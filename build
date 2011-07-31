@@ -1,0 +1,219 @@
+#!/bin/bash
+
+################################################################################
+#                                    Config                                    #
+################################################################################
+
+# Whether to produce optimized, name-mangled, debugging-unfriendly JS.
+OPTIMIZED=0
+
+# Which functions to export to the final Module object.
+EXPORTS='["_main","_PyRun_SimpleStringFlags"]'
+
+# Where the LLVM binaries can be found.
+LLVM=/home/max/emscripten-workspace/llvm-build/Release/bin/
+
+# Which modules to build dynamically.
+# Maps each module name to the C files implementing it.
+declare -A MODULES
+MODULES[array]="arraymodule.c"
+MODULES[cmath]="cmathmodule.c _math.c"
+MODULES[math]="mathmodule.c _math.c"
+MODULES[strop]="stropmodule.c"
+MODULES[time]="timemodule.c"
+MODULES[datetime]="datetimemodule.c timemodule.c"
+MODULES[itertools]="itertoolsmodule.c"
+MODULES[future_builtins]="future_builtins.c"
+MODULES[_random]="_randommodule.c"
+MODULES[_collections]="_collectionsmodule.c"
+MODULES[_bisect]="_bisectmodule.c"
+MODULES[_heapq]="_heapqmodule.c"
+MODULES[operator]="operator.c"
+MODULES[_functools]="_functoolsmodule.c"
+MODULES[_io]="_io/bufferedio.c _io/bytesio.c _io/fileio.c _io/iobase.c _io/_iomodule.c _io/stringio.c _io/textio.c"
+MODULES[_json]="_json.c"
+MODULES[_testcapi]="_testcapimodule.c"
+MODULES[_hotshot]="_hotshot.c"
+MODULES[_lsprof]="_lsprof.c rotatingtree.c"
+MODULES[unicodedata]="unicodedata.c"
+MODULES[_locale]="_localemodule.c"
+MODULES[fcntl]="fcntlmodule.c"
+MODULES[grp]="grpmodule.c"
+MODULES[spwd]="spwdmodule.c"
+MODULES[cStringIO]="cStringIO.c"
+MODULES[cPickle]="cPickle.c"
+MODULES[mmap]="mmapmodule.c"
+MODULES[syslog]="syslogmodule.c"
+MODULES[audioop]="audioop.c"
+MODULES[imageop]="imageop.c"
+MODULES[crypt]="cryptmodule.c"
+MODULES[_csv]="_csv.c"
+MODULES[_socket]="socketmodule.c"
+MODULES[_sha]="shamodule.c"
+MODULES[_md5]="md5module.c md5.c"
+MODULES[_sha256]="sha256module.c"
+MODULES[_sha512]="sha512module.c"
+MODULES[gdbm]="gdbmmodule.c"
+MODULES[termios]="termios.c"
+MODULES[resource]="resource.c"
+MODULES[nis]="nismodule.c"
+MODULES[_curses]="_cursesmodule.c"
+MODULES[_curses_panel]="_curses_panel.c"
+MODULES[zlib]="zlibmodule.c"
+MODULES[binascii]="binascii.c"
+MODULES[bz2]="bz2module.c"
+MODULES[_elementtree]="_elementtree.c"
+MODULES[_multibytecodec]="cjkcodecs/multibytecodec.c"
+MODULES[_codecs_kr]="cjkcodecs/_codecs_kr.c"
+MODULES[_codecs_jp]="cjkcodecs/_codecs_jp.c"
+MODULES[_codecs_cn]="cjkcodecs/_codecs_cn.c"
+MODULES[_codecs_tw]="cjkcodecs/_codecs_tw.c"
+MODULES[_codecs_hk]="cjkcodecs/_codecs_hk.c"
+MODULES[_codecs_iso2022]="cjkcodecs/_codecs_iso2022.c"
+MODULES[dl]="dlmodule.c"
+MODULES[pyexpat]="pyexpat.c expat/xmlparse.c expat/xmlrole.c expat/xmltok.c"
+MODULES[parser]="parsermodule.c"
+MODULES[_struct]="_struct.c"
+
+# These are baked into the main executable but can also be built separately.
+# MODULES[_symtable]="symtablemodule.c"
+# MODULES[zipimport]="zipimport.c"
+
+# These are disabled because they contain inline assembly.
+# MODULES[fpectl]="fpectlmodule.c"
+# MODULES[select]="selectmodule.c"
+# MODULES[linuxaudiodev]="linuxaudiodev.c"
+# MODULES[ossaudiodev]="ossaudiodev.c"
+
+################################################################################
+#                                    Script                                    #
+################################################################################
+
+# TODO: Make it possible to build only the main python.js, only modules or only
+#       a specific module.
+# TODO: Build the native version too, for comparison during debugging.
+
+# Exit on first error.
+set -e
+
+# Setup optimization flags for all future emscripting.
+if [ $OPTIMIZED -eq 1 ]; then
+  OPTIMIZATION_ARGS="-s OPTIMIZE=1 -s RELOOP=1 -s ASSERTIONS=0"
+else
+  OPTIMIZATION_ARGS="-s OPTIMIZE=0 -s RELOOP=0 -s ASSERTIONS=1"
+fi
+
+# Create two folders for intermediate and final files, respectively.
+mkdir -p obj
+mkdir -p dist
+
+# Remove old build.
+rm -rf obj/*
+rm -rf dist/*
+
+# Start building in the obj folder.
+cd obj
+
+# Create the Makefile and configurations using a filtering proxy for llvm-gcc.
+CC=../ccproxy.py ../cpython/configure --without-threads --without-pymalloc
+
+# Adjust configuration.
+# Remove the closing endif so we can insert new options.
+sed -i 's~#endif /\*Py_PYCONFIG_H\*/~~' pyconfig.h
+# Emscripten doesn't support CPU-specific assembly code.
+echo '#undef HAVE_GCC_ASM_FOR_X87' >> pyconfig.h
+# Emscripten does not support interrupt signals.
+echo '#undef HAVE_SIGACTION' >> pyconfig.h
+echo '#undef HAVE_SIGINTERRUPT' >> pyconfig.h
+echo '#undef HAVE_SIGRELSE' >> pyconfig.h
+# Put the closing endif back.
+echo '#endif /*Py_PYCONFIG_H*/' >> pyconfig.h
+
+# Compile CPython.
+echo 'Compiling...'
+make
+
+# Link the resulting libraries.
+echo 'Relinking...'
+mkdir -p relinked
+cd relinked
+ar x ../libpython2.7.a
+cp ../Modules/python.o .
+${LLVM}/llvm-link -o=python.bc *.o
+cp python.bc ..
+cd ..
+
+# Run LLVM optimizations.
+if [ $OPTIMIZED -eq 1 ]; then
+  echo 'Running LLVM optimizations...'
+  ${LLVM}/opt -O3 -o python.opt.bc python.bc
+else
+  cp python.bc python.opt.bc
+fi
+
+# Compile the assembly into JS using Emscripten.
+echo 'Emscripting...'
+# TODO: Add -m/--dlmalloc once it's debugged.
+python2 ../emscripten/emscripten.py python.opt.bc -o python.js \
+    -s INCLUDE_FULL_LIBRARY=1 -s EXPORTED_FUNCTIONS=$EXPORTS \
+    $OPTIMIZATION_ARGS
+
+# Copy the main Python JS executable to dist.
+cp python.js ../dist/python.js
+
+# Copy the pure Python modules to dist.
+# TODO: Remove unnecessary files and folders.
+cp -r ../cpython/Lib/* ../dist
+
+# Create a dummy modules list.
+mkdir -p ../dist/Modules
+touch ../dist/Modules/Setup
+
+# Build dynamically loaded modules.
+echo 'Building dynamic modules...'
+function build_module {
+  echo "Building $1..."
+
+  # Compile.
+  FLAGS="-c -emit-llvm -fPIC -fno-strict-aliasing -I. -IInclude -I../cpython/Include -Wstrict-prototypes"
+  FILES=""
+  for ((i=2; i<=$#; i++)); do
+    ../ccproxy.py $FLAGS ../cpython/Modules/${!i} -o `basename ${!i}`.o
+    FILES="$FILES `basename ${!i}`.o"
+  done
+
+  # Link.
+  ../ccproxy.py $FILES -o $1.so.bc
+
+  # Optimize.
+  if [ $OPTIMIZED -eq 1 ]; then
+    ${LLVM}/opt -O3 -o $1.so.opt.bc $1.so.bc
+  else
+    cp $1.so.bc $1.so.opt.bc
+  fi
+
+  # Emscript.
+  python2 ../emscripten/emscripten.py $1.so.opt.bc -o $1.so.js \
+      -s BUILD_AS_SHARED_LIB=1 -s EXPORTED_FUNCTIONS="[\"_init$1\"]" \
+      $OPTIMIZATION_ARGS
+
+  # Copy the new module to dist.
+  cp $1.so.js ../dist/$1.so.js
+}
+for i in "${!MODULES[@]}"; do
+  build_module $i ${MODULES[$i]}
+done
+
+# Create virtual file system entries.
+echo 'Mapping virtual filesystem.'
+python2 ../map_filesystem.py ../dist ../dist/python.js
+
+# TODO: Optimize and compress the resulting JS using Closure.
+#       Below is an old version that doesn't work right now.
+# if [ $OPTIMIZED -eq 1 ]; then
+#   echo 'Running closure...'
+#   closure --compilation_level ADVANCED_OPTIMIZATIONS --variable_map_output_file python.js.vars --js python.js --js_output_file python.opt.js
+# else
+#   cp ../dist/python.js ../dist/python.opt.js
+#   touch ../dist/python.js.vars
+# fi
