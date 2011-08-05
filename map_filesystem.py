@@ -3,7 +3,7 @@
 import os
 import sys
 
-def main(root, main_filename):
+def main(root):
   os.chdir(root)
   commands = []
   for (dirpath, dirnames, filenames) in os.walk('.'):
@@ -13,18 +13,12 @@ def main(root, main_filename):
     for filename in filenames:
       jsless_filename = filename[:-3] if filename.endswith('.js') else filename
       commands.append('FS.createLazyFile("%s", "%s", "%s", true, false);' %
-                      (dirpath, jsless_filename, filename))
+                      (dirpath, jsless_filename, dirpath + '/' + filename))
 
-  infile = open(main_filename, 'r')
-  src = infile.read().replace('// {{PRE_RUN_ADDITIONS}}', '\n'.join(commands))
-  infile.close()
-
-  outfile = open(main_filename, 'w')
-  outfile.write(src)
-  outfile.close()
+  print '\n'.join(commands) + '\n'
 
 if __name__ == '__main__':
-  if len(sys.argv) != 3:
-    print 'Usage: %s root outfile' % sys.argv[0]
+  if len(sys.argv) != 2:
+    print 'Usage: %s root' % sys.argv[0]
   else:
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1])
