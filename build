@@ -153,8 +153,8 @@ mkdir -p obj
 mkdir -p dist
 
 # Remove old build.
-# rm -rf obj/*
-# rm -rf dist/*
+rm -rf obj/*
+rm -rf dist/*
 
 # Start building in the obj folder.
 cd obj
