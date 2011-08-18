@@ -58,8 +58,6 @@ MODULES[gdbm]="gdbmmodule.c"
 MODULES[termios]="termios.c"
 MODULES[resource]="resource.c"
 MODULES[nis]="nismodule.c"
-MODULES[_curses]="_cursesmodule.c"
-MODULES[_curses_panel]="_curses_panel.c"
 MODULES[zlib]="zlibmodule.c"
 MODULES[binascii]="binascii.c"
 MODULES[bz2]="bz2module.c"
@@ -75,6 +73,9 @@ MODULES[dl]="dlmodule.c"
 MODULES[pyexpat]="pyexpat.c expat/xmlparse.c expat/xmlrole.c expat/xmltok.c"
 MODULES[parser]="parsermodule.c"
 MODULES[_struct]="_struct.c"
+
+# These are disabled because of problems with libffi.
+# MODULES[_ctypes]="_ctypes/_ctypes.c _ctypes/callbacks.c _ctypes/callproc.c _ctypes/stgdict.c _ctypes/cfield.c"
 
 # These are baked into the main executable but can also be built separately.
 # MODULES[_symtable]="symtablemodule.c"
@@ -98,7 +99,7 @@ CORRECT_SIGNS_LINES='["compile.c:3433","compile.c:3542","compile.c:3670","compil
 ################################################################################
 
 function build_module {
-  echo "Building $1..."
+  echo "  Building $1..."
 
   # Compile.
   FLAGS="-c -emit-llvm -fPIC -fno-strict-aliasing -I. -IInclude -I../cpython/Include -Wstrict-prototypes"
@@ -111,18 +112,13 @@ function build_module {
   # Link.
   ../ccproxy.py $FILES -o $1.so.bc
 
-  # Optimize.
-  if [ $OPTIMIZED -eq 1 ]; then
-    ${LLVM}/opt -O3 -o $1.so.opt.bc $1.so.bc
-  else
-    cp $1.so.bc $1.so.opt.bc
-  fi
-
   # Emscript.
-  python2 ../emscripten/emscripten.py $1.so.opt.bc \
+  python2 ../emscripten/emscripten.py $1.so.bc \
       -o $1.so.js \
       -s BUILD_AS_SHARED_LIB=1 \
       -s EXPORTED_FUNCTIONS="[\"_init$1\"]" \
+      -s CORRECT_SIGNS=2 -s CORRECT_SIGNS_LINES=$CORRECT_SIGNS_LINES \
+      -s CORRECT_OVERFLOWS=2 -s CORRECT_OVERFLOWS_LINES=$CORRECT_OVERFLOWS_LINES \
       $OPTIMIZATION_ARGS
 
   # Copy the new module to dist.
@@ -142,10 +138,11 @@ set -e
 
 # Setup optimization flags for all future emscripting.
 if [ $OPTIMIZED -eq 1 ]; then
-  # TODO: Figure out if reloop is useful.
-  OPTIMIZATION_ARGS="-s OPTIMIZE=1 -s RELOOP=0 -s ASSERTIONS=0"
+  # TODO: Figure out if reloop is possible and useful.
+  # TODO: Find the bug with USE_TYPED_ARRAYS=1 and =2.
+  OPTIMIZATION_ARGS="-O -s OPTIMIZE=1 -s RELOOP=0 -s ASSERTIONS=0"
 else
-  OPTIMIZATION_ARGS="-s OPTIMIZE=0 -s RELOOP=0 -s ASSERTIONS=1"
+  OPTIMIZATION_ARGS="   -s OPTIMIZE=0 -s RELOOP=0 -s ASSERTIONS=1"
 fi
 
 # Create two folders for intermediate and final files, respectively.
@@ -154,7 +151,7 @@ mkdir -p dist
 
 # Remove old build.
 rm -rf obj/*
-rm -rf dist/*
+rm -rf dist/{python.js,lib}
 
 # Start building in the obj folder.
 cd obj
@@ -188,17 +185,9 @@ ${LLVM}/llvm-link -o=python.bc *.o
 cp python.bc ..
 cd ..
 
-# Run LLVM optimizations.
-if [ $OPTIMIZED -eq 1 ]; then
-  echo 'Running LLVM optimizations...'
-  ${LLVM}/opt -O3 -o python.opt.bc python.bc
-else
-  cp python.bc python.opt.bc
-fi
-
 # Compile the bytecode into JS using Emscripten.
 echo 'Emscripting...'
-python2 ../emscripten/emscripten.py python.opt.bc \
+python2 ../emscripten/emscripten.py python.bc \
     -m \
     -o python.js \
     -s INVOKE_RUN=0 \
@@ -216,29 +205,12 @@ cp python.js ../dist/python.js
 mkdir -p ../dist/lib
 mkdir -p ../dist/lib/python2.7
 cp -r ../cpython/Lib/* ../dist/lib/python2.7
-rm -rf ../dist/lib/python2.7/idlelib
-rm -rf ../dist/lib/python2.7/lib-tk
-rm -rf ../dist/lib/python2.7/plat-aix3
-rm -rf ../dist/lib/python2.7/plat-aix4
-rm -rf ../dist/lib/python2.7/plat-atheos
-rm -rf ../dist/lib/python2.7/plat-beos5
-rm -rf ../dist/lib/python2.7/plat-darwin
-rm -rf ../dist/lib/python2.7/plat-freebsd4
-rm -rf ../dist/lib/python2.7/plat-freebsd5
-rm -rf ../dist/lib/python2.7/plat-freebsd6
-rm -rf ../dist/lib/python2.7/plat-freebsd7
-rm -rf ../dist/lib/python2.7/plat-freebsd8
-rm -rf ../dist/lib/python2.7/plat-generic
-rm -rf ../dist/lib/python2.7/plat-irix5
-rm -rf ../dist/lib/python2.7/plat-irix6
-rm -rf ../dist/lib/python2.7/plat-mac
-rm -rf ../dist/lib/python2.7/plat-netbsd1
-rm -rf ../dist/lib/python2.7/plat-next3
-rm -rf ../dist/lib/python2.7/plat-os2emx
-rm -rf ../dist/lib/python2.7/plat-riscos
-rm -rf ../dist/lib/python2.7/plat-sunos5
-rm -rf ../dist/lib/python2.7/plat-unixware7
-# TODO: Precompile pure modules.
+rm -rf ../dist/lib/python2.7/{idlelib,lib-tk}
+rm -rf ../dist/lib/python2.7/plat-{aix3,aix4,atheos,beos5,darwin,freebsd4,freebsd5,freebsd6,freebsd7,freebsd8,generic,irix5,irix6,mac,netbsd1,next3,os2emx,riscos,sunos5,unixware7}
+# TODO: Precompile pure modules instead.
+find ../dist -name '*.pyc' | xargs rm
+# Make sure everything is readable and folders are executable (browseable).
+chmod -R ugo+rX ../dist
 
 # Build dynamically loaded modules.
 echo 'Building dynamic modules...'

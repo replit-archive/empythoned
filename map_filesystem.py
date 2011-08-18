@@ -11,6 +11,8 @@ def main(root):
       commands.append('FS.createFolder("%s", "%s", true, true);' %
                       (dirpath, folder))
     for filename in filenames:
+      # NOTE: Remove the python.js entry to prevent unnecesary re-reading.
+      if dirpath == '.' and filename == 'python.js': continue
       jsless_filename = filename[:-3] if filename.endswith('.js') else filename
       commands.append('FS.createLazyFile("%s", "%s", "%s", true, false);' %
                       (dirpath, jsless_filename, dirpath + '/' + filename))

@@ -14,14 +14,14 @@
         });
 
         button.onclick = function() {
-          output.value = '';
-          if (!Python.isFinished(input.value)) {
-            output.value += 'Command not finished.';
-            return;
-          }
-          var result = Python.eval(input.value);
-          if (result !== null && result !== undefined) {
-            output.value += '\n--------------------------\nResult: ' + result;
+          if (Python.isFinished(input.value)) {
+            output.value = '';
+            var result = Python.eval(input.value);
+            if (result !== null && result !== undefined) {
+              output.value += '\n--------------------------\nResult: ' + result;
+            }
+          } else {
+            output.value = 'Command not finished.';
           }
         }
       };
