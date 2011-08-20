@@ -3,6 +3,8 @@
 import os
 import sys
 
+# TODO: Inline empty/tiny files.
+
 def main(root):
   os.chdir(root)
   commands = []

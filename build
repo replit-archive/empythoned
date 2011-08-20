@@ -74,7 +74,7 @@ MODULES[pyexpat]="pyexpat.c expat/xmlparse.c expat/xmlrole.c expat/xmltok.c"
 MODULES[parser]="parsermodule.c"
 MODULES[_struct]="_struct.c"
 
-# These are disabled because of problems with libffi.
+# This is disabled due to problems with libffi headers.
 # MODULES[_ctypes]="_ctypes/_ctypes.c _ctypes/callbacks.c _ctypes/callproc.c _ctypes/stgdict.c _ctypes/cfield.c"
 
 # These are baked into the main executable but can also be built separately.
@@ -91,7 +91,7 @@ MODULES[_struct]="_struct.c"
 #                                   Patches                                    #
 ################################################################################
 
-CORRECT_OVERFLOWS_LINES='["stringobject.c:1271","typeobject.c:2474","typeobject.c:2507","tupleobject.c:352","object.c:1069"]'
+CORRECT_OVERFLOWS_LINES='["stringobject.c:1271","typeobject.c:2474","typeobject.c:2507","tupleobject.c:352","object.c:1069","dictobject.c:365"]'
 CORRECT_SIGNS_LINES='["compile.c:3433","compile.c:3542","compile.c:3670","compile.c:3692","compile.c:3934","listobject.c:51","peephole.c:429","typeobject.c:2474","typeobject.c:2507","dictobject.c:442","dictobject.c:364","dictobject.c:569"]'
 
 ################################################################################
@@ -226,12 +226,11 @@ python2 ../map_filesystem.py ../dist >> ../dist/python.js
 echo 'Adding entry point.'
 cat ../entry_point.js >> ../dist/python.js
 
-# TODO: Optimize and compress the resulting JS using Closure.
-#       Below is an old version that doesn't work right now.
+# TODO: Switch to ADVANCED_OPTIMIZATIONS.
+# NOTE: Disabled because it hits a Closure Compiler iteration limit.
 # if [ $OPTIMIZED -eq 1 ]; then
-#   echo 'Running closure...'
-#   closure --compilation_level ADVANCED_OPTIMIZATIONS --variable_map_output_file python.js.vars --js python.js --js_output_file python.opt.js
+#   echo 'Running closure compiler...'
+#   closure --compilation_level SIMPLE_OPTIMIZATIONS --js python.js --js_output_file python.opt.js
 # else
 #   cp ../dist/python.js ../dist/python.opt.js
-#   touch ../dist/python.js.vars
 # fi
