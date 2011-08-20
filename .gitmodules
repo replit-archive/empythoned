@@ -1,3 +1,0 @@
-[submodule "emscripten"]
-	path = emscripten
-	url = git://github.com/max99x/emscripten.git
