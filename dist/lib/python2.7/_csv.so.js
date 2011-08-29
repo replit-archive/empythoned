@@ -91,11 +91,11 @@ var _quote_styles;
 var _dialects;
 var _error_obj;
 var __str4;
-var __Py_NoneStruct;
-var _PyExc_TypeError;
+
+
 var __str5;
 var __str6;
-var _PyBaseString_Type;
+
 var __str7;
 var __str8;
 var __str9;
@@ -254,7 +254,7 @@ var __str60;
         if ($7) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 156 "_csv.c"
       case 2: // $bb1
         var $8=HEAP[_error_obj]; //@line 157 "_csv.c"
-        var $9=_PyErr_Format($8, __str4); //@line 157 "_csv.c"
+        var $9=_PyErr_Format($8, __str4, allocate(1, "i32", ALLOC_STACK)); //@line 157 "_csv.c"
         __label__ = 4; break; //@line 157 "_csv.c"
       case 3: // $bb3
         var $10=$dialect_obj; //@line 160 "_csv.c"
@@ -278,143 +278,139 @@ var __str60;
   }
   
 
-  function _Dialect_get_lineterminator($self) {
+  function _get_string($str) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $str_addr_i;
-        var $retval_i;
-        var $0;
-        var $self_addr;
+        var $str_addr;
         var $retval;
-        var $1;
-        $self_addr=$self;
-        var $2=$self_addr; //@line 185 "_csv.c"
-        var $3=$2+20; //@line 185 "_csv.c"
-        var $4=HEAP[$3]; //@line 185 "_csv.c"
-        $str_addr_i=$4;
-        var $5=$str_addr_i; //@line 167 "_csv.c"
-        var $6=($5)!=0; //@line 167 "_csv.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 167 "_csv.c"
-      case 1: // $bb_i
-        var $7=$str_addr_i; //@line 167 "_csv.c"
+        var $0;
+        $str_addr=$str;
+        var $1=$str_addr; //@line 167 "_csv.c"
+        var $2=($1)!=0; //@line 167 "_csv.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 167 "_csv.c"
+      case 1: // $bb
+        var $3=$str_addr; //@line 167 "_csv.c"
+        var $4=$3; //@line 167 "_csv.c"
+        var $5=HEAP[$4]; //@line 167 "_csv.c"
+        var $6=($5) + 1; //@line 167 "_csv.c"
+        var $7=$str_addr; //@line 167 "_csv.c"
         var $8=$7; //@line 167 "_csv.c"
-        var $9=HEAP[$8]; //@line 167 "_csv.c"
-        var $10=($9) + 1; //@line 167 "_csv.c"
-        var $11=$str_addr_i; //@line 167 "_csv.c"
-        var $12=$11; //@line 167 "_csv.c"
-        HEAP[$12]=$10; //@line 167 "_csv.c"
+        HEAP[$8]=$6; //@line 167 "_csv.c"
         __label__ = 2; break; //@line 167 "_csv.c"
-      case 2: // $get_string_exit
-        var $13=$str_addr_i; //@line 168 "_csv.c"
-        $0=$13; //@line 168 "_csv.c"
-        var $14=$0; //@line 168 "_csv.c"
-        $retval_i=$14; //@line 168 "_csv.c"
-        var $retval2_i=$retval_i; //@line 168 "_csv.c"
-        $1=$retval2_i; //@line 185 "_csv.c"
-        var $15=$1; //@line 185 "_csv.c"
-        $retval=$15; //@line 185 "_csv.c"
-        var $retval1=$retval; //@line 185 "_csv.c"
+      case 2: // $bb1
+        var $9=$str_addr; //@line 168 "_csv.c"
+        $0=$9; //@line 168 "_csv.c"
+        var $10=$0; //@line 168 "_csv.c"
+        $retval=$10; //@line 168 "_csv.c"
+        var $retval2=$retval; //@line 168 "_csv.c"
         ;
-        return $retval1; //@line 185 "_csv.c"
+        return $retval2; //@line 168 "_csv.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _get_nullchar_as_None($c) {
+    var __stackBase__  = STACKTOP; STACKTOP += 1; _memset(__stackBase__, 0, 1);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $c_addr=__stackBase__;
+        var $retval;
+        var $0;
+        HEAP[$c_addr]=$c;
+        var $1=HEAP[$c_addr]; //@line 174 "_csv.c"
+        var $2=($1)==0; //@line 174 "_csv.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 174 "_csv.c"
+      case 1: // $bb
+        var $3=HEAP[__Py_NoneStruct]; //@line 175 "_csv.c"
+        var $4=($3) + 1; //@line 175 "_csv.c"
+        HEAP[__Py_NoneStruct]=$4; //@line 175 "_csv.c"
+        $0=__Py_NoneStruct; //@line 176 "_csv.c"
+        __label__ = 3; break; //@line 176 "_csv.c"
+      case 2: // $bb1
+        var $5=_PyString_FromStringAndSize($c_addr, 1); //@line 179 "_csv.c"
+        $0=$5; //@line 179 "_csv.c"
+        __label__ = 3; break; //@line 179 "_csv.c"
+      case 3: // $bb2
+        var $6=$0; //@line 176 "_csv.c"
+        $retval=$6; //@line 176 "_csv.c"
+        var $retval3=$retval; //@line 176 "_csv.c"
+        STACKTOP = __stackBase__;
+        return $retval3; //@line 176 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _Dialect_get_lineterminator($self) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    var $1=$self_addr; //@line 185 "_csv.c"
+    var $2=$1+20; //@line 185 "_csv.c"
+    var $3=HEAP[$2]; //@line 185 "_csv.c"
+    var $4=_get_string($3); //@line 185 "_csv.c"
+    $0=$4; //@line 185 "_csv.c"
+    var $5=$0; //@line 185 "_csv.c"
+    $retval=$5; //@line 185 "_csv.c"
+    var $retval1=$retval; //@line 185 "_csv.c"
+    ;
+    return $retval1; //@line 185 "_csv.c"
   }
   
 
   function _Dialect_get_escapechar($self) {
-    var __stackBase__  = STACKTOP; STACKTOP += 1; _memset(__stackBase__, 0, 1);
+    ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $c_addr_i=__stackBase__;
-        var $retval_i;
-        var $0;
-        var $self_addr;
-        var $retval;
-        var $1;
-        $self_addr=$self;
-        var $2=$self_addr; //@line 191 "_csv.c"
-        var $3=$2+14; //@line 191 "_csv.c"
-        var $4=HEAP[$3]; //@line 191 "_csv.c"
-        var $5=($4); //@line 191 "_csv.c"
-        var $6=((($5)) & 255); //@line 191 "_csv.c"
-        HEAP[$c_addr_i]=$6;
-        var $7=HEAP[$c_addr_i]; //@line 174 "_csv.c"
-        var $8=($7)==0; //@line 174 "_csv.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 174 "_csv.c"
-      case 1: // $bb_i
-        var $9=HEAP[__Py_NoneStruct]; //@line 175 "_csv.c"
-        var $10=($9) + 1; //@line 175 "_csv.c"
-        HEAP[__Py_NoneStruct]=$10; //@line 175 "_csv.c"
-        $0=__Py_NoneStruct; //@line 176 "_csv.c"
-        __label__ = 3; break; //@line 176 "_csv.c"
-      case 2: // $bb1_i
-        var $11=_PyString_FromStringAndSize($c_addr_i, 1); //@line 179 "_csv.c"
-        $0=$11; //@line 179 "_csv.c"
-        __label__ = 3; break; //@line 179 "_csv.c"
-      case 3: // $get_nullchar_as_None_exit
-        var $12=$0; //@line 176 "_csv.c"
-        $retval_i=$12; //@line 176 "_csv.c"
-        var $retval3_i=$retval_i; //@line 176 "_csv.c"
-        $1=$retval3_i; //@line 191 "_csv.c"
-        var $13=$1; //@line 191 "_csv.c"
-        $retval=$13; //@line 191 "_csv.c"
-        var $retval1=$retval; //@line 191 "_csv.c"
-        STACKTOP = __stackBase__;
-        return $retval1; //@line 191 "_csv.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $self_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    var $1=$self_addr; //@line 191 "_csv.c"
+    var $2=$1+14; //@line 191 "_csv.c"
+    var $3=HEAP[$2]; //@line 191 "_csv.c"
+    var $4=($3); //@line 191 "_csv.c"
+    var $5=((($4)) & 255); //@line 191 "_csv.c"
+    var $6=_get_nullchar_as_None($5); //@line 191 "_csv.c"
+    $0=$6; //@line 191 "_csv.c"
+    var $7=$0; //@line 191 "_csv.c"
+    $retval=$7; //@line 191 "_csv.c"
+    var $retval1=$retval; //@line 191 "_csv.c"
+    ;
+    return $retval1; //@line 191 "_csv.c"
   }
   
 
   function _Dialect_get_quotechar($self) {
-    var __stackBase__  = STACKTOP; STACKTOP += 1; _memset(__stackBase__, 0, 1);
+    ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $c_addr_i=__stackBase__;
-        var $retval_i;
-        var $0;
-        var $self_addr;
-        var $retval;
-        var $1;
-        $self_addr=$self;
-        var $2=$self_addr; //@line 197 "_csv.c"
-        var $3=$2+13; //@line 197 "_csv.c"
-        var $4=HEAP[$3]; //@line 197 "_csv.c"
-        var $5=($4); //@line 197 "_csv.c"
-        var $6=((($5)) & 255); //@line 197 "_csv.c"
-        HEAP[$c_addr_i]=$6;
-        var $7=HEAP[$c_addr_i]; //@line 174 "_csv.c"
-        var $8=($7)==0; //@line 174 "_csv.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 174 "_csv.c"
-      case 1: // $bb_i
-        var $9=HEAP[__Py_NoneStruct]; //@line 175 "_csv.c"
-        var $10=($9) + 1; //@line 175 "_csv.c"
-        HEAP[__Py_NoneStruct]=$10; //@line 175 "_csv.c"
-        $0=__Py_NoneStruct; //@line 176 "_csv.c"
-        __label__ = 3; break; //@line 176 "_csv.c"
-      case 2: // $bb1_i
-        var $11=_PyString_FromStringAndSize($c_addr_i, 1); //@line 179 "_csv.c"
-        $0=$11; //@line 179 "_csv.c"
-        __label__ = 3; break; //@line 179 "_csv.c"
-      case 3: // $get_nullchar_as_None_exit
-        var $12=$0; //@line 176 "_csv.c"
-        $retval_i=$12; //@line 176 "_csv.c"
-        var $retval3_i=$retval_i; //@line 176 "_csv.c"
-        $1=$retval3_i; //@line 197 "_csv.c"
-        var $13=$1; //@line 197 "_csv.c"
-        $retval=$13; //@line 197 "_csv.c"
-        var $retval1=$retval; //@line 197 "_csv.c"
-        STACKTOP = __stackBase__;
-        return $retval1; //@line 197 "_csv.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $self_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    var $1=$self_addr; //@line 197 "_csv.c"
+    var $2=$1+13; //@line 197 "_csv.c"
+    var $3=HEAP[$2]; //@line 197 "_csv.c"
+    var $4=($3); //@line 197 "_csv.c"
+    var $5=((($4)) & 255); //@line 197 "_csv.c"
+    var $6=_get_nullchar_as_None($5); //@line 197 "_csv.c"
+    $0=$6; //@line 197 "_csv.c"
+    var $7=$0; //@line 197 "_csv.c"
+    $retval=$7; //@line 197 "_csv.c"
+    var $retval1=$retval; //@line 197 "_csv.c"
+    ;
+    return $retval1; //@line 197 "_csv.c"
   }
   
 
@@ -436,6 +432,107 @@ var __str60;
     var $retval1=$retval; //@line 203 "_csv.c"
     ;
     return $retval1; //@line 203 "_csv.c"
+  }
+  
+
+  function __set_bool($name, $target, $src, $dflt) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $name_addr;
+        var $target_addr;
+        var $src_addr;
+        var $dflt_addr;
+        var $retval;
+        var $0;
+        $name_addr=$name;
+        $target_addr=$target;
+        $src_addr=$src;
+        $dflt_addr=$dflt;
+        var $1=$src_addr; //@line 209 "_csv.c"
+        var $2=($1)==0; //@line 209 "_csv.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 209 "_csv.c"
+      case 1: // $bb
+        var $3=$target_addr; //@line 210 "_csv.c"
+        var $4=$dflt_addr; //@line 210 "_csv.c"
+        HEAP[$3]=$4; //@line 210 "_csv.c"
+        __label__ = 3; break; //@line 210 "_csv.c"
+      case 2: // $bb1
+        var $5=$src_addr; //@line 212 "_csv.c"
+        var $6=_PyObject_IsTrue($5); //@line 212 "_csv.c"
+        var $7=$target_addr; //@line 212 "_csv.c"
+        HEAP[$7]=$6; //@line 212 "_csv.c"
+        __label__ = 3; break; //@line 212 "_csv.c"
+      case 3: // $bb2
+        $0=0; //@line 213 "_csv.c"
+        var $8=$0; //@line 213 "_csv.c"
+        $retval=$8; //@line 213 "_csv.c"
+        var $retval3=$retval; //@line 213 "_csv.c"
+        ;
+        return $retval3; //@line 213 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function __set_int($target, $src) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $name_addr;
+        var $target_addr;
+        var $src_addr;
+        var $dflt_addr;
+        var $retval;
+        var $0;
+        $name_addr=__str16;
+        $target_addr=$target;
+        $src_addr=$src;
+        $dflt_addr=0;
+        var $1=$src_addr; //@line 219 "_csv.c"
+        var $2=($1)==0; //@line 219 "_csv.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 219 "_csv.c"
+      case 1: // $bb
+        var $3=$target_addr; //@line 220 "_csv.c"
+        var $4=$dflt_addr; //@line 220 "_csv.c"
+        HEAP[$3]=$4; //@line 220 "_csv.c"
+        __label__ = 5; break; //@line 220 "_csv.c"
+      case 2: // $bb1
+        var $5=$src_addr; //@line 222 "_csv.c"
+        var $6=$5+4; //@line 222 "_csv.c"
+        var $7=HEAP[$6]; //@line 222 "_csv.c"
+        var $8=$7+84; //@line 222 "_csv.c"
+        var $9=HEAP[$8]; //@line 222 "_csv.c"
+        var $10=($9) & 8388608; //@line 222 "_csv.c"
+        var $11=($10)==0; //@line 222 "_csv.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 222 "_csv.c"
+      case 3: // $bb2
+        var $12=HEAP[_PyExc_TypeError]; //@line 223 "_csv.c"
+        var $13=$name_addr; //@line 223 "_csv.c"
+        var $14=_PyErr_Format($12, __str5, allocate([$13,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 223 "_csv.c"
+        $0=-1; //@line 225 "_csv.c"
+        __label__ = 6; break; //@line 225 "_csv.c"
+      case 4: // $bb3
+        var $15=$src_addr; //@line 227 "_csv.c"
+        var $16=_PyInt_AsLong($15); //@line 227 "_csv.c"
+        var $17=$target_addr; //@line 227 "_csv.c"
+        HEAP[$17]=$16; //@line 227 "_csv.c"
+        __label__ = 5; break; //@line 227 "_csv.c"
+      case 5: // $bb4
+        $0=0; //@line 229 "_csv.c"
+        __label__ = 6; break; //@line 229 "_csv.c"
+      case 6: // $bb5
+        var $18=$0; //@line 225 "_csv.c"
+        $retval=$18; //@line 225 "_csv.c"
+        var $retval6=$retval; //@line 225 "_csv.c"
+        ;
+        return $retval6; //@line 225 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
   }
   
 
@@ -494,7 +591,7 @@ var __str60;
       case 7: // $bb6
         var $21=HEAP[_PyExc_TypeError]; //@line 241 "_csv.c"
         var $22=$name_addr; //@line 241 "_csv.c"
-        var $23=_PyErr_Format($21, __str6, $22); //@line 241 "_csv.c"
+        var $23=_PyErr_Format($21, __str6, allocate([$22,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 241 "_csv.c"
         $0=-1; //@line 244 "_csv.c"
         __label__ = 12; break; //@line 244 "_csv.c"
       case 8: // $bb7
@@ -523,6 +620,162 @@ var __str60;
         var $retval12=$retval; //@line 244 "_csv.c"
         ;
         return $retval12; //@line 244 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function __set_str($target, $src) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $name_addr;
+        var $target_addr;
+        var $src_addr;
+        var $dflt_addr;
+        var $retval;
+        var $0;
+        $name_addr=__str14;
+        $target_addr=$target;
+        $src_addr=$src;
+        $dflt_addr=__str19;
+        var $1=$src_addr; //@line 259 "_csv.c"
+        var $2=($1)==0; //@line 259 "_csv.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 259 "_csv.c"
+      case 1: // $bb
+        var $3=$dflt_addr; //@line 260 "_csv.c"
+        var $4=_PyString_FromString($3); //@line 260 "_csv.c"
+        var $5=$target_addr; //@line 260 "_csv.c"
+        HEAP[$5]=$4; //@line 260 "_csv.c"
+        __label__ = 11; break; //@line 260 "_csv.c"
+      case 2: // $bb1
+        var $6=$src_addr; //@line 262 "_csv.c"
+        var $7=($6)==(__Py_NoneStruct); //@line 262 "_csv.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 262 "_csv.c"
+      case 3: // $bb2
+        var $8=$target_addr; //@line 263 "_csv.c"
+        HEAP[$8]=0; //@line 263 "_csv.c"
+        __label__ = 11; break; //@line 263 "_csv.c"
+      case 4: // $bb3
+        var $9=$src_addr; //@line 264 "_csv.c"
+        var $10=$9+4; //@line 264 "_csv.c"
+        var $11=HEAP[$10]; //@line 264 "_csv.c"
+        var $12=($11)==(_PyBaseString_Type); //@line 264 "_csv.c"
+        if ($12) { __label__ = 7; break; } else { __label__ = 5; break; } //@line 264 "_csv.c"
+      case 5: // $bb4
+        var $13=$src_addr; //@line 264 "_csv.c"
+        var $14=$13+4; //@line 264 "_csv.c"
+        var $15=HEAP[$14]; //@line 264 "_csv.c"
+        var $16=_PyType_IsSubtype($15, _PyBaseString_Type); //@line 264 "_csv.c"
+        var $17=($16)!=0; //@line 264 "_csv.c"
+        if ($17) { __label__ = 7; break; } else { __label__ = 6; break; } //@line 264 "_csv.c"
+      case 6: // $bb5
+        var $18=HEAP[_PyExc_TypeError]; //@line 265 "_csv.c"
+        var $19=$name_addr; //@line 265 "_csv.c"
+        var $20=_PyErr_Format($18, __str7, allocate([$19,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 265 "_csv.c"
+        $0=-1; //@line 267 "_csv.c"
+        __label__ = 12; break; //@line 267 "_csv.c"
+      case 7: // $bb6
+        var $21=$target_addr; //@line 270 "_csv.c"
+        var $22=HEAP[$21]; //@line 270 "_csv.c"
+        var $23=($22)!=0; //@line 270 "_csv.c"
+        if ($23) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 270 "_csv.c"
+      case 8: // $bb7
+        var $24=$target_addr; //@line 270 "_csv.c"
+        var $25=HEAP[$24]; //@line 270 "_csv.c"
+        var $26=$25; //@line 270 "_csv.c"
+        var $27=HEAP[$26]; //@line 270 "_csv.c"
+        var $28=($27) - 1; //@line 270 "_csv.c"
+        var $29=$25; //@line 270 "_csv.c"
+        HEAP[$29]=$28; //@line 270 "_csv.c"
+        var $30=$25; //@line 270 "_csv.c"
+        var $31=HEAP[$30]; //@line 270 "_csv.c"
+        var $32=($31)==0; //@line 270 "_csv.c"
+        if ($32) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 270 "_csv.c"
+      case 9: // $bb8
+        var $33=$target_addr; //@line 270 "_csv.c"
+        var $34=HEAP[$33]; //@line 270 "_csv.c"
+        var $35=$34+4; //@line 270 "_csv.c"
+        var $36=HEAP[$35]; //@line 270 "_csv.c"
+        var $37=$36+24; //@line 270 "_csv.c"
+        var $38=HEAP[$37]; //@line 270 "_csv.c"
+        var $39=$target_addr; //@line 270 "_csv.c"
+        var $40=HEAP[$39]; //@line 270 "_csv.c"
+        FUNCTION_TABLE[$38]($40); //@line 270 "_csv.c"
+        __label__ = 10; break; //@line 270 "_csv.c"
+      case 10: // $bb9
+        var $41=$src_addr; //@line 271 "_csv.c"
+        var $42=$41; //@line 271 "_csv.c"
+        var $43=HEAP[$42]; //@line 271 "_csv.c"
+        var $44=($43) + 1; //@line 271 "_csv.c"
+        var $45=$src_addr; //@line 271 "_csv.c"
+        var $46=$45; //@line 271 "_csv.c"
+        HEAP[$46]=$44; //@line 271 "_csv.c"
+        var $47=$target_addr; //@line 272 "_csv.c"
+        var $48=$src_addr; //@line 272 "_csv.c"
+        HEAP[$47]=$48; //@line 272 "_csv.c"
+        __label__ = 11; break; //@line 272 "_csv.c"
+      case 11: // $bb10
+        $0=0; //@line 275 "_csv.c"
+        __label__ = 12; break; //@line 275 "_csv.c"
+      case 12: // $bb11
+        var $49=$0; //@line 267 "_csv.c"
+        $retval=$49; //@line 267 "_csv.c"
+        var $retval12=$retval; //@line 267 "_csv.c"
+        ;
+        return $retval12; //@line 267 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _dialect_check_quoting($quoting) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $quoting_addr;
+        var $retval;
+        var $0;
+        var $qs;
+        $quoting_addr=$quoting;
+        $qs=_quote_styles; //@line 283 "_csv.c"
+        __label__ = 4; break; //@line 283 "_csv.c"
+      case 1: // $bb
+        var $1=$qs; //@line 284 "_csv.c"
+        var $2=$1; //@line 284 "_csv.c"
+        var $3=HEAP[$2]; //@line 284 "_csv.c"
+        var $4=$quoting_addr; //@line 284 "_csv.c"
+        var $5=($3)==($4); //@line 284 "_csv.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 284 "_csv.c"
+      case 2: // $bb1
+        $0=0; //@line 285 "_csv.c"
+        __label__ = 6; break; //@line 285 "_csv.c"
+      case 3: // $bb2
+        var $6=$qs; //@line 283 "_csv.c"
+        var $7=$6+8; //@line 283 "_csv.c"
+        $qs=$7; //@line 283 "_csv.c"
+        __label__ = 4; break; //@line 283 "_csv.c"
+      case 4: // $bb3
+        var $8=$qs; //@line 283 "_csv.c"
+        var $9=$8+4; //@line 283 "_csv.c"
+        var $10=HEAP[$9]; //@line 283 "_csv.c"
+        var $11=($10)!=0; //@line 283 "_csv.c"
+        if ($11) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 283 "_csv.c"
+      case 5: // $bb4
+        var $12=HEAP[_PyExc_TypeError]; //@line 287 "_csv.c"
+        var $13=_PyErr_Format($12, __str8, allocate(1, "i32", ALLOC_STACK)); //@line 287 "_csv.c"
+        $0=-1; //@line 288 "_csv.c"
+        __label__ = 6; break; //@line 288 "_csv.c"
+      case 6: // $bb5
+        var $14=$0; //@line 285 "_csv.c"
+        $retval=$14; //@line 285 "_csv.c"
+        var $retval6=$retval; //@line 285 "_csv.c"
+        ;
+        return $retval6; //@line 285 "_csv.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -590,45 +843,11 @@ var __str60;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $quoting_addr_i;
-        var $retval_i39;
-        var $0;
-        var $qs_i;
-        var $name_addr_i29;
-        var $target_addr_i30;
-        var $src_addr_i31;
-        var $dflt_addr_i32;
-        var $retval_i33;
-        var $1;
-        var $name_addr_i19;
-        var $target_addr_i20;
-        var $src_addr_i21;
-        var $dflt_addr_i22;
-        var $retval_i23;
-        var $2;
-        var $name_addr_i8;
-        var $target_addr_i9;
-        var $src_addr_i10;
-        var $dflt_addr_i11;
-        var $retval_i12;
-        var $3;
-        var $name_addr_i1;
-        var $target_addr_i2;
-        var $src_addr_i3;
-        var $dflt_addr_i4;
-        var $retval_i5;
-        var $4;
-        var $name_addr_i;
-        var $target_addr_i;
-        var $src_addr_i;
-        var $dflt_addr_i;
-        var $retval_i;
-        var $5;
         var $type_addr;
         var $args_addr;
         var $kwargs_addr;
         var $retval;
-        var $6;
+        var $0;
         var $self;
         var $ret;
         var $dialect=__stackBase__;
@@ -653,874 +872,686 @@ var __str60;
         HEAP[$quoting]=0; //@line 340 "_csv.c"
         HEAP[$skipinitialspace]=0; //@line 341 "_csv.c"
         HEAP[$strict]=0; //@line 342 "_csv.c"
-        var $7=$args_addr; //@line 344 "_csv.c"
-        var $8=$kwargs_addr; //@line 344 "_csv.c"
-        var $9=_PyArg_ParseTupleAndKeywords($7, $8, __str18, _dialect_kws, $dialect, $delimiter, $doublequote, $escapechar, $lineterminator, $quotechar, $quoting, $skipinitialspace, $strict); //@line 344 "_csv.c"
-        var $10=($9)==0; //@line 344 "_csv.c"
-        if ($10) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 344 "_csv.c"
+        var $1=$args_addr; //@line 344 "_csv.c"
+        var $2=$kwargs_addr; //@line 344 "_csv.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str18, _dialect_kws, allocate([$dialect,0,0,0,$delimiter,0,0,0,$doublequote,0,0,0,$escapechar,0,0,0,$lineterminator,0,0,0,$quotechar,0,0,0,$quoting,0,0,0,$skipinitialspace,0,0,0,$strict,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 344 "_csv.c"
+        var $4=($3)==0; //@line 344 "_csv.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 344 "_csv.c"
       case 1: // $bb
-        $6=0; //@line 355 "_csv.c"
-        __label__ = 133; break; //@line 355 "_csv.c"
+        $0=0; //@line 355 "_csv.c"
+        __label__ = 109; break; //@line 355 "_csv.c"
       case 2: // $bb1
-        var $11=HEAP[$dialect]; //@line 357 "_csv.c"
-        var $12=($11)!=0; //@line 357 "_csv.c"
-        if ($12) { __label__ = 3; break; } else { __label__ = 19; break; } //@line 357 "_csv.c"
+        var $5=HEAP[$dialect]; //@line 357 "_csv.c"
+        var $6=($5)!=0; //@line 357 "_csv.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 19; break; } //@line 357 "_csv.c"
       case 3: // $bb2
-        var $13=HEAP[$dialect]; //@line 358 "_csv.c"
-        var $14=$13+4; //@line 358 "_csv.c"
-        var $15=HEAP[$14]; //@line 358 "_csv.c"
-        var $16=($15)==(_PyBaseString_Type); //@line 358 "_csv.c"
-        if ($16) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 358 "_csv.c"
+        var $7=HEAP[$dialect]; //@line 358 "_csv.c"
+        var $8=$7+4; //@line 358 "_csv.c"
+        var $9=HEAP[$8]; //@line 358 "_csv.c"
+        var $10=($9)==(_PyBaseString_Type); //@line 358 "_csv.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 358 "_csv.c"
       case 4: // $bb3
-        var $17=HEAP[$dialect]; //@line 358 "_csv.c"
-        var $18=$17+4; //@line 358 "_csv.c"
-        var $19=HEAP[$18]; //@line 358 "_csv.c"
-        var $20=_PyType_IsSubtype($19, _PyBaseString_Type); //@line 358 "_csv.c"
-        var $21=($20)!=0; //@line 358 "_csv.c"
-        if ($21) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 358 "_csv.c"
+        var $11=HEAP[$dialect]; //@line 358 "_csv.c"
+        var $12=$11+4; //@line 358 "_csv.c"
+        var $13=HEAP[$12]; //@line 358 "_csv.c"
+        var $14=_PyType_IsSubtype($13, _PyBaseString_Type); //@line 358 "_csv.c"
+        var $15=($14)!=0; //@line 358 "_csv.c"
+        if ($15) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 358 "_csv.c"
       case 5: // $bb4
-        var $22=HEAP[$dialect]; //@line 359 "_csv.c"
-        var $23=_get_dialect_from_registry($22); //@line 359 "_csv.c"
-        HEAP[$dialect]=$23; //@line 359 "_csv.c"
-        var $24=($23)==0; //@line 360 "_csv.c"
-        if ($24) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 360 "_csv.c"
+        var $16=HEAP[$dialect]; //@line 359 "_csv.c"
+        var $17=_get_dialect_from_registry($16); //@line 359 "_csv.c"
+        HEAP[$dialect]=$17; //@line 359 "_csv.c"
+        var $18=($17)==0; //@line 360 "_csv.c"
+        if ($18) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 360 "_csv.c"
       case 6: // $bb5
-        $6=0; //@line 361 "_csv.c"
-        __label__ = 133; break; //@line 361 "_csv.c"
+        $0=0; //@line 361 "_csv.c"
+        __label__ = 109; break; //@line 361 "_csv.c"
       case 7: // $bb7
-        var $25=HEAP[$dialect]; //@line 364 "_csv.c"
-        var $26=$25; //@line 364 "_csv.c"
-        var $27=HEAP[$26]; //@line 364 "_csv.c"
-        var $28=($27) + 1; //@line 364 "_csv.c"
-        var $29=$25; //@line 364 "_csv.c"
-        HEAP[$29]=$28; //@line 364 "_csv.c"
+        var $19=HEAP[$dialect]; //@line 364 "_csv.c"
+        var $20=$19; //@line 364 "_csv.c"
+        var $21=HEAP[$20]; //@line 364 "_csv.c"
+        var $22=($21) + 1; //@line 364 "_csv.c"
+        var $23=$19; //@line 364 "_csv.c"
+        HEAP[$23]=$22; //@line 364 "_csv.c"
         __label__ = 8; break; //@line 364 "_csv.c"
       case 8: // $bb8
-        var $30=HEAP[$dialect]; //@line 366 "_csv.c"
-        var $31=$30+4; //@line 366 "_csv.c"
-        var $32=HEAP[$31]; //@line 366 "_csv.c"
-        var $33=($32)==(_Dialect_Type); //@line 366 "_csv.c"
-        if ($33) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 366 "_csv.c"
+        var $24=HEAP[$dialect]; //@line 366 "_csv.c"
+        var $25=$24+4; //@line 366 "_csv.c"
+        var $26=HEAP[$25]; //@line 366 "_csv.c"
+        var $27=($26)==(_Dialect_Type); //@line 366 "_csv.c"
+        if ($27) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 366 "_csv.c"
       case 9: // $bb9
-        var $34=HEAP[$dialect]; //@line 366 "_csv.c"
-        var $35=$34+4; //@line 366 "_csv.c"
-        var $36=HEAP[$35]; //@line 366 "_csv.c"
-        var $37=_PyType_IsSubtype($36, _Dialect_Type); //@line 366 "_csv.c"
-        var $38=($37)!=0; //@line 366 "_csv.c"
-        if ($38) { __label__ = 10; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $28=HEAP[$dialect]; //@line 366 "_csv.c"
+        var $29=$28+4; //@line 366 "_csv.c"
+        var $30=HEAP[$29]; //@line 366 "_csv.c"
+        var $31=_PyType_IsSubtype($30, _Dialect_Type); //@line 366 "_csv.c"
+        var $32=($31)!=0; //@line 366 "_csv.c"
+        if ($32) { __label__ = 10; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 10: // $bb10
-        var $39=HEAP[$delimiter]; //@line 366 "_csv.c"
-        var $40=($39)==0; //@line 366 "_csv.c"
-        if ($40) { __label__ = 11; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $33=HEAP[$delimiter]; //@line 366 "_csv.c"
+        var $34=($33)==0; //@line 366 "_csv.c"
+        if ($34) { __label__ = 11; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 11: // $bb11
-        var $41=HEAP[$doublequote]; //@line 366 "_csv.c"
-        var $42=($41)==0; //@line 366 "_csv.c"
-        if ($42) { __label__ = 12; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $35=HEAP[$doublequote]; //@line 366 "_csv.c"
+        var $36=($35)==0; //@line 366 "_csv.c"
+        if ($36) { __label__ = 12; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 12: // $bb12
-        var $43=HEAP[$escapechar]; //@line 366 "_csv.c"
-        var $44=($43)==0; //@line 366 "_csv.c"
-        if ($44) { __label__ = 13; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $37=HEAP[$escapechar]; //@line 366 "_csv.c"
+        var $38=($37)==0; //@line 366 "_csv.c"
+        if ($38) { __label__ = 13; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 13: // $bb13
-        var $45=HEAP[$lineterminator]; //@line 366 "_csv.c"
-        var $46=($45)==0; //@line 366 "_csv.c"
-        if ($46) { __label__ = 14; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $39=HEAP[$lineterminator]; //@line 366 "_csv.c"
+        var $40=($39)==0; //@line 366 "_csv.c"
+        if ($40) { __label__ = 14; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 14: // $bb14
-        var $47=HEAP[$quotechar]; //@line 366 "_csv.c"
-        var $48=($47)==0; //@line 366 "_csv.c"
-        if ($48) { __label__ = 15; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $41=HEAP[$quotechar]; //@line 366 "_csv.c"
+        var $42=($41)==0; //@line 366 "_csv.c"
+        if ($42) { __label__ = 15; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 15: // $bb15
-        var $49=HEAP[$quoting]; //@line 366 "_csv.c"
-        var $50=($49)==0; //@line 366 "_csv.c"
-        if ($50) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $43=HEAP[$quoting]; //@line 366 "_csv.c"
+        var $44=($43)==0; //@line 366 "_csv.c"
+        if ($44) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 16: // $bb16
-        var $51=HEAP[$skipinitialspace]; //@line 366 "_csv.c"
-        var $52=($51)==0; //@line 366 "_csv.c"
-        if ($52) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $45=HEAP[$skipinitialspace]; //@line 366 "_csv.c"
+        var $46=($45)==0; //@line 366 "_csv.c"
+        if ($46) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 17: // $bb17
-        var $53=HEAP[$strict]; //@line 366 "_csv.c"
-        var $54=($53)==0; //@line 366 "_csv.c"
-        if ($54) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
+        var $47=HEAP[$strict]; //@line 366 "_csv.c"
+        var $48=($47)==0; //@line 366 "_csv.c"
+        if ($48) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 366 "_csv.c"
       case 18: // $bb18
-        var $55=HEAP[$dialect]; //@line 375 "_csv.c"
-        $6=$55; //@line 375 "_csv.c"
-        __label__ = 133; break; //@line 375 "_csv.c"
+        var $49=HEAP[$dialect]; //@line 375 "_csv.c"
+        $0=$49; //@line 375 "_csv.c"
+        __label__ = 109; break; //@line 375 "_csv.c"
       case 19: // $bb19
-        var $56=$type_addr; //@line 378 "_csv.c"
-        var $57=$56+152; //@line 378 "_csv.c"
-        var $58=HEAP[$57]; //@line 378 "_csv.c"
-        var $59=$type_addr; //@line 378 "_csv.c"
-        var $60=FUNCTION_TABLE[$58]($59, 0); //@line 378 "_csv.c"
-        var $61=$60; //@line 378 "_csv.c"
-        $self=$61; //@line 378 "_csv.c"
-        var $62=($61)==0; //@line 379 "_csv.c"
-        if ($62) { __label__ = 20; break; } else { __label__ = 24; break; } //@line 379 "_csv.c"
+        var $50=$type_addr; //@line 378 "_csv.c"
+        var $51=$50+152; //@line 378 "_csv.c"
+        var $52=HEAP[$51]; //@line 378 "_csv.c"
+        var $53=$type_addr; //@line 378 "_csv.c"
+        var $54=FUNCTION_TABLE[$52]($53, 0); //@line 378 "_csv.c"
+        var $55=$54; //@line 378 "_csv.c"
+        $self=$55; //@line 378 "_csv.c"
+        var $56=($55)==0; //@line 379 "_csv.c"
+        if ($56) { __label__ = 20; break; } else { __label__ = 24; break; } //@line 379 "_csv.c"
       case 20: // $bb20
-        var $63=HEAP[$dialect]; //@line 380 "_csv.c"
-        var $64=($63)!=0; //@line 380 "_csv.c"
-        if ($64) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 380 "_csv.c"
+        var $57=HEAP[$dialect]; //@line 380 "_csv.c"
+        var $58=($57)!=0; //@line 380 "_csv.c"
+        if ($58) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 380 "_csv.c"
       case 21: // $bb21
-        var $65=HEAP[$dialect]; //@line 380 "_csv.c"
-        var $66=$65; //@line 380 "_csv.c"
-        var $67=HEAP[$66]; //@line 380 "_csv.c"
-        var $68=($67) - 1; //@line 380 "_csv.c"
-        var $69=$65; //@line 380 "_csv.c"
-        HEAP[$69]=$68; //@line 380 "_csv.c"
-        var $70=$65; //@line 380 "_csv.c"
-        var $71=HEAP[$70]; //@line 380 "_csv.c"
-        var $72=($71)==0; //@line 380 "_csv.c"
-        if ($72) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 380 "_csv.c"
+        var $59=HEAP[$dialect]; //@line 380 "_csv.c"
+        var $60=$59; //@line 380 "_csv.c"
+        var $61=HEAP[$60]; //@line 380 "_csv.c"
+        var $62=($61) - 1; //@line 380 "_csv.c"
+        var $63=$59; //@line 380 "_csv.c"
+        HEAP[$63]=$62; //@line 380 "_csv.c"
+        var $64=$59; //@line 380 "_csv.c"
+        var $65=HEAP[$64]; //@line 380 "_csv.c"
+        var $66=($65)==0; //@line 380 "_csv.c"
+        if ($66) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 380 "_csv.c"
       case 22: // $bb22
-        var $73=HEAP[$dialect]; //@line 380 "_csv.c"
-        var $74=$73+4; //@line 380 "_csv.c"
-        var $75=HEAP[$74]; //@line 380 "_csv.c"
-        var $76=$75+24; //@line 380 "_csv.c"
-        var $77=HEAP[$76]; //@line 380 "_csv.c"
-        var $78=HEAP[$dialect]; //@line 380 "_csv.c"
-        FUNCTION_TABLE[$77]($78); //@line 380 "_csv.c"
+        var $67=HEAP[$dialect]; //@line 380 "_csv.c"
+        var $68=$67+4; //@line 380 "_csv.c"
+        var $69=HEAP[$68]; //@line 380 "_csv.c"
+        var $70=$69+24; //@line 380 "_csv.c"
+        var $71=HEAP[$70]; //@line 380 "_csv.c"
+        var $72=HEAP[$dialect]; //@line 380 "_csv.c"
+        FUNCTION_TABLE[$71]($72); //@line 380 "_csv.c"
         __label__ = 23; break; //@line 380 "_csv.c"
       case 23: // $bb23
-        $6=0; //@line 381 "_csv.c"
-        __label__ = 133; break; //@line 381 "_csv.c"
+        $0=0; //@line 381 "_csv.c"
+        __label__ = 109; break; //@line 381 "_csv.c"
       case 24: // $bb24
-        var $79=$self; //@line 383 "_csv.c"
-        var $80=$79+20; //@line 383 "_csv.c"
-        HEAP[$80]=0; //@line 383 "_csv.c"
-        var $81=HEAP[$delimiter]; //@line 385 "_csv.c"
-        var $82=($81)!=0; //@line 385 "_csv.c"
-        if ($82) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 385 "_csv.c"
+        var $73=$self; //@line 383 "_csv.c"
+        var $74=$73+20; //@line 383 "_csv.c"
+        HEAP[$74]=0; //@line 383 "_csv.c"
+        var $75=HEAP[$delimiter]; //@line 385 "_csv.c"
+        var $76=($75)!=0; //@line 385 "_csv.c"
+        if ($76) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 385 "_csv.c"
       case 25: // $bb25
-        var $83=HEAP[$delimiter]; //@line 385 "_csv.c"
-        var $84=$83; //@line 385 "_csv.c"
-        var $85=HEAP[$84]; //@line 385 "_csv.c"
-        var $86=($85) + 1; //@line 385 "_csv.c"
-        var $87=$83; //@line 385 "_csv.c"
-        HEAP[$87]=$86; //@line 385 "_csv.c"
+        var $77=HEAP[$delimiter]; //@line 385 "_csv.c"
+        var $78=$77; //@line 385 "_csv.c"
+        var $79=HEAP[$78]; //@line 385 "_csv.c"
+        var $80=($79) + 1; //@line 385 "_csv.c"
+        var $81=$77; //@line 385 "_csv.c"
+        HEAP[$81]=$80; //@line 385 "_csv.c"
         __label__ = 26; break; //@line 385 "_csv.c"
       case 26: // $bb26
-        var $88=HEAP[$doublequote]; //@line 386 "_csv.c"
-        var $89=($88)!=0; //@line 386 "_csv.c"
-        if ($89) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 386 "_csv.c"
+        var $82=HEAP[$doublequote]; //@line 386 "_csv.c"
+        var $83=($82)!=0; //@line 386 "_csv.c"
+        if ($83) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 386 "_csv.c"
       case 27: // $bb27
-        var $90=HEAP[$doublequote]; //@line 386 "_csv.c"
-        var $91=$90; //@line 386 "_csv.c"
-        var $92=HEAP[$91]; //@line 386 "_csv.c"
-        var $93=($92) + 1; //@line 386 "_csv.c"
-        var $94=$90; //@line 386 "_csv.c"
-        HEAP[$94]=$93; //@line 386 "_csv.c"
+        var $84=HEAP[$doublequote]; //@line 386 "_csv.c"
+        var $85=$84; //@line 386 "_csv.c"
+        var $86=HEAP[$85]; //@line 386 "_csv.c"
+        var $87=($86) + 1; //@line 386 "_csv.c"
+        var $88=$84; //@line 386 "_csv.c"
+        HEAP[$88]=$87; //@line 386 "_csv.c"
         __label__ = 28; break; //@line 386 "_csv.c"
       case 28: // $bb28
-        var $95=HEAP[$escapechar]; //@line 387 "_csv.c"
-        var $96=($95)!=0; //@line 387 "_csv.c"
-        if ($96) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 387 "_csv.c"
+        var $89=HEAP[$escapechar]; //@line 387 "_csv.c"
+        var $90=($89)!=0; //@line 387 "_csv.c"
+        if ($90) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 387 "_csv.c"
       case 29: // $bb29
-        var $97=HEAP[$escapechar]; //@line 387 "_csv.c"
-        var $98=$97; //@line 387 "_csv.c"
-        var $99=HEAP[$98]; //@line 387 "_csv.c"
-        var $100=($99) + 1; //@line 387 "_csv.c"
-        var $101=$97; //@line 387 "_csv.c"
-        HEAP[$101]=$100; //@line 387 "_csv.c"
+        var $91=HEAP[$escapechar]; //@line 387 "_csv.c"
+        var $92=$91; //@line 387 "_csv.c"
+        var $93=HEAP[$92]; //@line 387 "_csv.c"
+        var $94=($93) + 1; //@line 387 "_csv.c"
+        var $95=$91; //@line 387 "_csv.c"
+        HEAP[$95]=$94; //@line 387 "_csv.c"
         __label__ = 30; break; //@line 387 "_csv.c"
       case 30: // $bb30
-        var $102=HEAP[$lineterminator]; //@line 388 "_csv.c"
-        var $103=($102)!=0; //@line 388 "_csv.c"
-        if ($103) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 388 "_csv.c"
+        var $96=HEAP[$lineterminator]; //@line 388 "_csv.c"
+        var $97=($96)!=0; //@line 388 "_csv.c"
+        if ($97) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 388 "_csv.c"
       case 31: // $bb31
-        var $104=HEAP[$lineterminator]; //@line 388 "_csv.c"
-        var $105=$104; //@line 388 "_csv.c"
-        var $106=HEAP[$105]; //@line 388 "_csv.c"
-        var $107=($106) + 1; //@line 388 "_csv.c"
-        var $108=$104; //@line 388 "_csv.c"
-        HEAP[$108]=$107; //@line 388 "_csv.c"
+        var $98=HEAP[$lineterminator]; //@line 388 "_csv.c"
+        var $99=$98; //@line 388 "_csv.c"
+        var $100=HEAP[$99]; //@line 388 "_csv.c"
+        var $101=($100) + 1; //@line 388 "_csv.c"
+        var $102=$98; //@line 388 "_csv.c"
+        HEAP[$102]=$101; //@line 388 "_csv.c"
         __label__ = 32; break; //@line 388 "_csv.c"
       case 32: // $bb32
-        var $109=HEAP[$quotechar]; //@line 389 "_csv.c"
-        var $110=($109)!=0; //@line 389 "_csv.c"
-        if ($110) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 389 "_csv.c"
+        var $103=HEAP[$quotechar]; //@line 389 "_csv.c"
+        var $104=($103)!=0; //@line 389 "_csv.c"
+        if ($104) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 389 "_csv.c"
       case 33: // $bb33
-        var $111=HEAP[$quotechar]; //@line 389 "_csv.c"
-        var $112=$111; //@line 389 "_csv.c"
-        var $113=HEAP[$112]; //@line 389 "_csv.c"
-        var $114=($113) + 1; //@line 389 "_csv.c"
-        var $115=$111; //@line 389 "_csv.c"
-        HEAP[$115]=$114; //@line 389 "_csv.c"
+        var $105=HEAP[$quotechar]; //@line 389 "_csv.c"
+        var $106=$105; //@line 389 "_csv.c"
+        var $107=HEAP[$106]; //@line 389 "_csv.c"
+        var $108=($107) + 1; //@line 389 "_csv.c"
+        var $109=$105; //@line 389 "_csv.c"
+        HEAP[$109]=$108; //@line 389 "_csv.c"
         __label__ = 34; break; //@line 389 "_csv.c"
       case 34: // $bb34
-        var $116=HEAP[$quoting]; //@line 390 "_csv.c"
-        var $117=($116)!=0; //@line 390 "_csv.c"
-        if ($117) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 390 "_csv.c"
+        var $110=HEAP[$quoting]; //@line 390 "_csv.c"
+        var $111=($110)!=0; //@line 390 "_csv.c"
+        if ($111) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 390 "_csv.c"
       case 35: // $bb35
-        var $118=HEAP[$quoting]; //@line 390 "_csv.c"
-        var $119=$118; //@line 390 "_csv.c"
-        var $120=HEAP[$119]; //@line 390 "_csv.c"
-        var $121=($120) + 1; //@line 390 "_csv.c"
-        var $122=$118; //@line 390 "_csv.c"
-        HEAP[$122]=$121; //@line 390 "_csv.c"
+        var $112=HEAP[$quoting]; //@line 390 "_csv.c"
+        var $113=$112; //@line 390 "_csv.c"
+        var $114=HEAP[$113]; //@line 390 "_csv.c"
+        var $115=($114) + 1; //@line 390 "_csv.c"
+        var $116=$112; //@line 390 "_csv.c"
+        HEAP[$116]=$115; //@line 390 "_csv.c"
         __label__ = 36; break; //@line 390 "_csv.c"
       case 36: // $bb36
-        var $123=HEAP[$skipinitialspace]; //@line 391 "_csv.c"
-        var $124=($123)!=0; //@line 391 "_csv.c"
-        if ($124) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 391 "_csv.c"
+        var $117=HEAP[$skipinitialspace]; //@line 391 "_csv.c"
+        var $118=($117)!=0; //@line 391 "_csv.c"
+        if ($118) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 391 "_csv.c"
       case 37: // $bb37
-        var $125=HEAP[$skipinitialspace]; //@line 391 "_csv.c"
-        var $126=$125; //@line 391 "_csv.c"
-        var $127=HEAP[$126]; //@line 391 "_csv.c"
-        var $128=($127) + 1; //@line 391 "_csv.c"
-        var $129=$125; //@line 391 "_csv.c"
-        HEAP[$129]=$128; //@line 391 "_csv.c"
+        var $119=HEAP[$skipinitialspace]; //@line 391 "_csv.c"
+        var $120=$119; //@line 391 "_csv.c"
+        var $121=HEAP[$120]; //@line 391 "_csv.c"
+        var $122=($121) + 1; //@line 391 "_csv.c"
+        var $123=$119; //@line 391 "_csv.c"
+        HEAP[$123]=$122; //@line 391 "_csv.c"
         __label__ = 38; break; //@line 391 "_csv.c"
       case 38: // $bb38
-        var $130=HEAP[$strict]; //@line 392 "_csv.c"
-        var $131=($130)!=0; //@line 392 "_csv.c"
-        if ($131) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 392 "_csv.c"
+        var $124=HEAP[$strict]; //@line 392 "_csv.c"
+        var $125=($124)!=0; //@line 392 "_csv.c"
+        if ($125) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 392 "_csv.c"
       case 39: // $bb39
-        var $132=HEAP[$strict]; //@line 392 "_csv.c"
-        var $133=$132; //@line 392 "_csv.c"
-        var $134=HEAP[$133]; //@line 392 "_csv.c"
-        var $135=($134) + 1; //@line 392 "_csv.c"
-        var $136=$132; //@line 392 "_csv.c"
-        HEAP[$136]=$135; //@line 392 "_csv.c"
+        var $126=HEAP[$strict]; //@line 392 "_csv.c"
+        var $127=$126; //@line 392 "_csv.c"
+        var $128=HEAP[$127]; //@line 392 "_csv.c"
+        var $129=($128) + 1; //@line 392 "_csv.c"
+        var $130=$126; //@line 392 "_csv.c"
+        HEAP[$130]=$129; //@line 392 "_csv.c"
         __label__ = 40; break; //@line 392 "_csv.c"
       case 40: // $bb40
-        var $137=HEAP[$dialect]; //@line 393 "_csv.c"
-        var $138=($137)!=0; //@line 393 "_csv.c"
-        if ($138) { __label__ = 41; break; } else { __label__ = 58; break; } //@line 393 "_csv.c"
+        var $131=HEAP[$dialect]; //@line 393 "_csv.c"
+        var $132=($131)!=0; //@line 393 "_csv.c"
+        if ($132) { __label__ = 41; break; } else { __label__ = 58; break; } //@line 393 "_csv.c"
       case 41: // $bb41
-        var $139=HEAP[$delimiter]; //@line 397 "_csv.c"
-        var $140=($139)==0; //@line 397 "_csv.c"
-        if ($140) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 397 "_csv.c"
+        var $133=HEAP[$delimiter]; //@line 397 "_csv.c"
+        var $134=($133)==0; //@line 397 "_csv.c"
+        if ($134) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 397 "_csv.c"
       case 42: // $bb42
-        var $141=HEAP[$dialect]; //@line 397 "_csv.c"
-        var $142=_PyObject_GetAttrString($141, __str9); //@line 397 "_csv.c"
-        HEAP[$delimiter]=$142; //@line 397 "_csv.c"
+        var $135=HEAP[$dialect]; //@line 397 "_csv.c"
+        var $136=_PyObject_GetAttrString($135, __str9); //@line 397 "_csv.c"
+        HEAP[$delimiter]=$136; //@line 397 "_csv.c"
         __label__ = 43; break; //@line 397 "_csv.c"
       case 43: // $bb43
-        var $143=HEAP[$doublequote]; //@line 398 "_csv.c"
-        var $144=($143)==0; //@line 398 "_csv.c"
-        if ($144) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 398 "_csv.c"
+        var $137=HEAP[$doublequote]; //@line 398 "_csv.c"
+        var $138=($137)==0; //@line 398 "_csv.c"
+        if ($138) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 398 "_csv.c"
       case 44: // $bb44
-        var $145=HEAP[$dialect]; //@line 398 "_csv.c"
-        var $146=_PyObject_GetAttrString($145, __str11); //@line 398 "_csv.c"
-        HEAP[$doublequote]=$146; //@line 398 "_csv.c"
+        var $139=HEAP[$dialect]; //@line 398 "_csv.c"
+        var $140=_PyObject_GetAttrString($139, __str11); //@line 398 "_csv.c"
+        HEAP[$doublequote]=$140; //@line 398 "_csv.c"
         __label__ = 45; break; //@line 398 "_csv.c"
       case 45: // $bb45
-        var $147=HEAP[$escapechar]; //@line 399 "_csv.c"
-        var $148=($147)==0; //@line 399 "_csv.c"
-        if ($148) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 399 "_csv.c"
+        var $141=HEAP[$escapechar]; //@line 399 "_csv.c"
+        var $142=($141)==0; //@line 399 "_csv.c"
+        if ($142) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 399 "_csv.c"
       case 46: // $bb46
-        var $149=HEAP[$dialect]; //@line 399 "_csv.c"
-        var $150=_PyObject_GetAttrString($149, __str13); //@line 399 "_csv.c"
-        HEAP[$escapechar]=$150; //@line 399 "_csv.c"
+        var $143=HEAP[$dialect]; //@line 399 "_csv.c"
+        var $144=_PyObject_GetAttrString($143, __str13); //@line 399 "_csv.c"
+        HEAP[$escapechar]=$144; //@line 399 "_csv.c"
         __label__ = 47; break; //@line 399 "_csv.c"
       case 47: // $bb47
-        var $151=HEAP[$lineterminator]; //@line 400 "_csv.c"
-        var $152=($151)==0; //@line 400 "_csv.c"
-        if ($152) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 400 "_csv.c"
+        var $145=HEAP[$lineterminator]; //@line 400 "_csv.c"
+        var $146=($145)==0; //@line 400 "_csv.c"
+        if ($146) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 400 "_csv.c"
       case 48: // $bb48
-        var $153=HEAP[$dialect]; //@line 400 "_csv.c"
-        var $154=_PyObject_GetAttrString($153, __str14); //@line 400 "_csv.c"
-        HEAP[$lineterminator]=$154; //@line 400 "_csv.c"
+        var $147=HEAP[$dialect]; //@line 400 "_csv.c"
+        var $148=_PyObject_GetAttrString($147, __str14); //@line 400 "_csv.c"
+        HEAP[$lineterminator]=$148; //@line 400 "_csv.c"
         __label__ = 49; break; //@line 400 "_csv.c"
       case 49: // $bb49
-        var $155=HEAP[$quotechar]; //@line 401 "_csv.c"
-        var $156=($155)==0; //@line 401 "_csv.c"
-        if ($156) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 401 "_csv.c"
+        var $149=HEAP[$quotechar]; //@line 401 "_csv.c"
+        var $150=($149)==0; //@line 401 "_csv.c"
+        if ($150) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 401 "_csv.c"
       case 50: // $bb50
-        var $157=HEAP[$dialect]; //@line 401 "_csv.c"
-        var $158=_PyObject_GetAttrString($157, __str15); //@line 401 "_csv.c"
-        HEAP[$quotechar]=$158; //@line 401 "_csv.c"
+        var $151=HEAP[$dialect]; //@line 401 "_csv.c"
+        var $152=_PyObject_GetAttrString($151, __str15); //@line 401 "_csv.c"
+        HEAP[$quotechar]=$152; //@line 401 "_csv.c"
         __label__ = 51; break; //@line 401 "_csv.c"
       case 51: // $bb51
-        var $159=HEAP[$quoting]; //@line 402 "_csv.c"
-        var $160=($159)==0; //@line 402 "_csv.c"
-        if ($160) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 402 "_csv.c"
+        var $153=HEAP[$quoting]; //@line 402 "_csv.c"
+        var $154=($153)==0; //@line 402 "_csv.c"
+        if ($154) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 402 "_csv.c"
       case 52: // $bb52
-        var $161=HEAP[$dialect]; //@line 402 "_csv.c"
-        var $162=_PyObject_GetAttrString($161, __str16); //@line 402 "_csv.c"
-        HEAP[$quoting]=$162; //@line 402 "_csv.c"
+        var $155=HEAP[$dialect]; //@line 402 "_csv.c"
+        var $156=_PyObject_GetAttrString($155, __str16); //@line 402 "_csv.c"
+        HEAP[$quoting]=$156; //@line 402 "_csv.c"
         __label__ = 53; break; //@line 402 "_csv.c"
       case 53: // $bb53
-        var $163=HEAP[$skipinitialspace]; //@line 403 "_csv.c"
-        var $164=($163)==0; //@line 403 "_csv.c"
-        if ($164) { __label__ = 54; break; } else { __label__ = 55; break; } //@line 403 "_csv.c"
+        var $157=HEAP[$skipinitialspace]; //@line 403 "_csv.c"
+        var $158=($157)==0; //@line 403 "_csv.c"
+        if ($158) { __label__ = 54; break; } else { __label__ = 55; break; } //@line 403 "_csv.c"
       case 54: // $bb54
-        var $165=HEAP[$dialect]; //@line 403 "_csv.c"
-        var $166=_PyObject_GetAttrString($165, __str10); //@line 403 "_csv.c"
-        HEAP[$skipinitialspace]=$166; //@line 403 "_csv.c"
+        var $159=HEAP[$dialect]; //@line 403 "_csv.c"
+        var $160=_PyObject_GetAttrString($159, __str10); //@line 403 "_csv.c"
+        HEAP[$skipinitialspace]=$160; //@line 403 "_csv.c"
         __label__ = 55; break; //@line 403 "_csv.c"
       case 55: // $bb55
-        var $167=HEAP[$strict]; //@line 404 "_csv.c"
-        var $168=($167)==0; //@line 404 "_csv.c"
-        if ($168) { __label__ = 56; break; } else { __label__ = 57; break; } //@line 404 "_csv.c"
+        var $161=HEAP[$strict]; //@line 404 "_csv.c"
+        var $162=($161)==0; //@line 404 "_csv.c"
+        if ($162) { __label__ = 56; break; } else { __label__ = 57; break; } //@line 404 "_csv.c"
       case 56: // $bb56
-        var $169=HEAP[$dialect]; //@line 404 "_csv.c"
-        var $170=_PyObject_GetAttrString($169, __str12); //@line 404 "_csv.c"
-        HEAP[$strict]=$170; //@line 404 "_csv.c"
+        var $163=HEAP[$dialect]; //@line 404 "_csv.c"
+        var $164=_PyObject_GetAttrString($163, __str12); //@line 404 "_csv.c"
+        HEAP[$strict]=$164; //@line 404 "_csv.c"
         __label__ = 57; break; //@line 404 "_csv.c"
       case 57: // $bb57
         _PyErr_Clear(); //@line 405 "_csv.c"
         __label__ = 58; break; //@line 405 "_csv.c"
       case 58: // $bb58
-        var $171=HEAP[$delimiter]; //@line 412 "_csv.c"
-        var $172=$self; //@line 412 "_csv.c"
-        var $173=$172+12; //@line 412 "_csv.c"
-        var $174=__set_char(__str9, $173, $171, 44); //@line 412 "_csv.c"
-        var $175=($174)!=0; //@line 412 "_csv.c"
-        if ($175) { __label__ = 102; break; } else { __label__ = 59; break; } //@line 412 "_csv.c"
+        var $165=HEAP[$delimiter]; //@line 412 "_csv.c"
+        var $166=$self; //@line 412 "_csv.c"
+        var $167=$166+12; //@line 412 "_csv.c"
+        var $168=__set_char(__str9, $167, $165, 44); //@line 412 "_csv.c"
+        var $169=($168)!=0; //@line 412 "_csv.c"
+        if ($169) { __label__ = 78; break; } else { __label__ = 59; break; } //@line 412 "_csv.c"
       case 59: // $bb59
-        var $176=HEAP[$doublequote]; //@line 413 "_csv.c"
-        var $177=$self; //@line 413 "_csv.c"
-        var $178=$177+8; //@line 413 "_csv.c"
-        $name_addr_i=__str11;
-        $target_addr_i=$178;
-        $src_addr_i=$176;
-        $dflt_addr_i=1;
-        var $179=$src_addr_i; //@line 209 "_csv.c"
-        var $180=($179)==0; //@line 209 "_csv.c"
-        if ($180) { __label__ = 60; break; } else { __label__ = 61; break; } //@line 209 "_csv.c"
-      case 60: // $bb_i
-        var $181=$target_addr_i; //@line 210 "_csv.c"
-        var $182=$dflt_addr_i; //@line 210 "_csv.c"
-        HEAP[$181]=$182; //@line 210 "_csv.c"
-        __label__ = 62; break; //@line 210 "_csv.c"
-      case 61: // $bb1_i
-        var $183=$src_addr_i; //@line 212 "_csv.c"
-        var $184=_PyObject_IsTrue($183); //@line 212 "_csv.c"
-        var $185=$target_addr_i; //@line 212 "_csv.c"
-        HEAP[$185]=$184; //@line 212 "_csv.c"
-        __label__ = 62; break; //@line 212 "_csv.c"
-      case 62: // $bb60
-        $5=0; //@line 213 "_csv.c"
-        $retval_i=0; //@line 213 "_csv.c"
-        var $186=HEAP[$escapechar]; //@line 414 "_csv.c"
-        var $187=$self; //@line 414 "_csv.c"
-        var $188=$187+14; //@line 414 "_csv.c"
-        var $189=__set_char(__str13, $188, $186, 0); //@line 414 "_csv.c"
-        var $190=($189)!=0; //@line 414 "_csv.c"
-        if ($190) { __label__ = 102; break; } else { __label__ = 63; break; } //@line 414 "_csv.c"
-      case 63: // $bb61
-        var $191=HEAP[$lineterminator]; //@line 415 "_csv.c"
-        var $192=$self; //@line 415 "_csv.c"
-        var $193=$192+20; //@line 415 "_csv.c"
-        $name_addr_i1=__str14;
-        $target_addr_i2=$193;
-        $src_addr_i3=$191;
-        $dflt_addr_i4=__str19;
-        var $194=$src_addr_i3; //@line 259 "_csv.c"
-        var $195=($194)==0; //@line 259 "_csv.c"
-        if ($195) { __label__ = 64; break; } else { __label__ = 65; break; } //@line 259 "_csv.c"
-      case 64: // $bb_i6
-        var $196=$dflt_addr_i4; //@line 260 "_csv.c"
-        var $197=_PyString_FromString($196); //@line 260 "_csv.c"
-        var $198=$target_addr_i2; //@line 260 "_csv.c"
-        HEAP[$198]=$197; //@line 260 "_csv.c"
-        __label__ = 74; break; //@line 260 "_csv.c"
-      case 65: // $bb1_i7
-        var $199=$src_addr_i3; //@line 262 "_csv.c"
-        var $200=($199)==(__Py_NoneStruct); //@line 262 "_csv.c"
-        if ($200) { __label__ = 66; break; } else { __label__ = 67; break; } //@line 262 "_csv.c"
-      case 66: // $bb2_i
-        var $201=$target_addr_i2; //@line 263 "_csv.c"
-        HEAP[$201]=0; //@line 263 "_csv.c"
-        __label__ = 74; break; //@line 263 "_csv.c"
-      case 67: // $bb3_i
-        var $202=$src_addr_i3; //@line 264 "_csv.c"
-        var $203=$202+4; //@line 264 "_csv.c"
-        var $204=HEAP[$203]; //@line 264 "_csv.c"
-        var $205=($204)==(_PyBaseString_Type); //@line 264 "_csv.c"
-        if ($205) { __label__ = 70; break; } else { __label__ = 68; break; } //@line 264 "_csv.c"
-      case 68: // $bb4_i
-        var $206=$src_addr_i3; //@line 264 "_csv.c"
-        var $207=$206+4; //@line 264 "_csv.c"
-        var $208=HEAP[$207]; //@line 264 "_csv.c"
-        var $209=_PyType_IsSubtype($208, _PyBaseString_Type); //@line 264 "_csv.c"
-        var $210=($209)!=0; //@line 264 "_csv.c"
-        if ($210) { __label__ = 70; break; } else { __label__ = 69; break; } //@line 264 "_csv.c"
-      case 69: // $_set_str_exit_thread
-        var $211=HEAP[_PyExc_TypeError]; //@line 265 "_csv.c"
-        var $212=$name_addr_i1; //@line 265 "_csv.c"
-        var $213=_PyErr_Format($211, __str7, $212); //@line 265 "_csv.c"
-        $4=-1; //@line 267 "_csv.c"
-        $retval_i5=-1; //@line 267 "_csv.c"
-        __label__ = 102; break;
-      case 70: // $bb6_i
-        var $214=$target_addr_i2; //@line 270 "_csv.c"
-        var $215=HEAP[$214]; //@line 270 "_csv.c"
-        var $216=($215)!=0; //@line 270 "_csv.c"
-        if ($216) { __label__ = 71; break; } else { __label__ = 73; break; } //@line 270 "_csv.c"
-      case 71: // $bb7_i
-        var $217=$target_addr_i2; //@line 270 "_csv.c"
-        var $218=HEAP[$217]; //@line 270 "_csv.c"
-        var $219=$218; //@line 270 "_csv.c"
-        var $220=HEAP[$219]; //@line 270 "_csv.c"
-        var $221=($220) - 1; //@line 270 "_csv.c"
-        var $222=$218; //@line 270 "_csv.c"
-        HEAP[$222]=$221; //@line 270 "_csv.c"
-        var $223=$218; //@line 270 "_csv.c"
-        var $224=HEAP[$223]; //@line 270 "_csv.c"
-        var $225=($224)==0; //@line 270 "_csv.c"
-        if ($225) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 270 "_csv.c"
-      case 72: // $bb8_i
-        var $226=$target_addr_i2; //@line 270 "_csv.c"
-        var $227=HEAP[$226]; //@line 270 "_csv.c"
-        var $228=$227+4; //@line 270 "_csv.c"
-        var $229=HEAP[$228]; //@line 270 "_csv.c"
-        var $230=$229+24; //@line 270 "_csv.c"
-        var $231=HEAP[$230]; //@line 270 "_csv.c"
-        var $232=$target_addr_i2; //@line 270 "_csv.c"
-        var $233=HEAP[$232]; //@line 270 "_csv.c"
-        FUNCTION_TABLE[$231]($233); //@line 270 "_csv.c"
-        __label__ = 73; break; //@line 270 "_csv.c"
-      case 73: // $bb9_i
-        var $234=$src_addr_i3; //@line 271 "_csv.c"
-        var $235=$234; //@line 271 "_csv.c"
-        var $236=HEAP[$235]; //@line 271 "_csv.c"
-        var $237=($236) + 1; //@line 271 "_csv.c"
-        var $238=$src_addr_i3; //@line 271 "_csv.c"
-        var $239=$238; //@line 271 "_csv.c"
-        HEAP[$239]=$237; //@line 271 "_csv.c"
-        var $240=$target_addr_i2; //@line 272 "_csv.c"
-        var $241=$src_addr_i3; //@line 272 "_csv.c"
-        HEAP[$240]=$241; //@line 272 "_csv.c"
-        __label__ = 74; break; //@line 272 "_csv.c"
-      case 74: // $bb62
-        $4=0; //@line 275 "_csv.c"
-        $retval_i5=0; //@line 267 "_csv.c"
-        var $242=HEAP[$quotechar]; //@line 416 "_csv.c"
-        var $243=$self; //@line 416 "_csv.c"
-        var $244=$243+13; //@line 416 "_csv.c"
-        var $245=__set_char(__str15, $244, $242, 34); //@line 416 "_csv.c"
-        var $246=($245)!=0; //@line 416 "_csv.c"
-        if ($246) { __label__ = 102; break; } else { __label__ = 75; break; } //@line 416 "_csv.c"
-      case 75: // $bb63
-        var $247=HEAP[$quoting]; //@line 417 "_csv.c"
-        var $248=$self; //@line 417 "_csv.c"
-        var $249=$248+24; //@line 417 "_csv.c"
-        $name_addr_i8=__str16;
-        $target_addr_i9=$249;
-        $src_addr_i10=$247;
-        $dflt_addr_i11=0;
-        var $250=$src_addr_i10; //@line 219 "_csv.c"
-        var $251=($250)==0; //@line 219 "_csv.c"
-        if ($251) { __label__ = 76; break; } else { __label__ = 77; break; } //@line 219 "_csv.c"
-      case 76: // $bb_i13
-        var $252=$target_addr_i9; //@line 220 "_csv.c"
-        var $253=$dflt_addr_i11; //@line 220 "_csv.c"
-        HEAP[$252]=$253; //@line 220 "_csv.c"
-        __label__ = 80; break; //@line 220 "_csv.c"
-      case 77: // $bb1_i14
-        var $254=$src_addr_i10; //@line 222 "_csv.c"
-        var $255=$254+4; //@line 222 "_csv.c"
-        var $256=HEAP[$255]; //@line 222 "_csv.c"
-        var $257=$256+84; //@line 222 "_csv.c"
-        var $258=HEAP[$257]; //@line 222 "_csv.c"
-        var $259=($258) & 8388608; //@line 222 "_csv.c"
-        var $260=($259)==0; //@line 222 "_csv.c"
-        if ($260) { __label__ = 78; break; } else { __label__ = 79; break; } //@line 222 "_csv.c"
-      case 78: // $_set_int_exit_thread
-        var $261=HEAP[_PyExc_TypeError]; //@line 223 "_csv.c"
-        var $262=$name_addr_i8; //@line 223 "_csv.c"
-        var $263=_PyErr_Format($261, __str5, $262); //@line 223 "_csv.c"
-        $3=-1; //@line 225 "_csv.c"
-        $retval_i12=-1; //@line 225 "_csv.c"
-        __label__ = 102; break;
-      case 79: // $bb3_i16
-        var $264=$src_addr_i10; //@line 227 "_csv.c"
-        var $265=_PyInt_AsLong($264); //@line 227 "_csv.c"
-        var $266=$target_addr_i9; //@line 227 "_csv.c"
-        HEAP[$266]=$265; //@line 227 "_csv.c"
-        __label__ = 80; break; //@line 227 "_csv.c"
-      case 80: // $bb64
-        $3=0; //@line 229 "_csv.c"
-        $retval_i12=0; //@line 225 "_csv.c"
-        var $267=HEAP[$skipinitialspace]; //@line 418 "_csv.c"
-        var $268=$self; //@line 418 "_csv.c"
-        var $269=$268+16; //@line 418 "_csv.c"
-        $name_addr_i19=__str10;
-        $target_addr_i20=$269;
-        $src_addr_i21=$267;
-        $dflt_addr_i22=0;
-        var $270=($267)==0; //@line 209 "_csv.c"
-        if ($270) { __label__ = 81; break; } else { __label__ = 82; break; } //@line 209 "_csv.c"
-      case 81: // $bb_i24
-        var $271=$target_addr_i20; //@line 210 "_csv.c"
-        var $272=$dflt_addr_i22; //@line 210 "_csv.c"
-        HEAP[$271]=$272; //@line 210 "_csv.c"
-        __label__ = 83; break; //@line 210 "_csv.c"
-      case 82: // $bb1_i25
-        var $273=$src_addr_i21; //@line 212 "_csv.c"
-        var $274=_PyObject_IsTrue($273); //@line 212 "_csv.c"
-        var $275=$target_addr_i20; //@line 212 "_csv.c"
-        HEAP[$275]=$274; //@line 212 "_csv.c"
-        __label__ = 83; break; //@line 212 "_csv.c"
-      case 83: // $bb65
-        $2=0; //@line 213 "_csv.c"
-        $retval_i23=0; //@line 213 "_csv.c"
-        var $276=HEAP[$strict]; //@line 419 "_csv.c"
-        var $277=$self; //@line 419 "_csv.c"
-        var $278=$277+28; //@line 419 "_csv.c"
-        $name_addr_i29=__str12;
-        $target_addr_i30=$278;
-        $src_addr_i31=$276;
-        $dflt_addr_i32=0;
-        var $279=($276)==0; //@line 209 "_csv.c"
-        if ($279) { __label__ = 84; break; } else { __label__ = 85; break; } //@line 209 "_csv.c"
-      case 84: // $bb_i34
-        var $280=$target_addr_i30; //@line 210 "_csv.c"
-        var $281=$dflt_addr_i32; //@line 210 "_csv.c"
-        HEAP[$280]=$281; //@line 210 "_csv.c"
-        __label__ = 86; break; //@line 210 "_csv.c"
-      case 85: // $bb1_i35
-        var $282=$src_addr_i31; //@line 212 "_csv.c"
-        var $283=_PyObject_IsTrue($282); //@line 212 "_csv.c"
-        var $284=$target_addr_i30; //@line 212 "_csv.c"
-        HEAP[$284]=$283; //@line 212 "_csv.c"
-        __label__ = 86; break; //@line 212 "_csv.c"
-      case 86: // $bb66
-        $1=0; //@line 213 "_csv.c"
-        $retval_i33=0; //@line 213 "_csv.c"
-        var $285=$self; //@line 422 "_csv.c"
-        var $286=$285+24; //@line 422 "_csv.c"
-        var $287=HEAP[$286]; //@line 422 "_csv.c"
-        $quoting_addr_i=$287;
-        $qs_i=_quote_styles; //@line 283 "_csv.c"
-        __label__ = 89; break; //@line 283 "_csv.c"
-      case 87: // $bb_i40
-        var $288=$qs_i; //@line 284 "_csv.c"
-        var $289=$288; //@line 284 "_csv.c"
-        var $290=HEAP[$289]; //@line 284 "_csv.c"
-        var $291=$quoting_addr_i; //@line 284 "_csv.c"
-        var $292=($290)==($291); //@line 284 "_csv.c"
-        if ($292) { __label__ = 91; break; } else { __label__ = 88; break; } //@line 284 "_csv.c"
-      case 88: // $bb2_i42
-        var $293=$qs_i; //@line 283 "_csv.c"
-        var $294=$293+8; //@line 283 "_csv.c"
-        $qs_i=$294; //@line 283 "_csv.c"
-        __label__ = 89; break; //@line 283 "_csv.c"
-      case 89: // $bb3_i43
-        var $295=$qs_i; //@line 283 "_csv.c"
-        var $296=$295+4; //@line 283 "_csv.c"
-        var $297=HEAP[$296]; //@line 283 "_csv.c"
-        var $298=($297)!=0; //@line 283 "_csv.c"
-        if ($298) { __label__ = 87; break; } else { __label__ = 90; break; } //@line 283 "_csv.c"
-      case 90: // $dialect_check_quoting_exit_thread
-        var $299=HEAP[_PyExc_TypeError]; //@line 287 "_csv.c"
-        var $300=_PyErr_Format($299, __str8); //@line 287 "_csv.c"
-        $0=-1; //@line 288 "_csv.c"
-        $retval_i39=-1; //@line 285 "_csv.c"
-        __label__ = 102; break;
-      case 91: // $bb67
-        $0=0; //@line 285 "_csv.c"
-        $retval_i39=0; //@line 285 "_csv.c"
-        var $301=$self; //@line 424 "_csv.c"
-        var $302=$301+12; //@line 424 "_csv.c"
-        var $303=HEAP[$302]; //@line 424 "_csv.c"
-        var $304=($303)==0; //@line 424 "_csv.c"
-        if ($304) { __label__ = 92; break; } else { __label__ = 93; break; } //@line 424 "_csv.c"
-      case 92: // $bb68
-        var $305=HEAP[_PyExc_TypeError]; //@line 425 "_csv.c"
-        _PyErr_SetString($305, __str20); //@line 425 "_csv.c"
-        __label__ = 102; break; //@line 425 "_csv.c"
-      case 93: // $bb69
-        var $306=HEAP[$quotechar]; //@line 428 "_csv.c"
-        var $307=($306)==(__Py_NoneStruct); //@line 428 "_csv.c"
-        if ($307) { __label__ = 94; break; } else { __label__ = 96; break; } //@line 428 "_csv.c"
-      case 94: // $bb70
-        var $308=HEAP[$quoting]; //@line 428 "_csv.c"
-        var $309=($308)==0; //@line 428 "_csv.c"
-        if ($309) { __label__ = 95; break; } else { __label__ = 96; break; } //@line 428 "_csv.c"
-      case 95: // $bb71
-        var $310=$self; //@line 429 "_csv.c"
-        var $311=$310+24; //@line 429 "_csv.c"
-        HEAP[$311]=3; //@line 429 "_csv.c"
-        __label__ = 96; break; //@line 429 "_csv.c"
-      case 96: // $bb72
-        var $312=$self; //@line 430 "_csv.c"
-        var $313=$312+24; //@line 430 "_csv.c"
-        var $314=HEAP[$313]; //@line 430 "_csv.c"
-        var $315=($314)!=3; //@line 430 "_csv.c"
-        if ($315) { __label__ = 97; break; } else { __label__ = 99; break; } //@line 430 "_csv.c"
-      case 97: // $bb73
-        var $316=$self; //@line 430 "_csv.c"
-        var $317=$316+13; //@line 430 "_csv.c"
-        var $318=HEAP[$317]; //@line 430 "_csv.c"
-        var $319=($318)==0; //@line 430 "_csv.c"
-        if ($319) { __label__ = 98; break; } else { __label__ = 99; break; } //@line 430 "_csv.c"
-      case 98: // $bb74
-        var $320=HEAP[_PyExc_TypeError]; //@line 431 "_csv.c"
-        _PyErr_SetString($320, __str21); //@line 431 "_csv.c"
-        __label__ = 102; break; //@line 431 "_csv.c"
-      case 99: // $bb75
-        var $321=$self; //@line 435 "_csv.c"
-        var $322=$321+20; //@line 435 "_csv.c"
-        var $323=HEAP[$322]; //@line 435 "_csv.c"
-        var $324=($323)==0; //@line 435 "_csv.c"
-        if ($324) { __label__ = 100; break; } else { __label__ = 101; break; } //@line 435 "_csv.c"
-      case 100: // $bb76
-        var $325=HEAP[_PyExc_TypeError]; //@line 436 "_csv.c"
-        _PyErr_SetString($325, __str22); //@line 436 "_csv.c"
-        __label__ = 102; break; //@line 436 "_csv.c"
-      case 101: // $bb77
-        var $326=$self; //@line 440 "_csv.c"
-        var $327=$326; //@line 440 "_csv.c"
-        $ret=$327; //@line 440 "_csv.c"
-        var $328=$self; //@line 441 "_csv.c"
-        var $329=$328; //@line 441 "_csv.c"
-        var $330=$329; //@line 441 "_csv.c"
-        var $331=HEAP[$330]; //@line 441 "_csv.c"
-        var $332=($331) + 1; //@line 441 "_csv.c"
-        var $333=$329; //@line 441 "_csv.c"
-        HEAP[$333]=$332; //@line 441 "_csv.c"
-        __label__ = 102; break; //@line 442 "_csv.c"
-      case 102: // $err
-        var $334=$self; //@line 443 "_csv.c"
-        var $335=($334)!=0; //@line 443 "_csv.c"
-        if ($335) { __label__ = 103; break; } else { __label__ = 105; break; } //@line 443 "_csv.c"
-      case 103: // $bb78
-        var $336=$self; //@line 443 "_csv.c"
-        var $337=$336; //@line 443 "_csv.c"
-        var $338=$337; //@line 443 "_csv.c"
-        var $339=HEAP[$338]; //@line 443 "_csv.c"
-        var $340=($339) - 1; //@line 443 "_csv.c"
-        var $341=$337; //@line 443 "_csv.c"
-        HEAP[$341]=$340; //@line 443 "_csv.c"
-        var $342=$337; //@line 443 "_csv.c"
-        var $343=HEAP[$342]; //@line 443 "_csv.c"
-        var $344=($343)==0; //@line 443 "_csv.c"
-        if ($344) { __label__ = 104; break; } else { __label__ = 105; break; } //@line 443 "_csv.c"
-      case 104: // $bb79
-        var $345=$self; //@line 443 "_csv.c"
-        var $346=$345; //@line 443 "_csv.c"
-        var $347=$346+4; //@line 443 "_csv.c"
-        var $348=HEAP[$347]; //@line 443 "_csv.c"
-        var $349=$348+24; //@line 443 "_csv.c"
-        var $350=HEAP[$349]; //@line 443 "_csv.c"
-        var $351=$self; //@line 443 "_csv.c"
-        var $352=$351; //@line 443 "_csv.c"
-        FUNCTION_TABLE[$350]($352); //@line 443 "_csv.c"
-        __label__ = 105; break; //@line 443 "_csv.c"
-      case 105: // $bb80
-        var $353=HEAP[$dialect]; //@line 444 "_csv.c"
-        var $354=($353)!=0; //@line 444 "_csv.c"
-        if ($354) { __label__ = 106; break; } else { __label__ = 108; break; } //@line 444 "_csv.c"
-      case 106: // $bb81
-        var $355=HEAP[$dialect]; //@line 444 "_csv.c"
-        var $356=$355; //@line 444 "_csv.c"
-        var $357=HEAP[$356]; //@line 444 "_csv.c"
-        var $358=($357) - 1; //@line 444 "_csv.c"
-        var $359=$355; //@line 444 "_csv.c"
-        HEAP[$359]=$358; //@line 444 "_csv.c"
-        var $360=$355; //@line 444 "_csv.c"
-        var $361=HEAP[$360]; //@line 444 "_csv.c"
-        var $362=($361)==0; //@line 444 "_csv.c"
-        if ($362) { __label__ = 107; break; } else { __label__ = 108; break; } //@line 444 "_csv.c"
-      case 107: // $bb82
-        var $363=HEAP[$dialect]; //@line 444 "_csv.c"
-        var $364=$363+4; //@line 444 "_csv.c"
-        var $365=HEAP[$364]; //@line 444 "_csv.c"
-        var $366=$365+24; //@line 444 "_csv.c"
-        var $367=HEAP[$366]; //@line 444 "_csv.c"
-        var $368=HEAP[$dialect]; //@line 444 "_csv.c"
-        FUNCTION_TABLE[$367]($368); //@line 444 "_csv.c"
-        __label__ = 108; break; //@line 444 "_csv.c"
-      case 108: // $bb83
-        var $369=HEAP[$delimiter]; //@line 445 "_csv.c"
-        var $370=($369)!=0; //@line 445 "_csv.c"
-        if ($370) { __label__ = 109; break; } else { __label__ = 111; break; } //@line 445 "_csv.c"
-      case 109: // $bb84
-        var $371=HEAP[$delimiter]; //@line 445 "_csv.c"
-        var $372=$371; //@line 445 "_csv.c"
-        var $373=HEAP[$372]; //@line 445 "_csv.c"
-        var $374=($373) - 1; //@line 445 "_csv.c"
-        var $375=$371; //@line 445 "_csv.c"
-        HEAP[$375]=$374; //@line 445 "_csv.c"
-        var $376=$371; //@line 445 "_csv.c"
-        var $377=HEAP[$376]; //@line 445 "_csv.c"
-        var $378=($377)==0; //@line 445 "_csv.c"
-        if ($378) { __label__ = 110; break; } else { __label__ = 111; break; } //@line 445 "_csv.c"
-      case 110: // $bb85
-        var $379=HEAP[$delimiter]; //@line 445 "_csv.c"
-        var $380=$379+4; //@line 445 "_csv.c"
-        var $381=HEAP[$380]; //@line 445 "_csv.c"
-        var $382=$381+24; //@line 445 "_csv.c"
-        var $383=HEAP[$382]; //@line 445 "_csv.c"
-        var $384=HEAP[$delimiter]; //@line 445 "_csv.c"
-        FUNCTION_TABLE[$383]($384); //@line 445 "_csv.c"
-        __label__ = 111; break; //@line 445 "_csv.c"
-      case 111: // $bb86
-        var $385=HEAP[$doublequote]; //@line 446 "_csv.c"
-        var $386=($385)!=0; //@line 446 "_csv.c"
-        if ($386) { __label__ = 112; break; } else { __label__ = 114; break; } //@line 446 "_csv.c"
-      case 112: // $bb87
-        var $387=HEAP[$doublequote]; //@line 446 "_csv.c"
-        var $388=$387; //@line 446 "_csv.c"
-        var $389=HEAP[$388]; //@line 446 "_csv.c"
-        var $390=($389) - 1; //@line 446 "_csv.c"
-        var $391=$387; //@line 446 "_csv.c"
-        HEAP[$391]=$390; //@line 446 "_csv.c"
-        var $392=$387; //@line 446 "_csv.c"
-        var $393=HEAP[$392]; //@line 446 "_csv.c"
-        var $394=($393)==0; //@line 446 "_csv.c"
-        if ($394) { __label__ = 113; break; } else { __label__ = 114; break; } //@line 446 "_csv.c"
-      case 113: // $bb88
-        var $395=HEAP[$doublequote]; //@line 446 "_csv.c"
-        var $396=$395+4; //@line 446 "_csv.c"
-        var $397=HEAP[$396]; //@line 446 "_csv.c"
-        var $398=$397+24; //@line 446 "_csv.c"
-        var $399=HEAP[$398]; //@line 446 "_csv.c"
-        var $400=HEAP[$doublequote]; //@line 446 "_csv.c"
-        FUNCTION_TABLE[$399]($400); //@line 446 "_csv.c"
-        __label__ = 114; break; //@line 446 "_csv.c"
-      case 114: // $bb89
-        var $401=HEAP[$escapechar]; //@line 447 "_csv.c"
-        var $402=($401)!=0; //@line 447 "_csv.c"
-        if ($402) { __label__ = 115; break; } else { __label__ = 117; break; } //@line 447 "_csv.c"
-      case 115: // $bb90
-        var $403=HEAP[$escapechar]; //@line 447 "_csv.c"
-        var $404=$403; //@line 447 "_csv.c"
-        var $405=HEAP[$404]; //@line 447 "_csv.c"
-        var $406=($405) - 1; //@line 447 "_csv.c"
-        var $407=$403; //@line 447 "_csv.c"
-        HEAP[$407]=$406; //@line 447 "_csv.c"
-        var $408=$403; //@line 447 "_csv.c"
-        var $409=HEAP[$408]; //@line 447 "_csv.c"
-        var $410=($409)==0; //@line 447 "_csv.c"
-        if ($410) { __label__ = 116; break; } else { __label__ = 117; break; } //@line 447 "_csv.c"
-      case 116: // $bb91
-        var $411=HEAP[$escapechar]; //@line 447 "_csv.c"
-        var $412=$411+4; //@line 447 "_csv.c"
-        var $413=HEAP[$412]; //@line 447 "_csv.c"
-        var $414=$413+24; //@line 447 "_csv.c"
-        var $415=HEAP[$414]; //@line 447 "_csv.c"
-        var $416=HEAP[$escapechar]; //@line 447 "_csv.c"
-        FUNCTION_TABLE[$415]($416); //@line 447 "_csv.c"
-        __label__ = 117; break; //@line 447 "_csv.c"
-      case 117: // $bb92
-        var $417=HEAP[$lineterminator]; //@line 448 "_csv.c"
-        var $418=($417)!=0; //@line 448 "_csv.c"
-        if ($418) { __label__ = 118; break; } else { __label__ = 120; break; } //@line 448 "_csv.c"
-      case 118: // $bb93
-        var $419=HEAP[$lineterminator]; //@line 448 "_csv.c"
-        var $420=$419; //@line 448 "_csv.c"
-        var $421=HEAP[$420]; //@line 448 "_csv.c"
-        var $422=($421) - 1; //@line 448 "_csv.c"
-        var $423=$419; //@line 448 "_csv.c"
-        HEAP[$423]=$422; //@line 448 "_csv.c"
-        var $424=$419; //@line 448 "_csv.c"
-        var $425=HEAP[$424]; //@line 448 "_csv.c"
-        var $426=($425)==0; //@line 448 "_csv.c"
-        if ($426) { __label__ = 119; break; } else { __label__ = 120; break; } //@line 448 "_csv.c"
-      case 119: // $bb94
-        var $427=HEAP[$lineterminator]; //@line 448 "_csv.c"
-        var $428=$427+4; //@line 448 "_csv.c"
-        var $429=HEAP[$428]; //@line 448 "_csv.c"
-        var $430=$429+24; //@line 448 "_csv.c"
-        var $431=HEAP[$430]; //@line 448 "_csv.c"
-        var $432=HEAP[$lineterminator]; //@line 448 "_csv.c"
-        FUNCTION_TABLE[$431]($432); //@line 448 "_csv.c"
-        __label__ = 120; break; //@line 448 "_csv.c"
-      case 120: // $bb95
-        var $433=HEAP[$quotechar]; //@line 449 "_csv.c"
-        var $434=($433)!=0; //@line 449 "_csv.c"
-        if ($434) { __label__ = 121; break; } else { __label__ = 123; break; } //@line 449 "_csv.c"
-      case 121: // $bb96
-        var $435=HEAP[$quotechar]; //@line 449 "_csv.c"
-        var $436=$435; //@line 449 "_csv.c"
-        var $437=HEAP[$436]; //@line 449 "_csv.c"
-        var $438=($437) - 1; //@line 449 "_csv.c"
-        var $439=$435; //@line 449 "_csv.c"
-        HEAP[$439]=$438; //@line 449 "_csv.c"
-        var $440=$435; //@line 449 "_csv.c"
-        var $441=HEAP[$440]; //@line 449 "_csv.c"
-        var $442=($441)==0; //@line 449 "_csv.c"
-        if ($442) { __label__ = 122; break; } else { __label__ = 123; break; } //@line 449 "_csv.c"
-      case 122: // $bb97
-        var $443=HEAP[$quotechar]; //@line 449 "_csv.c"
-        var $444=$443+4; //@line 449 "_csv.c"
-        var $445=HEAP[$444]; //@line 449 "_csv.c"
-        var $446=$445+24; //@line 449 "_csv.c"
-        var $447=HEAP[$446]; //@line 449 "_csv.c"
-        var $448=HEAP[$quotechar]; //@line 449 "_csv.c"
-        FUNCTION_TABLE[$447]($448); //@line 449 "_csv.c"
-        __label__ = 123; break; //@line 449 "_csv.c"
-      case 123: // $bb98
-        var $449=HEAP[$quoting]; //@line 450 "_csv.c"
-        var $450=($449)!=0; //@line 450 "_csv.c"
-        if ($450) { __label__ = 124; break; } else { __label__ = 126; break; } //@line 450 "_csv.c"
-      case 124: // $bb99
-        var $451=HEAP[$quoting]; //@line 450 "_csv.c"
-        var $452=$451; //@line 450 "_csv.c"
-        var $453=HEAP[$452]; //@line 450 "_csv.c"
-        var $454=($453) - 1; //@line 450 "_csv.c"
-        var $455=$451; //@line 450 "_csv.c"
-        HEAP[$455]=$454; //@line 450 "_csv.c"
-        var $456=$451; //@line 450 "_csv.c"
-        var $457=HEAP[$456]; //@line 450 "_csv.c"
-        var $458=($457)==0; //@line 450 "_csv.c"
-        if ($458) { __label__ = 125; break; } else { __label__ = 126; break; } //@line 450 "_csv.c"
-      case 125: // $bb100
-        var $459=HEAP[$quoting]; //@line 450 "_csv.c"
-        var $460=$459+4; //@line 450 "_csv.c"
-        var $461=HEAP[$460]; //@line 450 "_csv.c"
-        var $462=$461+24; //@line 450 "_csv.c"
-        var $463=HEAP[$462]; //@line 450 "_csv.c"
-        var $464=HEAP[$quoting]; //@line 450 "_csv.c"
-        FUNCTION_TABLE[$463]($464); //@line 450 "_csv.c"
-        __label__ = 126; break; //@line 450 "_csv.c"
-      case 126: // $bb101
-        var $465=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
-        var $466=($465)!=0; //@line 451 "_csv.c"
-        if ($466) { __label__ = 127; break; } else { __label__ = 129; break; } //@line 451 "_csv.c"
-      case 127: // $bb102
-        var $467=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
-        var $468=$467; //@line 451 "_csv.c"
-        var $469=HEAP[$468]; //@line 451 "_csv.c"
-        var $470=($469) - 1; //@line 451 "_csv.c"
-        var $471=$467; //@line 451 "_csv.c"
-        HEAP[$471]=$470; //@line 451 "_csv.c"
-        var $472=$467; //@line 451 "_csv.c"
-        var $473=HEAP[$472]; //@line 451 "_csv.c"
-        var $474=($473)==0; //@line 451 "_csv.c"
-        if ($474) { __label__ = 128; break; } else { __label__ = 129; break; } //@line 451 "_csv.c"
-      case 128: // $bb103
-        var $475=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
-        var $476=$475+4; //@line 451 "_csv.c"
-        var $477=HEAP[$476]; //@line 451 "_csv.c"
-        var $478=$477+24; //@line 451 "_csv.c"
-        var $479=HEAP[$478]; //@line 451 "_csv.c"
-        var $480=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
-        FUNCTION_TABLE[$479]($480); //@line 451 "_csv.c"
-        __label__ = 129; break; //@line 451 "_csv.c"
-      case 129: // $bb104
-        var $481=HEAP[$strict]; //@line 452 "_csv.c"
-        var $482=($481)!=0; //@line 452 "_csv.c"
-        if ($482) { __label__ = 130; break; } else { __label__ = 132; break; } //@line 452 "_csv.c"
-      case 130: // $bb105
-        var $483=HEAP[$strict]; //@line 452 "_csv.c"
-        var $484=$483; //@line 452 "_csv.c"
-        var $485=HEAP[$484]; //@line 452 "_csv.c"
-        var $486=($485) - 1; //@line 452 "_csv.c"
-        var $487=$483; //@line 452 "_csv.c"
-        HEAP[$487]=$486; //@line 452 "_csv.c"
-        var $488=$483; //@line 452 "_csv.c"
-        var $489=HEAP[$488]; //@line 452 "_csv.c"
-        var $490=($489)==0; //@line 452 "_csv.c"
-        if ($490) { __label__ = 131; break; } else { __label__ = 132; break; } //@line 452 "_csv.c"
-      case 131: // $bb106
-        var $491=HEAP[$strict]; //@line 452 "_csv.c"
-        var $492=$491+4; //@line 452 "_csv.c"
-        var $493=HEAP[$492]; //@line 452 "_csv.c"
-        var $494=$493+24; //@line 452 "_csv.c"
-        var $495=HEAP[$494]; //@line 452 "_csv.c"
-        var $496=HEAP[$strict]; //@line 452 "_csv.c"
-        FUNCTION_TABLE[$495]($496); //@line 452 "_csv.c"
-        __label__ = 132; break; //@line 452 "_csv.c"
-      case 132: // $bb107
-        var $497=$ret; //@line 453 "_csv.c"
-        $6=$497; //@line 453 "_csv.c"
-        __label__ = 133; break; //@line 453 "_csv.c"
-      case 133: // $bb108
-        var $498=$6; //@line 355 "_csv.c"
-        $retval=$498; //@line 355 "_csv.c"
+        var $170=HEAP[$doublequote]; //@line 413 "_csv.c"
+        var $171=$self; //@line 413 "_csv.c"
+        var $172=$171+8; //@line 413 "_csv.c"
+        var $173=__set_bool(__str11, $172, $170, 1); //@line 413 "_csv.c"
+        var $174=($173)!=0; //@line 413 "_csv.c"
+        if ($174) { __label__ = 78; break; } else { __label__ = 60; break; } //@line 413 "_csv.c"
+      case 60: // $bb60
+        var $175=HEAP[$escapechar]; //@line 414 "_csv.c"
+        var $176=$self; //@line 414 "_csv.c"
+        var $177=$176+14; //@line 414 "_csv.c"
+        var $178=__set_char(__str13, $177, $175, 0); //@line 414 "_csv.c"
+        var $179=($178)!=0; //@line 414 "_csv.c"
+        if ($179) { __label__ = 78; break; } else { __label__ = 61; break; } //@line 414 "_csv.c"
+      case 61: // $bb61
+        var $180=HEAP[$lineterminator]; //@line 415 "_csv.c"
+        var $181=$self; //@line 415 "_csv.c"
+        var $182=$181+20; //@line 415 "_csv.c"
+        var $183=__set_str($182, $180); //@line 415 "_csv.c"
+        var $184=($183)!=0; //@line 415 "_csv.c"
+        if ($184) { __label__ = 78; break; } else { __label__ = 62; break; } //@line 415 "_csv.c"
+      case 62: // $bb62
+        var $185=HEAP[$quotechar]; //@line 416 "_csv.c"
+        var $186=$self; //@line 416 "_csv.c"
+        var $187=$186+13; //@line 416 "_csv.c"
+        var $188=__set_char(__str15, $187, $185, 34); //@line 416 "_csv.c"
+        var $189=($188)!=0; //@line 416 "_csv.c"
+        if ($189) { __label__ = 78; break; } else { __label__ = 63; break; } //@line 416 "_csv.c"
+      case 63: // $bb63
+        var $190=HEAP[$quoting]; //@line 417 "_csv.c"
+        var $191=$self; //@line 417 "_csv.c"
+        var $192=$191+24; //@line 417 "_csv.c"
+        var $193=__set_int($192, $190); //@line 417 "_csv.c"
+        var $194=($193)!=0; //@line 417 "_csv.c"
+        if ($194) { __label__ = 78; break; } else { __label__ = 64; break; } //@line 417 "_csv.c"
+      case 64: // $bb64
+        var $195=HEAP[$skipinitialspace]; //@line 418 "_csv.c"
+        var $196=$self; //@line 418 "_csv.c"
+        var $197=$196+16; //@line 418 "_csv.c"
+        var $198=__set_bool(__str10, $197, $195, 0); //@line 418 "_csv.c"
+        var $199=($198)!=0; //@line 418 "_csv.c"
+        if ($199) { __label__ = 78; break; } else { __label__ = 65; break; } //@line 418 "_csv.c"
+      case 65: // $bb65
+        var $200=HEAP[$strict]; //@line 419 "_csv.c"
+        var $201=$self; //@line 419 "_csv.c"
+        var $202=$201+28; //@line 419 "_csv.c"
+        var $203=__set_bool(__str12, $202, $200, 0); //@line 419 "_csv.c"
+        var $204=($203)!=0; //@line 419 "_csv.c"
+        if ($204) { __label__ = 78; break; } else { __label__ = 66; break; } //@line 419 "_csv.c"
+      case 66: // $bb66
+        var $205=$self; //@line 422 "_csv.c"
+        var $206=$205+24; //@line 422 "_csv.c"
+        var $207=HEAP[$206]; //@line 422 "_csv.c"
+        var $208=_dialect_check_quoting($207); //@line 422 "_csv.c"
+        var $209=($208)!=0; //@line 422 "_csv.c"
+        if ($209) { __label__ = 78; break; } else { __label__ = 67; break; } //@line 422 "_csv.c"
+      case 67: // $bb67
+        var $210=$self; //@line 424 "_csv.c"
+        var $211=$210+12; //@line 424 "_csv.c"
+        var $212=HEAP[$211]; //@line 424 "_csv.c"
+        var $213=($212)==0; //@line 424 "_csv.c"
+        if ($213) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 424 "_csv.c"
+      case 68: // $bb68
+        var $214=HEAP[_PyExc_TypeError]; //@line 425 "_csv.c"
+        _PyErr_SetString($214, __str20); //@line 425 "_csv.c"
+        __label__ = 78; break; //@line 425 "_csv.c"
+      case 69: // $bb69
+        var $215=HEAP[$quotechar]; //@line 428 "_csv.c"
+        var $216=($215)==(__Py_NoneStruct); //@line 428 "_csv.c"
+        if ($216) { __label__ = 70; break; } else { __label__ = 72; break; } //@line 428 "_csv.c"
+      case 70: // $bb70
+        var $217=HEAP[$quoting]; //@line 428 "_csv.c"
+        var $218=($217)==0; //@line 428 "_csv.c"
+        if ($218) { __label__ = 71; break; } else { __label__ = 72; break; } //@line 428 "_csv.c"
+      case 71: // $bb71
+        var $219=$self; //@line 429 "_csv.c"
+        var $220=$219+24; //@line 429 "_csv.c"
+        HEAP[$220]=3; //@line 429 "_csv.c"
+        __label__ = 72; break; //@line 429 "_csv.c"
+      case 72: // $bb72
+        var $221=$self; //@line 430 "_csv.c"
+        var $222=$221+24; //@line 430 "_csv.c"
+        var $223=HEAP[$222]; //@line 430 "_csv.c"
+        var $224=($223)!=3; //@line 430 "_csv.c"
+        if ($224) { __label__ = 73; break; } else { __label__ = 75; break; } //@line 430 "_csv.c"
+      case 73: // $bb73
+        var $225=$self; //@line 430 "_csv.c"
+        var $226=$225+13; //@line 430 "_csv.c"
+        var $227=HEAP[$226]; //@line 430 "_csv.c"
+        var $228=($227)==0; //@line 430 "_csv.c"
+        if ($228) { __label__ = 74; break; } else { __label__ = 75; break; } //@line 430 "_csv.c"
+      case 74: // $bb74
+        var $229=HEAP[_PyExc_TypeError]; //@line 431 "_csv.c"
+        _PyErr_SetString($229, __str21); //@line 431 "_csv.c"
+        __label__ = 78; break; //@line 431 "_csv.c"
+      case 75: // $bb75
+        var $230=$self; //@line 435 "_csv.c"
+        var $231=$230+20; //@line 435 "_csv.c"
+        var $232=HEAP[$231]; //@line 435 "_csv.c"
+        var $233=($232)==0; //@line 435 "_csv.c"
+        if ($233) { __label__ = 76; break; } else { __label__ = 77; break; } //@line 435 "_csv.c"
+      case 76: // $bb76
+        var $234=HEAP[_PyExc_TypeError]; //@line 436 "_csv.c"
+        _PyErr_SetString($234, __str22); //@line 436 "_csv.c"
+        __label__ = 78; break; //@line 436 "_csv.c"
+      case 77: // $bb77
+        var $235=$self; //@line 440 "_csv.c"
+        var $236=$235; //@line 440 "_csv.c"
+        $ret=$236; //@line 440 "_csv.c"
+        var $237=$self; //@line 441 "_csv.c"
+        var $238=$237; //@line 441 "_csv.c"
+        var $239=$238; //@line 441 "_csv.c"
+        var $240=HEAP[$239]; //@line 441 "_csv.c"
+        var $241=($240) + 1; //@line 441 "_csv.c"
+        var $242=$238; //@line 441 "_csv.c"
+        HEAP[$242]=$241; //@line 441 "_csv.c"
+        __label__ = 78; break; //@line 442 "_csv.c"
+      case 78: // $err
+        var $243=$self; //@line 443 "_csv.c"
+        var $244=($243)!=0; //@line 443 "_csv.c"
+        if ($244) { __label__ = 79; break; } else { __label__ = 81; break; } //@line 443 "_csv.c"
+      case 79: // $bb78
+        var $245=$self; //@line 443 "_csv.c"
+        var $246=$245; //@line 443 "_csv.c"
+        var $247=$246; //@line 443 "_csv.c"
+        var $248=HEAP[$247]; //@line 443 "_csv.c"
+        var $249=($248) - 1; //@line 443 "_csv.c"
+        var $250=$246; //@line 443 "_csv.c"
+        HEAP[$250]=$249; //@line 443 "_csv.c"
+        var $251=$246; //@line 443 "_csv.c"
+        var $252=HEAP[$251]; //@line 443 "_csv.c"
+        var $253=($252)==0; //@line 443 "_csv.c"
+        if ($253) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 443 "_csv.c"
+      case 80: // $bb79
+        var $254=$self; //@line 443 "_csv.c"
+        var $255=$254; //@line 443 "_csv.c"
+        var $256=$255+4; //@line 443 "_csv.c"
+        var $257=HEAP[$256]; //@line 443 "_csv.c"
+        var $258=$257+24; //@line 443 "_csv.c"
+        var $259=HEAP[$258]; //@line 443 "_csv.c"
+        var $260=$self; //@line 443 "_csv.c"
+        var $261=$260; //@line 443 "_csv.c"
+        FUNCTION_TABLE[$259]($261); //@line 443 "_csv.c"
+        __label__ = 81; break; //@line 443 "_csv.c"
+      case 81: // $bb80
+        var $262=HEAP[$dialect]; //@line 444 "_csv.c"
+        var $263=($262)!=0; //@line 444 "_csv.c"
+        if ($263) { __label__ = 82; break; } else { __label__ = 84; break; } //@line 444 "_csv.c"
+      case 82: // $bb81
+        var $264=HEAP[$dialect]; //@line 444 "_csv.c"
+        var $265=$264; //@line 444 "_csv.c"
+        var $266=HEAP[$265]; //@line 444 "_csv.c"
+        var $267=($266) - 1; //@line 444 "_csv.c"
+        var $268=$264; //@line 444 "_csv.c"
+        HEAP[$268]=$267; //@line 444 "_csv.c"
+        var $269=$264; //@line 444 "_csv.c"
+        var $270=HEAP[$269]; //@line 444 "_csv.c"
+        var $271=($270)==0; //@line 444 "_csv.c"
+        if ($271) { __label__ = 83; break; } else { __label__ = 84; break; } //@line 444 "_csv.c"
+      case 83: // $bb82
+        var $272=HEAP[$dialect]; //@line 444 "_csv.c"
+        var $273=$272+4; //@line 444 "_csv.c"
+        var $274=HEAP[$273]; //@line 444 "_csv.c"
+        var $275=$274+24; //@line 444 "_csv.c"
+        var $276=HEAP[$275]; //@line 444 "_csv.c"
+        var $277=HEAP[$dialect]; //@line 444 "_csv.c"
+        FUNCTION_TABLE[$276]($277); //@line 444 "_csv.c"
+        __label__ = 84; break; //@line 444 "_csv.c"
+      case 84: // $bb83
+        var $278=HEAP[$delimiter]; //@line 445 "_csv.c"
+        var $279=($278)!=0; //@line 445 "_csv.c"
+        if ($279) { __label__ = 85; break; } else { __label__ = 87; break; } //@line 445 "_csv.c"
+      case 85: // $bb84
+        var $280=HEAP[$delimiter]; //@line 445 "_csv.c"
+        var $281=$280; //@line 445 "_csv.c"
+        var $282=HEAP[$281]; //@line 445 "_csv.c"
+        var $283=($282) - 1; //@line 445 "_csv.c"
+        var $284=$280; //@line 445 "_csv.c"
+        HEAP[$284]=$283; //@line 445 "_csv.c"
+        var $285=$280; //@line 445 "_csv.c"
+        var $286=HEAP[$285]; //@line 445 "_csv.c"
+        var $287=($286)==0; //@line 445 "_csv.c"
+        if ($287) { __label__ = 86; break; } else { __label__ = 87; break; } //@line 445 "_csv.c"
+      case 86: // $bb85
+        var $288=HEAP[$delimiter]; //@line 445 "_csv.c"
+        var $289=$288+4; //@line 445 "_csv.c"
+        var $290=HEAP[$289]; //@line 445 "_csv.c"
+        var $291=$290+24; //@line 445 "_csv.c"
+        var $292=HEAP[$291]; //@line 445 "_csv.c"
+        var $293=HEAP[$delimiter]; //@line 445 "_csv.c"
+        FUNCTION_TABLE[$292]($293); //@line 445 "_csv.c"
+        __label__ = 87; break; //@line 445 "_csv.c"
+      case 87: // $bb86
+        var $294=HEAP[$doublequote]; //@line 446 "_csv.c"
+        var $295=($294)!=0; //@line 446 "_csv.c"
+        if ($295) { __label__ = 88; break; } else { __label__ = 90; break; } //@line 446 "_csv.c"
+      case 88: // $bb87
+        var $296=HEAP[$doublequote]; //@line 446 "_csv.c"
+        var $297=$296; //@line 446 "_csv.c"
+        var $298=HEAP[$297]; //@line 446 "_csv.c"
+        var $299=($298) - 1; //@line 446 "_csv.c"
+        var $300=$296; //@line 446 "_csv.c"
+        HEAP[$300]=$299; //@line 446 "_csv.c"
+        var $301=$296; //@line 446 "_csv.c"
+        var $302=HEAP[$301]; //@line 446 "_csv.c"
+        var $303=($302)==0; //@line 446 "_csv.c"
+        if ($303) { __label__ = 89; break; } else { __label__ = 90; break; } //@line 446 "_csv.c"
+      case 89: // $bb88
+        var $304=HEAP[$doublequote]; //@line 446 "_csv.c"
+        var $305=$304+4; //@line 446 "_csv.c"
+        var $306=HEAP[$305]; //@line 446 "_csv.c"
+        var $307=$306+24; //@line 446 "_csv.c"
+        var $308=HEAP[$307]; //@line 446 "_csv.c"
+        var $309=HEAP[$doublequote]; //@line 446 "_csv.c"
+        FUNCTION_TABLE[$308]($309); //@line 446 "_csv.c"
+        __label__ = 90; break; //@line 446 "_csv.c"
+      case 90: // $bb89
+        var $310=HEAP[$escapechar]; //@line 447 "_csv.c"
+        var $311=($310)!=0; //@line 447 "_csv.c"
+        if ($311) { __label__ = 91; break; } else { __label__ = 93; break; } //@line 447 "_csv.c"
+      case 91: // $bb90
+        var $312=HEAP[$escapechar]; //@line 447 "_csv.c"
+        var $313=$312; //@line 447 "_csv.c"
+        var $314=HEAP[$313]; //@line 447 "_csv.c"
+        var $315=($314) - 1; //@line 447 "_csv.c"
+        var $316=$312; //@line 447 "_csv.c"
+        HEAP[$316]=$315; //@line 447 "_csv.c"
+        var $317=$312; //@line 447 "_csv.c"
+        var $318=HEAP[$317]; //@line 447 "_csv.c"
+        var $319=($318)==0; //@line 447 "_csv.c"
+        if ($319) { __label__ = 92; break; } else { __label__ = 93; break; } //@line 447 "_csv.c"
+      case 92: // $bb91
+        var $320=HEAP[$escapechar]; //@line 447 "_csv.c"
+        var $321=$320+4; //@line 447 "_csv.c"
+        var $322=HEAP[$321]; //@line 447 "_csv.c"
+        var $323=$322+24; //@line 447 "_csv.c"
+        var $324=HEAP[$323]; //@line 447 "_csv.c"
+        var $325=HEAP[$escapechar]; //@line 447 "_csv.c"
+        FUNCTION_TABLE[$324]($325); //@line 447 "_csv.c"
+        __label__ = 93; break; //@line 447 "_csv.c"
+      case 93: // $bb92
+        var $326=HEAP[$lineterminator]; //@line 448 "_csv.c"
+        var $327=($326)!=0; //@line 448 "_csv.c"
+        if ($327) { __label__ = 94; break; } else { __label__ = 96; break; } //@line 448 "_csv.c"
+      case 94: // $bb93
+        var $328=HEAP[$lineterminator]; //@line 448 "_csv.c"
+        var $329=$328; //@line 448 "_csv.c"
+        var $330=HEAP[$329]; //@line 448 "_csv.c"
+        var $331=($330) - 1; //@line 448 "_csv.c"
+        var $332=$328; //@line 448 "_csv.c"
+        HEAP[$332]=$331; //@line 448 "_csv.c"
+        var $333=$328; //@line 448 "_csv.c"
+        var $334=HEAP[$333]; //@line 448 "_csv.c"
+        var $335=($334)==0; //@line 448 "_csv.c"
+        if ($335) { __label__ = 95; break; } else { __label__ = 96; break; } //@line 448 "_csv.c"
+      case 95: // $bb94
+        var $336=HEAP[$lineterminator]; //@line 448 "_csv.c"
+        var $337=$336+4; //@line 448 "_csv.c"
+        var $338=HEAP[$337]; //@line 448 "_csv.c"
+        var $339=$338+24; //@line 448 "_csv.c"
+        var $340=HEAP[$339]; //@line 448 "_csv.c"
+        var $341=HEAP[$lineterminator]; //@line 448 "_csv.c"
+        FUNCTION_TABLE[$340]($341); //@line 448 "_csv.c"
+        __label__ = 96; break; //@line 448 "_csv.c"
+      case 96: // $bb95
+        var $342=HEAP[$quotechar]; //@line 449 "_csv.c"
+        var $343=($342)!=0; //@line 449 "_csv.c"
+        if ($343) { __label__ = 97; break; } else { __label__ = 99; break; } //@line 449 "_csv.c"
+      case 97: // $bb96
+        var $344=HEAP[$quotechar]; //@line 449 "_csv.c"
+        var $345=$344; //@line 449 "_csv.c"
+        var $346=HEAP[$345]; //@line 449 "_csv.c"
+        var $347=($346) - 1; //@line 449 "_csv.c"
+        var $348=$344; //@line 449 "_csv.c"
+        HEAP[$348]=$347; //@line 449 "_csv.c"
+        var $349=$344; //@line 449 "_csv.c"
+        var $350=HEAP[$349]; //@line 449 "_csv.c"
+        var $351=($350)==0; //@line 449 "_csv.c"
+        if ($351) { __label__ = 98; break; } else { __label__ = 99; break; } //@line 449 "_csv.c"
+      case 98: // $bb97
+        var $352=HEAP[$quotechar]; //@line 449 "_csv.c"
+        var $353=$352+4; //@line 449 "_csv.c"
+        var $354=HEAP[$353]; //@line 449 "_csv.c"
+        var $355=$354+24; //@line 449 "_csv.c"
+        var $356=HEAP[$355]; //@line 449 "_csv.c"
+        var $357=HEAP[$quotechar]; //@line 449 "_csv.c"
+        FUNCTION_TABLE[$356]($357); //@line 449 "_csv.c"
+        __label__ = 99; break; //@line 449 "_csv.c"
+      case 99: // $bb98
+        var $358=HEAP[$quoting]; //@line 450 "_csv.c"
+        var $359=($358)!=0; //@line 450 "_csv.c"
+        if ($359) { __label__ = 100; break; } else { __label__ = 102; break; } //@line 450 "_csv.c"
+      case 100: // $bb99
+        var $360=HEAP[$quoting]; //@line 450 "_csv.c"
+        var $361=$360; //@line 450 "_csv.c"
+        var $362=HEAP[$361]; //@line 450 "_csv.c"
+        var $363=($362) - 1; //@line 450 "_csv.c"
+        var $364=$360; //@line 450 "_csv.c"
+        HEAP[$364]=$363; //@line 450 "_csv.c"
+        var $365=$360; //@line 450 "_csv.c"
+        var $366=HEAP[$365]; //@line 450 "_csv.c"
+        var $367=($366)==0; //@line 450 "_csv.c"
+        if ($367) { __label__ = 101; break; } else { __label__ = 102; break; } //@line 450 "_csv.c"
+      case 101: // $bb100
+        var $368=HEAP[$quoting]; //@line 450 "_csv.c"
+        var $369=$368+4; //@line 450 "_csv.c"
+        var $370=HEAP[$369]; //@line 450 "_csv.c"
+        var $371=$370+24; //@line 450 "_csv.c"
+        var $372=HEAP[$371]; //@line 450 "_csv.c"
+        var $373=HEAP[$quoting]; //@line 450 "_csv.c"
+        FUNCTION_TABLE[$372]($373); //@line 450 "_csv.c"
+        __label__ = 102; break; //@line 450 "_csv.c"
+      case 102: // $bb101
+        var $374=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
+        var $375=($374)!=0; //@line 451 "_csv.c"
+        if ($375) { __label__ = 103; break; } else { __label__ = 105; break; } //@line 451 "_csv.c"
+      case 103: // $bb102
+        var $376=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
+        var $377=$376; //@line 451 "_csv.c"
+        var $378=HEAP[$377]; //@line 451 "_csv.c"
+        var $379=($378) - 1; //@line 451 "_csv.c"
+        var $380=$376; //@line 451 "_csv.c"
+        HEAP[$380]=$379; //@line 451 "_csv.c"
+        var $381=$376; //@line 451 "_csv.c"
+        var $382=HEAP[$381]; //@line 451 "_csv.c"
+        var $383=($382)==0; //@line 451 "_csv.c"
+        if ($383) { __label__ = 104; break; } else { __label__ = 105; break; } //@line 451 "_csv.c"
+      case 104: // $bb103
+        var $384=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
+        var $385=$384+4; //@line 451 "_csv.c"
+        var $386=HEAP[$385]; //@line 451 "_csv.c"
+        var $387=$386+24; //@line 451 "_csv.c"
+        var $388=HEAP[$387]; //@line 451 "_csv.c"
+        var $389=HEAP[$skipinitialspace]; //@line 451 "_csv.c"
+        FUNCTION_TABLE[$388]($389); //@line 451 "_csv.c"
+        __label__ = 105; break; //@line 451 "_csv.c"
+      case 105: // $bb104
+        var $390=HEAP[$strict]; //@line 452 "_csv.c"
+        var $391=($390)!=0; //@line 452 "_csv.c"
+        if ($391) { __label__ = 106; break; } else { __label__ = 108; break; } //@line 452 "_csv.c"
+      case 106: // $bb105
+        var $392=HEAP[$strict]; //@line 452 "_csv.c"
+        var $393=$392; //@line 452 "_csv.c"
+        var $394=HEAP[$393]; //@line 452 "_csv.c"
+        var $395=($394) - 1; //@line 452 "_csv.c"
+        var $396=$392; //@line 452 "_csv.c"
+        HEAP[$396]=$395; //@line 452 "_csv.c"
+        var $397=$392; //@line 452 "_csv.c"
+        var $398=HEAP[$397]; //@line 452 "_csv.c"
+        var $399=($398)==0; //@line 452 "_csv.c"
+        if ($399) { __label__ = 107; break; } else { __label__ = 108; break; } //@line 452 "_csv.c"
+      case 107: // $bb106
+        var $400=HEAP[$strict]; //@line 452 "_csv.c"
+        var $401=$400+4; //@line 452 "_csv.c"
+        var $402=HEAP[$401]; //@line 452 "_csv.c"
+        var $403=$402+24; //@line 452 "_csv.c"
+        var $404=HEAP[$403]; //@line 452 "_csv.c"
+        var $405=HEAP[$strict]; //@line 452 "_csv.c"
+        FUNCTION_TABLE[$404]($405); //@line 452 "_csv.c"
+        __label__ = 108; break; //@line 452 "_csv.c"
+      case 108: // $bb107
+        var $406=$ret; //@line 453 "_csv.c"
+        $0=$406; //@line 453 "_csv.c"
+        __label__ = 109; break; //@line 453 "_csv.c"
+      case 109: // $bb108
+        var $407=$0; //@line 355 "_csv.c"
+        $retval=$407; //@line 355 "_csv.c"
         var $retval109=$retval; //@line 355 "_csv.c"
         STACKTOP = __stackBase__;
         return $retval109; //@line 355 "_csv.c"
@@ -1556,7 +1587,7 @@ var __str60;
       case 3: // $bb2
         var $3=$iftmp_115; //@line 515 "_csv.c"
         var $4=$dialect_inst_addr; //@line 515 "_csv.c"
-        var $5=_Py_BuildValue($3, $4); //@line 515 "_csv.c"
+        var $5=_Py_BuildValue($3, allocate([$4,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 515 "_csv.c"
         $ctor_args=$5; //@line 515 "_csv.c"
         var $6=($5)==0; //@line 516 "_csv.c"
         if ($6) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 516 "_csv.c"
@@ -1730,138 +1761,156 @@ var __str60;
   }
   
 
+  function _parse_grow_buff($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 555 "_csv.c"
+        var $2=$1+28; //@line 555 "_csv.c"
+        var $3=HEAP[$2]; //@line 555 "_csv.c"
+        var $4=($3)==0; //@line 555 "_csv.c"
+        var $5=$self_addr; //@line 556 "_csv.c"
+        var $6=$5+28; //@line 556 "_csv.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 555 "_csv.c"
+      case 1: // $bb
+        HEAP[$6]=4096; //@line 556 "_csv.c"
+        var $7=$self_addr; //@line 557 "_csv.c"
+        var $8=$7+24; //@line 557 "_csv.c"
+        var $9=HEAP[$8]; //@line 557 "_csv.c"
+        var $10=($9)!=0; //@line 557 "_csv.c"
+        if ($10) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 557 "_csv.c"
+      case 2: // $bb1
+        var $11=$self_addr; //@line 558 "_csv.c"
+        var $12=$11+24; //@line 558 "_csv.c"
+        var $13=HEAP[$12]; //@line 558 "_csv.c"
+        _PyMem_Free($13); //@line 558 "_csv.c"
+        __label__ = 3; break; //@line 558 "_csv.c"
+      case 3: // $bb2
+        var $14=$self_addr; //@line 559 "_csv.c"
+        var $15=$14+28; //@line 559 "_csv.c"
+        var $16=HEAP[$15]; //@line 559 "_csv.c"
+        var $17=_PyMem_Malloc($16); //@line 559 "_csv.c"
+        var $18=$self_addr; //@line 559 "_csv.c"
+        var $19=$18+24; //@line 559 "_csv.c"
+        HEAP[$19]=$17; //@line 559 "_csv.c"
+        __label__ = 7; break; //@line 559 "_csv.c"
+      case 4: // $bb3
+        var $20=HEAP[$6]; //@line 562 "_csv.c"
+        var $21=($20) > 1073741823; //@line 562 "_csv.c"
+        if ($21) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 562 "_csv.c"
+      case 5: // $bb4
+        var $22=_PyErr_NoMemory(); //@line 563 "_csv.c"
+        $0=0; //@line 564 "_csv.c"
+        __label__ = 10; break; //@line 564 "_csv.c"
+      case 6: // $bb5
+        var $23=$self_addr; //@line 566 "_csv.c"
+        var $24=$23+28; //@line 566 "_csv.c"
+        var $25=HEAP[$24]; //@line 566 "_csv.c"
+        var $26=($25) * 2; //@line 566 "_csv.c"
+        var $27=$self_addr; //@line 566 "_csv.c"
+        var $28=$27+28; //@line 566 "_csv.c"
+        HEAP[$28]=$26; //@line 566 "_csv.c"
+        var $29=$self_addr; //@line 567 "_csv.c"
+        var $30=$29+28; //@line 567 "_csv.c"
+        var $31=HEAP[$30]; //@line 567 "_csv.c"
+        var $32=$self_addr; //@line 567 "_csv.c"
+        var $33=$32+24; //@line 567 "_csv.c"
+        var $34=HEAP[$33]; //@line 567 "_csv.c"
+        var $35=_PyMem_Realloc($34, $31); //@line 567 "_csv.c"
+        var $36=$self_addr; //@line 567 "_csv.c"
+        var $37=$36+24; //@line 567 "_csv.c"
+        HEAP[$37]=$35; //@line 567 "_csv.c"
+        __label__ = 7; break; //@line 567 "_csv.c"
+      case 7: // $bb6
+        var $38=$self_addr; //@line 569 "_csv.c"
+        var $39=$38+24; //@line 569 "_csv.c"
+        var $40=HEAP[$39]; //@line 569 "_csv.c"
+        var $41=($40)==0; //@line 569 "_csv.c"
+        if ($41) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 569 "_csv.c"
+      case 8: // $bb7
+        var $42=_PyErr_NoMemory(); //@line 570 "_csv.c"
+        $0=0; //@line 571 "_csv.c"
+        __label__ = 10; break; //@line 571 "_csv.c"
+      case 9: // $bb8
+        $0=1; //@line 573 "_csv.c"
+        __label__ = 10; break; //@line 573 "_csv.c"
+      case 10: // $bb9
+        var $43=$0; //@line 564 "_csv.c"
+        $retval=$43; //@line 564 "_csv.c"
+        var $retval10=$retval; //@line 564 "_csv.c"
+        ;
+        return $retval10; //@line 564 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _parse_add_char($self, $c) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $c_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $c_addr=$c;
-        var $2=$self_addr; //@line 579 "_csv.c"
-        var $3=$2+32; //@line 579 "_csv.c"
-        var $4=HEAP[$3]; //@line 579 "_csv.c"
-        var $5=HEAP[_field_limit]; //@line 579 "_csv.c"
-        var $6=($4) >= ($5); //@line 579 "_csv.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 579 "_csv.c"
+        var $1=$self_addr; //@line 579 "_csv.c"
+        var $2=$1+32; //@line 579 "_csv.c"
+        var $3=HEAP[$2]; //@line 579 "_csv.c"
+        var $4=HEAP[_field_limit]; //@line 579 "_csv.c"
+        var $5=($3) >= ($4); //@line 579 "_csv.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 579 "_csv.c"
       case 1: // $bb
-        var $7=HEAP[_field_limit]; //@line 580 "_csv.c"
-        var $8=HEAP[_error_obj]; //@line 580 "_csv.c"
-        var $9=_PyErr_Format($8, __str26, $7); //@line 580 "_csv.c"
-        $1=-1; //@line 582 "_csv.c"
-        __label__ = 15; break; //@line 582 "_csv.c"
+        var $6=HEAP[_field_limit]; //@line 580 "_csv.c"
+        var $7=HEAP[_error_obj]; //@line 580 "_csv.c"
+        var $8=_PyErr_Format($7, __str26, allocate([$6,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 580 "_csv.c"
+        $0=-1; //@line 582 "_csv.c"
+        __label__ = 6; break; //@line 582 "_csv.c"
       case 2: // $bb1
-        var $10=$self_addr; //@line 584 "_csv.c"
-        var $11=$10+32; //@line 584 "_csv.c"
-        var $12=HEAP[$11]; //@line 584 "_csv.c"
-        var $13=$self_addr; //@line 584 "_csv.c"
-        var $14=$13+28; //@line 584 "_csv.c"
-        var $15=HEAP[$14]; //@line 584 "_csv.c"
-        var $16=($12)==($15); //@line 584 "_csv.c"
-        if ($16) { __label__ = 3; break; } else { __label__ = 14; break; } //@line 584 "_csv.c"
+        var $9=$self_addr; //@line 584 "_csv.c"
+        var $10=$9+32; //@line 584 "_csv.c"
+        var $11=HEAP[$10]; //@line 584 "_csv.c"
+        var $12=$self_addr; //@line 584 "_csv.c"
+        var $13=$12+28; //@line 584 "_csv.c"
+        var $14=HEAP[$13]; //@line 584 "_csv.c"
+        var $15=($11)==($14); //@line 584 "_csv.c"
+        if ($15) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 584 "_csv.c"
       case 3: // $bb2
-        var $17=$self_addr; //@line 584 "_csv.c"
-        $self_addr_i=$17;
-        var $18=$self_addr_i; //@line 555 "_csv.c"
-        var $19=$18+28; //@line 555 "_csv.c"
-        var $20=HEAP[$19]; //@line 555 "_csv.c"
-        var $21=($20)==0; //@line 555 "_csv.c"
-        var $22=$self_addr_i; //@line 556 "_csv.c"
-        var $23=$22+28; //@line 556 "_csv.c"
-        if ($21) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 555 "_csv.c"
-      case 4: // $bb_i
-        HEAP[$23]=4096; //@line 556 "_csv.c"
-        var $24=$self_addr_i; //@line 557 "_csv.c"
-        var $25=$24+24; //@line 557 "_csv.c"
-        var $26=HEAP[$25]; //@line 557 "_csv.c"
-        var $27=($26)!=0; //@line 557 "_csv.c"
-        if ($27) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 557 "_csv.c"
-      case 5: // $bb1_i
-        var $28=$self_addr_i; //@line 558 "_csv.c"
-        var $29=$28+24; //@line 558 "_csv.c"
-        var $30=HEAP[$29]; //@line 558 "_csv.c"
-        _PyMem_Free($30); //@line 558 "_csv.c"
-        __label__ = 6; break; //@line 558 "_csv.c"
-      case 6: // $bb2_i
-        var $31=$self_addr_i; //@line 559 "_csv.c"
-        var $32=$31+28; //@line 559 "_csv.c"
-        var $33=HEAP[$32]; //@line 559 "_csv.c"
-        var $34=_PyMem_Malloc($33); //@line 559 "_csv.c"
-        var $35=$self_addr_i; //@line 559 "_csv.c"
-        var $36=$35+24; //@line 559 "_csv.c"
-        HEAP[$36]=$34; //@line 559 "_csv.c"
-        __label__ = 10; break; //@line 559 "_csv.c"
-      case 7: // $bb3_i
-        var $37=HEAP[$23]; //@line 562 "_csv.c"
-        var $38=($37) > 1073741823; //@line 562 "_csv.c"
-        if ($38) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 562 "_csv.c"
-      case 8: // $bb4_i
-        var $39=_PyErr_NoMemory(); //@line 563 "_csv.c"
-        $0=0; //@line 564 "_csv.c"
-        __label__ = 13; break; //@line 564 "_csv.c"
-      case 9: // $bb5_i
-        var $40=$self_addr_i; //@line 566 "_csv.c"
-        var $41=$40+28; //@line 566 "_csv.c"
-        var $42=HEAP[$41]; //@line 566 "_csv.c"
-        var $43=($42) * 2; //@line 566 "_csv.c"
-        var $44=$self_addr_i; //@line 566 "_csv.c"
-        var $45=$44+28; //@line 566 "_csv.c"
-        HEAP[$45]=$43; //@line 566 "_csv.c"
-        var $46=$self_addr_i; //@line 567 "_csv.c"
-        var $47=$46+28; //@line 567 "_csv.c"
-        var $48=HEAP[$47]; //@line 567 "_csv.c"
-        var $49=$self_addr_i; //@line 567 "_csv.c"
-        var $50=$49+24; //@line 567 "_csv.c"
-        var $51=HEAP[$50]; //@line 567 "_csv.c"
-        var $52=_PyMem_Realloc($51, $48); //@line 567 "_csv.c"
-        var $53=$self_addr_i; //@line 567 "_csv.c"
-        var $54=$53+24; //@line 567 "_csv.c"
-        HEAP[$54]=$52; //@line 567 "_csv.c"
-        __label__ = 10; break; //@line 567 "_csv.c"
-      case 10: // $bb6_i
-        var $55=$self_addr_i; //@line 569 "_csv.c"
-        var $56=$55+24; //@line 569 "_csv.c"
-        var $57=HEAP[$56]; //@line 569 "_csv.c"
-        var $58=($57)==0; //@line 569 "_csv.c"
-        if ($58) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 569 "_csv.c"
-      case 11: // $bb7_i
-        var $59=_PyErr_NoMemory(); //@line 570 "_csv.c"
-        $0=0; //@line 571 "_csv.c"
-        __label__ = 13; break; //@line 571 "_csv.c"
-      case 12: // $parse_grow_buff_exit
-        $0=1; //@line 573 "_csv.c"
-        $retval_i=1; //@line 564 "_csv.c"
-        __label__ = 14; break;
-      case 13: // $bb3
-        $retval_i=0; //@line 564 "_csv.c"
-        $1=-1; //@line 585 "_csv.c"
-        __label__ = 15; break; //@line 585 "_csv.c"
-      case 14: // $bb4
-        var $60=$self_addr; //@line 586 "_csv.c"
-        var $61=$60+24; //@line 586 "_csv.c"
-        var $62=HEAP[$61]; //@line 586 "_csv.c"
-        var $63=$self_addr; //@line 586 "_csv.c"
-        var $64=$63+32; //@line 586 "_csv.c"
-        var $65=HEAP[$64]; //@line 586 "_csv.c"
-        var $66=$62+$65; //@line 586 "_csv.c"
-        var $67=$c_addr; //@line 586 "_csv.c"
-        HEAP[$66]=$67; //@line 586 "_csv.c"
-        var $68=($65) + 1; //@line 586 "_csv.c"
-        var $69=$self_addr; //@line 586 "_csv.c"
-        var $70=$69+32; //@line 586 "_csv.c"
-        HEAP[$70]=$68; //@line 586 "_csv.c"
-        $1=0; //@line 587 "_csv.c"
-        __label__ = 15; break; //@line 587 "_csv.c"
-      case 15: // $bb5
-        var $71=$1; //@line 582 "_csv.c"
-        $retval=$71; //@line 582 "_csv.c"
+        var $16=$self_addr; //@line 584 "_csv.c"
+        var $17=_parse_grow_buff($16); //@line 584 "_csv.c"
+        var $18=($17)==0; //@line 584 "_csv.c"
+        if ($18) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 584 "_csv.c"
+      case 4: // $bb3
+        $0=-1; //@line 585 "_csv.c"
+        __label__ = 6; break; //@line 585 "_csv.c"
+      case 5: // $bb4
+        var $19=$self_addr; //@line 586 "_csv.c"
+        var $20=$19+24; //@line 586 "_csv.c"
+        var $21=HEAP[$20]; //@line 586 "_csv.c"
+        var $22=$self_addr; //@line 586 "_csv.c"
+        var $23=$22+32; //@line 586 "_csv.c"
+        var $24=HEAP[$23]; //@line 586 "_csv.c"
+        var $25=$21+$24; //@line 586 "_csv.c"
+        var $26=$c_addr; //@line 586 "_csv.c"
+        HEAP[$25]=$26; //@line 586 "_csv.c"
+        var $27=($24) + 1; //@line 586 "_csv.c"
+        var $28=$self_addr; //@line 586 "_csv.c"
+        var $29=$28+32; //@line 586 "_csv.c"
+        HEAP[$29]=$27; //@line 586 "_csv.c"
+        $0=0; //@line 587 "_csv.c"
+        __label__ = 6; break; //@line 587 "_csv.c"
+      case 6: // $bb5
+        var $30=$0; //@line 582 "_csv.c"
+        $retval=$30; //@line 582 "_csv.c"
         var $retval6=$retval; //@line 582 "_csv.c"
         ;
         return $retval6; //@line 582 "_csv.c"
@@ -2348,7 +2397,7 @@ var __str60;
         var $221=HEAP[$220]; //@line 738 "_csv.c"
         var $222=($221); //@line 738 "_csv.c"
         var $223=HEAP[_error_obj]; //@line 738 "_csv.c"
-        var $224=_PyErr_Format($223, __str27, $222, $218); //@line 738 "_csv.c"
+        var $224=_PyErr_Format($223, __str27, allocate([$222,0,0,0,$218,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 738 "_csv.c"
         $0=-1; //@line 741 "_csv.c"
         __label__ = 88; break; //@line 741 "_csv.c"
       case 83: // $bb96
@@ -2369,7 +2418,7 @@ var __str60;
         __label__ = 87; break; //@line 749 "_csv.c"
       case 86: // $bb100
         var $233=HEAP[_error_obj]; //@line 751 "_csv.c"
-        var $234=_PyErr_Format($233, __str28); //@line 751 "_csv.c"
+        var $234=_PyErr_Format($233, __str28, allocate(1, "i32", ALLOC_STACK)); //@line 751 "_csv.c"
         $0=-1; //@line 752 "_csv.c"
         __label__ = 88; break; //@line 752 "_csv.c"
       case 87: // $bb101
@@ -2506,7 +2555,7 @@ var __str60;
         if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 787 "_csv.c"
       case 5: // $bb4
         var $15=HEAP[_error_obj]; //@line 788 "_csv.c"
-        var $16=_PyErr_Format($15, __str29); //@line 788 "_csv.c"
+        var $16=_PyErr_Format($15, __str29, allocate(1, "i32", ALLOC_STACK)); //@line 788 "_csv.c"
         __label__ = 6; break; //@line 788 "_csv.c"
       case 6: // $bb5
         $0=0; //@line 790 "_csv.c"
@@ -2591,7 +2640,7 @@ var __str60;
         __label__ = 15; break; //@line 804 "_csv.c"
       case 15: // $bb15
         var $69=HEAP[_error_obj]; //@line 805 "_csv.c"
-        var $70=_PyErr_Format($69, __str30); //@line 805 "_csv.c"
+        var $70=_PyErr_Format($69, __str30, allocate(1, "i32", ALLOC_STACK)); //@line 805 "_csv.c"
         __label__ = 25; break; //@line 805 "_csv.c"
       case 16: // $bb16
         var $71=$c; //@line 809 "_csv.c"
@@ -3120,7 +3169,7 @@ var __str60;
         __label__ = 19; break; //@line 928 "_csv.c"
       case 6: // $bb5
         var $37=$args_addr; //@line 931 "_csv.c"
-        var $38=_PyArg_UnpackTuple($37, __str33, 1, 2, $iterator, $dialect); //@line 931 "_csv.c"
+        var $38=_PyArg_UnpackTuple($37, __str33, 1, 2, allocate([$iterator,0,0,0,$dialect,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 931 "_csv.c"
         var $39=($38)==0; //@line 931 "_csv.c"
         if ($39) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 931 "_csv.c"
       case 7: // $bb6
@@ -3242,6 +3291,23 @@ var __str60;
         return $retval19; //@line 917 "_csv.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _join_reset($self) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    $self_addr=$self;
+    var $0=$self_addr; //@line 959 "_csv.c"
+    var $1=$0+24; //@line 959 "_csv.c"
+    HEAP[$1]=0; //@line 959 "_csv.c"
+    var $2=$self_addr; //@line 960 "_csv.c"
+    var $3=$2+28; //@line 960 "_csv.c"
+    HEAP[$3]=0; //@line 960 "_csv.c"
+    ;
+    return; //@line 961 "_csv.c"
   }
   
 
@@ -3446,7 +3512,7 @@ var __str60;
         if ($102) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1022 "_csv.c"
       case 28: // $bb28
         var $103=HEAP[_error_obj]; //@line 1023 "_csv.c"
-        var $104=_PyErr_Format($103, __str35); //@line 1023 "_csv.c"
+        var $104=_PyErr_Format($103, __str35, allocate(1, "i32", ALLOC_STACK)); //@line 1023 "_csv.c"
         $0=-1; //@line 1025 "_csv.c"
         __label__ = 47; break; //@line 1025 "_csv.c"
       case 29: // $bb29
@@ -3506,7 +3572,7 @@ var __str60;
         if ($136) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 1038 "_csv.c"
       case 38: // $bb38
         var $137=HEAP[_error_obj]; //@line 1039 "_csv.c"
-        var $138=_PyErr_Format($137, __str36); //@line 1039 "_csv.c"
+        var $138=_PyErr_Format($137, __str36, allocate(1, "i32", ALLOC_STACK)); //@line 1039 "_csv.c"
         $0=-1; //@line 1041 "_csv.c"
         __label__ = 47; break; //@line 1041 "_csv.c"
       case 39: // $bb39
@@ -3748,22 +3814,100 @@ var __str60;
   }
   
 
+  function _join_append_lineterminator($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        var $terminator_len;
+        var $terminator;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 1114 "_csv.c"
+        var $2=$1+12; //@line 1114 "_csv.c"
+        var $3=HEAP[$2]; //@line 1114 "_csv.c"
+        var $4=$3+20; //@line 1114 "_csv.c"
+        var $5=HEAP[$4]; //@line 1114 "_csv.c"
+        var $6=_PyString_Size($5); //@line 1114 "_csv.c"
+        $terminator_len=$6; //@line 1114 "_csv.c"
+        var $7=$terminator_len; //@line 1115 "_csv.c"
+        var $8=($7)==-1; //@line 1115 "_csv.c"
+        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1115 "_csv.c"
+      case 1: // $bb
+        $0=0; //@line 1116 "_csv.c"
+        __label__ = 7; break; //@line 1116 "_csv.c"
+      case 2: // $bb1
+        var $9=$self_addr; //@line 1119 "_csv.c"
+        var $10=$9+24; //@line 1119 "_csv.c"
+        var $11=HEAP[$10]; //@line 1119 "_csv.c"
+        var $12=$terminator_len; //@line 1119 "_csv.c"
+        var $13=($12) + ($11); //@line 1119 "_csv.c"
+        var $14=$self_addr; //@line 1119 "_csv.c"
+        var $15=_join_check_rec_size($14, $13); //@line 1119 "_csv.c"
+        var $16=($15)==0; //@line 1119 "_csv.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1119 "_csv.c"
+      case 3: // $bb2
+        $0=0; //@line 1120 "_csv.c"
+        __label__ = 7; break; //@line 1120 "_csv.c"
+      case 4: // $bb3
+        var $17=$self_addr; //@line 1122 "_csv.c"
+        var $18=$17+12; //@line 1122 "_csv.c"
+        var $19=HEAP[$18]; //@line 1122 "_csv.c"
+        var $20=$19+20; //@line 1122 "_csv.c"
+        var $21=HEAP[$20]; //@line 1122 "_csv.c"
+        var $22=_PyString_AsString($21); //@line 1122 "_csv.c"
+        $terminator=$22; //@line 1122 "_csv.c"
+        var $23=$terminator; //@line 1123 "_csv.c"
+        var $24=($23)==0; //@line 1123 "_csv.c"
+        if ($24) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1123 "_csv.c"
+      case 5: // $bb4
+        $0=0; //@line 1124 "_csv.c"
+        __label__ = 7; break; //@line 1124 "_csv.c"
+      case 6: // $bb5
+        var $25=$terminator_len; //@line 1125 "_csv.c"
+        var $26=$self_addr; //@line 1125 "_csv.c"
+        var $27=$26+16; //@line 1125 "_csv.c"
+        var $28=HEAP[$27]; //@line 1125 "_csv.c"
+        var $29=$self_addr; //@line 1125 "_csv.c"
+        var $30=$29+24; //@line 1125 "_csv.c"
+        var $31=HEAP[$30]; //@line 1125 "_csv.c"
+        var $32=$28+$31; //@line 1125 "_csv.c"
+        var $33=$terminator; //@line 1125 "_csv.c"
+        _llvm_memmove_p0i8_p0i8_i32($32, $33, $25, 1, 0); //@line 1125 "_csv.c"
+        var $34=$self_addr; //@line 1126 "_csv.c"
+        var $35=$34+24; //@line 1126 "_csv.c"
+        var $36=HEAP[$35]; //@line 1126 "_csv.c"
+        var $37=$terminator_len; //@line 1126 "_csv.c"
+        var $38=($37) + ($36); //@line 1126 "_csv.c"
+        var $39=$self_addr; //@line 1126 "_csv.c"
+        var $40=$39+24; //@line 1126 "_csv.c"
+        HEAP[$40]=$38; //@line 1126 "_csv.c"
+        $0=1; //@line 1128 "_csv.c"
+        __label__ = 7; break; //@line 1128 "_csv.c"
+      case 7: // $bb6
+        var $41=$0; //@line 1116 "_csv.c"
+        $retval=$41; //@line 1116 "_csv.c"
+        var $retval7=$retval; //@line 1116 "_csv.c"
+        ;
+        return $retval7; //@line 1116 "_csv.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _csv_writerow($self, $seq) {
     var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $retval_i;
-        var $0;
-        var $terminator_len_i;
-        var $terminator_i;
-        var $self_addr_i;
         var $self_addr;
         var $seq_addr;
         var $retval;
-        var $1;
+        var $0;
         var $dialect;
         var $len;
         var $i;
@@ -3773,59 +3917,53 @@ var __str60;
         var $str;
         $self_addr=$self;
         $seq_addr=$seq;
-        var $2=$self_addr; //@line 1140 "_csv.c"
-        var $3=$2+12; //@line 1140 "_csv.c"
-        var $4=HEAP[$3]; //@line 1140 "_csv.c"
-        $dialect=$4; //@line 1140 "_csv.c"
-        var $5=$seq_addr; //@line 1143 "_csv.c"
-        var $6=_PySequence_Check($5); //@line 1143 "_csv.c"
-        var $7=($6)==0; //@line 1143 "_csv.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1143 "_csv.c"
+        var $1=$self_addr; //@line 1140 "_csv.c"
+        var $2=$1+12; //@line 1140 "_csv.c"
+        var $3=HEAP[$2]; //@line 1140 "_csv.c"
+        $dialect=$3; //@line 1140 "_csv.c"
+        var $4=$seq_addr; //@line 1143 "_csv.c"
+        var $5=_PySequence_Check($4); //@line 1143 "_csv.c"
+        var $6=($5)==0; //@line 1143 "_csv.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1143 "_csv.c"
       case 1: // $bb
-        var $8=HEAP[_error_obj]; //@line 1144 "_csv.c"
-        var $9=_PyErr_Format($8, __str37); //@line 1144 "_csv.c"
-        $1=$9; //@line 1144 "_csv.c"
-        __label__ = 35; break; //@line 1144 "_csv.c"
+        var $7=HEAP[_error_obj]; //@line 1144 "_csv.c"
+        var $8=_PyErr_Format($7, __str37, allocate(1, "i32", ALLOC_STACK)); //@line 1144 "_csv.c"
+        $0=$8; //@line 1144 "_csv.c"
+        __label__ = 30; break; //@line 1144 "_csv.c"
       case 2: // $bb1
-        var $10=$seq_addr; //@line 1146 "_csv.c"
-        var $11=_PySequence_Size($10); //@line 1146 "_csv.c"
-        $len=$11; //@line 1146 "_csv.c"
-        var $12=$len; //@line 1147 "_csv.c"
-        var $13=($12) < 0; //@line 1147 "_csv.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1147 "_csv.c"
+        var $9=$seq_addr; //@line 1146 "_csv.c"
+        var $10=_PySequence_Size($9); //@line 1146 "_csv.c"
+        $len=$10; //@line 1146 "_csv.c"
+        var $11=$len; //@line 1147 "_csv.c"
+        var $12=($11) < 0; //@line 1147 "_csv.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1147 "_csv.c"
       case 3: // $bb2
-        $1=0; //@line 1148 "_csv.c"
-        __label__ = 35; break; //@line 1148 "_csv.c"
+        $0=0; //@line 1148 "_csv.c"
+        __label__ = 30; break; //@line 1148 "_csv.c"
       case 4: // $bb3
-        var $14=$self_addr; //@line 1152 "_csv.c"
-        $self_addr_i=$14;
-        var $15=$self_addr_i; //@line 959 "_csv.c"
-        var $16=$15+24; //@line 959 "_csv.c"
-        HEAP[$16]=0; //@line 959 "_csv.c"
-        var $17=$self_addr_i; //@line 960 "_csv.c"
-        var $18=$17+28; //@line 960 "_csv.c"
-        HEAP[$18]=0; //@line 960 "_csv.c"
+        var $13=$self_addr; //@line 1152 "_csv.c"
+        _join_reset($13); //@line 1152 "_csv.c"
         $i=0; //@line 1153 "_csv.c"
         __label__ = 26; break; //@line 1153 "_csv.c"
       case 5: // $bb4
-        var $19=$seq_addr; //@line 1158 "_csv.c"
-        var $20=$i; //@line 1158 "_csv.c"
-        var $21=_PySequence_GetItem($19, $20); //@line 1158 "_csv.c"
-        $field=$21; //@line 1158 "_csv.c"
-        var $22=$field; //@line 1159 "_csv.c"
-        var $23=($22)==0; //@line 1159 "_csv.c"
-        if ($23) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1159 "_csv.c"
+        var $14=$seq_addr; //@line 1158 "_csv.c"
+        var $15=$i; //@line 1158 "_csv.c"
+        var $16=_PySequence_GetItem($14, $15); //@line 1158 "_csv.c"
+        $field=$16; //@line 1158 "_csv.c"
+        var $17=$field; //@line 1159 "_csv.c"
+        var $18=($17)==0; //@line 1159 "_csv.c"
+        if ($18) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1159 "_csv.c"
       case 6: // $bb5
-        $1=0; //@line 1160 "_csv.c"
-        __label__ = 35; break; //@line 1160 "_csv.c"
+        $0=0; //@line 1160 "_csv.c"
+        __label__ = 30; break; //@line 1160 "_csv.c"
       case 7: // $bb6
-        var $24=$dialect; //@line 1162 "_csv.c"
-        var $25=$24+24; //@line 1162 "_csv.c"
-        var $26=HEAP[$25]; //@line 1162 "_csv.c"
-        if ($26 == 1) {
+        var $19=$dialect; //@line 1162 "_csv.c"
+        var $20=$19+24; //@line 1162 "_csv.c"
+        var $21=HEAP[$20]; //@line 1162 "_csv.c"
+        if ($21 == 1) {
           __label__ = 9; break;
         }
-        else if ($26 == 2) {
+        else if ($21 == 2) {
           __label__ = 8; break;
         }
         else {
@@ -3833,11 +3971,11 @@ var __str60;
         }
         
       case 8: // $bb7
-        var $27=$field; //@line 1164 "_csv.c"
-        var $28=_PyNumber_Check($27); //@line 1164 "_csv.c"
-        var $29=($28)==0; //@line 1164 "_csv.c"
-        var $30=($29); //@line 1164 "_csv.c"
-        HEAP[$quoted]=$30; //@line 1164 "_csv.c"
+        var $22=$field; //@line 1164 "_csv.c"
+        var $23=_PyNumber_Check($22); //@line 1164 "_csv.c"
+        var $24=($23)==0; //@line 1164 "_csv.c"
+        var $25=($24); //@line 1164 "_csv.c"
+        HEAP[$quoted]=$25; //@line 1164 "_csv.c"
         __label__ = 11; break; //@line 1164 "_csv.c"
       case 9: // $bb8
         HEAP[$quoted]=1; //@line 1167 "_csv.c"
@@ -3846,242 +3984,183 @@ var __str60;
         HEAP[$quoted]=0; //@line 1170 "_csv.c"
         __label__ = 11; break; //@line 1170 "_csv.c"
       case 11: // $bb10
-        var $31=$field; //@line 1174 "_csv.c"
-        var $32=$31+4; //@line 1174 "_csv.c"
-        var $33=HEAP[$32]; //@line 1174 "_csv.c"
-        var $34=$33+84; //@line 1174 "_csv.c"
-        var $35=HEAP[$34]; //@line 1174 "_csv.c"
-        var $36=($35) & 134217728; //@line 1174 "_csv.c"
-        var $37=($36)!=0; //@line 1174 "_csv.c"
-        if ($37) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 1174 "_csv.c"
+        var $26=$field; //@line 1174 "_csv.c"
+        var $27=$26+4; //@line 1174 "_csv.c"
+        var $28=HEAP[$27]; //@line 1174 "_csv.c"
+        var $29=$28+84; //@line 1174 "_csv.c"
+        var $30=HEAP[$29]; //@line 1174 "_csv.c"
+        var $31=($30) & 134217728; //@line 1174 "_csv.c"
+        var $32=($31)!=0; //@line 1174 "_csv.c"
+        if ($32) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 1174 "_csv.c"
       case 12: // $bb11
-        var $38=$len; //@line 1175 "_csv.c"
-        var $39=($38)==1; //@line 1175 "_csv.c"
-        var $40=($39); //@line 1175 "_csv.c"
-        var $41=$field; //@line 1175 "_csv.c"
-        var $42=$41; //@line 1175 "_csv.c"
-        var $43=$42+20; //@line 1175 "_csv.c"
-        var $44=$43; //@line 1175 "_csv.c"
-        var $45=$self_addr; //@line 1175 "_csv.c"
-        var $46=_join_append($45, $44, $quoted, $40); //@line 1175 "_csv.c"
-        $append_ok=$46; //@line 1175 "_csv.c"
-        var $47=$field; //@line 1178 "_csv.c"
-        var $48=$47; //@line 1178 "_csv.c"
-        var $49=HEAP[$48]; //@line 1178 "_csv.c"
-        var $50=($49) - 1; //@line 1178 "_csv.c"
-        var $51=$field; //@line 1178 "_csv.c"
-        var $52=$51; //@line 1178 "_csv.c"
-        HEAP[$52]=$50; //@line 1178 "_csv.c"
-        var $53=$field; //@line 1178 "_csv.c"
-        var $54=$53; //@line 1178 "_csv.c"
-        var $55=HEAP[$54]; //@line 1178 "_csv.c"
-        var $56=($55)==0; //@line 1178 "_csv.c"
-        if ($56) { __label__ = 13; break; } else { __label__ = 23; break; } //@line 1178 "_csv.c"
+        var $33=$len; //@line 1175 "_csv.c"
+        var $34=($33)==1; //@line 1175 "_csv.c"
+        var $35=($34); //@line 1175 "_csv.c"
+        var $36=$field; //@line 1175 "_csv.c"
+        var $37=$36; //@line 1175 "_csv.c"
+        var $38=$37+20; //@line 1175 "_csv.c"
+        var $39=$38; //@line 1175 "_csv.c"
+        var $40=$self_addr; //@line 1175 "_csv.c"
+        var $41=_join_append($40, $39, $quoted, $35); //@line 1175 "_csv.c"
+        $append_ok=$41; //@line 1175 "_csv.c"
+        var $42=$field; //@line 1178 "_csv.c"
+        var $43=$42; //@line 1178 "_csv.c"
+        var $44=HEAP[$43]; //@line 1178 "_csv.c"
+        var $45=($44) - 1; //@line 1178 "_csv.c"
+        var $46=$field; //@line 1178 "_csv.c"
+        var $47=$46; //@line 1178 "_csv.c"
+        HEAP[$47]=$45; //@line 1178 "_csv.c"
+        var $48=$field; //@line 1178 "_csv.c"
+        var $49=$48; //@line 1178 "_csv.c"
+        var $50=HEAP[$49]; //@line 1178 "_csv.c"
+        var $51=($50)==0; //@line 1178 "_csv.c"
+        if ($51) { __label__ = 13; break; } else { __label__ = 23; break; } //@line 1178 "_csv.c"
       case 13: // $bb12
+        var $52=$field; //@line 1178 "_csv.c"
+        var $53=$52+4; //@line 1178 "_csv.c"
+        var $54=HEAP[$53]; //@line 1178 "_csv.c"
+        var $55=$54+24; //@line 1178 "_csv.c"
+        var $56=HEAP[$55]; //@line 1178 "_csv.c"
         var $57=$field; //@line 1178 "_csv.c"
-        var $58=$57+4; //@line 1178 "_csv.c"
-        var $59=HEAP[$58]; //@line 1178 "_csv.c"
-        var $60=$59+24; //@line 1178 "_csv.c"
-        var $61=HEAP[$60]; //@line 1178 "_csv.c"
-        var $62=$field; //@line 1178 "_csv.c"
-        FUNCTION_TABLE[$61]($62); //@line 1178 "_csv.c"
+        FUNCTION_TABLE[$56]($57); //@line 1178 "_csv.c"
         __label__ = 23; break; //@line 1178 "_csv.c"
       case 14: // $bb14
-        var $63=$field; //@line 1180 "_csv.c"
-        var $64=($63)==(__Py_NoneStruct); //@line 1180 "_csv.c"
-        if ($64) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 1180 "_csv.c"
+        var $58=$field; //@line 1180 "_csv.c"
+        var $59=($58)==(__Py_NoneStruct); //@line 1180 "_csv.c"
+        if ($59) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 1180 "_csv.c"
       case 15: // $bb15
-        var $65=$len; //@line 1181 "_csv.c"
-        var $66=($65)==1; //@line 1181 "_csv.c"
-        var $67=($66); //@line 1181 "_csv.c"
-        var $68=$self_addr; //@line 1181 "_csv.c"
-        var $69=_join_append($68, __str33, $quoted, $67); //@line 1181 "_csv.c"
-        $append_ok=$69; //@line 1181 "_csv.c"
-        var $70=$field; //@line 1182 "_csv.c"
-        var $71=$70; //@line 1182 "_csv.c"
-        var $72=HEAP[$71]; //@line 1182 "_csv.c"
-        var $73=($72) - 1; //@line 1182 "_csv.c"
-        var $74=$field; //@line 1182 "_csv.c"
-        var $75=$74; //@line 1182 "_csv.c"
-        HEAP[$75]=$73; //@line 1182 "_csv.c"
-        var $76=$field; //@line 1182 "_csv.c"
-        var $77=$76; //@line 1182 "_csv.c"
-        var $78=HEAP[$77]; //@line 1182 "_csv.c"
-        var $79=($78)==0; //@line 1182 "_csv.c"
-        if ($79) { __label__ = 16; break; } else { __label__ = 23; break; } //@line 1182 "_csv.c"
+        var $60=$len; //@line 1181 "_csv.c"
+        var $61=($60)==1; //@line 1181 "_csv.c"
+        var $62=($61); //@line 1181 "_csv.c"
+        var $63=$self_addr; //@line 1181 "_csv.c"
+        var $64=_join_append($63, __str33, $quoted, $62); //@line 1181 "_csv.c"
+        $append_ok=$64; //@line 1181 "_csv.c"
+        var $65=$field; //@line 1182 "_csv.c"
+        var $66=$65; //@line 1182 "_csv.c"
+        var $67=HEAP[$66]; //@line 1182 "_csv.c"
+        var $68=($67) - 1; //@line 1182 "_csv.c"
+        var $69=$field; //@line 1182 "_csv.c"
+        var $70=$69; //@line 1182 "_csv.c"
+        HEAP[$70]=$68; //@line 1182 "_csv.c"
+        var $71=$field; //@line 1182 "_csv.c"
+        var $72=$71; //@line 1182 "_csv.c"
+        var $73=HEAP[$72]; //@line 1182 "_csv.c"
+        var $74=($73)==0; //@line 1182 "_csv.c"
+        if ($74) { __label__ = 16; break; } else { __label__ = 23; break; } //@line 1182 "_csv.c"
       case 16: // $bb16
+        var $75=$field; //@line 1182 "_csv.c"
+        var $76=$75+4; //@line 1182 "_csv.c"
+        var $77=HEAP[$76]; //@line 1182 "_csv.c"
+        var $78=$77+24; //@line 1182 "_csv.c"
+        var $79=HEAP[$78]; //@line 1182 "_csv.c"
         var $80=$field; //@line 1182 "_csv.c"
-        var $81=$80+4; //@line 1182 "_csv.c"
-        var $82=HEAP[$81]; //@line 1182 "_csv.c"
-        var $83=$82+24; //@line 1182 "_csv.c"
-        var $84=HEAP[$83]; //@line 1182 "_csv.c"
-        var $85=$field; //@line 1182 "_csv.c"
-        FUNCTION_TABLE[$84]($85); //@line 1182 "_csv.c"
+        FUNCTION_TABLE[$79]($80); //@line 1182 "_csv.c"
         __label__ = 23; break; //@line 1182 "_csv.c"
       case 17: // $bb18
-        var $86=$field; //@line 1187 "_csv.c"
-        var $87=_PyObject_Str($86); //@line 1187 "_csv.c"
-        $str=$87; //@line 1187 "_csv.c"
-        var $88=$field; //@line 1188 "_csv.c"
-        var $89=$88; //@line 1188 "_csv.c"
-        var $90=HEAP[$89]; //@line 1188 "_csv.c"
-        var $91=($90) - 1; //@line 1188 "_csv.c"
-        var $92=$field; //@line 1188 "_csv.c"
-        var $93=$92; //@line 1188 "_csv.c"
-        HEAP[$93]=$91; //@line 1188 "_csv.c"
-        var $94=$field; //@line 1188 "_csv.c"
-        var $95=$94; //@line 1188 "_csv.c"
-        var $96=HEAP[$95]; //@line 1188 "_csv.c"
-        var $97=($96)==0; //@line 1188 "_csv.c"
-        if ($97) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 1188 "_csv.c"
+        var $81=$field; //@line 1187 "_csv.c"
+        var $82=_PyObject_Str($81); //@line 1187 "_csv.c"
+        $str=$82; //@line 1187 "_csv.c"
+        var $83=$field; //@line 1188 "_csv.c"
+        var $84=$83; //@line 1188 "_csv.c"
+        var $85=HEAP[$84]; //@line 1188 "_csv.c"
+        var $86=($85) - 1; //@line 1188 "_csv.c"
+        var $87=$field; //@line 1188 "_csv.c"
+        var $88=$87; //@line 1188 "_csv.c"
+        HEAP[$88]=$86; //@line 1188 "_csv.c"
+        var $89=$field; //@line 1188 "_csv.c"
+        var $90=$89; //@line 1188 "_csv.c"
+        var $91=HEAP[$90]; //@line 1188 "_csv.c"
+        var $92=($91)==0; //@line 1188 "_csv.c"
+        if ($92) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 1188 "_csv.c"
       case 18: // $bb19
+        var $93=$field; //@line 1188 "_csv.c"
+        var $94=$93+4; //@line 1188 "_csv.c"
+        var $95=HEAP[$94]; //@line 1188 "_csv.c"
+        var $96=$95+24; //@line 1188 "_csv.c"
+        var $97=HEAP[$96]; //@line 1188 "_csv.c"
         var $98=$field; //@line 1188 "_csv.c"
-        var $99=$98+4; //@line 1188 "_csv.c"
-        var $100=HEAP[$99]; //@line 1188 "_csv.c"
-        var $101=$100+24; //@line 1188 "_csv.c"
-        var $102=HEAP[$101]; //@line 1188 "_csv.c"
-        var $103=$field; //@line 1188 "_csv.c"
-        FUNCTION_TABLE[$102]($103); //@line 1188 "_csv.c"
+        FUNCTION_TABLE[$97]($98); //@line 1188 "_csv.c"
         __label__ = 19; break; //@line 1188 "_csv.c"
       case 19: // $bb20
-        var $104=$str; //@line 1189 "_csv.c"
-        var $105=($104)==0; //@line 1189 "_csv.c"
-        if ($105) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1189 "_csv.c"
+        var $99=$str; //@line 1189 "_csv.c"
+        var $100=($99)==0; //@line 1189 "_csv.c"
+        if ($100) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1189 "_csv.c"
       case 20: // $bb21
-        $1=0; //@line 1190 "_csv.c"
-        __label__ = 35; break; //@line 1190 "_csv.c"
+        $0=0; //@line 1190 "_csv.c"
+        __label__ = 30; break; //@line 1190 "_csv.c"
       case 21: // $bb22
-        var $106=$len; //@line 1192 "_csv.c"
-        var $107=($106)==1; //@line 1192 "_csv.c"
-        var $108=($107); //@line 1192 "_csv.c"
-        var $109=$str; //@line 1192 "_csv.c"
-        var $110=$109; //@line 1192 "_csv.c"
-        var $111=$110+20; //@line 1192 "_csv.c"
-        var $112=$111; //@line 1192 "_csv.c"
-        var $113=$self_addr; //@line 1192 "_csv.c"
-        var $114=_join_append($113, $112, $quoted, $108); //@line 1192 "_csv.c"
-        $append_ok=$114; //@line 1192 "_csv.c"
-        var $115=$str; //@line 1194 "_csv.c"
-        var $116=$115; //@line 1194 "_csv.c"
-        var $117=HEAP[$116]; //@line 1194 "_csv.c"
-        var $118=($117) - 1; //@line 1194 "_csv.c"
-        var $119=$str; //@line 1194 "_csv.c"
-        var $120=$119; //@line 1194 "_csv.c"
-        HEAP[$120]=$118; //@line 1194 "_csv.c"
-        var $121=$str; //@line 1194 "_csv.c"
-        var $122=$121; //@line 1194 "_csv.c"
-        var $123=HEAP[$122]; //@line 1194 "_csv.c"
-        var $124=($123)==0; //@line 1194 "_csv.c"
-        if ($124) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1194 "_csv.c"
+        var $101=$len; //@line 1192 "_csv.c"
+        var $102=($101)==1; //@line 1192 "_csv.c"
+        var $103=($102); //@line 1192 "_csv.c"
+        var $104=$str; //@line 1192 "_csv.c"
+        var $105=$104; //@line 1192 "_csv.c"
+        var $106=$105+20; //@line 1192 "_csv.c"
+        var $107=$106; //@line 1192 "_csv.c"
+        var $108=$self_addr; //@line 1192 "_csv.c"
+        var $109=_join_append($108, $107, $quoted, $103); //@line 1192 "_csv.c"
+        $append_ok=$109; //@line 1192 "_csv.c"
+        var $110=$str; //@line 1194 "_csv.c"
+        var $111=$110; //@line 1194 "_csv.c"
+        var $112=HEAP[$111]; //@line 1194 "_csv.c"
+        var $113=($112) - 1; //@line 1194 "_csv.c"
+        var $114=$str; //@line 1194 "_csv.c"
+        var $115=$114; //@line 1194 "_csv.c"
+        HEAP[$115]=$113; //@line 1194 "_csv.c"
+        var $116=$str; //@line 1194 "_csv.c"
+        var $117=$116; //@line 1194 "_csv.c"
+        var $118=HEAP[$117]; //@line 1194 "_csv.c"
+        var $119=($118)==0; //@line 1194 "_csv.c"
+        if ($119) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1194 "_csv.c"
       case 22: // $bb23
+        var $120=$str; //@line 1194 "_csv.c"
+        var $121=$120+4; //@line 1194 "_csv.c"
+        var $122=HEAP[$121]; //@line 1194 "_csv.c"
+        var $123=$122+24; //@line 1194 "_csv.c"
+        var $124=HEAP[$123]; //@line 1194 "_csv.c"
         var $125=$str; //@line 1194 "_csv.c"
-        var $126=$125+4; //@line 1194 "_csv.c"
-        var $127=HEAP[$126]; //@line 1194 "_csv.c"
-        var $128=$127+24; //@line 1194 "_csv.c"
-        var $129=HEAP[$128]; //@line 1194 "_csv.c"
-        var $130=$str; //@line 1194 "_csv.c"
-        FUNCTION_TABLE[$129]($130); //@line 1194 "_csv.c"
+        FUNCTION_TABLE[$124]($125); //@line 1194 "_csv.c"
         __label__ = 23; break; //@line 1194 "_csv.c"
       case 23: // $bb24
-        var $131=$append_ok; //@line 1196 "_csv.c"
-        var $132=($131)==0; //@line 1196 "_csv.c"
-        if ($132) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 1196 "_csv.c"
+        var $126=$append_ok; //@line 1196 "_csv.c"
+        var $127=($126)==0; //@line 1196 "_csv.c"
+        if ($127) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 1196 "_csv.c"
       case 24: // $bb25
-        $1=0; //@line 1197 "_csv.c"
-        __label__ = 35; break; //@line 1197 "_csv.c"
+        $0=0; //@line 1197 "_csv.c"
+        __label__ = 30; break; //@line 1197 "_csv.c"
       case 25: // $bb26
-        var $133=$i; //@line 1153 "_csv.c"
-        var $134=($133) + 1; //@line 1153 "_csv.c"
-        $i=$134; //@line 1153 "_csv.c"
+        var $128=$i; //@line 1153 "_csv.c"
+        var $129=($128) + 1; //@line 1153 "_csv.c"
+        $i=$129; //@line 1153 "_csv.c"
         __label__ = 26; break; //@line 1153 "_csv.c"
       case 26: // $bb27
-        var $135=$i; //@line 1153 "_csv.c"
-        var $136=$len; //@line 1153 "_csv.c"
-        var $137=($135) < ($136); //@line 1153 "_csv.c"
-        if ($137) { __label__ = 5; break; } else { __label__ = 27; break; } //@line 1153 "_csv.c"
+        var $130=$i; //@line 1153 "_csv.c"
+        var $131=$len; //@line 1153 "_csv.c"
+        var $132=($130) < ($131); //@line 1153 "_csv.c"
+        if ($132) { __label__ = 5; break; } else { __label__ = 27; break; } //@line 1153 "_csv.c"
       case 27: // $bb28
-        var $138=$self_addr; //@line 1202 "_csv.c"
-        $self_addr_i1=$138;
-        var $139=$self_addr_i1; //@line 1114 "_csv.c"
-        var $140=$139+12; //@line 1114 "_csv.c"
-        var $141=HEAP[$140]; //@line 1114 "_csv.c"
-        var $142=$141+20; //@line 1114 "_csv.c"
-        var $143=HEAP[$142]; //@line 1114 "_csv.c"
-        var $144=_PyString_Size($143); //@line 1114 "_csv.c"
-        $terminator_len_i=$144; //@line 1114 "_csv.c"
-        var $145=$terminator_len_i; //@line 1115 "_csv.c"
-        var $146=($145)==-1; //@line 1115 "_csv.c"
-        if ($146) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1115 "_csv.c"
-      case 28: // $bb_i
-        $0=0; //@line 1116 "_csv.c"
-        __label__ = 33; break; //@line 1116 "_csv.c"
-      case 29: // $bb1_i
-        var $147=$self_addr_i1; //@line 1119 "_csv.c"
-        var $148=$147+24; //@line 1119 "_csv.c"
-        var $149=HEAP[$148]; //@line 1119 "_csv.c"
-        var $150=$terminator_len_i; //@line 1119 "_csv.c"
-        var $151=($150) + ($149); //@line 1119 "_csv.c"
-        var $152=$self_addr_i1; //@line 1119 "_csv.c"
-        var $153=_join_check_rec_size($152, $151); //@line 1119 "_csv.c"
-        var $154=($153)==0; //@line 1119 "_csv.c"
-        if ($154) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 1119 "_csv.c"
-      case 30: // $bb2_i
-        $0=0; //@line 1120 "_csv.c"
-        __label__ = 33; break; //@line 1120 "_csv.c"
-      case 31: // $bb3_i
-        var $155=$self_addr_i1; //@line 1122 "_csv.c"
-        var $156=$155+12; //@line 1122 "_csv.c"
-        var $157=HEAP[$156]; //@line 1122 "_csv.c"
-        var $158=$157+20; //@line 1122 "_csv.c"
-        var $159=HEAP[$158]; //@line 1122 "_csv.c"
-        var $160=_PyString_AsString($159); //@line 1122 "_csv.c"
-        $terminator_i=$160; //@line 1122 "_csv.c"
-        var $161=$terminator_i; //@line 1123 "_csv.c"
-        var $162=($161)==0; //@line 1123 "_csv.c"
-        if ($162) { __label__ = 32; break; } else { __label__ = 34; break; } //@line 1123 "_csv.c"
-      case 32: // $bb4_i
-        $0=0; //@line 1124 "_csv.c"
-        __label__ = 33; break; //@line 1124 "_csv.c"
-      case 33: // $bb29
-        $retval_i=0; //@line 1116 "_csv.c"
-        $1=0; //@line 1203 "_csv.c"
-        __label__ = 35; break; //@line 1203 "_csv.c"
-      case 34: // $bb30
-        var $163=$terminator_len_i; //@line 1125 "_csv.c"
-        var $164=$self_addr_i1; //@line 1125 "_csv.c"
-        var $165=$164+16; //@line 1125 "_csv.c"
-        var $166=HEAP[$165]; //@line 1125 "_csv.c"
-        var $167=$self_addr_i1; //@line 1125 "_csv.c"
-        var $168=$167+24; //@line 1125 "_csv.c"
-        var $169=HEAP[$168]; //@line 1125 "_csv.c"
-        var $170=$166+$169; //@line 1125 "_csv.c"
-        var $171=$terminator_i; //@line 1125 "_csv.c"
-        _llvm_memmove_p0i8_p0i8_i32($170, $171, $163, 1, 0); //@line 1125 "_csv.c"
-        var $172=$self_addr_i1; //@line 1126 "_csv.c"
-        var $173=$172+24; //@line 1126 "_csv.c"
-        var $174=HEAP[$173]; //@line 1126 "_csv.c"
-        var $175=$terminator_len_i; //@line 1126 "_csv.c"
-        var $176=($175) + ($174); //@line 1126 "_csv.c"
-        var $177=$self_addr_i1; //@line 1126 "_csv.c"
-        var $178=$177+24; //@line 1126 "_csv.c"
-        HEAP[$178]=$176; //@line 1126 "_csv.c"
-        $0=1; //@line 1128 "_csv.c"
-        $retval_i=1; //@line 1116 "_csv.c"
-        var $179=$self_addr; //@line 1205 "_csv.c"
-        var $180=$179+24; //@line 1205 "_csv.c"
-        var $181=HEAP[$180]; //@line 1205 "_csv.c"
-        var $182=$self_addr; //@line 1205 "_csv.c"
-        var $183=$182+16; //@line 1205 "_csv.c"
-        var $184=HEAP[$183]; //@line 1205 "_csv.c"
-        var $185=$self_addr; //@line 1205 "_csv.c"
-        var $186=$185+8; //@line 1205 "_csv.c"
-        var $187=HEAP[$186]; //@line 1205 "_csv.c"
-        var $188=_PyObject_CallFunction($187, __str38, $184, $181); //@line 1205 "_csv.c"
-        $1=$188; //@line 1205 "_csv.c"
-        __label__ = 35; break; //@line 1205 "_csv.c"
-      case 35: // $bb31
-        var $189=$1; //@line 1144 "_csv.c"
-        $retval=$189; //@line 1144 "_csv.c"
+        var $133=$self_addr; //@line 1202 "_csv.c"
+        var $134=_join_append_lineterminator($133); //@line 1202 "_csv.c"
+        var $135=($134)==0; //@line 1202 "_csv.c"
+        if ($135) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1202 "_csv.c"
+      case 28: // $bb29
+        $0=0; //@line 1203 "_csv.c"
+        __label__ = 30; break; //@line 1203 "_csv.c"
+      case 29: // $bb30
+        var $136=$self_addr; //@line 1205 "_csv.c"
+        var $137=$136+24; //@line 1205 "_csv.c"
+        var $138=HEAP[$137]; //@line 1205 "_csv.c"
+        var $139=$self_addr; //@line 1205 "_csv.c"
+        var $140=$139+16; //@line 1205 "_csv.c"
+        var $141=HEAP[$140]; //@line 1205 "_csv.c"
+        var $142=$self_addr; //@line 1205 "_csv.c"
+        var $143=$142+8; //@line 1205 "_csv.c"
+        var $144=HEAP[$143]; //@line 1205 "_csv.c"
+        var $145=_PyObject_CallFunction($144, __str38, allocate([$141,0,0,0,$138,0,0,0], ["i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1205 "_csv.c"
+        $0=$145; //@line 1205 "_csv.c"
+        __label__ = 30; break; //@line 1205 "_csv.c"
+      case 30: // $bb31
+        var $146=$0; //@line 1144 "_csv.c"
+        $retval=$146; //@line 1144 "_csv.c"
         var $retval32=$retval; //@line 1144 "_csv.c"
         STACKTOP = __stackBase__;
         return $retval32; //@line 1144 "_csv.c"
@@ -4558,7 +4637,7 @@ var __str60;
         var $16=$15+28; //@line 1340 "_csv.c"
         HEAP[$16]=0; //@line 1340 "_csv.c"
         var $17=$args_addr; //@line 1342 "_csv.c"
-        var $18=_PyArg_UnpackTuple($17, __str33, 1, 2, $output_file, $dialect); //@line 1342 "_csv.c"
+        var $18=_PyArg_UnpackTuple($17, __str33, 1, 2, allocate([$output_file,0,0,0,$dialect,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1342 "_csv.c"
         var $19=($18)==0; //@line 1342 "_csv.c"
         if ($19) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 1342 "_csv.c"
       case 3: // $bb2
@@ -4730,7 +4809,7 @@ var __str60;
         $kwargs_addr=$kwargs;
         HEAP[$dialect_obj]=0; //@line 1374 "_csv.c"
         var $1=$args_addr; //@line 1377 "_csv.c"
-        var $2=_PyArg_UnpackTuple($1, __str33, 1, 2, $name_obj, $dialect_obj); //@line 1377 "_csv.c"
+        var $2=_PyArg_UnpackTuple($1, __str33, 1, 2, allocate([$name_obj,0,0,0,$dialect_obj,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1377 "_csv.c"
         var $3=($2)==0; //@line 1377 "_csv.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1377 "_csv.c"
       case 1: // $bb
@@ -4843,7 +4922,7 @@ var __str60;
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1399 "_csv.c"
       case 1: // $bb
         var $5=HEAP[_error_obj]; //@line 1400 "_csv.c"
-        var $6=_PyErr_Format($5, __str4); //@line 1400 "_csv.c"
+        var $6=_PyErr_Format($5, __str4, allocate(1, "i32", ALLOC_STACK)); //@line 1400 "_csv.c"
         $0=$6; //@line 1400 "_csv.c"
         __label__ = 3; break; //@line 1400 "_csv.c"
       case 2: // $bb1
@@ -4902,7 +4981,7 @@ var __str60;
         var $1=HEAP[_field_limit]; //@line 1415 "_csv.c"
         $old_limit=$1; //@line 1415 "_csv.c"
         var $2=$args_addr; //@line 1417 "_csv.c"
-        var $3=_PyArg_UnpackTuple($2, __str46, 0, 1, $new_limit); //@line 1417 "_csv.c"
+        var $3=_PyArg_UnpackTuple($2, __str46, 0, 1, allocate([$new_limit,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1417 "_csv.c"
         var $4=($3)==0; //@line 1417 "_csv.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1417 "_csv.c"
       case 1: // $bb
@@ -4923,7 +5002,7 @@ var __str60;
         if ($13) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1420 "_csv.c"
       case 4: // $bb3
         var $14=HEAP[_PyExc_TypeError]; //@line 1421 "_csv.c"
-        var $15=_PyErr_Format($14, __str47); //@line 1421 "_csv.c"
+        var $15=_PyErr_Format($14, __str47, allocate(1, "i32", ALLOC_STACK)); //@line 1421 "_csv.c"
         $0=0; //@line 1423 "_csv.c"
         __label__ = 7; break; //@line 1423 "_csv.c"
       case 5: // $bb4
@@ -5046,7 +5125,7 @@ FUNCTION_TABLE = FUNCTION_TABLE.concat([0,0,_Dialect_get_escapechar,0,_Dialect_g
 
 function run(args) {
   
-_field_limit=allocate([131072], "i32", ALLOC_NORMAL);
+_field_limit=allocate([131072], ["i32",0,0,0,0], ALLOC_NORMAL);
 __str=allocate([81,85,79,84,69,95,77,73,78,73,77,65,76,0] /* QUOTE_MINIMAL\00 */, "i8", ALLOC_NORMAL);
 __str1=allocate([81,85,79,84,69,95,65,76,76,0] /* QUOTE_ALL\00 */, "i8", ALLOC_NORMAL);
 __str2=allocate([81,85,79,84,69,95,78,79,78,78,85,77,69,82,73,67,0] /* QUOTE_NONNUMERIC\00 */, "i8", ALLOC_NORMAL);

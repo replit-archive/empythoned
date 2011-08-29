@@ -85,16 +85,16 @@ var $union_MultibyteCodec_State___SIZE = 8; // %union.MultibyteCodec_State
 var _cofunc_8453;
 var __str;
 var __str1;
-var _PyExc_TypeError;
+
 var __str2;
-var _PyExc_LookupError;
+
 var __str3;
 var __str4;
 var __str5;
 var __str6;
 var ___methods;
 var __str7;
-var _PyExc_ValueError;
+
 var __str8;
 var __str9;
 var __str10;
@@ -186,19 +186,77 @@ var __str37;
 
 
 
+  function _getmultibytecodec() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $mod;
+        var $1=HEAP[_cofunc_8453]; //@line 247 "cjkcodecs.h"
+        var $2=($1)==0; //@line 247 "cjkcodecs.h"
+        if ($2) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 247 "cjkcodecs.h"
+      case 1: // $bb
+        var $3=_PyImport_ImportModuleNoBlock(__str); //@line 248 "cjkcodecs.h"
+        $mod=$3; //@line 248 "cjkcodecs.h"
+        var $4=$mod; //@line 249 "cjkcodecs.h"
+        var $5=($4)==0; //@line 249 "cjkcodecs.h"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 249 "cjkcodecs.h"
+      case 2: // $bb1
+        $0=0; //@line 250 "cjkcodecs.h"
+        __label__ = 6; break; //@line 250 "cjkcodecs.h"
+      case 3: // $bb2
+        var $6=$mod; //@line 251 "cjkcodecs.h"
+        var $7=_PyObject_GetAttrString($6, __str1); //@line 251 "cjkcodecs.h"
+        HEAP[_cofunc_8453]=$7; //@line 251 "cjkcodecs.h"
+        var $8=$mod; //@line 252 "cjkcodecs.h"
+        var $9=$8; //@line 252 "cjkcodecs.h"
+        var $10=HEAP[$9]; //@line 252 "cjkcodecs.h"
+        var $11=($10) - 1; //@line 252 "cjkcodecs.h"
+        var $12=$mod; //@line 252 "cjkcodecs.h"
+        var $13=$12; //@line 252 "cjkcodecs.h"
+        HEAP[$13]=$11; //@line 252 "cjkcodecs.h"
+        var $14=$mod; //@line 252 "cjkcodecs.h"
+        var $15=$14; //@line 252 "cjkcodecs.h"
+        var $16=HEAP[$15]; //@line 252 "cjkcodecs.h"
+        var $17=($16)==0; //@line 252 "cjkcodecs.h"
+        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 252 "cjkcodecs.h"
+      case 4: // $bb3
+        var $18=$mod; //@line 252 "cjkcodecs.h"
+        var $19=$18+4; //@line 252 "cjkcodecs.h"
+        var $20=HEAP[$19]; //@line 252 "cjkcodecs.h"
+        var $21=$20+24; //@line 252 "cjkcodecs.h"
+        var $22=HEAP[$21]; //@line 252 "cjkcodecs.h"
+        var $23=$mod; //@line 252 "cjkcodecs.h"
+        FUNCTION_TABLE[$22]($23); //@line 252 "cjkcodecs.h"
+        __label__ = 5; break; //@line 252 "cjkcodecs.h"
+      case 5: // $bb4
+        var $24=HEAP[_cofunc_8453]; //@line 254 "cjkcodecs.h"
+        $0=$24; //@line 254 "cjkcodecs.h"
+        __label__ = 6; break; //@line 254 "cjkcodecs.h"
+      case 6: // $bb5
+        var $25=$0; //@line 250 "cjkcodecs.h"
+        $retval=$25; //@line 250 "cjkcodecs.h"
+        var $retval6=$retval; //@line 250 "cjkcodecs.h"
+        ;
+        return $retval6; //@line 250 "cjkcodecs.h"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _getcodec($self, $encoding) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $mod_i;
         var $self_addr;
         var $encoding_addr;
         var $retval;
-        var $1;
+        var $0;
         var $codecobj;
         var $r;
         var $cofunc;
@@ -206,163 +264,178 @@ var __str37;
         var $enc;
         $self_addr=$self;
         $encoding_addr=$encoding;
-        var $2=$encoding_addr; //@line 264 "cjkcodecs.h"
-        var $3=$2+4; //@line 264 "cjkcodecs.h"
-        var $4=HEAP[$3]; //@line 264 "cjkcodecs.h"
-        var $5=$4+84; //@line 264 "cjkcodecs.h"
-        var $6=HEAP[$5]; //@line 264 "cjkcodecs.h"
-        var $7=($6) & 134217728; //@line 264 "cjkcodecs.h"
-        var $8=($7)==0; //@line 264 "cjkcodecs.h"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 264 "cjkcodecs.h"
+        var $1=$encoding_addr; //@line 264 "cjkcodecs.h"
+        var $2=$1+4; //@line 264 "cjkcodecs.h"
+        var $3=HEAP[$2]; //@line 264 "cjkcodecs.h"
+        var $4=$3+84; //@line 264 "cjkcodecs.h"
+        var $5=HEAP[$4]; //@line 264 "cjkcodecs.h"
+        var $6=($5) & 134217728; //@line 264 "cjkcodecs.h"
+        var $7=($6)==0; //@line 264 "cjkcodecs.h"
+        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 264 "cjkcodecs.h"
       case 1: // $bb
-        var $9=HEAP[_PyExc_TypeError]; //@line 265 "cjkcodecs.h"
-        _PyErr_SetString($9, __str2); //@line 265 "cjkcodecs.h"
-        $1=0; //@line 267 "cjkcodecs.h"
-        __label__ = 21; break; //@line 267 "cjkcodecs.h"
+        var $8=HEAP[_PyExc_TypeError]; //@line 265 "cjkcodecs.h"
+        _PyErr_SetString($8, __str2); //@line 265 "cjkcodecs.h"
+        $0=0; //@line 267 "cjkcodecs.h"
+        __label__ = 15; break; //@line 267 "cjkcodecs.h"
       case 2: // $bb1
-        var $10=HEAP[_cofunc_8453]; //@line 247 "cjkcodecs.h"
-        var $11=($10)==0; //@line 247 "cjkcodecs.h"
-        if ($11) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 247 "cjkcodecs.h"
-      case 3: // $getmultibytecodec_exit_thread1
-        $0=$10; //@line 254 "cjkcodecs.h"
-        $retval_i=$10; //@line 250 "cjkcodecs.h"
-        $cofunc=$10; //@line 270 "cjkcodecs.h"
-        __label__ = 10; break;
-      case 4: // $bb_i
-        var $12=_PyImport_ImportModuleNoBlock(__str); //@line 248 "cjkcodecs.h"
-        $mod_i=$12; //@line 248 "cjkcodecs.h"
-        var $13=$mod_i; //@line 249 "cjkcodecs.h"
-        var $14=($13)==0; //@line 249 "cjkcodecs.h"
-        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 249 "cjkcodecs.h"
-      case 5: // $getmultibytecodec_exit_thread
-        $0=0; //@line 250 "cjkcodecs.h"
-        $retval_i=0; //@line 250 "cjkcodecs.h"
-        $cofunc=0; //@line 270 "cjkcodecs.h"
-        __label__ = 9; break;
-      case 6: // $bb2_i
-        var $15=$mod_i; //@line 251 "cjkcodecs.h"
-        var $16=_PyObject_GetAttrString($15, __str1); //@line 251 "cjkcodecs.h"
-        HEAP[_cofunc_8453]=$16; //@line 251 "cjkcodecs.h"
-        var $17=$mod_i; //@line 252 "cjkcodecs.h"
-        var $18=$17; //@line 252 "cjkcodecs.h"
-        var $19=HEAP[$18]; //@line 252 "cjkcodecs.h"
-        var $20=($19) - 1; //@line 252 "cjkcodecs.h"
-        var $21=$mod_i; //@line 252 "cjkcodecs.h"
-        var $22=$21; //@line 252 "cjkcodecs.h"
-        HEAP[$22]=$20; //@line 252 "cjkcodecs.h"
-        var $23=$mod_i; //@line 252 "cjkcodecs.h"
-        var $24=$23; //@line 252 "cjkcodecs.h"
-        var $25=HEAP[$24]; //@line 252 "cjkcodecs.h"
-        var $26=($25)==0; //@line 252 "cjkcodecs.h"
-        if ($26) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 252 "cjkcodecs.h"
-      case 7: // $bb3_i
-        var $27=$mod_i; //@line 252 "cjkcodecs.h"
-        var $28=$27+4; //@line 252 "cjkcodecs.h"
-        var $29=HEAP[$28]; //@line 252 "cjkcodecs.h"
-        var $30=$29+24; //@line 252 "cjkcodecs.h"
-        var $31=HEAP[$30]; //@line 252 "cjkcodecs.h"
-        var $32=$mod_i; //@line 252 "cjkcodecs.h"
-        FUNCTION_TABLE[$31]($32); //@line 252 "cjkcodecs.h"
-        __label__ = 8; break; //@line 252 "cjkcodecs.h"
-      case 8: // $getmultibytecodec_exit
-        var $_pr=HEAP[_cofunc_8453];
-        $0=$_pr; //@line 254 "cjkcodecs.h"
-        $retval_i=$_pr; //@line 250 "cjkcodecs.h"
-        $cofunc=$_pr; //@line 270 "cjkcodecs.h"
-        var $33=($_pr)==0; //@line 271 "cjkcodecs.h"
-        if ($33) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 271 "cjkcodecs.h"
-      case 9: // $bb2
-        $1=0; //@line 272 "cjkcodecs.h"
-        __label__ = 21; break; //@line 272 "cjkcodecs.h"
-      case 10: // $bb3
-        var $34=$encoding_addr; //@line 274 "cjkcodecs.h"
-        var $35=$34; //@line 274 "cjkcodecs.h"
-        var $36=$35+20; //@line 274 "cjkcodecs.h"
-        var $37=$36; //@line 274 "cjkcodecs.h"
-        $enc=$37; //@line 274 "cjkcodecs.h"
+        var $9=_getmultibytecodec(); //@line 270 "cjkcodecs.h"
+        $cofunc=$9; //@line 270 "cjkcodecs.h"
+        var $10=$cofunc; //@line 271 "cjkcodecs.h"
+        var $11=($10)==0; //@line 271 "cjkcodecs.h"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 271 "cjkcodecs.h"
+      case 3: // $bb2
+        $0=0; //@line 272 "cjkcodecs.h"
+        __label__ = 15; break; //@line 272 "cjkcodecs.h"
+      case 4: // $bb3
+        var $12=$encoding_addr; //@line 274 "cjkcodecs.h"
+        var $13=$12; //@line 274 "cjkcodecs.h"
+        var $14=$13+20; //@line 274 "cjkcodecs.h"
+        var $15=$14; //@line 274 "cjkcodecs.h"
+        $enc=$15; //@line 274 "cjkcodecs.h"
         $codec=__codec_list; //@line 275 "cjkcodecs.h"
-        __label__ = 13; break; //@line 275 "cjkcodecs.h"
-      case 11: // $bb4
-        var $38=$codec; //@line 276 "cjkcodecs.h"
-        var $39=$38; //@line 276 "cjkcodecs.h"
-        var $40=HEAP[$39]; //@line 276 "cjkcodecs.h"
-        var $41=$enc; //@line 276 "cjkcodecs.h"
-        var $42=_strcmp($40, $41); //@line 276 "cjkcodecs.h"
-        var $43=($42)==0; //@line 276 "cjkcodecs.h"
-        if ($43) { __label__ = 14; break; } else { __label__ = 12; break; } //@line 276 "cjkcodecs.h"
-      case 12: // $bb5
-        var $44=$codec; //@line 275 "cjkcodecs.h"
-        var $45=$44+36; //@line 275 "cjkcodecs.h"
-        $codec=$45; //@line 275 "cjkcodecs.h"
-        __label__ = 13; break; //@line 275 "cjkcodecs.h"
-      case 13: // $bb6
-        var $46=$codec; //@line 275 "cjkcodecs.h"
-        var $47=$46; //@line 275 "cjkcodecs.h"
-        var $48=HEAP[$47]; //@line 275 "cjkcodecs.h"
-        var $49=$48; //@line 275 "cjkcodecs.h"
-        var $50=HEAP[$49]; //@line 275 "cjkcodecs.h"
-        var $51=($50)!=0; //@line 275 "cjkcodecs.h"
-        if ($51) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 275 "cjkcodecs.h"
-      case 14: // $bb7
-        var $52=$codec; //@line 279 "cjkcodecs.h"
-        var $53=$52; //@line 279 "cjkcodecs.h"
-        var $54=HEAP[$53]; //@line 279 "cjkcodecs.h"
-        var $55=$54; //@line 279 "cjkcodecs.h"
-        var $56=HEAP[$55]; //@line 279 "cjkcodecs.h"
-        var $57=($56)==0; //@line 279 "cjkcodecs.h"
-        if ($57) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 279 "cjkcodecs.h"
-      case 15: // $bb8
-        var $58=HEAP[_PyExc_LookupError]; //@line 280 "cjkcodecs.h"
-        _PyErr_SetString($58, __str3); //@line 280 "cjkcodecs.h"
-        $1=0; //@line 282 "cjkcodecs.h"
-        __label__ = 21; break; //@line 282 "cjkcodecs.h"
-      case 16: // $bb9
-        var $59=$codec; //@line 285 "cjkcodecs.h"
-        var $60=$59; //@line 285 "cjkcodecs.h"
-        var $61=_PyCapsule_New($60, __str4, 0); //@line 285 "cjkcodecs.h"
-        $codecobj=$61; //@line 285 "cjkcodecs.h"
-        var $62=$codecobj; //@line 286 "cjkcodecs.h"
-        var $63=($62)==0; //@line 286 "cjkcodecs.h"
-        if ($63) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 286 "cjkcodecs.h"
-      case 17: // $bb10
-        $1=0; //@line 287 "cjkcodecs.h"
-        __label__ = 21; break; //@line 287 "cjkcodecs.h"
-      case 18: // $bb11
-        var $64=$cofunc; //@line 289 "cjkcodecs.h"
-        var $65=$codecobj; //@line 289 "cjkcodecs.h"
-        var $66=_PyObject_CallFunctionObjArgs($64, $65, 0); //@line 289 "cjkcodecs.h"
-        $r=$66; //@line 289 "cjkcodecs.h"
-        var $67=$codecobj; //@line 290 "cjkcodecs.h"
-        var $68=$67; //@line 290 "cjkcodecs.h"
-        var $69=HEAP[$68]; //@line 290 "cjkcodecs.h"
-        var $70=($69) - 1; //@line 290 "cjkcodecs.h"
-        var $71=$codecobj; //@line 290 "cjkcodecs.h"
-        var $72=$71; //@line 290 "cjkcodecs.h"
-        HEAP[$72]=$70; //@line 290 "cjkcodecs.h"
-        var $73=$codecobj; //@line 290 "cjkcodecs.h"
-        var $74=$73; //@line 290 "cjkcodecs.h"
-        var $75=HEAP[$74]; //@line 290 "cjkcodecs.h"
-        var $76=($75)==0; //@line 290 "cjkcodecs.h"
-        if ($76) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 290 "cjkcodecs.h"
-      case 19: // $bb12
-        var $77=$codecobj; //@line 290 "cjkcodecs.h"
-        var $78=$77+4; //@line 290 "cjkcodecs.h"
-        var $79=HEAP[$78]; //@line 290 "cjkcodecs.h"
-        var $80=$79+24; //@line 290 "cjkcodecs.h"
-        var $81=HEAP[$80]; //@line 290 "cjkcodecs.h"
-        var $82=$codecobj; //@line 290 "cjkcodecs.h"
-        FUNCTION_TABLE[$81]($82); //@line 290 "cjkcodecs.h"
-        __label__ = 20; break; //@line 290 "cjkcodecs.h"
-      case 20: // $bb13
-        var $83=$r; //@line 292 "cjkcodecs.h"
-        $1=$83; //@line 292 "cjkcodecs.h"
-        __label__ = 21; break; //@line 292 "cjkcodecs.h"
-      case 21: // $bb14
-        var $84=$1; //@line 267 "cjkcodecs.h"
-        $retval=$84; //@line 267 "cjkcodecs.h"
+        __label__ = 7; break; //@line 275 "cjkcodecs.h"
+      case 5: // $bb4
+        var $16=$codec; //@line 276 "cjkcodecs.h"
+        var $17=$16; //@line 276 "cjkcodecs.h"
+        var $18=HEAP[$17]; //@line 276 "cjkcodecs.h"
+        var $19=$enc; //@line 276 "cjkcodecs.h"
+        var $20=_strcmp($18, $19); //@line 276 "cjkcodecs.h"
+        var $21=($20)==0; //@line 276 "cjkcodecs.h"
+        if ($21) { __label__ = 8; break; } else { __label__ = 6; break; } //@line 276 "cjkcodecs.h"
+      case 6: // $bb5
+        var $22=$codec; //@line 275 "cjkcodecs.h"
+        var $23=$22+36; //@line 275 "cjkcodecs.h"
+        $codec=$23; //@line 275 "cjkcodecs.h"
+        __label__ = 7; break; //@line 275 "cjkcodecs.h"
+      case 7: // $bb6
+        var $24=$codec; //@line 275 "cjkcodecs.h"
+        var $25=$24; //@line 275 "cjkcodecs.h"
+        var $26=HEAP[$25]; //@line 275 "cjkcodecs.h"
+        var $27=$26; //@line 275 "cjkcodecs.h"
+        var $28=HEAP[$27]; //@line 275 "cjkcodecs.h"
+        var $29=($28)!=0; //@line 275 "cjkcodecs.h"
+        if ($29) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 275 "cjkcodecs.h"
+      case 8: // $bb7
+        var $30=$codec; //@line 279 "cjkcodecs.h"
+        var $31=$30; //@line 279 "cjkcodecs.h"
+        var $32=HEAP[$31]; //@line 279 "cjkcodecs.h"
+        var $33=$32; //@line 279 "cjkcodecs.h"
+        var $34=HEAP[$33]; //@line 279 "cjkcodecs.h"
+        var $35=($34)==0; //@line 279 "cjkcodecs.h"
+        if ($35) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 279 "cjkcodecs.h"
+      case 9: // $bb8
+        var $36=HEAP[_PyExc_LookupError]; //@line 280 "cjkcodecs.h"
+        _PyErr_SetString($36, __str3); //@line 280 "cjkcodecs.h"
+        $0=0; //@line 282 "cjkcodecs.h"
+        __label__ = 15; break; //@line 282 "cjkcodecs.h"
+      case 10: // $bb9
+        var $37=$codec; //@line 285 "cjkcodecs.h"
+        var $38=$37; //@line 285 "cjkcodecs.h"
+        var $39=_PyCapsule_New($38, __str4, 0); //@line 285 "cjkcodecs.h"
+        $codecobj=$39; //@line 285 "cjkcodecs.h"
+        var $40=$codecobj; //@line 286 "cjkcodecs.h"
+        var $41=($40)==0; //@line 286 "cjkcodecs.h"
+        if ($41) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 286 "cjkcodecs.h"
+      case 11: // $bb10
+        $0=0; //@line 287 "cjkcodecs.h"
+        __label__ = 15; break; //@line 287 "cjkcodecs.h"
+      case 12: // $bb11
+        var $42=$cofunc; //@line 289 "cjkcodecs.h"
+        var $43=$codecobj; //@line 289 "cjkcodecs.h"
+        var $44=_PyObject_CallFunctionObjArgs($42, allocate([$43,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 289 "cjkcodecs.h"
+        $r=$44; //@line 289 "cjkcodecs.h"
+        var $45=$codecobj; //@line 290 "cjkcodecs.h"
+        var $46=$45; //@line 290 "cjkcodecs.h"
+        var $47=HEAP[$46]; //@line 290 "cjkcodecs.h"
+        var $48=($47) - 1; //@line 290 "cjkcodecs.h"
+        var $49=$codecobj; //@line 290 "cjkcodecs.h"
+        var $50=$49; //@line 290 "cjkcodecs.h"
+        HEAP[$50]=$48; //@line 290 "cjkcodecs.h"
+        var $51=$codecobj; //@line 290 "cjkcodecs.h"
+        var $52=$51; //@line 290 "cjkcodecs.h"
+        var $53=HEAP[$52]; //@line 290 "cjkcodecs.h"
+        var $54=($53)==0; //@line 290 "cjkcodecs.h"
+        if ($54) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 290 "cjkcodecs.h"
+      case 13: // $bb12
+        var $55=$codecobj; //@line 290 "cjkcodecs.h"
+        var $56=$55+4; //@line 290 "cjkcodecs.h"
+        var $57=HEAP[$56]; //@line 290 "cjkcodecs.h"
+        var $58=$57+24; //@line 290 "cjkcodecs.h"
+        var $59=HEAP[$58]; //@line 290 "cjkcodecs.h"
+        var $60=$codecobj; //@line 290 "cjkcodecs.h"
+        FUNCTION_TABLE[$59]($60); //@line 290 "cjkcodecs.h"
+        __label__ = 14; break; //@line 290 "cjkcodecs.h"
+      case 14: // $bb13
+        var $61=$r; //@line 292 "cjkcodecs.h"
+        $0=$61; //@line 292 "cjkcodecs.h"
+        __label__ = 15; break; //@line 292 "cjkcodecs.h"
+      case 15: // $bb14
+        var $62=$0; //@line 267 "cjkcodecs.h"
+        $retval=$62; //@line 267 "cjkcodecs.h"
         var $retval15=$retval; //@line 267 "cjkcodecs.h"
         ;
         return $retval15; //@line 267 "cjkcodecs.h"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _register_maps($module) {
+    var __stackBase__  = STACKTOP; STACKTOP += 256; _memset(__stackBase__, 0, 256);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $module_addr;
+        var $0;
+        var $h;
+        var $mhname=__stackBase__;
+        var $r;
+        $module_addr=$module;
+        $h=__mapping_list; //@line 305 "cjkcodecs.h"
+        var $mhname1=$mhname; //@line 306 "cjkcodecs.h"
+        var $mhname2=$mhname; //@line 308 "cjkcodecs.h"
+        var $1=$mhname2+7; //@line 308 "cjkcodecs.h"
+        var $2=$1+-1; //@line 308 "cjkcodecs.h"
+        var $mhname3=$mhname; //@line 309 "cjkcodecs.h"
+        __label__ = 4; break; //@line 305 "cjkcodecs.h"
+      case 1: // $bb
+        _llvm_memcpy_p0i8_p0i8_i32($mhname1, __str7, 256, 1, 0); //@line 306 "cjkcodecs.h"
+        var $3=$h; //@line 308 "cjkcodecs.h"
+        var $4=$3; //@line 308 "cjkcodecs.h"
+        var $5=HEAP[$4]; //@line 308 "cjkcodecs.h"
+        var $6=_strcpy($2, $5); //@line 308 "cjkcodecs.h"
+        var $7=$h; //@line 309 "cjkcodecs.h"
+        var $8=$7; //@line 309 "cjkcodecs.h"
+        var $9=_PyCapsule_New($8, __str4, 0); //@line 309 "cjkcodecs.h"
+        var $10=$module_addr; //@line 309 "cjkcodecs.h"
+        var $11=_PyModule_AddObject($10, $mhname3, $9); //@line 309 "cjkcodecs.h"
+        $r=$11; //@line 309 "cjkcodecs.h"
+        var $12=$r; //@line 311 "cjkcodecs.h"
+        var $13=($12)==-1; //@line 311 "cjkcodecs.h"
+        if ($13) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 311 "cjkcodecs.h"
+      case 2: // $bb4
+        $0=-1; //@line 312 "cjkcodecs.h"
+        __label__ = 6; break; //@line 312 "cjkcodecs.h"
+      case 3: // $bb5
+        var $14=$h; //@line 305 "cjkcodecs.h"
+        var $15=$14+12; //@line 305 "cjkcodecs.h"
+        $h=$15; //@line 305 "cjkcodecs.h"
+        __label__ = 4; break; //@line 305 "cjkcodecs.h"
+      case 4: // $bb6
+        var $16=$h; //@line 305 "cjkcodecs.h"
+        var $17=$16; //@line 305 "cjkcodecs.h"
+        var $18=HEAP[$17]; //@line 305 "cjkcodecs.h"
+        var $19=$18; //@line 305 "cjkcodecs.h"
+        var $20=HEAP[$19]; //@line 305 "cjkcodecs.h"
+        var $21=($20)!=0; //@line 305 "cjkcodecs.h"
+        if ($21) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 305 "cjkcodecs.h"
+      case 5: // $bb7
+        $0=0; //@line 314 "cjkcodecs.h"
+        __label__ = 6; break; //@line 314 "cjkcodecs.h"
+      case 6: // $bb8
+        STACKTOP = __stackBase__;
+        return;
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1675,6 +1748,611 @@ var __str37;
   }
   
 
+  function _iso2022processesc($config, $state, $inbuf, $inleft) {
+    ;
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $config_addr;
+        var $state_addr;
+        var $inbuf_addr;
+        var $inleft_addr;
+        var $retval;
+        var $0;
+        var $charset;
+        var $designation;
+        var $i;
+        var $esclen;
+        var $dsg;
+        $config_addr=$config;
+        $state_addr=$state;
+        $inbuf_addr=$inbuf;
+        $inleft_addr=$inleft;
+        $i=1; //@line 309 "_codecs_iso2022.c"
+        __lastLabel__ = -1; __label__ = 13; break; //@line 309 "_codecs_iso2022.c"
+      case 1: // $bb
+        var $1=$inleft_addr; //@line 310 "_codecs_iso2022.c"
+        var $2=HEAP[$1]; //@line 310 "_codecs_iso2022.c"
+        var $3=$i; //@line 310 "_codecs_iso2022.c"
+        var $4=($2) <= ($3); //@line 310 "_codecs_iso2022.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 310 "_codecs_iso2022.c"
+      case 2: // $bb1
+        $0=-2; //@line 311 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 311 "_codecs_iso2022.c"
+      case 3: // $bb2
+        var $5=$inbuf_addr; //@line 312 "_codecs_iso2022.c"
+        var $6=HEAP[$5]; //@line 312 "_codecs_iso2022.c"
+        var $7=$i; //@line 312 "_codecs_iso2022.c"
+        var $8=$6+$7; //@line 312 "_codecs_iso2022.c"
+        var $9=HEAP[$8]; //@line 312 "_codecs_iso2022.c"
+        var $10=($9) <= 64; //@line 312 "_codecs_iso2022.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 312 "_codecs_iso2022.c"
+      case 4: // $bb3
+        var $11=$inbuf_addr; //@line 312 "_codecs_iso2022.c"
+        var $12=HEAP[$11]; //@line 312 "_codecs_iso2022.c"
+        var $13=$i; //@line 312 "_codecs_iso2022.c"
+        var $14=$12+$13; //@line 312 "_codecs_iso2022.c"
+        var $15=HEAP[$14]; //@line 312 "_codecs_iso2022.c"
+        var $16=($15) <= 90; //@line 312 "_codecs_iso2022.c"
+        if ($16) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 312 "_codecs_iso2022.c"
+      case 5: // $bb4
+        var $17=$inbuf_addr; //@line 312 "_codecs_iso2022.c"
+        var $18=HEAP[$17]; //@line 312 "_codecs_iso2022.c"
+        var $19=$i; //@line 312 "_codecs_iso2022.c"
+        var $20=$18+$19; //@line 312 "_codecs_iso2022.c"
+        var $21=HEAP[$20]; //@line 312 "_codecs_iso2022.c"
+        var $22=($21)==64; //@line 312 "_codecs_iso2022.c"
+        if ($22) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 312 "_codecs_iso2022.c"
+      case 6: // $bb5
+        var $23=$i; //@line 313 "_codecs_iso2022.c"
+        var $24=($23) + 1; //@line 313 "_codecs_iso2022.c"
+        $esclen=$24; //@line 313 "_codecs_iso2022.c"
+        __lastLabel__ = 6; __label__ = 15; break; //@line 313 "_codecs_iso2022.c"
+      case 7: // $bb6
+        var $25=$config_addr; //@line 316 "_codecs_iso2022.c"
+        var $26=$25; //@line 316 "_codecs_iso2022.c"
+        var $27=$26; //@line 316 "_codecs_iso2022.c"
+        var $28=HEAP[$27]; //@line 316 "_codecs_iso2022.c"
+        var $29=($28) & 4; //@line 316 "_codecs_iso2022.c"
+        var $30=($29)!=0; //@line 316 "_codecs_iso2022.c"
+        if ($30) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 316 "_codecs_iso2022.c"
+      case 8: // $bb7
+        var $31=$i; //@line 316 "_codecs_iso2022.c"
+        var $32=($31) + 1; //@line 316 "_codecs_iso2022.c"
+        var $33=$inleft_addr; //@line 316 "_codecs_iso2022.c"
+        var $34=HEAP[$33]; //@line 316 "_codecs_iso2022.c"
+        var $35=($32) < ($34); //@line 316 "_codecs_iso2022.c"
+        if ($35) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 316 "_codecs_iso2022.c"
+      case 9: // $bb8
+        var $36=$inbuf_addr; //@line 316 "_codecs_iso2022.c"
+        var $37=HEAP[$36]; //@line 316 "_codecs_iso2022.c"
+        var $38=$i; //@line 316 "_codecs_iso2022.c"
+        var $39=$37+$38; //@line 316 "_codecs_iso2022.c"
+        var $40=HEAP[$39]; //@line 316 "_codecs_iso2022.c"
+        var $41=($40)==38; //@line 316 "_codecs_iso2022.c"
+        if ($41) { __label__ = 10; break; } else { __label__ = 12; break; } //@line 316 "_codecs_iso2022.c"
+      case 10: // $bb9
+        var $42=$inbuf_addr; //@line 316 "_codecs_iso2022.c"
+        var $43=HEAP[$42]; //@line 316 "_codecs_iso2022.c"
+        var $44=$i; //@line 316 "_codecs_iso2022.c"
+        var $45=($44) + 1; //@line 316 "_codecs_iso2022.c"
+        var $46=$43+$45; //@line 316 "_codecs_iso2022.c"
+        var $47=HEAP[$46]; //@line 316 "_codecs_iso2022.c"
+        var $48=($47)==64; //@line 316 "_codecs_iso2022.c"
+        if ($48) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 316 "_codecs_iso2022.c"
+      case 11: // $bb10
+        var $49=$i; //@line 318 "_codecs_iso2022.c"
+        var $50=($49) + 2; //@line 318 "_codecs_iso2022.c"
+        $i=$50; //@line 318 "_codecs_iso2022.c"
+        __label__ = 12; break; //@line 318 "_codecs_iso2022.c"
+      case 12: // $bb11
+        var $51=$i; //@line 309 "_codecs_iso2022.c"
+        var $52=($51) + 1; //@line 309 "_codecs_iso2022.c"
+        $i=$52; //@line 309 "_codecs_iso2022.c"
+        __lastLabel__ = 12; __label__ = 13; break; //@line 309 "_codecs_iso2022.c"
+      case 13: // $bb12
+        var $53=__lastLabel__ == 12 ? $52 : (1);
+        var $54=($53) <= 15; //@line 309 "_codecs_iso2022.c"
+        if ($54) { __label__ = 1; break; } else { __label__ = 14; break; } //@line 309 "_codecs_iso2022.c"
+      case 14: // $bb13thread_pre_split
+        var $_pr=$i;
+        __lastLabel__ = 14; __label__ = 15; break;
+      case 15: // $bb13
+        var $55=__lastLabel__ == 14 ? $_pr : ($23);
+        var $56=($55) > 15; //@line 321 "_codecs_iso2022.c"
+        if ($56) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 321 "_codecs_iso2022.c"
+      case 16: // $bb14
+        $0=1; //@line 322 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 322 "_codecs_iso2022.c"
+      case 17: // $bb15
+        var $57=$esclen; //@line 324 "_codecs_iso2022.c"
+        if ($57 == 3) {
+          __label__ = 18; break;
+        }
+        else if ($57 == 4) {
+          __label__ = 28; break;
+        }
+        else if ($57 == 6) {
+          __label__ = 35; break;
+        }
+        else {
+        __label__ = 41; break;
+        }
+        
+      case 18: // $bb16
+        var $58=$inbuf_addr; //@line 326 "_codecs_iso2022.c"
+        var $59=HEAP[$58]; //@line 326 "_codecs_iso2022.c"
+        var $60=$59+1; //@line 326 "_codecs_iso2022.c"
+        var $61=HEAP[$60]; //@line 326 "_codecs_iso2022.c"
+        var $62=($61)==36; //@line 326 "_codecs_iso2022.c"
+        var $63=$inbuf_addr; //@line 327 "_codecs_iso2022.c"
+        var $64=HEAP[$63]; //@line 327 "_codecs_iso2022.c"
+        var $65=$64+2; //@line 327 "_codecs_iso2022.c"
+        var $66=HEAP[$65]; //@line 327 "_codecs_iso2022.c"
+        if ($62) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 326 "_codecs_iso2022.c"
+      case 19: // $bb17
+        var $67=($66) | -128; //@line 327 "_codecs_iso2022.c"
+        $charset=$67; //@line 327 "_codecs_iso2022.c"
+        $designation=0; //@line 328 "_codecs_iso2022.c"
+        __label__ = 43; break; //@line 328 "_codecs_iso2022.c"
+      case 20: // $bb18
+        $charset=$66; //@line 331 "_codecs_iso2022.c"
+        var $68=$inbuf_addr; //@line 332 "_codecs_iso2022.c"
+        var $69=HEAP[$68]; //@line 332 "_codecs_iso2022.c"
+        var $70=$69+1; //@line 332 "_codecs_iso2022.c"
+        var $71=HEAP[$70]; //@line 332 "_codecs_iso2022.c"
+        var $72=($71)==40; //@line 332 "_codecs_iso2022.c"
+        if ($72) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 332 "_codecs_iso2022.c"
+      case 21: // $bb19
+        $designation=0; //@line 332 "_codecs_iso2022.c"
+        __label__ = 42; break; //@line 332 "_codecs_iso2022.c"
+      case 22: // $bb20
+        var $73=$inbuf_addr; //@line 333 "_codecs_iso2022.c"
+        var $74=HEAP[$73]; //@line 333 "_codecs_iso2022.c"
+        var $75=$74+1; //@line 333 "_codecs_iso2022.c"
+        var $76=HEAP[$75]; //@line 333 "_codecs_iso2022.c"
+        var $77=($76)==41; //@line 333 "_codecs_iso2022.c"
+        if ($77) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 333 "_codecs_iso2022.c"
+      case 23: // $bb21
+        $designation=1; //@line 333 "_codecs_iso2022.c"
+        __label__ = 42; break; //@line 333 "_codecs_iso2022.c"
+      case 24: // $bb22
+        var $78=$config_addr; //@line 334 "_codecs_iso2022.c"
+        var $79=$78; //@line 334 "_codecs_iso2022.c"
+        var $80=$79; //@line 334 "_codecs_iso2022.c"
+        var $81=HEAP[$80]; //@line 334 "_codecs_iso2022.c"
+        var $82=($81) & 2; //@line 334 "_codecs_iso2022.c"
+        var $83=($82)==0; //@line 334 "_codecs_iso2022.c"
+        if ($83) { __label__ = 27; break; } else { __label__ = 25; break; } //@line 334 "_codecs_iso2022.c"
+      case 25: // $bb23
+        var $84=$inbuf_addr; //@line 334 "_codecs_iso2022.c"
+        var $85=HEAP[$84]; //@line 334 "_codecs_iso2022.c"
+        var $86=$85+1; //@line 334 "_codecs_iso2022.c"
+        var $87=HEAP[$86]; //@line 334 "_codecs_iso2022.c"
+        var $88=($87)!=46; //@line 334 "_codecs_iso2022.c"
+        if ($88) { __label__ = 27; break; } else { __label__ = 26; break; } //@line 334 "_codecs_iso2022.c"
+      case 26: // $bb24
+        $designation=2; //@line 335 "_codecs_iso2022.c"
+        __label__ = 42; break; //@line 335 "_codecs_iso2022.c"
+      case 27: // $bb25
+        $0=3; //@line 336 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 336 "_codecs_iso2022.c"
+      case 28: // $bb27
+        var $89=$inbuf_addr; //@line 340 "_codecs_iso2022.c"
+        var $90=HEAP[$89]; //@line 340 "_codecs_iso2022.c"
+        var $91=$90+1; //@line 340 "_codecs_iso2022.c"
+        var $92=HEAP[$91]; //@line 340 "_codecs_iso2022.c"
+        var $93=($92)!=36; //@line 340 "_codecs_iso2022.c"
+        if ($93) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 340 "_codecs_iso2022.c"
+      case 29: // $bb28
+        $0=4; //@line 341 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 341 "_codecs_iso2022.c"
+      case 30: // $bb29
+        var $94=$inbuf_addr; //@line 343 "_codecs_iso2022.c"
+        var $95=HEAP[$94]; //@line 343 "_codecs_iso2022.c"
+        var $96=$95+3; //@line 343 "_codecs_iso2022.c"
+        var $97=HEAP[$96]; //@line 343 "_codecs_iso2022.c"
+        var $98=($97) | -128; //@line 343 "_codecs_iso2022.c"
+        $charset=$98; //@line 343 "_codecs_iso2022.c"
+        var $99=$inbuf_addr; //@line 344 "_codecs_iso2022.c"
+        var $100=HEAP[$99]; //@line 344 "_codecs_iso2022.c"
+        var $101=$100+2; //@line 344 "_codecs_iso2022.c"
+        var $102=HEAP[$101]; //@line 344 "_codecs_iso2022.c"
+        var $103=($102)==40; //@line 344 "_codecs_iso2022.c"
+        if ($103) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 344 "_codecs_iso2022.c"
+      case 31: // $bb30
+        $designation=0; //@line 344 "_codecs_iso2022.c"
+        __label__ = 42; break; //@line 344 "_codecs_iso2022.c"
+      case 32: // $bb31
+        var $104=$inbuf_addr; //@line 345 "_codecs_iso2022.c"
+        var $105=HEAP[$104]; //@line 345 "_codecs_iso2022.c"
+        var $106=$105+2; //@line 345 "_codecs_iso2022.c"
+        var $107=HEAP[$106]; //@line 345 "_codecs_iso2022.c"
+        var $108=($107)==41; //@line 345 "_codecs_iso2022.c"
+        if ($108) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 345 "_codecs_iso2022.c"
+      case 33: // $bb32
+        $designation=1; //@line 345 "_codecs_iso2022.c"
+        __label__ = 42; break; //@line 345 "_codecs_iso2022.c"
+      case 34: // $bb33
+        $0=4; //@line 346 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 346 "_codecs_iso2022.c"
+      case 35: // $bb35
+        var $109=$config_addr; //@line 349 "_codecs_iso2022.c"
+        var $110=$109; //@line 349 "_codecs_iso2022.c"
+        var $111=$110; //@line 349 "_codecs_iso2022.c"
+        var $112=HEAP[$111]; //@line 349 "_codecs_iso2022.c"
+        var $113=($112) & 4; //@line 349 "_codecs_iso2022.c"
+        var $114=($113)==0; //@line 349 "_codecs_iso2022.c"
+        if ($114) { __label__ = 40; break; } else { __label__ = 36; break; } //@line 349 "_codecs_iso2022.c"
+      case 36: // $bb36
+        var $115=$inbuf_addr; //@line 349 "_codecs_iso2022.c"
+        var $116=HEAP[$115]; //@line 349 "_codecs_iso2022.c"
+        var $117=$116+3; //@line 349 "_codecs_iso2022.c"
+        var $118=HEAP[$117]; //@line 349 "_codecs_iso2022.c"
+        var $119=($118)!=27; //@line 349 "_codecs_iso2022.c"
+        if ($119) { __label__ = 40; break; } else { __label__ = 37; break; } //@line 349 "_codecs_iso2022.c"
+      case 37: // $bb37
+        var $120=$inbuf_addr; //@line 349 "_codecs_iso2022.c"
+        var $121=HEAP[$120]; //@line 349 "_codecs_iso2022.c"
+        var $122=$121+4; //@line 349 "_codecs_iso2022.c"
+        var $123=HEAP[$122]; //@line 349 "_codecs_iso2022.c"
+        var $124=($123)!=36; //@line 349 "_codecs_iso2022.c"
+        if ($124) { __label__ = 40; break; } else { __label__ = 38; break; } //@line 349 "_codecs_iso2022.c"
+      case 38: // $bb38
+        var $125=$inbuf_addr; //@line 349 "_codecs_iso2022.c"
+        var $126=HEAP[$125]; //@line 349 "_codecs_iso2022.c"
+        var $127=$126+5; //@line 349 "_codecs_iso2022.c"
+        var $128=HEAP[$127]; //@line 349 "_codecs_iso2022.c"
+        var $129=($128)!=66; //@line 349 "_codecs_iso2022.c"
+        if ($129) { __label__ = 40; break; } else { __label__ = 39; break; } //@line 349 "_codecs_iso2022.c"
+      case 39: // $bb39
+        $charset=-62; //@line 352 "_codecs_iso2022.c"
+        $designation=0; //@line 353 "_codecs_iso2022.c"
+        __label__ = 43; break; //@line 353 "_codecs_iso2022.c"
+      case 40: // $bb40
+        $0=6; //@line 356 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 356 "_codecs_iso2022.c"
+      case 41: // $bb41
+        var $130=$esclen; //@line 359 "_codecs_iso2022.c"
+        $0=$130; //@line 359 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 359 "_codecs_iso2022.c"
+      case 42: // $bb42
+        var $_pr1=$charset;
+        var $131=($_pr1)!=66; //@line 363 "_codecs_iso2022.c"
+        if ($131) { __label__ = 43; break; } else { __label__ = 49; break; } //@line 363 "_codecs_iso2022.c"
+      case 43: // $bb43
+        var $132=$config_addr; //@line 366 "_codecs_iso2022.c"
+        var $133=$132; //@line 366 "_codecs_iso2022.c"
+        var $134=$133+4; //@line 366 "_codecs_iso2022.c"
+        var $135=HEAP[$134]; //@line 366 "_codecs_iso2022.c"
+        $dsg=$135; //@line 366 "_codecs_iso2022.c"
+        __label__ = 46; break; //@line 366 "_codecs_iso2022.c"
+      case 44: // $bb44
+        var $136=$dsg; //@line 367 "_codecs_iso2022.c"
+        var $137=$136; //@line 367 "_codecs_iso2022.c"
+        var $138=HEAP[$137]; //@line 367 "_codecs_iso2022.c"
+        var $139=$charset; //@line 367 "_codecs_iso2022.c"
+        var $140=($138)==($139); //@line 367 "_codecs_iso2022.c"
+        if ($140) { __label__ = 47; break; } else { __label__ = 45; break; } //@line 367 "_codecs_iso2022.c"
+      case 45: // $bb45
+        var $141=$dsg; //@line 366 "_codecs_iso2022.c"
+        var $142=$141+16; //@line 366 "_codecs_iso2022.c"
+        $dsg=$142; //@line 366 "_codecs_iso2022.c"
+        __label__ = 46; break; //@line 366 "_codecs_iso2022.c"
+      case 46: // $bb46
+        var $143=$dsg; //@line 366 "_codecs_iso2022.c"
+        var $144=$143; //@line 366 "_codecs_iso2022.c"
+        var $145=HEAP[$144]; //@line 366 "_codecs_iso2022.c"
+        var $146=($145)!=0; //@line 366 "_codecs_iso2022.c"
+        if ($146) { __label__ = 44; break; } else { __label__ = 47; break; } //@line 366 "_codecs_iso2022.c"
+      case 47: // $bb47
+        var $147=$dsg; //@line 369 "_codecs_iso2022.c"
+        var $148=$147; //@line 369 "_codecs_iso2022.c"
+        var $149=HEAP[$148]; //@line 369 "_codecs_iso2022.c"
+        var $150=($149)==0; //@line 369 "_codecs_iso2022.c"
+        if ($150) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 369 "_codecs_iso2022.c"
+      case 48: // $bb48
+        var $151=$esclen; //@line 370 "_codecs_iso2022.c"
+        $0=$151; //@line 370 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 370 "_codecs_iso2022.c"
+      case 49: // $bb49
+        var $152=$designation; //@line 373 "_codecs_iso2022.c"
+        var $153=($152); //@line 373 "_codecs_iso2022.c"
+        var $154=$state_addr; //@line 373 "_codecs_iso2022.c"
+        var $155=$154; //@line 373 "_codecs_iso2022.c"
+        var $156=$155; //@line 373 "_codecs_iso2022.c"
+        var $157=$156+$153; //@line 373 "_codecs_iso2022.c"
+        var $158=$charset; //@line 373 "_codecs_iso2022.c"
+        HEAP[$157]=$158; //@line 373 "_codecs_iso2022.c"
+        var $159=$inleft_addr; //@line 374 "_codecs_iso2022.c"
+        var $160=HEAP[$159]; //@line 374 "_codecs_iso2022.c"
+        var $161=$esclen; //@line 374 "_codecs_iso2022.c"
+        var $162=($160) - ($161); //@line 374 "_codecs_iso2022.c"
+        var $163=$inleft_addr; //@line 374 "_codecs_iso2022.c"
+        HEAP[$163]=$162; //@line 374 "_codecs_iso2022.c"
+        var $164=$inbuf_addr; //@line 375 "_codecs_iso2022.c"
+        var $165=HEAP[$164]; //@line 375 "_codecs_iso2022.c"
+        var $166=$esclen; //@line 375 "_codecs_iso2022.c"
+        var $167=$165+$166; //@line 375 "_codecs_iso2022.c"
+        var $168=$inbuf_addr; //@line 375 "_codecs_iso2022.c"
+        HEAP[$168]=$167; //@line 375 "_codecs_iso2022.c"
+        $0=0; //@line 376 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 376 "_codecs_iso2022.c"
+      case 50: // $bb50
+        var $169=$0; //@line 311 "_codecs_iso2022.c"
+        $retval=$169; //@line 311 "_codecs_iso2022.c"
+        var $retval51=$retval; //@line 311 "_codecs_iso2022.c"
+        ;
+        return $retval51; //@line 311 "_codecs_iso2022.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _iso2022processg2($config, $state, $inbuf, $inleft, $outbuf, $outleft) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $config_addr;
+        var $state_addr;
+        var $inbuf_addr;
+        var $inleft_addr;
+        var $outbuf_addr;
+        var $outleft_addr;
+        var $retval;
+        var $0;
+        $config_addr=$config;
+        $state_addr=$state;
+        $inbuf_addr=$inbuf;
+        $inleft_addr=$inleft;
+        $outbuf_addr=$outbuf;
+        $outleft_addr=$outleft;
+        var $1=$state_addr; //@line 397 "_codecs_iso2022.c"
+        var $2=$1; //@line 397 "_codecs_iso2022.c"
+        var $3=$2; //@line 397 "_codecs_iso2022.c"
+        var $4=$3+2; //@line 397 "_codecs_iso2022.c"
+        var $5=HEAP[$4]; //@line 397 "_codecs_iso2022.c"
+        var $6=($5)==65; //@line 397 "_codecs_iso2022.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 397 "_codecs_iso2022.c"
+      case 1: // $bb
+        var $7=$inbuf_addr; //@line 398 "_codecs_iso2022.c"
+        var $8=HEAP[$7]; //@line 398 "_codecs_iso2022.c"
+        var $9=$8+2; //@line 398 "_codecs_iso2022.c"
+        var $10=HEAP[$9]; //@line 398 "_codecs_iso2022.c"
+        var $11=($10) >= 0; //@line 398 "_codecs_iso2022.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 398 "_codecs_iso2022.c"
+      case 2: // $bb1
+        var $12=$outbuf_addr; //@line 399 "_codecs_iso2022.c"
+        var $13=HEAP[$12]; //@line 399 "_codecs_iso2022.c"
+        var $14=$inbuf_addr; //@line 399 "_codecs_iso2022.c"
+        var $15=HEAP[$14]; //@line 399 "_codecs_iso2022.c"
+        var $16=$15+2; //@line 399 "_codecs_iso2022.c"
+        var $17=HEAP[$16]; //@line 399 "_codecs_iso2022.c"
+        var $18=($17); //@line 399 "_codecs_iso2022.c"
+        var $19=($18) + 128; //@line 399 "_codecs_iso2022.c"
+        var $20=$13; //@line 399 "_codecs_iso2022.c"
+        HEAP[$20]=$19; //@line 399 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 399 "_codecs_iso2022.c"
+      case 3: // $bb2
+        $0=3; //@line 401 "_codecs_iso2022.c"
+        __label__ = 28; break; //@line 401 "_codecs_iso2022.c"
+      case 4: // $bb3
+        var $21=$state_addr; //@line 403 "_codecs_iso2022.c"
+        var $22=$21; //@line 403 "_codecs_iso2022.c"
+        var $23=$22; //@line 403 "_codecs_iso2022.c"
+        var $24=$23+2; //@line 403 "_codecs_iso2022.c"
+        var $25=HEAP[$24]; //@line 403 "_codecs_iso2022.c"
+        var $26=($25)==70; //@line 403 "_codecs_iso2022.c"
+        if ($26) { __label__ = 5; break; } else { __label__ = 22; break; } //@line 403 "_codecs_iso2022.c"
+      case 5: // $bb4
+        var $27=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $28=HEAP[$27]; //@line 404 "_codecs_iso2022.c"
+        var $29=$28+2; //@line 404 "_codecs_iso2022.c"
+        var $30=HEAP[$29]; //@line 404 "_codecs_iso2022.c"
+        var $31=($30) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $32=($31) <= 159; //@line 404 "_codecs_iso2022.c"
+        if ($32) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 404 "_codecs_iso2022.c"
+      case 6: // $bb5
+        var $33=$outbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $34=HEAP[$33]; //@line 404 "_codecs_iso2022.c"
+        var $35=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $36=HEAP[$35]; //@line 404 "_codecs_iso2022.c"
+        var $37=$36+2; //@line 404 "_codecs_iso2022.c"
+        var $38=HEAP[$37]; //@line 404 "_codecs_iso2022.c"
+        var $39=($38) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $40=($39); //@line 404 "_codecs_iso2022.c"
+        HEAP[$34]=$40; //@line 404 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 404 "_codecs_iso2022.c"
+      case 7: // $bb6
+        var $41=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $42=HEAP[$41]; //@line 404 "_codecs_iso2022.c"
+        var $43=$42+2; //@line 404 "_codecs_iso2022.c"
+        var $44=HEAP[$43]; //@line 404 "_codecs_iso2022.c"
+        var $45=($44) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $46=($45) > 191; //@line 404 "_codecs_iso2022.c"
+        if ($46) { __label__ = 10; break; } else { __label__ = 8; break; } //@line 404 "_codecs_iso2022.c"
+      case 8: // $bb7
+        var $47=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $48=HEAP[$47]; //@line 404 "_codecs_iso2022.c"
+        var $49=$48+2; //@line 404 "_codecs_iso2022.c"
+        var $50=HEAP[$49]; //@line 404 "_codecs_iso2022.c"
+        var $51=($50) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $52=($51); //@line 404 "_codecs_iso2022.c"
+        var $53=($52) - 160; //@line 404 "_codecs_iso2022.c"
+        var $54=680475593 >> ($53); //@line 404 "_codecs_iso2022.c"
+        var $55=($54) & 1; //@line 404 "_codecs_iso2022.c"
+        var $56=((($55)) & 255); //@line 404 "_codecs_iso2022.c"
+        var $toBool=($56)!=0; //@line 404 "_codecs_iso2022.c"
+        var $toBoolnot=($toBool) ^ 1; //@line 404 "_codecs_iso2022.c"
+        var $toBoolnot8=($toBoolnot); //@line 404 "_codecs_iso2022.c"
+        var $toBool10=($toBoolnot8)!=0; //@line 404 "_codecs_iso2022.c"
+        if ($toBool10) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 404 "_codecs_iso2022.c"
+      case 9: // $bb11
+        var $57=$outbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $58=HEAP[$57]; //@line 404 "_codecs_iso2022.c"
+        var $59=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $60=HEAP[$59]; //@line 404 "_codecs_iso2022.c"
+        var $61=$60+2; //@line 404 "_codecs_iso2022.c"
+        var $62=HEAP[$61]; //@line 404 "_codecs_iso2022.c"
+        var $63=($62) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $64=($63); //@line 404 "_codecs_iso2022.c"
+        HEAP[$58]=$64; //@line 404 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 404 "_codecs_iso2022.c"
+      case 10: // $bb12
+        var $65=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $66=HEAP[$65]; //@line 404 "_codecs_iso2022.c"
+        var $67=$66+2; //@line 404 "_codecs_iso2022.c"
+        var $68=HEAP[$67]; //@line 404 "_codecs_iso2022.c"
+        var $69=($68) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $70=($69) <= 179; //@line 404 "_codecs_iso2022.c"
+        if ($70) { __label__ = 15; break; } else { __label__ = 11; break; } //@line 404 "_codecs_iso2022.c"
+      case 11: // $bb13
+        var $71=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $72=HEAP[$71]; //@line 404 "_codecs_iso2022.c"
+        var $73=$72+2; //@line 404 "_codecs_iso2022.c"
+        var $74=HEAP[$73]; //@line 404 "_codecs_iso2022.c"
+        var $75=($74)==127; //@line 404 "_codecs_iso2022.c"
+        if ($75) { __label__ = 15; break; } else { __label__ = 12; break; } //@line 404 "_codecs_iso2022.c"
+      case 12: // $bb14
+        var $76=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $77=HEAP[$76]; //@line 404 "_codecs_iso2022.c"
+        var $78=$77+2; //@line 404 "_codecs_iso2022.c"
+        var $79=HEAP[$78]; //@line 404 "_codecs_iso2022.c"
+        var $80=($79) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $81=($80) > 211; //@line 404 "_codecs_iso2022.c"
+        if ($81) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 404 "_codecs_iso2022.c"
+      case 13: // $bb15
+        var $82=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $83=HEAP[$82]; //@line 404 "_codecs_iso2022.c"
+        var $84=$83+2; //@line 404 "_codecs_iso2022.c"
+        var $85=HEAP[$84]; //@line 404 "_codecs_iso2022.c"
+        var $86=($85) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $87=($86); //@line 404 "_codecs_iso2022.c"
+        var $88=($87) - 180; //@line 404 "_codecs_iso2022.c"
+        var $89=1 << ($88); //@line 404 "_codecs_iso2022.c"
+        var $90=($89) & -1073742473; //@line 404 "_codecs_iso2022.c"
+        var $91=($90)!=0; //@line 404 "_codecs_iso2022.c"
+        if ($91) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 404 "_codecs_iso2022.c"
+      case 14: // $bb16
+        var $92=$outbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $93=HEAP[$92]; //@line 404 "_codecs_iso2022.c"
+        var $94=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $95=HEAP[$94]; //@line 404 "_codecs_iso2022.c"
+        var $96=$95+2; //@line 404 "_codecs_iso2022.c"
+        var $97=HEAP[$96]; //@line 404 "_codecs_iso2022.c"
+        var $98=($97) ^ -128; //@line 404 "_codecs_iso2022.c"
+        var $99=($98); //@line 404 "_codecs_iso2022.c"
+        var $100=($99) + 720; //@line 404 "_codecs_iso2022.c"
+        HEAP[$93]=$100; //@line 404 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 404 "_codecs_iso2022.c"
+      case 15: // $bb17
+        var $101=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $102=HEAP[$101]; //@line 404 "_codecs_iso2022.c"
+        var $103=$102+2; //@line 404 "_codecs_iso2022.c"
+        var $104=HEAP[$103]; //@line 404 "_codecs_iso2022.c"
+        var $105=($104)==33; //@line 404 "_codecs_iso2022.c"
+        if ($105) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 404 "_codecs_iso2022.c"
+      case 16: // $bb18
+        var $106=$outbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $107=HEAP[$106]; //@line 404 "_codecs_iso2022.c"
+        HEAP[$107]=8216; //@line 404 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 404 "_codecs_iso2022.c"
+      case 17: // $bb19
+        var $108=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $109=HEAP[$108]; //@line 404 "_codecs_iso2022.c"
+        var $110=$109+2; //@line 404 "_codecs_iso2022.c"
+        var $111=HEAP[$110]; //@line 404 "_codecs_iso2022.c"
+        var $112=($111)==34; //@line 404 "_codecs_iso2022.c"
+        if ($112) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 404 "_codecs_iso2022.c"
+      case 18: // $bb20
+        var $113=$outbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $114=HEAP[$113]; //@line 404 "_codecs_iso2022.c"
+        HEAP[$114]=8217; //@line 404 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 404 "_codecs_iso2022.c"
+      case 19: // $bb21
+        var $115=$inbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $116=HEAP[$115]; //@line 404 "_codecs_iso2022.c"
+        var $117=$116+2; //@line 404 "_codecs_iso2022.c"
+        var $118=HEAP[$117]; //@line 404 "_codecs_iso2022.c"
+        var $119=($118)==47; //@line 404 "_codecs_iso2022.c"
+        if ($119) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 404 "_codecs_iso2022.c"
+      case 20: // $bb22
+        var $120=$outbuf_addr; //@line 404 "_codecs_iso2022.c"
+        var $121=HEAP[$120]; //@line 404 "_codecs_iso2022.c"
+        HEAP[$121]=8213; //@line 404 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 404 "_codecs_iso2022.c"
+      case 21: // $bb23
+        $0=3; //@line 405 "_codecs_iso2022.c"
+        __label__ = 28; break; //@line 405 "_codecs_iso2022.c"
+      case 22: // $bb25
+        var $122=$state_addr; //@line 407 "_codecs_iso2022.c"
+        var $123=$122; //@line 407 "_codecs_iso2022.c"
+        var $124=$123; //@line 407 "_codecs_iso2022.c"
+        var $125=$124+2; //@line 407 "_codecs_iso2022.c"
+        var $126=HEAP[$125]; //@line 407 "_codecs_iso2022.c"
+        var $127=($126)==66; //@line 407 "_codecs_iso2022.c"
+        if ($127) { __label__ = 23; break; } else { __label__ = 26; break; } //@line 407 "_codecs_iso2022.c"
+      case 23: // $bb26
+        var $128=$inbuf_addr; //@line 408 "_codecs_iso2022.c"
+        var $129=HEAP[$128]; //@line 408 "_codecs_iso2022.c"
+        var $130=$129+2; //@line 408 "_codecs_iso2022.c"
+        var $131=HEAP[$130]; //@line 408 "_codecs_iso2022.c"
+        var $132=($131) < 0; //@line 408 "_codecs_iso2022.c"
+        if ($132) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 408 "_codecs_iso2022.c"
+      case 24: // $bb27
+        $0=3; //@line 408 "_codecs_iso2022.c"
+        __label__ = 28; break; //@line 408 "_codecs_iso2022.c"
+      case 25: // $bb28
+        var $133=$outbuf_addr; //@line 409 "_codecs_iso2022.c"
+        var $134=HEAP[$133]; //@line 409 "_codecs_iso2022.c"
+        var $135=$inbuf_addr; //@line 409 "_codecs_iso2022.c"
+        var $136=HEAP[$135]; //@line 409 "_codecs_iso2022.c"
+        var $137=$136+2; //@line 409 "_codecs_iso2022.c"
+        var $138=HEAP[$137]; //@line 409 "_codecs_iso2022.c"
+        var $139=($138); //@line 409 "_codecs_iso2022.c"
+        HEAP[$134]=$139; //@line 409 "_codecs_iso2022.c"
+        __label__ = 27; break; //@line 409 "_codecs_iso2022.c"
+      case 26: // $bb29
+        $0=-3; //@line 412 "_codecs_iso2022.c"
+        __label__ = 28; break; //@line 412 "_codecs_iso2022.c"
+      case 27: // $bb30
+        var $140=$inbuf_addr; //@line 414 "_codecs_iso2022.c"
+        var $141=HEAP[$140]; //@line 414 "_codecs_iso2022.c"
+        var $142=$141+3; //@line 414 "_codecs_iso2022.c"
+        var $143=$inbuf_addr; //@line 414 "_codecs_iso2022.c"
+        HEAP[$143]=$142; //@line 414 "_codecs_iso2022.c"
+        var $144=$inleft_addr; //@line 415 "_codecs_iso2022.c"
+        var $145=HEAP[$144]; //@line 415 "_codecs_iso2022.c"
+        var $146=($145) - 3; //@line 415 "_codecs_iso2022.c"
+        var $147=$inleft_addr; //@line 415 "_codecs_iso2022.c"
+        HEAP[$147]=$146; //@line 415 "_codecs_iso2022.c"
+        var $148=$outbuf_addr; //@line 416 "_codecs_iso2022.c"
+        var $149=HEAP[$148]; //@line 416 "_codecs_iso2022.c"
+        var $150=$149+2; //@line 416 "_codecs_iso2022.c"
+        var $151=$outbuf_addr; //@line 416 "_codecs_iso2022.c"
+        HEAP[$151]=$150; //@line 416 "_codecs_iso2022.c"
+        var $152=$outleft_addr; //@line 417 "_codecs_iso2022.c"
+        var $153=HEAP[$152]; //@line 417 "_codecs_iso2022.c"
+        var $154=($153) - 1; //@line 417 "_codecs_iso2022.c"
+        var $155=$outleft_addr; //@line 417 "_codecs_iso2022.c"
+        HEAP[$155]=$154; //@line 417 "_codecs_iso2022.c"
+        $0=0; //@line 418 "_codecs_iso2022.c"
+        __label__ = 28; break; //@line 418 "_codecs_iso2022.c"
+      case 28: // $bb31
+        var $156=$0; //@line 401 "_codecs_iso2022.c"
+        $retval=$156; //@line 401 "_codecs_iso2022.c"
+        var $retval32=$retval; //@line 401 "_codecs_iso2022.c"
+        ;
+        return $retval32; //@line 401 "_codecs_iso2022.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _iso2022_decode($state, $config, $inbuf, $inleft, $outbuf, $outleft) {
     var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
@@ -1682,25 +2360,6 @@ var __str37;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $config_addr_i4;
-        var $state_addr_i5;
-        var $inbuf_addr_i6;
-        var $inleft_addr_i7;
-        var $outbuf_addr_i;
-        var $outleft_addr_i;
-        var $retval_i8;
-        var $0;
-        var $config_addr_i;
-        var $state_addr_i;
-        var $inbuf_addr_i;
-        var $inleft_addr_i;
-        var $retval_i;
-        var $1;
-        var $charset_i;
-        var $designation_i;
-        var $i_i;
-        var $esclen_i;
-        var $dsg_i;
         var $state_addr;
         var $config_addr;
         var $inbuf_addr;
@@ -1708,7 +2367,7 @@ var __str37;
         var $outbuf_addr;
         var $outleft_addr=__stackBase__+4;
         var $retval;
-        var $2;
+        var $0;
         var $dsgcache;
         var $c;
         var $err;
@@ -1722,1159 +2381,599 @@ var __str37;
         $outbuf_addr=$outbuf;
         HEAP[$outleft_addr]=$outleft;
         $dsgcache=0; //@line 423 "_codecs_iso2022.c"
-        __lastLabel__ = -1; __label__ = 145; break; //@line 423 "_codecs_iso2022.c"
+        __lastLabel__ = -1; __label__ = 67; break; //@line 423 "_codecs_iso2022.c"
       case 1: // $bb
-        var $3=$inbuf_addr; //@line 426 "_codecs_iso2022.c"
+        var $1=$inbuf_addr; //@line 426 "_codecs_iso2022.c"
+        var $2=HEAP[$1]; //@line 426 "_codecs_iso2022.c"
+        var $3=$2; //@line 426 "_codecs_iso2022.c"
         var $4=HEAP[$3]; //@line 426 "_codecs_iso2022.c"
-        var $5=$4; //@line 426 "_codecs_iso2022.c"
-        var $6=HEAP[$5]; //@line 426 "_codecs_iso2022.c"
-        $c=$6; //@line 426 "_codecs_iso2022.c"
-        var $7=$state_addr; //@line 429 "_codecs_iso2022.c"
-        var $8=$7; //@line 429 "_codecs_iso2022.c"
-        var $9=$8; //@line 429 "_codecs_iso2022.c"
-        var $10=$9+4; //@line 429 "_codecs_iso2022.c"
-        var $11=HEAP[$10]; //@line 429 "_codecs_iso2022.c"
-        var $12=($11); //@line 429 "_codecs_iso2022.c"
-        var $13=($12) & 2; //@line 429 "_codecs_iso2022.c"
-        var $14=($13)!=0; //@line 429 "_codecs_iso2022.c"
-        if ($14) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 429 "_codecs_iso2022.c"
+        $c=$4; //@line 426 "_codecs_iso2022.c"
+        var $5=$state_addr; //@line 429 "_codecs_iso2022.c"
+        var $6=$5; //@line 429 "_codecs_iso2022.c"
+        var $7=$6; //@line 429 "_codecs_iso2022.c"
+        var $8=$7+4; //@line 429 "_codecs_iso2022.c"
+        var $9=HEAP[$8]; //@line 429 "_codecs_iso2022.c"
+        var $10=($9); //@line 429 "_codecs_iso2022.c"
+        var $11=($10) & 2; //@line 429 "_codecs_iso2022.c"
+        var $12=($11)!=0; //@line 429 "_codecs_iso2022.c"
+        if ($12) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 429 "_codecs_iso2022.c"
       case 2: // $bb1
-        var $15=HEAP[$outleft_addr]; //@line 432 "_codecs_iso2022.c"
-        var $16=($15) <= 0; //@line 432 "_codecs_iso2022.c"
-        if ($16) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 432 "_codecs_iso2022.c"
+        var $13=HEAP[$outleft_addr]; //@line 432 "_codecs_iso2022.c"
+        var $14=($13) <= 0; //@line 432 "_codecs_iso2022.c"
+        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 432 "_codecs_iso2022.c"
       case 3: // $bb2
-        $2=-1; //@line 432 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 432 "_codecs_iso2022.c"
+        $0=-1; //@line 432 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 432 "_codecs_iso2022.c"
       case 4: // $bb3
-        var $17=$outbuf_addr; //@line 432 "_codecs_iso2022.c"
-        var $18=HEAP[$17]; //@line 432 "_codecs_iso2022.c"
-        var $19=$c; //@line 432 "_codecs_iso2022.c"
-        var $20=($19); //@line 432 "_codecs_iso2022.c"
-        var $21=$18; //@line 432 "_codecs_iso2022.c"
-        HEAP[$21]=$20; //@line 432 "_codecs_iso2022.c"
-        var $22=$inbuf_addr; //@line 433 "_codecs_iso2022.c"
-        var $23=HEAP[$22]; //@line 433 "_codecs_iso2022.c"
-        var $24=$23+1; //@line 433 "_codecs_iso2022.c"
-        var $25=$inbuf_addr; //@line 433 "_codecs_iso2022.c"
-        HEAP[$25]=$24; //@line 433 "_codecs_iso2022.c"
-        var $26=HEAP[$inleft_addr]; //@line 433 "_codecs_iso2022.c"
-        var $27=($26) - 1; //@line 433 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$27; //@line 433 "_codecs_iso2022.c"
-        var $28=$outbuf_addr; //@line 433 "_codecs_iso2022.c"
-        var $29=HEAP[$28]; //@line 433 "_codecs_iso2022.c"
-        var $30=$29+2; //@line 433 "_codecs_iso2022.c"
-        var $31=$outbuf_addr; //@line 433 "_codecs_iso2022.c"
-        HEAP[$31]=$30; //@line 433 "_codecs_iso2022.c"
-        var $32=HEAP[$outleft_addr]; //@line 433 "_codecs_iso2022.c"
-        var $33=($32) - 1; //@line 433 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$33; //@line 433 "_codecs_iso2022.c"
+        var $15=$outbuf_addr; //@line 432 "_codecs_iso2022.c"
+        var $16=HEAP[$15]; //@line 432 "_codecs_iso2022.c"
+        var $17=$c; //@line 432 "_codecs_iso2022.c"
+        var $18=($17); //@line 432 "_codecs_iso2022.c"
+        var $19=$16; //@line 432 "_codecs_iso2022.c"
+        HEAP[$19]=$18; //@line 432 "_codecs_iso2022.c"
+        var $20=$inbuf_addr; //@line 433 "_codecs_iso2022.c"
+        var $21=HEAP[$20]; //@line 433 "_codecs_iso2022.c"
+        var $22=$21+1; //@line 433 "_codecs_iso2022.c"
+        var $23=$inbuf_addr; //@line 433 "_codecs_iso2022.c"
+        HEAP[$23]=$22; //@line 433 "_codecs_iso2022.c"
+        var $24=HEAP[$inleft_addr]; //@line 433 "_codecs_iso2022.c"
+        var $25=($24) - 1; //@line 433 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$25; //@line 433 "_codecs_iso2022.c"
+        var $26=$outbuf_addr; //@line 433 "_codecs_iso2022.c"
+        var $27=HEAP[$26]; //@line 433 "_codecs_iso2022.c"
+        var $28=$27+2; //@line 433 "_codecs_iso2022.c"
+        var $29=$outbuf_addr; //@line 433 "_codecs_iso2022.c"
+        HEAP[$29]=$28; //@line 433 "_codecs_iso2022.c"
+        var $30=HEAP[$outleft_addr]; //@line 433 "_codecs_iso2022.c"
+        var $31=($30) - 1; //@line 433 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$31; //@line 433 "_codecs_iso2022.c"
+        var $32=$c; //@line 434 "_codecs_iso2022.c"
+        var $33=($32) > 64; //@line 434 "_codecs_iso2022.c"
         var $34=$c; //@line 434 "_codecs_iso2022.c"
-        var $35=($34) > 64; //@line 434 "_codecs_iso2022.c"
+        var $35=($34) <= 90; //@line 434 "_codecs_iso2022.c"
+        var $or_cond=($33) & ($35);
         var $36=$c; //@line 434 "_codecs_iso2022.c"
-        var $37=($36) <= 90; //@line 434 "_codecs_iso2022.c"
-        var $or_cond=($35) & ($37);
-        var $38=$c; //@line 434 "_codecs_iso2022.c"
-        var $39=($38)==64; //@line 434 "_codecs_iso2022.c"
-        var $or_cond3=($or_cond) | ($39);
-        if ($or_cond3) { __label__ = 5; break; } else { __label__ = 144; break; } //@line 434 "_codecs_iso2022.c"
+        var $37=($36)==64; //@line 434 "_codecs_iso2022.c"
+        var $or_cond3=($or_cond) | ($37);
+        if ($or_cond3) { __label__ = 5; break; } else { __label__ = 66; break; } //@line 434 "_codecs_iso2022.c"
       case 5: // $bb6
-        var $40=$state_addr; //@line 435 "_codecs_iso2022.c"
-        var $41=$40; //@line 435 "_codecs_iso2022.c"
-        var $42=$41; //@line 435 "_codecs_iso2022.c"
-        var $43=$42+4; //@line 435 "_codecs_iso2022.c"
-        var $44=HEAP[$43]; //@line 435 "_codecs_iso2022.c"
-        var $45=($44) & -3; //@line 435 "_codecs_iso2022.c"
-        var $46=$state_addr; //@line 435 "_codecs_iso2022.c"
-        var $47=$46; //@line 435 "_codecs_iso2022.c"
-        var $48=$47; //@line 435 "_codecs_iso2022.c"
-        var $49=$48+4; //@line 435 "_codecs_iso2022.c"
-        HEAP[$49]=$45; //@line 435 "_codecs_iso2022.c"
-        __label__ = 144; break; //@line 435 "_codecs_iso2022.c"
+        var $38=$state_addr; //@line 435 "_codecs_iso2022.c"
+        var $39=$38; //@line 435 "_codecs_iso2022.c"
+        var $40=$39; //@line 435 "_codecs_iso2022.c"
+        var $41=$40+4; //@line 435 "_codecs_iso2022.c"
+        var $42=HEAP[$41]; //@line 435 "_codecs_iso2022.c"
+        var $43=($42) & -3; //@line 435 "_codecs_iso2022.c"
+        var $44=$state_addr; //@line 435 "_codecs_iso2022.c"
+        var $45=$44; //@line 435 "_codecs_iso2022.c"
+        var $46=$45; //@line 435 "_codecs_iso2022.c"
+        var $47=$46+4; //@line 435 "_codecs_iso2022.c"
+        HEAP[$47]=$43; //@line 435 "_codecs_iso2022.c"
+        __label__ = 66; break; //@line 435 "_codecs_iso2022.c"
       case 6: // $bb8
-        var $50=$c; //@line 440 "_codecs_iso2022.c"
-        var $51=($50); //@line 440 "_codecs_iso2022.c"
-        if ($51 == 10) {
-          __label__ = 107; break;
+        var $48=$c; //@line 440 "_codecs_iso2022.c"
+        var $49=($48); //@line 440 "_codecs_iso2022.c"
+        if ($49 == 10) {
+          __label__ = 29; break;
         }
-        else if ($51 == 14) {
-          __label__ = 105; break;
+        else if ($49 == 14) {
+          __label__ = 27; break;
         }
-        else if ($51 == 15) {
-          __label__ = 103; break;
+        else if ($49 == 15) {
+          __label__ = 25; break;
         }
-        else if ($51 == 27) {
+        else if ($49 == 27) {
           __label__ = 7; break;
         }
         else {
-        __label__ = 110; break;
+        __label__ = 32; break;
         }
         
       case 7: // $bb9
-        var $52=HEAP[$inleft_addr]; //@line 442 "_codecs_iso2022.c"
-        var $53=($52) <= 1; //@line 442 "_codecs_iso2022.c"
-        if ($53) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 442 "_codecs_iso2022.c"
+        var $50=HEAP[$inleft_addr]; //@line 442 "_codecs_iso2022.c"
+        var $51=($50) <= 1; //@line 442 "_codecs_iso2022.c"
+        if ($51) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 442 "_codecs_iso2022.c"
       case 8: // $bb10
-        $2=-2; //@line 442 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 442 "_codecs_iso2022.c"
+        $0=-2; //@line 442 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 442 "_codecs_iso2022.c"
       case 9: // $bb11
-        var $54=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $52=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $53=HEAP[$52]; //@line 443 "_codecs_iso2022.c"
+        var $54=$53+1; //@line 443 "_codecs_iso2022.c"
         var $55=HEAP[$54]; //@line 443 "_codecs_iso2022.c"
-        var $56=$55+1; //@line 443 "_codecs_iso2022.c"
-        var $57=HEAP[$56]; //@line 443 "_codecs_iso2022.c"
-        var $58=($57)==40; //@line 443 "_codecs_iso2022.c"
-        if ($58) { __label__ = 14; break; } else { __label__ = 10; break; } //@line 443 "_codecs_iso2022.c"
+        var $56=($55)==40; //@line 443 "_codecs_iso2022.c"
+        if ($56) { __label__ = 14; break; } else { __label__ = 10; break; } //@line 443 "_codecs_iso2022.c"
       case 10: // $bb12
-        var $59=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $57=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $58=HEAP[$57]; //@line 443 "_codecs_iso2022.c"
+        var $59=$58+1; //@line 443 "_codecs_iso2022.c"
         var $60=HEAP[$59]; //@line 443 "_codecs_iso2022.c"
-        var $61=$60+1; //@line 443 "_codecs_iso2022.c"
-        var $62=HEAP[$61]; //@line 443 "_codecs_iso2022.c"
-        var $63=($62)==41; //@line 443 "_codecs_iso2022.c"
-        if ($63) { __label__ = 14; break; } else { __label__ = 11; break; } //@line 443 "_codecs_iso2022.c"
+        var $61=($60)==41; //@line 443 "_codecs_iso2022.c"
+        if ($61) { __label__ = 14; break; } else { __label__ = 11; break; } //@line 443 "_codecs_iso2022.c"
       case 11: // $bb13
-        var $64=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $62=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $63=HEAP[$62]; //@line 443 "_codecs_iso2022.c"
+        var $64=$63+1; //@line 443 "_codecs_iso2022.c"
         var $65=HEAP[$64]; //@line 443 "_codecs_iso2022.c"
-        var $66=$65+1; //@line 443 "_codecs_iso2022.c"
-        var $67=HEAP[$66]; //@line 443 "_codecs_iso2022.c"
-        var $68=($67)==36; //@line 443 "_codecs_iso2022.c"
-        if ($68) { __label__ = 14; break; } else { __label__ = 12; break; } //@line 443 "_codecs_iso2022.c"
+        var $66=($65)==36; //@line 443 "_codecs_iso2022.c"
+        if ($66) { __label__ = 14; break; } else { __label__ = 12; break; } //@line 443 "_codecs_iso2022.c"
       case 12: // $bb14
-        var $69=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $67=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $68=HEAP[$67]; //@line 443 "_codecs_iso2022.c"
+        var $69=$68+1; //@line 443 "_codecs_iso2022.c"
         var $70=HEAP[$69]; //@line 443 "_codecs_iso2022.c"
-        var $71=$70+1; //@line 443 "_codecs_iso2022.c"
-        var $72=HEAP[$71]; //@line 443 "_codecs_iso2022.c"
-        var $73=($72)==46; //@line 443 "_codecs_iso2022.c"
-        if ($73) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 443 "_codecs_iso2022.c"
+        var $71=($70)==46; //@line 443 "_codecs_iso2022.c"
+        if ($71) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 443 "_codecs_iso2022.c"
       case 13: // $bb15
-        var $74=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $72=$inbuf_addr; //@line 443 "_codecs_iso2022.c"
+        var $73=HEAP[$72]; //@line 443 "_codecs_iso2022.c"
+        var $74=$73+1; //@line 443 "_codecs_iso2022.c"
         var $75=HEAP[$74]; //@line 443 "_codecs_iso2022.c"
-        var $76=$75+1; //@line 443 "_codecs_iso2022.c"
-        var $77=HEAP[$76]; //@line 443 "_codecs_iso2022.c"
-        var $78=($77)==38; //@line 443 "_codecs_iso2022.c"
-        if ($78) { __label__ = 14; break; } else { __label__ = 67; break; } //@line 443 "_codecs_iso2022.c"
+        var $76=($75)==38; //@line 443 "_codecs_iso2022.c"
+        if ($76) { __label__ = 14; break; } else { __label__ = 16; break; } //@line 443 "_codecs_iso2022.c"
       case 14: // $bb16
-        var $79=$config_addr; //@line 444 "_codecs_iso2022.c"
-        var $80=$state_addr; //@line 444 "_codecs_iso2022.c"
-        var $81=$inbuf_addr; //@line 444 "_codecs_iso2022.c"
-        $config_addr_i=$79;
-        $state_addr_i=$80;
-        $inbuf_addr_i=$81;
-        $inleft_addr_i=$inleft_addr;
-        $i_i=1; //@line 309 "_codecs_iso2022.c"
-        __lastLabel__ = 14; __label__ = 27; break; //@line 309 "_codecs_iso2022.c"
-      case 15: // $bb_i
-        var $82=$inleft_addr_i; //@line 310 "_codecs_iso2022.c"
-        var $83=HEAP[$82]; //@line 310 "_codecs_iso2022.c"
-        var $84=$i_i; //@line 310 "_codecs_iso2022.c"
-        var $85=($83) <= ($84); //@line 310 "_codecs_iso2022.c"
-        if ($85) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 310 "_codecs_iso2022.c"
-      case 16: // $bb1_i
-        $1=-2; //@line 311 "_codecs_iso2022.c"
-        __lastLabel__ = 16; __label__ = 64; break; //@line 311 "_codecs_iso2022.c"
-      case 17: // $bb2_i
-        var $86=$inbuf_addr_i; //@line 312 "_codecs_iso2022.c"
-        var $87=HEAP[$86]; //@line 312 "_codecs_iso2022.c"
-        var $88=$i_i; //@line 312 "_codecs_iso2022.c"
-        var $89=$87+$88; //@line 312 "_codecs_iso2022.c"
-        var $90=HEAP[$89]; //@line 312 "_codecs_iso2022.c"
-        var $91=($90) <= 64; //@line 312 "_codecs_iso2022.c"
-        if ($91) { __label__ = 19; break; } else { __label__ = 18; break; } //@line 312 "_codecs_iso2022.c"
-      case 18: // $bb3_i
-        var $92=$inbuf_addr_i; //@line 312 "_codecs_iso2022.c"
-        var $93=HEAP[$92]; //@line 312 "_codecs_iso2022.c"
-        var $94=$i_i; //@line 312 "_codecs_iso2022.c"
-        var $95=$93+$94; //@line 312 "_codecs_iso2022.c"
-        var $96=HEAP[$95]; //@line 312 "_codecs_iso2022.c"
-        var $97=($96) <= 90; //@line 312 "_codecs_iso2022.c"
-        if ($97) { __label__ = 20; break; } else { __label__ = 19; break; } //@line 312 "_codecs_iso2022.c"
-      case 19: // $bb4_i
-        var $98=$inbuf_addr_i; //@line 312 "_codecs_iso2022.c"
-        var $99=HEAP[$98]; //@line 312 "_codecs_iso2022.c"
-        var $100=$i_i; //@line 312 "_codecs_iso2022.c"
-        var $101=$99+$100; //@line 312 "_codecs_iso2022.c"
-        var $102=HEAP[$101]; //@line 312 "_codecs_iso2022.c"
-        var $103=($102)==64; //@line 312 "_codecs_iso2022.c"
-        if ($103) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 312 "_codecs_iso2022.c"
-      case 20: // $bb5_i
-        var $104=$i_i; //@line 313 "_codecs_iso2022.c"
-        var $105=($104) + 1; //@line 313 "_codecs_iso2022.c"
-        $esclen_i=$105; //@line 313 "_codecs_iso2022.c"
-        __lastLabel__ = 20; __label__ = 29; break; //@line 313 "_codecs_iso2022.c"
-      case 21: // $bb6_i
-        var $106=$config_addr_i; //@line 316 "_codecs_iso2022.c"
-        var $107=$106; //@line 316 "_codecs_iso2022.c"
-        var $108=$107; //@line 316 "_codecs_iso2022.c"
-        var $109=HEAP[$108]; //@line 316 "_codecs_iso2022.c"
-        var $110=($109) & 4; //@line 316 "_codecs_iso2022.c"
-        var $111=($110)!=0; //@line 316 "_codecs_iso2022.c"
-        if ($111) { __label__ = 22; break; } else { __label__ = 26; break; } //@line 316 "_codecs_iso2022.c"
-      case 22: // $bb7_i
-        var $112=$i_i; //@line 316 "_codecs_iso2022.c"
-        var $113=($112) + 1; //@line 316 "_codecs_iso2022.c"
-        var $114=$inleft_addr_i; //@line 316 "_codecs_iso2022.c"
-        var $115=HEAP[$114]; //@line 316 "_codecs_iso2022.c"
-        var $116=($113) < ($115); //@line 316 "_codecs_iso2022.c"
-        if ($116) { __label__ = 23; break; } else { __label__ = 26; break; } //@line 316 "_codecs_iso2022.c"
-      case 23: // $bb8_i
-        var $117=$inbuf_addr_i; //@line 316 "_codecs_iso2022.c"
-        var $118=HEAP[$117]; //@line 316 "_codecs_iso2022.c"
-        var $119=$i_i; //@line 316 "_codecs_iso2022.c"
-        var $120=$118+$119; //@line 316 "_codecs_iso2022.c"
-        var $121=HEAP[$120]; //@line 316 "_codecs_iso2022.c"
-        var $122=($121)==38; //@line 316 "_codecs_iso2022.c"
-        if ($122) { __label__ = 24; break; } else { __label__ = 26; break; } //@line 316 "_codecs_iso2022.c"
-      case 24: // $bb9_i
-        var $123=$inbuf_addr_i; //@line 316 "_codecs_iso2022.c"
-        var $124=HEAP[$123]; //@line 316 "_codecs_iso2022.c"
-        var $125=$i_i; //@line 316 "_codecs_iso2022.c"
-        var $126=($125) + 1; //@line 316 "_codecs_iso2022.c"
-        var $127=$124+$126; //@line 316 "_codecs_iso2022.c"
-        var $128=HEAP[$127]; //@line 316 "_codecs_iso2022.c"
-        var $129=($128)==64; //@line 316 "_codecs_iso2022.c"
-        if ($129) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 316 "_codecs_iso2022.c"
-      case 25: // $bb10_i
-        var $130=$i_i; //@line 318 "_codecs_iso2022.c"
-        var $131=($130) + 2; //@line 318 "_codecs_iso2022.c"
-        $i_i=$131; //@line 318 "_codecs_iso2022.c"
-        __label__ = 26; break; //@line 318 "_codecs_iso2022.c"
-      case 26: // $bb11_i
-        var $132=$i_i; //@line 309 "_codecs_iso2022.c"
-        var $133=($132) + 1; //@line 309 "_codecs_iso2022.c"
-        $i_i=$133; //@line 309 "_codecs_iso2022.c"
-        __lastLabel__ = 26; __label__ = 27; break; //@line 309 "_codecs_iso2022.c"
-      case 27: // $bb12_i
-        var $134=__lastLabel__ == 26 ? $133 : (1);
-        var $135=($134) <= 15; //@line 309 "_codecs_iso2022.c"
-        if ($135) { __label__ = 15; break; } else { __label__ = 28; break; } //@line 309 "_codecs_iso2022.c"
-      case 28: // $bb13thread_pre_split_i
-        var $_pr_i=$i_i;
-        __lastLabel__ = 28; __label__ = 29; break;
-      case 29: // $bb13_i
-        var $136=__lastLabel__ == 28 ? $_pr_i : ($104);
-        var $137=($136) > 15; //@line 321 "_codecs_iso2022.c"
-        if ($137) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 321 "_codecs_iso2022.c"
-      case 30: // $bb14_i
-        $1=1; //@line 322 "_codecs_iso2022.c"
-        __lastLabel__ = 30; __label__ = 64; break; //@line 322 "_codecs_iso2022.c"
-      case 31: // $bb15_i
-        var $138=$esclen_i; //@line 324 "_codecs_iso2022.c"
-        if ($138 == 3) {
-          __label__ = 32; break;
-        }
-        else if ($138 == 4) {
-          __label__ = 42; break;
-        }
-        else if ($138 == 6) {
-          __label__ = 49; break;
-        }
-        else {
-        __label__ = 55; break;
-        }
-        
-      case 32: // $bb16_i
-        var $139=$inbuf_addr_i; //@line 326 "_codecs_iso2022.c"
-        var $140=HEAP[$139]; //@line 326 "_codecs_iso2022.c"
-        var $141=$140+1; //@line 326 "_codecs_iso2022.c"
-        var $142=HEAP[$141]; //@line 326 "_codecs_iso2022.c"
-        var $143=($142)==36; //@line 326 "_codecs_iso2022.c"
-        var $144=$inbuf_addr_i; //@line 327 "_codecs_iso2022.c"
-        var $145=HEAP[$144]; //@line 327 "_codecs_iso2022.c"
-        var $146=$145+2; //@line 327 "_codecs_iso2022.c"
-        var $147=HEAP[$146]; //@line 327 "_codecs_iso2022.c"
-        if ($143) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 326 "_codecs_iso2022.c"
-      case 33: // $bb17_i
-        var $148=($147) | -128; //@line 327 "_codecs_iso2022.c"
-        $charset_i=$148; //@line 327 "_codecs_iso2022.c"
-        $designation_i=0; //@line 328 "_codecs_iso2022.c"
-        __label__ = 57; break; //@line 328 "_codecs_iso2022.c"
-      case 34: // $bb18_i
-        $charset_i=$147; //@line 331 "_codecs_iso2022.c"
-        var $149=$inbuf_addr_i; //@line 332 "_codecs_iso2022.c"
-        var $150=HEAP[$149]; //@line 332 "_codecs_iso2022.c"
-        var $151=$150+1; //@line 332 "_codecs_iso2022.c"
-        var $152=HEAP[$151]; //@line 332 "_codecs_iso2022.c"
-        var $153=($152)==40; //@line 332 "_codecs_iso2022.c"
-        if ($153) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 332 "_codecs_iso2022.c"
-      case 35: // $bb19_i
-        $designation_i=0; //@line 332 "_codecs_iso2022.c"
-        __label__ = 56; break; //@line 332 "_codecs_iso2022.c"
-      case 36: // $bb20_i
-        var $154=$inbuf_addr_i; //@line 333 "_codecs_iso2022.c"
-        var $155=HEAP[$154]; //@line 333 "_codecs_iso2022.c"
-        var $156=$155+1; //@line 333 "_codecs_iso2022.c"
-        var $157=HEAP[$156]; //@line 333 "_codecs_iso2022.c"
-        var $158=($157)==41; //@line 333 "_codecs_iso2022.c"
-        if ($158) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 333 "_codecs_iso2022.c"
-      case 37: // $bb21_i
-        $designation_i=1; //@line 333 "_codecs_iso2022.c"
-        __label__ = 56; break; //@line 333 "_codecs_iso2022.c"
-      case 38: // $bb22_i
-        var $159=$config_addr_i; //@line 334 "_codecs_iso2022.c"
-        var $160=$159; //@line 334 "_codecs_iso2022.c"
-        var $161=$160; //@line 334 "_codecs_iso2022.c"
-        var $162=HEAP[$161]; //@line 334 "_codecs_iso2022.c"
-        var $163=($162) & 2; //@line 334 "_codecs_iso2022.c"
-        var $164=($163)==0; //@line 334 "_codecs_iso2022.c"
-        if ($164) { __label__ = 41; break; } else { __label__ = 39; break; } //@line 334 "_codecs_iso2022.c"
-      case 39: // $bb23_i
-        var $165=$inbuf_addr_i; //@line 334 "_codecs_iso2022.c"
-        var $166=HEAP[$165]; //@line 334 "_codecs_iso2022.c"
-        var $167=$166+1; //@line 334 "_codecs_iso2022.c"
-        var $168=HEAP[$167]; //@line 334 "_codecs_iso2022.c"
-        var $169=($168)!=46; //@line 334 "_codecs_iso2022.c"
-        if ($169) { __label__ = 41; break; } else { __label__ = 40; break; } //@line 334 "_codecs_iso2022.c"
-      case 40: // $bb24_i
-        $designation_i=2; //@line 335 "_codecs_iso2022.c"
-        __label__ = 56; break; //@line 335 "_codecs_iso2022.c"
-      case 41: // $bb25_i
-        $1=3; //@line 336 "_codecs_iso2022.c"
-        __lastLabel__ = 41; __label__ = 64; break; //@line 336 "_codecs_iso2022.c"
-      case 42: // $bb27_i
-        var $170=$inbuf_addr_i; //@line 340 "_codecs_iso2022.c"
-        var $171=HEAP[$170]; //@line 340 "_codecs_iso2022.c"
-        var $172=$171+1; //@line 340 "_codecs_iso2022.c"
-        var $173=HEAP[$172]; //@line 340 "_codecs_iso2022.c"
-        var $174=($173)!=36; //@line 340 "_codecs_iso2022.c"
-        if ($174) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 340 "_codecs_iso2022.c"
-      case 43: // $bb28_i
-        $1=4; //@line 341 "_codecs_iso2022.c"
-        __lastLabel__ = 43; __label__ = 64; break; //@line 341 "_codecs_iso2022.c"
-      case 44: // $bb29_i
-        var $175=$inbuf_addr_i; //@line 343 "_codecs_iso2022.c"
-        var $176=HEAP[$175]; //@line 343 "_codecs_iso2022.c"
-        var $177=$176+3; //@line 343 "_codecs_iso2022.c"
-        var $178=HEAP[$177]; //@line 343 "_codecs_iso2022.c"
-        var $179=($178) | -128; //@line 343 "_codecs_iso2022.c"
-        $charset_i=$179; //@line 343 "_codecs_iso2022.c"
-        var $180=$inbuf_addr_i; //@line 344 "_codecs_iso2022.c"
-        var $181=HEAP[$180]; //@line 344 "_codecs_iso2022.c"
-        var $182=$181+2; //@line 344 "_codecs_iso2022.c"
-        var $183=HEAP[$182]; //@line 344 "_codecs_iso2022.c"
-        var $184=($183)==40; //@line 344 "_codecs_iso2022.c"
-        if ($184) { __label__ = 45; break; } else { __label__ = 46; break; } //@line 344 "_codecs_iso2022.c"
-      case 45: // $bb30_i
-        $designation_i=0; //@line 344 "_codecs_iso2022.c"
-        __label__ = 56; break; //@line 344 "_codecs_iso2022.c"
-      case 46: // $bb31_i
-        var $185=$inbuf_addr_i; //@line 345 "_codecs_iso2022.c"
-        var $186=HEAP[$185]; //@line 345 "_codecs_iso2022.c"
-        var $187=$186+2; //@line 345 "_codecs_iso2022.c"
-        var $188=HEAP[$187]; //@line 345 "_codecs_iso2022.c"
-        var $189=($188)==41; //@line 345 "_codecs_iso2022.c"
-        if ($189) { __label__ = 47; break; } else { __label__ = 48; break; } //@line 345 "_codecs_iso2022.c"
-      case 47: // $bb32_i
-        $designation_i=1; //@line 345 "_codecs_iso2022.c"
-        __label__ = 56; break; //@line 345 "_codecs_iso2022.c"
-      case 48: // $bb33_i
-        $1=4; //@line 346 "_codecs_iso2022.c"
-        __lastLabel__ = 48; __label__ = 64; break; //@line 346 "_codecs_iso2022.c"
-      case 49: // $bb35_i
-        var $190=$config_addr_i; //@line 349 "_codecs_iso2022.c"
-        var $191=$190; //@line 349 "_codecs_iso2022.c"
-        var $192=$191; //@line 349 "_codecs_iso2022.c"
-        var $193=HEAP[$192]; //@line 349 "_codecs_iso2022.c"
-        var $194=($193) & 4; //@line 349 "_codecs_iso2022.c"
-        var $195=($194)==0; //@line 349 "_codecs_iso2022.c"
-        if ($195) { __label__ = 54; break; } else { __label__ = 50; break; } //@line 349 "_codecs_iso2022.c"
-      case 50: // $bb36_i
-        var $196=$inbuf_addr_i; //@line 349 "_codecs_iso2022.c"
-        var $197=HEAP[$196]; //@line 349 "_codecs_iso2022.c"
-        var $198=$197+3; //@line 349 "_codecs_iso2022.c"
-        var $199=HEAP[$198]; //@line 349 "_codecs_iso2022.c"
-        var $200=($199)!=27; //@line 349 "_codecs_iso2022.c"
-        if ($200) { __label__ = 54; break; } else { __label__ = 51; break; } //@line 349 "_codecs_iso2022.c"
-      case 51: // $bb37_i
-        var $201=$inbuf_addr_i; //@line 349 "_codecs_iso2022.c"
-        var $202=HEAP[$201]; //@line 349 "_codecs_iso2022.c"
-        var $203=$202+4; //@line 349 "_codecs_iso2022.c"
-        var $204=HEAP[$203]; //@line 349 "_codecs_iso2022.c"
-        var $205=($204)!=36; //@line 349 "_codecs_iso2022.c"
-        if ($205) { __label__ = 54; break; } else { __label__ = 52; break; } //@line 349 "_codecs_iso2022.c"
-      case 52: // $bb38_i
-        var $206=$inbuf_addr_i; //@line 349 "_codecs_iso2022.c"
-        var $207=HEAP[$206]; //@line 349 "_codecs_iso2022.c"
-        var $208=$207+5; //@line 349 "_codecs_iso2022.c"
-        var $209=HEAP[$208]; //@line 349 "_codecs_iso2022.c"
-        var $210=($209)!=66; //@line 349 "_codecs_iso2022.c"
-        if ($210) { __label__ = 54; break; } else { __label__ = 53; break; } //@line 349 "_codecs_iso2022.c"
-      case 53: // $bb39_i
-        $charset_i=-62; //@line 352 "_codecs_iso2022.c"
-        $designation_i=0; //@line 353 "_codecs_iso2022.c"
-        __label__ = 57; break; //@line 353 "_codecs_iso2022.c"
-      case 54: // $bb40_i
-        $1=6; //@line 356 "_codecs_iso2022.c"
-        __lastLabel__ = 54; __label__ = 64; break; //@line 356 "_codecs_iso2022.c"
-      case 55: // $bb41_i
-        var $211=$esclen_i; //@line 359 "_codecs_iso2022.c"
-        $1=$211; //@line 359 "_codecs_iso2022.c"
-        __lastLabel__ = 55; __label__ = 65; break; //@line 359 "_codecs_iso2022.c"
-      case 56: // $bb42_i
-        var $_pr1_i=$charset_i;
-        var $212=($_pr1_i)!=66; //@line 363 "_codecs_iso2022.c"
-        if ($212) { __label__ = 57; break; } else { __label__ = 63; break; } //@line 363 "_codecs_iso2022.c"
-      case 57: // $bb43_i
-        var $213=$config_addr_i; //@line 366 "_codecs_iso2022.c"
-        var $214=$213; //@line 366 "_codecs_iso2022.c"
-        var $215=$214+4; //@line 366 "_codecs_iso2022.c"
-        var $216=HEAP[$215]; //@line 366 "_codecs_iso2022.c"
-        $dsg_i=$216; //@line 366 "_codecs_iso2022.c"
-        __label__ = 60; break; //@line 366 "_codecs_iso2022.c"
-      case 58: // $bb44_i
-        var $217=$dsg_i; //@line 367 "_codecs_iso2022.c"
-        var $218=$217; //@line 367 "_codecs_iso2022.c"
-        var $219=HEAP[$218]; //@line 367 "_codecs_iso2022.c"
-        var $220=$charset_i; //@line 367 "_codecs_iso2022.c"
-        var $221=($219)==($220); //@line 367 "_codecs_iso2022.c"
-        if ($221) { __label__ = 61; break; } else { __label__ = 59; break; } //@line 367 "_codecs_iso2022.c"
-      case 59: // $bb45_i
-        var $222=$dsg_i; //@line 366 "_codecs_iso2022.c"
-        var $223=$222+16; //@line 366 "_codecs_iso2022.c"
-        $dsg_i=$223; //@line 366 "_codecs_iso2022.c"
-        __label__ = 60; break; //@line 366 "_codecs_iso2022.c"
-      case 60: // $bb46_i
-        var $224=$dsg_i; //@line 366 "_codecs_iso2022.c"
-        var $225=$224; //@line 366 "_codecs_iso2022.c"
-        var $226=HEAP[$225]; //@line 366 "_codecs_iso2022.c"
-        var $227=($226)!=0; //@line 366 "_codecs_iso2022.c"
-        if ($227) { __label__ = 58; break; } else { __label__ = 61; break; } //@line 366 "_codecs_iso2022.c"
-      case 61: // $bb47_i
-        var $228=$dsg_i; //@line 369 "_codecs_iso2022.c"
-        var $229=$228; //@line 369 "_codecs_iso2022.c"
-        var $230=HEAP[$229]; //@line 369 "_codecs_iso2022.c"
-        var $231=($230)==0; //@line 369 "_codecs_iso2022.c"
-        if ($231) { __label__ = 62; break; } else { __label__ = 63; break; } //@line 369 "_codecs_iso2022.c"
-      case 62: // $bb48_i
-        var $232=$esclen_i; //@line 370 "_codecs_iso2022.c"
-        $1=$232; //@line 370 "_codecs_iso2022.c"
-        __lastLabel__ = 62; __label__ = 65; break; //@line 370 "_codecs_iso2022.c"
-      case 63: // $iso2022processesc_exit_thread36
-        var $233=$designation_i; //@line 373 "_codecs_iso2022.c"
-        var $234=($233); //@line 373 "_codecs_iso2022.c"
-        var $235=$state_addr_i; //@line 373 "_codecs_iso2022.c"
-        var $236=$235; //@line 373 "_codecs_iso2022.c"
-        var $237=$236; //@line 373 "_codecs_iso2022.c"
-        var $238=$237+$234; //@line 373 "_codecs_iso2022.c"
-        var $239=$charset_i; //@line 373 "_codecs_iso2022.c"
-        HEAP[$238]=$239; //@line 373 "_codecs_iso2022.c"
-        var $240=$inleft_addr_i; //@line 374 "_codecs_iso2022.c"
-        var $241=HEAP[$240]; //@line 374 "_codecs_iso2022.c"
-        var $242=$esclen_i; //@line 374 "_codecs_iso2022.c"
-        var $243=($241) - ($242); //@line 374 "_codecs_iso2022.c"
-        var $244=$inleft_addr_i; //@line 374 "_codecs_iso2022.c"
-        HEAP[$244]=$243; //@line 374 "_codecs_iso2022.c"
-        var $245=$inbuf_addr_i; //@line 375 "_codecs_iso2022.c"
-        var $246=HEAP[$245]; //@line 375 "_codecs_iso2022.c"
-        var $247=$esclen_i; //@line 375 "_codecs_iso2022.c"
-        var $248=$246+$247; //@line 375 "_codecs_iso2022.c"
-        var $249=$inbuf_addr_i; //@line 375 "_codecs_iso2022.c"
-        HEAP[$249]=$248; //@line 375 "_codecs_iso2022.c"
-        $1=0; //@line 376 "_codecs_iso2022.c"
-        $retval_i=0; //@line 311 "_codecs_iso2022.c"
-        $err=0; //@line 444 "_codecs_iso2022.c"
-        __label__ = 144; break;
-      case 64: // $iso2022processesc_exit_thread
-        var $_ph=__lastLabel__ == 16 ? -2 : (__lastLabel__ == 30 ? 1 : (__lastLabel__ == 41 ? 3 : (__lastLabel__ == 43 ? 4 : (__lastLabel__ == 48 ? 4 : (6)))));
-        $retval_i=$_ph; //@line 311 "_codecs_iso2022.c"
-        $err=$_ph; //@line 444 "_codecs_iso2022.c"
-        __label__ = 66; break;
-      case 65: // $iso2022processesc_exit
-        var $250=__lastLabel__ == 55 ? $211 : ($232);
-        $retval_i=$250; //@line 311 "_codecs_iso2022.c"
-        $err=$250; //@line 444 "_codecs_iso2022.c"
-        var $251=($250)!=0; //@line 446 "_codecs_iso2022.c"
-        if ($251) { __label__ = 66; break; } else { __label__ = 144; break; } //@line 446 "_codecs_iso2022.c"
-      case 66: // $bb17
-        var $252=$err; //@line 447 "_codecs_iso2022.c"
-        $2=$252; //@line 447 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 447 "_codecs_iso2022.c"
-      case 67: // $bb19
-        var $253=$config_addr; //@line 449 "_codecs_iso2022.c"
-        var $254=$253; //@line 449 "_codecs_iso2022.c"
-        var $255=$254; //@line 449 "_codecs_iso2022.c"
-        var $256=HEAP[$255]; //@line 449 "_codecs_iso2022.c"
-        var $257=($256) & 2; //@line 449 "_codecs_iso2022.c"
-        var $258=($257)==0; //@line 449 "_codecs_iso2022.c"
-        if ($258) { __label__ = 100; break; } else { __label__ = 68; break; } //@line 449 "_codecs_iso2022.c"
-      case 68: // $bb20
-        var $259=$inbuf_addr; //@line 449 "_codecs_iso2022.c"
-        var $260=HEAP[$259]; //@line 449 "_codecs_iso2022.c"
-        var $261=$260+1; //@line 449 "_codecs_iso2022.c"
-        var $262=HEAP[$261]; //@line 449 "_codecs_iso2022.c"
-        var $263=($262)!=78; //@line 449 "_codecs_iso2022.c"
-        if ($263) { __label__ = 100; break; } else { __label__ = 69; break; } //@line 449 "_codecs_iso2022.c"
-      case 69: // $bb21
-        var $264=HEAP[$inleft_addr]; //@line 450 "_codecs_iso2022.c"
-        var $265=($264) <= 2; //@line 450 "_codecs_iso2022.c"
-        if ($265) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 450 "_codecs_iso2022.c"
-      case 70: // $bb22
-        $2=-2; //@line 450 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 450 "_codecs_iso2022.c"
-      case 71: // $bb23
-        var $266=$config_addr; //@line 451 "_codecs_iso2022.c"
-        var $267=$state_addr; //@line 451 "_codecs_iso2022.c"
-        var $268=$inbuf_addr; //@line 451 "_codecs_iso2022.c"
-        var $269=$outbuf_addr; //@line 451 "_codecs_iso2022.c"
-        $config_addr_i4=$266;
-        $state_addr_i5=$267;
-        $inbuf_addr_i6=$268;
-        $inleft_addr_i7=$inleft_addr;
-        $outbuf_addr_i=$269;
-        $outleft_addr_i=$outleft_addr;
-        var $270=$state_addr_i5; //@line 397 "_codecs_iso2022.c"
-        var $271=$270; //@line 397 "_codecs_iso2022.c"
-        var $272=$271; //@line 397 "_codecs_iso2022.c"
-        var $273=$272+2; //@line 397 "_codecs_iso2022.c"
-        var $274=HEAP[$273]; //@line 397 "_codecs_iso2022.c"
-        var $275=($274)==65; //@line 397 "_codecs_iso2022.c"
-        if ($275) { __label__ = 72; break; } else { __label__ = 75; break; } //@line 397 "_codecs_iso2022.c"
-      case 72: // $bb_i9
-        var $276=$inbuf_addr_i6; //@line 398 "_codecs_iso2022.c"
-        var $277=HEAP[$276]; //@line 398 "_codecs_iso2022.c"
-        var $278=$277+2; //@line 398 "_codecs_iso2022.c"
-        var $279=HEAP[$278]; //@line 398 "_codecs_iso2022.c"
-        var $280=($279) >= 0; //@line 398 "_codecs_iso2022.c"
-        if ($280) { __label__ = 73; break; } else { __label__ = 74; break; } //@line 398 "_codecs_iso2022.c"
-      case 73: // $bb1_i10
-        var $281=$outbuf_addr_i; //@line 399 "_codecs_iso2022.c"
-        var $282=HEAP[$281]; //@line 399 "_codecs_iso2022.c"
-        var $283=$inbuf_addr_i6; //@line 399 "_codecs_iso2022.c"
-        var $284=HEAP[$283]; //@line 399 "_codecs_iso2022.c"
-        var $285=$284+2; //@line 399 "_codecs_iso2022.c"
-        var $286=HEAP[$285]; //@line 399 "_codecs_iso2022.c"
-        var $287=($286); //@line 399 "_codecs_iso2022.c"
-        var $288=($287) + 128; //@line 399 "_codecs_iso2022.c"
-        var $289=$282; //@line 399 "_codecs_iso2022.c"
-        HEAP[$289]=$288; //@line 399 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 399 "_codecs_iso2022.c"
-      case 74: // $bb2_i11
-        $0=3; //@line 401 "_codecs_iso2022.c"
-        __lastLabel__ = 74; __label__ = 99; break; //@line 401 "_codecs_iso2022.c"
-      case 75: // $bb3_i12
-        var $290=$state_addr_i5; //@line 403 "_codecs_iso2022.c"
-        var $291=$290; //@line 403 "_codecs_iso2022.c"
-        var $292=$291; //@line 403 "_codecs_iso2022.c"
-        var $293=$292+2; //@line 403 "_codecs_iso2022.c"
-        var $294=HEAP[$293]; //@line 403 "_codecs_iso2022.c"
-        var $295=($294)==70; //@line 403 "_codecs_iso2022.c"
-        if ($295) { __label__ = 76; break; } else { __label__ = 93; break; } //@line 403 "_codecs_iso2022.c"
-      case 76: // $bb4_i13
-        var $296=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $297=HEAP[$296]; //@line 404 "_codecs_iso2022.c"
-        var $298=$297+2; //@line 404 "_codecs_iso2022.c"
-        var $299=HEAP[$298]; //@line 404 "_codecs_iso2022.c"
-        var $300=($299) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $301=($300) <= 159; //@line 404 "_codecs_iso2022.c"
-        if ($301) { __label__ = 77; break; } else { __label__ = 78; break; } //@line 404 "_codecs_iso2022.c"
-      case 77: // $bb5_i14
-        var $302=$outbuf_addr_i; //@line 404 "_codecs_iso2022.c"
-        var $303=HEAP[$302]; //@line 404 "_codecs_iso2022.c"
-        var $304=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $305=HEAP[$304]; //@line 404 "_codecs_iso2022.c"
-        var $306=$305+2; //@line 404 "_codecs_iso2022.c"
-        var $307=HEAP[$306]; //@line 404 "_codecs_iso2022.c"
-        var $308=($307) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $309=($308); //@line 404 "_codecs_iso2022.c"
-        HEAP[$303]=$309; //@line 404 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 404 "_codecs_iso2022.c"
-      case 78: // $bb6_i15
-        var $310=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $311=HEAP[$310]; //@line 404 "_codecs_iso2022.c"
-        var $312=$311+2; //@line 404 "_codecs_iso2022.c"
-        var $313=HEAP[$312]; //@line 404 "_codecs_iso2022.c"
-        var $314=($313) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $315=($314) > 191; //@line 404 "_codecs_iso2022.c"
-        if ($315) { __label__ = 81; break; } else { __label__ = 79; break; } //@line 404 "_codecs_iso2022.c"
-      case 79: // $bb7_i16
-        var $316=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $317=HEAP[$316]; //@line 404 "_codecs_iso2022.c"
-        var $318=$317+2; //@line 404 "_codecs_iso2022.c"
-        var $319=HEAP[$318]; //@line 404 "_codecs_iso2022.c"
-        var $320=($319) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $321=($320); //@line 404 "_codecs_iso2022.c"
-        var $322=($321) - 160; //@line 404 "_codecs_iso2022.c"
-        var $323=680475593 >> ($322); //@line 404 "_codecs_iso2022.c"
-        var $324=($323) & 1; //@line 404 "_codecs_iso2022.c"
-        var $325=((($324)) & 255); //@line 404 "_codecs_iso2022.c"
-        var $toBool_i=($325)!=0; //@line 404 "_codecs_iso2022.c"
-        var $toBoolnot_i=($toBool_i) ^ 1; //@line 404 "_codecs_iso2022.c"
-        var $toBoolnot8_i=($toBoolnot_i); //@line 404 "_codecs_iso2022.c"
-        var $toBool10_i=($toBoolnot8_i)!=0; //@line 404 "_codecs_iso2022.c"
-        if ($toBool10_i) { __label__ = 81; break; } else { __label__ = 80; break; } //@line 404 "_codecs_iso2022.c"
-      case 80: // $bb11_i17
-        var $326=$outbuf_addr_i; //@line 404 "_codecs_iso2022.c"
-        var $327=HEAP[$326]; //@line 404 "_codecs_iso2022.c"
-        var $328=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $329=HEAP[$328]; //@line 404 "_codecs_iso2022.c"
-        var $330=$329+2; //@line 404 "_codecs_iso2022.c"
-        var $331=HEAP[$330]; //@line 404 "_codecs_iso2022.c"
-        var $332=($331) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $333=($332); //@line 404 "_codecs_iso2022.c"
-        HEAP[$327]=$333; //@line 404 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 404 "_codecs_iso2022.c"
-      case 81: // $bb12_i18
-        var $334=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $335=HEAP[$334]; //@line 404 "_codecs_iso2022.c"
-        var $336=$335+2; //@line 404 "_codecs_iso2022.c"
-        var $337=HEAP[$336]; //@line 404 "_codecs_iso2022.c"
-        var $338=($337) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $339=($338) <= 179; //@line 404 "_codecs_iso2022.c"
-        if ($339) { __label__ = 86; break; } else { __label__ = 82; break; } //@line 404 "_codecs_iso2022.c"
-      case 82: // $bb13_i19
-        var $340=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $341=HEAP[$340]; //@line 404 "_codecs_iso2022.c"
-        var $342=$341+2; //@line 404 "_codecs_iso2022.c"
-        var $343=HEAP[$342]; //@line 404 "_codecs_iso2022.c"
-        var $344=($343)==127; //@line 404 "_codecs_iso2022.c"
-        if ($344) { __label__ = 86; break; } else { __label__ = 83; break; } //@line 404 "_codecs_iso2022.c"
-      case 83: // $bb14_i20
-        var $345=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $346=HEAP[$345]; //@line 404 "_codecs_iso2022.c"
-        var $347=$346+2; //@line 404 "_codecs_iso2022.c"
-        var $348=HEAP[$347]; //@line 404 "_codecs_iso2022.c"
-        var $349=($348) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $350=($349) > 211; //@line 404 "_codecs_iso2022.c"
-        if ($350) { __label__ = 85; break; } else { __label__ = 84; break; } //@line 404 "_codecs_iso2022.c"
-      case 84: // $bb15_i21
-        var $351=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $352=HEAP[$351]; //@line 404 "_codecs_iso2022.c"
-        var $353=$352+2; //@line 404 "_codecs_iso2022.c"
-        var $354=HEAP[$353]; //@line 404 "_codecs_iso2022.c"
-        var $355=($354) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $356=($355); //@line 404 "_codecs_iso2022.c"
-        var $357=($356) - 180; //@line 404 "_codecs_iso2022.c"
-        var $358=1 << ($357); //@line 404 "_codecs_iso2022.c"
-        var $359=($358) & -1073742473; //@line 404 "_codecs_iso2022.c"
-        var $360=($359)!=0; //@line 404 "_codecs_iso2022.c"
-        if ($360) { __label__ = 85; break; } else { __label__ = 86; break; } //@line 404 "_codecs_iso2022.c"
-      case 85: // $bb16_i22
-        var $361=$outbuf_addr_i; //@line 404 "_codecs_iso2022.c"
-        var $362=HEAP[$361]; //@line 404 "_codecs_iso2022.c"
-        var $363=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $364=HEAP[$363]; //@line 404 "_codecs_iso2022.c"
-        var $365=$364+2; //@line 404 "_codecs_iso2022.c"
-        var $366=HEAP[$365]; //@line 404 "_codecs_iso2022.c"
-        var $367=($366) ^ -128; //@line 404 "_codecs_iso2022.c"
-        var $368=($367); //@line 404 "_codecs_iso2022.c"
-        var $369=($368) + 720; //@line 404 "_codecs_iso2022.c"
-        HEAP[$362]=$369; //@line 404 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 404 "_codecs_iso2022.c"
-      case 86: // $bb17_i23
-        var $370=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $371=HEAP[$370]; //@line 404 "_codecs_iso2022.c"
-        var $372=$371+2; //@line 404 "_codecs_iso2022.c"
-        var $373=HEAP[$372]; //@line 404 "_codecs_iso2022.c"
-        var $374=($373)==33; //@line 404 "_codecs_iso2022.c"
-        if ($374) { __label__ = 87; break; } else { __label__ = 88; break; } //@line 404 "_codecs_iso2022.c"
-      case 87: // $bb18_i24
-        var $375=$outbuf_addr_i; //@line 404 "_codecs_iso2022.c"
-        var $376=HEAP[$375]; //@line 404 "_codecs_iso2022.c"
-        HEAP[$376]=8216; //@line 404 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 404 "_codecs_iso2022.c"
-      case 88: // $bb19_i25
-        var $377=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $378=HEAP[$377]; //@line 404 "_codecs_iso2022.c"
-        var $379=$378+2; //@line 404 "_codecs_iso2022.c"
-        var $380=HEAP[$379]; //@line 404 "_codecs_iso2022.c"
-        var $381=($380)==34; //@line 404 "_codecs_iso2022.c"
-        if ($381) { __label__ = 89; break; } else { __label__ = 90; break; } //@line 404 "_codecs_iso2022.c"
-      case 89: // $bb20_i26
-        var $382=$outbuf_addr_i; //@line 404 "_codecs_iso2022.c"
-        var $383=HEAP[$382]; //@line 404 "_codecs_iso2022.c"
-        HEAP[$383]=8217; //@line 404 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 404 "_codecs_iso2022.c"
-      case 90: // $bb21_i27
-        var $384=$inbuf_addr_i6; //@line 404 "_codecs_iso2022.c"
-        var $385=HEAP[$384]; //@line 404 "_codecs_iso2022.c"
-        var $386=$385+2; //@line 404 "_codecs_iso2022.c"
-        var $387=HEAP[$386]; //@line 404 "_codecs_iso2022.c"
-        var $388=($387)==47; //@line 404 "_codecs_iso2022.c"
-        if ($388) { __label__ = 91; break; } else { __label__ = 92; break; } //@line 404 "_codecs_iso2022.c"
-      case 91: // $bb22_i28
-        var $389=$outbuf_addr_i; //@line 404 "_codecs_iso2022.c"
-        var $390=HEAP[$389]; //@line 404 "_codecs_iso2022.c"
-        HEAP[$390]=8213; //@line 404 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 404 "_codecs_iso2022.c"
-      case 92: // $bb23_i29
-        $0=3; //@line 405 "_codecs_iso2022.c"
-        __lastLabel__ = 92; __label__ = 99; break; //@line 405 "_codecs_iso2022.c"
-      case 93: // $bb25_i30
-        var $391=$state_addr_i5; //@line 407 "_codecs_iso2022.c"
-        var $392=$391; //@line 407 "_codecs_iso2022.c"
-        var $393=$392; //@line 407 "_codecs_iso2022.c"
-        var $394=$393+2; //@line 407 "_codecs_iso2022.c"
-        var $395=HEAP[$394]; //@line 407 "_codecs_iso2022.c"
-        var $396=($395)==66; //@line 407 "_codecs_iso2022.c"
-        if ($396) { __label__ = 94; break; } else { __label__ = 97; break; } //@line 407 "_codecs_iso2022.c"
-      case 94: // $bb26_i
-        var $397=$inbuf_addr_i6; //@line 408 "_codecs_iso2022.c"
-        var $398=HEAP[$397]; //@line 408 "_codecs_iso2022.c"
-        var $399=$398+2; //@line 408 "_codecs_iso2022.c"
-        var $400=HEAP[$399]; //@line 408 "_codecs_iso2022.c"
-        var $401=($400) < 0; //@line 408 "_codecs_iso2022.c"
-        if ($401) { __label__ = 95; break; } else { __label__ = 96; break; } //@line 408 "_codecs_iso2022.c"
-      case 95: // $bb27_i31
-        $0=3; //@line 408 "_codecs_iso2022.c"
-        __lastLabel__ = 95; __label__ = 99; break; //@line 408 "_codecs_iso2022.c"
-      case 96: // $bb28_i32
-        var $402=$outbuf_addr_i; //@line 409 "_codecs_iso2022.c"
-        var $403=HEAP[$402]; //@line 409 "_codecs_iso2022.c"
-        var $404=$inbuf_addr_i6; //@line 409 "_codecs_iso2022.c"
-        var $405=HEAP[$404]; //@line 409 "_codecs_iso2022.c"
-        var $406=$405+2; //@line 409 "_codecs_iso2022.c"
-        var $407=HEAP[$406]; //@line 409 "_codecs_iso2022.c"
-        var $408=($407); //@line 409 "_codecs_iso2022.c"
-        HEAP[$403]=$408; //@line 409 "_codecs_iso2022.c"
-        __label__ = 98; break; //@line 409 "_codecs_iso2022.c"
-      case 97: // $bb29_i33
-        $0=-3; //@line 412 "_codecs_iso2022.c"
-        __lastLabel__ = 97; __label__ = 99; break; //@line 412 "_codecs_iso2022.c"
-      case 98: // $iso2022processg2_exit
-        var $409=$inbuf_addr_i6; //@line 414 "_codecs_iso2022.c"
-        var $410=HEAP[$409]; //@line 414 "_codecs_iso2022.c"
-        var $411=$410+3; //@line 414 "_codecs_iso2022.c"
-        var $412=$inbuf_addr_i6; //@line 414 "_codecs_iso2022.c"
-        HEAP[$412]=$411; //@line 414 "_codecs_iso2022.c"
-        var $413=$inleft_addr_i7; //@line 415 "_codecs_iso2022.c"
-        var $414=HEAP[$413]; //@line 415 "_codecs_iso2022.c"
-        var $415=($414) - 3; //@line 415 "_codecs_iso2022.c"
-        var $416=$inleft_addr_i7; //@line 415 "_codecs_iso2022.c"
-        HEAP[$416]=$415; //@line 415 "_codecs_iso2022.c"
-        var $417=$outbuf_addr_i; //@line 416 "_codecs_iso2022.c"
-        var $418=HEAP[$417]; //@line 416 "_codecs_iso2022.c"
-        var $419=$418+2; //@line 416 "_codecs_iso2022.c"
-        var $420=$outbuf_addr_i; //@line 416 "_codecs_iso2022.c"
-        HEAP[$420]=$419; //@line 416 "_codecs_iso2022.c"
-        var $421=$outleft_addr_i; //@line 417 "_codecs_iso2022.c"
-        var $422=HEAP[$421]; //@line 417 "_codecs_iso2022.c"
-        var $423=($422) - 1; //@line 417 "_codecs_iso2022.c"
-        var $424=$outleft_addr_i; //@line 417 "_codecs_iso2022.c"
-        HEAP[$424]=$423; //@line 417 "_codecs_iso2022.c"
-        $0=0; //@line 418 "_codecs_iso2022.c"
-        $retval_i8=0; //@line 401 "_codecs_iso2022.c"
-        $err=0; //@line 451 "_codecs_iso2022.c"
-        __label__ = 144; break;
-      case 99: // $bb24
-        var $_ph37=__lastLabel__ == 74 ? 3 : (__lastLabel__ == 92 ? 3 : (__lastLabel__ == 95 ? 3 : (-3)));
-        $retval_i8=$_ph37; //@line 401 "_codecs_iso2022.c"
-        $err=$_ph37; //@line 451 "_codecs_iso2022.c"
-        var $425=$err; //@line 454 "_codecs_iso2022.c"
-        $2=$425; //@line 454 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 454 "_codecs_iso2022.c"
-      case 100: // $bb26
-        var $426=HEAP[$outleft_addr]; //@line 457 "_codecs_iso2022.c"
-        var $427=($426) <= 0; //@line 457 "_codecs_iso2022.c"
-        if ($427) { __label__ = 101; break; } else { __label__ = 102; break; } //@line 457 "_codecs_iso2022.c"
-      case 101: // $bb27
-        $2=-1; //@line 457 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 457 "_codecs_iso2022.c"
-      case 102: // $bb28
-        var $428=$outbuf_addr; //@line 457 "_codecs_iso2022.c"
-        var $429=HEAP[$428]; //@line 457 "_codecs_iso2022.c"
-        var $430=$429; //@line 457 "_codecs_iso2022.c"
-        HEAP[$430]=27; //@line 457 "_codecs_iso2022.c"
-        var $431=$state_addr; //@line 458 "_codecs_iso2022.c"
-        var $432=$431; //@line 458 "_codecs_iso2022.c"
-        var $433=$432; //@line 458 "_codecs_iso2022.c"
-        var $434=$433+4; //@line 458 "_codecs_iso2022.c"
-        var $435=HEAP[$434]; //@line 458 "_codecs_iso2022.c"
-        var $436=($435) | 2; //@line 458 "_codecs_iso2022.c"
-        var $437=$state_addr; //@line 458 "_codecs_iso2022.c"
-        var $438=$437; //@line 458 "_codecs_iso2022.c"
-        var $439=$438; //@line 458 "_codecs_iso2022.c"
-        var $440=$439+4; //@line 458 "_codecs_iso2022.c"
-        HEAP[$440]=$436; //@line 458 "_codecs_iso2022.c"
-        var $441=$inbuf_addr; //@line 459 "_codecs_iso2022.c"
-        var $442=HEAP[$441]; //@line 459 "_codecs_iso2022.c"
-        var $443=$442+1; //@line 459 "_codecs_iso2022.c"
-        var $444=$inbuf_addr; //@line 459 "_codecs_iso2022.c"
-        HEAP[$444]=$443; //@line 459 "_codecs_iso2022.c"
-        var $445=HEAP[$inleft_addr]; //@line 459 "_codecs_iso2022.c"
-        var $446=($445) - 1; //@line 459 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$446; //@line 459 "_codecs_iso2022.c"
-        var $447=$outbuf_addr; //@line 459 "_codecs_iso2022.c"
-        var $448=HEAP[$447]; //@line 459 "_codecs_iso2022.c"
-        var $449=$448+2; //@line 459 "_codecs_iso2022.c"
-        var $450=$outbuf_addr; //@line 459 "_codecs_iso2022.c"
-        HEAP[$450]=$449; //@line 459 "_codecs_iso2022.c"
-        var $451=HEAP[$outleft_addr]; //@line 459 "_codecs_iso2022.c"
-        var $452=($451) - 1; //@line 459 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$452; //@line 459 "_codecs_iso2022.c"
-        __label__ = 144; break; //@line 459 "_codecs_iso2022.c"
-      case 103: // $bb30
-        var $453=$config_addr; //@line 463 "_codecs_iso2022.c"
-        var $454=$453; //@line 463 "_codecs_iso2022.c"
-        var $455=$454; //@line 463 "_codecs_iso2022.c"
-        var $456=HEAP[$455]; //@line 463 "_codecs_iso2022.c"
-        var $457=($456) & 1; //@line 463 "_codecs_iso2022.c"
-        var $458=((($457)) & 255); //@line 463 "_codecs_iso2022.c"
-        var $toBool=($458)!=0; //@line 463 "_codecs_iso2022.c"
-        if ($toBool) { __label__ = 117; break; } else { __label__ = 104; break; } //@line 463 "_codecs_iso2022.c"
-      case 104: // $bb31
-        var $459=$state_addr; //@line 465 "_codecs_iso2022.c"
-        var $460=$459; //@line 465 "_codecs_iso2022.c"
-        var $461=$460; //@line 465 "_codecs_iso2022.c"
-        var $462=$461+4; //@line 465 "_codecs_iso2022.c"
-        var $463=HEAP[$462]; //@line 465 "_codecs_iso2022.c"
-        var $464=($463) & -2; //@line 465 "_codecs_iso2022.c"
-        var $465=$state_addr; //@line 465 "_codecs_iso2022.c"
-        var $466=$465; //@line 465 "_codecs_iso2022.c"
-        var $467=$466; //@line 465 "_codecs_iso2022.c"
-        var $468=$467+4; //@line 465 "_codecs_iso2022.c"
-        HEAP[$468]=$464; //@line 465 "_codecs_iso2022.c"
-        var $469=$inbuf_addr; //@line 466 "_codecs_iso2022.c"
-        var $470=HEAP[$469]; //@line 466 "_codecs_iso2022.c"
-        var $471=$470+1; //@line 466 "_codecs_iso2022.c"
-        var $472=$inbuf_addr; //@line 466 "_codecs_iso2022.c"
-        HEAP[$472]=$471; //@line 466 "_codecs_iso2022.c"
-        var $473=HEAP[$inleft_addr]; //@line 466 "_codecs_iso2022.c"
-        var $474=($473) - 1; //@line 466 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$474; //@line 466 "_codecs_iso2022.c"
-        __lastLabel__ = 104; __label__ = 145; break; //@line 466 "_codecs_iso2022.c"
-      case 105: // $bb32
-        var $475=$config_addr; //@line 469 "_codecs_iso2022.c"
-        var $476=$475; //@line 469 "_codecs_iso2022.c"
-        var $477=$476; //@line 469 "_codecs_iso2022.c"
-        var $478=HEAP[$477]; //@line 469 "_codecs_iso2022.c"
-        var $479=($478) & 1; //@line 469 "_codecs_iso2022.c"
-        var $480=((($479)) & 255); //@line 469 "_codecs_iso2022.c"
-        var $toBool33=($480)!=0; //@line 469 "_codecs_iso2022.c"
-        if ($toBool33) { __label__ = 117; break; } else { __label__ = 106; break; } //@line 469 "_codecs_iso2022.c"
-      case 106: // $bb34
-        var $481=$state_addr; //@line 471 "_codecs_iso2022.c"
-        var $482=$481; //@line 471 "_codecs_iso2022.c"
-        var $483=$482; //@line 471 "_codecs_iso2022.c"
-        var $484=$483+4; //@line 471 "_codecs_iso2022.c"
-        var $485=HEAP[$484]; //@line 471 "_codecs_iso2022.c"
-        var $486=($485) | 1; //@line 471 "_codecs_iso2022.c"
-        var $487=$state_addr; //@line 471 "_codecs_iso2022.c"
-        var $488=$487; //@line 471 "_codecs_iso2022.c"
-        var $489=$488; //@line 471 "_codecs_iso2022.c"
-        var $490=$489+4; //@line 471 "_codecs_iso2022.c"
-        HEAP[$490]=$486; //@line 471 "_codecs_iso2022.c"
-        var $491=$inbuf_addr; //@line 472 "_codecs_iso2022.c"
-        var $492=HEAP[$491]; //@line 472 "_codecs_iso2022.c"
-        var $493=$492+1; //@line 472 "_codecs_iso2022.c"
-        var $494=$inbuf_addr; //@line 472 "_codecs_iso2022.c"
-        HEAP[$494]=$493; //@line 472 "_codecs_iso2022.c"
-        var $495=HEAP[$inleft_addr]; //@line 472 "_codecs_iso2022.c"
-        var $496=($495) - 1; //@line 472 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$496; //@line 472 "_codecs_iso2022.c"
-        __lastLabel__ = 106; __label__ = 145; break; //@line 472 "_codecs_iso2022.c"
-      case 107: // $bb35
-        var $497=$state_addr; //@line 475 "_codecs_iso2022.c"
-        var $498=$497; //@line 475 "_codecs_iso2022.c"
-        var $499=$498; //@line 475 "_codecs_iso2022.c"
-        var $500=$499+4; //@line 475 "_codecs_iso2022.c"
-        var $501=HEAP[$500]; //@line 475 "_codecs_iso2022.c"
-        var $502=($501) & -2; //@line 475 "_codecs_iso2022.c"
-        var $503=$state_addr; //@line 475 "_codecs_iso2022.c"
-        var $504=$503; //@line 475 "_codecs_iso2022.c"
-        var $505=$504; //@line 475 "_codecs_iso2022.c"
-        var $506=$505+4; //@line 475 "_codecs_iso2022.c"
-        HEAP[$506]=$502; //@line 475 "_codecs_iso2022.c"
-        var $507=HEAP[$outleft_addr]; //@line 476 "_codecs_iso2022.c"
-        var $508=($507) <= 0; //@line 476 "_codecs_iso2022.c"
-        if ($508) { __label__ = 108; break; } else { __label__ = 109; break; } //@line 476 "_codecs_iso2022.c"
-      case 108: // $bb36
-        $2=-1; //@line 476 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 476 "_codecs_iso2022.c"
-      case 109: // $bb37
-        var $509=$outbuf_addr; //@line 476 "_codecs_iso2022.c"
-        var $510=HEAP[$509]; //@line 476 "_codecs_iso2022.c"
-        var $511=$510; //@line 476 "_codecs_iso2022.c"
-        HEAP[$511]=10; //@line 476 "_codecs_iso2022.c"
-        var $512=$inbuf_addr; //@line 477 "_codecs_iso2022.c"
-        var $513=HEAP[$512]; //@line 477 "_codecs_iso2022.c"
-        var $514=$513+1; //@line 477 "_codecs_iso2022.c"
-        var $515=$inbuf_addr; //@line 477 "_codecs_iso2022.c"
-        HEAP[$515]=$514; //@line 477 "_codecs_iso2022.c"
-        var $516=HEAP[$inleft_addr]; //@line 477 "_codecs_iso2022.c"
-        var $517=($516) - 1; //@line 477 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$517; //@line 477 "_codecs_iso2022.c"
-        var $518=$outbuf_addr; //@line 477 "_codecs_iso2022.c"
-        var $519=HEAP[$518]; //@line 477 "_codecs_iso2022.c"
-        var $520=$519+2; //@line 477 "_codecs_iso2022.c"
-        var $521=$outbuf_addr; //@line 477 "_codecs_iso2022.c"
-        HEAP[$521]=$520; //@line 477 "_codecs_iso2022.c"
-        var $522=HEAP[$outleft_addr]; //@line 477 "_codecs_iso2022.c"
-        var $523=($522) - 1; //@line 477 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$523; //@line 477 "_codecs_iso2022.c"
-        __label__ = 144; break; //@line 477 "_codecs_iso2022.c"
-      case 110: // $bb38
-        var $524=$c; //@line 480 "_codecs_iso2022.c"
-        var $525=($524) <= 31; //@line 480 "_codecs_iso2022.c"
-        if ($525) { __label__ = 117; break; } else { __label__ = 111; break; } //@line 480 "_codecs_iso2022.c"
-      case 111: // $bb39
-        var $526=$c; //@line 482 "_codecs_iso2022.c"
-        var $527=($526) < 0; //@line 482 "_codecs_iso2022.c"
-        if ($527) { __label__ = 112; break; } else { __label__ = 113; break; } //@line 482 "_codecs_iso2022.c"
-      case 112: // $bb40
-        $2=1; //@line 483 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 483 "_codecs_iso2022.c"
-      case 113: // $bb41
-        var $528=$state_addr; //@line 489 "_codecs_iso2022.c"
-        var $529=$528; //@line 489 "_codecs_iso2022.c"
-        var $530=$529; //@line 489 "_codecs_iso2022.c"
-        var $531=$530+4; //@line 489 "_codecs_iso2022.c"
-        var $532=HEAP[$531]; //@line 489 "_codecs_iso2022.c"
-        var $533=($532); //@line 489 "_codecs_iso2022.c"
-        var $534=($533) & 1; //@line 489 "_codecs_iso2022.c"
-        var $535=((($534)) & 255); //@line 489 "_codecs_iso2022.c"
-        var $toBool42=($535)!=0; //@line 489 "_codecs_iso2022.c"
-        var $536=$state_addr; //@line 490 "_codecs_iso2022.c"
-        var $537=$536; //@line 490 "_codecs_iso2022.c"
-        var $538=$537; //@line 490 "_codecs_iso2022.c"
-        if ($toBool42) { __label__ = 114; break; } else { __label__ = 115; break; } //@line 489 "_codecs_iso2022.c"
-      case 114: // $bb43
-        var $539=$538+1; //@line 490 "_codecs_iso2022.c"
-        var $540=HEAP[$539]; //@line 490 "_codecs_iso2022.c"
-        $charset=$540; //@line 490 "_codecs_iso2022.c"
-        __lastLabel__ = 114; __label__ = 116; break; //@line 490 "_codecs_iso2022.c"
-      case 115: // $bb44
-        var $541=$538; //@line 492 "_codecs_iso2022.c"
-        var $542=HEAP[$541]; //@line 492 "_codecs_iso2022.c"
-        $charset=$542; //@line 492 "_codecs_iso2022.c"
-        __lastLabel__ = 115; __label__ = 116; break; //@line 492 "_codecs_iso2022.c"
-      case 116: // $bb45
-        var $543=__lastLabel__ == 115 ? $542 : ($540);
-        var $544=($543)==66; //@line 494 "_codecs_iso2022.c"
-        if ($544) { __label__ = 117; break; } else { __label__ = 120; break; } //@line 494 "_codecs_iso2022.c"
-      case 117: // $bypass
-        var $545=HEAP[$outleft_addr]; //@line 495 "_codecs_iso2022.c"
-        var $546=($545) <= 0; //@line 495 "_codecs_iso2022.c"
-        if ($546) { __label__ = 118; break; } else { __label__ = 119; break; } //@line 495 "_codecs_iso2022.c"
-      case 118: // $bb46
-        $2=-1; //@line 495 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 495 "_codecs_iso2022.c"
-      case 119: // $bb47
-        var $547=$outbuf_addr; //@line 495 "_codecs_iso2022.c"
-        var $548=HEAP[$547]; //@line 495 "_codecs_iso2022.c"
-        var $549=$c; //@line 495 "_codecs_iso2022.c"
-        var $550=($549); //@line 495 "_codecs_iso2022.c"
-        var $551=$548; //@line 495 "_codecs_iso2022.c"
-        HEAP[$551]=$550; //@line 495 "_codecs_iso2022.c"
-        var $552=$inbuf_addr; //@line 496 "_codecs_iso2022.c"
-        var $553=HEAP[$552]; //@line 496 "_codecs_iso2022.c"
-        var $554=$553+1; //@line 496 "_codecs_iso2022.c"
-        var $555=$inbuf_addr; //@line 496 "_codecs_iso2022.c"
-        HEAP[$555]=$554; //@line 496 "_codecs_iso2022.c"
-        var $556=HEAP[$inleft_addr]; //@line 496 "_codecs_iso2022.c"
-        var $557=($556) - 1; //@line 496 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$557; //@line 496 "_codecs_iso2022.c"
-        var $558=$outbuf_addr; //@line 496 "_codecs_iso2022.c"
-        var $559=HEAP[$558]; //@line 496 "_codecs_iso2022.c"
-        var $560=$559+2; //@line 496 "_codecs_iso2022.c"
-        var $561=$outbuf_addr; //@line 496 "_codecs_iso2022.c"
-        HEAP[$561]=$560; //@line 496 "_codecs_iso2022.c"
-        var $562=HEAP[$outleft_addr]; //@line 496 "_codecs_iso2022.c"
-        var $563=($562) - 1; //@line 496 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$563; //@line 496 "_codecs_iso2022.c"
-        __label__ = 144; break; //@line 496 "_codecs_iso2022.c"
-      case 120: // $bb48
-        var $564=$dsgcache; //@line 500 "_codecs_iso2022.c"
-        var $565=$564; //@line 500 "_codecs_iso2022.c"
-        var $566=($565)==0; //@line 500 "_codecs_iso2022.c"
-        if ($566) { __label__ = 123; break; } else { __label__ = 121; break; } //@line 500 "_codecs_iso2022.c"
-      case 121: // $bb49
-        var $567=$dsgcache; //@line 500 "_codecs_iso2022.c"
-        var $568=$567; //@line 500 "_codecs_iso2022.c"
-        var $569=HEAP[$568]; //@line 500 "_codecs_iso2022.c"
-        var $570=$charset; //@line 500 "_codecs_iso2022.c"
-        var $571=($569)!=($570); //@line 500 "_codecs_iso2022.c"
-        if ($571) { __label__ = 123; break; } else { __label__ = 122; break; } //@line 500 "_codecs_iso2022.c"
-      case 122: // $bb50
-        var $572=$dsgcache; //@line 502 "_codecs_iso2022.c"
-        $dsg=$572; //@line 502 "_codecs_iso2022.c"
-        __label__ = 128; break; //@line 502 "_codecs_iso2022.c"
-      case 123: // $bb51
-        var $573=$config_addr; //@line 504 "_codecs_iso2022.c"
-        var $574=$573; //@line 504 "_codecs_iso2022.c"
-        var $575=$574+4; //@line 504 "_codecs_iso2022.c"
-        var $576=HEAP[$575]; //@line 504 "_codecs_iso2022.c"
-        $dsg=$576; //@line 504 "_codecs_iso2022.c"
-        var $577=$dsg; //@line 505 "_codecs_iso2022.c"
-        var $578=$577; //@line 505 "_codecs_iso2022.c"
-        var $579=HEAP[$578]; //@line 505 "_codecs_iso2022.c"
-        var $580=$charset; //@line 505 "_codecs_iso2022.c"
-        var $581=($579)!=($580); //@line 505 "_codecs_iso2022.c"
-        var $582=$dsg; //@line 509 "_codecs_iso2022.c"
-        if ($581) { __lastLabel__ = 123; __label__ = 124; break; } else { __lastLabel__ = 123; __label__ = 125; break; } //@line 505 "_codecs_iso2022.c"
-      case 124: // $bb52
-        var $583=__lastLabel__ == 124 ? $590 : ($582);
-        var $584=$583+16; //@line 509 "_codecs_iso2022.c"
-        $dsg=$584; //@line 509 "_codecs_iso2022.c"
-        var $585=$dsg; //@line 505 "_codecs_iso2022.c"
-        var $586=$585; //@line 505 "_codecs_iso2022.c"
-        var $587=HEAP[$586]; //@line 505 "_codecs_iso2022.c"
-        var $588=$charset; //@line 505 "_codecs_iso2022.c"
-        var $589=($587)!=($588); //@line 505 "_codecs_iso2022.c"
-        var $590=$dsg; //@line 509 "_codecs_iso2022.c"
-        if ($589) { __lastLabel__ = 124; __label__ = 124; break; } else { __lastLabel__ = 124; __label__ = 125; break; } //@line 505 "_codecs_iso2022.c"
-      case 125: // $bb54
-        var $_lcssa=__lastLabel__ == 123 ? $582 : ($590);
-        var $591=$_lcssa; //@line 511 "_codecs_iso2022.c"
-        var $592=HEAP[$591]; //@line 511 "_codecs_iso2022.c"
-        var $593=($592)==0; //@line 511 "_codecs_iso2022.c"
-        if ($593) { __label__ = 126; break; } else { __label__ = 127; break; } //@line 511 "_codecs_iso2022.c"
-      case 126: // $bb55
+        var $77=$config_addr; //@line 444 "_codecs_iso2022.c"
+        var $78=$state_addr; //@line 444 "_codecs_iso2022.c"
+        var $79=$inbuf_addr; //@line 444 "_codecs_iso2022.c"
+        var $80=_iso2022processesc($77, $78, $79, $inleft_addr); //@line 444 "_codecs_iso2022.c"
+        $err=$80; //@line 444 "_codecs_iso2022.c"
+        var $81=($80)!=0; //@line 446 "_codecs_iso2022.c"
+        if ($81) { __label__ = 15; break; } else { __label__ = 66; break; } //@line 446 "_codecs_iso2022.c"
+      case 15: // $bb17
+        var $82=$err; //@line 447 "_codecs_iso2022.c"
+        $0=$82; //@line 447 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 447 "_codecs_iso2022.c"
+      case 16: // $bb19
+        var $83=$config_addr; //@line 449 "_codecs_iso2022.c"
+        var $84=$83; //@line 449 "_codecs_iso2022.c"
+        var $85=$84; //@line 449 "_codecs_iso2022.c"
+        var $86=HEAP[$85]; //@line 449 "_codecs_iso2022.c"
+        var $87=($86) & 2; //@line 449 "_codecs_iso2022.c"
+        var $88=($87)==0; //@line 449 "_codecs_iso2022.c"
+        if ($88) { __label__ = 22; break; } else { __label__ = 17; break; } //@line 449 "_codecs_iso2022.c"
+      case 17: // $bb20
+        var $89=$inbuf_addr; //@line 449 "_codecs_iso2022.c"
+        var $90=HEAP[$89]; //@line 449 "_codecs_iso2022.c"
+        var $91=$90+1; //@line 449 "_codecs_iso2022.c"
+        var $92=HEAP[$91]; //@line 449 "_codecs_iso2022.c"
+        var $93=($92)!=78; //@line 449 "_codecs_iso2022.c"
+        if ($93) { __label__ = 22; break; } else { __label__ = 18; break; } //@line 449 "_codecs_iso2022.c"
+      case 18: // $bb21
+        var $94=HEAP[$inleft_addr]; //@line 450 "_codecs_iso2022.c"
+        var $95=($94) <= 2; //@line 450 "_codecs_iso2022.c"
+        if ($95) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 450 "_codecs_iso2022.c"
+      case 19: // $bb22
+        $0=-2; //@line 450 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 450 "_codecs_iso2022.c"
+      case 20: // $bb23
+        var $96=$config_addr; //@line 451 "_codecs_iso2022.c"
+        var $97=$state_addr; //@line 451 "_codecs_iso2022.c"
+        var $98=$inbuf_addr; //@line 451 "_codecs_iso2022.c"
+        var $99=$outbuf_addr; //@line 451 "_codecs_iso2022.c"
+        var $100=_iso2022processg2($96, $97, $98, $inleft_addr, $99, $outleft_addr); //@line 451 "_codecs_iso2022.c"
+        $err=$100; //@line 451 "_codecs_iso2022.c"
+        var $101=$err; //@line 453 "_codecs_iso2022.c"
+        var $102=($101)!=0; //@line 453 "_codecs_iso2022.c"
+        if ($102) { __label__ = 21; break; } else { __label__ = 66; break; } //@line 453 "_codecs_iso2022.c"
+      case 21: // $bb24
+        var $103=$err; //@line 454 "_codecs_iso2022.c"
+        $0=$103; //@line 454 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 454 "_codecs_iso2022.c"
+      case 22: // $bb26
+        var $104=HEAP[$outleft_addr]; //@line 457 "_codecs_iso2022.c"
+        var $105=($104) <= 0; //@line 457 "_codecs_iso2022.c"
+        if ($105) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 457 "_codecs_iso2022.c"
+      case 23: // $bb27
+        $0=-1; //@line 457 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 457 "_codecs_iso2022.c"
+      case 24: // $bb28
+        var $106=$outbuf_addr; //@line 457 "_codecs_iso2022.c"
+        var $107=HEAP[$106]; //@line 457 "_codecs_iso2022.c"
+        var $108=$107; //@line 457 "_codecs_iso2022.c"
+        HEAP[$108]=27; //@line 457 "_codecs_iso2022.c"
+        var $109=$state_addr; //@line 458 "_codecs_iso2022.c"
+        var $110=$109; //@line 458 "_codecs_iso2022.c"
+        var $111=$110; //@line 458 "_codecs_iso2022.c"
+        var $112=$111+4; //@line 458 "_codecs_iso2022.c"
+        var $113=HEAP[$112]; //@line 458 "_codecs_iso2022.c"
+        var $114=($113) | 2; //@line 458 "_codecs_iso2022.c"
+        var $115=$state_addr; //@line 458 "_codecs_iso2022.c"
+        var $116=$115; //@line 458 "_codecs_iso2022.c"
+        var $117=$116; //@line 458 "_codecs_iso2022.c"
+        var $118=$117+4; //@line 458 "_codecs_iso2022.c"
+        HEAP[$118]=$114; //@line 458 "_codecs_iso2022.c"
+        var $119=$inbuf_addr; //@line 459 "_codecs_iso2022.c"
+        var $120=HEAP[$119]; //@line 459 "_codecs_iso2022.c"
+        var $121=$120+1; //@line 459 "_codecs_iso2022.c"
+        var $122=$inbuf_addr; //@line 459 "_codecs_iso2022.c"
+        HEAP[$122]=$121; //@line 459 "_codecs_iso2022.c"
+        var $123=HEAP[$inleft_addr]; //@line 459 "_codecs_iso2022.c"
+        var $124=($123) - 1; //@line 459 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$124; //@line 459 "_codecs_iso2022.c"
+        var $125=$outbuf_addr; //@line 459 "_codecs_iso2022.c"
+        var $126=HEAP[$125]; //@line 459 "_codecs_iso2022.c"
+        var $127=$126+2; //@line 459 "_codecs_iso2022.c"
+        var $128=$outbuf_addr; //@line 459 "_codecs_iso2022.c"
+        HEAP[$128]=$127; //@line 459 "_codecs_iso2022.c"
+        var $129=HEAP[$outleft_addr]; //@line 459 "_codecs_iso2022.c"
+        var $130=($129) - 1; //@line 459 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$130; //@line 459 "_codecs_iso2022.c"
+        __label__ = 66; break; //@line 459 "_codecs_iso2022.c"
+      case 25: // $bb30
+        var $131=$config_addr; //@line 463 "_codecs_iso2022.c"
+        var $132=$131; //@line 463 "_codecs_iso2022.c"
+        var $133=$132; //@line 463 "_codecs_iso2022.c"
+        var $134=HEAP[$133]; //@line 463 "_codecs_iso2022.c"
+        var $135=($134) & 1; //@line 463 "_codecs_iso2022.c"
+        var $136=((($135)) & 255); //@line 463 "_codecs_iso2022.c"
+        var $toBool=($136)!=0; //@line 463 "_codecs_iso2022.c"
+        if ($toBool) { __label__ = 39; break; } else { __label__ = 26; break; } //@line 463 "_codecs_iso2022.c"
+      case 26: // $bb31
+        var $137=$state_addr; //@line 465 "_codecs_iso2022.c"
+        var $138=$137; //@line 465 "_codecs_iso2022.c"
+        var $139=$138; //@line 465 "_codecs_iso2022.c"
+        var $140=$139+4; //@line 465 "_codecs_iso2022.c"
+        var $141=HEAP[$140]; //@line 465 "_codecs_iso2022.c"
+        var $142=($141) & -2; //@line 465 "_codecs_iso2022.c"
+        var $143=$state_addr; //@line 465 "_codecs_iso2022.c"
+        var $144=$143; //@line 465 "_codecs_iso2022.c"
+        var $145=$144; //@line 465 "_codecs_iso2022.c"
+        var $146=$145+4; //@line 465 "_codecs_iso2022.c"
+        HEAP[$146]=$142; //@line 465 "_codecs_iso2022.c"
+        var $147=$inbuf_addr; //@line 466 "_codecs_iso2022.c"
+        var $148=HEAP[$147]; //@line 466 "_codecs_iso2022.c"
+        var $149=$148+1; //@line 466 "_codecs_iso2022.c"
+        var $150=$inbuf_addr; //@line 466 "_codecs_iso2022.c"
+        HEAP[$150]=$149; //@line 466 "_codecs_iso2022.c"
+        var $151=HEAP[$inleft_addr]; //@line 466 "_codecs_iso2022.c"
+        var $152=($151) - 1; //@line 466 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$152; //@line 466 "_codecs_iso2022.c"
+        __lastLabel__ = 26; __label__ = 67; break; //@line 466 "_codecs_iso2022.c"
+      case 27: // $bb32
+        var $153=$config_addr; //@line 469 "_codecs_iso2022.c"
+        var $154=$153; //@line 469 "_codecs_iso2022.c"
+        var $155=$154; //@line 469 "_codecs_iso2022.c"
+        var $156=HEAP[$155]; //@line 469 "_codecs_iso2022.c"
+        var $157=($156) & 1; //@line 469 "_codecs_iso2022.c"
+        var $158=((($157)) & 255); //@line 469 "_codecs_iso2022.c"
+        var $toBool33=($158)!=0; //@line 469 "_codecs_iso2022.c"
+        if ($toBool33) { __label__ = 39; break; } else { __label__ = 28; break; } //@line 469 "_codecs_iso2022.c"
+      case 28: // $bb34
+        var $159=$state_addr; //@line 471 "_codecs_iso2022.c"
+        var $160=$159; //@line 471 "_codecs_iso2022.c"
+        var $161=$160; //@line 471 "_codecs_iso2022.c"
+        var $162=$161+4; //@line 471 "_codecs_iso2022.c"
+        var $163=HEAP[$162]; //@line 471 "_codecs_iso2022.c"
+        var $164=($163) | 1; //@line 471 "_codecs_iso2022.c"
+        var $165=$state_addr; //@line 471 "_codecs_iso2022.c"
+        var $166=$165; //@line 471 "_codecs_iso2022.c"
+        var $167=$166; //@line 471 "_codecs_iso2022.c"
+        var $168=$167+4; //@line 471 "_codecs_iso2022.c"
+        HEAP[$168]=$164; //@line 471 "_codecs_iso2022.c"
+        var $169=$inbuf_addr; //@line 472 "_codecs_iso2022.c"
+        var $170=HEAP[$169]; //@line 472 "_codecs_iso2022.c"
+        var $171=$170+1; //@line 472 "_codecs_iso2022.c"
+        var $172=$inbuf_addr; //@line 472 "_codecs_iso2022.c"
+        HEAP[$172]=$171; //@line 472 "_codecs_iso2022.c"
+        var $173=HEAP[$inleft_addr]; //@line 472 "_codecs_iso2022.c"
+        var $174=($173) - 1; //@line 472 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$174; //@line 472 "_codecs_iso2022.c"
+        __lastLabel__ = 28; __label__ = 67; break; //@line 472 "_codecs_iso2022.c"
+      case 29: // $bb35
+        var $175=$state_addr; //@line 475 "_codecs_iso2022.c"
+        var $176=$175; //@line 475 "_codecs_iso2022.c"
+        var $177=$176; //@line 475 "_codecs_iso2022.c"
+        var $178=$177+4; //@line 475 "_codecs_iso2022.c"
+        var $179=HEAP[$178]; //@line 475 "_codecs_iso2022.c"
+        var $180=($179) & -2; //@line 475 "_codecs_iso2022.c"
+        var $181=$state_addr; //@line 475 "_codecs_iso2022.c"
+        var $182=$181; //@line 475 "_codecs_iso2022.c"
+        var $183=$182; //@line 475 "_codecs_iso2022.c"
+        var $184=$183+4; //@line 475 "_codecs_iso2022.c"
+        HEAP[$184]=$180; //@line 475 "_codecs_iso2022.c"
+        var $185=HEAP[$outleft_addr]; //@line 476 "_codecs_iso2022.c"
+        var $186=($185) <= 0; //@line 476 "_codecs_iso2022.c"
+        if ($186) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 476 "_codecs_iso2022.c"
+      case 30: // $bb36
+        $0=-1; //@line 476 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 476 "_codecs_iso2022.c"
+      case 31: // $bb37
+        var $187=$outbuf_addr; //@line 476 "_codecs_iso2022.c"
+        var $188=HEAP[$187]; //@line 476 "_codecs_iso2022.c"
+        var $189=$188; //@line 476 "_codecs_iso2022.c"
+        HEAP[$189]=10; //@line 476 "_codecs_iso2022.c"
+        var $190=$inbuf_addr; //@line 477 "_codecs_iso2022.c"
+        var $191=HEAP[$190]; //@line 477 "_codecs_iso2022.c"
+        var $192=$191+1; //@line 477 "_codecs_iso2022.c"
+        var $193=$inbuf_addr; //@line 477 "_codecs_iso2022.c"
+        HEAP[$193]=$192; //@line 477 "_codecs_iso2022.c"
+        var $194=HEAP[$inleft_addr]; //@line 477 "_codecs_iso2022.c"
+        var $195=($194) - 1; //@line 477 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$195; //@line 477 "_codecs_iso2022.c"
+        var $196=$outbuf_addr; //@line 477 "_codecs_iso2022.c"
+        var $197=HEAP[$196]; //@line 477 "_codecs_iso2022.c"
+        var $198=$197+2; //@line 477 "_codecs_iso2022.c"
+        var $199=$outbuf_addr; //@line 477 "_codecs_iso2022.c"
+        HEAP[$199]=$198; //@line 477 "_codecs_iso2022.c"
+        var $200=HEAP[$outleft_addr]; //@line 477 "_codecs_iso2022.c"
+        var $201=($200) - 1; //@line 477 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$201; //@line 477 "_codecs_iso2022.c"
+        __label__ = 66; break; //@line 477 "_codecs_iso2022.c"
+      case 32: // $bb38
+        var $202=$c; //@line 480 "_codecs_iso2022.c"
+        var $203=($202) <= 31; //@line 480 "_codecs_iso2022.c"
+        if ($203) { __label__ = 39; break; } else { __label__ = 33; break; } //@line 480 "_codecs_iso2022.c"
+      case 33: // $bb39
+        var $204=$c; //@line 482 "_codecs_iso2022.c"
+        var $205=($204) < 0; //@line 482 "_codecs_iso2022.c"
+        if ($205) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 482 "_codecs_iso2022.c"
+      case 34: // $bb40
+        $0=1; //@line 483 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 483 "_codecs_iso2022.c"
+      case 35: // $bb41
+        var $206=$state_addr; //@line 489 "_codecs_iso2022.c"
+        var $207=$206; //@line 489 "_codecs_iso2022.c"
+        var $208=$207; //@line 489 "_codecs_iso2022.c"
+        var $209=$208+4; //@line 489 "_codecs_iso2022.c"
+        var $210=HEAP[$209]; //@line 489 "_codecs_iso2022.c"
+        var $211=($210); //@line 489 "_codecs_iso2022.c"
+        var $212=($211) & 1; //@line 489 "_codecs_iso2022.c"
+        var $213=((($212)) & 255); //@line 489 "_codecs_iso2022.c"
+        var $toBool42=($213)!=0; //@line 489 "_codecs_iso2022.c"
+        var $214=$state_addr; //@line 490 "_codecs_iso2022.c"
+        var $215=$214; //@line 490 "_codecs_iso2022.c"
+        var $216=$215; //@line 490 "_codecs_iso2022.c"
+        if ($toBool42) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 489 "_codecs_iso2022.c"
+      case 36: // $bb43
+        var $217=$216+1; //@line 490 "_codecs_iso2022.c"
+        var $218=HEAP[$217]; //@line 490 "_codecs_iso2022.c"
+        $charset=$218; //@line 490 "_codecs_iso2022.c"
+        __lastLabel__ = 36; __label__ = 38; break; //@line 490 "_codecs_iso2022.c"
+      case 37: // $bb44
+        var $219=$216; //@line 492 "_codecs_iso2022.c"
+        var $220=HEAP[$219]; //@line 492 "_codecs_iso2022.c"
+        $charset=$220; //@line 492 "_codecs_iso2022.c"
+        __lastLabel__ = 37; __label__ = 38; break; //@line 492 "_codecs_iso2022.c"
+      case 38: // $bb45
+        var $221=__lastLabel__ == 37 ? $220 : ($218);
+        var $222=($221)==66; //@line 494 "_codecs_iso2022.c"
+        if ($222) { __label__ = 39; break; } else { __label__ = 42; break; } //@line 494 "_codecs_iso2022.c"
+      case 39: // $bypass
+        var $223=HEAP[$outleft_addr]; //@line 495 "_codecs_iso2022.c"
+        var $224=($223) <= 0; //@line 495 "_codecs_iso2022.c"
+        if ($224) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 495 "_codecs_iso2022.c"
+      case 40: // $bb46
+        $0=-1; //@line 495 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 495 "_codecs_iso2022.c"
+      case 41: // $bb47
+        var $225=$outbuf_addr; //@line 495 "_codecs_iso2022.c"
+        var $226=HEAP[$225]; //@line 495 "_codecs_iso2022.c"
+        var $227=$c; //@line 495 "_codecs_iso2022.c"
+        var $228=($227); //@line 495 "_codecs_iso2022.c"
+        var $229=$226; //@line 495 "_codecs_iso2022.c"
+        HEAP[$229]=$228; //@line 495 "_codecs_iso2022.c"
+        var $230=$inbuf_addr; //@line 496 "_codecs_iso2022.c"
+        var $231=HEAP[$230]; //@line 496 "_codecs_iso2022.c"
+        var $232=$231+1; //@line 496 "_codecs_iso2022.c"
+        var $233=$inbuf_addr; //@line 496 "_codecs_iso2022.c"
+        HEAP[$233]=$232; //@line 496 "_codecs_iso2022.c"
+        var $234=HEAP[$inleft_addr]; //@line 496 "_codecs_iso2022.c"
+        var $235=($234) - 1; //@line 496 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$235; //@line 496 "_codecs_iso2022.c"
+        var $236=$outbuf_addr; //@line 496 "_codecs_iso2022.c"
+        var $237=HEAP[$236]; //@line 496 "_codecs_iso2022.c"
+        var $238=$237+2; //@line 496 "_codecs_iso2022.c"
+        var $239=$outbuf_addr; //@line 496 "_codecs_iso2022.c"
+        HEAP[$239]=$238; //@line 496 "_codecs_iso2022.c"
+        var $240=HEAP[$outleft_addr]; //@line 496 "_codecs_iso2022.c"
+        var $241=($240) - 1; //@line 496 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$241; //@line 496 "_codecs_iso2022.c"
+        __label__ = 66; break; //@line 496 "_codecs_iso2022.c"
+      case 42: // $bb48
+        var $242=$dsgcache; //@line 500 "_codecs_iso2022.c"
+        var $243=$242; //@line 500 "_codecs_iso2022.c"
+        var $244=($243)==0; //@line 500 "_codecs_iso2022.c"
+        if ($244) { __label__ = 45; break; } else { __label__ = 43; break; } //@line 500 "_codecs_iso2022.c"
+      case 43: // $bb49
+        var $245=$dsgcache; //@line 500 "_codecs_iso2022.c"
+        var $246=$245; //@line 500 "_codecs_iso2022.c"
+        var $247=HEAP[$246]; //@line 500 "_codecs_iso2022.c"
+        var $248=$charset; //@line 500 "_codecs_iso2022.c"
+        var $249=($247)!=($248); //@line 500 "_codecs_iso2022.c"
+        if ($249) { __label__ = 45; break; } else { __label__ = 44; break; } //@line 500 "_codecs_iso2022.c"
+      case 44: // $bb50
+        var $250=$dsgcache; //@line 502 "_codecs_iso2022.c"
+        $dsg=$250; //@line 502 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 502 "_codecs_iso2022.c"
+      case 45: // $bb51
+        var $251=$config_addr; //@line 504 "_codecs_iso2022.c"
+        var $252=$251; //@line 504 "_codecs_iso2022.c"
+        var $253=$252+4; //@line 504 "_codecs_iso2022.c"
+        var $254=HEAP[$253]; //@line 504 "_codecs_iso2022.c"
+        $dsg=$254; //@line 504 "_codecs_iso2022.c"
+        var $255=$dsg; //@line 505 "_codecs_iso2022.c"
+        var $256=$255; //@line 505 "_codecs_iso2022.c"
+        var $257=HEAP[$256]; //@line 505 "_codecs_iso2022.c"
+        var $258=$charset; //@line 505 "_codecs_iso2022.c"
+        var $259=($257)!=($258); //@line 505 "_codecs_iso2022.c"
+        var $260=$dsg; //@line 509 "_codecs_iso2022.c"
+        if ($259) { __lastLabel__ = 45; __label__ = 46; break; } else { __lastLabel__ = 45; __label__ = 47; break; } //@line 505 "_codecs_iso2022.c"
+      case 46: // $bb52
+        var $261=__lastLabel__ == 46 ? $268 : ($260);
+        var $262=$261+16; //@line 509 "_codecs_iso2022.c"
+        $dsg=$262; //@line 509 "_codecs_iso2022.c"
+        var $263=$dsg; //@line 505 "_codecs_iso2022.c"
+        var $264=$263; //@line 505 "_codecs_iso2022.c"
+        var $265=HEAP[$264]; //@line 505 "_codecs_iso2022.c"
+        var $266=$charset; //@line 505 "_codecs_iso2022.c"
+        var $267=($265)!=($266); //@line 505 "_codecs_iso2022.c"
+        var $268=$dsg; //@line 509 "_codecs_iso2022.c"
+        if ($267) { __lastLabel__ = 46; __label__ = 46; break; } else { __lastLabel__ = 46; __label__ = 47; break; } //@line 505 "_codecs_iso2022.c"
+      case 47: // $bb54
+        var $_lcssa=__lastLabel__ == 45 ? $260 : ($268);
+        var $269=$_lcssa; //@line 511 "_codecs_iso2022.c"
+        var $270=HEAP[$269]; //@line 511 "_codecs_iso2022.c"
+        var $271=($270)==0; //@line 511 "_codecs_iso2022.c"
+        if ($271) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 511 "_codecs_iso2022.c"
+      case 48: // $bb55
         ___assert_fail(__str11, __str10, 511, ___PRETTY_FUNCTION___9242); //@line 511 "_codecs_iso2022.c"
         throw "Reached an unreachable!" //@line 511 "_codecs_iso2022.c"
-      case 127: // $bb56
-        var $594=$dsg; //@line 512 "_codecs_iso2022.c"
-        $dsgcache=$594; //@line 512 "_codecs_iso2022.c"
-        __label__ = 128; break; //@line 512 "_codecs_iso2022.c"
-      case 128: // $bb57
-        var $595=$dsg; //@line 515 "_codecs_iso2022.c"
-        var $596=$595+2; //@line 515 "_codecs_iso2022.c"
-        var $597=HEAP[$596]; //@line 515 "_codecs_iso2022.c"
-        var $598=($597); //@line 515 "_codecs_iso2022.c"
-        var $599=HEAP[$inleft_addr]; //@line 515 "_codecs_iso2022.c"
-        var $600=($598) > ($599); //@line 515 "_codecs_iso2022.c"
-        if ($600) { __label__ = 129; break; } else { __label__ = 130; break; } //@line 515 "_codecs_iso2022.c"
-      case 129: // $bb58
-        $2=-2; //@line 515 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 515 "_codecs_iso2022.c"
-      case 130: // $bb59
-        var $601=$dsg; //@line 516 "_codecs_iso2022.c"
-        var $602=$601+8; //@line 516 "_codecs_iso2022.c"
-        var $603=HEAP[$602]; //@line 516 "_codecs_iso2022.c"
-        var $604=$inbuf_addr; //@line 516 "_codecs_iso2022.c"
-        var $605=HEAP[$604]; //@line 516 "_codecs_iso2022.c"
-        var $606=FUNCTION_TABLE[$603]($605); //@line 516 "_codecs_iso2022.c"
-        $decoded=$606; //@line 516 "_codecs_iso2022.c"
-        var $607=$decoded; //@line 517 "_codecs_iso2022.c"
-        var $608=($607)==65535; //@line 517 "_codecs_iso2022.c"
-        if ($608) { __label__ = 131; break; } else { __label__ = 132; break; } //@line 517 "_codecs_iso2022.c"
-      case 131: // $bb60
-        var $609=$dsg; //@line 518 "_codecs_iso2022.c"
-        var $610=$609+2; //@line 518 "_codecs_iso2022.c"
-        var $611=HEAP[$610]; //@line 518 "_codecs_iso2022.c"
-        var $612=($611); //@line 518 "_codecs_iso2022.c"
-        $2=$612; //@line 518 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 518 "_codecs_iso2022.c"
-      case 132: // $bb61
-        var $613=$decoded; //@line 520 "_codecs_iso2022.c"
-        var $614=($613) <= 65535; //@line 520 "_codecs_iso2022.c"
-        if ($614) { __label__ = 133; break; } else { __label__ = 136; break; } //@line 520 "_codecs_iso2022.c"
-      case 133: // $bb62
-        var $615=HEAP[$outleft_addr]; //@line 521 "_codecs_iso2022.c"
-        var $616=($615) <= 0; //@line 521 "_codecs_iso2022.c"
-        if ($616) { __label__ = 134; break; } else { __label__ = 135; break; } //@line 521 "_codecs_iso2022.c"
-      case 134: // $bb63
-        $2=-1; //@line 521 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 521 "_codecs_iso2022.c"
-      case 135: // $bb64
-        var $617=$outbuf_addr; //@line 521 "_codecs_iso2022.c"
-        var $618=HEAP[$617]; //@line 521 "_codecs_iso2022.c"
-        var $619=$decoded; //@line 521 "_codecs_iso2022.c"
-        var $620=((($619)) & 65535); //@line 521 "_codecs_iso2022.c"
-        var $621=$618; //@line 521 "_codecs_iso2022.c"
-        HEAP[$621]=$620; //@line 521 "_codecs_iso2022.c"
-        var $622=$outbuf_addr; //@line 522 "_codecs_iso2022.c"
-        var $623=HEAP[$622]; //@line 522 "_codecs_iso2022.c"
-        var $624=$623+2; //@line 522 "_codecs_iso2022.c"
-        var $625=$outbuf_addr; //@line 522 "_codecs_iso2022.c"
-        HEAP[$625]=$624; //@line 522 "_codecs_iso2022.c"
-        var $626=HEAP[$outleft_addr]; //@line 522 "_codecs_iso2022.c"
-        var $627=($626) - 1; //@line 522 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$627; //@line 522 "_codecs_iso2022.c"
-        __label__ = 143; break; //@line 522 "_codecs_iso2022.c"
-      case 136: // $bb65
-        var $628=$decoded; //@line 524 "_codecs_iso2022.c"
-        var $629=($628) <= 196607; //@line 524 "_codecs_iso2022.c"
-        var $630=HEAP[$outleft_addr]; //@line 525 "_codecs_iso2022.c"
-        var $631=($630) <= 1; //@line 525 "_codecs_iso2022.c"
-        if ($629) { __label__ = 137; break; } else { __label__ = 140; break; } //@line 524 "_codecs_iso2022.c"
-      case 137: // $bb66
-        if ($631) { __label__ = 138; break; } else { __label__ = 139; break; } //@line 525 "_codecs_iso2022.c"
-      case 138: // $bb67
-        $2=-1; //@line 525 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 525 "_codecs_iso2022.c"
-      case 139: // $bb68
-        var $632=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
-        var $633=HEAP[$632]; //@line 525 "_codecs_iso2022.c"
-        var $634=$decoded; //@line 525 "_codecs_iso2022.c"
-        var $635=($634) - 65536; //@line 525 "_codecs_iso2022.c"
-        var $636=($635) >>> 10; //@line 525 "_codecs_iso2022.c"
-        var $637=((($636)) & 65535); //@line 525 "_codecs_iso2022.c"
-        var $638=($637) + -10240; //@line 525 "_codecs_iso2022.c"
-        var $639=$633; //@line 525 "_codecs_iso2022.c"
-        HEAP[$639]=$638; //@line 525 "_codecs_iso2022.c"
-        var $640=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
-        var $641=HEAP[$640]; //@line 525 "_codecs_iso2022.c"
-        var $642=$decoded; //@line 525 "_codecs_iso2022.c"
-        var $643=((($642)) & 65535); //@line 525 "_codecs_iso2022.c"
-        var $644=($643) & 1023; //@line 525 "_codecs_iso2022.c"
-        var $645=($644) + -9216; //@line 525 "_codecs_iso2022.c"
-        var $646=$641+2; //@line 525 "_codecs_iso2022.c"
-        HEAP[$646]=$645; //@line 525 "_codecs_iso2022.c"
-        var $647=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
-        var $648=HEAP[$647]; //@line 525 "_codecs_iso2022.c"
-        var $649=$648+4; //@line 525 "_codecs_iso2022.c"
-        var $650=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
-        HEAP[$650]=$649; //@line 525 "_codecs_iso2022.c"
-        var $651=HEAP[$outleft_addr]; //@line 525 "_codecs_iso2022.c"
-        var $652=($651) - 2; //@line 525 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$652; //@line 525 "_codecs_iso2022.c"
-        __label__ = 143; break; //@line 525 "_codecs_iso2022.c"
-      case 140: // $bb69
-        if ($631) { __label__ = 141; break; } else { __label__ = 142; break; } //@line 528 "_codecs_iso2022.c"
-      case 141: // $bb70
-        $2=-1; //@line 528 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 528 "_codecs_iso2022.c"
-      case 142: // $bb71
-        var $653=$outbuf_addr; //@line 528 "_codecs_iso2022.c"
-        var $654=HEAP[$653]; //@line 528 "_codecs_iso2022.c"
-        var $655=$decoded; //@line 528 "_codecs_iso2022.c"
-        var $656=($655) >>> 16; //@line 528 "_codecs_iso2022.c"
-        var $657=((($656)) & 65535); //@line 528 "_codecs_iso2022.c"
-        var $658=$654; //@line 528 "_codecs_iso2022.c"
-        HEAP[$658]=$657; //@line 528 "_codecs_iso2022.c"
-        var $659=$outbuf_addr; //@line 528 "_codecs_iso2022.c"
-        var $660=HEAP[$659]; //@line 528 "_codecs_iso2022.c"
-        var $661=$decoded; //@line 528 "_codecs_iso2022.c"
-        var $662=((($661)) & 65535); //@line 528 "_codecs_iso2022.c"
-        var $663=$660+2; //@line 528 "_codecs_iso2022.c"
-        HEAP[$663]=$662; //@line 528 "_codecs_iso2022.c"
-        var $664=$outbuf_addr; //@line 529 "_codecs_iso2022.c"
-        var $665=HEAP[$664]; //@line 529 "_codecs_iso2022.c"
-        var $666=$665+4; //@line 529 "_codecs_iso2022.c"
-        var $667=$outbuf_addr; //@line 529 "_codecs_iso2022.c"
-        HEAP[$667]=$666; //@line 529 "_codecs_iso2022.c"
-        var $668=HEAP[$outleft_addr]; //@line 529 "_codecs_iso2022.c"
-        var $669=($668) - 2; //@line 529 "_codecs_iso2022.c"
-        HEAP[$outleft_addr]=$669; //@line 529 "_codecs_iso2022.c"
-        __label__ = 143; break; //@line 529 "_codecs_iso2022.c"
-      case 143: // $bb72
-        var $670=$inbuf_addr; //@line 531 "_codecs_iso2022.c"
-        var $671=HEAP[$670]; //@line 531 "_codecs_iso2022.c"
-        var $672=$dsg; //@line 531 "_codecs_iso2022.c"
-        var $673=$672+2; //@line 531 "_codecs_iso2022.c"
-        var $674=HEAP[$673]; //@line 531 "_codecs_iso2022.c"
-        var $675=($674); //@line 531 "_codecs_iso2022.c"
-        var $676=$671+$675; //@line 531 "_codecs_iso2022.c"
-        var $677=$inbuf_addr; //@line 531 "_codecs_iso2022.c"
-        HEAP[$677]=$676; //@line 531 "_codecs_iso2022.c"
-        var $678=HEAP[$inleft_addr]; //@line 531 "_codecs_iso2022.c"
-        var $679=$dsg; //@line 531 "_codecs_iso2022.c"
-        var $680=$679+2; //@line 531 "_codecs_iso2022.c"
-        var $681=HEAP[$680]; //@line 531 "_codecs_iso2022.c"
-        var $682=($681); //@line 531 "_codecs_iso2022.c"
-        var $683=($678) - ($682); //@line 531 "_codecs_iso2022.c"
-        HEAP[$inleft_addr]=$683; //@line 531 "_codecs_iso2022.c"
-        __lastLabel__ = 143; __label__ = 145; break; //@line 531 "_codecs_iso2022.c"
-      case 144: // $bb73thread_pre_split
+      case 49: // $bb56
+        var $272=$dsg; //@line 512 "_codecs_iso2022.c"
+        $dsgcache=$272; //@line 512 "_codecs_iso2022.c"
+        __label__ = 50; break; //@line 512 "_codecs_iso2022.c"
+      case 50: // $bb57
+        var $273=$dsg; //@line 515 "_codecs_iso2022.c"
+        var $274=$273+2; //@line 515 "_codecs_iso2022.c"
+        var $275=HEAP[$274]; //@line 515 "_codecs_iso2022.c"
+        var $276=($275); //@line 515 "_codecs_iso2022.c"
+        var $277=HEAP[$inleft_addr]; //@line 515 "_codecs_iso2022.c"
+        var $278=($276) > ($277); //@line 515 "_codecs_iso2022.c"
+        if ($278) { __label__ = 51; break; } else { __label__ = 52; break; } //@line 515 "_codecs_iso2022.c"
+      case 51: // $bb58
+        $0=-2; //@line 515 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 515 "_codecs_iso2022.c"
+      case 52: // $bb59
+        var $279=$dsg; //@line 516 "_codecs_iso2022.c"
+        var $280=$279+8; //@line 516 "_codecs_iso2022.c"
+        var $281=HEAP[$280]; //@line 516 "_codecs_iso2022.c"
+        var $282=$inbuf_addr; //@line 516 "_codecs_iso2022.c"
+        var $283=HEAP[$282]; //@line 516 "_codecs_iso2022.c"
+        var $284=FUNCTION_TABLE[$281]($283); //@line 516 "_codecs_iso2022.c"
+        $decoded=$284; //@line 516 "_codecs_iso2022.c"
+        var $285=$decoded; //@line 517 "_codecs_iso2022.c"
+        var $286=($285)==65535; //@line 517 "_codecs_iso2022.c"
+        if ($286) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 517 "_codecs_iso2022.c"
+      case 53: // $bb60
+        var $287=$dsg; //@line 518 "_codecs_iso2022.c"
+        var $288=$287+2; //@line 518 "_codecs_iso2022.c"
+        var $289=HEAP[$288]; //@line 518 "_codecs_iso2022.c"
+        var $290=($289); //@line 518 "_codecs_iso2022.c"
+        $0=$290; //@line 518 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 518 "_codecs_iso2022.c"
+      case 54: // $bb61
+        var $291=$decoded; //@line 520 "_codecs_iso2022.c"
+        var $292=($291) <= 65535; //@line 520 "_codecs_iso2022.c"
+        if ($292) { __label__ = 55; break; } else { __label__ = 58; break; } //@line 520 "_codecs_iso2022.c"
+      case 55: // $bb62
+        var $293=HEAP[$outleft_addr]; //@line 521 "_codecs_iso2022.c"
+        var $294=($293) <= 0; //@line 521 "_codecs_iso2022.c"
+        if ($294) { __label__ = 56; break; } else { __label__ = 57; break; } //@line 521 "_codecs_iso2022.c"
+      case 56: // $bb63
+        $0=-1; //@line 521 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 521 "_codecs_iso2022.c"
+      case 57: // $bb64
+        var $295=$outbuf_addr; //@line 521 "_codecs_iso2022.c"
+        var $296=HEAP[$295]; //@line 521 "_codecs_iso2022.c"
+        var $297=$decoded; //@line 521 "_codecs_iso2022.c"
+        var $298=((($297)) & 65535); //@line 521 "_codecs_iso2022.c"
+        var $299=$296; //@line 521 "_codecs_iso2022.c"
+        HEAP[$299]=$298; //@line 521 "_codecs_iso2022.c"
+        var $300=$outbuf_addr; //@line 522 "_codecs_iso2022.c"
+        var $301=HEAP[$300]; //@line 522 "_codecs_iso2022.c"
+        var $302=$301+2; //@line 522 "_codecs_iso2022.c"
+        var $303=$outbuf_addr; //@line 522 "_codecs_iso2022.c"
+        HEAP[$303]=$302; //@line 522 "_codecs_iso2022.c"
+        var $304=HEAP[$outleft_addr]; //@line 522 "_codecs_iso2022.c"
+        var $305=($304) - 1; //@line 522 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$305; //@line 522 "_codecs_iso2022.c"
+        __label__ = 65; break; //@line 522 "_codecs_iso2022.c"
+      case 58: // $bb65
+        var $306=$decoded; //@line 524 "_codecs_iso2022.c"
+        var $307=($306) <= 196607; //@line 524 "_codecs_iso2022.c"
+        var $308=HEAP[$outleft_addr]; //@line 525 "_codecs_iso2022.c"
+        var $309=($308) <= 1; //@line 525 "_codecs_iso2022.c"
+        if ($307) { __label__ = 59; break; } else { __label__ = 62; break; } //@line 524 "_codecs_iso2022.c"
+      case 59: // $bb66
+        if ($309) { __label__ = 60; break; } else { __label__ = 61; break; } //@line 525 "_codecs_iso2022.c"
+      case 60: // $bb67
+        $0=-1; //@line 525 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 525 "_codecs_iso2022.c"
+      case 61: // $bb68
+        var $310=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
+        var $311=HEAP[$310]; //@line 525 "_codecs_iso2022.c"
+        var $312=$decoded; //@line 525 "_codecs_iso2022.c"
+        var $313=($312) - 65536; //@line 525 "_codecs_iso2022.c"
+        var $314=($313) >>> 10; //@line 525 "_codecs_iso2022.c"
+        var $315=((($314)) & 65535); //@line 525 "_codecs_iso2022.c"
+        var $316=($315) + -10240; //@line 525 "_codecs_iso2022.c"
+        var $317=$311; //@line 525 "_codecs_iso2022.c"
+        HEAP[$317]=$316; //@line 525 "_codecs_iso2022.c"
+        var $318=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
+        var $319=HEAP[$318]; //@line 525 "_codecs_iso2022.c"
+        var $320=$decoded; //@line 525 "_codecs_iso2022.c"
+        var $321=((($320)) & 65535); //@line 525 "_codecs_iso2022.c"
+        var $322=($321) & 1023; //@line 525 "_codecs_iso2022.c"
+        var $323=($322) + -9216; //@line 525 "_codecs_iso2022.c"
+        var $324=$319+2; //@line 525 "_codecs_iso2022.c"
+        HEAP[$324]=$323; //@line 525 "_codecs_iso2022.c"
+        var $325=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
+        var $326=HEAP[$325]; //@line 525 "_codecs_iso2022.c"
+        var $327=$326+4; //@line 525 "_codecs_iso2022.c"
+        var $328=$outbuf_addr; //@line 525 "_codecs_iso2022.c"
+        HEAP[$328]=$327; //@line 525 "_codecs_iso2022.c"
+        var $329=HEAP[$outleft_addr]; //@line 525 "_codecs_iso2022.c"
+        var $330=($329) - 2; //@line 525 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$330; //@line 525 "_codecs_iso2022.c"
+        __label__ = 65; break; //@line 525 "_codecs_iso2022.c"
+      case 62: // $bb69
+        if ($309) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 528 "_codecs_iso2022.c"
+      case 63: // $bb70
+        $0=-1; //@line 528 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 528 "_codecs_iso2022.c"
+      case 64: // $bb71
+        var $331=$outbuf_addr; //@line 528 "_codecs_iso2022.c"
+        var $332=HEAP[$331]; //@line 528 "_codecs_iso2022.c"
+        var $333=$decoded; //@line 528 "_codecs_iso2022.c"
+        var $334=($333) >>> 16; //@line 528 "_codecs_iso2022.c"
+        var $335=((($334)) & 65535); //@line 528 "_codecs_iso2022.c"
+        var $336=$332; //@line 528 "_codecs_iso2022.c"
+        HEAP[$336]=$335; //@line 528 "_codecs_iso2022.c"
+        var $337=$outbuf_addr; //@line 528 "_codecs_iso2022.c"
+        var $338=HEAP[$337]; //@line 528 "_codecs_iso2022.c"
+        var $339=$decoded; //@line 528 "_codecs_iso2022.c"
+        var $340=((($339)) & 65535); //@line 528 "_codecs_iso2022.c"
+        var $341=$338+2; //@line 528 "_codecs_iso2022.c"
+        HEAP[$341]=$340; //@line 528 "_codecs_iso2022.c"
+        var $342=$outbuf_addr; //@line 529 "_codecs_iso2022.c"
+        var $343=HEAP[$342]; //@line 529 "_codecs_iso2022.c"
+        var $344=$343+4; //@line 529 "_codecs_iso2022.c"
+        var $345=$outbuf_addr; //@line 529 "_codecs_iso2022.c"
+        HEAP[$345]=$344; //@line 529 "_codecs_iso2022.c"
+        var $346=HEAP[$outleft_addr]; //@line 529 "_codecs_iso2022.c"
+        var $347=($346) - 2; //@line 529 "_codecs_iso2022.c"
+        HEAP[$outleft_addr]=$347; //@line 529 "_codecs_iso2022.c"
+        __label__ = 65; break; //@line 529 "_codecs_iso2022.c"
+      case 65: // $bb72
+        var $348=$inbuf_addr; //@line 531 "_codecs_iso2022.c"
+        var $349=HEAP[$348]; //@line 531 "_codecs_iso2022.c"
+        var $350=$dsg; //@line 531 "_codecs_iso2022.c"
+        var $351=$350+2; //@line 531 "_codecs_iso2022.c"
+        var $352=HEAP[$351]; //@line 531 "_codecs_iso2022.c"
+        var $353=($352); //@line 531 "_codecs_iso2022.c"
+        var $354=$349+$353; //@line 531 "_codecs_iso2022.c"
+        var $355=$inbuf_addr; //@line 531 "_codecs_iso2022.c"
+        HEAP[$355]=$354; //@line 531 "_codecs_iso2022.c"
+        var $356=HEAP[$inleft_addr]; //@line 531 "_codecs_iso2022.c"
+        var $357=$dsg; //@line 531 "_codecs_iso2022.c"
+        var $358=$357+2; //@line 531 "_codecs_iso2022.c"
+        var $359=HEAP[$358]; //@line 531 "_codecs_iso2022.c"
+        var $360=($359); //@line 531 "_codecs_iso2022.c"
+        var $361=($356) - ($360); //@line 531 "_codecs_iso2022.c"
+        HEAP[$inleft_addr]=$361; //@line 531 "_codecs_iso2022.c"
+        __lastLabel__ = 65; __label__ = 67; break; //@line 531 "_codecs_iso2022.c"
+      case 66: // $bb73thread_pre_split
         var $_pr=HEAP[$inleft_addr];
-        __lastLabel__ = 144; __label__ = 145; break;
-      case 145: // $bb73
-        var $684=__lastLabel__ == -1 ? $inleft : (__lastLabel__ == 144 ? $_pr : (__lastLabel__ == 143 ? $683 : (__lastLabel__ == 106 ? $496 : ($474))));
-        var $685=($684) > 0; //@line 425 "_codecs_iso2022.c"
-        if ($685) { __label__ = 1; break; } else { __label__ = 146; break; } //@line 425 "_codecs_iso2022.c"
-      case 146: // $bb74
-        $2=0; //@line 536 "_codecs_iso2022.c"
-        __label__ = 147; break; //@line 536 "_codecs_iso2022.c"
-      case 147: // $bb75
-        var $686=$2; //@line 432 "_codecs_iso2022.c"
-        $retval=$686; //@line 432 "_codecs_iso2022.c"
+        __lastLabel__ = 66; __label__ = 67; break;
+      case 67: // $bb73
+        var $362=__lastLabel__ == -1 ? $inleft : (__lastLabel__ == 66 ? $_pr : (__lastLabel__ == 65 ? $361 : (__lastLabel__ == 28 ? $174 : ($152))));
+        var $363=($362) > 0; //@line 425 "_codecs_iso2022.c"
+        if ($363) { __label__ = 1; break; } else { __label__ = 68; break; } //@line 425 "_codecs_iso2022.c"
+      case 68: // $bb74
+        $0=0; //@line 536 "_codecs_iso2022.c"
+        __label__ = 69; break; //@line 536 "_codecs_iso2022.c"
+      case 69: // $bb75
+        var $364=$0; //@line 432 "_codecs_iso2022.c"
+        $retval=$364; //@line 432 "_codecs_iso2022.c"
         var $retval76=$retval; //@line 432 "_codecs_iso2022.c"
         STACKTOP = __stackBase__;
         return $retval76; //@line 432 "_codecs_iso2022.c"
@@ -3660,72 +3759,54 @@ var __str37;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
         var $retval;
-        var $1;
+        var $0;
         var $_b=HEAP[_initialized_9849_b];
-        var $2=($_b);
-        var $3=($2)==0; //@line 686 "_codecs_iso2022.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 13; break; } //@line 686 "_codecs_iso2022.c"
+        var $1=($_b);
+        var $2=($1)==0; //@line 686 "_codecs_iso2022.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 10; break; } //@line 686 "_codecs_iso2022.c"
       case 1: // $bb
-        var $_b_i=HEAP[_initialized_9598_b];
-        var $4=($_b_i);
-        var $5=($4)==0; //@line 608 "_codecs_iso2022.c"
-        if ($5) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 608 "_codecs_iso2022.c"
-      case 2: // $bb_i
-        var $6=_importmap(__str16, __str17, _jisxcommon_encmap, 0); //@line 608 "_codecs_iso2022.c"
-        var $7=($6)!=0; //@line 608 "_codecs_iso2022.c"
-        if ($7) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 608 "_codecs_iso2022.c"
-      case 3: // $bb1_i
-        var $8=_importmap(__str16, __str18, 0, _jisx0208_decmap); //@line 608 "_codecs_iso2022.c"
-        var $9=($8)!=0; //@line 608 "_codecs_iso2022.c"
-        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 608 "_codecs_iso2022.c"
-      case 4: // $jisx0208_init_exit_thread
-        $0=-1; //@line 611 "_codecs_iso2022.c"
-        $retval_i=-1; //@line 611 "_codecs_iso2022.c"
-        __label__ = 12; break;
-      case 5: // $bb1
-        HEAP[_initialized_9598_b]=1;
-        $0=0; //@line 613 "_codecs_iso2022.c"
-        $retval_i=0; //@line 611 "_codecs_iso2022.c"
-        var $10=_importmap(__str16, __str20, _jisx0213_bmp_encmap, 0); //@line 686 "_codecs_iso2022.c"
-        var $11=($10)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($11) { __label__ = 12; break; } else { __label__ = 6; break; } //@line 686 "_codecs_iso2022.c"
-      case 6: // $bb2
-        var $12=_importmap(__str16, __str21, 0, _jisx0213_1_bmp_decmap); //@line 686 "_codecs_iso2022.c"
-        var $13=($12)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($13) { __label__ = 12; break; } else { __label__ = 7; break; } //@line 686 "_codecs_iso2022.c"
-      case 7: // $bb3
-        var $14=_importmap(__str16, __str22, 0, _jisx0213_2_bmp_decmap); //@line 686 "_codecs_iso2022.c"
-        var $15=($14)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($15) { __label__ = 12; break; } else { __label__ = 8; break; } //@line 686 "_codecs_iso2022.c"
-      case 8: // $bb4
-        var $16=_importmap(__str16, __str23, _jisx0213_emp_encmap, 0); //@line 686 "_codecs_iso2022.c"
-        var $17=($16)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($17) { __label__ = 12; break; } else { __label__ = 9; break; } //@line 686 "_codecs_iso2022.c"
-      case 9: // $bb5
-        var $18=_importmap(__str16, __str24, 0, _jisx0213_1_emp_decmap); //@line 686 "_codecs_iso2022.c"
-        var $19=($18)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($19) { __label__ = 12; break; } else { __label__ = 10; break; } //@line 686 "_codecs_iso2022.c"
-      case 10: // $bb6
-        var $20=_importmap(__str16, __str25, 0, _jisx0213_2_emp_decmap); //@line 686 "_codecs_iso2022.c"
-        var $21=($20)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($21) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 686 "_codecs_iso2022.c"
-      case 11: // $bb7
-        var $22=_importmap(__str16, __str26, _jisx0213_pair_encmap, _jisx0213_pair_decmap); //@line 686 "_codecs_iso2022.c"
-        var $23=($22)!=0; //@line 686 "_codecs_iso2022.c"
-        if ($23) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 686 "_codecs_iso2022.c"
-      case 12: // $bb8
-        $1=-1; //@line 702 "_codecs_iso2022.c"
-        __label__ = 14; break; //@line 702 "_codecs_iso2022.c"
-      case 13: // $bb9
+        var $3=_jisx0208_init(); //@line 686 "_codecs_iso2022.c"
+        var $4=($3)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($4) { __label__ = 9; break; } else { __label__ = 2; break; } //@line 686 "_codecs_iso2022.c"
+      case 2: // $bb1
+        var $5=_importmap(__str16, __str20, _jisx0213_bmp_encmap, 0); //@line 686 "_codecs_iso2022.c"
+        var $6=($5)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($6) { __label__ = 9; break; } else { __label__ = 3; break; } //@line 686 "_codecs_iso2022.c"
+      case 3: // $bb2
+        var $7=_importmap(__str16, __str21, 0, _jisx0213_1_bmp_decmap); //@line 686 "_codecs_iso2022.c"
+        var $8=($7)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($8) { __label__ = 9; break; } else { __label__ = 4; break; } //@line 686 "_codecs_iso2022.c"
+      case 4: // $bb3
+        var $9=_importmap(__str16, __str22, 0, _jisx0213_2_bmp_decmap); //@line 686 "_codecs_iso2022.c"
+        var $10=($9)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($10) { __label__ = 9; break; } else { __label__ = 5; break; } //@line 686 "_codecs_iso2022.c"
+      case 5: // $bb4
+        var $11=_importmap(__str16, __str23, _jisx0213_emp_encmap, 0); //@line 686 "_codecs_iso2022.c"
+        var $12=($11)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($12) { __label__ = 9; break; } else { __label__ = 6; break; } //@line 686 "_codecs_iso2022.c"
+      case 6: // $bb5
+        var $13=_importmap(__str16, __str24, 0, _jisx0213_1_emp_decmap); //@line 686 "_codecs_iso2022.c"
+        var $14=($13)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($14) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 686 "_codecs_iso2022.c"
+      case 7: // $bb6
+        var $15=_importmap(__str16, __str25, 0, _jisx0213_2_emp_decmap); //@line 686 "_codecs_iso2022.c"
+        var $16=($15)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($16) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 686 "_codecs_iso2022.c"
+      case 8: // $bb7
+        var $17=_importmap(__str16, __str26, _jisx0213_pair_encmap, _jisx0213_pair_decmap); //@line 686 "_codecs_iso2022.c"
+        var $18=($17)!=0; //@line 686 "_codecs_iso2022.c"
+        if ($18) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 686 "_codecs_iso2022.c"
+      case 9: // $bb8
+        $0=-1; //@line 702 "_codecs_iso2022.c"
+        __label__ = 11; break; //@line 702 "_codecs_iso2022.c"
+      case 10: // $bb9
         HEAP[_initialized_9849_b]=1;
-        $1=0; //@line 704 "_codecs_iso2022.c"
-        __label__ = 14; break; //@line 704 "_codecs_iso2022.c"
-      case 14: // $bb10
-        var $24=$1; //@line 702 "_codecs_iso2022.c"
-        $retval=$24; //@line 702 "_codecs_iso2022.c"
+        $0=0; //@line 704 "_codecs_iso2022.c"
+        __label__ = 11; break; //@line 704 "_codecs_iso2022.c"
+      case 11: // $bb10
+        var $19=$0; //@line 702 "_codecs_iso2022.c"
+        $retval=$19; //@line 702 "_codecs_iso2022.c"
         var $retval11=$retval; //@line 702 "_codecs_iso2022.c"
         ;
         return $retval11; //@line 702 "_codecs_iso2022.c"
@@ -6165,68 +6246,23 @@ var __str37;
   
 
   function _init_codecs_iso2022() {
-    var __stackBase__  = STACKTOP; STACKTOP += 256; _memset(__stackBase__, 0, 256);
+    ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $module_addr_i;
-        var $0;
-        var $h_i;
-        var $mhname_i=__stackBase__;
-        var $r_i;
         var $m;
-        var $1=_Py_InitModule4(__str37, ___methods, 0, 0, 1013); //@line 1131 "_codecs_iso2022.c"
-        $m=$1; //@line 1131 "_codecs_iso2022.c"
-        var $2=$m; //@line 1131 "_codecs_iso2022.c"
-        var $3=($2)!=0; //@line 1131 "_codecs_iso2022.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 1131 "_codecs_iso2022.c"
+        var $0=_Py_InitModule4(__str37, ___methods, 0, 0, 1013); //@line 1131 "_codecs_iso2022.c"
+        $m=$0; //@line 1131 "_codecs_iso2022.c"
+        var $1=$m; //@line 1131 "_codecs_iso2022.c"
+        var $2=($1)!=0; //@line 1131 "_codecs_iso2022.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1131 "_codecs_iso2022.c"
       case 1: // $bb
-        var $4=$m; //@line 1131 "_codecs_iso2022.c"
-        $module_addr_i=$4;
-        $h_i=__mapping_list; //@line 305 "cjkcodecs.h"
-        var $mhname1_i=$mhname_i; //@line 306 "cjkcodecs.h"
-        var $mhname2_i=$mhname_i; //@line 308 "cjkcodecs.h"
-        var $5=$mhname2_i+7; //@line 308 "cjkcodecs.h"
-        var $6=$5+-1; //@line 308 "cjkcodecs.h"
-        var $mhname3_i=$mhname_i; //@line 309 "cjkcodecs.h"
-        __label__ = 5; break; //@line 305 "cjkcodecs.h"
-      case 2: // $bb_i
-        _llvm_memcpy_p0i8_p0i8_i32($mhname1_i, __str7, 256, 1, 0); //@line 306 "cjkcodecs.h"
-        var $7=$h_i; //@line 308 "cjkcodecs.h"
-        var $8=$7; //@line 308 "cjkcodecs.h"
-        var $9=HEAP[$8]; //@line 308 "cjkcodecs.h"
-        var $10=_strcpy($6, $9); //@line 308 "cjkcodecs.h"
-        var $11=$h_i; //@line 309 "cjkcodecs.h"
-        var $12=$11; //@line 309 "cjkcodecs.h"
-        var $13=_PyCapsule_New($12, __str4, 0); //@line 309 "cjkcodecs.h"
-        var $14=$module_addr_i; //@line 309 "cjkcodecs.h"
-        var $15=_PyModule_AddObject($14, $mhname3_i, $13); //@line 309 "cjkcodecs.h"
-        $r_i=$15; //@line 309 "cjkcodecs.h"
-        var $16=$r_i; //@line 311 "cjkcodecs.h"
-        var $17=($16)==-1; //@line 311 "cjkcodecs.h"
-        if ($17) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 311 "cjkcodecs.h"
-      case 3: // $bb4_i
-        $0=-1; //@line 312 "cjkcodecs.h"
-        __label__ = 7; break; //@line 312 "cjkcodecs.h"
-      case 4: // $bb5_i
-        var $18=$h_i; //@line 305 "cjkcodecs.h"
-        var $19=$18+12; //@line 305 "cjkcodecs.h"
-        $h_i=$19; //@line 305 "cjkcodecs.h"
-        __label__ = 5; break; //@line 305 "cjkcodecs.h"
-      case 5: // $bb6_i
-        var $20=$h_i; //@line 305 "cjkcodecs.h"
-        var $21=$20; //@line 305 "cjkcodecs.h"
-        var $22=HEAP[$21]; //@line 305 "cjkcodecs.h"
-        var $23=$22; //@line 305 "cjkcodecs.h"
-        var $24=HEAP[$23]; //@line 305 "cjkcodecs.h"
-        var $25=($24)!=0; //@line 305 "cjkcodecs.h"
-        if ($25) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 305 "cjkcodecs.h"
-      case 6: // $bb7_i
-        $0=0; //@line 314 "cjkcodecs.h"
-        __label__ = 7; break; //@line 314 "cjkcodecs.h"
-      case 7: // $return
-        STACKTOP = __stackBase__;
+        var $3=$m; //@line 1131 "_codecs_iso2022.c"
+        _register_maps($3); //@line 1131 "_codecs_iso2022.c"
+        __label__ = 2; break; //@line 1131 "_codecs_iso2022.c"
+      case 2: // $return
+        ;
         return; //@line 1131 "_codecs_iso2022.c"
       default: assert(0, "bad label: " + __label__);
     }

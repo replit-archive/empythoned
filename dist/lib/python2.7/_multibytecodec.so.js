@@ -112,17 +112,17 @@ var __str6;
 var __str7;
 var __str8;
 var ___PRETTY_FUNCTION___8537;
-var _PyExc_TypeError;
+
 var __str9;
 var __str10;
 var _codecctx_getsets;
 var __str11;
 var __str12;
-var _PyExc_RuntimeError;
+
 var __str13;
 var __str14;
 var __str15;
-var _PyExc_IndexError;
+
 var __str16;
 var __str17;
 var __str18;
@@ -134,10 +134,10 @@ var __str23;
 var _multibytecodec_methods;
 var __str24;
 var _MultibyteCodec_Type;
-var _PyExc_UnicodeError;
+
 var __str25;
 var __str26;
-var __Py_NoneStruct;
+
 var __str27;
 var _mbiencoder_methods;
 var __str28;
@@ -171,7 +171,7 @@ var _mbstreamwriter_members;
 var __str48;
 var _MultibyteStreamWriter_Type;
 var __str49;
-var _PyExc_ValueError;
+
 var __str50;
 var __str51;
 var ___methods;
@@ -1361,7 +1361,7 @@ var __str53;
         _PyErr_Clear(); //@line 339 "multibytecodec.c"
         var $268=HEAP[_PyExc_IndexError]; //@line 340 "multibytecodec.c"
         var $269=$newpos; //@line 340 "multibytecodec.c"
-        var $270=_PyErr_Format($268, __str16, $269); //@line 340 "multibytecodec.c"
+        var $270=_PyErr_Format($268, __str16, allocate([$269,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 340 "multibytecodec.c"
         __label__ = 48; break; //@line 340 "multibytecodec.c"
       case 43: // $bb44
         var $271=$buf_addr; //@line 345 "multibytecodec.c"
@@ -1861,7 +1861,7 @@ var __str53;
         _PyErr_Clear(); //@line 450 "multibytecodec.c"
         var $230=HEAP[_PyExc_IndexError]; //@line 451 "multibytecodec.c"
         var $231=$newpos; //@line 451 "multibytecodec.c"
-        var $232=_PyErr_Format($230, __str16, $231); //@line 451 "multibytecodec.c"
+        var $232=_PyErr_Format($230, __str16, allocate([$231,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 451 "multibytecodec.c"
         __label__ = 43; break; //@line 451 "multibytecodec.c"
       case 40: // $bb40
         var $233=$buf_addr; //@line 456 "multibytecodec.c"
@@ -2291,7 +2291,7 @@ var __str53;
         HEAP[$errors]=0; //@line 547 "multibytecodec.c"
         var $1=$args_addr; //@line 550 "multibytecodec.c"
         var $2=$kwargs_addr; //@line 550 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str19, _codeckwarglist, $arg, $errors); //@line 550 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str19, _codeckwarglist, allocate([$arg,0,0,0,$errors,0,0,0], ["%struct.PyObject**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 550 "multibytecodec.c"
         var $4=($3)==0; //@line 550 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 550 "multibytecodec.c"
       case 1: // $bb
@@ -2600,7 +2600,7 @@ var __str53;
         HEAP[$errors]=0; //@line 604 "multibytecodec.c"
         var $1=$args_addr; //@line 607 "multibytecodec.c"
         var $2=$kwargs_addr; //@line 607 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str21, _codeckwarglist, $pdata, $errors); //@line 607 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str21, _codeckwarglist, allocate([$pdata,0,0,0,$errors,0,0,0], ["%struct.Py_buffer*",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 607 "multibytecodec.c"
         var $4=($3)==0; //@line 607 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 607 "multibytecodec.c"
       case 1: // $bb
@@ -3666,7 +3666,7 @@ var __str53;
         HEAP[$final]=0; //@line 883 "multibytecodec.c"
         var $1=$args_addr; //@line 885 "multibytecodec.c"
         var $2=$kwargs_addr; //@line 885 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str26, _incrementalkwarglist, $data, $final); //@line 885 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str26, _incrementalkwarglist, allocate([$data,0,0,0,$final,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 885 "multibytecodec.c"
         var $4=($3)==0; //@line 885 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 885 "multibytecodec.c"
       case 1: // $bb
@@ -3768,7 +3768,7 @@ var __str53;
         HEAP[$errors]=0; //@line 916 "multibytecodec.c"
         var $1=$args_addr; //@line 918 "multibytecodec.c"
         var $2=$kwds_addr; //@line 918 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str28, _incnewkwarglist, $errors); //@line 918 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str28, _incnewkwarglist, allocate([$errors,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 918 "multibytecodec.c"
         var $4=($3)==0; //@line 918 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 918 "multibytecodec.c"
       case 1: // $bb
@@ -4127,7 +4127,7 @@ var __str53;
         HEAP[$final]=0; //@line 1031 "multibytecodec.c"
         var $1=$args_addr; //@line 1033 "multibytecodec.c"
         var $2=$kwargs_addr; //@line 1033 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str32, _incrementalkwarglist, $pdata, $final); //@line 1033 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str32, _incrementalkwarglist, allocate([$pdata,0,0,0,$final,0,0,0], ["%struct.Py_buffer*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1033 "multibytecodec.c"
         var $4=($3)==0; //@line 1033 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1033 "multibytecodec.c"
       case 1: // $bb
@@ -4496,7 +4496,7 @@ var __str53;
         HEAP[$errors]=0; //@line 1125 "multibytecodec.c"
         var $1=$args_addr; //@line 1127 "multibytecodec.c"
         var $2=$kwds_addr; //@line 1127 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str33, _incnewkwarglist, $errors); //@line 1127 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str33, _incnewkwarglist, allocate([$errors,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 1127 "multibytecodec.c"
         var $4=($3)==0; //@line 1127 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1127 "multibytecodec.c"
       case 1: // $bb
@@ -4882,12 +4882,12 @@ var __str53;
         var $19=HEAP[$18]; //@line 1250 "multibytecodec.c"
         if ($15) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1249 "multibytecodec.c"
       case 4: // $bb3
-        var $20=__PyObject_CallMethod_SizeT($19, $16, 0); //@line 1250 "multibytecodec.c"
+        var $20=__PyObject_CallMethod_SizeT($19, $16, 0, allocate(1, "i32", ALLOC_STACK)); //@line 1250 "multibytecodec.c"
         $cres=$20; //@line 1250 "multibytecodec.c"
         __lastLabel__ = 4; __label__ = 6; break; //@line 1250 "multibytecodec.c"
       case 5: // $bb4
         var $21=$sizehint_addr; //@line 1253 "multibytecodec.c"
-        var $22=__PyObject_CallMethod_SizeT($19, $16, __str35, $21); //@line 1253 "multibytecodec.c"
+        var $22=__PyObject_CallMethod_SizeT($19, $16, __str35, allocate([$21,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1253 "multibytecodec.c"
         $cres=$22; //@line 1253 "multibytecodec.c"
         __lastLabel__ = 5; __label__ = 6; break; //@line 1253 "multibytecodec.c"
       case 6: // $bb5
@@ -5300,7 +5300,7 @@ var __str53;
         $args_addr=$args;
         HEAP[$sizeobj]=0; //@line 1340 "multibytecodec.c"
         var $1=$args_addr; //@line 1343 "multibytecodec.c"
-        var $2=_PyArg_UnpackTuple($1, __str37, 0, 1, $sizeobj); //@line 1343 "multibytecodec.c"
+        var $2=_PyArg_UnpackTuple($1, __str37, 0, 1, allocate([$sizeobj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1343 "multibytecodec.c"
         var $3=($2)==0; //@line 1343 "multibytecodec.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1343 "multibytecodec.c"
       case 1: // $bb
@@ -5368,7 +5368,7 @@ var __str53;
         $args_addr=$args;
         HEAP[$sizeobj]=0; //@line 1361 "multibytecodec.c"
         var $1=$args_addr; //@line 1364 "multibytecodec.c"
-        var $2=_PyArg_UnpackTuple($1, __str39, 0, 1, $sizeobj); //@line 1364 "multibytecodec.c"
+        var $2=_PyArg_UnpackTuple($1, __str39, 0, 1, allocate([$sizeobj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1364 "multibytecodec.c"
         var $3=($2)==0; //@line 1364 "multibytecodec.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1364 "multibytecodec.c"
       case 1: // $bb
@@ -5438,7 +5438,7 @@ var __str53;
         $args_addr=$args;
         HEAP[$sizehintobj]=0; //@line 1382 "multibytecodec.c"
         var $1=$args_addr; //@line 1385 "multibytecodec.c"
-        var $2=_PyArg_UnpackTuple($1, __str40, 0, 1, $sizehintobj); //@line 1385 "multibytecodec.c"
+        var $2=_PyArg_UnpackTuple($1, __str40, 0, 1, allocate([$sizehintobj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1385 "multibytecodec.c"
         var $3=($2)==0; //@line 1385 "multibytecodec.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1385 "multibytecodec.c"
       case 1: // $bb
@@ -5602,7 +5602,7 @@ var __str53;
         HEAP[$errors]=0; //@line 1441 "multibytecodec.c"
         var $1=$args_addr; //@line 1443 "multibytecodec.c"
         var $2=$kwds_addr; //@line 1443 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str41, _streamkwarglist, $stream, $errors); //@line 1443 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str41, _streamkwarglist, allocate([$stream,0,0,0,$errors,0,0,0], ["%struct.PyObject**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 1443 "multibytecodec.c"
         var $4=($3)==0; //@line 1443 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1443 "multibytecodec.c"
       case 1: // $bb
@@ -6027,7 +6027,7 @@ var __str53;
         var $8=$7+32; //@line 1562 "multibytecodec.c"
         var $9=HEAP[$8]; //@line 1562 "multibytecodec.c"
         var $10=$str; //@line 1562 "multibytecodec.c"
-        var $11=__PyObject_CallMethod_SizeT($9, __str43, __str44, $10); //@line 1562 "multibytecodec.c"
+        var $11=__PyObject_CallMethod_SizeT($9, __str43, __str44, allocate([$10,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1562 "multibytecodec.c"
         $wr=$11; //@line 1562 "multibytecodec.c"
         var $12=$str; //@line 1563 "multibytecodec.c"
         var $13=$12; //@line 1563 "multibytecodec.c"
@@ -6278,7 +6278,7 @@ var __str53;
         var $24=$23+32; //@line 1627 "multibytecodec.c"
         var $25=HEAP[$24]; //@line 1627 "multibytecodec.c"
         var $26=$pwrt; //@line 1627 "multibytecodec.c"
-        var $27=__PyObject_CallMethod_SizeT($25, __str43, __str44, $26); //@line 1627 "multibytecodec.c"
+        var $27=__PyObject_CallMethod_SizeT($25, __str43, __str44, allocate([$26,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1627 "multibytecodec.c"
         $wr=$27; //@line 1627 "multibytecodec.c"
         var $28=$wr; //@line 1628 "multibytecodec.c"
         var $29=($28)==0; //@line 1628 "multibytecodec.c"
@@ -6370,7 +6370,7 @@ var __str53;
         HEAP[$errors]=0; //@line 1643 "multibytecodec.c"
         var $1=$args_addr; //@line 1645 "multibytecodec.c"
         var $2=$kwds_addr; //@line 1645 "multibytecodec.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str46, _streamkwarglist, $stream, $errors); //@line 1645 "multibytecodec.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str46, _streamkwarglist, allocate([$stream,0,0,0,$errors,0,0,0], ["%struct.PyObject**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 1645 "multibytecodec.c"
         var $4=($3)==0; //@line 1645 "multibytecodec.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1645 "multibytecodec.c"
       case 1: // $bb

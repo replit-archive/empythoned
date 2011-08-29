@@ -79,9 +79,9 @@ var _tanh_special_values;
 var _c_tanh_doc;
 var __str;
 var _cmath_log_doc;
-var _PyExc_ValueError;
+
 var __str1;
-var _PyExc_OverflowError;
+
 var __str2;
 var __str3;
 var __str4;
@@ -2577,7 +2577,7 @@ var __str32;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 837 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str, $x, $y); //@line 837 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str, allocate([$x,0,0,0,$y,0,0,0], ["%struct.Py_complex*",0,0,0,"%struct.Py_complex*",0,0,0], ALLOC_STACK)); //@line 837 "cmathmodule.c"
         var $3=($2)==0; //@line 837 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 837 "cmathmodule.c"
       case 1: // $bb
@@ -2721,7 +2721,7 @@ var __str32;
         $args_addr=$args;
         $func_addr=$func;
         var $1=$args_addr; //@line 876 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str3, $x); //@line 876 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str3, allocate([$x,0,0,0], ["%struct.Py_complex*",0,0,0], ALLOC_STACK)); //@line 876 "cmathmodule.c"
         var $3=($2)==0; //@line 876 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 876 "cmathmodule.c"
       case 1: // $bb
@@ -3104,7 +3104,7 @@ var __str32;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 921 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str4, $z); //@line 921 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str4, allocate([$z,0,0,0], ["%struct.Py_complex*",0,0,0], ALLOC_STACK)); //@line 921 "cmathmodule.c"
         var $3=($2)==0; //@line 921 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 921 "cmathmodule.c"
       case 1: // $bb
@@ -3159,7 +3159,7 @@ var __str32;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 942 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str5, $z); //@line 942 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str5, allocate([$z,0,0,0], ["%struct.Py_complex*",0,0,0], ALLOC_STACK)); //@line 942 "cmathmodule.c"
         var $3=($2)==0; //@line 942 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 942 "cmathmodule.c"
       case 1: // $bb
@@ -3189,7 +3189,7 @@ var __str32;
       case 4: // $bb9
         var $10=$r; //@line 951 "cmathmodule.c"
         var $11=$phi; //@line 951 "cmathmodule.c"
-        var $12=_Py_BuildValue(__str6, $10, $11); //@line 951 "cmathmodule.c"
+        var $12=_Py_BuildValue(__str6, allocate([$10,0,0,0,0,0,0,0,$11,0,0,0,0,0,0,0], ["double",0,0,0,0,0,0,0,"double",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 951 "cmathmodule.c"
         $0=$12; //@line 951 "cmathmodule.c"
         __label__ = 5; break; //@line 951 "cmathmodule.c"
       case 5: // $bb10
@@ -3219,7 +3219,7 @@ var __str32;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 977 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str7, $r, $phi); //@line 977 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str7, allocate([$r,0,0,0,$phi,0,0,0], ["double*",0,0,0,"double*",0,0,0], ALLOC_STACK)); //@line 977 "cmathmodule.c"
         var $3=($2)==0; //@line 977 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 977 "cmathmodule.c"
       case 1: // $bb
@@ -3374,7 +3374,7 @@ var __str32;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1030 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str8, $z); //@line 1030 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str8, allocate([$z,0,0,0], ["%struct.Py_complex*",0,0,0], ALLOC_STACK)); //@line 1030 "cmathmodule.c"
         var $3=($2)==0; //@line 1030 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1030 "cmathmodule.c"
       case 1: // $bb
@@ -3429,7 +3429,7 @@ var __str32;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1043 "cmathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str8, $z); //@line 1043 "cmathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str8, allocate([$z,0,0,0], ["%struct.Py_complex*",0,0,0], ALLOC_STACK)); //@line 1043 "cmathmodule.c"
         var $3=($2)==0; //@line 1043 "cmathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1043 "cmathmodule.c"
       case 1: // $bb

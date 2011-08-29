@@ -1,11 +1,11 @@
-// Warning: 64 bit OR - precision limit may be hit on llvm line 2336
-// Warning: 64 bit AND - precision limit may be hit on llvm line 2363
-// Warning: 64 bit OR - precision limit may be hit on llvm line 2366
-// Warning: 64 bit OR - precision limit may be hit on llvm line 2429
-// Warning: 64 bit OR - precision limit may be hit on llvm line 3223
-// Warning: 64 bit AND - precision limit may be hit on llvm line 3244
-// Warning: 64 bit OR - precision limit may be hit on llvm line 3247
-// Warning: 64 bit OR - precision limit may be hit on llvm line 3314
+// Warning: 64 bit OR - precision limit may be hit on llvm line 2452
+// Warning: 64 bit AND - precision limit may be hit on llvm line 2479
+// Warning: 64 bit OR - precision limit may be hit on llvm line 2482
+// Warning: 64 bit OR - precision limit may be hit on llvm line 2545
+// Warning: 64 bit OR - precision limit may be hit on llvm line 3267
+// Warning: 64 bit AND - precision limit may be hit on llvm line 3288
+// Warning: 64 bit OR - precision limit may be hit on llvm line 3291
+// Warning: 64 bit OR - precision limit may be hit on llvm line 3358
 "use strict";
 
 // Capture the output of this into a variable, if you want
@@ -90,9 +90,9 @@ var __str;
 var __str1;
 var __str2;
 var ___PRETTY_FUNCTION___8419;
-var _PyExc_TypeError;
-var _PyFloat_Type;
-var _PyExc_DeprecationWarning;
+
+
+
 var __str3;
 var __str4;
 var __str5;
@@ -123,7 +123,7 @@ var __str19;
 var __str20;
 var __str21;
 var ___PRETTY_FUNCTION___9830;
-var __Py_NoneStruct;
+
 var __str22;
 var ___PRETTY_FUNCTION___9853;
 var __str23;
@@ -144,7 +144,7 @@ var __str31;
 var __str32;
 var __str33;
 var __str34;
-var _PyExc_OverflowError;
+
 var __str35;
 var _s_pack__doc__;
 var ___PRETTY_FUNCTION___10174;
@@ -180,7 +180,7 @@ var _module_functions;
 var _module_doc;
 var __str51;
 var __str52;
-var _PyType_Type;
+
 var __str53;
 var __str54;
 var __str55;
@@ -725,6 +725,266 @@ var __str57;
   }
   
 
+  function _get_longlong($v, $p) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $v_addr;
+        var $p_addr;
+        var $retval;
+        var $0;
+        var $x;
+        $v_addr=$v;
+        $p_addr=$p;
+        var $1=$v_addr; //@line 239 "_struct.c"
+        var $2=_get_pylong($1); //@line 239 "_struct.c"
+        $v_addr=$2; //@line 239 "_struct.c"
+        var $3=$v_addr; //@line 240 "_struct.c"
+        var $4=($3)==0; //@line 240 "_struct.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 240 "_struct.c"
+      case 1: // $bb
+        $0=-1; //@line 241 "_struct.c"
+        __label__ = 10; break; //@line 241 "_struct.c"
+      case 2: // $bb1
+        var $5=$v_addr; //@line 242 "_struct.c"
+        var $6=$5+4; //@line 242 "_struct.c"
+        var $7=HEAP[$6]; //@line 242 "_struct.c"
+        var $8=$7+84; //@line 242 "_struct.c"
+        var $9=HEAP[$8]; //@line 242 "_struct.c"
+        var $10=($9) & 16777216; //@line 242 "_struct.c"
+        var $11=($10)==0; //@line 242 "_struct.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 242 "_struct.c"
+      case 3: // $bb2
+        ___assert_fail(__str8, __str2, 242, ___PRETTY_FUNCTION___8601); //@line 242 "_struct.c"
+        throw "Reached an unreachable!" //@line 242 "_struct.c"
+      case 4: // $bb3
+        var $12=$v_addr; //@line 243 "_struct.c"
+        var $13=_PyLong_AsLongLong($12); //@line 243 "_struct.c"
+        $x=$13; //@line 243 "_struct.c"
+        var $14=$v_addr; //@line 244 "_struct.c"
+        var $15=$14; //@line 244 "_struct.c"
+        var $16=HEAP[$15]; //@line 244 "_struct.c"
+        var $17=($16) - 1; //@line 244 "_struct.c"
+        var $18=$v_addr; //@line 244 "_struct.c"
+        var $19=$18; //@line 244 "_struct.c"
+        HEAP[$19]=$17; //@line 244 "_struct.c"
+        var $20=$v_addr; //@line 244 "_struct.c"
+        var $21=$20; //@line 244 "_struct.c"
+        var $22=HEAP[$21]; //@line 244 "_struct.c"
+        var $23=($22)==0; //@line 244 "_struct.c"
+        if ($23) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 244 "_struct.c"
+      case 5: // $bb4
+        var $24=$v_addr; //@line 244 "_struct.c"
+        var $25=$24+4; //@line 244 "_struct.c"
+        var $26=HEAP[$25]; //@line 244 "_struct.c"
+        var $27=$26+24; //@line 244 "_struct.c"
+        var $28=HEAP[$27]; //@line 244 "_struct.c"
+        var $29=$v_addr; //@line 244 "_struct.c"
+        FUNCTION_TABLE[$28]($29); //@line 244 "_struct.c"
+        __label__ = 6; break; //@line 244 "_struct.c"
+      case 6: // $bb5
+        var $30=$x; //@line 245 "_struct.c"
+        var $31=($30)==-1; //@line 245 "_struct.c"
+        if ($31) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 245 "_struct.c"
+      case 7: // $bb6
+        var $32=_PyErr_Occurred(); //@line 245 "_struct.c"
+        var $33=($32)!=0; //@line 245 "_struct.c"
+        if ($33) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 245 "_struct.c"
+      case 8: // $bb7
+        $0=-1; //@line 246 "_struct.c"
+        __label__ = 10; break; //@line 246 "_struct.c"
+      case 9: // $bb8
+        var $34=$p_addr; //@line 247 "_struct.c"
+        var $35=$x; //@line 247 "_struct.c"
+        HEAP[$34]=$35; //@line 247 "_struct.c"
+        $0=0; //@line 248 "_struct.c"
+        __label__ = 10; break; //@line 248 "_struct.c"
+      case 10: // $bb9
+        var $36=$0; //@line 241 "_struct.c"
+        $retval=$36; //@line 241 "_struct.c"
+        var $retval10=$retval; //@line 241 "_struct.c"
+        ;
+        return $retval10; //@line 241 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _get_ulonglong($v, $p) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $v_addr;
+        var $p_addr;
+        var $retval;
+        var $0;
+        var $x;
+        $v_addr=$v;
+        $p_addr=$p;
+        var $1=$v_addr; //@line 258 "_struct.c"
+        var $2=_get_pylong($1); //@line 258 "_struct.c"
+        $v_addr=$2; //@line 258 "_struct.c"
+        var $3=$v_addr; //@line 259 "_struct.c"
+        var $4=($3)==0; //@line 259 "_struct.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 259 "_struct.c"
+      case 1: // $bb
+        $0=-1; //@line 260 "_struct.c"
+        __label__ = 10; break; //@line 260 "_struct.c"
+      case 2: // $bb1
+        var $5=$v_addr; //@line 261 "_struct.c"
+        var $6=$5+4; //@line 261 "_struct.c"
+        var $7=HEAP[$6]; //@line 261 "_struct.c"
+        var $8=$7+84; //@line 261 "_struct.c"
+        var $9=HEAP[$8]; //@line 261 "_struct.c"
+        var $10=($9) & 16777216; //@line 261 "_struct.c"
+        var $11=($10)==0; //@line 261 "_struct.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 261 "_struct.c"
+      case 3: // $bb2
+        ___assert_fail(__str8, __str2, 261, ___PRETTY_FUNCTION___8630); //@line 261 "_struct.c"
+        throw "Reached an unreachable!" //@line 261 "_struct.c"
+      case 4: // $bb3
+        var $12=$v_addr; //@line 262 "_struct.c"
+        var $13=_PyLong_AsUnsignedLongLong($12); //@line 262 "_struct.c"
+        $x=$13; //@line 262 "_struct.c"
+        var $14=$v_addr; //@line 263 "_struct.c"
+        var $15=$14; //@line 263 "_struct.c"
+        var $16=HEAP[$15]; //@line 263 "_struct.c"
+        var $17=($16) - 1; //@line 263 "_struct.c"
+        var $18=$v_addr; //@line 263 "_struct.c"
+        var $19=$18; //@line 263 "_struct.c"
+        HEAP[$19]=$17; //@line 263 "_struct.c"
+        var $20=$v_addr; //@line 263 "_struct.c"
+        var $21=$20; //@line 263 "_struct.c"
+        var $22=HEAP[$21]; //@line 263 "_struct.c"
+        var $23=($22)==0; //@line 263 "_struct.c"
+        if ($23) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 263 "_struct.c"
+      case 5: // $bb4
+        var $24=$v_addr; //@line 263 "_struct.c"
+        var $25=$24+4; //@line 263 "_struct.c"
+        var $26=HEAP[$25]; //@line 263 "_struct.c"
+        var $27=$26+24; //@line 263 "_struct.c"
+        var $28=HEAP[$27]; //@line 263 "_struct.c"
+        var $29=$v_addr; //@line 263 "_struct.c"
+        FUNCTION_TABLE[$28]($29); //@line 263 "_struct.c"
+        __label__ = 6; break; //@line 263 "_struct.c"
+      case 6: // $bb5
+        var $30=$x; //@line 264 "_struct.c"
+        var $31=($30)==-1; //@line 264 "_struct.c"
+        if ($31) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 264 "_struct.c"
+      case 7: // $bb6
+        var $32=_PyErr_Occurred(); //@line 264 "_struct.c"
+        var $33=($32)!=0; //@line 264 "_struct.c"
+        if ($33) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 264 "_struct.c"
+      case 8: // $bb7
+        $0=-1; //@line 265 "_struct.c"
+        __label__ = 10; break; //@line 265 "_struct.c"
+      case 9: // $bb8
+        var $34=$p_addr; //@line 266 "_struct.c"
+        var $35=$x; //@line 266 "_struct.c"
+        HEAP[$34]=$35; //@line 266 "_struct.c"
+        $0=0; //@line 267 "_struct.c"
+        __label__ = 10; break; //@line 267 "_struct.c"
+      case 10: // $bb9
+        var $36=$0; //@line 260 "_struct.c"
+        $retval=$36; //@line 260 "_struct.c"
+        var $retval10=$retval; //@line 260 "_struct.c"
+        ;
+        return $retval10; //@line 260 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _unpack_float($p, $le) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $p_addr;
+        var $le_addr;
+        var $retval;
+        var $0;
+        var $x;
+        $p_addr=$p;
+        $le_addr=$le;
+        var $1=$p_addr; //@line 280 "_struct.c"
+        var $2=$le_addr; //@line 280 "_struct.c"
+        var $3=__PyFloat_Unpack4($1, $2); //@line 280 "_struct.c"
+        $x=$3; //@line 280 "_struct.c"
+        var $4=$x; //@line 281 "_struct.c"
+        var $5=($4) == -1; //@line 281 "_struct.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 281 "_struct.c"
+      case 1: // $bb
+        var $6=_PyErr_Occurred(); //@line 281 "_struct.c"
+        var $7=($6)!=0; //@line 281 "_struct.c"
+        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 281 "_struct.c"
+      case 2: // $bb1
+        $0=0; //@line 282 "_struct.c"
+        __label__ = 4; break; //@line 282 "_struct.c"
+      case 3: // $bb2
+        var $8=$x; //@line 283 "_struct.c"
+        var $9=_PyFloat_FromDouble($8); //@line 283 "_struct.c"
+        $0=$9; //@line 283 "_struct.c"
+        __label__ = 4; break; //@line 283 "_struct.c"
+      case 4: // $bb3
+        var $10=$0; //@line 282 "_struct.c"
+        $retval=$10; //@line 282 "_struct.c"
+        var $retval4=$retval; //@line 282 "_struct.c"
+        ;
+        return $retval4; //@line 282 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _unpack_double($p, $le) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $p_addr;
+        var $le_addr;
+        var $retval;
+        var $0;
+        var $x;
+        $p_addr=$p;
+        $le_addr=$le;
+        var $1=$p_addr; //@line 292 "_struct.c"
+        var $2=$le_addr; //@line 292 "_struct.c"
+        var $3=__PyFloat_Unpack8($1, $2); //@line 292 "_struct.c"
+        $x=$3; //@line 292 "_struct.c"
+        var $4=$x; //@line 293 "_struct.c"
+        var $5=($4) == -1; //@line 293 "_struct.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 293 "_struct.c"
+      case 1: // $bb
+        var $6=_PyErr_Occurred(); //@line 293 "_struct.c"
+        var $7=($6)!=0; //@line 293 "_struct.c"
+        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 293 "_struct.c"
+      case 2: // $bb1
+        $0=0; //@line 294 "_struct.c"
+        __label__ = 4; break; //@line 294 "_struct.c"
+      case 3: // $bb2
+        var $8=$x; //@line 295 "_struct.c"
+        var $9=_PyFloat_FromDouble($8); //@line 295 "_struct.c"
+        $0=$9; //@line 295 "_struct.c"
+        __label__ = 4; break; //@line 295 "_struct.c"
+      case 4: // $bb3
+        var $10=$0; //@line 294 "_struct.c"
+        $retval=$10; //@line 294 "_struct.c"
+        var $retval4=$retval; //@line 294 "_struct.c"
+        ;
+        return $retval4; //@line 294 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function __range_error($f, $is_unsigned) {
     ;
     var __label__;
@@ -771,7 +1031,7 @@ var __str57;
         var $20=($19); //@line 313 "_struct.c"
         var $21=HEAP[_StructError]; //@line 313 "_struct.c"
         var $22=$ulargest; //@line 313 "_struct.c"
-        var $23=_PyErr_Format($21, __str11, $20, $22); //@line 313 "_struct.c"
+        var $23=_PyErr_Format($21, __str11, allocate([$20,0,0,0,$22,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 313 "_struct.c"
         __label__ = 6; break; //@line 313 "_struct.c"
       case 5: // $bb4
         var $24=$ulargest; //@line 318 "_struct.c"
@@ -785,7 +1045,7 @@ var __str57;
         var $30=($29); //@line 319 "_struct.c"
         var $31=HEAP[_StructError]; //@line 319 "_struct.c"
         var $32=$largest; //@line 319 "_struct.c"
-        var $33=_PyErr_Format($31, __str12, $30, $not, $32); //@line 319 "_struct.c"
+        var $33=_PyErr_Format($31, __str12, allocate([$30,0,0,0,$not,0,0,0,$32,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 319 "_struct.c"
         __label__ = 6; break; //@line 319 "_struct.c"
       case 6: // $bb6
         $0=-1; //@line 325 "_struct.c"
@@ -1663,98 +1923,31 @@ var __str57;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $v_addr_i;
-        var $p_addr_i;
-        var $retval_i;
-        var $0;
-        var $x_i;
         var $p_addr;
         var $v_addr;
         var $f_addr;
         var $retval;
-        var $1;
+        var $0;
         var $x=__stackBase__;
         $p_addr=$p;
         $v_addr=$v;
         $f_addr=$f;
-        var $2=$v_addr; //@line 618 "_struct.c"
-        $v_addr_i=$2;
-        $p_addr_i=$x;
-        var $3=$v_addr_i; //@line 239 "_struct.c"
-        var $4=_get_pylong($3); //@line 239 "_struct.c"
-        $v_addr_i=$4; //@line 239 "_struct.c"
-        var $5=$v_addr_i; //@line 240 "_struct.c"
-        var $6=($5)==0; //@line 240 "_struct.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 240 "_struct.c"
-      case 1: // $bb_i
-        $0=-1; //@line 241 "_struct.c"
-        __label__ = 9; break; //@line 241 "_struct.c"
-      case 2: // $bb1_i
-        var $7=$v_addr_i; //@line 242 "_struct.c"
-        var $8=$7+4; //@line 242 "_struct.c"
-        var $9=HEAP[$8]; //@line 242 "_struct.c"
-        var $10=$9+84; //@line 242 "_struct.c"
-        var $11=HEAP[$10]; //@line 242 "_struct.c"
-        var $12=($11) & 16777216; //@line 242 "_struct.c"
-        var $13=($12)==0; //@line 242 "_struct.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 242 "_struct.c"
-      case 3: // $bb2_i
-        ___assert_fail(__str8, __str2, 242, ___PRETTY_FUNCTION___8601); //@line 242 "_struct.c"
-        throw "Reached an unreachable!" //@line 242 "_struct.c"
-      case 4: // $bb3_i
-        var $14=$v_addr_i; //@line 243 "_struct.c"
-        var $15=_PyLong_AsLongLong($14); //@line 243 "_struct.c"
-        $x_i=$15; //@line 243 "_struct.c"
-        var $16=$v_addr_i; //@line 244 "_struct.c"
-        var $17=$16; //@line 244 "_struct.c"
-        var $18=HEAP[$17]; //@line 244 "_struct.c"
-        var $19=($18) - 1; //@line 244 "_struct.c"
-        var $20=$v_addr_i; //@line 244 "_struct.c"
-        var $21=$20; //@line 244 "_struct.c"
-        HEAP[$21]=$19; //@line 244 "_struct.c"
-        var $22=$v_addr_i; //@line 244 "_struct.c"
-        var $23=$22; //@line 244 "_struct.c"
-        var $24=HEAP[$23]; //@line 244 "_struct.c"
-        var $25=($24)==0; //@line 244 "_struct.c"
-        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 244 "_struct.c"
-      case 5: // $bb4_i
-        var $26=$v_addr_i; //@line 244 "_struct.c"
-        var $27=$26+4; //@line 244 "_struct.c"
-        var $28=HEAP[$27]; //@line 244 "_struct.c"
-        var $29=$28+24; //@line 244 "_struct.c"
-        var $30=HEAP[$29]; //@line 244 "_struct.c"
-        var $31=$v_addr_i; //@line 244 "_struct.c"
-        FUNCTION_TABLE[$30]($31); //@line 244 "_struct.c"
-        __label__ = 6; break; //@line 244 "_struct.c"
-      case 6: // $bb5_i
-        var $32=$x_i; //@line 245 "_struct.c"
-        var $33=($32)==-1; //@line 245 "_struct.c"
-        if ($33) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 245 "_struct.c"
-      case 7: // $bb6_i
-        var $34=_PyErr_Occurred(); //@line 245 "_struct.c"
-        var $35=($34)!=0; //@line 245 "_struct.c"
-        if ($35) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 245 "_struct.c"
-      case 8: // $bb7_i
-        $0=-1; //@line 246 "_struct.c"
-        __label__ = 9; break; //@line 246 "_struct.c"
-      case 9: // $bb
-        $retval_i=-1; //@line 241 "_struct.c"
-        $1=-1; //@line 619 "_struct.c"
-        __label__ = 11; break; //@line 619 "_struct.c"
-      case 10: // $bb1
-        var $36=$p_addr_i; //@line 247 "_struct.c"
-        var $37=$x_i; //@line 247 "_struct.c"
-        HEAP[$36]=$37; //@line 247 "_struct.c"
-        $0=0; //@line 248 "_struct.c"
-        $retval_i=0; //@line 241 "_struct.c"
-        var $38=$p_addr; //@line 620 "_struct.c"
+        var $1=$v_addr; //@line 618 "_struct.c"
+        var $2=_get_longlong($1, $x); //@line 618 "_struct.c"
+        var $3=($2) < 0; //@line 618 "_struct.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 618 "_struct.c"
+      case 1: // $bb
+        $0=-1; //@line 619 "_struct.c"
+        __label__ = 3; break; //@line 619 "_struct.c"
+      case 2: // $bb1
+        var $4=$p_addr; //@line 620 "_struct.c"
         var $x2=$x; //@line 620 "_struct.c"
-        _llvm_memcpy_p0i8_p0i8_i32($38, $x2, 8, 1, 0); //@line 620 "_struct.c"
-        $1=0; //@line 621 "_struct.c"
-        __label__ = 11; break; //@line 621 "_struct.c"
-      case 11: // $bb3
-        var $39=$1; //@line 619 "_struct.c"
-        $retval=$39; //@line 619 "_struct.c"
+        _llvm_memcpy_p0i8_p0i8_i32($4, $x2, 8, 1, 0); //@line 620 "_struct.c"
+        $0=0; //@line 621 "_struct.c"
+        __label__ = 3; break; //@line 621 "_struct.c"
+      case 3: // $bb3
+        var $5=$0; //@line 619 "_struct.c"
+        $retval=$5; //@line 619 "_struct.c"
         var $retval4=$retval; //@line 619 "_struct.c"
         STACKTOP = __stackBase__;
         return $retval4; //@line 619 "_struct.c"
@@ -1769,98 +1962,31 @@ var __str57;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $v_addr_i;
-        var $p_addr_i;
-        var $retval_i;
-        var $0;
-        var $x_i;
         var $p_addr;
         var $v_addr;
         var $f_addr;
         var $retval;
-        var $1;
+        var $0;
         var $x=__stackBase__;
         $p_addr=$p;
         $v_addr=$v;
         $f_addr=$f;
-        var $2=$v_addr; //@line 628 "_struct.c"
-        $v_addr_i=$2;
-        $p_addr_i=$x;
-        var $3=$v_addr_i; //@line 258 "_struct.c"
-        var $4=_get_pylong($3); //@line 258 "_struct.c"
-        $v_addr_i=$4; //@line 258 "_struct.c"
-        var $5=$v_addr_i; //@line 259 "_struct.c"
-        var $6=($5)==0; //@line 259 "_struct.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 259 "_struct.c"
-      case 1: // $bb_i
-        $0=-1; //@line 260 "_struct.c"
-        __label__ = 9; break; //@line 260 "_struct.c"
-      case 2: // $bb1_i
-        var $7=$v_addr_i; //@line 261 "_struct.c"
-        var $8=$7+4; //@line 261 "_struct.c"
-        var $9=HEAP[$8]; //@line 261 "_struct.c"
-        var $10=$9+84; //@line 261 "_struct.c"
-        var $11=HEAP[$10]; //@line 261 "_struct.c"
-        var $12=($11) & 16777216; //@line 261 "_struct.c"
-        var $13=($12)==0; //@line 261 "_struct.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 261 "_struct.c"
-      case 3: // $bb2_i
-        ___assert_fail(__str8, __str2, 261, ___PRETTY_FUNCTION___8630); //@line 261 "_struct.c"
-        throw "Reached an unreachable!" //@line 261 "_struct.c"
-      case 4: // $bb3_i
-        var $14=$v_addr_i; //@line 262 "_struct.c"
-        var $15=_PyLong_AsUnsignedLongLong($14); //@line 262 "_struct.c"
-        $x_i=$15; //@line 262 "_struct.c"
-        var $16=$v_addr_i; //@line 263 "_struct.c"
-        var $17=$16; //@line 263 "_struct.c"
-        var $18=HEAP[$17]; //@line 263 "_struct.c"
-        var $19=($18) - 1; //@line 263 "_struct.c"
-        var $20=$v_addr_i; //@line 263 "_struct.c"
-        var $21=$20; //@line 263 "_struct.c"
-        HEAP[$21]=$19; //@line 263 "_struct.c"
-        var $22=$v_addr_i; //@line 263 "_struct.c"
-        var $23=$22; //@line 263 "_struct.c"
-        var $24=HEAP[$23]; //@line 263 "_struct.c"
-        var $25=($24)==0; //@line 263 "_struct.c"
-        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 263 "_struct.c"
-      case 5: // $bb4_i
-        var $26=$v_addr_i; //@line 263 "_struct.c"
-        var $27=$26+4; //@line 263 "_struct.c"
-        var $28=HEAP[$27]; //@line 263 "_struct.c"
-        var $29=$28+24; //@line 263 "_struct.c"
-        var $30=HEAP[$29]; //@line 263 "_struct.c"
-        var $31=$v_addr_i; //@line 263 "_struct.c"
-        FUNCTION_TABLE[$30]($31); //@line 263 "_struct.c"
-        __label__ = 6; break; //@line 263 "_struct.c"
-      case 6: // $bb5_i
-        var $32=$x_i; //@line 264 "_struct.c"
-        var $33=($32)==-1; //@line 264 "_struct.c"
-        if ($33) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 264 "_struct.c"
-      case 7: // $bb6_i
-        var $34=_PyErr_Occurred(); //@line 264 "_struct.c"
-        var $35=($34)!=0; //@line 264 "_struct.c"
-        if ($35) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 264 "_struct.c"
-      case 8: // $bb7_i
-        $0=-1; //@line 265 "_struct.c"
-        __label__ = 9; break; //@line 265 "_struct.c"
-      case 9: // $bb
-        $retval_i=-1; //@line 260 "_struct.c"
-        $1=-1; //@line 629 "_struct.c"
-        __label__ = 11; break; //@line 629 "_struct.c"
-      case 10: // $bb1
-        var $36=$p_addr_i; //@line 266 "_struct.c"
-        var $37=$x_i; //@line 266 "_struct.c"
-        HEAP[$36]=$37; //@line 266 "_struct.c"
-        $0=0; //@line 267 "_struct.c"
-        $retval_i=0; //@line 260 "_struct.c"
-        var $38=$p_addr; //@line 630 "_struct.c"
+        var $1=$v_addr; //@line 628 "_struct.c"
+        var $2=_get_ulonglong($1, $x); //@line 628 "_struct.c"
+        var $3=($2) < 0; //@line 628 "_struct.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 628 "_struct.c"
+      case 1: // $bb
+        $0=-1; //@line 629 "_struct.c"
+        __label__ = 3; break; //@line 629 "_struct.c"
+      case 2: // $bb1
+        var $4=$p_addr; //@line 630 "_struct.c"
         var $x2=$x; //@line 630 "_struct.c"
-        _llvm_memcpy_p0i8_p0i8_i32($38, $x2, 8, 1, 0); //@line 630 "_struct.c"
-        $1=0; //@line 631 "_struct.c"
-        __label__ = 11; break; //@line 631 "_struct.c"
-      case 11: // $bb3
-        var $39=$1; //@line 629 "_struct.c"
-        $retval=$39; //@line 629 "_struct.c"
+        _llvm_memcpy_p0i8_p0i8_i32($4, $x2, 8, 1, 0); //@line 630 "_struct.c"
+        $0=0; //@line 631 "_struct.c"
+        __label__ = 3; break; //@line 631 "_struct.c"
+      case 3: // $bb3
+        var $5=$0; //@line 629 "_struct.c"
+        $retval=$5; //@line 629 "_struct.c"
         var $retval4=$retval; //@line 629 "_struct.c"
         STACKTOP = __stackBase__;
         return $retval4; //@line 629 "_struct.c"
@@ -2389,108 +2515,42 @@ var __str57;
   function _bu_float($p, $f) {
     ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $p_addr_i;
-        var $le_addr_i;
-        var $retval_i;
-        var $0;
-        var $x_i;
-        var $p_addr;
-        var $f_addr;
-        var $retval;
-        var $1;
-        $p_addr=$p;
-        $f_addr=$f;
-        var $2=$p_addr; //@line 795 "_struct.c"
-        $p_addr_i=$2;
-        $le_addr_i=0;
-        var $3=$p_addr_i; //@line 280 "_struct.c"
-        var $4=$le_addr_i; //@line 280 "_struct.c"
-        var $5=__PyFloat_Unpack4($3, $4); //@line 280 "_struct.c"
-        $x_i=$5; //@line 280 "_struct.c"
-        var $6=$x_i; //@line 281 "_struct.c"
-        var $7=($6) == -1; //@line 281 "_struct.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 281 "_struct.c"
-      case 1: // $bb_i
-        var $8=_PyErr_Occurred(); //@line 281 "_struct.c"
-        var $9=($8)!=0; //@line 281 "_struct.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 281 "_struct.c"
-      case 2: // $bb1_i
-        $0=0; //@line 282 "_struct.c"
-        __label__ = 4; break; //@line 282 "_struct.c"
-      case 3: // $bb2_i
-        var $10=$x_i; //@line 283 "_struct.c"
-        var $11=_PyFloat_FromDouble($10); //@line 283 "_struct.c"
-        $0=$11; //@line 283 "_struct.c"
-        __label__ = 4; break; //@line 283 "_struct.c"
-      case 4: // $unpack_float_exit
-        var $12=$0; //@line 282 "_struct.c"
-        $retval_i=$12; //@line 282 "_struct.c"
-        var $retval4_i=$retval_i; //@line 282 "_struct.c"
-        $1=$retval4_i; //@line 795 "_struct.c"
-        var $13=$1; //@line 795 "_struct.c"
-        $retval=$13; //@line 795 "_struct.c"
-        var $retval1=$retval; //@line 795 "_struct.c"
-        ;
-        return $retval1; //@line 795 "_struct.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $p_addr;
+    var $f_addr;
+    var $retval;
+    var $0;
+    $p_addr=$p;
+    $f_addr=$f;
+    var $1=$p_addr; //@line 795 "_struct.c"
+    var $2=_unpack_float($1, 0); //@line 795 "_struct.c"
+    $0=$2; //@line 795 "_struct.c"
+    var $3=$0; //@line 795 "_struct.c"
+    $retval=$3; //@line 795 "_struct.c"
+    var $retval1=$retval; //@line 795 "_struct.c"
+    ;
+    return $retval1; //@line 795 "_struct.c"
   }
   
 
   function _bu_double($p, $f) {
     ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $p_addr_i;
-        var $le_addr_i;
-        var $retval_i;
-        var $0;
-        var $x_i;
-        var $p_addr;
-        var $f_addr;
-        var $retval;
-        var $1;
-        $p_addr=$p;
-        $f_addr=$f;
-        var $2=$p_addr; //@line 801 "_struct.c"
-        $p_addr_i=$2;
-        $le_addr_i=0;
-        var $3=$p_addr_i; //@line 292 "_struct.c"
-        var $4=$le_addr_i; //@line 292 "_struct.c"
-        var $5=__PyFloat_Unpack8($3, $4); //@line 292 "_struct.c"
-        $x_i=$5; //@line 292 "_struct.c"
-        var $6=$x_i; //@line 293 "_struct.c"
-        var $7=($6) == -1; //@line 293 "_struct.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 293 "_struct.c"
-      case 1: // $bb_i
-        var $8=_PyErr_Occurred(); //@line 293 "_struct.c"
-        var $9=($8)!=0; //@line 293 "_struct.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 293 "_struct.c"
-      case 2: // $bb1_i
-        $0=0; //@line 294 "_struct.c"
-        __label__ = 4; break; //@line 294 "_struct.c"
-      case 3: // $bb2_i
-        var $10=$x_i; //@line 295 "_struct.c"
-        var $11=_PyFloat_FromDouble($10); //@line 295 "_struct.c"
-        $0=$11; //@line 295 "_struct.c"
-        __label__ = 4; break; //@line 295 "_struct.c"
-      case 4: // $unpack_double_exit
-        var $12=$0; //@line 294 "_struct.c"
-        $retval_i=$12; //@line 294 "_struct.c"
-        var $retval4_i=$retval_i; //@line 294 "_struct.c"
-        $1=$retval4_i; //@line 801 "_struct.c"
-        var $13=$1; //@line 801 "_struct.c"
-        $retval=$13; //@line 801 "_struct.c"
-        var $retval1=$retval; //@line 801 "_struct.c"
-        ;
-        return $retval1; //@line 801 "_struct.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $p_addr;
+    var $f_addr;
+    var $retval;
+    var $0;
+    $p_addr=$p;
+    $f_addr=$f;
+    var $1=$p_addr; //@line 801 "_struct.c"
+    var $2=_unpack_double($1, 0); //@line 801 "_struct.c"
+    $0=$2; //@line 801 "_struct.c"
+    var $3=$0; //@line 801 "_struct.c"
+    $retval=$3; //@line 801 "_struct.c"
+    var $retval1=$retval; //@line 801 "_struct.c"
+    ;
+    return $retval1; //@line 801 "_struct.c"
   }
   
 
@@ -3225,108 +3285,42 @@ var __str57;
   function _lu_float($p, $f) {
     ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $p_addr_i;
-        var $le_addr_i;
-        var $retval_i;
-        var $0;
-        var $x_i;
-        var $p_addr;
-        var $f_addr;
-        var $retval;
-        var $1;
-        $p_addr=$p;
-        $f_addr=$f;
-        var $2=$p_addr; //@line 1023 "_struct.c"
-        $p_addr_i=$2;
-        $le_addr_i=1;
-        var $3=$p_addr_i; //@line 280 "_struct.c"
-        var $4=$le_addr_i; //@line 280 "_struct.c"
-        var $5=__PyFloat_Unpack4($3, $4); //@line 280 "_struct.c"
-        $x_i=$5; //@line 280 "_struct.c"
-        var $6=$x_i; //@line 281 "_struct.c"
-        var $7=($6) == -1; //@line 281 "_struct.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 281 "_struct.c"
-      case 1: // $bb_i
-        var $8=_PyErr_Occurred(); //@line 281 "_struct.c"
-        var $9=($8)!=0; //@line 281 "_struct.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 281 "_struct.c"
-      case 2: // $bb1_i
-        $0=0; //@line 282 "_struct.c"
-        __label__ = 4; break; //@line 282 "_struct.c"
-      case 3: // $bb2_i
-        var $10=$x_i; //@line 283 "_struct.c"
-        var $11=_PyFloat_FromDouble($10); //@line 283 "_struct.c"
-        $0=$11; //@line 283 "_struct.c"
-        __label__ = 4; break; //@line 283 "_struct.c"
-      case 4: // $unpack_float_exit
-        var $12=$0; //@line 282 "_struct.c"
-        $retval_i=$12; //@line 282 "_struct.c"
-        var $retval4_i=$retval_i; //@line 282 "_struct.c"
-        $1=$retval4_i; //@line 1023 "_struct.c"
-        var $13=$1; //@line 1023 "_struct.c"
-        $retval=$13; //@line 1023 "_struct.c"
-        var $retval1=$retval; //@line 1023 "_struct.c"
-        ;
-        return $retval1; //@line 1023 "_struct.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $p_addr;
+    var $f_addr;
+    var $retval;
+    var $0;
+    $p_addr=$p;
+    $f_addr=$f;
+    var $1=$p_addr; //@line 1023 "_struct.c"
+    var $2=_unpack_float($1, 1); //@line 1023 "_struct.c"
+    $0=$2; //@line 1023 "_struct.c"
+    var $3=$0; //@line 1023 "_struct.c"
+    $retval=$3; //@line 1023 "_struct.c"
+    var $retval1=$retval; //@line 1023 "_struct.c"
+    ;
+    return $retval1; //@line 1023 "_struct.c"
   }
   
 
   function _lu_double($p, $f) {
     ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $p_addr_i;
-        var $le_addr_i;
-        var $retval_i;
-        var $0;
-        var $x_i;
-        var $p_addr;
-        var $f_addr;
-        var $retval;
-        var $1;
-        $p_addr=$p;
-        $f_addr=$f;
-        var $2=$p_addr; //@line 1029 "_struct.c"
-        $p_addr_i=$2;
-        $le_addr_i=1;
-        var $3=$p_addr_i; //@line 292 "_struct.c"
-        var $4=$le_addr_i; //@line 292 "_struct.c"
-        var $5=__PyFloat_Unpack8($3, $4); //@line 292 "_struct.c"
-        $x_i=$5; //@line 292 "_struct.c"
-        var $6=$x_i; //@line 293 "_struct.c"
-        var $7=($6) == -1; //@line 293 "_struct.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 293 "_struct.c"
-      case 1: // $bb_i
-        var $8=_PyErr_Occurred(); //@line 293 "_struct.c"
-        var $9=($8)!=0; //@line 293 "_struct.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 293 "_struct.c"
-      case 2: // $bb1_i
-        $0=0; //@line 294 "_struct.c"
-        __label__ = 4; break; //@line 294 "_struct.c"
-      case 3: // $bb2_i
-        var $10=$x_i; //@line 295 "_struct.c"
-        var $11=_PyFloat_FromDouble($10); //@line 295 "_struct.c"
-        $0=$11; //@line 295 "_struct.c"
-        __label__ = 4; break; //@line 295 "_struct.c"
-      case 4: // $unpack_double_exit
-        var $12=$0; //@line 294 "_struct.c"
-        $retval_i=$12; //@line 294 "_struct.c"
-        var $retval4_i=$retval_i; //@line 294 "_struct.c"
-        $1=$retval4_i; //@line 1029 "_struct.c"
-        var $13=$1; //@line 1029 "_struct.c"
-        $retval=$13; //@line 1029 "_struct.c"
-        var $retval1=$retval; //@line 1029 "_struct.c"
-        ;
-        return $retval1; //@line 1029 "_struct.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $p_addr;
+    var $f_addr;
+    var $retval;
+    var $0;
+    $p_addr=$p;
+    $f_addr=$f;
+    var $1=$p_addr; //@line 1029 "_struct.c"
+    var $2=_unpack_double($1, 1); //@line 1029 "_struct.c"
+    $0=$2; //@line 1029 "_struct.c"
+    var $3=$0; //@line 1029 "_struct.c"
+    $retval=$3; //@line 1029 "_struct.c"
+    var $retval1=$retval; //@line 1029 "_struct.c"
+    ;
+    return $retval1; //@line 1029 "_struct.c"
   }
   
 
@@ -3710,6 +3704,139 @@ var __str57;
   }
   
 
+  function _whichtable($pfmt) {
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $pfmt_addr;
+        var $retval;
+        var $0;
+        var $fmt;
+        var $n=__stackBase__;
+        var $p;
+        $pfmt_addr=$pfmt;
+        var $1=$pfmt_addr; //@line 1158 "_struct.c"
+        var $2=HEAP[$1]; //@line 1158 "_struct.c"
+        $fmt=$2; //@line 1158 "_struct.c"
+        var $3=$2+1; //@line 1158 "_struct.c"
+        var $4=$pfmt_addr; //@line 1158 "_struct.c"
+        HEAP[$4]=$3; //@line 1158 "_struct.c"
+        var $5=$fmt; //@line 1159 "_struct.c"
+        var $6=HEAP[$5]; //@line 1159 "_struct.c"
+        var $7=($6); //@line 1159 "_struct.c"
+        if ($7 == 33) {
+          __label__ = 2; break;
+        }
+        else if ($7 == 60) {
+          __label__ = 1; break;
+        }
+        else if ($7 == 61) {
+          __label__ = 3; break;
+        }
+        else if ($7 == 62) {
+          __label__ = 2; break;
+        }
+        else if ($7 == 64) {
+          __label__ = 7; break;
+        }
+        else {
+        __label__ = 6; break;
+        }
+        
+      case 1: // $bb
+        $0=_lilendian_table; //@line 1161 "_struct.c"
+        __label__ = 8; break; //@line 1161 "_struct.c"
+      case 2: // $bb1
+        $0=_bigendian_table; //@line 1164 "_struct.c"
+        __label__ = 8; break; //@line 1164 "_struct.c"
+      case 3: // $bb2
+        HEAP[$n]=1; //@line 1166 "_struct.c"
+        var $n3=$n; //@line 1167 "_struct.c"
+        $p=$n3; //@line 1167 "_struct.c"
+        var $8=$p; //@line 1168 "_struct.c"
+        var $9=HEAP[$8]; //@line 1168 "_struct.c"
+        var $10=($9)==1; //@line 1168 "_struct.c"
+        if ($10) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1168 "_struct.c"
+      case 4: // $bb4
+        $0=_lilendian_table; //@line 1169 "_struct.c"
+        __label__ = 8; break; //@line 1169 "_struct.c"
+      case 5: // $bb5
+        $0=_bigendian_table; //@line 1171 "_struct.c"
+        __label__ = 8; break; //@line 1171 "_struct.c"
+      case 6: // $bb6
+        var $11=$pfmt_addr; //@line 1174 "_struct.c"
+        var $12=HEAP[$11]; //@line 1174 "_struct.c"
+        var $13=$12+-1; //@line 1174 "_struct.c"
+        var $14=$pfmt_addr; //@line 1174 "_struct.c"
+        HEAP[$14]=$13; //@line 1174 "_struct.c"
+        __label__ = 7; break; //@line 1174 "_struct.c"
+      case 7: // $bb7
+        $0=_native_table; //@line 1177 "_struct.c"
+        __label__ = 8; break; //@line 1177 "_struct.c"
+      case 8: // $bb8
+        var $15=$0; //@line 1161 "_struct.c"
+        $retval=$15; //@line 1161 "_struct.c"
+        var $retval9=$retval; //@line 1161 "_struct.c"
+        STACKTOP = __stackBase__;
+        return $retval9; //@line 1161 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _getentry($c, $f) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $c_addr;
+        var $f_addr;
+        var $retval;
+        var $0;
+        $c_addr=$c;
+        $f_addr=$f;
+        __label__ = 4; break; //@line 1187 "_struct.c"
+      case 1: // $bb
+        var $1=$f_addr; //@line 1188 "_struct.c"
+        var $2=$1; //@line 1188 "_struct.c"
+        var $3=HEAP[$2]; //@line 1188 "_struct.c"
+        var $4=($3); //@line 1188 "_struct.c"
+        var $5=$c_addr; //@line 1188 "_struct.c"
+        var $6=($4)==($5); //@line 1188 "_struct.c"
+        var $7=$f_addr; //@line 1189 "_struct.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1188 "_struct.c"
+      case 2: // $bb1
+        $0=$7; //@line 1189 "_struct.c"
+        __label__ = 6; break; //@line 1189 "_struct.c"
+      case 3: // $bb2
+        var $8=$7+20; //@line 1187 "_struct.c"
+        $f_addr=$8; //@line 1187 "_struct.c"
+        __label__ = 4; break; //@line 1187 "_struct.c"
+      case 4: // $bb3
+        var $9=$f_addr; //@line 1187 "_struct.c"
+        var $10=$9; //@line 1187 "_struct.c"
+        var $11=HEAP[$10]; //@line 1187 "_struct.c"
+        var $12=($11)!=0; //@line 1187 "_struct.c"
+        if ($12) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 1187 "_struct.c"
+      case 5: // $bb4
+        var $13=HEAP[_StructError]; //@line 1192 "_struct.c"
+        _PyErr_SetString($13, __str19); //@line 1192 "_struct.c"
+        $0=0; //@line 1193 "_struct.c"
+        __label__ = 6; break; //@line 1193 "_struct.c"
+      case 6: // $bb5
+        var $14=$0; //@line 1189 "_struct.c"
+        $retval=$14; //@line 1189 "_struct.c"
+        var $retval6=$retval; //@line 1189 "_struct.c"
+        ;
+        return $retval6; //@line 1189 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _align($size, $c, $e) {
     ;
     var __label__;
@@ -3779,6 +3906,456 @@ var __str57;
         var $retval7=$retval; //@line 1208 "_struct.c"
         ;
         return $retval7; //@line 1208 "_struct.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _prepare_s($self) {
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $iftmp_101;
+        var $iftmp_100;
+        var $0;
+        var $f;
+        var $e;
+        var $codes;
+        var $s;
+        var $fmt=__stackBase__;
+        var $c;
+        var $size;
+        var $len;
+        var $num;
+        var $itemsize;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 1230 "_struct.c"
+        var $2=$1+20; //@line 1230 "_struct.c"
+        var $3=HEAP[$2]; //@line 1230 "_struct.c"
+        var $4=$3; //@line 1230 "_struct.c"
+        var $5=$4+20; //@line 1230 "_struct.c"
+        var $6=$5; //@line 1230 "_struct.c"
+        HEAP[$fmt]=$6; //@line 1230 "_struct.c"
+        var $7=_whichtable($fmt); //@line 1232 "_struct.c"
+        $f=$7; //@line 1232 "_struct.c"
+        var $8=HEAP[$fmt]; //@line 1234 "_struct.c"
+        $s=$8; //@line 1234 "_struct.c"
+        $size=0; //@line 1235 "_struct.c"
+        $len=0; //@line 1236 "_struct.c"
+        __label__ = 20; break; //@line 1236 "_struct.c"
+      case 1: // $bb
+        var $9=___ctype_b_loc(); //@line 1238 "_struct.c"
+        var $10=HEAP[$9]; //@line 1238 "_struct.c"
+        var $11=$c; //@line 1238 "_struct.c"
+        var $12=($11); //@line 1238 "_struct.c"
+        var $13=$10+2*$12; //@line 1238 "_struct.c"
+        var $14=HEAP[$13]; //@line 1238 "_struct.c"
+        var $15=($14); //@line 1238 "_struct.c"
+        var $16=($15) & 8192; //@line 1238 "_struct.c"
+        var $17=($16)!=0; //@line 1238 "_struct.c"
+        if ($17) { __label__ = 20; break; } else { __label__ = 2; break; } //@line 1238 "_struct.c"
+      case 2: // $bb2
+        var $18=$c; //@line 1240 "_struct.c"
+        var $19=($18) <= 47; //@line 1240 "_struct.c"
+        var $20=$c; //@line 1240 "_struct.c"
+        var $21=($20) > 57; //@line 1240 "_struct.c"
+        var $or_cond=($19) | ($21);
+        if ($or_cond) { __label__ = 11; break; } else { __label__ = 3; break; } //@line 1240 "_struct.c"
+      case 3: // $bb4
+        var $22=$c; //@line 1241 "_struct.c"
+        var $23=($22); //@line 1241 "_struct.c"
+        var $24=($23) - 48; //@line 1241 "_struct.c"
+        $num=$24; //@line 1241 "_struct.c"
+        __label__ = 8; break; //@line 1241 "_struct.c"
+      case 4: // $bb5
+        var $25=$num; //@line 1245 "_struct.c"
+        var $26=($25) > 214748363; //@line 1245 "_struct.c"
+        if ($26) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 1245 "_struct.c"
+      case 5: // $bb6
+        var $27=$num; //@line 1245 "_struct.c"
+        var $28=($27) > 214748364; //@line 1245 "_struct.c"
+        if ($28) { __label__ = 49; break; } else { __label__ = 6; break; } //@line 1245 "_struct.c"
+      case 6: // $bb7
+        var $29=$c; //@line 1245 "_struct.c"
+        var $30=($29); //@line 1245 "_struct.c"
+        var $31=($30) - 48; //@line 1245 "_struct.c"
+        var $32=($31) > 7; //@line 1245 "_struct.c"
+        if ($32) { __label__ = 49; break; } else { __label__ = 7; break; } //@line 1245 "_struct.c"
+      case 7: // $bb8
+        var $33=$num; //@line 1249 "_struct.c"
+        var $34=($33) * 10; //@line 1249 "_struct.c"
+        var $35=$c; //@line 1249 "_struct.c"
+        var $36=($35); //@line 1249 "_struct.c"
+        var $37=($34) + -48;
+        var $38=($37) + ($36); //@line 1249 "_struct.c"
+        $num=$38; //@line 1249 "_struct.c"
+        __label__ = 8; break; //@line 1249 "_struct.c"
+      case 8: // $bb9
+        var $39=$s; //@line 1242 "_struct.c"
+        var $40=HEAP[$39]; //@line 1242 "_struct.c"
+        $c=$40; //@line 1242 "_struct.c"
+        var $41=$c; //@line 1242 "_struct.c"
+        var $42=($41) > 47; //@line 1242 "_struct.c"
+        var $43=($42); //@line 1242 "_struct.c"
+        var $44=$s; //@line 1242 "_struct.c"
+        var $45=$44+1; //@line 1242 "_struct.c"
+        $s=$45; //@line 1242 "_struct.c"
+        var $toBool=($43)!=0; //@line 1242 "_struct.c"
+        var $toBoolnot=($toBool) ^ 1; //@line 1242 "_struct.c"
+        var $toBoolnot10=($toBoolnot); //@line 1242 "_struct.c"
+        var $toBool12=($toBoolnot10)!=0; //@line 1242 "_struct.c"
+        var $_pr=$c;
+        if ($toBool12) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 1242 "_struct.c"
+      case 9: // $bb13
+        var $46=($_pr) <= 57; //@line 1242 "_struct.c"
+        if ($46) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 1242 "_struct.c"
+      case 10: // $bb14
+        var $47=($_pr)==0; //@line 1251 "_struct.c"
+        if ($47) { __label__ = 21; break; } else { __label__ = 12; break; } //@line 1251 "_struct.c"
+      case 11: // $bb16
+        $num=1; //@line 1255 "_struct.c"
+        __label__ = 12; break; //@line 1255 "_struct.c"
+      case 12: // $bb17
+        var $48=$c; //@line 1257 "_struct.c"
+        var $49=($48); //@line 1257 "_struct.c"
+        var $50=$f; //@line 1257 "_struct.c"
+        var $51=_getentry($49, $50); //@line 1257 "_struct.c"
+        $e=$51; //@line 1257 "_struct.c"
+        var $52=$e; //@line 1258 "_struct.c"
+        var $53=$52; //@line 1258 "_struct.c"
+        var $54=($53)==0; //@line 1258 "_struct.c"
+        if ($54) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1258 "_struct.c"
+      case 13: // $bb18
+        $0=-1; //@line 1259 "_struct.c"
+        __label__ = 50; break; //@line 1259 "_struct.c"
+      case 14: // $bb19
+        var $55=$c; //@line 1261 "_struct.c"
+        var $56=($55); //@line 1261 "_struct.c"
+        if ($56 == 112) {
+          __label__ = 15; break;
+        }
+        else if ($56 == 115) {
+          __label__ = 15; break;
+        }
+        else if ($56 == 120) {
+          __label__ = 17; break;
+        }
+        else {
+        __label__ = 16; break;
+        }
+        
+      case 15: // $bb20
+        var $57=$len; //@line 1263 "_struct.c"
+        var $58=($57) + 1; //@line 1263 "_struct.c"
+        $len=$58; //@line 1263 "_struct.c"
+        __label__ = 17; break; //@line 1263 "_struct.c"
+      case 16: // $bb22
+        var $59=$len; //@line 1265 "_struct.c"
+        var $60=$num; //@line 1265 "_struct.c"
+        var $61=($60) + ($59); //@line 1265 "_struct.c"
+        $len=$61; //@line 1265 "_struct.c"
+        __label__ = 17; break; //@line 1265 "_struct.c"
+      case 17: // $bb23
+        var $62=$e; //@line 1268 "_struct.c"
+        var $63=$62+4; //@line 1268 "_struct.c"
+        var $64=HEAP[$63]; //@line 1268 "_struct.c"
+        $itemsize=$64; //@line 1268 "_struct.c"
+        var $65=$c; //@line 1269 "_struct.c"
+        var $66=($65); //@line 1269 "_struct.c"
+        var $67=$size; //@line 1269 "_struct.c"
+        var $68=((($66)) & 255); //@line 1269 "_struct.c"
+        var $69=$e; //@line 1269 "_struct.c"
+        var $70=_align($67, $68, $69); //@line 1269 "_struct.c"
+        $size=$70; //@line 1269 "_struct.c"
+        var $71=($70)==-1; //@line 1270 "_struct.c"
+        if ($71) { __label__ = 49; break; } else { __label__ = 18; break; } //@line 1270 "_struct.c"
+      case 18: // $bb24
+        var $72=$size; //@line 1274 "_struct.c"
+        var $73=2147483647 - ($72); //@line 1274 "_struct.c"
+        var $74=$itemsize; //@line 1274 "_struct.c"
+        var $75=((($73)/($74))|0); //@line 1274 "_struct.c"
+        var $76=$num; //@line 1274 "_struct.c"
+        var $77=($75) < ($76); //@line 1274 "_struct.c"
+        if ($77) { __label__ = 49; break; } else { __label__ = 19; break; } //@line 1274 "_struct.c"
+      case 19: // $bb25
+        var $78=$num; //@line 1276 "_struct.c"
+        var $79=$itemsize; //@line 1276 "_struct.c"
+        var $80=($79) * ($78); //@line 1276 "_struct.c"
+        var $81=$size; //@line 1276 "_struct.c"
+        var $82=($80) + ($81); //@line 1276 "_struct.c"
+        $size=$82; //@line 1276 "_struct.c"
+        __label__ = 20; break; //@line 1276 "_struct.c"
+      case 20: // $bb26
+        var $83=$s; //@line 1237 "_struct.c"
+        var $84=HEAP[$83]; //@line 1237 "_struct.c"
+        $c=$84; //@line 1237 "_struct.c"
+        var $85=$c; //@line 1237 "_struct.c"
+        var $86=($85)!=0; //@line 1237 "_struct.c"
+        var $87=($86); //@line 1237 "_struct.c"
+        var $88=$s; //@line 1237 "_struct.c"
+        var $89=$88+1; //@line 1237 "_struct.c"
+        $s=$89; //@line 1237 "_struct.c"
+        var $toBool27=($87)!=0; //@line 1237 "_struct.c"
+        if ($toBool27) { __label__ = 1; break; } else { __label__ = 21; break; } //@line 1237 "_struct.c"
+      case 21: // $bb28
+        var $90=$len; //@line 1280 "_struct.c"
+        var $91=($90) + 1; //@line 1280 "_struct.c"
+        var $92=($91) > 178956970; //@line 1280 "_struct.c"
+        if ($92) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1280 "_struct.c"
+      case 22: // $bb29
+        var $93=_PyErr_NoMemory(); //@line 1281 "_struct.c"
+        $0=-1; //@line 1282 "_struct.c"
+        __label__ = 50; break; //@line 1282 "_struct.c"
+      case 23: // $bb30
+        var $94=$self_addr; //@line 1285 "_struct.c"
+        var $95=$94+8; //@line 1285 "_struct.c"
+        var $96=$size; //@line 1285 "_struct.c"
+        HEAP[$95]=$96; //@line 1285 "_struct.c"
+        var $97=$self_addr; //@line 1286 "_struct.c"
+        var $98=$97+12; //@line 1286 "_struct.c"
+        var $99=$len; //@line 1286 "_struct.c"
+        HEAP[$98]=$99; //@line 1286 "_struct.c"
+        var $100=$len; //@line 1287 "_struct.c"
+        var $101=($100) + 1; //@line 1287 "_struct.c"
+        var $102=($101) * 12; //@line 1287 "_struct.c"
+        var $103=($102) >= 0; //@line 1287 "_struct.c"
+        if ($103) { __label__ = 24; break; } else { __label__ = 27; break; } //@line 1287 "_struct.c"
+      case 24: // $bb31
+        var $104=$len; //@line 1287 "_struct.c"
+        var $105=($104) + 1; //@line 1287 "_struct.c"
+        var $106=($105) * 12; //@line 1287 "_struct.c"
+        var $107=($106)!=0; //@line 1287 "_struct.c"
+        if ($107) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1287 "_struct.c"
+      case 25: // $bb32
+        var $108=$len; //@line 1287 "_struct.c"
+        var $109=($108) + 1; //@line 1287 "_struct.c"
+        var $110=($109) * 12; //@line 1287 "_struct.c"
+        $iftmp_101=$110; //@line 1287 "_struct.c"
+        __label__ = 28; break; //@line 1287 "_struct.c"
+      case 26: // $bb33
+        $iftmp_101=1; //@line 1287 "_struct.c"
+        __label__ = 28; break; //@line 1287 "_struct.c"
+      case 27: // $bb36_thread
+        $iftmp_100=0; //@line 1287 "_struct.c"
+        $codes=0; //@line 1287 "_struct.c"
+        __label__ = 29; break;
+      case 28: // $bb36
+        var $111=$iftmp_101; //@line 1287 "_struct.c"
+        var $112=_malloc($111); //@line 1287 "_struct.c"
+        var $113=$112; //@line 1287 "_struct.c"
+        $iftmp_100=$113; //@line 1287 "_struct.c"
+        $codes=$113; //@line 1287 "_struct.c"
+        var $114=($113)==0; //@line 1288 "_struct.c"
+        if ($114) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 1288 "_struct.c"
+      case 29: // $bb37
+        var $115=_PyErr_NoMemory(); //@line 1289 "_struct.c"
+        $0=-1; //@line 1290 "_struct.c"
+        __label__ = 50; break; //@line 1290 "_struct.c"
+      case 30: // $bb38
+        var $116=$self_addr; //@line 1293 "_struct.c"
+        var $117=$116+16; //@line 1293 "_struct.c"
+        var $118=HEAP[$117]; //@line 1293 "_struct.c"
+        var $119=($118)!=0; //@line 1293 "_struct.c"
+        if ($119) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1293 "_struct.c"
+      case 31: // $bb39
+        var $120=$self_addr; //@line 1294 "_struct.c"
+        var $121=$120+16; //@line 1294 "_struct.c"
+        var $122=HEAP[$121]; //@line 1294 "_struct.c"
+        var $123=$122; //@line 1294 "_struct.c"
+        _free($123); //@line 1294 "_struct.c"
+        __label__ = 32; break; //@line 1294 "_struct.c"
+      case 32: // $bb40
+        var $124=$self_addr; //@line 1295 "_struct.c"
+        var $125=$124+16; //@line 1295 "_struct.c"
+        var $126=$codes; //@line 1295 "_struct.c"
+        HEAP[$125]=$126; //@line 1295 "_struct.c"
+        var $127=HEAP[$fmt]; //@line 1297 "_struct.c"
+        $s=$127; //@line 1297 "_struct.c"
+        $size=0; //@line 1298 "_struct.c"
+        __label__ = 47; break; //@line 1298 "_struct.c"
+      case 33: // $bb41
+        var $128=___ctype_b_loc(); //@line 1300 "_struct.c"
+        var $129=HEAP[$128]; //@line 1300 "_struct.c"
+        var $130=$c; //@line 1300 "_struct.c"
+        var $131=($130); //@line 1300 "_struct.c"
+        var $132=$129+2*$131; //@line 1300 "_struct.c"
+        var $133=HEAP[$132]; //@line 1300 "_struct.c"
+        var $134=($133); //@line 1300 "_struct.c"
+        var $135=($134) & 8192; //@line 1300 "_struct.c"
+        var $136=($135)!=0; //@line 1300 "_struct.c"
+        if ($136) { __label__ = 47; break; } else { __label__ = 34; break; } //@line 1300 "_struct.c"
+      case 34: // $bb42
+        var $137=$c; //@line 1302 "_struct.c"
+        var $138=($137) <= 47; //@line 1302 "_struct.c"
+        var $139=$c; //@line 1302 "_struct.c"
+        var $140=($139) > 57; //@line 1302 "_struct.c"
+        var $or_cond3=($138) | ($140);
+        if ($or_cond3) { __label__ = 40; break; } else { __label__ = 35; break; } //@line 1302 "_struct.c"
+      case 35: // $bb44
+        var $141=$c; //@line 1303 "_struct.c"
+        var $142=($141); //@line 1303 "_struct.c"
+        var $143=($142) - 48; //@line 1303 "_struct.c"
+        $num=$143; //@line 1303 "_struct.c"
+        __label__ = 37; break; //@line 1303 "_struct.c"
+      case 36: // $bb45
+        var $144=$num; //@line 1305 "_struct.c"
+        var $145=($144) * 10; //@line 1305 "_struct.c"
+        var $146=$c; //@line 1305 "_struct.c"
+        var $147=($146); //@line 1305 "_struct.c"
+        var $148=($145) + -48;
+        var $149=($148) + ($147); //@line 1305 "_struct.c"
+        $num=$149; //@line 1305 "_struct.c"
+        __label__ = 37; break; //@line 1305 "_struct.c"
+      case 37: // $bb46
+        var $150=$s; //@line 1304 "_struct.c"
+        var $151=HEAP[$150]; //@line 1304 "_struct.c"
+        $c=$151; //@line 1304 "_struct.c"
+        var $152=$c; //@line 1304 "_struct.c"
+        var $153=($152) > 47; //@line 1304 "_struct.c"
+        var $154=($153); //@line 1304 "_struct.c"
+        var $155=$s; //@line 1304 "_struct.c"
+        var $156=$155+1; //@line 1304 "_struct.c"
+        $s=$156; //@line 1304 "_struct.c"
+        var $toBool47=($154)!=0; //@line 1304 "_struct.c"
+        var $toBool47not=($toBool47) ^ 1; //@line 1304 "_struct.c"
+        var $toBool47not48=($toBool47not); //@line 1304 "_struct.c"
+        var $toBool50=($toBool47not48)!=0; //@line 1304 "_struct.c"
+        var $_pr6=$c;
+        if ($toBool50) { __label__ = 39; break; } else { __label__ = 38; break; } //@line 1304 "_struct.c"
+      case 38: // $bb51
+        var $157=($_pr6) <= 57; //@line 1304 "_struct.c"
+        if ($157) { __label__ = 36; break; } else { __label__ = 41; break; } //@line 1304 "_struct.c"
+      case 39: // $bb52
+        var $158=($_pr6)==0; //@line 1306 "_struct.c"
+        if ($158) { __label__ = 48; break; } else { __label__ = 41; break; } //@line 1306 "_struct.c"
+      case 40: // $bb54
+        $num=1; //@line 1310 "_struct.c"
+        __label__ = 41; break; //@line 1310 "_struct.c"
+      case 41: // $bb55
+        var $159=$c; //@line 1312 "_struct.c"
+        var $160=($159); //@line 1312 "_struct.c"
+        var $161=$f; //@line 1312 "_struct.c"
+        var $162=_getentry($160, $161); //@line 1312 "_struct.c"
+        $e=$162; //@line 1312 "_struct.c"
+        var $163=$c; //@line 1314 "_struct.c"
+        var $164=($163); //@line 1314 "_struct.c"
+        var $165=$size; //@line 1314 "_struct.c"
+        var $166=((($164)) & 255); //@line 1314 "_struct.c"
+        var $167=$e; //@line 1314 "_struct.c"
+        var $168=_align($165, $166, $167); //@line 1314 "_struct.c"
+        $size=$168; //@line 1314 "_struct.c"
+        var $169=$c; //@line 1315 "_struct.c"
+        var $170=($169)==115; //@line 1315 "_struct.c"
+        var $171=$c; //@line 1315 "_struct.c"
+        var $172=($171)==112; //@line 1315 "_struct.c"
+        var $or_cond5=($170) | ($172);
+        if ($or_cond5) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 1315 "_struct.c"
+      case 42: // $bb57
+        var $173=$codes; //@line 1316 "_struct.c"
+        var $174=$173+4; //@line 1316 "_struct.c"
+        var $175=$size; //@line 1316 "_struct.c"
+        HEAP[$174]=$175; //@line 1316 "_struct.c"
+        var $176=$codes; //@line 1317 "_struct.c"
+        var $177=$176+8; //@line 1317 "_struct.c"
+        var $178=$num; //@line 1317 "_struct.c"
+        HEAP[$177]=$178; //@line 1317 "_struct.c"
+        var $179=$codes; //@line 1318 "_struct.c"
+        var $180=$179; //@line 1318 "_struct.c"
+        var $181=$e; //@line 1318 "_struct.c"
+        HEAP[$180]=$181; //@line 1318 "_struct.c"
+        var $182=$codes; //@line 1319 "_struct.c"
+        var $183=$182+12; //@line 1319 "_struct.c"
+        $codes=$183; //@line 1319 "_struct.c"
+        var $184=$size; //@line 1320 "_struct.c"
+        var $185=$num; //@line 1320 "_struct.c"
+        var $186=($185) + ($184); //@line 1320 "_struct.c"
+        $size=$186; //@line 1320 "_struct.c"
+        __label__ = 47; break; //@line 1320 "_struct.c"
+      case 43: // $bb58
+        var $187=$c; //@line 1321 "_struct.c"
+        var $188=($187)==120; //@line 1321 "_struct.c"
+        if ($188) { __label__ = 45; break; } else { __label__ = 44; break; } //@line 1321 "_struct.c"
+      case 44: // $bb62_preheader
+        var $189=$num; //@line 1324 "_struct.c"
+        var $190=($189) - 1; //@line 1324 "_struct.c"
+        $num=$190; //@line 1324 "_struct.c"
+        var $191=($190) >= 0; //@line 1324 "_struct.c"
+        if ($191) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1324 "_struct.c"
+      case 45: // $bb59
+        var $192=$size; //@line 1322 "_struct.c"
+        var $193=$num; //@line 1322 "_struct.c"
+        var $194=($193) + ($192); //@line 1322 "_struct.c"
+        $size=$194; //@line 1322 "_struct.c"
+        __label__ = 47; break; //@line 1322 "_struct.c"
+      case 46: // $bb61
+        var $195=$codes; //@line 1325 "_struct.c"
+        var $196=$195+4; //@line 1325 "_struct.c"
+        var $197=$size; //@line 1325 "_struct.c"
+        HEAP[$196]=$197; //@line 1325 "_struct.c"
+        var $198=$e; //@line 1326 "_struct.c"
+        var $199=$198+4; //@line 1326 "_struct.c"
+        var $200=HEAP[$199]; //@line 1326 "_struct.c"
+        var $201=$codes; //@line 1326 "_struct.c"
+        var $202=$201+8; //@line 1326 "_struct.c"
+        HEAP[$202]=$200; //@line 1326 "_struct.c"
+        var $203=$codes; //@line 1327 "_struct.c"
+        var $204=$203; //@line 1327 "_struct.c"
+        var $205=$e; //@line 1327 "_struct.c"
+        HEAP[$204]=$205; //@line 1327 "_struct.c"
+        var $206=$codes; //@line 1328 "_struct.c"
+        var $207=$206+12; //@line 1328 "_struct.c"
+        $codes=$207; //@line 1328 "_struct.c"
+        var $208=$e; //@line 1329 "_struct.c"
+        var $209=$208+4; //@line 1329 "_struct.c"
+        var $210=HEAP[$209]; //@line 1329 "_struct.c"
+        var $211=$size; //@line 1329 "_struct.c"
+        var $212=($211) + ($210); //@line 1329 "_struct.c"
+        $size=$212; //@line 1329 "_struct.c"
+        var $213=$num; //@line 1324 "_struct.c"
+        var $214=($213) - 1; //@line 1324 "_struct.c"
+        $num=$214; //@line 1324 "_struct.c"
+        var $215=($214) >= 0; //@line 1324 "_struct.c"
+        if ($215) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1324 "_struct.c"
+      case 47: // $bb63
+        var $216=$s; //@line 1299 "_struct.c"
+        var $217=HEAP[$216]; //@line 1299 "_struct.c"
+        $c=$217; //@line 1299 "_struct.c"
+        var $218=$c; //@line 1299 "_struct.c"
+        var $219=($218)!=0; //@line 1299 "_struct.c"
+        var $220=($219); //@line 1299 "_struct.c"
+        var $221=$s; //@line 1299 "_struct.c"
+        var $222=$221+1; //@line 1299 "_struct.c"
+        $s=$222; //@line 1299 "_struct.c"
+        var $toBool64=($220)!=0; //@line 1299 "_struct.c"
+        if ($toBool64) { __label__ = 33; break; } else { __label__ = 48; break; } //@line 1299 "_struct.c"
+      case 48: // $bb65
+        var $223=$codes; //@line 1333 "_struct.c"
+        var $224=$223; //@line 1333 "_struct.c"
+        HEAP[$224]=0; //@line 1333 "_struct.c"
+        var $225=$codes; //@line 1334 "_struct.c"
+        var $226=$225+4; //@line 1334 "_struct.c"
+        var $227=$size; //@line 1334 "_struct.c"
+        HEAP[$226]=$227; //@line 1334 "_struct.c"
+        var $228=$codes; //@line 1335 "_struct.c"
+        var $229=$228+8; //@line 1335 "_struct.c"
+        HEAP[$229]=0; //@line 1335 "_struct.c"
+        $0=0; //@line 1337 "_struct.c"
+        __label__ = 50; break; //@line 1337 "_struct.c"
+      case 49: // $overflow
+        var $230=HEAP[_StructError]; //@line 1340 "_struct.c"
+        _PyErr_SetString($230, __str20); //@line 1340 "_struct.c"
+        $0=-1; //@line 1342 "_struct.c"
+        __label__ = 50; break; //@line 1342 "_struct.c"
+      case 50: // $bb66
+        var $231=$0; //@line 1259 "_struct.c"
+        $retval=$231; //@line 1259 "_struct.c"
+        var $retval67=$retval; //@line 1259 "_struct.c"
+        STACKTOP = __stackBase__;
+        return $retval67; //@line 1259 "_struct.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -3856,685 +4433,107 @@ var __str57;
   
 
   function _s_init($self, $args, $kwds) {
-    var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $c_addr_i12_i;
-        var $f_addr_i13_i;
-        var $retval_i14_i;
-        var $0;
-        var $c_addr_i_i;
-        var $f_addr_i_i;
-        var $retval_i6_i;
-        var $1;
-        var $pfmt_addr_i_i;
-        var $retval_i_i;
-        var $2;
-        var $fmt_i_i;
-        var $n_i_i=__stackBase__;
-        var $p_i_i;
-        var $self_addr_i;
-        var $retval_i;
-        var $iftmp_101_i;
-        var $iftmp_100_i;
-        var $3;
-        var $f_i;
-        var $e_i;
-        var $codes_i;
-        var $s_i;
-        var $fmt_i=__stackBase__+4;
-        var $c_i;
-        var $size_i;
-        var $len_i;
-        var $num_i;
-        var $itemsize_i;
         var $self_addr;
         var $args_addr;
         var $kwds_addr;
         var $retval;
-        var $4;
+        var $0;
         var $soself;
-        var $o_format=__stackBase__+8;
+        var $o_format=__stackBase__;
         var $ret;
         var $_py_tmp;
         $self_addr=$self;
         $args_addr=$args;
         $kwds_addr=$kwds;
-        var $5=$self_addr; //@line 1367 "_struct.c"
-        var $6=$5; //@line 1367 "_struct.c"
-        $soself=$6; //@line 1367 "_struct.c"
+        var $1=$self_addr; //@line 1367 "_struct.c"
+        var $2=$1; //@line 1367 "_struct.c"
+        $soself=$2; //@line 1367 "_struct.c"
         HEAP[$o_format]=0; //@line 1368 "_struct.c"
         $ret=0; //@line 1369 "_struct.c"
+        var $3=$self_addr; //@line 1372 "_struct.c"
+        var $4=$3+4; //@line 1372 "_struct.c"
+        var $5=HEAP[$4]; //@line 1372 "_struct.c"
+        var $6=($5)!=(_PyStructType); //@line 1372 "_struct.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1372 "_struct.c"
+      case 1: // $bb
         var $7=$self_addr; //@line 1372 "_struct.c"
         var $8=$7+4; //@line 1372 "_struct.c"
         var $9=HEAP[$8]; //@line 1372 "_struct.c"
-        var $10=($9)!=(_PyStructType); //@line 1372 "_struct.c"
-        if ($10) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1372 "_struct.c"
-      case 1: // $bb
-        var $11=$self_addr; //@line 1372 "_struct.c"
-        var $12=$11+4; //@line 1372 "_struct.c"
-        var $13=HEAP[$12]; //@line 1372 "_struct.c"
-        var $14=_PyType_IsSubtype($13, _PyStructType); //@line 1372 "_struct.c"
-        var $15=($14)==0; //@line 1372 "_struct.c"
-        if ($15) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1372 "_struct.c"
+        var $10=_PyType_IsSubtype($9, _PyStructType); //@line 1372 "_struct.c"
+        var $11=($10)==0; //@line 1372 "_struct.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1372 "_struct.c"
       case 2: // $bb1
         ___assert_fail(__str22, __str2, 1372, ___PRETTY_FUNCTION___9853); //@line 1372 "_struct.c"
         throw "Reached an unreachable!" //@line 1372 "_struct.c"
       case 3: // $bb2
-        var $16=$args_addr; //@line 1374 "_struct.c"
-        var $17=$kwds_addr; //@line 1374 "_struct.c"
-        var $18=__PyArg_ParseTupleAndKeywords_SizeT($16, $17, __str23, _kwlist_9852, $o_format); //@line 1374 "_struct.c"
-        var $19=($18)==0; //@line 1374 "_struct.c"
-        if ($19) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1374 "_struct.c"
+        var $12=$args_addr; //@line 1374 "_struct.c"
+        var $13=$kwds_addr; //@line 1374 "_struct.c"
+        var $14=__PyArg_ParseTupleAndKeywords_SizeT($12, $13, __str23, _kwlist_9852, allocate([$o_format,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1374 "_struct.c"
+        var $15=($14)==0; //@line 1374 "_struct.c"
+        if ($15) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1374 "_struct.c"
       case 4: // $bb3
-        $4=-1; //@line 1376 "_struct.c"
-        __label__ = 79; break; //@line 1376 "_struct.c"
+        $0=-1; //@line 1376 "_struct.c"
+        __label__ = 9; break; //@line 1376 "_struct.c"
       case 5: // $bb4
-        var $20=HEAP[$o_format]; //@line 1378 "_struct.c"
-        var $21=$20; //@line 1378 "_struct.c"
-        var $22=HEAP[$21]; //@line 1378 "_struct.c"
-        var $23=($22) + 1; //@line 1378 "_struct.c"
-        var $24=$20; //@line 1378 "_struct.c"
-        HEAP[$24]=$23; //@line 1378 "_struct.c"
+        var $16=HEAP[$o_format]; //@line 1378 "_struct.c"
+        var $17=$16; //@line 1378 "_struct.c"
+        var $18=HEAP[$17]; //@line 1378 "_struct.c"
+        var $19=($18) + 1; //@line 1378 "_struct.c"
+        var $20=$16; //@line 1378 "_struct.c"
+        HEAP[$20]=$19; //@line 1378 "_struct.c"
+        var $21=$soself; //@line 1379 "_struct.c"
+        var $22=$21+20; //@line 1379 "_struct.c"
+        var $23=HEAP[$22]; //@line 1379 "_struct.c"
+        var $24=($23)!=0; //@line 1379 "_struct.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 1379 "_struct.c"
+      case 6: // $bb5
         var $25=$soself; //@line 1379 "_struct.c"
         var $26=$25+20; //@line 1379 "_struct.c"
         var $27=HEAP[$26]; //@line 1379 "_struct.c"
-        var $28=($27)!=0; //@line 1379 "_struct.c"
-        if ($28) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 1379 "_struct.c"
-      case 6: // $bb5
-        var $29=$soself; //@line 1379 "_struct.c"
-        var $30=$29+20; //@line 1379 "_struct.c"
-        var $31=HEAP[$30]; //@line 1379 "_struct.c"
-        $_py_tmp=$31; //@line 1379 "_struct.c"
-        var $32=$soself; //@line 1379 "_struct.c"
-        var $33=$32+20; //@line 1379 "_struct.c"
-        HEAP[$33]=0; //@line 1379 "_struct.c"
+        $_py_tmp=$27; //@line 1379 "_struct.c"
+        var $28=$soself; //@line 1379 "_struct.c"
+        var $29=$28+20; //@line 1379 "_struct.c"
+        HEAP[$29]=0; //@line 1379 "_struct.c"
+        var $30=$_py_tmp; //@line 1379 "_struct.c"
+        var $31=$30; //@line 1379 "_struct.c"
+        var $32=HEAP[$31]; //@line 1379 "_struct.c"
+        var $33=($32) - 1; //@line 1379 "_struct.c"
         var $34=$_py_tmp; //@line 1379 "_struct.c"
         var $35=$34; //@line 1379 "_struct.c"
-        var $36=HEAP[$35]; //@line 1379 "_struct.c"
-        var $37=($36) - 1; //@line 1379 "_struct.c"
-        var $38=$_py_tmp; //@line 1379 "_struct.c"
-        var $39=$38; //@line 1379 "_struct.c"
-        HEAP[$39]=$37; //@line 1379 "_struct.c"
-        var $40=$_py_tmp; //@line 1379 "_struct.c"
-        var $41=$40; //@line 1379 "_struct.c"
-        var $42=HEAP[$41]; //@line 1379 "_struct.c"
-        var $43=($42)==0; //@line 1379 "_struct.c"
-        if ($43) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1379 "_struct.c"
+        HEAP[$35]=$33; //@line 1379 "_struct.c"
+        var $36=$_py_tmp; //@line 1379 "_struct.c"
+        var $37=$36; //@line 1379 "_struct.c"
+        var $38=HEAP[$37]; //@line 1379 "_struct.c"
+        var $39=($38)==0; //@line 1379 "_struct.c"
+        if ($39) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1379 "_struct.c"
       case 7: // $bb6
-        var $44=$_py_tmp; //@line 1379 "_struct.c"
-        var $45=$44+4; //@line 1379 "_struct.c"
-        var $46=HEAP[$45]; //@line 1379 "_struct.c"
-        var $47=$46+24; //@line 1379 "_struct.c"
-        var $48=HEAP[$47]; //@line 1379 "_struct.c"
-        var $49=$_py_tmp; //@line 1379 "_struct.c"
-        FUNCTION_TABLE[$48]($49); //@line 1379 "_struct.c"
+        var $40=$_py_tmp; //@line 1379 "_struct.c"
+        var $41=$40+4; //@line 1379 "_struct.c"
+        var $42=HEAP[$41]; //@line 1379 "_struct.c"
+        var $43=$42+24; //@line 1379 "_struct.c"
+        var $44=HEAP[$43]; //@line 1379 "_struct.c"
+        var $45=$_py_tmp; //@line 1379 "_struct.c"
+        FUNCTION_TABLE[$44]($45); //@line 1379 "_struct.c"
         __label__ = 8; break; //@line 1379 "_struct.c"
       case 8: // $bb7
-        var $50=HEAP[$o_format]; //@line 1380 "_struct.c"
-        var $51=$soself; //@line 1380 "_struct.c"
-        var $52=$51+20; //@line 1380 "_struct.c"
-        HEAP[$52]=$50; //@line 1380 "_struct.c"
-        var $53=$soself; //@line 1382 "_struct.c"
-        $self_addr_i=$53;
-        var $54=$self_addr_i; //@line 1230 "_struct.c"
-        var $55=$54+20; //@line 1230 "_struct.c"
-        var $56=HEAP[$55]; //@line 1230 "_struct.c"
-        var $57=$56; //@line 1230 "_struct.c"
-        var $58=$57+20; //@line 1230 "_struct.c"
-        var $59=$58; //@line 1230 "_struct.c"
-        HEAP[$fmt_i]=$59; //@line 1230 "_struct.c"
-        $pfmt_addr_i_i=$fmt_i;
-        var $60=$pfmt_addr_i_i; //@line 1158 "_struct.c"
-        var $61=HEAP[$60]; //@line 1158 "_struct.c"
-        $fmt_i_i=$61; //@line 1158 "_struct.c"
-        var $62=$61+1; //@line 1158 "_struct.c"
-        var $63=$pfmt_addr_i_i; //@line 1158 "_struct.c"
-        HEAP[$63]=$62; //@line 1158 "_struct.c"
-        var $64=$fmt_i_i; //@line 1159 "_struct.c"
-        var $65=HEAP[$64]; //@line 1159 "_struct.c"
-        var $66=($65); //@line 1159 "_struct.c"
-        if ($66 == 33) {
-          __label__ = 10; break;
-        }
-        else if ($66 == 60) {
-          __label__ = 9; break;
-        }
-        else if ($66 == 61) {
-          __label__ = 11; break;
-        }
-        else if ($66 == 62) {
-          __label__ = 10; break;
-        }
-        else if ($66 == 64) {
-          __label__ = 15; break;
-        }
-        else {
-        __label__ = 14; break;
-        }
-        
-      case 9: // $bb_i_i
-        $2=_lilendian_table; //@line 1161 "_struct.c"
-        __label__ = 16; break; //@line 1161 "_struct.c"
-      case 10: // $bb1_i_i
-        $2=_bigendian_table; //@line 1164 "_struct.c"
-        __label__ = 16; break; //@line 1164 "_struct.c"
-      case 11: // $bb2_i_i
-        HEAP[$n_i_i]=1; //@line 1166 "_struct.c"
-        var $n3_i_i=$n_i_i; //@line 1167 "_struct.c"
-        $p_i_i=$n3_i_i; //@line 1167 "_struct.c"
-        var $67=$p_i_i; //@line 1168 "_struct.c"
-        var $68=HEAP[$67]; //@line 1168 "_struct.c"
-        var $69=($68)==1; //@line 1168 "_struct.c"
-        if ($69) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1168 "_struct.c"
-      case 12: // $bb4_i_i
-        $2=_lilendian_table; //@line 1169 "_struct.c"
-        __label__ = 16; break; //@line 1169 "_struct.c"
-      case 13: // $bb5_i_i
-        $2=_bigendian_table; //@line 1171 "_struct.c"
-        __label__ = 16; break; //@line 1171 "_struct.c"
-      case 14: // $bb6_i_i
-        var $70=$pfmt_addr_i_i; //@line 1174 "_struct.c"
-        var $71=HEAP[$70]; //@line 1174 "_struct.c"
-        var $72=$71+-1; //@line 1174 "_struct.c"
-        var $73=$pfmt_addr_i_i; //@line 1174 "_struct.c"
-        HEAP[$73]=$72; //@line 1174 "_struct.c"
-        __label__ = 15; break; //@line 1174 "_struct.c"
-      case 15: // $bb7_i_i
-        $2=_native_table; //@line 1177 "_struct.c"
-        __label__ = 16; break; //@line 1177 "_struct.c"
-      case 16: // $whichtable_exit_i
-        var $74=$2; //@line 1161 "_struct.c"
-        $retval_i_i=$74; //@line 1161 "_struct.c"
-        var $retval9_i_i=$retval_i_i; //@line 1161 "_struct.c"
-        $f_i=$retval9_i_i; //@line 1232 "_struct.c"
-        var $75=HEAP[$fmt_i]; //@line 1234 "_struct.c"
-        $s_i=$75; //@line 1234 "_struct.c"
-        $size_i=0; //@line 1235 "_struct.c"
-        $len_i=0; //@line 1236 "_struct.c"
-        __label__ = 42; break; //@line 1236 "_struct.c"
-      case 17: // $bb_i
-        var $76=___ctype_b_loc(); //@line 1238 "_struct.c"
-        var $77=HEAP[$76]; //@line 1238 "_struct.c"
-        var $78=$c_i; //@line 1238 "_struct.c"
-        var $79=($78); //@line 1238 "_struct.c"
-        var $80=$77+2*$79; //@line 1238 "_struct.c"
-        var $81=HEAP[$80]; //@line 1238 "_struct.c"
-        var $82=($81); //@line 1238 "_struct.c"
-        var $83=($82) & 8192; //@line 1238 "_struct.c"
-        var $84=($83)!=0; //@line 1238 "_struct.c"
-        if ($84) { __label__ = 42; break; } else { __label__ = 18; break; } //@line 1238 "_struct.c"
-      case 18: // $bb2_i
-        var $85=$c_i; //@line 1240 "_struct.c"
-        var $86=($85) <= 47; //@line 1240 "_struct.c"
-        var $87=$c_i; //@line 1240 "_struct.c"
-        var $88=($87) > 57; //@line 1240 "_struct.c"
-        var $or_cond_i=($86) | ($88);
-        if ($or_cond_i) { __label__ = 27; break; } else { __label__ = 19; break; } //@line 1240 "_struct.c"
-      case 19: // $bb4_i
-        var $89=$c_i; //@line 1241 "_struct.c"
-        var $90=($89); //@line 1241 "_struct.c"
-        var $91=($90) - 48; //@line 1241 "_struct.c"
-        $num_i=$91; //@line 1241 "_struct.c"
-        __label__ = 24; break; //@line 1241 "_struct.c"
-      case 20: // $bb5_i
-        var $92=$num_i; //@line 1245 "_struct.c"
-        var $93=($92) > 214748363; //@line 1245 "_struct.c"
-        if ($93) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 1245 "_struct.c"
-      case 21: // $bb6_i
-        var $94=$num_i; //@line 1245 "_struct.c"
-        var $95=($94) > 214748364; //@line 1245 "_struct.c"
-        if ($95) { __label__ = 77; break; } else { __label__ = 22; break; } //@line 1245 "_struct.c"
-      case 22: // $bb7_i
-        var $96=$c_i; //@line 1245 "_struct.c"
-        var $97=($96); //@line 1245 "_struct.c"
-        var $98=($97) - 48; //@line 1245 "_struct.c"
-        var $99=($98) > 7; //@line 1245 "_struct.c"
-        if ($99) { __label__ = 77; break; } else { __label__ = 23; break; } //@line 1245 "_struct.c"
-      case 23: // $bb8_i
-        var $100=$num_i; //@line 1249 "_struct.c"
-        var $101=($100) * 10; //@line 1249 "_struct.c"
-        var $102=$c_i; //@line 1249 "_struct.c"
-        var $103=($102); //@line 1249 "_struct.c"
-        var $104=($101) + -48;
-        var $105=($104) + ($103); //@line 1249 "_struct.c"
-        $num_i=$105; //@line 1249 "_struct.c"
-        __label__ = 24; break; //@line 1249 "_struct.c"
-      case 24: // $bb9_i
-        var $106=$s_i; //@line 1242 "_struct.c"
-        var $107=HEAP[$106]; //@line 1242 "_struct.c"
-        $c_i=$107; //@line 1242 "_struct.c"
-        var $108=$c_i; //@line 1242 "_struct.c"
-        var $109=($108) > 47; //@line 1242 "_struct.c"
-        var $110=($109); //@line 1242 "_struct.c"
-        var $111=$s_i; //@line 1242 "_struct.c"
-        var $112=$111+1; //@line 1242 "_struct.c"
-        $s_i=$112; //@line 1242 "_struct.c"
-        var $toBool_i=($110)!=0; //@line 1242 "_struct.c"
-        var $toBoolnot_i=($toBool_i) ^ 1; //@line 1242 "_struct.c"
-        var $toBoolnot10_i=($toBoolnot_i); //@line 1242 "_struct.c"
-        var $toBool12_i=($toBoolnot10_i)!=0; //@line 1242 "_struct.c"
-        var $_pr_i=$c_i;
-        if ($toBool12_i) { __label__ = 26; break; } else { __label__ = 25; break; } //@line 1242 "_struct.c"
-      case 25: // $bb13_i
-        var $113=($_pr_i) <= 57; //@line 1242 "_struct.c"
-        if ($113) { __label__ = 20; break; } else { __label__ = 28; break; } //@line 1242 "_struct.c"
-      case 26: // $bb14_i
-        var $114=($_pr_i)==0; //@line 1251 "_struct.c"
-        if ($114) { __label__ = 43; break; } else { __label__ = 28; break; } //@line 1251 "_struct.c"
-      case 27: // $bb16_i
-        $num_i=1; //@line 1255 "_struct.c"
-        __label__ = 28; break; //@line 1255 "_struct.c"
-      case 28: // $bb17_i
-        var $115=$c_i; //@line 1257 "_struct.c"
-        var $116=($115); //@line 1257 "_struct.c"
-        var $117=$f_i; //@line 1257 "_struct.c"
-        $c_addr_i_i=$116;
-        $f_addr_i_i=$117;
-        __label__ = 32; break; //@line 1187 "_struct.c"
-      case 29: // $bb_i7_i
-        var $118=$f_addr_i_i; //@line 1188 "_struct.c"
-        var $119=$118; //@line 1188 "_struct.c"
-        var $120=HEAP[$119]; //@line 1188 "_struct.c"
-        var $121=($120); //@line 1188 "_struct.c"
-        var $122=$c_addr_i_i; //@line 1188 "_struct.c"
-        var $123=($121)==($122); //@line 1188 "_struct.c"
-        var $124=$f_addr_i_i; //@line 1189 "_struct.c"
-        if ($123) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 1188 "_struct.c"
-      case 30: // $bb1_i8_i
-        $1=$124; //@line 1189 "_struct.c"
-        __label__ = 34; break; //@line 1189 "_struct.c"
-      case 31: // $bb2_i9_i
-        var $125=$124+20; //@line 1187 "_struct.c"
-        $f_addr_i_i=$125; //@line 1187 "_struct.c"
-        __label__ = 32; break; //@line 1187 "_struct.c"
-      case 32: // $bb3_i_i
-        var $126=$f_addr_i_i; //@line 1187 "_struct.c"
-        var $127=$126; //@line 1187 "_struct.c"
-        var $128=HEAP[$127]; //@line 1187 "_struct.c"
-        var $129=($128)!=0; //@line 1187 "_struct.c"
-        if ($129) { __label__ = 29; break; } else { __label__ = 33; break; } //@line 1187 "_struct.c"
-      case 33: // $bb4_i10_i
-        var $130=HEAP[_StructError]; //@line 1192 "_struct.c"
-        _PyErr_SetString($130, __str19); //@line 1192 "_struct.c"
-        $1=0; //@line 1193 "_struct.c"
-        __label__ = 34; break; //@line 1193 "_struct.c"
-      case 34: // $getentry_exit_i
-        var $131=$1; //@line 1189 "_struct.c"
-        $retval_i6_i=$131; //@line 1189 "_struct.c"
-        var $retval6_i_i=$retval_i6_i; //@line 1189 "_struct.c"
-        $e_i=$retval6_i_i; //@line 1257 "_struct.c"
-        var $132=$e_i; //@line 1258 "_struct.c"
-        var $133=$132; //@line 1258 "_struct.c"
-        var $134=($133)==0; //@line 1258 "_struct.c"
-        if ($134) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 1258 "_struct.c"
-      case 35: // $bb18_i
-        $3=-1; //@line 1259 "_struct.c"
-        __label__ = 78; break; //@line 1259 "_struct.c"
-      case 36: // $bb19_i
-        var $135=$c_i; //@line 1261 "_struct.c"
-        var $136=($135); //@line 1261 "_struct.c"
-        if ($136 == 112) {
-          __label__ = 37; break;
-        }
-        else if ($136 == 115) {
-          __label__ = 37; break;
-        }
-        else if ($136 == 120) {
-          __label__ = 39; break;
-        }
-        else {
-        __label__ = 38; break;
-        }
-        
-      case 37: // $bb20_i
-        var $137=$len_i; //@line 1263 "_struct.c"
-        var $138=($137) + 1; //@line 1263 "_struct.c"
-        $len_i=$138; //@line 1263 "_struct.c"
-        __label__ = 39; break; //@line 1263 "_struct.c"
-      case 38: // $bb22_i
-        var $139=$len_i; //@line 1265 "_struct.c"
-        var $140=$num_i; //@line 1265 "_struct.c"
-        var $141=($140) + ($139); //@line 1265 "_struct.c"
-        $len_i=$141; //@line 1265 "_struct.c"
-        __label__ = 39; break; //@line 1265 "_struct.c"
-      case 39: // $bb23_i
-        var $142=$e_i; //@line 1268 "_struct.c"
-        var $143=$142+4; //@line 1268 "_struct.c"
-        var $144=HEAP[$143]; //@line 1268 "_struct.c"
-        $itemsize_i=$144; //@line 1268 "_struct.c"
-        var $145=$c_i; //@line 1269 "_struct.c"
-        var $146=($145); //@line 1269 "_struct.c"
-        var $147=$size_i; //@line 1269 "_struct.c"
-        var $148=((($146)) & 255); //@line 1269 "_struct.c"
-        var $149=$e_i; //@line 1269 "_struct.c"
-        var $150=_align($147, $148, $149); //@line 1269 "_struct.c"
-        $size_i=$150; //@line 1269 "_struct.c"
-        var $151=($150)==-1; //@line 1270 "_struct.c"
-        if ($151) { __label__ = 77; break; } else { __label__ = 40; break; } //@line 1270 "_struct.c"
-      case 40: // $bb24_i
-        var $152=$size_i; //@line 1274 "_struct.c"
-        var $153=2147483647 - ($152); //@line 1274 "_struct.c"
-        var $154=$itemsize_i; //@line 1274 "_struct.c"
-        var $155=((($153)/($154))|0); //@line 1274 "_struct.c"
-        var $156=$num_i; //@line 1274 "_struct.c"
-        var $157=($155) < ($156); //@line 1274 "_struct.c"
-        if ($157) { __label__ = 77; break; } else { __label__ = 41; break; } //@line 1274 "_struct.c"
-      case 41: // $bb25_i
-        var $158=$num_i; //@line 1276 "_struct.c"
-        var $159=$itemsize_i; //@line 1276 "_struct.c"
-        var $160=($159) * ($158); //@line 1276 "_struct.c"
-        var $161=$size_i; //@line 1276 "_struct.c"
-        var $162=($160) + ($161); //@line 1276 "_struct.c"
-        $size_i=$162; //@line 1276 "_struct.c"
-        __label__ = 42; break; //@line 1276 "_struct.c"
-      case 42: // $bb26_i
-        var $163=$s_i; //@line 1237 "_struct.c"
-        var $164=HEAP[$163]; //@line 1237 "_struct.c"
-        $c_i=$164; //@line 1237 "_struct.c"
-        var $165=$c_i; //@line 1237 "_struct.c"
-        var $166=($165)!=0; //@line 1237 "_struct.c"
-        var $167=($166); //@line 1237 "_struct.c"
-        var $168=$s_i; //@line 1237 "_struct.c"
-        var $169=$168+1; //@line 1237 "_struct.c"
-        $s_i=$169; //@line 1237 "_struct.c"
-        var $toBool27_i=($167)!=0; //@line 1237 "_struct.c"
-        if ($toBool27_i) { __label__ = 17; break; } else { __label__ = 43; break; } //@line 1237 "_struct.c"
-      case 43: // $bb28_i
-        var $170=$len_i; //@line 1280 "_struct.c"
-        var $171=($170) + 1; //@line 1280 "_struct.c"
-        var $172=($171) > 178956970; //@line 1280 "_struct.c"
-        if ($172) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 1280 "_struct.c"
-      case 44: // $bb29_i
-        var $173=_PyErr_NoMemory(); //@line 1281 "_struct.c"
-        $3=-1; //@line 1282 "_struct.c"
-        __label__ = 78; break; //@line 1282 "_struct.c"
-      case 45: // $bb30_i
-        var $174=$self_addr_i; //@line 1285 "_struct.c"
-        var $175=$174+8; //@line 1285 "_struct.c"
-        var $176=$size_i; //@line 1285 "_struct.c"
-        HEAP[$175]=$176; //@line 1285 "_struct.c"
-        var $177=$self_addr_i; //@line 1286 "_struct.c"
-        var $178=$177+12; //@line 1286 "_struct.c"
-        var $179=$len_i; //@line 1286 "_struct.c"
-        HEAP[$178]=$179; //@line 1286 "_struct.c"
-        var $180=$len_i; //@line 1287 "_struct.c"
-        var $181=($180) + 1; //@line 1287 "_struct.c"
-        var $182=($181) * 12; //@line 1287 "_struct.c"
-        var $183=($182) >= 0; //@line 1287 "_struct.c"
-        if ($183) { __label__ = 46; break; } else { __label__ = 49; break; } //@line 1287 "_struct.c"
-      case 46: // $bb31_i
-        var $184=$len_i; //@line 1287 "_struct.c"
-        var $185=($184) + 1; //@line 1287 "_struct.c"
-        var $186=($185) * 12; //@line 1287 "_struct.c"
-        var $187=($186)!=0; //@line 1287 "_struct.c"
-        if ($187) { __label__ = 47; break; } else { __label__ = 48; break; } //@line 1287 "_struct.c"
-      case 47: // $bb32_i
-        var $188=$len_i; //@line 1287 "_struct.c"
-        var $189=($188) + 1; //@line 1287 "_struct.c"
-        var $190=($189) * 12; //@line 1287 "_struct.c"
-        $iftmp_101_i=$190; //@line 1287 "_struct.c"
-        __label__ = 50; break; //@line 1287 "_struct.c"
-      case 48: // $bb33_i
-        $iftmp_101_i=1; //@line 1287 "_struct.c"
-        __label__ = 50; break; //@line 1287 "_struct.c"
-      case 49: // $bb36_thread_i
-        $iftmp_100_i=0; //@line 1287 "_struct.c"
-        $codes_i=0; //@line 1287 "_struct.c"
-        __label__ = 51; break;
-      case 50: // $bb36_i
-        var $191=$iftmp_101_i; //@line 1287 "_struct.c"
-        var $192=_malloc($191); //@line 1287 "_struct.c"
-        var $193=$192; //@line 1287 "_struct.c"
-        $iftmp_100_i=$193; //@line 1287 "_struct.c"
-        $codes_i=$193; //@line 1287 "_struct.c"
-        var $194=($193)==0; //@line 1288 "_struct.c"
-        if ($194) { __label__ = 51; break; } else { __label__ = 52; break; } //@line 1288 "_struct.c"
-      case 51: // $bb37_i
-        var $195=_PyErr_NoMemory(); //@line 1289 "_struct.c"
-        $3=-1; //@line 1290 "_struct.c"
-        __label__ = 78; break; //@line 1290 "_struct.c"
-      case 52: // $bb38_i
-        var $196=$self_addr_i; //@line 1293 "_struct.c"
-        var $197=$196+16; //@line 1293 "_struct.c"
-        var $198=HEAP[$197]; //@line 1293 "_struct.c"
-        var $199=($198)!=0; //@line 1293 "_struct.c"
-        if ($199) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 1293 "_struct.c"
-      case 53: // $bb39_i
-        var $200=$self_addr_i; //@line 1294 "_struct.c"
-        var $201=$200+16; //@line 1294 "_struct.c"
-        var $202=HEAP[$201]; //@line 1294 "_struct.c"
-        var $203=$202; //@line 1294 "_struct.c"
-        _free($203); //@line 1294 "_struct.c"
-        __label__ = 54; break; //@line 1294 "_struct.c"
-      case 54: // $bb40_i
-        var $204=$self_addr_i; //@line 1295 "_struct.c"
-        var $205=$204+16; //@line 1295 "_struct.c"
-        var $206=$codes_i; //@line 1295 "_struct.c"
-        HEAP[$205]=$206; //@line 1295 "_struct.c"
-        var $207=HEAP[$fmt_i]; //@line 1297 "_struct.c"
-        $s_i=$207; //@line 1297 "_struct.c"
-        $size_i=0; //@line 1298 "_struct.c"
-        __label__ = 75; break; //@line 1298 "_struct.c"
-      case 55: // $bb41_i
-        var $208=___ctype_b_loc(); //@line 1300 "_struct.c"
-        var $209=HEAP[$208]; //@line 1300 "_struct.c"
-        var $210=$c_i; //@line 1300 "_struct.c"
-        var $211=($210); //@line 1300 "_struct.c"
-        var $212=$209+2*$211; //@line 1300 "_struct.c"
-        var $213=HEAP[$212]; //@line 1300 "_struct.c"
-        var $214=($213); //@line 1300 "_struct.c"
-        var $215=($214) & 8192; //@line 1300 "_struct.c"
-        var $216=($215)!=0; //@line 1300 "_struct.c"
-        if ($216) { __label__ = 75; break; } else { __label__ = 56; break; } //@line 1300 "_struct.c"
-      case 56: // $bb42_i
-        var $217=$c_i; //@line 1302 "_struct.c"
-        var $218=($217) <= 47; //@line 1302 "_struct.c"
-        var $219=$c_i; //@line 1302 "_struct.c"
-        var $220=($219) > 57; //@line 1302 "_struct.c"
-        var $or_cond3_i=($218) | ($220);
-        if ($or_cond3_i) { __label__ = 62; break; } else { __label__ = 57; break; } //@line 1302 "_struct.c"
-      case 57: // $bb44_i
-        var $221=$c_i; //@line 1303 "_struct.c"
-        var $222=($221); //@line 1303 "_struct.c"
-        var $223=($222) - 48; //@line 1303 "_struct.c"
-        $num_i=$223; //@line 1303 "_struct.c"
-        __label__ = 59; break; //@line 1303 "_struct.c"
-      case 58: // $bb45_i
-        var $224=$num_i; //@line 1305 "_struct.c"
-        var $225=($224) * 10; //@line 1305 "_struct.c"
-        var $226=$c_i; //@line 1305 "_struct.c"
-        var $227=($226); //@line 1305 "_struct.c"
-        var $228=($225) + -48;
-        var $229=($228) + ($227); //@line 1305 "_struct.c"
-        $num_i=$229; //@line 1305 "_struct.c"
-        __label__ = 59; break; //@line 1305 "_struct.c"
-      case 59: // $bb46_i
-        var $230=$s_i; //@line 1304 "_struct.c"
-        var $231=HEAP[$230]; //@line 1304 "_struct.c"
-        $c_i=$231; //@line 1304 "_struct.c"
-        var $232=$c_i; //@line 1304 "_struct.c"
-        var $233=($232) > 47; //@line 1304 "_struct.c"
-        var $234=($233); //@line 1304 "_struct.c"
-        var $235=$s_i; //@line 1304 "_struct.c"
-        var $236=$235+1; //@line 1304 "_struct.c"
-        $s_i=$236; //@line 1304 "_struct.c"
-        var $toBool47_i=($234)!=0; //@line 1304 "_struct.c"
-        var $toBool47not_i=($toBool47_i) ^ 1; //@line 1304 "_struct.c"
-        var $toBool47not48_i=($toBool47not_i); //@line 1304 "_struct.c"
-        var $toBool50_i=($toBool47not48_i)!=0; //@line 1304 "_struct.c"
-        var $_pr23_i=$c_i;
-        if ($toBool50_i) { __label__ = 61; break; } else { __label__ = 60; break; } //@line 1304 "_struct.c"
-      case 60: // $bb51_i
-        var $237=($_pr23_i) <= 57; //@line 1304 "_struct.c"
-        if ($237) { __label__ = 58; break; } else { __label__ = 63; break; } //@line 1304 "_struct.c"
-      case 61: // $bb52_i
-        var $238=($_pr23_i)==0; //@line 1306 "_struct.c"
-        if ($238) { __label__ = 76; break; } else { __label__ = 63; break; } //@line 1306 "_struct.c"
-      case 62: // $bb54_i
-        $num_i=1; //@line 1310 "_struct.c"
-        __label__ = 63; break; //@line 1310 "_struct.c"
-      case 63: // $bb55_i
-        var $239=$c_i; //@line 1312 "_struct.c"
-        var $240=($239); //@line 1312 "_struct.c"
-        var $241=$f_i; //@line 1312 "_struct.c"
-        $c_addr_i12_i=$240;
-        $f_addr_i13_i=$241;
-        __label__ = 67; break; //@line 1187 "_struct.c"
-      case 64: // $bb_i15_i
-        var $242=$f_addr_i13_i; //@line 1188 "_struct.c"
-        var $243=$242; //@line 1188 "_struct.c"
-        var $244=HEAP[$243]; //@line 1188 "_struct.c"
-        var $245=($244); //@line 1188 "_struct.c"
-        var $246=$c_addr_i12_i; //@line 1188 "_struct.c"
-        var $247=($245)==($246); //@line 1188 "_struct.c"
-        var $248=$f_addr_i13_i; //@line 1189 "_struct.c"
-        if ($247) { __label__ = 65; break; } else { __label__ = 66; break; } //@line 1188 "_struct.c"
-      case 65: // $bb1_i16_i
-        $0=$248; //@line 1189 "_struct.c"
-        __label__ = 69; break; //@line 1189 "_struct.c"
-      case 66: // $bb2_i17_i
-        var $249=$248+20; //@line 1187 "_struct.c"
-        $f_addr_i13_i=$249; //@line 1187 "_struct.c"
-        __label__ = 67; break; //@line 1187 "_struct.c"
-      case 67: // $bb3_i18_i
-        var $250=$f_addr_i13_i; //@line 1187 "_struct.c"
-        var $251=$250; //@line 1187 "_struct.c"
-        var $252=HEAP[$251]; //@line 1187 "_struct.c"
-        var $253=($252)!=0; //@line 1187 "_struct.c"
-        if ($253) { __label__ = 64; break; } else { __label__ = 68; break; } //@line 1187 "_struct.c"
-      case 68: // $bb4_i19_i
-        var $254=HEAP[_StructError]; //@line 1192 "_struct.c"
-        _PyErr_SetString($254, __str19); //@line 1192 "_struct.c"
-        $0=0; //@line 1193 "_struct.c"
-        __label__ = 69; break; //@line 1193 "_struct.c"
-      case 69: // $getentry_exit22_i
-        var $255=$0; //@line 1189 "_struct.c"
-        $retval_i14_i=$255; //@line 1189 "_struct.c"
-        var $retval6_i20_i=$retval_i14_i; //@line 1189 "_struct.c"
-        $e_i=$retval6_i20_i; //@line 1312 "_struct.c"
-        var $256=$c_i; //@line 1314 "_struct.c"
-        var $257=($256); //@line 1314 "_struct.c"
-        var $258=$size_i; //@line 1314 "_struct.c"
-        var $259=((($257)) & 255); //@line 1314 "_struct.c"
-        var $260=$e_i; //@line 1314 "_struct.c"
-        var $261=_align($258, $259, $260); //@line 1314 "_struct.c"
-        $size_i=$261; //@line 1314 "_struct.c"
-        var $262=$c_i; //@line 1315 "_struct.c"
-        var $263=($262)==115; //@line 1315 "_struct.c"
-        var $264=$c_i; //@line 1315 "_struct.c"
-        var $265=($264)==112; //@line 1315 "_struct.c"
-        var $or_cond5_i=($263) | ($265);
-        if ($or_cond5_i) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 1315 "_struct.c"
-      case 70: // $bb57_i
-        var $266=$codes_i; //@line 1316 "_struct.c"
-        var $267=$266+4; //@line 1316 "_struct.c"
-        var $268=$size_i; //@line 1316 "_struct.c"
-        HEAP[$267]=$268; //@line 1316 "_struct.c"
-        var $269=$codes_i; //@line 1317 "_struct.c"
-        var $270=$269+8; //@line 1317 "_struct.c"
-        var $271=$num_i; //@line 1317 "_struct.c"
-        HEAP[$270]=$271; //@line 1317 "_struct.c"
-        var $272=$codes_i; //@line 1318 "_struct.c"
-        var $273=$272; //@line 1318 "_struct.c"
-        var $274=$e_i; //@line 1318 "_struct.c"
-        HEAP[$273]=$274; //@line 1318 "_struct.c"
-        var $275=$codes_i; //@line 1319 "_struct.c"
-        var $276=$275+12; //@line 1319 "_struct.c"
-        $codes_i=$276; //@line 1319 "_struct.c"
-        var $277=$size_i; //@line 1320 "_struct.c"
-        var $278=$num_i; //@line 1320 "_struct.c"
-        var $279=($278) + ($277); //@line 1320 "_struct.c"
-        $size_i=$279; //@line 1320 "_struct.c"
-        __label__ = 75; break; //@line 1320 "_struct.c"
-      case 71: // $bb58_i
-        var $280=$c_i; //@line 1321 "_struct.c"
-        var $281=($280)==120; //@line 1321 "_struct.c"
-        if ($281) { __label__ = 73; break; } else { __label__ = 72; break; } //@line 1321 "_struct.c"
-      case 72: // $bb62_preheader_i
-        var $282=$num_i; //@line 1324 "_struct.c"
-        var $283=($282) - 1; //@line 1324 "_struct.c"
-        $num_i=$283; //@line 1324 "_struct.c"
-        var $284=($283) >= 0; //@line 1324 "_struct.c"
-        if ($284) { __label__ = 74; break; } else { __label__ = 75; break; } //@line 1324 "_struct.c"
-      case 73: // $bb59_i
-        var $285=$size_i; //@line 1322 "_struct.c"
-        var $286=$num_i; //@line 1322 "_struct.c"
-        var $287=($286) + ($285); //@line 1322 "_struct.c"
-        $size_i=$287; //@line 1322 "_struct.c"
-        __label__ = 75; break; //@line 1322 "_struct.c"
-      case 74: // $bb61_i
-        var $288=$codes_i; //@line 1325 "_struct.c"
-        var $289=$288+4; //@line 1325 "_struct.c"
-        var $290=$size_i; //@line 1325 "_struct.c"
-        HEAP[$289]=$290; //@line 1325 "_struct.c"
-        var $291=$e_i; //@line 1326 "_struct.c"
-        var $292=$291+4; //@line 1326 "_struct.c"
-        var $293=HEAP[$292]; //@line 1326 "_struct.c"
-        var $294=$codes_i; //@line 1326 "_struct.c"
-        var $295=$294+8; //@line 1326 "_struct.c"
-        HEAP[$295]=$293; //@line 1326 "_struct.c"
-        var $296=$codes_i; //@line 1327 "_struct.c"
-        var $297=$296; //@line 1327 "_struct.c"
-        var $298=$e_i; //@line 1327 "_struct.c"
-        HEAP[$297]=$298; //@line 1327 "_struct.c"
-        var $299=$codes_i; //@line 1328 "_struct.c"
-        var $300=$299+12; //@line 1328 "_struct.c"
-        $codes_i=$300; //@line 1328 "_struct.c"
-        var $301=$e_i; //@line 1329 "_struct.c"
-        var $302=$301+4; //@line 1329 "_struct.c"
-        var $303=HEAP[$302]; //@line 1329 "_struct.c"
-        var $304=$size_i; //@line 1329 "_struct.c"
-        var $305=($304) + ($303); //@line 1329 "_struct.c"
-        $size_i=$305; //@line 1329 "_struct.c"
-        var $306=$num_i; //@line 1324 "_struct.c"
-        var $307=($306) - 1; //@line 1324 "_struct.c"
-        $num_i=$307; //@line 1324 "_struct.c"
-        var $308=($307) >= 0; //@line 1324 "_struct.c"
-        if ($308) { __label__ = 74; break; } else { __label__ = 75; break; } //@line 1324 "_struct.c"
-      case 75: // $bb63_i
-        var $309=$s_i; //@line 1299 "_struct.c"
-        var $310=HEAP[$309]; //@line 1299 "_struct.c"
-        $c_i=$310; //@line 1299 "_struct.c"
-        var $311=$c_i; //@line 1299 "_struct.c"
-        var $312=($311)!=0; //@line 1299 "_struct.c"
-        var $313=($312); //@line 1299 "_struct.c"
-        var $314=$s_i; //@line 1299 "_struct.c"
-        var $315=$314+1; //@line 1299 "_struct.c"
-        $s_i=$315; //@line 1299 "_struct.c"
-        var $toBool64_i=($313)!=0; //@line 1299 "_struct.c"
-        if ($toBool64_i) { __label__ = 55; break; } else { __label__ = 76; break; } //@line 1299 "_struct.c"
-      case 76: // $bb65_i
-        var $316=$codes_i; //@line 1333 "_struct.c"
-        var $317=$316; //@line 1333 "_struct.c"
-        HEAP[$317]=0; //@line 1333 "_struct.c"
-        var $318=$codes_i; //@line 1334 "_struct.c"
-        var $319=$318+4; //@line 1334 "_struct.c"
-        var $320=$size_i; //@line 1334 "_struct.c"
-        HEAP[$319]=$320; //@line 1334 "_struct.c"
-        var $321=$codes_i; //@line 1335 "_struct.c"
-        var $322=$321+8; //@line 1335 "_struct.c"
-        HEAP[$322]=0; //@line 1335 "_struct.c"
-        $3=0; //@line 1337 "_struct.c"
-        __label__ = 78; break; //@line 1337 "_struct.c"
-      case 77: // $overflow_i
-        var $323=HEAP[_StructError]; //@line 1340 "_struct.c"
-        _PyErr_SetString($323, __str20); //@line 1340 "_struct.c"
-        $3=-1; //@line 1342 "_struct.c"
-        __label__ = 78; break; //@line 1342 "_struct.c"
-      case 78: // $prepare_s_exit
-        var $324=$3; //@line 1259 "_struct.c"
-        $retval_i=$324; //@line 1259 "_struct.c"
-        var $retval67_i=$retval_i; //@line 1259 "_struct.c"
-        $ret=$retval67_i; //@line 1382 "_struct.c"
-        var $325=$ret; //@line 1383 "_struct.c"
-        $4=$325; //@line 1383 "_struct.c"
-        __label__ = 79; break; //@line 1383 "_struct.c"
-      case 79: // $bb8
-        var $326=$4; //@line 1376 "_struct.c"
-        $retval=$326; //@line 1376 "_struct.c"
+        var $46=HEAP[$o_format]; //@line 1380 "_struct.c"
+        var $47=$soself; //@line 1380 "_struct.c"
+        var $48=$47+20; //@line 1380 "_struct.c"
+        HEAP[$48]=$46; //@line 1380 "_struct.c"
+        var $49=$soself; //@line 1382 "_struct.c"
+        var $50=_prepare_s($49); //@line 1382 "_struct.c"
+        $ret=$50; //@line 1382 "_struct.c"
+        var $51=$ret; //@line 1383 "_struct.c"
+        $0=$51; //@line 1383 "_struct.c"
+        __label__ = 9; break; //@line 1383 "_struct.c"
+      case 9: // $bb8
+        var $52=$0; //@line 1376 "_struct.c"
+        $retval=$52; //@line 1376 "_struct.c"
         var $retval9=$retval; //@line 1376 "_struct.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 1376 "_struct.c"
@@ -4869,7 +4868,7 @@ var __str57;
         __label__ = 20; break; //@line 1452 "_struct.c"
       case 9: // $bb8
         var $39=$inputstr_addr; //@line 1454 "_struct.c"
-        var $40=_PyTuple_Pack(1, $39); //@line 1454 "_struct.c"
+        var $40=_PyTuple_Pack(1, allocate([$39,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1454 "_struct.c"
         $args=$40; //@line 1454 "_struct.c"
         var $41=($40)==0; //@line 1455 "_struct.c"
         if ($41) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 1455 "_struct.c"
@@ -4878,7 +4877,7 @@ var __str57;
         __label__ = 20; break; //@line 1456 "_struct.c"
       case 11: // $bb10
         var $42=$args; //@line 1457 "_struct.c"
-        var $43=__PyArg_ParseTuple_SizeT($42, __str26, $start, $len); //@line 1457 "_struct.c"
+        var $43=__PyArg_ParseTuple_SizeT($42, __str26, allocate([$start,0,0,0,$len,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1457 "_struct.c"
         var $44=($43)==0; //@line 1457 "_struct.c"
         if ($44) { __label__ = 16; break; } else { __label__ = 12; break; } //@line 1457 "_struct.c"
       case 12: // $bb11
@@ -4949,7 +4948,7 @@ var __str57;
         var $89=$88+8; //@line 1467 "_struct.c"
         var $90=HEAP[$89]; //@line 1467 "_struct.c"
         var $91=HEAP[_StructError]; //@line 1467 "_struct.c"
-        var $92=_PyErr_Format($91, __str27, $90); //@line 1467 "_struct.c"
+        var $92=_PyErr_Format($91, __str27, allocate([$90,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1467 "_struct.c"
         $0=0; //@line 1470 "_struct.c"
         __label__ = 20; break; //@line 1470 "_struct.c"
       case 20: // $bb18
@@ -5014,7 +5013,7 @@ var __str57;
       case 5: // $bb4
         var $16=$args_addr; //@line 1496 "_struct.c"
         var $17=$kwds_addr; //@line 1496 "_struct.c"
-        var $18=__PyArg_ParseTupleAndKeywords_SizeT($16, $17, __str28, _kwlist_10035, $buffer, $buffer_len, $offset); //@line 1496 "_struct.c"
+        var $18=__PyArg_ParseTupleAndKeywords_SizeT($16, $17, __str28, _kwlist_10035, allocate([$buffer,0,0,0,$buffer_len,0,0,0,$offset,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1496 "_struct.c"
         var $19=($18)==0; //@line 1496 "_struct.c"
         if ($19) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1496 "_struct.c"
       case 6: // $bb5
@@ -5026,7 +5025,7 @@ var __str57;
         if ($21) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1500 "_struct.c"
       case 8: // $bb7
         var $22=HEAP[_StructError]; //@line 1501 "_struct.c"
-        var $23=_PyErr_Format($22, __str31); //@line 1501 "_struct.c"
+        var $23=_PyErr_Format($22, __str31, allocate(1, "i32", ALLOC_STACK)); //@line 1501 "_struct.c"
         $0=0; //@line 1503 "_struct.c"
         __label__ = 14; break; //@line 1503 "_struct.c"
       case 9: // $bb8
@@ -5054,7 +5053,7 @@ var __str57;
         var $38=$37+8; //@line 1510 "_struct.c"
         var $39=HEAP[$38]; //@line 1510 "_struct.c"
         var $40=HEAP[_StructError]; //@line 1510 "_struct.c"
-        var $41=_PyErr_Format($40, __str32, $39); //@line 1510 "_struct.c"
+        var $41=_PyErr_Format($40, __str32, allocate([$39,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1510 "_struct.c"
         $0=0; //@line 1513 "_struct.c"
         __label__ = 14; break; //@line 1513 "_struct.c"
       case 13: // $bb13
@@ -5278,7 +5277,7 @@ var __str57;
         var $115=HEAP[$114]; //@line 1574 "_struct.c"
         var $116=($115); //@line 1574 "_struct.c"
         var $117=HEAP[_StructError]; //@line 1574 "_struct.c"
-        var $118=_PyErr_Format($117, __str35, $116); //@line 1574 "_struct.c"
+        var $118=_PyErr_Format($117, __str35, allocate([$116,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1574 "_struct.c"
         __label__ = 22; break; //@line 1574 "_struct.c"
       case 22: // $bb22
         $0=-1; //@line 1578 "_struct.c"
@@ -5365,7 +5364,7 @@ var __str57;
         var $25=$24+12; //@line 1605 "_struct.c"
         var $26=HEAP[$25]; //@line 1605 "_struct.c"
         var $27=HEAP[_StructError]; //@line 1605 "_struct.c"
-        var $28=_PyErr_Format($27, __str36, $26); //@line 1605 "_struct.c"
+        var $28=_PyErr_Format($27, __str36, allocate([$26,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1605 "_struct.c"
         $0=0; //@line 1607 "_struct.c"
         __label__ = 14; break; //@line 1607 "_struct.c"
       case 7: // $bb6
@@ -5489,7 +5488,7 @@ var __str57;
         var $27=HEAP[$26]; //@line 1645 "_struct.c"
         var $28=($27) + 2; //@line 1645 "_struct.c"
         var $29=HEAP[_StructError]; //@line 1645 "_struct.c"
-        var $30=_PyErr_Format($29, __str37, $28); //@line 1645 "_struct.c"
+        var $30=_PyErr_Format($29, __str37, allocate([$28,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1645 "_struct.c"
         $0=0; //@line 1648 "_struct.c"
         __label__ = 24; break; //@line 1648 "_struct.c"
       case 7: // $bb6
@@ -5563,7 +5562,7 @@ var __str57;
         var $65=$64+8; //@line 1669 "_struct.c"
         var $66=HEAP[$65]; //@line 1669 "_struct.c"
         var $67=HEAP[_StructError]; //@line 1669 "_struct.c"
-        var $68=_PyErr_Format($67, __str39, $66); //@line 1669 "_struct.c"
+        var $68=_PyErr_Format($67, __str39, allocate([$66,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1669 "_struct.c"
         $0=0; //@line 1672 "_struct.c"
         __label__ = 24; break; //@line 1672 "_struct.c"
       case 21: // $bb19
@@ -5691,7 +5690,7 @@ var __str57;
         __label__ = 11; break; //@line 1780 "_struct.c"
       case 5: // $bb4
         var $17=$fmt_addr; //@line 1783 "_struct.c"
-        var $18=_PyObject_CallFunctionObjArgs(_PyStructType, $17, 0); //@line 1783 "_struct.c"
+        var $18=_PyObject_CallFunctionObjArgs(_PyStructType, allocate([$17,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1783 "_struct.c"
         $s_object=$18; //@line 1783 "_struct.c"
         var $19=$s_object; //@line 1784 "_struct.c"
         var $20=($19)!=0; //@line 1784 "_struct.c"
@@ -6151,7 +6150,7 @@ var __str57;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1887 "_struct.c"
-        var $2=_PyArg_UnpackTuple($1, __str42, 2, 2, $fmt, $inputstr); //@line 1887 "_struct.c"
+        var $2=_PyArg_UnpackTuple($1, __str42, 2, 2, allocate([$fmt,0,0,0,$inputstr,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1887 "_struct.c"
         var $3=($2)==0; //@line 1887 "_struct.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1887 "_struct.c"
       case 1: // $bb

@@ -56,17 +56,17 @@ var $struct__typeobject___SIZE = 196; // %struct._typeobject
   
 var _strop_module__doc__;
 var _splitfields__doc__;
-var _PyExc_DeprecationWarning;
+
 var __str;
 var __str1;
-var _PyExc_ValueError;
+
 var __str2;
 var _joinfields__doc__;
 var __str3;
 var __str4;
-var _PyExc_TypeError;
+
 var __str5;
-var _PyExc_OverflowError;
+
 var __str6;
 var __str7;
 var _find__doc__;
@@ -175,27 +175,279 @@ var __str57;
 
 
 
+  function _split_whitespace($s, $len, $maxsplit) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $s_addr;
+        var $len_addr;
+        var $maxsplit_addr;
+        var $retval;
+        var $0;
+        var $i;
+        var $j;
+        var $err;
+        var $countsplit;
+        var $item;
+        var $list;
+        $s_addr=$s;
+        $len_addr=$len;
+        $maxsplit_addr=$maxsplit;
+        $i=0; //@line 32 "stropmodule.c"
+        $countsplit=0; //@line 34 "stropmodule.c"
+        var $1=_PyList_New(0); //@line 36 "stropmodule.c"
+        $list=$1; //@line 36 "stropmodule.c"
+        var $2=$list; //@line 38 "stropmodule.c"
+        var $3=($2)==0; //@line 38 "stropmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 26; break; } //@line 38 "stropmodule.c"
+      case 1: // $bb
+        $0=0; //@line 39 "stropmodule.c"
+        __label__ = 31; break; //@line 39 "stropmodule.c"
+      case 2: // $bb3
+        var $4=$i; //@line 43 "stropmodule.c"
+        var $5=($4) + 1; //@line 43 "stropmodule.c"
+        $i=$5; //@line 43 "stropmodule.c"
+        __label__ = 3; break; //@line 43 "stropmodule.c"
+      case 3: // $bb4
+        var $6=$i; //@line 42 "stropmodule.c"
+        var $7=$len_addr; //@line 42 "stropmodule.c"
+        var $8=($6) >= ($7); //@line 42 "stropmodule.c"
+        if ($8) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 42 "stropmodule.c"
+      case 4: // $bb5
+        var $9=___ctype_b_loc(); //@line 42 "stropmodule.c"
+        var $10=HEAP[$9]; //@line 42 "stropmodule.c"
+        var $11=$s_addr; //@line 42 "stropmodule.c"
+        var $12=$i; //@line 42 "stropmodule.c"
+        var $13=$11+$12; //@line 42 "stropmodule.c"
+        var $14=HEAP[$13]; //@line 42 "stropmodule.c"
+        var $15=($14); //@line 42 "stropmodule.c"
+        var $16=$10+2*$15; //@line 42 "stropmodule.c"
+        var $17=HEAP[$16]; //@line 42 "stropmodule.c"
+        var $18=($17); //@line 42 "stropmodule.c"
+        var $19=($18) & 8192; //@line 42 "stropmodule.c"
+        var $20=($19)!=0; //@line 42 "stropmodule.c"
+        if ($20) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 42 "stropmodule.c"
+      case 5: // $bb6
+        var $21=$i; //@line 45 "stropmodule.c"
+        $j=$21; //@line 45 "stropmodule.c"
+        __label__ = 7; break; //@line 45 "stropmodule.c"
+      case 6: // $bb7
+        var $22=$i; //@line 47 "stropmodule.c"
+        var $23=($22) + 1; //@line 47 "stropmodule.c"
+        $i=$23; //@line 47 "stropmodule.c"
+        __label__ = 7; break; //@line 47 "stropmodule.c"
+      case 7: // $bb8
+        var $24=$i; //@line 46 "stropmodule.c"
+        var $25=$len_addr; //@line 46 "stropmodule.c"
+        var $26=($24) >= ($25); //@line 46 "stropmodule.c"
+        if ($26) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 46 "stropmodule.c"
+      case 8: // $bb9
+        var $27=___ctype_b_loc(); //@line 46 "stropmodule.c"
+        var $28=HEAP[$27]; //@line 46 "stropmodule.c"
+        var $29=$s_addr; //@line 46 "stropmodule.c"
+        var $30=$i; //@line 46 "stropmodule.c"
+        var $31=$29+$30; //@line 46 "stropmodule.c"
+        var $32=HEAP[$31]; //@line 46 "stropmodule.c"
+        var $33=($32); //@line 46 "stropmodule.c"
+        var $34=$28+2*$33; //@line 46 "stropmodule.c"
+        var $35=HEAP[$34]; //@line 46 "stropmodule.c"
+        var $36=($35); //@line 46 "stropmodule.c"
+        var $37=($36) & 8192; //@line 46 "stropmodule.c"
+        var $38=($37)==0; //@line 46 "stropmodule.c"
+        if ($38) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 46 "stropmodule.c"
+      case 9: // $bb10
+        var $39=$j; //@line 49 "stropmodule.c"
+        var $40=$i; //@line 49 "stropmodule.c"
+        var $41=($39) < ($40); //@line 49 "stropmodule.c"
+        if ($41) { __label__ = 10; break; } else { __label__ = 26; break; } //@line 49 "stropmodule.c"
+      case 10: // $bb11
+        var $42=$i; //@line 50 "stropmodule.c"
+        var $43=$j; //@line 50 "stropmodule.c"
+        var $44=($42) - ($43); //@line 50 "stropmodule.c"
+        var $45=$s_addr; //@line 50 "stropmodule.c"
+        var $46=$j; //@line 50 "stropmodule.c"
+        var $47=$45+$46; //@line 50 "stropmodule.c"
+        var $48=_PyString_FromStringAndSize($47, $44); //@line 50 "stropmodule.c"
+        $item=$48; //@line 50 "stropmodule.c"
+        var $49=$item; //@line 51 "stropmodule.c"
+        var $50=($49)==0; //@line 51 "stropmodule.c"
+        if ($50) { __label__ = 28; break; } else { __label__ = 11; break; } //@line 51 "stropmodule.c"
+      case 11: // $bb12
+        var $51=$list; //@line 54 "stropmodule.c"
+        var $52=$item; //@line 54 "stropmodule.c"
+        var $53=_PyList_Append($51, $52); //@line 54 "stropmodule.c"
+        $err=$53; //@line 54 "stropmodule.c"
+        var $54=$item; //@line 55 "stropmodule.c"
+        var $55=$54; //@line 55 "stropmodule.c"
+        var $56=HEAP[$55]; //@line 55 "stropmodule.c"
+        var $57=($56) - 1; //@line 55 "stropmodule.c"
+        var $58=$item; //@line 55 "stropmodule.c"
+        var $59=$58; //@line 55 "stropmodule.c"
+        HEAP[$59]=$57; //@line 55 "stropmodule.c"
+        var $60=$item; //@line 55 "stropmodule.c"
+        var $61=$60; //@line 55 "stropmodule.c"
+        var $62=HEAP[$61]; //@line 55 "stropmodule.c"
+        var $63=($62)==0; //@line 55 "stropmodule.c"
+        if ($63) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 55 "stropmodule.c"
+      case 12: // $bb13
+        var $64=$item; //@line 55 "stropmodule.c"
+        var $65=$64+4; //@line 55 "stropmodule.c"
+        var $66=HEAP[$65]; //@line 55 "stropmodule.c"
+        var $67=$66+24; //@line 55 "stropmodule.c"
+        var $68=HEAP[$67]; //@line 55 "stropmodule.c"
+        var $69=$item; //@line 55 "stropmodule.c"
+        FUNCTION_TABLE[$68]($69); //@line 55 "stropmodule.c"
+        __label__ = 13; break; //@line 55 "stropmodule.c"
+      case 13: // $bb14
+        var $70=$err; //@line 56 "stropmodule.c"
+        var $71=($70) < 0; //@line 56 "stropmodule.c"
+        if ($71) { __label__ = 28; break; } else { __label__ = 14; break; } //@line 56 "stropmodule.c"
+      case 14: // $bb15
+        var $72=$countsplit; //@line 59 "stropmodule.c"
+        var $73=($72) + 1; //@line 59 "stropmodule.c"
+        $countsplit=$73; //@line 59 "stropmodule.c"
+        __label__ = 16; break; //@line 59 "stropmodule.c"
+      case 15: // $bb16
+        var $74=$i; //@line 61 "stropmodule.c"
+        var $75=($74) + 1; //@line 61 "stropmodule.c"
+        $i=$75; //@line 61 "stropmodule.c"
+        __label__ = 16; break; //@line 61 "stropmodule.c"
+      case 16: // $bb17
+        var $76=$i; //@line 60 "stropmodule.c"
+        var $77=$len_addr; //@line 60 "stropmodule.c"
+        var $78=($76) >= ($77); //@line 60 "stropmodule.c"
+        if ($78) { __label__ = 18; break; } else { __label__ = 17; break; } //@line 60 "stropmodule.c"
+      case 17: // $bb18
+        var $79=___ctype_b_loc(); //@line 60 "stropmodule.c"
+        var $80=HEAP[$79]; //@line 60 "stropmodule.c"
+        var $81=$s_addr; //@line 60 "stropmodule.c"
+        var $82=$i; //@line 60 "stropmodule.c"
+        var $83=$81+$82; //@line 60 "stropmodule.c"
+        var $84=HEAP[$83]; //@line 60 "stropmodule.c"
+        var $85=($84); //@line 60 "stropmodule.c"
+        var $86=$80+2*$85; //@line 60 "stropmodule.c"
+        var $87=HEAP[$86]; //@line 60 "stropmodule.c"
+        var $88=($87); //@line 60 "stropmodule.c"
+        var $89=($88) & 8192; //@line 60 "stropmodule.c"
+        var $90=($89)!=0; //@line 60 "stropmodule.c"
+        if ($90) { __label__ = 15; break; } else { __label__ = 18; break; } //@line 60 "stropmodule.c"
+      case 18: // $bb19
+        var $91=$maxsplit_addr; //@line 63 "stropmodule.c"
+        var $92=($91)!=0; //@line 63 "stropmodule.c"
+        if ($92) { __label__ = 19; break; } else { __label__ = 26; break; } //@line 63 "stropmodule.c"
+      case 19: // $bb20
+        var $93=$countsplit; //@line 63 "stropmodule.c"
+        var $94=$maxsplit_addr; //@line 63 "stropmodule.c"
+        var $95=($93) >= ($94); //@line 63 "stropmodule.c"
+        if ($95) { __label__ = 20; break; } else { __label__ = 26; break; } //@line 63 "stropmodule.c"
+      case 20: // $bb21
+        var $96=$i; //@line 63 "stropmodule.c"
+        var $97=$len_addr; //@line 63 "stropmodule.c"
+        var $98=($96) < ($97); //@line 63 "stropmodule.c"
+        if ($98) { __label__ = 21; break; } else { __label__ = 26; break; } //@line 63 "stropmodule.c"
+      case 21: // $bb22
+        var $99=$len_addr; //@line 64 "stropmodule.c"
+        var $100=$i; //@line 64 "stropmodule.c"
+        var $101=($99) - ($100); //@line 64 "stropmodule.c"
+        var $102=$s_addr; //@line 64 "stropmodule.c"
+        var $103=$i; //@line 64 "stropmodule.c"
+        var $104=$102+$103; //@line 64 "stropmodule.c"
+        var $105=_PyString_FromStringAndSize($104, $101); //@line 64 "stropmodule.c"
+        $item=$105; //@line 64 "stropmodule.c"
+        var $106=$item; //@line 66 "stropmodule.c"
+        var $107=($106)==0; //@line 66 "stropmodule.c"
+        if ($107) { __label__ = 28; break; } else { __label__ = 22; break; } //@line 66 "stropmodule.c"
+      case 22: // $bb23
+        var $108=$list; //@line 69 "stropmodule.c"
+        var $109=$item; //@line 69 "stropmodule.c"
+        var $110=_PyList_Append($108, $109); //@line 69 "stropmodule.c"
+        $err=$110; //@line 69 "stropmodule.c"
+        var $111=$item; //@line 70 "stropmodule.c"
+        var $112=$111; //@line 70 "stropmodule.c"
+        var $113=HEAP[$112]; //@line 70 "stropmodule.c"
+        var $114=($113) - 1; //@line 70 "stropmodule.c"
+        var $115=$item; //@line 70 "stropmodule.c"
+        var $116=$115; //@line 70 "stropmodule.c"
+        HEAP[$116]=$114; //@line 70 "stropmodule.c"
+        var $117=$item; //@line 70 "stropmodule.c"
+        var $118=$117; //@line 70 "stropmodule.c"
+        var $119=HEAP[$118]; //@line 70 "stropmodule.c"
+        var $120=($119)==0; //@line 70 "stropmodule.c"
+        if ($120) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 70 "stropmodule.c"
+      case 23: // $bb24
+        var $121=$item; //@line 70 "stropmodule.c"
+        var $122=$121+4; //@line 70 "stropmodule.c"
+        var $123=HEAP[$122]; //@line 70 "stropmodule.c"
+        var $124=$123+24; //@line 70 "stropmodule.c"
+        var $125=HEAP[$124]; //@line 70 "stropmodule.c"
+        var $126=$item; //@line 70 "stropmodule.c"
+        FUNCTION_TABLE[$125]($126); //@line 70 "stropmodule.c"
+        __label__ = 24; break; //@line 70 "stropmodule.c"
+      case 24: // $bb25
+        var $127=$err; //@line 71 "stropmodule.c"
+        var $128=($127) < 0; //@line 71 "stropmodule.c"
+        if ($128) { __label__ = 28; break; } else { __label__ = 25; break; } //@line 71 "stropmodule.c"
+      case 25: // $bb26
+        var $129=$len_addr; //@line 74 "stropmodule.c"
+        $i=$129; //@line 74 "stropmodule.c"
+        __label__ = 26; break; //@line 74 "stropmodule.c"
+      case 26: // $bb27
+        var $130=$i; //@line 41 "stropmodule.c"
+        var $131=$len_addr; //@line 41 "stropmodule.c"
+        var $132=($130) < ($131); //@line 41 "stropmodule.c"
+        if ($132) { __label__ = 3; break; } else { __label__ = 27; break; } //@line 41 "stropmodule.c"
+      case 27: // $bb28
+        var $133=$list; //@line 78 "stropmodule.c"
+        $0=$133; //@line 78 "stropmodule.c"
+        __label__ = 31; break; //@line 78 "stropmodule.c"
+      case 28: // $finally
+        var $134=$list; //@line 80 "stropmodule.c"
+        var $135=$134; //@line 80 "stropmodule.c"
+        var $136=HEAP[$135]; //@line 80 "stropmodule.c"
+        var $137=($136) - 1; //@line 80 "stropmodule.c"
+        var $138=$list; //@line 80 "stropmodule.c"
+        var $139=$138; //@line 80 "stropmodule.c"
+        HEAP[$139]=$137; //@line 80 "stropmodule.c"
+        var $140=$list; //@line 80 "stropmodule.c"
+        var $141=$140; //@line 80 "stropmodule.c"
+        var $142=HEAP[$141]; //@line 80 "stropmodule.c"
+        var $143=($142)==0; //@line 80 "stropmodule.c"
+        if ($143) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 80 "stropmodule.c"
+      case 29: // $bb29
+        var $144=$list; //@line 80 "stropmodule.c"
+        var $145=$144+4; //@line 80 "stropmodule.c"
+        var $146=HEAP[$145]; //@line 80 "stropmodule.c"
+        var $147=$146+24; //@line 80 "stropmodule.c"
+        var $148=HEAP[$147]; //@line 80 "stropmodule.c"
+        var $149=$list; //@line 80 "stropmodule.c"
+        FUNCTION_TABLE[$148]($149); //@line 80 "stropmodule.c"
+        __label__ = 30; break; //@line 80 "stropmodule.c"
+      case 30: // $bb30
+        $0=0; //@line 81 "stropmodule.c"
+        __label__ = 31; break; //@line 81 "stropmodule.c"
+      case 31: // $bb31
+        var $150=$0; //@line 39 "stropmodule.c"
+        $retval=$150; //@line 39 "stropmodule.c"
+        var $retval32=$retval; //@line 39 "stropmodule.c"
+        ;
+        return $retval32; //@line 39 "stropmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _strop_splitfields($self, $args) {
     var __stackBase__  = STACKTOP; STACKTOP += 20; _memset(__stackBase__, 0, 20);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $len_addr_i;
-        var $maxsplit_addr_i;
-        var $retval_i;
-        var $0;
-        var $i_i;
-        var $j_i;
-        var $err_i;
-        var $countsplit_i;
-        var $item_i;
-        var $list_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $len=__stackBase__;
         var $n=__stackBase__+4;
         var $i;
@@ -209,464 +461,226 @@ var __str57;
         var $item;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=HEAP[_PyExc_DeprecationWarning]; //@line 104 "stropmodule.c"
-        var $3=_PyErr_WarnEx($2, __str, 1); //@line 104 "stropmodule.c"
-        var $4=($3)!=0; //@line 104 "stropmodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 104 "stropmodule.c"
+        var $1=HEAP[_PyExc_DeprecationWarning]; //@line 104 "stropmodule.c"
+        var $2=_PyErr_WarnEx($1, __str, 1); //@line 104 "stropmodule.c"
+        var $3=($2)!=0; //@line 104 "stropmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 104 "stropmodule.c"
       case 1: // $bb
-        $1=0; //@line 104 "stropmodule.c"
-        __label__ = 61; break; //@line 104 "stropmodule.c"
+        $0=0; //@line 104 "stropmodule.c"
+        __label__ = 30; break; //@line 104 "stropmodule.c"
       case 2: // $bb1
         HEAP[$sub]=0; //@line 105 "stropmodule.c"
         HEAP[$n]=0; //@line 106 "stropmodule.c"
         $splitcount=0; //@line 107 "stropmodule.c"
         HEAP[$maxsplit]=0; //@line 108 "stropmodule.c"
-        var $5=$args_addr; //@line 109 "stropmodule.c"
-        var $6=__PyArg_ParseTuple_SizeT($5, __str1, $s, $len, $sub, $n, $maxsplit); //@line 109 "stropmodule.c"
-        var $7=($6)==0; //@line 109 "stropmodule.c"
-        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 109 "stropmodule.c"
+        var $4=$args_addr; //@line 109 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str1, allocate([$s,0,0,0,$len,0,0,0,$sub,0,0,0,$n,0,0,0,$maxsplit,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 109 "stropmodule.c"
+        var $6=($5)==0; //@line 109 "stropmodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 109 "stropmodule.c"
       case 3: // $bb2
-        $1=0; //@line 110 "stropmodule.c"
-        __label__ = 61; break; //@line 110 "stropmodule.c"
+        $0=0; //@line 110 "stropmodule.c"
+        __label__ = 30; break; //@line 110 "stropmodule.c"
       case 4: // $bb3
-        var $8=HEAP[$sub]; //@line 111 "stropmodule.c"
-        var $9=($8)==0; //@line 111 "stropmodule.c"
-        if ($9) { __label__ = 5; break; } else { __label__ = 37; break; } //@line 111 "stropmodule.c"
+        var $7=HEAP[$sub]; //@line 111 "stropmodule.c"
+        var $8=($7)==0; //@line 111 "stropmodule.c"
+        if ($8) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 111 "stropmodule.c"
       case 5: // $bb4
-        var $10=HEAP[$maxsplit]; //@line 112 "stropmodule.c"
-        var $11=HEAP[$len]; //@line 112 "stropmodule.c"
-        var $12=HEAP[$s]; //@line 112 "stropmodule.c"
-        $s_addr_i=$12;
-        $len_addr_i=$11;
-        $maxsplit_addr_i=$10;
-        $i_i=0; //@line 32 "stropmodule.c"
-        $countsplit_i=0; //@line 34 "stropmodule.c"
-        var $13=_PyList_New(0); //@line 36 "stropmodule.c"
-        $list_i=$13; //@line 36 "stropmodule.c"
-        var $14=$list_i; //@line 38 "stropmodule.c"
-        var $15=($14)==0; //@line 38 "stropmodule.c"
-        if ($15) { __label__ = 6; break; } else { __label__ = 31; break; } //@line 38 "stropmodule.c"
-      case 6: // $bb_i
-        $0=0; //@line 39 "stropmodule.c"
-        __label__ = 36; break; //@line 39 "stropmodule.c"
-      case 7: // $bb3_i
-        var $16=$i_i; //@line 43 "stropmodule.c"
-        var $17=($16) + 1; //@line 43 "stropmodule.c"
-        $i_i=$17; //@line 43 "stropmodule.c"
-        __label__ = 8; break; //@line 43 "stropmodule.c"
-      case 8: // $bb4_i
-        var $18=$i_i; //@line 42 "stropmodule.c"
-        var $19=$len_addr_i; //@line 42 "stropmodule.c"
-        var $20=($18) >= ($19); //@line 42 "stropmodule.c"
-        if ($20) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 42 "stropmodule.c"
-      case 9: // $bb5_i
-        var $21=___ctype_b_loc(); //@line 42 "stropmodule.c"
-        var $22=HEAP[$21]; //@line 42 "stropmodule.c"
-        var $23=$s_addr_i; //@line 42 "stropmodule.c"
-        var $24=$i_i; //@line 42 "stropmodule.c"
-        var $25=$23+$24; //@line 42 "stropmodule.c"
-        var $26=HEAP[$25]; //@line 42 "stropmodule.c"
-        var $27=($26); //@line 42 "stropmodule.c"
-        var $28=$22+2*$27; //@line 42 "stropmodule.c"
-        var $29=HEAP[$28]; //@line 42 "stropmodule.c"
-        var $30=($29); //@line 42 "stropmodule.c"
-        var $31=($30) & 8192; //@line 42 "stropmodule.c"
-        var $32=($31)!=0; //@line 42 "stropmodule.c"
-        if ($32) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 42 "stropmodule.c"
-      case 10: // $bb6_i
-        var $33=$i_i; //@line 45 "stropmodule.c"
-        $j_i=$33; //@line 45 "stropmodule.c"
-        __label__ = 12; break; //@line 45 "stropmodule.c"
-      case 11: // $bb7_i
-        var $34=$i_i; //@line 47 "stropmodule.c"
-        var $35=($34) + 1; //@line 47 "stropmodule.c"
-        $i_i=$35; //@line 47 "stropmodule.c"
-        __label__ = 12; break; //@line 47 "stropmodule.c"
-      case 12: // $bb8_i
-        var $36=$i_i; //@line 46 "stropmodule.c"
-        var $37=$len_addr_i; //@line 46 "stropmodule.c"
-        var $38=($36) >= ($37); //@line 46 "stropmodule.c"
-        if ($38) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 46 "stropmodule.c"
-      case 13: // $bb9_i
-        var $39=___ctype_b_loc(); //@line 46 "stropmodule.c"
-        var $40=HEAP[$39]; //@line 46 "stropmodule.c"
-        var $41=$s_addr_i; //@line 46 "stropmodule.c"
-        var $42=$i_i; //@line 46 "stropmodule.c"
-        var $43=$41+$42; //@line 46 "stropmodule.c"
-        var $44=HEAP[$43]; //@line 46 "stropmodule.c"
-        var $45=($44); //@line 46 "stropmodule.c"
-        var $46=$40+2*$45; //@line 46 "stropmodule.c"
-        var $47=HEAP[$46]; //@line 46 "stropmodule.c"
-        var $48=($47); //@line 46 "stropmodule.c"
-        var $49=($48) & 8192; //@line 46 "stropmodule.c"
-        var $50=($49)==0; //@line 46 "stropmodule.c"
-        if ($50) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 46 "stropmodule.c"
-      case 14: // $bb10_i
-        var $51=$j_i; //@line 49 "stropmodule.c"
-        var $52=$i_i; //@line 49 "stropmodule.c"
-        var $53=($51) < ($52); //@line 49 "stropmodule.c"
-        if ($53) { __label__ = 15; break; } else { __label__ = 31; break; } //@line 49 "stropmodule.c"
-      case 15: // $bb11_i
-        var $54=$i_i; //@line 50 "stropmodule.c"
-        var $55=$j_i; //@line 50 "stropmodule.c"
-        var $56=($54) - ($55); //@line 50 "stropmodule.c"
-        var $57=$s_addr_i; //@line 50 "stropmodule.c"
-        var $58=$j_i; //@line 50 "stropmodule.c"
-        var $59=$57+$58; //@line 50 "stropmodule.c"
-        var $60=_PyString_FromStringAndSize($59, $56); //@line 50 "stropmodule.c"
-        $item_i=$60; //@line 50 "stropmodule.c"
-        var $61=$item_i; //@line 51 "stropmodule.c"
-        var $62=($61)==0; //@line 51 "stropmodule.c"
-        if ($62) { __label__ = 33; break; } else { __label__ = 16; break; } //@line 51 "stropmodule.c"
-      case 16: // $bb12_i
-        var $63=$list_i; //@line 54 "stropmodule.c"
-        var $64=$item_i; //@line 54 "stropmodule.c"
-        var $65=_PyList_Append($63, $64); //@line 54 "stropmodule.c"
-        $err_i=$65; //@line 54 "stropmodule.c"
-        var $66=$item_i; //@line 55 "stropmodule.c"
-        var $67=$66; //@line 55 "stropmodule.c"
-        var $68=HEAP[$67]; //@line 55 "stropmodule.c"
-        var $69=($68) - 1; //@line 55 "stropmodule.c"
-        var $70=$item_i; //@line 55 "stropmodule.c"
-        var $71=$70; //@line 55 "stropmodule.c"
-        HEAP[$71]=$69; //@line 55 "stropmodule.c"
-        var $72=$item_i; //@line 55 "stropmodule.c"
-        var $73=$72; //@line 55 "stropmodule.c"
-        var $74=HEAP[$73]; //@line 55 "stropmodule.c"
-        var $75=($74)==0; //@line 55 "stropmodule.c"
-        if ($75) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 55 "stropmodule.c"
-      case 17: // $bb13_i
-        var $76=$item_i; //@line 55 "stropmodule.c"
-        var $77=$76+4; //@line 55 "stropmodule.c"
-        var $78=HEAP[$77]; //@line 55 "stropmodule.c"
-        var $79=$78+24; //@line 55 "stropmodule.c"
-        var $80=HEAP[$79]; //@line 55 "stropmodule.c"
-        var $81=$item_i; //@line 55 "stropmodule.c"
-        FUNCTION_TABLE[$80]($81); //@line 55 "stropmodule.c"
-        __label__ = 18; break; //@line 55 "stropmodule.c"
-      case 18: // $bb14_i
-        var $82=$err_i; //@line 56 "stropmodule.c"
-        var $83=($82) < 0; //@line 56 "stropmodule.c"
-        if ($83) { __label__ = 33; break; } else { __label__ = 19; break; } //@line 56 "stropmodule.c"
-      case 19: // $bb15_i
-        var $84=$countsplit_i; //@line 59 "stropmodule.c"
-        var $85=($84) + 1; //@line 59 "stropmodule.c"
-        $countsplit_i=$85; //@line 59 "stropmodule.c"
-        __label__ = 21; break; //@line 59 "stropmodule.c"
-      case 20: // $bb16_i
-        var $86=$i_i; //@line 61 "stropmodule.c"
-        var $87=($86) + 1; //@line 61 "stropmodule.c"
-        $i_i=$87; //@line 61 "stropmodule.c"
-        __label__ = 21; break; //@line 61 "stropmodule.c"
-      case 21: // $bb17_i
-        var $88=$i_i; //@line 60 "stropmodule.c"
-        var $89=$len_addr_i; //@line 60 "stropmodule.c"
-        var $90=($88) >= ($89); //@line 60 "stropmodule.c"
-        if ($90) { __label__ = 23; break; } else { __label__ = 22; break; } //@line 60 "stropmodule.c"
-      case 22: // $bb18_i
-        var $91=___ctype_b_loc(); //@line 60 "stropmodule.c"
-        var $92=HEAP[$91]; //@line 60 "stropmodule.c"
-        var $93=$s_addr_i; //@line 60 "stropmodule.c"
-        var $94=$i_i; //@line 60 "stropmodule.c"
-        var $95=$93+$94; //@line 60 "stropmodule.c"
-        var $96=HEAP[$95]; //@line 60 "stropmodule.c"
-        var $97=($96); //@line 60 "stropmodule.c"
-        var $98=$92+2*$97; //@line 60 "stropmodule.c"
-        var $99=HEAP[$98]; //@line 60 "stropmodule.c"
-        var $100=($99); //@line 60 "stropmodule.c"
-        var $101=($100) & 8192; //@line 60 "stropmodule.c"
-        var $102=($101)!=0; //@line 60 "stropmodule.c"
-        if ($102) { __label__ = 20; break; } else { __label__ = 23; break; } //@line 60 "stropmodule.c"
-      case 23: // $bb19_i
-        var $103=$maxsplit_addr_i; //@line 63 "stropmodule.c"
-        var $104=($103)!=0; //@line 63 "stropmodule.c"
-        if ($104) { __label__ = 24; break; } else { __label__ = 31; break; } //@line 63 "stropmodule.c"
-      case 24: // $bb20_i
-        var $105=$countsplit_i; //@line 63 "stropmodule.c"
-        var $106=$maxsplit_addr_i; //@line 63 "stropmodule.c"
-        var $107=($105) >= ($106); //@line 63 "stropmodule.c"
-        if ($107) { __label__ = 25; break; } else { __label__ = 31; break; } //@line 63 "stropmodule.c"
-      case 25: // $bb21_i
-        var $108=$i_i; //@line 63 "stropmodule.c"
-        var $109=$len_addr_i; //@line 63 "stropmodule.c"
-        var $110=($108) < ($109); //@line 63 "stropmodule.c"
-        if ($110) { __label__ = 26; break; } else { __label__ = 31; break; } //@line 63 "stropmodule.c"
-      case 26: // $bb22_i
-        var $111=$len_addr_i; //@line 64 "stropmodule.c"
-        var $112=$i_i; //@line 64 "stropmodule.c"
-        var $113=($111) - ($112); //@line 64 "stropmodule.c"
-        var $114=$s_addr_i; //@line 64 "stropmodule.c"
-        var $115=$i_i; //@line 64 "stropmodule.c"
-        var $116=$114+$115; //@line 64 "stropmodule.c"
-        var $117=_PyString_FromStringAndSize($116, $113); //@line 64 "stropmodule.c"
-        $item_i=$117; //@line 64 "stropmodule.c"
-        var $118=$item_i; //@line 66 "stropmodule.c"
-        var $119=($118)==0; //@line 66 "stropmodule.c"
-        if ($119) { __label__ = 33; break; } else { __label__ = 27; break; } //@line 66 "stropmodule.c"
-      case 27: // $bb23_i
-        var $120=$list_i; //@line 69 "stropmodule.c"
-        var $121=$item_i; //@line 69 "stropmodule.c"
-        var $122=_PyList_Append($120, $121); //@line 69 "stropmodule.c"
-        $err_i=$122; //@line 69 "stropmodule.c"
-        var $123=$item_i; //@line 70 "stropmodule.c"
-        var $124=$123; //@line 70 "stropmodule.c"
-        var $125=HEAP[$124]; //@line 70 "stropmodule.c"
-        var $126=($125) - 1; //@line 70 "stropmodule.c"
-        var $127=$item_i; //@line 70 "stropmodule.c"
-        var $128=$127; //@line 70 "stropmodule.c"
-        HEAP[$128]=$126; //@line 70 "stropmodule.c"
-        var $129=$item_i; //@line 70 "stropmodule.c"
-        var $130=$129; //@line 70 "stropmodule.c"
-        var $131=HEAP[$130]; //@line 70 "stropmodule.c"
-        var $132=($131)==0; //@line 70 "stropmodule.c"
-        if ($132) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 70 "stropmodule.c"
-      case 28: // $bb24_i
-        var $133=$item_i; //@line 70 "stropmodule.c"
-        var $134=$133+4; //@line 70 "stropmodule.c"
-        var $135=HEAP[$134]; //@line 70 "stropmodule.c"
-        var $136=$135+24; //@line 70 "stropmodule.c"
-        var $137=HEAP[$136]; //@line 70 "stropmodule.c"
-        var $138=$item_i; //@line 70 "stropmodule.c"
-        FUNCTION_TABLE[$137]($138); //@line 70 "stropmodule.c"
-        __label__ = 29; break; //@line 70 "stropmodule.c"
-      case 29: // $bb25_i
-        var $139=$err_i; //@line 71 "stropmodule.c"
-        var $140=($139) < 0; //@line 71 "stropmodule.c"
-        if ($140) { __label__ = 33; break; } else { __label__ = 30; break; } //@line 71 "stropmodule.c"
-      case 30: // $bb26_i
-        var $141=$len_addr_i; //@line 74 "stropmodule.c"
-        $i_i=$141; //@line 74 "stropmodule.c"
-        __label__ = 31; break; //@line 74 "stropmodule.c"
-      case 31: // $bb27_i
-        var $142=$i_i; //@line 41 "stropmodule.c"
-        var $143=$len_addr_i; //@line 41 "stropmodule.c"
-        var $144=($142) < ($143); //@line 41 "stropmodule.c"
-        if ($144) { __label__ = 8; break; } else { __label__ = 32; break; } //@line 41 "stropmodule.c"
-      case 32: // $bb28_i
-        var $145=$list_i; //@line 78 "stropmodule.c"
-        $0=$145; //@line 78 "stropmodule.c"
-        __label__ = 36; break; //@line 78 "stropmodule.c"
-      case 33: // $finally_i
-        var $146=$list_i; //@line 80 "stropmodule.c"
-        var $147=$146; //@line 80 "stropmodule.c"
-        var $148=HEAP[$147]; //@line 80 "stropmodule.c"
-        var $149=($148) - 1; //@line 80 "stropmodule.c"
-        var $150=$list_i; //@line 80 "stropmodule.c"
-        var $151=$150; //@line 80 "stropmodule.c"
-        HEAP[$151]=$149; //@line 80 "stropmodule.c"
-        var $152=$list_i; //@line 80 "stropmodule.c"
-        var $153=$152; //@line 80 "stropmodule.c"
-        var $154=HEAP[$153]; //@line 80 "stropmodule.c"
-        var $155=($154)==0; //@line 80 "stropmodule.c"
-        if ($155) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 80 "stropmodule.c"
-      case 34: // $bb29_i
-        var $156=$list_i; //@line 80 "stropmodule.c"
-        var $157=$156+4; //@line 80 "stropmodule.c"
-        var $158=HEAP[$157]; //@line 80 "stropmodule.c"
-        var $159=$158+24; //@line 80 "stropmodule.c"
-        var $160=HEAP[$159]; //@line 80 "stropmodule.c"
-        var $161=$list_i; //@line 80 "stropmodule.c"
-        FUNCTION_TABLE[$160]($161); //@line 80 "stropmodule.c"
-        __label__ = 35; break; //@line 80 "stropmodule.c"
-      case 35: // $bb30_i
-        $0=0; //@line 81 "stropmodule.c"
-        __label__ = 36; break; //@line 81 "stropmodule.c"
-      case 36: // $split_whitespace_exit
-        var $162=$0; //@line 39 "stropmodule.c"
-        $retval_i=$162; //@line 39 "stropmodule.c"
-        var $retval32_i=$retval_i; //@line 39 "stropmodule.c"
-        $1=$retval32_i; //@line 112 "stropmodule.c"
-        __label__ = 61; break; //@line 112 "stropmodule.c"
-      case 37: // $bb5
-        var $163=HEAP[$n]; //@line 113 "stropmodule.c"
-        var $164=($163)==0; //@line 113 "stropmodule.c"
-        if ($164) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 113 "stropmodule.c"
-      case 38: // $bb6
-        var $165=HEAP[_PyExc_ValueError]; //@line 114 "stropmodule.c"
-        _PyErr_SetString($165, __str2); //@line 114 "stropmodule.c"
-        $1=0; //@line 115 "stropmodule.c"
-        __label__ = 61; break; //@line 115 "stropmodule.c"
-      case 39: // $bb7
-        var $166=_PyList_New(0); //@line 118 "stropmodule.c"
-        $list=$166; //@line 118 "stropmodule.c"
-        var $167=$list; //@line 119 "stropmodule.c"
-        var $168=($167)==0; //@line 119 "stropmodule.c"
-        if ($168) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 119 "stropmodule.c"
-      case 40: // $bb8
-        $1=0; //@line 120 "stropmodule.c"
-        __label__ = 61; break; //@line 120 "stropmodule.c"
-      case 41: // $bb9
+        var $9=HEAP[$maxsplit]; //@line 112 "stropmodule.c"
+        var $10=HEAP[$len]; //@line 112 "stropmodule.c"
+        var $11=HEAP[$s]; //@line 112 "stropmodule.c"
+        var $12=_split_whitespace($11, $10, $9); //@line 112 "stropmodule.c"
+        $0=$12; //@line 112 "stropmodule.c"
+        __label__ = 30; break; //@line 112 "stropmodule.c"
+      case 6: // $bb5
+        var $13=HEAP[$n]; //@line 113 "stropmodule.c"
+        var $14=($13)==0; //@line 113 "stropmodule.c"
+        if ($14) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 113 "stropmodule.c"
+      case 7: // $bb6
+        var $15=HEAP[_PyExc_ValueError]; //@line 114 "stropmodule.c"
+        _PyErr_SetString($15, __str2); //@line 114 "stropmodule.c"
+        $0=0; //@line 115 "stropmodule.c"
+        __label__ = 30; break; //@line 115 "stropmodule.c"
+      case 8: // $bb7
+        var $16=_PyList_New(0); //@line 118 "stropmodule.c"
+        $list=$16; //@line 118 "stropmodule.c"
+        var $17=$list; //@line 119 "stropmodule.c"
+        var $18=($17)==0; //@line 119 "stropmodule.c"
+        if ($18) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 119 "stropmodule.c"
+      case 9: // $bb8
+        $0=0; //@line 120 "stropmodule.c"
+        __label__ = 30; break; //@line 120 "stropmodule.c"
+      case 10: // $bb9
         $j=0; //@line 122 "stropmodule.c"
-        var $169=$j; //@line 122 "stropmodule.c"
-        $i=$169; //@line 122 "stropmodule.c"
-        __label__ = 52; break; //@line 122 "stropmodule.c"
-      case 42: // $bb10
-        var $170=HEAP[$s]; //@line 124 "stropmodule.c"
-        var $171=$i; //@line 124 "stropmodule.c"
-        var $172=$170+$171; //@line 124 "stropmodule.c"
-        var $173=HEAP[$172]; //@line 124 "stropmodule.c"
-        var $174=HEAP[$sub]; //@line 124 "stropmodule.c"
-        var $175=$174; //@line 124 "stropmodule.c"
-        var $176=HEAP[$175]; //@line 124 "stropmodule.c"
-        var $177=($173)!=($176); //@line 124 "stropmodule.c"
-        if ($177) { __label__ = 51; break; } else { __label__ = 43; break; } //@line 124 "stropmodule.c"
-      case 43: // $bb11
-        var $178=HEAP[$n]; //@line 124 "stropmodule.c"
-        var $179=($178)==1; //@line 124 "stropmodule.c"
-        if ($179) { __label__ = 45; break; } else { __label__ = 44; break; } //@line 124 "stropmodule.c"
-      case 44: // $bb12
-        var $180=HEAP[$n]; //@line 124 "stropmodule.c"
-        var $181=HEAP[$sub]; //@line 124 "stropmodule.c"
-        var $182=HEAP[$s]; //@line 124 "stropmodule.c"
-        var $183=$i; //@line 124 "stropmodule.c"
-        var $184=$182+$183; //@line 124 "stropmodule.c"
-        var $185=_memcmp($184, $181, $180); //@line 124 "stropmodule.c"
-        var $186=($185)==0; //@line 124 "stropmodule.c"
-        if ($186) { __label__ = 45; break; } else { __label__ = 51; break; } //@line 124 "stropmodule.c"
-      case 45: // $bb13
-        var $187=$i; //@line 125 "stropmodule.c"
-        var $188=$j; //@line 125 "stropmodule.c"
-        var $189=($187) - ($188); //@line 125 "stropmodule.c"
-        var $190=HEAP[$s]; //@line 125 "stropmodule.c"
-        var $191=$j; //@line 125 "stropmodule.c"
-        var $192=$190+$191; //@line 125 "stropmodule.c"
-        var $193=_PyString_FromStringAndSize($192, $189); //@line 125 "stropmodule.c"
-        $item=$193; //@line 125 "stropmodule.c"
-        var $194=($193)==0; //@line 126 "stropmodule.c"
-        if ($194) { __label__ = 58; break; } else { __label__ = 46; break; } //@line 126 "stropmodule.c"
-      case 46: // $bb14
-        var $195=$list; //@line 128 "stropmodule.c"
-        var $196=$item; //@line 128 "stropmodule.c"
-        var $197=_PyList_Append($195, $196); //@line 128 "stropmodule.c"
-        $err=$197; //@line 128 "stropmodule.c"
-        var $198=$item; //@line 129 "stropmodule.c"
-        var $199=$198; //@line 129 "stropmodule.c"
-        var $200=HEAP[$199]; //@line 129 "stropmodule.c"
-        var $201=($200) - 1; //@line 129 "stropmodule.c"
-        var $202=$item; //@line 129 "stropmodule.c"
-        var $203=$202; //@line 129 "stropmodule.c"
-        HEAP[$203]=$201; //@line 129 "stropmodule.c"
-        var $204=$item; //@line 129 "stropmodule.c"
-        var $205=$204; //@line 129 "stropmodule.c"
-        var $206=HEAP[$205]; //@line 129 "stropmodule.c"
-        var $207=($206)==0; //@line 129 "stropmodule.c"
-        if ($207) { __label__ = 47; break; } else { __label__ = 48; break; } //@line 129 "stropmodule.c"
-      case 47: // $bb15
-        var $208=$item; //@line 129 "stropmodule.c"
-        var $209=$208+4; //@line 129 "stropmodule.c"
-        var $210=HEAP[$209]; //@line 129 "stropmodule.c"
-        var $211=$210+24; //@line 129 "stropmodule.c"
-        var $212=HEAP[$211]; //@line 129 "stropmodule.c"
-        var $213=$item; //@line 129 "stropmodule.c"
-        FUNCTION_TABLE[$212]($213); //@line 129 "stropmodule.c"
-        __label__ = 48; break; //@line 129 "stropmodule.c"
-      case 48: // $bb16
-        var $214=$err; //@line 130 "stropmodule.c"
-        var $215=($214) < 0; //@line 130 "stropmodule.c"
-        if ($215) { __label__ = 58; break; } else { __label__ = 49; break; } //@line 130 "stropmodule.c"
-      case 49: // $bb17
-        var $216=HEAP[$n]; //@line 132 "stropmodule.c"
-        var $217=$i; //@line 132 "stropmodule.c"
-        var $218=($217) + ($216); //@line 132 "stropmodule.c"
-        $j=$218; //@line 132 "stropmodule.c"
-        var $219=$j; //@line 132 "stropmodule.c"
-        $i=$219; //@line 132 "stropmodule.c"
-        var $220=$splitcount; //@line 133 "stropmodule.c"
-        var $221=($220) + 1; //@line 133 "stropmodule.c"
-        $splitcount=$221; //@line 133 "stropmodule.c"
-        var $222=HEAP[$maxsplit]; //@line 134 "stropmodule.c"
-        var $223=($222)!=0; //@line 134 "stropmodule.c"
-        if ($223) { __label__ = 50; break; } else { __label__ = 52; break; } //@line 134 "stropmodule.c"
-      case 50: // $bb18
-        var $224=HEAP[$maxsplit]; //@line 134 "stropmodule.c"
-        var $225=$splitcount; //@line 134 "stropmodule.c"
-        var $226=($225) >= ($224); //@line 134 "stropmodule.c"
-        if ($226) { __label__ = 53; break; } else { __label__ = 52; break; } //@line 134 "stropmodule.c"
-      case 51: // $bb20
-        var $227=$i; //@line 138 "stropmodule.c"
-        var $228=($227) + 1; //@line 138 "stropmodule.c"
-        $i=$228; //@line 138 "stropmodule.c"
-        __label__ = 52; break; //@line 138 "stropmodule.c"
-      case 52: // $bb21
-        var $229=HEAP[$n]; //@line 123 "stropmodule.c"
-        var $230=$i; //@line 123 "stropmodule.c"
-        var $231=($230) + ($229); //@line 123 "stropmodule.c"
-        var $232=HEAP[$len]; //@line 123 "stropmodule.c"
-        var $233=($231) <= ($232); //@line 123 "stropmodule.c"
-        if ($233) { __label__ = 42; break; } else { __label__ = 53; break; } //@line 123 "stropmodule.c"
-      case 53: // $bb22
-        var $234=HEAP[$len]; //@line 140 "stropmodule.c"
-        var $235=$j; //@line 140 "stropmodule.c"
-        var $236=($234) - ($235); //@line 140 "stropmodule.c"
-        var $237=HEAP[$s]; //@line 140 "stropmodule.c"
-        var $238=$j; //@line 140 "stropmodule.c"
-        var $239=$237+$238; //@line 140 "stropmodule.c"
-        var $240=_PyString_FromStringAndSize($239, $236); //@line 140 "stropmodule.c"
-        $item=$240; //@line 140 "stropmodule.c"
-        var $241=($240)==0; //@line 141 "stropmodule.c"
-        if ($241) { __label__ = 58; break; } else { __label__ = 54; break; } //@line 141 "stropmodule.c"
-      case 54: // $bb23
-        var $242=$list; //@line 143 "stropmodule.c"
-        var $243=$item; //@line 143 "stropmodule.c"
-        var $244=_PyList_Append($242, $243); //@line 143 "stropmodule.c"
-        $err=$244; //@line 143 "stropmodule.c"
-        var $245=$item; //@line 144 "stropmodule.c"
-        var $246=$245; //@line 144 "stropmodule.c"
-        var $247=HEAP[$246]; //@line 144 "stropmodule.c"
-        var $248=($247) - 1; //@line 144 "stropmodule.c"
-        var $249=$item; //@line 144 "stropmodule.c"
-        var $250=$249; //@line 144 "stropmodule.c"
-        HEAP[$250]=$248; //@line 144 "stropmodule.c"
-        var $251=$item; //@line 144 "stropmodule.c"
-        var $252=$251; //@line 144 "stropmodule.c"
-        var $253=HEAP[$252]; //@line 144 "stropmodule.c"
-        var $254=($253)==0; //@line 144 "stropmodule.c"
-        if ($254) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 144 "stropmodule.c"
-      case 55: // $bb24
-        var $255=$item; //@line 144 "stropmodule.c"
-        var $256=$255+4; //@line 144 "stropmodule.c"
-        var $257=HEAP[$256]; //@line 144 "stropmodule.c"
-        var $258=$257+24; //@line 144 "stropmodule.c"
-        var $259=HEAP[$258]; //@line 144 "stropmodule.c"
-        var $260=$item; //@line 144 "stropmodule.c"
-        FUNCTION_TABLE[$259]($260); //@line 144 "stropmodule.c"
-        __label__ = 56; break; //@line 144 "stropmodule.c"
-      case 56: // $bb25
-        var $261=$err; //@line 145 "stropmodule.c"
-        var $262=($261) < 0; //@line 145 "stropmodule.c"
-        if ($262) { __label__ = 58; break; } else { __label__ = 57; break; } //@line 145 "stropmodule.c"
-      case 57: // $bb26
-        var $263=$list; //@line 148 "stropmodule.c"
-        $1=$263; //@line 148 "stropmodule.c"
-        __label__ = 61; break; //@line 148 "stropmodule.c"
-      case 58: // $fail
-        var $264=$list; //@line 151 "stropmodule.c"
-        var $265=$264; //@line 151 "stropmodule.c"
-        var $266=HEAP[$265]; //@line 151 "stropmodule.c"
-        var $267=($266) - 1; //@line 151 "stropmodule.c"
-        var $268=$list; //@line 151 "stropmodule.c"
-        var $269=$268; //@line 151 "stropmodule.c"
-        HEAP[$269]=$267; //@line 151 "stropmodule.c"
-        var $270=$list; //@line 151 "stropmodule.c"
-        var $271=$270; //@line 151 "stropmodule.c"
-        var $272=HEAP[$271]; //@line 151 "stropmodule.c"
-        var $273=($272)==0; //@line 151 "stropmodule.c"
-        if ($273) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 151 "stropmodule.c"
-      case 59: // $bb27
-        var $274=$list; //@line 151 "stropmodule.c"
-        var $275=$274+4; //@line 151 "stropmodule.c"
-        var $276=HEAP[$275]; //@line 151 "stropmodule.c"
-        var $277=$276+24; //@line 151 "stropmodule.c"
-        var $278=HEAP[$277]; //@line 151 "stropmodule.c"
-        var $279=$list; //@line 151 "stropmodule.c"
-        FUNCTION_TABLE[$278]($279); //@line 151 "stropmodule.c"
-        __label__ = 60; break; //@line 151 "stropmodule.c"
-      case 60: // $bb28
-        $1=0; //@line 152 "stropmodule.c"
-        __label__ = 61; break; //@line 152 "stropmodule.c"
-      case 61: // $bb29
-        var $280=$1; //@line 104 "stropmodule.c"
-        $retval=$280; //@line 104 "stropmodule.c"
+        var $19=$j; //@line 122 "stropmodule.c"
+        $i=$19; //@line 122 "stropmodule.c"
+        __label__ = 21; break; //@line 122 "stropmodule.c"
+      case 11: // $bb10
+        var $20=HEAP[$s]; //@line 124 "stropmodule.c"
+        var $21=$i; //@line 124 "stropmodule.c"
+        var $22=$20+$21; //@line 124 "stropmodule.c"
+        var $23=HEAP[$22]; //@line 124 "stropmodule.c"
+        var $24=HEAP[$sub]; //@line 124 "stropmodule.c"
+        var $25=$24; //@line 124 "stropmodule.c"
+        var $26=HEAP[$25]; //@line 124 "stropmodule.c"
+        var $27=($23)!=($26); //@line 124 "stropmodule.c"
+        if ($27) { __label__ = 20; break; } else { __label__ = 12; break; } //@line 124 "stropmodule.c"
+      case 12: // $bb11
+        var $28=HEAP[$n]; //@line 124 "stropmodule.c"
+        var $29=($28)==1; //@line 124 "stropmodule.c"
+        if ($29) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 124 "stropmodule.c"
+      case 13: // $bb12
+        var $30=HEAP[$n]; //@line 124 "stropmodule.c"
+        var $31=HEAP[$sub]; //@line 124 "stropmodule.c"
+        var $32=HEAP[$s]; //@line 124 "stropmodule.c"
+        var $33=$i; //@line 124 "stropmodule.c"
+        var $34=$32+$33; //@line 124 "stropmodule.c"
+        var $35=_memcmp($34, $31, $30); //@line 124 "stropmodule.c"
+        var $36=($35)==0; //@line 124 "stropmodule.c"
+        if ($36) { __label__ = 14; break; } else { __label__ = 20; break; } //@line 124 "stropmodule.c"
+      case 14: // $bb13
+        var $37=$i; //@line 125 "stropmodule.c"
+        var $38=$j; //@line 125 "stropmodule.c"
+        var $39=($37) - ($38); //@line 125 "stropmodule.c"
+        var $40=HEAP[$s]; //@line 125 "stropmodule.c"
+        var $41=$j; //@line 125 "stropmodule.c"
+        var $42=$40+$41; //@line 125 "stropmodule.c"
+        var $43=_PyString_FromStringAndSize($42, $39); //@line 125 "stropmodule.c"
+        $item=$43; //@line 125 "stropmodule.c"
+        var $44=($43)==0; //@line 126 "stropmodule.c"
+        if ($44) { __label__ = 27; break; } else { __label__ = 15; break; } //@line 126 "stropmodule.c"
+      case 15: // $bb14
+        var $45=$list; //@line 128 "stropmodule.c"
+        var $46=$item; //@line 128 "stropmodule.c"
+        var $47=_PyList_Append($45, $46); //@line 128 "stropmodule.c"
+        $err=$47; //@line 128 "stropmodule.c"
+        var $48=$item; //@line 129 "stropmodule.c"
+        var $49=$48; //@line 129 "stropmodule.c"
+        var $50=HEAP[$49]; //@line 129 "stropmodule.c"
+        var $51=($50) - 1; //@line 129 "stropmodule.c"
+        var $52=$item; //@line 129 "stropmodule.c"
+        var $53=$52; //@line 129 "stropmodule.c"
+        HEAP[$53]=$51; //@line 129 "stropmodule.c"
+        var $54=$item; //@line 129 "stropmodule.c"
+        var $55=$54; //@line 129 "stropmodule.c"
+        var $56=HEAP[$55]; //@line 129 "stropmodule.c"
+        var $57=($56)==0; //@line 129 "stropmodule.c"
+        if ($57) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 129 "stropmodule.c"
+      case 16: // $bb15
+        var $58=$item; //@line 129 "stropmodule.c"
+        var $59=$58+4; //@line 129 "stropmodule.c"
+        var $60=HEAP[$59]; //@line 129 "stropmodule.c"
+        var $61=$60+24; //@line 129 "stropmodule.c"
+        var $62=HEAP[$61]; //@line 129 "stropmodule.c"
+        var $63=$item; //@line 129 "stropmodule.c"
+        FUNCTION_TABLE[$62]($63); //@line 129 "stropmodule.c"
+        __label__ = 17; break; //@line 129 "stropmodule.c"
+      case 17: // $bb16
+        var $64=$err; //@line 130 "stropmodule.c"
+        var $65=($64) < 0; //@line 130 "stropmodule.c"
+        if ($65) { __label__ = 27; break; } else { __label__ = 18; break; } //@line 130 "stropmodule.c"
+      case 18: // $bb17
+        var $66=HEAP[$n]; //@line 132 "stropmodule.c"
+        var $67=$i; //@line 132 "stropmodule.c"
+        var $68=($67) + ($66); //@line 132 "stropmodule.c"
+        $j=$68; //@line 132 "stropmodule.c"
+        var $69=$j; //@line 132 "stropmodule.c"
+        $i=$69; //@line 132 "stropmodule.c"
+        var $70=$splitcount; //@line 133 "stropmodule.c"
+        var $71=($70) + 1; //@line 133 "stropmodule.c"
+        $splitcount=$71; //@line 133 "stropmodule.c"
+        var $72=HEAP[$maxsplit]; //@line 134 "stropmodule.c"
+        var $73=($72)!=0; //@line 134 "stropmodule.c"
+        if ($73) { __label__ = 19; break; } else { __label__ = 21; break; } //@line 134 "stropmodule.c"
+      case 19: // $bb18
+        var $74=HEAP[$maxsplit]; //@line 134 "stropmodule.c"
+        var $75=$splitcount; //@line 134 "stropmodule.c"
+        var $76=($75) >= ($74); //@line 134 "stropmodule.c"
+        if ($76) { __label__ = 22; break; } else { __label__ = 21; break; } //@line 134 "stropmodule.c"
+      case 20: // $bb20
+        var $77=$i; //@line 138 "stropmodule.c"
+        var $78=($77) + 1; //@line 138 "stropmodule.c"
+        $i=$78; //@line 138 "stropmodule.c"
+        __label__ = 21; break; //@line 138 "stropmodule.c"
+      case 21: // $bb21
+        var $79=HEAP[$n]; //@line 123 "stropmodule.c"
+        var $80=$i; //@line 123 "stropmodule.c"
+        var $81=($80) + ($79); //@line 123 "stropmodule.c"
+        var $82=HEAP[$len]; //@line 123 "stropmodule.c"
+        var $83=($81) <= ($82); //@line 123 "stropmodule.c"
+        if ($83) { __label__ = 11; break; } else { __label__ = 22; break; } //@line 123 "stropmodule.c"
+      case 22: // $bb22
+        var $84=HEAP[$len]; //@line 140 "stropmodule.c"
+        var $85=$j; //@line 140 "stropmodule.c"
+        var $86=($84) - ($85); //@line 140 "stropmodule.c"
+        var $87=HEAP[$s]; //@line 140 "stropmodule.c"
+        var $88=$j; //@line 140 "stropmodule.c"
+        var $89=$87+$88; //@line 140 "stropmodule.c"
+        var $90=_PyString_FromStringAndSize($89, $86); //@line 140 "stropmodule.c"
+        $item=$90; //@line 140 "stropmodule.c"
+        var $91=($90)==0; //@line 141 "stropmodule.c"
+        if ($91) { __label__ = 27; break; } else { __label__ = 23; break; } //@line 141 "stropmodule.c"
+      case 23: // $bb23
+        var $92=$list; //@line 143 "stropmodule.c"
+        var $93=$item; //@line 143 "stropmodule.c"
+        var $94=_PyList_Append($92, $93); //@line 143 "stropmodule.c"
+        $err=$94; //@line 143 "stropmodule.c"
+        var $95=$item; //@line 144 "stropmodule.c"
+        var $96=$95; //@line 144 "stropmodule.c"
+        var $97=HEAP[$96]; //@line 144 "stropmodule.c"
+        var $98=($97) - 1; //@line 144 "stropmodule.c"
+        var $99=$item; //@line 144 "stropmodule.c"
+        var $100=$99; //@line 144 "stropmodule.c"
+        HEAP[$100]=$98; //@line 144 "stropmodule.c"
+        var $101=$item; //@line 144 "stropmodule.c"
+        var $102=$101; //@line 144 "stropmodule.c"
+        var $103=HEAP[$102]; //@line 144 "stropmodule.c"
+        var $104=($103)==0; //@line 144 "stropmodule.c"
+        if ($104) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 144 "stropmodule.c"
+      case 24: // $bb24
+        var $105=$item; //@line 144 "stropmodule.c"
+        var $106=$105+4; //@line 144 "stropmodule.c"
+        var $107=HEAP[$106]; //@line 144 "stropmodule.c"
+        var $108=$107+24; //@line 144 "stropmodule.c"
+        var $109=HEAP[$108]; //@line 144 "stropmodule.c"
+        var $110=$item; //@line 144 "stropmodule.c"
+        FUNCTION_TABLE[$109]($110); //@line 144 "stropmodule.c"
+        __label__ = 25; break; //@line 144 "stropmodule.c"
+      case 25: // $bb25
+        var $111=$err; //@line 145 "stropmodule.c"
+        var $112=($111) < 0; //@line 145 "stropmodule.c"
+        if ($112) { __label__ = 27; break; } else { __label__ = 26; break; } //@line 145 "stropmodule.c"
+      case 26: // $bb26
+        var $113=$list; //@line 148 "stropmodule.c"
+        $0=$113; //@line 148 "stropmodule.c"
+        __label__ = 30; break; //@line 148 "stropmodule.c"
+      case 27: // $fail
+        var $114=$list; //@line 151 "stropmodule.c"
+        var $115=$114; //@line 151 "stropmodule.c"
+        var $116=HEAP[$115]; //@line 151 "stropmodule.c"
+        var $117=($116) - 1; //@line 151 "stropmodule.c"
+        var $118=$list; //@line 151 "stropmodule.c"
+        var $119=$118; //@line 151 "stropmodule.c"
+        HEAP[$119]=$117; //@line 151 "stropmodule.c"
+        var $120=$list; //@line 151 "stropmodule.c"
+        var $121=$120; //@line 151 "stropmodule.c"
+        var $122=HEAP[$121]; //@line 151 "stropmodule.c"
+        var $123=($122)==0; //@line 151 "stropmodule.c"
+        if ($123) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 151 "stropmodule.c"
+      case 28: // $bb27
+        var $124=$list; //@line 151 "stropmodule.c"
+        var $125=$124+4; //@line 151 "stropmodule.c"
+        var $126=HEAP[$125]; //@line 151 "stropmodule.c"
+        var $127=$126+24; //@line 151 "stropmodule.c"
+        var $128=HEAP[$127]; //@line 151 "stropmodule.c"
+        var $129=$list; //@line 151 "stropmodule.c"
+        FUNCTION_TABLE[$128]($129); //@line 151 "stropmodule.c"
+        __label__ = 29; break; //@line 151 "stropmodule.c"
+      case 29: // $bb28
+        $0=0; //@line 152 "stropmodule.c"
+        __label__ = 30; break; //@line 152 "stropmodule.c"
+      case 30: // $bb29
+        var $130=$0; //@line 104 "stropmodule.c"
+        $retval=$130; //@line 104 "stropmodule.c"
         var $retval30=$retval; //@line 104 "stropmodule.c"
         STACKTOP = __stackBase__;
         return $retval30; //@line 104 "stropmodule.c"
@@ -718,7 +732,7 @@ var __str57;
         __label__ = 72; break; //@line 177 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 178 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str3, $seq, $sep, $seplen); //@line 178 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str3, allocate([$seq,0,0,0,$sep,0,0,0,$seplen,0,0,0], ["%struct.PyObject**",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 178 "stropmodule.c"
         var $6=($5)==0; //@line 178 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 178 "stropmodule.c"
       case 3: // $bb2
@@ -1320,7 +1334,7 @@ var __str57;
         __label__ = 24; break; //@line 309 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 310 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str8, $s, $len, $sub, $n, $i, $last); //@line 310 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str8, allocate([$s,0,0,0,$len,0,0,0,$sub,0,0,0,$n,0,0,0,$i,0,0,0,$last,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 310 "stropmodule.c"
         var $6=($5)==0; //@line 310 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 310 "stropmodule.c"
       case 3: // $bb2
@@ -1473,7 +1487,7 @@ var __str57;
         __label__ = 24; break; //@line 353 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 354 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str9, $s, $len, $sub, $n, $i, $last); //@line 354 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str9, allocate([$s,0,0,0,$len,0,0,0,$sub,0,0,0,$n,0,0,0,$i,0,0,0,$last,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 354 "stropmodule.c"
         var $6=($5)==0; //@line 354 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 354 "stropmodule.c"
       case 3: // $bb2
@@ -2350,7 +2364,7 @@ var __str57;
         __label__ = 27; break; //@line 602 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 604 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str10, $string, $stringlen, $tabsize); //@line 604 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str10, allocate([$string,0,0,0,$stringlen,0,0,0,$tabsize,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 604 "stropmodule.c"
         var $6=($5)==0; //@line 604 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 604 "stropmodule.c"
       case 3: // $bb2
@@ -2578,7 +2592,7 @@ var __str57;
         __label__ = 21; break; //@line 679 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 680 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str13, $s, $len, $sub, $n, $i, $last); //@line 680 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str13, allocate([$s,0,0,0,$len,0,0,0,$sub,0,0,0,$n,0,0,0,$i,0,0,0,$last,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 680 "stropmodule.c"
         var $6=($5)==0; //@line 680 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 680 "stropmodule.c"
       case 3: // $bb2
@@ -2886,7 +2900,7 @@ var __str57;
         __label__ = 23; break; //@line 772 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 773 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str14, $s, $base); //@line 773 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str14, allocate([$s,0,0,0,$base,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 773 "stropmodule.c"
         var $6=($5)==0; //@line 773 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 773 "stropmodule.c"
       case 3: // $bb2
@@ -3001,7 +3015,7 @@ var __str57;
       case 19: // $bad
         var $74=HEAP[$s]; //@line 794 "stropmodule.c"
         var $buffer22=$buffer; //@line 794 "stropmodule.c"
-        var $75=_PyOS_snprintf($buffer22, 256, __str16, $74); //@line 794 "stropmodule.c"
+        var $75=_PyOS_snprintf($buffer22, 256, __str16, allocate([$74,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 794 "stropmodule.c"
         var $76=HEAP[_PyExc_ValueError]; //@line 796 "stropmodule.c"
         var $buffer23=$buffer; //@line 796 "stropmodule.c"
         _PyErr_SetString($76, $buffer23); //@line 796 "stropmodule.c"
@@ -3015,7 +3029,7 @@ var __str57;
       case 21: // $bb25
         var $80=HEAP[$s]; //@line 800 "stropmodule.c"
         var $buffer26=$buffer; //@line 800 "stropmodule.c"
-        var $81=_PyOS_snprintf($buffer26, 256, __str17, $80); //@line 800 "stropmodule.c"
+        var $81=_PyOS_snprintf($buffer26, 256, __str17, allocate([$80,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 800 "stropmodule.c"
         var $82=HEAP[_PyExc_ValueError]; //@line 802 "stropmodule.c"
         var $buffer27=$buffer; //@line 802 "stropmodule.c"
         _PyErr_SetString($82, $buffer27); //@line 802 "stropmodule.c"
@@ -3064,7 +3078,7 @@ var __str57;
         __label__ = 25; break; //@line 828 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 829 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str18, $s, $base); //@line 829 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str18, allocate([$s,0,0,0,$base,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 829 "stropmodule.c"
         var $6=($5)==0; //@line 829 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 829 "stropmodule.c"
       case 3: // $bb2
@@ -3178,7 +3192,7 @@ var __str57;
       case 21: // $bb24
         var $67=HEAP[$s]; //@line 851 "stropmodule.c"
         var $buffer25=$buffer; //@line 851 "stropmodule.c"
-        var $68=_PyOS_snprintf($buffer25, 256, __str21, $67); //@line 851 "stropmodule.c"
+        var $68=_PyOS_snprintf($buffer25, 256, __str21, allocate([$67,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 851 "stropmodule.c"
         var $69=HEAP[_PyExc_ValueError]; //@line 853 "stropmodule.c"
         var $buffer26=$buffer; //@line 853 "stropmodule.c"
         _PyErr_SetString($69, $buffer26); //@line 853 "stropmodule.c"
@@ -3246,7 +3260,7 @@ var __str57;
         __label__ = 18; break; //@line 873 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 874 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str22, $s); //@line 874 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str22, allocate([$s,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 874 "stropmodule.c"
         var $6=($5)==0; //@line 874 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 874 "stropmodule.c"
       case 3: // $bb2
@@ -3330,7 +3344,7 @@ var __str57;
       case 16: // $bb17
         var $52=HEAP[$s]; //@line 891 "stropmodule.c"
         var $buffer18=$buffer; //@line 891 "stropmodule.c"
-        var $53=_PyOS_snprintf($buffer18, 256, __str24, $52); //@line 891 "stropmodule.c"
+        var $53=_PyOS_snprintf($buffer18, 256, __str24, allocate([$52,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 891 "stropmodule.c"
         var $54=HEAP[_PyExc_ValueError]; //@line 893 "stropmodule.c"
         var $buffer19=$buffer; //@line 893 "stropmodule.c"
         _PyErr_SetString($54, $buffer19); //@line 893 "stropmodule.c"
@@ -3376,7 +3390,7 @@ var __str57;
         HEAP[$fromlen]=0; //@line 911 "stropmodule.c"
         HEAP[$tolen]=0; //@line 911 "stropmodule.c"
         var $1=$args_addr; //@line 914 "stropmodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str25, $from, $fromlen, $to, $tolen); //@line 914 "stropmodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str25, allocate([$from,0,0,0,$fromlen,0,0,0,$to,0,0,0,$tolen,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 914 "stropmodule.c"
         var $3=($2)==0; //@line 914 "stropmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 914 "stropmodule.c"
       case 1: // $bb
@@ -3501,7 +3515,7 @@ var __str57;
         __label__ = 34; break; //@line 956 "stropmodule.c"
       case 2: // $bb1
         var $4=$args_addr; //@line 957 "stropmodule.c"
-        var $5=__PyArg_ParseTuple_SizeT($4, __str27, $input_obj, $table1, $tablen, $del_table, $dellen); //@line 957 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str27, allocate([$input_obj,0,0,0,$table1,0,0,0,$tablen,0,0,0,$del_table,0,0,0,$dellen,0,0,0], ["%struct.PyObject**",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 957 "stropmodule.c"
         var $6=($5)==0; //@line 957 "stropmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 957 "stropmodule.c"
       case 3: // $bb2
@@ -3848,42 +3862,305 @@ var __str57;
   }
   
 
-  function _strop_replace($self, $args) {
-    var __stackBase__  = STACKTOP; STACKTOP += 32; _memset(__stackBase__, 0, 32);
+  function _mymemcnt($mem, $len, $pat, $pat_len) {
+    ;
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $mem_addr_i_i;
-        var $len_addr_i_i;
-        var $pat_addr_i_i;
-        var $pat_len_addr_i_i;
-        var $retval_i_i;
+        var $mem_addr;
+        var $len_addr;
+        var $pat_addr;
+        var $pat_len_addr;
+        var $retval;
         var $0;
-        var $offset_i_i;
-        var $nfound_i_i;
-        var $str_addr_i;
-        var $len_addr_i;
-        var $pat_addr_i;
-        var $pat_len_addr_i;
-        var $sub_addr_i;
-        var $sub_len_addr_i;
-        var $count_addr_i;
-        var $out_len_addr_i;
-        var $retval_i;
-        var $iftmp_287_i;
-        var $iftmp_286_i;
-        var $1;
-        var $out_s_i;
-        var $new_s_i;
-        var $nfound_i;
-        var $offset_i;
-        var $new_len_i;
+        var $offset;
+        var $nfound;
+        $mem_addr=$mem;
+        $len_addr=$len;
+        $pat_addr=$pat;
+        $pat_len_addr=$pat_len;
+        $offset=0; //@line 1053 "stropmodule.c"
+        $nfound=0; //@line 1054 "stropmodule.c"
+        __lastLabel__ = -1; __label__ = 3; break; //@line 1054 "stropmodule.c"
+      case 1: // $bb
+        var $1=$mem_addr; //@line 1057 "stropmodule.c"
+        var $2=$len_addr; //@line 1057 "stropmodule.c"
+        var $3=$pat_addr; //@line 1057 "stropmodule.c"
+        var $4=$pat_len_addr; //@line 1057 "stropmodule.c"
+        var $5=_mymemfind($1, $2, $3, $4); //@line 1057 "stropmodule.c"
+        $offset=$5; //@line 1057 "stropmodule.c"
+        var $6=$offset; //@line 1058 "stropmodule.c"
+        var $7=($6)==-1; //@line 1058 "stropmodule.c"
+        if ($7) { __label__ = 4; break; } else { __label__ = 2; break; } //@line 1058 "stropmodule.c"
+      case 2: // $bb1
+        var $8=$offset; //@line 1060 "stropmodule.c"
+        var $9=$pat_len_addr; //@line 1060 "stropmodule.c"
+        var $10=($9) + ($8); //@line 1060 "stropmodule.c"
+        var $11=$mem_addr; //@line 1060 "stropmodule.c"
+        var $12=$11+$10; //@line 1060 "stropmodule.c"
+        $mem_addr=$12; //@line 1060 "stropmodule.c"
+        var $13=$offset; //@line 1061 "stropmodule.c"
+        var $14=$pat_len_addr; //@line 1061 "stropmodule.c"
+        var $15=$len_addr; //@line 1061 "stropmodule.c"
+        var $_neg=0 - ($13);
+        var $_neg1=0 - ($14);
+        var $_neg2=($_neg1) + ($_neg); //@line 1061 "stropmodule.c"
+        var $16=($_neg2) + ($15);
+        $len_addr=$16; //@line 1061 "stropmodule.c"
+        var $17=$nfound; //@line 1062 "stropmodule.c"
+        var $18=($17) + 1; //@line 1062 "stropmodule.c"
+        $nfound=$18; //@line 1062 "stropmodule.c"
+        __lastLabel__ = 2; __label__ = 3; break; //@line 1062 "stropmodule.c"
+      case 3: // $bb2
+        var $19=__lastLabel__ == 2 ? $16 : ($len);
+        var $20=($19) >= 0; //@line 1056 "stropmodule.c"
+        if ($20) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 1056 "stropmodule.c"
+      case 4: // $bb3
+        var $21=$nfound; //@line 1064 "stropmodule.c"
+        $0=$21; //@line 1064 "stropmodule.c"
+        var $22=$0; //@line 1064 "stropmodule.c"
+        $retval=$22; //@line 1064 "stropmodule.c"
+        var $retval4=$retval; //@line 1064 "stropmodule.c"
+        ;
+        return $retval4; //@line 1064 "stropmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _mymemreplace($str, $len, $pat, $pat_len, $sub, $sub_len, $count, $out_len) {
+    ;
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $str_addr;
+        var $len_addr;
+        var $pat_addr;
+        var $pat_len_addr;
+        var $sub_addr;
+        var $sub_len_addr;
+        var $count_addr;
+        var $out_len_addr;
+        var $retval;
+        var $iftmp_287;
+        var $iftmp_286;
+        var $0;
+        var $out_s;
+        var $new_s;
+        var $nfound;
+        var $offset;
+        var $new_len;
+        $str_addr=$str;
+        $len_addr=$len;
+        $pat_addr=$pat;
+        $pat_len_addr=$pat_len;
+        $sub_addr=$sub;
+        $sub_len_addr=$sub_len;
+        $count_addr=$count;
+        $out_len_addr=$out_len;
+        var $1=$len_addr; //@line 1097 "stropmodule.c"
+        var $2=($1)==0; //@line 1097 "stropmodule.c"
+        if ($2) { __label__ = 28; break; } else { __label__ = 1; break; } //@line 1097 "stropmodule.c"
+      case 1: // $bb
+        var $3=$pat_len_addr; //@line 1097 "stropmodule.c"
+        var $4=$len_addr; //@line 1097 "stropmodule.c"
+        var $5=($3) > ($4); //@line 1097 "stropmodule.c"
+        if ($5) { __label__ = 28; break; } else { __label__ = 2; break; } //@line 1097 "stropmodule.c"
+      case 2: // $bb1
+        var $6=$str_addr; //@line 1101 "stropmodule.c"
+        var $7=$len_addr; //@line 1101 "stropmodule.c"
+        var $8=$pat_addr; //@line 1101 "stropmodule.c"
+        var $9=$pat_len_addr; //@line 1101 "stropmodule.c"
+        var $10=_mymemcnt($6, $7, $8, $9); //@line 1101 "stropmodule.c"
+        $nfound=$10; //@line 1101 "stropmodule.c"
+        var $11=$count_addr; //@line 1102 "stropmodule.c"
+        var $12=($11) < 0; //@line 1102 "stropmodule.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1102 "stropmodule.c"
+      case 3: // $bb2
+        $count_addr=2147483647; //@line 1103 "stropmodule.c"
+        var $_pr=$nfound;
+        __lastLabel__ = 3; __label__ = 6; break; //@line 1103 "stropmodule.c"
+      case 4: // $bb3
+        var $13=$nfound; //@line 1104 "stropmodule.c"
+        var $14=$count_addr; //@line 1104 "stropmodule.c"
+        var $15=($13) > ($14); //@line 1104 "stropmodule.c"
+        if ($15) { __lastLabel__ = 4; __label__ = 5; break; } else { __lastLabel__ = 4; __label__ = 6; break; } //@line 1104 "stropmodule.c"
+      case 5: // $bb4
+        var $16=$count_addr; //@line 1105 "stropmodule.c"
+        $nfound=$16; //@line 1105 "stropmodule.c"
+        __lastLabel__ = 5; __label__ = 6; break; //@line 1105 "stropmodule.c"
+      case 6: // $bb5
+        var $17=__lastLabel__ == 5 ? $16 : (__lastLabel__ == 4 ? $13 : ($_pr));
+        var $18=($17)==0; //@line 1106 "stropmodule.c"
+        if ($18) { __label__ = 28; break; } else { __label__ = 7; break; } //@line 1106 "stropmodule.c"
+      case 7: // $bb6
+        var $19=$sub_len_addr; //@line 1109 "stropmodule.c"
+        var $20=$pat_len_addr; //@line 1109 "stropmodule.c"
+        var $21=($19) - ($20); //@line 1109 "stropmodule.c"
+        var $22=$nfound; //@line 1109 "stropmodule.c"
+        var $23=($21) * ($22); //@line 1109 "stropmodule.c"
+        var $24=$len_addr; //@line 1109 "stropmodule.c"
+        var $25=($23) + ($24); //@line 1109 "stropmodule.c"
+        $new_len=$25; //@line 1109 "stropmodule.c"
+        var $26=$new_len; //@line 1110 "stropmodule.c"
+        var $27=($26)==0; //@line 1110 "stropmodule.c"
+        if ($27) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 1110 "stropmodule.c"
+      case 8: // $bb7
+        var $28=_malloc(1); //@line 1112 "stropmodule.c"
+        $out_s=$28; //@line 1112 "stropmodule.c"
+        var $29=$out_s; //@line 1113 "stropmodule.c"
+        var $30=($29)==0; //@line 1113 "stropmodule.c"
+        if ($30) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1113 "stropmodule.c"
+      case 9: // $bb8
+        $0=0; //@line 1114 "stropmodule.c"
+        __label__ = 29; break; //@line 1114 "stropmodule.c"
+      case 10: // $bb9
+        var $31=$out_s; //@line 1115 "stropmodule.c"
+        var $32=$31; //@line 1115 "stropmodule.c"
+        HEAP[$32]=0; //@line 1115 "stropmodule.c"
+        __label__ = 27; break; //@line 1115 "stropmodule.c"
+      case 11: // $bb10
+        var $33=$new_len; //@line 1118 "stropmodule.c"
+        var $34=($33) <= 0; //@line 1118 "stropmodule.c"
+        if ($34) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1118 "stropmodule.c"
+      case 12: // $bb11
+        ___assert_fail(__str29, __str30, 1118, ___PRETTY_FUNCTION___9892); //@line 1118 "stropmodule.c"
+        throw "Reached an unreachable!" //@line 1118 "stropmodule.c"
+      case 13: // $bb12
+        var $35=$new_len; //@line 1119 "stropmodule.c"
+        var $36=($35) >= 0; //@line 1119 "stropmodule.c"
+        if ($36) { __label__ = 14; break; } else { __label__ = 17; break; } //@line 1119 "stropmodule.c"
+      case 14: // $bb13
+        var $37=$new_len; //@line 1119 "stropmodule.c"
+        var $38=($37)!=0; //@line 1119 "stropmodule.c"
+        if ($38) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 1119 "stropmodule.c"
+      case 15: // $bb14
+        var $39=$new_len; //@line 1119 "stropmodule.c"
+        $iftmp_287=$39; //@line 1119 "stropmodule.c"
+        __label__ = 18; break; //@line 1119 "stropmodule.c"
+      case 16: // $bb15
+        $iftmp_287=1; //@line 1119 "stropmodule.c"
+        __label__ = 18; break; //@line 1119 "stropmodule.c"
+      case 17: // $bb18_thread
+        $iftmp_286=0; //@line 1119 "stropmodule.c"
+        $new_s=0; //@line 1119 "stropmodule.c"
+        __label__ = 19; break;
+      case 18: // $bb18
+        var $40=$iftmp_287; //@line 1119 "stropmodule.c"
+        var $41=_malloc($40); //@line 1119 "stropmodule.c"
+        $iftmp_286=$41; //@line 1119 "stropmodule.c"
+        $new_s=$41; //@line 1119 "stropmodule.c"
+        var $42=($41)==0; //@line 1120 "stropmodule.c"
+        if ($42) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1120 "stropmodule.c"
+      case 19: // $bb19
+        $0=0; //@line 1121 "stropmodule.c"
+        __label__ = 29; break; //@line 1121 "stropmodule.c"
+      case 20: // $bb20
+        var $43=$new_s; //@line 1122 "stropmodule.c"
+        $out_s=$43; //@line 1122 "stropmodule.c"
+        var $_pr1=$count_addr;
+        __lastLabel__ = 20; __label__ = 23; break; //@line 1122 "stropmodule.c"
+      case 21: // $bb21
+        var $44=$str_addr; //@line 1126 "stropmodule.c"
+        var $45=$len_addr; //@line 1126 "stropmodule.c"
+        var $46=$pat_addr; //@line 1126 "stropmodule.c"
+        var $47=$pat_len_addr; //@line 1126 "stropmodule.c"
+        var $48=_mymemfind($44, $45, $46, $47); //@line 1126 "stropmodule.c"
+        $offset=$48; //@line 1126 "stropmodule.c"
+        var $49=$offset; //@line 1127 "stropmodule.c"
+        var $50=($49)==-1; //@line 1127 "stropmodule.c"
+        if ($50) { __label__ = 25; break; } else { __label__ = 22; break; } //@line 1127 "stropmodule.c"
+      case 22: // $bb22
+        var $51=$offset; //@line 1131 "stropmodule.c"
+        var $52=$new_s; //@line 1131 "stropmodule.c"
+        var $53=$str_addr; //@line 1131 "stropmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($52, $53, $51, 1, 0); //@line 1131 "stropmodule.c"
+        var $54=$offset; //@line 1132 "stropmodule.c"
+        var $55=$pat_len_addr; //@line 1132 "stropmodule.c"
+        var $56=($55) + ($54); //@line 1132 "stropmodule.c"
+        var $57=$str_addr; //@line 1132 "stropmodule.c"
+        var $58=$57+$56; //@line 1132 "stropmodule.c"
+        $str_addr=$58; //@line 1132 "stropmodule.c"
+        var $59=$offset; //@line 1133 "stropmodule.c"
+        var $60=$pat_len_addr; //@line 1133 "stropmodule.c"
+        var $61=$len_addr; //@line 1133 "stropmodule.c"
+        var $_neg=0 - ($59);
+        var $_neg3=0 - ($60);
+        var $_neg4=($_neg3) + ($_neg); //@line 1133 "stropmodule.c"
+        var $62=($_neg4) + ($61);
+        $len_addr=$62; //@line 1133 "stropmodule.c"
+        var $63=$new_s; //@line 1136 "stropmodule.c"
+        var $64=$offset; //@line 1136 "stropmodule.c"
+        var $65=$63+$64; //@line 1136 "stropmodule.c"
+        $new_s=$65; //@line 1136 "stropmodule.c"
+        var $66=$sub_len_addr; //@line 1137 "stropmodule.c"
+        var $67=$new_s; //@line 1137 "stropmodule.c"
+        var $68=$sub_addr; //@line 1137 "stropmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($67, $68, $66, 1, 0); //@line 1137 "stropmodule.c"
+        var $69=$new_s; //@line 1138 "stropmodule.c"
+        var $70=$sub_len_addr; //@line 1138 "stropmodule.c"
+        var $71=$69+$70; //@line 1138 "stropmodule.c"
+        $new_s=$71; //@line 1138 "stropmodule.c"
+        var $72=$count_addr; //@line 1124 "stropmodule.c"
+        var $73=($72) - 1; //@line 1124 "stropmodule.c"
+        $count_addr=$73; //@line 1124 "stropmodule.c"
+        __lastLabel__ = 22; __label__ = 23; break; //@line 1124 "stropmodule.c"
+      case 23: // $bb23
+        var $74=__lastLabel__ == 22 ? $73 : ($_pr1);
+        var $75=($74) <= 0; //@line 1124 "stropmodule.c"
+        if ($75) { __label__ = 25; break; } else { __label__ = 24; break; } //@line 1124 "stropmodule.c"
+      case 24: // $bb24
+        var $76=$len_addr; //@line 1124 "stropmodule.c"
+        var $77=($76) > 0; //@line 1124 "stropmodule.c"
+        if ($77) { __label__ = 21; break; } else { __label__ = 27; break; } //@line 1124 "stropmodule.c"
+      case 25: // $bb25
+        var $_pr2=$len_addr;
+        var $78=($_pr2) > 0; //@line 1141 "stropmodule.c"
+        if ($78) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 1141 "stropmodule.c"
+      case 26: // $bb26
+        var $79=$len_addr; //@line 1142 "stropmodule.c"
+        var $80=$new_s; //@line 1142 "stropmodule.c"
+        var $81=$str_addr; //@line 1142 "stropmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($80, $81, $79, 1, 0); //@line 1142 "stropmodule.c"
+        __label__ = 27; break; //@line 1142 "stropmodule.c"
+      case 27: // $bb27
+        var $82=$out_len_addr; //@line 1144 "stropmodule.c"
+        var $83=$new_len; //@line 1144 "stropmodule.c"
+        HEAP[$82]=$83; //@line 1144 "stropmodule.c"
+        var $84=$out_s; //@line 1145 "stropmodule.c"
+        $0=$84; //@line 1145 "stropmodule.c"
+        __label__ = 29; break; //@line 1145 "stropmodule.c"
+      case 28: // $return_same
+        var $85=$out_len_addr; //@line 1148 "stropmodule.c"
+        HEAP[$85]=-1; //@line 1148 "stropmodule.c"
+        var $86=$str_addr; //@line 1149 "stropmodule.c"
+        $0=$86; //@line 1149 "stropmodule.c"
+        __label__ = 29; break; //@line 1149 "stropmodule.c"
+      case 29: // $bb28
+        var $87=$0; //@line 1114 "stropmodule.c"
+        $retval=$87; //@line 1114 "stropmodule.c"
+        var $retval29=$retval; //@line 1114 "stropmodule.c"
+        ;
+        return $retval29; //@line 1114 "stropmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _strop_replace($self, $args) {
+    var __stackBase__  = STACKTOP; STACKTOP += 32; _memset(__stackBase__, 0, 32);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $2;
+        var $0;
         var $str=__stackBase__;
         var $pat=__stackBase__+4;
         var $sub=__stackBase__+8;
@@ -3897,325 +4174,88 @@ var __str57;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$count]=-1; //@line 1165 "stropmodule.c"
-        var $3=HEAP[_PyExc_DeprecationWarning]; //@line 1168 "stropmodule.c"
-        var $4=_PyErr_WarnEx($3, __str, 1); //@line 1168 "stropmodule.c"
-        var $5=($4)!=0; //@line 1168 "stropmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1168 "stropmodule.c"
+        var $1=HEAP[_PyExc_DeprecationWarning]; //@line 1168 "stropmodule.c"
+        var $2=_PyErr_WarnEx($1, __str, 1); //@line 1168 "stropmodule.c"
+        var $3=($2)!=0; //@line 1168 "stropmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1168 "stropmodule.c"
       case 1: // $bb
-        $2=0; //@line 1168 "stropmodule.c"
-        __label__ = 49; break; //@line 1168 "stropmodule.c"
+        $0=0; //@line 1168 "stropmodule.c"
+        __label__ = 15; break; //@line 1168 "stropmodule.c"
       case 2: // $bb1
-        var $6=$args_addr; //@line 1169 "stropmodule.c"
-        var $7=__PyArg_ParseTuple_SizeT($6, __str31, $str, $len, $pat, $pat_len, $sub, $sub_len, $count); //@line 1169 "stropmodule.c"
-        var $8=($7)==0; //@line 1169 "stropmodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1169 "stropmodule.c"
+        var $4=$args_addr; //@line 1169 "stropmodule.c"
+        var $5=__PyArg_ParseTuple_SizeT($4, __str31, allocate([$str,0,0,0,$len,0,0,0,$pat,0,0,0,$pat_len,0,0,0,$sub,0,0,0,$sub_len,0,0,0,$count,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1169 "stropmodule.c"
+        var $6=($5)==0; //@line 1169 "stropmodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1169 "stropmodule.c"
       case 3: // $bb2
-        $2=0; //@line 1172 "stropmodule.c"
-        __label__ = 49; break; //@line 1172 "stropmodule.c"
+        $0=0; //@line 1172 "stropmodule.c"
+        __label__ = 15; break; //@line 1172 "stropmodule.c"
       case 4: // $bb3
-        var $9=HEAP[$pat_len]; //@line 1173 "stropmodule.c"
-        var $10=($9) <= 0; //@line 1173 "stropmodule.c"
-        if ($10) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1173 "stropmodule.c"
+        var $7=HEAP[$pat_len]; //@line 1173 "stropmodule.c"
+        var $8=($7) <= 0; //@line 1173 "stropmodule.c"
+        if ($8) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1173 "stropmodule.c"
       case 5: // $bb4
-        var $11=HEAP[_PyExc_ValueError]; //@line 1174 "stropmodule.c"
-        _PyErr_SetString($11, __str32); //@line 1174 "stropmodule.c"
-        $2=0; //@line 1175 "stropmodule.c"
-        __label__ = 49; break; //@line 1175 "stropmodule.c"
+        var $9=HEAP[_PyExc_ValueError]; //@line 1174 "stropmodule.c"
+        _PyErr_SetString($9, __str32); //@line 1174 "stropmodule.c"
+        $0=0; //@line 1175 "stropmodule.c"
+        __label__ = 15; break; //@line 1175 "stropmodule.c"
       case 6: // $bb5
-        var $12=HEAP[$count]; //@line 1181 "stropmodule.c"
-        var $13=($12)==0; //@line 1181 "stropmodule.c"
-        if ($13) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1181 "stropmodule.c"
+        var $10=HEAP[$count]; //@line 1181 "stropmodule.c"
+        var $11=($10)==0; //@line 1181 "stropmodule.c"
+        if ($11) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1181 "stropmodule.c"
       case 7: // $bb6
         HEAP[$count]=-1; //@line 1182 "stropmodule.c"
         __label__ = 8; break; //@line 1182 "stropmodule.c"
       case 8: // $bb7
-        var $14=HEAP[$count]; //@line 1183 "stropmodule.c"
-        var $15=HEAP[$sub_len]; //@line 1183 "stropmodule.c"
-        var $16=HEAP[$sub]; //@line 1183 "stropmodule.c"
-        var $17=HEAP[$pat_len]; //@line 1183 "stropmodule.c"
-        var $18=HEAP[$pat]; //@line 1183 "stropmodule.c"
-        var $19=HEAP[$len]; //@line 1183 "stropmodule.c"
-        var $20=HEAP[$str]; //@line 1183 "stropmodule.c"
-        $str_addr_i=$20;
-        $len_addr_i=$19;
-        $pat_addr_i=$18;
-        $pat_len_addr_i=$17;
-        $sub_addr_i=$16;
-        $sub_len_addr_i=$15;
-        $count_addr_i=$14;
-        $out_len_addr_i=$out_len;
-        var $21=$len_addr_i; //@line 1097 "stropmodule.c"
-        var $22=($21)==0; //@line 1097 "stropmodule.c"
-        if ($22) { __label__ = 40; break; } else { __label__ = 9; break; } //@line 1097 "stropmodule.c"
-      case 9: // $bb_i
-        var $23=$pat_len_addr_i; //@line 1097 "stropmodule.c"
-        var $24=$len_addr_i; //@line 1097 "stropmodule.c"
-        var $25=($23) > ($24); //@line 1097 "stropmodule.c"
-        if ($25) { __label__ = 40; break; } else { __label__ = 10; break; } //@line 1097 "stropmodule.c"
-      case 10: // $bb1_i
-        var $26=$str_addr_i; //@line 1101 "stropmodule.c"
-        var $27=$len_addr_i; //@line 1101 "stropmodule.c"
-        var $28=$pat_addr_i; //@line 1101 "stropmodule.c"
-        var $29=$pat_len_addr_i; //@line 1101 "stropmodule.c"
-        $mem_addr_i_i=$26;
-        $len_addr_i_i=$27;
-        $pat_addr_i_i=$28;
-        $pat_len_addr_i_i=$29;
-        $offset_i_i=0; //@line 1053 "stropmodule.c"
-        $nfound_i_i=0; //@line 1054 "stropmodule.c"
-        __lastLabel__ = 10; __label__ = 13; break; //@line 1054 "stropmodule.c"
-      case 11: // $bb_i_i
-        var $30=$mem_addr_i_i; //@line 1057 "stropmodule.c"
-        var $31=$len_addr_i_i; //@line 1057 "stropmodule.c"
-        var $32=$pat_addr_i_i; //@line 1057 "stropmodule.c"
-        var $33=$pat_len_addr_i_i; //@line 1057 "stropmodule.c"
-        var $34=_mymemfind($30, $31, $32, $33); //@line 1057 "stropmodule.c"
-        $offset_i_i=$34; //@line 1057 "stropmodule.c"
-        var $35=$offset_i_i; //@line 1058 "stropmodule.c"
-        var $36=($35)==-1; //@line 1058 "stropmodule.c"
-        if ($36) { __label__ = 14; break; } else { __label__ = 12; break; } //@line 1058 "stropmodule.c"
-      case 12: // $bb1_i_i
-        var $37=$offset_i_i; //@line 1060 "stropmodule.c"
-        var $38=$pat_len_addr_i_i; //@line 1060 "stropmodule.c"
-        var $39=($38) + ($37); //@line 1060 "stropmodule.c"
-        var $40=$mem_addr_i_i; //@line 1060 "stropmodule.c"
-        var $41=$40+$39; //@line 1060 "stropmodule.c"
-        $mem_addr_i_i=$41; //@line 1060 "stropmodule.c"
-        var $42=$offset_i_i; //@line 1061 "stropmodule.c"
-        var $43=$pat_len_addr_i_i; //@line 1061 "stropmodule.c"
-        var $44=$len_addr_i_i; //@line 1061 "stropmodule.c"
-        var $_neg_i_i=0 - ($42);
-        var $_neg1_i_i=0 - ($43);
-        var $_neg2_i_i=($_neg1_i_i) + ($_neg_i_i); //@line 1061 "stropmodule.c"
-        var $45=($_neg2_i_i) + ($44);
-        $len_addr_i_i=$45; //@line 1061 "stropmodule.c"
-        var $46=$nfound_i_i; //@line 1062 "stropmodule.c"
-        var $47=($46) + 1; //@line 1062 "stropmodule.c"
-        $nfound_i_i=$47; //@line 1062 "stropmodule.c"
-        __lastLabel__ = 12; __label__ = 13; break; //@line 1062 "stropmodule.c"
-      case 13: // $bb2_i_i
-        var $48=__lastLabel__ == 12 ? $45 : ($27);
-        var $49=($48) >= 0; //@line 1056 "stropmodule.c"
-        if ($49) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 1056 "stropmodule.c"
-      case 14: // $mymemcnt_exit_i
-        var $50=$nfound_i_i; //@line 1064 "stropmodule.c"
-        $0=$50; //@line 1064 "stropmodule.c"
-        var $51=$0; //@line 1064 "stropmodule.c"
-        $retval_i_i=$51; //@line 1064 "stropmodule.c"
-        var $retval4_i_i=$retval_i_i; //@line 1064 "stropmodule.c"
-        $nfound_i=$retval4_i_i; //@line 1101 "stropmodule.c"
-        var $52=$count_addr_i; //@line 1102 "stropmodule.c"
-        var $53=($52) < 0; //@line 1102 "stropmodule.c"
-        if ($53) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 1102 "stropmodule.c"
-      case 15: // $bb2_i
-        $count_addr_i=2147483647; //@line 1103 "stropmodule.c"
-        var $_pr_i=$nfound_i;
-        __lastLabel__ = 15; __label__ = 18; break; //@line 1103 "stropmodule.c"
-      case 16: // $bb3_i
-        var $54=$nfound_i; //@line 1104 "stropmodule.c"
-        var $55=$count_addr_i; //@line 1104 "stropmodule.c"
-        var $56=($54) > ($55); //@line 1104 "stropmodule.c"
-        if ($56) { __lastLabel__ = 16; __label__ = 17; break; } else { __lastLabel__ = 16; __label__ = 18; break; } //@line 1104 "stropmodule.c"
-      case 17: // $bb4_i
-        var $57=$count_addr_i; //@line 1105 "stropmodule.c"
-        $nfound_i=$57; //@line 1105 "stropmodule.c"
-        __lastLabel__ = 17; __label__ = 18; break; //@line 1105 "stropmodule.c"
-      case 18: // $bb5_i
-        var $58=__lastLabel__ == 17 ? $57 : (__lastLabel__ == 16 ? $54 : ($_pr_i));
-        var $59=($58)==0; //@line 1106 "stropmodule.c"
-        if ($59) { __label__ = 40; break; } else { __label__ = 19; break; } //@line 1106 "stropmodule.c"
-      case 19: // $bb6_i
-        var $60=$sub_len_addr_i; //@line 1109 "stropmodule.c"
-        var $61=$pat_len_addr_i; //@line 1109 "stropmodule.c"
-        var $62=($60) - ($61); //@line 1109 "stropmodule.c"
-        var $63=$nfound_i; //@line 1109 "stropmodule.c"
-        var $64=($62) * ($63); //@line 1109 "stropmodule.c"
-        var $65=$len_addr_i; //@line 1109 "stropmodule.c"
-        var $66=($64) + ($65); //@line 1109 "stropmodule.c"
-        $new_len_i=$66; //@line 1109 "stropmodule.c"
-        var $67=$new_len_i; //@line 1110 "stropmodule.c"
-        var $68=($67)==0; //@line 1110 "stropmodule.c"
-        if ($68) { __label__ = 20; break; } else { __label__ = 23; break; } //@line 1110 "stropmodule.c"
-      case 20: // $bb7_i
-        var $69=_malloc(1); //@line 1112 "stropmodule.c"
-        $out_s_i=$69; //@line 1112 "stropmodule.c"
-        var $70=$out_s_i; //@line 1113 "stropmodule.c"
-        var $71=($70)==0; //@line 1113 "stropmodule.c"
-        if ($71) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 1113 "stropmodule.c"
-      case 21: // $bb8_i
-        $1=0; //@line 1114 "stropmodule.c"
-        __label__ = 41; break; //@line 1114 "stropmodule.c"
-      case 22: // $bb9_i
-        var $72=$out_s_i; //@line 1115 "stropmodule.c"
-        var $73=$72; //@line 1115 "stropmodule.c"
-        HEAP[$73]=0; //@line 1115 "stropmodule.c"
-        __label__ = 39; break; //@line 1115 "stropmodule.c"
-      case 23: // $bb10_i
-        var $74=$new_len_i; //@line 1118 "stropmodule.c"
-        var $75=($74) <= 0; //@line 1118 "stropmodule.c"
-        if ($75) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 1118 "stropmodule.c"
-      case 24: // $bb11_i
-        ___assert_fail(__str29, __str30, 1118, ___PRETTY_FUNCTION___9892); //@line 1118 "stropmodule.c"
-        throw "Reached an unreachable!" //@line 1118 "stropmodule.c"
-      case 25: // $bb12_i
-        var $76=$new_len_i; //@line 1119 "stropmodule.c"
-        var $77=($76) >= 0; //@line 1119 "stropmodule.c"
-        if ($77) { __label__ = 26; break; } else { __label__ = 29; break; } //@line 1119 "stropmodule.c"
-      case 26: // $bb13_i
-        var $78=$new_len_i; //@line 1119 "stropmodule.c"
-        var $79=($78)!=0; //@line 1119 "stropmodule.c"
-        if ($79) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1119 "stropmodule.c"
-      case 27: // $bb14_i
-        var $80=$new_len_i; //@line 1119 "stropmodule.c"
-        $iftmp_287_i=$80; //@line 1119 "stropmodule.c"
-        __label__ = 30; break; //@line 1119 "stropmodule.c"
-      case 28: // $bb15_i
-        $iftmp_287_i=1; //@line 1119 "stropmodule.c"
-        __label__ = 30; break; //@line 1119 "stropmodule.c"
-      case 29: // $bb18_thread_i
-        $iftmp_286_i=0; //@line 1119 "stropmodule.c"
-        $new_s_i=0; //@line 1119 "stropmodule.c"
-        __label__ = 31; break;
-      case 30: // $bb18_i
-        var $81=$iftmp_287_i; //@line 1119 "stropmodule.c"
-        var $82=_malloc($81); //@line 1119 "stropmodule.c"
-        $iftmp_286_i=$82; //@line 1119 "stropmodule.c"
-        $new_s_i=$82; //@line 1119 "stropmodule.c"
-        var $83=($82)==0; //@line 1120 "stropmodule.c"
-        if ($83) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1120 "stropmodule.c"
-      case 31: // $bb19_i
-        $1=0; //@line 1121 "stropmodule.c"
-        __label__ = 41; break; //@line 1121 "stropmodule.c"
-      case 32: // $bb20_i
-        var $84=$new_s_i; //@line 1122 "stropmodule.c"
-        $out_s_i=$84; //@line 1122 "stropmodule.c"
-        var $_pr1_i=$count_addr_i;
-        __lastLabel__ = 32; __label__ = 35; break; //@line 1122 "stropmodule.c"
-      case 33: // $bb21_i
-        var $85=$str_addr_i; //@line 1126 "stropmodule.c"
-        var $86=$len_addr_i; //@line 1126 "stropmodule.c"
-        var $87=$pat_addr_i; //@line 1126 "stropmodule.c"
-        var $88=$pat_len_addr_i; //@line 1126 "stropmodule.c"
-        var $89=_mymemfind($85, $86, $87, $88); //@line 1126 "stropmodule.c"
-        $offset_i=$89; //@line 1126 "stropmodule.c"
-        var $90=$offset_i; //@line 1127 "stropmodule.c"
-        var $91=($90)==-1; //@line 1127 "stropmodule.c"
-        if ($91) { __label__ = 37; break; } else { __label__ = 34; break; } //@line 1127 "stropmodule.c"
-      case 34: // $bb22_i
-        var $92=$offset_i; //@line 1131 "stropmodule.c"
-        var $93=$new_s_i; //@line 1131 "stropmodule.c"
-        var $94=$str_addr_i; //@line 1131 "stropmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($93, $94, $92, 1, 0); //@line 1131 "stropmodule.c"
-        var $95=$offset_i; //@line 1132 "stropmodule.c"
-        var $96=$pat_len_addr_i; //@line 1132 "stropmodule.c"
-        var $97=($96) + ($95); //@line 1132 "stropmodule.c"
-        var $98=$str_addr_i; //@line 1132 "stropmodule.c"
-        var $99=$98+$97; //@line 1132 "stropmodule.c"
-        $str_addr_i=$99; //@line 1132 "stropmodule.c"
-        var $100=$offset_i; //@line 1133 "stropmodule.c"
-        var $101=$pat_len_addr_i; //@line 1133 "stropmodule.c"
-        var $102=$len_addr_i; //@line 1133 "stropmodule.c"
-        var $_neg_i=0 - ($100);
-        var $_neg3_i=0 - ($101);
-        var $_neg4_i=($_neg3_i) + ($_neg_i); //@line 1133 "stropmodule.c"
-        var $103=($_neg4_i) + ($102);
-        $len_addr_i=$103; //@line 1133 "stropmodule.c"
-        var $104=$new_s_i; //@line 1136 "stropmodule.c"
-        var $105=$offset_i; //@line 1136 "stropmodule.c"
-        var $106=$104+$105; //@line 1136 "stropmodule.c"
-        $new_s_i=$106; //@line 1136 "stropmodule.c"
-        var $107=$sub_len_addr_i; //@line 1137 "stropmodule.c"
-        var $108=$new_s_i; //@line 1137 "stropmodule.c"
-        var $109=$sub_addr_i; //@line 1137 "stropmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($108, $109, $107, 1, 0); //@line 1137 "stropmodule.c"
-        var $110=$new_s_i; //@line 1138 "stropmodule.c"
-        var $111=$sub_len_addr_i; //@line 1138 "stropmodule.c"
-        var $112=$110+$111; //@line 1138 "stropmodule.c"
-        $new_s_i=$112; //@line 1138 "stropmodule.c"
-        var $113=$count_addr_i; //@line 1124 "stropmodule.c"
-        var $114=($113) - 1; //@line 1124 "stropmodule.c"
-        $count_addr_i=$114; //@line 1124 "stropmodule.c"
-        __lastLabel__ = 34; __label__ = 35; break; //@line 1124 "stropmodule.c"
-      case 35: // $bb23_i
-        var $115=__lastLabel__ == 34 ? $114 : ($_pr1_i);
-        var $116=($115) <= 0; //@line 1124 "stropmodule.c"
-        if ($116) { __label__ = 37; break; } else { __label__ = 36; break; } //@line 1124 "stropmodule.c"
-      case 36: // $bb24_i
-        var $117=$len_addr_i; //@line 1124 "stropmodule.c"
-        var $118=($117) > 0; //@line 1124 "stropmodule.c"
-        if ($118) { __label__ = 33; break; } else { __label__ = 39; break; } //@line 1124 "stropmodule.c"
-      case 37: // $bb25_i
-        var $_pr2_i=$len_addr_i;
-        var $119=($_pr2_i) > 0; //@line 1141 "stropmodule.c"
-        if ($119) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 1141 "stropmodule.c"
-      case 38: // $bb26_i
-        var $120=$len_addr_i; //@line 1142 "stropmodule.c"
-        var $121=$new_s_i; //@line 1142 "stropmodule.c"
-        var $122=$str_addr_i; //@line 1142 "stropmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($121, $122, $120, 1, 0); //@line 1142 "stropmodule.c"
-        __label__ = 39; break; //@line 1142 "stropmodule.c"
-      case 39: // $bb27_i
-        var $123=$out_len_addr_i; //@line 1144 "stropmodule.c"
-        var $124=$new_len_i; //@line 1144 "stropmodule.c"
-        HEAP[$123]=$124; //@line 1144 "stropmodule.c"
-        var $125=$out_s_i; //@line 1145 "stropmodule.c"
-        $1=$125; //@line 1145 "stropmodule.c"
-        __lastLabel__ = 39; __label__ = 42; break; //@line 1145 "stropmodule.c"
-      case 40: // $return_same_i
-        var $126=$out_len_addr_i; //@line 1148 "stropmodule.c"
-        HEAP[$126]=-1; //@line 1148 "stropmodule.c"
-        var $127=$str_addr_i; //@line 1149 "stropmodule.c"
-        $1=$127; //@line 1149 "stropmodule.c"
-        __lastLabel__ = 40; __label__ = 42; break; //@line 1149 "stropmodule.c"
-      case 41: // $mymemreplace_exit_thread
-        $retval_i=0; //@line 1114 "stropmodule.c"
-        $new_s=0; //@line 1183 "stropmodule.c"
-        __label__ = 43; break;
-      case 42: // $mymemreplace_exit
-        var $128=__lastLabel__ == 39 ? $125 : ($127);
-        $retval_i=$128; //@line 1114 "stropmodule.c"
-        $new_s=$128; //@line 1183 "stropmodule.c"
-        var $129=($128)==0; //@line 1184 "stropmodule.c"
-        if ($129) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 1184 "stropmodule.c"
-      case 43: // $bb8
-        var $130=_PyErr_NoMemory(); //@line 1185 "stropmodule.c"
-        $2=0; //@line 1186 "stropmodule.c"
-        __label__ = 49; break; //@line 1186 "stropmodule.c"
-      case 44: // $bb9
-        var $131=HEAP[$out_len]; //@line 1188 "stropmodule.c"
-        var $132=($131)==-1; //@line 1188 "stropmodule.c"
-        if ($132) { __label__ = 45; break; } else { __label__ = 47; break; } //@line 1188 "stropmodule.c"
-      case 45: // $bb10
-        var $133=$args_addr; //@line 1190 "stropmodule.c"
-        var $134=_PyTuple_GetItem($133, 0); //@line 1190 "stropmodule.c"
-        $newstr=$134; //@line 1190 "stropmodule.c"
-        var $135=$newstr; //@line 1191 "stropmodule.c"
-        var $136=($135)!=0; //@line 1191 "stropmodule.c"
-        if ($136) { __label__ = 46; break; } else { __label__ = 48; break; } //@line 1191 "stropmodule.c"
-      case 46: // $bb11
-        var $137=$newstr; //@line 1191 "stropmodule.c"
-        var $138=$137; //@line 1191 "stropmodule.c"
-        var $139=HEAP[$138]; //@line 1191 "stropmodule.c"
-        var $140=($139) + 1; //@line 1191 "stropmodule.c"
-        var $141=$newstr; //@line 1191 "stropmodule.c"
-        var $142=$141; //@line 1191 "stropmodule.c"
-        HEAP[$142]=$140; //@line 1191 "stropmodule.c"
-        __label__ = 48; break; //@line 1191 "stropmodule.c"
-      case 47: // $bb13
-        var $143=HEAP[$out_len]; //@line 1194 "stropmodule.c"
-        var $144=$new_s; //@line 1194 "stropmodule.c"
-        var $145=_PyString_FromStringAndSize($144, $143); //@line 1194 "stropmodule.c"
-        $newstr=$145; //@line 1194 "stropmodule.c"
-        var $146=$new_s; //@line 1195 "stropmodule.c"
-        _free($146); //@line 1195 "stropmodule.c"
-        __label__ = 48; break; //@line 1195 "stropmodule.c"
-      case 48: // $bb14
-        var $147=$newstr; //@line 1197 "stropmodule.c"
-        $2=$147; //@line 1197 "stropmodule.c"
-        __label__ = 49; break; //@line 1197 "stropmodule.c"
-      case 49: // $bb15
-        var $148=$2; //@line 1168 "stropmodule.c"
-        $retval=$148; //@line 1168 "stropmodule.c"
+        var $12=HEAP[$count]; //@line 1183 "stropmodule.c"
+        var $13=HEAP[$sub_len]; //@line 1183 "stropmodule.c"
+        var $14=HEAP[$sub]; //@line 1183 "stropmodule.c"
+        var $15=HEAP[$pat_len]; //@line 1183 "stropmodule.c"
+        var $16=HEAP[$pat]; //@line 1183 "stropmodule.c"
+        var $17=HEAP[$len]; //@line 1183 "stropmodule.c"
+        var $18=HEAP[$str]; //@line 1183 "stropmodule.c"
+        var $19=_mymemreplace($18, $17, $16, $15, $14, $13, $12, $out_len); //@line 1183 "stropmodule.c"
+        $new_s=$19; //@line 1183 "stropmodule.c"
+        var $20=($19)==0; //@line 1184 "stropmodule.c"
+        if ($20) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1184 "stropmodule.c"
+      case 9: // $bb8
+        var $21=_PyErr_NoMemory(); //@line 1185 "stropmodule.c"
+        $0=0; //@line 1186 "stropmodule.c"
+        __label__ = 15; break; //@line 1186 "stropmodule.c"
+      case 10: // $bb9
+        var $22=HEAP[$out_len]; //@line 1188 "stropmodule.c"
+        var $23=($22)==-1; //@line 1188 "stropmodule.c"
+        if ($23) { __label__ = 11; break; } else { __label__ = 13; break; } //@line 1188 "stropmodule.c"
+      case 11: // $bb10
+        var $24=$args_addr; //@line 1190 "stropmodule.c"
+        var $25=_PyTuple_GetItem($24, 0); //@line 1190 "stropmodule.c"
+        $newstr=$25; //@line 1190 "stropmodule.c"
+        var $26=$newstr; //@line 1191 "stropmodule.c"
+        var $27=($26)!=0; //@line 1191 "stropmodule.c"
+        if ($27) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 1191 "stropmodule.c"
+      case 12: // $bb11
+        var $28=$newstr; //@line 1191 "stropmodule.c"
+        var $29=$28; //@line 1191 "stropmodule.c"
+        var $30=HEAP[$29]; //@line 1191 "stropmodule.c"
+        var $31=($30) + 1; //@line 1191 "stropmodule.c"
+        var $32=$newstr; //@line 1191 "stropmodule.c"
+        var $33=$32; //@line 1191 "stropmodule.c"
+        HEAP[$33]=$31; //@line 1191 "stropmodule.c"
+        __label__ = 14; break; //@line 1191 "stropmodule.c"
+      case 13: // $bb13
+        var $34=HEAP[$out_len]; //@line 1194 "stropmodule.c"
+        var $35=$new_s; //@line 1194 "stropmodule.c"
+        var $36=_PyString_FromStringAndSize($35, $34); //@line 1194 "stropmodule.c"
+        $newstr=$36; //@line 1194 "stropmodule.c"
+        var $37=$new_s; //@line 1195 "stropmodule.c"
+        _free($37); //@line 1195 "stropmodule.c"
+        __label__ = 14; break; //@line 1195 "stropmodule.c"
+      case 14: // $bb14
+        var $38=$newstr; //@line 1197 "stropmodule.c"
+        $0=$38; //@line 1197 "stropmodule.c"
+        __label__ = 15; break; //@line 1197 "stropmodule.c"
+      case 15: // $bb15
+        var $39=$0; //@line 1168 "stropmodule.c"
+        $retval=$39; //@line 1168 "stropmodule.c"
         var $retval16=$retval; //@line 1168 "stropmodule.c"
         STACKTOP = __stackBase__;
         return $retval16; //@line 1168 "stropmodule.c"

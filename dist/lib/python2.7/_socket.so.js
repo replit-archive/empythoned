@@ -129,25 +129,25 @@ var __str5;
 var __str6;
 var __str7;
 var __str8;
-var __Py_NoneStruct;
+
 var __str9;
 var __str10;
 var __str11;
 var __str12;
 var __str13;
 var __str14;
-var _PyExc_ValueError;
+
 var __str15;
 var __str16;
 var __str17;
 var __str18;
-var _PyExc_TypeError;
+
 var __str19;
 var __str20;
 var __str21;
 var __str22;
 var __str23;
-var _PyExc_OverflowError;
+
 var __str24;
 var __str25;
 var __str26;
@@ -341,9 +341,9 @@ var __str159;
 var _socket_methods;
 var _PySocketModuleAPI;
 var _socket_doc;
-var _PyType_Type;
+
 var __str160;
-var _PyExc_IOError;
+
 var __str161;
 var __str162;
 var __str163;
@@ -353,7 +353,7 @@ var __str166;
 var __str167;
 var __str168;
 var __str169;
-var __Py_TrueStruct;
+
 var __str170;
 var __str171;
 var __str172;
@@ -683,68 +683,152 @@ var __str384;
   }
   
 
+  function _set_herror($h_error) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $h_error_addr;
+        var $v;
+        $h_error_addr=$h_error;
+        var $0=$h_error_addr; //@line 553 "socketmodule.c"
+        var $1=_hstrerror($0); //@line 553 "socketmodule.c"
+        var $2=$h_error_addr; //@line 553 "socketmodule.c"
+        var $3=_Py_BuildValue(__str1, allocate([$2,0,0,0,$1,0,0,0], ["i32",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 553 "socketmodule.c"
+        $v=$3; //@line 553 "socketmodule.c"
+        var $4=$v; //@line 557 "socketmodule.c"
+        var $5=($4)!=0; //@line 557 "socketmodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 557 "socketmodule.c"
+      case 1: // $bb
+        var $6=HEAP[_socket_herror]; //@line 558 "socketmodule.c"
+        var $7=$v; //@line 558 "socketmodule.c"
+        _PyErr_SetObject($6, $7); //@line 558 "socketmodule.c"
+        var $8=$v; //@line 559 "socketmodule.c"
+        var $9=$8; //@line 559 "socketmodule.c"
+        var $10=HEAP[$9]; //@line 559 "socketmodule.c"
+        var $11=($10) - 1; //@line 559 "socketmodule.c"
+        var $12=$v; //@line 559 "socketmodule.c"
+        var $13=$12; //@line 559 "socketmodule.c"
+        HEAP[$13]=$11; //@line 559 "socketmodule.c"
+        var $14=$v; //@line 559 "socketmodule.c"
+        var $15=$14; //@line 559 "socketmodule.c"
+        var $16=HEAP[$15]; //@line 559 "socketmodule.c"
+        var $17=($16)==0; //@line 559 "socketmodule.c"
+        if ($17) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 559 "socketmodule.c"
+      case 2: // $bb1
+        var $18=$v; //@line 559 "socketmodule.c"
+        var $19=$18+4; //@line 559 "socketmodule.c"
+        var $20=HEAP[$19]; //@line 559 "socketmodule.c"
+        var $21=$20+24; //@line 559 "socketmodule.c"
+        var $22=HEAP[$21]; //@line 559 "socketmodule.c"
+        var $23=$v; //@line 559 "socketmodule.c"
+        FUNCTION_TABLE[$22]($23); //@line 559 "socketmodule.c"
+        __label__ = 3; break; //@line 559 "socketmodule.c"
+      case 3: // $bb2
+        ;
+        return;
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _set_gaierror($error) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
         var $error_addr;
-        var $1;
+        var $0;
         var $v;
         $error_addr=$error;
-        var $2=$error_addr; //@line 573 "socketmodule.c"
-        var $3=($2)==-11; //@line 573 "socketmodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 573 "socketmodule.c"
+        var $1=$error_addr; //@line 573 "socketmodule.c"
+        var $2=($1)==-11; //@line 573 "socketmodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 573 "socketmodule.c"
       case 1: // $bb
-        var $4=HEAP[_socket_error]; //@line 543 "socketmodule.c"
-        var $5=_PyErr_SetFromErrno($4); //@line 543 "socketmodule.c"
-        $0=$5; //@line 543 "socketmodule.c"
-        var $6=$0; //@line 543 "socketmodule.c"
-        $retval_i=$6; //@line 543 "socketmodule.c"
-        var $retval1_i=$retval_i; //@line 543 "socketmodule.c"
-        $1=$retval1_i; //@line 574 "socketmodule.c"
+        var $3=_set_error(); //@line 574 "socketmodule.c"
+        $0=$3; //@line 574 "socketmodule.c"
         __label__ = 6; break; //@line 574 "socketmodule.c"
       case 2: // $bb1
-        var $7=$error_addr; //@line 578 "socketmodule.c"
-        var $8=_gai_strerror($7); //@line 578 "socketmodule.c"
-        var $9=$error_addr; //@line 578 "socketmodule.c"
-        var $10=_Py_BuildValue(__str1, $9, $8); //@line 578 "socketmodule.c"
-        $v=$10; //@line 578 "socketmodule.c"
-        var $11=$v; //@line 582 "socketmodule.c"
-        var $12=($11)!=0; //@line 582 "socketmodule.c"
-        if ($12) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 582 "socketmodule.c"
+        var $4=$error_addr; //@line 578 "socketmodule.c"
+        var $5=_gai_strerror($4); //@line 578 "socketmodule.c"
+        var $6=$error_addr; //@line 578 "socketmodule.c"
+        var $7=_Py_BuildValue(__str1, allocate([$6,0,0,0,$5,0,0,0], ["i32",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 578 "socketmodule.c"
+        $v=$7; //@line 578 "socketmodule.c"
+        var $8=$v; //@line 582 "socketmodule.c"
+        var $9=($8)!=0; //@line 582 "socketmodule.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 582 "socketmodule.c"
       case 3: // $bb2
-        var $13=HEAP[_socket_gaierror]; //@line 583 "socketmodule.c"
-        var $14=$v; //@line 583 "socketmodule.c"
-        _PyErr_SetObject($13, $14); //@line 583 "socketmodule.c"
-        var $15=$v; //@line 584 "socketmodule.c"
-        var $16=$15; //@line 584 "socketmodule.c"
-        var $17=HEAP[$16]; //@line 584 "socketmodule.c"
-        var $18=($17) - 1; //@line 584 "socketmodule.c"
-        var $19=$v; //@line 584 "socketmodule.c"
-        var $20=$19; //@line 584 "socketmodule.c"
-        HEAP[$20]=$18; //@line 584 "socketmodule.c"
-        var $21=$v; //@line 584 "socketmodule.c"
-        var $22=$21; //@line 584 "socketmodule.c"
-        var $23=HEAP[$22]; //@line 584 "socketmodule.c"
-        var $24=($23)==0; //@line 584 "socketmodule.c"
-        if ($24) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 584 "socketmodule.c"
+        var $10=HEAP[_socket_gaierror]; //@line 583 "socketmodule.c"
+        var $11=$v; //@line 583 "socketmodule.c"
+        _PyErr_SetObject($10, $11); //@line 583 "socketmodule.c"
+        var $12=$v; //@line 584 "socketmodule.c"
+        var $13=$12; //@line 584 "socketmodule.c"
+        var $14=HEAP[$13]; //@line 584 "socketmodule.c"
+        var $15=($14) - 1; //@line 584 "socketmodule.c"
+        var $16=$v; //@line 584 "socketmodule.c"
+        var $17=$16; //@line 584 "socketmodule.c"
+        HEAP[$17]=$15; //@line 584 "socketmodule.c"
+        var $18=$v; //@line 584 "socketmodule.c"
+        var $19=$18; //@line 584 "socketmodule.c"
+        var $20=HEAP[$19]; //@line 584 "socketmodule.c"
+        var $21=($20)==0; //@line 584 "socketmodule.c"
+        if ($21) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 584 "socketmodule.c"
       case 4: // $bb3
-        var $25=$v; //@line 584 "socketmodule.c"
-        var $26=$25+4; //@line 584 "socketmodule.c"
-        var $27=HEAP[$26]; //@line 584 "socketmodule.c"
-        var $28=$27+24; //@line 584 "socketmodule.c"
-        var $29=HEAP[$28]; //@line 584 "socketmodule.c"
-        var $30=$v; //@line 584 "socketmodule.c"
-        FUNCTION_TABLE[$29]($30); //@line 584 "socketmodule.c"
+        var $22=$v; //@line 584 "socketmodule.c"
+        var $23=$22+4; //@line 584 "socketmodule.c"
+        var $24=HEAP[$23]; //@line 584 "socketmodule.c"
+        var $25=$24+24; //@line 584 "socketmodule.c"
+        var $26=HEAP[$25]; //@line 584 "socketmodule.c"
+        var $27=$v; //@line 584 "socketmodule.c"
+        FUNCTION_TABLE[$26]($27); //@line 584 "socketmodule.c"
         __label__ = 5; break; //@line 584 "socketmodule.c"
       case 5: // $bb4
-        $1=0; //@line 587 "socketmodule.c"
+        $0=0; //@line 587 "socketmodule.c"
         __label__ = 6; break; //@line 587 "socketmodule.c"
       case 6: // $bb5
+        ;
+        return;
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _internal_setblocking($s, $block) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $s_addr;
+        var $block_addr;
+        var $delay_flag;
+        $s_addr=$s;
+        $block_addr=$block;
+        var $0=$s_addr; //@line 640 "socketmodule.c"
+        var $1=$0+8; //@line 640 "socketmodule.c"
+        var $2=HEAP[$1]; //@line 640 "socketmodule.c"
+        var $3=_fcntl($2, 3, allocate(4, "i32", ALLOC_STACK)); //@line 640 "socketmodule.c"
+        $delay_flag=$3; //@line 640 "socketmodule.c"
+        var $4=$block_addr; //@line 641 "socketmodule.c"
+        var $5=($4)!=0; //@line 641 "socketmodule.c"
+        var $6=$delay_flag; //@line 642 "socketmodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 641 "socketmodule.c"
+      case 1: // $bb
+        var $7=($6) & -2049; //@line 642 "socketmodule.c"
+        $delay_flag=$7; //@line 642 "socketmodule.c"
+        __label__ = 3; break; //@line 642 "socketmodule.c"
+      case 2: // $bb1
+        var $8=($6) | 2048; //@line 644 "socketmodule.c"
+        $delay_flag=$8; //@line 644 "socketmodule.c"
+        __label__ = 3; break; //@line 644 "socketmodule.c"
+      case 3: // $bb2
+        var $9=$s_addr; //@line 645 "socketmodule.c"
+        var $10=$9+8; //@line 645 "socketmodule.c"
+        var $11=HEAP[$10]; //@line 645 "socketmodule.c"
+        var $12=$delay_flag; //@line 645 "socketmodule.c"
+        var $13=_fcntl($11, 4, allocate([$12,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 645 "socketmodule.c"
         ;
         return;
       default: assert(0, "bad label: " + __label__);
@@ -846,9 +930,6 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $block_addr_i;
-        var $delay_flag_i;
         var $s_addr;
         var $fd_addr;
         var $family_addr;
@@ -884,38 +965,58 @@ var __str384;
         HEAP[$16]=(FUNCTION_TABLE_OFFSET + 2); //@line 736 "socketmodule.c"
         var $17=HEAP[_defaulttimeout]; //@line 738 "socketmodule.c"
         var $18=($17) >= 0; //@line 738 "socketmodule.c"
-        if ($18) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 738 "socketmodule.c"
+        if ($18) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 738 "socketmodule.c"
       case 1: // $bb
         var $19=$s_addr; //@line 739 "socketmodule.c"
-        $s_addr_i=$19;
-        $block_addr_i=0;
-        var $20=$s_addr_i; //@line 640 "socketmodule.c"
-        var $21=$20+8; //@line 640 "socketmodule.c"
-        var $22=HEAP[$21]; //@line 640 "socketmodule.c"
-        var $23=_fcntl($22, 3, 0); //@line 640 "socketmodule.c"
-        $delay_flag_i=$23; //@line 640 "socketmodule.c"
-        var $24=$block_addr_i; //@line 641 "socketmodule.c"
-        var $25=($24)!=0; //@line 641 "socketmodule.c"
-        var $26=$delay_flag_i; //@line 642 "socketmodule.c"
-        if ($25) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 641 "socketmodule.c"
-      case 2: // $bb_i
-        var $27=($26) & -2049; //@line 642 "socketmodule.c"
-        $delay_flag_i=$27; //@line 642 "socketmodule.c"
-        __label__ = 4; break; //@line 642 "socketmodule.c"
-      case 3: // $bb1_i
-        var $28=($26) | 2048; //@line 644 "socketmodule.c"
-        $delay_flag_i=$28; //@line 644 "socketmodule.c"
-        __label__ = 4; break; //@line 644 "socketmodule.c"
-      case 4: // $internal_setblocking_exit
-        var $29=$s_addr_i; //@line 645 "socketmodule.c"
-        var $30=$29+8; //@line 645 "socketmodule.c"
-        var $31=HEAP[$30]; //@line 645 "socketmodule.c"
-        var $32=$delay_flag_i; //@line 645 "socketmodule.c"
-        var $33=_fcntl($31, 4, $32); //@line 645 "socketmodule.c"
-        __label__ = 5; break; //@line 739 "socketmodule.c"
-      case 5: // $return
+        _internal_setblocking($19, 0); //@line 739 "socketmodule.c"
+        __label__ = 2; break; //@line 739 "socketmodule.c"
+      case 2: // $return
         ;
         return; //@line 745 "socketmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _new_sockobject($fd, $family, $type, $proto) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $fd_addr;
+        var $family_addr;
+        var $type_addr;
+        var $proto_addr;
+        var $retval;
+        var $0;
+        var $s;
+        $fd_addr=$fd;
+        $family_addr=$family;
+        $type_addr=$type;
+        $proto_addr=$proto;
+        var $1=_PyType_GenericNew(_sock_type, 0, 0); //@line 757 "socketmodule.c"
+        var $2=$1; //@line 757 "socketmodule.c"
+        $s=$2; //@line 757 "socketmodule.c"
+        var $3=$s; //@line 759 "socketmodule.c"
+        var $4=($3)!=0; //@line 759 "socketmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 759 "socketmodule.c"
+      case 1: // $bb
+        var $5=$s; //@line 760 "socketmodule.c"
+        var $6=$fd_addr; //@line 760 "socketmodule.c"
+        var $7=$family_addr; //@line 760 "socketmodule.c"
+        var $8=$type_addr; //@line 760 "socketmodule.c"
+        var $9=$proto_addr; //@line 760 "socketmodule.c"
+        _init_sockobject($5, $6, $7, $8, $9); //@line 760 "socketmodule.c"
+        __label__ = 2; break; //@line 760 "socketmodule.c"
+      case 2: // $bb1
+        var $10=$s; //@line 761 "socketmodule.c"
+        $0=$10; //@line 761 "socketmodule.c"
+        var $11=$0; //@line 761 "socketmodule.c"
+        $retval=$11; //@line 761 "socketmodule.c"
+        var $retval2=$retval; //@line 761 "socketmodule.c"
+        ;
+        return $retval2; //@line 761 "socketmodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1083,7 +1184,7 @@ var __str384;
         __label__ = 30; break; //@line 847 "socketmodule.c"
       case 17: // $bb18
         var $63=$name_addr; //@line 849 "socketmodule.c"
-        var $64=_sscanf($63, __str7, $d1, $d2, $d3, $d4, $ch); //@line 849 "socketmodule.c"
+        var $64=_sscanf($63, __str7, allocate([$d1,0,0,0,$d2,0,0,0,$d3,0,0,0,$d4,0,0,0,$ch,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 849 "socketmodule.c"
         var $65=($64)==4; //@line 849 "socketmodule.c"
         var $66=HEAP[$d1]; //@line 849 "socketmodule.c"
         var $67=($66) >= 0; //@line 849 "socketmodule.c"
@@ -1340,7 +1441,7 @@ var __str384;
         var $20=_ntohs($19); //@line 994 "socketmodule.c"
         var $21=($20); //@line 994 "socketmodule.c"
         var $22=$addrobj; //@line 994 "socketmodule.c"
-        var $23=_Py_BuildValue(__str9, $22, $21); //@line 994 "socketmodule.c"
+        var $23=_Py_BuildValue(__str9, allocate([$22,0,0,0,$21,0,0,0], ["%struct.PyObject*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 994 "socketmodule.c"
         $ret=$23; //@line 994 "socketmodule.c"
         var $24=$addrobj; //@line 995 "socketmodule.c"
         var $25=$24; //@line 995 "socketmodule.c"
@@ -1405,7 +1506,7 @@ var __str384;
         var $64=$a11; //@line 1023 "socketmodule.c"
         var $65=$64+4; //@line 1023 "socketmodule.c"
         var $66=HEAP[$65]; //@line 1023 "socketmodule.c"
-        var $67=_Py_BuildValue(__str10, $66, $63); //@line 1023 "socketmodule.c"
+        var $67=_Py_BuildValue(__str10, allocate([$66,0,0,0,$63,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1023 "socketmodule.c"
         $0=$67; //@line 1023 "socketmodule.c"
         __label__ = 27; break; //@line 1023 "socketmodule.c"
       case 11: // $bb12
@@ -1434,7 +1535,7 @@ var __str384;
         var $85=_ntohs($84); //@line 1035 "socketmodule.c"
         var $86=($85); //@line 1035 "socketmodule.c"
         var $87=$addrobj14; //@line 1035 "socketmodule.c"
-        var $88=_Py_BuildValue(__str11, $87, $86, $79, $76); //@line 1035 "socketmodule.c"
+        var $88=_Py_BuildValue(__str11, allocate([$87,0,0,0,$86,0,0,0,$79,0,0,0,$76,0,0,0], ["%struct.PyObject*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1035 "socketmodule.c"
         $ret15=$88; //@line 1035 "socketmodule.c"
         var $89=$addrobj14; //@line 1040 "socketmodule.c"
         var $90=$89; //@line 1040 "socketmodule.c"
@@ -1480,7 +1581,7 @@ var __str384;
         var $117=$116; //@line 1113 "socketmodule.c"
         HEAP[$117]=$114; //@line 1113 "socketmodule.c"
         var $118=$sockfd_addr; //@line 1114 "socketmodule.c"
-        var $119=_ioctl($118, 35088, $ifr); //@line 1114 "socketmodule.c"
+        var $119=_ioctl($118, 35088, allocate([$ifr,0,0,0], ["%struct.ifreq*",0,0,0], ALLOC_STACK)); //@line 1114 "socketmodule.c"
         var $120=($119)==0; //@line 1114 "socketmodule.c"
         if ($120) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1114 "socketmodule.c"
       case 17: // $bb22
@@ -1513,7 +1614,7 @@ var __str384;
         var $144=_ntohs($143); //@line 1117 "socketmodule.c"
         var $145=($144); //@line 1117 "socketmodule.c"
         var $146=$ifname; //@line 1117 "socketmodule.c"
-        var $147=_Py_BuildValue(__str13, $146, $145, $138, $134, $130, $127); //@line 1117 "socketmodule.c"
+        var $147=_Py_BuildValue(__str13, allocate([$146,0,0,0,$145,0,0,0,$138,0,0,0,$134,0,0,0,$130,0,0,0,$127,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1117 "socketmodule.c"
         $0=$147; //@line 1117 "socketmodule.c"
         __label__ = 27; break; //@line 1117 "socketmodule.c"
       case 19: // $bb24
@@ -1549,7 +1650,7 @@ var __str384;
         var $174=$173+2; //@line 1132 "socketmodule.c"
         var $175=HEAP[$174]; //@line 1132 "socketmodule.c"
         var $176=($175); //@line 1132 "socketmodule.c"
-        var $177=_Py_BuildValue(__str14, $176, $172, $167, $162, $157); //@line 1132 "socketmodule.c"
+        var $177=_Py_BuildValue(__str14, allocate([$176,0,0,0,$172,0,0,0,$167,0,0,0,$162,0,0,0,$157,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1132 "socketmodule.c"
         $0=$177; //@line 1132 "socketmodule.c"
         __label__ = 27; break; //@line 1132 "socketmodule.c"
       case 21: // $bb27
@@ -1587,7 +1688,7 @@ var __str384;
         var $207=$206+2; //@line 1139 "socketmodule.c"
         var $208=HEAP[$207]; //@line 1139 "socketmodule.c"
         var $209=($208); //@line 1139 "socketmodule.c"
-        var $210=_Py_BuildValue(__str14, $209, $205, $198, $191, $184); //@line 1139 "socketmodule.c"
+        var $210=_Py_BuildValue(__str14, allocate([$209,0,0,0,$205,0,0,0,$198,0,0,0,$191,0,0,0,$184,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1139 "socketmodule.c"
         $0=$210; //@line 1139 "socketmodule.c"
         __label__ = 27; break; //@line 1139 "socketmodule.c"
       case 23: // $bb29
@@ -1616,7 +1717,7 @@ var __str384;
         var $231=$230+2; //@line 1146 "socketmodule.c"
         var $232=HEAP[$231]; //@line 1146 "socketmodule.c"
         var $233=($232); //@line 1146 "socketmodule.c"
-        var $234=_Py_BuildValue(__str14, $233, $229, $223, 0, $217); //@line 1146 "socketmodule.c"
+        var $234=_Py_BuildValue(__str14, allocate([$233,0,0,0,$229,0,0,0,$223,0,0,0,0,0,0,0,$217,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1146 "socketmodule.c"
         $0=$234; //@line 1146 "socketmodule.c"
         __label__ = 27; break; //@line 1146 "socketmodule.c"
       case 25: // $bb31
@@ -1632,7 +1733,7 @@ var __str384;
         var $240=$239; //@line 1165 "socketmodule.c"
         var $241=HEAP[$240]; //@line 1165 "socketmodule.c"
         var $242=($241); //@line 1165 "socketmodule.c"
-        var $243=_Py_BuildValue(__str16, $242, $238, 14); //@line 1165 "socketmodule.c"
+        var $243=_Py_BuildValue(__str16, allocate([$242,0,0,0,$238,0,0,0,14,0,0,0], ["i32",0,0,0,"i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1165 "socketmodule.c"
         $0=$243; //@line 1165 "socketmodule.c"
         __label__ = 27; break; //@line 1165 "socketmodule.c"
       case 27: // $bb33
@@ -1720,7 +1821,7 @@ var __str384;
         
       case 1: // $bb
         var $4=$args_addr; //@line 1191 "socketmodule.c"
-        var $5=_PyArg_Parse($4, __str17, $path, $len); //@line 1191 "socketmodule.c"
+        var $5=_PyArg_Parse($4, __str17, allocate([$path,0,0,0,$len,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1191 "socketmodule.c"
         var $6=($5)==0; //@line 1191 "socketmodule.c"
         if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1191 "socketmodule.c"
       case 2: // $bb1
@@ -1803,11 +1904,11 @@ var __str384;
         var $50=$49+12; //@line 1233 "socketmodule.c"
         var $51=HEAP[$50]; //@line 1233 "socketmodule.c"
         var $52=HEAP[_PyExc_TypeError]; //@line 1233 "socketmodule.c"
-        var $53=_PyErr_Format($52, __str19, $51); //@line 1233 "socketmodule.c"
+        var $53=_PyErr_Format($52, __str19, allocate([$51,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1233 "socketmodule.c"
         $0=0; //@line 1238 "socketmodule.c"
         __label__ = 60; break; //@line 1238 "socketmodule.c"
       case 13: // $bb14
-        var $54=_PyArg_ParseTuple($47, __str20, $pid, $groups); //@line 1240 "socketmodule.c"
+        var $54=_PyArg_ParseTuple($47, __str20, allocate([$pid,0,0,0,$groups,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1240 "socketmodule.c"
         var $55=($54)==0; //@line 1240 "socketmodule.c"
         if ($55) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1240 "socketmodule.c"
       case 14: // $bb15
@@ -1845,11 +1946,11 @@ var __str384;
         var $75=$74+12; //@line 1256 "socketmodule.c"
         var $76=HEAP[$75]; //@line 1256 "socketmodule.c"
         var $77=HEAP[_PyExc_TypeError]; //@line 1256 "socketmodule.c"
-        var $78=_PyErr_Format($77, __str21, $76); //@line 1256 "socketmodule.c"
+        var $78=_PyErr_Format($77, __str21, allocate([$76,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1256 "socketmodule.c"
         $0=0; //@line 1261 "socketmodule.c"
         __label__ = 60; break; //@line 1261 "socketmodule.c"
       case 18: // $bb20
-        var $79=_PyArg_ParseTuple($72, __str22, __str23, $host, $port); //@line 1263 "socketmodule.c"
+        var $79=_PyArg_ParseTuple($72, __str22, allocate([__str23,0,0,0,$host,0,0,0,$port,0,0,0], ["i8*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1263 "socketmodule.c"
         var $80=($79)==0; //@line 1263 "socketmodule.c"
         if ($80) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1263 "socketmodule.c"
       case 19: // $bb21
@@ -1919,11 +2020,11 @@ var __str384;
         var $116=$115+12; //@line 1292 "socketmodule.c"
         var $117=HEAP[$116]; //@line 1292 "socketmodule.c"
         var $118=HEAP[_PyExc_TypeError]; //@line 1292 "socketmodule.c"
-        var $119=_PyErr_Format($118, __str25, $117); //@line 1292 "socketmodule.c"
+        var $119=_PyErr_Format($118, __str25, allocate([$117,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1292 "socketmodule.c"
         $0=0; //@line 1297 "socketmodule.c"
         __label__ = 60; break; //@line 1297 "socketmodule.c"
       case 27: // $bb34
-        var $120=_PyArg_ParseTuple($113, __str26, __str23, $host30, $port31, $flowinfo, $scope_id); //@line 1299 "socketmodule.c"
+        var $120=_PyArg_ParseTuple($113, __str26, allocate([__str23,0,0,0,$host30,0,0,0,$port31,0,0,0,$flowinfo,0,0,0,$scope_id,0,0,0], ["i8*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1299 "socketmodule.c"
         var $121=($120)==0; //@line 1299 "socketmodule.c"
         if ($121) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1299 "socketmodule.c"
       case 28: // $bb35
@@ -2006,11 +2107,11 @@ var __str384;
         var $166=$165+12; //@line 1434 "socketmodule.c"
         var $167=HEAP[$166]; //@line 1434 "socketmodule.c"
         var $168=HEAP[_PyExc_TypeError]; //@line 1434 "socketmodule.c"
-        var $169=_PyErr_Format($168, __str27, $167); //@line 1434 "socketmodule.c"
+        var $169=_PyErr_Format($168, __str27, allocate([$167,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1434 "socketmodule.c"
         $0=0; //@line 1439 "socketmodule.c"
         __label__ = 60; break; //@line 1439 "socketmodule.c"
       case 36: // $bb45
-        var $170=_PyArg_ParseTuple($163, __str28, $interfaceName, $protoNumber, $pkttype, $hatype, $haddr, $halen); //@line 1441 "socketmodule.c"
+        var $170=_PyArg_ParseTuple($163, __str28, allocate([$interfaceName,0,0,0,$protoNumber,0,0,0,$pkttype,0,0,0,$hatype,0,0,0,$haddr,0,0,0,$halen,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1441 "socketmodule.c"
         var $171=($170)==0; //@line 1441 "socketmodule.c"
         if ($171) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 1441 "socketmodule.c"
       case 37: // $bb46
@@ -2029,7 +2130,7 @@ var __str384;
         var $180=$s_addr; //@line 1447 "socketmodule.c"
         var $181=$180+8; //@line 1447 "socketmodule.c"
         var $182=HEAP[$181]; //@line 1447 "socketmodule.c"
-        var $183=_ioctl($182, 35123, $ifr); //@line 1447 "socketmodule.c"
+        var $183=_ioctl($182, 35123, allocate([$ifr,0,0,0], ["%struct.ifreq*",0,0,0], ALLOC_STACK)); //@line 1447 "socketmodule.c"
         var $184=($183) < 0; //@line 1447 "socketmodule.c"
         if ($184) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 1447 "socketmodule.c"
       case 39: // $bb48
@@ -2130,11 +2231,11 @@ var __str384;
         var $244=$243+12; //@line 1485 "socketmodule.c"
         var $245=HEAP[$244]; //@line 1485 "socketmodule.c"
         var $246=HEAP[_PyExc_TypeError]; //@line 1485 "socketmodule.c"
-        var $247=_PyErr_Format($246, __str31, $245); //@line 1485 "socketmodule.c"
+        var $247=_PyErr_Format($246, __str31, allocate([$245,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1485 "socketmodule.c"
         $0=0; //@line 1490 "socketmodule.c"
         __label__ = 60; break; //@line 1490 "socketmodule.c"
       case 49: // $bb60
-        var $248=_PyArg_ParseTuple($241, __str32, $atype, $v1, $v2, $v3, $scope); //@line 1493 "socketmodule.c"
+        var $248=_PyArg_ParseTuple($241, __str32, allocate([$atype,0,0,0,$v1,0,0,0,$v2,0,0,0,$v3,0,0,0,$scope,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1493 "socketmodule.c"
         var $249=($248)==0; //@line 1493 "socketmodule.c"
         if ($249) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 1493 "socketmodule.c"
       case 50: // $bb61
@@ -2251,6 +2352,89 @@ var __str384;
   }
   
 
+  function _getsockaddrlen($s, $len_ret) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $s_addr;
+        var $len_ret_addr;
+        var $retval;
+        var $0;
+        $s_addr=$s;
+        $len_ret_addr=$len_ret;
+        var $1=$s_addr; //@line 1544 "socketmodule.c"
+        var $2=$1+12; //@line 1544 "socketmodule.c"
+        var $3=HEAP[$2]; //@line 1544 "socketmodule.c"
+        if ($3 == 1) {
+          __label__ = 1; break;
+        }
+        else if ($3 == 2) {
+          __label__ = 3; break;
+        }
+        else if ($3 == 10) {
+          __label__ = 4; break;
+        }
+        else if ($3 == 16) {
+          __label__ = 2; break;
+        }
+        else if ($3 == 17) {
+          __label__ = 5; break;
+        }
+        else if ($3 == 30) {
+          __label__ = 6; break;
+        }
+        else {
+        __label__ = 7; break;
+        }
+        
+      case 1: // $bb
+        var $4=$len_ret_addr; //@line 1549 "socketmodule.c"
+        HEAP[$4]=110; //@line 1549 "socketmodule.c"
+        $0=1; //@line 1550 "socketmodule.c"
+        __label__ = 8; break; //@line 1550 "socketmodule.c"
+      case 2: // $bb1
+        var $5=$len_ret_addr; //@line 1556 "socketmodule.c"
+        HEAP[$5]=12; //@line 1556 "socketmodule.c"
+        $0=1; //@line 1557 "socketmodule.c"
+        __label__ = 8; break; //@line 1557 "socketmodule.c"
+      case 3: // $bb2
+        var $6=$len_ret_addr; //@line 1563 "socketmodule.c"
+        HEAP[$6]=16; //@line 1563 "socketmodule.c"
+        $0=1; //@line 1564 "socketmodule.c"
+        __label__ = 8; break; //@line 1564 "socketmodule.c"
+      case 4: // $bb3
+        var $7=$len_ret_addr; //@line 1570 "socketmodule.c"
+        HEAP[$7]=28; //@line 1570 "socketmodule.c"
+        $0=1; //@line 1571 "socketmodule.c"
+        __label__ = 8; break; //@line 1571 "socketmodule.c"
+      case 5: // $bb4
+        var $8=$len_ret_addr; //@line 1607 "socketmodule.c"
+        HEAP[$8]=20; //@line 1607 "socketmodule.c"
+        $0=1; //@line 1608 "socketmodule.c"
+        __label__ = 8; break; //@line 1608 "socketmodule.c"
+      case 6: // $bb5
+        var $9=$len_ret_addr; //@line 1615 "socketmodule.c"
+        HEAP[$9]=16; //@line 1615 "socketmodule.c"
+        $0=1; //@line 1616 "socketmodule.c"
+        __label__ = 8; break; //@line 1616 "socketmodule.c"
+      case 7: // $bb6
+        var $10=HEAP[_socket_error]; //@line 1623 "socketmodule.c"
+        _PyErr_SetString($10, __str34); //@line 1623 "socketmodule.c"
+        $0=0; //@line 1624 "socketmodule.c"
+        __label__ = 8; break; //@line 1624 "socketmodule.c"
+      case 8: // $bb7
+        var $11=$0; //@line 1550 "socketmodule.c"
+        $retval=$11; //@line 1550 "socketmodule.c"
+        var $retval8=$retval; //@line 1550 "socketmodule.c"
+        ;
+        return $retval8; //@line 1550 "socketmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _sock_accept($s) {
     var __stackBase__  = STACKTOP; STACKTOP += 136; _memset(__stackBase__, 0, 136);
     var __label__;
@@ -2258,21 +2442,10 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $fd_addr_i;
-        var $family_addr_i;
-        var $type_addr_i;
-        var $proto_addr_i;
-        var $retval_i1;
-        var $0;
-        var $s_i;
-        var $s_addr_i;
-        var $len_ret_addr_i;
-        var $retval_i;
-        var $1;
         var $s_addr;
         var $retval;
-        var $2=__stackBase__;
-        var $3;
+        var $0=__stackBase__;
+        var $1;
         var $addrbuf=__stackBase__+4;
         var $newfd;
         var $addrlen=__stackBase__+132;
@@ -2284,236 +2457,156 @@ var __str384;
         $sock=0; //@line 1638 "socketmodule.c"
         $addr=0; //@line 1639 "socketmodule.c"
         $res=0; //@line 1640 "socketmodule.c"
-        var $4=$s_addr; //@line 1643 "socketmodule.c"
-        $s_addr_i=$4;
-        $len_ret_addr_i=$addrlen;
-        var $5=$s_addr_i; //@line 1544 "socketmodule.c"
-        var $6=$5+12; //@line 1544 "socketmodule.c"
-        var $7=HEAP[$6]; //@line 1544 "socketmodule.c"
-        if ($7 == 1) {
-          __label__ = 1; break;
-        }
-        else if ($7 == 2) {
-          __label__ = 3; break;
-        }
-        else if ($7 == 10) {
-          __label__ = 4; break;
-        }
-        else if ($7 == 16) {
-          __label__ = 2; break;
-        }
-        else if ($7 == 17) {
-          __label__ = 5; break;
-        }
-        else if ($7 == 30) {
-          __label__ = 6; break;
-        }
-        else {
-        __label__ = 7; break;
-        }
-        
-      case 1: // $bb_i
-        var $8=$len_ret_addr_i; //@line 1549 "socketmodule.c"
-        HEAP[$8]=110; //@line 1549 "socketmodule.c"
-        $1=1; //@line 1550 "socketmodule.c"
-        __label__ = 8; break; //@line 1550 "socketmodule.c"
-      case 2: // $bb1_i
-        var $9=$len_ret_addr_i; //@line 1556 "socketmodule.c"
-        HEAP[$9]=12; //@line 1556 "socketmodule.c"
-        $1=1; //@line 1557 "socketmodule.c"
-        __label__ = 8; break; //@line 1557 "socketmodule.c"
-      case 3: // $bb2_i
-        var $10=$len_ret_addr_i; //@line 1563 "socketmodule.c"
-        HEAP[$10]=16; //@line 1563 "socketmodule.c"
-        $1=1; //@line 1564 "socketmodule.c"
-        __label__ = 8; break; //@line 1564 "socketmodule.c"
-      case 4: // $bb3_i
-        var $11=$len_ret_addr_i; //@line 1570 "socketmodule.c"
-        HEAP[$11]=28; //@line 1570 "socketmodule.c"
-        $1=1; //@line 1571 "socketmodule.c"
-        __label__ = 8; break; //@line 1571 "socketmodule.c"
-      case 5: // $bb4_i
-        var $12=$len_ret_addr_i; //@line 1607 "socketmodule.c"
-        HEAP[$12]=20; //@line 1607 "socketmodule.c"
-        $1=1; //@line 1608 "socketmodule.c"
-        __label__ = 8; break; //@line 1608 "socketmodule.c"
-      case 6: // $bb5_i
-        var $13=$len_ret_addr_i; //@line 1615 "socketmodule.c"
-        HEAP[$13]=16; //@line 1615 "socketmodule.c"
-        $1=1; //@line 1616 "socketmodule.c"
-        __label__ = 8; break; //@line 1616 "socketmodule.c"
-      case 7: // $bb
-        var $14=HEAP[_socket_error]; //@line 1623 "socketmodule.c"
-        _PyErr_SetString($14, __str34); //@line 1623 "socketmodule.c"
-        $1=0; //@line 1624 "socketmodule.c"
-        $retval_i=0; //@line 1550 "socketmodule.c"
-        $3=0; //@line 1644 "socketmodule.c"
-        __label__ = 27; break; //@line 1644 "socketmodule.c"
-      case 8: // $bb1
-        $retval_i=1; //@line 1550 "socketmodule.c"
-        var $15=HEAP[$addrlen]; //@line 1645 "socketmodule.c"
+        var $2=$s_addr; //@line 1643 "socketmodule.c"
+        var $3=_getsockaddrlen($2, $addrlen); //@line 1643 "socketmodule.c"
+        var $4=($3)==0; //@line 1643 "socketmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1643 "socketmodule.c"
+      case 1: // $bb
+        $1=0; //@line 1644 "socketmodule.c"
+        __label__ = 19; break; //@line 1644 "socketmodule.c"
+      case 2: // $bb1
+        var $5=HEAP[$addrlen]; //@line 1645 "socketmodule.c"
         var $addrbuf2=$addrbuf; //@line 1645 "socketmodule.c"
-        _llvm_memset_p0i8_i32($addrbuf2, 0, $15, 1, 0); //@line 1645 "socketmodule.c"
+        _llvm_memset_p0i8_i32($addrbuf2, 0, $5, 1, 0); //@line 1645 "socketmodule.c"
         $newfd=-1; //@line 1650 "socketmodule.c"
-        var $16=$s_addr; //@line 1657 "socketmodule.c"
-        var $17=_internal_select($16, 0); //@line 1657 "socketmodule.c"
-        $timeout=$17; //@line 1657 "socketmodule.c"
-        var $18=($17)==0; //@line 1658 "socketmodule.c"
-        if ($18) { __lastLabel__ = 8; __label__ = 9; break; } else { __lastLabel__ = 8; __label__ = 10; break; } //@line 1658 "socketmodule.c"
-      case 9: // $bb3
+        var $6=$s_addr; //@line 1657 "socketmodule.c"
+        var $7=_internal_select($6, 0); //@line 1657 "socketmodule.c"
+        $timeout=$7; //@line 1657 "socketmodule.c"
+        var $8=$timeout; //@line 1658 "socketmodule.c"
+        var $9=($8)==0; //@line 1658 "socketmodule.c"
+        if ($9) { __lastLabel__ = 2; __label__ = 3; break; } else { __lastLabel__ = 2; __label__ = 4; break; } //@line 1658 "socketmodule.c"
+      case 3: // $bb3
         var $addrbuf4=$addrbuf; //@line 1659 "socketmodule.c"
-        var $19=$2; //@line 1659 "socketmodule.c"
-        HEAP[$19]=$addrbuf4; //@line 1659 "socketmodule.c"
-        var $20=$s_addr; //@line 1659 "socketmodule.c"
-        var $21=$20+8; //@line 1659 "socketmodule.c"
-        var $22=HEAP[$21]; //@line 1659 "socketmodule.c"
-        var $elt=$2; //@line 1659 "socketmodule.c"
+        var $10=$0; //@line 1659 "socketmodule.c"
+        HEAP[$10]=$addrbuf4; //@line 1659 "socketmodule.c"
+        var $11=$s_addr; //@line 1659 "socketmodule.c"
+        var $12=$11+8; //@line 1659 "socketmodule.c"
+        var $13=HEAP[$12]; //@line 1659 "socketmodule.c"
+        var $elt=$0; //@line 1659 "socketmodule.c"
         var $val=HEAP[$elt]; //@line 1659 "socketmodule.c"
-        var $23=_accept($22, $val, $addrlen); //@line 1659 "socketmodule.c"
-        $newfd=$23; //@line 1659 "socketmodule.c"
+        var $14=_accept($13, $val, $addrlen); //@line 1659 "socketmodule.c"
+        $newfd=$14; //@line 1659 "socketmodule.c"
         var $_pr=$timeout;
-        __lastLabel__ = 9; __label__ = 10; break; //@line 1659 "socketmodule.c"
-      case 10: // $bb6
-        var $24=__lastLabel__ == 9 ? $_pr : ($17);
-        var $25=($24)==1; //@line 1662 "socketmodule.c"
-        if ($25) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1662 "socketmodule.c"
-      case 11: // $bb7
-        var $26=HEAP[_socket_timeout]; //@line 1663 "socketmodule.c"
-        _PyErr_SetString($26, __str35); //@line 1663 "socketmodule.c"
-        $3=0; //@line 1664 "socketmodule.c"
-        __label__ = 27; break; //@line 1664 "socketmodule.c"
-      case 12: // $bb8
-        var $27=$newfd; //@line 1670 "socketmodule.c"
-        var $28=($27) < 0; //@line 1670 "socketmodule.c"
-        var $29=$s_addr; //@line 1672 "socketmodule.c"
-        if ($28) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1670 "socketmodule.c"
-      case 13: // $bb9
-        var $30=$29+24; //@line 1672 "socketmodule.c"
-        var $31=HEAP[$30]; //@line 1672 "socketmodule.c"
-        var $32=FUNCTION_TABLE[$31](); //@line 1672 "socketmodule.c"
-        $3=$32; //@line 1672 "socketmodule.c"
-        __label__ = 27; break; //@line 1672 "socketmodule.c"
-      case 14: // $bb10
-        var $33=$29+20; //@line 1676 "socketmodule.c"
-        var $34=HEAP[$33]; //@line 1676 "socketmodule.c"
-        var $35=$s_addr; //@line 1676 "socketmodule.c"
-        var $36=$35+16; //@line 1676 "socketmodule.c"
-        var $37=HEAP[$36]; //@line 1676 "socketmodule.c"
-        var $38=$s_addr; //@line 1676 "socketmodule.c"
-        var $39=$38+12; //@line 1676 "socketmodule.c"
-        var $40=HEAP[$39]; //@line 1676 "socketmodule.c"
-        var $41=$newfd; //@line 1676 "socketmodule.c"
-        $fd_addr_i=$41;
-        $family_addr_i=$40;
-        $type_addr_i=$37;
-        $proto_addr_i=$34;
-        var $42=_PyType_GenericNew(_sock_type, 0, 0); //@line 757 "socketmodule.c"
-        var $43=$42; //@line 757 "socketmodule.c"
-        $s_i=$43; //@line 757 "socketmodule.c"
-        var $44=$s_i; //@line 759 "socketmodule.c"
-        var $45=($44)!=0; //@line 759 "socketmodule.c"
-        if ($45) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 759 "socketmodule.c"
-      case 15: // $bb_i2
-        var $46=$s_i; //@line 760 "socketmodule.c"
-        var $47=$fd_addr_i; //@line 760 "socketmodule.c"
-        var $48=$family_addr_i; //@line 760 "socketmodule.c"
-        var $49=$type_addr_i; //@line 760 "socketmodule.c"
-        var $50=$proto_addr_i; //@line 760 "socketmodule.c"
-        _init_sockobject($46, $47, $48, $49, $50); //@line 760 "socketmodule.c"
-        __label__ = 16; break; //@line 760 "socketmodule.c"
-      case 16: // $new_sockobject_exit
-        var $51=$s_i; //@line 761 "socketmodule.c"
-        $0=$51; //@line 761 "socketmodule.c"
-        var $52=$0; //@line 761 "socketmodule.c"
-        $retval_i1=$52; //@line 761 "socketmodule.c"
-        var $retval2_i=$retval_i1; //@line 761 "socketmodule.c"
-        var $53=$retval2_i; //@line 1676 "socketmodule.c"
-        $sock=$53; //@line 1676 "socketmodule.c"
-        var $54=($53)==0; //@line 1681 "socketmodule.c"
-        if ($54) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1681 "socketmodule.c"
-      case 17: // $bb11
-        var $55=$newfd; //@line 1682 "socketmodule.c"
-        var $56=_close($55); //@line 1682 "socketmodule.c"
-        __label__ = 20; break; //@line 1682 "socketmodule.c"
-      case 18: // $bb12
-        var $57=$s_addr; //@line 1685 "socketmodule.c"
-        var $58=$57+20; //@line 1685 "socketmodule.c"
-        var $59=HEAP[$58]; //@line 1685 "socketmodule.c"
-        var $60=HEAP[$addrlen]; //@line 1685 "socketmodule.c"
+        __lastLabel__ = 3; __label__ = 4; break; //@line 1659 "socketmodule.c"
+      case 4: // $bb6
+        var $15=__lastLabel__ == 3 ? $_pr : ($8);
+        var $16=($15)==1; //@line 1662 "socketmodule.c"
+        if ($16) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1662 "socketmodule.c"
+      case 5: // $bb7
+        var $17=HEAP[_socket_timeout]; //@line 1663 "socketmodule.c"
+        _PyErr_SetString($17, __str35); //@line 1663 "socketmodule.c"
+        $1=0; //@line 1664 "socketmodule.c"
+        __label__ = 19; break; //@line 1664 "socketmodule.c"
+      case 6: // $bb8
+        var $18=$newfd; //@line 1670 "socketmodule.c"
+        var $19=($18) < 0; //@line 1670 "socketmodule.c"
+        var $20=$s_addr; //@line 1672 "socketmodule.c"
+        if ($19) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1670 "socketmodule.c"
+      case 7: // $bb9
+        var $21=$20+24; //@line 1672 "socketmodule.c"
+        var $22=HEAP[$21]; //@line 1672 "socketmodule.c"
+        var $23=FUNCTION_TABLE[$22](); //@line 1672 "socketmodule.c"
+        $1=$23; //@line 1672 "socketmodule.c"
+        __label__ = 19; break; //@line 1672 "socketmodule.c"
+      case 8: // $bb10
+        var $24=$20+20; //@line 1676 "socketmodule.c"
+        var $25=HEAP[$24]; //@line 1676 "socketmodule.c"
+        var $26=$s_addr; //@line 1676 "socketmodule.c"
+        var $27=$26+16; //@line 1676 "socketmodule.c"
+        var $28=HEAP[$27]; //@line 1676 "socketmodule.c"
+        var $29=$s_addr; //@line 1676 "socketmodule.c"
+        var $30=$29+12; //@line 1676 "socketmodule.c"
+        var $31=HEAP[$30]; //@line 1676 "socketmodule.c"
+        var $32=$newfd; //@line 1676 "socketmodule.c"
+        var $33=_new_sockobject($32, $31, $28, $25); //@line 1676 "socketmodule.c"
+        var $34=$33; //@line 1676 "socketmodule.c"
+        $sock=$34; //@line 1676 "socketmodule.c"
+        var $35=$sock; //@line 1681 "socketmodule.c"
+        var $36=($35)==0; //@line 1681 "socketmodule.c"
+        if ($36) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1681 "socketmodule.c"
+      case 9: // $bb11
+        var $37=$newfd; //@line 1682 "socketmodule.c"
+        var $38=_close($37); //@line 1682 "socketmodule.c"
+        __label__ = 12; break; //@line 1682 "socketmodule.c"
+      case 10: // $bb12
+        var $39=$s_addr; //@line 1685 "socketmodule.c"
+        var $40=$39+20; //@line 1685 "socketmodule.c"
+        var $41=HEAP[$40]; //@line 1685 "socketmodule.c"
+        var $42=HEAP[$addrlen]; //@line 1685 "socketmodule.c"
         var $addrbuf13=$addrbuf; //@line 1685 "socketmodule.c"
-        var $61=$s_addr; //@line 1685 "socketmodule.c"
-        var $62=$61+8; //@line 1685 "socketmodule.c"
-        var $63=HEAP[$62]; //@line 1685 "socketmodule.c"
-        var $64=_makesockaddr($63, $addrbuf13, $60, $59); //@line 1685 "socketmodule.c"
-        $addr=$64; //@line 1685 "socketmodule.c"
-        var $65=$addr; //@line 1687 "socketmodule.c"
-        var $66=($65)==0; //@line 1687 "socketmodule.c"
-        if ($66) { __label__ = 20; break; } else { __label__ = 19; break; } //@line 1687 "socketmodule.c"
-      case 19: // $bb15
-        var $67=$sock; //@line 1690 "socketmodule.c"
-        var $68=$addr; //@line 1690 "socketmodule.c"
-        var $69=_PyTuple_Pack(2, $67, $68); //@line 1690 "socketmodule.c"
-        $res=$69; //@line 1690 "socketmodule.c"
-        __label__ = 20; break; //@line 1692 "socketmodule.c"
-      case 20: // $finally
-        var $70=$sock; //@line 1693 "socketmodule.c"
-        var $71=($70)!=0; //@line 1693 "socketmodule.c"
-        if ($71) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 1693 "socketmodule.c"
-      case 21: // $bb16
-        var $72=$sock; //@line 1693 "socketmodule.c"
-        var $73=$72; //@line 1693 "socketmodule.c"
-        var $74=HEAP[$73]; //@line 1693 "socketmodule.c"
-        var $75=($74) - 1; //@line 1693 "socketmodule.c"
-        var $76=$sock; //@line 1693 "socketmodule.c"
-        var $77=$76; //@line 1693 "socketmodule.c"
-        HEAP[$77]=$75; //@line 1693 "socketmodule.c"
-        var $78=$sock; //@line 1693 "socketmodule.c"
-        var $79=$78; //@line 1693 "socketmodule.c"
-        var $80=HEAP[$79]; //@line 1693 "socketmodule.c"
-        var $81=($80)==0; //@line 1693 "socketmodule.c"
-        if ($81) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1693 "socketmodule.c"
-      case 22: // $bb17
-        var $82=$sock; //@line 1693 "socketmodule.c"
-        var $83=$82+4; //@line 1693 "socketmodule.c"
-        var $84=HEAP[$83]; //@line 1693 "socketmodule.c"
-        var $85=$84+24; //@line 1693 "socketmodule.c"
-        var $86=HEAP[$85]; //@line 1693 "socketmodule.c"
-        var $87=$sock; //@line 1693 "socketmodule.c"
-        FUNCTION_TABLE[$86]($87); //@line 1693 "socketmodule.c"
-        __label__ = 23; break; //@line 1693 "socketmodule.c"
-      case 23: // $bb18
-        var $88=$addr; //@line 1694 "socketmodule.c"
-        var $89=($88)!=0; //@line 1694 "socketmodule.c"
-        if ($89) { __label__ = 24; break; } else { __label__ = 26; break; } //@line 1694 "socketmodule.c"
-      case 24: // $bb19
-        var $90=$addr; //@line 1694 "socketmodule.c"
-        var $91=$90; //@line 1694 "socketmodule.c"
-        var $92=HEAP[$91]; //@line 1694 "socketmodule.c"
-        var $93=($92) - 1; //@line 1694 "socketmodule.c"
-        var $94=$addr; //@line 1694 "socketmodule.c"
-        var $95=$94; //@line 1694 "socketmodule.c"
-        HEAP[$95]=$93; //@line 1694 "socketmodule.c"
-        var $96=$addr; //@line 1694 "socketmodule.c"
-        var $97=$96; //@line 1694 "socketmodule.c"
-        var $98=HEAP[$97]; //@line 1694 "socketmodule.c"
-        var $99=($98)==0; //@line 1694 "socketmodule.c"
-        if ($99) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1694 "socketmodule.c"
-      case 25: // $bb20
-        var $100=$addr; //@line 1694 "socketmodule.c"
-        var $101=$100+4; //@line 1694 "socketmodule.c"
-        var $102=HEAP[$101]; //@line 1694 "socketmodule.c"
-        var $103=$102+24; //@line 1694 "socketmodule.c"
-        var $104=HEAP[$103]; //@line 1694 "socketmodule.c"
-        var $105=$addr; //@line 1694 "socketmodule.c"
-        FUNCTION_TABLE[$104]($105); //@line 1694 "socketmodule.c"
-        __label__ = 26; break; //@line 1694 "socketmodule.c"
-      case 26: // $bb21
-        var $106=$res; //@line 1695 "socketmodule.c"
-        $3=$106; //@line 1695 "socketmodule.c"
-        __label__ = 27; break; //@line 1695 "socketmodule.c"
-      case 27: // $bb22
-        var $107=$3; //@line 1644 "socketmodule.c"
-        $retval=$107; //@line 1644 "socketmodule.c"
+        var $43=$s_addr; //@line 1685 "socketmodule.c"
+        var $44=$43+8; //@line 1685 "socketmodule.c"
+        var $45=HEAP[$44]; //@line 1685 "socketmodule.c"
+        var $46=_makesockaddr($45, $addrbuf13, $42, $41); //@line 1685 "socketmodule.c"
+        $addr=$46; //@line 1685 "socketmodule.c"
+        var $47=$addr; //@line 1687 "socketmodule.c"
+        var $48=($47)==0; //@line 1687 "socketmodule.c"
+        if ($48) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 1687 "socketmodule.c"
+      case 11: // $bb15
+        var $49=$sock; //@line 1690 "socketmodule.c"
+        var $50=$addr; //@line 1690 "socketmodule.c"
+        var $51=_PyTuple_Pack(2, allocate([$49,0,0,0,$50,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1690 "socketmodule.c"
+        $res=$51; //@line 1690 "socketmodule.c"
+        __label__ = 12; break; //@line 1692 "socketmodule.c"
+      case 12: // $finally
+        var $52=$sock; //@line 1693 "socketmodule.c"
+        var $53=($52)!=0; //@line 1693 "socketmodule.c"
+        if ($53) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 1693 "socketmodule.c"
+      case 13: // $bb16
+        var $54=$sock; //@line 1693 "socketmodule.c"
+        var $55=$54; //@line 1693 "socketmodule.c"
+        var $56=HEAP[$55]; //@line 1693 "socketmodule.c"
+        var $57=($56) - 1; //@line 1693 "socketmodule.c"
+        var $58=$sock; //@line 1693 "socketmodule.c"
+        var $59=$58; //@line 1693 "socketmodule.c"
+        HEAP[$59]=$57; //@line 1693 "socketmodule.c"
+        var $60=$sock; //@line 1693 "socketmodule.c"
+        var $61=$60; //@line 1693 "socketmodule.c"
+        var $62=HEAP[$61]; //@line 1693 "socketmodule.c"
+        var $63=($62)==0; //@line 1693 "socketmodule.c"
+        if ($63) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1693 "socketmodule.c"
+      case 14: // $bb17
+        var $64=$sock; //@line 1693 "socketmodule.c"
+        var $65=$64+4; //@line 1693 "socketmodule.c"
+        var $66=HEAP[$65]; //@line 1693 "socketmodule.c"
+        var $67=$66+24; //@line 1693 "socketmodule.c"
+        var $68=HEAP[$67]; //@line 1693 "socketmodule.c"
+        var $69=$sock; //@line 1693 "socketmodule.c"
+        FUNCTION_TABLE[$68]($69); //@line 1693 "socketmodule.c"
+        __label__ = 15; break; //@line 1693 "socketmodule.c"
+      case 15: // $bb18
+        var $70=$addr; //@line 1694 "socketmodule.c"
+        var $71=($70)!=0; //@line 1694 "socketmodule.c"
+        if ($71) { __label__ = 16; break; } else { __label__ = 18; break; } //@line 1694 "socketmodule.c"
+      case 16: // $bb19
+        var $72=$addr; //@line 1694 "socketmodule.c"
+        var $73=$72; //@line 1694 "socketmodule.c"
+        var $74=HEAP[$73]; //@line 1694 "socketmodule.c"
+        var $75=($74) - 1; //@line 1694 "socketmodule.c"
+        var $76=$addr; //@line 1694 "socketmodule.c"
+        var $77=$76; //@line 1694 "socketmodule.c"
+        HEAP[$77]=$75; //@line 1694 "socketmodule.c"
+        var $78=$addr; //@line 1694 "socketmodule.c"
+        var $79=$78; //@line 1694 "socketmodule.c"
+        var $80=HEAP[$79]; //@line 1694 "socketmodule.c"
+        var $81=($80)==0; //@line 1694 "socketmodule.c"
+        if ($81) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1694 "socketmodule.c"
+      case 17: // $bb20
+        var $82=$addr; //@line 1694 "socketmodule.c"
+        var $83=$82+4; //@line 1694 "socketmodule.c"
+        var $84=HEAP[$83]; //@line 1694 "socketmodule.c"
+        var $85=$84+24; //@line 1694 "socketmodule.c"
+        var $86=HEAP[$85]; //@line 1694 "socketmodule.c"
+        var $87=$addr; //@line 1694 "socketmodule.c"
+        FUNCTION_TABLE[$86]($87); //@line 1694 "socketmodule.c"
+        __label__ = 18; break; //@line 1694 "socketmodule.c"
+      case 18: // $bb21
+        var $88=$res; //@line 1695 "socketmodule.c"
+        $1=$88; //@line 1695 "socketmodule.c"
+        __label__ = 19; break; //@line 1695 "socketmodule.c"
+      case 19: // $bb22
+        var $89=$1; //@line 1644 "socketmodule.c"
+        $retval=$89; //@line 1644 "socketmodule.c"
         var $retval23=$retval; //@line 1644 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval23; //@line 1644 "socketmodule.c"
@@ -2529,9 +2622,6 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $block_addr_i;
-        var $delay_flag_i;
         var $s_addr;
         var $arg_addr;
         var $retval;
@@ -2552,7 +2642,7 @@ var __str384;
         if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1716 "socketmodule.c"
       case 2: // $bb1
         $0=0; //@line 1717 "socketmodule.c"
-        __label__ = 11; break; //@line 1717 "socketmodule.c"
+        __label__ = 8; break; //@line 1717 "socketmodule.c"
       case 3: // $bb2thread_pre_split
         var $_pr=$block;
         __lastLabel__ = 3; __label__ = 4; break;
@@ -2573,39 +2663,15 @@ var __str384;
         HEAP[$10]=$11; //@line 1719 "socketmodule.c"
         var $12=$s_addr; //@line 1720 "socketmodule.c"
         var $13=$block; //@line 1720 "socketmodule.c"
-        $s_addr_i=$12;
-        $block_addr_i=$13;
-        var $14=$s_addr_i; //@line 640 "socketmodule.c"
-        var $15=$14+8; //@line 640 "socketmodule.c"
-        var $16=HEAP[$15]; //@line 640 "socketmodule.c"
-        var $17=_fcntl($16, 3, 0); //@line 640 "socketmodule.c"
-        $delay_flag_i=$17; //@line 640 "socketmodule.c"
-        var $18=$block_addr_i; //@line 641 "socketmodule.c"
-        var $19=($18)!=0; //@line 641 "socketmodule.c"
-        var $20=$delay_flag_i; //@line 642 "socketmodule.c"
-        if ($19) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 641 "socketmodule.c"
-      case 8: // $bb_i
-        var $21=($20) & -2049; //@line 642 "socketmodule.c"
-        $delay_flag_i=$21; //@line 642 "socketmodule.c"
-        __label__ = 10; break; //@line 642 "socketmodule.c"
-      case 9: // $bb1_i
-        var $22=($20) | 2048; //@line 644 "socketmodule.c"
-        $delay_flag_i=$22; //@line 644 "socketmodule.c"
-        __label__ = 10; break; //@line 644 "socketmodule.c"
-      case 10: // $internal_setblocking_exit
-        var $23=$s_addr_i; //@line 645 "socketmodule.c"
-        var $24=$23+8; //@line 645 "socketmodule.c"
-        var $25=HEAP[$24]; //@line 645 "socketmodule.c"
-        var $26=$delay_flag_i; //@line 645 "socketmodule.c"
-        var $27=_fcntl($25, 4, $26); //@line 645 "socketmodule.c"
-        var $28=HEAP[__Py_NoneStruct]; //@line 1722 "socketmodule.c"
-        var $29=($28) + 1; //@line 1722 "socketmodule.c"
-        HEAP[__Py_NoneStruct]=$29; //@line 1722 "socketmodule.c"
+        _internal_setblocking($12, $13); //@line 1720 "socketmodule.c"
+        var $14=HEAP[__Py_NoneStruct]; //@line 1722 "socketmodule.c"
+        var $15=($14) + 1; //@line 1722 "socketmodule.c"
+        HEAP[__Py_NoneStruct]=$15; //@line 1722 "socketmodule.c"
         $0=__Py_NoneStruct; //@line 1723 "socketmodule.c"
-        __label__ = 11; break; //@line 1723 "socketmodule.c"
-      case 11: // $bb6
-        var $30=$0; //@line 1717 "socketmodule.c"
-        $retval=$30; //@line 1717 "socketmodule.c"
+        __label__ = 8; break; //@line 1723 "socketmodule.c"
+      case 8: // $bb6
+        var $16=$0; //@line 1717 "socketmodule.c"
+        $retval=$16; //@line 1717 "socketmodule.c"
         var $retval7=$retval; //@line 1717 "socketmodule.c"
         ;
         return $retval7; //@line 1717 "socketmodule.c"
@@ -2620,9 +2686,6 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $block_addr_i;
-        var $delay_flag_i;
         var $s_addr;
         var $arg_addr;
         var $retval;
@@ -2653,7 +2716,7 @@ var __str384;
         __label__ = 5; break; //@line 1750 "socketmodule.c"
       case 5: // $bb4
         $0=0; //@line 1752 "socketmodule.c"
-        __label__ = 10; break; //@line 1752 "socketmodule.c"
+        __label__ = 7; break; //@line 1752 "socketmodule.c"
       case 6: // $bb5
         var $10=$s_addr; //@line 1756 "socketmodule.c"
         var $11=$10+28; //@line 1756 "socketmodule.c"
@@ -2663,39 +2726,15 @@ var __str384;
         var $14=($13) < 0; //@line 1757 "socketmodule.c"
         var $15=($14); //@line 1757 "socketmodule.c"
         var $16=$s_addr; //@line 1757 "socketmodule.c"
-        $s_addr_i=$16;
-        $block_addr_i=$15;
-        var $17=$s_addr_i; //@line 640 "socketmodule.c"
-        var $18=$17+8; //@line 640 "socketmodule.c"
-        var $19=HEAP[$18]; //@line 640 "socketmodule.c"
-        var $20=_fcntl($19, 3, 0); //@line 640 "socketmodule.c"
-        $delay_flag_i=$20; //@line 640 "socketmodule.c"
-        var $21=$block_addr_i; //@line 641 "socketmodule.c"
-        var $22=($21)!=0; //@line 641 "socketmodule.c"
-        var $23=$delay_flag_i; //@line 642 "socketmodule.c"
-        if ($22) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 641 "socketmodule.c"
-      case 7: // $bb_i
-        var $24=($23) & -2049; //@line 642 "socketmodule.c"
-        $delay_flag_i=$24; //@line 642 "socketmodule.c"
-        __label__ = 9; break; //@line 642 "socketmodule.c"
-      case 8: // $bb1_i
-        var $25=($23) | 2048; //@line 644 "socketmodule.c"
-        $delay_flag_i=$25; //@line 644 "socketmodule.c"
-        __label__ = 9; break; //@line 644 "socketmodule.c"
-      case 9: // $internal_setblocking_exit
-        var $26=$s_addr_i; //@line 645 "socketmodule.c"
-        var $27=$26+8; //@line 645 "socketmodule.c"
-        var $28=HEAP[$27]; //@line 645 "socketmodule.c"
-        var $29=$delay_flag_i; //@line 645 "socketmodule.c"
-        var $30=_fcntl($28, 4, $29); //@line 645 "socketmodule.c"
-        var $31=HEAP[__Py_NoneStruct]; //@line 1759 "socketmodule.c"
-        var $32=($31) + 1; //@line 1759 "socketmodule.c"
-        HEAP[__Py_NoneStruct]=$32; //@line 1759 "socketmodule.c"
+        _internal_setblocking($16, $15); //@line 1757 "socketmodule.c"
+        var $17=HEAP[__Py_NoneStruct]; //@line 1759 "socketmodule.c"
+        var $18=($17) + 1; //@line 1759 "socketmodule.c"
+        HEAP[__Py_NoneStruct]=$18; //@line 1759 "socketmodule.c"
         $0=__Py_NoneStruct; //@line 1760 "socketmodule.c"
-        __label__ = 10; break; //@line 1760 "socketmodule.c"
-      case 10: // $bb6
-        var $33=$0; //@line 1752 "socketmodule.c"
-        $retval=$33; //@line 1752 "socketmodule.c"
+        __label__ = 7; break; //@line 1760 "socketmodule.c"
+      case 7: // $bb6
+        var $19=$0; //@line 1752 "socketmodule.c"
+        $retval=$19; //@line 1752 "socketmodule.c"
         var $retval7=$retval; //@line 1752 "socketmodule.c"
         ;
         return $retval7; //@line 1752 "socketmodule.c"
@@ -2762,7 +2801,7 @@ var __str384;
         $s_addr=$s;
         $args_addr=$args;
         var $1=$args_addr; //@line 1830 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str37, $level, $optname, $flag); //@line 1830 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str37, allocate([$level,0,0,0,$optname,0,0,0,$flag,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1830 "socketmodule.c"
         var $3=($2)!=0; //@line 1830 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1830 "socketmodule.c"
       case 1: // $bb
@@ -2773,7 +2812,7 @@ var __str384;
       case 2: // $bb3
         _PyErr_Clear(); //@line 1836 "socketmodule.c"
         var $4=$args_addr; //@line 1837 "socketmodule.c"
-        var $5=_PyArg_ParseTuple($4, __str38, $level, $optname, $buf, $buflen); //@line 1837 "socketmodule.c"
+        var $5=_PyArg_ParseTuple($4, __str38, allocate([$level,0,0,0,$optname,0,0,0,$buf,0,0,0,$buflen,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1837 "socketmodule.c"
         var $6=($5)==0; //@line 1837 "socketmodule.c"
         if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1837 "socketmodule.c"
       case 3: // $bb4
@@ -2836,7 +2875,7 @@ var __str384;
         $args_addr=$args;
         HEAP[$buflen]=0; //@line 1867 "socketmodule.c"
         var $1=$args_addr; //@line 1875 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str39, $level, $optname, $buflen); //@line 1875 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str39, allocate([$level,0,0,0,$optname,0,0,0,$buflen,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1875 "socketmodule.c"
         var $3=($2)==0; //@line 1875 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1875 "socketmodule.c"
       case 1: // $bb
@@ -3320,83 +3359,54 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $fd_addr_i;
-        var $family_addr_i;
-        var $type_addr_i;
-        var $proto_addr_i;
-        var $retval_i;
-        var $0;
-        var $s_i;
         var $s_addr;
         var $retval;
-        var $1;
+        var $0;
         var $newfd;
         var $sock;
         $s_addr=$s;
-        var $2=$s_addr; //@line 2156 "socketmodule.c"
-        var $3=$2+8; //@line 2156 "socketmodule.c"
-        var $4=HEAP[$3]; //@line 2156 "socketmodule.c"
-        var $5=_dup($4); //@line 2156 "socketmodule.c"
-        $newfd=$5; //@line 2156 "socketmodule.c"
-        var $6=$newfd; //@line 2157 "socketmodule.c"
-        var $7=($6) < 0; //@line 2157 "socketmodule.c"
-        var $8=$s_addr; //@line 2158 "socketmodule.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2157 "socketmodule.c"
+        var $1=$s_addr; //@line 2156 "socketmodule.c"
+        var $2=$1+8; //@line 2156 "socketmodule.c"
+        var $3=HEAP[$2]; //@line 2156 "socketmodule.c"
+        var $4=_dup($3); //@line 2156 "socketmodule.c"
+        $newfd=$4; //@line 2156 "socketmodule.c"
+        var $5=$newfd; //@line 2157 "socketmodule.c"
+        var $6=($5) < 0; //@line 2157 "socketmodule.c"
+        var $7=$s_addr; //@line 2158 "socketmodule.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2157 "socketmodule.c"
       case 1: // $bb
-        var $9=$8+24; //@line 2158 "socketmodule.c"
-        var $10=HEAP[$9]; //@line 2158 "socketmodule.c"
-        var $11=FUNCTION_TABLE[$10](); //@line 2158 "socketmodule.c"
-        $1=$11; //@line 2158 "socketmodule.c"
-        __label__ = 7; break; //@line 2158 "socketmodule.c"
+        var $8=$7+24; //@line 2158 "socketmodule.c"
+        var $9=HEAP[$8]; //@line 2158 "socketmodule.c"
+        var $10=FUNCTION_TABLE[$9](); //@line 2158 "socketmodule.c"
+        $0=$10; //@line 2158 "socketmodule.c"
+        __label__ = 5; break; //@line 2158 "socketmodule.c"
       case 2: // $bb1
-        var $12=$8+20; //@line 2159 "socketmodule.c"
-        var $13=HEAP[$12]; //@line 2159 "socketmodule.c"
-        var $14=$s_addr; //@line 2159 "socketmodule.c"
-        var $15=$14+16; //@line 2159 "socketmodule.c"
-        var $16=HEAP[$15]; //@line 2159 "socketmodule.c"
-        var $17=$s_addr; //@line 2159 "socketmodule.c"
-        var $18=$17+12; //@line 2159 "socketmodule.c"
-        var $19=HEAP[$18]; //@line 2159 "socketmodule.c"
-        var $20=$newfd; //@line 2159 "socketmodule.c"
-        $fd_addr_i=$20;
-        $family_addr_i=$19;
-        $type_addr_i=$16;
-        $proto_addr_i=$13;
-        var $21=_PyType_GenericNew(_sock_type, 0, 0); //@line 757 "socketmodule.c"
-        var $22=$21; //@line 757 "socketmodule.c"
-        $s_i=$22; //@line 757 "socketmodule.c"
-        var $23=$s_i; //@line 759 "socketmodule.c"
-        var $24=($23)!=0; //@line 759 "socketmodule.c"
-        if ($24) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 759 "socketmodule.c"
-      case 3: // $bb_i
-        var $25=$s_i; //@line 760 "socketmodule.c"
-        var $26=$fd_addr_i; //@line 760 "socketmodule.c"
-        var $27=$family_addr_i; //@line 760 "socketmodule.c"
-        var $28=$type_addr_i; //@line 760 "socketmodule.c"
-        var $29=$proto_addr_i; //@line 760 "socketmodule.c"
-        _init_sockobject($25, $26, $27, $28, $29); //@line 760 "socketmodule.c"
-        __label__ = 4; break; //@line 760 "socketmodule.c"
-      case 4: // $new_sockobject_exit
-        var $30=$s_i; //@line 761 "socketmodule.c"
-        $0=$30; //@line 761 "socketmodule.c"
-        var $31=$0; //@line 761 "socketmodule.c"
-        $retval_i=$31; //@line 761 "socketmodule.c"
-        var $retval2_i=$retval_i; //@line 761 "socketmodule.c"
-        var $32=$retval2_i; //@line 2159 "socketmodule.c"
-        $sock=$32; //@line 2159 "socketmodule.c"
-        var $33=($32)==0; //@line 2163 "socketmodule.c"
-        if ($33) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2163 "socketmodule.c"
-      case 5: // $bb2
-        var $34=$newfd; //@line 2164 "socketmodule.c"
-        var $35=_close($34); //@line 2164 "socketmodule.c"
-        __label__ = 6; break; //@line 2164 "socketmodule.c"
-      case 6: // $bb3
-        var $36=$sock; //@line 2165 "socketmodule.c"
-        $1=$36; //@line 2165 "socketmodule.c"
-        __label__ = 7; break; //@line 2165 "socketmodule.c"
-      case 7: // $bb4
-        var $37=$1; //@line 2158 "socketmodule.c"
-        $retval=$37; //@line 2158 "socketmodule.c"
+        var $11=$7+20; //@line 2159 "socketmodule.c"
+        var $12=HEAP[$11]; //@line 2159 "socketmodule.c"
+        var $13=$s_addr; //@line 2159 "socketmodule.c"
+        var $14=$13+16; //@line 2159 "socketmodule.c"
+        var $15=HEAP[$14]; //@line 2159 "socketmodule.c"
+        var $16=$s_addr; //@line 2159 "socketmodule.c"
+        var $17=$16+12; //@line 2159 "socketmodule.c"
+        var $18=HEAP[$17]; //@line 2159 "socketmodule.c"
+        var $19=$newfd; //@line 2159 "socketmodule.c"
+        var $20=_new_sockobject($19, $18, $15, $12); //@line 2159 "socketmodule.c"
+        var $21=$20; //@line 2159 "socketmodule.c"
+        $sock=$21; //@line 2159 "socketmodule.c"
+        var $22=$sock; //@line 2163 "socketmodule.c"
+        var $23=($22)==0; //@line 2163 "socketmodule.c"
+        if ($23) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2163 "socketmodule.c"
+      case 3: // $bb2
+        var $24=$newfd; //@line 2164 "socketmodule.c"
+        var $25=_close($24); //@line 2164 "socketmodule.c"
+        __label__ = 4; break; //@line 2164 "socketmodule.c"
+      case 4: // $bb3
+        var $26=$sock; //@line 2165 "socketmodule.c"
+        $0=$26; //@line 2165 "socketmodule.c"
+        __label__ = 5; break; //@line 2165 "socketmodule.c"
+      case 5: // $bb4
+        var $27=$0; //@line 2158 "socketmodule.c"
+        $retval=$27; //@line 2158 "socketmodule.c"
         var $retval5=$retval; //@line 2158 "socketmodule.c"
         ;
         return $retval5; //@line 2158 "socketmodule.c"
@@ -3411,121 +3421,59 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $len_ret_addr_i;
-        var $retval_i;
-        var $0;
         var $s_addr;
         var $retval;
-        var $1=__stackBase__;
-        var $2;
+        var $0=__stackBase__;
+        var $1;
         var $addrbuf=__stackBase__+4;
         var $res;
         var $addrlen=__stackBase__+132;
         $s_addr=$s;
-        var $3=$s_addr; //@line 2185 "socketmodule.c"
-        $s_addr_i=$3;
-        $len_ret_addr_i=$addrlen;
-        var $4=$s_addr_i; //@line 1544 "socketmodule.c"
-        var $5=$4+12; //@line 1544 "socketmodule.c"
-        var $6=HEAP[$5]; //@line 1544 "socketmodule.c"
-        if ($6 == 1) {
-          __label__ = 1; break;
-        }
-        else if ($6 == 2) {
-          __label__ = 3; break;
-        }
-        else if ($6 == 10) {
-          __label__ = 4; break;
-        }
-        else if ($6 == 16) {
-          __label__ = 2; break;
-        }
-        else if ($6 == 17) {
-          __label__ = 5; break;
-        }
-        else if ($6 == 30) {
-          __label__ = 6; break;
-        }
-        else {
-        __label__ = 7; break;
-        }
-        
-      case 1: // $bb_i
-        var $7=$len_ret_addr_i; //@line 1549 "socketmodule.c"
-        HEAP[$7]=110; //@line 1549 "socketmodule.c"
-        $0=1; //@line 1550 "socketmodule.c"
-        __label__ = 8; break; //@line 1550 "socketmodule.c"
-      case 2: // $bb1_i
-        var $8=$len_ret_addr_i; //@line 1556 "socketmodule.c"
-        HEAP[$8]=12; //@line 1556 "socketmodule.c"
-        $0=1; //@line 1557 "socketmodule.c"
-        __label__ = 8; break; //@line 1557 "socketmodule.c"
-      case 3: // $bb2_i
-        var $9=$len_ret_addr_i; //@line 1563 "socketmodule.c"
-        HEAP[$9]=16; //@line 1563 "socketmodule.c"
-        $0=1; //@line 1564 "socketmodule.c"
-        __label__ = 8; break; //@line 1564 "socketmodule.c"
-      case 4: // $bb3_i
-        var $10=$len_ret_addr_i; //@line 1570 "socketmodule.c"
-        HEAP[$10]=28; //@line 1570 "socketmodule.c"
-        $0=1; //@line 1571 "socketmodule.c"
-        __label__ = 8; break; //@line 1571 "socketmodule.c"
-      case 5: // $bb4_i
-        var $11=$len_ret_addr_i; //@line 1607 "socketmodule.c"
-        HEAP[$11]=20; //@line 1607 "socketmodule.c"
-        $0=1; //@line 1608 "socketmodule.c"
-        __label__ = 8; break; //@line 1608 "socketmodule.c"
-      case 6: // $bb5_i
-        var $12=$len_ret_addr_i; //@line 1615 "socketmodule.c"
-        HEAP[$12]=16; //@line 1615 "socketmodule.c"
-        $0=1; //@line 1616 "socketmodule.c"
-        __label__ = 8; break; //@line 1616 "socketmodule.c"
-      case 7: // $bb
-        var $13=HEAP[_socket_error]; //@line 1623 "socketmodule.c"
-        _PyErr_SetString($13, __str34); //@line 1623 "socketmodule.c"
-        $0=0; //@line 1624 "socketmodule.c"
-        $retval_i=0; //@line 1550 "socketmodule.c"
-        $2=0; //@line 2186 "socketmodule.c"
-        __label__ = 11; break; //@line 2186 "socketmodule.c"
-      case 8: // $bb1
-        $retval_i=1; //@line 1550 "socketmodule.c"
-        var $14=HEAP[$addrlen]; //@line 2187 "socketmodule.c"
+        var $2=$s_addr; //@line 2185 "socketmodule.c"
+        var $3=_getsockaddrlen($2, $addrlen); //@line 2185 "socketmodule.c"
+        var $4=($3)==0; //@line 2185 "socketmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2185 "socketmodule.c"
+      case 1: // $bb
+        $1=0; //@line 2186 "socketmodule.c"
+        __label__ = 5; break; //@line 2186 "socketmodule.c"
+      case 2: // $bb1
+        var $5=HEAP[$addrlen]; //@line 2187 "socketmodule.c"
         var $addrbuf2=$addrbuf; //@line 2187 "socketmodule.c"
-        _llvm_memset_p0i8_i32($addrbuf2, 0, $14, 1, 0); //@line 2187 "socketmodule.c"
+        _llvm_memset_p0i8_i32($addrbuf2, 0, $5, 1, 0); //@line 2187 "socketmodule.c"
         var $addrbuf3=$addrbuf; //@line 2189 "socketmodule.c"
-        var $15=$1; //@line 2189 "socketmodule.c"
-        HEAP[$15]=$addrbuf3; //@line 2189 "socketmodule.c"
-        var $16=$s_addr; //@line 2189 "socketmodule.c"
-        var $17=$16+8; //@line 2189 "socketmodule.c"
-        var $18=HEAP[$17]; //@line 2189 "socketmodule.c"
-        var $elt=$1; //@line 2189 "socketmodule.c"
+        var $6=$0; //@line 2189 "socketmodule.c"
+        HEAP[$6]=$addrbuf3; //@line 2189 "socketmodule.c"
+        var $7=$s_addr; //@line 2189 "socketmodule.c"
+        var $8=$7+8; //@line 2189 "socketmodule.c"
+        var $9=HEAP[$8]; //@line 2189 "socketmodule.c"
+        var $elt=$0; //@line 2189 "socketmodule.c"
         var $val=HEAP[$elt]; //@line 2189 "socketmodule.c"
-        var $19=_getsockname($18, $val, $addrlen); //@line 2189 "socketmodule.c"
-        $res=$19; //@line 2189 "socketmodule.c"
-        var $20=($19) < 0; //@line 2191 "socketmodule.c"
-        var $21=$s_addr; //@line 2192 "socketmodule.c"
-        if ($20) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2191 "socketmodule.c"
-      case 9: // $bb5
-        var $22=$21+24; //@line 2192 "socketmodule.c"
-        var $23=HEAP[$22]; //@line 2192 "socketmodule.c"
-        var $24=FUNCTION_TABLE[$23](); //@line 2192 "socketmodule.c"
-        $2=$24; //@line 2192 "socketmodule.c"
-        __label__ = 11; break; //@line 2192 "socketmodule.c"
-      case 10: // $bb6
-        var $25=$21+20; //@line 2193 "socketmodule.c"
-        var $26=HEAP[$25]; //@line 2193 "socketmodule.c"
-        var $27=HEAP[$addrlen]; //@line 2193 "socketmodule.c"
+        var $10=_getsockname($9, $val, $addrlen); //@line 2189 "socketmodule.c"
+        $res=$10; //@line 2189 "socketmodule.c"
+        var $11=$res; //@line 2191 "socketmodule.c"
+        var $12=($11) < 0; //@line 2191 "socketmodule.c"
+        var $13=$s_addr; //@line 2192 "socketmodule.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2191 "socketmodule.c"
+      case 3: // $bb5
+        var $14=$13+24; //@line 2192 "socketmodule.c"
+        var $15=HEAP[$14]; //@line 2192 "socketmodule.c"
+        var $16=FUNCTION_TABLE[$15](); //@line 2192 "socketmodule.c"
+        $1=$16; //@line 2192 "socketmodule.c"
+        __label__ = 5; break; //@line 2192 "socketmodule.c"
+      case 4: // $bb6
+        var $17=$13+20; //@line 2193 "socketmodule.c"
+        var $18=HEAP[$17]; //@line 2193 "socketmodule.c"
+        var $19=HEAP[$addrlen]; //@line 2193 "socketmodule.c"
         var $addrbuf7=$addrbuf; //@line 2193 "socketmodule.c"
-        var $28=$s_addr; //@line 2193 "socketmodule.c"
-        var $29=$28+8; //@line 2193 "socketmodule.c"
-        var $30=HEAP[$29]; //@line 2193 "socketmodule.c"
-        var $31=_makesockaddr($30, $addrbuf7, $27, $26); //@line 2193 "socketmodule.c"
-        $2=$31; //@line 2193 "socketmodule.c"
-        __label__ = 11; break; //@line 2193 "socketmodule.c"
-      case 11: // $bb9
-        var $32=$2; //@line 2186 "socketmodule.c"
-        $retval=$32; //@line 2186 "socketmodule.c"
+        var $20=$s_addr; //@line 2193 "socketmodule.c"
+        var $21=$20+8; //@line 2193 "socketmodule.c"
+        var $22=HEAP[$21]; //@line 2193 "socketmodule.c"
+        var $23=_makesockaddr($22, $addrbuf7, $19, $18); //@line 2193 "socketmodule.c"
+        $1=$23; //@line 2193 "socketmodule.c"
+        __label__ = 5; break; //@line 2193 "socketmodule.c"
+      case 5: // $bb9
+        var $24=$1; //@line 2186 "socketmodule.c"
+        $retval=$24; //@line 2186 "socketmodule.c"
         var $retval10=$retval; //@line 2186 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 2186 "socketmodule.c"
@@ -3540,121 +3488,59 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $len_ret_addr_i;
-        var $retval_i;
-        var $0;
         var $s_addr;
         var $retval;
-        var $1=__stackBase__;
-        var $2;
+        var $0=__stackBase__;
+        var $1;
         var $addrbuf=__stackBase__+4;
         var $res;
         var $addrlen=__stackBase__+132;
         $s_addr=$s;
-        var $3=$s_addr; //@line 2214 "socketmodule.c"
-        $s_addr_i=$3;
-        $len_ret_addr_i=$addrlen;
-        var $4=$s_addr_i; //@line 1544 "socketmodule.c"
-        var $5=$4+12; //@line 1544 "socketmodule.c"
-        var $6=HEAP[$5]; //@line 1544 "socketmodule.c"
-        if ($6 == 1) {
-          __label__ = 1; break;
-        }
-        else if ($6 == 2) {
-          __label__ = 3; break;
-        }
-        else if ($6 == 10) {
-          __label__ = 4; break;
-        }
-        else if ($6 == 16) {
-          __label__ = 2; break;
-        }
-        else if ($6 == 17) {
-          __label__ = 5; break;
-        }
-        else if ($6 == 30) {
-          __label__ = 6; break;
-        }
-        else {
-        __label__ = 7; break;
-        }
-        
-      case 1: // $bb_i
-        var $7=$len_ret_addr_i; //@line 1549 "socketmodule.c"
-        HEAP[$7]=110; //@line 1549 "socketmodule.c"
-        $0=1; //@line 1550 "socketmodule.c"
-        __label__ = 8; break; //@line 1550 "socketmodule.c"
-      case 2: // $bb1_i
-        var $8=$len_ret_addr_i; //@line 1556 "socketmodule.c"
-        HEAP[$8]=12; //@line 1556 "socketmodule.c"
-        $0=1; //@line 1557 "socketmodule.c"
-        __label__ = 8; break; //@line 1557 "socketmodule.c"
-      case 3: // $bb2_i
-        var $9=$len_ret_addr_i; //@line 1563 "socketmodule.c"
-        HEAP[$9]=16; //@line 1563 "socketmodule.c"
-        $0=1; //@line 1564 "socketmodule.c"
-        __label__ = 8; break; //@line 1564 "socketmodule.c"
-      case 4: // $bb3_i
-        var $10=$len_ret_addr_i; //@line 1570 "socketmodule.c"
-        HEAP[$10]=28; //@line 1570 "socketmodule.c"
-        $0=1; //@line 1571 "socketmodule.c"
-        __label__ = 8; break; //@line 1571 "socketmodule.c"
-      case 5: // $bb4_i
-        var $11=$len_ret_addr_i; //@line 1607 "socketmodule.c"
-        HEAP[$11]=20; //@line 1607 "socketmodule.c"
-        $0=1; //@line 1608 "socketmodule.c"
-        __label__ = 8; break; //@line 1608 "socketmodule.c"
-      case 6: // $bb5_i
-        var $12=$len_ret_addr_i; //@line 1615 "socketmodule.c"
-        HEAP[$12]=16; //@line 1615 "socketmodule.c"
-        $0=1; //@line 1616 "socketmodule.c"
-        __label__ = 8; break; //@line 1616 "socketmodule.c"
-      case 7: // $bb
-        var $13=HEAP[_socket_error]; //@line 1623 "socketmodule.c"
-        _PyErr_SetString($13, __str34); //@line 1623 "socketmodule.c"
-        $0=0; //@line 1624 "socketmodule.c"
-        $retval_i=0; //@line 1550 "socketmodule.c"
-        $2=0; //@line 2215 "socketmodule.c"
-        __label__ = 11; break; //@line 2215 "socketmodule.c"
-      case 8: // $bb1
-        $retval_i=1; //@line 1550 "socketmodule.c"
-        var $14=HEAP[$addrlen]; //@line 2216 "socketmodule.c"
+        var $2=$s_addr; //@line 2214 "socketmodule.c"
+        var $3=_getsockaddrlen($2, $addrlen); //@line 2214 "socketmodule.c"
+        var $4=($3)==0; //@line 2214 "socketmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2214 "socketmodule.c"
+      case 1: // $bb
+        $1=0; //@line 2215 "socketmodule.c"
+        __label__ = 5; break; //@line 2215 "socketmodule.c"
+      case 2: // $bb1
+        var $5=HEAP[$addrlen]; //@line 2216 "socketmodule.c"
         var $addrbuf2=$addrbuf; //@line 2216 "socketmodule.c"
-        _llvm_memset_p0i8_i32($addrbuf2, 0, $14, 1, 0); //@line 2216 "socketmodule.c"
+        _llvm_memset_p0i8_i32($addrbuf2, 0, $5, 1, 0); //@line 2216 "socketmodule.c"
         var $addrbuf3=$addrbuf; //@line 2218 "socketmodule.c"
-        var $15=$1; //@line 2218 "socketmodule.c"
-        HEAP[$15]=$addrbuf3; //@line 2218 "socketmodule.c"
-        var $16=$s_addr; //@line 2218 "socketmodule.c"
-        var $17=$16+8; //@line 2218 "socketmodule.c"
-        var $18=HEAP[$17]; //@line 2218 "socketmodule.c"
-        var $elt=$1; //@line 2218 "socketmodule.c"
+        var $6=$0; //@line 2218 "socketmodule.c"
+        HEAP[$6]=$addrbuf3; //@line 2218 "socketmodule.c"
+        var $7=$s_addr; //@line 2218 "socketmodule.c"
+        var $8=$7+8; //@line 2218 "socketmodule.c"
+        var $9=HEAP[$8]; //@line 2218 "socketmodule.c"
+        var $elt=$0; //@line 2218 "socketmodule.c"
         var $val=HEAP[$elt]; //@line 2218 "socketmodule.c"
-        var $19=_getpeername($18, $val, $addrlen); //@line 2218 "socketmodule.c"
-        $res=$19; //@line 2218 "socketmodule.c"
-        var $20=($19) < 0; //@line 2220 "socketmodule.c"
-        var $21=$s_addr; //@line 2221 "socketmodule.c"
-        if ($20) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2220 "socketmodule.c"
-      case 9: // $bb5
-        var $22=$21+24; //@line 2221 "socketmodule.c"
-        var $23=HEAP[$22]; //@line 2221 "socketmodule.c"
-        var $24=FUNCTION_TABLE[$23](); //@line 2221 "socketmodule.c"
-        $2=$24; //@line 2221 "socketmodule.c"
-        __label__ = 11; break; //@line 2221 "socketmodule.c"
-      case 10: // $bb6
-        var $25=$21+20; //@line 2222 "socketmodule.c"
-        var $26=HEAP[$25]; //@line 2222 "socketmodule.c"
-        var $27=HEAP[$addrlen]; //@line 2222 "socketmodule.c"
+        var $10=_getpeername($9, $val, $addrlen); //@line 2218 "socketmodule.c"
+        $res=$10; //@line 2218 "socketmodule.c"
+        var $11=$res; //@line 2220 "socketmodule.c"
+        var $12=($11) < 0; //@line 2220 "socketmodule.c"
+        var $13=$s_addr; //@line 2221 "socketmodule.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2220 "socketmodule.c"
+      case 3: // $bb5
+        var $14=$13+24; //@line 2221 "socketmodule.c"
+        var $15=HEAP[$14]; //@line 2221 "socketmodule.c"
+        var $16=FUNCTION_TABLE[$15](); //@line 2221 "socketmodule.c"
+        $1=$16; //@line 2221 "socketmodule.c"
+        __label__ = 5; break; //@line 2221 "socketmodule.c"
+      case 4: // $bb6
+        var $17=$13+20; //@line 2222 "socketmodule.c"
+        var $18=HEAP[$17]; //@line 2222 "socketmodule.c"
+        var $19=HEAP[$addrlen]; //@line 2222 "socketmodule.c"
         var $addrbuf7=$addrbuf; //@line 2222 "socketmodule.c"
-        var $28=$s_addr; //@line 2222 "socketmodule.c"
-        var $29=$28+8; //@line 2222 "socketmodule.c"
-        var $30=HEAP[$29]; //@line 2222 "socketmodule.c"
-        var $31=_makesockaddr($30, $addrbuf7, $27, $26); //@line 2222 "socketmodule.c"
-        $2=$31; //@line 2222 "socketmodule.c"
-        __label__ = 11; break; //@line 2222 "socketmodule.c"
-      case 11: // $bb9
-        var $32=$2; //@line 2215 "socketmodule.c"
-        $retval=$32; //@line 2215 "socketmodule.c"
+        var $20=$s_addr; //@line 2222 "socketmodule.c"
+        var $21=$20+8; //@line 2222 "socketmodule.c"
+        var $22=HEAP[$21]; //@line 2222 "socketmodule.c"
+        var $23=_makesockaddr($22, $addrbuf7, $19, $18); //@line 2222 "socketmodule.c"
+        $1=$23; //@line 2222 "socketmodule.c"
+        __label__ = 5; break; //@line 2222 "socketmodule.c"
+      case 5: // $bb9
+        var $24=$1; //@line 2215 "socketmodule.c"
+        $retval=$24; //@line 2215 "socketmodule.c"
         var $retval10=$retval; //@line 2215 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 2215 "socketmodule.c"
@@ -3754,7 +3640,7 @@ var __str384;
         HEAP[$mode]=__str41; //@line 2280 "socketmodule.c"
         HEAP[$bufsize]=-1; //@line 2281 "socketmodule.c"
         var $1=$args_addr; //@line 2294 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str42, $mode, $bufsize); //@line 2294 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str42, allocate([$mode,0,0,0,$bufsize,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2294 "socketmodule.c"
         var $3=($2)==0; //@line 2294 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2294 "socketmodule.c"
       case 1: // $bb
@@ -3910,7 +3796,7 @@ var __str384;
         $args_addr=$args;
         HEAP[$flags]=0; //@line 2420 "socketmodule.c"
         var $1=$args_addr; //@line 2424 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str44, $recvlen, $flags); //@line 2424 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str44, allocate([$recvlen,0,0,0,$flags,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2424 "socketmodule.c"
         var $3=($2)==0; //@line 2424 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2424 "socketmodule.c"
       case 1: // $bb
@@ -4022,7 +3908,7 @@ var __str384;
         HEAP[$flags]=0; //@line 2473 "socketmodule.c"
         var $1=$args_addr; //@line 2479 "socketmodule.c"
         var $2=$kwds_addr; //@line 2479 "socketmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str46, _kwlist_10873, $buf, $recvlen, $flags); //@line 2479 "socketmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str46, _kwlist_10873, allocate([$buf,0,0,0,$recvlen,0,0,0,$flags,0,0,0], ["%struct.Py_buffer*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2479 "socketmodule.c"
         var $4=($3)==0; //@line 2479 "socketmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2479 "socketmodule.c"
       case 1: // $bb
@@ -4107,18 +3993,14 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $len_ret_addr_i;
-        var $retval_i;
-        var $0;
         var $s_addr;
         var $cbuf_addr;
         var $len_addr;
         var $flags_addr;
         var $addr_addr;
         var $retval;
-        var $1=__stackBase__;
-        var $2;
+        var $0=__stackBase__;
+        var $1;
         var $addrbuf=__stackBase__+4;
         var $timeout;
         var $n;
@@ -4129,144 +4011,86 @@ var __str384;
         $flags_addr=$flags;
         $addr_addr=$addr;
         $n=-1; //@line 2546 "socketmodule.c"
-        var $3=$addr_addr; //@line 2549 "socketmodule.c"
-        HEAP[$3]=0; //@line 2549 "socketmodule.c"
-        var $4=$s_addr; //@line 2551 "socketmodule.c"
-        $s_addr_i=$4;
-        $len_ret_addr_i=$addrlen;
-        var $5=$s_addr_i; //@line 1544 "socketmodule.c"
-        var $6=$5+12; //@line 1544 "socketmodule.c"
-        var $7=HEAP[$6]; //@line 1544 "socketmodule.c"
-        if ($7 == 1) {
-          __label__ = 1; break;
-        }
-        else if ($7 == 2) {
-          __label__ = 3; break;
-        }
-        else if ($7 == 10) {
-          __label__ = 4; break;
-        }
-        else if ($7 == 16) {
-          __label__ = 2; break;
-        }
-        else if ($7 == 17) {
-          __label__ = 5; break;
-        }
-        else if ($7 == 30) {
-          __label__ = 6; break;
-        }
-        else {
-        __label__ = 7; break;
-        }
-        
-      case 1: // $bb_i
-        var $8=$len_ret_addr_i; //@line 1549 "socketmodule.c"
-        HEAP[$8]=110; //@line 1549 "socketmodule.c"
-        $0=1; //@line 1550 "socketmodule.c"
-        __label__ = 8; break; //@line 1550 "socketmodule.c"
-      case 2: // $bb1_i
-        var $9=$len_ret_addr_i; //@line 1556 "socketmodule.c"
-        HEAP[$9]=12; //@line 1556 "socketmodule.c"
-        $0=1; //@line 1557 "socketmodule.c"
-        __label__ = 8; break; //@line 1557 "socketmodule.c"
-      case 3: // $bb2_i
-        var $10=$len_ret_addr_i; //@line 1563 "socketmodule.c"
-        HEAP[$10]=16; //@line 1563 "socketmodule.c"
-        $0=1; //@line 1564 "socketmodule.c"
-        __label__ = 8; break; //@line 1564 "socketmodule.c"
-      case 4: // $bb3_i
-        var $11=$len_ret_addr_i; //@line 1570 "socketmodule.c"
-        HEAP[$11]=28; //@line 1570 "socketmodule.c"
-        $0=1; //@line 1571 "socketmodule.c"
-        __label__ = 8; break; //@line 1571 "socketmodule.c"
-      case 5: // $bb4_i
-        var $12=$len_ret_addr_i; //@line 1607 "socketmodule.c"
-        HEAP[$12]=20; //@line 1607 "socketmodule.c"
-        $0=1; //@line 1608 "socketmodule.c"
-        __label__ = 8; break; //@line 1608 "socketmodule.c"
-      case 6: // $bb5_i
-        var $13=$len_ret_addr_i; //@line 1615 "socketmodule.c"
-        HEAP[$13]=16; //@line 1615 "socketmodule.c"
-        $0=1; //@line 1616 "socketmodule.c"
-        __label__ = 8; break; //@line 1616 "socketmodule.c"
-      case 7: // $bb
-        var $14=HEAP[_socket_error]; //@line 1623 "socketmodule.c"
-        _PyErr_SetString($14, __str34); //@line 1623 "socketmodule.c"
-        $0=0; //@line 1624 "socketmodule.c"
-        $retval_i=0; //@line 1550 "socketmodule.c"
-        $2=-1; //@line 2552 "socketmodule.c"
-        __label__ = 17; break; //@line 2552 "socketmodule.c"
-      case 8: // $bb1
-        $retval_i=1; //@line 1550 "socketmodule.c"
-        var $15=HEAP[$addrlen]; //@line 2560 "socketmodule.c"
+        var $2=$addr_addr; //@line 2549 "socketmodule.c"
+        HEAP[$2]=0; //@line 2549 "socketmodule.c"
+        var $3=$s_addr; //@line 2551 "socketmodule.c"
+        var $4=_getsockaddrlen($3, $addrlen); //@line 2551 "socketmodule.c"
+        var $5=($4)==0; //@line 2551 "socketmodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2551 "socketmodule.c"
+      case 1: // $bb
+        $1=-1; //@line 2552 "socketmodule.c"
+        __label__ = 11; break; //@line 2552 "socketmodule.c"
+      case 2: // $bb1
+        var $6=HEAP[$addrlen]; //@line 2560 "socketmodule.c"
         var $addrbuf2=$addrbuf; //@line 2560 "socketmodule.c"
-        _llvm_memset_p0i8_i32($addrbuf2, 0, $15, 1, 0); //@line 2560 "socketmodule.c"
-        var $16=$s_addr; //@line 2561 "socketmodule.c"
-        var $17=_internal_select($16, 0); //@line 2561 "socketmodule.c"
-        $timeout=$17; //@line 2561 "socketmodule.c"
-        var $18=($17)==0; //@line 2562 "socketmodule.c"
-        if ($18) { __lastLabel__ = 8; __label__ = 9; break; } else { __lastLabel__ = 8; __label__ = 10; break; } //@line 2562 "socketmodule.c"
-      case 9: // $bb3
-        var $19=$1; //@line 2568 "socketmodule.c"
+        _llvm_memset_p0i8_i32($addrbuf2, 0, $6, 1, 0); //@line 2560 "socketmodule.c"
+        var $7=$s_addr; //@line 2561 "socketmodule.c"
+        var $8=_internal_select($7, 0); //@line 2561 "socketmodule.c"
+        $timeout=$8; //@line 2561 "socketmodule.c"
+        var $9=$timeout; //@line 2562 "socketmodule.c"
+        var $10=($9)==0; //@line 2562 "socketmodule.c"
+        if ($10) { __lastLabel__ = 2; __label__ = 3; break; } else { __lastLabel__ = 2; __label__ = 4; break; } //@line 2562 "socketmodule.c"
+      case 3: // $bb3
+        var $11=$0; //@line 2568 "socketmodule.c"
         var $addrbuf4=$addrbuf; //@line 2568 "socketmodule.c"
-        HEAP[$19]=$addrbuf4; //@line 2568 "socketmodule.c"
-        var $20=$len_addr; //@line 2568 "socketmodule.c"
-        var $21=$s_addr; //@line 2568 "socketmodule.c"
-        var $22=$21+8; //@line 2568 "socketmodule.c"
-        var $23=HEAP[$22]; //@line 2568 "socketmodule.c"
-        var $24=$cbuf_addr; //@line 2568 "socketmodule.c"
-        var $25=$flags_addr; //@line 2568 "socketmodule.c"
-        var $elt=$1; //@line 2568 "socketmodule.c"
+        HEAP[$11]=$addrbuf4; //@line 2568 "socketmodule.c"
+        var $12=$len_addr; //@line 2568 "socketmodule.c"
+        var $13=$s_addr; //@line 2568 "socketmodule.c"
+        var $14=$13+8; //@line 2568 "socketmodule.c"
+        var $15=HEAP[$14]; //@line 2568 "socketmodule.c"
+        var $16=$cbuf_addr; //@line 2568 "socketmodule.c"
+        var $17=$flags_addr; //@line 2568 "socketmodule.c"
+        var $elt=$0; //@line 2568 "socketmodule.c"
         var $val=HEAP[$elt]; //@line 2568 "socketmodule.c"
-        var $26=_recvfrom($23, $24, $20, $25, $val, $addrlen); //@line 2568 "socketmodule.c"
-        $n=$26; //@line 2568 "socketmodule.c"
+        var $18=_recvfrom($15, $16, $12, $17, $val, $addrlen); //@line 2568 "socketmodule.c"
+        $n=$18; //@line 2568 "socketmodule.c"
         var $_pr=$timeout;
-        __lastLabel__ = 9; __label__ = 10; break; //@line 2568 "socketmodule.c"
-      case 10: // $bb5
-        var $27=__lastLabel__ == 9 ? $_pr : ($17);
-        var $28=($27)==1; //@line 2578 "socketmodule.c"
-        if ($28) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 2578 "socketmodule.c"
-      case 11: // $bb6
-        var $29=HEAP[_socket_timeout]; //@line 2579 "socketmodule.c"
-        _PyErr_SetString($29, __str35); //@line 2579 "socketmodule.c"
-        $2=-1; //@line 2580 "socketmodule.c"
-        __label__ = 17; break; //@line 2580 "socketmodule.c"
-      case 12: // $bb7
-        var $30=$n; //@line 2582 "socketmodule.c"
-        var $31=($30) < 0; //@line 2582 "socketmodule.c"
-        var $32=$s_addr; //@line 2583 "socketmodule.c"
-        if ($31) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2582 "socketmodule.c"
-      case 13: // $bb8
-        var $33=$32+24; //@line 2583 "socketmodule.c"
-        var $34=HEAP[$33]; //@line 2583 "socketmodule.c"
-        var $35=FUNCTION_TABLE[$34](); //@line 2583 "socketmodule.c"
-        $2=-1; //@line 2584 "socketmodule.c"
-        __label__ = 17; break; //@line 2584 "socketmodule.c"
-      case 14: // $bb9
-        var $36=$32+20; //@line 2587 "socketmodule.c"
-        var $37=HEAP[$36]; //@line 2587 "socketmodule.c"
-        var $38=HEAP[$addrlen]; //@line 2587 "socketmodule.c"
+        __lastLabel__ = 3; __label__ = 4; break; //@line 2568 "socketmodule.c"
+      case 4: // $bb5
+        var $19=__lastLabel__ == 3 ? $_pr : ($9);
+        var $20=($19)==1; //@line 2578 "socketmodule.c"
+        if ($20) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2578 "socketmodule.c"
+      case 5: // $bb6
+        var $21=HEAP[_socket_timeout]; //@line 2579 "socketmodule.c"
+        _PyErr_SetString($21, __str35); //@line 2579 "socketmodule.c"
+        $1=-1; //@line 2580 "socketmodule.c"
+        __label__ = 11; break; //@line 2580 "socketmodule.c"
+      case 6: // $bb7
+        var $22=$n; //@line 2582 "socketmodule.c"
+        var $23=($22) < 0; //@line 2582 "socketmodule.c"
+        var $24=$s_addr; //@line 2583 "socketmodule.c"
+        if ($23) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2582 "socketmodule.c"
+      case 7: // $bb8
+        var $25=$24+24; //@line 2583 "socketmodule.c"
+        var $26=HEAP[$25]; //@line 2583 "socketmodule.c"
+        var $27=FUNCTION_TABLE[$26](); //@line 2583 "socketmodule.c"
+        $1=-1; //@line 2584 "socketmodule.c"
+        __label__ = 11; break; //@line 2584 "socketmodule.c"
+      case 8: // $bb9
+        var $28=$24+20; //@line 2587 "socketmodule.c"
+        var $29=HEAP[$28]; //@line 2587 "socketmodule.c"
+        var $30=HEAP[$addrlen]; //@line 2587 "socketmodule.c"
         var $addrbuf10=$addrbuf; //@line 2587 "socketmodule.c"
-        var $39=$s_addr; //@line 2587 "socketmodule.c"
-        var $40=$39+8; //@line 2587 "socketmodule.c"
-        var $41=HEAP[$40]; //@line 2587 "socketmodule.c"
-        var $42=_makesockaddr($41, $addrbuf10, $38, $37); //@line 2587 "socketmodule.c"
-        var $43=$addr_addr; //@line 2587 "socketmodule.c"
-        HEAP[$43]=$42; //@line 2587 "socketmodule.c"
-        var $44=$addr_addr; //@line 2587 "socketmodule.c"
-        var $45=HEAP[$44]; //@line 2587 "socketmodule.c"
-        var $46=($45)==0; //@line 2587 "socketmodule.c"
-        if ($46) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 2587 "socketmodule.c"
-      case 15: // $bb12
-        $2=-1; //@line 2589 "socketmodule.c"
-        __label__ = 17; break; //@line 2589 "socketmodule.c"
-      case 16: // $bb13
-        var $47=$n; //@line 2591 "socketmodule.c"
-        $2=$47; //@line 2591 "socketmodule.c"
-        __label__ = 17; break; //@line 2591 "socketmodule.c"
-      case 17: // $bb14
-        var $48=$2; //@line 2552 "socketmodule.c"
-        $retval=$48; //@line 2552 "socketmodule.c"
+        var $31=$s_addr; //@line 2587 "socketmodule.c"
+        var $32=$31+8; //@line 2587 "socketmodule.c"
+        var $33=HEAP[$32]; //@line 2587 "socketmodule.c"
+        var $34=_makesockaddr($33, $addrbuf10, $30, $29); //@line 2587 "socketmodule.c"
+        var $35=$addr_addr; //@line 2587 "socketmodule.c"
+        HEAP[$35]=$34; //@line 2587 "socketmodule.c"
+        var $36=$addr_addr; //@line 2587 "socketmodule.c"
+        var $37=HEAP[$36]; //@line 2587 "socketmodule.c"
+        var $38=($37)==0; //@line 2587 "socketmodule.c"
+        if ($38) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2587 "socketmodule.c"
+      case 9: // $bb12
+        $1=-1; //@line 2589 "socketmodule.c"
+        __label__ = 11; break; //@line 2589 "socketmodule.c"
+      case 10: // $bb13
+        var $39=$n; //@line 2591 "socketmodule.c"
+        $1=$39; //@line 2591 "socketmodule.c"
+        __label__ = 11; break; //@line 2591 "socketmodule.c"
+      case 11: // $bb14
+        var $40=$1; //@line 2552 "socketmodule.c"
+        $retval=$40; //@line 2552 "socketmodule.c"
         var $retval15=$retval; //@line 2552 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval15; //@line 2552 "socketmodule.c"
@@ -4298,7 +4122,7 @@ var __str384;
         $ret=0; //@line 2601 "socketmodule.c"
         HEAP[$flags]=0; //@line 2602 "socketmodule.c"
         var $1=$args_addr; //@line 2605 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str54, $recvlen, $flags); //@line 2605 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str54, allocate([$recvlen,0,0,0,$flags,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2605 "socketmodule.c"
         var $3=($2)==0; //@line 2605 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2605 "socketmodule.c"
       case 1: // $bb
@@ -4349,7 +4173,7 @@ var __str384;
       case 9: // $bb8
         var $27=HEAP[$addr]; //@line 2632 "socketmodule.c"
         var $28=HEAP[$buf]; //@line 2632 "socketmodule.c"
-        var $29=_PyTuple_Pack(2, $28, $27); //@line 2632 "socketmodule.c"
+        var $29=_PyTuple_Pack(2, allocate([$28,0,0,0,$27,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2632 "socketmodule.c"
         $ret=$29; //@line 2632 "socketmodule.c"
         __label__ = 10; break; //@line 2634 "socketmodule.c"
       case 10: // $finally
@@ -4440,7 +4264,7 @@ var __str384;
         HEAP[$addr]=0; //@line 2658 "socketmodule.c"
         var $1=$args_addr; //@line 2660 "socketmodule.c"
         var $2=$kwds_addr; //@line 2660 "socketmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str56, _kwlist_11020, $buf, $recvlen, $flags); //@line 2660 "socketmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str56, _kwlist_11020, allocate([$buf,0,0,0,$recvlen,0,0,0,$flags,0,0,0], ["%struct.Py_buffer*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2660 "socketmodule.c"
         var $4=($3)==0; //@line 2660 "socketmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2660 "socketmodule.c"
       case 1: // $bb
@@ -4491,7 +4315,7 @@ var __str384;
         _PyBuffer_Release($buf); //@line 2683 "socketmodule.c"
         var $25=HEAP[$addr]; //@line 2686 "socketmodule.c"
         var $26=$readlen; //@line 2686 "socketmodule.c"
-        var $27=_Py_BuildValue(__str58, $26, $25); //@line 2686 "socketmodule.c"
+        var $27=_Py_BuildValue(__str58, allocate([$26,0,0,0,$25,0,0,0], ["i32",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2686 "socketmodule.c"
         $0=$27; //@line 2686 "socketmodule.c"
         __label__ = 15; break; //@line 2686 "socketmodule.c"
       case 11: // $error
@@ -4554,7 +4378,7 @@ var __str384;
         $n=-1; //@line 2706 "socketmodule.c"
         HEAP[$flags]=0; //@line 2706 "socketmodule.c"
         var $1=$args_addr; //@line 2709 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str59, $pbuf, $flags); //@line 2709 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str59, allocate([$pbuf,0,0,0,$flags,0,0,0], ["%struct.Py_buffer*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2709 "socketmodule.c"
         var $3=($2)==0; //@line 2709 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2709 "socketmodule.c"
       case 1: // $bb
@@ -4643,7 +4467,7 @@ var __str384;
         $n=-1; //@line 2754 "socketmodule.c"
         HEAP[$flags]=0; //@line 2754 "socketmodule.c"
         var $1=$args_addr; //@line 2757 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str60, $pbuf, $flags); //@line 2757 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str60, allocate([$pbuf,0,0,0,$flags,0,0,0], ["%struct.Py_buffer*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2757 "socketmodule.c"
         var $3=($2)==0; //@line 2757 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2757 "socketmodule.c"
       case 1: // $bb
@@ -4791,16 +4615,16 @@ var __str384;
         
       case 1: // $bb
         var $5=$args_addr; //@line 2838 "socketmodule.c"
-        var $6=_PyArg_ParseTuple($5, __str61, $pbuf, $addro); //@line 2838 "socketmodule.c"
+        var $6=_PyArg_ParseTuple($5, __str61, allocate([$pbuf,0,0,0,$addro,0,0,0], ["%struct.Py_buffer*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2838 "socketmodule.c"
         __label__ = 4; break; //@line 2838 "socketmodule.c"
       case 2: // $bb1
         var $7=$args_addr; //@line 2841 "socketmodule.c"
-        var $8=_PyArg_ParseTuple($7, __str62, $pbuf, $flags, $addro); //@line 2841 "socketmodule.c"
+        var $8=_PyArg_ParseTuple($7, __str62, allocate([$pbuf,0,0,0,$flags,0,0,0,$addro,0,0,0], ["%struct.Py_buffer*",0,0,0,"i32*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2841 "socketmodule.c"
         __label__ = 4; break; //@line 2841 "socketmodule.c"
       case 3: // $bb2
         var $9=HEAP[_PyExc_TypeError]; //@line 2844 "socketmodule.c"
         var $10=$arglen; //@line 2844 "socketmodule.c"
-        var $11=_PyErr_Format($9, __str63, $10); //@line 2844 "socketmodule.c"
+        var $11=_PyErr_Format($9, __str63, allocate([$10,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 2844 "socketmodule.c"
         __label__ = 4; break; //@line 2844 "socketmodule.c"
       case 4: // $bb3
         var $12=_PyErr_Occurred(); //@line 2847 "socketmodule.c"
@@ -5004,7 +4828,7 @@ var __str384;
     var $11=$10+8; //@line 3061 "socketmodule.c"
     var $12=HEAP[$11]; //@line 3061 "socketmodule.c"
     var $buf1=$buf; //@line 3061 "socketmodule.c"
-    var $13=_PyOS_snprintf($buf1, 512, __str96, $12, $9, $6, $3); //@line 3061 "socketmodule.c"
+    var $13=_PyOS_snprintf($buf1, 512, __str96, allocate([$12,0,0,0,$9,0,0,0,$6,0,0,0,$3,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3061 "socketmodule.c"
     var $buf2=$buf; //@line 3067 "socketmodule.c"
     var $14=_PyString_FromString($buf2); //@line 3067 "socketmodule.c"
     $0=$14; //@line 3067 "socketmodule.c"
@@ -5073,13 +4897,11 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $kwds_addr;
         var $retval;
-        var $1;
+        var $0;
         var $s;
         var $fd;
         var $family=__stackBase__;
@@ -5088,49 +4910,45 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         $kwds_addr=$kwds;
-        var $2=$self_addr; //@line 3094 "socketmodule.c"
-        var $3=$2; //@line 3094 "socketmodule.c"
-        $s=$3; //@line 3094 "socketmodule.c"
+        var $1=$self_addr; //@line 3094 "socketmodule.c"
+        var $2=$1; //@line 3094 "socketmodule.c"
+        $s=$2; //@line 3094 "socketmodule.c"
         HEAP[$family]=2; //@line 3096 "socketmodule.c"
         HEAP[$type]=1; //@line 3096 "socketmodule.c"
         HEAP[$proto]=0; //@line 3096 "socketmodule.c"
-        var $4=$args_addr; //@line 3099 "socketmodule.c"
-        var $5=$kwds_addr; //@line 3099 "socketmodule.c"
-        var $6=_PyArg_ParseTupleAndKeywords($4, $5, __str97, _keywords_11267, $family, $type, $proto); //@line 3099 "socketmodule.c"
-        var $7=($6)==0; //@line 3099 "socketmodule.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3099 "socketmodule.c"
+        var $3=$args_addr; //@line 3099 "socketmodule.c"
+        var $4=$kwds_addr; //@line 3099 "socketmodule.c"
+        var $5=_PyArg_ParseTupleAndKeywords($3, $4, __str97, _keywords_11267, allocate([$family,0,0,0,$type,0,0,0,$proto,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 3099 "socketmodule.c"
+        var $6=($5)==0; //@line 3099 "socketmodule.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3099 "socketmodule.c"
       case 1: // $bb
-        $1=-1; //@line 3102 "socketmodule.c"
+        $0=-1; //@line 3102 "socketmodule.c"
         __label__ = 5; break; //@line 3102 "socketmodule.c"
       case 2: // $bb1
-        var $8=HEAP[$proto]; //@line 3105 "socketmodule.c"
-        var $9=HEAP[$type]; //@line 3105 "socketmodule.c"
-        var $10=HEAP[$family]; //@line 3105 "socketmodule.c"
-        var $11=_socket($10, $9, $8); //@line 3105 "socketmodule.c"
-        $fd=$11; //@line 3105 "socketmodule.c"
-        var $12=$fd; //@line 3111 "socketmodule.c"
-        var $13=($12) < 0; //@line 3111 "socketmodule.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3111 "socketmodule.c"
+        var $7=HEAP[$proto]; //@line 3105 "socketmodule.c"
+        var $8=HEAP[$type]; //@line 3105 "socketmodule.c"
+        var $9=HEAP[$family]; //@line 3105 "socketmodule.c"
+        var $10=_socket($9, $8, $7); //@line 3105 "socketmodule.c"
+        $fd=$10; //@line 3105 "socketmodule.c"
+        var $11=$fd; //@line 3111 "socketmodule.c"
+        var $12=($11) < 0; //@line 3111 "socketmodule.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3111 "socketmodule.c"
       case 3: // $bb2
-        var $14=HEAP[_socket_error]; //@line 543 "socketmodule.c"
-        var $15=_PyErr_SetFromErrno($14); //@line 543 "socketmodule.c"
-        $0=$15; //@line 543 "socketmodule.c"
-        var $16=$0; //@line 543 "socketmodule.c"
-        $retval_i=$16; //@line 543 "socketmodule.c"
-        $1=-1; //@line 3115 "socketmodule.c"
+        var $13=_set_error(); //@line 3114 "socketmodule.c"
+        $0=-1; //@line 3115 "socketmodule.c"
         __label__ = 5; break; //@line 3115 "socketmodule.c"
       case 4: // $bb3
-        var $17=HEAP[$proto]; //@line 3117 "socketmodule.c"
-        var $18=HEAP[$type]; //@line 3117 "socketmodule.c"
-        var $19=HEAP[$family]; //@line 3117 "socketmodule.c"
-        var $20=$s; //@line 3117 "socketmodule.c"
-        var $21=$fd; //@line 3117 "socketmodule.c"
-        _init_sockobject($20, $21, $19, $18, $17); //@line 3117 "socketmodule.c"
-        $1=0; //@line 3119 "socketmodule.c"
+        var $14=HEAP[$proto]; //@line 3117 "socketmodule.c"
+        var $15=HEAP[$type]; //@line 3117 "socketmodule.c"
+        var $16=HEAP[$family]; //@line 3117 "socketmodule.c"
+        var $17=$s; //@line 3117 "socketmodule.c"
+        var $18=$fd; //@line 3117 "socketmodule.c"
+        _init_sockobject($17, $18, $16, $15, $14); //@line 3117 "socketmodule.c"
+        $0=0; //@line 3119 "socketmodule.c"
         __label__ = 5; break; //@line 3119 "socketmodule.c"
       case 5: // $bb4
-        var $22=$1; //@line 3102 "socketmodule.c"
-        $retval=$22; //@line 3102 "socketmodule.c"
+        var $19=$0; //@line 3102 "socketmodule.c"
+        $retval=$19; //@line 3102 "socketmodule.c"
         var $retval5=$retval; //@line 3102 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 3102 "socketmodule.c"
@@ -5145,41 +4963,34 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         var $buf=__stackBase__;
         var $res;
         $self_addr=$self;
         $unused_addr=$unused;
         var $buf1=$buf; //@line 3178 "socketmodule.c"
-        var $2=_gethostname($buf1, 1023); //@line 3178 "socketmodule.c"
-        $res=$2; //@line 3178 "socketmodule.c"
-        var $3=$res; //@line 3180 "socketmodule.c"
-        var $4=($3) < 0; //@line 3180 "socketmodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3180 "socketmodule.c"
+        var $1=_gethostname($buf1, 1023); //@line 3178 "socketmodule.c"
+        $res=$1; //@line 3178 "socketmodule.c"
+        var $2=$res; //@line 3180 "socketmodule.c"
+        var $3=($2) < 0; //@line 3180 "socketmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3180 "socketmodule.c"
       case 1: // $bb
-        var $5=HEAP[_socket_error]; //@line 543 "socketmodule.c"
-        var $6=_PyErr_SetFromErrno($5); //@line 543 "socketmodule.c"
-        $0=$6; //@line 543 "socketmodule.c"
-        var $7=$0; //@line 543 "socketmodule.c"
-        $retval_i=$7; //@line 543 "socketmodule.c"
-        var $retval1_i=$retval_i; //@line 543 "socketmodule.c"
-        $1=$retval1_i; //@line 3181 "socketmodule.c"
+        var $4=_set_error(); //@line 3181 "socketmodule.c"
+        $0=$4; //@line 3181 "socketmodule.c"
         __label__ = 3; break; //@line 3181 "socketmodule.c"
       case 2: // $bb2
-        var $8=$buf+1023; //@line 3182 "socketmodule.c"
-        HEAP[$8]=0; //@line 3182 "socketmodule.c"
+        var $5=$buf+1023; //@line 3182 "socketmodule.c"
+        HEAP[$5]=0; //@line 3182 "socketmodule.c"
         var $buf3=$buf; //@line 3183 "socketmodule.c"
-        var $9=_PyString_FromString($buf3); //@line 3183 "socketmodule.c"
-        $1=$9; //@line 3183 "socketmodule.c"
+        var $6=_PyString_FromString($buf3); //@line 3183 "socketmodule.c"
+        $0=$6; //@line 3183 "socketmodule.c"
         __label__ = 3; break; //@line 3183 "socketmodule.c"
       case 3: // $bb4
-        var $10=$1; //@line 3181 "socketmodule.c"
-        $retval=$10; //@line 3181 "socketmodule.c"
+        var $7=$0; //@line 3181 "socketmodule.c"
+        $retval=$7; //@line 3181 "socketmodule.c"
         var $retval5=$retval; //@line 3181 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 3181 "socketmodule.c"
@@ -5203,7 +5014,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3201 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str99, $name); //@line 3201 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str99, allocate([$name,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 3201 "socketmodule.c"
         var $3=($2)==0; //@line 3201 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3201 "socketmodule.c"
       case 1: // $bb
@@ -5240,8 +5051,6 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $h_error_addr_i;
-        var $v_i;
         var $h_addr;
         var $addr_addr;
         var $alen_addr;
@@ -5266,354 +5075,320 @@ var __str384;
         $addr_list=0; //@line 3222 "socketmodule.c"
         var $1=$h_addr; //@line 3225 "socketmodule.c"
         var $2=($1)==0; //@line 3225 "socketmodule.c"
-        if ($2) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 3225 "socketmodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3225 "socketmodule.c"
       case 1: // $bb
         var $3=___h_errno_location(); //@line 3228 "socketmodule.c"
         var $4=HEAP[$3]; //@line 3228 "socketmodule.c"
-        $h_error_addr_i=$4;
-        var $5=$h_error_addr_i; //@line 553 "socketmodule.c"
-        var $6=_hstrerror($5); //@line 553 "socketmodule.c"
-        var $7=$h_error_addr_i; //@line 553 "socketmodule.c"
-        var $8=_Py_BuildValue(__str1, $7, $6); //@line 553 "socketmodule.c"
-        $v_i=$8; //@line 553 "socketmodule.c"
-        var $9=$v_i; //@line 557 "socketmodule.c"
-        var $10=($9)!=0; //@line 557 "socketmodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 557 "socketmodule.c"
-      case 2: // $bb_i
-        var $11=HEAP[_socket_herror]; //@line 558 "socketmodule.c"
-        var $12=$v_i; //@line 558 "socketmodule.c"
-        _PyErr_SetObject($11, $12); //@line 558 "socketmodule.c"
-        var $13=$v_i; //@line 559 "socketmodule.c"
-        var $14=$13; //@line 559 "socketmodule.c"
-        var $15=HEAP[$14]; //@line 559 "socketmodule.c"
-        var $16=($15) - 1; //@line 559 "socketmodule.c"
-        var $17=$v_i; //@line 559 "socketmodule.c"
-        var $18=$17; //@line 559 "socketmodule.c"
-        HEAP[$18]=$16; //@line 559 "socketmodule.c"
-        var $19=$v_i; //@line 559 "socketmodule.c"
-        var $20=$19; //@line 559 "socketmodule.c"
-        var $21=HEAP[$20]; //@line 559 "socketmodule.c"
-        var $22=($21)==0; //@line 559 "socketmodule.c"
-        if ($22) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 559 "socketmodule.c"
-      case 3: // $bb1_i
-        var $23=$v_i; //@line 559 "socketmodule.c"
-        var $24=$23+4; //@line 559 "socketmodule.c"
-        var $25=HEAP[$24]; //@line 559 "socketmodule.c"
-        var $26=$25+24; //@line 559 "socketmodule.c"
-        var $27=HEAP[$26]; //@line 559 "socketmodule.c"
-        var $28=$v_i; //@line 559 "socketmodule.c"
-        FUNCTION_TABLE[$27]($28); //@line 559 "socketmodule.c"
-        __label__ = 4; break; //@line 559 "socketmodule.c"
-      case 4: // $set_herror_exit
+        _set_herror($4); //@line 3228 "socketmodule.c"
         $0=0; //@line 3232 "socketmodule.c"
-        __label__ = 45; break; //@line 3232 "socketmodule.c"
-      case 5: // $bb1
-        var $29=$h_addr; //@line 3235 "socketmodule.c"
-        var $30=$29+8; //@line 3235 "socketmodule.c"
-        var $31=HEAP[$30]; //@line 3235 "socketmodule.c"
-        var $32=$af_addr; //@line 3235 "socketmodule.c"
-        var $33=($31)!=($32); //@line 3235 "socketmodule.c"
-        if ($33) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 3235 "socketmodule.c"
-      case 6: // $bb2
-        var $34=_strerror(97); //@line 3237 "socketmodule.c"
-        var $35=HEAP[_socket_error]; //@line 3237 "socketmodule.c"
-        _PyErr_SetString($35, $34); //@line 3237 "socketmodule.c"
+        __label__ = 42; break; //@line 3232 "socketmodule.c"
+      case 2: // $bb1
+        var $5=$h_addr; //@line 3235 "socketmodule.c"
+        var $6=$5+8; //@line 3235 "socketmodule.c"
+        var $7=HEAP[$6]; //@line 3235 "socketmodule.c"
+        var $8=$af_addr; //@line 3235 "socketmodule.c"
+        var $9=($7)!=($8); //@line 3235 "socketmodule.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3235 "socketmodule.c"
+      case 3: // $bb2
+        var $10=_strerror(97); //@line 3237 "socketmodule.c"
+        var $11=HEAP[_socket_error]; //@line 3237 "socketmodule.c"
+        _PyErr_SetString($11, $10); //@line 3237 "socketmodule.c"
         $0=0; //@line 3240 "socketmodule.c"
-        __label__ = 45; break; //@line 3240 "socketmodule.c"
-      case 7: // $bb3
-        var $36=$af_addr; //@line 3243 "socketmodule.c"
-        if ($36 == 2) {
-          __label__ = 8; break;
+        __label__ = 42; break; //@line 3240 "socketmodule.c"
+      case 4: // $bb3
+        var $12=$af_addr; //@line 3243 "socketmodule.c"
+        if ($12 == 2) {
+          __label__ = 5; break;
         }
-        else if ($36 == 10) {
-          __label__ = 10; break;
+        else if ($12 == 10) {
+          __label__ = 7; break;
         }
         else {
-        __label__ = 12; break;
+        __label__ = 9; break;
         }
         
-      case 8: // $bb4
-        var $37=$alen_addr; //@line 3246 "socketmodule.c"
-        var $38=($37) <= 15; //@line 3246 "socketmodule.c"
-        if ($38) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 3246 "socketmodule.c"
-      case 9: // $bb5
+      case 5: // $bb4
+        var $13=$alen_addr; //@line 3246 "socketmodule.c"
+        var $14=($13) <= 15; //@line 3246 "socketmodule.c"
+        if ($14) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 3246 "socketmodule.c"
+      case 6: // $bb5
         $0=0; //@line 3247 "socketmodule.c"
-        __label__ = 45; break; //@line 3247 "socketmodule.c"
-      case 10: // $bb7
-        var $39=$alen_addr; //@line 3252 "socketmodule.c"
-        var $40=($39) <= 27; //@line 3252 "socketmodule.c"
-        if ($40) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 3252 "socketmodule.c"
-      case 11: // $bb8
+        __label__ = 42; break; //@line 3247 "socketmodule.c"
+      case 7: // $bb7
+        var $15=$alen_addr; //@line 3252 "socketmodule.c"
+        var $16=($15) <= 27; //@line 3252 "socketmodule.c"
+        if ($16) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 3252 "socketmodule.c"
+      case 8: // $bb8
         $0=0; //@line 3253 "socketmodule.c"
-        __label__ = 45; break; //@line 3253 "socketmodule.c"
-      case 12: // $bb9
-        var $41=_PyList_New(0); //@line 3259 "socketmodule.c"
-        $name_list=$41; //@line 3259 "socketmodule.c"
-        var $42=($41)==0; //@line 3259 "socketmodule.c"
-        if ($42) { __label__ = 41; break; } else { __label__ = 13; break; } //@line 3259 "socketmodule.c"
-      case 13: // $bb10
-        var $43=_PyList_New(0); //@line 3262 "socketmodule.c"
-        $addr_list=$43; //@line 3262 "socketmodule.c"
-        var $44=$addr_list; //@line 3262 "socketmodule.c"
-        var $45=($44)==0; //@line 3262 "socketmodule.c"
-        if ($45) { __label__ = 38; break; } else { __label__ = 14; break; } //@line 3262 "socketmodule.c"
-      case 14: // $bb11
-        var $46=$h_addr; //@line 3266 "socketmodule.c"
-        var $47=$46+4; //@line 3266 "socketmodule.c"
-        var $48=HEAP[$47]; //@line 3266 "socketmodule.c"
-        var $49=($48)!=0; //@line 3266 "socketmodule.c"
-        if ($49) { __label__ = 15; break; } else { __label__ = 22; break; } //@line 3266 "socketmodule.c"
-      case 15: // $bb12
-        var $50=$h_addr; //@line 3267 "socketmodule.c"
-        var $51=$50+4; //@line 3267 "socketmodule.c"
-        var $52=HEAP[$51]; //@line 3267 "socketmodule.c"
-        $pch=$52; //@line 3267 "socketmodule.c"
-        __label__ = 21; break; //@line 3267 "socketmodule.c"
-      case 16: // $bb13
-        var $53=$pch; //@line 3269 "socketmodule.c"
-        var $54=HEAP[$53]; //@line 3269 "socketmodule.c"
-        var $55=_PyString_FromString($54); //@line 3269 "socketmodule.c"
-        $tmp=$55; //@line 3269 "socketmodule.c"
-        var $56=$tmp; //@line 3270 "socketmodule.c"
-        var $57=($56)==0; //@line 3270 "socketmodule.c"
-        if ($57) { __label__ = 38; break; } else { __label__ = 17; break; } //@line 3270 "socketmodule.c"
-      case 17: // $bb14
-        var $58=$name_list; //@line 3273 "socketmodule.c"
-        var $59=$tmp; //@line 3273 "socketmodule.c"
-        var $60=_PyList_Append($58, $59); //@line 3273 "socketmodule.c"
-        $status=$60; //@line 3273 "socketmodule.c"
-        var $61=$tmp; //@line 3274 "socketmodule.c"
-        var $62=$61; //@line 3274 "socketmodule.c"
-        var $63=HEAP[$62]; //@line 3274 "socketmodule.c"
-        var $64=($63) - 1; //@line 3274 "socketmodule.c"
-        var $65=$tmp; //@line 3274 "socketmodule.c"
-        var $66=$65; //@line 3274 "socketmodule.c"
-        HEAP[$66]=$64; //@line 3274 "socketmodule.c"
-        var $67=$tmp; //@line 3274 "socketmodule.c"
-        var $68=$67; //@line 3274 "socketmodule.c"
-        var $69=HEAP[$68]; //@line 3274 "socketmodule.c"
-        var $70=($69)==0; //@line 3274 "socketmodule.c"
-        if ($70) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 3274 "socketmodule.c"
-      case 18: // $bb15
-        var $71=$tmp; //@line 3274 "socketmodule.c"
-        var $72=$71+4; //@line 3274 "socketmodule.c"
-        var $73=HEAP[$72]; //@line 3274 "socketmodule.c"
-        var $74=$73+24; //@line 3274 "socketmodule.c"
-        var $75=HEAP[$74]; //@line 3274 "socketmodule.c"
-        var $76=$tmp; //@line 3274 "socketmodule.c"
-        FUNCTION_TABLE[$75]($76); //@line 3274 "socketmodule.c"
-        __label__ = 19; break; //@line 3274 "socketmodule.c"
-      case 19: // $bb16
-        var $77=$status; //@line 3276 "socketmodule.c"
-        var $78=($77)!=0; //@line 3276 "socketmodule.c"
-        if ($78) { __label__ = 38; break; } else { __label__ = 20; break; } //@line 3276 "socketmodule.c"
-      case 20: // $bb17
-        var $79=$pch; //@line 3267 "socketmodule.c"
-        var $80=$79+4; //@line 3267 "socketmodule.c"
-        $pch=$80; //@line 3267 "socketmodule.c"
-        __label__ = 21; break; //@line 3267 "socketmodule.c"
-      case 21: // $bb18
-        var $81=$pch; //@line 3267 "socketmodule.c"
-        var $82=HEAP[$81]; //@line 3267 "socketmodule.c"
-        var $83=($82)!=0; //@line 3267 "socketmodule.c"
-        if ($83) { __label__ = 16; break; } else { __label__ = 22; break; } //@line 3267 "socketmodule.c"
-      case 22: // $bb19
-        var $84=$h_addr; //@line 3281 "socketmodule.c"
-        var $85=$84+16; //@line 3281 "socketmodule.c"
-        var $86=HEAP[$85]; //@line 3281 "socketmodule.c"
-        $pch=$86; //@line 3281 "socketmodule.c"
+        __label__ = 42; break; //@line 3253 "socketmodule.c"
+      case 9: // $bb9
+        var $17=_PyList_New(0); //@line 3259 "socketmodule.c"
+        $name_list=$17; //@line 3259 "socketmodule.c"
+        var $18=($17)==0; //@line 3259 "socketmodule.c"
+        if ($18) { __label__ = 38; break; } else { __label__ = 10; break; } //@line 3259 "socketmodule.c"
+      case 10: // $bb10
+        var $19=_PyList_New(0); //@line 3262 "socketmodule.c"
+        $addr_list=$19; //@line 3262 "socketmodule.c"
+        var $20=$addr_list; //@line 3262 "socketmodule.c"
+        var $21=($20)==0; //@line 3262 "socketmodule.c"
+        if ($21) { __label__ = 35; break; } else { __label__ = 11; break; } //@line 3262 "socketmodule.c"
+      case 11: // $bb11
+        var $22=$h_addr; //@line 3266 "socketmodule.c"
+        var $23=$22+4; //@line 3266 "socketmodule.c"
+        var $24=HEAP[$23]; //@line 3266 "socketmodule.c"
+        var $25=($24)!=0; //@line 3266 "socketmodule.c"
+        if ($25) { __label__ = 12; break; } else { __label__ = 19; break; } //@line 3266 "socketmodule.c"
+      case 12: // $bb12
+        var $26=$h_addr; //@line 3267 "socketmodule.c"
+        var $27=$26+4; //@line 3267 "socketmodule.c"
+        var $28=HEAP[$27]; //@line 3267 "socketmodule.c"
+        $pch=$28; //@line 3267 "socketmodule.c"
+        __label__ = 18; break; //@line 3267 "socketmodule.c"
+      case 13: // $bb13
+        var $29=$pch; //@line 3269 "socketmodule.c"
+        var $30=HEAP[$29]; //@line 3269 "socketmodule.c"
+        var $31=_PyString_FromString($30); //@line 3269 "socketmodule.c"
+        $tmp=$31; //@line 3269 "socketmodule.c"
+        var $32=$tmp; //@line 3270 "socketmodule.c"
+        var $33=($32)==0; //@line 3270 "socketmodule.c"
+        if ($33) { __label__ = 35; break; } else { __label__ = 14; break; } //@line 3270 "socketmodule.c"
+      case 14: // $bb14
+        var $34=$name_list; //@line 3273 "socketmodule.c"
+        var $35=$tmp; //@line 3273 "socketmodule.c"
+        var $36=_PyList_Append($34, $35); //@line 3273 "socketmodule.c"
+        $status=$36; //@line 3273 "socketmodule.c"
+        var $37=$tmp; //@line 3274 "socketmodule.c"
+        var $38=$37; //@line 3274 "socketmodule.c"
+        var $39=HEAP[$38]; //@line 3274 "socketmodule.c"
+        var $40=($39) - 1; //@line 3274 "socketmodule.c"
+        var $41=$tmp; //@line 3274 "socketmodule.c"
+        var $42=$41; //@line 3274 "socketmodule.c"
+        HEAP[$42]=$40; //@line 3274 "socketmodule.c"
+        var $43=$tmp; //@line 3274 "socketmodule.c"
+        var $44=$43; //@line 3274 "socketmodule.c"
+        var $45=HEAP[$44]; //@line 3274 "socketmodule.c"
+        var $46=($45)==0; //@line 3274 "socketmodule.c"
+        if ($46) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 3274 "socketmodule.c"
+      case 15: // $bb15
+        var $47=$tmp; //@line 3274 "socketmodule.c"
+        var $48=$47+4; //@line 3274 "socketmodule.c"
+        var $49=HEAP[$48]; //@line 3274 "socketmodule.c"
+        var $50=$49+24; //@line 3274 "socketmodule.c"
+        var $51=HEAP[$50]; //@line 3274 "socketmodule.c"
+        var $52=$tmp; //@line 3274 "socketmodule.c"
+        FUNCTION_TABLE[$51]($52); //@line 3274 "socketmodule.c"
+        __label__ = 16; break; //@line 3274 "socketmodule.c"
+      case 16: // $bb16
+        var $53=$status; //@line 3276 "socketmodule.c"
+        var $54=($53)!=0; //@line 3276 "socketmodule.c"
+        if ($54) { __label__ = 35; break; } else { __label__ = 17; break; } //@line 3276 "socketmodule.c"
+      case 17: // $bb17
+        var $55=$pch; //@line 3267 "socketmodule.c"
+        var $56=$55+4; //@line 3267 "socketmodule.c"
+        $pch=$56; //@line 3267 "socketmodule.c"
+        __label__ = 18; break; //@line 3267 "socketmodule.c"
+      case 18: // $bb18
+        var $57=$pch; //@line 3267 "socketmodule.c"
+        var $58=HEAP[$57]; //@line 3267 "socketmodule.c"
+        var $59=($58)!=0; //@line 3267 "socketmodule.c"
+        if ($59) { __label__ = 13; break; } else { __label__ = 19; break; } //@line 3267 "socketmodule.c"
+      case 19: // $bb19
+        var $60=$h_addr; //@line 3281 "socketmodule.c"
+        var $61=$60+16; //@line 3281 "socketmodule.c"
+        var $62=HEAP[$61]; //@line 3281 "socketmodule.c"
+        $pch=$62; //@line 3281 "socketmodule.c"
         var $sin23=$sin; //@line 3289 "socketmodule.c"
-        var $87=$sin; //@line 3290 "socketmodule.c"
-        var $88=$sin+4; //@line 3294 "socketmodule.c"
-        var $89=$88; //@line 3294 "socketmodule.c"
+        var $63=$sin; //@line 3290 "socketmodule.c"
+        var $64=$sin+4; //@line 3294 "socketmodule.c"
+        var $65=$64; //@line 3294 "socketmodule.c"
         var $sin24=$sin; //@line 3295 "socketmodule.c"
         var $sin28=$sin; //@line 3298 "socketmodule.c"
         var $sin631=$sin6; //@line 3306 "socketmodule.c"
-        var $90=$sin6; //@line 3307 "socketmodule.c"
-        var $91=$sin6+8; //@line 3311 "socketmodule.c"
-        var $92=$91; //@line 3311 "socketmodule.c"
+        var $66=$sin6; //@line 3307 "socketmodule.c"
+        var $67=$sin6+8; //@line 3311 "socketmodule.c"
+        var $68=$67; //@line 3311 "socketmodule.c"
         var $sin632=$sin6; //@line 3312 "socketmodule.c"
         var $sin636=$sin6; //@line 3316 "socketmodule.c"
-        __label__ = 36; break; //@line 3281 "socketmodule.c"
-      case 23: // $bb20
-        var $93=$af_addr; //@line 3284 "socketmodule.c"
-        if ($93 == 2) {
+        __label__ = 33; break; //@line 3281 "socketmodule.c"
+      case 20: // $bb20
+        var $69=$af_addr; //@line 3284 "socketmodule.c"
+        if ($69 == 2) {
+          __label__ = 21; break;
+        }
+        else if ($69 == 10) {
           __label__ = 24; break;
         }
-        else if ($93 == 10) {
-          __label__ = 27; break;
-        }
         else {
-        __label__ = 30; break;
+        __label__ = 27; break;
         }
         
-      case 24: // $bb22
+      case 21: // $bb22
         _llvm_memset_p0i8_i32($sin23, 0, 16, 1, 0); //@line 3289 "socketmodule.c"
-        var $94=$af_addr; //@line 3290 "socketmodule.c"
-        var $95=((($94)) & 65535); //@line 3290 "socketmodule.c"
-        HEAP[$87]=$95; //@line 3290 "socketmodule.c"
-        var $96=$pch; //@line 3294 "socketmodule.c"
-        var $97=HEAP[$96]; //@line 3294 "socketmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($89, $97, 4, 1, 0); //@line 3294 "socketmodule.c"
-        var $98=_makeipaddr($sin24, 16); //@line 3295 "socketmodule.c"
-        $tmp=$98; //@line 3295 "socketmodule.c"
-        var $99=$h_addr; //@line 3297 "socketmodule.c"
-        var $100=$99+16; //@line 3297 "socketmodule.c"
-        var $101=HEAP[$100]; //@line 3297 "socketmodule.c"
-        var $102=$pch; //@line 3297 "socketmodule.c"
-        var $103=($101)==($102); //@line 3297 "socketmodule.c"
-        if ($103) { __label__ = 25; break; } else { __label__ = 31; break; } //@line 3297 "socketmodule.c"
-      case 25: // $bb26
-        var $104=$alen_addr; //@line 3297 "socketmodule.c"
-        var $105=($104) > 15; //@line 3297 "socketmodule.c"
-        if ($105) { __label__ = 26; break; } else { __label__ = 31; break; } //@line 3297 "socketmodule.c"
-      case 26: // $bb27
-        var $106=$addr_addr; //@line 3298 "socketmodule.c"
-        var $107=$106; //@line 3298 "socketmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($107, $sin28, 16, 1, 0); //@line 3298 "socketmodule.c"
-        __label__ = 31; break; //@line 3298 "socketmodule.c"
-      case 27: // $bb30
+        var $70=$af_addr; //@line 3290 "socketmodule.c"
+        var $71=((($70)) & 65535); //@line 3290 "socketmodule.c"
+        HEAP[$63]=$71; //@line 3290 "socketmodule.c"
+        var $72=$pch; //@line 3294 "socketmodule.c"
+        var $73=HEAP[$72]; //@line 3294 "socketmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($65, $73, 4, 1, 0); //@line 3294 "socketmodule.c"
+        var $74=_makeipaddr($sin24, 16); //@line 3295 "socketmodule.c"
+        $tmp=$74; //@line 3295 "socketmodule.c"
+        var $75=$h_addr; //@line 3297 "socketmodule.c"
+        var $76=$75+16; //@line 3297 "socketmodule.c"
+        var $77=HEAP[$76]; //@line 3297 "socketmodule.c"
+        var $78=$pch; //@line 3297 "socketmodule.c"
+        var $79=($77)==($78); //@line 3297 "socketmodule.c"
+        if ($79) { __label__ = 22; break; } else { __label__ = 28; break; } //@line 3297 "socketmodule.c"
+      case 22: // $bb26
+        var $80=$alen_addr; //@line 3297 "socketmodule.c"
+        var $81=($80) > 15; //@line 3297 "socketmodule.c"
+        if ($81) { __label__ = 23; break; } else { __label__ = 28; break; } //@line 3297 "socketmodule.c"
+      case 23: // $bb27
+        var $82=$addr_addr; //@line 3298 "socketmodule.c"
+        var $83=$82; //@line 3298 "socketmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($83, $sin28, 16, 1, 0); //@line 3298 "socketmodule.c"
+        __label__ = 28; break; //@line 3298 "socketmodule.c"
+      case 24: // $bb30
         _llvm_memset_p0i8_i32($sin631, 0, 28, 1, 0); //@line 3306 "socketmodule.c"
-        var $108=$af_addr; //@line 3307 "socketmodule.c"
-        var $109=((($108)) & 65535); //@line 3307 "socketmodule.c"
-        HEAP[$90]=$109; //@line 3307 "socketmodule.c"
-        var $110=$pch; //@line 3311 "socketmodule.c"
-        var $111=HEAP[$110]; //@line 3311 "socketmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($92, $111, 16, 1, 0); //@line 3311 "socketmodule.c"
-        var $112=_makeipaddr($sin632, 28); //@line 3312 "socketmodule.c"
-        $tmp=$112; //@line 3312 "socketmodule.c"
-        var $113=$h_addr; //@line 3315 "socketmodule.c"
-        var $114=$113+16; //@line 3315 "socketmodule.c"
-        var $115=HEAP[$114]; //@line 3315 "socketmodule.c"
-        var $116=$pch; //@line 3315 "socketmodule.c"
-        var $117=($115)==($116); //@line 3315 "socketmodule.c"
-        if ($117) { __label__ = 28; break; } else { __label__ = 31; break; } //@line 3315 "socketmodule.c"
-      case 28: // $bb34
-        var $118=$alen_addr; //@line 3315 "socketmodule.c"
-        var $119=($118) > 27; //@line 3315 "socketmodule.c"
-        if ($119) { __label__ = 29; break; } else { __label__ = 31; break; } //@line 3315 "socketmodule.c"
-      case 29: // $bb35
-        var $120=$addr_addr; //@line 3316 "socketmodule.c"
-        var $121=$120; //@line 3316 "socketmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($121, $sin636, 28, 1, 0); //@line 3316 "socketmodule.c"
-        __label__ = 31; break; //@line 3316 "socketmodule.c"
-      case 30: // $bb38
-        var $122=HEAP[_socket_error]; //@line 3322 "socketmodule.c"
-        _PyErr_SetString($122, __str3); //@line 3322 "socketmodule.c"
+        var $84=$af_addr; //@line 3307 "socketmodule.c"
+        var $85=((($84)) & 65535); //@line 3307 "socketmodule.c"
+        HEAP[$66]=$85; //@line 3307 "socketmodule.c"
+        var $86=$pch; //@line 3311 "socketmodule.c"
+        var $87=HEAP[$86]; //@line 3311 "socketmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($68, $87, 16, 1, 0); //@line 3311 "socketmodule.c"
+        var $88=_makeipaddr($sin632, 28); //@line 3312 "socketmodule.c"
+        $tmp=$88; //@line 3312 "socketmodule.c"
+        var $89=$h_addr; //@line 3315 "socketmodule.c"
+        var $90=$89+16; //@line 3315 "socketmodule.c"
+        var $91=HEAP[$90]; //@line 3315 "socketmodule.c"
+        var $92=$pch; //@line 3315 "socketmodule.c"
+        var $93=($91)==($92); //@line 3315 "socketmodule.c"
+        if ($93) { __label__ = 25; break; } else { __label__ = 28; break; } //@line 3315 "socketmodule.c"
+      case 25: // $bb34
+        var $94=$alen_addr; //@line 3315 "socketmodule.c"
+        var $95=($94) > 27; //@line 3315 "socketmodule.c"
+        if ($95) { __label__ = 26; break; } else { __label__ = 28; break; } //@line 3315 "socketmodule.c"
+      case 26: // $bb35
+        var $96=$addr_addr; //@line 3316 "socketmodule.c"
+        var $97=$96; //@line 3316 "socketmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($97, $sin636, 28, 1, 0); //@line 3316 "socketmodule.c"
+        __label__ = 28; break; //@line 3316 "socketmodule.c"
+      case 27: // $bb38
+        var $98=HEAP[_socket_error]; //@line 3322 "socketmodule.c"
+        _PyErr_SetString($98, __str3); //@line 3322 "socketmodule.c"
         $0=0; //@line 3324 "socketmodule.c"
-        __label__ = 45; break; //@line 3324 "socketmodule.c"
-      case 31: // $bb39
-        var $123=$tmp; //@line 3327 "socketmodule.c"
-        var $124=($123)==0; //@line 3327 "socketmodule.c"
-        if ($124) { __label__ = 38; break; } else { __label__ = 32; break; } //@line 3327 "socketmodule.c"
-      case 32: // $bb40
-        var $125=$addr_list; //@line 3330 "socketmodule.c"
-        var $126=$tmp; //@line 3330 "socketmodule.c"
-        var $127=_PyList_Append($125, $126); //@line 3330 "socketmodule.c"
-        $status21=$127; //@line 3330 "socketmodule.c"
-        var $128=$tmp; //@line 3331 "socketmodule.c"
-        var $129=$128; //@line 3331 "socketmodule.c"
-        var $130=HEAP[$129]; //@line 3331 "socketmodule.c"
-        var $131=($130) - 1; //@line 3331 "socketmodule.c"
-        var $132=$tmp; //@line 3331 "socketmodule.c"
-        var $133=$132; //@line 3331 "socketmodule.c"
-        HEAP[$133]=$131; //@line 3331 "socketmodule.c"
-        var $134=$tmp; //@line 3331 "socketmodule.c"
-        var $135=$134; //@line 3331 "socketmodule.c"
-        var $136=HEAP[$135]; //@line 3331 "socketmodule.c"
-        var $137=($136)==0; //@line 3331 "socketmodule.c"
-        if ($137) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 3331 "socketmodule.c"
-      case 33: // $bb41
-        var $138=$tmp; //@line 3331 "socketmodule.c"
-        var $139=$138+4; //@line 3331 "socketmodule.c"
-        var $140=HEAP[$139]; //@line 3331 "socketmodule.c"
-        var $141=$140+24; //@line 3331 "socketmodule.c"
-        var $142=HEAP[$141]; //@line 3331 "socketmodule.c"
-        var $143=$tmp; //@line 3331 "socketmodule.c"
-        FUNCTION_TABLE[$142]($143); //@line 3331 "socketmodule.c"
-        __label__ = 34; break; //@line 3331 "socketmodule.c"
-      case 34: // $bb42
-        var $144=$status21; //@line 3333 "socketmodule.c"
-        var $145=($144)!=0; //@line 3333 "socketmodule.c"
-        if ($145) { __label__ = 38; break; } else { __label__ = 35; break; } //@line 3333 "socketmodule.c"
-      case 35: // $bb43
-        var $146=$pch; //@line 3281 "socketmodule.c"
-        var $147=$146+4; //@line 3281 "socketmodule.c"
-        $pch=$147; //@line 3281 "socketmodule.c"
-        __label__ = 36; break; //@line 3281 "socketmodule.c"
-      case 36: // $bb44
-        var $148=$pch; //@line 3281 "socketmodule.c"
-        var $149=HEAP[$148]; //@line 3281 "socketmodule.c"
-        var $150=($149)!=0; //@line 3281 "socketmodule.c"
-        if ($150) { __label__ = 23; break; } else { __label__ = 37; break; } //@line 3281 "socketmodule.c"
-      case 37: // $bb45
-        var $151=$h_addr; //@line 3337 "socketmodule.c"
-        var $152=$151; //@line 3337 "socketmodule.c"
-        var $153=HEAP[$152]; //@line 3337 "socketmodule.c"
-        var $154=$name_list; //@line 3337 "socketmodule.c"
-        var $155=$addr_list; //@line 3337 "socketmodule.c"
-        var $156=_Py_BuildValue(__str100, $153, $154, $155); //@line 3337 "socketmodule.c"
-        $rtn_tuple=$156; //@line 3337 "socketmodule.c"
-        __label__ = 38; break; //@line 3339 "socketmodule.c"
-      case 38: // $err
+        __label__ = 42; break; //@line 3324 "socketmodule.c"
+      case 28: // $bb39
+        var $99=$tmp; //@line 3327 "socketmodule.c"
+        var $100=($99)==0; //@line 3327 "socketmodule.c"
+        if ($100) { __label__ = 35; break; } else { __label__ = 29; break; } //@line 3327 "socketmodule.c"
+      case 29: // $bb40
+        var $101=$addr_list; //@line 3330 "socketmodule.c"
+        var $102=$tmp; //@line 3330 "socketmodule.c"
+        var $103=_PyList_Append($101, $102); //@line 3330 "socketmodule.c"
+        $status21=$103; //@line 3330 "socketmodule.c"
+        var $104=$tmp; //@line 3331 "socketmodule.c"
+        var $105=$104; //@line 3331 "socketmodule.c"
+        var $106=HEAP[$105]; //@line 3331 "socketmodule.c"
+        var $107=($106) - 1; //@line 3331 "socketmodule.c"
+        var $108=$tmp; //@line 3331 "socketmodule.c"
+        var $109=$108; //@line 3331 "socketmodule.c"
+        HEAP[$109]=$107; //@line 3331 "socketmodule.c"
+        var $110=$tmp; //@line 3331 "socketmodule.c"
+        var $111=$110; //@line 3331 "socketmodule.c"
+        var $112=HEAP[$111]; //@line 3331 "socketmodule.c"
+        var $113=($112)==0; //@line 3331 "socketmodule.c"
+        if ($113) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 3331 "socketmodule.c"
+      case 30: // $bb41
+        var $114=$tmp; //@line 3331 "socketmodule.c"
+        var $115=$114+4; //@line 3331 "socketmodule.c"
+        var $116=HEAP[$115]; //@line 3331 "socketmodule.c"
+        var $117=$116+24; //@line 3331 "socketmodule.c"
+        var $118=HEAP[$117]; //@line 3331 "socketmodule.c"
+        var $119=$tmp; //@line 3331 "socketmodule.c"
+        FUNCTION_TABLE[$118]($119); //@line 3331 "socketmodule.c"
+        __label__ = 31; break; //@line 3331 "socketmodule.c"
+      case 31: // $bb42
+        var $120=$status21; //@line 3333 "socketmodule.c"
+        var $121=($120)!=0; //@line 3333 "socketmodule.c"
+        if ($121) { __label__ = 35; break; } else { __label__ = 32; break; } //@line 3333 "socketmodule.c"
+      case 32: // $bb43
+        var $122=$pch; //@line 3281 "socketmodule.c"
+        var $123=$122+4; //@line 3281 "socketmodule.c"
+        $pch=$123; //@line 3281 "socketmodule.c"
+        __label__ = 33; break; //@line 3281 "socketmodule.c"
+      case 33: // $bb44
+        var $124=$pch; //@line 3281 "socketmodule.c"
+        var $125=HEAP[$124]; //@line 3281 "socketmodule.c"
+        var $126=($125)!=0; //@line 3281 "socketmodule.c"
+        if ($126) { __label__ = 20; break; } else { __label__ = 34; break; } //@line 3281 "socketmodule.c"
+      case 34: // $bb45
+        var $127=$h_addr; //@line 3337 "socketmodule.c"
+        var $128=$127; //@line 3337 "socketmodule.c"
+        var $129=HEAP[$128]; //@line 3337 "socketmodule.c"
+        var $130=$name_list; //@line 3337 "socketmodule.c"
+        var $131=$addr_list; //@line 3337 "socketmodule.c"
+        var $132=_Py_BuildValue(__str100, allocate([$129,0,0,0,$130,0,0,0,$131,0,0,0], ["i8*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 3337 "socketmodule.c"
+        $rtn_tuple=$132; //@line 3337 "socketmodule.c"
+        __label__ = 35; break; //@line 3339 "socketmodule.c"
+      case 35: // $err
         var $_pr=$name_list;
-        var $157=($_pr)!=0; //@line 3340 "socketmodule.c"
-        if ($157) { __label__ = 39; break; } else { __label__ = 41; break; } //@line 3340 "socketmodule.c"
-      case 39: // $bb46
-        var $158=$name_list; //@line 3340 "socketmodule.c"
-        var $159=$158; //@line 3340 "socketmodule.c"
-        var $160=HEAP[$159]; //@line 3340 "socketmodule.c"
-        var $161=($160) - 1; //@line 3340 "socketmodule.c"
-        var $162=$name_list; //@line 3340 "socketmodule.c"
-        var $163=$162; //@line 3340 "socketmodule.c"
-        HEAP[$163]=$161; //@line 3340 "socketmodule.c"
-        var $164=$name_list; //@line 3340 "socketmodule.c"
-        var $165=$164; //@line 3340 "socketmodule.c"
-        var $166=HEAP[$165]; //@line 3340 "socketmodule.c"
-        var $167=($166)==0; //@line 3340 "socketmodule.c"
-        if ($167) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 3340 "socketmodule.c"
-      case 40: // $bb47
-        var $168=$name_list; //@line 3340 "socketmodule.c"
-        var $169=$168+4; //@line 3340 "socketmodule.c"
-        var $170=HEAP[$169]; //@line 3340 "socketmodule.c"
-        var $171=$170+24; //@line 3340 "socketmodule.c"
-        var $172=HEAP[$171]; //@line 3340 "socketmodule.c"
-        var $173=$name_list; //@line 3340 "socketmodule.c"
-        FUNCTION_TABLE[$172]($173); //@line 3340 "socketmodule.c"
-        __label__ = 41; break; //@line 3340 "socketmodule.c"
-      case 41: // $bb48
-        var $174=$addr_list; //@line 3341 "socketmodule.c"
-        var $175=($174)!=0; //@line 3341 "socketmodule.c"
-        if ($175) { __label__ = 42; break; } else { __label__ = 44; break; } //@line 3341 "socketmodule.c"
-      case 42: // $bb49
-        var $176=$addr_list; //@line 3341 "socketmodule.c"
-        var $177=$176; //@line 3341 "socketmodule.c"
-        var $178=HEAP[$177]; //@line 3341 "socketmodule.c"
-        var $179=($178) - 1; //@line 3341 "socketmodule.c"
-        var $180=$addr_list; //@line 3341 "socketmodule.c"
-        var $181=$180; //@line 3341 "socketmodule.c"
-        HEAP[$181]=$179; //@line 3341 "socketmodule.c"
-        var $182=$addr_list; //@line 3341 "socketmodule.c"
-        var $183=$182; //@line 3341 "socketmodule.c"
-        var $184=HEAP[$183]; //@line 3341 "socketmodule.c"
-        var $185=($184)==0; //@line 3341 "socketmodule.c"
-        if ($185) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 3341 "socketmodule.c"
-      case 43: // $bb50
-        var $186=$addr_list; //@line 3341 "socketmodule.c"
-        var $187=$186+4; //@line 3341 "socketmodule.c"
-        var $188=HEAP[$187]; //@line 3341 "socketmodule.c"
-        var $189=$188+24; //@line 3341 "socketmodule.c"
-        var $190=HEAP[$189]; //@line 3341 "socketmodule.c"
-        var $191=$addr_list; //@line 3341 "socketmodule.c"
-        FUNCTION_TABLE[$190]($191); //@line 3341 "socketmodule.c"
-        __label__ = 44; break; //@line 3341 "socketmodule.c"
-      case 44: // $bb51
-        var $192=$rtn_tuple; //@line 3342 "socketmodule.c"
-        $0=$192; //@line 3342 "socketmodule.c"
-        __label__ = 45; break; //@line 3342 "socketmodule.c"
-      case 45: // $bb52
-        var $193=$0; //@line 3232 "socketmodule.c"
-        $retval=$193; //@line 3232 "socketmodule.c"
+        var $133=($_pr)!=0; //@line 3340 "socketmodule.c"
+        if ($133) { __label__ = 36; break; } else { __label__ = 38; break; } //@line 3340 "socketmodule.c"
+      case 36: // $bb46
+        var $134=$name_list; //@line 3340 "socketmodule.c"
+        var $135=$134; //@line 3340 "socketmodule.c"
+        var $136=HEAP[$135]; //@line 3340 "socketmodule.c"
+        var $137=($136) - 1; //@line 3340 "socketmodule.c"
+        var $138=$name_list; //@line 3340 "socketmodule.c"
+        var $139=$138; //@line 3340 "socketmodule.c"
+        HEAP[$139]=$137; //@line 3340 "socketmodule.c"
+        var $140=$name_list; //@line 3340 "socketmodule.c"
+        var $141=$140; //@line 3340 "socketmodule.c"
+        var $142=HEAP[$141]; //@line 3340 "socketmodule.c"
+        var $143=($142)==0; //@line 3340 "socketmodule.c"
+        if ($143) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 3340 "socketmodule.c"
+      case 37: // $bb47
+        var $144=$name_list; //@line 3340 "socketmodule.c"
+        var $145=$144+4; //@line 3340 "socketmodule.c"
+        var $146=HEAP[$145]; //@line 3340 "socketmodule.c"
+        var $147=$146+24; //@line 3340 "socketmodule.c"
+        var $148=HEAP[$147]; //@line 3340 "socketmodule.c"
+        var $149=$name_list; //@line 3340 "socketmodule.c"
+        FUNCTION_TABLE[$148]($149); //@line 3340 "socketmodule.c"
+        __label__ = 38; break; //@line 3340 "socketmodule.c"
+      case 38: // $bb48
+        var $150=$addr_list; //@line 3341 "socketmodule.c"
+        var $151=($150)!=0; //@line 3341 "socketmodule.c"
+        if ($151) { __label__ = 39; break; } else { __label__ = 41; break; } //@line 3341 "socketmodule.c"
+      case 39: // $bb49
+        var $152=$addr_list; //@line 3341 "socketmodule.c"
+        var $153=$152; //@line 3341 "socketmodule.c"
+        var $154=HEAP[$153]; //@line 3341 "socketmodule.c"
+        var $155=($154) - 1; //@line 3341 "socketmodule.c"
+        var $156=$addr_list; //@line 3341 "socketmodule.c"
+        var $157=$156; //@line 3341 "socketmodule.c"
+        HEAP[$157]=$155; //@line 3341 "socketmodule.c"
+        var $158=$addr_list; //@line 3341 "socketmodule.c"
+        var $159=$158; //@line 3341 "socketmodule.c"
+        var $160=HEAP[$159]; //@line 3341 "socketmodule.c"
+        var $161=($160)==0; //@line 3341 "socketmodule.c"
+        if ($161) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 3341 "socketmodule.c"
+      case 40: // $bb50
+        var $162=$addr_list; //@line 3341 "socketmodule.c"
+        var $163=$162+4; //@line 3341 "socketmodule.c"
+        var $164=HEAP[$163]; //@line 3341 "socketmodule.c"
+        var $165=$164+24; //@line 3341 "socketmodule.c"
+        var $166=HEAP[$165]; //@line 3341 "socketmodule.c"
+        var $167=$addr_list; //@line 3341 "socketmodule.c"
+        FUNCTION_TABLE[$166]($167); //@line 3341 "socketmodule.c"
+        __label__ = 41; break; //@line 3341 "socketmodule.c"
+      case 41: // $bb51
+        var $168=$rtn_tuple; //@line 3342 "socketmodule.c"
+        $0=$168; //@line 3342 "socketmodule.c"
+        __label__ = 42; break; //@line 3342 "socketmodule.c"
+      case 42: // $bb52
+        var $169=$0; //@line 3232 "socketmodule.c"
+        $retval=$169; //@line 3232 "socketmodule.c"
         var $retval53=$retval; //@line 3232 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval53; //@line 3232 "socketmodule.c"
@@ -5640,7 +5415,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3375 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str101, $name); //@line 3375 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str101, allocate([$name,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 3375 "socketmodule.c"
         var $3=($2)==0; //@line 3375 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3375 "socketmodule.c"
       case 1: // $bb
@@ -5706,7 +5481,7 @@ var __str384;
         var $addr1=$addr; //@line 3429 "socketmodule.c"
         $sa=$addr1; //@line 3429 "socketmodule.c"
         var $1=$args_addr; //@line 3454 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str102, $ip_num); //@line 3454 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str102, allocate([$ip_num,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 3454 "socketmodule.c"
         var $3=($2)==0; //@line 3454 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3454 "socketmodule.c"
       case 1: // $bb
@@ -5804,7 +5579,7 @@ var __str384;
         $args_addr=$args;
         HEAP[$proto]=0; //@line 3519 "socketmodule.c"
         var $1=$args_addr; //@line 3521 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str103, $name, $proto); //@line 3521 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str103, allocate([$name,0,0,0,$proto,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 3521 "socketmodule.c"
         var $3=($2)==0; //@line 3521 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3521 "socketmodule.c"
       case 1: // $bb
@@ -5863,7 +5638,7 @@ var __str384;
         $args_addr=$args;
         HEAP[$proto]=0; //@line 3550 "socketmodule.c"
         var $1=$args_addr; //@line 3552 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str105, $port, $proto); //@line 3552 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str105, allocate([$port,0,0,0,$proto,0,0,0], ["i32*",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 3552 "socketmodule.c"
         var $3=($2)==0; //@line 3552 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3552 "socketmodule.c"
       case 1: // $bb
@@ -5932,7 +5707,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3592 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str108, $name); //@line 3592 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str108, allocate([$name,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 3592 "socketmodule.c"
         var $3=($2)==0; //@line 3592 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3592 "socketmodule.c"
       case 1: // $bb
@@ -5975,26 +5750,10 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $fd_addr_i2;
-        var $family_addr_i3;
-        var $type_addr_i4;
-        var $proto_addr_i5;
-        var $retval_i6;
-        var $0;
-        var $s_i7;
-        var $fd_addr_i;
-        var $family_addr_i;
-        var $type_addr_i;
-        var $proto_addr_i;
-        var $retval_i1;
-        var $1;
-        var $s_i;
-        var $retval_i;
-        var $2;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $3;
+        var $0;
         var $s0;
         var $s1;
         var $sv=__stackBase__;
@@ -6010,190 +5769,139 @@ var __str384;
         HEAP[$proto]=0; //@line 3622 "socketmodule.c"
         $res=0; //@line 3623 "socketmodule.c"
         HEAP[$family]=1; //@line 3626 "socketmodule.c"
-        var $4=$args_addr; //@line 3630 "socketmodule.c"
-        var $5=_PyArg_ParseTuple($4, __str110, $family, $type, $proto); //@line 3630 "socketmodule.c"
-        var $6=($5)==0; //@line 3630 "socketmodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3630 "socketmodule.c"
+        var $1=$args_addr; //@line 3630 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str110, allocate([$family,0,0,0,$type,0,0,0,$proto,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 3630 "socketmodule.c"
+        var $3=($2)==0; //@line 3630 "socketmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3630 "socketmodule.c"
       case 1: // $bb
-        $3=0; //@line 3632 "socketmodule.c"
-        __label__ = 24; break; //@line 3632 "socketmodule.c"
+        $0=0; //@line 3632 "socketmodule.c"
+        __label__ = 20; break; //@line 3632 "socketmodule.c"
       case 2: // $bb1
-        var $7=HEAP[$proto]; //@line 3634 "socketmodule.c"
-        var $8=HEAP[$type]; //@line 3634 "socketmodule.c"
-        var $9=HEAP[$family]; //@line 3634 "socketmodule.c"
+        var $4=HEAP[$proto]; //@line 3634 "socketmodule.c"
+        var $5=HEAP[$type]; //@line 3634 "socketmodule.c"
+        var $6=HEAP[$family]; //@line 3634 "socketmodule.c"
         var $sv2=$sv; //@line 3634 "socketmodule.c"
-        var $10=_socketpair($9, $8, $7, $sv2); //@line 3634 "socketmodule.c"
-        var $11=($10) < 0; //@line 3634 "socketmodule.c"
-        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3634 "socketmodule.c"
+        var $7=_socketpair($6, $5, $4, $sv2); //@line 3634 "socketmodule.c"
+        var $8=($7) < 0; //@line 3634 "socketmodule.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3634 "socketmodule.c"
       case 3: // $bb3
-        var $12=HEAP[_socket_error]; //@line 543 "socketmodule.c"
-        var $13=_PyErr_SetFromErrno($12); //@line 543 "socketmodule.c"
-        $2=$13; //@line 543 "socketmodule.c"
-        var $14=$2; //@line 543 "socketmodule.c"
-        $retval_i=$14; //@line 543 "socketmodule.c"
-        var $retval1_i=$retval_i; //@line 543 "socketmodule.c"
-        $3=$retval1_i; //@line 3635 "socketmodule.c"
-        __label__ = 24; break; //@line 3635 "socketmodule.c"
+        var $9=_set_error(); //@line 3635 "socketmodule.c"
+        $0=$9; //@line 3635 "socketmodule.c"
+        __label__ = 20; break; //@line 3635 "socketmodule.c"
       case 4: // $bb4
-        var $15=HEAP[$proto]; //@line 3636 "socketmodule.c"
-        var $16=HEAP[$type]; //@line 3636 "socketmodule.c"
-        var $17=HEAP[$family]; //@line 3636 "socketmodule.c"
-        var $18=$sv; //@line 3636 "socketmodule.c"
-        var $19=HEAP[$18]; //@line 3636 "socketmodule.c"
-        $fd_addr_i=$19;
-        $family_addr_i=$17;
-        $type_addr_i=$16;
-        $proto_addr_i=$15;
-        var $20=_PyType_GenericNew(_sock_type, 0, 0); //@line 757 "socketmodule.c"
-        var $21=$20; //@line 757 "socketmodule.c"
-        $s_i=$21; //@line 757 "socketmodule.c"
-        var $22=$s_i; //@line 759 "socketmodule.c"
-        var $23=($22)!=0; //@line 759 "socketmodule.c"
-        if ($23) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 759 "socketmodule.c"
-      case 5: // $new_sockobject_exit_thread
-        $1=$22; //@line 761 "socketmodule.c"
-        $retval_i1=$22; //@line 761 "socketmodule.c"
-        $s0=$22; //@line 3636 "socketmodule.c"
-        __label__ = 11; break;
-      case 6: // $new_sockobject_exit
-        var $24=$s_i; //@line 760 "socketmodule.c"
-        var $25=$fd_addr_i; //@line 760 "socketmodule.c"
-        var $26=$family_addr_i; //@line 760 "socketmodule.c"
-        var $27=$type_addr_i; //@line 760 "socketmodule.c"
-        var $28=$proto_addr_i; //@line 760 "socketmodule.c"
-        _init_sockobject($24, $25, $26, $27, $28); //@line 760 "socketmodule.c"
-        var $_pr=$s_i;
-        $1=$_pr; //@line 761 "socketmodule.c"
-        $retval_i1=$_pr; //@line 761 "socketmodule.c"
-        $s0=$_pr; //@line 3636 "socketmodule.c"
-        var $29=($_pr)==0; //@line 3637 "socketmodule.c"
-        if ($29) { __label__ = 11; break; } else { __label__ = 7; break; } //@line 3637 "socketmodule.c"
-      case 7: // $bb5
-        var $30=HEAP[$proto]; //@line 3639 "socketmodule.c"
-        var $31=HEAP[$type]; //@line 3639 "socketmodule.c"
-        var $32=HEAP[$family]; //@line 3639 "socketmodule.c"
-        var $33=$sv+4; //@line 3639 "socketmodule.c"
-        var $34=HEAP[$33]; //@line 3639 "socketmodule.c"
-        $fd_addr_i2=$34;
-        $family_addr_i3=$32;
-        $type_addr_i4=$31;
-        $proto_addr_i5=$30;
-        var $35=_PyType_GenericNew(_sock_type, 0, 0); //@line 757 "socketmodule.c"
-        var $36=$35; //@line 757 "socketmodule.c"
-        $s_i7=$36; //@line 757 "socketmodule.c"
-        var $37=$s_i7; //@line 759 "socketmodule.c"
-        var $38=($37)!=0; //@line 759 "socketmodule.c"
-        if ($38) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 759 "socketmodule.c"
-      case 8: // $new_sockobject_exit10_thread
-        $0=$37; //@line 761 "socketmodule.c"
-        $retval_i6=$37; //@line 761 "socketmodule.c"
-        $s1=$37; //@line 3639 "socketmodule.c"
-        __label__ = 11; break;
-      case 9: // $new_sockobject_exit10
-        var $39=$s_i7; //@line 760 "socketmodule.c"
-        var $40=$fd_addr_i2; //@line 760 "socketmodule.c"
-        var $41=$family_addr_i3; //@line 760 "socketmodule.c"
-        var $42=$type_addr_i4; //@line 760 "socketmodule.c"
-        var $43=$proto_addr_i5; //@line 760 "socketmodule.c"
-        _init_sockobject($39, $40, $41, $42, $43); //@line 760 "socketmodule.c"
-        var $_pr11=$s_i7;
-        $0=$_pr11; //@line 761 "socketmodule.c"
-        $retval_i6=$_pr11; //@line 761 "socketmodule.c"
-        $s1=$_pr11; //@line 3639 "socketmodule.c"
-        var $44=($_pr11)==0; //@line 3640 "socketmodule.c"
-        if ($44) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 3640 "socketmodule.c"
-      case 10: // $bb6
-        var $45=$s0; //@line 3642 "socketmodule.c"
-        var $46=$s1; //@line 3642 "socketmodule.c"
-        var $47=_PyTuple_Pack(2, $45, $46); //@line 3642 "socketmodule.c"
-        $res=$47; //@line 3642 "socketmodule.c"
-        __lastLabel__ = 10; __label__ = 12; break; //@line 3644 "socketmodule.c"
-      case 11: // $finallythread_pre_split
-        var $_pr12=$res;
-        __lastLabel__ = 11; __label__ = 12; break;
-      case 12: // $finally
-        var $48=__lastLabel__ == 11 ? $_pr12 : ($47);
-        var $49=($48)==0; //@line 3645 "socketmodule.c"
-        if ($49) { __label__ = 13; break; } else { __label__ = 17; break; } //@line 3645 "socketmodule.c"
-      case 13: // $bb7
-        var $50=$s0; //@line 3646 "socketmodule.c"
-        var $51=($50)==0; //@line 3646 "socketmodule.c"
-        if ($51) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 3646 "socketmodule.c"
-      case 14: // $bb8
-        var $52=$sv; //@line 3647 "socketmodule.c"
-        var $53=HEAP[$52]; //@line 3647 "socketmodule.c"
-        var $54=_close($53); //@line 3647 "socketmodule.c"
-        __label__ = 15; break; //@line 3647 "socketmodule.c"
-      case 15: // $bb9
-        var $55=$s1; //@line 3648 "socketmodule.c"
-        var $56=($55)==0; //@line 3648 "socketmodule.c"
-        if ($56) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 3648 "socketmodule.c"
-      case 16: // $bb10
-        var $57=$sv+4; //@line 3649 "socketmodule.c"
-        var $58=HEAP[$57]; //@line 3649 "socketmodule.c"
-        var $59=_close($58); //@line 3649 "socketmodule.c"
-        __label__ = 17; break; //@line 3649 "socketmodule.c"
-      case 17: // $bb11
-        var $60=$s0; //@line 3651 "socketmodule.c"
-        var $61=($60)!=0; //@line 3651 "socketmodule.c"
-        if ($61) { __label__ = 18; break; } else { __label__ = 20; break; } //@line 3651 "socketmodule.c"
-      case 18: // $bb12
-        var $62=$s0; //@line 3651 "socketmodule.c"
-        var $63=$62; //@line 3651 "socketmodule.c"
-        var $64=$63; //@line 3651 "socketmodule.c"
-        var $65=HEAP[$64]; //@line 3651 "socketmodule.c"
-        var $66=($65) - 1; //@line 3651 "socketmodule.c"
-        var $67=$63; //@line 3651 "socketmodule.c"
-        HEAP[$67]=$66; //@line 3651 "socketmodule.c"
-        var $68=$63; //@line 3651 "socketmodule.c"
-        var $69=HEAP[$68]; //@line 3651 "socketmodule.c"
-        var $70=($69)==0; //@line 3651 "socketmodule.c"
-        if ($70) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 3651 "socketmodule.c"
-      case 19: // $bb13
-        var $71=$s0; //@line 3651 "socketmodule.c"
-        var $72=$71; //@line 3651 "socketmodule.c"
-        var $73=$72+4; //@line 3651 "socketmodule.c"
-        var $74=HEAP[$73]; //@line 3651 "socketmodule.c"
-        var $75=$74+24; //@line 3651 "socketmodule.c"
-        var $76=HEAP[$75]; //@line 3651 "socketmodule.c"
-        var $77=$s0; //@line 3651 "socketmodule.c"
-        var $78=$77; //@line 3651 "socketmodule.c"
-        FUNCTION_TABLE[$76]($78); //@line 3651 "socketmodule.c"
-        __label__ = 20; break; //@line 3651 "socketmodule.c"
-      case 20: // $bb14
-        var $79=$s1; //@line 3652 "socketmodule.c"
-        var $80=($79)!=0; //@line 3652 "socketmodule.c"
-        if ($80) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 3652 "socketmodule.c"
-      case 21: // $bb15
-        var $81=$s1; //@line 3652 "socketmodule.c"
-        var $82=$81; //@line 3652 "socketmodule.c"
-        var $83=$82; //@line 3652 "socketmodule.c"
-        var $84=HEAP[$83]; //@line 3652 "socketmodule.c"
-        var $85=($84) - 1; //@line 3652 "socketmodule.c"
-        var $86=$82; //@line 3652 "socketmodule.c"
-        HEAP[$86]=$85; //@line 3652 "socketmodule.c"
-        var $87=$82; //@line 3652 "socketmodule.c"
-        var $88=HEAP[$87]; //@line 3652 "socketmodule.c"
-        var $89=($88)==0; //@line 3652 "socketmodule.c"
-        if ($89) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 3652 "socketmodule.c"
-      case 22: // $bb16
-        var $90=$s1; //@line 3652 "socketmodule.c"
-        var $91=$90; //@line 3652 "socketmodule.c"
-        var $92=$91+4; //@line 3652 "socketmodule.c"
-        var $93=HEAP[$92]; //@line 3652 "socketmodule.c"
-        var $94=$93+24; //@line 3652 "socketmodule.c"
-        var $95=HEAP[$94]; //@line 3652 "socketmodule.c"
-        var $96=$s1; //@line 3652 "socketmodule.c"
-        var $97=$96; //@line 3652 "socketmodule.c"
-        FUNCTION_TABLE[$95]($97); //@line 3652 "socketmodule.c"
-        __label__ = 23; break; //@line 3652 "socketmodule.c"
-      case 23: // $bb17
-        var $98=$res; //@line 3653 "socketmodule.c"
-        $3=$98; //@line 3653 "socketmodule.c"
-        __label__ = 24; break; //@line 3653 "socketmodule.c"
-      case 24: // $bb18
-        var $99=$3; //@line 3632 "socketmodule.c"
-        $retval=$99; //@line 3632 "socketmodule.c"
+        var $10=HEAP[$proto]; //@line 3636 "socketmodule.c"
+        var $11=HEAP[$type]; //@line 3636 "socketmodule.c"
+        var $12=HEAP[$family]; //@line 3636 "socketmodule.c"
+        var $13=$sv; //@line 3636 "socketmodule.c"
+        var $14=HEAP[$13]; //@line 3636 "socketmodule.c"
+        var $15=_new_sockobject($14, $12, $11, $10); //@line 3636 "socketmodule.c"
+        $s0=$15; //@line 3636 "socketmodule.c"
+        var $16=$s0; //@line 3637 "socketmodule.c"
+        var $17=($16)==0; //@line 3637 "socketmodule.c"
+        if ($17) { __label__ = 7; break; } else { __label__ = 5; break; } //@line 3637 "socketmodule.c"
+      case 5: // $bb5
+        var $18=HEAP[$proto]; //@line 3639 "socketmodule.c"
+        var $19=HEAP[$type]; //@line 3639 "socketmodule.c"
+        var $20=HEAP[$family]; //@line 3639 "socketmodule.c"
+        var $21=$sv+4; //@line 3639 "socketmodule.c"
+        var $22=HEAP[$21]; //@line 3639 "socketmodule.c"
+        var $23=_new_sockobject($22, $20, $19, $18); //@line 3639 "socketmodule.c"
+        $s1=$23; //@line 3639 "socketmodule.c"
+        var $24=$s1; //@line 3640 "socketmodule.c"
+        var $25=($24)==0; //@line 3640 "socketmodule.c"
+        if ($25) { __label__ = 7; break; } else { __label__ = 6; break; } //@line 3640 "socketmodule.c"
+      case 6: // $bb6
+        var $26=$s0; //@line 3642 "socketmodule.c"
+        var $27=$s1; //@line 3642 "socketmodule.c"
+        var $28=_PyTuple_Pack(2, allocate([$26,0,0,0,$27,0,0,0], ["%struct.PySocketSockObject*",0,0,0,"%struct.PySocketSockObject*",0,0,0], ALLOC_STACK)); //@line 3642 "socketmodule.c"
+        $res=$28; //@line 3642 "socketmodule.c"
+        __lastLabel__ = 6; __label__ = 8; break; //@line 3644 "socketmodule.c"
+      case 7: // $finallythread_pre_split
+        var $_pr=$res;
+        __lastLabel__ = 7; __label__ = 8; break;
+      case 8: // $finally
+        var $29=__lastLabel__ == 7 ? $_pr : ($28);
+        var $30=($29)==0; //@line 3645 "socketmodule.c"
+        if ($30) { __label__ = 9; break; } else { __label__ = 13; break; } //@line 3645 "socketmodule.c"
+      case 9: // $bb7
+        var $31=$s0; //@line 3646 "socketmodule.c"
+        var $32=($31)==0; //@line 3646 "socketmodule.c"
+        if ($32) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 3646 "socketmodule.c"
+      case 10: // $bb8
+        var $33=$sv; //@line 3647 "socketmodule.c"
+        var $34=HEAP[$33]; //@line 3647 "socketmodule.c"
+        var $35=_close($34); //@line 3647 "socketmodule.c"
+        __label__ = 11; break; //@line 3647 "socketmodule.c"
+      case 11: // $bb9
+        var $36=$s1; //@line 3648 "socketmodule.c"
+        var $37=($36)==0; //@line 3648 "socketmodule.c"
+        if ($37) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 3648 "socketmodule.c"
+      case 12: // $bb10
+        var $38=$sv+4; //@line 3649 "socketmodule.c"
+        var $39=HEAP[$38]; //@line 3649 "socketmodule.c"
+        var $40=_close($39); //@line 3649 "socketmodule.c"
+        __label__ = 13; break; //@line 3649 "socketmodule.c"
+      case 13: // $bb11
+        var $41=$s0; //@line 3651 "socketmodule.c"
+        var $42=($41)!=0; //@line 3651 "socketmodule.c"
+        if ($42) { __label__ = 14; break; } else { __label__ = 16; break; } //@line 3651 "socketmodule.c"
+      case 14: // $bb12
+        var $43=$s0; //@line 3651 "socketmodule.c"
+        var $44=$43; //@line 3651 "socketmodule.c"
+        var $45=$44; //@line 3651 "socketmodule.c"
+        var $46=HEAP[$45]; //@line 3651 "socketmodule.c"
+        var $47=($46) - 1; //@line 3651 "socketmodule.c"
+        var $48=$44; //@line 3651 "socketmodule.c"
+        HEAP[$48]=$47; //@line 3651 "socketmodule.c"
+        var $49=$44; //@line 3651 "socketmodule.c"
+        var $50=HEAP[$49]; //@line 3651 "socketmodule.c"
+        var $51=($50)==0; //@line 3651 "socketmodule.c"
+        if ($51) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 3651 "socketmodule.c"
+      case 15: // $bb13
+        var $52=$s0; //@line 3651 "socketmodule.c"
+        var $53=$52; //@line 3651 "socketmodule.c"
+        var $54=$53+4; //@line 3651 "socketmodule.c"
+        var $55=HEAP[$54]; //@line 3651 "socketmodule.c"
+        var $56=$55+24; //@line 3651 "socketmodule.c"
+        var $57=HEAP[$56]; //@line 3651 "socketmodule.c"
+        var $58=$s0; //@line 3651 "socketmodule.c"
+        var $59=$58; //@line 3651 "socketmodule.c"
+        FUNCTION_TABLE[$57]($59); //@line 3651 "socketmodule.c"
+        __label__ = 16; break; //@line 3651 "socketmodule.c"
+      case 16: // $bb14
+        var $60=$s1; //@line 3652 "socketmodule.c"
+        var $61=($60)!=0; //@line 3652 "socketmodule.c"
+        if ($61) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 3652 "socketmodule.c"
+      case 17: // $bb15
+        var $62=$s1; //@line 3652 "socketmodule.c"
+        var $63=$62; //@line 3652 "socketmodule.c"
+        var $64=$63; //@line 3652 "socketmodule.c"
+        var $65=HEAP[$64]; //@line 3652 "socketmodule.c"
+        var $66=($65) - 1; //@line 3652 "socketmodule.c"
+        var $67=$63; //@line 3652 "socketmodule.c"
+        HEAP[$67]=$66; //@line 3652 "socketmodule.c"
+        var $68=$63; //@line 3652 "socketmodule.c"
+        var $69=HEAP[$68]; //@line 3652 "socketmodule.c"
+        var $70=($69)==0; //@line 3652 "socketmodule.c"
+        if ($70) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 3652 "socketmodule.c"
+      case 18: // $bb16
+        var $71=$s1; //@line 3652 "socketmodule.c"
+        var $72=$71; //@line 3652 "socketmodule.c"
+        var $73=$72+4; //@line 3652 "socketmodule.c"
+        var $74=HEAP[$73]; //@line 3652 "socketmodule.c"
+        var $75=$74+24; //@line 3652 "socketmodule.c"
+        var $76=HEAP[$75]; //@line 3652 "socketmodule.c"
+        var $77=$s1; //@line 3652 "socketmodule.c"
+        var $78=$77; //@line 3652 "socketmodule.c"
+        FUNCTION_TABLE[$76]($78); //@line 3652 "socketmodule.c"
+        __label__ = 19; break; //@line 3652 "socketmodule.c"
+      case 19: // $bb17
+        var $79=$res; //@line 3653 "socketmodule.c"
+        $0=$79; //@line 3653 "socketmodule.c"
+        __label__ = 20; break; //@line 3653 "socketmodule.c"
+      case 20: // $bb18
+        var $80=$0; //@line 3632 "socketmodule.c"
+        $retval=$80; //@line 3632 "socketmodule.c"
         var $retval19=$retval; //@line 3632 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval19; //@line 3632 "socketmodule.c"
@@ -6208,19 +5916,10 @@ var __str384;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $fd_addr_i;
-        var $family_addr_i;
-        var $type_addr_i;
-        var $proto_addr_i;
-        var $retval_i1;
-        var $0;
-        var $s_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $2;
+        var $0;
         var $s;
         var $fd=__stackBase__;
         var $family=__stackBase__+4;
@@ -6229,66 +5928,38 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$proto]=0; //@line 3678 "socketmodule.c"
-        var $3=$args_addr; //@line 3679 "socketmodule.c"
-        var $4=_PyArg_ParseTuple($3, __str111, $fd, $family, $type, $proto); //@line 3679 "socketmodule.c"
-        var $5=($4)==0; //@line 3679 "socketmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3679 "socketmodule.c"
+        var $1=$args_addr; //@line 3679 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str111, allocate([$fd,0,0,0,$family,0,0,0,$type,0,0,0,$proto,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 3679 "socketmodule.c"
+        var $3=($2)==0; //@line 3679 "socketmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3679 "socketmodule.c"
       case 1: // $bb
-        $2=0; //@line 3681 "socketmodule.c"
-        __label__ = 7; break; //@line 3681 "socketmodule.c"
+        $0=0; //@line 3681 "socketmodule.c"
+        __label__ = 5; break; //@line 3681 "socketmodule.c"
       case 2: // $bb1
-        var $6=HEAP[$fd]; //@line 3683 "socketmodule.c"
-        var $7=_dup($6); //@line 3683 "socketmodule.c"
-        HEAP[$fd]=$7; //@line 3683 "socketmodule.c"
-        var $8=HEAP[$fd]; //@line 3684 "socketmodule.c"
-        var $9=($8) < 0; //@line 3684 "socketmodule.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3684 "socketmodule.c"
+        var $4=HEAP[$fd]; //@line 3683 "socketmodule.c"
+        var $5=_dup($4); //@line 3683 "socketmodule.c"
+        HEAP[$fd]=$5; //@line 3683 "socketmodule.c"
+        var $6=HEAP[$fd]; //@line 3684 "socketmodule.c"
+        var $7=($6) < 0; //@line 3684 "socketmodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3684 "socketmodule.c"
       case 3: // $bb2
-        var $10=HEAP[_socket_error]; //@line 543 "socketmodule.c"
-        var $11=_PyErr_SetFromErrno($10); //@line 543 "socketmodule.c"
-        $1=$11; //@line 543 "socketmodule.c"
-        var $12=$1; //@line 543 "socketmodule.c"
-        $retval_i=$12; //@line 543 "socketmodule.c"
-        var $retval1_i=$retval_i; //@line 543 "socketmodule.c"
-        $2=$retval1_i; //@line 3685 "socketmodule.c"
-        __label__ = 7; break; //@line 3685 "socketmodule.c"
+        var $8=_set_error(); //@line 3685 "socketmodule.c"
+        $0=$8; //@line 3685 "socketmodule.c"
+        __label__ = 5; break; //@line 3685 "socketmodule.c"
       case 4: // $bb3
-        var $13=HEAP[$proto]; //@line 3686 "socketmodule.c"
-        var $14=HEAP[$type]; //@line 3686 "socketmodule.c"
-        var $15=HEAP[$family]; //@line 3686 "socketmodule.c"
-        var $16=HEAP[$fd]; //@line 3686 "socketmodule.c"
-        $fd_addr_i=$16;
-        $family_addr_i=$15;
-        $type_addr_i=$14;
-        $proto_addr_i=$13;
-        var $17=_PyType_GenericNew(_sock_type, 0, 0); //@line 757 "socketmodule.c"
-        var $18=$17; //@line 757 "socketmodule.c"
-        $s_i=$18; //@line 757 "socketmodule.c"
-        var $19=$s_i; //@line 759 "socketmodule.c"
-        var $20=($19)!=0; //@line 759 "socketmodule.c"
-        if ($20) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 759 "socketmodule.c"
-      case 5: // $bb_i
-        var $21=$s_i; //@line 760 "socketmodule.c"
-        var $22=$fd_addr_i; //@line 760 "socketmodule.c"
-        var $23=$family_addr_i; //@line 760 "socketmodule.c"
-        var $24=$type_addr_i; //@line 760 "socketmodule.c"
-        var $25=$proto_addr_i; //@line 760 "socketmodule.c"
-        _init_sockobject($21, $22, $23, $24, $25); //@line 760 "socketmodule.c"
-        __label__ = 6; break; //@line 760 "socketmodule.c"
-      case 6: // $new_sockobject_exit
-        var $26=$s_i; //@line 761 "socketmodule.c"
-        $0=$26; //@line 761 "socketmodule.c"
-        var $27=$0; //@line 761 "socketmodule.c"
-        $retval_i1=$27; //@line 761 "socketmodule.c"
-        var $retval2_i=$retval_i1; //@line 761 "socketmodule.c"
-        $s=$retval2_i; //@line 3686 "socketmodule.c"
-        var $28=$s; //@line 3687 "socketmodule.c"
-        var $29=$28; //@line 3687 "socketmodule.c"
-        $2=$29; //@line 3687 "socketmodule.c"
-        __label__ = 7; break; //@line 3687 "socketmodule.c"
-      case 7: // $bb4
-        var $30=$2; //@line 3681 "socketmodule.c"
-        $retval=$30; //@line 3681 "socketmodule.c"
+        var $9=HEAP[$proto]; //@line 3686 "socketmodule.c"
+        var $10=HEAP[$type]; //@line 3686 "socketmodule.c"
+        var $11=HEAP[$family]; //@line 3686 "socketmodule.c"
+        var $12=HEAP[$fd]; //@line 3686 "socketmodule.c"
+        var $13=_new_sockobject($12, $11, $10, $9); //@line 3686 "socketmodule.c"
+        $s=$13; //@line 3686 "socketmodule.c"
+        var $14=$s; //@line 3687 "socketmodule.c"
+        var $15=$14; //@line 3687 "socketmodule.c"
+        $0=$15; //@line 3687 "socketmodule.c"
+        __label__ = 5; break; //@line 3687 "socketmodule.c"
+      case 5: // $bb4
+        var $16=$0; //@line 3681 "socketmodule.c"
+        $retval=$16; //@line 3681 "socketmodule.c"
         var $retval5=$retval; //@line 3681 "socketmodule.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 3681 "socketmodule.c"
@@ -6312,7 +5983,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3705 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str112, $x1); //@line 3705 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str112, allocate([$x1,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 3705 "socketmodule.c"
         var $3=($2)==0; //@line 3705 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3705 "socketmodule.c"
       case 1: // $bb
@@ -6428,7 +6099,7 @@ var __str384;
         var $33=$32+12; //@line 3755 "socketmodule.c"
         var $34=HEAP[$33]; //@line 3755 "socketmodule.c"
         var $35=HEAP[_PyExc_TypeError]; //@line 3755 "socketmodule.c"
-        var $36=_PyErr_Format($35, __str114, $34); //@line 3755 "socketmodule.c"
+        var $36=_PyErr_Format($35, __str114, allocate([$34,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 3755 "socketmodule.c"
         $0=$36; //@line 3755 "socketmodule.c"
         __label__ = 16; break; //@line 3755 "socketmodule.c"
       case 12: // $bb12
@@ -6474,7 +6145,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3774 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str115, $x1); //@line 3774 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str115, allocate([$x1,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 3774 "socketmodule.c"
         var $3=($2)==0; //@line 3774 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3774 "socketmodule.c"
       case 1: // $bb
@@ -6590,7 +6261,7 @@ var __str384;
         var $33=$32+12; //@line 3824 "socketmodule.c"
         var $34=HEAP[$33]; //@line 3824 "socketmodule.c"
         var $35=HEAP[_PyExc_TypeError]; //@line 3824 "socketmodule.c"
-        var $36=_PyErr_Format($35, __str114, $34); //@line 3824 "socketmodule.c"
+        var $36=_PyErr_Format($35, __str114, allocate([$34,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 3824 "socketmodule.c"
         $0=$36; //@line 3824 "socketmodule.c"
         __label__ = 13; break; //@line 3824 "socketmodule.c"
       case 12: // $bb12
@@ -6625,7 +6296,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3862 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str116, $ip_addr); //@line 3862 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str116, allocate([$ip_addr,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 3862 "socketmodule.c"
         var $3=($2)==0; //@line 3862 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3862 "socketmodule.c"
       case 1: // $bb
@@ -6673,7 +6344,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3923 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str118, $packed_str, $addr_len); //@line 3923 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str118, allocate([$packed_str,0,0,0,$addr_len,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 3923 "socketmodule.c"
         var $3=($2)==0; //@line 3923 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3923 "socketmodule.c"
       case 1: // $bb
@@ -6727,7 +6398,7 @@ var __str384;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 3957 "socketmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str120, $af, $ip); //@line 3957 "socketmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str120, allocate([$af,0,0,0,$ip,0,0,0], ["i32*",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 3957 "socketmodule.c"
         var $3=($2)==0; //@line 3957 "socketmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3957 "socketmodule.c"
       case 1: // $bb
@@ -6810,7 +6481,7 @@ var __str384;
         var $1=$ip; //@line 4010 "socketmodule.c"
         _llvm_memset_p0i8_i32($1, 0, 47, 1, 0); //@line 4010 "socketmodule.c"
         var $2=$args_addr; //@line 4012 "socketmodule.c"
-        var $3=_PyArg_ParseTuple($2, __str122, $af, $packed, $len); //@line 4012 "socketmodule.c"
+        var $3=_PyArg_ParseTuple($2, __str122, allocate([$af,0,0,0,$packed,0,0,0,$len,0,0,0], ["i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 4012 "socketmodule.c"
         var $4=($3)==0; //@line 4012 "socketmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4012 "socketmodule.c"
       case 1: // $bb
@@ -6845,7 +6516,7 @@ var __str384;
       case 8: // $bb10
         var $15=HEAP[$af]; //@line 4031 "socketmodule.c"
         var $16=HEAP[_PyExc_ValueError]; //@line 4031 "socketmodule.c"
-        var $17=_PyErr_Format($16, __str124, $15); //@line 4031 "socketmodule.c"
+        var $17=_PyErr_Format($16, __str124, allocate([$15,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 4031 "socketmodule.c"
         $0=0; //@line 4033 "socketmodule.c"
         __label__ = 12; break; //@line 4033 "socketmodule.c"
       case 9: // $bb11
@@ -6921,7 +6592,7 @@ var __str384;
         HEAP[$socktype]=$2; //@line 4069 "socketmodule.c"
         HEAP[$family]=0; //@line 4070 "socketmodule.c"
         var $3=$args_addr; //@line 4071 "socketmodule.c"
-        var $4=_PyArg_ParseTuple($3, __str125, $hobj, $pobj, $family, $socktype, $protocol, $flags); //@line 4071 "socketmodule.c"
+        var $4=_PyArg_ParseTuple($3, __str125, allocate([$hobj,0,0,0,$pobj,0,0,0,$family,0,0,0,$socktype,0,0,0,$protocol,0,0,0,$flags,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 4071 "socketmodule.c"
         var $5=($4)==0; //@line 4071 "socketmodule.c"
         if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4071 "socketmodule.c"
       case 1: // $bb
@@ -6945,7 +6616,7 @@ var __str384;
         var $15=HEAP[$hobj]; //@line 4079 "socketmodule.c"
         if ($14) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 4078 "socketmodule.c"
       case 5: // $bb4
-        var $16=_PyObject_CallMethod($15, __str126, __str127, __str23); //@line 4079 "socketmodule.c"
+        var $16=_PyObject_CallMethod($15, __str126, __str127, allocate([__str23,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 4079 "socketmodule.c"
         $idna=$16; //@line 4079 "socketmodule.c"
         var $17=$idna; //@line 4080 "socketmodule.c"
         var $18=($17)==0; //@line 4080 "socketmodule.c"
@@ -6989,7 +6660,7 @@ var __str384;
       case 12: // $bb11
         var $38=_PyInt_AsLong($37); //@line 4091 "socketmodule.c"
         var $pbuf12=$pbuf; //@line 4091 "socketmodule.c"
-        var $39=_PyOS_snprintf($pbuf12, 30, __str129, $38); //@line 4091 "socketmodule.c"
+        var $39=_PyOS_snprintf($pbuf12, 30, __str129, allocate([$38,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 4091 "socketmodule.c"
         var $pbuf13=$pbuf; //@line 4092 "socketmodule.c"
         $pptr=$pbuf13; //@line 4092 "socketmodule.c"
         __label__ = 18; break; //@line 4092 "socketmodule.c"
@@ -7091,7 +6762,7 @@ var __str384;
         var $92=HEAP[$91]; //@line 4123 "socketmodule.c"
         var $93=$iftmp_366; //@line 4123 "socketmodule.c"
         var $94=$addr; //@line 4123 "socketmodule.c"
-        var $95=_Py_BuildValue(__str131, $92, $89, $86, $93, $94); //@line 4123 "socketmodule.c"
+        var $95=_Py_BuildValue(__str131, allocate([$92,0,0,0,$89,0,0,0,$86,0,0,0,$93,0,0,0,$94,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i8*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 4123 "socketmodule.c"
         $single=$95; //@line 4123 "socketmodule.c"
         var $96=$addr; //@line 4127 "socketmodule.c"
         var $97=$96; //@line 4127 "socketmodule.c"
@@ -7332,7 +7003,7 @@ var __str384;
         var $2=HEAP[$flowinfo]; //@line 4169 "socketmodule.c"
         HEAP[$flags]=$2; //@line 4169 "socketmodule.c"
         var $3=$args_addr; //@line 4170 "socketmodule.c"
-        var $4=_PyArg_ParseTuple($3, __str132, $sa, $flags); //@line 4170 "socketmodule.c"
+        var $4=_PyArg_ParseTuple($3, __str132, allocate([$sa,0,0,0,$flags,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 4170 "socketmodule.c"
         var $5=($4)==0; //@line 4170 "socketmodule.c"
         if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4170 "socketmodule.c"
       case 1: // $bb
@@ -7354,7 +7025,7 @@ var __str384;
         __label__ = 20; break; //@line 4175 "socketmodule.c"
       case 4: // $bb3
         var $14=HEAP[$sa]; //@line 4177 "socketmodule.c"
-        var $15=_PyArg_ParseTuple($14, __str134, $hostp, $port, $flowinfo, $scope_id); //@line 4177 "socketmodule.c"
+        var $15=_PyArg_ParseTuple($14, __str134, allocate([$hostp,0,0,0,$port,0,0,0,$flowinfo,0,0,0,$scope_id,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 4177 "socketmodule.c"
         var $16=($15)==0; //@line 4177 "socketmodule.c"
         if ($16) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4177 "socketmodule.c"
       case 5: // $bb4
@@ -7363,7 +7034,7 @@ var __str384;
       case 6: // $bb5
         var $17=HEAP[$port]; //@line 4180 "socketmodule.c"
         var $pbuf6=$pbuf; //@line 4180 "socketmodule.c"
-        var $18=_PyOS_snprintf($pbuf6, 32, __str135, $17); //@line 4180 "socketmodule.c"
+        var $18=_PyOS_snprintf($pbuf6, 32, __str135, allocate([$17,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 4180 "socketmodule.c"
         var $19=$hints+8; //@line 4183 "socketmodule.c"
         var $20=$hints;
         _llvm_memset_p0i8_i64($20, 0, 32, 1, 0);
@@ -7450,7 +7121,7 @@ var __str384;
       case 16: // $bb21
         var $hbuf22=$hbuf; //@line 4225 "socketmodule.c"
         var $pbuf23=$pbuf; //@line 4225 "socketmodule.c"
-        var $60=_Py_BuildValue(__str138, $hbuf22, $pbuf23); //@line 4225 "socketmodule.c"
+        var $60=_Py_BuildValue(__str138, allocate([$hbuf22,0,0,0,$pbuf23,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 4225 "socketmodule.c"
         $ret=$60; //@line 4225 "socketmodule.c"
         __label__ = 17; break; //@line 4227 "socketmodule.c"
       case 17: // $fail
@@ -7567,557 +7238,567 @@ var __str384;
   }
   
 
+  function _os_init() {
+    ;
+    var __label__;
+  
+    var $retval;
+    var $0;
+    $0=1; //@line 4441 "socketmodule.c"
+    var $1=$0; //@line 4441 "socketmodule.c"
+    $retval=$1; //@line 4441 "socketmodule.c"
+    var $retval1=$retval; //@line 4441 "socketmodule.c"
+    ;
+    return $retval1; //@line 4441 "socketmodule.c"
+  }
+  
+
   function _init_socket() {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
         var $m;
         var $has_ipv6;
-        $0=1; //@line 4441 "socketmodule.c"
-        var $1=$0; //@line 4441 "socketmodule.c"
-        $retval_i=$1; //@line 4441 "socketmodule.c"
-        var $retval1_i=$retval_i; //@line 4441 "socketmodule.c"
-        var $2=($retval1_i)==0; //@line 4479 "socketmodule.c"
-        if ($2) { __label__ = 10; break; } else { __label__ = 1; break; } //@line 4479 "socketmodule.c"
+        var $0=_os_init(); //@line 4479 "socketmodule.c"
+        var $1=($0)==0; //@line 4479 "socketmodule.c"
+        if ($1) { __label__ = 10; break; } else { __label__ = 1; break; } //@line 4479 "socketmodule.c"
       case 1: // $bb
         HEAP[_sock_type+4]=_PyType_Type; //@line 4482 "socketmodule.c"
-        var $3=_Py_InitModule4(__str160, _socket_methods, _socket_doc, 0, 1013); //@line 4483 "socketmodule.c"
-        $m=$3; //@line 4483 "socketmodule.c"
-        var $4=$m; //@line 4486 "socketmodule.c"
-        var $5=($4)==0; //@line 4486 "socketmodule.c"
-        if ($5) { __label__ = 10; break; } else { __label__ = 2; break; } //@line 4486 "socketmodule.c"
+        var $2=_Py_InitModule4(__str160, _socket_methods, _socket_doc, 0, 1013); //@line 4483 "socketmodule.c"
+        $m=$2; //@line 4483 "socketmodule.c"
+        var $3=$m; //@line 4486 "socketmodule.c"
+        var $4=($3)==0; //@line 4486 "socketmodule.c"
+        if ($4) { __label__ = 10; break; } else { __label__ = 2; break; } //@line 4486 "socketmodule.c"
       case 2: // $bb1
-        var $6=HEAP[_PyExc_IOError]; //@line 4489 "socketmodule.c"
-        var $7=_PyErr_NewException(__str161, $6, 0); //@line 4489 "socketmodule.c"
-        HEAP[_socket_error]=$7; //@line 4489 "socketmodule.c"
-        var $8=HEAP[_socket_error]; //@line 4491 "socketmodule.c"
-        var $9=($8)==0; //@line 4491 "socketmodule.c"
-        if ($9) { __label__ = 10; break; } else { __label__ = 3; break; } //@line 4491 "socketmodule.c"
+        var $5=HEAP[_PyExc_IOError]; //@line 4489 "socketmodule.c"
+        var $6=_PyErr_NewException(__str161, $5, 0); //@line 4489 "socketmodule.c"
+        HEAP[_socket_error]=$6; //@line 4489 "socketmodule.c"
+        var $7=HEAP[_socket_error]; //@line 4491 "socketmodule.c"
+        var $8=($7)==0; //@line 4491 "socketmodule.c"
+        if ($8) { __label__ = 10; break; } else { __label__ = 3; break; } //@line 4491 "socketmodule.c"
       case 3: // $bb2
-        var $10=HEAP[_socket_error]; //@line 4493 "socketmodule.c"
-        HEAP[_PySocketModuleAPI+4]=$10; //@line 4493 "socketmodule.c"
-        var $11=HEAP[_socket_error]; //@line 4494 "socketmodule.c"
-        var $12=$11; //@line 4494 "socketmodule.c"
-        var $13=HEAP[$12]; //@line 4494 "socketmodule.c"
-        var $14=($13) + 1; //@line 4494 "socketmodule.c"
-        var $15=$11; //@line 4494 "socketmodule.c"
-        HEAP[$15]=$14; //@line 4494 "socketmodule.c"
-        var $16=HEAP[_socket_error]; //@line 4495 "socketmodule.c"
-        var $17=$m; //@line 4495 "socketmodule.c"
-        var $18=_PyModule_AddObject($17, __str162, $16); //@line 4495 "socketmodule.c"
-        var $19=HEAP[_socket_error]; //@line 4496 "socketmodule.c"
-        var $20=_PyErr_NewException(__str163, $19, 0); //@line 4496 "socketmodule.c"
-        HEAP[_socket_herror]=$20; //@line 4496 "socketmodule.c"
-        var $21=HEAP[_socket_herror]; //@line 4498 "socketmodule.c"
-        var $22=($21)==0; //@line 4498 "socketmodule.c"
-        if ($22) { __label__ = 10; break; } else { __label__ = 4; break; } //@line 4498 "socketmodule.c"
+        var $9=HEAP[_socket_error]; //@line 4493 "socketmodule.c"
+        HEAP[_PySocketModuleAPI+4]=$9; //@line 4493 "socketmodule.c"
+        var $10=HEAP[_socket_error]; //@line 4494 "socketmodule.c"
+        var $11=$10; //@line 4494 "socketmodule.c"
+        var $12=HEAP[$11]; //@line 4494 "socketmodule.c"
+        var $13=($12) + 1; //@line 4494 "socketmodule.c"
+        var $14=$10; //@line 4494 "socketmodule.c"
+        HEAP[$14]=$13; //@line 4494 "socketmodule.c"
+        var $15=HEAP[_socket_error]; //@line 4495 "socketmodule.c"
+        var $16=$m; //@line 4495 "socketmodule.c"
+        var $17=_PyModule_AddObject($16, __str162, $15); //@line 4495 "socketmodule.c"
+        var $18=HEAP[_socket_error]; //@line 4496 "socketmodule.c"
+        var $19=_PyErr_NewException(__str163, $18, 0); //@line 4496 "socketmodule.c"
+        HEAP[_socket_herror]=$19; //@line 4496 "socketmodule.c"
+        var $20=HEAP[_socket_herror]; //@line 4498 "socketmodule.c"
+        var $21=($20)==0; //@line 4498 "socketmodule.c"
+        if ($21) { __label__ = 10; break; } else { __label__ = 4; break; } //@line 4498 "socketmodule.c"
       case 4: // $bb3
-        var $23=HEAP[_socket_herror]; //@line 4500 "socketmodule.c"
-        var $24=$23; //@line 4500 "socketmodule.c"
-        var $25=HEAP[$24]; //@line 4500 "socketmodule.c"
-        var $26=($25) + 1; //@line 4500 "socketmodule.c"
-        var $27=$23; //@line 4500 "socketmodule.c"
-        HEAP[$27]=$26; //@line 4500 "socketmodule.c"
-        var $28=HEAP[_socket_herror]; //@line 4501 "socketmodule.c"
-        var $29=$m; //@line 4501 "socketmodule.c"
-        var $30=_PyModule_AddObject($29, __str164, $28); //@line 4501 "socketmodule.c"
-        var $31=HEAP[_socket_error]; //@line 4502 "socketmodule.c"
-        var $32=_PyErr_NewException(__str165, $31, 0); //@line 4502 "socketmodule.c"
-        HEAP[_socket_gaierror]=$32; //@line 4502 "socketmodule.c"
-        var $33=HEAP[_socket_gaierror]; //@line 4504 "socketmodule.c"
-        var $34=($33)==0; //@line 4504 "socketmodule.c"
-        if ($34) { __label__ = 10; break; } else { __label__ = 5; break; } //@line 4504 "socketmodule.c"
+        var $22=HEAP[_socket_herror]; //@line 4500 "socketmodule.c"
+        var $23=$22; //@line 4500 "socketmodule.c"
+        var $24=HEAP[$23]; //@line 4500 "socketmodule.c"
+        var $25=($24) + 1; //@line 4500 "socketmodule.c"
+        var $26=$22; //@line 4500 "socketmodule.c"
+        HEAP[$26]=$25; //@line 4500 "socketmodule.c"
+        var $27=HEAP[_socket_herror]; //@line 4501 "socketmodule.c"
+        var $28=$m; //@line 4501 "socketmodule.c"
+        var $29=_PyModule_AddObject($28, __str164, $27); //@line 4501 "socketmodule.c"
+        var $30=HEAP[_socket_error]; //@line 4502 "socketmodule.c"
+        var $31=_PyErr_NewException(__str165, $30, 0); //@line 4502 "socketmodule.c"
+        HEAP[_socket_gaierror]=$31; //@line 4502 "socketmodule.c"
+        var $32=HEAP[_socket_gaierror]; //@line 4504 "socketmodule.c"
+        var $33=($32)==0; //@line 4504 "socketmodule.c"
+        if ($33) { __label__ = 10; break; } else { __label__ = 5; break; } //@line 4504 "socketmodule.c"
       case 5: // $bb4
-        var $35=HEAP[_socket_gaierror]; //@line 4506 "socketmodule.c"
-        var $36=$35; //@line 4506 "socketmodule.c"
-        var $37=HEAP[$36]; //@line 4506 "socketmodule.c"
-        var $38=($37) + 1; //@line 4506 "socketmodule.c"
-        var $39=$35; //@line 4506 "socketmodule.c"
-        HEAP[$39]=$38; //@line 4506 "socketmodule.c"
-        var $40=HEAP[_socket_gaierror]; //@line 4507 "socketmodule.c"
-        var $41=$m; //@line 4507 "socketmodule.c"
-        var $42=_PyModule_AddObject($41, __str166, $40); //@line 4507 "socketmodule.c"
-        var $43=HEAP[_socket_error]; //@line 4508 "socketmodule.c"
-        var $44=_PyErr_NewException(__str167, $43, 0); //@line 4508 "socketmodule.c"
-        HEAP[_socket_timeout]=$44; //@line 4508 "socketmodule.c"
-        var $45=HEAP[_socket_timeout]; //@line 4510 "socketmodule.c"
-        var $46=($45)==0; //@line 4510 "socketmodule.c"
-        if ($46) { __label__ = 10; break; } else { __label__ = 6; break; } //@line 4510 "socketmodule.c"
+        var $34=HEAP[_socket_gaierror]; //@line 4506 "socketmodule.c"
+        var $35=$34; //@line 4506 "socketmodule.c"
+        var $36=HEAP[$35]; //@line 4506 "socketmodule.c"
+        var $37=($36) + 1; //@line 4506 "socketmodule.c"
+        var $38=$34; //@line 4506 "socketmodule.c"
+        HEAP[$38]=$37; //@line 4506 "socketmodule.c"
+        var $39=HEAP[_socket_gaierror]; //@line 4507 "socketmodule.c"
+        var $40=$m; //@line 4507 "socketmodule.c"
+        var $41=_PyModule_AddObject($40, __str166, $39); //@line 4507 "socketmodule.c"
+        var $42=HEAP[_socket_error]; //@line 4508 "socketmodule.c"
+        var $43=_PyErr_NewException(__str167, $42, 0); //@line 4508 "socketmodule.c"
+        HEAP[_socket_timeout]=$43; //@line 4508 "socketmodule.c"
+        var $44=HEAP[_socket_timeout]; //@line 4510 "socketmodule.c"
+        var $45=($44)==0; //@line 4510 "socketmodule.c"
+        if ($45) { __label__ = 10; break; } else { __label__ = 6; break; } //@line 4510 "socketmodule.c"
       case 6: // $bb5
-        var $47=HEAP[_socket_timeout]; //@line 4512 "socketmodule.c"
-        var $48=$47; //@line 4512 "socketmodule.c"
-        var $49=HEAP[$48]; //@line 4512 "socketmodule.c"
-        var $50=($49) + 1; //@line 4512 "socketmodule.c"
-        var $51=$47; //@line 4512 "socketmodule.c"
-        HEAP[$51]=$50; //@line 4512 "socketmodule.c"
-        var $52=HEAP[_socket_timeout]; //@line 4513 "socketmodule.c"
-        var $53=$m; //@line 4513 "socketmodule.c"
-        var $54=_PyModule_AddObject($53, __str94, $52); //@line 4513 "socketmodule.c"
-        var $55=HEAP[_sock_type]; //@line 4514 "socketmodule.c"
-        var $56=($55) + 1; //@line 4514 "socketmodule.c"
-        HEAP[_sock_type]=$56; //@line 4514 "socketmodule.c"
-        var $57=$m; //@line 4515 "socketmodule.c"
-        var $58=_PyModule_AddObject($57, __str168, _sock_type); //@line 4515 "socketmodule.c"
-        var $59=($58)!=0; //@line 4515 "socketmodule.c"
-        if ($59) { __label__ = 10; break; } else { __label__ = 7; break; } //@line 4515 "socketmodule.c"
+        var $46=HEAP[_socket_timeout]; //@line 4512 "socketmodule.c"
+        var $47=$46; //@line 4512 "socketmodule.c"
+        var $48=HEAP[$47]; //@line 4512 "socketmodule.c"
+        var $49=($48) + 1; //@line 4512 "socketmodule.c"
+        var $50=$46; //@line 4512 "socketmodule.c"
+        HEAP[$50]=$49; //@line 4512 "socketmodule.c"
+        var $51=HEAP[_socket_timeout]; //@line 4513 "socketmodule.c"
+        var $52=$m; //@line 4513 "socketmodule.c"
+        var $53=_PyModule_AddObject($52, __str94, $51); //@line 4513 "socketmodule.c"
+        var $54=HEAP[_sock_type]; //@line 4514 "socketmodule.c"
+        var $55=($54) + 1; //@line 4514 "socketmodule.c"
+        HEAP[_sock_type]=$55; //@line 4514 "socketmodule.c"
+        var $56=$m; //@line 4515 "socketmodule.c"
+        var $57=_PyModule_AddObject($56, __str168, _sock_type); //@line 4515 "socketmodule.c"
+        var $58=($57)!=0; //@line 4515 "socketmodule.c"
+        if ($58) { __label__ = 10; break; } else { __label__ = 7; break; } //@line 4515 "socketmodule.c"
       case 7: // $bb6
-        var $60=HEAP[_sock_type]; //@line 4518 "socketmodule.c"
-        var $61=($60) + 1; //@line 4518 "socketmodule.c"
-        HEAP[_sock_type]=$61; //@line 4518 "socketmodule.c"
-        var $62=$m; //@line 4519 "socketmodule.c"
-        var $63=_PyModule_AddObject($62, __str169, _sock_type); //@line 4519 "socketmodule.c"
-        var $64=($63)!=0; //@line 4519 "socketmodule.c"
-        if ($64) { __label__ = 10; break; } else { __label__ = 8; break; } //@line 4519 "socketmodule.c"
+        var $59=HEAP[_sock_type]; //@line 4518 "socketmodule.c"
+        var $60=($59) + 1; //@line 4518 "socketmodule.c"
+        HEAP[_sock_type]=$60; //@line 4518 "socketmodule.c"
+        var $61=$m; //@line 4519 "socketmodule.c"
+        var $62=_PyModule_AddObject($61, __str169, _sock_type); //@line 4519 "socketmodule.c"
+        var $63=($62)!=0; //@line 4519 "socketmodule.c"
+        if ($63) { __label__ = 10; break; } else { __label__ = 8; break; } //@line 4519 "socketmodule.c"
       case 8: // $bb7
         $has_ipv6=__Py_TrueStruct; //@line 4524 "socketmodule.c"
-        var $65=$has_ipv6; //@line 4528 "socketmodule.c"
-        var $66=$65; //@line 4528 "socketmodule.c"
-        var $67=HEAP[$66]; //@line 4528 "socketmodule.c"
-        var $68=($67) + 1; //@line 4528 "socketmodule.c"
-        var $69=$has_ipv6; //@line 4528 "socketmodule.c"
-        var $70=$69; //@line 4528 "socketmodule.c"
-        HEAP[$70]=$68; //@line 4528 "socketmodule.c"
-        var $71=$m; //@line 4529 "socketmodule.c"
-        var $72=$has_ipv6; //@line 4529 "socketmodule.c"
-        var $73=_PyModule_AddObject($71, __str170, $72); //@line 4529 "socketmodule.c"
-        var $74=_PyCapsule_New(_PySocketModuleAPI, __str171, 0); //@line 4532 "socketmodule.c"
-        var $75=$m; //@line 4532 "socketmodule.c"
-        var $76=_PyModule_AddObject($75, __str172, $74); //@line 4532 "socketmodule.c"
-        var $77=($76)!=0; //@line 4532 "socketmodule.c"
-        if ($77) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 4532 "socketmodule.c"
+        var $64=$has_ipv6; //@line 4528 "socketmodule.c"
+        var $65=$64; //@line 4528 "socketmodule.c"
+        var $66=HEAP[$65]; //@line 4528 "socketmodule.c"
+        var $67=($66) + 1; //@line 4528 "socketmodule.c"
+        var $68=$has_ipv6; //@line 4528 "socketmodule.c"
+        var $69=$68; //@line 4528 "socketmodule.c"
+        HEAP[$69]=$67; //@line 4528 "socketmodule.c"
+        var $70=$m; //@line 4529 "socketmodule.c"
+        var $71=$has_ipv6; //@line 4529 "socketmodule.c"
+        var $72=_PyModule_AddObject($70, __str170, $71); //@line 4529 "socketmodule.c"
+        var $73=_PyCapsule_New(_PySocketModuleAPI, __str171, 0); //@line 4532 "socketmodule.c"
+        var $74=$m; //@line 4532 "socketmodule.c"
+        var $75=_PyModule_AddObject($74, __str172, $73); //@line 4532 "socketmodule.c"
+        var $76=($75)!=0; //@line 4532 "socketmodule.c"
+        if ($76) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 4532 "socketmodule.c"
       case 9: // $bb8
-        var $78=$m; //@line 4539 "socketmodule.c"
-        var $79=_PyModule_AddIntConstant($78, __str173, 0); //@line 4539 "socketmodule.c"
-        var $80=$m; //@line 4541 "socketmodule.c"
-        var $81=_PyModule_AddIntConstant($80, __str174, 2); //@line 4541 "socketmodule.c"
-        var $82=$m; //@line 4543 "socketmodule.c"
-        var $83=_PyModule_AddIntConstant($82, __str175, 10); //@line 4543 "socketmodule.c"
-        var $84=$m; //@line 4546 "socketmodule.c"
-        var $85=_PyModule_AddIntConstant($84, __str176, 1); //@line 4546 "socketmodule.c"
-        var $86=$m; //@line 4550 "socketmodule.c"
-        var $87=_PyModule_AddIntConstant($86, __str177, 3); //@line 4550 "socketmodule.c"
-        var $88=$m; //@line 4553 "socketmodule.c"
-        var $89=_PyModule_AddIntConstant($88, __str178, 4); //@line 4553 "socketmodule.c"
-        var $90=$m; //@line 4557 "socketmodule.c"
-        var $91=_PyModule_AddIntConstant($90, __str179, 5); //@line 4557 "socketmodule.c"
-        var $92=$m; //@line 4561 "socketmodule.c"
-        var $93=_PyModule_AddIntConstant($92, __str180, 6); //@line 4561 "socketmodule.c"
-        var $94=$m; //@line 4565 "socketmodule.c"
-        var $95=_PyModule_AddIntConstant($94, __str181, 7); //@line 4565 "socketmodule.c"
-        var $96=$m; //@line 4569 "socketmodule.c"
-        var $97=_PyModule_AddIntConstant($96, __str182, 8); //@line 4569 "socketmodule.c"
-        var $98=$m; //@line 4577 "socketmodule.c"
-        var $99=_PyModule_AddIntConstant($98, __str183, 9); //@line 4577 "socketmodule.c"
-        var $100=$m; //@line 4580 "socketmodule.c"
-        var $101=_PyModule_AddIntConstant($100, __str175, 10); //@line 4580 "socketmodule.c"
-        var $102=$m; //@line 4584 "socketmodule.c"
-        var $103=_PyModule_AddIntConstant($102, __str184, 11); //@line 4584 "socketmodule.c"
-        var $104=$m; //@line 4588 "socketmodule.c"
-        var $105=_PyModule_AddIntConstant($104, __str185, 12); //@line 4588 "socketmodule.c"
-        var $106=$m; //@line 4592 "socketmodule.c"
-        var $107=_PyModule_AddIntConstant($106, __str186, 13); //@line 4592 "socketmodule.c"
-        var $108=$m; //@line 4596 "socketmodule.c"
-        var $109=_PyModule_AddIntConstant($108, __str187, 14); //@line 4596 "socketmodule.c"
-        var $110=$m; //@line 4600 "socketmodule.c"
-        var $111=_PyModule_AddIntConstant($110, __str188, 15); //@line 4600 "socketmodule.c"
-        var $112=$m; //@line 4604 "socketmodule.c"
-        var $113=_PyModule_AddIntConstant($112, __str189, 16); //@line 4604 "socketmodule.c"
-        var $114=$m; //@line 4605 "socketmodule.c"
-        var $115=_PyModule_AddIntConstant($114, __str190, 0); //@line 4605 "socketmodule.c"
-        var $116=$m; //@line 4612 "socketmodule.c"
-        var $117=_PyModule_AddIntConstant($116, __str191, 2); //@line 4612 "socketmodule.c"
-        var $118=$m; //@line 4613 "socketmodule.c"
-        var $119=_PyModule_AddIntConstant($118, __str192, 3); //@line 4613 "socketmodule.c"
-        var $120=$m; //@line 4618 "socketmodule.c"
-        var $121=_PyModule_AddIntConstant($120, __str193, 5); //@line 4618 "socketmodule.c"
-        var $122=$m; //@line 4621 "socketmodule.c"
-        var $123=_PyModule_AddIntConstant($122, __str194, 6); //@line 4621 "socketmodule.c"
-        var $124=$m; //@line 4629 "socketmodule.c"
-        var $125=_PyModule_AddIntConstant($124, __str195, 13); //@line 4629 "socketmodule.c"
-        var $126=$m; //@line 4631 "socketmodule.c"
-        var $127=_PyModule_AddIntConstant($126, __str196, 14); //@line 4631 "socketmodule.c"
-        var $128=$m; //@line 4639 "socketmodule.c"
-        var $129=_PyModule_AddIntConstant($128, __str197, 16); //@line 4639 "socketmodule.c"
-        var $130=$m; //@line 4643 "socketmodule.c"
-        var $131=_PyModule_AddIntConstant($130, __str198, 18); //@line 4643 "socketmodule.c"
-        var $132=$m; //@line 4647 "socketmodule.c"
-        var $133=_PyModule_AddIntConstant($132, __str199, 19); //@line 4647 "socketmodule.c"
-        var $134=$m; //@line 4651 "socketmodule.c"
-        var $135=_PyModule_AddIntConstant($134, __str200, 20); //@line 4651 "socketmodule.c"
-        var $136=$m; //@line 4655 "socketmodule.c"
-        var $137=_PyModule_AddIntConstant($136, __str201, 22); //@line 4655 "socketmodule.c"
-        var $138=$m; //@line 4659 "socketmodule.c"
-        var $139=_PyModule_AddIntConstant($138, __str202, 23); //@line 4659 "socketmodule.c"
-        var $140=$m; //@line 4663 "socketmodule.c"
-        var $141=_PyModule_AddIntConstant($140, __str203, 24); //@line 4663 "socketmodule.c"
-        var $142=$m; //@line 4667 "socketmodule.c"
-        var $143=_PyModule_AddIntConstant($142, __str204, 25); //@line 4667 "socketmodule.c"
-        var $144=$m; //@line 4671 "socketmodule.c"
-        var $145=_PyModule_AddIntConstant($144, __str205, 26); //@line 4671 "socketmodule.c"
-        var $146=$m; //@line 4695 "socketmodule.c"
-        var $147=_PyModule_AddIntConstant($146, __str206, 17); //@line 4695 "socketmodule.c"
-        var $148=$m; //@line 4698 "socketmodule.c"
-        var $149=_PyModule_AddIntConstant($148, __str207, 17); //@line 4698 "socketmodule.c"
-        var $150=$m; //@line 4701 "socketmodule.c"
-        var $151=_PyModule_AddIntConstant($150, __str208, 0); //@line 4701 "socketmodule.c"
-        var $152=$m; //@line 4704 "socketmodule.c"
-        var $153=_PyModule_AddIntConstant($152, __str209, 1); //@line 4704 "socketmodule.c"
-        var $154=$m; //@line 4707 "socketmodule.c"
-        var $155=_PyModule_AddIntConstant($154, __str210, 2); //@line 4707 "socketmodule.c"
-        var $156=$m; //@line 4710 "socketmodule.c"
-        var $157=_PyModule_AddIntConstant($156, __str211, 3); //@line 4710 "socketmodule.c"
-        var $158=$m; //@line 4713 "socketmodule.c"
-        var $159=_PyModule_AddIntConstant($158, __str212, 4); //@line 4713 "socketmodule.c"
-        var $160=$m; //@line 4716 "socketmodule.c"
-        var $161=_PyModule_AddIntConstant($160, __str213, 5); //@line 4716 "socketmodule.c"
-        var $162=$m; //@line 4719 "socketmodule.c"
-        var $163=_PyModule_AddIntConstant($162, __str214, 6); //@line 4719 "socketmodule.c"
-        var $164=$m; //@line 4723 "socketmodule.c"
-        var $165=_PyModule_AddIntConstant($164, __str215, 30); //@line 4723 "socketmodule.c"
-        var $166=$m; //@line 4726 "socketmodule.c"
-        var $167=_PyModule_AddIntConstant($166, __str216, 1); //@line 4726 "socketmodule.c"
-        var $168=$m; //@line 4727 "socketmodule.c"
-        var $169=_PyModule_AddIntConstant($168, __str217, 2); //@line 4727 "socketmodule.c"
-        var $170=$m; //@line 4728 "socketmodule.c"
-        var $171=_PyModule_AddIntConstant($170, __str218, 3); //@line 4728 "socketmodule.c"
-        var $172=$m; //@line 4730 "socketmodule.c"
-        var $173=_PyModule_AddIntConstant($172, __str219, 1); //@line 4730 "socketmodule.c"
-        var $174=$m; //@line 4731 "socketmodule.c"
-        var $175=_PyModule_AddIntConstant($174, __str220, 2); //@line 4731 "socketmodule.c"
-        var $176=$m; //@line 4732 "socketmodule.c"
-        var $177=_PyModule_AddIntConstant($176, __str221, 3); //@line 4732 "socketmodule.c"
-        var $178=$m; //@line 4735 "socketmodule.c"
-        var $179=_PyModule_AddIntConstant($178, __str222, 271); //@line 4735 "socketmodule.c"
-        var $180=$m; //@line 4736 "socketmodule.c"
-        var $181=_PyModule_AddIntConstant($180, __str223, 127); //@line 4736 "socketmodule.c"
-        var $182=$m; //@line 4737 "socketmodule.c"
-        var $183=_PyModule_AddIntConstant($182, __str224, 128); //@line 4737 "socketmodule.c"
-        var $184=$m; //@line 4738 "socketmodule.c"
-        var $185=_PyModule_AddIntConstant($184, __str225, 129); //@line 4738 "socketmodule.c"
-        var $186=$m; //@line 4740 "socketmodule.c"
-        var $187=_PyModule_AddIntConstant($186, __str226, 130); //@line 4740 "socketmodule.c"
-        var $188=$m; //@line 4742 "socketmodule.c"
-        var $189=_PyModule_AddIntConstant($188, __str227, 0); //@line 4742 "socketmodule.c"
-        var $190=$m; //@line 4744 "socketmodule.c"
-        var $191=_PyModule_AddIntConstant($190, __str228, 1); //@line 4744 "socketmodule.c"
-        var $192=$m; //@line 4746 "socketmodule.c"
-        var $193=_PyModule_AddIntConstant($192, __str229, 2); //@line 4746 "socketmodule.c"
-        var $194=$m; //@line 4748 "socketmodule.c"
-        var $195=_PyModule_AddIntConstant($194, __str230, 3); //@line 4748 "socketmodule.c"
-        var $196=$m; //@line 4752 "socketmodule.c"
-        var $197=_PyModule_AddIntConstant($196, __str231, 1); //@line 4752 "socketmodule.c"
-        var $198=$m; //@line 4753 "socketmodule.c"
-        var $199=_PyModule_AddIntConstant($198, __str232, 2); //@line 4753 "socketmodule.c"
-        var $200=$m; //@line 4756 "socketmodule.c"
-        var $201=_PyModule_AddIntConstant($200, __str233, 4); //@line 4756 "socketmodule.c"
-        var $202=$m; //@line 4758 "socketmodule.c"
-        var $203=_PyModule_AddIntConstant($202, __str234, -1); //@line 4758 "socketmodule.c"
-        var $204=$m; //@line 4759 "socketmodule.c"
-        var $205=_PyModule_AddIntConstant($204, __str235, 1); //@line 4759 "socketmodule.c"
-        var $206=$m; //@line 4760 "socketmodule.c"
-        var $207=_PyModule_AddIntConstant($206, __str236, 2); //@line 4760 "socketmodule.c"
-        var $208=$m; //@line 4761 "socketmodule.c"
-        var $209=_PyModule_AddIntConstant($208, __str237, 3); //@line 4761 "socketmodule.c"
-        var $210=$m; //@line 4762 "socketmodule.c"
-        var $211=_PyModule_AddIntConstant($210, __str238, 0); //@line 4762 "socketmodule.c"
-        var $212=$m; //@line 4763 "socketmodule.c"
-        var $213=_PyModule_AddIntConstant($212, __str239, 1); //@line 4763 "socketmodule.c"
-        var $214=$m; //@line 4767 "socketmodule.c"
-        var $215=_PyModule_AddIntConstant($214, __str240, 1); //@line 4767 "socketmodule.c"
-        var $216=$m; //@line 4768 "socketmodule.c"
-        var $217=_PyModule_AddIntConstant($216, __str241, 2); //@line 4768 "socketmodule.c"
-        var $218=$m; //@line 4771 "socketmodule.c"
-        var $219=_PyModule_AddIntConstant($218, __str242, 3); //@line 4771 "socketmodule.c"
-        var $220=$m; //@line 4772 "socketmodule.c"
-        var $221=_PyModule_AddIntConstant($220, __str243, 5); //@line 4772 "socketmodule.c"
-        var $222=$m; //@line 4774 "socketmodule.c"
-        var $223=_PyModule_AddIntConstant($222, __str244, 4); //@line 4774 "socketmodule.c"
-        var $224=$m; //@line 4779 "socketmodule.c"
-        var $225=_PyModule_AddIntConstant($224, __str245, 1); //@line 4779 "socketmodule.c"
-        var $226=$m; //@line 4782 "socketmodule.c"
-        var $227=_PyModule_AddIntConstant($226, __str246, 30); //@line 4782 "socketmodule.c"
-        var $228=$m; //@line 4785 "socketmodule.c"
-        var $229=_PyModule_AddIntConstant($228, __str247, 2); //@line 4785 "socketmodule.c"
-        var $230=$m; //@line 4792 "socketmodule.c"
-        var $231=_PyModule_AddIntConstant($230, __str248, 9); //@line 4792 "socketmodule.c"
-        var $232=$m; //@line 4795 "socketmodule.c"
-        var $233=_PyModule_AddIntConstant($232, __str249, 5); //@line 4795 "socketmodule.c"
-        var $234=$m; //@line 4798 "socketmodule.c"
-        var $235=_PyModule_AddIntConstant($234, __str250, 6); //@line 4798 "socketmodule.c"
-        var $236=$m; //@line 4804 "socketmodule.c"
-        var $237=_PyModule_AddIntConstant($236, __str251, 13); //@line 4804 "socketmodule.c"
-        var $238=$m; //@line 4807 "socketmodule.c"
-        var $239=_PyModule_AddIntConstant($238, __str252, 10); //@line 4807 "socketmodule.c"
-        var $240=$m; //@line 4813 "socketmodule.c"
-        var $241=_PyModule_AddIntConstant($240, __str253, 7); //@line 4813 "socketmodule.c"
-        var $242=$m; //@line 4816 "socketmodule.c"
-        var $243=_PyModule_AddIntConstant($242, __str254, 8); //@line 4816 "socketmodule.c"
-        var $244=$m; //@line 4819 "socketmodule.c"
-        var $245=_PyModule_AddIntConstant($244, __str255, 19); //@line 4819 "socketmodule.c"
-        var $246=$m; //@line 4822 "socketmodule.c"
-        var $247=_PyModule_AddIntConstant($246, __str256, 18); //@line 4822 "socketmodule.c"
-        var $248=$m; //@line 4825 "socketmodule.c"
-        var $249=_PyModule_AddIntConstant($248, __str257, 21); //@line 4825 "socketmodule.c"
-        var $250=$m; //@line 4828 "socketmodule.c"
-        var $251=_PyModule_AddIntConstant($250, __str258, 20); //@line 4828 "socketmodule.c"
-        var $252=$m; //@line 4831 "socketmodule.c"
-        var $253=_PyModule_AddIntConstant($252, __str259, 4); //@line 4831 "socketmodule.c"
-        var $254=$m; //@line 4834 "socketmodule.c"
-        var $255=_PyModule_AddIntConstant($254, __str260, 3); //@line 4834 "socketmodule.c"
-        var $256=$m; //@line 4842 "socketmodule.c"
-        var $257=_PyModule_AddIntConstant($256, __str261, 128); //@line 4842 "socketmodule.c"
-        var $258=$m; //@line 4849 "socketmodule.c"
-        var $259=_PyModule_AddIntConstant($258, __str262, 1); //@line 4849 "socketmodule.c"
-        var $260=$m; //@line 4852 "socketmodule.c"
-        var $261=_PyModule_AddIntConstant($260, __str263, 2); //@line 4852 "socketmodule.c"
-        var $262=$m; //@line 4855 "socketmodule.c"
-        var $263=_PyModule_AddIntConstant($262, __str264, 4); //@line 4855 "socketmodule.c"
-        var $264=$m; //@line 4858 "socketmodule.c"
-        var $265=_PyModule_AddIntConstant($264, __str265, 64); //@line 4858 "socketmodule.c"
-        var $266=$m; //@line 4861 "socketmodule.c"
-        var $267=_PyModule_AddIntConstant($266, __str266, 128); //@line 4861 "socketmodule.c"
-        var $268=$m; //@line 4864 "socketmodule.c"
-        var $269=_PyModule_AddIntConstant($268, __str267, 32); //@line 4864 "socketmodule.c"
-        var $270=$m; //@line 4867 "socketmodule.c"
-        var $271=_PyModule_AddIntConstant($270, __str268, 8); //@line 4867 "socketmodule.c"
-        var $272=$m; //@line 4870 "socketmodule.c"
-        var $273=_PyModule_AddIntConstant($272, __str269, 256); //@line 4870 "socketmodule.c"
-        var $274=$m; //@line 4881 "socketmodule.c"
-        var $275=_PyModule_AddIntConstant($274, __str270, 1); //@line 4881 "socketmodule.c"
-        var $276=$m; //@line 4884 "socketmodule.c"
-        var $277=_PyModule_AddIntConstant($276, __str271, 0); //@line 4884 "socketmodule.c"
-        var $278=$m; //@line 4904 "socketmodule.c"
-        var $279=_PyModule_AddIntConstant($278, __str272, 6); //@line 4904 "socketmodule.c"
-        var $280=$m; //@line 4911 "socketmodule.c"
-        var $281=_PyModule_AddIntConstant($280, __str273, 17); //@line 4911 "socketmodule.c"
-        var $282=$m; //@line 4914 "socketmodule.c"
-        var $283=_PyModule_AddIntConstant($282, __str274, 0); //@line 4914 "socketmodule.c"
-        var $284=$m; //@line 4919 "socketmodule.c"
-        var $285=_PyModule_AddIntConstant($284, __str275, 0); //@line 4919 "socketmodule.c"
-        var $286=$m; //@line 4922 "socketmodule.c"
-        var $287=_PyModule_AddIntConstant($286, __str276, 1); //@line 4922 "socketmodule.c"
-        var $288=$m; //@line 4927 "socketmodule.c"
-        var $289=_PyModule_AddIntConstant($288, __str277, 2); //@line 4927 "socketmodule.c"
-        var $290=$m; //@line 4936 "socketmodule.c"
-        var $291=_PyModule_AddIntConstant($290, __str278, 41); //@line 4936 "socketmodule.c"
-        var $292=$m; //@line 4939 "socketmodule.c"
-        var $293=_PyModule_AddIntConstant($292, __str279, 4); //@line 4939 "socketmodule.c"
-        var $294=$m; //@line 4942 "socketmodule.c"
-        var $295=_PyModule_AddIntConstant($294, __str280, 6); //@line 4942 "socketmodule.c"
-        var $296=$m; //@line 4947 "socketmodule.c"
-        var $297=_PyModule_AddIntConstant($296, __str281, 8); //@line 4947 "socketmodule.c"
-        var $298=$m; //@line 4950 "socketmodule.c"
-        var $299=_PyModule_AddIntConstant($298, __str282, 12); //@line 4950 "socketmodule.c"
-        var $300=$m; //@line 4953 "socketmodule.c"
-        var $301=_PyModule_AddIntConstant($300, __str283, 17); //@line 4953 "socketmodule.c"
-        var $302=$m; //@line 4958 "socketmodule.c"
-        var $303=_PyModule_AddIntConstant($302, __str284, 22); //@line 4958 "socketmodule.c"
-        var $304=$m; //@line 4967 "socketmodule.c"
-        var $305=_PyModule_AddIntConstant($304, __str285, 29); //@line 4967 "socketmodule.c"
-        var $306=$m; //@line 4970 "socketmodule.c"
-        var $307=_PyModule_AddIntConstant($306, __str278, 41); //@line 4970 "socketmodule.c"
-        var $308=$m; //@line 4973 "socketmodule.c"
-        var $309=_PyModule_AddIntConstant($308, __str286, 43); //@line 4973 "socketmodule.c"
-        var $310=$m; //@line 4976 "socketmodule.c"
-        var $311=_PyModule_AddIntConstant($310, __str287, 44); //@line 4976 "socketmodule.c"
-        var $312=$m; //@line 4979 "socketmodule.c"
-        var $313=_PyModule_AddIntConstant($312, __str288, 46); //@line 4979 "socketmodule.c"
-        var $314=$m; //@line 4982 "socketmodule.c"
-        var $315=_PyModule_AddIntConstant($314, __str289, 47); //@line 4982 "socketmodule.c"
-        var $316=$m; //@line 4985 "socketmodule.c"
-        var $317=_PyModule_AddIntConstant($316, __str290, 50); //@line 4985 "socketmodule.c"
-        var $318=$m; //@line 4988 "socketmodule.c"
-        var $319=_PyModule_AddIntConstant($318, __str291, 51); //@line 4988 "socketmodule.c"
-        var $320=$m; //@line 4994 "socketmodule.c"
-        var $321=_PyModule_AddIntConstant($320, __str292, 58); //@line 4994 "socketmodule.c"
-        var $322=$m; //@line 4997 "socketmodule.c"
-        var $323=_PyModule_AddIntConstant($322, __str293, 59); //@line 4997 "socketmodule.c"
-        var $324=$m; //@line 5000 "socketmodule.c"
-        var $325=_PyModule_AddIntConstant($324, __str294, 60); //@line 5000 "socketmodule.c"
-        var $326=$m; //@line 5009 "socketmodule.c"
-        var $327=_PyModule_AddIntConstant($326, __str295, 103); //@line 5009 "socketmodule.c"
-        var $328=$m; //@line 5022 "socketmodule.c"
-        var $329=_PyModule_AddIntConstant($328, __str296, 255); //@line 5022 "socketmodule.c"
-        var $330=$m; //@line 5032 "socketmodule.c"
-        var $331=_PyModule_AddIntConstant($330, __str297, 1024); //@line 5032 "socketmodule.c"
-        var $332=$m; //@line 5039 "socketmodule.c"
-        var $333=_PyModule_AddIntConstant($332, __str298, 5000); //@line 5039 "socketmodule.c"
-        var $334=$m; //@line 5044 "socketmodule.c"
-        var $335=_PyModule_AddIntConstant($334, __str299, 0); //@line 5044 "socketmodule.c"
-        var $336=$m; //@line 5049 "socketmodule.c"
-        var $337=_PyModule_AddIntConstant($336, __str300, -1); //@line 5049 "socketmodule.c"
-        var $338=$m; //@line 5054 "socketmodule.c"
-        var $339=_PyModule_AddIntConstant($338, __str301, 2130706433); //@line 5054 "socketmodule.c"
-        var $340=$m; //@line 5059 "socketmodule.c"
-        var $341=_PyModule_AddIntConstant($340, __str302, -536870912); //@line 5059 "socketmodule.c"
-        var $342=$m; //@line 5064 "socketmodule.c"
-        var $343=_PyModule_AddIntConstant($342, __str303, -536870911); //@line 5064 "socketmodule.c"
-        var $344=$m; //@line 5070 "socketmodule.c"
-        var $345=_PyModule_AddIntConstant($344, __str304, -536870657); //@line 5070 "socketmodule.c"
-        var $346=$m; //@line 5076 "socketmodule.c"
-        var $347=_PyModule_AddIntConstant($346, __str305, -1); //@line 5076 "socketmodule.c"
-        var $348=$m; //@line 5083 "socketmodule.c"
-        var $349=_PyModule_AddIntConstant($348, __str306, 4); //@line 5083 "socketmodule.c"
-        var $350=$m; //@line 5086 "socketmodule.c"
-        var $351=_PyModule_AddIntConstant($350, __str307, 3); //@line 5086 "socketmodule.c"
-        var $352=$m; //@line 5089 "socketmodule.c"
-        var $353=_PyModule_AddIntConstant($352, __str308, 1); //@line 5089 "socketmodule.c"
-        var $354=$m; //@line 5092 "socketmodule.c"
-        var $355=_PyModule_AddIntConstant($354, __str309, 2); //@line 5092 "socketmodule.c"
-        var $356=$m; //@line 5095 "socketmodule.c"
-        var $357=_PyModule_AddIntConstant($356, __str310, 6); //@line 5095 "socketmodule.c"
-        var $358=$m; //@line 5098 "socketmodule.c"
-        var $359=_PyModule_AddIntConstant($358, __str311, 7); //@line 5098 "socketmodule.c"
-        var $360=$m; //@line 5104 "socketmodule.c"
-        var $361=_PyModule_AddIntConstant($360, __str312, 7); //@line 5104 "socketmodule.c"
-        var $362=$m; //@line 5107 "socketmodule.c"
-        var $363=_PyModule_AddIntConstant($362, __str313, 32); //@line 5107 "socketmodule.c"
-        var $364=$m; //@line 5110 "socketmodule.c"
-        var $365=_PyModule_AddIntConstant($364, __str314, 33); //@line 5110 "socketmodule.c"
-        var $366=$m; //@line 5113 "socketmodule.c"
-        var $367=_PyModule_AddIntConstant($366, __str315, 34); //@line 5113 "socketmodule.c"
-        var $368=$m; //@line 5116 "socketmodule.c"
-        var $369=_PyModule_AddIntConstant($368, __str316, 35); //@line 5116 "socketmodule.c"
-        var $370=$m; //@line 5119 "socketmodule.c"
-        var $371=_PyModule_AddIntConstant($370, __str317, 36); //@line 5119 "socketmodule.c"
-        var $372=$m; //@line 5122 "socketmodule.c"
-        var $373=_PyModule_AddIntConstant($372, __str318, 1); //@line 5122 "socketmodule.c"
-        var $374=$m; //@line 5126 "socketmodule.c"
-        var $375=_PyModule_AddIntConstant($374, __str319, 1); //@line 5126 "socketmodule.c"
-        var $376=$m; //@line 5130 "socketmodule.c"
-        var $377=_PyModule_AddIntConstant($376, __str320, 20); //@line 5130 "socketmodule.c"
-        var $378=$m; //@line 5135 "socketmodule.c"
-        var $379=_PyModule_AddIntConstant($378, __str321, 20); //@line 5135 "socketmodule.c"
-        var $380=$m; //@line 5138 "socketmodule.c"
-        var $381=_PyModule_AddIntConstant($380, __str322, 21); //@line 5138 "socketmodule.c"
-        var $382=$m; //@line 5141 "socketmodule.c"
-        var $383=_PyModule_AddIntConstant($382, __str323, 18); //@line 5141 "socketmodule.c"
-        var $384=$m; //@line 5144 "socketmodule.c"
-        var $385=_PyModule_AddIntConstant($384, __str324, 17); //@line 5144 "socketmodule.c"
-        var $386=$m; //@line 5147 "socketmodule.c"
-        var $387=_PyModule_AddIntConstant($386, __str325, 19); //@line 5147 "socketmodule.c"
-        var $388=$m; //@line 5150 "socketmodule.c"
-        var $389=_PyModule_AddIntConstant($388, __str326, 16); //@line 5150 "socketmodule.c"
-        var $390=$m; //@line 5154 "socketmodule.c"
-        var $391=_PyModule_AddIntConstant($390, __str327, 26); //@line 5154 "socketmodule.c"
-        var $392=$m; //@line 5158 "socketmodule.c"
-        var $393=_PyModule_AddIntConstant($392, __str328, 7); //@line 5158 "socketmodule.c"
-        var $394=$m; //@line 5164 "socketmodule.c"
-        var $395=_PyModule_AddIntConstant($394, __str329, 59); //@line 5164 "socketmodule.c"
-        var $396=$m; //@line 5167 "socketmodule.c"
-        var $397=_PyModule_AddIntConstant($396, __str330, 52); //@line 5167 "socketmodule.c"
-        var $398=$m; //@line 5170 "socketmodule.c"
-        var $399=_PyModule_AddIntConstant($398, __str331, 54); //@line 5170 "socketmodule.c"
-        var $400=$m; //@line 5173 "socketmodule.c"
-        var $401=_PyModule_AddIntConstant($400, __str332, 9); //@line 5173 "socketmodule.c"
-        var $402=$m; //@line 5179 "socketmodule.c"
-        var $403=_PyModule_AddIntConstant($402, __str333, 50); //@line 5179 "socketmodule.c"
-        var $404=$m; //@line 5182 "socketmodule.c"
-        var $405=_PyModule_AddIntConstant($404, __str334, 58); //@line 5182 "socketmodule.c"
-        var $406=$m; //@line 5185 "socketmodule.c"
-        var $407=_PyModule_AddIntConstant($406, __str335, 51); //@line 5185 "socketmodule.c"
-        var $408=$m; //@line 5188 "socketmodule.c"
-        var $409=_PyModule_AddIntConstant($408, __str336, 53); //@line 5188 "socketmodule.c"
-        var $410=$m; //@line 5191 "socketmodule.c"
-        var $411=_PyModule_AddIntConstant($410, __str337, 49); //@line 5191 "socketmodule.c"
-        var $412=$m; //@line 5194 "socketmodule.c"
-        var $413=_PyModule_AddIntConstant($412, __str338, 56); //@line 5194 "socketmodule.c"
-        var $414=$m; //@line 5197 "socketmodule.c"
-        var $415=_PyModule_AddIntConstant($414, __str339, 66); //@line 5197 "socketmodule.c"
-        var $416=$m; //@line 5200 "socketmodule.c"
-        var $417=_PyModule_AddIntConstant($416, __str340, 57); //@line 5200 "socketmodule.c"
-        var $418=$m; //@line 5203 "socketmodule.c"
-        var $419=_PyModule_AddIntConstant($418, __str341, 55); //@line 5203 "socketmodule.c"
-        var $420=$m; //@line 5206 "socketmodule.c"
-        var $421=_PyModule_AddIntConstant($420, __str342, 0); //@line 5206 "socketmodule.c"
-        var $422=$m; //@line 5212 "socketmodule.c"
-        var $423=_PyModule_AddIntConstant($422, __str343, 67); //@line 5212 "socketmodule.c"
-        var $424=$m; //@line 5220 "socketmodule.c"
-        var $425=_PyModule_AddIntConstant($424, __str344, 1); //@line 5220 "socketmodule.c"
-        var $426=$m; //@line 5223 "socketmodule.c"
-        var $427=_PyModule_AddIntConstant($426, __str345, 2); //@line 5223 "socketmodule.c"
-        var $428=$m; //@line 5226 "socketmodule.c"
-        var $429=_PyModule_AddIntConstant($428, __str346, 3); //@line 5226 "socketmodule.c"
-        var $430=$m; //@line 5229 "socketmodule.c"
-        var $431=_PyModule_AddIntConstant($430, __str347, 4); //@line 5229 "socketmodule.c"
-        var $432=$m; //@line 5232 "socketmodule.c"
-        var $433=_PyModule_AddIntConstant($432, __str348, 5); //@line 5232 "socketmodule.c"
-        var $434=$m; //@line 5235 "socketmodule.c"
-        var $435=_PyModule_AddIntConstant($434, __str349, 6); //@line 5235 "socketmodule.c"
-        var $436=$m; //@line 5238 "socketmodule.c"
-        var $437=_PyModule_AddIntConstant($436, __str350, 7); //@line 5238 "socketmodule.c"
-        var $438=$m; //@line 5241 "socketmodule.c"
-        var $439=_PyModule_AddIntConstant($438, __str351, 8); //@line 5241 "socketmodule.c"
-        var $440=$m; //@line 5244 "socketmodule.c"
-        var $441=_PyModule_AddIntConstant($440, __str352, 9); //@line 5244 "socketmodule.c"
-        var $442=$m; //@line 5247 "socketmodule.c"
-        var $443=_PyModule_AddIntConstant($442, __str353, 10); //@line 5247 "socketmodule.c"
-        var $444=$m; //@line 5250 "socketmodule.c"
-        var $445=_PyModule_AddIntConstant($444, __str354, 11); //@line 5250 "socketmodule.c"
-        var $446=$m; //@line 5253 "socketmodule.c"
-        var $447=_PyModule_AddIntConstant($446, __str355, 12); //@line 5253 "socketmodule.c"
-        var $448=$m; //@line 5264 "socketmodule.c"
-        var $449=_PyModule_AddIntConstant($448, __str356, -9); //@line 5264 "socketmodule.c"
-        var $450=$m; //@line 5267 "socketmodule.c"
-        var $451=_PyModule_AddIntConstant($450, __str357, -3); //@line 5267 "socketmodule.c"
-        var $452=$m; //@line 5270 "socketmodule.c"
-        var $453=_PyModule_AddIntConstant($452, __str358, -1); //@line 5270 "socketmodule.c"
-        var $454=$m; //@line 5273 "socketmodule.c"
-        var $455=_PyModule_AddIntConstant($454, __str359, -4); //@line 5273 "socketmodule.c"
-        var $456=$m; //@line 5276 "socketmodule.c"
-        var $457=_PyModule_AddIntConstant($456, __str360, -6); //@line 5276 "socketmodule.c"
-        var $458=$m; //@line 5279 "socketmodule.c"
-        var $459=_PyModule_AddIntConstant($458, __str361, -10); //@line 5279 "socketmodule.c"
-        var $460=$m; //@line 5282 "socketmodule.c"
-        var $461=_PyModule_AddIntConstant($460, __str362, -5); //@line 5282 "socketmodule.c"
-        var $462=$m; //@line 5285 "socketmodule.c"
-        var $463=_PyModule_AddIntConstant($462, __str363, -2); //@line 5285 "socketmodule.c"
-        var $464=$m; //@line 5288 "socketmodule.c"
-        var $465=_PyModule_AddIntConstant($464, __str364, -12); //@line 5288 "socketmodule.c"
-        var $466=$m; //@line 5291 "socketmodule.c"
-        var $467=_PyModule_AddIntConstant($466, __str365, -8); //@line 5291 "socketmodule.c"
-        var $468=$m; //@line 5294 "socketmodule.c"
-        var $469=_PyModule_AddIntConstant($468, __str366, -7); //@line 5294 "socketmodule.c"
-        var $470=$m; //@line 5297 "socketmodule.c"
-        var $471=_PyModule_AddIntConstant($470, __str367, -11); //@line 5297 "socketmodule.c"
-        var $472=$m; //@line 5309 "socketmodule.c"
-        var $473=_PyModule_AddIntConstant($472, __str368, 1); //@line 5309 "socketmodule.c"
-        var $474=$m; //@line 5312 "socketmodule.c"
-        var $475=_PyModule_AddIntConstant($474, __str369, 2); //@line 5312 "socketmodule.c"
-        var $476=$m; //@line 5315 "socketmodule.c"
-        var $477=_PyModule_AddIntConstant($476, __str370, 4); //@line 5315 "socketmodule.c"
-        var $478=$m; //@line 5318 "socketmodule.c"
-        var $479=_PyModule_AddIntConstant($478, __str371, 1024); //@line 5318 "socketmodule.c"
-        var $480=$m; //@line 5324 "socketmodule.c"
-        var $481=_PyModule_AddIntConstant($480, __str372, 16); //@line 5324 "socketmodule.c"
-        var $482=$m; //@line 5330 "socketmodule.c"
-        var $483=_PyModule_AddIntConstant($482, __str373, 32); //@line 5330 "socketmodule.c"
-        var $484=$m; //@line 5333 "socketmodule.c"
-        var $485=_PyModule_AddIntConstant($484, __str374, 8); //@line 5333 "socketmodule.c"
-        var $486=$m; //@line 5339 "socketmodule.c"
-        var $487=_PyModule_AddIntConstant($486, __str375, 1025); //@line 5339 "socketmodule.c"
-        var $488=$m; //@line 5342 "socketmodule.c"
-        var $489=_PyModule_AddIntConstant($488, __str376, 32); //@line 5342 "socketmodule.c"
-        var $490=$m; //@line 5345 "socketmodule.c"
-        var $491=_PyModule_AddIntConstant($490, __str377, 4); //@line 5345 "socketmodule.c"
-        var $492=$m; //@line 5348 "socketmodule.c"
-        var $493=_PyModule_AddIntConstant($492, __str378, 1); //@line 5348 "socketmodule.c"
-        var $494=$m; //@line 5351 "socketmodule.c"
-        var $495=_PyModule_AddIntConstant($494, __str379, 8); //@line 5351 "socketmodule.c"
-        var $496=$m; //@line 5354 "socketmodule.c"
-        var $497=_PyModule_AddIntConstant($496, __str380, 2); //@line 5354 "socketmodule.c"
-        var $498=$m; //@line 5357 "socketmodule.c"
-        var $499=_PyModule_AddIntConstant($498, __str381, 16); //@line 5357 "socketmodule.c"
-        var $500=$m; //@line 5362 "socketmodule.c"
-        var $501=_PyModule_AddIntConstant($500, __str382, 0); //@line 5362 "socketmodule.c"
-        var $502=$m; //@line 5369 "socketmodule.c"
-        var $503=_PyModule_AddIntConstant($502, __str383, 1); //@line 5369 "socketmodule.c"
-        var $504=$m; //@line 5376 "socketmodule.c"
-        var $505=_PyModule_AddIntConstant($504, __str384, 2); //@line 5376 "socketmodule.c"
+        var $77=$m; //@line 4539 "socketmodule.c"
+        var $78=_PyModule_AddIntConstant($77, __str173, 0); //@line 4539 "socketmodule.c"
+        var $79=$m; //@line 4541 "socketmodule.c"
+        var $80=_PyModule_AddIntConstant($79, __str174, 2); //@line 4541 "socketmodule.c"
+        var $81=$m; //@line 4543 "socketmodule.c"
+        var $82=_PyModule_AddIntConstant($81, __str175, 10); //@line 4543 "socketmodule.c"
+        var $83=$m; //@line 4546 "socketmodule.c"
+        var $84=_PyModule_AddIntConstant($83, __str176, 1); //@line 4546 "socketmodule.c"
+        var $85=$m; //@line 4550 "socketmodule.c"
+        var $86=_PyModule_AddIntConstant($85, __str177, 3); //@line 4550 "socketmodule.c"
+        var $87=$m; //@line 4553 "socketmodule.c"
+        var $88=_PyModule_AddIntConstant($87, __str178, 4); //@line 4553 "socketmodule.c"
+        var $89=$m; //@line 4557 "socketmodule.c"
+        var $90=_PyModule_AddIntConstant($89, __str179, 5); //@line 4557 "socketmodule.c"
+        var $91=$m; //@line 4561 "socketmodule.c"
+        var $92=_PyModule_AddIntConstant($91, __str180, 6); //@line 4561 "socketmodule.c"
+        var $93=$m; //@line 4565 "socketmodule.c"
+        var $94=_PyModule_AddIntConstant($93, __str181, 7); //@line 4565 "socketmodule.c"
+        var $95=$m; //@line 4569 "socketmodule.c"
+        var $96=_PyModule_AddIntConstant($95, __str182, 8); //@line 4569 "socketmodule.c"
+        var $97=$m; //@line 4577 "socketmodule.c"
+        var $98=_PyModule_AddIntConstant($97, __str183, 9); //@line 4577 "socketmodule.c"
+        var $99=$m; //@line 4580 "socketmodule.c"
+        var $100=_PyModule_AddIntConstant($99, __str175, 10); //@line 4580 "socketmodule.c"
+        var $101=$m; //@line 4584 "socketmodule.c"
+        var $102=_PyModule_AddIntConstant($101, __str184, 11); //@line 4584 "socketmodule.c"
+        var $103=$m; //@line 4588 "socketmodule.c"
+        var $104=_PyModule_AddIntConstant($103, __str185, 12); //@line 4588 "socketmodule.c"
+        var $105=$m; //@line 4592 "socketmodule.c"
+        var $106=_PyModule_AddIntConstant($105, __str186, 13); //@line 4592 "socketmodule.c"
+        var $107=$m; //@line 4596 "socketmodule.c"
+        var $108=_PyModule_AddIntConstant($107, __str187, 14); //@line 4596 "socketmodule.c"
+        var $109=$m; //@line 4600 "socketmodule.c"
+        var $110=_PyModule_AddIntConstant($109, __str188, 15); //@line 4600 "socketmodule.c"
+        var $111=$m; //@line 4604 "socketmodule.c"
+        var $112=_PyModule_AddIntConstant($111, __str189, 16); //@line 4604 "socketmodule.c"
+        var $113=$m; //@line 4605 "socketmodule.c"
+        var $114=_PyModule_AddIntConstant($113, __str190, 0); //@line 4605 "socketmodule.c"
+        var $115=$m; //@line 4612 "socketmodule.c"
+        var $116=_PyModule_AddIntConstant($115, __str191, 2); //@line 4612 "socketmodule.c"
+        var $117=$m; //@line 4613 "socketmodule.c"
+        var $118=_PyModule_AddIntConstant($117, __str192, 3); //@line 4613 "socketmodule.c"
+        var $119=$m; //@line 4618 "socketmodule.c"
+        var $120=_PyModule_AddIntConstant($119, __str193, 5); //@line 4618 "socketmodule.c"
+        var $121=$m; //@line 4621 "socketmodule.c"
+        var $122=_PyModule_AddIntConstant($121, __str194, 6); //@line 4621 "socketmodule.c"
+        var $123=$m; //@line 4629 "socketmodule.c"
+        var $124=_PyModule_AddIntConstant($123, __str195, 13); //@line 4629 "socketmodule.c"
+        var $125=$m; //@line 4631 "socketmodule.c"
+        var $126=_PyModule_AddIntConstant($125, __str196, 14); //@line 4631 "socketmodule.c"
+        var $127=$m; //@line 4639 "socketmodule.c"
+        var $128=_PyModule_AddIntConstant($127, __str197, 16); //@line 4639 "socketmodule.c"
+        var $129=$m; //@line 4643 "socketmodule.c"
+        var $130=_PyModule_AddIntConstant($129, __str198, 18); //@line 4643 "socketmodule.c"
+        var $131=$m; //@line 4647 "socketmodule.c"
+        var $132=_PyModule_AddIntConstant($131, __str199, 19); //@line 4647 "socketmodule.c"
+        var $133=$m; //@line 4651 "socketmodule.c"
+        var $134=_PyModule_AddIntConstant($133, __str200, 20); //@line 4651 "socketmodule.c"
+        var $135=$m; //@line 4655 "socketmodule.c"
+        var $136=_PyModule_AddIntConstant($135, __str201, 22); //@line 4655 "socketmodule.c"
+        var $137=$m; //@line 4659 "socketmodule.c"
+        var $138=_PyModule_AddIntConstant($137, __str202, 23); //@line 4659 "socketmodule.c"
+        var $139=$m; //@line 4663 "socketmodule.c"
+        var $140=_PyModule_AddIntConstant($139, __str203, 24); //@line 4663 "socketmodule.c"
+        var $141=$m; //@line 4667 "socketmodule.c"
+        var $142=_PyModule_AddIntConstant($141, __str204, 25); //@line 4667 "socketmodule.c"
+        var $143=$m; //@line 4671 "socketmodule.c"
+        var $144=_PyModule_AddIntConstant($143, __str205, 26); //@line 4671 "socketmodule.c"
+        var $145=$m; //@line 4695 "socketmodule.c"
+        var $146=_PyModule_AddIntConstant($145, __str206, 17); //@line 4695 "socketmodule.c"
+        var $147=$m; //@line 4698 "socketmodule.c"
+        var $148=_PyModule_AddIntConstant($147, __str207, 17); //@line 4698 "socketmodule.c"
+        var $149=$m; //@line 4701 "socketmodule.c"
+        var $150=_PyModule_AddIntConstant($149, __str208, 0); //@line 4701 "socketmodule.c"
+        var $151=$m; //@line 4704 "socketmodule.c"
+        var $152=_PyModule_AddIntConstant($151, __str209, 1); //@line 4704 "socketmodule.c"
+        var $153=$m; //@line 4707 "socketmodule.c"
+        var $154=_PyModule_AddIntConstant($153, __str210, 2); //@line 4707 "socketmodule.c"
+        var $155=$m; //@line 4710 "socketmodule.c"
+        var $156=_PyModule_AddIntConstant($155, __str211, 3); //@line 4710 "socketmodule.c"
+        var $157=$m; //@line 4713 "socketmodule.c"
+        var $158=_PyModule_AddIntConstant($157, __str212, 4); //@line 4713 "socketmodule.c"
+        var $159=$m; //@line 4716 "socketmodule.c"
+        var $160=_PyModule_AddIntConstant($159, __str213, 5); //@line 4716 "socketmodule.c"
+        var $161=$m; //@line 4719 "socketmodule.c"
+        var $162=_PyModule_AddIntConstant($161, __str214, 6); //@line 4719 "socketmodule.c"
+        var $163=$m; //@line 4723 "socketmodule.c"
+        var $164=_PyModule_AddIntConstant($163, __str215, 30); //@line 4723 "socketmodule.c"
+        var $165=$m; //@line 4726 "socketmodule.c"
+        var $166=_PyModule_AddIntConstant($165, __str216, 1); //@line 4726 "socketmodule.c"
+        var $167=$m; //@line 4727 "socketmodule.c"
+        var $168=_PyModule_AddIntConstant($167, __str217, 2); //@line 4727 "socketmodule.c"
+        var $169=$m; //@line 4728 "socketmodule.c"
+        var $170=_PyModule_AddIntConstant($169, __str218, 3); //@line 4728 "socketmodule.c"
+        var $171=$m; //@line 4730 "socketmodule.c"
+        var $172=_PyModule_AddIntConstant($171, __str219, 1); //@line 4730 "socketmodule.c"
+        var $173=$m; //@line 4731 "socketmodule.c"
+        var $174=_PyModule_AddIntConstant($173, __str220, 2); //@line 4731 "socketmodule.c"
+        var $175=$m; //@line 4732 "socketmodule.c"
+        var $176=_PyModule_AddIntConstant($175, __str221, 3); //@line 4732 "socketmodule.c"
+        var $177=$m; //@line 4735 "socketmodule.c"
+        var $178=_PyModule_AddIntConstant($177, __str222, 271); //@line 4735 "socketmodule.c"
+        var $179=$m; //@line 4736 "socketmodule.c"
+        var $180=_PyModule_AddIntConstant($179, __str223, 127); //@line 4736 "socketmodule.c"
+        var $181=$m; //@line 4737 "socketmodule.c"
+        var $182=_PyModule_AddIntConstant($181, __str224, 128); //@line 4737 "socketmodule.c"
+        var $183=$m; //@line 4738 "socketmodule.c"
+        var $184=_PyModule_AddIntConstant($183, __str225, 129); //@line 4738 "socketmodule.c"
+        var $185=$m; //@line 4740 "socketmodule.c"
+        var $186=_PyModule_AddIntConstant($185, __str226, 130); //@line 4740 "socketmodule.c"
+        var $187=$m; //@line 4742 "socketmodule.c"
+        var $188=_PyModule_AddIntConstant($187, __str227, 0); //@line 4742 "socketmodule.c"
+        var $189=$m; //@line 4744 "socketmodule.c"
+        var $190=_PyModule_AddIntConstant($189, __str228, 1); //@line 4744 "socketmodule.c"
+        var $191=$m; //@line 4746 "socketmodule.c"
+        var $192=_PyModule_AddIntConstant($191, __str229, 2); //@line 4746 "socketmodule.c"
+        var $193=$m; //@line 4748 "socketmodule.c"
+        var $194=_PyModule_AddIntConstant($193, __str230, 3); //@line 4748 "socketmodule.c"
+        var $195=$m; //@line 4752 "socketmodule.c"
+        var $196=_PyModule_AddIntConstant($195, __str231, 1); //@line 4752 "socketmodule.c"
+        var $197=$m; //@line 4753 "socketmodule.c"
+        var $198=_PyModule_AddIntConstant($197, __str232, 2); //@line 4753 "socketmodule.c"
+        var $199=$m; //@line 4756 "socketmodule.c"
+        var $200=_PyModule_AddIntConstant($199, __str233, 4); //@line 4756 "socketmodule.c"
+        var $201=$m; //@line 4758 "socketmodule.c"
+        var $202=_PyModule_AddIntConstant($201, __str234, -1); //@line 4758 "socketmodule.c"
+        var $203=$m; //@line 4759 "socketmodule.c"
+        var $204=_PyModule_AddIntConstant($203, __str235, 1); //@line 4759 "socketmodule.c"
+        var $205=$m; //@line 4760 "socketmodule.c"
+        var $206=_PyModule_AddIntConstant($205, __str236, 2); //@line 4760 "socketmodule.c"
+        var $207=$m; //@line 4761 "socketmodule.c"
+        var $208=_PyModule_AddIntConstant($207, __str237, 3); //@line 4761 "socketmodule.c"
+        var $209=$m; //@line 4762 "socketmodule.c"
+        var $210=_PyModule_AddIntConstant($209, __str238, 0); //@line 4762 "socketmodule.c"
+        var $211=$m; //@line 4763 "socketmodule.c"
+        var $212=_PyModule_AddIntConstant($211, __str239, 1); //@line 4763 "socketmodule.c"
+        var $213=$m; //@line 4767 "socketmodule.c"
+        var $214=_PyModule_AddIntConstant($213, __str240, 1); //@line 4767 "socketmodule.c"
+        var $215=$m; //@line 4768 "socketmodule.c"
+        var $216=_PyModule_AddIntConstant($215, __str241, 2); //@line 4768 "socketmodule.c"
+        var $217=$m; //@line 4771 "socketmodule.c"
+        var $218=_PyModule_AddIntConstant($217, __str242, 3); //@line 4771 "socketmodule.c"
+        var $219=$m; //@line 4772 "socketmodule.c"
+        var $220=_PyModule_AddIntConstant($219, __str243, 5); //@line 4772 "socketmodule.c"
+        var $221=$m; //@line 4774 "socketmodule.c"
+        var $222=_PyModule_AddIntConstant($221, __str244, 4); //@line 4774 "socketmodule.c"
+        var $223=$m; //@line 4779 "socketmodule.c"
+        var $224=_PyModule_AddIntConstant($223, __str245, 1); //@line 4779 "socketmodule.c"
+        var $225=$m; //@line 4782 "socketmodule.c"
+        var $226=_PyModule_AddIntConstant($225, __str246, 30); //@line 4782 "socketmodule.c"
+        var $227=$m; //@line 4785 "socketmodule.c"
+        var $228=_PyModule_AddIntConstant($227, __str247, 2); //@line 4785 "socketmodule.c"
+        var $229=$m; //@line 4792 "socketmodule.c"
+        var $230=_PyModule_AddIntConstant($229, __str248, 9); //@line 4792 "socketmodule.c"
+        var $231=$m; //@line 4795 "socketmodule.c"
+        var $232=_PyModule_AddIntConstant($231, __str249, 5); //@line 4795 "socketmodule.c"
+        var $233=$m; //@line 4798 "socketmodule.c"
+        var $234=_PyModule_AddIntConstant($233, __str250, 6); //@line 4798 "socketmodule.c"
+        var $235=$m; //@line 4804 "socketmodule.c"
+        var $236=_PyModule_AddIntConstant($235, __str251, 13); //@line 4804 "socketmodule.c"
+        var $237=$m; //@line 4807 "socketmodule.c"
+        var $238=_PyModule_AddIntConstant($237, __str252, 10); //@line 4807 "socketmodule.c"
+        var $239=$m; //@line 4813 "socketmodule.c"
+        var $240=_PyModule_AddIntConstant($239, __str253, 7); //@line 4813 "socketmodule.c"
+        var $241=$m; //@line 4816 "socketmodule.c"
+        var $242=_PyModule_AddIntConstant($241, __str254, 8); //@line 4816 "socketmodule.c"
+        var $243=$m; //@line 4819 "socketmodule.c"
+        var $244=_PyModule_AddIntConstant($243, __str255, 19); //@line 4819 "socketmodule.c"
+        var $245=$m; //@line 4822 "socketmodule.c"
+        var $246=_PyModule_AddIntConstant($245, __str256, 18); //@line 4822 "socketmodule.c"
+        var $247=$m; //@line 4825 "socketmodule.c"
+        var $248=_PyModule_AddIntConstant($247, __str257, 21); //@line 4825 "socketmodule.c"
+        var $249=$m; //@line 4828 "socketmodule.c"
+        var $250=_PyModule_AddIntConstant($249, __str258, 20); //@line 4828 "socketmodule.c"
+        var $251=$m; //@line 4831 "socketmodule.c"
+        var $252=_PyModule_AddIntConstant($251, __str259, 4); //@line 4831 "socketmodule.c"
+        var $253=$m; //@line 4834 "socketmodule.c"
+        var $254=_PyModule_AddIntConstant($253, __str260, 3); //@line 4834 "socketmodule.c"
+        var $255=$m; //@line 4842 "socketmodule.c"
+        var $256=_PyModule_AddIntConstant($255, __str261, 128); //@line 4842 "socketmodule.c"
+        var $257=$m; //@line 4849 "socketmodule.c"
+        var $258=_PyModule_AddIntConstant($257, __str262, 1); //@line 4849 "socketmodule.c"
+        var $259=$m; //@line 4852 "socketmodule.c"
+        var $260=_PyModule_AddIntConstant($259, __str263, 2); //@line 4852 "socketmodule.c"
+        var $261=$m; //@line 4855 "socketmodule.c"
+        var $262=_PyModule_AddIntConstant($261, __str264, 4); //@line 4855 "socketmodule.c"
+        var $263=$m; //@line 4858 "socketmodule.c"
+        var $264=_PyModule_AddIntConstant($263, __str265, 64); //@line 4858 "socketmodule.c"
+        var $265=$m; //@line 4861 "socketmodule.c"
+        var $266=_PyModule_AddIntConstant($265, __str266, 128); //@line 4861 "socketmodule.c"
+        var $267=$m; //@line 4864 "socketmodule.c"
+        var $268=_PyModule_AddIntConstant($267, __str267, 32); //@line 4864 "socketmodule.c"
+        var $269=$m; //@line 4867 "socketmodule.c"
+        var $270=_PyModule_AddIntConstant($269, __str268, 8); //@line 4867 "socketmodule.c"
+        var $271=$m; //@line 4870 "socketmodule.c"
+        var $272=_PyModule_AddIntConstant($271, __str269, 256); //@line 4870 "socketmodule.c"
+        var $273=$m; //@line 4881 "socketmodule.c"
+        var $274=_PyModule_AddIntConstant($273, __str270, 1); //@line 4881 "socketmodule.c"
+        var $275=$m; //@line 4884 "socketmodule.c"
+        var $276=_PyModule_AddIntConstant($275, __str271, 0); //@line 4884 "socketmodule.c"
+        var $277=$m; //@line 4904 "socketmodule.c"
+        var $278=_PyModule_AddIntConstant($277, __str272, 6); //@line 4904 "socketmodule.c"
+        var $279=$m; //@line 4911 "socketmodule.c"
+        var $280=_PyModule_AddIntConstant($279, __str273, 17); //@line 4911 "socketmodule.c"
+        var $281=$m; //@line 4914 "socketmodule.c"
+        var $282=_PyModule_AddIntConstant($281, __str274, 0); //@line 4914 "socketmodule.c"
+        var $283=$m; //@line 4919 "socketmodule.c"
+        var $284=_PyModule_AddIntConstant($283, __str275, 0); //@line 4919 "socketmodule.c"
+        var $285=$m; //@line 4922 "socketmodule.c"
+        var $286=_PyModule_AddIntConstant($285, __str276, 1); //@line 4922 "socketmodule.c"
+        var $287=$m; //@line 4927 "socketmodule.c"
+        var $288=_PyModule_AddIntConstant($287, __str277, 2); //@line 4927 "socketmodule.c"
+        var $289=$m; //@line 4936 "socketmodule.c"
+        var $290=_PyModule_AddIntConstant($289, __str278, 41); //@line 4936 "socketmodule.c"
+        var $291=$m; //@line 4939 "socketmodule.c"
+        var $292=_PyModule_AddIntConstant($291, __str279, 4); //@line 4939 "socketmodule.c"
+        var $293=$m; //@line 4942 "socketmodule.c"
+        var $294=_PyModule_AddIntConstant($293, __str280, 6); //@line 4942 "socketmodule.c"
+        var $295=$m; //@line 4947 "socketmodule.c"
+        var $296=_PyModule_AddIntConstant($295, __str281, 8); //@line 4947 "socketmodule.c"
+        var $297=$m; //@line 4950 "socketmodule.c"
+        var $298=_PyModule_AddIntConstant($297, __str282, 12); //@line 4950 "socketmodule.c"
+        var $299=$m; //@line 4953 "socketmodule.c"
+        var $300=_PyModule_AddIntConstant($299, __str283, 17); //@line 4953 "socketmodule.c"
+        var $301=$m; //@line 4958 "socketmodule.c"
+        var $302=_PyModule_AddIntConstant($301, __str284, 22); //@line 4958 "socketmodule.c"
+        var $303=$m; //@line 4967 "socketmodule.c"
+        var $304=_PyModule_AddIntConstant($303, __str285, 29); //@line 4967 "socketmodule.c"
+        var $305=$m; //@line 4970 "socketmodule.c"
+        var $306=_PyModule_AddIntConstant($305, __str278, 41); //@line 4970 "socketmodule.c"
+        var $307=$m; //@line 4973 "socketmodule.c"
+        var $308=_PyModule_AddIntConstant($307, __str286, 43); //@line 4973 "socketmodule.c"
+        var $309=$m; //@line 4976 "socketmodule.c"
+        var $310=_PyModule_AddIntConstant($309, __str287, 44); //@line 4976 "socketmodule.c"
+        var $311=$m; //@line 4979 "socketmodule.c"
+        var $312=_PyModule_AddIntConstant($311, __str288, 46); //@line 4979 "socketmodule.c"
+        var $313=$m; //@line 4982 "socketmodule.c"
+        var $314=_PyModule_AddIntConstant($313, __str289, 47); //@line 4982 "socketmodule.c"
+        var $315=$m; //@line 4985 "socketmodule.c"
+        var $316=_PyModule_AddIntConstant($315, __str290, 50); //@line 4985 "socketmodule.c"
+        var $317=$m; //@line 4988 "socketmodule.c"
+        var $318=_PyModule_AddIntConstant($317, __str291, 51); //@line 4988 "socketmodule.c"
+        var $319=$m; //@line 4994 "socketmodule.c"
+        var $320=_PyModule_AddIntConstant($319, __str292, 58); //@line 4994 "socketmodule.c"
+        var $321=$m; //@line 4997 "socketmodule.c"
+        var $322=_PyModule_AddIntConstant($321, __str293, 59); //@line 4997 "socketmodule.c"
+        var $323=$m; //@line 5000 "socketmodule.c"
+        var $324=_PyModule_AddIntConstant($323, __str294, 60); //@line 5000 "socketmodule.c"
+        var $325=$m; //@line 5009 "socketmodule.c"
+        var $326=_PyModule_AddIntConstant($325, __str295, 103); //@line 5009 "socketmodule.c"
+        var $327=$m; //@line 5022 "socketmodule.c"
+        var $328=_PyModule_AddIntConstant($327, __str296, 255); //@line 5022 "socketmodule.c"
+        var $329=$m; //@line 5032 "socketmodule.c"
+        var $330=_PyModule_AddIntConstant($329, __str297, 1024); //@line 5032 "socketmodule.c"
+        var $331=$m; //@line 5039 "socketmodule.c"
+        var $332=_PyModule_AddIntConstant($331, __str298, 5000); //@line 5039 "socketmodule.c"
+        var $333=$m; //@line 5044 "socketmodule.c"
+        var $334=_PyModule_AddIntConstant($333, __str299, 0); //@line 5044 "socketmodule.c"
+        var $335=$m; //@line 5049 "socketmodule.c"
+        var $336=_PyModule_AddIntConstant($335, __str300, -1); //@line 5049 "socketmodule.c"
+        var $337=$m; //@line 5054 "socketmodule.c"
+        var $338=_PyModule_AddIntConstant($337, __str301, 2130706433); //@line 5054 "socketmodule.c"
+        var $339=$m; //@line 5059 "socketmodule.c"
+        var $340=_PyModule_AddIntConstant($339, __str302, -536870912); //@line 5059 "socketmodule.c"
+        var $341=$m; //@line 5064 "socketmodule.c"
+        var $342=_PyModule_AddIntConstant($341, __str303, -536870911); //@line 5064 "socketmodule.c"
+        var $343=$m; //@line 5070 "socketmodule.c"
+        var $344=_PyModule_AddIntConstant($343, __str304, -536870657); //@line 5070 "socketmodule.c"
+        var $345=$m; //@line 5076 "socketmodule.c"
+        var $346=_PyModule_AddIntConstant($345, __str305, -1); //@line 5076 "socketmodule.c"
+        var $347=$m; //@line 5083 "socketmodule.c"
+        var $348=_PyModule_AddIntConstant($347, __str306, 4); //@line 5083 "socketmodule.c"
+        var $349=$m; //@line 5086 "socketmodule.c"
+        var $350=_PyModule_AddIntConstant($349, __str307, 3); //@line 5086 "socketmodule.c"
+        var $351=$m; //@line 5089 "socketmodule.c"
+        var $352=_PyModule_AddIntConstant($351, __str308, 1); //@line 5089 "socketmodule.c"
+        var $353=$m; //@line 5092 "socketmodule.c"
+        var $354=_PyModule_AddIntConstant($353, __str309, 2); //@line 5092 "socketmodule.c"
+        var $355=$m; //@line 5095 "socketmodule.c"
+        var $356=_PyModule_AddIntConstant($355, __str310, 6); //@line 5095 "socketmodule.c"
+        var $357=$m; //@line 5098 "socketmodule.c"
+        var $358=_PyModule_AddIntConstant($357, __str311, 7); //@line 5098 "socketmodule.c"
+        var $359=$m; //@line 5104 "socketmodule.c"
+        var $360=_PyModule_AddIntConstant($359, __str312, 7); //@line 5104 "socketmodule.c"
+        var $361=$m; //@line 5107 "socketmodule.c"
+        var $362=_PyModule_AddIntConstant($361, __str313, 32); //@line 5107 "socketmodule.c"
+        var $363=$m; //@line 5110 "socketmodule.c"
+        var $364=_PyModule_AddIntConstant($363, __str314, 33); //@line 5110 "socketmodule.c"
+        var $365=$m; //@line 5113 "socketmodule.c"
+        var $366=_PyModule_AddIntConstant($365, __str315, 34); //@line 5113 "socketmodule.c"
+        var $367=$m; //@line 5116 "socketmodule.c"
+        var $368=_PyModule_AddIntConstant($367, __str316, 35); //@line 5116 "socketmodule.c"
+        var $369=$m; //@line 5119 "socketmodule.c"
+        var $370=_PyModule_AddIntConstant($369, __str317, 36); //@line 5119 "socketmodule.c"
+        var $371=$m; //@line 5122 "socketmodule.c"
+        var $372=_PyModule_AddIntConstant($371, __str318, 1); //@line 5122 "socketmodule.c"
+        var $373=$m; //@line 5126 "socketmodule.c"
+        var $374=_PyModule_AddIntConstant($373, __str319, 1); //@line 5126 "socketmodule.c"
+        var $375=$m; //@line 5130 "socketmodule.c"
+        var $376=_PyModule_AddIntConstant($375, __str320, 20); //@line 5130 "socketmodule.c"
+        var $377=$m; //@line 5135 "socketmodule.c"
+        var $378=_PyModule_AddIntConstant($377, __str321, 20); //@line 5135 "socketmodule.c"
+        var $379=$m; //@line 5138 "socketmodule.c"
+        var $380=_PyModule_AddIntConstant($379, __str322, 21); //@line 5138 "socketmodule.c"
+        var $381=$m; //@line 5141 "socketmodule.c"
+        var $382=_PyModule_AddIntConstant($381, __str323, 18); //@line 5141 "socketmodule.c"
+        var $383=$m; //@line 5144 "socketmodule.c"
+        var $384=_PyModule_AddIntConstant($383, __str324, 17); //@line 5144 "socketmodule.c"
+        var $385=$m; //@line 5147 "socketmodule.c"
+        var $386=_PyModule_AddIntConstant($385, __str325, 19); //@line 5147 "socketmodule.c"
+        var $387=$m; //@line 5150 "socketmodule.c"
+        var $388=_PyModule_AddIntConstant($387, __str326, 16); //@line 5150 "socketmodule.c"
+        var $389=$m; //@line 5154 "socketmodule.c"
+        var $390=_PyModule_AddIntConstant($389, __str327, 26); //@line 5154 "socketmodule.c"
+        var $391=$m; //@line 5158 "socketmodule.c"
+        var $392=_PyModule_AddIntConstant($391, __str328, 7); //@line 5158 "socketmodule.c"
+        var $393=$m; //@line 5164 "socketmodule.c"
+        var $394=_PyModule_AddIntConstant($393, __str329, 59); //@line 5164 "socketmodule.c"
+        var $395=$m; //@line 5167 "socketmodule.c"
+        var $396=_PyModule_AddIntConstant($395, __str330, 52); //@line 5167 "socketmodule.c"
+        var $397=$m; //@line 5170 "socketmodule.c"
+        var $398=_PyModule_AddIntConstant($397, __str331, 54); //@line 5170 "socketmodule.c"
+        var $399=$m; //@line 5173 "socketmodule.c"
+        var $400=_PyModule_AddIntConstant($399, __str332, 9); //@line 5173 "socketmodule.c"
+        var $401=$m; //@line 5179 "socketmodule.c"
+        var $402=_PyModule_AddIntConstant($401, __str333, 50); //@line 5179 "socketmodule.c"
+        var $403=$m; //@line 5182 "socketmodule.c"
+        var $404=_PyModule_AddIntConstant($403, __str334, 58); //@line 5182 "socketmodule.c"
+        var $405=$m; //@line 5185 "socketmodule.c"
+        var $406=_PyModule_AddIntConstant($405, __str335, 51); //@line 5185 "socketmodule.c"
+        var $407=$m; //@line 5188 "socketmodule.c"
+        var $408=_PyModule_AddIntConstant($407, __str336, 53); //@line 5188 "socketmodule.c"
+        var $409=$m; //@line 5191 "socketmodule.c"
+        var $410=_PyModule_AddIntConstant($409, __str337, 49); //@line 5191 "socketmodule.c"
+        var $411=$m; //@line 5194 "socketmodule.c"
+        var $412=_PyModule_AddIntConstant($411, __str338, 56); //@line 5194 "socketmodule.c"
+        var $413=$m; //@line 5197 "socketmodule.c"
+        var $414=_PyModule_AddIntConstant($413, __str339, 66); //@line 5197 "socketmodule.c"
+        var $415=$m; //@line 5200 "socketmodule.c"
+        var $416=_PyModule_AddIntConstant($415, __str340, 57); //@line 5200 "socketmodule.c"
+        var $417=$m; //@line 5203 "socketmodule.c"
+        var $418=_PyModule_AddIntConstant($417, __str341, 55); //@line 5203 "socketmodule.c"
+        var $419=$m; //@line 5206 "socketmodule.c"
+        var $420=_PyModule_AddIntConstant($419, __str342, 0); //@line 5206 "socketmodule.c"
+        var $421=$m; //@line 5212 "socketmodule.c"
+        var $422=_PyModule_AddIntConstant($421, __str343, 67); //@line 5212 "socketmodule.c"
+        var $423=$m; //@line 5220 "socketmodule.c"
+        var $424=_PyModule_AddIntConstant($423, __str344, 1); //@line 5220 "socketmodule.c"
+        var $425=$m; //@line 5223 "socketmodule.c"
+        var $426=_PyModule_AddIntConstant($425, __str345, 2); //@line 5223 "socketmodule.c"
+        var $427=$m; //@line 5226 "socketmodule.c"
+        var $428=_PyModule_AddIntConstant($427, __str346, 3); //@line 5226 "socketmodule.c"
+        var $429=$m; //@line 5229 "socketmodule.c"
+        var $430=_PyModule_AddIntConstant($429, __str347, 4); //@line 5229 "socketmodule.c"
+        var $431=$m; //@line 5232 "socketmodule.c"
+        var $432=_PyModule_AddIntConstant($431, __str348, 5); //@line 5232 "socketmodule.c"
+        var $433=$m; //@line 5235 "socketmodule.c"
+        var $434=_PyModule_AddIntConstant($433, __str349, 6); //@line 5235 "socketmodule.c"
+        var $435=$m; //@line 5238 "socketmodule.c"
+        var $436=_PyModule_AddIntConstant($435, __str350, 7); //@line 5238 "socketmodule.c"
+        var $437=$m; //@line 5241 "socketmodule.c"
+        var $438=_PyModule_AddIntConstant($437, __str351, 8); //@line 5241 "socketmodule.c"
+        var $439=$m; //@line 5244 "socketmodule.c"
+        var $440=_PyModule_AddIntConstant($439, __str352, 9); //@line 5244 "socketmodule.c"
+        var $441=$m; //@line 5247 "socketmodule.c"
+        var $442=_PyModule_AddIntConstant($441, __str353, 10); //@line 5247 "socketmodule.c"
+        var $443=$m; //@line 5250 "socketmodule.c"
+        var $444=_PyModule_AddIntConstant($443, __str354, 11); //@line 5250 "socketmodule.c"
+        var $445=$m; //@line 5253 "socketmodule.c"
+        var $446=_PyModule_AddIntConstant($445, __str355, 12); //@line 5253 "socketmodule.c"
+        var $447=$m; //@line 5264 "socketmodule.c"
+        var $448=_PyModule_AddIntConstant($447, __str356, -9); //@line 5264 "socketmodule.c"
+        var $449=$m; //@line 5267 "socketmodule.c"
+        var $450=_PyModule_AddIntConstant($449, __str357, -3); //@line 5267 "socketmodule.c"
+        var $451=$m; //@line 5270 "socketmodule.c"
+        var $452=_PyModule_AddIntConstant($451, __str358, -1); //@line 5270 "socketmodule.c"
+        var $453=$m; //@line 5273 "socketmodule.c"
+        var $454=_PyModule_AddIntConstant($453, __str359, -4); //@line 5273 "socketmodule.c"
+        var $455=$m; //@line 5276 "socketmodule.c"
+        var $456=_PyModule_AddIntConstant($455, __str360, -6); //@line 5276 "socketmodule.c"
+        var $457=$m; //@line 5279 "socketmodule.c"
+        var $458=_PyModule_AddIntConstant($457, __str361, -10); //@line 5279 "socketmodule.c"
+        var $459=$m; //@line 5282 "socketmodule.c"
+        var $460=_PyModule_AddIntConstant($459, __str362, -5); //@line 5282 "socketmodule.c"
+        var $461=$m; //@line 5285 "socketmodule.c"
+        var $462=_PyModule_AddIntConstant($461, __str363, -2); //@line 5285 "socketmodule.c"
+        var $463=$m; //@line 5288 "socketmodule.c"
+        var $464=_PyModule_AddIntConstant($463, __str364, -12); //@line 5288 "socketmodule.c"
+        var $465=$m; //@line 5291 "socketmodule.c"
+        var $466=_PyModule_AddIntConstant($465, __str365, -8); //@line 5291 "socketmodule.c"
+        var $467=$m; //@line 5294 "socketmodule.c"
+        var $468=_PyModule_AddIntConstant($467, __str366, -7); //@line 5294 "socketmodule.c"
+        var $469=$m; //@line 5297 "socketmodule.c"
+        var $470=_PyModule_AddIntConstant($469, __str367, -11); //@line 5297 "socketmodule.c"
+        var $471=$m; //@line 5309 "socketmodule.c"
+        var $472=_PyModule_AddIntConstant($471, __str368, 1); //@line 5309 "socketmodule.c"
+        var $473=$m; //@line 5312 "socketmodule.c"
+        var $474=_PyModule_AddIntConstant($473, __str369, 2); //@line 5312 "socketmodule.c"
+        var $475=$m; //@line 5315 "socketmodule.c"
+        var $476=_PyModule_AddIntConstant($475, __str370, 4); //@line 5315 "socketmodule.c"
+        var $477=$m; //@line 5318 "socketmodule.c"
+        var $478=_PyModule_AddIntConstant($477, __str371, 1024); //@line 5318 "socketmodule.c"
+        var $479=$m; //@line 5324 "socketmodule.c"
+        var $480=_PyModule_AddIntConstant($479, __str372, 16); //@line 5324 "socketmodule.c"
+        var $481=$m; //@line 5330 "socketmodule.c"
+        var $482=_PyModule_AddIntConstant($481, __str373, 32); //@line 5330 "socketmodule.c"
+        var $483=$m; //@line 5333 "socketmodule.c"
+        var $484=_PyModule_AddIntConstant($483, __str374, 8); //@line 5333 "socketmodule.c"
+        var $485=$m; //@line 5339 "socketmodule.c"
+        var $486=_PyModule_AddIntConstant($485, __str375, 1025); //@line 5339 "socketmodule.c"
+        var $487=$m; //@line 5342 "socketmodule.c"
+        var $488=_PyModule_AddIntConstant($487, __str376, 32); //@line 5342 "socketmodule.c"
+        var $489=$m; //@line 5345 "socketmodule.c"
+        var $490=_PyModule_AddIntConstant($489, __str377, 4); //@line 5345 "socketmodule.c"
+        var $491=$m; //@line 5348 "socketmodule.c"
+        var $492=_PyModule_AddIntConstant($491, __str378, 1); //@line 5348 "socketmodule.c"
+        var $493=$m; //@line 5351 "socketmodule.c"
+        var $494=_PyModule_AddIntConstant($493, __str379, 8); //@line 5351 "socketmodule.c"
+        var $495=$m; //@line 5354 "socketmodule.c"
+        var $496=_PyModule_AddIntConstant($495, __str380, 2); //@line 5354 "socketmodule.c"
+        var $497=$m; //@line 5357 "socketmodule.c"
+        var $498=_PyModule_AddIntConstant($497, __str381, 16); //@line 5357 "socketmodule.c"
+        var $499=$m; //@line 5362 "socketmodule.c"
+        var $500=_PyModule_AddIntConstant($499, __str382, 0); //@line 5362 "socketmodule.c"
+        var $501=$m; //@line 5369 "socketmodule.c"
+        var $502=_PyModule_AddIntConstant($501, __str383, 1); //@line 5369 "socketmodule.c"
+        var $503=$m; //@line 5376 "socketmodule.c"
+        var $504=_PyModule_AddIntConstant($503, __str384, 2); //@line 5376 "socketmodule.c"
         __label__ = 10; break; //@line 5376 "socketmodule.c"
       case 10: // $return
         ;
@@ -8137,7 +7818,7 @@ _socket_error=allocate(1, "%struct.PyObject*", ALLOC_NORMAL);
 __str1=allocate([40,105,115,41,0] /* (is)\00 */, "i8", ALLOC_NORMAL);
 _socket_herror=allocate(1, "%struct.PyObject*", ALLOC_NORMAL);
 _socket_gaierror=allocate(1, "%struct.PyObject*", ALLOC_NORMAL);
-_defaulttimeout=allocate([-1], "double", ALLOC_NORMAL);
+_defaulttimeout=allocate([-1], ["double",0,0,0,0,0,0,0,0], ALLOC_NORMAL);
 __str2=allocate([48,0] /* 0\00 */, "i8", ALLOC_NORMAL);
 __str3=allocate([117,110,115,117,112,112,111,114,116,101,100,32,97,100,100,114,101,115,115,32,102,97,109,105,108,121,0] /* unsupported address  */, "i8", ALLOC_NORMAL);
 __str4=allocate([119,105,108,100,99,97,114,100,32,114,101,115,111,108,118,101,100,32,116,111,32,109,117,108,116,105,112,108,101,32,97,100,100,114,101,115,115,0] /* wildcard resolved to */, "i8", ALLOC_NORMAL);

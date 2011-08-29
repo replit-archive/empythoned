@@ -91,13 +91,13 @@ var $struct__IO_marker___SIZE = 12; // %struct._IO_marker
 var $struct__typeobject___SIZE = 196; // %struct._typeobject
   
 var _elementtree_deepcopy_obj;
-var _PyExc_RuntimeError;
+
 var __str;
 var __str1;
 var __str2;
-var __Py_NoneStruct;
-var _PyDict_Type;
-var _PyList_Type;
+
+
+
 var __str3;
 var __str4;
 var __str5;
@@ -105,7 +105,7 @@ var __str6;
 var __str7;
 var __str8;
 var __str9;
-var _PyExc_TypeError;
+
 var __str10;
 var __str11;
 var _elementpath_obj;
@@ -126,7 +126,7 @@ var __str24;
 var __str25;
 var _elementtree_itertext_obj;
 var __str26;
-var _PyExc_IndexError;
+
 var __str27;
 var __str28;
 var __str29;
@@ -137,12 +137,12 @@ var _elementtree_copyelement_obj;
 var __str33;
 var __str34;
 var __str35;
-var _PyExc_ValueError;
+
 var __str36;
 var __str37;
 var __str38;
 var __str39;
-var _PySlice_Type;
+
 var __str40;
 var __str41;
 var __str42;
@@ -167,7 +167,7 @@ var __str59;
 var __str60;
 var __str61;
 var __str62;
-var _PyExc_AttributeError;
+
 var __str63;
 var _element_as_sequence;
 var _element_as_mapping;
@@ -176,7 +176,7 @@ var _Element_Type;
 var __str65;
 var _elementtree_parseerror_obj;
 var __str66;
-var _PyString_Type;
+
 var __str67;
 var __str68;
 var __str69;
@@ -202,11 +202,11 @@ var __str86;
 var _expat_capi;
 var __str87;
 var __str88;
-var _kwlist_12208;
+var _kwlist_12207;
 var __str89;
 var __str90;
 var __str91;
-var _memory_handler_12205;
+var _memory_handler_12204;
 var __str92;
 var __str93;
 var __str94;
@@ -232,7 +232,7 @@ var _XMLParser_Type;
 var __str112;
 var __str113;
 var __functions;
-var _PyType_Type;
+
 var __str114;
 var __str115;
 var __str116;
@@ -242,7 +242,7 @@ var __str119;
 var __str120;
 var __str121;
 var __str122;
-var _PyExc_SyntaxError;
+
 var __str123;
 var __str124;
 
@@ -1137,6 +1137,67 @@ var __str124;
   }
   
 
+  function _element_add_subelement($self, $element) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $element_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        $element_addr=$element;
+        var $1=$self_addr; //@line 395 "_elementtree.c"
+        var $2=_element_resize($1, 1); //@line 395 "_elementtree.c"
+        var $3=($2) < 0; //@line 395 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 395 "_elementtree.c"
+      case 1: // $bb
+        $0=-1; //@line 396 "_elementtree.c"
+        __label__ = 3; break; //@line 396 "_elementtree.c"
+      case 2: // $bb1
+        var $4=$element_addr; //@line 398 "_elementtree.c"
+        var $5=$4; //@line 398 "_elementtree.c"
+        var $6=HEAP[$5]; //@line 398 "_elementtree.c"
+        var $7=($6) + 1; //@line 398 "_elementtree.c"
+        var $8=$element_addr; //@line 398 "_elementtree.c"
+        var $9=$8; //@line 398 "_elementtree.c"
+        HEAP[$9]=$7; //@line 398 "_elementtree.c"
+        var $10=$self_addr; //@line 399 "_elementtree.c"
+        var $11=$10+20; //@line 399 "_elementtree.c"
+        var $12=HEAP[$11]; //@line 399 "_elementtree.c"
+        var $13=$12+12; //@line 399 "_elementtree.c"
+        var $14=HEAP[$13]; //@line 399 "_elementtree.c"
+        var $15=$self_addr; //@line 399 "_elementtree.c"
+        var $16=$15+20; //@line 399 "_elementtree.c"
+        var $17=HEAP[$16]; //@line 399 "_elementtree.c"
+        var $18=$17+4; //@line 399 "_elementtree.c"
+        var $19=HEAP[$18]; //@line 399 "_elementtree.c"
+        var $20=$14+4*$19; //@line 399 "_elementtree.c"
+        var $21=$element_addr; //@line 399 "_elementtree.c"
+        HEAP[$20]=$21; //@line 399 "_elementtree.c"
+        var $22=$self_addr; //@line 401 "_elementtree.c"
+        var $23=$22+20; //@line 401 "_elementtree.c"
+        var $24=HEAP[$23]; //@line 401 "_elementtree.c"
+        var $25=$24+4; //@line 401 "_elementtree.c"
+        var $26=HEAP[$25]; //@line 401 "_elementtree.c"
+        var $27=($26) + 1; //@line 401 "_elementtree.c"
+        var $28=$24+4; //@line 401 "_elementtree.c"
+        HEAP[$28]=$27; //@line 401 "_elementtree.c"
+        $0=0; //@line 403 "_elementtree.c"
+        __label__ = 3; break; //@line 403 "_elementtree.c"
+      case 3: // $bb2
+        var $29=$0; //@line 396 "_elementtree.c"
+        $retval=$29; //@line 396 "_elementtree.c"
+        var $retval3=$retval; //@line 396 "_elementtree.c"
+        ;
+        return $retval3; //@line 396 "_elementtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _element_get_attrib($self) {
     ;
     var __label__;
@@ -1210,6 +1271,132 @@ var __str124;
   }
   
 
+  function _element_get_text($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        var $res;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 431 "_elementtree.c"
+        var $2=$1+12; //@line 431 "_elementtree.c"
+        var $3=HEAP[$2]; //@line 431 "_elementtree.c"
+        $res=$3; //@line 431 "_elementtree.c"
+        var $4=$res; //@line 433 "_elementtree.c"
+        var $5=($4); //@line 433 "_elementtree.c"
+        var $6=($5) & 1; //@line 433 "_elementtree.c"
+        var $7=((($6)) & 255); //@line 433 "_elementtree.c"
+        var $toBool=($7)!=0; //@line 433 "_elementtree.c"
+        if ($toBool) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 433 "_elementtree.c"
+      case 1: // $bb
+        var $8=$res; //@line 434 "_elementtree.c"
+        var $9=($8); //@line 434 "_elementtree.c"
+        var $10=($9) & -2; //@line 434 "_elementtree.c"
+        var $11=($10); //@line 434 "_elementtree.c"
+        $res=$11; //@line 434 "_elementtree.c"
+        var $12=$res; //@line 435 "_elementtree.c"
+        var $13=$12+4; //@line 435 "_elementtree.c"
+        var $14=HEAP[$13]; //@line 435 "_elementtree.c"
+        var $15=($14)==(_PyList_Type); //@line 435 "_elementtree.c"
+        if ($15) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 435 "_elementtree.c"
+      case 2: // $bb1
+        var $16=$res; //@line 436 "_elementtree.c"
+        var $17=_list_join($16); //@line 436 "_elementtree.c"
+        $res=$17; //@line 436 "_elementtree.c"
+        var $18=$res; //@line 437 "_elementtree.c"
+        var $19=($18)==0; //@line 437 "_elementtree.c"
+        if ($19) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 437 "_elementtree.c"
+      case 3: // $bb2
+        $0=0; //@line 438 "_elementtree.c"
+        __label__ = 6; break; //@line 438 "_elementtree.c"
+      case 4: // $bb3
+        var $20=$self_addr; //@line 439 "_elementtree.c"
+        var $21=$20+12; //@line 439 "_elementtree.c"
+        var $22=$res; //@line 439 "_elementtree.c"
+        HEAP[$21]=$22; //@line 439 "_elementtree.c"
+        __label__ = 5; break; //@line 439 "_elementtree.c"
+      case 5: // $bb4
+        var $23=$res; //@line 443 "_elementtree.c"
+        $0=$23; //@line 443 "_elementtree.c"
+        __label__ = 6; break; //@line 443 "_elementtree.c"
+      case 6: // $bb5
+        var $24=$0; //@line 438 "_elementtree.c"
+        $retval=$24; //@line 438 "_elementtree.c"
+        var $retval6=$retval; //@line 438 "_elementtree.c"
+        ;
+        return $retval6; //@line 438 "_elementtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _element_get_tail($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        var $res;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 451 "_elementtree.c"
+        var $2=$1+16; //@line 451 "_elementtree.c"
+        var $3=HEAP[$2]; //@line 451 "_elementtree.c"
+        $res=$3; //@line 451 "_elementtree.c"
+        var $4=$res; //@line 453 "_elementtree.c"
+        var $5=($4); //@line 453 "_elementtree.c"
+        var $6=($5) & 1; //@line 453 "_elementtree.c"
+        var $7=((($6)) & 255); //@line 453 "_elementtree.c"
+        var $toBool=($7)!=0; //@line 453 "_elementtree.c"
+        if ($toBool) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 453 "_elementtree.c"
+      case 1: // $bb
+        var $8=$res; //@line 454 "_elementtree.c"
+        var $9=($8); //@line 454 "_elementtree.c"
+        var $10=($9) & -2; //@line 454 "_elementtree.c"
+        var $11=($10); //@line 454 "_elementtree.c"
+        $res=$11; //@line 454 "_elementtree.c"
+        var $12=$res; //@line 455 "_elementtree.c"
+        var $13=$12+4; //@line 455 "_elementtree.c"
+        var $14=HEAP[$13]; //@line 455 "_elementtree.c"
+        var $15=($14)==(_PyList_Type); //@line 455 "_elementtree.c"
+        if ($15) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 455 "_elementtree.c"
+      case 2: // $bb1
+        var $16=$res; //@line 456 "_elementtree.c"
+        var $17=_list_join($16); //@line 456 "_elementtree.c"
+        $res=$17; //@line 456 "_elementtree.c"
+        var $18=$res; //@line 457 "_elementtree.c"
+        var $19=($18)==0; //@line 457 "_elementtree.c"
+        if ($19) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 457 "_elementtree.c"
+      case 3: // $bb2
+        $0=0; //@line 458 "_elementtree.c"
+        __label__ = 6; break; //@line 458 "_elementtree.c"
+      case 4: // $bb3
+        var $20=$self_addr; //@line 459 "_elementtree.c"
+        var $21=$20+16; //@line 459 "_elementtree.c"
+        var $22=$res; //@line 459 "_elementtree.c"
+        HEAP[$21]=$22; //@line 459 "_elementtree.c"
+        __label__ = 5; break; //@line 459 "_elementtree.c"
+      case 5: // $bb4
+        var $23=$res; //@line 463 "_elementtree.c"
+        $0=$23; //@line 463 "_elementtree.c"
+        __label__ = 6; break; //@line 463 "_elementtree.c"
+      case 6: // $bb5
+        var $24=$0; //@line 458 "_elementtree.c"
+        $retval=$24; //@line 458 "_elementtree.c"
+        var $retval6=$retval; //@line 458 "_elementtree.c"
+        ;
+        return $retval6; //@line 458 "_elementtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _element($self, $args, $kw) {
     var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
@@ -1231,7 +1418,7 @@ var __str124;
         $kw_addr=$kw;
         HEAP[$attrib]=0; //@line 472 "_elementtree.c"
         var $1=$args_addr; //@line 473 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str3, $tag, _PyDict_Type, $attrib); //@line 473 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str3, allocate([$tag,0,0,0,_PyDict_Type,0,0,0,$attrib,0,0,0], ["%struct.PyObject**",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 473 "_elementtree.c"
         var $3=($2)==0; //@line 473 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 473 "_elementtree.c"
       case 1: // $bb
@@ -1327,16 +1514,12 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $element_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
         var $iftmp_31;
-        var $1;
+        var $0;
         var $elem;
         var $parent=__stackBase__;
         var $tag=__stackBase__+4;
@@ -1345,154 +1528,118 @@ var __str124;
         $args_addr=$args;
         $kw_addr=$kw;
         HEAP[$attrib]=0; //@line 502 "_elementtree.c"
-        var $2=$args_addr; //@line 503 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str4, _Element_Type, $parent, $tag, _PyDict_Type, $attrib); //@line 503 "_elementtree.c"
-        var $4=($3)==0; //@line 503 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 503 "_elementtree.c"
+        var $1=$args_addr; //@line 503 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str4, allocate([_Element_Type,0,0,0,$parent,0,0,0,$tag,0,0,0,_PyDict_Type,0,0,0,$attrib,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.ElementObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 503 "_elementtree.c"
+        var $3=($2)==0; //@line 503 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 503 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 506 "_elementtree.c"
+        $0=0; //@line 506 "_elementtree.c"
         __label__ = 19; break; //@line 506 "_elementtree.c"
       case 2: // $bb1
-        var $5=HEAP[$attrib]; //@line 508 "_elementtree.c"
-        var $6=($5)!=0; //@line 508 "_elementtree.c"
-        if ($6) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 508 "_elementtree.c"
+        var $4=HEAP[$attrib]; //@line 508 "_elementtree.c"
+        var $5=($4)!=0; //@line 508 "_elementtree.c"
+        if ($5) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 508 "_elementtree.c"
       case 3: // $bb2
-        var $7=$kw_addr; //@line 508 "_elementtree.c"
-        var $8=($7)!=0; //@line 508 "_elementtree.c"
-        if ($8) { __label__ = 4; break; } else { __label__ = 11; break; } //@line 508 "_elementtree.c"
+        var $6=$kw_addr; //@line 508 "_elementtree.c"
+        var $7=($6)!=0; //@line 508 "_elementtree.c"
+        if ($7) { __label__ = 4; break; } else { __label__ = 11; break; } //@line 508 "_elementtree.c"
       case 4: // $bb3
         var $_pr=HEAP[$attrib];
-        var $9=($_pr)!=0; //@line 509 "_elementtree.c"
-        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 509 "_elementtree.c"
+        var $8=($_pr)!=0; //@line 509 "_elementtree.c"
+        if ($8) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 509 "_elementtree.c"
       case 5: // $bb4
-        var $10=HEAP[$attrib]; //@line 509 "_elementtree.c"
-        var $11=_PyDict_Copy($10); //@line 509 "_elementtree.c"
-        $iftmp_31=$11; //@line 509 "_elementtree.c"
+        var $9=HEAP[$attrib]; //@line 509 "_elementtree.c"
+        var $10=_PyDict_Copy($9); //@line 509 "_elementtree.c"
+        $iftmp_31=$10; //@line 509 "_elementtree.c"
         __lastLabel__ = 5; __label__ = 7; break; //@line 509 "_elementtree.c"
       case 6: // $bb5
-        var $12=_PyDict_New(); //@line 509 "_elementtree.c"
-        $iftmp_31=$12; //@line 509 "_elementtree.c"
+        var $11=_PyDict_New(); //@line 509 "_elementtree.c"
+        $iftmp_31=$11; //@line 509 "_elementtree.c"
         __lastLabel__ = 6; __label__ = 7; break; //@line 509 "_elementtree.c"
       case 7: // $bb6
-        var $13=__lastLabel__ == 6 ? $12 : ($11);
-        HEAP[$attrib]=$13; //@line 509 "_elementtree.c"
-        var $14=($13)==0; //@line 510 "_elementtree.c"
-        if ($14) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 510 "_elementtree.c"
+        var $12=__lastLabel__ == 6 ? $11 : ($10);
+        HEAP[$attrib]=$12; //@line 509 "_elementtree.c"
+        var $13=($12)==0; //@line 510 "_elementtree.c"
+        if ($13) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 510 "_elementtree.c"
       case 8: // $bb7
-        $1=0; //@line 511 "_elementtree.c"
+        $0=0; //@line 511 "_elementtree.c"
         __label__ = 19; break; //@line 511 "_elementtree.c"
       case 9: // $bb8
-        var $15=$kw_addr; //@line 512 "_elementtree.c"
-        var $16=($15)!=0; //@line 512 "_elementtree.c"
-        if ($16) { __label__ = 10; break; } else { __label__ = 12; break; } //@line 512 "_elementtree.c"
+        var $14=$kw_addr; //@line 512 "_elementtree.c"
+        var $15=($14)!=0; //@line 512 "_elementtree.c"
+        if ($15) { __label__ = 10; break; } else { __label__ = 12; break; } //@line 512 "_elementtree.c"
       case 10: // $bb9
-        var $17=HEAP[$attrib]; //@line 513 "_elementtree.c"
-        var $18=$kw_addr; //@line 513 "_elementtree.c"
-        var $19=_PyDict_Update($17, $18); //@line 513 "_elementtree.c"
+        var $16=HEAP[$attrib]; //@line 513 "_elementtree.c"
+        var $17=$kw_addr; //@line 513 "_elementtree.c"
+        var $18=_PyDict_Update($16, $17); //@line 513 "_elementtree.c"
         __label__ = 12; break; //@line 513 "_elementtree.c"
       case 11: // $bb11
-        var $20=HEAP[__Py_NoneStruct]; //@line 515 "_elementtree.c"
-        var $21=($20) + 1; //@line 515 "_elementtree.c"
-        HEAP[__Py_NoneStruct]=$21; //@line 515 "_elementtree.c"
+        var $19=HEAP[__Py_NoneStruct]; //@line 515 "_elementtree.c"
+        var $20=($19) + 1; //@line 515 "_elementtree.c"
+        HEAP[__Py_NoneStruct]=$20; //@line 515 "_elementtree.c"
         HEAP[$attrib]=__Py_NoneStruct; //@line 516 "_elementtree.c"
         __label__ = 12; break; //@line 516 "_elementtree.c"
       case 12: // $bb12
-        var $22=HEAP[$attrib]; //@line 519 "_elementtree.c"
-        var $23=HEAP[$tag]; //@line 519 "_elementtree.c"
-        var $24=_element_new($23, $22); //@line 519 "_elementtree.c"
-        $elem=$24; //@line 519 "_elementtree.c"
-        var $25=HEAP[$attrib]; //@line 521 "_elementtree.c"
-        var $26=$25; //@line 521 "_elementtree.c"
-        var $27=HEAP[$26]; //@line 521 "_elementtree.c"
-        var $28=($27) - 1; //@line 521 "_elementtree.c"
-        var $29=$25; //@line 521 "_elementtree.c"
-        HEAP[$29]=$28; //@line 521 "_elementtree.c"
-        var $30=$25; //@line 521 "_elementtree.c"
-        var $31=HEAP[$30]; //@line 521 "_elementtree.c"
-        var $32=($31)==0; //@line 521 "_elementtree.c"
-        if ($32) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 521 "_elementtree.c"
+        var $21=HEAP[$attrib]; //@line 519 "_elementtree.c"
+        var $22=HEAP[$tag]; //@line 519 "_elementtree.c"
+        var $23=_element_new($22, $21); //@line 519 "_elementtree.c"
+        $elem=$23; //@line 519 "_elementtree.c"
+        var $24=HEAP[$attrib]; //@line 521 "_elementtree.c"
+        var $25=$24; //@line 521 "_elementtree.c"
+        var $26=HEAP[$25]; //@line 521 "_elementtree.c"
+        var $27=($26) - 1; //@line 521 "_elementtree.c"
+        var $28=$24; //@line 521 "_elementtree.c"
+        HEAP[$28]=$27; //@line 521 "_elementtree.c"
+        var $29=$24; //@line 521 "_elementtree.c"
+        var $30=HEAP[$29]; //@line 521 "_elementtree.c"
+        var $31=($30)==0; //@line 521 "_elementtree.c"
+        if ($31) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 521 "_elementtree.c"
       case 13: // $bb13
-        var $33=HEAP[$attrib]; //@line 521 "_elementtree.c"
-        var $34=$33+4; //@line 521 "_elementtree.c"
-        var $35=HEAP[$34]; //@line 521 "_elementtree.c"
-        var $36=$35+24; //@line 521 "_elementtree.c"
-        var $37=HEAP[$36]; //@line 521 "_elementtree.c"
-        var $38=HEAP[$attrib]; //@line 521 "_elementtree.c"
-        FUNCTION_TABLE[$37]($38); //@line 521 "_elementtree.c"
+        var $32=HEAP[$attrib]; //@line 521 "_elementtree.c"
+        var $33=$32+4; //@line 521 "_elementtree.c"
+        var $34=HEAP[$33]; //@line 521 "_elementtree.c"
+        var $35=$34+24; //@line 521 "_elementtree.c"
+        var $36=HEAP[$35]; //@line 521 "_elementtree.c"
+        var $37=HEAP[$attrib]; //@line 521 "_elementtree.c"
+        FUNCTION_TABLE[$36]($37); //@line 521 "_elementtree.c"
         __label__ = 14; break; //@line 521 "_elementtree.c"
       case 14: // $bb14
-        var $39=HEAP[$parent]; //@line 523 "_elementtree.c"
-        var $40=$elem; //@line 523 "_elementtree.c"
-        $self_addr_i=$39;
-        $element_addr_i=$40;
-        var $41=$self_addr_i; //@line 395 "_elementtree.c"
-        var $42=_element_resize($41, 1); //@line 395 "_elementtree.c"
-        var $43=($42) < 0; //@line 395 "_elementtree.c"
-        if ($43) { __label__ = 15; break; } else { __label__ = 18; break; } //@line 395 "_elementtree.c"
+        var $38=HEAP[$parent]; //@line 523 "_elementtree.c"
+        var $39=$elem; //@line 523 "_elementtree.c"
+        var $40=_element_add_subelement($38, $39); //@line 523 "_elementtree.c"
+        var $41=($40) < 0; //@line 523 "_elementtree.c"
+        var $42=$elem; //@line 524 "_elementtree.c"
+        if ($41) { __label__ = 15; break; } else { __label__ = 18; break; } //@line 523 "_elementtree.c"
       case 15: // $bb15
-        $0=-1; //@line 396 "_elementtree.c"
-        $retval_i=-1; //@line 396 "_elementtree.c"
-        var $44=$elem; //@line 524 "_elementtree.c"
-        var $45=$44; //@line 524 "_elementtree.c"
-        var $46=HEAP[$45]; //@line 524 "_elementtree.c"
-        var $47=($46) - 1; //@line 524 "_elementtree.c"
+        var $43=$42; //@line 524 "_elementtree.c"
+        var $44=HEAP[$43]; //@line 524 "_elementtree.c"
+        var $45=($44) - 1; //@line 524 "_elementtree.c"
+        var $46=$elem; //@line 524 "_elementtree.c"
+        var $47=$46; //@line 524 "_elementtree.c"
+        HEAP[$47]=$45; //@line 524 "_elementtree.c"
         var $48=$elem; //@line 524 "_elementtree.c"
         var $49=$48; //@line 524 "_elementtree.c"
-        HEAP[$49]=$47; //@line 524 "_elementtree.c"
-        var $50=$elem; //@line 524 "_elementtree.c"
-        var $51=$50; //@line 524 "_elementtree.c"
-        var $52=HEAP[$51]; //@line 524 "_elementtree.c"
-        var $53=($52)==0; //@line 524 "_elementtree.c"
-        if ($53) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 524 "_elementtree.c"
+        var $50=HEAP[$49]; //@line 524 "_elementtree.c"
+        var $51=($50)==0; //@line 524 "_elementtree.c"
+        if ($51) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 524 "_elementtree.c"
       case 16: // $bb16
-        var $54=$elem; //@line 524 "_elementtree.c"
-        var $55=$54+4; //@line 524 "_elementtree.c"
+        var $52=$elem; //@line 524 "_elementtree.c"
+        var $53=$52+4; //@line 524 "_elementtree.c"
+        var $54=HEAP[$53]; //@line 524 "_elementtree.c"
+        var $55=$54+24; //@line 524 "_elementtree.c"
         var $56=HEAP[$55]; //@line 524 "_elementtree.c"
-        var $57=$56+24; //@line 524 "_elementtree.c"
-        var $58=HEAP[$57]; //@line 524 "_elementtree.c"
-        var $59=$elem; //@line 524 "_elementtree.c"
-        FUNCTION_TABLE[$58]($59); //@line 524 "_elementtree.c"
+        var $57=$elem; //@line 524 "_elementtree.c"
+        FUNCTION_TABLE[$56]($57); //@line 524 "_elementtree.c"
         __label__ = 17; break; //@line 524 "_elementtree.c"
       case 17: // $bb17
-        $1=0; //@line 525 "_elementtree.c"
+        $0=0; //@line 525 "_elementtree.c"
         __label__ = 19; break; //@line 525 "_elementtree.c"
       case 18: // $bb18
-        var $60=$element_addr_i; //@line 398 "_elementtree.c"
-        var $61=$60; //@line 398 "_elementtree.c"
-        var $62=HEAP[$61]; //@line 398 "_elementtree.c"
-        var $63=($62) + 1; //@line 398 "_elementtree.c"
-        var $64=$element_addr_i; //@line 398 "_elementtree.c"
-        var $65=$64; //@line 398 "_elementtree.c"
-        HEAP[$65]=$63; //@line 398 "_elementtree.c"
-        var $66=$self_addr_i; //@line 399 "_elementtree.c"
-        var $67=$66+20; //@line 399 "_elementtree.c"
-        var $68=HEAP[$67]; //@line 399 "_elementtree.c"
-        var $69=$68+12; //@line 399 "_elementtree.c"
-        var $70=HEAP[$69]; //@line 399 "_elementtree.c"
-        var $71=$self_addr_i; //@line 399 "_elementtree.c"
-        var $72=$71+20; //@line 399 "_elementtree.c"
-        var $73=HEAP[$72]; //@line 399 "_elementtree.c"
-        var $74=$73+4; //@line 399 "_elementtree.c"
-        var $75=HEAP[$74]; //@line 399 "_elementtree.c"
-        var $76=$70+4*$75; //@line 399 "_elementtree.c"
-        var $77=$element_addr_i; //@line 399 "_elementtree.c"
-        HEAP[$76]=$77; //@line 399 "_elementtree.c"
-        var $78=$self_addr_i; //@line 401 "_elementtree.c"
-        var $79=$78+20; //@line 401 "_elementtree.c"
-        var $80=HEAP[$79]; //@line 401 "_elementtree.c"
-        var $81=$80+4; //@line 401 "_elementtree.c"
-        var $82=HEAP[$81]; //@line 401 "_elementtree.c"
-        var $83=($82) + 1; //@line 401 "_elementtree.c"
-        var $84=$80+4; //@line 401 "_elementtree.c"
-        HEAP[$84]=$83; //@line 401 "_elementtree.c"
-        $0=0; //@line 403 "_elementtree.c"
-        $retval_i=0; //@line 396 "_elementtree.c"
-        var $85=$elem; //@line 524 "_elementtree.c"
-        $1=$85; //@line 528 "_elementtree.c"
+        $0=$42; //@line 528 "_elementtree.c"
         __label__ = 19; break; //@line 528 "_elementtree.c"
       case 19: // $bb19
-        var $86=$1; //@line 506 "_elementtree.c"
-        $retval=$86; //@line 506 "_elementtree.c"
+        var $58=$0; //@line 506 "_elementtree.c"
+        $retval=$58; //@line 506 "_elementtree.c"
         var $retval20=$retval; //@line 506 "_elementtree.c"
         STACKTOP = __stackBase__;
         return $retval20; //@line 506 "_elementtree.c"
@@ -1631,77 +1778,38 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $element_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $element=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 554 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str5, _Element_Type, $element); //@line 554 "_elementtree.c"
-        var $4=($3)==0; //@line 554 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 554 "_elementtree.c"
+        var $1=$args_addr; //@line 554 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str5, allocate([_Element_Type,0,0,0,$element,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 554 "_elementtree.c"
+        var $3=($2)==0; //@line 554 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 554 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 555 "_elementtree.c"
+        $0=0; //@line 555 "_elementtree.c"
         __label__ = 5; break; //@line 555 "_elementtree.c"
       case 2: // $bb1
-        var $5=HEAP[$element]; //@line 557 "_elementtree.c"
-        var $6=$self_addr; //@line 557 "_elementtree.c"
-        $self_addr_i=$6;
-        $element_addr_i=$5;
-        var $7=$self_addr_i; //@line 395 "_elementtree.c"
-        var $8=_element_resize($7, 1); //@line 395 "_elementtree.c"
-        var $9=($8) < 0; //@line 395 "_elementtree.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 395 "_elementtree.c"
+        var $4=HEAP[$element]; //@line 557 "_elementtree.c"
+        var $5=$self_addr; //@line 557 "_elementtree.c"
+        var $6=_element_add_subelement($5, $4); //@line 557 "_elementtree.c"
+        var $7=($6) < 0; //@line 557 "_elementtree.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 557 "_elementtree.c"
       case 3: // $bb2
-        $0=-1; //@line 396 "_elementtree.c"
-        $retval_i=-1; //@line 396 "_elementtree.c"
-        $1=0; //@line 558 "_elementtree.c"
+        $0=0; //@line 558 "_elementtree.c"
         __label__ = 5; break; //@line 558 "_elementtree.c"
       case 4: // $bb3
-        var $10=$element_addr_i; //@line 398 "_elementtree.c"
-        var $11=$10; //@line 398 "_elementtree.c"
-        var $12=HEAP[$11]; //@line 398 "_elementtree.c"
-        var $13=($12) + 1; //@line 398 "_elementtree.c"
-        var $14=$element_addr_i; //@line 398 "_elementtree.c"
-        var $15=$14; //@line 398 "_elementtree.c"
-        HEAP[$15]=$13; //@line 398 "_elementtree.c"
-        var $16=$self_addr_i; //@line 399 "_elementtree.c"
-        var $17=$16+20; //@line 399 "_elementtree.c"
-        var $18=HEAP[$17]; //@line 399 "_elementtree.c"
-        var $19=$18+12; //@line 399 "_elementtree.c"
-        var $20=HEAP[$19]; //@line 399 "_elementtree.c"
-        var $21=$self_addr_i; //@line 399 "_elementtree.c"
-        var $22=$21+20; //@line 399 "_elementtree.c"
-        var $23=HEAP[$22]; //@line 399 "_elementtree.c"
-        var $24=$23+4; //@line 399 "_elementtree.c"
-        var $25=HEAP[$24]; //@line 399 "_elementtree.c"
-        var $26=$20+4*$25; //@line 399 "_elementtree.c"
-        var $27=$element_addr_i; //@line 399 "_elementtree.c"
-        HEAP[$26]=$27; //@line 399 "_elementtree.c"
-        var $28=$self_addr_i; //@line 401 "_elementtree.c"
-        var $29=$28+20; //@line 401 "_elementtree.c"
-        var $30=HEAP[$29]; //@line 401 "_elementtree.c"
-        var $31=$30+4; //@line 401 "_elementtree.c"
-        var $32=HEAP[$31]; //@line 401 "_elementtree.c"
-        var $33=($32) + 1; //@line 401 "_elementtree.c"
-        var $34=$30+4; //@line 401 "_elementtree.c"
-        HEAP[$34]=$33; //@line 401 "_elementtree.c"
-        $0=0; //@line 403 "_elementtree.c"
-        $retval_i=0; //@line 396 "_elementtree.c"
-        var $35=HEAP[__Py_NoneStruct]; //@line 560 "_elementtree.c"
-        var $36=($35) + 1; //@line 560 "_elementtree.c"
-        HEAP[__Py_NoneStruct]=$36; //@line 560 "_elementtree.c"
-        $1=__Py_NoneStruct; //@line 560 "_elementtree.c"
+        var $8=HEAP[__Py_NoneStruct]; //@line 560 "_elementtree.c"
+        var $9=($8) + 1; //@line 560 "_elementtree.c"
+        HEAP[__Py_NoneStruct]=$9; //@line 560 "_elementtree.c"
+        $0=__Py_NoneStruct; //@line 560 "_elementtree.c"
         __label__ = 5; break; //@line 560 "_elementtree.c"
       case 5: // $bb4
-        var $37=$1; //@line 555 "_elementtree.c"
-        $retval=$37; //@line 555 "_elementtree.c"
+        var $10=$0; //@line 555 "_elementtree.c"
+        $retval=$10; //@line 555 "_elementtree.c"
         var $retval5=$retval; //@line 555 "_elementtree.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 555 "_elementtree.c"
@@ -1723,7 +1831,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 566 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str6); //@line 566 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str6, allocate(1, "i32", ALLOC_STACK)); //@line 566 "_elementtree.c"
         var $3=($2)==0; //@line 566 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 566 "_elementtree.c"
       case 1: // $bb
@@ -1857,7 +1965,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 591 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str7); //@line 591 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str7, allocate(1, "i32", ALLOC_STACK)); //@line 591 "_elementtree.c"
         var $3=($2)==0; //@line 591 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 591 "_elementtree.c"
       case 1: // $bb
@@ -2140,7 +2248,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 639 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str8, $memo); //@line 639 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str8, allocate([$memo,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 639 "_elementtree.c"
         var $3=($2)==0; //@line 639 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 639 "_elementtree.c"
       case 1: // $bb
@@ -2745,15 +2853,11 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $element_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
         var $iftmp_69;
-        var $1;
+        var $0;
         var $seq;
         var $i;
         var $seqlen;
@@ -2762,171 +2866,136 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         $seqlen=0; //@line 759 "_elementtree.c"
-        var $2=$args_addr; //@line 762 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str9, $seq_in); //@line 762 "_elementtree.c"
-        var $4=($3)==0; //@line 762 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 762 "_elementtree.c"
+        var $1=$args_addr; //@line 762 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str9, allocate([$seq_in,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 762 "_elementtree.c"
+        var $3=($2)==0; //@line 762 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 762 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 763 "_elementtree.c"
+        $0=0; //@line 763 "_elementtree.c"
         __label__ = 17; break; //@line 763 "_elementtree.c"
       case 2: // $bb1
-        var $5=HEAP[$seq_in]; //@line 765 "_elementtree.c"
-        var $6=_PySequence_Fast($5, __str1); //@line 765 "_elementtree.c"
-        $seq=$6; //@line 765 "_elementtree.c"
-        var $7=$seq; //@line 766 "_elementtree.c"
-        var $8=($7)==0; //@line 766 "_elementtree.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 766 "_elementtree.c"
+        var $4=HEAP[$seq_in]; //@line 765 "_elementtree.c"
+        var $5=_PySequence_Fast($4, __str1); //@line 765 "_elementtree.c"
+        $seq=$5; //@line 765 "_elementtree.c"
+        var $6=$seq; //@line 766 "_elementtree.c"
+        var $7=($6)==0; //@line 766 "_elementtree.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 766 "_elementtree.c"
       case 3: // $bb2
-        var $9=HEAP[$seq_in]; //@line 767 "_elementtree.c"
-        var $10=$9+4; //@line 767 "_elementtree.c"
-        var $11=HEAP[$10]; //@line 767 "_elementtree.c"
-        var $12=$11+12; //@line 767 "_elementtree.c"
-        var $13=HEAP[$12]; //@line 767 "_elementtree.c"
-        var $14=HEAP[_PyExc_TypeError]; //@line 767 "_elementtree.c"
-        var $15=_PyErr_Format($14, __str10, $13); //@line 767 "_elementtree.c"
-        $1=0; //@line 771 "_elementtree.c"
+        var $8=HEAP[$seq_in]; //@line 767 "_elementtree.c"
+        var $9=$8+4; //@line 767 "_elementtree.c"
+        var $10=HEAP[$9]; //@line 767 "_elementtree.c"
+        var $11=$10+12; //@line 767 "_elementtree.c"
+        var $12=HEAP[$11]; //@line 767 "_elementtree.c"
+        var $13=HEAP[_PyExc_TypeError]; //@line 767 "_elementtree.c"
+        var $14=_PyErr_Format($13, __str10, allocate([$12,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 767 "_elementtree.c"
+        $0=0; //@line 771 "_elementtree.c"
         __label__ = 17; break; //@line 771 "_elementtree.c"
       case 4: // $bb3
-        var $16=$seq; //@line 774 "_elementtree.c"
-        var $17=_PySequence_Size($16); //@line 774 "_elementtree.c"
-        $seqlen=$17; //@line 774 "_elementtree.c"
+        var $15=$seq; //@line 774 "_elementtree.c"
+        var $16=_PySequence_Size($15); //@line 774 "_elementtree.c"
+        $seqlen=$16; //@line 774 "_elementtree.c"
         $i=0; //@line 775 "_elementtree.c"
         __label__ = 13; break; //@line 775 "_elementtree.c"
       case 5: // $bb4
-        var $18=$88+4; //@line 776 "_elementtree.c"
-        var $19=HEAP[$18]; //@line 776 "_elementtree.c"
-        var $20=$19+84; //@line 776 "_elementtree.c"
-        var $21=HEAP[$20]; //@line 776 "_elementtree.c"
-        var $22=($21) & 33554432; //@line 776 "_elementtree.c"
-        var $23=($22)!=0; //@line 776 "_elementtree.c"
-        var $24=$seq; //@line 776 "_elementtree.c"
-        if ($23) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 776 "_elementtree.c"
+        var $17=$61+4; //@line 776 "_elementtree.c"
+        var $18=HEAP[$17]; //@line 776 "_elementtree.c"
+        var $19=$18+84; //@line 776 "_elementtree.c"
+        var $20=HEAP[$19]; //@line 776 "_elementtree.c"
+        var $21=($20) & 33554432; //@line 776 "_elementtree.c"
+        var $22=($21)!=0; //@line 776 "_elementtree.c"
+        var $23=$seq; //@line 776 "_elementtree.c"
+        if ($22) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 776 "_elementtree.c"
       case 6: // $bb5
-        var $25=$24; //@line 776 "_elementtree.c"
-        var $26=$25+12; //@line 776 "_elementtree.c"
-        var $27=HEAP[$26]; //@line 776 "_elementtree.c"
-        var $28=$i; //@line 776 "_elementtree.c"
-        var $29=$27+4*$28; //@line 776 "_elementtree.c"
-        var $30=HEAP[$29]; //@line 776 "_elementtree.c"
-        $iftmp_69=$30; //@line 776 "_elementtree.c"
+        var $24=$23; //@line 776 "_elementtree.c"
+        var $25=$24+12; //@line 776 "_elementtree.c"
+        var $26=HEAP[$25]; //@line 776 "_elementtree.c"
+        var $27=$i; //@line 776 "_elementtree.c"
+        var $28=$26+4*$27; //@line 776 "_elementtree.c"
+        var $29=HEAP[$28]; //@line 776 "_elementtree.c"
+        $iftmp_69=$29; //@line 776 "_elementtree.c"
         __label__ = 8; break; //@line 776 "_elementtree.c"
       case 7: // $bb6
-        var $31=$24; //@line 776 "_elementtree.c"
-        var $32=$i; //@line 776 "_elementtree.c"
-        var $33=$31+12; //@line 776 "_elementtree.c"
-        var $34=$33+$32*4; //@line 776 "_elementtree.c"
-        var $35=HEAP[$34]; //@line 776 "_elementtree.c"
-        $iftmp_69=$35; //@line 776 "_elementtree.c"
+        var $30=$23; //@line 776 "_elementtree.c"
+        var $31=$i; //@line 776 "_elementtree.c"
+        var $32=$30+12; //@line 776 "_elementtree.c"
+        var $33=$32+$31*4; //@line 776 "_elementtree.c"
+        var $34=HEAP[$33]; //@line 776 "_elementtree.c"
+        $iftmp_69=$34; //@line 776 "_elementtree.c"
         __label__ = 8; break; //@line 776 "_elementtree.c"
       case 8: // $bb7
-        var $36=$iftmp_69; //@line 776 "_elementtree.c"
-        $element=$36; //@line 776 "_elementtree.c"
-        var $37=$self_addr; //@line 777 "_elementtree.c"
-        var $38=$element; //@line 777 "_elementtree.c"
-        $self_addr_i=$37;
-        $element_addr_i=$38;
-        var $39=$self_addr_i; //@line 395 "_elementtree.c"
-        var $40=_element_resize($39, 1); //@line 395 "_elementtree.c"
-        var $41=($40) < 0; //@line 395 "_elementtree.c"
-        if ($41) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 395 "_elementtree.c"
+        var $35=$iftmp_69; //@line 776 "_elementtree.c"
+        $element=$35; //@line 776 "_elementtree.c"
+        var $36=$self_addr; //@line 777 "_elementtree.c"
+        var $37=$element; //@line 777 "_elementtree.c"
+        var $38=_element_add_subelement($36, $37); //@line 777 "_elementtree.c"
+        var $39=($38) < 0; //@line 777 "_elementtree.c"
+        if ($39) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 777 "_elementtree.c"
       case 9: // $bb8
-        $0=-1; //@line 396 "_elementtree.c"
-        $retval_i=-1; //@line 396 "_elementtree.c"
-        var $42=$seq; //@line 778 "_elementtree.c"
-        var $43=$42; //@line 778 "_elementtree.c"
-        var $44=HEAP[$43]; //@line 778 "_elementtree.c"
-        var $45=($44) - 1; //@line 778 "_elementtree.c"
+        var $40=$seq; //@line 778 "_elementtree.c"
+        var $41=$40; //@line 778 "_elementtree.c"
+        var $42=HEAP[$41]; //@line 778 "_elementtree.c"
+        var $43=($42) - 1; //@line 778 "_elementtree.c"
+        var $44=$seq; //@line 778 "_elementtree.c"
+        var $45=$44; //@line 778 "_elementtree.c"
+        HEAP[$45]=$43; //@line 778 "_elementtree.c"
         var $46=$seq; //@line 778 "_elementtree.c"
         var $47=$46; //@line 778 "_elementtree.c"
-        HEAP[$47]=$45; //@line 778 "_elementtree.c"
-        var $48=$seq; //@line 778 "_elementtree.c"
-        var $49=$48; //@line 778 "_elementtree.c"
-        var $50=HEAP[$49]; //@line 778 "_elementtree.c"
-        var $51=($50)==0; //@line 778 "_elementtree.c"
-        if ($51) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 778 "_elementtree.c"
+        var $48=HEAP[$47]; //@line 778 "_elementtree.c"
+        var $49=($48)==0; //@line 778 "_elementtree.c"
+        if ($49) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 778 "_elementtree.c"
       case 10: // $bb9
-        var $52=$seq; //@line 778 "_elementtree.c"
-        var $53=$52+4; //@line 778 "_elementtree.c"
+        var $50=$seq; //@line 778 "_elementtree.c"
+        var $51=$50+4; //@line 778 "_elementtree.c"
+        var $52=HEAP[$51]; //@line 778 "_elementtree.c"
+        var $53=$52+24; //@line 778 "_elementtree.c"
         var $54=HEAP[$53]; //@line 778 "_elementtree.c"
-        var $55=$54+24; //@line 778 "_elementtree.c"
-        var $56=HEAP[$55]; //@line 778 "_elementtree.c"
-        var $57=$seq; //@line 778 "_elementtree.c"
-        FUNCTION_TABLE[$56]($57); //@line 778 "_elementtree.c"
+        var $55=$seq; //@line 778 "_elementtree.c"
+        FUNCTION_TABLE[$54]($55); //@line 778 "_elementtree.c"
         __label__ = 11; break; //@line 778 "_elementtree.c"
       case 11: // $bb10
-        $1=0; //@line 779 "_elementtree.c"
+        $0=0; //@line 779 "_elementtree.c"
         __label__ = 17; break; //@line 779 "_elementtree.c"
       case 12: // $bb11
-        var $58=$element_addr_i; //@line 398 "_elementtree.c"
-        var $59=$58; //@line 398 "_elementtree.c"
-        var $60=HEAP[$59]; //@line 398 "_elementtree.c"
-        var $61=($60) + 1; //@line 398 "_elementtree.c"
-        var $62=$element_addr_i; //@line 398 "_elementtree.c"
-        var $63=$62; //@line 398 "_elementtree.c"
-        HEAP[$63]=$61; //@line 398 "_elementtree.c"
-        var $64=$self_addr_i; //@line 399 "_elementtree.c"
-        var $65=$64+20; //@line 399 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 399 "_elementtree.c"
-        var $67=$66+12; //@line 399 "_elementtree.c"
-        var $68=HEAP[$67]; //@line 399 "_elementtree.c"
-        var $69=$self_addr_i; //@line 399 "_elementtree.c"
-        var $70=$69+20; //@line 399 "_elementtree.c"
-        var $71=HEAP[$70]; //@line 399 "_elementtree.c"
-        var $72=$71+4; //@line 399 "_elementtree.c"
-        var $73=HEAP[$72]; //@line 399 "_elementtree.c"
-        var $74=$68+4*$73; //@line 399 "_elementtree.c"
-        var $75=$element_addr_i; //@line 399 "_elementtree.c"
-        HEAP[$74]=$75; //@line 399 "_elementtree.c"
-        var $76=$self_addr_i; //@line 401 "_elementtree.c"
-        var $77=$76+20; //@line 401 "_elementtree.c"
-        var $78=HEAP[$77]; //@line 401 "_elementtree.c"
-        var $79=$78+4; //@line 401 "_elementtree.c"
-        var $80=HEAP[$79]; //@line 401 "_elementtree.c"
-        var $81=($80) + 1; //@line 401 "_elementtree.c"
-        var $82=$78+4; //@line 401 "_elementtree.c"
-        HEAP[$82]=$81; //@line 401 "_elementtree.c"
-        $0=0; //@line 403 "_elementtree.c"
-        $retval_i=0; //@line 396 "_elementtree.c"
-        var $83=$i; //@line 775 "_elementtree.c"
-        var $84=($83) + 1; //@line 775 "_elementtree.c"
-        $i=$84; //@line 775 "_elementtree.c"
+        var $56=$i; //@line 775 "_elementtree.c"
+        var $57=($56) + 1; //@line 775 "_elementtree.c"
+        $i=$57; //@line 775 "_elementtree.c"
         __label__ = 13; break; //@line 775 "_elementtree.c"
       case 13: // $bb12
-        var $85=$i; //@line 775 "_elementtree.c"
-        var $86=$seqlen; //@line 775 "_elementtree.c"
-        var $87=($85) < ($86); //@line 775 "_elementtree.c"
-        var $88=$seq; //@line 776 "_elementtree.c"
-        if ($87) { __label__ = 5; break; } else { __label__ = 14; break; } //@line 775 "_elementtree.c"
+        var $58=$i; //@line 775 "_elementtree.c"
+        var $59=$seqlen; //@line 775 "_elementtree.c"
+        var $60=($58) < ($59); //@line 775 "_elementtree.c"
+        var $61=$seq; //@line 776 "_elementtree.c"
+        if ($60) { __label__ = 5; break; } else { __label__ = 14; break; } //@line 775 "_elementtree.c"
       case 14: // $bb13
-        var $89=$88; //@line 783 "_elementtree.c"
-        var $90=HEAP[$89]; //@line 783 "_elementtree.c"
-        var $91=($90) - 1; //@line 783 "_elementtree.c"
-        var $92=$seq; //@line 783 "_elementtree.c"
-        var $93=$92; //@line 783 "_elementtree.c"
-        HEAP[$93]=$91; //@line 783 "_elementtree.c"
-        var $94=$seq; //@line 783 "_elementtree.c"
-        var $95=$94; //@line 783 "_elementtree.c"
-        var $96=HEAP[$95]; //@line 783 "_elementtree.c"
-        var $97=($96)==0; //@line 783 "_elementtree.c"
-        if ($97) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 783 "_elementtree.c"
+        var $62=$61; //@line 783 "_elementtree.c"
+        var $63=HEAP[$62]; //@line 783 "_elementtree.c"
+        var $64=($63) - 1; //@line 783 "_elementtree.c"
+        var $65=$seq; //@line 783 "_elementtree.c"
+        var $66=$65; //@line 783 "_elementtree.c"
+        HEAP[$66]=$64; //@line 783 "_elementtree.c"
+        var $67=$seq; //@line 783 "_elementtree.c"
+        var $68=$67; //@line 783 "_elementtree.c"
+        var $69=HEAP[$68]; //@line 783 "_elementtree.c"
+        var $70=($69)==0; //@line 783 "_elementtree.c"
+        if ($70) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 783 "_elementtree.c"
       case 15: // $bb14
-        var $98=$seq; //@line 783 "_elementtree.c"
-        var $99=$98+4; //@line 783 "_elementtree.c"
-        var $100=HEAP[$99]; //@line 783 "_elementtree.c"
-        var $101=$100+24; //@line 783 "_elementtree.c"
-        var $102=HEAP[$101]; //@line 783 "_elementtree.c"
-        var $103=$seq; //@line 783 "_elementtree.c"
-        FUNCTION_TABLE[$102]($103); //@line 783 "_elementtree.c"
+        var $71=$seq; //@line 783 "_elementtree.c"
+        var $72=$71+4; //@line 783 "_elementtree.c"
+        var $73=HEAP[$72]; //@line 783 "_elementtree.c"
+        var $74=$73+24; //@line 783 "_elementtree.c"
+        var $75=HEAP[$74]; //@line 783 "_elementtree.c"
+        var $76=$seq; //@line 783 "_elementtree.c"
+        FUNCTION_TABLE[$75]($76); //@line 783 "_elementtree.c"
         __label__ = 16; break; //@line 783 "_elementtree.c"
       case 16: // $bb15
-        var $104=HEAP[__Py_NoneStruct]; //@line 785 "_elementtree.c"
-        var $105=($104) + 1; //@line 785 "_elementtree.c"
-        HEAP[__Py_NoneStruct]=$105; //@line 785 "_elementtree.c"
-        $1=__Py_NoneStruct; //@line 785 "_elementtree.c"
+        var $77=HEAP[__Py_NoneStruct]; //@line 785 "_elementtree.c"
+        var $78=($77) + 1; //@line 785 "_elementtree.c"
+        HEAP[__Py_NoneStruct]=$78; //@line 785 "_elementtree.c"
+        $0=__Py_NoneStruct; //@line 785 "_elementtree.c"
         __label__ = 17; break; //@line 785 "_elementtree.c"
       case 17: // $bb16
-        var $106=$1; //@line 763 "_elementtree.c"
-        $retval=$106; //@line 763 "_elementtree.c"
+        var $79=$0; //@line 763 "_elementtree.c"
+        $retval=$79; //@line 763 "_elementtree.c"
         var $retval17=$retval; //@line 763 "_elementtree.c"
         STACKTOP = __stackBase__;
         return $retval17; //@line 763 "_elementtree.c"
@@ -2953,7 +3022,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$namespaces]=__Py_NoneStruct; //@line 794 "_elementtree.c"
         var $1=$args_addr; //@line 795 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str11, $tag, $namespaces); //@line 795 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str11, allocate([$tag,0,0,0,$namespaces,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 795 "_elementtree.c"
         var $3=($2)==0; //@line 795 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 795 "_elementtree.c"
       case 1: // $bb
@@ -2973,7 +3042,7 @@ var __str124;
         var $10=HEAP[$tag]; //@line 799 "_elementtree.c"
         var $11=HEAP[_elementpath_obj]; //@line 799 "_elementtree.c"
         var $12=$self_addr; //@line 799 "_elementtree.c"
-        var $13=_PyObject_CallMethod($11, __str12, __str13, $12, $10, $9); //@line 799 "_elementtree.c"
+        var $13=_PyObject_CallMethod($11, __str12, __str13, allocate([$12,0,0,0,$10,0,0,0,$9,0,0,0], ["%struct.ElementObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 799 "_elementtree.c"
         $0=$13; //@line 799 "_elementtree.c"
         __label__ = 14; break; //@line 799 "_elementtree.c"
       case 5: // $bb4
@@ -3060,18 +3129,13 @@ var __str124;
   function _element_findtext($self, $args) {
     var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
-        var $res_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $i;
         var $tag=__stackBase__;
         var $default_value=__stackBase__+4;
@@ -3082,172 +3146,130 @@ var __str124;
         $args_addr=$args;
         HEAP[$default_value]=__Py_NoneStruct; //@line 824 "_elementtree.c"
         HEAP[$namespaces]=__Py_NoneStruct; //@line 825 "_elementtree.c"
-        var $2=$args_addr; //@line 826 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str14, $tag, $default_value, $namespaces); //@line 826 "_elementtree.c"
-        var $4=($3)==0; //@line 826 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 826 "_elementtree.c"
+        var $1=$args_addr; //@line 826 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str14, allocate([$tag,0,0,0,$default_value,0,0,0,$namespaces,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 826 "_elementtree.c"
+        var $3=($2)==0; //@line 826 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 826 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 827 "_elementtree.c"
-        __label__ = 23; break; //@line 827 "_elementtree.c"
+        $0=0; //@line 827 "_elementtree.c"
+        __label__ = 18; break; //@line 827 "_elementtree.c"
       case 2: // $bb1
-        var $5=HEAP[$tag]; //@line 829 "_elementtree.c"
-        var $6=_checkpath($5); //@line 829 "_elementtree.c"
-        var $7=($6)!=0; //@line 829 "_elementtree.c"
-        if ($7) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 829 "_elementtree.c"
+        var $4=HEAP[$tag]; //@line 829 "_elementtree.c"
+        var $5=_checkpath($4); //@line 829 "_elementtree.c"
+        var $6=($5)!=0; //@line 829 "_elementtree.c"
+        if ($6) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 829 "_elementtree.c"
       case 3: // $bb2
-        var $8=HEAP[$namespaces]; //@line 829 "_elementtree.c"
-        var $9=($8)!=(__Py_NoneStruct); //@line 829 "_elementtree.c"
-        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 829 "_elementtree.c"
+        var $7=HEAP[$namespaces]; //@line 829 "_elementtree.c"
+        var $8=($7)!=(__Py_NoneStruct); //@line 829 "_elementtree.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 829 "_elementtree.c"
       case 4: // $bb3
-        var $10=HEAP[$namespaces]; //@line 830 "_elementtree.c"
-        var $11=HEAP[$default_value]; //@line 830 "_elementtree.c"
-        var $12=HEAP[$tag]; //@line 830 "_elementtree.c"
-        var $13=HEAP[_elementpath_obj]; //@line 830 "_elementtree.c"
-        var $14=$self_addr; //@line 830 "_elementtree.c"
-        var $15=_PyObject_CallMethod($13, __str15, __str16, $14, $12, $11, $10); //@line 830 "_elementtree.c"
-        $1=$15; //@line 830 "_elementtree.c"
-        __label__ = 23; break; //@line 830 "_elementtree.c"
+        var $9=HEAP[$namespaces]; //@line 830 "_elementtree.c"
+        var $10=HEAP[$default_value]; //@line 830 "_elementtree.c"
+        var $11=HEAP[$tag]; //@line 830 "_elementtree.c"
+        var $12=HEAP[_elementpath_obj]; //@line 830 "_elementtree.c"
+        var $13=$self_addr; //@line 830 "_elementtree.c"
+        var $14=_PyObject_CallMethod($12, __str15, __str16, allocate([$13,0,0,0,$11,0,0,0,$10,0,0,0,$9,0,0,0], ["%struct.ElementObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 830 "_elementtree.c"
+        $0=$14; //@line 830 "_elementtree.c"
+        __label__ = 18; break; //@line 830 "_elementtree.c"
       case 5: // $bb4
-        var $16=$self_addr; //@line 834 "_elementtree.c"
-        var $17=$16+20; //@line 834 "_elementtree.c"
-        var $18=HEAP[$17]; //@line 834 "_elementtree.c"
-        var $19=($18)==0; //@line 834 "_elementtree.c"
-        if ($19) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 834 "_elementtree.c"
+        var $15=$self_addr; //@line 834 "_elementtree.c"
+        var $16=$15+20; //@line 834 "_elementtree.c"
+        var $17=HEAP[$16]; //@line 834 "_elementtree.c"
+        var $18=($17)==0; //@line 834 "_elementtree.c"
+        if ($18) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 834 "_elementtree.c"
       case 6: // $bb5
-        var $20=HEAP[$default_value]; //@line 835 "_elementtree.c"
-        var $21=$20; //@line 835 "_elementtree.c"
-        var $22=HEAP[$21]; //@line 835 "_elementtree.c"
-        var $23=($22) + 1; //@line 835 "_elementtree.c"
-        var $24=$20; //@line 835 "_elementtree.c"
-        HEAP[$24]=$23; //@line 835 "_elementtree.c"
-        var $25=HEAP[$default_value]; //@line 836 "_elementtree.c"
-        $1=$25; //@line 836 "_elementtree.c"
-        __label__ = 23; break; //@line 836 "_elementtree.c"
+        var $19=HEAP[$default_value]; //@line 835 "_elementtree.c"
+        var $20=$19; //@line 835 "_elementtree.c"
+        var $21=HEAP[$20]; //@line 835 "_elementtree.c"
+        var $22=($21) + 1; //@line 835 "_elementtree.c"
+        var $23=$19; //@line 835 "_elementtree.c"
+        HEAP[$23]=$22; //@line 835 "_elementtree.c"
+        var $24=HEAP[$default_value]; //@line 836 "_elementtree.c"
+        $0=$24; //@line 836 "_elementtree.c"
+        __label__ = 18; break; //@line 836 "_elementtree.c"
       case 7: // $bb6
         $i=0; //@line 839 "_elementtree.c"
-        __label__ = 21; break; //@line 839 "_elementtree.c"
+        __label__ = 16; break; //@line 839 "_elementtree.c"
       case 8: // $bb7
-        var $26=$self_addr; //@line 840 "_elementtree.c"
-        var $27=$26+20; //@line 840 "_elementtree.c"
-        var $28=HEAP[$27]; //@line 840 "_elementtree.c"
-        var $29=$28+12; //@line 840 "_elementtree.c"
-        var $30=HEAP[$29]; //@line 840 "_elementtree.c"
-        var $31=$i; //@line 840 "_elementtree.c"
-        var $32=$30+4*$31; //@line 840 "_elementtree.c"
-        var $33=HEAP[$32]; //@line 840 "_elementtree.c"
-        var $34=$33; //@line 840 "_elementtree.c"
-        $item=$34; //@line 840 "_elementtree.c"
-        var $35=$item; //@line 841 "_elementtree.c"
-        var $36=$35; //@line 841 "_elementtree.c"
-        var $37=$36+4; //@line 841 "_elementtree.c"
-        var $38=HEAP[$37]; //@line 841 "_elementtree.c"
-        var $39=($38)==(_Element_Type); //@line 841 "_elementtree.c"
-        if ($39) { __label__ = 9; break; } else { __label__ = 20; break; } //@line 841 "_elementtree.c"
+        var $25=$self_addr; //@line 840 "_elementtree.c"
+        var $26=$25+20; //@line 840 "_elementtree.c"
+        var $27=HEAP[$26]; //@line 840 "_elementtree.c"
+        var $28=$27+12; //@line 840 "_elementtree.c"
+        var $29=HEAP[$28]; //@line 840 "_elementtree.c"
+        var $30=$i; //@line 840 "_elementtree.c"
+        var $31=$29+4*$30; //@line 840 "_elementtree.c"
+        var $32=HEAP[$31]; //@line 840 "_elementtree.c"
+        var $33=$32; //@line 840 "_elementtree.c"
+        $item=$33; //@line 840 "_elementtree.c"
+        var $34=$item; //@line 841 "_elementtree.c"
+        var $35=$34; //@line 841 "_elementtree.c"
+        var $36=$35+4; //@line 841 "_elementtree.c"
+        var $37=HEAP[$36]; //@line 841 "_elementtree.c"
+        var $38=($37)==(_Element_Type); //@line 841 "_elementtree.c"
+        if ($38) { __label__ = 9; break; } else { __label__ = 15; break; } //@line 841 "_elementtree.c"
       case 9: // $bb8
-        var $40=HEAP[$tag]; //@line 841 "_elementtree.c"
-        var $41=$item; //@line 841 "_elementtree.c"
-        var $42=$41+8; //@line 841 "_elementtree.c"
-        var $43=HEAP[$42]; //@line 841 "_elementtree.c"
-        var $44=_PyObject_Compare($43, $40); //@line 841 "_elementtree.c"
-        var $45=($44)==0; //@line 841 "_elementtree.c"
-        if ($45) { __label__ = 10; break; } else { __label__ = 20; break; } //@line 841 "_elementtree.c"
+        var $39=HEAP[$tag]; //@line 841 "_elementtree.c"
+        var $40=$item; //@line 841 "_elementtree.c"
+        var $41=$40+8; //@line 841 "_elementtree.c"
+        var $42=HEAP[$41]; //@line 841 "_elementtree.c"
+        var $43=_PyObject_Compare($42, $39); //@line 841 "_elementtree.c"
+        var $44=($43)==0; //@line 841 "_elementtree.c"
+        if ($44) { __label__ = 10; break; } else { __label__ = 15; break; } //@line 841 "_elementtree.c"
       case 10: // $bb9
-        var $46=$item; //@line 842 "_elementtree.c"
-        $self_addr_i=$46;
-        var $47=$self_addr_i; //@line 431 "_elementtree.c"
-        var $48=$47+12; //@line 431 "_elementtree.c"
-        var $49=HEAP[$48]; //@line 431 "_elementtree.c"
-        $res_i=$49; //@line 431 "_elementtree.c"
-        var $50=$res_i; //@line 433 "_elementtree.c"
-        var $51=($50); //@line 433 "_elementtree.c"
-        var $52=($51) & 1; //@line 433 "_elementtree.c"
-        var $53=((($52)) & 255); //@line 433 "_elementtree.c"
-        var $toBool_i=($53)!=0; //@line 433 "_elementtree.c"
-        if ($toBool_i) { __lastLabel__ = 10; __label__ = 11; break; } else { __lastLabel__ = 10; __label__ = 15; break; } //@line 433 "_elementtree.c"
-      case 11: // $bb_i
-        var $54=$res_i; //@line 434 "_elementtree.c"
-        var $55=($54); //@line 434 "_elementtree.c"
-        var $56=($55) & -2; //@line 434 "_elementtree.c"
-        var $57=($56); //@line 434 "_elementtree.c"
-        $res_i=$57; //@line 434 "_elementtree.c"
-        var $58=$res_i; //@line 435 "_elementtree.c"
-        var $59=$58+4; //@line 435 "_elementtree.c"
-        var $60=HEAP[$59]; //@line 435 "_elementtree.c"
-        var $61=($60)==(_PyList_Type); //@line 435 "_elementtree.c"
-        if ($61) { __lastLabel__ = 11; __label__ = 12; break; } else { __lastLabel__ = 11; __label__ = 15; break; } //@line 435 "_elementtree.c"
-      case 12: // $bb1_i
-        var $62=$res_i; //@line 436 "_elementtree.c"
-        var $63=_list_join($62); //@line 436 "_elementtree.c"
-        $res_i=$63; //@line 436 "_elementtree.c"
-        var $64=$res_i; //@line 437 "_elementtree.c"
-        var $65=($64)==0; //@line 437 "_elementtree.c"
-        if ($65) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 437 "_elementtree.c"
-      case 13: // $bb11_thread
-        $0=0; //@line 438 "_elementtree.c"
-        $retval_i=0; //@line 438 "_elementtree.c"
-        $text=0; //@line 842 "_elementtree.c"
-        __label__ = 19; break;
-      case 14: // $bb3_i
-        var $66=$self_addr_i; //@line 439 "_elementtree.c"
-        var $67=$66+12; //@line 439 "_elementtree.c"
-        var $68=$res_i; //@line 439 "_elementtree.c"
-        HEAP[$67]=$68; //@line 439 "_elementtree.c"
-        var $_pr=$res_i;
-        __lastLabel__ = 14; __label__ = 15; break; //@line 439 "_elementtree.c"
-      case 15: // $element_get_text_exit
-        var $69=__lastLabel__ == 10 ? $50 : (__lastLabel__ == 11 ? $58 : ($_pr));
-        $0=$69; //@line 443 "_elementtree.c"
-        $retval_i=$69; //@line 438 "_elementtree.c"
-        $text=$69; //@line 842 "_elementtree.c"
-        var $70=($69)==(__Py_NoneStruct); //@line 843 "_elementtree.c"
-        if ($70) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 843 "_elementtree.c"
-      case 16: // $bb10
-        var $71=_PyString_FromString(__str1); //@line 844 "_elementtree.c"
-        $1=$71; //@line 844 "_elementtree.c"
-        __label__ = 23; break; //@line 844 "_elementtree.c"
-      case 17: // $bb11
-        var $72=($69)!=0; //@line 845 "_elementtree.c"
-        if ($72) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 845 "_elementtree.c"
-      case 18: // $bb12
-        var $73=$text; //@line 845 "_elementtree.c"
-        var $74=$73; //@line 845 "_elementtree.c"
-        var $75=HEAP[$74]; //@line 845 "_elementtree.c"
-        var $76=($75) + 1; //@line 845 "_elementtree.c"
-        var $77=$text; //@line 845 "_elementtree.c"
-        var $78=$77; //@line 845 "_elementtree.c"
-        HEAP[$78]=$76; //@line 845 "_elementtree.c"
-        __label__ = 19; break; //@line 845 "_elementtree.c"
-      case 19: // $bb13
-        var $79=$text; //@line 846 "_elementtree.c"
-        $1=$79; //@line 846 "_elementtree.c"
-        __label__ = 23; break; //@line 846 "_elementtree.c"
-      case 20: // $bb14
-        var $80=$i; //@line 839 "_elementtree.c"
-        var $81=($80) + 1; //@line 839 "_elementtree.c"
-        $i=$81; //@line 839 "_elementtree.c"
-        __label__ = 21; break; //@line 839 "_elementtree.c"
-      case 21: // $bb15
-        var $82=$self_addr; //@line 839 "_elementtree.c"
-        var $83=$82+20; //@line 839 "_elementtree.c"
-        var $84=HEAP[$83]; //@line 839 "_elementtree.c"
-        var $85=$84+4; //@line 839 "_elementtree.c"
-        var $86=HEAP[$85]; //@line 839 "_elementtree.c"
-        var $87=$i; //@line 839 "_elementtree.c"
-        var $88=($86) > ($87); //@line 839 "_elementtree.c"
-        if ($88) { __label__ = 8; break; } else { __label__ = 22; break; } //@line 839 "_elementtree.c"
-      case 22: // $bb16
-        var $89=HEAP[$default_value]; //@line 850 "_elementtree.c"
-        var $90=$89; //@line 850 "_elementtree.c"
-        var $91=HEAP[$90]; //@line 850 "_elementtree.c"
-        var $92=($91) + 1; //@line 850 "_elementtree.c"
-        var $93=$89; //@line 850 "_elementtree.c"
-        HEAP[$93]=$92; //@line 850 "_elementtree.c"
-        var $94=HEAP[$default_value]; //@line 851 "_elementtree.c"
-        $1=$94; //@line 851 "_elementtree.c"
-        __label__ = 23; break; //@line 851 "_elementtree.c"
-      case 23: // $bb17
-        var $95=$1; //@line 827 "_elementtree.c"
-        $retval=$95; //@line 827 "_elementtree.c"
+        var $45=$item; //@line 842 "_elementtree.c"
+        var $46=_element_get_text($45); //@line 842 "_elementtree.c"
+        $text=$46; //@line 842 "_elementtree.c"
+        var $47=$text; //@line 843 "_elementtree.c"
+        var $48=($47)==(__Py_NoneStruct); //@line 843 "_elementtree.c"
+        if ($48) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 843 "_elementtree.c"
+      case 11: // $bb10
+        var $49=_PyString_FromString(__str1); //@line 844 "_elementtree.c"
+        $0=$49; //@line 844 "_elementtree.c"
+        __label__ = 18; break; //@line 844 "_elementtree.c"
+      case 12: // $bb11
+        var $50=$text; //@line 845 "_elementtree.c"
+        var $51=($50)!=0; //@line 845 "_elementtree.c"
+        if ($51) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 845 "_elementtree.c"
+      case 13: // $bb12
+        var $52=$text; //@line 845 "_elementtree.c"
+        var $53=$52; //@line 845 "_elementtree.c"
+        var $54=HEAP[$53]; //@line 845 "_elementtree.c"
+        var $55=($54) + 1; //@line 845 "_elementtree.c"
+        var $56=$text; //@line 845 "_elementtree.c"
+        var $57=$56; //@line 845 "_elementtree.c"
+        HEAP[$57]=$55; //@line 845 "_elementtree.c"
+        __label__ = 14; break; //@line 845 "_elementtree.c"
+      case 14: // $bb13
+        var $58=$text; //@line 846 "_elementtree.c"
+        $0=$58; //@line 846 "_elementtree.c"
+        __label__ = 18; break; //@line 846 "_elementtree.c"
+      case 15: // $bb14
+        var $59=$i; //@line 839 "_elementtree.c"
+        var $60=($59) + 1; //@line 839 "_elementtree.c"
+        $i=$60; //@line 839 "_elementtree.c"
+        __label__ = 16; break; //@line 839 "_elementtree.c"
+      case 16: // $bb15
+        var $61=$self_addr; //@line 839 "_elementtree.c"
+        var $62=$61+20; //@line 839 "_elementtree.c"
+        var $63=HEAP[$62]; //@line 839 "_elementtree.c"
+        var $64=$63+4; //@line 839 "_elementtree.c"
+        var $65=HEAP[$64]; //@line 839 "_elementtree.c"
+        var $66=$i; //@line 839 "_elementtree.c"
+        var $67=($65) > ($66); //@line 839 "_elementtree.c"
+        if ($67) { __label__ = 8; break; } else { __label__ = 17; break; } //@line 839 "_elementtree.c"
+      case 17: // $bb16
+        var $68=HEAP[$default_value]; //@line 850 "_elementtree.c"
+        var $69=$68; //@line 850 "_elementtree.c"
+        var $70=HEAP[$69]; //@line 850 "_elementtree.c"
+        var $71=($70) + 1; //@line 850 "_elementtree.c"
+        var $72=$68; //@line 850 "_elementtree.c"
+        HEAP[$72]=$71; //@line 850 "_elementtree.c"
+        var $73=HEAP[$default_value]; //@line 851 "_elementtree.c"
+        $0=$73; //@line 851 "_elementtree.c"
+        __label__ = 18; break; //@line 851 "_elementtree.c"
+      case 18: // $bb17
+        var $74=$0; //@line 827 "_elementtree.c"
+        $retval=$74; //@line 827 "_elementtree.c"
         var $retval18=$retval; //@line 827 "_elementtree.c"
         STACKTOP = __stackBase__;
         return $retval18; //@line 827 "_elementtree.c"
@@ -3275,7 +3297,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$namespaces]=__Py_NoneStruct; //@line 861 "_elementtree.c"
         var $1=$args_addr; //@line 862 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str17, $tag, $namespaces); //@line 862 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str17, allocate([$tag,0,0,0,$namespaces,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 862 "_elementtree.c"
         var $3=($2)==0; //@line 862 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 862 "_elementtree.c"
       case 1: // $bb
@@ -3295,7 +3317,7 @@ var __str124;
         var $10=HEAP[$tag]; //@line 866 "_elementtree.c"
         var $11=HEAP[_elementpath_obj]; //@line 866 "_elementtree.c"
         var $12=$self_addr; //@line 866 "_elementtree.c"
-        var $13=_PyObject_CallMethod($11, __str18, __str13, $12, $10, $9); //@line 866 "_elementtree.c"
+        var $13=_PyObject_CallMethod($11, __str18, __str13, allocate([$12,0,0,0,$10,0,0,0,$9,0,0,0], ["%struct.ElementObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 866 "_elementtree.c"
         $0=$13; //@line 866 "_elementtree.c"
         __label__ = 19; break; //@line 866 "_elementtree.c"
       case 5: // $bb4
@@ -3420,7 +3442,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$namespaces]=__Py_NoneStruct; //@line 895 "_elementtree.c"
         var $1=$args_addr; //@line 896 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str19, $tag, $namespaces); //@line 896 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str19, allocate([$tag,0,0,0,$namespaces,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 896 "_elementtree.c"
         var $3=($2)==0; //@line 896 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 896 "_elementtree.c"
       case 1: // $bb
@@ -3431,7 +3453,7 @@ var __str124;
         var $5=HEAP[$tag]; //@line 899 "_elementtree.c"
         var $6=HEAP[_elementpath_obj]; //@line 899 "_elementtree.c"
         var $7=$self_addr; //@line 899 "_elementtree.c"
-        var $8=_PyObject_CallMethod($6, __str20, __str13, $7, $5, $4); //@line 899 "_elementtree.c"
+        var $8=_PyObject_CallMethod($6, __str20, __str13, allocate([$7,0,0,0,$5,0,0,0,$4,0,0,0], ["%struct.ElementObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 899 "_elementtree.c"
         $0=$8; //@line 899 "_elementtree.c"
         __label__ = 3; break; //@line 899 "_elementtree.c"
       case 3: // $bb2
@@ -3462,7 +3484,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$default_value]=__Py_NoneStruct; //@line 910 "_elementtree.c"
         var $1=$args_addr; //@line 911 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str21, $key, $default_value); //@line 911 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str21, allocate([$key,0,0,0,$default_value,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 911 "_elementtree.c"
         var $3=($2)==0; //@line 911 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 911 "_elementtree.c"
       case 1: // $bb
@@ -3540,7 +3562,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 934 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str22); //@line 934 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str22, allocate(1, "i32", ALLOC_STACK)); //@line 934 "_elementtree.c"
         var $3=($2)==0; //@line 934 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 934 "_elementtree.c"
       case 1: // $bb
@@ -3647,7 +3669,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$tag]=__Py_NoneStruct; //@line 958 "_elementtree.c"
         var $1=$args_addr; //@line 959 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str23, $tag); //@line 959 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str23, allocate([$tag,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 959 "_elementtree.c"
         var $3=($2)==0; //@line 959 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 959 "_elementtree.c"
       case 1: // $bb
@@ -3752,7 +3774,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 990 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str25); //@line 990 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str25, allocate(1, "i32", ALLOC_STACK)); //@line 990 "_elementtree.c"
         var $3=($2)==0; //@line 990 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 990 "_elementtree.c"
       case 1: // $bb
@@ -3921,7 +3943,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1038 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str28, $index, _Element_Type, $element); //@line 1038 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str28, allocate([$index,0,0,0,_Element_Type,0,0,0,$element,0,0,0], ["i32*",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1038 "_elementtree.c"
         var $3=($2)==0; //@line 1038 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1038 "_elementtree.c"
       case 1: // $bb
@@ -4070,7 +4092,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1070 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str29); //@line 1070 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str29, allocate(1, "i32", ALLOC_STACK)); //@line 1070 "_elementtree.c"
         var $3=($2)==0; //@line 1070 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1070 "_elementtree.c"
       case 1: // $bb
@@ -4127,7 +4149,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1082 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str30); //@line 1082 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str30, allocate(1, "i32", ALLOC_STACK)); //@line 1082 "_elementtree.c"
         var $3=($2)==0; //@line 1082 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1082 "_elementtree.c"
       case 1: // $bb
@@ -4226,7 +4248,7 @@ var __str124;
         $args_addr=$args;
         $kw_addr=$kw;
         var $1=$args_addr; //@line 1107 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str31, $tag, $attrib); //@line 1107 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str31, allocate([$tag,0,0,0,$attrib,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1107 "_elementtree.c"
         var $3=($2)==0; //@line 1107 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1107 "_elementtree.c"
       case 1: // $bb
@@ -4294,7 +4316,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1124 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str32); //@line 1124 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str32, allocate(1, "i32", ALLOC_STACK)); //@line 1124 "_elementtree.c"
         var $3=($2)==0; //@line 1124 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1124 "_elementtree.c"
       case 1: // $bb
@@ -4314,7 +4336,7 @@ var __str124;
         var $8=$args_addr; //@line 1141 "_elementtree.c"
         var $9=_element_copy($7, $8); //@line 1141 "_elementtree.c"
         var $10=HEAP[_elementtree_copyelement_obj]; //@line 1141 "_elementtree.c"
-        var $11=_Py_BuildValue(__str34, $10, $9); //@line 1141 "_elementtree.c"
+        var $11=_Py_BuildValue(__str34, allocate([$10,0,0,0,$9,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1141 "_elementtree.c"
         $0=$11; //@line 1141 "_elementtree.c"
         __label__ = 5; break; //@line 1141 "_elementtree.c"
       case 5: // $bb4
@@ -4343,7 +4365,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1152 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str35, _Element_Type, $element); //@line 1152 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str35, allocate([_Element_Type,0,0,0,$element,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1152 "_elementtree.c"
         var $3=($2)==0; //@line 1152 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1152 "_elementtree.c"
       case 1: // $bb
@@ -4549,7 +4571,7 @@ var __str124;
         var $9=$8+20; //@line 1199 "_elementtree.c"
         var $10=$9; //@line 1199 "_elementtree.c"
         var $11=$self_addr; //@line 1199 "_elementtree.c"
-        var $12=_PyString_FromFormat(__str37, $10, $11); //@line 1199 "_elementtree.c"
+        var $12=_PyString_FromFormat(__str37, allocate([$10,0,0,0,$11,0,0,0], ["i8*",0,0,0,"%struct.ElementObject*",0,0,0], ALLOC_STACK)); //@line 1199 "_elementtree.c"
         $repr=$12; //@line 1199 "_elementtree.c"
         var $13=$tag; //@line 1202 "_elementtree.c"
         var $14=$13; //@line 1202 "_elementtree.c"
@@ -4603,7 +4625,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1214 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str38, $key, $value); //@line 1214 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str38, allocate([$key,0,0,0,$value,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1214 "_elementtree.c"
         var $3=($2)==0; //@line 1214 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1214 "_elementtree.c"
       case 1: // $bb
@@ -5176,7 +5198,7 @@ var __str124;
         var $76=$75+12; //@line 1357 "_elementtree.c"
         var $77=HEAP[$76]; //@line 1357 "_elementtree.c"
         var $78=HEAP[_PyExc_TypeError]; //@line 1357 "_elementtree.c"
-        var $79=_PyErr_Format($78, __str10, $77); //@line 1357 "_elementtree.c"
+        var $79=_PyErr_Format($78, __str10, allocate([$77,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1357 "_elementtree.c"
         $0=-1; //@line 1361 "_elementtree.c"
         __label__ = 58; break; //@line 1361 "_elementtree.c"
       case 20: // $bb19
@@ -5197,7 +5219,7 @@ var __str124;
         var $87=HEAP[$slicelen]; //@line 1368 "_elementtree.c"
         var $88=HEAP[_PyExc_ValueError]; //@line 1368 "_elementtree.c"
         var $89=$newlen; //@line 1368 "_elementtree.c"
-        var $90=_PyErr_Format($88, __str41, $89, $87); //@line 1368 "_elementtree.c"
+        var $90=_PyErr_Format($88, __str41, allocate([$89,0,0,0,$87,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1368 "_elementtree.c"
         $0=-1; //@line 1378 "_elementtree.c"
         __label__ = 58; break; //@line 1378 "_elementtree.c"
       case 24: // $bb23
@@ -5573,219 +5595,121 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $res_i3;
-        var $self_addr_i;
-        var $retval_i;
-        var $1;
-        var $res_i;
         var $self_addr;
         var $name_addr;
         var $retval;
-        var $2;
+        var $0;
         var $res;
         $self_addr=$self;
         $name_addr=$name;
-        var $3=$name_addr; //@line 1496 "_elementtree.c"
-        var $4=_strcmp($3, __str59); //@line 1496 "_elementtree.c"
-        var $5=($4)==0; //@line 1496 "_elementtree.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1496 "_elementtree.c"
+        var $1=$name_addr; //@line 1496 "_elementtree.c"
+        var $2=_strcmp($1, __str59); //@line 1496 "_elementtree.c"
+        var $3=($2)==0; //@line 1496 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1496 "_elementtree.c"
       case 1: // $bb
-        var $6=$self_addr; //@line 1497 "_elementtree.c"
-        var $7=$6+8; //@line 1497 "_elementtree.c"
-        var $8=HEAP[$7]; //@line 1497 "_elementtree.c"
-        $res=$8; //@line 1497 "_elementtree.c"
-        var $9=$res; //@line 1498 "_elementtree.c"
-        var $10=$9; //@line 1498 "_elementtree.c"
-        var $11=HEAP[$10]; //@line 1498 "_elementtree.c"
-        var $12=($11) + 1; //@line 1498 "_elementtree.c"
-        var $13=$res; //@line 1498 "_elementtree.c"
-        var $14=$13; //@line 1498 "_elementtree.c"
-        HEAP[$14]=$12; //@line 1498 "_elementtree.c"
-        var $15=$res; //@line 1499 "_elementtree.c"
-        $2=$15; //@line 1499 "_elementtree.c"
-        __label__ = 28; break; //@line 1499 "_elementtree.c"
+        var $4=$self_addr; //@line 1497 "_elementtree.c"
+        var $5=$4+8; //@line 1497 "_elementtree.c"
+        var $6=HEAP[$5]; //@line 1497 "_elementtree.c"
+        $res=$6; //@line 1497 "_elementtree.c"
+        var $7=$res; //@line 1498 "_elementtree.c"
+        var $8=$7; //@line 1498 "_elementtree.c"
+        var $9=HEAP[$8]; //@line 1498 "_elementtree.c"
+        var $10=($9) + 1; //@line 1498 "_elementtree.c"
+        var $11=$res; //@line 1498 "_elementtree.c"
+        var $12=$11; //@line 1498 "_elementtree.c"
+        HEAP[$12]=$10; //@line 1498 "_elementtree.c"
+        var $13=$res; //@line 1499 "_elementtree.c"
+        $0=$13; //@line 1499 "_elementtree.c"
+        __label__ = 16; break; //@line 1499 "_elementtree.c"
       case 2: // $bb1
-        var $16=$name_addr; //@line 1500 "_elementtree.c"
-        var $17=_strcmp($16, __str60); //@line 1500 "_elementtree.c"
-        var $18=($17)==0; //@line 1500 "_elementtree.c"
-        var $19=$self_addr; //@line 1501 "_elementtree.c"
-        if ($18) { __label__ = 3; break; } else { __label__ = 10; break; } //@line 1500 "_elementtree.c"
+        var $14=$name_addr; //@line 1500 "_elementtree.c"
+        var $15=_strcmp($14, __str60); //@line 1500 "_elementtree.c"
+        var $16=($15)==0; //@line 1500 "_elementtree.c"
+        var $17=$self_addr; //@line 1501 "_elementtree.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1500 "_elementtree.c"
       case 3: // $bb2
-        $self_addr_i=$19;
-        var $20=$self_addr_i; //@line 431 "_elementtree.c"
-        var $21=$20+12; //@line 431 "_elementtree.c"
-        var $22=HEAP[$21]; //@line 431 "_elementtree.c"
-        $res_i=$22; //@line 431 "_elementtree.c"
-        var $23=$res_i; //@line 433 "_elementtree.c"
-        var $24=($23); //@line 433 "_elementtree.c"
-        var $25=($24) & 1; //@line 433 "_elementtree.c"
-        var $26=((($25)) & 255); //@line 433 "_elementtree.c"
-        var $toBool_i=($26)!=0; //@line 433 "_elementtree.c"
-        if ($toBool_i) { __label__ = 4; break; } else { __label__ = 8; break; } //@line 433 "_elementtree.c"
-      case 4: // $bb_i
-        var $27=$res_i; //@line 434 "_elementtree.c"
-        var $28=($27); //@line 434 "_elementtree.c"
-        var $29=($28) & -2; //@line 434 "_elementtree.c"
-        var $30=($29); //@line 434 "_elementtree.c"
-        $res_i=$30; //@line 434 "_elementtree.c"
-        var $31=$res_i; //@line 435 "_elementtree.c"
-        var $32=$31+4; //@line 435 "_elementtree.c"
-        var $33=HEAP[$32]; //@line 435 "_elementtree.c"
-        var $34=($33)==(_PyList_Type); //@line 435 "_elementtree.c"
-        if ($34) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 435 "_elementtree.c"
-      case 5: // $bb1_i
-        var $35=$res_i; //@line 436 "_elementtree.c"
-        var $36=_list_join($35); //@line 436 "_elementtree.c"
-        $res_i=$36; //@line 436 "_elementtree.c"
-        var $37=$res_i; //@line 437 "_elementtree.c"
-        var $38=($37)==0; //@line 437 "_elementtree.c"
-        if ($38) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 437 "_elementtree.c"
-      case 6: // $bb2_i
-        $1=0; //@line 438 "_elementtree.c"
-        __label__ = 9; break; //@line 438 "_elementtree.c"
-      case 7: // $bb3_i
-        var $39=$self_addr_i; //@line 439 "_elementtree.c"
-        var $40=$39+12; //@line 439 "_elementtree.c"
-        var $41=$res_i; //@line 439 "_elementtree.c"
-        HEAP[$40]=$41; //@line 439 "_elementtree.c"
-        __label__ = 8; break; //@line 439 "_elementtree.c"
-      case 8: // $bb4_i
-        var $42=$res_i; //@line 443 "_elementtree.c"
-        $1=$42; //@line 443 "_elementtree.c"
-        __label__ = 9; break; //@line 443 "_elementtree.c"
-      case 9: // $element_get_text_exit
-        var $43=$1; //@line 438 "_elementtree.c"
-        $retval_i=$43; //@line 438 "_elementtree.c"
-        var $retval6_i=$retval_i; //@line 438 "_elementtree.c"
-        $res=$retval6_i; //@line 1501 "_elementtree.c"
-        var $44=$res; //@line 1502 "_elementtree.c"
-        var $45=$44; //@line 1502 "_elementtree.c"
-        var $46=HEAP[$45]; //@line 1502 "_elementtree.c"
-        var $47=($46) + 1; //@line 1502 "_elementtree.c"
-        var $48=$res; //@line 1502 "_elementtree.c"
-        var $49=$48; //@line 1502 "_elementtree.c"
-        HEAP[$49]=$47; //@line 1502 "_elementtree.c"
-        var $50=$res; //@line 1503 "_elementtree.c"
-        $2=$50; //@line 1503 "_elementtree.c"
-        __label__ = 28; break; //@line 1503 "_elementtree.c"
-      case 10: // $bb3
-        var $51=$19; //@line 1507 "_elementtree.c"
-        var $52=$name_addr; //@line 1507 "_elementtree.c"
-        var $53=_Py_FindMethod(_element_methods, $51, $52); //@line 1507 "_elementtree.c"
-        $res=$53; //@line 1507 "_elementtree.c"
-        var $54=$res; //@line 1508 "_elementtree.c"
-        var $55=($54)!=0; //@line 1508 "_elementtree.c"
-        if ($55) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1508 "_elementtree.c"
-      case 11: // $bb4
-        var $56=$res; //@line 1509 "_elementtree.c"
-        $2=$56; //@line 1509 "_elementtree.c"
-        __label__ = 28; break; //@line 1509 "_elementtree.c"
-      case 12: // $bb5
+        var $18=_element_get_text($17); //@line 1501 "_elementtree.c"
+        $res=$18; //@line 1501 "_elementtree.c"
+        var $19=$res; //@line 1502 "_elementtree.c"
+        var $20=$19; //@line 1502 "_elementtree.c"
+        var $21=HEAP[$20]; //@line 1502 "_elementtree.c"
+        var $22=($21) + 1; //@line 1502 "_elementtree.c"
+        var $23=$res; //@line 1502 "_elementtree.c"
+        var $24=$23; //@line 1502 "_elementtree.c"
+        HEAP[$24]=$22; //@line 1502 "_elementtree.c"
+        var $25=$res; //@line 1503 "_elementtree.c"
+        $0=$25; //@line 1503 "_elementtree.c"
+        __label__ = 16; break; //@line 1503 "_elementtree.c"
+      case 4: // $bb3
+        var $26=$17; //@line 1507 "_elementtree.c"
+        var $27=$name_addr; //@line 1507 "_elementtree.c"
+        var $28=_Py_FindMethod(_element_methods, $26, $27); //@line 1507 "_elementtree.c"
+        $res=$28; //@line 1507 "_elementtree.c"
+        var $29=$res; //@line 1508 "_elementtree.c"
+        var $30=($29)!=0; //@line 1508 "_elementtree.c"
+        if ($30) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1508 "_elementtree.c"
+      case 5: // $bb4
+        var $31=$res; //@line 1509 "_elementtree.c"
+        $0=$31; //@line 1509 "_elementtree.c"
+        __label__ = 16; break; //@line 1509 "_elementtree.c"
+      case 6: // $bb5
         _PyErr_Clear(); //@line 1511 "_elementtree.c"
-        var $57=$name_addr; //@line 1514 "_elementtree.c"
-        var $58=_strcmp($57, __str61); //@line 1514 "_elementtree.c"
-        var $59=($58)==0; //@line 1514 "_elementtree.c"
-        if ($59) { __label__ = 13; break; } else { __label__ = 20; break; } //@line 1514 "_elementtree.c"
-      case 13: // $bb6
-        var $60=$self_addr; //@line 1515 "_elementtree.c"
-        $self_addr_i1=$60;
-        var $61=$self_addr_i1; //@line 451 "_elementtree.c"
-        var $62=$61+16; //@line 451 "_elementtree.c"
-        var $63=HEAP[$62]; //@line 451 "_elementtree.c"
-        $res_i3=$63; //@line 451 "_elementtree.c"
-        var $64=$res_i3; //@line 453 "_elementtree.c"
-        var $65=($64); //@line 453 "_elementtree.c"
-        var $66=($65) & 1; //@line 453 "_elementtree.c"
-        var $67=((($66)) & 255); //@line 453 "_elementtree.c"
-        var $toBool_i4=($67)!=0; //@line 453 "_elementtree.c"
-        if ($toBool_i4) { __label__ = 14; break; } else { __label__ = 18; break; } //@line 453 "_elementtree.c"
-      case 14: // $bb_i5
-        var $68=$res_i3; //@line 454 "_elementtree.c"
-        var $69=($68); //@line 454 "_elementtree.c"
-        var $70=($69) & -2; //@line 454 "_elementtree.c"
-        var $71=($70); //@line 454 "_elementtree.c"
-        $res_i3=$71; //@line 454 "_elementtree.c"
-        var $72=$res_i3; //@line 455 "_elementtree.c"
-        var $73=$72+4; //@line 455 "_elementtree.c"
-        var $74=HEAP[$73]; //@line 455 "_elementtree.c"
-        var $75=($74)==(_PyList_Type); //@line 455 "_elementtree.c"
-        if ($75) { __label__ = 15; break; } else { __label__ = 18; break; } //@line 455 "_elementtree.c"
-      case 15: // $bb1_i6
-        var $76=$res_i3; //@line 456 "_elementtree.c"
-        var $77=_list_join($76); //@line 456 "_elementtree.c"
-        $res_i3=$77; //@line 456 "_elementtree.c"
-        var $78=$res_i3; //@line 457 "_elementtree.c"
-        var $79=($78)==0; //@line 457 "_elementtree.c"
-        if ($79) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 457 "_elementtree.c"
-      case 16: // $bb2_i7
-        $0=0; //@line 458 "_elementtree.c"
-        __label__ = 19; break; //@line 458 "_elementtree.c"
-      case 17: // $bb3_i8
-        var $80=$self_addr_i1; //@line 459 "_elementtree.c"
-        var $81=$80+16; //@line 459 "_elementtree.c"
-        var $82=$res_i3; //@line 459 "_elementtree.c"
-        HEAP[$81]=$82; //@line 459 "_elementtree.c"
-        __label__ = 18; break; //@line 459 "_elementtree.c"
-      case 18: // $bb4_i9
-        var $83=$res_i3; //@line 463 "_elementtree.c"
-        $0=$83; //@line 463 "_elementtree.c"
-        __label__ = 19; break; //@line 463 "_elementtree.c"
-      case 19: // $element_get_tail_exit
-        var $84=$0; //@line 458 "_elementtree.c"
-        $retval_i2=$84; //@line 458 "_elementtree.c"
-        var $retval6_i10=$retval_i2; //@line 458 "_elementtree.c"
-        $res=$retval6_i10; //@line 1515 "_elementtree.c"
-        __lastLabel__ = 19; __label__ = 25; break; //@line 1515 "_elementtree.c"
-      case 20: // $bb7
-        var $85=$name_addr; //@line 1516 "_elementtree.c"
-        var $86=_strcmp($85, __str62); //@line 1516 "_elementtree.c"
-        var $87=($86)==0; //@line 1516 "_elementtree.c"
-        if ($87) { __label__ = 21; break; } else { __label__ = 24; break; } //@line 1516 "_elementtree.c"
-      case 21: // $bb8
-        var $88=$self_addr; //@line 1517 "_elementtree.c"
-        var $89=$88+20; //@line 1517 "_elementtree.c"
-        var $90=HEAP[$89]; //@line 1517 "_elementtree.c"
-        var $91=($90)==0; //@line 1517 "_elementtree.c"
-        if ($91) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1517 "_elementtree.c"
-      case 22: // $bb9
-        var $92=$self_addr; //@line 1518 "_elementtree.c"
-        var $93=_element_new_extra($92, 0); //@line 1518 "_elementtree.c"
-        __label__ = 23; break; //@line 1518 "_elementtree.c"
-      case 23: // $bb10
-        var $94=$self_addr; //@line 1519 "_elementtree.c"
-        var $95=_element_get_attrib($94); //@line 1519 "_elementtree.c"
-        $res=$95; //@line 1519 "_elementtree.c"
-        __lastLabel__ = 23; __label__ = 25; break; //@line 1519 "_elementtree.c"
-      case 24: // $bb11
-        var $96=HEAP[_PyExc_AttributeError]; //@line 1521 "_elementtree.c"
-        var $97=$name_addr; //@line 1521 "_elementtree.c"
-        _PyErr_SetString($96, $97); //@line 1521 "_elementtree.c"
-        $2=0; //@line 1522 "_elementtree.c"
-        __label__ = 28; break; //@line 1522 "_elementtree.c"
-      case 25: // $bb12
-        var $98=__lastLabel__ == 23 ? $95 : ($retval6_i10);
-        var $99=($98)==0; //@line 1525 "_elementtree.c"
-        if ($99) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 1525 "_elementtree.c"
-      case 26: // $bb13
-        $2=0; //@line 1526 "_elementtree.c"
-        __label__ = 28; break; //@line 1526 "_elementtree.c"
-      case 27: // $bb14
-        var $100=$res; //@line 1528 "_elementtree.c"
-        var $101=$100; //@line 1528 "_elementtree.c"
-        var $102=HEAP[$101]; //@line 1528 "_elementtree.c"
-        var $103=($102) + 1; //@line 1528 "_elementtree.c"
-        var $104=$res; //@line 1528 "_elementtree.c"
-        var $105=$104; //@line 1528 "_elementtree.c"
-        HEAP[$105]=$103; //@line 1528 "_elementtree.c"
-        var $106=$res; //@line 1529 "_elementtree.c"
-        $2=$106; //@line 1529 "_elementtree.c"
-        __label__ = 28; break; //@line 1529 "_elementtree.c"
-      case 28: // $bb15
-        var $107=$2; //@line 1499 "_elementtree.c"
-        $retval=$107; //@line 1499 "_elementtree.c"
+        var $32=$name_addr; //@line 1514 "_elementtree.c"
+        var $33=_strcmp($32, __str61); //@line 1514 "_elementtree.c"
+        var $34=($33)==0; //@line 1514 "_elementtree.c"
+        if ($34) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1514 "_elementtree.c"
+      case 7: // $bb6
+        var $35=$self_addr; //@line 1515 "_elementtree.c"
+        var $36=_element_get_tail($35); //@line 1515 "_elementtree.c"
+        $res=$36; //@line 1515 "_elementtree.c"
+        __lastLabel__ = 7; __label__ = 13; break; //@line 1515 "_elementtree.c"
+      case 8: // $bb7
+        var $37=$name_addr; //@line 1516 "_elementtree.c"
+        var $38=_strcmp($37, __str62); //@line 1516 "_elementtree.c"
+        var $39=($38)==0; //@line 1516 "_elementtree.c"
+        if ($39) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 1516 "_elementtree.c"
+      case 9: // $bb8
+        var $40=$self_addr; //@line 1517 "_elementtree.c"
+        var $41=$40+20; //@line 1517 "_elementtree.c"
+        var $42=HEAP[$41]; //@line 1517 "_elementtree.c"
+        var $43=($42)==0; //@line 1517 "_elementtree.c"
+        if ($43) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 1517 "_elementtree.c"
+      case 10: // $bb9
+        var $44=$self_addr; //@line 1518 "_elementtree.c"
+        var $45=_element_new_extra($44, 0); //@line 1518 "_elementtree.c"
+        __label__ = 11; break; //@line 1518 "_elementtree.c"
+      case 11: // $bb10
+        var $46=$self_addr; //@line 1519 "_elementtree.c"
+        var $47=_element_get_attrib($46); //@line 1519 "_elementtree.c"
+        $res=$47; //@line 1519 "_elementtree.c"
+        __lastLabel__ = 11; __label__ = 13; break; //@line 1519 "_elementtree.c"
+      case 12: // $bb11
+        var $48=HEAP[_PyExc_AttributeError]; //@line 1521 "_elementtree.c"
+        var $49=$name_addr; //@line 1521 "_elementtree.c"
+        _PyErr_SetString($48, $49); //@line 1521 "_elementtree.c"
+        $0=0; //@line 1522 "_elementtree.c"
+        __label__ = 16; break; //@line 1522 "_elementtree.c"
+      case 13: // $bb12
+        var $50=__lastLabel__ == 11 ? $47 : ($36);
+        var $51=($50)==0; //@line 1525 "_elementtree.c"
+        if ($51) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1525 "_elementtree.c"
+      case 14: // $bb13
+        $0=0; //@line 1526 "_elementtree.c"
+        __label__ = 16; break; //@line 1526 "_elementtree.c"
+      case 15: // $bb14
+        var $52=$res; //@line 1528 "_elementtree.c"
+        var $53=$52; //@line 1528 "_elementtree.c"
+        var $54=HEAP[$53]; //@line 1528 "_elementtree.c"
+        var $55=($54) + 1; //@line 1528 "_elementtree.c"
+        var $56=$res; //@line 1528 "_elementtree.c"
+        var $57=$56; //@line 1528 "_elementtree.c"
+        HEAP[$57]=$55; //@line 1528 "_elementtree.c"
+        var $58=$res; //@line 1529 "_elementtree.c"
+        $0=$58; //@line 1529 "_elementtree.c"
+        __label__ = 16; break; //@line 1529 "_elementtree.c"
+      case 16: // $bb15
+        var $59=$0; //@line 1499 "_elementtree.c"
+        $retval=$59; //@line 1499 "_elementtree.c"
         var $retval16=$retval; //@line 1499 "_elementtree.c"
         ;
         return $retval16; //@line 1499 "_elementtree.c"
@@ -6147,7 +6071,7 @@ var __str124;
         $self__addr=$self_;
         $args_addr=$args;
         var $1=$args_addr; //@line 1666 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str65); //@line 1666 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str65, allocate(1, "i32", ALLOC_STACK)); //@line 1666 "_elementtree.c"
         var $3=($2)==0; //@line 1666 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1666 "_elementtree.c"
       case 1: // $bb
@@ -6494,21 +6418,39 @@ var __str124;
   }
   
 
+  function _treebuilder_handle_xml($self, $encoding, $standalone) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $encoding_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    $encoding_addr=$encoding;
+    var $1=HEAP[__Py_NoneStruct]; //@line 1698 "_elementtree.c"
+    var $2=($1) + 1; //@line 1698 "_elementtree.c"
+    HEAP[__Py_NoneStruct]=$2; //@line 1698 "_elementtree.c"
+    $0=__Py_NoneStruct; //@line 1698 "_elementtree.c"
+    var $3=$0; //@line 1698 "_elementtree.c"
+    $retval=$3; //@line 1698 "_elementtree.c"
+    var $retval1=$retval; //@line 1698 "_elementtree.c"
+    ;
+    return $retval1; //@line 1698 "_elementtree.c"
+  }
+  
+
   function _treebuilder_handle_start($self, $tag, $attrib) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $element_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $tag_addr;
         var $attrib_addr;
         var $retval;
-        var $1;
+        var $0;
         var $node;
         var $this;
         var $res;
@@ -6516,459 +6458,420 @@ var __str124;
         $self_addr=$self;
         $tag_addr=$tag;
         $attrib_addr=$attrib;
-        var $2=$self_addr; //@line 1708 "_elementtree.c"
-        var $3=$2+20; //@line 1708 "_elementtree.c"
-        var $4=HEAP[$3]; //@line 1708 "_elementtree.c"
-        var $5=($4)!=0; //@line 1708 "_elementtree.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 9; break; } //@line 1708 "_elementtree.c"
+        var $1=$self_addr; //@line 1708 "_elementtree.c"
+        var $2=$1+20; //@line 1708 "_elementtree.c"
+        var $3=HEAP[$2]; //@line 1708 "_elementtree.c"
+        var $4=($3)!=0; //@line 1708 "_elementtree.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 9; break; } //@line 1708 "_elementtree.c"
       case 1: // $bb
-        var $6=$self_addr; //@line 1709 "_elementtree.c"
-        var $7=$6+12; //@line 1709 "_elementtree.c"
-        var $8=HEAP[$7]; //@line 1709 "_elementtree.c"
-        var $9=$self_addr; //@line 1709 "_elementtree.c"
-        var $10=$9+16; //@line 1709 "_elementtree.c"
-        var $11=HEAP[$10]; //@line 1709 "_elementtree.c"
-        var $12=($8)==($11); //@line 1709 "_elementtree.c"
-        var $13=$self_addr; //@line 1710 "_elementtree.c"
-        var $14=$13+16; //@line 1710 "_elementtree.c"
-        var $15=HEAP[$14]; //@line 1710 "_elementtree.c"
-        if ($12) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 1709 "_elementtree.c"
+        var $5=$self_addr; //@line 1709 "_elementtree.c"
+        var $6=$5+12; //@line 1709 "_elementtree.c"
+        var $7=HEAP[$6]; //@line 1709 "_elementtree.c"
+        var $8=$self_addr; //@line 1709 "_elementtree.c"
+        var $9=$8+16; //@line 1709 "_elementtree.c"
+        var $10=HEAP[$9]; //@line 1709 "_elementtree.c"
+        var $11=($7)==($10); //@line 1709 "_elementtree.c"
+        var $12=$self_addr; //@line 1710 "_elementtree.c"
+        var $13=$12+16; //@line 1710 "_elementtree.c"
+        var $14=HEAP[$13]; //@line 1710 "_elementtree.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 1709 "_elementtree.c"
       case 2: // $bb1
-        var $16=$15+12; //@line 1710 "_elementtree.c"
-        var $17=HEAP[$16]; //@line 1710 "_elementtree.c"
-        var $18=($17); //@line 1710 "_elementtree.c"
-        var $19=($18) & -2; //@line 1710 "_elementtree.c"
-        var $20=($19); //@line 1710 "_elementtree.c"
-        var $21=$20; //@line 1710 "_elementtree.c"
-        var $22=HEAP[$21]; //@line 1710 "_elementtree.c"
-        var $23=($22) - 1; //@line 1710 "_elementtree.c"
-        var $24=$20; //@line 1710 "_elementtree.c"
-        HEAP[$24]=$23; //@line 1710 "_elementtree.c"
-        var $25=$20; //@line 1710 "_elementtree.c"
-        var $26=HEAP[$25]; //@line 1710 "_elementtree.c"
-        var $27=($26)==0; //@line 1710 "_elementtree.c"
-        if ($27) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1710 "_elementtree.c"
+        var $15=$14+12; //@line 1710 "_elementtree.c"
+        var $16=HEAP[$15]; //@line 1710 "_elementtree.c"
+        var $17=($16); //@line 1710 "_elementtree.c"
+        var $18=($17) & -2; //@line 1710 "_elementtree.c"
+        var $19=($18); //@line 1710 "_elementtree.c"
+        var $20=$19; //@line 1710 "_elementtree.c"
+        var $21=HEAP[$20]; //@line 1710 "_elementtree.c"
+        var $22=($21) - 1; //@line 1710 "_elementtree.c"
+        var $23=$19; //@line 1710 "_elementtree.c"
+        HEAP[$23]=$22; //@line 1710 "_elementtree.c"
+        var $24=$19; //@line 1710 "_elementtree.c"
+        var $25=HEAP[$24]; //@line 1710 "_elementtree.c"
+        var $26=($25)==0; //@line 1710 "_elementtree.c"
+        if ($26) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1710 "_elementtree.c"
       case 3: // $bb2
-        var $28=$self_addr; //@line 1710 "_elementtree.c"
-        var $29=$28+16; //@line 1710 "_elementtree.c"
-        var $30=HEAP[$29]; //@line 1710 "_elementtree.c"
-        var $31=$30+12; //@line 1710 "_elementtree.c"
-        var $32=HEAP[$31]; //@line 1710 "_elementtree.c"
-        var $33=($32); //@line 1710 "_elementtree.c"
-        var $34=($33) & -2; //@line 1710 "_elementtree.c"
-        var $35=($34); //@line 1710 "_elementtree.c"
-        var $36=$35+4; //@line 1710 "_elementtree.c"
-        var $37=HEAP[$36]; //@line 1710 "_elementtree.c"
-        var $38=$37+24; //@line 1710 "_elementtree.c"
-        var $39=HEAP[$38]; //@line 1710 "_elementtree.c"
-        var $40=$self_addr; //@line 1710 "_elementtree.c"
-        var $41=$40+16; //@line 1710 "_elementtree.c"
-        var $42=HEAP[$41]; //@line 1710 "_elementtree.c"
-        var $43=$42+12; //@line 1710 "_elementtree.c"
-        var $44=HEAP[$43]; //@line 1710 "_elementtree.c"
-        var $45=($44); //@line 1710 "_elementtree.c"
-        var $46=($45) & -2; //@line 1710 "_elementtree.c"
-        var $47=($46); //@line 1710 "_elementtree.c"
-        FUNCTION_TABLE[$39]($47); //@line 1710 "_elementtree.c"
+        var $27=$self_addr; //@line 1710 "_elementtree.c"
+        var $28=$27+16; //@line 1710 "_elementtree.c"
+        var $29=HEAP[$28]; //@line 1710 "_elementtree.c"
+        var $30=$29+12; //@line 1710 "_elementtree.c"
+        var $31=HEAP[$30]; //@line 1710 "_elementtree.c"
+        var $32=($31); //@line 1710 "_elementtree.c"
+        var $33=($32) & -2; //@line 1710 "_elementtree.c"
+        var $34=($33); //@line 1710 "_elementtree.c"
+        var $35=$34+4; //@line 1710 "_elementtree.c"
+        var $36=HEAP[$35]; //@line 1710 "_elementtree.c"
+        var $37=$36+24; //@line 1710 "_elementtree.c"
+        var $38=HEAP[$37]; //@line 1710 "_elementtree.c"
+        var $39=$self_addr; //@line 1710 "_elementtree.c"
+        var $40=$39+16; //@line 1710 "_elementtree.c"
+        var $41=HEAP[$40]; //@line 1710 "_elementtree.c"
+        var $42=$41+12; //@line 1710 "_elementtree.c"
+        var $43=HEAP[$42]; //@line 1710 "_elementtree.c"
+        var $44=($43); //@line 1710 "_elementtree.c"
+        var $45=($44) & -2; //@line 1710 "_elementtree.c"
+        var $46=($45); //@line 1710 "_elementtree.c"
+        FUNCTION_TABLE[$38]($46); //@line 1710 "_elementtree.c"
         __label__ = 4; break; //@line 1710 "_elementtree.c"
       case 4: // $bb3
-        var $48=$self_addr; //@line 1711 "_elementtree.c"
-        var $49=$48+16; //@line 1711 "_elementtree.c"
-        var $50=HEAP[$49]; //@line 1711 "_elementtree.c"
-        var $51=$self_addr; //@line 1711 "_elementtree.c"
-        var $52=$51+20; //@line 1711 "_elementtree.c"
-        var $53=HEAP[$52]; //@line 1711 "_elementtree.c"
-        var $54=($53); //@line 1711 "_elementtree.c"
-        var $55=($54) & -2; //@line 1711 "_elementtree.c"
-        var $56=$self_addr; //@line 1711 "_elementtree.c"
-        var $57=$56+20; //@line 1711 "_elementtree.c"
-        var $58=HEAP[$57]; //@line 1711 "_elementtree.c"
-        var $59=$58+4; //@line 1711 "_elementtree.c"
-        var $60=HEAP[$59]; //@line 1711 "_elementtree.c"
-        var $61=($60)==(_PyList_Type); //@line 1711 "_elementtree.c"
-        var $62=($61); //@line 1711 "_elementtree.c"
-        var $63=($62) | ($55); //@line 1711 "_elementtree.c"
-        var $64=($63); //@line 1711 "_elementtree.c"
-        var $65=$50+12; //@line 1711 "_elementtree.c"
-        HEAP[$65]=$64; //@line 1711 "_elementtree.c"
+        var $47=$self_addr; //@line 1711 "_elementtree.c"
+        var $48=$47+16; //@line 1711 "_elementtree.c"
+        var $49=HEAP[$48]; //@line 1711 "_elementtree.c"
+        var $50=$self_addr; //@line 1711 "_elementtree.c"
+        var $51=$50+20; //@line 1711 "_elementtree.c"
+        var $52=HEAP[$51]; //@line 1711 "_elementtree.c"
+        var $53=($52); //@line 1711 "_elementtree.c"
+        var $54=($53) & -2; //@line 1711 "_elementtree.c"
+        var $55=$self_addr; //@line 1711 "_elementtree.c"
+        var $56=$55+20; //@line 1711 "_elementtree.c"
+        var $57=HEAP[$56]; //@line 1711 "_elementtree.c"
+        var $58=$57+4; //@line 1711 "_elementtree.c"
+        var $59=HEAP[$58]; //@line 1711 "_elementtree.c"
+        var $60=($59)==(_PyList_Type); //@line 1711 "_elementtree.c"
+        var $61=($60); //@line 1711 "_elementtree.c"
+        var $62=($61) | ($54); //@line 1711 "_elementtree.c"
+        var $63=($62); //@line 1711 "_elementtree.c"
+        var $64=$49+12; //@line 1711 "_elementtree.c"
+        HEAP[$64]=$63; //@line 1711 "_elementtree.c"
         __label__ = 8; break; //@line 1711 "_elementtree.c"
       case 5: // $bb4
-        var $66=$15+16; //@line 1715 "_elementtree.c"
-        var $67=HEAP[$66]; //@line 1715 "_elementtree.c"
-        var $68=($67); //@line 1715 "_elementtree.c"
-        var $69=($68) & -2; //@line 1715 "_elementtree.c"
-        var $70=($69); //@line 1715 "_elementtree.c"
-        var $71=$70; //@line 1715 "_elementtree.c"
-        var $72=HEAP[$71]; //@line 1715 "_elementtree.c"
-        var $73=($72) - 1; //@line 1715 "_elementtree.c"
-        var $74=$70; //@line 1715 "_elementtree.c"
-        HEAP[$74]=$73; //@line 1715 "_elementtree.c"
-        var $75=$70; //@line 1715 "_elementtree.c"
-        var $76=HEAP[$75]; //@line 1715 "_elementtree.c"
-        var $77=($76)==0; //@line 1715 "_elementtree.c"
-        if ($77) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1715 "_elementtree.c"
+        var $65=$14+16; //@line 1715 "_elementtree.c"
+        var $66=HEAP[$65]; //@line 1715 "_elementtree.c"
+        var $67=($66); //@line 1715 "_elementtree.c"
+        var $68=($67) & -2; //@line 1715 "_elementtree.c"
+        var $69=($68); //@line 1715 "_elementtree.c"
+        var $70=$69; //@line 1715 "_elementtree.c"
+        var $71=HEAP[$70]; //@line 1715 "_elementtree.c"
+        var $72=($71) - 1; //@line 1715 "_elementtree.c"
+        var $73=$69; //@line 1715 "_elementtree.c"
+        HEAP[$73]=$72; //@line 1715 "_elementtree.c"
+        var $74=$69; //@line 1715 "_elementtree.c"
+        var $75=HEAP[$74]; //@line 1715 "_elementtree.c"
+        var $76=($75)==0; //@line 1715 "_elementtree.c"
+        if ($76) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1715 "_elementtree.c"
       case 6: // $bb5
-        var $78=$self_addr; //@line 1715 "_elementtree.c"
-        var $79=$78+16; //@line 1715 "_elementtree.c"
-        var $80=HEAP[$79]; //@line 1715 "_elementtree.c"
-        var $81=$80+16; //@line 1715 "_elementtree.c"
-        var $82=HEAP[$81]; //@line 1715 "_elementtree.c"
-        var $83=($82); //@line 1715 "_elementtree.c"
-        var $84=($83) & -2; //@line 1715 "_elementtree.c"
-        var $85=($84); //@line 1715 "_elementtree.c"
-        var $86=$85+4; //@line 1715 "_elementtree.c"
-        var $87=HEAP[$86]; //@line 1715 "_elementtree.c"
-        var $88=$87+24; //@line 1715 "_elementtree.c"
-        var $89=HEAP[$88]; //@line 1715 "_elementtree.c"
-        var $90=$self_addr; //@line 1715 "_elementtree.c"
-        var $91=$90+16; //@line 1715 "_elementtree.c"
-        var $92=HEAP[$91]; //@line 1715 "_elementtree.c"
-        var $93=$92+16; //@line 1715 "_elementtree.c"
-        var $94=HEAP[$93]; //@line 1715 "_elementtree.c"
-        var $95=($94); //@line 1715 "_elementtree.c"
-        var $96=($95) & -2; //@line 1715 "_elementtree.c"
-        var $97=($96); //@line 1715 "_elementtree.c"
-        FUNCTION_TABLE[$89]($97); //@line 1715 "_elementtree.c"
+        var $77=$self_addr; //@line 1715 "_elementtree.c"
+        var $78=$77+16; //@line 1715 "_elementtree.c"
+        var $79=HEAP[$78]; //@line 1715 "_elementtree.c"
+        var $80=$79+16; //@line 1715 "_elementtree.c"
+        var $81=HEAP[$80]; //@line 1715 "_elementtree.c"
+        var $82=($81); //@line 1715 "_elementtree.c"
+        var $83=($82) & -2; //@line 1715 "_elementtree.c"
+        var $84=($83); //@line 1715 "_elementtree.c"
+        var $85=$84+4; //@line 1715 "_elementtree.c"
+        var $86=HEAP[$85]; //@line 1715 "_elementtree.c"
+        var $87=$86+24; //@line 1715 "_elementtree.c"
+        var $88=HEAP[$87]; //@line 1715 "_elementtree.c"
+        var $89=$self_addr; //@line 1715 "_elementtree.c"
+        var $90=$89+16; //@line 1715 "_elementtree.c"
+        var $91=HEAP[$90]; //@line 1715 "_elementtree.c"
+        var $92=$91+16; //@line 1715 "_elementtree.c"
+        var $93=HEAP[$92]; //@line 1715 "_elementtree.c"
+        var $94=($93); //@line 1715 "_elementtree.c"
+        var $95=($94) & -2; //@line 1715 "_elementtree.c"
+        var $96=($95); //@line 1715 "_elementtree.c"
+        FUNCTION_TABLE[$88]($96); //@line 1715 "_elementtree.c"
         __label__ = 7; break; //@line 1715 "_elementtree.c"
       case 7: // $bb6
-        var $98=$self_addr; //@line 1716 "_elementtree.c"
-        var $99=$98+16; //@line 1716 "_elementtree.c"
-        var $100=HEAP[$99]; //@line 1716 "_elementtree.c"
-        var $101=$self_addr; //@line 1716 "_elementtree.c"
-        var $102=$101+20; //@line 1716 "_elementtree.c"
-        var $103=HEAP[$102]; //@line 1716 "_elementtree.c"
-        var $104=($103); //@line 1716 "_elementtree.c"
-        var $105=($104) & -2; //@line 1716 "_elementtree.c"
-        var $106=$self_addr; //@line 1716 "_elementtree.c"
-        var $107=$106+20; //@line 1716 "_elementtree.c"
-        var $108=HEAP[$107]; //@line 1716 "_elementtree.c"
-        var $109=$108+4; //@line 1716 "_elementtree.c"
-        var $110=HEAP[$109]; //@line 1716 "_elementtree.c"
-        var $111=($110)==(_PyList_Type); //@line 1716 "_elementtree.c"
-        var $112=($111); //@line 1716 "_elementtree.c"
-        var $113=($112) | ($105); //@line 1716 "_elementtree.c"
-        var $114=($113); //@line 1716 "_elementtree.c"
-        var $115=$100+16; //@line 1716 "_elementtree.c"
-        HEAP[$115]=$114; //@line 1716 "_elementtree.c"
+        var $97=$self_addr; //@line 1716 "_elementtree.c"
+        var $98=$97+16; //@line 1716 "_elementtree.c"
+        var $99=HEAP[$98]; //@line 1716 "_elementtree.c"
+        var $100=$self_addr; //@line 1716 "_elementtree.c"
+        var $101=$100+20; //@line 1716 "_elementtree.c"
+        var $102=HEAP[$101]; //@line 1716 "_elementtree.c"
+        var $103=($102); //@line 1716 "_elementtree.c"
+        var $104=($103) & -2; //@line 1716 "_elementtree.c"
+        var $105=$self_addr; //@line 1716 "_elementtree.c"
+        var $106=$105+20; //@line 1716 "_elementtree.c"
+        var $107=HEAP[$106]; //@line 1716 "_elementtree.c"
+        var $108=$107+4; //@line 1716 "_elementtree.c"
+        var $109=HEAP[$108]; //@line 1716 "_elementtree.c"
+        var $110=($109)==(_PyList_Type); //@line 1716 "_elementtree.c"
+        var $111=($110); //@line 1716 "_elementtree.c"
+        var $112=($111) | ($104); //@line 1716 "_elementtree.c"
+        var $113=($112); //@line 1716 "_elementtree.c"
+        var $114=$99+16; //@line 1716 "_elementtree.c"
+        HEAP[$114]=$113; //@line 1716 "_elementtree.c"
         __label__ = 8; break; //@line 1716 "_elementtree.c"
       case 8: // $bb7
-        var $116=$self_addr; //@line 1720 "_elementtree.c"
-        var $117=$116+20; //@line 1720 "_elementtree.c"
-        HEAP[$117]=0; //@line 1720 "_elementtree.c"
+        var $115=$self_addr; //@line 1720 "_elementtree.c"
+        var $116=$115+20; //@line 1720 "_elementtree.c"
+        HEAP[$116]=0; //@line 1720 "_elementtree.c"
         __label__ = 9; break; //@line 1720 "_elementtree.c"
       case 9: // $bb8
-        var $118=$tag_addr; //@line 1723 "_elementtree.c"
-        var $119=$attrib_addr; //@line 1723 "_elementtree.c"
-        var $120=_element_new($118, $119); //@line 1723 "_elementtree.c"
-        $node=$120; //@line 1723 "_elementtree.c"
-        var $121=($120)==0; //@line 1724 "_elementtree.c"
-        if ($121) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 1724 "_elementtree.c"
+        var $117=$tag_addr; //@line 1723 "_elementtree.c"
+        var $118=$attrib_addr; //@line 1723 "_elementtree.c"
+        var $119=_element_new($117, $118); //@line 1723 "_elementtree.c"
+        $node=$119; //@line 1723 "_elementtree.c"
+        var $120=($119)==0; //@line 1724 "_elementtree.c"
+        if ($120) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 1724 "_elementtree.c"
       case 10: // $bb9
-        $1=0; //@line 1725 "_elementtree.c"
-        __label__ = 35; break; //@line 1725 "_elementtree.c"
+        $0=0; //@line 1725 "_elementtree.c"
+        __label__ = 33; break; //@line 1725 "_elementtree.c"
       case 11: // $bb10
-        var $122=$self_addr; //@line 1727 "_elementtree.c"
-        var $123=$122+12; //@line 1727 "_elementtree.c"
-        var $124=HEAP[$123]; //@line 1727 "_elementtree.c"
-        var $125=$124; //@line 1727 "_elementtree.c"
-        $this=$125; //@line 1727 "_elementtree.c"
-        var $126=$this; //@line 1729 "_elementtree.c"
-        var $127=($126)!=(__Py_NoneStruct); //@line 1729 "_elementtree.c"
-        if ($127) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 1729 "_elementtree.c"
+        var $121=$self_addr; //@line 1727 "_elementtree.c"
+        var $122=$121+12; //@line 1727 "_elementtree.c"
+        var $123=HEAP[$122]; //@line 1727 "_elementtree.c"
+        var $124=$123; //@line 1727 "_elementtree.c"
+        $this=$124; //@line 1727 "_elementtree.c"
+        var $125=$this; //@line 1729 "_elementtree.c"
+        var $126=($125)!=(__Py_NoneStruct); //@line 1729 "_elementtree.c"
+        if ($126) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1729 "_elementtree.c"
       case 12: // $bb11
-        var $128=$this; //@line 1730 "_elementtree.c"
-        var $129=$128; //@line 1730 "_elementtree.c"
-        var $130=$node; //@line 1730 "_elementtree.c"
-        $self_addr_i=$129;
-        $element_addr_i=$130;
-        var $131=$self_addr_i; //@line 395 "_elementtree.c"
-        var $132=_element_resize($131, 1); //@line 395 "_elementtree.c"
-        var $133=($132) < 0; //@line 395 "_elementtree.c"
-        if ($133) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 395 "_elementtree.c"
-      case 13: // $element_add_subelement_exit_thread
-        $0=-1; //@line 396 "_elementtree.c"
-        $retval_i=-1; //@line 396 "_elementtree.c"
-        __label__ = 32; break;
-      case 14: // $element_add_subelement_exit
-        var $134=$element_addr_i; //@line 398 "_elementtree.c"
-        var $135=$134; //@line 398 "_elementtree.c"
-        var $136=HEAP[$135]; //@line 398 "_elementtree.c"
-        var $137=($136) + 1; //@line 398 "_elementtree.c"
-        var $138=$element_addr_i; //@line 398 "_elementtree.c"
-        var $139=$138; //@line 398 "_elementtree.c"
-        HEAP[$139]=$137; //@line 398 "_elementtree.c"
-        var $140=$self_addr_i; //@line 399 "_elementtree.c"
-        var $141=$140+20; //@line 399 "_elementtree.c"
-        var $142=HEAP[$141]; //@line 399 "_elementtree.c"
-        var $143=$142+12; //@line 399 "_elementtree.c"
-        var $144=HEAP[$143]; //@line 399 "_elementtree.c"
-        var $145=$self_addr_i; //@line 399 "_elementtree.c"
-        var $146=$145+20; //@line 399 "_elementtree.c"
-        var $147=HEAP[$146]; //@line 399 "_elementtree.c"
-        var $148=$147+4; //@line 399 "_elementtree.c"
-        var $149=HEAP[$148]; //@line 399 "_elementtree.c"
-        var $150=$144+4*$149; //@line 399 "_elementtree.c"
-        var $151=$element_addr_i; //@line 399 "_elementtree.c"
-        HEAP[$150]=$151; //@line 399 "_elementtree.c"
-        var $152=$self_addr_i; //@line 401 "_elementtree.c"
-        var $153=$152+20; //@line 401 "_elementtree.c"
-        var $154=HEAP[$153]; //@line 401 "_elementtree.c"
-        var $155=$154+4; //@line 401 "_elementtree.c"
-        var $156=HEAP[$155]; //@line 401 "_elementtree.c"
-        var $157=($156) + 1; //@line 401 "_elementtree.c"
-        var $158=$154+4; //@line 401 "_elementtree.c"
-        HEAP[$158]=$157; //@line 401 "_elementtree.c"
-        $0=0; //@line 403 "_elementtree.c"
-        $retval_i=0; //@line 396 "_elementtree.c"
-        __label__ = 18; break;
-      case 15: // $bb13
-        var $159=$self_addr; //@line 1733 "_elementtree.c"
-        var $160=$159+8; //@line 1733 "_elementtree.c"
-        var $161=HEAP[$160]; //@line 1733 "_elementtree.c"
-        var $162=($161)!=0; //@line 1733 "_elementtree.c"
-        if ($162) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1733 "_elementtree.c"
-      case 16: // $bb14
-        var $163=HEAP[_elementtree_parseerror_obj]; //@line 1734 "_elementtree.c"
-        _PyErr_SetString($163, __str66); //@line 1734 "_elementtree.c"
-        __label__ = 32; break; //@line 1734 "_elementtree.c"
-      case 17: // $bb15
-        var $164=$node; //@line 1740 "_elementtree.c"
-        var $165=$164; //@line 1740 "_elementtree.c"
-        var $166=HEAP[$165]; //@line 1740 "_elementtree.c"
-        var $167=($166) + 1; //@line 1740 "_elementtree.c"
-        var $168=$node; //@line 1740 "_elementtree.c"
-        var $169=$168; //@line 1740 "_elementtree.c"
-        HEAP[$169]=$167; //@line 1740 "_elementtree.c"
-        var $170=$self_addr; //@line 1741 "_elementtree.c"
-        var $171=$170+8; //@line 1741 "_elementtree.c"
-        var $172=$node; //@line 1741 "_elementtree.c"
-        HEAP[$171]=$172; //@line 1741 "_elementtree.c"
-        __label__ = 18; break; //@line 1741 "_elementtree.c"
-      case 18: // $bb16
-        var $173=$self_addr; //@line 1744 "_elementtree.c"
-        var $174=$173+28; //@line 1744 "_elementtree.c"
-        var $175=HEAP[$174]; //@line 1744 "_elementtree.c"
-        var $176=$self_addr; //@line 1744 "_elementtree.c"
-        var $177=$176+24; //@line 1744 "_elementtree.c"
-        var $178=HEAP[$177]; //@line 1744 "_elementtree.c"
-        var $179=$178; //@line 1744 "_elementtree.c"
-        var $180=$179+8; //@line 1744 "_elementtree.c"
-        var $181=HEAP[$180]; //@line 1744 "_elementtree.c"
-        var $182=($175) < ($181); //@line 1744 "_elementtree.c"
-        var $183=$self_addr; //@line 1745 "_elementtree.c"
-        if ($182) { __label__ = 19; break; } else { __label__ = 21; break; } //@line 1744 "_elementtree.c"
-      case 19: // $bb17
-        var $184=$183+28; //@line 1745 "_elementtree.c"
-        var $185=HEAP[$184]; //@line 1745 "_elementtree.c"
-        var $186=$self_addr; //@line 1745 "_elementtree.c"
-        var $187=$186+24; //@line 1745 "_elementtree.c"
-        var $188=HEAP[$187]; //@line 1745 "_elementtree.c"
-        var $189=$this; //@line 1745 "_elementtree.c"
-        var $190=_PyList_SetItem($188, $185, $189); //@line 1745 "_elementtree.c"
-        var $191=($190) < 0; //@line 1745 "_elementtree.c"
-        if ($191) { __label__ = 32; break; } else { __label__ = 20; break; } //@line 1745 "_elementtree.c"
-      case 20: // $bb18
-        var $192=$this; //@line 1747 "_elementtree.c"
-        var $193=$192; //@line 1747 "_elementtree.c"
-        var $194=HEAP[$193]; //@line 1747 "_elementtree.c"
-        var $195=($194) + 1; //@line 1747 "_elementtree.c"
-        var $196=$this; //@line 1747 "_elementtree.c"
-        var $197=$196; //@line 1747 "_elementtree.c"
-        HEAP[$197]=$195; //@line 1747 "_elementtree.c"
-        __label__ = 22; break; //@line 1747 "_elementtree.c"
-      case 21: // $bb19
-        var $198=$183+24; //@line 1749 "_elementtree.c"
-        var $199=HEAP[$198]; //@line 1749 "_elementtree.c"
-        var $200=$this; //@line 1749 "_elementtree.c"
-        var $201=_PyList_Append($199, $200); //@line 1749 "_elementtree.c"
-        var $202=($201) < 0; //@line 1749 "_elementtree.c"
-        if ($202) { __label__ = 32; break; } else { __label__ = 22; break; } //@line 1749 "_elementtree.c"
-      case 22: // $bb20
-        var $203=$self_addr; //@line 1752 "_elementtree.c"
-        var $204=$203+28; //@line 1752 "_elementtree.c"
-        var $205=HEAP[$204]; //@line 1752 "_elementtree.c"
-        var $206=($205) + 1; //@line 1752 "_elementtree.c"
-        var $207=$self_addr; //@line 1752 "_elementtree.c"
-        var $208=$207+28; //@line 1752 "_elementtree.c"
-        HEAP[$208]=$206; //@line 1752 "_elementtree.c"
-        var $209=$this; //@line 1754 "_elementtree.c"
-        var $210=$209; //@line 1754 "_elementtree.c"
-        var $211=HEAP[$210]; //@line 1754 "_elementtree.c"
-        var $212=($211) - 1; //@line 1754 "_elementtree.c"
-        var $213=$this; //@line 1754 "_elementtree.c"
-        var $214=$213; //@line 1754 "_elementtree.c"
-        HEAP[$214]=$212; //@line 1754 "_elementtree.c"
-        var $215=$this; //@line 1754 "_elementtree.c"
-        var $216=$215; //@line 1754 "_elementtree.c"
-        var $217=HEAP[$216]; //@line 1754 "_elementtree.c"
-        var $218=($217)==0; //@line 1754 "_elementtree.c"
-        if ($218) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 1754 "_elementtree.c"
-      case 23: // $bb21
-        var $219=$this; //@line 1754 "_elementtree.c"
-        var $220=$219+4; //@line 1754 "_elementtree.c"
-        var $221=HEAP[$220]; //@line 1754 "_elementtree.c"
-        var $222=$221+24; //@line 1754 "_elementtree.c"
-        var $223=HEAP[$222]; //@line 1754 "_elementtree.c"
-        var $224=$this; //@line 1754 "_elementtree.c"
-        FUNCTION_TABLE[$223]($224); //@line 1754 "_elementtree.c"
-        __label__ = 24; break; //@line 1754 "_elementtree.c"
-      case 24: // $bb22
-        var $225=$node; //@line 1755 "_elementtree.c"
-        var $226=$225; //@line 1755 "_elementtree.c"
-        var $227=HEAP[$226]; //@line 1755 "_elementtree.c"
-        var $228=($227) + 1; //@line 1755 "_elementtree.c"
-        var $229=$node; //@line 1755 "_elementtree.c"
-        var $230=$229; //@line 1755 "_elementtree.c"
-        HEAP[$230]=$228; //@line 1755 "_elementtree.c"
-        var $231=$node; //@line 1756 "_elementtree.c"
-        var $232=$231; //@line 1756 "_elementtree.c"
-        var $233=$self_addr; //@line 1756 "_elementtree.c"
-        var $234=$233+12; //@line 1756 "_elementtree.c"
-        HEAP[$234]=$232; //@line 1756 "_elementtree.c"
-        var $235=$self_addr; //@line 1758 "_elementtree.c"
-        var $236=$235+16; //@line 1758 "_elementtree.c"
-        var $237=HEAP[$236]; //@line 1758 "_elementtree.c"
-        var $238=$237; //@line 1758 "_elementtree.c"
-        var $239=$238; //@line 1758 "_elementtree.c"
-        var $240=HEAP[$239]; //@line 1758 "_elementtree.c"
-        var $241=($240) - 1; //@line 1758 "_elementtree.c"
-        var $242=$238; //@line 1758 "_elementtree.c"
-        HEAP[$242]=$241; //@line 1758 "_elementtree.c"
-        var $243=$238; //@line 1758 "_elementtree.c"
-        var $244=HEAP[$243]; //@line 1758 "_elementtree.c"
-        var $245=($244)==0; //@line 1758 "_elementtree.c"
-        if ($245) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1758 "_elementtree.c"
-      case 25: // $bb23
-        var $246=$self_addr; //@line 1758 "_elementtree.c"
-        var $247=$246+16; //@line 1758 "_elementtree.c"
-        var $248=HEAP[$247]; //@line 1758 "_elementtree.c"
-        var $249=$248; //@line 1758 "_elementtree.c"
-        var $250=$249+4; //@line 1758 "_elementtree.c"
-        var $251=HEAP[$250]; //@line 1758 "_elementtree.c"
-        var $252=$251+24; //@line 1758 "_elementtree.c"
-        var $253=HEAP[$252]; //@line 1758 "_elementtree.c"
-        var $254=$self_addr; //@line 1758 "_elementtree.c"
-        var $255=$254+16; //@line 1758 "_elementtree.c"
-        var $256=HEAP[$255]; //@line 1758 "_elementtree.c"
-        var $257=$256; //@line 1758 "_elementtree.c"
-        FUNCTION_TABLE[$253]($257); //@line 1758 "_elementtree.c"
-        __label__ = 26; break; //@line 1758 "_elementtree.c"
-      case 26: // $bb24
-        var $258=$node; //@line 1759 "_elementtree.c"
-        var $259=$258; //@line 1759 "_elementtree.c"
-        var $260=HEAP[$259]; //@line 1759 "_elementtree.c"
-        var $261=($260) + 1; //@line 1759 "_elementtree.c"
-        var $262=$node; //@line 1759 "_elementtree.c"
-        var $263=$262; //@line 1759 "_elementtree.c"
-        HEAP[$263]=$261; //@line 1759 "_elementtree.c"
-        var $264=$node; //@line 1760 "_elementtree.c"
-        var $265=$264; //@line 1760 "_elementtree.c"
-        var $266=$self_addr; //@line 1760 "_elementtree.c"
-        var $267=$266+16; //@line 1760 "_elementtree.c"
-        HEAP[$267]=$265; //@line 1760 "_elementtree.c"
-        var $268=$self_addr; //@line 1762 "_elementtree.c"
-        var $269=$268+36; //@line 1762 "_elementtree.c"
-        var $270=HEAP[$269]; //@line 1762 "_elementtree.c"
-        var $271=($270)!=0; //@line 1762 "_elementtree.c"
-        if ($271) { __label__ = 27; break; } else { __label__ = 31; break; } //@line 1762 "_elementtree.c"
-      case 27: // $bb25
-        var $272=$self_addr; //@line 1764 "_elementtree.c"
-        var $273=$272+36; //@line 1764 "_elementtree.c"
-        var $274=HEAP[$273]; //@line 1764 "_elementtree.c"
-        $action=$274; //@line 1764 "_elementtree.c"
-        var $275=_PyTuple_New(2); //@line 1765 "_elementtree.c"
-        $res=$275; //@line 1765 "_elementtree.c"
-        var $276=$res; //@line 1766 "_elementtree.c"
-        var $277=($276)!=0; //@line 1766 "_elementtree.c"
-        if ($277) { __label__ = 28; break; } else { __label__ = 30; break; } //@line 1766 "_elementtree.c"
-      case 28: // $bb26
-        var $278=$action; //@line 1767 "_elementtree.c"
-        var $279=$278; //@line 1767 "_elementtree.c"
-        var $280=HEAP[$279]; //@line 1767 "_elementtree.c"
-        var $281=($280) + 1; //@line 1767 "_elementtree.c"
-        var $282=$action; //@line 1767 "_elementtree.c"
-        var $283=$282; //@line 1767 "_elementtree.c"
-        HEAP[$283]=$281; //@line 1767 "_elementtree.c"
-        var $284=$res; //@line 1767 "_elementtree.c"
-        var $285=$284; //@line 1767 "_elementtree.c"
-        var $286=$285+12; //@line 1767 "_elementtree.c"
-        var $287=$286; //@line 1767 "_elementtree.c"
-        var $288=$action; //@line 1767 "_elementtree.c"
-        HEAP[$287]=$288; //@line 1767 "_elementtree.c"
-        var $289=$node; //@line 1768 "_elementtree.c"
-        var $290=$289; //@line 1768 "_elementtree.c"
-        var $291=HEAP[$290]; //@line 1768 "_elementtree.c"
-        var $292=($291) + 1; //@line 1768 "_elementtree.c"
-        var $293=$node; //@line 1768 "_elementtree.c"
-        var $294=$293; //@line 1768 "_elementtree.c"
-        HEAP[$294]=$292; //@line 1768 "_elementtree.c"
-        var $295=$res; //@line 1768 "_elementtree.c"
-        var $296=$295; //@line 1768 "_elementtree.c"
-        var $297=$296+12; //@line 1768 "_elementtree.c"
-        var $298=$297+4; //@line 1768 "_elementtree.c"
-        var $299=$node; //@line 1768 "_elementtree.c"
-        HEAP[$298]=$299; //@line 1768 "_elementtree.c"
-        var $300=$self_addr; //@line 1769 "_elementtree.c"
-        var $301=$300+32; //@line 1769 "_elementtree.c"
-        var $302=HEAP[$301]; //@line 1769 "_elementtree.c"
-        var $303=$res; //@line 1769 "_elementtree.c"
-        var $304=_PyList_Append($302, $303); //@line 1769 "_elementtree.c"
-        var $305=$res; //@line 1770 "_elementtree.c"
-        var $306=$305; //@line 1770 "_elementtree.c"
-        var $307=HEAP[$306]; //@line 1770 "_elementtree.c"
-        var $308=($307) - 1; //@line 1770 "_elementtree.c"
-        var $309=$res; //@line 1770 "_elementtree.c"
-        var $310=$309; //@line 1770 "_elementtree.c"
-        HEAP[$310]=$308; //@line 1770 "_elementtree.c"
-        var $311=$res; //@line 1770 "_elementtree.c"
-        var $312=$311; //@line 1770 "_elementtree.c"
-        var $313=HEAP[$312]; //@line 1770 "_elementtree.c"
-        var $314=($313)==0; //@line 1770 "_elementtree.c"
-        if ($314) { __label__ = 29; break; } else { __label__ = 31; break; } //@line 1770 "_elementtree.c"
-      case 29: // $bb27
-        var $315=$res; //@line 1770 "_elementtree.c"
-        var $316=$315+4; //@line 1770 "_elementtree.c"
-        var $317=HEAP[$316]; //@line 1770 "_elementtree.c"
-        var $318=$317+24; //@line 1770 "_elementtree.c"
-        var $319=HEAP[$318]; //@line 1770 "_elementtree.c"
-        var $320=$res; //@line 1770 "_elementtree.c"
-        FUNCTION_TABLE[$319]($320); //@line 1770 "_elementtree.c"
-        __label__ = 31; break; //@line 1770 "_elementtree.c"
-      case 30: // $bb29
+        var $127=$this; //@line 1730 "_elementtree.c"
+        var $128=$127; //@line 1730 "_elementtree.c"
+        var $129=$node; //@line 1730 "_elementtree.c"
+        var $130=_element_add_subelement($128, $129); //@line 1730 "_elementtree.c"
+        var $131=($130) < 0; //@line 1730 "_elementtree.c"
+        if ($131) { __label__ = 30; break; } else { __label__ = 16; break; } //@line 1730 "_elementtree.c"
+      case 13: // $bb13
+        var $132=$self_addr; //@line 1733 "_elementtree.c"
+        var $133=$132+8; //@line 1733 "_elementtree.c"
+        var $134=HEAP[$133]; //@line 1733 "_elementtree.c"
+        var $135=($134)!=0; //@line 1733 "_elementtree.c"
+        if ($135) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1733 "_elementtree.c"
+      case 14: // $bb14
+        var $136=HEAP[_elementtree_parseerror_obj]; //@line 1734 "_elementtree.c"
+        _PyErr_SetString($136, __str66); //@line 1734 "_elementtree.c"
+        __label__ = 30; break; //@line 1734 "_elementtree.c"
+      case 15: // $bb15
+        var $137=$node; //@line 1740 "_elementtree.c"
+        var $138=$137; //@line 1740 "_elementtree.c"
+        var $139=HEAP[$138]; //@line 1740 "_elementtree.c"
+        var $140=($139) + 1; //@line 1740 "_elementtree.c"
+        var $141=$node; //@line 1740 "_elementtree.c"
+        var $142=$141; //@line 1740 "_elementtree.c"
+        HEAP[$142]=$140; //@line 1740 "_elementtree.c"
+        var $143=$self_addr; //@line 1741 "_elementtree.c"
+        var $144=$143+8; //@line 1741 "_elementtree.c"
+        var $145=$node; //@line 1741 "_elementtree.c"
+        HEAP[$144]=$145; //@line 1741 "_elementtree.c"
+        __label__ = 16; break; //@line 1741 "_elementtree.c"
+      case 16: // $bb16
+        var $146=$self_addr; //@line 1744 "_elementtree.c"
+        var $147=$146+28; //@line 1744 "_elementtree.c"
+        var $148=HEAP[$147]; //@line 1744 "_elementtree.c"
+        var $149=$self_addr; //@line 1744 "_elementtree.c"
+        var $150=$149+24; //@line 1744 "_elementtree.c"
+        var $151=HEAP[$150]; //@line 1744 "_elementtree.c"
+        var $152=$151; //@line 1744 "_elementtree.c"
+        var $153=$152+8; //@line 1744 "_elementtree.c"
+        var $154=HEAP[$153]; //@line 1744 "_elementtree.c"
+        var $155=($148) < ($154); //@line 1744 "_elementtree.c"
+        var $156=$self_addr; //@line 1745 "_elementtree.c"
+        if ($155) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 1744 "_elementtree.c"
+      case 17: // $bb17
+        var $157=$156+28; //@line 1745 "_elementtree.c"
+        var $158=HEAP[$157]; //@line 1745 "_elementtree.c"
+        var $159=$self_addr; //@line 1745 "_elementtree.c"
+        var $160=$159+24; //@line 1745 "_elementtree.c"
+        var $161=HEAP[$160]; //@line 1745 "_elementtree.c"
+        var $162=$this; //@line 1745 "_elementtree.c"
+        var $163=_PyList_SetItem($161, $158, $162); //@line 1745 "_elementtree.c"
+        var $164=($163) < 0; //@line 1745 "_elementtree.c"
+        if ($164) { __label__ = 30; break; } else { __label__ = 18; break; } //@line 1745 "_elementtree.c"
+      case 18: // $bb18
+        var $165=$this; //@line 1747 "_elementtree.c"
+        var $166=$165; //@line 1747 "_elementtree.c"
+        var $167=HEAP[$166]; //@line 1747 "_elementtree.c"
+        var $168=($167) + 1; //@line 1747 "_elementtree.c"
+        var $169=$this; //@line 1747 "_elementtree.c"
+        var $170=$169; //@line 1747 "_elementtree.c"
+        HEAP[$170]=$168; //@line 1747 "_elementtree.c"
+        __label__ = 20; break; //@line 1747 "_elementtree.c"
+      case 19: // $bb19
+        var $171=$156+24; //@line 1749 "_elementtree.c"
+        var $172=HEAP[$171]; //@line 1749 "_elementtree.c"
+        var $173=$this; //@line 1749 "_elementtree.c"
+        var $174=_PyList_Append($172, $173); //@line 1749 "_elementtree.c"
+        var $175=($174) < 0; //@line 1749 "_elementtree.c"
+        if ($175) { __label__ = 30; break; } else { __label__ = 20; break; } //@line 1749 "_elementtree.c"
+      case 20: // $bb20
+        var $176=$self_addr; //@line 1752 "_elementtree.c"
+        var $177=$176+28; //@line 1752 "_elementtree.c"
+        var $178=HEAP[$177]; //@line 1752 "_elementtree.c"
+        var $179=($178) + 1; //@line 1752 "_elementtree.c"
+        var $180=$self_addr; //@line 1752 "_elementtree.c"
+        var $181=$180+28; //@line 1752 "_elementtree.c"
+        HEAP[$181]=$179; //@line 1752 "_elementtree.c"
+        var $182=$this; //@line 1754 "_elementtree.c"
+        var $183=$182; //@line 1754 "_elementtree.c"
+        var $184=HEAP[$183]; //@line 1754 "_elementtree.c"
+        var $185=($184) - 1; //@line 1754 "_elementtree.c"
+        var $186=$this; //@line 1754 "_elementtree.c"
+        var $187=$186; //@line 1754 "_elementtree.c"
+        HEAP[$187]=$185; //@line 1754 "_elementtree.c"
+        var $188=$this; //@line 1754 "_elementtree.c"
+        var $189=$188; //@line 1754 "_elementtree.c"
+        var $190=HEAP[$189]; //@line 1754 "_elementtree.c"
+        var $191=($190)==0; //@line 1754 "_elementtree.c"
+        if ($191) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 1754 "_elementtree.c"
+      case 21: // $bb21
+        var $192=$this; //@line 1754 "_elementtree.c"
+        var $193=$192+4; //@line 1754 "_elementtree.c"
+        var $194=HEAP[$193]; //@line 1754 "_elementtree.c"
+        var $195=$194+24; //@line 1754 "_elementtree.c"
+        var $196=HEAP[$195]; //@line 1754 "_elementtree.c"
+        var $197=$this; //@line 1754 "_elementtree.c"
+        FUNCTION_TABLE[$196]($197); //@line 1754 "_elementtree.c"
+        __label__ = 22; break; //@line 1754 "_elementtree.c"
+      case 22: // $bb22
+        var $198=$node; //@line 1755 "_elementtree.c"
+        var $199=$198; //@line 1755 "_elementtree.c"
+        var $200=HEAP[$199]; //@line 1755 "_elementtree.c"
+        var $201=($200) + 1; //@line 1755 "_elementtree.c"
+        var $202=$node; //@line 1755 "_elementtree.c"
+        var $203=$202; //@line 1755 "_elementtree.c"
+        HEAP[$203]=$201; //@line 1755 "_elementtree.c"
+        var $204=$node; //@line 1756 "_elementtree.c"
+        var $205=$204; //@line 1756 "_elementtree.c"
+        var $206=$self_addr; //@line 1756 "_elementtree.c"
+        var $207=$206+12; //@line 1756 "_elementtree.c"
+        HEAP[$207]=$205; //@line 1756 "_elementtree.c"
+        var $208=$self_addr; //@line 1758 "_elementtree.c"
+        var $209=$208+16; //@line 1758 "_elementtree.c"
+        var $210=HEAP[$209]; //@line 1758 "_elementtree.c"
+        var $211=$210; //@line 1758 "_elementtree.c"
+        var $212=$211; //@line 1758 "_elementtree.c"
+        var $213=HEAP[$212]; //@line 1758 "_elementtree.c"
+        var $214=($213) - 1; //@line 1758 "_elementtree.c"
+        var $215=$211; //@line 1758 "_elementtree.c"
+        HEAP[$215]=$214; //@line 1758 "_elementtree.c"
+        var $216=$211; //@line 1758 "_elementtree.c"
+        var $217=HEAP[$216]; //@line 1758 "_elementtree.c"
+        var $218=($217)==0; //@line 1758 "_elementtree.c"
+        if ($218) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 1758 "_elementtree.c"
+      case 23: // $bb23
+        var $219=$self_addr; //@line 1758 "_elementtree.c"
+        var $220=$219+16; //@line 1758 "_elementtree.c"
+        var $221=HEAP[$220]; //@line 1758 "_elementtree.c"
+        var $222=$221; //@line 1758 "_elementtree.c"
+        var $223=$222+4; //@line 1758 "_elementtree.c"
+        var $224=HEAP[$223]; //@line 1758 "_elementtree.c"
+        var $225=$224+24; //@line 1758 "_elementtree.c"
+        var $226=HEAP[$225]; //@line 1758 "_elementtree.c"
+        var $227=$self_addr; //@line 1758 "_elementtree.c"
+        var $228=$227+16; //@line 1758 "_elementtree.c"
+        var $229=HEAP[$228]; //@line 1758 "_elementtree.c"
+        var $230=$229; //@line 1758 "_elementtree.c"
+        FUNCTION_TABLE[$226]($230); //@line 1758 "_elementtree.c"
+        __label__ = 24; break; //@line 1758 "_elementtree.c"
+      case 24: // $bb24
+        var $231=$node; //@line 1759 "_elementtree.c"
+        var $232=$231; //@line 1759 "_elementtree.c"
+        var $233=HEAP[$232]; //@line 1759 "_elementtree.c"
+        var $234=($233) + 1; //@line 1759 "_elementtree.c"
+        var $235=$node; //@line 1759 "_elementtree.c"
+        var $236=$235; //@line 1759 "_elementtree.c"
+        HEAP[$236]=$234; //@line 1759 "_elementtree.c"
+        var $237=$node; //@line 1760 "_elementtree.c"
+        var $238=$237; //@line 1760 "_elementtree.c"
+        var $239=$self_addr; //@line 1760 "_elementtree.c"
+        var $240=$239+16; //@line 1760 "_elementtree.c"
+        HEAP[$240]=$238; //@line 1760 "_elementtree.c"
+        var $241=$self_addr; //@line 1762 "_elementtree.c"
+        var $242=$241+36; //@line 1762 "_elementtree.c"
+        var $243=HEAP[$242]; //@line 1762 "_elementtree.c"
+        var $244=($243)!=0; //@line 1762 "_elementtree.c"
+        if ($244) { __label__ = 25; break; } else { __label__ = 29; break; } //@line 1762 "_elementtree.c"
+      case 25: // $bb25
+        var $245=$self_addr; //@line 1764 "_elementtree.c"
+        var $246=$245+36; //@line 1764 "_elementtree.c"
+        var $247=HEAP[$246]; //@line 1764 "_elementtree.c"
+        $action=$247; //@line 1764 "_elementtree.c"
+        var $248=_PyTuple_New(2); //@line 1765 "_elementtree.c"
+        $res=$248; //@line 1765 "_elementtree.c"
+        var $249=$res; //@line 1766 "_elementtree.c"
+        var $250=($249)!=0; //@line 1766 "_elementtree.c"
+        if ($250) { __label__ = 26; break; } else { __label__ = 28; break; } //@line 1766 "_elementtree.c"
+      case 26: // $bb26
+        var $251=$action; //@line 1767 "_elementtree.c"
+        var $252=$251; //@line 1767 "_elementtree.c"
+        var $253=HEAP[$252]; //@line 1767 "_elementtree.c"
+        var $254=($253) + 1; //@line 1767 "_elementtree.c"
+        var $255=$action; //@line 1767 "_elementtree.c"
+        var $256=$255; //@line 1767 "_elementtree.c"
+        HEAP[$256]=$254; //@line 1767 "_elementtree.c"
+        var $257=$res; //@line 1767 "_elementtree.c"
+        var $258=$257; //@line 1767 "_elementtree.c"
+        var $259=$258+12; //@line 1767 "_elementtree.c"
+        var $260=$259; //@line 1767 "_elementtree.c"
+        var $261=$action; //@line 1767 "_elementtree.c"
+        HEAP[$260]=$261; //@line 1767 "_elementtree.c"
+        var $262=$node; //@line 1768 "_elementtree.c"
+        var $263=$262; //@line 1768 "_elementtree.c"
+        var $264=HEAP[$263]; //@line 1768 "_elementtree.c"
+        var $265=($264) + 1; //@line 1768 "_elementtree.c"
+        var $266=$node; //@line 1768 "_elementtree.c"
+        var $267=$266; //@line 1768 "_elementtree.c"
+        HEAP[$267]=$265; //@line 1768 "_elementtree.c"
+        var $268=$res; //@line 1768 "_elementtree.c"
+        var $269=$268; //@line 1768 "_elementtree.c"
+        var $270=$269+12; //@line 1768 "_elementtree.c"
+        var $271=$270+4; //@line 1768 "_elementtree.c"
+        var $272=$node; //@line 1768 "_elementtree.c"
+        HEAP[$271]=$272; //@line 1768 "_elementtree.c"
+        var $273=$self_addr; //@line 1769 "_elementtree.c"
+        var $274=$273+32; //@line 1769 "_elementtree.c"
+        var $275=HEAP[$274]; //@line 1769 "_elementtree.c"
+        var $276=$res; //@line 1769 "_elementtree.c"
+        var $277=_PyList_Append($275, $276); //@line 1769 "_elementtree.c"
+        var $278=$res; //@line 1770 "_elementtree.c"
+        var $279=$278; //@line 1770 "_elementtree.c"
+        var $280=HEAP[$279]; //@line 1770 "_elementtree.c"
+        var $281=($280) - 1; //@line 1770 "_elementtree.c"
+        var $282=$res; //@line 1770 "_elementtree.c"
+        var $283=$282; //@line 1770 "_elementtree.c"
+        HEAP[$283]=$281; //@line 1770 "_elementtree.c"
+        var $284=$res; //@line 1770 "_elementtree.c"
+        var $285=$284; //@line 1770 "_elementtree.c"
+        var $286=HEAP[$285]; //@line 1770 "_elementtree.c"
+        var $287=($286)==0; //@line 1770 "_elementtree.c"
+        if ($287) { __label__ = 27; break; } else { __label__ = 29; break; } //@line 1770 "_elementtree.c"
+      case 27: // $bb27
+        var $288=$res; //@line 1770 "_elementtree.c"
+        var $289=$288+4; //@line 1770 "_elementtree.c"
+        var $290=HEAP[$289]; //@line 1770 "_elementtree.c"
+        var $291=$290+24; //@line 1770 "_elementtree.c"
+        var $292=HEAP[$291]; //@line 1770 "_elementtree.c"
+        var $293=$res; //@line 1770 "_elementtree.c"
+        FUNCTION_TABLE[$292]($293); //@line 1770 "_elementtree.c"
+        __label__ = 29; break; //@line 1770 "_elementtree.c"
+      case 28: // $bb29
         _PyErr_Clear(); //@line 1772 "_elementtree.c"
-        __label__ = 31; break; //@line 1772 "_elementtree.c"
-      case 31: // $bb30
-        var $321=$node; //@line 1775 "_elementtree.c"
-        $1=$321; //@line 1775 "_elementtree.c"
-        __label__ = 35; break; //@line 1775 "_elementtree.c"
-      case 32: // $error
-        var $322=$node; //@line 1778 "_elementtree.c"
-        var $323=$322; //@line 1778 "_elementtree.c"
-        var $324=HEAP[$323]; //@line 1778 "_elementtree.c"
-        var $325=($324) - 1; //@line 1778 "_elementtree.c"
-        var $326=$node; //@line 1778 "_elementtree.c"
-        var $327=$326; //@line 1778 "_elementtree.c"
-        HEAP[$327]=$325; //@line 1778 "_elementtree.c"
-        var $328=$node; //@line 1778 "_elementtree.c"
-        var $329=$328; //@line 1778 "_elementtree.c"
-        var $330=HEAP[$329]; //@line 1778 "_elementtree.c"
-        var $331=($330)==0; //@line 1778 "_elementtree.c"
-        if ($331) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 1778 "_elementtree.c"
-      case 33: // $bb31
-        var $332=$node; //@line 1778 "_elementtree.c"
-        var $333=$332+4; //@line 1778 "_elementtree.c"
-        var $334=HEAP[$333]; //@line 1778 "_elementtree.c"
-        var $335=$334+24; //@line 1778 "_elementtree.c"
-        var $336=HEAP[$335]; //@line 1778 "_elementtree.c"
-        var $337=$node; //@line 1778 "_elementtree.c"
-        FUNCTION_TABLE[$336]($337); //@line 1778 "_elementtree.c"
-        __label__ = 34; break; //@line 1778 "_elementtree.c"
-      case 34: // $bb32
-        $1=0; //@line 1779 "_elementtree.c"
-        __label__ = 35; break; //@line 1779 "_elementtree.c"
-      case 35: // $bb33
-        var $338=$1; //@line 1725 "_elementtree.c"
-        $retval=$338; //@line 1725 "_elementtree.c"
+        __label__ = 29; break; //@line 1772 "_elementtree.c"
+      case 29: // $bb30
+        var $294=$node; //@line 1775 "_elementtree.c"
+        $0=$294; //@line 1775 "_elementtree.c"
+        __label__ = 33; break; //@line 1775 "_elementtree.c"
+      case 30: // $error
+        var $295=$node; //@line 1778 "_elementtree.c"
+        var $296=$295; //@line 1778 "_elementtree.c"
+        var $297=HEAP[$296]; //@line 1778 "_elementtree.c"
+        var $298=($297) - 1; //@line 1778 "_elementtree.c"
+        var $299=$node; //@line 1778 "_elementtree.c"
+        var $300=$299; //@line 1778 "_elementtree.c"
+        HEAP[$300]=$298; //@line 1778 "_elementtree.c"
+        var $301=$node; //@line 1778 "_elementtree.c"
+        var $302=$301; //@line 1778 "_elementtree.c"
+        var $303=HEAP[$302]; //@line 1778 "_elementtree.c"
+        var $304=($303)==0; //@line 1778 "_elementtree.c"
+        if ($304) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1778 "_elementtree.c"
+      case 31: // $bb31
+        var $305=$node; //@line 1778 "_elementtree.c"
+        var $306=$305+4; //@line 1778 "_elementtree.c"
+        var $307=HEAP[$306]; //@line 1778 "_elementtree.c"
+        var $308=$307+24; //@line 1778 "_elementtree.c"
+        var $309=HEAP[$308]; //@line 1778 "_elementtree.c"
+        var $310=$node; //@line 1778 "_elementtree.c"
+        FUNCTION_TABLE[$309]($310); //@line 1778 "_elementtree.c"
+        __label__ = 32; break; //@line 1778 "_elementtree.c"
+      case 32: // $bb32
+        $0=0; //@line 1779 "_elementtree.c"
+        __label__ = 33; break; //@line 1779 "_elementtree.c"
+      case 33: // $bb33
+        var $311=$0; //@line 1725 "_elementtree.c"
+        $retval=$311; //@line 1725 "_elementtree.c"
         var $retval34=$retval; //@line 1725 "_elementtree.c"
         ;
         return $retval34; //@line 1725 "_elementtree.c"
@@ -7532,7 +7435,7 @@ var __str124;
         $action=$12; //@line 1888 "_elementtree.c"
         var $13=$prefix_addr; //@line 1889 "_elementtree.c"
         var $14=$uri_addr; //@line 1889 "_elementtree.c"
-        var $15=_Py_BuildValue(__str68, $13, $14); //@line 1889 "_elementtree.c"
+        var $15=_Py_BuildValue(__str68, allocate([$13,0,0,0,$14,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1889 "_elementtree.c"
         $parcel=$15; //@line 1889 "_elementtree.c"
         var $16=$parcel; //@line 1890 "_elementtree.c"
         var $17=($16)==0; //@line 1890 "_elementtree.c"
@@ -7641,7 +7544,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1920 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str69, $data); //@line 1920 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str69, allocate([$data,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1920 "_elementtree.c"
         var $3=($2)==0; //@line 1920 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1920 "_elementtree.c"
       case 1: // $bb
@@ -7678,7 +7581,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1930 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str70, $tag); //@line 1930 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str70, allocate([$tag,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1930 "_elementtree.c"
         var $3=($2)==0; //@line 1930 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1930 "_elementtree.c"
       case 1: // $bb
@@ -7701,64 +7604,78 @@ var __str124;
   }
   
 
+  function _treebuilder_done($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        var $res;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 1943 "_elementtree.c"
+        var $2=$1+8; //@line 1943 "_elementtree.c"
+        var $3=HEAP[$2]; //@line 1943 "_elementtree.c"
+        var $4=($3)!=0; //@line 1943 "_elementtree.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1943 "_elementtree.c"
+      case 1: // $bb
+        var $5=$self_addr; //@line 1944 "_elementtree.c"
+        var $6=$5+8; //@line 1944 "_elementtree.c"
+        var $7=HEAP[$6]; //@line 1944 "_elementtree.c"
+        $res=$7; //@line 1944 "_elementtree.c"
+        __label__ = 3; break; //@line 1944 "_elementtree.c"
+      case 2: // $bb1
+        $res=__Py_NoneStruct; //@line 1946 "_elementtree.c"
+        __label__ = 3; break; //@line 1946 "_elementtree.c"
+      case 3: // $bb2
+        var $8=$res; //@line 1948 "_elementtree.c"
+        var $9=$8; //@line 1948 "_elementtree.c"
+        var $10=HEAP[$9]; //@line 1948 "_elementtree.c"
+        var $11=($10) + 1; //@line 1948 "_elementtree.c"
+        var $12=$res; //@line 1948 "_elementtree.c"
+        var $13=$12; //@line 1948 "_elementtree.c"
+        HEAP[$13]=$11; //@line 1948 "_elementtree.c"
+        var $14=$res; //@line 1949 "_elementtree.c"
+        $0=$14; //@line 1949 "_elementtree.c"
+        var $15=$0; //@line 1949 "_elementtree.c"
+        $retval=$15; //@line 1949 "_elementtree.c"
+        var $retval3=$retval; //@line 1949 "_elementtree.c"
+        ;
+        return $retval3; //@line 1949 "_elementtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _treebuilder_close($self, $args) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
-        var $res_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 1955 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str71); //@line 1955 "_elementtree.c"
-        var $4=($3)==0; //@line 1955 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1955 "_elementtree.c"
+        var $1=$args_addr; //@line 1955 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str71, allocate(1, "i32", ALLOC_STACK)); //@line 1955 "_elementtree.c"
+        var $3=($2)==0; //@line 1955 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1955 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 1956 "_elementtree.c"
-        __label__ = 6; break; //@line 1956 "_elementtree.c"
+        $0=0; //@line 1956 "_elementtree.c"
+        __label__ = 3; break; //@line 1956 "_elementtree.c"
       case 2: // $bb1
-        var $5=$self_addr; //@line 1958 "_elementtree.c"
-        $self_addr_i=$5;
-        var $6=$self_addr_i; //@line 1943 "_elementtree.c"
-        var $7=$6+8; //@line 1943 "_elementtree.c"
-        var $8=HEAP[$7]; //@line 1943 "_elementtree.c"
-        var $9=($8)!=0; //@line 1943 "_elementtree.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1943 "_elementtree.c"
-      case 3: // $bb_i
-        var $10=$self_addr_i; //@line 1944 "_elementtree.c"
-        var $11=$10+8; //@line 1944 "_elementtree.c"
-        var $12=HEAP[$11]; //@line 1944 "_elementtree.c"
-        $res_i=$12; //@line 1944 "_elementtree.c"
-        __label__ = 5; break; //@line 1944 "_elementtree.c"
-      case 4: // $bb1_i
-        $res_i=__Py_NoneStruct; //@line 1946 "_elementtree.c"
-        __label__ = 5; break; //@line 1946 "_elementtree.c"
-      case 5: // $treebuilder_done_exit
-        var $13=$res_i; //@line 1948 "_elementtree.c"
-        var $14=$13; //@line 1948 "_elementtree.c"
-        var $15=HEAP[$14]; //@line 1948 "_elementtree.c"
-        var $16=($15) + 1; //@line 1948 "_elementtree.c"
-        var $17=$res_i; //@line 1948 "_elementtree.c"
-        var $18=$17; //@line 1948 "_elementtree.c"
-        HEAP[$18]=$16; //@line 1948 "_elementtree.c"
-        var $19=$res_i; //@line 1949 "_elementtree.c"
-        $0=$19; //@line 1949 "_elementtree.c"
-        var $20=$0; //@line 1949 "_elementtree.c"
-        $retval_i=$20; //@line 1949 "_elementtree.c"
-        var $retval3_i=$retval_i; //@line 1949 "_elementtree.c"
-        $1=$retval3_i; //@line 1958 "_elementtree.c"
-        __label__ = 6; break; //@line 1958 "_elementtree.c"
-      case 6: // $bb2
-        var $21=$1; //@line 1956 "_elementtree.c"
-        $retval=$21; //@line 1956 "_elementtree.c"
+        var $4=$self_addr; //@line 1958 "_elementtree.c"
+        var $5=_treebuilder_done($4); //@line 1958 "_elementtree.c"
+        $0=$5; //@line 1958 "_elementtree.c"
+        __label__ = 3; break; //@line 1958 "_elementtree.c"
+      case 3: // $bb2
+        var $6=$0; //@line 1956 "_elementtree.c"
+        $retval=$6; //@line 1956 "_elementtree.c"
         var $retval3=$retval; //@line 1956 "_elementtree.c"
         ;
         return $retval3; //@line 1956 "_elementtree.c"
@@ -7783,7 +7700,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$attrib]=__Py_NoneStruct; //@line 1965 "_elementtree.c"
         var $1=$args_addr; //@line 1966 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str72, $tag, $attrib); //@line 1966 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str72, allocate([$tag,0,0,0,$attrib,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1966 "_elementtree.c"
         var $3=($2)==0; //@line 1966 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1966 "_elementtree.c"
       case 1: // $bb
@@ -7813,42 +7730,31 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $encoding_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $encoding=__stackBase__;
         var $standalone=__stackBase__+4;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 1977 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str73, $encoding, $standalone); //@line 1977 "_elementtree.c"
-        var $4=($3)==0; //@line 1977 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1977 "_elementtree.c"
+        var $1=$args_addr; //@line 1977 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str73, allocate([$encoding,0,0,0,$standalone,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1977 "_elementtree.c"
+        var $3=($2)==0; //@line 1977 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1977 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 1978 "_elementtree.c"
+        $0=0; //@line 1978 "_elementtree.c"
         __label__ = 3; break; //@line 1978 "_elementtree.c"
       case 2: // $bb1
+        var $4=HEAP[$standalone]; //@line 1980 "_elementtree.c"
         var $5=HEAP[$encoding]; //@line 1980 "_elementtree.c"
         var $6=$self_addr; //@line 1980 "_elementtree.c"
-        $self_addr_i=$6;
-        $encoding_addr_i=$5;
-        var $7=HEAP[__Py_NoneStruct]; //@line 1698 "_elementtree.c"
-        var $8=($7) + 1; //@line 1698 "_elementtree.c"
-        HEAP[__Py_NoneStruct]=$8; //@line 1698 "_elementtree.c"
-        $0=__Py_NoneStruct; //@line 1698 "_elementtree.c"
-        var $9=$0; //@line 1698 "_elementtree.c"
-        $retval_i=$9; //@line 1698 "_elementtree.c"
-        var $retval1_i=$retval_i; //@line 1698 "_elementtree.c"
-        $1=$retval1_i; //@line 1980 "_elementtree.c"
+        var $7=_treebuilder_handle_xml($6, $5, $4); //@line 1980 "_elementtree.c"
+        $0=$7; //@line 1980 "_elementtree.c"
         __label__ = 3; break; //@line 1980 "_elementtree.c"
       case 3: // $bb2
-        var $10=$1; //@line 1978 "_elementtree.c"
-        $retval=$10; //@line 1978 "_elementtree.c"
+        var $8=$0; //@line 1978 "_elementtree.c"
+        $retval=$8; //@line 1978 "_elementtree.c"
         var $retval3=$retval; //@line 1978 "_elementtree.c"
         STACKTOP = __stackBase__;
         return $retval3; //@line 1978 "_elementtree.c"
@@ -7880,21 +7786,103 @@ var __str124;
   }
   
 
+  function _checkstring($string, $size) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $string_addr;
+        var $size_addr;
+        var $retval;
+        var $0;
+        var $i;
+        $string_addr=$string;
+        $size_addr=$size;
+        $i=0; //@line 2056 "_elementtree.c"
+        __label__ = 4; break; //@line 2056 "_elementtree.c"
+      case 1: // $bb
+        var $1=$string_addr; //@line 2057 "_elementtree.c"
+        var $2=$i; //@line 2057 "_elementtree.c"
+        var $3=$1+$2; //@line 2057 "_elementtree.c"
+        var $4=HEAP[$3]; //@line 2057 "_elementtree.c"
+        var $5=($4) < 0; //@line 2057 "_elementtree.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2057 "_elementtree.c"
+      case 2: // $bb1
+        $0=1; //@line 2058 "_elementtree.c"
+        __label__ = 6; break; //@line 2058 "_elementtree.c"
+      case 3: // $bb2
+        var $6=$i; //@line 2056 "_elementtree.c"
+        var $7=($6) + 1; //@line 2056 "_elementtree.c"
+        $i=$7; //@line 2056 "_elementtree.c"
+        __label__ = 4; break; //@line 2056 "_elementtree.c"
+      case 4: // $bb3
+        var $8=$i; //@line 2056 "_elementtree.c"
+        var $9=$size_addr; //@line 2056 "_elementtree.c"
+        var $10=($8) < ($9); //@line 2056 "_elementtree.c"
+        if ($10) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 2056 "_elementtree.c"
+      case 5: // $bb4
+        $0=0; //@line 2060 "_elementtree.c"
+        __label__ = 6; break; //@line 2060 "_elementtree.c"
+      case 6: // $bb5
+        var $11=$0; //@line 2058 "_elementtree.c"
+        $retval=$11; //@line 2058 "_elementtree.c"
+        var $retval6=$retval; //@line 2058 "_elementtree.c"
+        ;
+        return $retval6; //@line 2058 "_elementtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _makestring($string, $size) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $string_addr;
+        var $size_addr;
+        var $retval;
+        var $0;
+        $string_addr=$string;
+        $size_addr=$size;
+        var $1=$string_addr; //@line 2071 "_elementtree.c"
+        var $2=$size_addr; //@line 2071 "_elementtree.c"
+        var $3=_checkstring($1, $2); //@line 2071 "_elementtree.c"
+        var $4=($3)!=0; //@line 2071 "_elementtree.c"
+        var $5=$string_addr; //@line 2072 "_elementtree.c"
+        var $6=$size_addr; //@line 2072 "_elementtree.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2071 "_elementtree.c"
+      case 1: // $bb
+        var $7=_PyUnicodeUCS2_DecodeUTF8($5, $6, __str80); //@line 2072 "_elementtree.c"
+        $0=$7; //@line 2072 "_elementtree.c"
+        __label__ = 3; break; //@line 2072 "_elementtree.c"
+      case 2: // $bb1
+        var $8=_PyString_FromStringAndSize($5, $6); //@line 2075 "_elementtree.c"
+        $0=$8; //@line 2075 "_elementtree.c"
+        __label__ = 3; break; //@line 2075 "_elementtree.c"
+      case 3: // $bb2
+        var $9=$0; //@line 2072 "_elementtree.c"
+        $retval=$9; //@line 2072 "_elementtree.c"
+        var $retval3=$retval; //@line 2072 "_elementtree.c"
+        ;
+        return $retval3; //@line 2072 "_elementtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _makeuniversal($self, $string) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $0;
-        var $i_i;
         var $self_addr;
         var $string_addr;
         var $retval;
-        var $1;
+        var $0;
         var $size;
         var $key;
         var $value;
@@ -7903,273 +7891,251 @@ var __str124;
         var $i;
         $self_addr=$self;
         $string_addr=$string;
-        var $2=$string_addr; //@line 2084 "_elementtree.c"
-        var $3=_strlen($2); //@line 2084 "_elementtree.c"
-        $size=$3; //@line 2084 "_elementtree.c"
-        var $4=$string_addr; //@line 2089 "_elementtree.c"
-        var $5=$size; //@line 2089 "_elementtree.c"
-        var $6=_PyString_FromStringAndSize($4, $5); //@line 2089 "_elementtree.c"
-        $key=$6; //@line 2089 "_elementtree.c"
-        var $7=$key; //@line 2090 "_elementtree.c"
-        var $8=($7)==0; //@line 2090 "_elementtree.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2090 "_elementtree.c"
+        var $1=$string_addr; //@line 2084 "_elementtree.c"
+        var $2=_strlen($1); //@line 2084 "_elementtree.c"
+        $size=$2; //@line 2084 "_elementtree.c"
+        var $3=$string_addr; //@line 2089 "_elementtree.c"
+        var $4=$size; //@line 2089 "_elementtree.c"
+        var $5=_PyString_FromStringAndSize($3, $4); //@line 2089 "_elementtree.c"
+        $key=$5; //@line 2089 "_elementtree.c"
+        var $6=$key; //@line 2090 "_elementtree.c"
+        var $7=($6)==0; //@line 2090 "_elementtree.c"
+        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2090 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 2091 "_elementtree.c"
-        __label__ = 31; break; //@line 2091 "_elementtree.c"
+        $0=0; //@line 2091 "_elementtree.c"
+        __label__ = 28; break; //@line 2091 "_elementtree.c"
       case 2: // $bb1
-        var $9=$self_addr; //@line 2093 "_elementtree.c"
-        var $10=$9+20; //@line 2093 "_elementtree.c"
-        var $11=HEAP[$10]; //@line 2093 "_elementtree.c"
-        var $12=$key; //@line 2093 "_elementtree.c"
-        var $13=_PyDict_GetItem($11, $12); //@line 2093 "_elementtree.c"
-        $value=$13; //@line 2093 "_elementtree.c"
-        var $14=$value; //@line 2095 "_elementtree.c"
-        var $15=($14)!=0; //@line 2095 "_elementtree.c"
-        if ($15) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2095 "_elementtree.c"
+        var $8=$self_addr; //@line 2093 "_elementtree.c"
+        var $9=$8+20; //@line 2093 "_elementtree.c"
+        var $10=HEAP[$9]; //@line 2093 "_elementtree.c"
+        var $11=$key; //@line 2093 "_elementtree.c"
+        var $12=_PyDict_GetItem($10, $11); //@line 2093 "_elementtree.c"
+        $value=$12; //@line 2093 "_elementtree.c"
+        var $13=$value; //@line 2095 "_elementtree.c"
+        var $14=($13)!=0; //@line 2095 "_elementtree.c"
+        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2095 "_elementtree.c"
       case 3: // $bb2
-        var $16=$value; //@line 2096 "_elementtree.c"
-        var $17=$16; //@line 2096 "_elementtree.c"
-        var $18=HEAP[$17]; //@line 2096 "_elementtree.c"
-        var $19=($18) + 1; //@line 2096 "_elementtree.c"
-        var $20=$value; //@line 2096 "_elementtree.c"
-        var $21=$20; //@line 2096 "_elementtree.c"
-        HEAP[$21]=$19; //@line 2096 "_elementtree.c"
-        __label__ = 28; break; //@line 2096 "_elementtree.c"
+        var $15=$value; //@line 2096 "_elementtree.c"
+        var $16=$15; //@line 2096 "_elementtree.c"
+        var $17=HEAP[$16]; //@line 2096 "_elementtree.c"
+        var $18=($17) + 1; //@line 2096 "_elementtree.c"
+        var $19=$value; //@line 2096 "_elementtree.c"
+        var $20=$19; //@line 2096 "_elementtree.c"
+        HEAP[$20]=$18; //@line 2096 "_elementtree.c"
+        __label__ = 25; break; //@line 2096 "_elementtree.c"
       case 4: // $bb3
         $i=0; //@line 2106 "_elementtree.c"
         __label__ = 7; break; //@line 2106 "_elementtree.c"
       case 5: // $bb4
-        var $22=$string_addr; //@line 2107 "_elementtree.c"
-        var $23=$i; //@line 2107 "_elementtree.c"
-        var $24=$22+$23; //@line 2107 "_elementtree.c"
-        var $25=HEAP[$24]; //@line 2107 "_elementtree.c"
-        var $26=($25)==125; //@line 2107 "_elementtree.c"
-        if ($26) { __label__ = 8; break; } else { __label__ = 6; break; } //@line 2107 "_elementtree.c"
+        var $21=$string_addr; //@line 2107 "_elementtree.c"
+        var $22=$i; //@line 2107 "_elementtree.c"
+        var $23=$21+$22; //@line 2107 "_elementtree.c"
+        var $24=HEAP[$23]; //@line 2107 "_elementtree.c"
+        var $25=($24)==125; //@line 2107 "_elementtree.c"
+        if ($25) { __label__ = 8; break; } else { __label__ = 6; break; } //@line 2107 "_elementtree.c"
       case 6: // $bb5
-        var $27=$i; //@line 2106 "_elementtree.c"
-        var $28=($27) + 1; //@line 2106 "_elementtree.c"
-        $i=$28; //@line 2106 "_elementtree.c"
+        var $26=$i; //@line 2106 "_elementtree.c"
+        var $27=($26) + 1; //@line 2106 "_elementtree.c"
+        $i=$27; //@line 2106 "_elementtree.c"
         __label__ = 7; break; //@line 2106 "_elementtree.c"
       case 7: // $bb6
-        var $29=$i; //@line 2106 "_elementtree.c"
-        var $30=$size; //@line 2106 "_elementtree.c"
-        var $31=($29) < ($30); //@line 2106 "_elementtree.c"
-        if ($31) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 2106 "_elementtree.c"
+        var $28=$i; //@line 2106 "_elementtree.c"
+        var $29=$size; //@line 2106 "_elementtree.c"
+        var $30=($28) < ($29); //@line 2106 "_elementtree.c"
+        if ($30) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 2106 "_elementtree.c"
       case 8: // $bb7
-        var $32=$i; //@line 2109 "_elementtree.c"
-        var $33=$size; //@line 2109 "_elementtree.c"
-        var $34=($32)!=($33); //@line 2109 "_elementtree.c"
-        if ($34) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2109 "_elementtree.c"
+        var $31=$i; //@line 2109 "_elementtree.c"
+        var $32=$size; //@line 2109 "_elementtree.c"
+        var $33=($31)!=($32); //@line 2109 "_elementtree.c"
+        if ($33) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2109 "_elementtree.c"
       case 9: // $bb8
-        var $35=$size; //@line 2111 "_elementtree.c"
-        var $36=($35) + 1; //@line 2111 "_elementtree.c"
-        var $37=_PyString_FromStringAndSize(0, $36); //@line 2111 "_elementtree.c"
-        $tag=$37; //@line 2111 "_elementtree.c"
-        var $38=$tag; //@line 2112 "_elementtree.c"
-        var $39=$38; //@line 2112 "_elementtree.c"
-        var $40=$39+20; //@line 2112 "_elementtree.c"
-        var $41=$40; //@line 2112 "_elementtree.c"
-        $p=$41; //@line 2112 "_elementtree.c"
-        var $42=$p; //@line 2113 "_elementtree.c"
-        var $43=$42; //@line 2113 "_elementtree.c"
-        HEAP[$43]=123; //@line 2113 "_elementtree.c"
-        var $44=$size; //@line 2114 "_elementtree.c"
-        var $45=$p; //@line 2114 "_elementtree.c"
-        var $46=$45+1; //@line 2114 "_elementtree.c"
-        var $47=$string_addr; //@line 2114 "_elementtree.c"
-        _llvm_memcpy_p0i8_p0i8_i32($46, $47, $44, 1, 0); //@line 2114 "_elementtree.c"
-        var $48=$size; //@line 2115 "_elementtree.c"
-        var $49=($48) + 1; //@line 2115 "_elementtree.c"
-        $size=$49; //@line 2115 "_elementtree.c"
+        var $34=$size; //@line 2111 "_elementtree.c"
+        var $35=($34) + 1; //@line 2111 "_elementtree.c"
+        var $36=_PyString_FromStringAndSize(0, $35); //@line 2111 "_elementtree.c"
+        $tag=$36; //@line 2111 "_elementtree.c"
+        var $37=$tag; //@line 2112 "_elementtree.c"
+        var $38=$37; //@line 2112 "_elementtree.c"
+        var $39=$38+20; //@line 2112 "_elementtree.c"
+        var $40=$39; //@line 2112 "_elementtree.c"
+        $p=$40; //@line 2112 "_elementtree.c"
+        var $41=$p; //@line 2113 "_elementtree.c"
+        var $42=$41; //@line 2113 "_elementtree.c"
+        HEAP[$42]=123; //@line 2113 "_elementtree.c"
+        var $43=$size; //@line 2114 "_elementtree.c"
+        var $44=$p; //@line 2114 "_elementtree.c"
+        var $45=$44+1; //@line 2114 "_elementtree.c"
+        var $46=$string_addr; //@line 2114 "_elementtree.c"
+        _llvm_memcpy_p0i8_p0i8_i32($45, $46, $43, 1, 0); //@line 2114 "_elementtree.c"
+        var $47=$size; //@line 2115 "_elementtree.c"
+        var $48=($47) + 1; //@line 2115 "_elementtree.c"
+        $size=$48; //@line 2115 "_elementtree.c"
         __label__ = 11; break; //@line 2115 "_elementtree.c"
       case 10: // $bb9
-        var $50=$key; //@line 2118 "_elementtree.c"
-        var $51=$50; //@line 2118 "_elementtree.c"
-        var $52=HEAP[$51]; //@line 2118 "_elementtree.c"
-        var $53=($52) + 1; //@line 2118 "_elementtree.c"
-        var $54=$key; //@line 2118 "_elementtree.c"
-        var $55=$54; //@line 2118 "_elementtree.c"
-        HEAP[$55]=$53; //@line 2118 "_elementtree.c"
-        var $56=$key; //@line 2119 "_elementtree.c"
-        $tag=$56; //@line 2119 "_elementtree.c"
+        var $49=$key; //@line 2118 "_elementtree.c"
+        var $50=$49; //@line 2118 "_elementtree.c"
+        var $51=HEAP[$50]; //@line 2118 "_elementtree.c"
+        var $52=($51) + 1; //@line 2118 "_elementtree.c"
+        var $53=$key; //@line 2118 "_elementtree.c"
+        var $54=$53; //@line 2118 "_elementtree.c"
+        HEAP[$54]=$52; //@line 2118 "_elementtree.c"
+        var $55=$key; //@line 2119 "_elementtree.c"
+        $tag=$55; //@line 2119 "_elementtree.c"
         __label__ = 11; break; //@line 2119 "_elementtree.c"
       case 11: // $bb10
-        var $57=$tag; //@line 2126 "_elementtree.c"
-        var $58=$57; //@line 2126 "_elementtree.c"
-        var $59=$58+20; //@line 2126 "_elementtree.c"
-        var $60=$59; //@line 2126 "_elementtree.c"
-        $p=$60; //@line 2126 "_elementtree.c"
-        var $61=$p; //@line 2127 "_elementtree.c"
-        var $62=$size; //@line 2127 "_elementtree.c"
-        $string_addr_i=$61;
-        $size_addr_i=$62;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 14; break; //@line 2056 "_elementtree.c"
-      case 12: // $bb_i
-        var $63=$string_addr_i; //@line 2057 "_elementtree.c"
-        var $64=$i_i; //@line 2057 "_elementtree.c"
-        var $65=$63+$64; //@line 2057 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 2057 "_elementtree.c"
-        var $67=($66) < 0; //@line 2057 "_elementtree.c"
-        if ($67) { __label__ = 15; break; } else { __label__ = 13; break; } //@line 2057 "_elementtree.c"
-      case 13: // $bb2_i
-        var $68=$i_i; //@line 2056 "_elementtree.c"
-        var $69=($68) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$69; //@line 2056 "_elementtree.c"
-        __label__ = 14; break; //@line 2056 "_elementtree.c"
-      case 14: // $bb3_i
-        var $70=$i_i; //@line 2056 "_elementtree.c"
-        var $71=$size_addr_i; //@line 2056 "_elementtree.c"
-        var $72=($70) < ($71); //@line 2056 "_elementtree.c"
-        if ($72) { __label__ = 12; break; } else { __label__ = 21; break; } //@line 2056 "_elementtree.c"
-      case 15: // $bb11
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i=1; //@line 2058 "_elementtree.c"
-        var $73=$p; //@line 2128 "_elementtree.c"
-        var $74=$size; //@line 2128 "_elementtree.c"
-        var $75=_PyUnicodeUCS2_DecodeUTF8($73, $74, __str80); //@line 2128 "_elementtree.c"
-        $value=$75; //@line 2128 "_elementtree.c"
-        var $76=$tag; //@line 2129 "_elementtree.c"
-        var $77=$76; //@line 2129 "_elementtree.c"
-        var $78=HEAP[$77]; //@line 2129 "_elementtree.c"
-        var $79=($78) - 1; //@line 2129 "_elementtree.c"
-        var $80=$tag; //@line 2129 "_elementtree.c"
-        var $81=$80; //@line 2129 "_elementtree.c"
-        HEAP[$81]=$79; //@line 2129 "_elementtree.c"
+        var $56=$tag; //@line 2126 "_elementtree.c"
+        var $57=$56; //@line 2126 "_elementtree.c"
+        var $58=$57+20; //@line 2126 "_elementtree.c"
+        var $59=$58; //@line 2126 "_elementtree.c"
+        $p=$59; //@line 2126 "_elementtree.c"
+        var $60=$p; //@line 2127 "_elementtree.c"
+        var $61=$size; //@line 2127 "_elementtree.c"
+        var $62=_checkstring($60, $61); //@line 2127 "_elementtree.c"
+        var $63=($62)!=0; //@line 2127 "_elementtree.c"
+        if ($63) { __label__ = 12; break; } else { __label__ = 18; break; } //@line 2127 "_elementtree.c"
+      case 12: // $bb11
+        var $64=$p; //@line 2128 "_elementtree.c"
+        var $65=$size; //@line 2128 "_elementtree.c"
+        var $66=_PyUnicodeUCS2_DecodeUTF8($64, $65, __str80); //@line 2128 "_elementtree.c"
+        $value=$66; //@line 2128 "_elementtree.c"
+        var $67=$tag; //@line 2129 "_elementtree.c"
+        var $68=$67; //@line 2129 "_elementtree.c"
+        var $69=HEAP[$68]; //@line 2129 "_elementtree.c"
+        var $70=($69) - 1; //@line 2129 "_elementtree.c"
+        var $71=$tag; //@line 2129 "_elementtree.c"
+        var $72=$71; //@line 2129 "_elementtree.c"
+        HEAP[$72]=$70; //@line 2129 "_elementtree.c"
+        var $73=$tag; //@line 2129 "_elementtree.c"
+        var $74=$73; //@line 2129 "_elementtree.c"
+        var $75=HEAP[$74]; //@line 2129 "_elementtree.c"
+        var $76=($75)==0; //@line 2129 "_elementtree.c"
+        if ($76) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2129 "_elementtree.c"
+      case 13: // $bb12
+        var $77=$tag; //@line 2129 "_elementtree.c"
+        var $78=$77+4; //@line 2129 "_elementtree.c"
+        var $79=HEAP[$78]; //@line 2129 "_elementtree.c"
+        var $80=$79+24; //@line 2129 "_elementtree.c"
+        var $81=HEAP[$80]; //@line 2129 "_elementtree.c"
         var $82=$tag; //@line 2129 "_elementtree.c"
-        var $83=$82; //@line 2129 "_elementtree.c"
-        var $84=HEAP[$83]; //@line 2129 "_elementtree.c"
-        var $85=($84)==0; //@line 2129 "_elementtree.c"
-        if ($85) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 2129 "_elementtree.c"
-      case 16: // $bb12
-        var $86=$tag; //@line 2129 "_elementtree.c"
-        var $87=$86+4; //@line 2129 "_elementtree.c"
-        var $88=HEAP[$87]; //@line 2129 "_elementtree.c"
-        var $89=$88+24; //@line 2129 "_elementtree.c"
-        var $90=HEAP[$89]; //@line 2129 "_elementtree.c"
-        var $91=$tag; //@line 2129 "_elementtree.c"
-        FUNCTION_TABLE[$90]($91); //@line 2129 "_elementtree.c"
-        __label__ = 17; break; //@line 2129 "_elementtree.c"
-      case 17: // $bb13
-        var $92=$value; //@line 2130 "_elementtree.c"
-        var $93=($92)==0; //@line 2130 "_elementtree.c"
-        if ($93) { __label__ = 18; break; } else { __label__ = 22; break; } //@line 2130 "_elementtree.c"
-      case 18: // $bb14
-        var $94=$key; //@line 2131 "_elementtree.c"
-        var $95=$94; //@line 2131 "_elementtree.c"
-        var $96=HEAP[$95]; //@line 2131 "_elementtree.c"
-        var $97=($96) - 1; //@line 2131 "_elementtree.c"
-        var $98=$key; //@line 2131 "_elementtree.c"
-        var $99=$98; //@line 2131 "_elementtree.c"
-        HEAP[$99]=$97; //@line 2131 "_elementtree.c"
+        FUNCTION_TABLE[$81]($82); //@line 2129 "_elementtree.c"
+        __label__ = 14; break; //@line 2129 "_elementtree.c"
+      case 14: // $bb13
+        var $83=$value; //@line 2130 "_elementtree.c"
+        var $84=($83)==0; //@line 2130 "_elementtree.c"
+        if ($84) { __label__ = 15; break; } else { __label__ = 19; break; } //@line 2130 "_elementtree.c"
+      case 15: // $bb14
+        var $85=$key; //@line 2131 "_elementtree.c"
+        var $86=$85; //@line 2131 "_elementtree.c"
+        var $87=HEAP[$86]; //@line 2131 "_elementtree.c"
+        var $88=($87) - 1; //@line 2131 "_elementtree.c"
+        var $89=$key; //@line 2131 "_elementtree.c"
+        var $90=$89; //@line 2131 "_elementtree.c"
+        HEAP[$90]=$88; //@line 2131 "_elementtree.c"
+        var $91=$key; //@line 2131 "_elementtree.c"
+        var $92=$91; //@line 2131 "_elementtree.c"
+        var $93=HEAP[$92]; //@line 2131 "_elementtree.c"
+        var $94=($93)==0; //@line 2131 "_elementtree.c"
+        if ($94) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 2131 "_elementtree.c"
+      case 16: // $bb15
+        var $95=$key; //@line 2131 "_elementtree.c"
+        var $96=$95+4; //@line 2131 "_elementtree.c"
+        var $97=HEAP[$96]; //@line 2131 "_elementtree.c"
+        var $98=$97+24; //@line 2131 "_elementtree.c"
+        var $99=HEAP[$98]; //@line 2131 "_elementtree.c"
         var $100=$key; //@line 2131 "_elementtree.c"
-        var $101=$100; //@line 2131 "_elementtree.c"
-        var $102=HEAP[$101]; //@line 2131 "_elementtree.c"
-        var $103=($102)==0; //@line 2131 "_elementtree.c"
-        if ($103) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 2131 "_elementtree.c"
-      case 19: // $bb15
-        var $104=$key; //@line 2131 "_elementtree.c"
-        var $105=$104+4; //@line 2131 "_elementtree.c"
-        var $106=HEAP[$105]; //@line 2131 "_elementtree.c"
-        var $107=$106+24; //@line 2131 "_elementtree.c"
-        var $108=HEAP[$107]; //@line 2131 "_elementtree.c"
-        var $109=$key; //@line 2131 "_elementtree.c"
-        FUNCTION_TABLE[$108]($109); //@line 2131 "_elementtree.c"
-        __label__ = 20; break; //@line 2131 "_elementtree.c"
-      case 20: // $bb16
-        $1=0; //@line 2132 "_elementtree.c"
-        __label__ = 31; break; //@line 2132 "_elementtree.c"
-      case 21: // $bb18
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i=0; //@line 2058 "_elementtree.c"
-        var $110=$tag; //@line 2136 "_elementtree.c"
-        $value=$110; //@line 2136 "_elementtree.c"
-        __label__ = 22; break; //@line 2136 "_elementtree.c"
-      case 22: // $bb19
-        var $111=$self_addr; //@line 2139 "_elementtree.c"
-        var $112=$111+20; //@line 2139 "_elementtree.c"
-        var $113=HEAP[$112]; //@line 2139 "_elementtree.c"
-        var $114=$key; //@line 2139 "_elementtree.c"
-        var $115=$value; //@line 2139 "_elementtree.c"
-        var $116=_PyDict_SetItem($113, $114, $115); //@line 2139 "_elementtree.c"
-        var $117=($116) < 0; //@line 2139 "_elementtree.c"
-        if ($117) { __label__ = 23; break; } else { __label__ = 28; break; } //@line 2139 "_elementtree.c"
-      case 23: // $bb20
-        var $118=$key; //@line 2140 "_elementtree.c"
-        var $119=$118; //@line 2140 "_elementtree.c"
-        var $120=HEAP[$119]; //@line 2140 "_elementtree.c"
-        var $121=($120) - 1; //@line 2140 "_elementtree.c"
-        var $122=$key; //@line 2140 "_elementtree.c"
-        var $123=$122; //@line 2140 "_elementtree.c"
-        HEAP[$123]=$121; //@line 2140 "_elementtree.c"
+        FUNCTION_TABLE[$99]($100); //@line 2131 "_elementtree.c"
+        __label__ = 17; break; //@line 2131 "_elementtree.c"
+      case 17: // $bb16
+        $0=0; //@line 2132 "_elementtree.c"
+        __label__ = 28; break; //@line 2132 "_elementtree.c"
+      case 18: // $bb18
+        var $101=$tag; //@line 2136 "_elementtree.c"
+        $value=$101; //@line 2136 "_elementtree.c"
+        __label__ = 19; break; //@line 2136 "_elementtree.c"
+      case 19: // $bb19
+        var $102=$self_addr; //@line 2139 "_elementtree.c"
+        var $103=$102+20; //@line 2139 "_elementtree.c"
+        var $104=HEAP[$103]; //@line 2139 "_elementtree.c"
+        var $105=$key; //@line 2139 "_elementtree.c"
+        var $106=$value; //@line 2139 "_elementtree.c"
+        var $107=_PyDict_SetItem($104, $105, $106); //@line 2139 "_elementtree.c"
+        var $108=($107) < 0; //@line 2139 "_elementtree.c"
+        if ($108) { __label__ = 20; break; } else { __label__ = 25; break; } //@line 2139 "_elementtree.c"
+      case 20: // $bb20
+        var $109=$key; //@line 2140 "_elementtree.c"
+        var $110=$109; //@line 2140 "_elementtree.c"
+        var $111=HEAP[$110]; //@line 2140 "_elementtree.c"
+        var $112=($111) - 1; //@line 2140 "_elementtree.c"
+        var $113=$key; //@line 2140 "_elementtree.c"
+        var $114=$113; //@line 2140 "_elementtree.c"
+        HEAP[$114]=$112; //@line 2140 "_elementtree.c"
+        var $115=$key; //@line 2140 "_elementtree.c"
+        var $116=$115; //@line 2140 "_elementtree.c"
+        var $117=HEAP[$116]; //@line 2140 "_elementtree.c"
+        var $118=($117)==0; //@line 2140 "_elementtree.c"
+        if ($118) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 2140 "_elementtree.c"
+      case 21: // $bb21
+        var $119=$key; //@line 2140 "_elementtree.c"
+        var $120=$119+4; //@line 2140 "_elementtree.c"
+        var $121=HEAP[$120]; //@line 2140 "_elementtree.c"
+        var $122=$121+24; //@line 2140 "_elementtree.c"
+        var $123=HEAP[$122]; //@line 2140 "_elementtree.c"
         var $124=$key; //@line 2140 "_elementtree.c"
-        var $125=$124; //@line 2140 "_elementtree.c"
-        var $126=HEAP[$125]; //@line 2140 "_elementtree.c"
-        var $127=($126)==0; //@line 2140 "_elementtree.c"
-        if ($127) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 2140 "_elementtree.c"
-      case 24: // $bb21
-        var $128=$key; //@line 2140 "_elementtree.c"
-        var $129=$128+4; //@line 2140 "_elementtree.c"
-        var $130=HEAP[$129]; //@line 2140 "_elementtree.c"
-        var $131=$130+24; //@line 2140 "_elementtree.c"
-        var $132=HEAP[$131]; //@line 2140 "_elementtree.c"
-        var $133=$key; //@line 2140 "_elementtree.c"
-        FUNCTION_TABLE[$132]($133); //@line 2140 "_elementtree.c"
-        __label__ = 25; break; //@line 2140 "_elementtree.c"
-      case 25: // $bb22
-        var $134=$value; //@line 2141 "_elementtree.c"
-        var $135=$134; //@line 2141 "_elementtree.c"
-        var $136=HEAP[$135]; //@line 2141 "_elementtree.c"
-        var $137=($136) - 1; //@line 2141 "_elementtree.c"
-        var $138=$value; //@line 2141 "_elementtree.c"
-        var $139=$138; //@line 2141 "_elementtree.c"
-        HEAP[$139]=$137; //@line 2141 "_elementtree.c"
+        FUNCTION_TABLE[$123]($124); //@line 2140 "_elementtree.c"
+        __label__ = 22; break; //@line 2140 "_elementtree.c"
+      case 22: // $bb22
+        var $125=$value; //@line 2141 "_elementtree.c"
+        var $126=$125; //@line 2141 "_elementtree.c"
+        var $127=HEAP[$126]; //@line 2141 "_elementtree.c"
+        var $128=($127) - 1; //@line 2141 "_elementtree.c"
+        var $129=$value; //@line 2141 "_elementtree.c"
+        var $130=$129; //@line 2141 "_elementtree.c"
+        HEAP[$130]=$128; //@line 2141 "_elementtree.c"
+        var $131=$value; //@line 2141 "_elementtree.c"
+        var $132=$131; //@line 2141 "_elementtree.c"
+        var $133=HEAP[$132]; //@line 2141 "_elementtree.c"
+        var $134=($133)==0; //@line 2141 "_elementtree.c"
+        if ($134) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 2141 "_elementtree.c"
+      case 23: // $bb23
+        var $135=$value; //@line 2141 "_elementtree.c"
+        var $136=$135+4; //@line 2141 "_elementtree.c"
+        var $137=HEAP[$136]; //@line 2141 "_elementtree.c"
+        var $138=$137+24; //@line 2141 "_elementtree.c"
+        var $139=HEAP[$138]; //@line 2141 "_elementtree.c"
         var $140=$value; //@line 2141 "_elementtree.c"
-        var $141=$140; //@line 2141 "_elementtree.c"
-        var $142=HEAP[$141]; //@line 2141 "_elementtree.c"
-        var $143=($142)==0; //@line 2141 "_elementtree.c"
-        if ($143) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 2141 "_elementtree.c"
-      case 26: // $bb23
-        var $144=$value; //@line 2141 "_elementtree.c"
-        var $145=$144+4; //@line 2141 "_elementtree.c"
-        var $146=HEAP[$145]; //@line 2141 "_elementtree.c"
-        var $147=$146+24; //@line 2141 "_elementtree.c"
-        var $148=HEAP[$147]; //@line 2141 "_elementtree.c"
-        var $149=$value; //@line 2141 "_elementtree.c"
-        FUNCTION_TABLE[$148]($149); //@line 2141 "_elementtree.c"
-        __label__ = 27; break; //@line 2141 "_elementtree.c"
-      case 27: // $bb24
-        $1=0; //@line 2142 "_elementtree.c"
-        __label__ = 31; break; //@line 2142 "_elementtree.c"
-      case 28: // $bb25
-        var $150=$key; //@line 2146 "_elementtree.c"
-        var $151=$150; //@line 2146 "_elementtree.c"
-        var $152=HEAP[$151]; //@line 2146 "_elementtree.c"
-        var $153=($152) - 1; //@line 2146 "_elementtree.c"
-        var $154=$key; //@line 2146 "_elementtree.c"
-        var $155=$154; //@line 2146 "_elementtree.c"
-        HEAP[$155]=$153; //@line 2146 "_elementtree.c"
+        FUNCTION_TABLE[$139]($140); //@line 2141 "_elementtree.c"
+        __label__ = 24; break; //@line 2141 "_elementtree.c"
+      case 24: // $bb24
+        $0=0; //@line 2142 "_elementtree.c"
+        __label__ = 28; break; //@line 2142 "_elementtree.c"
+      case 25: // $bb25
+        var $141=$key; //@line 2146 "_elementtree.c"
+        var $142=$141; //@line 2146 "_elementtree.c"
+        var $143=HEAP[$142]; //@line 2146 "_elementtree.c"
+        var $144=($143) - 1; //@line 2146 "_elementtree.c"
+        var $145=$key; //@line 2146 "_elementtree.c"
+        var $146=$145; //@line 2146 "_elementtree.c"
+        HEAP[$146]=$144; //@line 2146 "_elementtree.c"
+        var $147=$key; //@line 2146 "_elementtree.c"
+        var $148=$147; //@line 2146 "_elementtree.c"
+        var $149=HEAP[$148]; //@line 2146 "_elementtree.c"
+        var $150=($149)==0; //@line 2146 "_elementtree.c"
+        if ($150) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 2146 "_elementtree.c"
+      case 26: // $bb26
+        var $151=$key; //@line 2146 "_elementtree.c"
+        var $152=$151+4; //@line 2146 "_elementtree.c"
+        var $153=HEAP[$152]; //@line 2146 "_elementtree.c"
+        var $154=$153+24; //@line 2146 "_elementtree.c"
+        var $155=HEAP[$154]; //@line 2146 "_elementtree.c"
         var $156=$key; //@line 2146 "_elementtree.c"
-        var $157=$156; //@line 2146 "_elementtree.c"
-        var $158=HEAP[$157]; //@line 2146 "_elementtree.c"
-        var $159=($158)==0; //@line 2146 "_elementtree.c"
-        if ($159) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 2146 "_elementtree.c"
-      case 29: // $bb26
-        var $160=$key; //@line 2146 "_elementtree.c"
-        var $161=$160+4; //@line 2146 "_elementtree.c"
-        var $162=HEAP[$161]; //@line 2146 "_elementtree.c"
-        var $163=$162+24; //@line 2146 "_elementtree.c"
-        var $164=HEAP[$163]; //@line 2146 "_elementtree.c"
-        var $165=$key; //@line 2146 "_elementtree.c"
-        FUNCTION_TABLE[$164]($165); //@line 2146 "_elementtree.c"
-        __label__ = 30; break; //@line 2146 "_elementtree.c"
-      case 30: // $bb27
-        var $166=$value; //@line 2147 "_elementtree.c"
-        $1=$166; //@line 2147 "_elementtree.c"
-        __label__ = 31; break; //@line 2147 "_elementtree.c"
-      case 31: // $bb28
-        var $167=$1; //@line 2091 "_elementtree.c"
-        $retval=$167; //@line 2091 "_elementtree.c"
+        FUNCTION_TABLE[$155]($156); //@line 2146 "_elementtree.c"
+        __label__ = 27; break; //@line 2146 "_elementtree.c"
+      case 27: // $bb27
+        var $157=$value; //@line 2147 "_elementtree.c"
+        $0=$157; //@line 2147 "_elementtree.c"
+        __label__ = 28; break; //@line 2147 "_elementtree.c"
+      case 28: // $bb28
+        var $158=$0; //@line 2091 "_elementtree.c"
+        $retval=$158; //@line 2091 "_elementtree.c"
         var $retval29=$retval; //@line 2091 "_elementtree.c"
         ;
         return $retval29; //@line 2091 "_elementtree.c"
@@ -8197,10 +8163,10 @@ var __str124;
         var $0=$message_addr; //@line 2157 "_elementtree.c"
         var $1=$line_addr; //@line 2157 "_elementtree.c"
         var $2=$column_addr; //@line 2157 "_elementtree.c"
-        var $3=_sprintf($buffer1, __str81, $0, $1, $2); //@line 2157 "_elementtree.c"
+        var $3=_sprintf($buffer1, __str81, allocate([$0,0,0,0,$1,0,0,0,$2,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2157 "_elementtree.c"
         var $4=HEAP[_elementtree_parseerror_obj]; //@line 2159 "_elementtree.c"
         var $buffer2=$buffer; //@line 2159 "_elementtree.c"
-        var $5=_PyObject_CallFunction($4, __str82, $buffer2); //@line 2159 "_elementtree.c"
+        var $5=_PyObject_CallFunction($4, __str82, allocate([$buffer2,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 2159 "_elementtree.c"
         $error=$5; //@line 2159 "_elementtree.c"
         var $6=$error; //@line 2160 "_elementtree.c"
         var $7=($6)==0; //@line 2160 "_elementtree.c"
@@ -8208,7 +8174,7 @@ var __str124;
       case 1: // $bb
         var $8=$line_addr; //@line 2164 "_elementtree.c"
         var $9=$column_addr; //@line 2164 "_elementtree.c"
-        var $10=_Py_BuildValue(__str83, $8, $9); //@line 2164 "_elementtree.c"
+        var $10=_Py_BuildValue(__str83, allocate([$8,0,0,0,$9,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2164 "_elementtree.c"
         $position=$10; //@line 2164 "_elementtree.c"
         var $11=$position; //@line 2165 "_elementtree.c"
         var $12=($11)==0; //@line 2165 "_elementtree.c"
@@ -8346,15 +8312,6 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i1;
-        var $size_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $i_i;
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $data_in_addr;
         var $data_len_addr;
@@ -8365,187 +8322,145 @@ var __str124;
         $self_addr=$self;
         $data_in_addr=$data_in;
         $data_len_addr=$data_len;
-        var $2=$data_len_addr; //@line 2191 "_elementtree.c"
-        var $3=($2) <= 1; //@line 2191 "_elementtree.c"
-        if ($3) { __label__ = 22; break; } else { __label__ = 1; break; } //@line 2191 "_elementtree.c"
+        var $0=$data_len_addr; //@line 2191 "_elementtree.c"
+        var $1=($0) <= 1; //@line 2191 "_elementtree.c"
+        if ($1) { __label__ = 16; break; } else { __label__ = 1; break; } //@line 2191 "_elementtree.c"
       case 1: // $bb
-        var $4=$data_in_addr; //@line 2191 "_elementtree.c"
-        var $5=$4; //@line 2191 "_elementtree.c"
-        var $6=HEAP[$5]; //@line 2191 "_elementtree.c"
-        var $7=($6)!=38; //@line 2191 "_elementtree.c"
-        if ($7) { __label__ = 22; break; } else { __label__ = 2; break; } //@line 2191 "_elementtree.c"
+        var $2=$data_in_addr; //@line 2191 "_elementtree.c"
+        var $3=$2; //@line 2191 "_elementtree.c"
+        var $4=HEAP[$3]; //@line 2191 "_elementtree.c"
+        var $5=($4)!=38; //@line 2191 "_elementtree.c"
+        if ($5) { __label__ = 16; break; } else { __label__ = 2; break; } //@line 2191 "_elementtree.c"
       case 2: // $bb2
-        var $8=$data_len_addr; //@line 2194 "_elementtree.c"
-        var $9=($8) - 2; //@line 2194 "_elementtree.c"
-        var $10=$data_in_addr; //@line 2194 "_elementtree.c"
-        var $11=$10+1; //@line 2194 "_elementtree.c"
-        $string_addr_i=$11;
-        $size_addr_i=$9;
-        var $12=$string_addr_i; //@line 2071 "_elementtree.c"
-        var $13=$size_addr_i; //@line 2071 "_elementtree.c"
-        $string_addr_i1=$12;
-        $size_addr_i2=$13;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 5; break; //@line 2056 "_elementtree.c"
-      case 3: // $bb_i4
-        var $14=$string_addr_i1; //@line 2057 "_elementtree.c"
-        var $15=$i_i; //@line 2057 "_elementtree.c"
-        var $16=$14+$15; //@line 2057 "_elementtree.c"
-        var $17=HEAP[$16]; //@line 2057 "_elementtree.c"
-        var $18=($17) < 0; //@line 2057 "_elementtree.c"
-        if ($18) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 2057 "_elementtree.c"
-      case 4: // $bb2_i
-        var $19=$i_i; //@line 2056 "_elementtree.c"
-        var $20=($19) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$20; //@line 2056 "_elementtree.c"
-        __label__ = 5; break; //@line 2056 "_elementtree.c"
-      case 5: // $bb3_i
-        var $21=$i_i; //@line 2056 "_elementtree.c"
-        var $22=$size_addr_i2; //@line 2056 "_elementtree.c"
-        var $23=($21) < ($22); //@line 2056 "_elementtree.c"
-        if ($23) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 2056 "_elementtree.c"
-      case 6: // $bb_i
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i3=1; //@line 2058 "_elementtree.c"
-        var $24=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $25=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $26=_PyUnicodeUCS2_DecodeUTF8($24, $25, __str80); //@line 2072 "_elementtree.c"
-        $1=$26; //@line 2072 "_elementtree.c"
-        __lastLabel__ = 6; __label__ = 8; break; //@line 2072 "_elementtree.c"
-      case 7: // $bb1_i
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i3=0; //@line 2058 "_elementtree.c"
-        var $27=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $28=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $29=_PyString_FromStringAndSize($27, $28); //@line 2075 "_elementtree.c"
-        $1=$29; //@line 2075 "_elementtree.c"
-        __lastLabel__ = 7; __label__ = 8; break; //@line 2075 "_elementtree.c"
-      case 8: // $makestring_exit
-        var $30=__lastLabel__ == 6 ? $26 : ($29);
-        $retval_i=$30; //@line 2072 "_elementtree.c"
-        $key=$30; //@line 2194 "_elementtree.c"
-        var $31=($30)==0; //@line 2195 "_elementtree.c"
-        if ($31) { __label__ = 22; break; } else { __label__ = 9; break; } //@line 2195 "_elementtree.c"
-      case 9: // $bb3
-        var $32=$self_addr; //@line 2198 "_elementtree.c"
-        var $33=$32+16; //@line 2198 "_elementtree.c"
-        var $34=HEAP[$33]; //@line 2198 "_elementtree.c"
-        var $35=$key; //@line 2198 "_elementtree.c"
-        var $36=_PyDict_GetItem($34, $35); //@line 2198 "_elementtree.c"
-        $value=$36; //@line 2198 "_elementtree.c"
-        var $37=$value; //@line 2200 "_elementtree.c"
-        var $38=($37)!=0; //@line 2200 "_elementtree.c"
-        if ($38) { __label__ = 10; break; } else { __label__ = 18; break; } //@line 2200 "_elementtree.c"
-      case 10: // $bb4
-        var $39=$self_addr; //@line 2201 "_elementtree.c"
-        var $40=$39+12; //@line 2201 "_elementtree.c"
-        var $41=HEAP[$40]; //@line 2201 "_elementtree.c"
-        var $42=$41+4; //@line 2201 "_elementtree.c"
-        var $43=HEAP[$42]; //@line 2201 "_elementtree.c"
-        var $44=($43)==(_TreeBuilder_Type); //@line 2201 "_elementtree.c"
-        var $45=$self_addr; //@line 2202 "_elementtree.c"
-        if ($44) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 2201 "_elementtree.c"
-      case 11: // $bb5
-        var $46=$45+12; //@line 2202 "_elementtree.c"
-        var $47=HEAP[$46]; //@line 2202 "_elementtree.c"
-        var $48=$47; //@line 2202 "_elementtree.c"
-        var $49=$value; //@line 2202 "_elementtree.c"
-        var $50=_treebuilder_handle_data($48, $49); //@line 2202 "_elementtree.c"
-        $res=$50; //@line 2202 "_elementtree.c"
-        __lastLabel__ = 11; __label__ = 15; break; //@line 2202 "_elementtree.c"
-      case 12: // $bb6
-        var $51=$45+32; //@line 2205 "_elementtree.c"
-        var $52=HEAP[$51]; //@line 2205 "_elementtree.c"
-        var $53=($52)!=0; //@line 2205 "_elementtree.c"
-        if ($53) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2205 "_elementtree.c"
-      case 13: // $bb7
-        var $54=$self_addr; //@line 2206 "_elementtree.c"
-        var $55=$54+32; //@line 2206 "_elementtree.c"
-        var $56=HEAP[$55]; //@line 2206 "_elementtree.c"
-        var $57=$value; //@line 2206 "_elementtree.c"
-        var $58=_PyObject_CallFunction($56, __str85, $57); //@line 2206 "_elementtree.c"
-        $res=$58; //@line 2206 "_elementtree.c"
-        __lastLabel__ = 13; __label__ = 15; break; //@line 2206 "_elementtree.c"
-      case 14: // $bb9_thread
+        var $6=$data_len_addr; //@line 2194 "_elementtree.c"
+        var $7=($6) - 2; //@line 2194 "_elementtree.c"
+        var $8=$data_in_addr; //@line 2194 "_elementtree.c"
+        var $9=$8+1; //@line 2194 "_elementtree.c"
+        var $10=_makestring($9, $7); //@line 2194 "_elementtree.c"
+        $key=$10; //@line 2194 "_elementtree.c"
+        var $11=$key; //@line 2195 "_elementtree.c"
+        var $12=($11)==0; //@line 2195 "_elementtree.c"
+        if ($12) { __label__ = 16; break; } else { __label__ = 3; break; } //@line 2195 "_elementtree.c"
+      case 3: // $bb3
+        var $13=$self_addr; //@line 2198 "_elementtree.c"
+        var $14=$13+16; //@line 2198 "_elementtree.c"
+        var $15=HEAP[$14]; //@line 2198 "_elementtree.c"
+        var $16=$key; //@line 2198 "_elementtree.c"
+        var $17=_PyDict_GetItem($15, $16); //@line 2198 "_elementtree.c"
+        $value=$17; //@line 2198 "_elementtree.c"
+        var $18=$value; //@line 2200 "_elementtree.c"
+        var $19=($18)!=0; //@line 2200 "_elementtree.c"
+        if ($19) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 2200 "_elementtree.c"
+      case 4: // $bb4
+        var $20=$self_addr; //@line 2201 "_elementtree.c"
+        var $21=$20+12; //@line 2201 "_elementtree.c"
+        var $22=HEAP[$21]; //@line 2201 "_elementtree.c"
+        var $23=$22+4; //@line 2201 "_elementtree.c"
+        var $24=HEAP[$23]; //@line 2201 "_elementtree.c"
+        var $25=($24)==(_TreeBuilder_Type); //@line 2201 "_elementtree.c"
+        var $26=$self_addr; //@line 2202 "_elementtree.c"
+        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2201 "_elementtree.c"
+      case 5: // $bb5
+        var $27=$26+12; //@line 2202 "_elementtree.c"
+        var $28=HEAP[$27]; //@line 2202 "_elementtree.c"
+        var $29=$28; //@line 2202 "_elementtree.c"
+        var $30=$value; //@line 2202 "_elementtree.c"
+        var $31=_treebuilder_handle_data($29, $30); //@line 2202 "_elementtree.c"
+        $res=$31; //@line 2202 "_elementtree.c"
+        __lastLabel__ = 5; __label__ = 9; break; //@line 2202 "_elementtree.c"
+      case 6: // $bb6
+        var $32=$26+32; //@line 2205 "_elementtree.c"
+        var $33=HEAP[$32]; //@line 2205 "_elementtree.c"
+        var $34=($33)!=0; //@line 2205 "_elementtree.c"
+        if ($34) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2205 "_elementtree.c"
+      case 7: // $bb7
+        var $35=$self_addr; //@line 2206 "_elementtree.c"
+        var $36=$35+32; //@line 2206 "_elementtree.c"
+        var $37=HEAP[$36]; //@line 2206 "_elementtree.c"
+        var $38=$value; //@line 2206 "_elementtree.c"
+        var $39=_PyObject_CallFunction($37, __str85, allocate([$38,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2206 "_elementtree.c"
+        $res=$39; //@line 2206 "_elementtree.c"
+        __lastLabel__ = 7; __label__ = 9; break; //@line 2206 "_elementtree.c"
+      case 8: // $bb9_thread
         $res=0; //@line 2208 "_elementtree.c"
-        __label__ = 20; break;
-      case 15: // $bb9
-        var $59=__lastLabel__ == 13 ? $58 : ($50);
-        var $60=($59)!=0; //@line 2209 "_elementtree.c"
-        if ($60) { __label__ = 16; break; } else { __label__ = 20; break; } //@line 2209 "_elementtree.c"
-      case 16: // $bb10
-        var $61=$res; //@line 2209 "_elementtree.c"
-        var $62=$61; //@line 2209 "_elementtree.c"
-        var $63=HEAP[$62]; //@line 2209 "_elementtree.c"
-        var $64=($63) - 1; //@line 2209 "_elementtree.c"
-        var $65=$res; //@line 2209 "_elementtree.c"
-        var $66=$65; //@line 2209 "_elementtree.c"
-        HEAP[$66]=$64; //@line 2209 "_elementtree.c"
-        var $67=$res; //@line 2209 "_elementtree.c"
-        var $68=$67; //@line 2209 "_elementtree.c"
-        var $69=HEAP[$68]; //@line 2209 "_elementtree.c"
-        var $70=($69)==0; //@line 2209 "_elementtree.c"
-        if ($70) { __label__ = 17; break; } else { __label__ = 20; break; } //@line 2209 "_elementtree.c"
-      case 17: // $bb11
-        var $71=$res; //@line 2209 "_elementtree.c"
-        var $72=$71+4; //@line 2209 "_elementtree.c"
-        var $73=HEAP[$72]; //@line 2209 "_elementtree.c"
-        var $74=$73+24; //@line 2209 "_elementtree.c"
-        var $75=HEAP[$74]; //@line 2209 "_elementtree.c"
-        var $76=$res; //@line 2209 "_elementtree.c"
-        FUNCTION_TABLE[$75]($76); //@line 2209 "_elementtree.c"
-        __label__ = 20; break; //@line 2209 "_elementtree.c"
-      case 18: // $bb13
-        var $77=_PyErr_Occurred(); //@line 2210 "_elementtree.c"
-        var $78=($77)==0; //@line 2210 "_elementtree.c"
-        if ($78) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 2210 "_elementtree.c"
-      case 19: // $bb14
-        var $79=$key; //@line 2213 "_elementtree.c"
-        var $80=$79; //@line 2213 "_elementtree.c"
-        var $81=$80+20; //@line 2213 "_elementtree.c"
-        var $82=$81; //@line 2213 "_elementtree.c"
+        __label__ = 14; break;
+      case 9: // $bb9
+        var $40=__lastLabel__ == 7 ? $39 : ($31);
+        var $41=($40)!=0; //@line 2209 "_elementtree.c"
+        if ($41) { __label__ = 10; break; } else { __label__ = 14; break; } //@line 2209 "_elementtree.c"
+      case 10: // $bb10
+        var $42=$res; //@line 2209 "_elementtree.c"
+        var $43=$42; //@line 2209 "_elementtree.c"
+        var $44=HEAP[$43]; //@line 2209 "_elementtree.c"
+        var $45=($44) - 1; //@line 2209 "_elementtree.c"
+        var $46=$res; //@line 2209 "_elementtree.c"
+        var $47=$46; //@line 2209 "_elementtree.c"
+        HEAP[$47]=$45; //@line 2209 "_elementtree.c"
+        var $48=$res; //@line 2209 "_elementtree.c"
+        var $49=$48; //@line 2209 "_elementtree.c"
+        var $50=HEAP[$49]; //@line 2209 "_elementtree.c"
+        var $51=($50)==0; //@line 2209 "_elementtree.c"
+        if ($51) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 2209 "_elementtree.c"
+      case 11: // $bb11
+        var $52=$res; //@line 2209 "_elementtree.c"
+        var $53=$52+4; //@line 2209 "_elementtree.c"
+        var $54=HEAP[$53]; //@line 2209 "_elementtree.c"
+        var $55=$54+24; //@line 2209 "_elementtree.c"
+        var $56=HEAP[$55]; //@line 2209 "_elementtree.c"
+        var $57=$res; //@line 2209 "_elementtree.c"
+        FUNCTION_TABLE[$56]($57); //@line 2209 "_elementtree.c"
+        __label__ = 14; break; //@line 2209 "_elementtree.c"
+      case 12: // $bb13
+        var $58=_PyErr_Occurred(); //@line 2210 "_elementtree.c"
+        var $59=($58)==0; //@line 2210 "_elementtree.c"
+        if ($59) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2210 "_elementtree.c"
+      case 13: // $bb14
+        var $60=$key; //@line 2213 "_elementtree.c"
+        var $61=$60; //@line 2213 "_elementtree.c"
+        var $62=$61+20; //@line 2213 "_elementtree.c"
+        var $63=$62; //@line 2213 "_elementtree.c"
         var $message15=$message; //@line 2213 "_elementtree.c"
-        var $83=_sprintf($message15, __str86, $82); //@line 2213 "_elementtree.c"
-        var $84=HEAP[_expat_capi]; //@line 2214 "_elementtree.c"
-        var $85=$84+28; //@line 2214 "_elementtree.c"
-        var $86=HEAP[$85]; //@line 2214 "_elementtree.c"
-        var $87=$self_addr; //@line 2214 "_elementtree.c"
-        var $88=$87+8; //@line 2214 "_elementtree.c"
-        var $89=HEAP[$88]; //@line 2214 "_elementtree.c"
-        var $90=FUNCTION_TABLE[$86]($89); //@line 2214 "_elementtree.c"
-        var $91=HEAP[_expat_capi]; //@line 2214 "_elementtree.c"
-        var $92=$91+32; //@line 2214 "_elementtree.c"
-        var $93=HEAP[$92]; //@line 2214 "_elementtree.c"
-        var $94=$self_addr; //@line 2214 "_elementtree.c"
-        var $95=$94+8; //@line 2214 "_elementtree.c"
-        var $96=HEAP[$95]; //@line 2214 "_elementtree.c"
-        var $97=FUNCTION_TABLE[$93]($96); //@line 2214 "_elementtree.c"
+        var $64=_sprintf($message15, __str86, allocate([$63,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 2213 "_elementtree.c"
+        var $65=HEAP[_expat_capi]; //@line 2214 "_elementtree.c"
+        var $66=$65+28; //@line 2214 "_elementtree.c"
+        var $67=HEAP[$66]; //@line 2214 "_elementtree.c"
+        var $68=$self_addr; //@line 2214 "_elementtree.c"
+        var $69=$68+8; //@line 2214 "_elementtree.c"
+        var $70=HEAP[$69]; //@line 2214 "_elementtree.c"
+        var $71=FUNCTION_TABLE[$67]($70); //@line 2214 "_elementtree.c"
+        var $72=HEAP[_expat_capi]; //@line 2214 "_elementtree.c"
+        var $73=$72+32; //@line 2214 "_elementtree.c"
+        var $74=HEAP[$73]; //@line 2214 "_elementtree.c"
+        var $75=$self_addr; //@line 2214 "_elementtree.c"
+        var $76=$75+8; //@line 2214 "_elementtree.c"
+        var $77=HEAP[$76]; //@line 2214 "_elementtree.c"
+        var $78=FUNCTION_TABLE[$74]($77); //@line 2214 "_elementtree.c"
         var $message16=$message; //@line 2214 "_elementtree.c"
-        _expat_set_error($message16, $97, $90); //@line 2214 "_elementtree.c"
-        __label__ = 20; break; //@line 2214 "_elementtree.c"
-      case 20: // $bb17
-        var $98=$key; //@line 2221 "_elementtree.c"
-        var $99=$98; //@line 2221 "_elementtree.c"
-        var $100=HEAP[$99]; //@line 2221 "_elementtree.c"
-        var $101=($100) - 1; //@line 2221 "_elementtree.c"
-        var $102=$key; //@line 2221 "_elementtree.c"
-        var $103=$102; //@line 2221 "_elementtree.c"
-        HEAP[$103]=$101; //@line 2221 "_elementtree.c"
-        var $104=$key; //@line 2221 "_elementtree.c"
-        var $105=$104; //@line 2221 "_elementtree.c"
-        var $106=HEAP[$105]; //@line 2221 "_elementtree.c"
-        var $107=($106)==0; //@line 2221 "_elementtree.c"
-        if ($107) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 2221 "_elementtree.c"
-      case 21: // $bb18
-        var $108=$key; //@line 2221 "_elementtree.c"
-        var $109=$108+4; //@line 2221 "_elementtree.c"
-        var $110=HEAP[$109]; //@line 2221 "_elementtree.c"
-        var $111=$110+24; //@line 2221 "_elementtree.c"
-        var $112=HEAP[$111]; //@line 2221 "_elementtree.c"
-        var $113=$key; //@line 2221 "_elementtree.c"
-        FUNCTION_TABLE[$112]($113); //@line 2221 "_elementtree.c"
-        __label__ = 22; break; //@line 2221 "_elementtree.c"
-      case 22: // $return
+        _expat_set_error($message16, $78, $71); //@line 2214 "_elementtree.c"
+        __label__ = 14; break; //@line 2214 "_elementtree.c"
+      case 14: // $bb17
+        var $79=$key; //@line 2221 "_elementtree.c"
+        var $80=$79; //@line 2221 "_elementtree.c"
+        var $81=HEAP[$80]; //@line 2221 "_elementtree.c"
+        var $82=($81) - 1; //@line 2221 "_elementtree.c"
+        var $83=$key; //@line 2221 "_elementtree.c"
+        var $84=$83; //@line 2221 "_elementtree.c"
+        HEAP[$84]=$82; //@line 2221 "_elementtree.c"
+        var $85=$key; //@line 2221 "_elementtree.c"
+        var $86=$85; //@line 2221 "_elementtree.c"
+        var $87=HEAP[$86]; //@line 2221 "_elementtree.c"
+        var $88=($87)==0; //@line 2221 "_elementtree.c"
+        if ($88) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 2221 "_elementtree.c"
+      case 15: // $bb18
+        var $89=$key; //@line 2221 "_elementtree.c"
+        var $90=$89+4; //@line 2221 "_elementtree.c"
+        var $91=HEAP[$90]; //@line 2221 "_elementtree.c"
+        var $92=$91+24; //@line 2221 "_elementtree.c"
+        var $93=HEAP[$92]; //@line 2221 "_elementtree.c"
+        var $94=$key; //@line 2221 "_elementtree.c"
+        FUNCTION_TABLE[$93]($94); //@line 2221 "_elementtree.c"
+        __label__ = 16; break; //@line 2221 "_elementtree.c"
+      case 16: // $return
         STACKTOP = __stackBase__;
         return; //@line 2192 "_elementtree.c"
       default: assert(0, "bad label: " + __label__);
@@ -8559,15 +8474,6 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i1;
-        var $size_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $i_i;
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $tag_in_addr;
         var $attrib_in_addr;
@@ -8580,400 +8486,356 @@ var __str124;
         $self_addr=$self;
         $tag_in_addr=$tag_in;
         $attrib_in_addr=$attrib_in;
-        var $2=$self_addr; //@line 2234 "_elementtree.c"
-        var $3=$tag_in_addr; //@line 2234 "_elementtree.c"
-        var $4=_makeuniversal($2, $3); //@line 2234 "_elementtree.c"
-        $tag=$4; //@line 2234 "_elementtree.c"
-        var $5=$tag; //@line 2235 "_elementtree.c"
-        var $6=($5)==0; //@line 2235 "_elementtree.c"
-        if ($6) { __label__ = 46; break; } else { __label__ = 1; break; } //@line 2235 "_elementtree.c"
+        var $0=$self_addr; //@line 2234 "_elementtree.c"
+        var $1=$tag_in_addr; //@line 2234 "_elementtree.c"
+        var $2=_makeuniversal($0, $1); //@line 2234 "_elementtree.c"
+        $tag=$2; //@line 2234 "_elementtree.c"
+        var $3=$tag; //@line 2235 "_elementtree.c"
+        var $4=($3)==0; //@line 2235 "_elementtree.c"
+        if ($4) { __label__ = 40; break; } else { __label__ = 1; break; } //@line 2235 "_elementtree.c"
       case 1: // $bb
-        var $7=$attrib_in_addr; //@line 2239 "_elementtree.c"
-        var $8=$7; //@line 2239 "_elementtree.c"
-        var $9=HEAP[$8]; //@line 2239 "_elementtree.c"
-        var $10=($9)!=0; //@line 2239 "_elementtree.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 29; break; } //@line 2239 "_elementtree.c"
+        var $5=$attrib_in_addr; //@line 2239 "_elementtree.c"
+        var $6=$5; //@line 2239 "_elementtree.c"
+        var $7=HEAP[$6]; //@line 2239 "_elementtree.c"
+        var $8=($7)!=0; //@line 2239 "_elementtree.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 23; break; } //@line 2239 "_elementtree.c"
       case 2: // $bb1
-        var $11=_PyDict_New(); //@line 2240 "_elementtree.c"
-        $attrib=$11; //@line 2240 "_elementtree.c"
-        var $12=$attrib; //@line 2241 "_elementtree.c"
-        var $13=($12)==0; //@line 2241 "_elementtree.c"
-        if ($13) { __label__ = 46; break; } else { __label__ = 27; break; } //@line 2241 "_elementtree.c"
+        var $9=_PyDict_New(); //@line 2240 "_elementtree.c"
+        $attrib=$9; //@line 2240 "_elementtree.c"
+        var $10=$attrib; //@line 2241 "_elementtree.c"
+        var $11=($10)==0; //@line 2241 "_elementtree.c"
+        if ($11) { __label__ = 40; break; } else { __label__ = 21; break; } //@line 2241 "_elementtree.c"
       case 3: // $bb3
-        var $14=$attrib_in_addr; //@line 2244 "_elementtree.c"
-        var $15=$14; //@line 2244 "_elementtree.c"
-        var $16=HEAP[$15]; //@line 2244 "_elementtree.c"
-        var $17=$self_addr; //@line 2244 "_elementtree.c"
-        var $18=_makeuniversal($17, $16); //@line 2244 "_elementtree.c"
-        $key=$18; //@line 2244 "_elementtree.c"
-        var $19=$attrib_in_addr; //@line 2245 "_elementtree.c"
-        var $20=$19+4; //@line 2245 "_elementtree.c"
-        var $21=HEAP[$20]; //@line 2245 "_elementtree.c"
-        var $22=_strlen($21); //@line 2245 "_elementtree.c"
-        var $23=$attrib_in_addr; //@line 2245 "_elementtree.c"
-        var $24=$23+4; //@line 2245 "_elementtree.c"
-        var $25=HEAP[$24]; //@line 2245 "_elementtree.c"
-        $string_addr_i=$25;
-        $size_addr_i=$22;
-        var $26=$string_addr_i; //@line 2071 "_elementtree.c"
-        var $27=$size_addr_i; //@line 2071 "_elementtree.c"
-        $string_addr_i1=$26;
-        $size_addr_i2=$27;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 6; break; //@line 2056 "_elementtree.c"
-      case 4: // $bb_i4
-        var $28=$string_addr_i1; //@line 2057 "_elementtree.c"
-        var $29=$i_i; //@line 2057 "_elementtree.c"
-        var $30=$28+$29; //@line 2057 "_elementtree.c"
-        var $31=HEAP[$30]; //@line 2057 "_elementtree.c"
-        var $32=($31) < 0; //@line 2057 "_elementtree.c"
-        if ($32) { __label__ = 7; break; } else { __label__ = 5; break; } //@line 2057 "_elementtree.c"
-      case 5: // $bb2_i
-        var $33=$i_i; //@line 2056 "_elementtree.c"
-        var $34=($33) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$34; //@line 2056 "_elementtree.c"
-        __label__ = 6; break; //@line 2056 "_elementtree.c"
-      case 6: // $bb3_i
-        var $35=$i_i; //@line 2056 "_elementtree.c"
-        var $36=$size_addr_i2; //@line 2056 "_elementtree.c"
-        var $37=($35) < ($36); //@line 2056 "_elementtree.c"
-        if ($37) { __label__ = 4; break; } else { __label__ = 8; break; } //@line 2056 "_elementtree.c"
-      case 7: // $bb_i
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i3=1; //@line 2058 "_elementtree.c"
-        var $38=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $39=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $40=_PyUnicodeUCS2_DecodeUTF8($38, $39, __str80); //@line 2072 "_elementtree.c"
-        $1=$40; //@line 2072 "_elementtree.c"
-        __label__ = 9; break; //@line 2072 "_elementtree.c"
-      case 8: // $bb1_i
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i3=0; //@line 2058 "_elementtree.c"
-        var $41=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $42=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $43=_PyString_FromStringAndSize($41, $42); //@line 2075 "_elementtree.c"
-        $1=$43; //@line 2075 "_elementtree.c"
-        __label__ = 9; break; //@line 2075 "_elementtree.c"
-      case 9: // $makestring_exit
-        var $44=$1; //@line 2072 "_elementtree.c"
-        $retval_i=$44; //@line 2072 "_elementtree.c"
-        var $retval3_i=$retval_i; //@line 2072 "_elementtree.c"
-        $value=$retval3_i; //@line 2245 "_elementtree.c"
-        var $45=$key; //@line 2246 "_elementtree.c"
-        var $46=($45)==0; //@line 2246 "_elementtree.c"
-        if ($46) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 2246 "_elementtree.c"
-      case 10: // $bb4
-        var $47=$value; //@line 2246 "_elementtree.c"
-        var $48=($47)==0; //@line 2246 "_elementtree.c"
-        if ($48) { __label__ = 14; break; } else { __label__ = 19; break; } //@line 2246 "_elementtree.c"
-      case 11: // $bb5
-        var $49=($retval3_i)!=0; //@line 2247 "_elementtree.c"
-        if ($49) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 2247 "_elementtree.c"
-      case 12: // $bb6
-        var $50=$value; //@line 2247 "_elementtree.c"
-        var $51=$50; //@line 2247 "_elementtree.c"
-        var $52=HEAP[$51]; //@line 2247 "_elementtree.c"
-        var $53=($52) - 1; //@line 2247 "_elementtree.c"
-        var $54=$value; //@line 2247 "_elementtree.c"
-        var $55=$54; //@line 2247 "_elementtree.c"
-        HEAP[$55]=$53; //@line 2247 "_elementtree.c"
-        var $56=$value; //@line 2247 "_elementtree.c"
-        var $57=$56; //@line 2247 "_elementtree.c"
-        var $58=HEAP[$57]; //@line 2247 "_elementtree.c"
-        var $59=($58)==0; //@line 2247 "_elementtree.c"
-        if ($59) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2247 "_elementtree.c"
-      case 13: // $bb7
-        var $60=$value; //@line 2247 "_elementtree.c"
-        var $61=$60+4; //@line 2247 "_elementtree.c"
-        var $62=HEAP[$61]; //@line 2247 "_elementtree.c"
-        var $63=$62+24; //@line 2247 "_elementtree.c"
-        var $64=HEAP[$63]; //@line 2247 "_elementtree.c"
-        var $65=$value; //@line 2247 "_elementtree.c"
-        FUNCTION_TABLE[$64]($65); //@line 2247 "_elementtree.c"
-        __label__ = 14; break; //@line 2247 "_elementtree.c"
-      case 14: // $bb8
-        var $66=$key; //@line 2248 "_elementtree.c"
-        var $67=($66)!=0; //@line 2248 "_elementtree.c"
-        if ($67) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 2248 "_elementtree.c"
-      case 15: // $bb9
-        var $68=$key; //@line 2248 "_elementtree.c"
-        var $69=$68; //@line 2248 "_elementtree.c"
-        var $70=HEAP[$69]; //@line 2248 "_elementtree.c"
-        var $71=($70) - 1; //@line 2248 "_elementtree.c"
-        var $72=$key; //@line 2248 "_elementtree.c"
-        var $73=$72; //@line 2248 "_elementtree.c"
-        HEAP[$73]=$71; //@line 2248 "_elementtree.c"
-        var $74=$key; //@line 2248 "_elementtree.c"
-        var $75=$74; //@line 2248 "_elementtree.c"
-        var $76=HEAP[$75]; //@line 2248 "_elementtree.c"
-        var $77=($76)==0; //@line 2248 "_elementtree.c"
-        if ($77) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 2248 "_elementtree.c"
-      case 16: // $bb10
-        var $78=$key; //@line 2248 "_elementtree.c"
-        var $79=$78+4; //@line 2248 "_elementtree.c"
-        var $80=HEAP[$79]; //@line 2248 "_elementtree.c"
-        var $81=$80+24; //@line 2248 "_elementtree.c"
-        var $82=HEAP[$81]; //@line 2248 "_elementtree.c"
-        var $83=$key; //@line 2248 "_elementtree.c"
-        FUNCTION_TABLE[$82]($83); //@line 2248 "_elementtree.c"
-        __label__ = 17; break; //@line 2248 "_elementtree.c"
-      case 17: // $bb11
-        var $84=$attrib; //@line 2249 "_elementtree.c"
-        var $85=$84; //@line 2249 "_elementtree.c"
-        var $86=HEAP[$85]; //@line 2249 "_elementtree.c"
-        var $87=($86) - 1; //@line 2249 "_elementtree.c"
-        var $88=$attrib; //@line 2249 "_elementtree.c"
-        var $89=$88; //@line 2249 "_elementtree.c"
-        HEAP[$89]=$87; //@line 2249 "_elementtree.c"
-        var $90=$attrib; //@line 2249 "_elementtree.c"
-        var $91=$90; //@line 2249 "_elementtree.c"
-        var $92=HEAP[$91]; //@line 2249 "_elementtree.c"
-        var $93=($92)==0; //@line 2249 "_elementtree.c"
-        if ($93) { __label__ = 18; break; } else { __label__ = 46; break; } //@line 2249 "_elementtree.c"
-      case 18: // $bb12
-        var $94=$attrib; //@line 2249 "_elementtree.c"
-        var $95=$94+4; //@line 2249 "_elementtree.c"
-        var $96=HEAP[$95]; //@line 2249 "_elementtree.c"
-        var $97=$96+24; //@line 2249 "_elementtree.c"
-        var $98=HEAP[$97]; //@line 2249 "_elementtree.c"
-        var $99=$attrib; //@line 2249 "_elementtree.c"
-        FUNCTION_TABLE[$98]($99); //@line 2249 "_elementtree.c"
-        __label__ = 46; break; //@line 2249 "_elementtree.c"
-      case 19: // $bb14
-        var $100=$attrib; //@line 2252 "_elementtree.c"
-        var $101=$key; //@line 2252 "_elementtree.c"
-        var $102=$value; //@line 2252 "_elementtree.c"
-        var $103=_PyDict_SetItem($100, $101, $102); //@line 2252 "_elementtree.c"
-        $ok=$103; //@line 2252 "_elementtree.c"
-        var $104=$value; //@line 2253 "_elementtree.c"
-        var $105=$104; //@line 2253 "_elementtree.c"
-        var $106=HEAP[$105]; //@line 2253 "_elementtree.c"
-        var $107=($106) - 1; //@line 2253 "_elementtree.c"
-        var $108=$value; //@line 2253 "_elementtree.c"
-        var $109=$108; //@line 2253 "_elementtree.c"
-        HEAP[$109]=$107; //@line 2253 "_elementtree.c"
-        var $110=$value; //@line 2253 "_elementtree.c"
-        var $111=$110; //@line 2253 "_elementtree.c"
-        var $112=HEAP[$111]; //@line 2253 "_elementtree.c"
-        var $113=($112)==0; //@line 2253 "_elementtree.c"
-        if ($113) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 2253 "_elementtree.c"
-      case 20: // $bb15
-        var $114=$value; //@line 2253 "_elementtree.c"
-        var $115=$114+4; //@line 2253 "_elementtree.c"
-        var $116=HEAP[$115]; //@line 2253 "_elementtree.c"
-        var $117=$116+24; //@line 2253 "_elementtree.c"
-        var $118=HEAP[$117]; //@line 2253 "_elementtree.c"
-        var $119=$value; //@line 2253 "_elementtree.c"
-        FUNCTION_TABLE[$118]($119); //@line 2253 "_elementtree.c"
-        __label__ = 21; break; //@line 2253 "_elementtree.c"
-      case 21: // $bb16
-        var $120=$key; //@line 2254 "_elementtree.c"
-        var $121=$120; //@line 2254 "_elementtree.c"
-        var $122=HEAP[$121]; //@line 2254 "_elementtree.c"
-        var $123=($122) - 1; //@line 2254 "_elementtree.c"
-        var $124=$key; //@line 2254 "_elementtree.c"
-        var $125=$124; //@line 2254 "_elementtree.c"
-        HEAP[$125]=$123; //@line 2254 "_elementtree.c"
-        var $126=$key; //@line 2254 "_elementtree.c"
-        var $127=$126; //@line 2254 "_elementtree.c"
-        var $128=HEAP[$127]; //@line 2254 "_elementtree.c"
-        var $129=($128)==0; //@line 2254 "_elementtree.c"
-        if ($129) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 2254 "_elementtree.c"
-      case 22: // $bb17
-        var $130=$key; //@line 2254 "_elementtree.c"
-        var $131=$130+4; //@line 2254 "_elementtree.c"
-        var $132=HEAP[$131]; //@line 2254 "_elementtree.c"
-        var $133=$132+24; //@line 2254 "_elementtree.c"
-        var $134=HEAP[$133]; //@line 2254 "_elementtree.c"
-        var $135=$key; //@line 2254 "_elementtree.c"
-        FUNCTION_TABLE[$134]($135); //@line 2254 "_elementtree.c"
-        __label__ = 23; break; //@line 2254 "_elementtree.c"
-      case 23: // $bb18
-        var $136=$ok; //@line 2255 "_elementtree.c"
-        var $137=($136) < 0; //@line 2255 "_elementtree.c"
-        if ($137) { __label__ = 24; break; } else { __label__ = 26; break; } //@line 2255 "_elementtree.c"
-      case 24: // $bb19
-        var $138=$attrib; //@line 2256 "_elementtree.c"
-        var $139=$138; //@line 2256 "_elementtree.c"
-        var $140=HEAP[$139]; //@line 2256 "_elementtree.c"
-        var $141=($140) - 1; //@line 2256 "_elementtree.c"
-        var $142=$attrib; //@line 2256 "_elementtree.c"
-        var $143=$142; //@line 2256 "_elementtree.c"
-        HEAP[$143]=$141; //@line 2256 "_elementtree.c"
-        var $144=$attrib; //@line 2256 "_elementtree.c"
-        var $145=$144; //@line 2256 "_elementtree.c"
-        var $146=HEAP[$145]; //@line 2256 "_elementtree.c"
-        var $147=($146)==0; //@line 2256 "_elementtree.c"
-        if ($147) { __label__ = 25; break; } else { __label__ = 46; break; } //@line 2256 "_elementtree.c"
-      case 25: // $bb20
-        var $148=$attrib; //@line 2256 "_elementtree.c"
-        var $149=$148+4; //@line 2256 "_elementtree.c"
-        var $150=HEAP[$149]; //@line 2256 "_elementtree.c"
-        var $151=$150+24; //@line 2256 "_elementtree.c"
-        var $152=HEAP[$151]; //@line 2256 "_elementtree.c"
-        var $153=$attrib; //@line 2256 "_elementtree.c"
-        FUNCTION_TABLE[$152]($153); //@line 2256 "_elementtree.c"
-        __label__ = 46; break; //@line 2256 "_elementtree.c"
-      case 26: // $bb22
-        var $154=$attrib_in_addr; //@line 2259 "_elementtree.c"
-        var $155=$154+8; //@line 2259 "_elementtree.c"
-        $attrib_in_addr=$155; //@line 2259 "_elementtree.c"
-        __label__ = 27; break; //@line 2259 "_elementtree.c"
-      case 27: // $bb23
-        var $156=$attrib_in_addr; //@line 2243 "_elementtree.c"
-        var $157=$156; //@line 2243 "_elementtree.c"
-        var $158=HEAP[$157]; //@line 2243 "_elementtree.c"
-        var $159=($158)==0; //@line 2243 "_elementtree.c"
-        if ($159) { __label__ = 30; break; } else { __label__ = 28; break; } //@line 2243 "_elementtree.c"
-      case 28: // $bb24
-        var $160=$attrib_in_addr; //@line 2243 "_elementtree.c"
-        var $161=$160+4; //@line 2243 "_elementtree.c"
-        var $162=HEAP[$161]; //@line 2243 "_elementtree.c"
-        var $163=($162)!=0; //@line 2243 "_elementtree.c"
-        if ($163) { __label__ = 3; break; } else { __label__ = 30; break; } //@line 2243 "_elementtree.c"
-      case 29: // $bb26
-        var $164=HEAP[__Py_NoneStruct]; //@line 2262 "_elementtree.c"
-        var $165=($164) + 1; //@line 2262 "_elementtree.c"
-        HEAP[__Py_NoneStruct]=$165; //@line 2262 "_elementtree.c"
+        var $12=$attrib_in_addr; //@line 2244 "_elementtree.c"
+        var $13=$12; //@line 2244 "_elementtree.c"
+        var $14=HEAP[$13]; //@line 2244 "_elementtree.c"
+        var $15=$self_addr; //@line 2244 "_elementtree.c"
+        var $16=_makeuniversal($15, $14); //@line 2244 "_elementtree.c"
+        $key=$16; //@line 2244 "_elementtree.c"
+        var $17=$attrib_in_addr; //@line 2245 "_elementtree.c"
+        var $18=$17+4; //@line 2245 "_elementtree.c"
+        var $19=HEAP[$18]; //@line 2245 "_elementtree.c"
+        var $20=_strlen($19); //@line 2245 "_elementtree.c"
+        var $21=$attrib_in_addr; //@line 2245 "_elementtree.c"
+        var $22=$21+4; //@line 2245 "_elementtree.c"
+        var $23=HEAP[$22]; //@line 2245 "_elementtree.c"
+        var $24=_makestring($23, $20); //@line 2245 "_elementtree.c"
+        $value=$24; //@line 2245 "_elementtree.c"
+        var $25=$key; //@line 2246 "_elementtree.c"
+        var $26=($25)==0; //@line 2246 "_elementtree.c"
+        if ($26) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 2246 "_elementtree.c"
+      case 4: // $bb4
+        var $27=$value; //@line 2246 "_elementtree.c"
+        var $28=($27)==0; //@line 2246 "_elementtree.c"
+        if ($28) { __label__ = 8; break; } else { __label__ = 13; break; } //@line 2246 "_elementtree.c"
+      case 5: // $bb5
+        var $29=($24)!=0; //@line 2247 "_elementtree.c"
+        if ($29) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 2247 "_elementtree.c"
+      case 6: // $bb6
+        var $30=$value; //@line 2247 "_elementtree.c"
+        var $31=$30; //@line 2247 "_elementtree.c"
+        var $32=HEAP[$31]; //@line 2247 "_elementtree.c"
+        var $33=($32) - 1; //@line 2247 "_elementtree.c"
+        var $34=$value; //@line 2247 "_elementtree.c"
+        var $35=$34; //@line 2247 "_elementtree.c"
+        HEAP[$35]=$33; //@line 2247 "_elementtree.c"
+        var $36=$value; //@line 2247 "_elementtree.c"
+        var $37=$36; //@line 2247 "_elementtree.c"
+        var $38=HEAP[$37]; //@line 2247 "_elementtree.c"
+        var $39=($38)==0; //@line 2247 "_elementtree.c"
+        if ($39) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2247 "_elementtree.c"
+      case 7: // $bb7
+        var $40=$value; //@line 2247 "_elementtree.c"
+        var $41=$40+4; //@line 2247 "_elementtree.c"
+        var $42=HEAP[$41]; //@line 2247 "_elementtree.c"
+        var $43=$42+24; //@line 2247 "_elementtree.c"
+        var $44=HEAP[$43]; //@line 2247 "_elementtree.c"
+        var $45=$value; //@line 2247 "_elementtree.c"
+        FUNCTION_TABLE[$44]($45); //@line 2247 "_elementtree.c"
+        __label__ = 8; break; //@line 2247 "_elementtree.c"
+      case 8: // $bb8
+        var $46=$key; //@line 2248 "_elementtree.c"
+        var $47=($46)!=0; //@line 2248 "_elementtree.c"
+        if ($47) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 2248 "_elementtree.c"
+      case 9: // $bb9
+        var $48=$key; //@line 2248 "_elementtree.c"
+        var $49=$48; //@line 2248 "_elementtree.c"
+        var $50=HEAP[$49]; //@line 2248 "_elementtree.c"
+        var $51=($50) - 1; //@line 2248 "_elementtree.c"
+        var $52=$key; //@line 2248 "_elementtree.c"
+        var $53=$52; //@line 2248 "_elementtree.c"
+        HEAP[$53]=$51; //@line 2248 "_elementtree.c"
+        var $54=$key; //@line 2248 "_elementtree.c"
+        var $55=$54; //@line 2248 "_elementtree.c"
+        var $56=HEAP[$55]; //@line 2248 "_elementtree.c"
+        var $57=($56)==0; //@line 2248 "_elementtree.c"
+        if ($57) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2248 "_elementtree.c"
+      case 10: // $bb10
+        var $58=$key; //@line 2248 "_elementtree.c"
+        var $59=$58+4; //@line 2248 "_elementtree.c"
+        var $60=HEAP[$59]; //@line 2248 "_elementtree.c"
+        var $61=$60+24; //@line 2248 "_elementtree.c"
+        var $62=HEAP[$61]; //@line 2248 "_elementtree.c"
+        var $63=$key; //@line 2248 "_elementtree.c"
+        FUNCTION_TABLE[$62]($63); //@line 2248 "_elementtree.c"
+        __label__ = 11; break; //@line 2248 "_elementtree.c"
+      case 11: // $bb11
+        var $64=$attrib; //@line 2249 "_elementtree.c"
+        var $65=$64; //@line 2249 "_elementtree.c"
+        var $66=HEAP[$65]; //@line 2249 "_elementtree.c"
+        var $67=($66) - 1; //@line 2249 "_elementtree.c"
+        var $68=$attrib; //@line 2249 "_elementtree.c"
+        var $69=$68; //@line 2249 "_elementtree.c"
+        HEAP[$69]=$67; //@line 2249 "_elementtree.c"
+        var $70=$attrib; //@line 2249 "_elementtree.c"
+        var $71=$70; //@line 2249 "_elementtree.c"
+        var $72=HEAP[$71]; //@line 2249 "_elementtree.c"
+        var $73=($72)==0; //@line 2249 "_elementtree.c"
+        if ($73) { __label__ = 12; break; } else { __label__ = 40; break; } //@line 2249 "_elementtree.c"
+      case 12: // $bb12
+        var $74=$attrib; //@line 2249 "_elementtree.c"
+        var $75=$74+4; //@line 2249 "_elementtree.c"
+        var $76=HEAP[$75]; //@line 2249 "_elementtree.c"
+        var $77=$76+24; //@line 2249 "_elementtree.c"
+        var $78=HEAP[$77]; //@line 2249 "_elementtree.c"
+        var $79=$attrib; //@line 2249 "_elementtree.c"
+        FUNCTION_TABLE[$78]($79); //@line 2249 "_elementtree.c"
+        __label__ = 40; break; //@line 2249 "_elementtree.c"
+      case 13: // $bb14
+        var $80=$attrib; //@line 2252 "_elementtree.c"
+        var $81=$key; //@line 2252 "_elementtree.c"
+        var $82=$value; //@line 2252 "_elementtree.c"
+        var $83=_PyDict_SetItem($80, $81, $82); //@line 2252 "_elementtree.c"
+        $ok=$83; //@line 2252 "_elementtree.c"
+        var $84=$value; //@line 2253 "_elementtree.c"
+        var $85=$84; //@line 2253 "_elementtree.c"
+        var $86=HEAP[$85]; //@line 2253 "_elementtree.c"
+        var $87=($86) - 1; //@line 2253 "_elementtree.c"
+        var $88=$value; //@line 2253 "_elementtree.c"
+        var $89=$88; //@line 2253 "_elementtree.c"
+        HEAP[$89]=$87; //@line 2253 "_elementtree.c"
+        var $90=$value; //@line 2253 "_elementtree.c"
+        var $91=$90; //@line 2253 "_elementtree.c"
+        var $92=HEAP[$91]; //@line 2253 "_elementtree.c"
+        var $93=($92)==0; //@line 2253 "_elementtree.c"
+        if ($93) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 2253 "_elementtree.c"
+      case 14: // $bb15
+        var $94=$value; //@line 2253 "_elementtree.c"
+        var $95=$94+4; //@line 2253 "_elementtree.c"
+        var $96=HEAP[$95]; //@line 2253 "_elementtree.c"
+        var $97=$96+24; //@line 2253 "_elementtree.c"
+        var $98=HEAP[$97]; //@line 2253 "_elementtree.c"
+        var $99=$value; //@line 2253 "_elementtree.c"
+        FUNCTION_TABLE[$98]($99); //@line 2253 "_elementtree.c"
+        __label__ = 15; break; //@line 2253 "_elementtree.c"
+      case 15: // $bb16
+        var $100=$key; //@line 2254 "_elementtree.c"
+        var $101=$100; //@line 2254 "_elementtree.c"
+        var $102=HEAP[$101]; //@line 2254 "_elementtree.c"
+        var $103=($102) - 1; //@line 2254 "_elementtree.c"
+        var $104=$key; //@line 2254 "_elementtree.c"
+        var $105=$104; //@line 2254 "_elementtree.c"
+        HEAP[$105]=$103; //@line 2254 "_elementtree.c"
+        var $106=$key; //@line 2254 "_elementtree.c"
+        var $107=$106; //@line 2254 "_elementtree.c"
+        var $108=HEAP[$107]; //@line 2254 "_elementtree.c"
+        var $109=($108)==0; //@line 2254 "_elementtree.c"
+        if ($109) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 2254 "_elementtree.c"
+      case 16: // $bb17
+        var $110=$key; //@line 2254 "_elementtree.c"
+        var $111=$110+4; //@line 2254 "_elementtree.c"
+        var $112=HEAP[$111]; //@line 2254 "_elementtree.c"
+        var $113=$112+24; //@line 2254 "_elementtree.c"
+        var $114=HEAP[$113]; //@line 2254 "_elementtree.c"
+        var $115=$key; //@line 2254 "_elementtree.c"
+        FUNCTION_TABLE[$114]($115); //@line 2254 "_elementtree.c"
+        __label__ = 17; break; //@line 2254 "_elementtree.c"
+      case 17: // $bb18
+        var $116=$ok; //@line 2255 "_elementtree.c"
+        var $117=($116) < 0; //@line 2255 "_elementtree.c"
+        if ($117) { __label__ = 18; break; } else { __label__ = 20; break; } //@line 2255 "_elementtree.c"
+      case 18: // $bb19
+        var $118=$attrib; //@line 2256 "_elementtree.c"
+        var $119=$118; //@line 2256 "_elementtree.c"
+        var $120=HEAP[$119]; //@line 2256 "_elementtree.c"
+        var $121=($120) - 1; //@line 2256 "_elementtree.c"
+        var $122=$attrib; //@line 2256 "_elementtree.c"
+        var $123=$122; //@line 2256 "_elementtree.c"
+        HEAP[$123]=$121; //@line 2256 "_elementtree.c"
+        var $124=$attrib; //@line 2256 "_elementtree.c"
+        var $125=$124; //@line 2256 "_elementtree.c"
+        var $126=HEAP[$125]; //@line 2256 "_elementtree.c"
+        var $127=($126)==0; //@line 2256 "_elementtree.c"
+        if ($127) { __label__ = 19; break; } else { __label__ = 40; break; } //@line 2256 "_elementtree.c"
+      case 19: // $bb20
+        var $128=$attrib; //@line 2256 "_elementtree.c"
+        var $129=$128+4; //@line 2256 "_elementtree.c"
+        var $130=HEAP[$129]; //@line 2256 "_elementtree.c"
+        var $131=$130+24; //@line 2256 "_elementtree.c"
+        var $132=HEAP[$131]; //@line 2256 "_elementtree.c"
+        var $133=$attrib; //@line 2256 "_elementtree.c"
+        FUNCTION_TABLE[$132]($133); //@line 2256 "_elementtree.c"
+        __label__ = 40; break; //@line 2256 "_elementtree.c"
+      case 20: // $bb22
+        var $134=$attrib_in_addr; //@line 2259 "_elementtree.c"
+        var $135=$134+8; //@line 2259 "_elementtree.c"
+        $attrib_in_addr=$135; //@line 2259 "_elementtree.c"
+        __label__ = 21; break; //@line 2259 "_elementtree.c"
+      case 21: // $bb23
+        var $136=$attrib_in_addr; //@line 2243 "_elementtree.c"
+        var $137=$136; //@line 2243 "_elementtree.c"
+        var $138=HEAP[$137]; //@line 2243 "_elementtree.c"
+        var $139=($138)==0; //@line 2243 "_elementtree.c"
+        if ($139) { __label__ = 24; break; } else { __label__ = 22; break; } //@line 2243 "_elementtree.c"
+      case 22: // $bb24
+        var $140=$attrib_in_addr; //@line 2243 "_elementtree.c"
+        var $141=$140+4; //@line 2243 "_elementtree.c"
+        var $142=HEAP[$141]; //@line 2243 "_elementtree.c"
+        var $143=($142)!=0; //@line 2243 "_elementtree.c"
+        if ($143) { __label__ = 3; break; } else { __label__ = 24; break; } //@line 2243 "_elementtree.c"
+      case 23: // $bb26
+        var $144=HEAP[__Py_NoneStruct]; //@line 2262 "_elementtree.c"
+        var $145=($144) + 1; //@line 2262 "_elementtree.c"
+        HEAP[__Py_NoneStruct]=$145; //@line 2262 "_elementtree.c"
         $attrib=__Py_NoneStruct; //@line 2263 "_elementtree.c"
-        __label__ = 30; break; //@line 2263 "_elementtree.c"
-      case 30: // $bb27
-        var $166=$self_addr; //@line 2266 "_elementtree.c"
-        var $167=$166+12; //@line 2266 "_elementtree.c"
-        var $168=HEAP[$167]; //@line 2266 "_elementtree.c"
-        var $169=$168+4; //@line 2266 "_elementtree.c"
-        var $170=HEAP[$169]; //@line 2266 "_elementtree.c"
-        var $171=($170)==(_TreeBuilder_Type); //@line 2266 "_elementtree.c"
-        var $172=$self_addr; //@line 2268 "_elementtree.c"
-        if ($171) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 2266 "_elementtree.c"
-      case 31: // $bb28
-        var $173=$172+12; //@line 2268 "_elementtree.c"
-        var $174=HEAP[$173]; //@line 2268 "_elementtree.c"
-        var $175=$174; //@line 2268 "_elementtree.c"
-        var $176=$tag; //@line 2268 "_elementtree.c"
-        var $177=$attrib; //@line 2268 "_elementtree.c"
-        var $178=_treebuilder_handle_start($175, $176, $177); //@line 2268 "_elementtree.c"
-        $res=$178; //@line 2268 "_elementtree.c"
-        __label__ = 39; break; //@line 2268 "_elementtree.c"
-      case 32: // $bb29
-        var $179=$172+28; //@line 2270 "_elementtree.c"
-        var $180=HEAP[$179]; //@line 2270 "_elementtree.c"
-        var $181=($180)!=0; //@line 2270 "_elementtree.c"
-        if ($181) { __label__ = 33; break; } else { __label__ = 38; break; } //@line 2270 "_elementtree.c"
-      case 33: // $bb30
-        var $182=$attrib; //@line 2271 "_elementtree.c"
-        var $183=($182)==(__Py_NoneStruct); //@line 2271 "_elementtree.c"
-        if ($183) { __label__ = 34; break; } else { __label__ = 37; break; } //@line 2271 "_elementtree.c"
-      case 34: // $bb31
-        var $184=$attrib; //@line 2272 "_elementtree.c"
-        var $185=$184; //@line 2272 "_elementtree.c"
-        var $186=HEAP[$185]; //@line 2272 "_elementtree.c"
-        var $187=($186) - 1; //@line 2272 "_elementtree.c"
-        var $188=$attrib; //@line 2272 "_elementtree.c"
-        var $189=$188; //@line 2272 "_elementtree.c"
-        HEAP[$189]=$187; //@line 2272 "_elementtree.c"
-        var $190=$attrib; //@line 2272 "_elementtree.c"
-        var $191=$190; //@line 2272 "_elementtree.c"
-        var $192=HEAP[$191]; //@line 2272 "_elementtree.c"
-        var $193=($192)==0; //@line 2272 "_elementtree.c"
-        if ($193) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 2272 "_elementtree.c"
-      case 35: // $bb32
-        var $194=$attrib; //@line 2272 "_elementtree.c"
-        var $195=$194+4; //@line 2272 "_elementtree.c"
-        var $196=HEAP[$195]; //@line 2272 "_elementtree.c"
-        var $197=$196+24; //@line 2272 "_elementtree.c"
-        var $198=HEAP[$197]; //@line 2272 "_elementtree.c"
-        var $199=$attrib; //@line 2272 "_elementtree.c"
-        FUNCTION_TABLE[$198]($199); //@line 2272 "_elementtree.c"
-        __label__ = 36; break; //@line 2272 "_elementtree.c"
-      case 36: // $bb33
-        var $200=_PyDict_New(); //@line 2273 "_elementtree.c"
-        $attrib=$200; //@line 2273 "_elementtree.c"
-        var $201=($200)==0; //@line 2274 "_elementtree.c"
-        if ($201) { __label__ = 46; break; } else { __label__ = 37; break; } //@line 2274 "_elementtree.c"
-      case 37: // $bb34
-        var $202=$self_addr; //@line 2277 "_elementtree.c"
-        var $203=$202+28; //@line 2277 "_elementtree.c"
-        var $204=HEAP[$203]; //@line 2277 "_elementtree.c"
-        var $205=$tag; //@line 2277 "_elementtree.c"
-        var $206=$attrib; //@line 2277 "_elementtree.c"
-        var $207=_PyObject_CallFunction($204, __str68, $205, $206); //@line 2277 "_elementtree.c"
-        $res=$207; //@line 2277 "_elementtree.c"
-        __label__ = 39; break; //@line 2277 "_elementtree.c"
-      case 38: // $bb35
+        __label__ = 24; break; //@line 2263 "_elementtree.c"
+      case 24: // $bb27
+        var $146=$self_addr; //@line 2266 "_elementtree.c"
+        var $147=$146+12; //@line 2266 "_elementtree.c"
+        var $148=HEAP[$147]; //@line 2266 "_elementtree.c"
+        var $149=$148+4; //@line 2266 "_elementtree.c"
+        var $150=HEAP[$149]; //@line 2266 "_elementtree.c"
+        var $151=($150)==(_TreeBuilder_Type); //@line 2266 "_elementtree.c"
+        var $152=$self_addr; //@line 2268 "_elementtree.c"
+        if ($151) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 2266 "_elementtree.c"
+      case 25: // $bb28
+        var $153=$152+12; //@line 2268 "_elementtree.c"
+        var $154=HEAP[$153]; //@line 2268 "_elementtree.c"
+        var $155=$154; //@line 2268 "_elementtree.c"
+        var $156=$tag; //@line 2268 "_elementtree.c"
+        var $157=$attrib; //@line 2268 "_elementtree.c"
+        var $158=_treebuilder_handle_start($155, $156, $157); //@line 2268 "_elementtree.c"
+        $res=$158; //@line 2268 "_elementtree.c"
+        __label__ = 33; break; //@line 2268 "_elementtree.c"
+      case 26: // $bb29
+        var $159=$152+28; //@line 2270 "_elementtree.c"
+        var $160=HEAP[$159]; //@line 2270 "_elementtree.c"
+        var $161=($160)!=0; //@line 2270 "_elementtree.c"
+        if ($161) { __label__ = 27; break; } else { __label__ = 32; break; } //@line 2270 "_elementtree.c"
+      case 27: // $bb30
+        var $162=$attrib; //@line 2271 "_elementtree.c"
+        var $163=($162)==(__Py_NoneStruct); //@line 2271 "_elementtree.c"
+        if ($163) { __label__ = 28; break; } else { __label__ = 31; break; } //@line 2271 "_elementtree.c"
+      case 28: // $bb31
+        var $164=$attrib; //@line 2272 "_elementtree.c"
+        var $165=$164; //@line 2272 "_elementtree.c"
+        var $166=HEAP[$165]; //@line 2272 "_elementtree.c"
+        var $167=($166) - 1; //@line 2272 "_elementtree.c"
+        var $168=$attrib; //@line 2272 "_elementtree.c"
+        var $169=$168; //@line 2272 "_elementtree.c"
+        HEAP[$169]=$167; //@line 2272 "_elementtree.c"
+        var $170=$attrib; //@line 2272 "_elementtree.c"
+        var $171=$170; //@line 2272 "_elementtree.c"
+        var $172=HEAP[$171]; //@line 2272 "_elementtree.c"
+        var $173=($172)==0; //@line 2272 "_elementtree.c"
+        if ($173) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 2272 "_elementtree.c"
+      case 29: // $bb32
+        var $174=$attrib; //@line 2272 "_elementtree.c"
+        var $175=$174+4; //@line 2272 "_elementtree.c"
+        var $176=HEAP[$175]; //@line 2272 "_elementtree.c"
+        var $177=$176+24; //@line 2272 "_elementtree.c"
+        var $178=HEAP[$177]; //@line 2272 "_elementtree.c"
+        var $179=$attrib; //@line 2272 "_elementtree.c"
+        FUNCTION_TABLE[$178]($179); //@line 2272 "_elementtree.c"
+        __label__ = 30; break; //@line 2272 "_elementtree.c"
+      case 30: // $bb33
+        var $180=_PyDict_New(); //@line 2273 "_elementtree.c"
+        $attrib=$180; //@line 2273 "_elementtree.c"
+        var $181=($180)==0; //@line 2274 "_elementtree.c"
+        if ($181) { __label__ = 40; break; } else { __label__ = 31; break; } //@line 2274 "_elementtree.c"
+      case 31: // $bb34
+        var $182=$self_addr; //@line 2277 "_elementtree.c"
+        var $183=$182+28; //@line 2277 "_elementtree.c"
+        var $184=HEAP[$183]; //@line 2277 "_elementtree.c"
+        var $185=$tag; //@line 2277 "_elementtree.c"
+        var $186=$attrib; //@line 2277 "_elementtree.c"
+        var $187=_PyObject_CallFunction($184, __str68, allocate([$185,0,0,0,$186,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2277 "_elementtree.c"
+        $res=$187; //@line 2277 "_elementtree.c"
+        __label__ = 33; break; //@line 2277 "_elementtree.c"
+      case 32: // $bb35
         $res=0; //@line 2279 "_elementtree.c"
-        __label__ = 39; break; //@line 2279 "_elementtree.c"
-      case 39: // $bb36
-        var $208=$tag; //@line 2281 "_elementtree.c"
-        var $209=$208; //@line 2281 "_elementtree.c"
-        var $210=HEAP[$209]; //@line 2281 "_elementtree.c"
-        var $211=($210) - 1; //@line 2281 "_elementtree.c"
-        var $212=$tag; //@line 2281 "_elementtree.c"
-        var $213=$212; //@line 2281 "_elementtree.c"
-        HEAP[$213]=$211; //@line 2281 "_elementtree.c"
-        var $214=$tag; //@line 2281 "_elementtree.c"
-        var $215=$214; //@line 2281 "_elementtree.c"
-        var $216=HEAP[$215]; //@line 2281 "_elementtree.c"
-        var $217=($216)==0; //@line 2281 "_elementtree.c"
-        if ($217) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 2281 "_elementtree.c"
-      case 40: // $bb37
-        var $218=$tag; //@line 2281 "_elementtree.c"
-        var $219=$218+4; //@line 2281 "_elementtree.c"
-        var $220=HEAP[$219]; //@line 2281 "_elementtree.c"
-        var $221=$220+24; //@line 2281 "_elementtree.c"
-        var $222=HEAP[$221]; //@line 2281 "_elementtree.c"
-        var $223=$tag; //@line 2281 "_elementtree.c"
-        FUNCTION_TABLE[$222]($223); //@line 2281 "_elementtree.c"
-        __label__ = 41; break; //@line 2281 "_elementtree.c"
-      case 41: // $bb38
-        var $224=$attrib; //@line 2282 "_elementtree.c"
-        var $225=$224; //@line 2282 "_elementtree.c"
-        var $226=HEAP[$225]; //@line 2282 "_elementtree.c"
-        var $227=($226) - 1; //@line 2282 "_elementtree.c"
-        var $228=$attrib; //@line 2282 "_elementtree.c"
-        var $229=$228; //@line 2282 "_elementtree.c"
-        HEAP[$229]=$227; //@line 2282 "_elementtree.c"
-        var $230=$attrib; //@line 2282 "_elementtree.c"
-        var $231=$230; //@line 2282 "_elementtree.c"
-        var $232=HEAP[$231]; //@line 2282 "_elementtree.c"
-        var $233=($232)==0; //@line 2282 "_elementtree.c"
-        if ($233) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 2282 "_elementtree.c"
-      case 42: // $bb39
-        var $234=$attrib; //@line 2282 "_elementtree.c"
-        var $235=$234+4; //@line 2282 "_elementtree.c"
-        var $236=HEAP[$235]; //@line 2282 "_elementtree.c"
-        var $237=$236+24; //@line 2282 "_elementtree.c"
-        var $238=HEAP[$237]; //@line 2282 "_elementtree.c"
-        var $239=$attrib; //@line 2282 "_elementtree.c"
-        FUNCTION_TABLE[$238]($239); //@line 2282 "_elementtree.c"
-        __label__ = 43; break; //@line 2282 "_elementtree.c"
-      case 43: // $bb40
-        var $240=$res; //@line 2284 "_elementtree.c"
-        var $241=($240)!=0; //@line 2284 "_elementtree.c"
-        if ($241) { __label__ = 44; break; } else { __label__ = 46; break; } //@line 2284 "_elementtree.c"
-      case 44: // $bb41
-        var $242=$res; //@line 2284 "_elementtree.c"
-        var $243=$242; //@line 2284 "_elementtree.c"
-        var $244=HEAP[$243]; //@line 2284 "_elementtree.c"
-        var $245=($244) - 1; //@line 2284 "_elementtree.c"
-        var $246=$res; //@line 2284 "_elementtree.c"
-        var $247=$246; //@line 2284 "_elementtree.c"
-        HEAP[$247]=$245; //@line 2284 "_elementtree.c"
-        var $248=$res; //@line 2284 "_elementtree.c"
-        var $249=$248; //@line 2284 "_elementtree.c"
-        var $250=HEAP[$249]; //@line 2284 "_elementtree.c"
-        var $251=($250)==0; //@line 2284 "_elementtree.c"
-        if ($251) { __label__ = 45; break; } else { __label__ = 46; break; } //@line 2284 "_elementtree.c"
-      case 45: // $bb42
-        var $252=$res; //@line 2284 "_elementtree.c"
-        var $253=$252+4; //@line 2284 "_elementtree.c"
-        var $254=HEAP[$253]; //@line 2284 "_elementtree.c"
-        var $255=$254+24; //@line 2284 "_elementtree.c"
-        var $256=HEAP[$255]; //@line 2284 "_elementtree.c"
-        var $257=$res; //@line 2284 "_elementtree.c"
-        FUNCTION_TABLE[$256]($257); //@line 2284 "_elementtree.c"
-        __label__ = 46; break; //@line 2284 "_elementtree.c"
-      case 46: // $return
+        __label__ = 33; break; //@line 2279 "_elementtree.c"
+      case 33: // $bb36
+        var $188=$tag; //@line 2281 "_elementtree.c"
+        var $189=$188; //@line 2281 "_elementtree.c"
+        var $190=HEAP[$189]; //@line 2281 "_elementtree.c"
+        var $191=($190) - 1; //@line 2281 "_elementtree.c"
+        var $192=$tag; //@line 2281 "_elementtree.c"
+        var $193=$192; //@line 2281 "_elementtree.c"
+        HEAP[$193]=$191; //@line 2281 "_elementtree.c"
+        var $194=$tag; //@line 2281 "_elementtree.c"
+        var $195=$194; //@line 2281 "_elementtree.c"
+        var $196=HEAP[$195]; //@line 2281 "_elementtree.c"
+        var $197=($196)==0; //@line 2281 "_elementtree.c"
+        if ($197) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 2281 "_elementtree.c"
+      case 34: // $bb37
+        var $198=$tag; //@line 2281 "_elementtree.c"
+        var $199=$198+4; //@line 2281 "_elementtree.c"
+        var $200=HEAP[$199]; //@line 2281 "_elementtree.c"
+        var $201=$200+24; //@line 2281 "_elementtree.c"
+        var $202=HEAP[$201]; //@line 2281 "_elementtree.c"
+        var $203=$tag; //@line 2281 "_elementtree.c"
+        FUNCTION_TABLE[$202]($203); //@line 2281 "_elementtree.c"
+        __label__ = 35; break; //@line 2281 "_elementtree.c"
+      case 35: // $bb38
+        var $204=$attrib; //@line 2282 "_elementtree.c"
+        var $205=$204; //@line 2282 "_elementtree.c"
+        var $206=HEAP[$205]; //@line 2282 "_elementtree.c"
+        var $207=($206) - 1; //@line 2282 "_elementtree.c"
+        var $208=$attrib; //@line 2282 "_elementtree.c"
+        var $209=$208; //@line 2282 "_elementtree.c"
+        HEAP[$209]=$207; //@line 2282 "_elementtree.c"
+        var $210=$attrib; //@line 2282 "_elementtree.c"
+        var $211=$210; //@line 2282 "_elementtree.c"
+        var $212=HEAP[$211]; //@line 2282 "_elementtree.c"
+        var $213=($212)==0; //@line 2282 "_elementtree.c"
+        if ($213) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 2282 "_elementtree.c"
+      case 36: // $bb39
+        var $214=$attrib; //@line 2282 "_elementtree.c"
+        var $215=$214+4; //@line 2282 "_elementtree.c"
+        var $216=HEAP[$215]; //@line 2282 "_elementtree.c"
+        var $217=$216+24; //@line 2282 "_elementtree.c"
+        var $218=HEAP[$217]; //@line 2282 "_elementtree.c"
+        var $219=$attrib; //@line 2282 "_elementtree.c"
+        FUNCTION_TABLE[$218]($219); //@line 2282 "_elementtree.c"
+        __label__ = 37; break; //@line 2282 "_elementtree.c"
+      case 37: // $bb40
+        var $220=$res; //@line 2284 "_elementtree.c"
+        var $221=($220)!=0; //@line 2284 "_elementtree.c"
+        if ($221) { __label__ = 38; break; } else { __label__ = 40; break; } //@line 2284 "_elementtree.c"
+      case 38: // $bb41
+        var $222=$res; //@line 2284 "_elementtree.c"
+        var $223=$222; //@line 2284 "_elementtree.c"
+        var $224=HEAP[$223]; //@line 2284 "_elementtree.c"
+        var $225=($224) - 1; //@line 2284 "_elementtree.c"
+        var $226=$res; //@line 2284 "_elementtree.c"
+        var $227=$226; //@line 2284 "_elementtree.c"
+        HEAP[$227]=$225; //@line 2284 "_elementtree.c"
+        var $228=$res; //@line 2284 "_elementtree.c"
+        var $229=$228; //@line 2284 "_elementtree.c"
+        var $230=HEAP[$229]; //@line 2284 "_elementtree.c"
+        var $231=($230)==0; //@line 2284 "_elementtree.c"
+        if ($231) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 2284 "_elementtree.c"
+      case 39: // $bb42
+        var $232=$res; //@line 2284 "_elementtree.c"
+        var $233=$232+4; //@line 2284 "_elementtree.c"
+        var $234=HEAP[$233]; //@line 2284 "_elementtree.c"
+        var $235=$234+24; //@line 2284 "_elementtree.c"
+        var $236=HEAP[$235]; //@line 2284 "_elementtree.c"
+        var $237=$res; //@line 2284 "_elementtree.c"
+        FUNCTION_TABLE[$236]($237); //@line 2284 "_elementtree.c"
+        __label__ = 40; break; //@line 2284 "_elementtree.c"
+      case 40: // $return
         ;
         return; //@line 2236 "_elementtree.c"
       default: assert(0, "bad label: " + __label__);
@@ -8984,19 +8846,9 @@ var __str124;
   function _expat_data_handler($self, $data_in, $data_len) {
     ;
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i1;
-        var $size_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $i_i;
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $data_in_addr;
         var $data_len_addr;
@@ -9005,137 +8857,95 @@ var __str124;
         $self_addr=$self;
         $data_in_addr=$data_in;
         $data_len_addr=$data_len;
-        var $2=$data_in_addr; //@line 2294 "_elementtree.c"
-        var $3=$data_len_addr; //@line 2294 "_elementtree.c"
-        $string_addr_i=$2;
-        $size_addr_i=$3;
-        var $4=$string_addr_i; //@line 2071 "_elementtree.c"
-        var $5=$size_addr_i; //@line 2071 "_elementtree.c"
-        $string_addr_i1=$4;
-        $size_addr_i2=$5;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 3; break; //@line 2056 "_elementtree.c"
-      case 1: // $bb_i4
-        var $6=$string_addr_i1; //@line 2057 "_elementtree.c"
-        var $7=$i_i; //@line 2057 "_elementtree.c"
-        var $8=$6+$7; //@line 2057 "_elementtree.c"
-        var $9=HEAP[$8]; //@line 2057 "_elementtree.c"
-        var $10=($9) < 0; //@line 2057 "_elementtree.c"
-        if ($10) { __label__ = 4; break; } else { __label__ = 2; break; } //@line 2057 "_elementtree.c"
-      case 2: // $bb2_i
-        var $11=$i_i; //@line 2056 "_elementtree.c"
-        var $12=($11) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$12; //@line 2056 "_elementtree.c"
-        __label__ = 3; break; //@line 2056 "_elementtree.c"
-      case 3: // $bb3_i
-        var $13=$i_i; //@line 2056 "_elementtree.c"
-        var $14=$size_addr_i2; //@line 2056 "_elementtree.c"
-        var $15=($13) < ($14); //@line 2056 "_elementtree.c"
-        if ($15) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 2056 "_elementtree.c"
-      case 4: // $bb_i
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i3=1; //@line 2058 "_elementtree.c"
-        var $16=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $17=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $18=_PyUnicodeUCS2_DecodeUTF8($16, $17, __str80); //@line 2072 "_elementtree.c"
-        $1=$18; //@line 2072 "_elementtree.c"
-        __lastLabel__ = 4; __label__ = 6; break; //@line 2072 "_elementtree.c"
-      case 5: // $bb1_i
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i3=0; //@line 2058 "_elementtree.c"
-        var $19=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $20=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $21=_PyString_FromStringAndSize($19, $20); //@line 2075 "_elementtree.c"
-        $1=$21; //@line 2075 "_elementtree.c"
-        __lastLabel__ = 5; __label__ = 6; break; //@line 2075 "_elementtree.c"
-      case 6: // $makestring_exit
-        var $22=__lastLabel__ == 4 ? $18 : ($21);
-        $retval_i=$22; //@line 2072 "_elementtree.c"
-        $data=$22; //@line 2294 "_elementtree.c"
-        var $23=($22)==0; //@line 2295 "_elementtree.c"
-        if ($23) { __label__ = 17; break; } else { __label__ = 7; break; } //@line 2295 "_elementtree.c"
-      case 7: // $bb
-        var $24=$self_addr; //@line 2298 "_elementtree.c"
-        var $25=$24+12; //@line 2298 "_elementtree.c"
-        var $26=HEAP[$25]; //@line 2298 "_elementtree.c"
-        var $27=$26+4; //@line 2298 "_elementtree.c"
-        var $28=HEAP[$27]; //@line 2298 "_elementtree.c"
-        var $29=($28)==(_TreeBuilder_Type); //@line 2298 "_elementtree.c"
-        var $30=$self_addr; //@line 2300 "_elementtree.c"
-        if ($29) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 2298 "_elementtree.c"
-      case 8: // $bb1
-        var $31=$30+12; //@line 2300 "_elementtree.c"
-        var $32=HEAP[$31]; //@line 2300 "_elementtree.c"
-        var $33=$32; //@line 2300 "_elementtree.c"
-        var $34=$data; //@line 2300 "_elementtree.c"
-        var $35=_treebuilder_handle_data($33, $34); //@line 2300 "_elementtree.c"
-        $res=$35; //@line 2300 "_elementtree.c"
-        __label__ = 12; break; //@line 2300 "_elementtree.c"
-      case 9: // $bb2
-        var $36=$30+32; //@line 2301 "_elementtree.c"
-        var $37=HEAP[$36]; //@line 2301 "_elementtree.c"
-        var $38=($37)!=0; //@line 2301 "_elementtree.c"
-        if ($38) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2301 "_elementtree.c"
-      case 10: // $bb3
-        var $39=$self_addr; //@line 2302 "_elementtree.c"
-        var $40=$39+32; //@line 2302 "_elementtree.c"
-        var $41=HEAP[$40]; //@line 2302 "_elementtree.c"
-        var $42=$data; //@line 2302 "_elementtree.c"
-        var $43=_PyObject_CallFunction($41, __str85, $42); //@line 2302 "_elementtree.c"
-        $res=$43; //@line 2302 "_elementtree.c"
-        __label__ = 12; break; //@line 2302 "_elementtree.c"
-      case 11: // $bb4
+        var $0=$data_in_addr; //@line 2294 "_elementtree.c"
+        var $1=$data_len_addr; //@line 2294 "_elementtree.c"
+        var $2=_makestring($0, $1); //@line 2294 "_elementtree.c"
+        $data=$2; //@line 2294 "_elementtree.c"
+        var $3=$data; //@line 2295 "_elementtree.c"
+        var $4=($3)==0; //@line 2295 "_elementtree.c"
+        if ($4) { __label__ = 11; break; } else { __label__ = 1; break; } //@line 2295 "_elementtree.c"
+      case 1: // $bb
+        var $5=$self_addr; //@line 2298 "_elementtree.c"
+        var $6=$5+12; //@line 2298 "_elementtree.c"
+        var $7=HEAP[$6]; //@line 2298 "_elementtree.c"
+        var $8=$7+4; //@line 2298 "_elementtree.c"
+        var $9=HEAP[$8]; //@line 2298 "_elementtree.c"
+        var $10=($9)==(_TreeBuilder_Type); //@line 2298 "_elementtree.c"
+        var $11=$self_addr; //@line 2300 "_elementtree.c"
+        if ($10) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2298 "_elementtree.c"
+      case 2: // $bb1
+        var $12=$11+12; //@line 2300 "_elementtree.c"
+        var $13=HEAP[$12]; //@line 2300 "_elementtree.c"
+        var $14=$13; //@line 2300 "_elementtree.c"
+        var $15=$data; //@line 2300 "_elementtree.c"
+        var $16=_treebuilder_handle_data($14, $15); //@line 2300 "_elementtree.c"
+        $res=$16; //@line 2300 "_elementtree.c"
+        __label__ = 6; break; //@line 2300 "_elementtree.c"
+      case 3: // $bb2
+        var $17=$11+32; //@line 2301 "_elementtree.c"
+        var $18=HEAP[$17]; //@line 2301 "_elementtree.c"
+        var $19=($18)!=0; //@line 2301 "_elementtree.c"
+        if ($19) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2301 "_elementtree.c"
+      case 4: // $bb3
+        var $20=$self_addr; //@line 2302 "_elementtree.c"
+        var $21=$20+32; //@line 2302 "_elementtree.c"
+        var $22=HEAP[$21]; //@line 2302 "_elementtree.c"
+        var $23=$data; //@line 2302 "_elementtree.c"
+        var $24=_PyObject_CallFunction($22, __str85, allocate([$23,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2302 "_elementtree.c"
+        $res=$24; //@line 2302 "_elementtree.c"
+        __label__ = 6; break; //@line 2302 "_elementtree.c"
+      case 5: // $bb4
         $res=0; //@line 2304 "_elementtree.c"
-        __label__ = 12; break; //@line 2304 "_elementtree.c"
-      case 12: // $bb5
-        var $44=$data; //@line 2306 "_elementtree.c"
-        var $45=$44; //@line 2306 "_elementtree.c"
-        var $46=HEAP[$45]; //@line 2306 "_elementtree.c"
-        var $47=($46) - 1; //@line 2306 "_elementtree.c"
-        var $48=$data; //@line 2306 "_elementtree.c"
-        var $49=$48; //@line 2306 "_elementtree.c"
-        HEAP[$49]=$47; //@line 2306 "_elementtree.c"
-        var $50=$data; //@line 2306 "_elementtree.c"
-        var $51=$50; //@line 2306 "_elementtree.c"
-        var $52=HEAP[$51]; //@line 2306 "_elementtree.c"
-        var $53=($52)==0; //@line 2306 "_elementtree.c"
-        if ($53) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2306 "_elementtree.c"
-      case 13: // $bb6
-        var $54=$data; //@line 2306 "_elementtree.c"
-        var $55=$54+4; //@line 2306 "_elementtree.c"
-        var $56=HEAP[$55]; //@line 2306 "_elementtree.c"
-        var $57=$56+24; //@line 2306 "_elementtree.c"
-        var $58=HEAP[$57]; //@line 2306 "_elementtree.c"
-        var $59=$data; //@line 2306 "_elementtree.c"
-        FUNCTION_TABLE[$58]($59); //@line 2306 "_elementtree.c"
-        __label__ = 14; break; //@line 2306 "_elementtree.c"
-      case 14: // $bb7
-        var $60=$res; //@line 2308 "_elementtree.c"
-        var $61=($60)!=0; //@line 2308 "_elementtree.c"
-        if ($61) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 2308 "_elementtree.c"
-      case 15: // $bb8
-        var $62=$res; //@line 2308 "_elementtree.c"
-        var $63=$62; //@line 2308 "_elementtree.c"
-        var $64=HEAP[$63]; //@line 2308 "_elementtree.c"
-        var $65=($64) - 1; //@line 2308 "_elementtree.c"
-        var $66=$res; //@line 2308 "_elementtree.c"
-        var $67=$66; //@line 2308 "_elementtree.c"
-        HEAP[$67]=$65; //@line 2308 "_elementtree.c"
-        var $68=$res; //@line 2308 "_elementtree.c"
-        var $69=$68; //@line 2308 "_elementtree.c"
-        var $70=HEAP[$69]; //@line 2308 "_elementtree.c"
-        var $71=($70)==0; //@line 2308 "_elementtree.c"
-        if ($71) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 2308 "_elementtree.c"
-      case 16: // $bb9
-        var $72=$res; //@line 2308 "_elementtree.c"
-        var $73=$72+4; //@line 2308 "_elementtree.c"
-        var $74=HEAP[$73]; //@line 2308 "_elementtree.c"
-        var $75=$74+24; //@line 2308 "_elementtree.c"
-        var $76=HEAP[$75]; //@line 2308 "_elementtree.c"
-        var $77=$res; //@line 2308 "_elementtree.c"
-        FUNCTION_TABLE[$76]($77); //@line 2308 "_elementtree.c"
-        __label__ = 17; break; //@line 2308 "_elementtree.c"
-      case 17: // $return
+        __label__ = 6; break; //@line 2304 "_elementtree.c"
+      case 6: // $bb5
+        var $25=$data; //@line 2306 "_elementtree.c"
+        var $26=$25; //@line 2306 "_elementtree.c"
+        var $27=HEAP[$26]; //@line 2306 "_elementtree.c"
+        var $28=($27) - 1; //@line 2306 "_elementtree.c"
+        var $29=$data; //@line 2306 "_elementtree.c"
+        var $30=$29; //@line 2306 "_elementtree.c"
+        HEAP[$30]=$28; //@line 2306 "_elementtree.c"
+        var $31=$data; //@line 2306 "_elementtree.c"
+        var $32=$31; //@line 2306 "_elementtree.c"
+        var $33=HEAP[$32]; //@line 2306 "_elementtree.c"
+        var $34=($33)==0; //@line 2306 "_elementtree.c"
+        if ($34) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2306 "_elementtree.c"
+      case 7: // $bb6
+        var $35=$data; //@line 2306 "_elementtree.c"
+        var $36=$35+4; //@line 2306 "_elementtree.c"
+        var $37=HEAP[$36]; //@line 2306 "_elementtree.c"
+        var $38=$37+24; //@line 2306 "_elementtree.c"
+        var $39=HEAP[$38]; //@line 2306 "_elementtree.c"
+        var $40=$data; //@line 2306 "_elementtree.c"
+        FUNCTION_TABLE[$39]($40); //@line 2306 "_elementtree.c"
+        __label__ = 8; break; //@line 2306 "_elementtree.c"
+      case 8: // $bb7
+        var $41=$res; //@line 2308 "_elementtree.c"
+        var $42=($41)!=0; //@line 2308 "_elementtree.c"
+        if ($42) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 2308 "_elementtree.c"
+      case 9: // $bb8
+        var $43=$res; //@line 2308 "_elementtree.c"
+        var $44=$43; //@line 2308 "_elementtree.c"
+        var $45=HEAP[$44]; //@line 2308 "_elementtree.c"
+        var $46=($45) - 1; //@line 2308 "_elementtree.c"
+        var $47=$res; //@line 2308 "_elementtree.c"
+        var $48=$47; //@line 2308 "_elementtree.c"
+        HEAP[$48]=$46; //@line 2308 "_elementtree.c"
+        var $49=$res; //@line 2308 "_elementtree.c"
+        var $50=$49; //@line 2308 "_elementtree.c"
+        var $51=HEAP[$50]; //@line 2308 "_elementtree.c"
+        var $52=($51)==0; //@line 2308 "_elementtree.c"
+        if ($52) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2308 "_elementtree.c"
+      case 10: // $bb9
+        var $53=$res; //@line 2308 "_elementtree.c"
+        var $54=$53+4; //@line 2308 "_elementtree.c"
+        var $55=HEAP[$54]; //@line 2308 "_elementtree.c"
+        var $56=$55+24; //@line 2308 "_elementtree.c"
+        var $57=HEAP[$56]; //@line 2308 "_elementtree.c"
+        var $58=$res; //@line 2308 "_elementtree.c"
+        FUNCTION_TABLE[$57]($58); //@line 2308 "_elementtree.c"
+        __label__ = 11; break; //@line 2308 "_elementtree.c"
+      case 11: // $return
         ;
         return; //@line 2296 "_elementtree.c"
       default: assert(0, "bad label: " + __label__);
@@ -9190,7 +9000,7 @@ var __str124;
         var $20=$19+36; //@line 2326 "_elementtree.c"
         var $21=HEAP[$20]; //@line 2326 "_elementtree.c"
         var $22=$tag; //@line 2326 "_elementtree.c"
-        var $23=_PyObject_CallFunction($21, __str85, $22); //@line 2326 "_elementtree.c"
+        var $23=_PyObject_CallFunction($21, __str85, allocate([$22,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2326 "_elementtree.c"
         $res=$23; //@line 2326 "_elementtree.c"
         var $24=$tag; //@line 2327 "_elementtree.c"
         var $25=$24; //@line 2327 "_elementtree.c"
@@ -9257,24 +9067,6 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i13;
-        var $size_addr_i14;
-        var $retval_i15;
-        var $0;
-        var $i_i16;
-        var $string_addr_i8;
-        var $size_addr_i9;
-        var $retval_i10;
-        var $1;
-        var $i_i;
-        var $string_addr_i1;
-        var $size_addr_i2;
-        var $retval_i3;
-        var $2;
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $3;
         var $self_addr;
         var $prefix_addr;
         var $uri_addr;
@@ -9285,193 +9077,107 @@ var __str124;
         $uri_addr=$uri;
         $sprefix=0; //@line 2338 "_elementtree.c"
         $suri=0; //@line 2339 "_elementtree.c"
-        var $4=$uri_addr; //@line 2341 "_elementtree.c"
-        var $5=_strlen($4); //@line 2341 "_elementtree.c"
-        var $6=$uri_addr; //@line 2341 "_elementtree.c"
-        $string_addr_i=$6;
-        $size_addr_i=$5;
-        var $7=$string_addr_i; //@line 2071 "_elementtree.c"
-        var $8=$size_addr_i; //@line 2071 "_elementtree.c"
-        $string_addr_i8=$7;
-        $size_addr_i9=$8;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 3; break; //@line 2056 "_elementtree.c"
-      case 1: // $bb_i11
-        var $9=$string_addr_i8; //@line 2057 "_elementtree.c"
-        var $10=$i_i; //@line 2057 "_elementtree.c"
-        var $11=$9+$10; //@line 2057 "_elementtree.c"
-        var $12=HEAP[$11]; //@line 2057 "_elementtree.c"
-        var $13=($12) < 0; //@line 2057 "_elementtree.c"
-        if ($13) { __label__ = 4; break; } else { __label__ = 2; break; } //@line 2057 "_elementtree.c"
-      case 2: // $bb2_i
-        var $14=$i_i; //@line 2056 "_elementtree.c"
-        var $15=($14) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$15; //@line 2056 "_elementtree.c"
-        __label__ = 3; break; //@line 2056 "_elementtree.c"
-      case 3: // $bb3_i
-        var $16=$i_i; //@line 2056 "_elementtree.c"
-        var $17=$size_addr_i9; //@line 2056 "_elementtree.c"
-        var $18=($16) < ($17); //@line 2056 "_elementtree.c"
-        if ($18) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 2056 "_elementtree.c"
-      case 4: // $bb_i
-        $1=1; //@line 2058 "_elementtree.c"
-        $retval_i10=1; //@line 2058 "_elementtree.c"
-        var $19=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $20=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $21=_PyUnicodeUCS2_DecodeUTF8($19, $20, __str80); //@line 2072 "_elementtree.c"
-        $3=$21; //@line 2072 "_elementtree.c"
-        __lastLabel__ = 4; __label__ = 6; break; //@line 2072 "_elementtree.c"
-      case 5: // $bb1_i
-        $1=0; //@line 2060 "_elementtree.c"
-        $retval_i10=0; //@line 2058 "_elementtree.c"
-        var $22=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $23=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $24=_PyString_FromStringAndSize($22, $23); //@line 2075 "_elementtree.c"
-        $3=$24; //@line 2075 "_elementtree.c"
-        __lastLabel__ = 5; __label__ = 6; break; //@line 2075 "_elementtree.c"
-      case 6: // $makestring_exit
-        var $25=__lastLabel__ == 4 ? $21 : ($24);
-        $retval_i=$25; //@line 2072 "_elementtree.c"
-        $suri=$25; //@line 2341 "_elementtree.c"
-        var $26=($25)==0; //@line 2342 "_elementtree.c"
-        if ($26) { __label__ = 23; break; } else { __label__ = 7; break; } //@line 2342 "_elementtree.c"
-      case 7: // $bb
-        var $27=$prefix_addr; //@line 2345 "_elementtree.c"
-        var $28=($27)!=0; //@line 2345 "_elementtree.c"
-        if ($28) { __label__ = 8; break; } else { __label__ = 15; break; } //@line 2345 "_elementtree.c"
-      case 8: // $bb1
-        var $29=$prefix_addr; //@line 2346 "_elementtree.c"
-        var $30=_strlen($29); //@line 2346 "_elementtree.c"
-        var $31=$prefix_addr; //@line 2346 "_elementtree.c"
-        $string_addr_i1=$31;
-        $size_addr_i2=$30;
-        var $32=$string_addr_i1; //@line 2071 "_elementtree.c"
-        var $33=$size_addr_i2; //@line 2071 "_elementtree.c"
-        $string_addr_i13=$32;
-        $size_addr_i14=$33;
-        $i_i16=0; //@line 2056 "_elementtree.c"
-        __label__ = 11; break; //@line 2056 "_elementtree.c"
-      case 9: // $bb_i17
-        var $34=$string_addr_i13; //@line 2057 "_elementtree.c"
-        var $35=$i_i16; //@line 2057 "_elementtree.c"
-        var $36=$34+$35; //@line 2057 "_elementtree.c"
-        var $37=HEAP[$36]; //@line 2057 "_elementtree.c"
-        var $38=($37) < 0; //@line 2057 "_elementtree.c"
-        if ($38) { __label__ = 12; break; } else { __label__ = 10; break; } //@line 2057 "_elementtree.c"
-      case 10: // $bb2_i19
-        var $39=$i_i16; //@line 2056 "_elementtree.c"
-        var $40=($39) + 1; //@line 2056 "_elementtree.c"
-        $i_i16=$40; //@line 2056 "_elementtree.c"
-        __label__ = 11; break; //@line 2056 "_elementtree.c"
-      case 11: // $bb3_i20
-        var $41=$i_i16; //@line 2056 "_elementtree.c"
-        var $42=$size_addr_i14; //@line 2056 "_elementtree.c"
-        var $43=($41) < ($42); //@line 2056 "_elementtree.c"
-        if ($43) { __label__ = 9; break; } else { __label__ = 13; break; } //@line 2056 "_elementtree.c"
-      case 12: // $bb_i4
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i15=1; //@line 2058 "_elementtree.c"
-        var $44=$string_addr_i1; //@line 2072 "_elementtree.c"
-        var $45=$size_addr_i2; //@line 2072 "_elementtree.c"
-        var $46=_PyUnicodeUCS2_DecodeUTF8($44, $45, __str80); //@line 2072 "_elementtree.c"
-        $2=$46; //@line 2072 "_elementtree.c"
-        __label__ = 14; break; //@line 2072 "_elementtree.c"
-      case 13: // $bb1_i5
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i15=0; //@line 2058 "_elementtree.c"
-        var $47=$string_addr_i1; //@line 2072 "_elementtree.c"
-        var $48=$size_addr_i2; //@line 2072 "_elementtree.c"
-        var $49=_PyString_FromStringAndSize($47, $48); //@line 2075 "_elementtree.c"
-        $2=$49; //@line 2075 "_elementtree.c"
-        __label__ = 14; break; //@line 2075 "_elementtree.c"
-      case 14: // $makestring_exit7
-        var $50=$2; //@line 2072 "_elementtree.c"
-        $retval_i3=$50; //@line 2072 "_elementtree.c"
-        var $retval3_i6=$retval_i3; //@line 2072 "_elementtree.c"
-        $sprefix=$retval3_i6; //@line 2346 "_elementtree.c"
-        __lastLabel__ = 14; __label__ = 16; break; //@line 2346 "_elementtree.c"
-      case 15: // $bb2
-        var $51=_PyString_FromStringAndSize(__str1, 0); //@line 2348 "_elementtree.c"
-        $sprefix=$51; //@line 2348 "_elementtree.c"
-        __lastLabel__ = 15; __label__ = 16; break; //@line 2348 "_elementtree.c"
-      case 16: // $bb3
-        var $52=__lastLabel__ == 15 ? $51 : ($retval3_i6);
-        var $53=($52)==0; //@line 2349 "_elementtree.c"
-        if ($53) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 2349 "_elementtree.c"
-      case 17: // $bb4
-        var $54=$suri; //@line 2350 "_elementtree.c"
-        var $55=$54; //@line 2350 "_elementtree.c"
-        var $56=HEAP[$55]; //@line 2350 "_elementtree.c"
-        var $57=($56) - 1; //@line 2350 "_elementtree.c"
-        var $58=$suri; //@line 2350 "_elementtree.c"
-        var $59=$58; //@line 2350 "_elementtree.c"
-        HEAP[$59]=$57; //@line 2350 "_elementtree.c"
-        var $60=$suri; //@line 2350 "_elementtree.c"
-        var $61=$60; //@line 2350 "_elementtree.c"
-        var $62=HEAP[$61]; //@line 2350 "_elementtree.c"
-        var $63=($62)==0; //@line 2350 "_elementtree.c"
-        if ($63) { __label__ = 18; break; } else { __label__ = 23; break; } //@line 2350 "_elementtree.c"
-      case 18: // $bb5
-        var $64=$suri; //@line 2350 "_elementtree.c"
-        var $65=$64+4; //@line 2350 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 2350 "_elementtree.c"
-        var $67=$66+24; //@line 2350 "_elementtree.c"
-        var $68=HEAP[$67]; //@line 2350 "_elementtree.c"
-        var $69=$suri; //@line 2350 "_elementtree.c"
-        FUNCTION_TABLE[$68]($69); //@line 2350 "_elementtree.c"
-        __label__ = 23; break; //@line 2350 "_elementtree.c"
-      case 19: // $bb7
-        var $70=$self_addr; //@line 2354 "_elementtree.c"
-        var $71=$70+12; //@line 2354 "_elementtree.c"
-        var $72=HEAP[$71]; //@line 2354 "_elementtree.c"
-        var $73=$72; //@line 2354 "_elementtree.c"
-        var $74=$sprefix; //@line 2354 "_elementtree.c"
-        var $75=$suri; //@line 2354 "_elementtree.c"
-        _treebuilder_handle_namespace($73, 1, $74, $75); //@line 2354 "_elementtree.c"
-        var $76=$sprefix; //@line 2358 "_elementtree.c"
-        var $77=$76; //@line 2358 "_elementtree.c"
-        var $78=HEAP[$77]; //@line 2358 "_elementtree.c"
-        var $79=($78) - 1; //@line 2358 "_elementtree.c"
-        var $80=$sprefix; //@line 2358 "_elementtree.c"
-        var $81=$80; //@line 2358 "_elementtree.c"
-        HEAP[$81]=$79; //@line 2358 "_elementtree.c"
-        var $82=$sprefix; //@line 2358 "_elementtree.c"
-        var $83=$82; //@line 2358 "_elementtree.c"
-        var $84=HEAP[$83]; //@line 2358 "_elementtree.c"
-        var $85=($84)==0; //@line 2358 "_elementtree.c"
-        if ($85) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 2358 "_elementtree.c"
-      case 20: // $bb8
-        var $86=$sprefix; //@line 2358 "_elementtree.c"
-        var $87=$86+4; //@line 2358 "_elementtree.c"
-        var $88=HEAP[$87]; //@line 2358 "_elementtree.c"
-        var $89=$88+24; //@line 2358 "_elementtree.c"
-        var $90=HEAP[$89]; //@line 2358 "_elementtree.c"
-        var $91=$sprefix; //@line 2358 "_elementtree.c"
-        FUNCTION_TABLE[$90]($91); //@line 2358 "_elementtree.c"
-        __label__ = 21; break; //@line 2358 "_elementtree.c"
-      case 21: // $bb9
-        var $92=$suri; //@line 2359 "_elementtree.c"
-        var $93=$92; //@line 2359 "_elementtree.c"
-        var $94=HEAP[$93]; //@line 2359 "_elementtree.c"
-        var $95=($94) - 1; //@line 2359 "_elementtree.c"
-        var $96=$suri; //@line 2359 "_elementtree.c"
-        var $97=$96; //@line 2359 "_elementtree.c"
-        HEAP[$97]=$95; //@line 2359 "_elementtree.c"
-        var $98=$suri; //@line 2359 "_elementtree.c"
-        var $99=$98; //@line 2359 "_elementtree.c"
-        var $100=HEAP[$99]; //@line 2359 "_elementtree.c"
-        var $101=($100)==0; //@line 2359 "_elementtree.c"
-        if ($101) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 2359 "_elementtree.c"
-      case 22: // $bb10
-        var $102=$suri; //@line 2359 "_elementtree.c"
-        var $103=$102+4; //@line 2359 "_elementtree.c"
-        var $104=HEAP[$103]; //@line 2359 "_elementtree.c"
-        var $105=$104+24; //@line 2359 "_elementtree.c"
-        var $106=HEAP[$105]; //@line 2359 "_elementtree.c"
-        var $107=$suri; //@line 2359 "_elementtree.c"
-        FUNCTION_TABLE[$106]($107); //@line 2359 "_elementtree.c"
-        __label__ = 23; break; //@line 2359 "_elementtree.c"
-      case 23: // $return
+        var $0=$uri_addr; //@line 2341 "_elementtree.c"
+        var $1=_strlen($0); //@line 2341 "_elementtree.c"
+        var $2=$uri_addr; //@line 2341 "_elementtree.c"
+        var $3=_makestring($2, $1); //@line 2341 "_elementtree.c"
+        $suri=$3; //@line 2341 "_elementtree.c"
+        var $4=$suri; //@line 2342 "_elementtree.c"
+        var $5=($4)==0; //@line 2342 "_elementtree.c"
+        if ($5) { __label__ = 11; break; } else { __label__ = 1; break; } //@line 2342 "_elementtree.c"
+      case 1: // $bb
+        var $6=$prefix_addr; //@line 2345 "_elementtree.c"
+        var $7=($6)!=0; //@line 2345 "_elementtree.c"
+        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2345 "_elementtree.c"
+      case 2: // $bb1
+        var $8=$prefix_addr; //@line 2346 "_elementtree.c"
+        var $9=_strlen($8); //@line 2346 "_elementtree.c"
+        var $10=$prefix_addr; //@line 2346 "_elementtree.c"
+        var $11=_makestring($10, $9); //@line 2346 "_elementtree.c"
+        $sprefix=$11; //@line 2346 "_elementtree.c"
+        __lastLabel__ = 2; __label__ = 4; break; //@line 2346 "_elementtree.c"
+      case 3: // $bb2
+        var $12=_PyString_FromStringAndSize(__str1, 0); //@line 2348 "_elementtree.c"
+        $sprefix=$12; //@line 2348 "_elementtree.c"
+        __lastLabel__ = 3; __label__ = 4; break; //@line 2348 "_elementtree.c"
+      case 4: // $bb3
+        var $13=__lastLabel__ == 3 ? $12 : ($11);
+        var $14=($13)==0; //@line 2349 "_elementtree.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 2349 "_elementtree.c"
+      case 5: // $bb4
+        var $15=$suri; //@line 2350 "_elementtree.c"
+        var $16=$15; //@line 2350 "_elementtree.c"
+        var $17=HEAP[$16]; //@line 2350 "_elementtree.c"
+        var $18=($17) - 1; //@line 2350 "_elementtree.c"
+        var $19=$suri; //@line 2350 "_elementtree.c"
+        var $20=$19; //@line 2350 "_elementtree.c"
+        HEAP[$20]=$18; //@line 2350 "_elementtree.c"
+        var $21=$suri; //@line 2350 "_elementtree.c"
+        var $22=$21; //@line 2350 "_elementtree.c"
+        var $23=HEAP[$22]; //@line 2350 "_elementtree.c"
+        var $24=($23)==0; //@line 2350 "_elementtree.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 11; break; } //@line 2350 "_elementtree.c"
+      case 6: // $bb5
+        var $25=$suri; //@line 2350 "_elementtree.c"
+        var $26=$25+4; //@line 2350 "_elementtree.c"
+        var $27=HEAP[$26]; //@line 2350 "_elementtree.c"
+        var $28=$27+24; //@line 2350 "_elementtree.c"
+        var $29=HEAP[$28]; //@line 2350 "_elementtree.c"
+        var $30=$suri; //@line 2350 "_elementtree.c"
+        FUNCTION_TABLE[$29]($30); //@line 2350 "_elementtree.c"
+        __label__ = 11; break; //@line 2350 "_elementtree.c"
+      case 7: // $bb7
+        var $31=$self_addr; //@line 2354 "_elementtree.c"
+        var $32=$31+12; //@line 2354 "_elementtree.c"
+        var $33=HEAP[$32]; //@line 2354 "_elementtree.c"
+        var $34=$33; //@line 2354 "_elementtree.c"
+        var $35=$sprefix; //@line 2354 "_elementtree.c"
+        var $36=$suri; //@line 2354 "_elementtree.c"
+        _treebuilder_handle_namespace($34, 1, $35, $36); //@line 2354 "_elementtree.c"
+        var $37=$sprefix; //@line 2358 "_elementtree.c"
+        var $38=$37; //@line 2358 "_elementtree.c"
+        var $39=HEAP[$38]; //@line 2358 "_elementtree.c"
+        var $40=($39) - 1; //@line 2358 "_elementtree.c"
+        var $41=$sprefix; //@line 2358 "_elementtree.c"
+        var $42=$41; //@line 2358 "_elementtree.c"
+        HEAP[$42]=$40; //@line 2358 "_elementtree.c"
+        var $43=$sprefix; //@line 2358 "_elementtree.c"
+        var $44=$43; //@line 2358 "_elementtree.c"
+        var $45=HEAP[$44]; //@line 2358 "_elementtree.c"
+        var $46=($45)==0; //@line 2358 "_elementtree.c"
+        if ($46) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 2358 "_elementtree.c"
+      case 8: // $bb8
+        var $47=$sprefix; //@line 2358 "_elementtree.c"
+        var $48=$47+4; //@line 2358 "_elementtree.c"
+        var $49=HEAP[$48]; //@line 2358 "_elementtree.c"
+        var $50=$49+24; //@line 2358 "_elementtree.c"
+        var $51=HEAP[$50]; //@line 2358 "_elementtree.c"
+        var $52=$sprefix; //@line 2358 "_elementtree.c"
+        FUNCTION_TABLE[$51]($52); //@line 2358 "_elementtree.c"
+        __label__ = 9; break; //@line 2358 "_elementtree.c"
+      case 9: // $bb9
+        var $53=$suri; //@line 2359 "_elementtree.c"
+        var $54=$53; //@line 2359 "_elementtree.c"
+        var $55=HEAP[$54]; //@line 2359 "_elementtree.c"
+        var $56=($55) - 1; //@line 2359 "_elementtree.c"
+        var $57=$suri; //@line 2359 "_elementtree.c"
+        var $58=$57; //@line 2359 "_elementtree.c"
+        HEAP[$58]=$56; //@line 2359 "_elementtree.c"
+        var $59=$suri; //@line 2359 "_elementtree.c"
+        var $60=$59; //@line 2359 "_elementtree.c"
+        var $61=HEAP[$60]; //@line 2359 "_elementtree.c"
+        var $62=($61)==0; //@line 2359 "_elementtree.c"
+        if ($62) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2359 "_elementtree.c"
+      case 10: // $bb10
+        var $63=$suri; //@line 2359 "_elementtree.c"
+        var $64=$63+4; //@line 2359 "_elementtree.c"
+        var $65=HEAP[$64]; //@line 2359 "_elementtree.c"
+        var $66=$65+24; //@line 2359 "_elementtree.c"
+        var $67=HEAP[$66]; //@line 2359 "_elementtree.c"
+        var $68=$suri; //@line 2359 "_elementtree.c"
+        FUNCTION_TABLE[$67]($68); //@line 2359 "_elementtree.c"
+        __label__ = 11; break; //@line 2359 "_elementtree.c"
+      case 11: // $return
         ;
         return; //@line 2343 "_elementtree.c"
       default: assert(0, "bad label: " + __label__);
@@ -9500,136 +9206,84 @@ var __str124;
   function _expat_comment_handler($self, $comment_in) {
     ;
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i1;
-        var $size_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $i_i;
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $comment_in_addr;
         var $comment;
         var $res;
         $self_addr=$self;
         $comment_in_addr=$comment_in;
-        var $2=$self_addr; //@line 2376 "_elementtree.c"
-        var $3=$2+40; //@line 2376 "_elementtree.c"
-        var $4=HEAP[$3]; //@line 2376 "_elementtree.c"
-        var $5=($4)!=0; //@line 2376 "_elementtree.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 13; break; } //@line 2376 "_elementtree.c"
+        var $0=$self_addr; //@line 2376 "_elementtree.c"
+        var $1=$0+40; //@line 2376 "_elementtree.c"
+        var $2=HEAP[$1]; //@line 2376 "_elementtree.c"
+        var $3=($2)!=0; //@line 2376 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 2376 "_elementtree.c"
       case 1: // $bb
+        var $4=$comment_in_addr; //@line 2377 "_elementtree.c"
+        var $5=_strlen($4); //@line 2377 "_elementtree.c"
         var $6=$comment_in_addr; //@line 2377 "_elementtree.c"
-        var $7=_strlen($6); //@line 2377 "_elementtree.c"
-        var $8=$comment_in_addr; //@line 2377 "_elementtree.c"
-        $string_addr_i=$8;
-        $size_addr_i=$7;
-        var $9=$string_addr_i; //@line 2071 "_elementtree.c"
-        var $10=$size_addr_i; //@line 2071 "_elementtree.c"
-        $string_addr_i1=$9;
-        $size_addr_i2=$10;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 4; break; //@line 2056 "_elementtree.c"
-      case 2: // $bb_i4
-        var $11=$string_addr_i1; //@line 2057 "_elementtree.c"
-        var $12=$i_i; //@line 2057 "_elementtree.c"
-        var $13=$11+$12; //@line 2057 "_elementtree.c"
-        var $14=HEAP[$13]; //@line 2057 "_elementtree.c"
-        var $15=($14) < 0; //@line 2057 "_elementtree.c"
-        if ($15) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 2057 "_elementtree.c"
-      case 3: // $bb2_i
-        var $16=$i_i; //@line 2056 "_elementtree.c"
-        var $17=($16) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$17; //@line 2056 "_elementtree.c"
-        __label__ = 4; break; //@line 2056 "_elementtree.c"
-      case 4: // $bb3_i
-        var $18=$i_i; //@line 2056 "_elementtree.c"
-        var $19=$size_addr_i2; //@line 2056 "_elementtree.c"
-        var $20=($18) < ($19); //@line 2056 "_elementtree.c"
-        if ($20) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 2056 "_elementtree.c"
-      case 5: // $bb_i
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i3=1; //@line 2058 "_elementtree.c"
-        var $21=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $22=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $23=_PyUnicodeUCS2_DecodeUTF8($21, $22, __str80); //@line 2072 "_elementtree.c"
-        $1=$23; //@line 2072 "_elementtree.c"
-        __lastLabel__ = 5; __label__ = 7; break; //@line 2072 "_elementtree.c"
-      case 6: // $bb1_i
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i3=0; //@line 2058 "_elementtree.c"
-        var $24=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $25=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $26=_PyString_FromStringAndSize($24, $25); //@line 2075 "_elementtree.c"
-        $1=$26; //@line 2075 "_elementtree.c"
-        __lastLabel__ = 6; __label__ = 7; break; //@line 2075 "_elementtree.c"
-      case 7: // $makestring_exit
-        var $27=__lastLabel__ == 5 ? $23 : ($26);
-        $retval_i=$27; //@line 2072 "_elementtree.c"
-        $comment=$27; //@line 2377 "_elementtree.c"
-        var $28=($27)!=0; //@line 2378 "_elementtree.c"
-        if ($28) { __label__ = 8; break; } else { __label__ = 13; break; } //@line 2378 "_elementtree.c"
-      case 8: // $bb1
-        var $29=$self_addr; //@line 2379 "_elementtree.c"
-        var $30=$29+40; //@line 2379 "_elementtree.c"
-        var $31=HEAP[$30]; //@line 2379 "_elementtree.c"
-        var $32=$comment; //@line 2379 "_elementtree.c"
-        var $33=_PyObject_CallFunction($31, __str85, $32); //@line 2379 "_elementtree.c"
-        $res=$33; //@line 2379 "_elementtree.c"
-        var $34=$res; //@line 2380 "_elementtree.c"
-        var $35=($34)!=0; //@line 2380 "_elementtree.c"
-        if ($35) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 2380 "_elementtree.c"
-      case 9: // $bb2
-        var $36=$res; //@line 2380 "_elementtree.c"
-        var $37=$36; //@line 2380 "_elementtree.c"
-        var $38=HEAP[$37]; //@line 2380 "_elementtree.c"
-        var $39=($38) - 1; //@line 2380 "_elementtree.c"
-        var $40=$res; //@line 2380 "_elementtree.c"
-        var $41=$40; //@line 2380 "_elementtree.c"
-        HEAP[$41]=$39; //@line 2380 "_elementtree.c"
-        var $42=$res; //@line 2380 "_elementtree.c"
-        var $43=$42; //@line 2380 "_elementtree.c"
-        var $44=HEAP[$43]; //@line 2380 "_elementtree.c"
-        var $45=($44)==0; //@line 2380 "_elementtree.c"
-        if ($45) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2380 "_elementtree.c"
-      case 10: // $bb3
-        var $46=$res; //@line 2380 "_elementtree.c"
-        var $47=$46+4; //@line 2380 "_elementtree.c"
-        var $48=HEAP[$47]; //@line 2380 "_elementtree.c"
-        var $49=$48+24; //@line 2380 "_elementtree.c"
-        var $50=HEAP[$49]; //@line 2380 "_elementtree.c"
-        var $51=$res; //@line 2380 "_elementtree.c"
-        FUNCTION_TABLE[$50]($51); //@line 2380 "_elementtree.c"
-        __label__ = 11; break; //@line 2380 "_elementtree.c"
-      case 11: // $bb4
-        var $52=$comment; //@line 2381 "_elementtree.c"
-        var $53=$52; //@line 2381 "_elementtree.c"
-        var $54=HEAP[$53]; //@line 2381 "_elementtree.c"
-        var $55=($54) - 1; //@line 2381 "_elementtree.c"
-        var $56=$comment; //@line 2381 "_elementtree.c"
-        var $57=$56; //@line 2381 "_elementtree.c"
-        HEAP[$57]=$55; //@line 2381 "_elementtree.c"
-        var $58=$comment; //@line 2381 "_elementtree.c"
-        var $59=$58; //@line 2381 "_elementtree.c"
-        var $60=HEAP[$59]; //@line 2381 "_elementtree.c"
-        var $61=($60)==0; //@line 2381 "_elementtree.c"
-        if ($61) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 2381 "_elementtree.c"
-      case 12: // $bb5
-        var $62=$comment; //@line 2381 "_elementtree.c"
-        var $63=$62+4; //@line 2381 "_elementtree.c"
-        var $64=HEAP[$63]; //@line 2381 "_elementtree.c"
-        var $65=$64+24; //@line 2381 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 2381 "_elementtree.c"
-        var $67=$comment; //@line 2381 "_elementtree.c"
-        FUNCTION_TABLE[$66]($67); //@line 2381 "_elementtree.c"
-        __label__ = 13; break; //@line 2381 "_elementtree.c"
-      case 13: // $return
+        var $7=_makestring($6, $5); //@line 2377 "_elementtree.c"
+        $comment=$7; //@line 2377 "_elementtree.c"
+        var $8=$comment; //@line 2378 "_elementtree.c"
+        var $9=($8)!=0; //@line 2378 "_elementtree.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 7; break; } //@line 2378 "_elementtree.c"
+      case 2: // $bb1
+        var $10=$self_addr; //@line 2379 "_elementtree.c"
+        var $11=$10+40; //@line 2379 "_elementtree.c"
+        var $12=HEAP[$11]; //@line 2379 "_elementtree.c"
+        var $13=$comment; //@line 2379 "_elementtree.c"
+        var $14=_PyObject_CallFunction($12, __str85, allocate([$13,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2379 "_elementtree.c"
+        $res=$14; //@line 2379 "_elementtree.c"
+        var $15=$res; //@line 2380 "_elementtree.c"
+        var $16=($15)!=0; //@line 2380 "_elementtree.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 2380 "_elementtree.c"
+      case 3: // $bb2
+        var $17=$res; //@line 2380 "_elementtree.c"
+        var $18=$17; //@line 2380 "_elementtree.c"
+        var $19=HEAP[$18]; //@line 2380 "_elementtree.c"
+        var $20=($19) - 1; //@line 2380 "_elementtree.c"
+        var $21=$res; //@line 2380 "_elementtree.c"
+        var $22=$21; //@line 2380 "_elementtree.c"
+        HEAP[$22]=$20; //@line 2380 "_elementtree.c"
+        var $23=$res; //@line 2380 "_elementtree.c"
+        var $24=$23; //@line 2380 "_elementtree.c"
+        var $25=HEAP[$24]; //@line 2380 "_elementtree.c"
+        var $26=($25)==0; //@line 2380 "_elementtree.c"
+        if ($26) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2380 "_elementtree.c"
+      case 4: // $bb3
+        var $27=$res; //@line 2380 "_elementtree.c"
+        var $28=$27+4; //@line 2380 "_elementtree.c"
+        var $29=HEAP[$28]; //@line 2380 "_elementtree.c"
+        var $30=$29+24; //@line 2380 "_elementtree.c"
+        var $31=HEAP[$30]; //@line 2380 "_elementtree.c"
+        var $32=$res; //@line 2380 "_elementtree.c"
+        FUNCTION_TABLE[$31]($32); //@line 2380 "_elementtree.c"
+        __label__ = 5; break; //@line 2380 "_elementtree.c"
+      case 5: // $bb4
+        var $33=$comment; //@line 2381 "_elementtree.c"
+        var $34=$33; //@line 2381 "_elementtree.c"
+        var $35=HEAP[$34]; //@line 2381 "_elementtree.c"
+        var $36=($35) - 1; //@line 2381 "_elementtree.c"
+        var $37=$comment; //@line 2381 "_elementtree.c"
+        var $38=$37; //@line 2381 "_elementtree.c"
+        HEAP[$38]=$36; //@line 2381 "_elementtree.c"
+        var $39=$comment; //@line 2381 "_elementtree.c"
+        var $40=$39; //@line 2381 "_elementtree.c"
+        var $41=HEAP[$40]; //@line 2381 "_elementtree.c"
+        var $42=($41)==0; //@line 2381 "_elementtree.c"
+        if ($42) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2381 "_elementtree.c"
+      case 6: // $bb5
+        var $43=$comment; //@line 2381 "_elementtree.c"
+        var $44=$43+4; //@line 2381 "_elementtree.c"
+        var $45=HEAP[$44]; //@line 2381 "_elementtree.c"
+        var $46=$45+24; //@line 2381 "_elementtree.c"
+        var $47=HEAP[$46]; //@line 2381 "_elementtree.c"
+        var $48=$comment; //@line 2381 "_elementtree.c"
+        FUNCTION_TABLE[$47]($48); //@line 2381 "_elementtree.c"
+        __label__ = 7; break; //@line 2381 "_elementtree.c"
+      case 7: // $return
         ;
         return; //@line 2384 "_elementtree.c"
       default: assert(0, "bad label: " + __label__);
@@ -9643,24 +9297,6 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $string_addr_i13;
-        var $size_addr_i14;
-        var $retval_i15;
-        var $0;
-        var $i_i16;
-        var $string_addr_i8;
-        var $size_addr_i9;
-        var $retval_i10;
-        var $1;
-        var $i_i;
-        var $string_addr_i1;
-        var $size_addr_i2;
-        var $retval_i3;
-        var $2;
-        var $string_addr_i;
-        var $size_addr_i;
-        var $retval_i;
-        var $3;
         var $self_addr;
         var $target_in_addr;
         var $data_in_addr;
@@ -9670,246 +9306,158 @@ var __str124;
         $self_addr=$self;
         $target_in_addr=$target_in;
         $data_in_addr=$data_in;
-        var $4=$self_addr; //@line 2394 "_elementtree.c"
-        var $5=$4+44; //@line 2394 "_elementtree.c"
-        var $6=HEAP[$5]; //@line 2394 "_elementtree.c"
-        var $7=($6)!=0; //@line 2394 "_elementtree.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 28; break; } //@line 2394 "_elementtree.c"
+        var $0=$self_addr; //@line 2394 "_elementtree.c"
+        var $1=$0+44; //@line 2394 "_elementtree.c"
+        var $2=HEAP[$1]; //@line 2394 "_elementtree.c"
+        var $3=($2)!=0; //@line 2394 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 16; break; } //@line 2394 "_elementtree.c"
       case 1: // $bb
-        var $8=$target_in_addr; //@line 2395 "_elementtree.c"
-        var $9=_strlen($8); //@line 2395 "_elementtree.c"
-        var $10=$target_in_addr; //@line 2395 "_elementtree.c"
-        $string_addr_i=$10;
-        $size_addr_i=$9;
-        var $11=$string_addr_i; //@line 2071 "_elementtree.c"
-        var $12=$size_addr_i; //@line 2071 "_elementtree.c"
-        $string_addr_i8=$11;
-        $size_addr_i9=$12;
-        $i_i=0; //@line 2056 "_elementtree.c"
-        __label__ = 4; break; //@line 2056 "_elementtree.c"
-      case 2: // $bb_i11
-        var $13=$string_addr_i8; //@line 2057 "_elementtree.c"
-        var $14=$i_i; //@line 2057 "_elementtree.c"
-        var $15=$13+$14; //@line 2057 "_elementtree.c"
-        var $16=HEAP[$15]; //@line 2057 "_elementtree.c"
-        var $17=($16) < 0; //@line 2057 "_elementtree.c"
-        if ($17) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 2057 "_elementtree.c"
-      case 3: // $bb2_i
-        var $18=$i_i; //@line 2056 "_elementtree.c"
-        var $19=($18) + 1; //@line 2056 "_elementtree.c"
-        $i_i=$19; //@line 2056 "_elementtree.c"
-        __label__ = 4; break; //@line 2056 "_elementtree.c"
-      case 4: // $bb3_i
-        var $20=$i_i; //@line 2056 "_elementtree.c"
-        var $21=$size_addr_i9; //@line 2056 "_elementtree.c"
-        var $22=($20) < ($21); //@line 2056 "_elementtree.c"
-        if ($22) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 2056 "_elementtree.c"
-      case 5: // $bb_i
-        $1=1; //@line 2058 "_elementtree.c"
-        $retval_i10=1; //@line 2058 "_elementtree.c"
-        var $23=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $24=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $25=_PyUnicodeUCS2_DecodeUTF8($23, $24, __str80); //@line 2072 "_elementtree.c"
-        $3=$25; //@line 2072 "_elementtree.c"
-        __label__ = 7; break; //@line 2072 "_elementtree.c"
-      case 6: // $bb1_i
-        $1=0; //@line 2060 "_elementtree.c"
-        $retval_i10=0; //@line 2058 "_elementtree.c"
-        var $26=$string_addr_i; //@line 2072 "_elementtree.c"
-        var $27=$size_addr_i; //@line 2072 "_elementtree.c"
-        var $28=_PyString_FromStringAndSize($26, $27); //@line 2075 "_elementtree.c"
-        $3=$28; //@line 2075 "_elementtree.c"
-        __label__ = 7; break; //@line 2075 "_elementtree.c"
-      case 7: // $makestring_exit
-        var $29=$3; //@line 2072 "_elementtree.c"
-        $retval_i=$29; //@line 2072 "_elementtree.c"
-        var $retval3_i=$retval_i; //@line 2072 "_elementtree.c"
-        $target=$retval3_i; //@line 2395 "_elementtree.c"
-        var $30=$data_in_addr; //@line 2396 "_elementtree.c"
-        var $31=_strlen($30); //@line 2396 "_elementtree.c"
-        var $32=$data_in_addr; //@line 2396 "_elementtree.c"
-        $string_addr_i1=$32;
-        $size_addr_i2=$31;
-        var $33=$string_addr_i1; //@line 2071 "_elementtree.c"
-        var $34=$size_addr_i2; //@line 2071 "_elementtree.c"
-        $string_addr_i13=$33;
-        $size_addr_i14=$34;
-        $i_i16=0; //@line 2056 "_elementtree.c"
-        __label__ = 10; break; //@line 2056 "_elementtree.c"
-      case 8: // $bb_i17
-        var $35=$string_addr_i13; //@line 2057 "_elementtree.c"
-        var $36=$i_i16; //@line 2057 "_elementtree.c"
-        var $37=$35+$36; //@line 2057 "_elementtree.c"
-        var $38=HEAP[$37]; //@line 2057 "_elementtree.c"
-        var $39=($38) < 0; //@line 2057 "_elementtree.c"
-        if ($39) { __label__ = 11; break; } else { __label__ = 9; break; } //@line 2057 "_elementtree.c"
-      case 9: // $bb2_i19
-        var $40=$i_i16; //@line 2056 "_elementtree.c"
-        var $41=($40) + 1; //@line 2056 "_elementtree.c"
-        $i_i16=$41; //@line 2056 "_elementtree.c"
-        __label__ = 10; break; //@line 2056 "_elementtree.c"
-      case 10: // $bb3_i20
-        var $42=$i_i16; //@line 2056 "_elementtree.c"
-        var $43=$size_addr_i14; //@line 2056 "_elementtree.c"
-        var $44=($42) < ($43); //@line 2056 "_elementtree.c"
-        if ($44) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 2056 "_elementtree.c"
-      case 11: // $bb_i4
-        $0=1; //@line 2058 "_elementtree.c"
-        $retval_i15=1; //@line 2058 "_elementtree.c"
-        var $45=$string_addr_i1; //@line 2072 "_elementtree.c"
-        var $46=$size_addr_i2; //@line 2072 "_elementtree.c"
-        var $47=_PyUnicodeUCS2_DecodeUTF8($45, $46, __str80); //@line 2072 "_elementtree.c"
-        $2=$47; //@line 2072 "_elementtree.c"
-        __label__ = 13; break; //@line 2072 "_elementtree.c"
-      case 12: // $bb1_i5
-        $0=0; //@line 2060 "_elementtree.c"
-        $retval_i15=0; //@line 2058 "_elementtree.c"
-        var $48=$string_addr_i1; //@line 2072 "_elementtree.c"
-        var $49=$size_addr_i2; //@line 2072 "_elementtree.c"
-        var $50=_PyString_FromStringAndSize($48, $49); //@line 2075 "_elementtree.c"
-        $2=$50; //@line 2075 "_elementtree.c"
-        __label__ = 13; break; //@line 2075 "_elementtree.c"
-      case 13: // $makestring_exit7
-        var $51=$2; //@line 2072 "_elementtree.c"
-        $retval_i3=$51; //@line 2072 "_elementtree.c"
-        var $retval3_i6=$retval_i3; //@line 2072 "_elementtree.c"
-        $data=$retval3_i6; //@line 2396 "_elementtree.c"
-        var $52=$target; //@line 2397 "_elementtree.c"
-        var $53=($52)==0; //@line 2397 "_elementtree.c"
-        if ($53) { __label__ = 22; break; } else { __label__ = 14; break; } //@line 2397 "_elementtree.c"
-      case 14: // $bb1
-        var $54=$data; //@line 2397 "_elementtree.c"
-        var $55=($54)==0; //@line 2397 "_elementtree.c"
-        if ($55) { __label__ = 25; break; } else { __label__ = 15; break; } //@line 2397 "_elementtree.c"
-      case 15: // $bb2
-        var $56=$self_addr; //@line 2398 "_elementtree.c"
-        var $57=$56+44; //@line 2398 "_elementtree.c"
-        var $58=HEAP[$57]; //@line 2398 "_elementtree.c"
-        var $59=$target; //@line 2398 "_elementtree.c"
-        var $60=$data; //@line 2398 "_elementtree.c"
-        var $61=_PyObject_CallFunction($58, __str68, $59, $60); //@line 2398 "_elementtree.c"
-        $res=$61; //@line 2398 "_elementtree.c"
-        var $62=$res; //@line 2399 "_elementtree.c"
-        var $63=($62)!=0; //@line 2399 "_elementtree.c"
-        if ($63) { __label__ = 16; break; } else { __label__ = 18; break; } //@line 2399 "_elementtree.c"
-      case 16: // $bb3
-        var $64=$res; //@line 2399 "_elementtree.c"
-        var $65=$64; //@line 2399 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 2399 "_elementtree.c"
-        var $67=($66) - 1; //@line 2399 "_elementtree.c"
-        var $68=$res; //@line 2399 "_elementtree.c"
-        var $69=$68; //@line 2399 "_elementtree.c"
-        HEAP[$69]=$67; //@line 2399 "_elementtree.c"
-        var $70=$res; //@line 2399 "_elementtree.c"
-        var $71=$70; //@line 2399 "_elementtree.c"
-        var $72=HEAP[$71]; //@line 2399 "_elementtree.c"
-        var $73=($72)==0; //@line 2399 "_elementtree.c"
-        if ($73) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 2399 "_elementtree.c"
-      case 17: // $bb4
-        var $74=$res; //@line 2399 "_elementtree.c"
-        var $75=$74+4; //@line 2399 "_elementtree.c"
-        var $76=HEAP[$75]; //@line 2399 "_elementtree.c"
-        var $77=$76+24; //@line 2399 "_elementtree.c"
-        var $78=HEAP[$77]; //@line 2399 "_elementtree.c"
-        var $79=$res; //@line 2399 "_elementtree.c"
-        FUNCTION_TABLE[$78]($79); //@line 2399 "_elementtree.c"
-        __label__ = 18; break; //@line 2399 "_elementtree.c"
-      case 18: // $bb5
-        var $80=$data; //@line 2400 "_elementtree.c"
-        var $81=$80; //@line 2400 "_elementtree.c"
-        var $82=HEAP[$81]; //@line 2400 "_elementtree.c"
-        var $83=($82) - 1; //@line 2400 "_elementtree.c"
-        var $84=$data; //@line 2400 "_elementtree.c"
-        var $85=$84; //@line 2400 "_elementtree.c"
-        HEAP[$85]=$83; //@line 2400 "_elementtree.c"
-        var $86=$data; //@line 2400 "_elementtree.c"
-        var $87=$86; //@line 2400 "_elementtree.c"
-        var $88=HEAP[$87]; //@line 2400 "_elementtree.c"
-        var $89=($88)==0; //@line 2400 "_elementtree.c"
-        if ($89) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 2400 "_elementtree.c"
-      case 19: // $bb6
-        var $90=$data; //@line 2400 "_elementtree.c"
-        var $91=$90+4; //@line 2400 "_elementtree.c"
-        var $92=HEAP[$91]; //@line 2400 "_elementtree.c"
-        var $93=$92+24; //@line 2400 "_elementtree.c"
-        var $94=HEAP[$93]; //@line 2400 "_elementtree.c"
-        var $95=$data; //@line 2400 "_elementtree.c"
-        FUNCTION_TABLE[$94]($95); //@line 2400 "_elementtree.c"
-        __label__ = 20; break; //@line 2400 "_elementtree.c"
-      case 20: // $bb7
-        var $96=$target; //@line 2401 "_elementtree.c"
-        var $97=$96; //@line 2401 "_elementtree.c"
-        var $98=HEAP[$97]; //@line 2401 "_elementtree.c"
-        var $99=($98) - 1; //@line 2401 "_elementtree.c"
-        var $100=$target; //@line 2401 "_elementtree.c"
-        var $101=$100; //@line 2401 "_elementtree.c"
-        HEAP[$101]=$99; //@line 2401 "_elementtree.c"
-        var $102=$target; //@line 2401 "_elementtree.c"
-        var $103=$102; //@line 2401 "_elementtree.c"
-        var $104=HEAP[$103]; //@line 2401 "_elementtree.c"
-        var $105=($104)==0; //@line 2401 "_elementtree.c"
-        if ($105) { __label__ = 21; break; } else { __label__ = 28; break; } //@line 2401 "_elementtree.c"
-      case 21: // $bb8
-        var $106=$target; //@line 2401 "_elementtree.c"
-        var $107=$106+4; //@line 2401 "_elementtree.c"
-        var $108=HEAP[$107]; //@line 2401 "_elementtree.c"
-        var $109=$108+24; //@line 2401 "_elementtree.c"
-        var $110=HEAP[$109]; //@line 2401 "_elementtree.c"
-        var $111=$target; //@line 2401 "_elementtree.c"
-        FUNCTION_TABLE[$110]($111); //@line 2401 "_elementtree.c"
-        __label__ = 28; break; //@line 2401 "_elementtree.c"
-      case 22: // $bb10
-        var $112=($retval3_i6)!=0; //@line 2403 "_elementtree.c"
-        if ($112) { __label__ = 23; break; } else { __label__ = 25; break; } //@line 2403 "_elementtree.c"
-      case 23: // $bb11
-        var $113=$data; //@line 2403 "_elementtree.c"
-        var $114=$113; //@line 2403 "_elementtree.c"
-        var $115=HEAP[$114]; //@line 2403 "_elementtree.c"
-        var $116=($115) - 1; //@line 2403 "_elementtree.c"
-        var $117=$data; //@line 2403 "_elementtree.c"
-        var $118=$117; //@line 2403 "_elementtree.c"
-        HEAP[$118]=$116; //@line 2403 "_elementtree.c"
-        var $119=$data; //@line 2403 "_elementtree.c"
-        var $120=$119; //@line 2403 "_elementtree.c"
-        var $121=HEAP[$120]; //@line 2403 "_elementtree.c"
-        var $122=($121)==0; //@line 2403 "_elementtree.c"
-        if ($122) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 2403 "_elementtree.c"
-      case 24: // $bb12
-        var $123=$data; //@line 2403 "_elementtree.c"
-        var $124=$123+4; //@line 2403 "_elementtree.c"
-        var $125=HEAP[$124]; //@line 2403 "_elementtree.c"
-        var $126=$125+24; //@line 2403 "_elementtree.c"
-        var $127=HEAP[$126]; //@line 2403 "_elementtree.c"
-        var $128=$data; //@line 2403 "_elementtree.c"
-        FUNCTION_TABLE[$127]($128); //@line 2403 "_elementtree.c"
-        __label__ = 25; break; //@line 2403 "_elementtree.c"
-      case 25: // $bb13
-        var $129=$target; //@line 2404 "_elementtree.c"
-        var $130=($129)!=0; //@line 2404 "_elementtree.c"
-        if ($130) { __label__ = 26; break; } else { __label__ = 28; break; } //@line 2404 "_elementtree.c"
-      case 26: // $bb14
-        var $131=$target; //@line 2404 "_elementtree.c"
-        var $132=$131; //@line 2404 "_elementtree.c"
-        var $133=HEAP[$132]; //@line 2404 "_elementtree.c"
-        var $134=($133) - 1; //@line 2404 "_elementtree.c"
-        var $135=$target; //@line 2404 "_elementtree.c"
-        var $136=$135; //@line 2404 "_elementtree.c"
-        HEAP[$136]=$134; //@line 2404 "_elementtree.c"
-        var $137=$target; //@line 2404 "_elementtree.c"
-        var $138=$137; //@line 2404 "_elementtree.c"
-        var $139=HEAP[$138]; //@line 2404 "_elementtree.c"
-        var $140=($139)==0; //@line 2404 "_elementtree.c"
-        if ($140) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 2404 "_elementtree.c"
-      case 27: // $bb15
-        var $141=$target; //@line 2404 "_elementtree.c"
-        var $142=$141+4; //@line 2404 "_elementtree.c"
-        var $143=HEAP[$142]; //@line 2404 "_elementtree.c"
-        var $144=$143+24; //@line 2404 "_elementtree.c"
-        var $145=HEAP[$144]; //@line 2404 "_elementtree.c"
-        var $146=$target; //@line 2404 "_elementtree.c"
-        FUNCTION_TABLE[$145]($146); //@line 2404 "_elementtree.c"
-        __label__ = 28; break; //@line 2404 "_elementtree.c"
-      case 28: // $return
+        var $4=$target_in_addr; //@line 2395 "_elementtree.c"
+        var $5=_strlen($4); //@line 2395 "_elementtree.c"
+        var $6=$target_in_addr; //@line 2395 "_elementtree.c"
+        var $7=_makestring($6, $5); //@line 2395 "_elementtree.c"
+        $target=$7; //@line 2395 "_elementtree.c"
+        var $8=$data_in_addr; //@line 2396 "_elementtree.c"
+        var $9=_strlen($8); //@line 2396 "_elementtree.c"
+        var $10=$data_in_addr; //@line 2396 "_elementtree.c"
+        var $11=_makestring($10, $9); //@line 2396 "_elementtree.c"
+        $data=$11; //@line 2396 "_elementtree.c"
+        var $12=$target; //@line 2397 "_elementtree.c"
+        var $13=($12)==0; //@line 2397 "_elementtree.c"
+        if ($13) { __label__ = 10; break; } else { __label__ = 2; break; } //@line 2397 "_elementtree.c"
+      case 2: // $bb1
+        var $14=$data; //@line 2397 "_elementtree.c"
+        var $15=($14)==0; //@line 2397 "_elementtree.c"
+        if ($15) { __label__ = 13; break; } else { __label__ = 3; break; } //@line 2397 "_elementtree.c"
+      case 3: // $bb2
+        var $16=$self_addr; //@line 2398 "_elementtree.c"
+        var $17=$16+44; //@line 2398 "_elementtree.c"
+        var $18=HEAP[$17]; //@line 2398 "_elementtree.c"
+        var $19=$target; //@line 2398 "_elementtree.c"
+        var $20=$data; //@line 2398 "_elementtree.c"
+        var $21=_PyObject_CallFunction($18, __str68, allocate([$19,0,0,0,$20,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 2398 "_elementtree.c"
+        $res=$21; //@line 2398 "_elementtree.c"
+        var $22=$res; //@line 2399 "_elementtree.c"
+        var $23=($22)!=0; //@line 2399 "_elementtree.c"
+        if ($23) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 2399 "_elementtree.c"
+      case 4: // $bb3
+        var $24=$res; //@line 2399 "_elementtree.c"
+        var $25=$24; //@line 2399 "_elementtree.c"
+        var $26=HEAP[$25]; //@line 2399 "_elementtree.c"
+        var $27=($26) - 1; //@line 2399 "_elementtree.c"
+        var $28=$res; //@line 2399 "_elementtree.c"
+        var $29=$28; //@line 2399 "_elementtree.c"
+        HEAP[$29]=$27; //@line 2399 "_elementtree.c"
+        var $30=$res; //@line 2399 "_elementtree.c"
+        var $31=$30; //@line 2399 "_elementtree.c"
+        var $32=HEAP[$31]; //@line 2399 "_elementtree.c"
+        var $33=($32)==0; //@line 2399 "_elementtree.c"
+        if ($33) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2399 "_elementtree.c"
+      case 5: // $bb4
+        var $34=$res; //@line 2399 "_elementtree.c"
+        var $35=$34+4; //@line 2399 "_elementtree.c"
+        var $36=HEAP[$35]; //@line 2399 "_elementtree.c"
+        var $37=$36+24; //@line 2399 "_elementtree.c"
+        var $38=HEAP[$37]; //@line 2399 "_elementtree.c"
+        var $39=$res; //@line 2399 "_elementtree.c"
+        FUNCTION_TABLE[$38]($39); //@line 2399 "_elementtree.c"
+        __label__ = 6; break; //@line 2399 "_elementtree.c"
+      case 6: // $bb5
+        var $40=$data; //@line 2400 "_elementtree.c"
+        var $41=$40; //@line 2400 "_elementtree.c"
+        var $42=HEAP[$41]; //@line 2400 "_elementtree.c"
+        var $43=($42) - 1; //@line 2400 "_elementtree.c"
+        var $44=$data; //@line 2400 "_elementtree.c"
+        var $45=$44; //@line 2400 "_elementtree.c"
+        HEAP[$45]=$43; //@line 2400 "_elementtree.c"
+        var $46=$data; //@line 2400 "_elementtree.c"
+        var $47=$46; //@line 2400 "_elementtree.c"
+        var $48=HEAP[$47]; //@line 2400 "_elementtree.c"
+        var $49=($48)==0; //@line 2400 "_elementtree.c"
+        if ($49) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2400 "_elementtree.c"
+      case 7: // $bb6
+        var $50=$data; //@line 2400 "_elementtree.c"
+        var $51=$50+4; //@line 2400 "_elementtree.c"
+        var $52=HEAP[$51]; //@line 2400 "_elementtree.c"
+        var $53=$52+24; //@line 2400 "_elementtree.c"
+        var $54=HEAP[$53]; //@line 2400 "_elementtree.c"
+        var $55=$data; //@line 2400 "_elementtree.c"
+        FUNCTION_TABLE[$54]($55); //@line 2400 "_elementtree.c"
+        __label__ = 8; break; //@line 2400 "_elementtree.c"
+      case 8: // $bb7
+        var $56=$target; //@line 2401 "_elementtree.c"
+        var $57=$56; //@line 2401 "_elementtree.c"
+        var $58=HEAP[$57]; //@line 2401 "_elementtree.c"
+        var $59=($58) - 1; //@line 2401 "_elementtree.c"
+        var $60=$target; //@line 2401 "_elementtree.c"
+        var $61=$60; //@line 2401 "_elementtree.c"
+        HEAP[$61]=$59; //@line 2401 "_elementtree.c"
+        var $62=$target; //@line 2401 "_elementtree.c"
+        var $63=$62; //@line 2401 "_elementtree.c"
+        var $64=HEAP[$63]; //@line 2401 "_elementtree.c"
+        var $65=($64)==0; //@line 2401 "_elementtree.c"
+        if ($65) { __label__ = 9; break; } else { __label__ = 16; break; } //@line 2401 "_elementtree.c"
+      case 9: // $bb8
+        var $66=$target; //@line 2401 "_elementtree.c"
+        var $67=$66+4; //@line 2401 "_elementtree.c"
+        var $68=HEAP[$67]; //@line 2401 "_elementtree.c"
+        var $69=$68+24; //@line 2401 "_elementtree.c"
+        var $70=HEAP[$69]; //@line 2401 "_elementtree.c"
+        var $71=$target; //@line 2401 "_elementtree.c"
+        FUNCTION_TABLE[$70]($71); //@line 2401 "_elementtree.c"
+        __label__ = 16; break; //@line 2401 "_elementtree.c"
+      case 10: // $bb10
+        var $72=($11)!=0; //@line 2403 "_elementtree.c"
+        if ($72) { __label__ = 11; break; } else { __label__ = 13; break; } //@line 2403 "_elementtree.c"
+      case 11: // $bb11
+        var $73=$data; //@line 2403 "_elementtree.c"
+        var $74=$73; //@line 2403 "_elementtree.c"
+        var $75=HEAP[$74]; //@line 2403 "_elementtree.c"
+        var $76=($75) - 1; //@line 2403 "_elementtree.c"
+        var $77=$data; //@line 2403 "_elementtree.c"
+        var $78=$77; //@line 2403 "_elementtree.c"
+        HEAP[$78]=$76; //@line 2403 "_elementtree.c"
+        var $79=$data; //@line 2403 "_elementtree.c"
+        var $80=$79; //@line 2403 "_elementtree.c"
+        var $81=HEAP[$80]; //@line 2403 "_elementtree.c"
+        var $82=($81)==0; //@line 2403 "_elementtree.c"
+        if ($82) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 2403 "_elementtree.c"
+      case 12: // $bb12
+        var $83=$data; //@line 2403 "_elementtree.c"
+        var $84=$83+4; //@line 2403 "_elementtree.c"
+        var $85=HEAP[$84]; //@line 2403 "_elementtree.c"
+        var $86=$85+24; //@line 2403 "_elementtree.c"
+        var $87=HEAP[$86]; //@line 2403 "_elementtree.c"
+        var $88=$data; //@line 2403 "_elementtree.c"
+        FUNCTION_TABLE[$87]($88); //@line 2403 "_elementtree.c"
+        __label__ = 13; break; //@line 2403 "_elementtree.c"
+      case 13: // $bb13
+        var $89=$target; //@line 2404 "_elementtree.c"
+        var $90=($89)!=0; //@line 2404 "_elementtree.c"
+        if ($90) { __label__ = 14; break; } else { __label__ = 16; break; } //@line 2404 "_elementtree.c"
+      case 14: // $bb14
+        var $91=$target; //@line 2404 "_elementtree.c"
+        var $92=$91; //@line 2404 "_elementtree.c"
+        var $93=HEAP[$92]; //@line 2404 "_elementtree.c"
+        var $94=($93) - 1; //@line 2404 "_elementtree.c"
+        var $95=$target; //@line 2404 "_elementtree.c"
+        var $96=$95; //@line 2404 "_elementtree.c"
+        HEAP[$96]=$94; //@line 2404 "_elementtree.c"
+        var $97=$target; //@line 2404 "_elementtree.c"
+        var $98=$97; //@line 2404 "_elementtree.c"
+        var $99=HEAP[$98]; //@line 2404 "_elementtree.c"
+        var $100=($99)==0; //@line 2404 "_elementtree.c"
+        if ($100) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 2404 "_elementtree.c"
+      case 15: // $bb15
+        var $101=$target; //@line 2404 "_elementtree.c"
+        var $102=$101+4; //@line 2404 "_elementtree.c"
+        var $103=HEAP[$102]; //@line 2404 "_elementtree.c"
+        var $104=$103+24; //@line 2404 "_elementtree.c"
+        var $105=HEAP[$104]; //@line 2404 "_elementtree.c"
+        var $106=$target; //@line 2404 "_elementtree.c"
+        FUNCTION_TABLE[$105]($106); //@line 2404 "_elementtree.c"
+        __label__ = 16; break; //@line 2404 "_elementtree.c"
+      case 16: // $return
         ;
         return; //@line 2407 "_elementtree.c"
       default: assert(0, "bad label: " + __label__);
@@ -10089,7 +9637,7 @@ var __str124;
         HEAP[$encoding]=0; //@line 2459 "_elementtree.c"
         var $1=$args_addr; //@line 2461 "_elementtree.c"
         var $2=$kw_addr; //@line 2461 "_elementtree.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str88, _kwlist_12208, $target, $encoding); //@line 2461 "_elementtree.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str88, _kwlist_12207, allocate([$target,0,0,0,$encoding,0,0,0], ["%struct.PyObject**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 2461 "_elementtree.c"
         var $4=($3)==0; //@line 2461 "_elementtree.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2461 "_elementtree.c"
       case 1: // $bb
@@ -10152,14 +9700,14 @@ var __str124;
         $0=0; //@line 2488 "_elementtree.c"
         __label__ = 21; break; //@line 2488 "_elementtree.c"
       case 10: // $bb9
-        HEAP[_memory_handler_12205]=(FUNCTION_TABLE_OFFSET + 2); //@line 2491 "_elementtree.c"
-        HEAP[_memory_handler_12205+4]=(FUNCTION_TABLE_OFFSET + 4); //@line 2492 "_elementtree.c"
-        HEAP[_memory_handler_12205+8]=(FUNCTION_TABLE_OFFSET + 6); //@line 2493 "_elementtree.c"
+        HEAP[_memory_handler_12204]=(FUNCTION_TABLE_OFFSET + 2); //@line 2491 "_elementtree.c"
+        HEAP[_memory_handler_12204+4]=(FUNCTION_TABLE_OFFSET + 4); //@line 2492 "_elementtree.c"
+        HEAP[_memory_handler_12204+8]=(FUNCTION_TABLE_OFFSET + 6); //@line 2493 "_elementtree.c"
         var $34=HEAP[_expat_capi]; //@line 2495 "_elementtree.c"
         var $35=$34+40; //@line 2495 "_elementtree.c"
         var $36=HEAP[$35]; //@line 2495 "_elementtree.c"
         var $37=HEAP[$encoding]; //@line 2495 "_elementtree.c"
-        var $38=FUNCTION_TABLE[$36]($37, _memory_handler_12205, __str92); //@line 2495 "_elementtree.c"
+        var $38=FUNCTION_TABLE[$36]($37, _memory_handler_12204, __str92); //@line 2495 "_elementtree.c"
         var $39=$self; //@line 2495 "_elementtree.c"
         var $40=$39+8; //@line 2495 "_elementtree.c"
         HEAP[$40]=$38; //@line 2495 "_elementtree.c"
@@ -10766,140 +10314,109 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
-        var $res_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $res;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 2618 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str71); //@line 2618 "_elementtree.c"
-        var $4=($3)==0; //@line 2618 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2618 "_elementtree.c"
+        var $1=$args_addr; //@line 2618 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str71, allocate(1, "i32", ALLOC_STACK)); //@line 2618 "_elementtree.c"
+        var $3=($2)==0; //@line 2618 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2618 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 2619 "_elementtree.c"
-        __label__ = 16; break; //@line 2619 "_elementtree.c"
+        $0=0; //@line 2619 "_elementtree.c"
+        __label__ = 13; break; //@line 2619 "_elementtree.c"
       case 2: // $bb1
-        var $5=$self_addr; //@line 2621 "_elementtree.c"
-        var $6=_expat_parse($5, __str1, 0, 1); //@line 2621 "_elementtree.c"
-        $res=$6; //@line 2621 "_elementtree.c"
-        var $7=$res; //@line 2622 "_elementtree.c"
-        var $8=($7)==0; //@line 2622 "_elementtree.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2622 "_elementtree.c"
+        var $4=$self_addr; //@line 2621 "_elementtree.c"
+        var $5=_expat_parse($4, __str1, 0, 1); //@line 2621 "_elementtree.c"
+        $res=$5; //@line 2621 "_elementtree.c"
+        var $6=$res; //@line 2622 "_elementtree.c"
+        var $7=($6)==0; //@line 2622 "_elementtree.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2622 "_elementtree.c"
       case 3: // $bb2
-        $1=0; //@line 2623 "_elementtree.c"
-        __label__ = 16; break; //@line 2623 "_elementtree.c"
+        $0=0; //@line 2623 "_elementtree.c"
+        __label__ = 13; break; //@line 2623 "_elementtree.c"
       case 4: // $bb3
-        var $9=$self_addr; //@line 2625 "_elementtree.c"
-        var $10=$9+12; //@line 2625 "_elementtree.c"
-        var $11=HEAP[$10]; //@line 2625 "_elementtree.c"
-        var $12=$11+4; //@line 2625 "_elementtree.c"
-        var $13=HEAP[$12]; //@line 2625 "_elementtree.c"
-        var $14=($13)==(_TreeBuilder_Type); //@line 2625 "_elementtree.c"
-        if ($14) { __label__ = 5; break; } else { __label__ = 11; break; } //@line 2625 "_elementtree.c"
+        var $8=$self_addr; //@line 2625 "_elementtree.c"
+        var $9=$8+12; //@line 2625 "_elementtree.c"
+        var $10=HEAP[$9]; //@line 2625 "_elementtree.c"
+        var $11=$10+4; //@line 2625 "_elementtree.c"
+        var $12=HEAP[$11]; //@line 2625 "_elementtree.c"
+        var $13=($12)==(_TreeBuilder_Type); //@line 2625 "_elementtree.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 2625 "_elementtree.c"
       case 5: // $bb4
-        var $15=$res; //@line 2626 "_elementtree.c"
-        var $16=$15; //@line 2626 "_elementtree.c"
-        var $17=HEAP[$16]; //@line 2626 "_elementtree.c"
-        var $18=($17) - 1; //@line 2626 "_elementtree.c"
-        var $19=$res; //@line 2626 "_elementtree.c"
-        var $20=$19; //@line 2626 "_elementtree.c"
-        HEAP[$20]=$18; //@line 2626 "_elementtree.c"
-        var $21=$res; //@line 2626 "_elementtree.c"
-        var $22=$21; //@line 2626 "_elementtree.c"
-        var $23=HEAP[$22]; //@line 2626 "_elementtree.c"
-        var $24=($23)==0; //@line 2626 "_elementtree.c"
-        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2626 "_elementtree.c"
+        var $14=$res; //@line 2626 "_elementtree.c"
+        var $15=$14; //@line 2626 "_elementtree.c"
+        var $16=HEAP[$15]; //@line 2626 "_elementtree.c"
+        var $17=($16) - 1; //@line 2626 "_elementtree.c"
+        var $18=$res; //@line 2626 "_elementtree.c"
+        var $19=$18; //@line 2626 "_elementtree.c"
+        HEAP[$19]=$17; //@line 2626 "_elementtree.c"
+        var $20=$res; //@line 2626 "_elementtree.c"
+        var $21=$20; //@line 2626 "_elementtree.c"
+        var $22=HEAP[$21]; //@line 2626 "_elementtree.c"
+        var $23=($22)==0; //@line 2626 "_elementtree.c"
+        if ($23) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2626 "_elementtree.c"
       case 6: // $bb5
-        var $25=$res; //@line 2626 "_elementtree.c"
-        var $26=$25+4; //@line 2626 "_elementtree.c"
-        var $27=HEAP[$26]; //@line 2626 "_elementtree.c"
-        var $28=$27+24; //@line 2626 "_elementtree.c"
-        var $29=HEAP[$28]; //@line 2626 "_elementtree.c"
-        var $30=$res; //@line 2626 "_elementtree.c"
-        FUNCTION_TABLE[$29]($30); //@line 2626 "_elementtree.c"
+        var $24=$res; //@line 2626 "_elementtree.c"
+        var $25=$24+4; //@line 2626 "_elementtree.c"
+        var $26=HEAP[$25]; //@line 2626 "_elementtree.c"
+        var $27=$26+24; //@line 2626 "_elementtree.c"
+        var $28=HEAP[$27]; //@line 2626 "_elementtree.c"
+        var $29=$res; //@line 2626 "_elementtree.c"
+        FUNCTION_TABLE[$28]($29); //@line 2626 "_elementtree.c"
         __label__ = 7; break; //@line 2626 "_elementtree.c"
       case 7: // $bb6
-        var $31=$self_addr; //@line 2627 "_elementtree.c"
-        var $32=$31+12; //@line 2627 "_elementtree.c"
-        var $33=HEAP[$32]; //@line 2627 "_elementtree.c"
-        var $34=$33; //@line 2627 "_elementtree.c"
-        $self_addr_i=$34;
-        var $35=$self_addr_i; //@line 1943 "_elementtree.c"
-        var $36=$35+8; //@line 1943 "_elementtree.c"
-        var $37=HEAP[$36]; //@line 1943 "_elementtree.c"
-        var $38=($37)!=0; //@line 1943 "_elementtree.c"
-        if ($38) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1943 "_elementtree.c"
-      case 8: // $bb_i
-        var $39=$self_addr_i; //@line 1944 "_elementtree.c"
-        var $40=$39+8; //@line 1944 "_elementtree.c"
-        var $41=HEAP[$40]; //@line 1944 "_elementtree.c"
-        $res_i=$41; //@line 1944 "_elementtree.c"
-        __label__ = 10; break; //@line 1944 "_elementtree.c"
-      case 9: // $bb1_i
-        $res_i=__Py_NoneStruct; //@line 1946 "_elementtree.c"
-        __label__ = 10; break; //@line 1946 "_elementtree.c"
-      case 10: // $treebuilder_done_exit
-        var $42=$res_i; //@line 1948 "_elementtree.c"
-        var $43=$42; //@line 1948 "_elementtree.c"
-        var $44=HEAP[$43]; //@line 1948 "_elementtree.c"
-        var $45=($44) + 1; //@line 1948 "_elementtree.c"
-        var $46=$res_i; //@line 1948 "_elementtree.c"
-        var $47=$46; //@line 1948 "_elementtree.c"
-        HEAP[$47]=$45; //@line 1948 "_elementtree.c"
-        var $48=$res_i; //@line 1949 "_elementtree.c"
-        $0=$48; //@line 1949 "_elementtree.c"
-        var $49=$0; //@line 1949 "_elementtree.c"
-        $retval_i=$49; //@line 1949 "_elementtree.c"
-        var $retval3_i=$retval_i; //@line 1949 "_elementtree.c"
-        $1=$retval3_i; //@line 2627 "_elementtree.c"
-        __label__ = 16; break; //@line 2627 "_elementtree.c"
-      case 11: // $bb7
-        var $50=$self_addr; //@line 2628 "_elementtree.c"
-        var $51=$50+48; //@line 2628 "_elementtree.c"
-        var $52=HEAP[$51]; //@line 2628 "_elementtree.c"
-        var $53=($52)!=0; //@line 2628 "_elementtree.c"
+        var $30=$self_addr; //@line 2627 "_elementtree.c"
+        var $31=$30+12; //@line 2627 "_elementtree.c"
+        var $32=HEAP[$31]; //@line 2627 "_elementtree.c"
+        var $33=$32; //@line 2627 "_elementtree.c"
+        var $34=_treebuilder_done($33); //@line 2627 "_elementtree.c"
+        $0=$34; //@line 2627 "_elementtree.c"
+        __label__ = 13; break; //@line 2627 "_elementtree.c"
+      case 8: // $bb7
+        var $35=$self_addr; //@line 2628 "_elementtree.c"
+        var $36=$35+48; //@line 2628 "_elementtree.c"
+        var $37=HEAP[$36]; //@line 2628 "_elementtree.c"
+        var $38=($37)!=0; //@line 2628 "_elementtree.c"
+        var $39=$res; //@line 2629 "_elementtree.c"
+        if ($38) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 2628 "_elementtree.c"
+      case 9: // $bb8
+        var $40=$39; //@line 2629 "_elementtree.c"
+        var $41=HEAP[$40]; //@line 2629 "_elementtree.c"
+        var $42=($41) - 1; //@line 2629 "_elementtree.c"
+        var $43=$res; //@line 2629 "_elementtree.c"
+        var $44=$43; //@line 2629 "_elementtree.c"
+        HEAP[$44]=$42; //@line 2629 "_elementtree.c"
+        var $45=$res; //@line 2629 "_elementtree.c"
+        var $46=$45; //@line 2629 "_elementtree.c"
+        var $47=HEAP[$46]; //@line 2629 "_elementtree.c"
+        var $48=($47)==0; //@line 2629 "_elementtree.c"
+        if ($48) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2629 "_elementtree.c"
+      case 10: // $bb9
+        var $49=$res; //@line 2629 "_elementtree.c"
+        var $50=$49+4; //@line 2629 "_elementtree.c"
+        var $51=HEAP[$50]; //@line 2629 "_elementtree.c"
+        var $52=$51+24; //@line 2629 "_elementtree.c"
+        var $53=HEAP[$52]; //@line 2629 "_elementtree.c"
         var $54=$res; //@line 2629 "_elementtree.c"
-        if ($53) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 2628 "_elementtree.c"
-      case 12: // $bb8
-        var $55=$54; //@line 2629 "_elementtree.c"
-        var $56=HEAP[$55]; //@line 2629 "_elementtree.c"
-        var $57=($56) - 1; //@line 2629 "_elementtree.c"
-        var $58=$res; //@line 2629 "_elementtree.c"
-        var $59=$58; //@line 2629 "_elementtree.c"
-        HEAP[$59]=$57; //@line 2629 "_elementtree.c"
-        var $60=$res; //@line 2629 "_elementtree.c"
-        var $61=$60; //@line 2629 "_elementtree.c"
-        var $62=HEAP[$61]; //@line 2629 "_elementtree.c"
-        var $63=($62)==0; //@line 2629 "_elementtree.c"
-        if ($63) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2629 "_elementtree.c"
-      case 13: // $bb9
-        var $64=$res; //@line 2629 "_elementtree.c"
-        var $65=$64+4; //@line 2629 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 2629 "_elementtree.c"
-        var $67=$66+24; //@line 2629 "_elementtree.c"
-        var $68=HEAP[$67]; //@line 2629 "_elementtree.c"
-        var $69=$res; //@line 2629 "_elementtree.c"
-        FUNCTION_TABLE[$68]($69); //@line 2629 "_elementtree.c"
-        __label__ = 14; break; //@line 2629 "_elementtree.c"
-      case 14: // $bb10
-        var $70=$self_addr; //@line 2630 "_elementtree.c"
-        var $71=$70+48; //@line 2630 "_elementtree.c"
-        var $72=HEAP[$71]; //@line 2630 "_elementtree.c"
-        var $73=_PyObject_CallFunction($72, __str1); //@line 2630 "_elementtree.c"
-        $1=$73; //@line 2630 "_elementtree.c"
-        __label__ = 16; break; //@line 2630 "_elementtree.c"
-      case 15: // $bb11
-        $1=$54; //@line 2632 "_elementtree.c"
-        __label__ = 16; break; //@line 2632 "_elementtree.c"
-      case 16: // $bb12
-        var $74=$1; //@line 2619 "_elementtree.c"
-        $retval=$74; //@line 2619 "_elementtree.c"
+        FUNCTION_TABLE[$53]($54); //@line 2629 "_elementtree.c"
+        __label__ = 11; break; //@line 2629 "_elementtree.c"
+      case 11: // $bb10
+        var $55=$self_addr; //@line 2630 "_elementtree.c"
+        var $56=$55+48; //@line 2630 "_elementtree.c"
+        var $57=HEAP[$56]; //@line 2630 "_elementtree.c"
+        var $58=_PyObject_CallFunction($57, __str1, allocate(1, "i32", ALLOC_STACK)); //@line 2630 "_elementtree.c"
+        $0=$58; //@line 2630 "_elementtree.c"
+        __label__ = 13; break; //@line 2630 "_elementtree.c"
+      case 12: // $bb11
+        $0=$39; //@line 2632 "_elementtree.c"
+        __label__ = 13; break; //@line 2632 "_elementtree.c"
+      case 13: // $bb12
+        var $59=$0; //@line 2619 "_elementtree.c"
+        $retval=$59; //@line 2619 "_elementtree.c"
         var $retval13=$retval; //@line 2619 "_elementtree.c"
         ;
         return $retval13; //@line 2619 "_elementtree.c"
@@ -10923,7 +10440,7 @@ var __str124;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 2642 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str95, $data, $data_len); //@line 2642 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str95, allocate([$data,0,0,0,$data_len,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2642 "_elementtree.c"
         var $3=($2)==0; //@line 2642 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2642 "_elementtree.c"
       case 1: // $bb
@@ -10953,287 +10470,256 @@ var __str124;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
-        var $res_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $reader;
         var $buffer;
         var $res;
         var $fileobj=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 2658 "_elementtree.c"
-        var $3=_PyArg_ParseTuple($2, __str96, $fileobj); //@line 2658 "_elementtree.c"
-        var $4=($3)==0; //@line 2658 "_elementtree.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2658 "_elementtree.c"
+        var $1=$args_addr; //@line 2658 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str96, allocate([$fileobj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2658 "_elementtree.c"
+        var $3=($2)==0; //@line 2658 "_elementtree.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2658 "_elementtree.c"
       case 1: // $bb
-        $1=0; //@line 2659 "_elementtree.c"
-        __label__ = 31; break; //@line 2659 "_elementtree.c"
+        $0=0; //@line 2659 "_elementtree.c"
+        __label__ = 28; break; //@line 2659 "_elementtree.c"
       case 2: // $bb1
-        var $5=HEAP[$fileobj]; //@line 2661 "_elementtree.c"
-        var $6=_PyObject_GetAttrString($5, __str97); //@line 2661 "_elementtree.c"
-        $reader=$6; //@line 2661 "_elementtree.c"
-        var $7=$reader; //@line 2662 "_elementtree.c"
-        var $8=($7)==0; //@line 2662 "_elementtree.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2662 "_elementtree.c"
+        var $4=HEAP[$fileobj]; //@line 2661 "_elementtree.c"
+        var $5=_PyObject_GetAttrString($4, __str97); //@line 2661 "_elementtree.c"
+        $reader=$5; //@line 2661 "_elementtree.c"
+        var $6=$reader; //@line 2662 "_elementtree.c"
+        var $7=($6)==0; //@line 2662 "_elementtree.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2662 "_elementtree.c"
       case 3: // $bb2
-        $1=0; //@line 2663 "_elementtree.c"
-        __label__ = 31; break; //@line 2663 "_elementtree.c"
+        $0=0; //@line 2663 "_elementtree.c"
+        __label__ = 28; break; //@line 2663 "_elementtree.c"
       case 4: // $bb3
-        var $9=$reader; //@line 2668 "_elementtree.c"
-        var $10=_PyObject_CallFunction($9, __str98, 65536); //@line 2668 "_elementtree.c"
-        $buffer=$10; //@line 2668 "_elementtree.c"
-        var $11=($10)==0; //@line 2670 "_elementtree.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 2670 "_elementtree.c"
+        var $8=$reader; //@line 2668 "_elementtree.c"
+        var $9=_PyObject_CallFunction($8, __str98, allocate([65536,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 2668 "_elementtree.c"
+        $buffer=$9; //@line 2668 "_elementtree.c"
+        var $10=($9)==0; //@line 2670 "_elementtree.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 2670 "_elementtree.c"
       case 5: // $bb4
-        var $12=$reader; //@line 2672 "_elementtree.c"
-        var $13=$12; //@line 2672 "_elementtree.c"
-        var $14=HEAP[$13]; //@line 2672 "_elementtree.c"
-        var $15=($14) - 1; //@line 2672 "_elementtree.c"
-        var $16=$reader; //@line 2672 "_elementtree.c"
-        var $17=$16; //@line 2672 "_elementtree.c"
-        HEAP[$17]=$15; //@line 2672 "_elementtree.c"
-        var $18=$reader; //@line 2672 "_elementtree.c"
-        var $19=$18; //@line 2672 "_elementtree.c"
-        var $20=HEAP[$19]; //@line 2672 "_elementtree.c"
-        var $21=($20)==0; //@line 2672 "_elementtree.c"
-        if ($21) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2672 "_elementtree.c"
+        var $11=$reader; //@line 2672 "_elementtree.c"
+        var $12=$11; //@line 2672 "_elementtree.c"
+        var $13=HEAP[$12]; //@line 2672 "_elementtree.c"
+        var $14=($13) - 1; //@line 2672 "_elementtree.c"
+        var $15=$reader; //@line 2672 "_elementtree.c"
+        var $16=$15; //@line 2672 "_elementtree.c"
+        HEAP[$16]=$14; //@line 2672 "_elementtree.c"
+        var $17=$reader; //@line 2672 "_elementtree.c"
+        var $18=$17; //@line 2672 "_elementtree.c"
+        var $19=HEAP[$18]; //@line 2672 "_elementtree.c"
+        var $20=($19)==0; //@line 2672 "_elementtree.c"
+        if ($20) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2672 "_elementtree.c"
       case 6: // $bb5
-        var $22=$reader; //@line 2672 "_elementtree.c"
-        var $23=$22+4; //@line 2672 "_elementtree.c"
-        var $24=HEAP[$23]; //@line 2672 "_elementtree.c"
-        var $25=$24+24; //@line 2672 "_elementtree.c"
-        var $26=HEAP[$25]; //@line 2672 "_elementtree.c"
-        var $27=$reader; //@line 2672 "_elementtree.c"
-        FUNCTION_TABLE[$26]($27); //@line 2672 "_elementtree.c"
+        var $21=$reader; //@line 2672 "_elementtree.c"
+        var $22=$21+4; //@line 2672 "_elementtree.c"
+        var $23=HEAP[$22]; //@line 2672 "_elementtree.c"
+        var $24=$23+24; //@line 2672 "_elementtree.c"
+        var $25=HEAP[$24]; //@line 2672 "_elementtree.c"
+        var $26=$reader; //@line 2672 "_elementtree.c"
+        FUNCTION_TABLE[$25]($26); //@line 2672 "_elementtree.c"
         __label__ = 7; break; //@line 2672 "_elementtree.c"
       case 7: // $bb6
-        $1=0; //@line 2673 "_elementtree.c"
-        __label__ = 31; break; //@line 2673 "_elementtree.c"
+        $0=0; //@line 2673 "_elementtree.c"
+        __label__ = 28; break; //@line 2673 "_elementtree.c"
       case 8: // $bb7
-        var $28=$buffer; //@line 2676 "_elementtree.c"
-        var $29=$28+4; //@line 2676 "_elementtree.c"
-        var $30=HEAP[$29]; //@line 2676 "_elementtree.c"
-        var $31=($30)!=(_PyString_Type); //@line 2676 "_elementtree.c"
-        if ($31) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 2676 "_elementtree.c"
+        var $27=$buffer; //@line 2676 "_elementtree.c"
+        var $28=$27+4; //@line 2676 "_elementtree.c"
+        var $29=HEAP[$28]; //@line 2676 "_elementtree.c"
+        var $30=($29)!=(_PyString_Type); //@line 2676 "_elementtree.c"
+        if ($30) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 2676 "_elementtree.c"
       case 9: // $bb8
-        var $32=$buffer; //@line 2676 "_elementtree.c"
-        var $33=$32; //@line 2676 "_elementtree.c"
-        var $34=$33+8; //@line 2676 "_elementtree.c"
-        var $35=HEAP[$34]; //@line 2676 "_elementtree.c"
-        var $36=($35)==0; //@line 2676 "_elementtree.c"
-        if ($36) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 2676 "_elementtree.c"
+        var $31=$buffer; //@line 2676 "_elementtree.c"
+        var $32=$31; //@line 2676 "_elementtree.c"
+        var $33=$32+8; //@line 2676 "_elementtree.c"
+        var $34=HEAP[$33]; //@line 2676 "_elementtree.c"
+        var $35=($34)==0; //@line 2676 "_elementtree.c"
+        if ($35) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 2676 "_elementtree.c"
       case 10: // $bb9
-        var $37=$buffer; //@line 2677 "_elementtree.c"
-        var $38=$37; //@line 2677 "_elementtree.c"
-        var $39=HEAP[$38]; //@line 2677 "_elementtree.c"
-        var $40=($39) - 1; //@line 2677 "_elementtree.c"
-        var $41=$buffer; //@line 2677 "_elementtree.c"
-        var $42=$41; //@line 2677 "_elementtree.c"
-        HEAP[$42]=$40; //@line 2677 "_elementtree.c"
-        var $43=$buffer; //@line 2677 "_elementtree.c"
-        var $44=$43; //@line 2677 "_elementtree.c"
-        var $45=HEAP[$44]; //@line 2677 "_elementtree.c"
-        var $46=($45)==0; //@line 2677 "_elementtree.c"
-        if ($46) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 2677 "_elementtree.c"
+        var $36=$buffer; //@line 2677 "_elementtree.c"
+        var $37=$36; //@line 2677 "_elementtree.c"
+        var $38=HEAP[$37]; //@line 2677 "_elementtree.c"
+        var $39=($38) - 1; //@line 2677 "_elementtree.c"
+        var $40=$buffer; //@line 2677 "_elementtree.c"
+        var $41=$40; //@line 2677 "_elementtree.c"
+        HEAP[$41]=$39; //@line 2677 "_elementtree.c"
+        var $42=$buffer; //@line 2677 "_elementtree.c"
+        var $43=$42; //@line 2677 "_elementtree.c"
+        var $44=HEAP[$43]; //@line 2677 "_elementtree.c"
+        var $45=($44)==0; //@line 2677 "_elementtree.c"
+        if ($45) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 2677 "_elementtree.c"
       case 11: // $bb10
-        var $47=$buffer; //@line 2677 "_elementtree.c"
-        var $48=$47+4; //@line 2677 "_elementtree.c"
-        var $49=HEAP[$48]; //@line 2677 "_elementtree.c"
-        var $50=$49+24; //@line 2677 "_elementtree.c"
-        var $51=HEAP[$50]; //@line 2677 "_elementtree.c"
-        var $52=$buffer; //@line 2677 "_elementtree.c"
-        FUNCTION_TABLE[$51]($52); //@line 2677 "_elementtree.c"
+        var $46=$buffer; //@line 2677 "_elementtree.c"
+        var $47=$46+4; //@line 2677 "_elementtree.c"
+        var $48=HEAP[$47]; //@line 2677 "_elementtree.c"
+        var $49=$48+24; //@line 2677 "_elementtree.c"
+        var $50=HEAP[$49]; //@line 2677 "_elementtree.c"
+        var $51=$buffer; //@line 2677 "_elementtree.c"
+        FUNCTION_TABLE[$50]($51); //@line 2677 "_elementtree.c"
         __label__ = 12; break; //@line 2677 "_elementtree.c"
       case 12: // $bb11
-        var $53=$reader; //@line 2695 "_elementtree.c"
-        var $54=$53; //@line 2695 "_elementtree.c"
-        var $55=HEAP[$54]; //@line 2695 "_elementtree.c"
-        var $56=($55) - 1; //@line 2695 "_elementtree.c"
-        var $57=$reader; //@line 2695 "_elementtree.c"
-        var $58=$57; //@line 2695 "_elementtree.c"
-        HEAP[$58]=$56; //@line 2695 "_elementtree.c"
-        var $59=$reader; //@line 2695 "_elementtree.c"
-        var $60=$59; //@line 2695 "_elementtree.c"
-        var $61=HEAP[$60]; //@line 2695 "_elementtree.c"
-        var $62=($61)==0; //@line 2695 "_elementtree.c"
-        if ($62) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 2695 "_elementtree.c"
+        var $52=$reader; //@line 2695 "_elementtree.c"
+        var $53=$52; //@line 2695 "_elementtree.c"
+        var $54=HEAP[$53]; //@line 2695 "_elementtree.c"
+        var $55=($54) - 1; //@line 2695 "_elementtree.c"
+        var $56=$reader; //@line 2695 "_elementtree.c"
+        var $57=$56; //@line 2695 "_elementtree.c"
+        HEAP[$57]=$55; //@line 2695 "_elementtree.c"
+        var $58=$reader; //@line 2695 "_elementtree.c"
+        var $59=$58; //@line 2695 "_elementtree.c"
+        var $60=HEAP[$59]; //@line 2695 "_elementtree.c"
+        var $61=($60)==0; //@line 2695 "_elementtree.c"
+        if ($61) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 2695 "_elementtree.c"
       case 13: // $bb12
-        var $63=$buffer; //@line 2681 "_elementtree.c"
-        var $64=$63; //@line 2681 "_elementtree.c"
-        var $65=$64+8; //@line 2681 "_elementtree.c"
-        var $66=HEAP[$65]; //@line 2681 "_elementtree.c"
-        var $67=$buffer; //@line 2681 "_elementtree.c"
-        var $68=$67; //@line 2681 "_elementtree.c"
-        var $69=$68+20; //@line 2681 "_elementtree.c"
-        var $70=$69; //@line 2681 "_elementtree.c"
-        var $71=$self_addr; //@line 2681 "_elementtree.c"
-        var $72=_expat_parse($71, $70, $66, 0); //@line 2681 "_elementtree.c"
-        $res=$72; //@line 2681 "_elementtree.c"
-        var $73=$buffer; //@line 2685 "_elementtree.c"
-        var $74=$73; //@line 2685 "_elementtree.c"
-        var $75=HEAP[$74]; //@line 2685 "_elementtree.c"
-        var $76=($75) - 1; //@line 2685 "_elementtree.c"
-        var $77=$buffer; //@line 2685 "_elementtree.c"
-        var $78=$77; //@line 2685 "_elementtree.c"
-        HEAP[$78]=$76; //@line 2685 "_elementtree.c"
-        var $79=$buffer; //@line 2685 "_elementtree.c"
-        var $80=$79; //@line 2685 "_elementtree.c"
-        var $81=HEAP[$80]; //@line 2685 "_elementtree.c"
-        var $82=($81)==0; //@line 2685 "_elementtree.c"
-        if ($82) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 2685 "_elementtree.c"
+        var $62=$buffer; //@line 2681 "_elementtree.c"
+        var $63=$62; //@line 2681 "_elementtree.c"
+        var $64=$63+8; //@line 2681 "_elementtree.c"
+        var $65=HEAP[$64]; //@line 2681 "_elementtree.c"
+        var $66=$buffer; //@line 2681 "_elementtree.c"
+        var $67=$66; //@line 2681 "_elementtree.c"
+        var $68=$67+20; //@line 2681 "_elementtree.c"
+        var $69=$68; //@line 2681 "_elementtree.c"
+        var $70=$self_addr; //@line 2681 "_elementtree.c"
+        var $71=_expat_parse($70, $69, $65, 0); //@line 2681 "_elementtree.c"
+        $res=$71; //@line 2681 "_elementtree.c"
+        var $72=$buffer; //@line 2685 "_elementtree.c"
+        var $73=$72; //@line 2685 "_elementtree.c"
+        var $74=HEAP[$73]; //@line 2685 "_elementtree.c"
+        var $75=($74) - 1; //@line 2685 "_elementtree.c"
+        var $76=$buffer; //@line 2685 "_elementtree.c"
+        var $77=$76; //@line 2685 "_elementtree.c"
+        HEAP[$77]=$75; //@line 2685 "_elementtree.c"
+        var $78=$buffer; //@line 2685 "_elementtree.c"
+        var $79=$78; //@line 2685 "_elementtree.c"
+        var $80=HEAP[$79]; //@line 2685 "_elementtree.c"
+        var $81=($80)==0; //@line 2685 "_elementtree.c"
+        if ($81) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 2685 "_elementtree.c"
       case 14: // $bb13
-        var $83=$buffer; //@line 2685 "_elementtree.c"
-        var $84=$83+4; //@line 2685 "_elementtree.c"
-        var $85=HEAP[$84]; //@line 2685 "_elementtree.c"
-        var $86=$85+24; //@line 2685 "_elementtree.c"
-        var $87=HEAP[$86]; //@line 2685 "_elementtree.c"
-        var $88=$buffer; //@line 2685 "_elementtree.c"
-        FUNCTION_TABLE[$87]($88); //@line 2685 "_elementtree.c"
+        var $82=$buffer; //@line 2685 "_elementtree.c"
+        var $83=$82+4; //@line 2685 "_elementtree.c"
+        var $84=HEAP[$83]; //@line 2685 "_elementtree.c"
+        var $85=$84+24; //@line 2685 "_elementtree.c"
+        var $86=HEAP[$85]; //@line 2685 "_elementtree.c"
+        var $87=$buffer; //@line 2685 "_elementtree.c"
+        FUNCTION_TABLE[$86]($87); //@line 2685 "_elementtree.c"
         __label__ = 15; break; //@line 2685 "_elementtree.c"
       case 15: // $bb14
-        var $89=$res; //@line 2687 "_elementtree.c"
-        var $90=($89)==0; //@line 2687 "_elementtree.c"
-        if ($90) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 2687 "_elementtree.c"
+        var $88=$res; //@line 2687 "_elementtree.c"
+        var $89=($88)==0; //@line 2687 "_elementtree.c"
+        if ($89) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 2687 "_elementtree.c"
       case 16: // $bb15
-        var $91=$reader; //@line 2688 "_elementtree.c"
-        var $92=$91; //@line 2688 "_elementtree.c"
-        var $93=HEAP[$92]; //@line 2688 "_elementtree.c"
-        var $94=($93) - 1; //@line 2688 "_elementtree.c"
-        var $95=$reader; //@line 2688 "_elementtree.c"
-        var $96=$95; //@line 2688 "_elementtree.c"
-        HEAP[$96]=$94; //@line 2688 "_elementtree.c"
-        var $97=$reader; //@line 2688 "_elementtree.c"
-        var $98=$97; //@line 2688 "_elementtree.c"
-        var $99=HEAP[$98]; //@line 2688 "_elementtree.c"
-        var $100=($99)==0; //@line 2688 "_elementtree.c"
-        if ($100) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 2688 "_elementtree.c"
+        var $90=$reader; //@line 2688 "_elementtree.c"
+        var $91=$90; //@line 2688 "_elementtree.c"
+        var $92=HEAP[$91]; //@line 2688 "_elementtree.c"
+        var $93=($92) - 1; //@line 2688 "_elementtree.c"
+        var $94=$reader; //@line 2688 "_elementtree.c"
+        var $95=$94; //@line 2688 "_elementtree.c"
+        HEAP[$95]=$93; //@line 2688 "_elementtree.c"
+        var $96=$reader; //@line 2688 "_elementtree.c"
+        var $97=$96; //@line 2688 "_elementtree.c"
+        var $98=HEAP[$97]; //@line 2688 "_elementtree.c"
+        var $99=($98)==0; //@line 2688 "_elementtree.c"
+        if ($99) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 2688 "_elementtree.c"
       case 17: // $bb16
-        var $101=$reader; //@line 2688 "_elementtree.c"
-        var $102=$101+4; //@line 2688 "_elementtree.c"
-        var $103=HEAP[$102]; //@line 2688 "_elementtree.c"
-        var $104=$103+24; //@line 2688 "_elementtree.c"
-        var $105=HEAP[$104]; //@line 2688 "_elementtree.c"
-        var $106=$reader; //@line 2688 "_elementtree.c"
-        FUNCTION_TABLE[$105]($106); //@line 2688 "_elementtree.c"
+        var $100=$reader; //@line 2688 "_elementtree.c"
+        var $101=$100+4; //@line 2688 "_elementtree.c"
+        var $102=HEAP[$101]; //@line 2688 "_elementtree.c"
+        var $103=$102+24; //@line 2688 "_elementtree.c"
+        var $104=HEAP[$103]; //@line 2688 "_elementtree.c"
+        var $105=$reader; //@line 2688 "_elementtree.c"
+        FUNCTION_TABLE[$104]($105); //@line 2688 "_elementtree.c"
         __label__ = 18; break; //@line 2688 "_elementtree.c"
       case 18: // $bb17
-        $1=0; //@line 2689 "_elementtree.c"
-        __label__ = 31; break; //@line 2689 "_elementtree.c"
+        $0=0; //@line 2689 "_elementtree.c"
+        __label__ = 28; break; //@line 2689 "_elementtree.c"
       case 19: // $bb18
-        var $107=$res; //@line 2691 "_elementtree.c"
-        var $108=$107; //@line 2691 "_elementtree.c"
-        var $109=HEAP[$108]; //@line 2691 "_elementtree.c"
-        var $110=($109) - 1; //@line 2691 "_elementtree.c"
-        var $111=$res; //@line 2691 "_elementtree.c"
-        var $112=$111; //@line 2691 "_elementtree.c"
-        HEAP[$112]=$110; //@line 2691 "_elementtree.c"
-        var $113=$res; //@line 2691 "_elementtree.c"
-        var $114=$113; //@line 2691 "_elementtree.c"
-        var $115=HEAP[$114]; //@line 2691 "_elementtree.c"
-        var $116=($115)==0; //@line 2691 "_elementtree.c"
-        if ($116) { __label__ = 20; break; } else { __label__ = 4; break; } //@line 2691 "_elementtree.c"
+        var $106=$res; //@line 2691 "_elementtree.c"
+        var $107=$106; //@line 2691 "_elementtree.c"
+        var $108=HEAP[$107]; //@line 2691 "_elementtree.c"
+        var $109=($108) - 1; //@line 2691 "_elementtree.c"
+        var $110=$res; //@line 2691 "_elementtree.c"
+        var $111=$110; //@line 2691 "_elementtree.c"
+        HEAP[$111]=$109; //@line 2691 "_elementtree.c"
+        var $112=$res; //@line 2691 "_elementtree.c"
+        var $113=$112; //@line 2691 "_elementtree.c"
+        var $114=HEAP[$113]; //@line 2691 "_elementtree.c"
+        var $115=($114)==0; //@line 2691 "_elementtree.c"
+        if ($115) { __label__ = 20; break; } else { __label__ = 4; break; } //@line 2691 "_elementtree.c"
       case 20: // $bb19
-        var $117=$res; //@line 2691 "_elementtree.c"
-        var $118=$117+4; //@line 2691 "_elementtree.c"
-        var $119=HEAP[$118]; //@line 2691 "_elementtree.c"
-        var $120=$119+24; //@line 2691 "_elementtree.c"
-        var $121=HEAP[$120]; //@line 2691 "_elementtree.c"
-        var $122=$res; //@line 2691 "_elementtree.c"
-        FUNCTION_TABLE[$121]($122); //@line 2691 "_elementtree.c"
+        var $116=$res; //@line 2691 "_elementtree.c"
+        var $117=$116+4; //@line 2691 "_elementtree.c"
+        var $118=HEAP[$117]; //@line 2691 "_elementtree.c"
+        var $119=$118+24; //@line 2691 "_elementtree.c"
+        var $120=HEAP[$119]; //@line 2691 "_elementtree.c"
+        var $121=$res; //@line 2691 "_elementtree.c"
+        FUNCTION_TABLE[$120]($121); //@line 2691 "_elementtree.c"
         __label__ = 4; break; //@line 2691 "_elementtree.c"
       case 21: // $bb21
-        var $123=$reader; //@line 2695 "_elementtree.c"
-        var $124=$123+4; //@line 2695 "_elementtree.c"
-        var $125=HEAP[$124]; //@line 2695 "_elementtree.c"
-        var $126=$125+24; //@line 2695 "_elementtree.c"
-        var $127=HEAP[$126]; //@line 2695 "_elementtree.c"
-        var $128=$reader; //@line 2695 "_elementtree.c"
-        FUNCTION_TABLE[$127]($128); //@line 2695 "_elementtree.c"
+        var $122=$reader; //@line 2695 "_elementtree.c"
+        var $123=$122+4; //@line 2695 "_elementtree.c"
+        var $124=HEAP[$123]; //@line 2695 "_elementtree.c"
+        var $125=$124+24; //@line 2695 "_elementtree.c"
+        var $126=HEAP[$125]; //@line 2695 "_elementtree.c"
+        var $127=$reader; //@line 2695 "_elementtree.c"
+        FUNCTION_TABLE[$126]($127); //@line 2695 "_elementtree.c"
         __label__ = 22; break; //@line 2695 "_elementtree.c"
       case 22: // $bb22
-        var $129=$self_addr; //@line 2697 "_elementtree.c"
-        var $130=_expat_parse($129, __str1, 0, 1); //@line 2697 "_elementtree.c"
-        $res=$130; //@line 2697 "_elementtree.c"
-        var $131=($130)!=0; //@line 2699 "_elementtree.c"
-        if ($131) { __label__ = 23; break; } else { __label__ = 30; break; } //@line 2699 "_elementtree.c"
+        var $128=$self_addr; //@line 2697 "_elementtree.c"
+        var $129=_expat_parse($128, __str1, 0, 1); //@line 2697 "_elementtree.c"
+        $res=$129; //@line 2697 "_elementtree.c"
+        var $130=($129)!=0; //@line 2699 "_elementtree.c"
+        if ($130) { __label__ = 23; break; } else { __label__ = 27; break; } //@line 2699 "_elementtree.c"
       case 23: // $bb23
-        var $132=$self_addr; //@line 2699 "_elementtree.c"
-        var $133=$132+12; //@line 2699 "_elementtree.c"
-        var $134=HEAP[$133]; //@line 2699 "_elementtree.c"
-        var $135=$134+4; //@line 2699 "_elementtree.c"
-        var $136=HEAP[$135]; //@line 2699 "_elementtree.c"
-        var $137=($136)==(_TreeBuilder_Type); //@line 2699 "_elementtree.c"
-        if ($137) { __label__ = 24; break; } else { __label__ = 30; break; } //@line 2699 "_elementtree.c"
+        var $131=$self_addr; //@line 2699 "_elementtree.c"
+        var $132=$131+12; //@line 2699 "_elementtree.c"
+        var $133=HEAP[$132]; //@line 2699 "_elementtree.c"
+        var $134=$133+4; //@line 2699 "_elementtree.c"
+        var $135=HEAP[$134]; //@line 2699 "_elementtree.c"
+        var $136=($135)==(_TreeBuilder_Type); //@line 2699 "_elementtree.c"
+        if ($136) { __label__ = 24; break; } else { __label__ = 27; break; } //@line 2699 "_elementtree.c"
       case 24: // $bb24
-        var $138=$res; //@line 2700 "_elementtree.c"
-        var $139=$138; //@line 2700 "_elementtree.c"
-        var $140=HEAP[$139]; //@line 2700 "_elementtree.c"
-        var $141=($140) - 1; //@line 2700 "_elementtree.c"
-        var $142=$res; //@line 2700 "_elementtree.c"
-        var $143=$142; //@line 2700 "_elementtree.c"
-        HEAP[$143]=$141; //@line 2700 "_elementtree.c"
-        var $144=$res; //@line 2700 "_elementtree.c"
-        var $145=$144; //@line 2700 "_elementtree.c"
-        var $146=HEAP[$145]; //@line 2700 "_elementtree.c"
-        var $147=($146)==0; //@line 2700 "_elementtree.c"
-        if ($147) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 2700 "_elementtree.c"
+        var $137=$res; //@line 2700 "_elementtree.c"
+        var $138=$137; //@line 2700 "_elementtree.c"
+        var $139=HEAP[$138]; //@line 2700 "_elementtree.c"
+        var $140=($139) - 1; //@line 2700 "_elementtree.c"
+        var $141=$res; //@line 2700 "_elementtree.c"
+        var $142=$141; //@line 2700 "_elementtree.c"
+        HEAP[$142]=$140; //@line 2700 "_elementtree.c"
+        var $143=$res; //@line 2700 "_elementtree.c"
+        var $144=$143; //@line 2700 "_elementtree.c"
+        var $145=HEAP[$144]; //@line 2700 "_elementtree.c"
+        var $146=($145)==0; //@line 2700 "_elementtree.c"
+        if ($146) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 2700 "_elementtree.c"
       case 25: // $bb25
-        var $148=$res; //@line 2700 "_elementtree.c"
-        var $149=$148+4; //@line 2700 "_elementtree.c"
-        var $150=HEAP[$149]; //@line 2700 "_elementtree.c"
-        var $151=$150+24; //@line 2700 "_elementtree.c"
-        var $152=HEAP[$151]; //@line 2700 "_elementtree.c"
-        var $153=$res; //@line 2700 "_elementtree.c"
-        FUNCTION_TABLE[$152]($153); //@line 2700 "_elementtree.c"
+        var $147=$res; //@line 2700 "_elementtree.c"
+        var $148=$147+4; //@line 2700 "_elementtree.c"
+        var $149=HEAP[$148]; //@line 2700 "_elementtree.c"
+        var $150=$149+24; //@line 2700 "_elementtree.c"
+        var $151=HEAP[$150]; //@line 2700 "_elementtree.c"
+        var $152=$res; //@line 2700 "_elementtree.c"
+        FUNCTION_TABLE[$151]($152); //@line 2700 "_elementtree.c"
         __label__ = 26; break; //@line 2700 "_elementtree.c"
       case 26: // $bb26
-        var $154=$self_addr; //@line 2701 "_elementtree.c"
-        var $155=$154+12; //@line 2701 "_elementtree.c"
-        var $156=HEAP[$155]; //@line 2701 "_elementtree.c"
-        var $157=$156; //@line 2701 "_elementtree.c"
-        $self_addr_i=$157;
-        var $158=$self_addr_i; //@line 1943 "_elementtree.c"
-        var $159=$158+8; //@line 1943 "_elementtree.c"
-        var $160=HEAP[$159]; //@line 1943 "_elementtree.c"
-        var $161=($160)!=0; //@line 1943 "_elementtree.c"
-        if ($161) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1943 "_elementtree.c"
-      case 27: // $bb_i
-        var $162=$self_addr_i; //@line 1944 "_elementtree.c"
-        var $163=$162+8; //@line 1944 "_elementtree.c"
-        var $164=HEAP[$163]; //@line 1944 "_elementtree.c"
-        $res_i=$164; //@line 1944 "_elementtree.c"
-        __label__ = 29; break; //@line 1944 "_elementtree.c"
-      case 28: // $bb1_i
-        $res_i=__Py_NoneStruct; //@line 1946 "_elementtree.c"
-        __label__ = 29; break; //@line 1946 "_elementtree.c"
-      case 29: // $treebuilder_done_exit
-        var $165=$res_i; //@line 1948 "_elementtree.c"
-        var $166=$165; //@line 1948 "_elementtree.c"
-        var $167=HEAP[$166]; //@line 1948 "_elementtree.c"
-        var $168=($167) + 1; //@line 1948 "_elementtree.c"
-        var $169=$res_i; //@line 1948 "_elementtree.c"
-        var $170=$169; //@line 1948 "_elementtree.c"
-        HEAP[$170]=$168; //@line 1948 "_elementtree.c"
-        var $171=$res_i; //@line 1949 "_elementtree.c"
-        $0=$171; //@line 1949 "_elementtree.c"
-        var $172=$0; //@line 1949 "_elementtree.c"
-        $retval_i=$172; //@line 1949 "_elementtree.c"
-        var $retval3_i=$retval_i; //@line 1949 "_elementtree.c"
-        $1=$retval3_i; //@line 2701 "_elementtree.c"
-        __label__ = 31; break; //@line 2701 "_elementtree.c"
-      case 30: // $bb27
-        var $173=$res; //@line 2704 "_elementtree.c"
-        $1=$173; //@line 2704 "_elementtree.c"
-        __label__ = 31; break; //@line 2704 "_elementtree.c"
-      case 31: // $bb28
-        var $174=$1; //@line 2659 "_elementtree.c"
-        $retval=$174; //@line 2659 "_elementtree.c"
+        var $153=$self_addr; //@line 2701 "_elementtree.c"
+        var $154=$153+12; //@line 2701 "_elementtree.c"
+        var $155=HEAP[$154]; //@line 2701 "_elementtree.c"
+        var $156=$155; //@line 2701 "_elementtree.c"
+        var $157=_treebuilder_done($156); //@line 2701 "_elementtree.c"
+        $0=$157; //@line 2701 "_elementtree.c"
+        __label__ = 28; break; //@line 2701 "_elementtree.c"
+      case 27: // $bb27
+        var $158=$res; //@line 2704 "_elementtree.c"
+        $0=$158; //@line 2704 "_elementtree.c"
+        __label__ = 28; break; //@line 2704 "_elementtree.c"
+      case 28: // $bb28
+        var $159=$0; //@line 2659 "_elementtree.c"
+        $retval=$159; //@line 2659 "_elementtree.c"
         var $retval29=$retval; //@line 2659 "_elementtree.c"
         STACKTOP = __stackBase__;
         return $retval29; //@line 2659 "_elementtree.c"
@@ -11262,7 +10748,7 @@ var __str124;
         $args_addr=$args;
         HEAP[$event_set]=__Py_NoneStruct; //@line 2716 "_elementtree.c"
         var $1=$args_addr; //@line 2717 "_elementtree.c"
-        var $2=_PyArg_ParseTuple($1, __str99, _PyList_Type, $events, $event_set); //@line 2717 "_elementtree.c"
+        var $2=_PyArg_ParseTuple($1, __str99, allocate([_PyList_Type,0,0,0,$events,0,0,0,$event_set,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2717 "_elementtree.c"
         var $3=($2)==0; //@line 2717 "_elementtree.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2717 "_elementtree.c"
       case 1: // $bb
@@ -11700,7 +11186,7 @@ var __str124;
       case 41: // $bb40
         var $314=HEAP[_PyExc_ValueError]; //@line 2783 "_elementtree.c"
         var $315=$event; //@line 2783 "_elementtree.c"
-        var $316=_PyErr_Format($314, __str103, $315); //@line 2783 "_elementtree.c"
+        var $316=_PyErr_Format($314, __str103, allocate([$315,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 2783 "_elementtree.c"
         $0=0; //@line 2787 "_elementtree.c"
         __label__ = 46; break; //@line 2787 "_elementtree.c"
       case 42: // $bb41
@@ -11794,7 +11280,7 @@ var __str124;
         if ($22) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2824 "_elementtree.c"
       case 7: // $bb6
         var $buffer7=$buffer; //@line 2826 "_elementtree.c"
-        var $23=_sprintf($buffer7, __str110, 2, 0, 1); //@line 2826 "_elementtree.c"
+        var $23=_sprintf($buffer7, __str110, allocate([2,0,0,0,0,0,0,0,0,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2826 "_elementtree.c"
         var $buffer8=$buffer; //@line 2828 "_elementtree.c"
         var $24=_PyString_FromString($buffer8); //@line 2828 "_elementtree.c"
         $0=$24; //@line 2828 "_elementtree.c"
@@ -11943,7 +11429,7 @@ var __str124;
         var $57=HEAP[_expat_capi]; //@line 3065 "_elementtree.c"
         var $58=$57+16; //@line 3065 "_elementtree.c"
         var $59=HEAP[$58]; //@line 3065 "_elementtree.c"
-        var $60=($59)!=1; //@line 3065 "_elementtree.c"
+        var $60=($59)!=0; //@line 3065 "_elementtree.c"
         if ($60) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 3065 "_elementtree.c"
       case 16: // $bb16
         HEAP[_expat_capi]=0; //@line 3070 "_elementtree.c"
@@ -12077,11 +11563,11 @@ __str86=allocate([117,110,100,101,102,105,110,101,100,32,101,110,116,105,116,121
 _expat_capi=allocate(1, "%struct.PyExpat_CAPI*", ALLOC_NORMAL);
 __str87=allocate([114,101,112,108,97,99,101,0] /* replace\00 */, "i8", ALLOC_NORMAL);
 __str88=allocate([124,79,122,58,88,77,76,80,97,114,115,101,114,0] /* |Oz:XMLParser\00 */, "i8", ALLOC_NORMAL);
-_kwlist_12208=allocate(12, "i8*", ALLOC_NORMAL);
+_kwlist_12207=allocate(12, "i8*", ALLOC_NORMAL);
 __str89=allocate([116,97,114,103,101,116,0] /* target\00 */, "i8", ALLOC_NORMAL);
 __str90=allocate([101,110,99,111,100,105,110,103,0] /* encoding\00 */, "i8", ALLOC_NORMAL);
 __str91=allocate([99,97,110,110,111,116,32,108,111,97,100,32,100,105,115,112,97,116,99,104,32,116,97,98,108,101,32,102,114,111,109,32,112,121,101,120,112,97,116,0] /* cannot load dispatch */, "i8", ALLOC_NORMAL);
-_memory_handler_12205=allocate(12, ["i8* (i32)*",0,0,0,"i8* (i8*, i32)*",0,0,0,"void (i8*)*",0,0,0], ALLOC_NORMAL);
+_memory_handler_12204=allocate(12, ["i8* (i32)*",0,0,0,"i8* (i8*, i32)*",0,0,0,"void (i8*)*",0,0,0], ALLOC_NORMAL);
 __str92=allocate([125,0] /* }\00 */, "i8", ALLOC_NORMAL);
 __str93=allocate([99,111,109,109,101,110,116,0] /* comment\00 */, "i8", ALLOC_NORMAL);
 __str94=allocate([112,105,0] /* pi\00 */, "i8", ALLOC_NORMAL);
@@ -12186,8 +11672,8 @@ HEAP[_treebuilder_methods+68]=(FUNCTION_TABLE_OFFSET + 92);
 HEAP[_TreeBuilder_Type+12]=__str79;
 HEAP[_TreeBuilder_Type+24]=(FUNCTION_TABLE_OFFSET + 94);
 HEAP[_TreeBuilder_Type+32]=(FUNCTION_TABLE_OFFSET + 96);
-HEAP[_kwlist_12208]=__str89;
-HEAP[_kwlist_12208+4]=__str90;
+HEAP[_kwlist_12207]=__str89;
+HEAP[_kwlist_12207+4]=__str90;
 HEAP[_xmlparser_methods]=__str105;
 HEAP[_xmlparser_methods+4]=(FUNCTION_TABLE_OFFSET + 98);
 HEAP[_xmlparser_methods+16]=__str78;

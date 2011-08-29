@@ -80,7 +80,7 @@ var _PyDateTimeAPI;
 var _TestError;
 var __str;
 var __str1;
-var __Py_NoneStruct;
+
 var __str3;
 var __str4;
 var __str5;
@@ -89,7 +89,7 @@ var __str6;
 var __str7;
 var __str8;
 var __str9;
-var _PyType_Type;
+
 var __str10;
 var __str11;
 var _memoryviewtester_as_buffer;
@@ -107,7 +107,7 @@ var __str21;
 var __str22;
 var __str23;
 var __str24;
-var _PyExc_OverflowError;
+
 var __str25;
 var __str26;
 var __str27;
@@ -166,7 +166,7 @@ var __str78;
 var __str79;
 var __str80;
 var __str81;
-var __Py_ascii_whitespace;
+
 var _x;
 var __str82;
 var __str83;
@@ -188,11 +188,11 @@ var __str96;
 var __str97;
 var __str98;
 var __str99;
-var _PyClass_Type;
-var _PyExc_TypeError;
+
+
 var __str100;
 var _test_run_counter;
-var _PyExc_AssertionError;
+
 var __str101;
 var __str102;
 var __str103;
@@ -298,7 +298,7 @@ var __str197;
 var _test_members;
 var __str198;
 var _keywords_10762;
-var _PyExc_ValueError;
+
 var __str199;
 var __str201;
 var __str202;
@@ -443,7 +443,7 @@ var __str228;
         var $buf2=$buf; //@line 28 "_testcapimodule.c"
         var $8=$test_name_addr; //@line 28 "_testcapimodule.c"
         var $9=$msg_addr; //@line 28 "_testcapimodule.c"
-        var $10=_PyOS_snprintf($buf2, 2048, __str1, $8, $9); //@line 28 "_testcapimodule.c"
+        var $10=_PyOS_snprintf($buf2, 2048, __str1, allocate([$8,0,0,0,$9,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 28 "_testcapimodule.c"
         var $11=HEAP[_TestError]; //@line 29 "_testcapimodule.c"
         var $buf3=$buf; //@line 29 "_testcapimodule.c"
         _PyErr_SetString($11, $buf3); //@line 29 "_testcapimodule.c"
@@ -678,209 +678,229 @@ var __str228;
   }
   
 
-  function _test_dict_iteration($self) {
+  function _test_dict_inner($count) {
     var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $count_addr;
+        var $retval;
+        var $0;
+        var $pos=__stackBase__;
+        var $iterations;
+        var $i;
+        var $dict;
+        var $v=__stackBase__+4;
+        var $k=__stackBase__+8;
+        var $o;
+        $count_addr=$count;
+        HEAP[$pos]=0; //@line 120 "_testcapimodule.c"
+        $iterations=0; //@line 120 "_testcapimodule.c"
+        var $1=_PyDict_New(); //@line 122 "_testcapimodule.c"
+        $dict=$1; //@line 122 "_testcapimodule.c"
+        var $2=$dict; //@line 125 "_testcapimodule.c"
+        var $3=($2)==0; //@line 125 "_testcapimodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 125 "_testcapimodule.c"
+      case 1: // $bb
+        $0=-1; //@line 126 "_testcapimodule.c"
+        __label__ = 20; break; //@line 126 "_testcapimodule.c"
+      case 2: // $bb1
+        $i=0; //@line 128 "_testcapimodule.c"
+        var $4=$i; //@line 128 "_testcapimodule.c"
+        var $5=$count_addr; //@line 128 "_testcapimodule.c"
+        var $6=($4) < ($5); //@line 128 "_testcapimodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 14; break; } //@line 128 "_testcapimodule.c"
+      case 3: // $bb2
+        var $7=$i; //@line 129 "_testcapimodule.c"
+        var $8=_PyInt_FromLong($7); //@line 129 "_testcapimodule.c"
+        HEAP[$v]=$8; //@line 129 "_testcapimodule.c"
+        var $9=HEAP[$v]; //@line 130 "_testcapimodule.c"
+        var $10=HEAP[$v]; //@line 130 "_testcapimodule.c"
+        var $11=$dict; //@line 130 "_testcapimodule.c"
+        var $12=_PyDict_SetItem($11, $10, $9); //@line 130 "_testcapimodule.c"
+        var $13=HEAP[$v]; //@line 131 "_testcapimodule.c"
+        var $14=$13; //@line 131 "_testcapimodule.c"
+        var $15=HEAP[$14]; //@line 131 "_testcapimodule.c"
+        var $16=($15) - 1; //@line 131 "_testcapimodule.c"
+        var $17=$13; //@line 131 "_testcapimodule.c"
+        HEAP[$17]=$16; //@line 131 "_testcapimodule.c"
+        var $18=$13; //@line 131 "_testcapimodule.c"
+        var $19=HEAP[$18]; //@line 131 "_testcapimodule.c"
+        var $20=($19)==0; //@line 131 "_testcapimodule.c"
+        if ($20) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 131 "_testcapimodule.c"
+      case 4: // $bb3
+        var $21=HEAP[$v]; //@line 131 "_testcapimodule.c"
+        var $22=$21+4; //@line 131 "_testcapimodule.c"
+        var $23=HEAP[$22]; //@line 131 "_testcapimodule.c"
+        var $24=$23+24; //@line 131 "_testcapimodule.c"
+        var $25=HEAP[$24]; //@line 131 "_testcapimodule.c"
+        var $26=HEAP[$v]; //@line 131 "_testcapimodule.c"
+        FUNCTION_TABLE[$25]($26); //@line 131 "_testcapimodule.c"
+        __label__ = 5; break; //@line 131 "_testcapimodule.c"
+      case 5: // $bb4
+        var $27=$i; //@line 128 "_testcapimodule.c"
+        var $28=($27) + 1; //@line 128 "_testcapimodule.c"
+        $i=$28; //@line 128 "_testcapimodule.c"
+        var $29=$i; //@line 128 "_testcapimodule.c"
+        var $30=$count_addr; //@line 128 "_testcapimodule.c"
+        var $31=($29) < ($30); //@line 128 "_testcapimodule.c"
+        if ($31) { __label__ = 3; break; } else { __label__ = 14; break; } //@line 128 "_testcapimodule.c"
+      case 6: // $bb7
+        var $32=$iterations; //@line 136 "_testcapimodule.c"
+        var $33=($32) + 1; //@line 136 "_testcapimodule.c"
+        $iterations=$33; //@line 136 "_testcapimodule.c"
+        var $34=HEAP[$v]; //@line 138 "_testcapimodule.c"
+        var $35=$34; //@line 138 "_testcapimodule.c"
+        var $36=$35+8; //@line 138 "_testcapimodule.c"
+        var $37=HEAP[$36]; //@line 138 "_testcapimodule.c"
+        var $38=($37) + 1; //@line 138 "_testcapimodule.c"
+        $i=$38; //@line 138 "_testcapimodule.c"
+        var $39=$i; //@line 139 "_testcapimodule.c"
+        var $40=_PyInt_FromLong($39); //@line 139 "_testcapimodule.c"
+        $o=$40; //@line 139 "_testcapimodule.c"
+        var $41=$o; //@line 140 "_testcapimodule.c"
+        var $42=($41)==0; //@line 140 "_testcapimodule.c"
+        if ($42) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 140 "_testcapimodule.c"
+      case 7: // $bb8
+        $0=-1; //@line 141 "_testcapimodule.c"
+        __label__ = 20; break; //@line 141 "_testcapimodule.c"
+      case 8: // $bb9
+        var $43=HEAP[$k]; //@line 142 "_testcapimodule.c"
+        var $44=$dict; //@line 142 "_testcapimodule.c"
+        var $45=$o; //@line 142 "_testcapimodule.c"
+        var $46=_PyDict_SetItem($44, $43, $45); //@line 142 "_testcapimodule.c"
+        var $47=($46) < 0; //@line 142 "_testcapimodule.c"
+        var $48=$o; //@line 143 "_testcapimodule.c"
+        var $49=$48; //@line 143 "_testcapimodule.c"
+        var $50=HEAP[$49]; //@line 143 "_testcapimodule.c"
+        var $51=($50) - 1; //@line 143 "_testcapimodule.c"
+        var $52=$o; //@line 143 "_testcapimodule.c"
+        var $53=$52; //@line 143 "_testcapimodule.c"
+        HEAP[$53]=$51; //@line 143 "_testcapimodule.c"
+        var $54=$o; //@line 143 "_testcapimodule.c"
+        var $55=$54; //@line 143 "_testcapimodule.c"
+        var $56=HEAP[$55]; //@line 143 "_testcapimodule.c"
+        var $57=($56)==0; //@line 143 "_testcapimodule.c"
+        if ($47) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 142 "_testcapimodule.c"
+      case 9: // $bb10
+        if ($57) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 143 "_testcapimodule.c"
+      case 10: // $bb11
+        var $58=$o; //@line 143 "_testcapimodule.c"
+        var $59=$58+4; //@line 143 "_testcapimodule.c"
+        var $60=HEAP[$59]; //@line 143 "_testcapimodule.c"
+        var $61=$60+24; //@line 143 "_testcapimodule.c"
+        var $62=HEAP[$61]; //@line 143 "_testcapimodule.c"
+        var $63=$o; //@line 143 "_testcapimodule.c"
+        FUNCTION_TABLE[$62]($63); //@line 143 "_testcapimodule.c"
+        __label__ = 11; break; //@line 143 "_testcapimodule.c"
+      case 11: // $bb12
+        $0=-1; //@line 144 "_testcapimodule.c"
+        __label__ = 20; break; //@line 144 "_testcapimodule.c"
+      case 12: // $bb13
+        if ($57) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 146 "_testcapimodule.c"
+      case 13: // $bb14
+        var $64=$o; //@line 146 "_testcapimodule.c"
+        var $65=$64+4; //@line 146 "_testcapimodule.c"
+        var $66=HEAP[$65]; //@line 146 "_testcapimodule.c"
+        var $67=$66+24; //@line 146 "_testcapimodule.c"
+        var $68=HEAP[$67]; //@line 146 "_testcapimodule.c"
+        var $69=$o; //@line 146 "_testcapimodule.c"
+        FUNCTION_TABLE[$68]($69); //@line 146 "_testcapimodule.c"
+        __label__ = 14; break; //@line 146 "_testcapimodule.c"
+      case 14: // $bb15
+        var $70=$dict; //@line 134 "_testcapimodule.c"
+        var $71=_PyDict_Next($70, $pos, $k, $v); //@line 134 "_testcapimodule.c"
+        var $72=($71)!=0; //@line 134 "_testcapimodule.c"
+        if ($72) { __label__ = 6; break; } else { __label__ = 15; break; } //@line 134 "_testcapimodule.c"
+      case 15: // $bb16
+        var $73=$dict; //@line 149 "_testcapimodule.c"
+        var $74=$73; //@line 149 "_testcapimodule.c"
+        var $75=HEAP[$74]; //@line 149 "_testcapimodule.c"
+        var $76=($75) - 1; //@line 149 "_testcapimodule.c"
+        var $77=$dict; //@line 149 "_testcapimodule.c"
+        var $78=$77; //@line 149 "_testcapimodule.c"
+        HEAP[$78]=$76; //@line 149 "_testcapimodule.c"
+        var $79=$dict; //@line 149 "_testcapimodule.c"
+        var $80=$79; //@line 149 "_testcapimodule.c"
+        var $81=HEAP[$80]; //@line 149 "_testcapimodule.c"
+        var $82=($81)==0; //@line 149 "_testcapimodule.c"
+        if ($82) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 149 "_testcapimodule.c"
+      case 16: // $bb17
+        var $83=$dict; //@line 149 "_testcapimodule.c"
+        var $84=$83+4; //@line 149 "_testcapimodule.c"
+        var $85=HEAP[$84]; //@line 149 "_testcapimodule.c"
+        var $86=$85+24; //@line 149 "_testcapimodule.c"
+        var $87=HEAP[$86]; //@line 149 "_testcapimodule.c"
+        var $88=$dict; //@line 149 "_testcapimodule.c"
+        FUNCTION_TABLE[$87]($88); //@line 149 "_testcapimodule.c"
+        __label__ = 17; break; //@line 149 "_testcapimodule.c"
+      case 17: // $bb18
+        var $89=$iterations; //@line 151 "_testcapimodule.c"
+        var $90=$count_addr; //@line 151 "_testcapimodule.c"
+        var $91=($89)!=($90); //@line 151 "_testcapimodule.c"
+        if ($91) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 151 "_testcapimodule.c"
+      case 18: // $bb19
+        var $92=HEAP[_TestError]; //@line 152 "_testcapimodule.c"
+        _PyErr_SetString($92, __str4); //@line 152 "_testcapimodule.c"
+        $0=-1; //@line 155 "_testcapimodule.c"
+        __label__ = 20; break; //@line 155 "_testcapimodule.c"
+      case 19: // $bb20
+        $0=0; //@line 157 "_testcapimodule.c"
+        __label__ = 20; break; //@line 157 "_testcapimodule.c"
+      case 20: // $bb21
+        var $93=$0; //@line 126 "_testcapimodule.c"
+        $retval=$93; //@line 126 "_testcapimodule.c"
+        var $retval22=$retval; //@line 126 "_testcapimodule.c"
+        STACKTOP = __stackBase__;
+        return $retval22; //@line 126 "_testcapimodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _test_dict_iteration($self) {
+    ;
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $count_addr_i;
-        var $retval_i;
-        var $0;
-        var $pos_i=__stackBase__;
-        var $iterations_i;
-        var $i_i;
-        var $dict_i;
-        var $v_i=__stackBase__+4;
-        var $k_i=__stackBase__+8;
-        var $o_i;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $i;
         $self_addr=$self;
         $i=0; //@line 166 "_testcapimodule.c"
-        __lastLabel__ = -1; __label__ = 22; break; //@line 166 "_testcapimodule.c"
+        __lastLabel__ = -1; __label__ = 4; break; //@line 166 "_testcapimodule.c"
       case 1: // $bb
-        var $2=$i; //@line 167 "_testcapimodule.c"
-        $count_addr_i=$2;
-        HEAP[$pos_i]=0; //@line 120 "_testcapimodule.c"
-        $iterations_i=0; //@line 120 "_testcapimodule.c"
-        var $3=_PyDict_New(); //@line 122 "_testcapimodule.c"
-        $dict_i=$3; //@line 122 "_testcapimodule.c"
-        var $4=$dict_i; //@line 125 "_testcapimodule.c"
-        var $5=($4)==0; //@line 125 "_testcapimodule.c"
-        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 125 "_testcapimodule.c"
-      case 2: // $bb_i
-        $0=-1; //@line 126 "_testcapimodule.c"
-        __label__ = 20; break; //@line 126 "_testcapimodule.c"
-      case 3: // $bb1_i
-        $i_i=0; //@line 128 "_testcapimodule.c"
-        var $6=$i_i; //@line 128 "_testcapimodule.c"
-        var $7=$count_addr_i; //@line 128 "_testcapimodule.c"
-        var $8=($6) < ($7); //@line 128 "_testcapimodule.c"
-        if ($8) { __label__ = 4; break; } else { __label__ = 15; break; } //@line 128 "_testcapimodule.c"
-      case 4: // $bb2_i
-        var $9=$i_i; //@line 129 "_testcapimodule.c"
-        var $10=_PyInt_FromLong($9); //@line 129 "_testcapimodule.c"
-        HEAP[$v_i]=$10; //@line 129 "_testcapimodule.c"
-        var $11=HEAP[$v_i]; //@line 130 "_testcapimodule.c"
-        var $12=HEAP[$v_i]; //@line 130 "_testcapimodule.c"
-        var $13=$dict_i; //@line 130 "_testcapimodule.c"
-        var $14=_PyDict_SetItem($13, $12, $11); //@line 130 "_testcapimodule.c"
-        var $15=HEAP[$v_i]; //@line 131 "_testcapimodule.c"
-        var $16=$15; //@line 131 "_testcapimodule.c"
-        var $17=HEAP[$16]; //@line 131 "_testcapimodule.c"
-        var $18=($17) - 1; //@line 131 "_testcapimodule.c"
-        var $19=$15; //@line 131 "_testcapimodule.c"
-        HEAP[$19]=$18; //@line 131 "_testcapimodule.c"
-        var $20=$15; //@line 131 "_testcapimodule.c"
-        var $21=HEAP[$20]; //@line 131 "_testcapimodule.c"
-        var $22=($21)==0; //@line 131 "_testcapimodule.c"
-        if ($22) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 131 "_testcapimodule.c"
-      case 5: // $bb3_i
-        var $23=HEAP[$v_i]; //@line 131 "_testcapimodule.c"
-        var $24=$23+4; //@line 131 "_testcapimodule.c"
-        var $25=HEAP[$24]; //@line 131 "_testcapimodule.c"
-        var $26=$25+24; //@line 131 "_testcapimodule.c"
-        var $27=HEAP[$26]; //@line 131 "_testcapimodule.c"
-        var $28=HEAP[$v_i]; //@line 131 "_testcapimodule.c"
-        FUNCTION_TABLE[$27]($28); //@line 131 "_testcapimodule.c"
-        __label__ = 6; break; //@line 131 "_testcapimodule.c"
-      case 6: // $bb4_i
-        var $29=$i_i; //@line 128 "_testcapimodule.c"
-        var $30=($29) + 1; //@line 128 "_testcapimodule.c"
-        $i_i=$30; //@line 128 "_testcapimodule.c"
-        var $31=$i_i; //@line 128 "_testcapimodule.c"
-        var $32=$count_addr_i; //@line 128 "_testcapimodule.c"
-        var $33=($31) < ($32); //@line 128 "_testcapimodule.c"
-        if ($33) { __label__ = 4; break; } else { __label__ = 15; break; } //@line 128 "_testcapimodule.c"
-      case 7: // $bb7_i
-        var $34=$iterations_i; //@line 136 "_testcapimodule.c"
-        var $35=($34) + 1; //@line 136 "_testcapimodule.c"
-        $iterations_i=$35; //@line 136 "_testcapimodule.c"
-        var $36=HEAP[$v_i]; //@line 138 "_testcapimodule.c"
-        var $37=$36; //@line 138 "_testcapimodule.c"
-        var $38=$37+8; //@line 138 "_testcapimodule.c"
-        var $39=HEAP[$38]; //@line 138 "_testcapimodule.c"
-        var $40=($39) + 1; //@line 138 "_testcapimodule.c"
-        $i_i=$40; //@line 138 "_testcapimodule.c"
-        var $41=$i_i; //@line 139 "_testcapimodule.c"
-        var $42=_PyInt_FromLong($41); //@line 139 "_testcapimodule.c"
-        $o_i=$42; //@line 139 "_testcapimodule.c"
-        var $43=$o_i; //@line 140 "_testcapimodule.c"
-        var $44=($43)==0; //@line 140 "_testcapimodule.c"
-        if ($44) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 140 "_testcapimodule.c"
-      case 8: // $bb8_i
-        $0=-1; //@line 141 "_testcapimodule.c"
-        __label__ = 20; break; //@line 141 "_testcapimodule.c"
-      case 9: // $bb9_i
-        var $45=HEAP[$k_i]; //@line 142 "_testcapimodule.c"
-        var $46=$dict_i; //@line 142 "_testcapimodule.c"
-        var $47=$o_i; //@line 142 "_testcapimodule.c"
-        var $48=_PyDict_SetItem($46, $45, $47); //@line 142 "_testcapimodule.c"
-        var $49=($48) < 0; //@line 142 "_testcapimodule.c"
-        var $50=$o_i; //@line 143 "_testcapimodule.c"
-        var $51=$50; //@line 143 "_testcapimodule.c"
-        var $52=HEAP[$51]; //@line 143 "_testcapimodule.c"
-        var $53=($52) - 1; //@line 143 "_testcapimodule.c"
-        var $54=$o_i; //@line 143 "_testcapimodule.c"
-        var $55=$54; //@line 143 "_testcapimodule.c"
-        HEAP[$55]=$53; //@line 143 "_testcapimodule.c"
-        var $56=$o_i; //@line 143 "_testcapimodule.c"
-        var $57=$56; //@line 143 "_testcapimodule.c"
-        var $58=HEAP[$57]; //@line 143 "_testcapimodule.c"
-        var $59=($58)==0; //@line 143 "_testcapimodule.c"
-        if ($49) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 142 "_testcapimodule.c"
-      case 10: // $bb10_i
-        if ($59) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 143 "_testcapimodule.c"
-      case 11: // $bb11_i
-        var $60=$o_i; //@line 143 "_testcapimodule.c"
-        var $61=$60+4; //@line 143 "_testcapimodule.c"
-        var $62=HEAP[$61]; //@line 143 "_testcapimodule.c"
-        var $63=$62+24; //@line 143 "_testcapimodule.c"
-        var $64=HEAP[$63]; //@line 143 "_testcapimodule.c"
-        var $65=$o_i; //@line 143 "_testcapimodule.c"
-        FUNCTION_TABLE[$64]($65); //@line 143 "_testcapimodule.c"
-        __label__ = 12; break; //@line 143 "_testcapimodule.c"
-      case 12: // $bb12_i
-        $0=-1; //@line 144 "_testcapimodule.c"
-        __label__ = 20; break; //@line 144 "_testcapimodule.c"
-      case 13: // $bb13_i
-        if ($59) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 146 "_testcapimodule.c"
-      case 14: // $bb14_i
-        var $66=$o_i; //@line 146 "_testcapimodule.c"
-        var $67=$66+4; //@line 146 "_testcapimodule.c"
-        var $68=HEAP[$67]; //@line 146 "_testcapimodule.c"
-        var $69=$68+24; //@line 146 "_testcapimodule.c"
-        var $70=HEAP[$69]; //@line 146 "_testcapimodule.c"
-        var $71=$o_i; //@line 146 "_testcapimodule.c"
-        FUNCTION_TABLE[$70]($71); //@line 146 "_testcapimodule.c"
-        __label__ = 15; break; //@line 146 "_testcapimodule.c"
-      case 15: // $bb15_i
-        var $72=$dict_i; //@line 134 "_testcapimodule.c"
-        var $73=_PyDict_Next($72, $pos_i, $k_i, $v_i); //@line 134 "_testcapimodule.c"
-        var $74=($73)!=0; //@line 134 "_testcapimodule.c"
-        if ($74) { __label__ = 7; break; } else { __label__ = 16; break; } //@line 134 "_testcapimodule.c"
-      case 16: // $bb16_i
-        var $75=$dict_i; //@line 149 "_testcapimodule.c"
-        var $76=$75; //@line 149 "_testcapimodule.c"
-        var $77=HEAP[$76]; //@line 149 "_testcapimodule.c"
-        var $78=($77) - 1; //@line 149 "_testcapimodule.c"
-        var $79=$dict_i; //@line 149 "_testcapimodule.c"
-        var $80=$79; //@line 149 "_testcapimodule.c"
-        HEAP[$80]=$78; //@line 149 "_testcapimodule.c"
-        var $81=$dict_i; //@line 149 "_testcapimodule.c"
-        var $82=$81; //@line 149 "_testcapimodule.c"
-        var $83=HEAP[$82]; //@line 149 "_testcapimodule.c"
-        var $84=($83)==0; //@line 149 "_testcapimodule.c"
-        if ($84) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 149 "_testcapimodule.c"
-      case 17: // $bb17_i
-        var $85=$dict_i; //@line 149 "_testcapimodule.c"
-        var $86=$85+4; //@line 149 "_testcapimodule.c"
-        var $87=HEAP[$86]; //@line 149 "_testcapimodule.c"
-        var $88=$87+24; //@line 149 "_testcapimodule.c"
-        var $89=HEAP[$88]; //@line 149 "_testcapimodule.c"
-        var $90=$dict_i; //@line 149 "_testcapimodule.c"
-        FUNCTION_TABLE[$89]($90); //@line 149 "_testcapimodule.c"
-        __label__ = 18; break; //@line 149 "_testcapimodule.c"
-      case 18: // $bb18_i
-        var $91=$iterations_i; //@line 151 "_testcapimodule.c"
-        var $92=$count_addr_i; //@line 151 "_testcapimodule.c"
-        var $93=($91)!=($92); //@line 151 "_testcapimodule.c"
-        if ($93) { __label__ = 19; break; } else { __label__ = 21; break; } //@line 151 "_testcapimodule.c"
-      case 19: // $bb19_i
-        var $94=HEAP[_TestError]; //@line 152 "_testcapimodule.c"
-        _PyErr_SetString($94, __str4); //@line 152 "_testcapimodule.c"
-        $0=-1; //@line 155 "_testcapimodule.c"
-        __label__ = 20; break; //@line 155 "_testcapimodule.c"
-      case 20: // $bb1
-        $retval_i=-1; //@line 126 "_testcapimodule.c"
-        $1=0; //@line 168 "_testcapimodule.c"
-        __label__ = 24; break; //@line 168 "_testcapimodule.c"
-      case 21: // $bb2
-        $0=0; //@line 157 "_testcapimodule.c"
-        $retval_i=0; //@line 126 "_testcapimodule.c"
-        var $95=$i; //@line 166 "_testcapimodule.c"
-        var $96=($95) + 1; //@line 166 "_testcapimodule.c"
-        $i=$96; //@line 166 "_testcapimodule.c"
-        __lastLabel__ = 21; __label__ = 22; break; //@line 166 "_testcapimodule.c"
-      case 22: // $bb3
-        var $97=__lastLabel__ == 21 ? $96 : (0);
-        var $98=($97) <= 199; //@line 166 "_testcapimodule.c"
-        if ($98) { __label__ = 1; break; } else { __label__ = 23; break; } //@line 166 "_testcapimodule.c"
-      case 23: // $bb4
-        var $99=HEAP[__Py_NoneStruct]; //@line 172 "_testcapimodule.c"
-        var $100=($99) + 1; //@line 172 "_testcapimodule.c"
-        HEAP[__Py_NoneStruct]=$100; //@line 172 "_testcapimodule.c"
-        $1=__Py_NoneStruct; //@line 173 "_testcapimodule.c"
-        __label__ = 24; break; //@line 173 "_testcapimodule.c"
-      case 24: // $bb5
-        var $101=$1; //@line 168 "_testcapimodule.c"
-        $retval=$101; //@line 168 "_testcapimodule.c"
+        var $1=$i; //@line 167 "_testcapimodule.c"
+        var $2=_test_dict_inner($1); //@line 167 "_testcapimodule.c"
+        var $3=($2) < 0; //@line 167 "_testcapimodule.c"
+        if ($3) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 167 "_testcapimodule.c"
+      case 2: // $bb1
+        $0=0; //@line 168 "_testcapimodule.c"
+        __label__ = 6; break; //@line 168 "_testcapimodule.c"
+      case 3: // $bb2
+        var $4=$i; //@line 166 "_testcapimodule.c"
+        var $5=($4) + 1; //@line 166 "_testcapimodule.c"
+        $i=$5; //@line 166 "_testcapimodule.c"
+        __lastLabel__ = 3; __label__ = 4; break; //@line 166 "_testcapimodule.c"
+      case 4: // $bb3
+        var $6=__lastLabel__ == 3 ? $5 : (0);
+        var $7=($6) <= 199; //@line 166 "_testcapimodule.c"
+        if ($7) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 166 "_testcapimodule.c"
+      case 5: // $bb4
+        var $8=HEAP[__Py_NoneStruct]; //@line 172 "_testcapimodule.c"
+        var $9=($8) + 1; //@line 172 "_testcapimodule.c"
+        HEAP[__Py_NoneStruct]=$9; //@line 172 "_testcapimodule.c"
+        $0=__Py_NoneStruct; //@line 173 "_testcapimodule.c"
+        __label__ = 6; break; //@line 173 "_testcapimodule.c"
+      case 6: // $bb5
+        var $10=$0; //@line 168 "_testcapimodule.c"
+        $retval=$10; //@line 168 "_testcapimodule.c"
         var $retval6=$retval; //@line 168 "_testcapimodule.c"
-        STACKTOP = __stackBase__;
+        ;
         return $retval6; //@line 168 "_testcapimodule.c"
       default: assert(0, "bad label: " + __label__);
     }
@@ -1272,631 +1292,641 @@ var __str228;
   }
   
 
-  function _test_long_api($self) {
+  function _test_long_api_inner() {
     ;
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $error_addr_i;
-        var $retval_i;
-        var $0;
-        var $iftmp_24_i;
-        var $NBITS_i;
-        var $base_i;
-        var $pyresult_i;
-        var $i_i;
-        var $j_i;
-        var $in_i;
-        var $out_i;
-        var $uin_i;
-        var $uout_i;
-        var $one_i;
-        var $x_i;
-        var $y_i;
-        var $out27_i;
-        var $uout28_i;
-        var $self_addr;
+        var $error_addr;
         var $retval;
-        var $1;
-        $self_addr=$self;
-        $error_addr_i=(FUNCTION_TABLE_OFFSET + 2);
-        $NBITS_i=32; //@line 13 "testcapi_long.h"
-        $base_i=1; //@line 25 "testcapi_long.h"
-        $i_i=0; //@line 26 "testcapi_long.h"
+        var $0;
+        var $iftmp_24;
+        var $NBITS;
+        var $base;
+        var $pyresult;
+        var $i;
+        var $j;
+        var $in;
+        var $out;
+        var $uin;
+        var $uout;
+        var $one;
+        var $x;
+        var $y;
+        var $out27;
+        var $uout28;
+        $error_addr=(FUNCTION_TABLE_OFFSET + 2);
+        $NBITS=32; //@line 13 "testcapi_long.h"
+        $base=1; //@line 25 "testcapi_long.h"
+        $i=0; //@line 26 "testcapi_long.h"
         __label__ = 26; break; //@line 26 "testcapi_long.h"
-      case 1: // $bb_i
-        $j_i=0; //@line 31 "testcapi_long.h"
+      case 1: // $bb
+        $j=0; //@line 31 "testcapi_long.h"
         __lastLabel__ = 1; __label__ = 24; break; //@line 31 "testcapi_long.h"
-      case 2: // $bb1_i
-        var $2=$j_i; //@line 36 "testcapi_long.h"
-        var $3=($2) > 2; //@line 36 "testcapi_long.h"
-        var $4=$base_i; //@line 36 "testcapi_long.h"
-        if ($3) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 36 "testcapi_long.h"
-      case 3: // $bb2_i
-        var $5=0 - ($4); //@line 36 "testcapi_long.h"
-        $iftmp_24_i=$5; //@line 36 "testcapi_long.h"
+      case 2: // $bb1
+        var $1=$j; //@line 36 "testcapi_long.h"
+        var $2=($1) > 2; //@line 36 "testcapi_long.h"
+        var $3=$base; //@line 36 "testcapi_long.h"
+        if ($2) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 36 "testcapi_long.h"
+      case 3: // $bb2
+        var $4=0 - ($3); //@line 36 "testcapi_long.h"
+        $iftmp_24=$4; //@line 36 "testcapi_long.h"
         __label__ = 5; break; //@line 36 "testcapi_long.h"
-      case 4: // $bb3_i
-        $iftmp_24_i=$4; //@line 36 "testcapi_long.h"
+      case 4: // $bb3
+        $iftmp_24=$3; //@line 36 "testcapi_long.h"
         __label__ = 5; break; //@line 36 "testcapi_long.h"
-      case 5: // $bb4_i
-        var $6=$iftmp_24_i; //@line 36 "testcapi_long.h"
-        $uin_i=$6; //@line 36 "testcapi_long.h"
-        var $7=$j_i; //@line 43 "testcapi_long.h"
-        var $8=($7) % 3; //@line 43 "testcapi_long.h"
-        var $9=$uin_i; //@line 43 "testcapi_long.h"
-        var $10=($8) + -1; //@line 43 "testcapi_long.h"
-        var $11=($10) + ($9);
-        $uin_i=$11; //@line 43 "testcapi_long.h"
-        var $12=$uin_i; //@line 45 "testcapi_long.h"
-        var $13=_PyLong_FromUnsignedLong($12); //@line 45 "testcapi_long.h"
-        $pyresult_i=$13; //@line 45 "testcapi_long.h"
-        var $14=($13)==0; //@line 46 "testcapi_long.h"
-        if ($14) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 46 "testcapi_long.h"
-      case 6: // $bb5_i
-        var $15=$error_addr_i; //@line 47 "testcapi_long.h"
-        var $16=FUNCTION_TABLE[$15](__str16); //@line 47 "testcapi_long.h"
-        $0=$16; //@line 47 "testcapi_long.h"
+      case 5: // $bb4
+        var $5=$iftmp_24; //@line 36 "testcapi_long.h"
+        $uin=$5; //@line 36 "testcapi_long.h"
+        var $6=$j; //@line 43 "testcapi_long.h"
+        var $7=($6) % 3; //@line 43 "testcapi_long.h"
+        var $8=$uin; //@line 43 "testcapi_long.h"
+        var $9=($7) + -1; //@line 43 "testcapi_long.h"
+        var $10=($9) + ($8);
+        $uin=$10; //@line 43 "testcapi_long.h"
+        var $11=$uin; //@line 45 "testcapi_long.h"
+        var $12=_PyLong_FromUnsignedLong($11); //@line 45 "testcapi_long.h"
+        $pyresult=$12; //@line 45 "testcapi_long.h"
+        var $13=($12)==0; //@line 46 "testcapi_long.h"
+        if ($13) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 46 "testcapi_long.h"
+      case 6: // $bb5
+        var $14=$error_addr; //@line 47 "testcapi_long.h"
+        var $15=FUNCTION_TABLE[$14](__str16); //@line 47 "testcapi_long.h"
+        $0=$15; //@line 47 "testcapi_long.h"
         __label__ = 82; break; //@line 47 "testcapi_long.h"
-      case 7: // $bb6_i
-        var $17=$pyresult_i; //@line 50 "testcapi_long.h"
-        var $18=_PyLong_AsUnsignedLong($17); //@line 50 "testcapi_long.h"
-        $uout_i=$18; //@line 50 "testcapi_long.h"
-        var $19=$uout_i; //@line 51 "testcapi_long.h"
-        var $20=($19)==-1; //@line 51 "testcapi_long.h"
-        if ($20) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
-      case 8: // $bb7_i
-        var $21=_PyErr_Occurred(); //@line 51 "testcapi_long.h"
-        var $22=($21)!=0; //@line 51 "testcapi_long.h"
-        if ($22) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
-      case 9: // $bb8_i
-        var $23=$error_addr_i; //@line 52 "testcapi_long.h"
-        var $24=FUNCTION_TABLE[$23](__str17); //@line 52 "testcapi_long.h"
-        $0=$24; //@line 52 "testcapi_long.h"
+      case 7: // $bb6
+        var $16=$pyresult; //@line 50 "testcapi_long.h"
+        var $17=_PyLong_AsUnsignedLong($16); //@line 50 "testcapi_long.h"
+        $uout=$17; //@line 50 "testcapi_long.h"
+        var $18=$uout; //@line 51 "testcapi_long.h"
+        var $19=($18)==-1; //@line 51 "testcapi_long.h"
+        if ($19) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
+      case 8: // $bb7
+        var $20=_PyErr_Occurred(); //@line 51 "testcapi_long.h"
+        var $21=($20)!=0; //@line 51 "testcapi_long.h"
+        if ($21) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
+      case 9: // $bb8
+        var $22=$error_addr; //@line 52 "testcapi_long.h"
+        var $23=FUNCTION_TABLE[$22](__str17); //@line 52 "testcapi_long.h"
+        $0=$23; //@line 52 "testcapi_long.h"
         __label__ = 82; break; //@line 52 "testcapi_long.h"
-      case 10: // $bb9_i
-        var $25=$uout_i; //@line 54 "testcapi_long.h"
-        var $26=$uin_i; //@line 54 "testcapi_long.h"
-        var $27=($25)!=($26); //@line 54 "testcapi_long.h"
-        if ($27) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 54 "testcapi_long.h"
-      case 11: // $bb10_i
-        var $28=$error_addr_i; //@line 55 "testcapi_long.h"
-        var $29=FUNCTION_TABLE[$28](__str18); //@line 55 "testcapi_long.h"
-        $0=$29; //@line 55 "testcapi_long.h"
+      case 10: // $bb9
+        var $24=$uout; //@line 54 "testcapi_long.h"
+        var $25=$uin; //@line 54 "testcapi_long.h"
+        var $26=($24)!=($25); //@line 54 "testcapi_long.h"
+        if ($26) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 54 "testcapi_long.h"
+      case 11: // $bb10
+        var $27=$error_addr; //@line 55 "testcapi_long.h"
+        var $28=FUNCTION_TABLE[$27](__str18); //@line 55 "testcapi_long.h"
+        $0=$28; //@line 55 "testcapi_long.h"
         __label__ = 82; break; //@line 55 "testcapi_long.h"
-      case 12: // $bb11_i
-        var $30=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $31=$30; //@line 57 "testcapi_long.h"
-        var $32=HEAP[$31]; //@line 57 "testcapi_long.h"
-        var $33=($32) - 1; //@line 57 "testcapi_long.h"
-        var $34=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $35=$34; //@line 57 "testcapi_long.h"
-        HEAP[$35]=$33; //@line 57 "testcapi_long.h"
-        var $36=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $37=$36; //@line 57 "testcapi_long.h"
-        var $38=HEAP[$37]; //@line 57 "testcapi_long.h"
-        var $39=($38)==0; //@line 57 "testcapi_long.h"
-        if ($39) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 57 "testcapi_long.h"
-      case 13: // $bb12_i
-        var $40=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $41=$40+4; //@line 57 "testcapi_long.h"
-        var $42=HEAP[$41]; //@line 57 "testcapi_long.h"
-        var $43=$42+24; //@line 57 "testcapi_long.h"
-        var $44=HEAP[$43]; //@line 57 "testcapi_long.h"
-        var $45=$pyresult_i; //@line 57 "testcapi_long.h"
-        FUNCTION_TABLE[$44]($45); //@line 57 "testcapi_long.h"
+      case 12: // $bb11
+        var $29=$pyresult; //@line 57 "testcapi_long.h"
+        var $30=$29; //@line 57 "testcapi_long.h"
+        var $31=HEAP[$30]; //@line 57 "testcapi_long.h"
+        var $32=($31) - 1; //@line 57 "testcapi_long.h"
+        var $33=$pyresult; //@line 57 "testcapi_long.h"
+        var $34=$33; //@line 57 "testcapi_long.h"
+        HEAP[$34]=$32; //@line 57 "testcapi_long.h"
+        var $35=$pyresult; //@line 57 "testcapi_long.h"
+        var $36=$35; //@line 57 "testcapi_long.h"
+        var $37=HEAP[$36]; //@line 57 "testcapi_long.h"
+        var $38=($37)==0; //@line 57 "testcapi_long.h"
+        if ($38) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 57 "testcapi_long.h"
+      case 13: // $bb12
+        var $39=$pyresult; //@line 57 "testcapi_long.h"
+        var $40=$39+4; //@line 57 "testcapi_long.h"
+        var $41=HEAP[$40]; //@line 57 "testcapi_long.h"
+        var $42=$41+24; //@line 57 "testcapi_long.h"
+        var $43=HEAP[$42]; //@line 57 "testcapi_long.h"
+        var $44=$pyresult; //@line 57 "testcapi_long.h"
+        FUNCTION_TABLE[$43]($44); //@line 57 "testcapi_long.h"
         __label__ = 14; break; //@line 57 "testcapi_long.h"
-      case 14: // $bb13_i
-        $pyresult_i=0; //@line 57 "testcapi_long.h"
-        var $46=$uin_i; //@line 59 "testcapi_long.h"
-        $in_i=$46; //@line 59 "testcapi_long.h"
-        var $47=$in_i; //@line 60 "testcapi_long.h"
-        var $48=_PyLong_FromLong($47); //@line 60 "testcapi_long.h"
-        $pyresult_i=$48; //@line 60 "testcapi_long.h"
-        var $49=($48)==0; //@line 61 "testcapi_long.h"
-        if ($49) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 61 "testcapi_long.h"
-      case 15: // $bb14_i
-        var $50=$error_addr_i; //@line 62 "testcapi_long.h"
-        var $51=FUNCTION_TABLE[$50](__str19); //@line 62 "testcapi_long.h"
-        $0=$51; //@line 62 "testcapi_long.h"
+      case 14: // $bb13
+        $pyresult=0; //@line 57 "testcapi_long.h"
+        var $45=$uin; //@line 59 "testcapi_long.h"
+        $in=$45; //@line 59 "testcapi_long.h"
+        var $46=$in; //@line 60 "testcapi_long.h"
+        var $47=_PyLong_FromLong($46); //@line 60 "testcapi_long.h"
+        $pyresult=$47; //@line 60 "testcapi_long.h"
+        var $48=($47)==0; //@line 61 "testcapi_long.h"
+        if ($48) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 61 "testcapi_long.h"
+      case 15: // $bb14
+        var $49=$error_addr; //@line 62 "testcapi_long.h"
+        var $50=FUNCTION_TABLE[$49](__str19); //@line 62 "testcapi_long.h"
+        $0=$50; //@line 62 "testcapi_long.h"
         __label__ = 82; break; //@line 62 "testcapi_long.h"
-      case 16: // $bb15_i
-        var $52=$pyresult_i; //@line 65 "testcapi_long.h"
-        var $53=_PyLong_AsLong($52); //@line 65 "testcapi_long.h"
-        $out_i=$53; //@line 65 "testcapi_long.h"
-        var $54=$out_i; //@line 66 "testcapi_long.h"
-        var $55=($54)==-1; //@line 66 "testcapi_long.h"
-        if ($55) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
-      case 17: // $bb16_i
-        var $56=_PyErr_Occurred(); //@line 66 "testcapi_long.h"
-        var $57=($56)!=0; //@line 66 "testcapi_long.h"
-        if ($57) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
-      case 18: // $bb17_i
-        var $58=$error_addr_i; //@line 67 "testcapi_long.h"
-        var $59=FUNCTION_TABLE[$58](__str20); //@line 67 "testcapi_long.h"
-        $0=$59; //@line 67 "testcapi_long.h"
+      case 16: // $bb15
+        var $51=$pyresult; //@line 65 "testcapi_long.h"
+        var $52=_PyLong_AsLong($51); //@line 65 "testcapi_long.h"
+        $out=$52; //@line 65 "testcapi_long.h"
+        var $53=$out; //@line 66 "testcapi_long.h"
+        var $54=($53)==-1; //@line 66 "testcapi_long.h"
+        if ($54) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
+      case 17: // $bb16
+        var $55=_PyErr_Occurred(); //@line 66 "testcapi_long.h"
+        var $56=($55)!=0; //@line 66 "testcapi_long.h"
+        if ($56) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
+      case 18: // $bb17
+        var $57=$error_addr; //@line 67 "testcapi_long.h"
+        var $58=FUNCTION_TABLE[$57](__str20); //@line 67 "testcapi_long.h"
+        $0=$58; //@line 67 "testcapi_long.h"
         __label__ = 82; break; //@line 67 "testcapi_long.h"
-      case 19: // $bb18_i
-        var $60=$out_i; //@line 69 "testcapi_long.h"
-        var $61=$in_i; //@line 69 "testcapi_long.h"
-        var $62=($60)!=($61); //@line 69 "testcapi_long.h"
-        if ($62) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 69 "testcapi_long.h"
-      case 20: // $bb19_i
-        var $63=$error_addr_i; //@line 70 "testcapi_long.h"
-        var $64=FUNCTION_TABLE[$63](__str21); //@line 70 "testcapi_long.h"
-        $0=$64; //@line 70 "testcapi_long.h"
+      case 19: // $bb18
+        var $59=$out; //@line 69 "testcapi_long.h"
+        var $60=$in; //@line 69 "testcapi_long.h"
+        var $61=($59)!=($60); //@line 69 "testcapi_long.h"
+        if ($61) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 69 "testcapi_long.h"
+      case 20: // $bb19
+        var $62=$error_addr; //@line 70 "testcapi_long.h"
+        var $63=FUNCTION_TABLE[$62](__str21); //@line 70 "testcapi_long.h"
+        $0=$63; //@line 70 "testcapi_long.h"
         __label__ = 82; break; //@line 70 "testcapi_long.h"
-      case 21: // $bb20_i
-        var $65=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $66=$65; //@line 72 "testcapi_long.h"
-        var $67=HEAP[$66]; //@line 72 "testcapi_long.h"
-        var $68=($67) - 1; //@line 72 "testcapi_long.h"
-        var $69=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $70=$69; //@line 72 "testcapi_long.h"
-        HEAP[$70]=$68; //@line 72 "testcapi_long.h"
-        var $71=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $72=$71; //@line 72 "testcapi_long.h"
-        var $73=HEAP[$72]; //@line 72 "testcapi_long.h"
-        var $74=($73)==0; //@line 72 "testcapi_long.h"
-        if ($74) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 72 "testcapi_long.h"
-      case 22: // $bb21_i
-        var $75=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $76=$75+4; //@line 72 "testcapi_long.h"
-        var $77=HEAP[$76]; //@line 72 "testcapi_long.h"
-        var $78=$77+24; //@line 72 "testcapi_long.h"
-        var $79=HEAP[$78]; //@line 72 "testcapi_long.h"
-        var $80=$pyresult_i; //@line 72 "testcapi_long.h"
-        FUNCTION_TABLE[$79]($80); //@line 72 "testcapi_long.h"
+      case 21: // $bb20
+        var $64=$pyresult; //@line 72 "testcapi_long.h"
+        var $65=$64; //@line 72 "testcapi_long.h"
+        var $66=HEAP[$65]; //@line 72 "testcapi_long.h"
+        var $67=($66) - 1; //@line 72 "testcapi_long.h"
+        var $68=$pyresult; //@line 72 "testcapi_long.h"
+        var $69=$68; //@line 72 "testcapi_long.h"
+        HEAP[$69]=$67; //@line 72 "testcapi_long.h"
+        var $70=$pyresult; //@line 72 "testcapi_long.h"
+        var $71=$70; //@line 72 "testcapi_long.h"
+        var $72=HEAP[$71]; //@line 72 "testcapi_long.h"
+        var $73=($72)==0; //@line 72 "testcapi_long.h"
+        if ($73) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 72 "testcapi_long.h"
+      case 22: // $bb21
+        var $74=$pyresult; //@line 72 "testcapi_long.h"
+        var $75=$74+4; //@line 72 "testcapi_long.h"
+        var $76=HEAP[$75]; //@line 72 "testcapi_long.h"
+        var $77=$76+24; //@line 72 "testcapi_long.h"
+        var $78=HEAP[$77]; //@line 72 "testcapi_long.h"
+        var $79=$pyresult; //@line 72 "testcapi_long.h"
+        FUNCTION_TABLE[$78]($79); //@line 72 "testcapi_long.h"
         __label__ = 23; break; //@line 72 "testcapi_long.h"
-      case 23: // $bb22_i
-        $pyresult_i=0; //@line 72 "testcapi_long.h"
-        var $81=$j_i; //@line 31 "testcapi_long.h"
-        var $82=($81) + 1; //@line 31 "testcapi_long.h"
-        $j_i=$82; //@line 31 "testcapi_long.h"
+      case 23: // $bb22
+        $pyresult=0; //@line 72 "testcapi_long.h"
+        var $80=$j; //@line 31 "testcapi_long.h"
+        var $81=($80) + 1; //@line 31 "testcapi_long.h"
+        $j=$81; //@line 31 "testcapi_long.h"
         __lastLabel__ = 23; __label__ = 24; break; //@line 31 "testcapi_long.h"
-      case 24: // $bb23_i
-        var $83=__lastLabel__ == 23 ? $82 : (0);
-        var $84=($83) <= 5; //@line 31 "testcapi_long.h"
-        if ($84) { __label__ = 2; break; } else { __label__ = 25; break; } //@line 31 "testcapi_long.h"
-      case 25: // $bb24_i
-        var $85=$i_i; //@line 28 "testcapi_long.h"
-        var $86=($85) + 1; //@line 28 "testcapi_long.h"
-        $i_i=$86; //@line 28 "testcapi_long.h"
-        var $87=$base_i; //@line 28 "testcapi_long.h"
-        var $88=($87) << 1; //@line 28 "testcapi_long.h"
-        $base_i=$88; //@line 28 "testcapi_long.h"
+      case 24: // $bb23
+        var $82=__lastLabel__ == 23 ? $81 : (0);
+        var $83=($82) <= 5; //@line 31 "testcapi_long.h"
+        if ($83) { __label__ = 2; break; } else { __label__ = 25; break; } //@line 31 "testcapi_long.h"
+      case 25: // $bb24
+        var $84=$i; //@line 28 "testcapi_long.h"
+        var $85=($84) + 1; //@line 28 "testcapi_long.h"
+        $i=$85; //@line 28 "testcapi_long.h"
+        var $86=$base; //@line 28 "testcapi_long.h"
+        var $87=($86) << 1; //@line 28 "testcapi_long.h"
+        $base=$87; //@line 28 "testcapi_long.h"
         __label__ = 26; break; //@line 28 "testcapi_long.h"
-      case 26: // $bb25_i
-        var $89=$NBITS_i; //@line 27 "testcapi_long.h"
-        var $90=($89) + 1; //@line 27 "testcapi_long.h"
-        var $91=$i_i; //@line 27 "testcapi_long.h"
-        var $92=($90) > ($91); //@line 27 "testcapi_long.h"
-        if ($92) { __label__ = 1; break; } else { __label__ = 27; break; } //@line 27 "testcapi_long.h"
-      case 27: // $bb26_i
-        var $93=_PyLong_FromLong(1); //@line 85 "testcapi_long.h"
-        $one_i=$93; //@line 85 "testcapi_long.h"
-        var $94=$one_i; //@line 86 "testcapi_long.h"
-        var $95=($94)==0; //@line 86 "testcapi_long.h"
-        if ($95) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 86 "testcapi_long.h"
-      case 28: // $bb29_i
-        var $96=$error_addr_i; //@line 87 "testcapi_long.h"
-        var $97=FUNCTION_TABLE[$96](__str22); //@line 87 "testcapi_long.h"
-        $0=$97; //@line 87 "testcapi_long.h"
+      case 26: // $bb25
+        var $88=$NBITS; //@line 27 "testcapi_long.h"
+        var $89=($88) + 1; //@line 27 "testcapi_long.h"
+        var $90=$i; //@line 27 "testcapi_long.h"
+        var $91=($89) > ($90); //@line 27 "testcapi_long.h"
+        if ($91) { __label__ = 1; break; } else { __label__ = 27; break; } //@line 27 "testcapi_long.h"
+      case 27: // $bb26
+        var $92=_PyLong_FromLong(1); //@line 85 "testcapi_long.h"
+        $one=$92; //@line 85 "testcapi_long.h"
+        var $93=$one; //@line 86 "testcapi_long.h"
+        var $94=($93)==0; //@line 86 "testcapi_long.h"
+        if ($94) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 86 "testcapi_long.h"
+      case 28: // $bb29
+        var $95=$error_addr; //@line 87 "testcapi_long.h"
+        var $96=FUNCTION_TABLE[$95](__str22); //@line 87 "testcapi_long.h"
+        $0=$96; //@line 87 "testcapi_long.h"
         __label__ = 82; break; //@line 87 "testcapi_long.h"
-      case 29: // $bb30_i
-        var $98=$one_i; //@line 91 "testcapi_long.h"
-        var $99=_PyNumber_Negative($98); //@line 91 "testcapi_long.h"
-        $x_i=$99; //@line 91 "testcapi_long.h"
-        var $100=$x_i; //@line 92 "testcapi_long.h"
-        var $101=($100)==0; //@line 92 "testcapi_long.h"
-        if ($101) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 92 "testcapi_long.h"
-      case 30: // $bb31_i
-        var $102=$error_addr_i; //@line 93 "testcapi_long.h"
-        var $103=FUNCTION_TABLE[$102](__str23); //@line 93 "testcapi_long.h"
-        $0=$103; //@line 93 "testcapi_long.h"
+      case 29: // $bb30
+        var $97=$one; //@line 91 "testcapi_long.h"
+        var $98=_PyNumber_Negative($97); //@line 91 "testcapi_long.h"
+        $x=$98; //@line 91 "testcapi_long.h"
+        var $99=$x; //@line 92 "testcapi_long.h"
+        var $100=($99)==0; //@line 92 "testcapi_long.h"
+        if ($100) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 92 "testcapi_long.h"
+      case 30: // $bb31
+        var $101=$error_addr; //@line 93 "testcapi_long.h"
+        var $102=FUNCTION_TABLE[$101](__str23); //@line 93 "testcapi_long.h"
+        $0=$102; //@line 93 "testcapi_long.h"
         __label__ = 82; break; //@line 93 "testcapi_long.h"
-      case 31: // $bb32_i
-        var $104=$x_i; //@line 96 "testcapi_long.h"
-        var $105=_PyLong_AsUnsignedLong($104); //@line 96 "testcapi_long.h"
-        $uout28_i=$105; //@line 96 "testcapi_long.h"
-        var $106=$uout28_i; //@line 97 "testcapi_long.h"
-        var $107=($106)!=-1; //@line 97 "testcapi_long.h"
-        if ($107) { __label__ = 33; break; } else { __label__ = 32; break; } //@line 97 "testcapi_long.h"
-      case 32: // $bb33_i
-        var $108=_PyErr_Occurred(); //@line 97 "testcapi_long.h"
-        var $109=($108)==0; //@line 97 "testcapi_long.h"
-        if ($109) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 97 "testcapi_long.h"
-      case 33: // $bb34_i
-        var $110=$error_addr_i; //@line 98 "testcapi_long.h"
-        var $111=FUNCTION_TABLE[$110](__str24); //@line 98 "testcapi_long.h"
-        $0=$111; //@line 98 "testcapi_long.h"
+      case 31: // $bb32
+        var $103=$x; //@line 96 "testcapi_long.h"
+        var $104=_PyLong_AsUnsignedLong($103); //@line 96 "testcapi_long.h"
+        $uout28=$104; //@line 96 "testcapi_long.h"
+        var $105=$uout28; //@line 97 "testcapi_long.h"
+        var $106=($105)!=-1; //@line 97 "testcapi_long.h"
+        if ($106) { __label__ = 33; break; } else { __label__ = 32; break; } //@line 97 "testcapi_long.h"
+      case 32: // $bb33
+        var $107=_PyErr_Occurred(); //@line 97 "testcapi_long.h"
+        var $108=($107)==0; //@line 97 "testcapi_long.h"
+        if ($108) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 97 "testcapi_long.h"
+      case 33: // $bb34
+        var $109=$error_addr; //@line 98 "testcapi_long.h"
+        var $110=FUNCTION_TABLE[$109](__str24); //@line 98 "testcapi_long.h"
+        $0=$110; //@line 98 "testcapi_long.h"
         __label__ = 82; break; //@line 98 "testcapi_long.h"
-      case 34: // $bb35_i
-        var $112=HEAP[_PyExc_OverflowError]; //@line 100 "testcapi_long.h"
-        var $113=_PyErr_ExceptionMatches($112); //@line 100 "testcapi_long.h"
-        var $114=($113)==0; //@line 100 "testcapi_long.h"
-        if ($114) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 100 "testcapi_long.h"
-      case 35: // $bb36_i
-        var $115=$error_addr_i; //@line 101 "testcapi_long.h"
-        var $116=FUNCTION_TABLE[$115](__str25); //@line 101 "testcapi_long.h"
-        $0=$116; //@line 101 "testcapi_long.h"
+      case 34: // $bb35
+        var $111=HEAP[_PyExc_OverflowError]; //@line 100 "testcapi_long.h"
+        var $112=_PyErr_ExceptionMatches($111); //@line 100 "testcapi_long.h"
+        var $113=($112)==0; //@line 100 "testcapi_long.h"
+        if ($113) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 100 "testcapi_long.h"
+      case 35: // $bb36
+        var $114=$error_addr; //@line 101 "testcapi_long.h"
+        var $115=FUNCTION_TABLE[$114](__str25); //@line 101 "testcapi_long.h"
+        $0=$115; //@line 101 "testcapi_long.h"
         __label__ = 82; break; //@line 101 "testcapi_long.h"
-      case 36: // $bb37_i
+      case 36: // $bb37
         _PyErr_Clear(); //@line 104 "testcapi_long.h"
-        var $117=$x_i; //@line 105 "testcapi_long.h"
-        var $118=$117; //@line 105 "testcapi_long.h"
-        var $119=HEAP[$118]; //@line 105 "testcapi_long.h"
-        var $120=($119) - 1; //@line 105 "testcapi_long.h"
-        var $121=$x_i; //@line 105 "testcapi_long.h"
-        var $122=$121; //@line 105 "testcapi_long.h"
-        HEAP[$122]=$120; //@line 105 "testcapi_long.h"
-        var $123=$x_i; //@line 105 "testcapi_long.h"
-        var $124=$123; //@line 105 "testcapi_long.h"
-        var $125=HEAP[$124]; //@line 105 "testcapi_long.h"
-        var $126=($125)==0; //@line 105 "testcapi_long.h"
-        if ($126) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 105 "testcapi_long.h"
-      case 37: // $bb38_i
-        var $127=$x_i; //@line 105 "testcapi_long.h"
-        var $128=$127+4; //@line 105 "testcapi_long.h"
-        var $129=HEAP[$128]; //@line 105 "testcapi_long.h"
-        var $130=$129+24; //@line 105 "testcapi_long.h"
-        var $131=HEAP[$130]; //@line 105 "testcapi_long.h"
-        var $132=$x_i; //@line 105 "testcapi_long.h"
-        FUNCTION_TABLE[$131]($132); //@line 105 "testcapi_long.h"
+        var $116=$x; //@line 105 "testcapi_long.h"
+        var $117=$116; //@line 105 "testcapi_long.h"
+        var $118=HEAP[$117]; //@line 105 "testcapi_long.h"
+        var $119=($118) - 1; //@line 105 "testcapi_long.h"
+        var $120=$x; //@line 105 "testcapi_long.h"
+        var $121=$120; //@line 105 "testcapi_long.h"
+        HEAP[$121]=$119; //@line 105 "testcapi_long.h"
+        var $122=$x; //@line 105 "testcapi_long.h"
+        var $123=$122; //@line 105 "testcapi_long.h"
+        var $124=HEAP[$123]; //@line 105 "testcapi_long.h"
+        var $125=($124)==0; //@line 105 "testcapi_long.h"
+        if ($125) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 105 "testcapi_long.h"
+      case 37: // $bb38
+        var $126=$x; //@line 105 "testcapi_long.h"
+        var $127=$126+4; //@line 105 "testcapi_long.h"
+        var $128=HEAP[$127]; //@line 105 "testcapi_long.h"
+        var $129=$128+24; //@line 105 "testcapi_long.h"
+        var $130=HEAP[$129]; //@line 105 "testcapi_long.h"
+        var $131=$x; //@line 105 "testcapi_long.h"
+        FUNCTION_TABLE[$130]($131); //@line 105 "testcapi_long.h"
         __label__ = 38; break; //@line 105 "testcapi_long.h"
-      case 38: // $bb39_i
-        $x_i=0; //@line 105 "testcapi_long.h"
-        var $133=$NBITS_i; //@line 108 "testcapi_long.h"
-        var $134=_PyLong_FromLong($133); //@line 108 "testcapi_long.h"
-        $y_i=$134; //@line 108 "testcapi_long.h"
-        var $135=($134)==0; //@line 109 "testcapi_long.h"
-        if ($135) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 109 "testcapi_long.h"
-      case 39: // $bb40_i
-        var $136=$error_addr_i; //@line 110 "testcapi_long.h"
-        var $137=FUNCTION_TABLE[$136](__str22); //@line 110 "testcapi_long.h"
-        $0=$137; //@line 110 "testcapi_long.h"
+      case 38: // $bb39
+        $x=0; //@line 105 "testcapi_long.h"
+        var $132=$NBITS; //@line 108 "testcapi_long.h"
+        var $133=_PyLong_FromLong($132); //@line 108 "testcapi_long.h"
+        $y=$133; //@line 108 "testcapi_long.h"
+        var $134=($133)==0; //@line 109 "testcapi_long.h"
+        if ($134) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 109 "testcapi_long.h"
+      case 39: // $bb40
+        var $135=$error_addr; //@line 110 "testcapi_long.h"
+        var $136=FUNCTION_TABLE[$135](__str22); //@line 110 "testcapi_long.h"
+        $0=$136; //@line 110 "testcapi_long.h"
         __label__ = 82; break; //@line 110 "testcapi_long.h"
-      case 40: // $bb41_i
-        var $138=$one_i; //@line 113 "testcapi_long.h"
-        var $139=$y_i; //@line 113 "testcapi_long.h"
-        var $140=_PyNumber_Lshift($138, $139); //@line 113 "testcapi_long.h"
-        $x_i=$140; //@line 113 "testcapi_long.h"
-        var $141=$y_i; //@line 114 "testcapi_long.h"
-        var $142=$141; //@line 114 "testcapi_long.h"
-        var $143=HEAP[$142]; //@line 114 "testcapi_long.h"
-        var $144=($143) - 1; //@line 114 "testcapi_long.h"
-        var $145=$y_i; //@line 114 "testcapi_long.h"
-        var $146=$145; //@line 114 "testcapi_long.h"
-        HEAP[$146]=$144; //@line 114 "testcapi_long.h"
-        var $147=$y_i; //@line 114 "testcapi_long.h"
-        var $148=$147; //@line 114 "testcapi_long.h"
-        var $149=HEAP[$148]; //@line 114 "testcapi_long.h"
-        var $150=($149)==0; //@line 114 "testcapi_long.h"
-        if ($150) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 114 "testcapi_long.h"
-      case 41: // $bb42_i
-        var $151=$y_i; //@line 114 "testcapi_long.h"
-        var $152=$151+4; //@line 114 "testcapi_long.h"
-        var $153=HEAP[$152]; //@line 114 "testcapi_long.h"
-        var $154=$153+24; //@line 114 "testcapi_long.h"
-        var $155=HEAP[$154]; //@line 114 "testcapi_long.h"
-        var $156=$y_i; //@line 114 "testcapi_long.h"
-        FUNCTION_TABLE[$155]($156); //@line 114 "testcapi_long.h"
+      case 40: // $bb41
+        var $137=$one; //@line 113 "testcapi_long.h"
+        var $138=$y; //@line 113 "testcapi_long.h"
+        var $139=_PyNumber_Lshift($137, $138); //@line 113 "testcapi_long.h"
+        $x=$139; //@line 113 "testcapi_long.h"
+        var $140=$y; //@line 114 "testcapi_long.h"
+        var $141=$140; //@line 114 "testcapi_long.h"
+        var $142=HEAP[$141]; //@line 114 "testcapi_long.h"
+        var $143=($142) - 1; //@line 114 "testcapi_long.h"
+        var $144=$y; //@line 114 "testcapi_long.h"
+        var $145=$144; //@line 114 "testcapi_long.h"
+        HEAP[$145]=$143; //@line 114 "testcapi_long.h"
+        var $146=$y; //@line 114 "testcapi_long.h"
+        var $147=$146; //@line 114 "testcapi_long.h"
+        var $148=HEAP[$147]; //@line 114 "testcapi_long.h"
+        var $149=($148)==0; //@line 114 "testcapi_long.h"
+        if ($149) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 114 "testcapi_long.h"
+      case 41: // $bb42
+        var $150=$y; //@line 114 "testcapi_long.h"
+        var $151=$150+4; //@line 114 "testcapi_long.h"
+        var $152=HEAP[$151]; //@line 114 "testcapi_long.h"
+        var $153=$152+24; //@line 114 "testcapi_long.h"
+        var $154=HEAP[$153]; //@line 114 "testcapi_long.h"
+        var $155=$y; //@line 114 "testcapi_long.h"
+        FUNCTION_TABLE[$154]($155); //@line 114 "testcapi_long.h"
         __label__ = 42; break; //@line 114 "testcapi_long.h"
-      case 42: // $bb43_i
-        $y_i=0; //@line 114 "testcapi_long.h"
-        var $157=$x_i; //@line 115 "testcapi_long.h"
-        var $158=($157)==0; //@line 115 "testcapi_long.h"
-        if ($158) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 115 "testcapi_long.h"
-      case 43: // $bb44_i
-        var $159=$error_addr_i; //@line 116 "testcapi_long.h"
-        var $160=FUNCTION_TABLE[$159](__str26); //@line 116 "testcapi_long.h"
-        $0=$160; //@line 116 "testcapi_long.h"
+      case 42: // $bb43
+        $y=0; //@line 114 "testcapi_long.h"
+        var $156=$x; //@line 115 "testcapi_long.h"
+        var $157=($156)==0; //@line 115 "testcapi_long.h"
+        if ($157) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 115 "testcapi_long.h"
+      case 43: // $bb44
+        var $158=$error_addr; //@line 116 "testcapi_long.h"
+        var $159=FUNCTION_TABLE[$158](__str26); //@line 116 "testcapi_long.h"
+        $0=$159; //@line 116 "testcapi_long.h"
         __label__ = 82; break; //@line 116 "testcapi_long.h"
-      case 44: // $bb45_i
-        var $161=$x_i; //@line 119 "testcapi_long.h"
-        var $162=_PyLong_AsUnsignedLong($161); //@line 119 "testcapi_long.h"
-        $uout28_i=$162; //@line 119 "testcapi_long.h"
-        var $163=$uout28_i; //@line 120 "testcapi_long.h"
-        var $164=($163)!=-1; //@line 120 "testcapi_long.h"
-        if ($164) { __label__ = 46; break; } else { __label__ = 45; break; } //@line 120 "testcapi_long.h"
-      case 45: // $bb46_i
-        var $165=_PyErr_Occurred(); //@line 120 "testcapi_long.h"
-        var $166=($165)==0; //@line 120 "testcapi_long.h"
-        if ($166) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 120 "testcapi_long.h"
-      case 46: // $bb47_i
-        var $167=$error_addr_i; //@line 121 "testcapi_long.h"
-        var $168=FUNCTION_TABLE[$167](__str27); //@line 121 "testcapi_long.h"
-        $0=$168; //@line 121 "testcapi_long.h"
+      case 44: // $bb45
+        var $160=$x; //@line 119 "testcapi_long.h"
+        var $161=_PyLong_AsUnsignedLong($160); //@line 119 "testcapi_long.h"
+        $uout28=$161; //@line 119 "testcapi_long.h"
+        var $162=$uout28; //@line 120 "testcapi_long.h"
+        var $163=($162)!=-1; //@line 120 "testcapi_long.h"
+        if ($163) { __label__ = 46; break; } else { __label__ = 45; break; } //@line 120 "testcapi_long.h"
+      case 45: // $bb46
+        var $164=_PyErr_Occurred(); //@line 120 "testcapi_long.h"
+        var $165=($164)==0; //@line 120 "testcapi_long.h"
+        if ($165) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 120 "testcapi_long.h"
+      case 46: // $bb47
+        var $166=$error_addr; //@line 121 "testcapi_long.h"
+        var $167=FUNCTION_TABLE[$166](__str27); //@line 121 "testcapi_long.h"
+        $0=$167; //@line 121 "testcapi_long.h"
         __label__ = 82; break; //@line 121 "testcapi_long.h"
-      case 47: // $bb48_i
-        var $169=HEAP[_PyExc_OverflowError]; //@line 124 "testcapi_long.h"
-        var $170=_PyErr_ExceptionMatches($169); //@line 124 "testcapi_long.h"
-        var $171=($170)==0; //@line 124 "testcapi_long.h"
-        if ($171) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 124 "testcapi_long.h"
-      case 48: // $bb49_i
-        var $172=$error_addr_i; //@line 125 "testcapi_long.h"
-        var $173=FUNCTION_TABLE[$172](__str28); //@line 125 "testcapi_long.h"
-        $0=$173; //@line 125 "testcapi_long.h"
+      case 47: // $bb48
+        var $168=HEAP[_PyExc_OverflowError]; //@line 124 "testcapi_long.h"
+        var $169=_PyErr_ExceptionMatches($168); //@line 124 "testcapi_long.h"
+        var $170=($169)==0; //@line 124 "testcapi_long.h"
+        if ($170) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 124 "testcapi_long.h"
+      case 48: // $bb49
+        var $171=$error_addr; //@line 125 "testcapi_long.h"
+        var $172=FUNCTION_TABLE[$171](__str28); //@line 125 "testcapi_long.h"
+        $0=$172; //@line 125 "testcapi_long.h"
         __label__ = 82; break; //@line 125 "testcapi_long.h"
-      case 49: // $bb50_i
+      case 49: // $bb50
         _PyErr_Clear(); //@line 128 "testcapi_long.h"
-        var $174=$x_i; //@line 132 "testcapi_long.h"
-        var $175=$one_i; //@line 132 "testcapi_long.h"
-        var $176=_PyNumber_Rshift($174, $175); //@line 132 "testcapi_long.h"
-        $y_i=$176; //@line 132 "testcapi_long.h"
-        var $177=$x_i; //@line 133 "testcapi_long.h"
-        var $178=$177; //@line 133 "testcapi_long.h"
-        var $179=HEAP[$178]; //@line 133 "testcapi_long.h"
-        var $180=($179) - 1; //@line 133 "testcapi_long.h"
-        var $181=$x_i; //@line 133 "testcapi_long.h"
-        var $182=$181; //@line 133 "testcapi_long.h"
-        HEAP[$182]=$180; //@line 133 "testcapi_long.h"
-        var $183=$x_i; //@line 133 "testcapi_long.h"
-        var $184=$183; //@line 133 "testcapi_long.h"
-        var $185=HEAP[$184]; //@line 133 "testcapi_long.h"
-        var $186=($185)==0; //@line 133 "testcapi_long.h"
-        if ($186) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 133 "testcapi_long.h"
-      case 50: // $bb51_i
-        var $187=$x_i; //@line 133 "testcapi_long.h"
-        var $188=$187+4; //@line 133 "testcapi_long.h"
-        var $189=HEAP[$188]; //@line 133 "testcapi_long.h"
-        var $190=$189+24; //@line 133 "testcapi_long.h"
-        var $191=HEAP[$190]; //@line 133 "testcapi_long.h"
-        var $192=$x_i; //@line 133 "testcapi_long.h"
-        FUNCTION_TABLE[$191]($192); //@line 133 "testcapi_long.h"
+        var $173=$x; //@line 132 "testcapi_long.h"
+        var $174=$one; //@line 132 "testcapi_long.h"
+        var $175=_PyNumber_Rshift($173, $174); //@line 132 "testcapi_long.h"
+        $y=$175; //@line 132 "testcapi_long.h"
+        var $176=$x; //@line 133 "testcapi_long.h"
+        var $177=$176; //@line 133 "testcapi_long.h"
+        var $178=HEAP[$177]; //@line 133 "testcapi_long.h"
+        var $179=($178) - 1; //@line 133 "testcapi_long.h"
+        var $180=$x; //@line 133 "testcapi_long.h"
+        var $181=$180; //@line 133 "testcapi_long.h"
+        HEAP[$181]=$179; //@line 133 "testcapi_long.h"
+        var $182=$x; //@line 133 "testcapi_long.h"
+        var $183=$182; //@line 133 "testcapi_long.h"
+        var $184=HEAP[$183]; //@line 133 "testcapi_long.h"
+        var $185=($184)==0; //@line 133 "testcapi_long.h"
+        if ($185) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 133 "testcapi_long.h"
+      case 50: // $bb51
+        var $186=$x; //@line 133 "testcapi_long.h"
+        var $187=$186+4; //@line 133 "testcapi_long.h"
+        var $188=HEAP[$187]; //@line 133 "testcapi_long.h"
+        var $189=$188+24; //@line 133 "testcapi_long.h"
+        var $190=HEAP[$189]; //@line 133 "testcapi_long.h"
+        var $191=$x; //@line 133 "testcapi_long.h"
+        FUNCTION_TABLE[$190]($191); //@line 133 "testcapi_long.h"
         __label__ = 51; break; //@line 133 "testcapi_long.h"
-      case 51: // $bb52_i
-        $x_i=0; //@line 133 "testcapi_long.h"
-        var $193=$y_i; //@line 134 "testcapi_long.h"
-        var $194=($193)==0; //@line 134 "testcapi_long.h"
-        if ($194) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 134 "testcapi_long.h"
-      case 52: // $bb53_i
-        var $195=$error_addr_i; //@line 135 "testcapi_long.h"
-        var $196=FUNCTION_TABLE[$195](__str29); //@line 135 "testcapi_long.h"
-        $0=$196; //@line 135 "testcapi_long.h"
+      case 51: // $bb52
+        $x=0; //@line 133 "testcapi_long.h"
+        var $192=$y; //@line 134 "testcapi_long.h"
+        var $193=($192)==0; //@line 134 "testcapi_long.h"
+        if ($193) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 134 "testcapi_long.h"
+      case 52: // $bb53
+        var $194=$error_addr; //@line 135 "testcapi_long.h"
+        var $195=FUNCTION_TABLE[$194](__str29); //@line 135 "testcapi_long.h"
+        $0=$195; //@line 135 "testcapi_long.h"
         __label__ = 82; break; //@line 135 "testcapi_long.h"
-      case 53: // $bb54_i
-        var $197=$y_i; //@line 138 "testcapi_long.h"
-        var $198=_PyLong_AsLong($197); //@line 138 "testcapi_long.h"
-        $out27_i=$198; //@line 138 "testcapi_long.h"
-        var $199=$out27_i; //@line 139 "testcapi_long.h"
-        var $200=($199)!=-1; //@line 139 "testcapi_long.h"
-        if ($200) { __label__ = 55; break; } else { __label__ = 54; break; } //@line 139 "testcapi_long.h"
-      case 54: // $bb55_i
-        var $201=_PyErr_Occurred(); //@line 139 "testcapi_long.h"
-        var $202=($201)==0; //@line 139 "testcapi_long.h"
-        if ($202) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 139 "testcapi_long.h"
-      case 55: // $bb56_i
-        var $203=$error_addr_i; //@line 140 "testcapi_long.h"
-        var $204=FUNCTION_TABLE[$203](__str30); //@line 140 "testcapi_long.h"
-        $0=$204; //@line 140 "testcapi_long.h"
+      case 53: // $bb54
+        var $196=$y; //@line 138 "testcapi_long.h"
+        var $197=_PyLong_AsLong($196); //@line 138 "testcapi_long.h"
+        $out27=$197; //@line 138 "testcapi_long.h"
+        var $198=$out27; //@line 139 "testcapi_long.h"
+        var $199=($198)!=-1; //@line 139 "testcapi_long.h"
+        if ($199) { __label__ = 55; break; } else { __label__ = 54; break; } //@line 139 "testcapi_long.h"
+      case 54: // $bb55
+        var $200=_PyErr_Occurred(); //@line 139 "testcapi_long.h"
+        var $201=($200)==0; //@line 139 "testcapi_long.h"
+        if ($201) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 139 "testcapi_long.h"
+      case 55: // $bb56
+        var $202=$error_addr; //@line 140 "testcapi_long.h"
+        var $203=FUNCTION_TABLE[$202](__str30); //@line 140 "testcapi_long.h"
+        $0=$203; //@line 140 "testcapi_long.h"
         __label__ = 82; break; //@line 140 "testcapi_long.h"
-      case 56: // $bb57_i
-        var $205=HEAP[_PyExc_OverflowError]; //@line 143 "testcapi_long.h"
-        var $206=_PyErr_ExceptionMatches($205); //@line 143 "testcapi_long.h"
-        var $207=($206)==0; //@line 143 "testcapi_long.h"
-        if ($207) { __label__ = 57; break; } else { __label__ = 58; break; } //@line 143 "testcapi_long.h"
-      case 57: // $bb58_i
-        var $208=$error_addr_i; //@line 144 "testcapi_long.h"
-        var $209=FUNCTION_TABLE[$208](__str31); //@line 144 "testcapi_long.h"
-        $0=$209; //@line 144 "testcapi_long.h"
+      case 56: // $bb57
+        var $204=HEAP[_PyExc_OverflowError]; //@line 143 "testcapi_long.h"
+        var $205=_PyErr_ExceptionMatches($204); //@line 143 "testcapi_long.h"
+        var $206=($205)==0; //@line 143 "testcapi_long.h"
+        if ($206) { __label__ = 57; break; } else { __label__ = 58; break; } //@line 143 "testcapi_long.h"
+      case 57: // $bb58
+        var $207=$error_addr; //@line 144 "testcapi_long.h"
+        var $208=FUNCTION_TABLE[$207](__str31); //@line 144 "testcapi_long.h"
+        $0=$208; //@line 144 "testcapi_long.h"
         __label__ = 82; break; //@line 144 "testcapi_long.h"
-      case 58: // $bb59_i
+      case 58: // $bb59
         _PyErr_Clear(); //@line 147 "testcapi_long.h"
-        var $210=$y_i; //@line 151 "testcapi_long.h"
-        var $211=_PyNumber_Negative($210); //@line 151 "testcapi_long.h"
-        $x_i=$211; //@line 151 "testcapi_long.h"
-        var $212=$y_i; //@line 152 "testcapi_long.h"
-        var $213=$212; //@line 152 "testcapi_long.h"
-        var $214=HEAP[$213]; //@line 152 "testcapi_long.h"
-        var $215=($214) - 1; //@line 152 "testcapi_long.h"
-        var $216=$y_i; //@line 152 "testcapi_long.h"
-        var $217=$216; //@line 152 "testcapi_long.h"
-        HEAP[$217]=$215; //@line 152 "testcapi_long.h"
-        var $218=$y_i; //@line 152 "testcapi_long.h"
-        var $219=$218; //@line 152 "testcapi_long.h"
-        var $220=HEAP[$219]; //@line 152 "testcapi_long.h"
-        var $221=($220)==0; //@line 152 "testcapi_long.h"
-        if ($221) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 152 "testcapi_long.h"
-      case 59: // $bb60_i
-        var $222=$y_i; //@line 152 "testcapi_long.h"
-        var $223=$222+4; //@line 152 "testcapi_long.h"
-        var $224=HEAP[$223]; //@line 152 "testcapi_long.h"
-        var $225=$224+24; //@line 152 "testcapi_long.h"
-        var $226=HEAP[$225]; //@line 152 "testcapi_long.h"
-        var $227=$y_i; //@line 152 "testcapi_long.h"
-        FUNCTION_TABLE[$226]($227); //@line 152 "testcapi_long.h"
+        var $209=$y; //@line 151 "testcapi_long.h"
+        var $210=_PyNumber_Negative($209); //@line 151 "testcapi_long.h"
+        $x=$210; //@line 151 "testcapi_long.h"
+        var $211=$y; //@line 152 "testcapi_long.h"
+        var $212=$211; //@line 152 "testcapi_long.h"
+        var $213=HEAP[$212]; //@line 152 "testcapi_long.h"
+        var $214=($213) - 1; //@line 152 "testcapi_long.h"
+        var $215=$y; //@line 152 "testcapi_long.h"
+        var $216=$215; //@line 152 "testcapi_long.h"
+        HEAP[$216]=$214; //@line 152 "testcapi_long.h"
+        var $217=$y; //@line 152 "testcapi_long.h"
+        var $218=$217; //@line 152 "testcapi_long.h"
+        var $219=HEAP[$218]; //@line 152 "testcapi_long.h"
+        var $220=($219)==0; //@line 152 "testcapi_long.h"
+        if ($220) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 152 "testcapi_long.h"
+      case 59: // $bb60
+        var $221=$y; //@line 152 "testcapi_long.h"
+        var $222=$221+4; //@line 152 "testcapi_long.h"
+        var $223=HEAP[$222]; //@line 152 "testcapi_long.h"
+        var $224=$223+24; //@line 152 "testcapi_long.h"
+        var $225=HEAP[$224]; //@line 152 "testcapi_long.h"
+        var $226=$y; //@line 152 "testcapi_long.h"
+        FUNCTION_TABLE[$225]($226); //@line 152 "testcapi_long.h"
         __label__ = 60; break; //@line 152 "testcapi_long.h"
-      case 60: // $bb61_i
-        $y_i=0; //@line 152 "testcapi_long.h"
-        var $228=$x_i; //@line 153 "testcapi_long.h"
-        var $229=($228)==0; //@line 153 "testcapi_long.h"
-        if ($229) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 153 "testcapi_long.h"
-      case 61: // $bb62_i
-        var $230=$error_addr_i; //@line 154 "testcapi_long.h"
-        var $231=FUNCTION_TABLE[$230](__str23); //@line 154 "testcapi_long.h"
-        $0=$231; //@line 154 "testcapi_long.h"
+      case 60: // $bb61
+        $y=0; //@line 152 "testcapi_long.h"
+        var $227=$x; //@line 153 "testcapi_long.h"
+        var $228=($227)==0; //@line 153 "testcapi_long.h"
+        if ($228) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 153 "testcapi_long.h"
+      case 61: // $bb62
+        var $229=$error_addr; //@line 154 "testcapi_long.h"
+        var $230=FUNCTION_TABLE[$229](__str23); //@line 154 "testcapi_long.h"
+        $0=$230; //@line 154 "testcapi_long.h"
         __label__ = 82; break; //@line 154 "testcapi_long.h"
-      case 62: // $bb63_i
-        var $232=$x_i; //@line 157 "testcapi_long.h"
-        var $233=$one_i; //@line 157 "testcapi_long.h"
-        var $234=_PyNumber_Subtract($232, $233); //@line 157 "testcapi_long.h"
-        $y_i=$234; //@line 157 "testcapi_long.h"
-        var $235=$x_i; //@line 158 "testcapi_long.h"
-        var $236=$235; //@line 158 "testcapi_long.h"
-        var $237=HEAP[$236]; //@line 158 "testcapi_long.h"
-        var $238=($237) - 1; //@line 158 "testcapi_long.h"
-        var $239=$x_i; //@line 158 "testcapi_long.h"
-        var $240=$239; //@line 158 "testcapi_long.h"
-        HEAP[$240]=$238; //@line 158 "testcapi_long.h"
-        var $241=$x_i; //@line 158 "testcapi_long.h"
-        var $242=$241; //@line 158 "testcapi_long.h"
-        var $243=HEAP[$242]; //@line 158 "testcapi_long.h"
-        var $244=($243)==0; //@line 158 "testcapi_long.h"
-        if ($244) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 158 "testcapi_long.h"
-      case 63: // $bb64_i
-        var $245=$x_i; //@line 158 "testcapi_long.h"
-        var $246=$245+4; //@line 158 "testcapi_long.h"
-        var $247=HEAP[$246]; //@line 158 "testcapi_long.h"
-        var $248=$247+24; //@line 158 "testcapi_long.h"
-        var $249=HEAP[$248]; //@line 158 "testcapi_long.h"
-        var $250=$x_i; //@line 158 "testcapi_long.h"
-        FUNCTION_TABLE[$249]($250); //@line 158 "testcapi_long.h"
+      case 62: // $bb63
+        var $231=$x; //@line 157 "testcapi_long.h"
+        var $232=$one; //@line 157 "testcapi_long.h"
+        var $233=_PyNumber_Subtract($231, $232); //@line 157 "testcapi_long.h"
+        $y=$233; //@line 157 "testcapi_long.h"
+        var $234=$x; //@line 158 "testcapi_long.h"
+        var $235=$234; //@line 158 "testcapi_long.h"
+        var $236=HEAP[$235]; //@line 158 "testcapi_long.h"
+        var $237=($236) - 1; //@line 158 "testcapi_long.h"
+        var $238=$x; //@line 158 "testcapi_long.h"
+        var $239=$238; //@line 158 "testcapi_long.h"
+        HEAP[$239]=$237; //@line 158 "testcapi_long.h"
+        var $240=$x; //@line 158 "testcapi_long.h"
+        var $241=$240; //@line 158 "testcapi_long.h"
+        var $242=HEAP[$241]; //@line 158 "testcapi_long.h"
+        var $243=($242)==0; //@line 158 "testcapi_long.h"
+        if ($243) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 158 "testcapi_long.h"
+      case 63: // $bb64
+        var $244=$x; //@line 158 "testcapi_long.h"
+        var $245=$244+4; //@line 158 "testcapi_long.h"
+        var $246=HEAP[$245]; //@line 158 "testcapi_long.h"
+        var $247=$246+24; //@line 158 "testcapi_long.h"
+        var $248=HEAP[$247]; //@line 158 "testcapi_long.h"
+        var $249=$x; //@line 158 "testcapi_long.h"
+        FUNCTION_TABLE[$248]($249); //@line 158 "testcapi_long.h"
         __label__ = 64; break; //@line 158 "testcapi_long.h"
-      case 64: // $bb65_i
-        $x_i=0; //@line 158 "testcapi_long.h"
-        var $251=$y_i; //@line 159 "testcapi_long.h"
-        var $252=($251)==0; //@line 159 "testcapi_long.h"
-        if ($252) { __label__ = 65; break; } else { __label__ = 66; break; } //@line 159 "testcapi_long.h"
-      case 65: // $bb66_i
-        var $253=$error_addr_i; //@line 160 "testcapi_long.h"
-        var $254=FUNCTION_TABLE[$253](__str32); //@line 160 "testcapi_long.h"
-        $0=$254; //@line 160 "testcapi_long.h"
+      case 64: // $bb65
+        $x=0; //@line 158 "testcapi_long.h"
+        var $250=$y; //@line 159 "testcapi_long.h"
+        var $251=($250)==0; //@line 159 "testcapi_long.h"
+        if ($251) { __label__ = 65; break; } else { __label__ = 66; break; } //@line 159 "testcapi_long.h"
+      case 65: // $bb66
+        var $252=$error_addr; //@line 160 "testcapi_long.h"
+        var $253=FUNCTION_TABLE[$252](__str32); //@line 160 "testcapi_long.h"
+        $0=$253; //@line 160 "testcapi_long.h"
         __label__ = 82; break; //@line 160 "testcapi_long.h"
-      case 66: // $bb67_i
-        var $255=$y_i; //@line 163 "testcapi_long.h"
-        var $256=_PyLong_AsLong($255); //@line 163 "testcapi_long.h"
-        $out27_i=$256; //@line 163 "testcapi_long.h"
-        var $257=$out27_i; //@line 164 "testcapi_long.h"
-        var $258=($257)!=-1; //@line 164 "testcapi_long.h"
-        if ($258) { __label__ = 68; break; } else { __label__ = 67; break; } //@line 164 "testcapi_long.h"
-      case 67: // $bb68_i
-        var $259=_PyErr_Occurred(); //@line 164 "testcapi_long.h"
-        var $260=($259)==0; //@line 164 "testcapi_long.h"
-        if ($260) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 164 "testcapi_long.h"
-      case 68: // $bb69_i
-        var $261=$error_addr_i; //@line 165 "testcapi_long.h"
-        var $262=FUNCTION_TABLE[$261](__str33); //@line 165 "testcapi_long.h"
-        $0=$262; //@line 165 "testcapi_long.h"
+      case 66: // $bb67
+        var $254=$y; //@line 163 "testcapi_long.h"
+        var $255=_PyLong_AsLong($254); //@line 163 "testcapi_long.h"
+        $out27=$255; //@line 163 "testcapi_long.h"
+        var $256=$out27; //@line 164 "testcapi_long.h"
+        var $257=($256)!=-1; //@line 164 "testcapi_long.h"
+        if ($257) { __label__ = 68; break; } else { __label__ = 67; break; } //@line 164 "testcapi_long.h"
+      case 67: // $bb68
+        var $258=_PyErr_Occurred(); //@line 164 "testcapi_long.h"
+        var $259=($258)==0; //@line 164 "testcapi_long.h"
+        if ($259) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 164 "testcapi_long.h"
+      case 68: // $bb69
+        var $260=$error_addr; //@line 165 "testcapi_long.h"
+        var $261=FUNCTION_TABLE[$260](__str33); //@line 165 "testcapi_long.h"
+        $0=$261; //@line 165 "testcapi_long.h"
         __label__ = 82; break; //@line 165 "testcapi_long.h"
-      case 69: // $bb70_i
-        var $263=HEAP[_PyExc_OverflowError]; //@line 168 "testcapi_long.h"
-        var $264=_PyErr_ExceptionMatches($263); //@line 168 "testcapi_long.h"
-        var $265=($264)==0; //@line 168 "testcapi_long.h"
-        if ($265) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 168 "testcapi_long.h"
-      case 70: // $bb71_i
-        var $266=$error_addr_i; //@line 169 "testcapi_long.h"
-        var $267=FUNCTION_TABLE[$266](__str34); //@line 169 "testcapi_long.h"
-        $0=$267; //@line 169 "testcapi_long.h"
+      case 69: // $bb70
+        var $262=HEAP[_PyExc_OverflowError]; //@line 168 "testcapi_long.h"
+        var $263=_PyErr_ExceptionMatches($262); //@line 168 "testcapi_long.h"
+        var $264=($263)==0; //@line 168 "testcapi_long.h"
+        if ($264) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 168 "testcapi_long.h"
+      case 70: // $bb71
+        var $265=$error_addr; //@line 169 "testcapi_long.h"
+        var $266=FUNCTION_TABLE[$265](__str34); //@line 169 "testcapi_long.h"
+        $0=$266; //@line 169 "testcapi_long.h"
         __label__ = 82; break; //@line 169 "testcapi_long.h"
-      case 71: // $bb72_i
+      case 71: // $bb72
         _PyErr_Clear(); //@line 172 "testcapi_long.h"
-        var $268=$y_i; //@line 173 "testcapi_long.h"
-        var $269=$268; //@line 173 "testcapi_long.h"
-        var $270=HEAP[$269]; //@line 173 "testcapi_long.h"
-        var $271=($270) - 1; //@line 173 "testcapi_long.h"
-        var $272=$y_i; //@line 173 "testcapi_long.h"
-        var $273=$272; //@line 173 "testcapi_long.h"
-        HEAP[$273]=$271; //@line 173 "testcapi_long.h"
-        var $274=$y_i; //@line 173 "testcapi_long.h"
-        var $275=$274; //@line 173 "testcapi_long.h"
-        var $276=HEAP[$275]; //@line 173 "testcapi_long.h"
-        var $277=($276)==0; //@line 173 "testcapi_long.h"
-        if ($277) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 173 "testcapi_long.h"
-      case 72: // $bb73_i
-        var $278=$y_i; //@line 173 "testcapi_long.h"
-        var $279=$278+4; //@line 173 "testcapi_long.h"
-        var $280=HEAP[$279]; //@line 173 "testcapi_long.h"
-        var $281=$280+24; //@line 173 "testcapi_long.h"
-        var $282=HEAP[$281]; //@line 173 "testcapi_long.h"
-        var $283=$y_i; //@line 173 "testcapi_long.h"
-        FUNCTION_TABLE[$282]($283); //@line 173 "testcapi_long.h"
+        var $267=$y; //@line 173 "testcapi_long.h"
+        var $268=$267; //@line 173 "testcapi_long.h"
+        var $269=HEAP[$268]; //@line 173 "testcapi_long.h"
+        var $270=($269) - 1; //@line 173 "testcapi_long.h"
+        var $271=$y; //@line 173 "testcapi_long.h"
+        var $272=$271; //@line 173 "testcapi_long.h"
+        HEAP[$272]=$270; //@line 173 "testcapi_long.h"
+        var $273=$y; //@line 173 "testcapi_long.h"
+        var $274=$273; //@line 173 "testcapi_long.h"
+        var $275=HEAP[$274]; //@line 173 "testcapi_long.h"
+        var $276=($275)==0; //@line 173 "testcapi_long.h"
+        if ($276) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 173 "testcapi_long.h"
+      case 72: // $bb73
+        var $277=$y; //@line 173 "testcapi_long.h"
+        var $278=$277+4; //@line 173 "testcapi_long.h"
+        var $279=HEAP[$278]; //@line 173 "testcapi_long.h"
+        var $280=$279+24; //@line 173 "testcapi_long.h"
+        var $281=HEAP[$280]; //@line 173 "testcapi_long.h"
+        var $282=$y; //@line 173 "testcapi_long.h"
+        FUNCTION_TABLE[$281]($282); //@line 173 "testcapi_long.h"
         __label__ = 73; break; //@line 173 "testcapi_long.h"
-      case 73: // $bb74_i
-        $y_i=0; //@line 173 "testcapi_long.h"
-        var $284=$x_i; //@line 175 "testcapi_long.h"
-        var $285=($284)!=0; //@line 175 "testcapi_long.h"
-        if ($285) { __label__ = 74; break; } else { __label__ = 79; break; } //@line 175 "testcapi_long.h"
-      case 74: // $bb75_i
-        var $286=$x_i; //@line 175 "testcapi_long.h"
-        var $287=$286; //@line 175 "testcapi_long.h"
-        var $288=HEAP[$287]; //@line 175 "testcapi_long.h"
-        var $289=($288) - 1; //@line 175 "testcapi_long.h"
-        var $290=$x_i; //@line 175 "testcapi_long.h"
-        var $291=$290; //@line 175 "testcapi_long.h"
-        HEAP[$291]=$289; //@line 175 "testcapi_long.h"
-        var $292=$x_i; //@line 175 "testcapi_long.h"
-        var $293=$292; //@line 175 "testcapi_long.h"
-        var $294=HEAP[$293]; //@line 175 "testcapi_long.h"
-        var $295=($294)==0; //@line 175 "testcapi_long.h"
-        if ($295) { __label__ = 75; break; } else { __label__ = 76; break; } //@line 175 "testcapi_long.h"
-      case 75: // $bb76_i
-        var $296=$x_i; //@line 175 "testcapi_long.h"
-        var $297=$296+4; //@line 175 "testcapi_long.h"
-        var $298=HEAP[$297]; //@line 175 "testcapi_long.h"
-        var $299=$298+24; //@line 175 "testcapi_long.h"
-        var $300=HEAP[$299]; //@line 175 "testcapi_long.h"
-        var $301=$x_i; //@line 175 "testcapi_long.h"
-        FUNCTION_TABLE[$300]($301); //@line 175 "testcapi_long.h"
+      case 73: // $bb74
+        $y=0; //@line 173 "testcapi_long.h"
+        var $283=$x; //@line 175 "testcapi_long.h"
+        var $284=($283)!=0; //@line 175 "testcapi_long.h"
+        if ($284) { __label__ = 74; break; } else { __label__ = 79; break; } //@line 175 "testcapi_long.h"
+      case 74: // $bb75
+        var $285=$x; //@line 175 "testcapi_long.h"
+        var $286=$285; //@line 175 "testcapi_long.h"
+        var $287=HEAP[$286]; //@line 175 "testcapi_long.h"
+        var $288=($287) - 1; //@line 175 "testcapi_long.h"
+        var $289=$x; //@line 175 "testcapi_long.h"
+        var $290=$289; //@line 175 "testcapi_long.h"
+        HEAP[$290]=$288; //@line 175 "testcapi_long.h"
+        var $291=$x; //@line 175 "testcapi_long.h"
+        var $292=$291; //@line 175 "testcapi_long.h"
+        var $293=HEAP[$292]; //@line 175 "testcapi_long.h"
+        var $294=($293)==0; //@line 175 "testcapi_long.h"
+        if ($294) { __label__ = 75; break; } else { __label__ = 76; break; } //@line 175 "testcapi_long.h"
+      case 75: // $bb76
+        var $295=$x; //@line 175 "testcapi_long.h"
+        var $296=$295+4; //@line 175 "testcapi_long.h"
+        var $297=HEAP[$296]; //@line 175 "testcapi_long.h"
+        var $298=$297+24; //@line 175 "testcapi_long.h"
+        var $299=HEAP[$298]; //@line 175 "testcapi_long.h"
+        var $300=$x; //@line 175 "testcapi_long.h"
+        FUNCTION_TABLE[$299]($300); //@line 175 "testcapi_long.h"
         __label__ = 76; break; //@line 175 "testcapi_long.h"
-      case 76: // $bb77_i
-        var $_pr_i=$y_i;
-        var $302=($_pr_i)!=0; //@line 176 "testcapi_long.h"
-        if ($302) { __label__ = 77; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
-      case 77: // $bb78_i
-        var $303=$y_i; //@line 176 "testcapi_long.h"
-        var $304=$303; //@line 176 "testcapi_long.h"
-        var $305=HEAP[$304]; //@line 176 "testcapi_long.h"
-        var $306=($305) - 1; //@line 176 "testcapi_long.h"
-        var $307=$y_i; //@line 176 "testcapi_long.h"
-        var $308=$307; //@line 176 "testcapi_long.h"
-        HEAP[$308]=$306; //@line 176 "testcapi_long.h"
-        var $309=$y_i; //@line 176 "testcapi_long.h"
-        var $310=$309; //@line 176 "testcapi_long.h"
-        var $311=HEAP[$310]; //@line 176 "testcapi_long.h"
-        var $312=($311)==0; //@line 176 "testcapi_long.h"
-        if ($312) { __label__ = 78; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
-      case 78: // $bb79_i
-        var $313=$y_i; //@line 176 "testcapi_long.h"
-        var $314=$313+4; //@line 176 "testcapi_long.h"
-        var $315=HEAP[$314]; //@line 176 "testcapi_long.h"
-        var $316=$315+24; //@line 176 "testcapi_long.h"
-        var $317=HEAP[$316]; //@line 176 "testcapi_long.h"
-        var $318=$y_i; //@line 176 "testcapi_long.h"
-        FUNCTION_TABLE[$317]($318); //@line 176 "testcapi_long.h"
+      case 76: // $bb77
+        var $_pr=$y;
+        var $301=($_pr)!=0; //@line 176 "testcapi_long.h"
+        if ($301) { __label__ = 77; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
+      case 77: // $bb78
+        var $302=$y; //@line 176 "testcapi_long.h"
+        var $303=$302; //@line 176 "testcapi_long.h"
+        var $304=HEAP[$303]; //@line 176 "testcapi_long.h"
+        var $305=($304) - 1; //@line 176 "testcapi_long.h"
+        var $306=$y; //@line 176 "testcapi_long.h"
+        var $307=$306; //@line 176 "testcapi_long.h"
+        HEAP[$307]=$305; //@line 176 "testcapi_long.h"
+        var $308=$y; //@line 176 "testcapi_long.h"
+        var $309=$308; //@line 176 "testcapi_long.h"
+        var $310=HEAP[$309]; //@line 176 "testcapi_long.h"
+        var $311=($310)==0; //@line 176 "testcapi_long.h"
+        if ($311) { __label__ = 78; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
+      case 78: // $bb79
+        var $312=$y; //@line 176 "testcapi_long.h"
+        var $313=$312+4; //@line 176 "testcapi_long.h"
+        var $314=HEAP[$313]; //@line 176 "testcapi_long.h"
+        var $315=$314+24; //@line 176 "testcapi_long.h"
+        var $316=HEAP[$315]; //@line 176 "testcapi_long.h"
+        var $317=$y; //@line 176 "testcapi_long.h"
+        FUNCTION_TABLE[$316]($317); //@line 176 "testcapi_long.h"
         __label__ = 79; break; //@line 176 "testcapi_long.h"
-      case 79: // $bb80_i
-        var $319=$one_i; //@line 177 "testcapi_long.h"
-        var $320=$319; //@line 177 "testcapi_long.h"
-        var $321=HEAP[$320]; //@line 177 "testcapi_long.h"
-        var $322=($321) - 1; //@line 177 "testcapi_long.h"
-        var $323=$one_i; //@line 177 "testcapi_long.h"
-        var $324=$323; //@line 177 "testcapi_long.h"
-        HEAP[$324]=$322; //@line 177 "testcapi_long.h"
-        var $325=$one_i; //@line 177 "testcapi_long.h"
-        var $326=$325; //@line 177 "testcapi_long.h"
-        var $327=HEAP[$326]; //@line 177 "testcapi_long.h"
-        var $328=($327)==0; //@line 177 "testcapi_long.h"
-        if ($328) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 177 "testcapi_long.h"
-      case 80: // $bb81_i
-        var $329=$one_i; //@line 177 "testcapi_long.h"
-        var $330=$329+4; //@line 177 "testcapi_long.h"
-        var $331=HEAP[$330]; //@line 177 "testcapi_long.h"
-        var $332=$331+24; //@line 177 "testcapi_long.h"
-        var $333=HEAP[$332]; //@line 177 "testcapi_long.h"
-        var $334=$one_i; //@line 177 "testcapi_long.h"
-        FUNCTION_TABLE[$333]($334); //@line 177 "testcapi_long.h"
+      case 79: // $bb80
+        var $318=$one; //@line 177 "testcapi_long.h"
+        var $319=$318; //@line 177 "testcapi_long.h"
+        var $320=HEAP[$319]; //@line 177 "testcapi_long.h"
+        var $321=($320) - 1; //@line 177 "testcapi_long.h"
+        var $322=$one; //@line 177 "testcapi_long.h"
+        var $323=$322; //@line 177 "testcapi_long.h"
+        HEAP[$323]=$321; //@line 177 "testcapi_long.h"
+        var $324=$one; //@line 177 "testcapi_long.h"
+        var $325=$324; //@line 177 "testcapi_long.h"
+        var $326=HEAP[$325]; //@line 177 "testcapi_long.h"
+        var $327=($326)==0; //@line 177 "testcapi_long.h"
+        if ($327) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 177 "testcapi_long.h"
+      case 80: // $bb81
+        var $328=$one; //@line 177 "testcapi_long.h"
+        var $329=$328+4; //@line 177 "testcapi_long.h"
+        var $330=HEAP[$329]; //@line 177 "testcapi_long.h"
+        var $331=$330+24; //@line 177 "testcapi_long.h"
+        var $332=HEAP[$331]; //@line 177 "testcapi_long.h"
+        var $333=$one; //@line 177 "testcapi_long.h"
+        FUNCTION_TABLE[$332]($333); //@line 177 "testcapi_long.h"
         __label__ = 81; break; //@line 177 "testcapi_long.h"
-      case 81: // $bb82_i
-        var $335=HEAP[__Py_NoneStruct]; //@line 180 "testcapi_long.h"
-        var $336=($335) + 1; //@line 180 "testcapi_long.h"
-        HEAP[__Py_NoneStruct]=$336; //@line 180 "testcapi_long.h"
+      case 81: // $bb82
+        var $334=HEAP[__Py_NoneStruct]; //@line 180 "testcapi_long.h"
+        var $335=($334) + 1; //@line 180 "testcapi_long.h"
+        HEAP[__Py_NoneStruct]=$335; //@line 180 "testcapi_long.h"
         $0=__Py_NoneStruct; //@line 181 "testcapi_long.h"
         __label__ = 82; break; //@line 181 "testcapi_long.h"
-      case 82: // $test_long_api_inner_exit
-        var $337=$0; //@line 47 "testcapi_long.h"
-        $retval_i=$337; //@line 47 "testcapi_long.h"
-        var $retval84_i=$retval_i; //@line 47 "testcapi_long.h"
-        $1=$retval84_i; //@line 415 "_testcapimodule.c"
-        var $338=$1; //@line 415 "_testcapimodule.c"
-        $retval=$338; //@line 415 "_testcapimodule.c"
-        var $retval1=$retval; //@line 415 "_testcapimodule.c"
+      case 82: // $bb83
+        var $336=$0; //@line 47 "testcapi_long.h"
+        $retval=$336; //@line 47 "testcapi_long.h"
+        var $retval84=$retval; //@line 47 "testcapi_long.h"
         ;
-        return $retval1; //@line 415 "_testcapimodule.c"
+        return $retval84; //@line 47 "testcapi_long.h"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _test_long_api($self) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    var $1=_test_long_api_inner(); //@line 415 "_testcapimodule.c"
+    $0=$1; //@line 415 "_testcapimodule.c"
+    var $2=$0; //@line 415 "_testcapimodule.c"
+    $retval=$2; //@line 415 "_testcapimodule.c"
+    var $retval1=$retval; //@line 415 "_testcapimodule.c"
+    ;
+    return $retval1; //@line 415 "_testcapimodule.c"
   }
   
 
@@ -1919,634 +1949,644 @@ var __str228;
   }
   
 
-  function _test_longlong_api($self, $args) {
+  function _test_longlong_api_inner() {
     ;
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $error_addr_i;
-        var $retval_i;
-        var $0;
-        var $iftmp_30_i;
-        var $NBITS_i;
-        var $base_i;
-        var $pyresult_i;
-        var $i_i;
-        var $j_i;
-        var $in_i;
-        var $out_i;
-        var $uin_i;
-        var $uout_i;
-        var $one_i;
-        var $x_i;
-        var $y_i;
-        var $out27_i;
-        var $uout28_i;
-        var $self_addr;
-        var $args_addr;
+        var $error_addr;
         var $retval;
-        var $1;
-        $self_addr=$self;
-        $args_addr=$args;
-        $error_addr_i=(FUNCTION_TABLE_OFFSET + 4);
-        $NBITS_i=64; //@line 13 "testcapi_long.h"
-        $base_i=1; //@line 25 "testcapi_long.h"
-        $i_i=0; //@line 26 "testcapi_long.h"
+        var $0;
+        var $iftmp_30;
+        var $NBITS;
+        var $base;
+        var $pyresult;
+        var $i;
+        var $j;
+        var $in;
+        var $out;
+        var $uin;
+        var $uout;
+        var $one;
+        var $x;
+        var $y;
+        var $out27;
+        var $uout28;
+        $error_addr=(FUNCTION_TABLE_OFFSET + 4);
+        $NBITS=64; //@line 13 "testcapi_long.h"
+        $base=1; //@line 25 "testcapi_long.h"
+        $i=0; //@line 26 "testcapi_long.h"
         __label__ = 26; break; //@line 26 "testcapi_long.h"
-      case 1: // $bb_i
-        $j_i=0; //@line 31 "testcapi_long.h"
+      case 1: // $bb
+        $j=0; //@line 31 "testcapi_long.h"
         __lastLabel__ = 1; __label__ = 24; break; //@line 31 "testcapi_long.h"
-      case 2: // $bb1_i
-        var $2=$j_i; //@line 36 "testcapi_long.h"
-        var $3=($2) > 2; //@line 36 "testcapi_long.h"
-        var $4=$base_i; //@line 36 "testcapi_long.h"
-        if ($3) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 36 "testcapi_long.h"
-      case 3: // $bb2_i
-        var $5=0 - ($4); //@line 36 "testcapi_long.h"
-        $iftmp_30_i=$5; //@line 36 "testcapi_long.h"
+      case 2: // $bb1
+        var $1=$j; //@line 36 "testcapi_long.h"
+        var $2=($1) > 2; //@line 36 "testcapi_long.h"
+        var $3=$base; //@line 36 "testcapi_long.h"
+        if ($2) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 36 "testcapi_long.h"
+      case 3: // $bb2
+        var $4=0 - ($3); //@line 36 "testcapi_long.h"
+        $iftmp_30=$4; //@line 36 "testcapi_long.h"
         __label__ = 5; break; //@line 36 "testcapi_long.h"
-      case 4: // $bb3_i
-        $iftmp_30_i=$4; //@line 36 "testcapi_long.h"
+      case 4: // $bb3
+        $iftmp_30=$3; //@line 36 "testcapi_long.h"
         __label__ = 5; break; //@line 36 "testcapi_long.h"
-      case 5: // $bb4_i
-        var $6=$iftmp_30_i; //@line 36 "testcapi_long.h"
-        $uin_i=$6; //@line 36 "testcapi_long.h"
-        var $7=$j_i; //@line 43 "testcapi_long.h"
-        var $8=($7) % 3; //@line 43 "testcapi_long.h"
-        var $9=($8) - 1; //@line 43 "testcapi_long.h"
-        var $10=($9); //@line 43 "testcapi_long.h"
-        var $11=$uin_i; //@line 43 "testcapi_long.h"
-        var $12=($10) + ($11); //@line 43 "testcapi_long.h"
-        $uin_i=$12; //@line 43 "testcapi_long.h"
-        var $13=$uin_i; //@line 45 "testcapi_long.h"
-        var $14=_PyLong_FromUnsignedLongLong($13); //@line 45 "testcapi_long.h"
-        $pyresult_i=$14; //@line 45 "testcapi_long.h"
-        var $15=($14)==0; //@line 46 "testcapi_long.h"
-        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 46 "testcapi_long.h"
-      case 6: // $bb5_i
-        var $16=$error_addr_i; //@line 47 "testcapi_long.h"
-        var $17=FUNCTION_TABLE[$16](__str16); //@line 47 "testcapi_long.h"
-        $0=$17; //@line 47 "testcapi_long.h"
+      case 5: // $bb4
+        var $5=$iftmp_30; //@line 36 "testcapi_long.h"
+        $uin=$5; //@line 36 "testcapi_long.h"
+        var $6=$j; //@line 43 "testcapi_long.h"
+        var $7=($6) % 3; //@line 43 "testcapi_long.h"
+        var $8=($7) - 1; //@line 43 "testcapi_long.h"
+        var $9=($8); //@line 43 "testcapi_long.h"
+        var $10=$uin; //@line 43 "testcapi_long.h"
+        var $11=($9) + ($10); //@line 43 "testcapi_long.h"
+        $uin=$11; //@line 43 "testcapi_long.h"
+        var $12=$uin; //@line 45 "testcapi_long.h"
+        var $13=_PyLong_FromUnsignedLongLong($12); //@line 45 "testcapi_long.h"
+        $pyresult=$13; //@line 45 "testcapi_long.h"
+        var $14=($13)==0; //@line 46 "testcapi_long.h"
+        if ($14) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 46 "testcapi_long.h"
+      case 6: // $bb5
+        var $15=$error_addr; //@line 47 "testcapi_long.h"
+        var $16=FUNCTION_TABLE[$15](__str16); //@line 47 "testcapi_long.h"
+        $0=$16; //@line 47 "testcapi_long.h"
         __label__ = 82; break; //@line 47 "testcapi_long.h"
-      case 7: // $bb6_i
-        var $18=$pyresult_i; //@line 50 "testcapi_long.h"
-        var $19=_PyLong_AsUnsignedLongLong($18); //@line 50 "testcapi_long.h"
-        $uout_i=$19; //@line 50 "testcapi_long.h"
-        var $20=$uout_i; //@line 51 "testcapi_long.h"
-        var $21=($20)==-1; //@line 51 "testcapi_long.h"
-        if ($21) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
-      case 8: // $bb7_i
-        var $22=_PyErr_Occurred(); //@line 51 "testcapi_long.h"
-        var $23=($22)!=0; //@line 51 "testcapi_long.h"
-        if ($23) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
-      case 9: // $bb8_i
-        var $24=$error_addr_i; //@line 52 "testcapi_long.h"
-        var $25=FUNCTION_TABLE[$24](__str17); //@line 52 "testcapi_long.h"
-        $0=$25; //@line 52 "testcapi_long.h"
+      case 7: // $bb6
+        var $17=$pyresult; //@line 50 "testcapi_long.h"
+        var $18=_PyLong_AsUnsignedLongLong($17); //@line 50 "testcapi_long.h"
+        $uout=$18; //@line 50 "testcapi_long.h"
+        var $19=$uout; //@line 51 "testcapi_long.h"
+        var $20=($19)==-1; //@line 51 "testcapi_long.h"
+        if ($20) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
+      case 8: // $bb7
+        var $21=_PyErr_Occurred(); //@line 51 "testcapi_long.h"
+        var $22=($21)!=0; //@line 51 "testcapi_long.h"
+        if ($22) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 51 "testcapi_long.h"
+      case 9: // $bb8
+        var $23=$error_addr; //@line 52 "testcapi_long.h"
+        var $24=FUNCTION_TABLE[$23](__str17); //@line 52 "testcapi_long.h"
+        $0=$24; //@line 52 "testcapi_long.h"
         __label__ = 82; break; //@line 52 "testcapi_long.h"
-      case 10: // $bb9_i
-        var $26=$uout_i; //@line 54 "testcapi_long.h"
-        var $27=$uin_i; //@line 54 "testcapi_long.h"
-        var $28=($26)!=($27); //@line 54 "testcapi_long.h"
-        if ($28) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 54 "testcapi_long.h"
-      case 11: // $bb10_i
-        var $29=$error_addr_i; //@line 55 "testcapi_long.h"
-        var $30=FUNCTION_TABLE[$29](__str18); //@line 55 "testcapi_long.h"
-        $0=$30; //@line 55 "testcapi_long.h"
+      case 10: // $bb9
+        var $25=$uout; //@line 54 "testcapi_long.h"
+        var $26=$uin; //@line 54 "testcapi_long.h"
+        var $27=($25)!=($26); //@line 54 "testcapi_long.h"
+        if ($27) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 54 "testcapi_long.h"
+      case 11: // $bb10
+        var $28=$error_addr; //@line 55 "testcapi_long.h"
+        var $29=FUNCTION_TABLE[$28](__str18); //@line 55 "testcapi_long.h"
+        $0=$29; //@line 55 "testcapi_long.h"
         __label__ = 82; break; //@line 55 "testcapi_long.h"
-      case 12: // $bb11_i
-        var $31=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $32=$31; //@line 57 "testcapi_long.h"
-        var $33=HEAP[$32]; //@line 57 "testcapi_long.h"
-        var $34=($33) - 1; //@line 57 "testcapi_long.h"
-        var $35=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $36=$35; //@line 57 "testcapi_long.h"
-        HEAP[$36]=$34; //@line 57 "testcapi_long.h"
-        var $37=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $38=$37; //@line 57 "testcapi_long.h"
-        var $39=HEAP[$38]; //@line 57 "testcapi_long.h"
-        var $40=($39)==0; //@line 57 "testcapi_long.h"
-        if ($40) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 57 "testcapi_long.h"
-      case 13: // $bb12_i
-        var $41=$pyresult_i; //@line 57 "testcapi_long.h"
-        var $42=$41+4; //@line 57 "testcapi_long.h"
-        var $43=HEAP[$42]; //@line 57 "testcapi_long.h"
-        var $44=$43+24; //@line 57 "testcapi_long.h"
-        var $45=HEAP[$44]; //@line 57 "testcapi_long.h"
-        var $46=$pyresult_i; //@line 57 "testcapi_long.h"
-        FUNCTION_TABLE[$45]($46); //@line 57 "testcapi_long.h"
+      case 12: // $bb11
+        var $30=$pyresult; //@line 57 "testcapi_long.h"
+        var $31=$30; //@line 57 "testcapi_long.h"
+        var $32=HEAP[$31]; //@line 57 "testcapi_long.h"
+        var $33=($32) - 1; //@line 57 "testcapi_long.h"
+        var $34=$pyresult; //@line 57 "testcapi_long.h"
+        var $35=$34; //@line 57 "testcapi_long.h"
+        HEAP[$35]=$33; //@line 57 "testcapi_long.h"
+        var $36=$pyresult; //@line 57 "testcapi_long.h"
+        var $37=$36; //@line 57 "testcapi_long.h"
+        var $38=HEAP[$37]; //@line 57 "testcapi_long.h"
+        var $39=($38)==0; //@line 57 "testcapi_long.h"
+        if ($39) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 57 "testcapi_long.h"
+      case 13: // $bb12
+        var $40=$pyresult; //@line 57 "testcapi_long.h"
+        var $41=$40+4; //@line 57 "testcapi_long.h"
+        var $42=HEAP[$41]; //@line 57 "testcapi_long.h"
+        var $43=$42+24; //@line 57 "testcapi_long.h"
+        var $44=HEAP[$43]; //@line 57 "testcapi_long.h"
+        var $45=$pyresult; //@line 57 "testcapi_long.h"
+        FUNCTION_TABLE[$44]($45); //@line 57 "testcapi_long.h"
         __label__ = 14; break; //@line 57 "testcapi_long.h"
-      case 14: // $bb13_i
-        $pyresult_i=0; //@line 57 "testcapi_long.h"
-        var $47=$uin_i; //@line 59 "testcapi_long.h"
-        $in_i=$47; //@line 59 "testcapi_long.h"
-        var $48=$in_i; //@line 60 "testcapi_long.h"
-        var $49=_PyLong_FromLongLong($48); //@line 60 "testcapi_long.h"
-        $pyresult_i=$49; //@line 60 "testcapi_long.h"
-        var $50=($49)==0; //@line 61 "testcapi_long.h"
-        if ($50) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 61 "testcapi_long.h"
-      case 15: // $bb14_i
-        var $51=$error_addr_i; //@line 62 "testcapi_long.h"
-        var $52=FUNCTION_TABLE[$51](__str19); //@line 62 "testcapi_long.h"
-        $0=$52; //@line 62 "testcapi_long.h"
+      case 14: // $bb13
+        $pyresult=0; //@line 57 "testcapi_long.h"
+        var $46=$uin; //@line 59 "testcapi_long.h"
+        $in=$46; //@line 59 "testcapi_long.h"
+        var $47=$in; //@line 60 "testcapi_long.h"
+        var $48=_PyLong_FromLongLong($47); //@line 60 "testcapi_long.h"
+        $pyresult=$48; //@line 60 "testcapi_long.h"
+        var $49=($48)==0; //@line 61 "testcapi_long.h"
+        if ($49) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 61 "testcapi_long.h"
+      case 15: // $bb14
+        var $50=$error_addr; //@line 62 "testcapi_long.h"
+        var $51=FUNCTION_TABLE[$50](__str19); //@line 62 "testcapi_long.h"
+        $0=$51; //@line 62 "testcapi_long.h"
         __label__ = 82; break; //@line 62 "testcapi_long.h"
-      case 16: // $bb15_i
-        var $53=$pyresult_i; //@line 65 "testcapi_long.h"
-        var $54=_PyLong_AsLongLong($53); //@line 65 "testcapi_long.h"
-        $out_i=$54; //@line 65 "testcapi_long.h"
-        var $55=$out_i; //@line 66 "testcapi_long.h"
-        var $56=($55)==-1; //@line 66 "testcapi_long.h"
-        if ($56) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
-      case 17: // $bb16_i
-        var $57=_PyErr_Occurred(); //@line 66 "testcapi_long.h"
-        var $58=($57)!=0; //@line 66 "testcapi_long.h"
-        if ($58) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
-      case 18: // $bb17_i
-        var $59=$error_addr_i; //@line 67 "testcapi_long.h"
-        var $60=FUNCTION_TABLE[$59](__str20); //@line 67 "testcapi_long.h"
-        $0=$60; //@line 67 "testcapi_long.h"
+      case 16: // $bb15
+        var $52=$pyresult; //@line 65 "testcapi_long.h"
+        var $53=_PyLong_AsLongLong($52); //@line 65 "testcapi_long.h"
+        $out=$53; //@line 65 "testcapi_long.h"
+        var $54=$out; //@line 66 "testcapi_long.h"
+        var $55=($54)==-1; //@line 66 "testcapi_long.h"
+        if ($55) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
+      case 17: // $bb16
+        var $56=_PyErr_Occurred(); //@line 66 "testcapi_long.h"
+        var $57=($56)!=0; //@line 66 "testcapi_long.h"
+        if ($57) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 66 "testcapi_long.h"
+      case 18: // $bb17
+        var $58=$error_addr; //@line 67 "testcapi_long.h"
+        var $59=FUNCTION_TABLE[$58](__str20); //@line 67 "testcapi_long.h"
+        $0=$59; //@line 67 "testcapi_long.h"
         __label__ = 82; break; //@line 67 "testcapi_long.h"
-      case 19: // $bb18_i
-        var $61=$out_i; //@line 69 "testcapi_long.h"
-        var $62=$in_i; //@line 69 "testcapi_long.h"
-        var $63=($61)!=($62); //@line 69 "testcapi_long.h"
-        if ($63) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 69 "testcapi_long.h"
-      case 20: // $bb19_i
-        var $64=$error_addr_i; //@line 70 "testcapi_long.h"
-        var $65=FUNCTION_TABLE[$64](__str21); //@line 70 "testcapi_long.h"
-        $0=$65; //@line 70 "testcapi_long.h"
+      case 19: // $bb18
+        var $60=$out; //@line 69 "testcapi_long.h"
+        var $61=$in; //@line 69 "testcapi_long.h"
+        var $62=($60)!=($61); //@line 69 "testcapi_long.h"
+        if ($62) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 69 "testcapi_long.h"
+      case 20: // $bb19
+        var $63=$error_addr; //@line 70 "testcapi_long.h"
+        var $64=FUNCTION_TABLE[$63](__str21); //@line 70 "testcapi_long.h"
+        $0=$64; //@line 70 "testcapi_long.h"
         __label__ = 82; break; //@line 70 "testcapi_long.h"
-      case 21: // $bb20_i
-        var $66=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $67=$66; //@line 72 "testcapi_long.h"
-        var $68=HEAP[$67]; //@line 72 "testcapi_long.h"
-        var $69=($68) - 1; //@line 72 "testcapi_long.h"
-        var $70=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $71=$70; //@line 72 "testcapi_long.h"
-        HEAP[$71]=$69; //@line 72 "testcapi_long.h"
-        var $72=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $73=$72; //@line 72 "testcapi_long.h"
-        var $74=HEAP[$73]; //@line 72 "testcapi_long.h"
-        var $75=($74)==0; //@line 72 "testcapi_long.h"
-        if ($75) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 72 "testcapi_long.h"
-      case 22: // $bb21_i
-        var $76=$pyresult_i; //@line 72 "testcapi_long.h"
-        var $77=$76+4; //@line 72 "testcapi_long.h"
-        var $78=HEAP[$77]; //@line 72 "testcapi_long.h"
-        var $79=$78+24; //@line 72 "testcapi_long.h"
-        var $80=HEAP[$79]; //@line 72 "testcapi_long.h"
-        var $81=$pyresult_i; //@line 72 "testcapi_long.h"
-        FUNCTION_TABLE[$80]($81); //@line 72 "testcapi_long.h"
+      case 21: // $bb20
+        var $65=$pyresult; //@line 72 "testcapi_long.h"
+        var $66=$65; //@line 72 "testcapi_long.h"
+        var $67=HEAP[$66]; //@line 72 "testcapi_long.h"
+        var $68=($67) - 1; //@line 72 "testcapi_long.h"
+        var $69=$pyresult; //@line 72 "testcapi_long.h"
+        var $70=$69; //@line 72 "testcapi_long.h"
+        HEAP[$70]=$68; //@line 72 "testcapi_long.h"
+        var $71=$pyresult; //@line 72 "testcapi_long.h"
+        var $72=$71; //@line 72 "testcapi_long.h"
+        var $73=HEAP[$72]; //@line 72 "testcapi_long.h"
+        var $74=($73)==0; //@line 72 "testcapi_long.h"
+        if ($74) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 72 "testcapi_long.h"
+      case 22: // $bb21
+        var $75=$pyresult; //@line 72 "testcapi_long.h"
+        var $76=$75+4; //@line 72 "testcapi_long.h"
+        var $77=HEAP[$76]; //@line 72 "testcapi_long.h"
+        var $78=$77+24; //@line 72 "testcapi_long.h"
+        var $79=HEAP[$78]; //@line 72 "testcapi_long.h"
+        var $80=$pyresult; //@line 72 "testcapi_long.h"
+        FUNCTION_TABLE[$79]($80); //@line 72 "testcapi_long.h"
         __label__ = 23; break; //@line 72 "testcapi_long.h"
-      case 23: // $bb22_i
-        $pyresult_i=0; //@line 72 "testcapi_long.h"
-        var $82=$j_i; //@line 31 "testcapi_long.h"
-        var $83=($82) + 1; //@line 31 "testcapi_long.h"
-        $j_i=$83; //@line 31 "testcapi_long.h"
+      case 23: // $bb22
+        $pyresult=0; //@line 72 "testcapi_long.h"
+        var $81=$j; //@line 31 "testcapi_long.h"
+        var $82=($81) + 1; //@line 31 "testcapi_long.h"
+        $j=$82; //@line 31 "testcapi_long.h"
         __lastLabel__ = 23; __label__ = 24; break; //@line 31 "testcapi_long.h"
-      case 24: // $bb23_i
-        var $84=__lastLabel__ == 23 ? $83 : (0);
-        var $85=($84) <= 5; //@line 31 "testcapi_long.h"
-        if ($85) { __label__ = 2; break; } else { __label__ = 25; break; } //@line 31 "testcapi_long.h"
-      case 25: // $bb24_i
-        var $86=$i_i; //@line 28 "testcapi_long.h"
-        var $87=($86) + 1; //@line 28 "testcapi_long.h"
-        $i_i=$87; //@line 28 "testcapi_long.h"
-        var $88=$base_i; //@line 28 "testcapi_long.h"
-        var $89=($88)*Math.pow(2,1); //@line 28 "testcapi_long.h"
-        $base_i=$89; //@line 28 "testcapi_long.h"
+      case 24: // $bb23
+        var $83=__lastLabel__ == 23 ? $82 : (0);
+        var $84=($83) <= 5; //@line 31 "testcapi_long.h"
+        if ($84) { __label__ = 2; break; } else { __label__ = 25; break; } //@line 31 "testcapi_long.h"
+      case 25: // $bb24
+        var $85=$i; //@line 28 "testcapi_long.h"
+        var $86=($85) + 1; //@line 28 "testcapi_long.h"
+        $i=$86; //@line 28 "testcapi_long.h"
+        var $87=$base; //@line 28 "testcapi_long.h"
+        var $88=($87)*Math.pow(2,1); //@line 28 "testcapi_long.h"
+        $base=$88; //@line 28 "testcapi_long.h"
         __label__ = 26; break; //@line 28 "testcapi_long.h"
-      case 26: // $bb25_i
-        var $90=$NBITS_i; //@line 27 "testcapi_long.h"
-        var $91=($90) + 1; //@line 27 "testcapi_long.h"
-        var $92=$i_i; //@line 27 "testcapi_long.h"
-        var $93=($91) > ($92); //@line 27 "testcapi_long.h"
-        if ($93) { __label__ = 1; break; } else { __label__ = 27; break; } //@line 27 "testcapi_long.h"
-      case 27: // $bb26_i
-        var $94=_PyLong_FromLong(1); //@line 85 "testcapi_long.h"
-        $one_i=$94; //@line 85 "testcapi_long.h"
-        var $95=$one_i; //@line 86 "testcapi_long.h"
-        var $96=($95)==0; //@line 86 "testcapi_long.h"
-        if ($96) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 86 "testcapi_long.h"
-      case 28: // $bb29_i
-        var $97=$error_addr_i; //@line 87 "testcapi_long.h"
-        var $98=FUNCTION_TABLE[$97](__str22); //@line 87 "testcapi_long.h"
-        $0=$98; //@line 87 "testcapi_long.h"
+      case 26: // $bb25
+        var $89=$NBITS; //@line 27 "testcapi_long.h"
+        var $90=($89) + 1; //@line 27 "testcapi_long.h"
+        var $91=$i; //@line 27 "testcapi_long.h"
+        var $92=($90) > ($91); //@line 27 "testcapi_long.h"
+        if ($92) { __label__ = 1; break; } else { __label__ = 27; break; } //@line 27 "testcapi_long.h"
+      case 27: // $bb26
+        var $93=_PyLong_FromLong(1); //@line 85 "testcapi_long.h"
+        $one=$93; //@line 85 "testcapi_long.h"
+        var $94=$one; //@line 86 "testcapi_long.h"
+        var $95=($94)==0; //@line 86 "testcapi_long.h"
+        if ($95) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 86 "testcapi_long.h"
+      case 28: // $bb29
+        var $96=$error_addr; //@line 87 "testcapi_long.h"
+        var $97=FUNCTION_TABLE[$96](__str22); //@line 87 "testcapi_long.h"
+        $0=$97; //@line 87 "testcapi_long.h"
         __label__ = 82; break; //@line 87 "testcapi_long.h"
-      case 29: // $bb30_i
-        var $99=$one_i; //@line 91 "testcapi_long.h"
-        var $100=_PyNumber_Negative($99); //@line 91 "testcapi_long.h"
-        $x_i=$100; //@line 91 "testcapi_long.h"
-        var $101=$x_i; //@line 92 "testcapi_long.h"
-        var $102=($101)==0; //@line 92 "testcapi_long.h"
-        if ($102) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 92 "testcapi_long.h"
-      case 30: // $bb31_i
-        var $103=$error_addr_i; //@line 93 "testcapi_long.h"
-        var $104=FUNCTION_TABLE[$103](__str23); //@line 93 "testcapi_long.h"
-        $0=$104; //@line 93 "testcapi_long.h"
+      case 29: // $bb30
+        var $98=$one; //@line 91 "testcapi_long.h"
+        var $99=_PyNumber_Negative($98); //@line 91 "testcapi_long.h"
+        $x=$99; //@line 91 "testcapi_long.h"
+        var $100=$x; //@line 92 "testcapi_long.h"
+        var $101=($100)==0; //@line 92 "testcapi_long.h"
+        if ($101) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 92 "testcapi_long.h"
+      case 30: // $bb31
+        var $102=$error_addr; //@line 93 "testcapi_long.h"
+        var $103=FUNCTION_TABLE[$102](__str23); //@line 93 "testcapi_long.h"
+        $0=$103; //@line 93 "testcapi_long.h"
         __label__ = 82; break; //@line 93 "testcapi_long.h"
-      case 31: // $bb32_i
-        var $105=$x_i; //@line 96 "testcapi_long.h"
-        var $106=_PyLong_AsUnsignedLongLong($105); //@line 96 "testcapi_long.h"
-        $uout28_i=$106; //@line 96 "testcapi_long.h"
-        var $107=$uout28_i; //@line 97 "testcapi_long.h"
-        var $108=($107)!=-1; //@line 97 "testcapi_long.h"
-        if ($108) { __label__ = 33; break; } else { __label__ = 32; break; } //@line 97 "testcapi_long.h"
-      case 32: // $bb33_i
-        var $109=_PyErr_Occurred(); //@line 97 "testcapi_long.h"
-        var $110=($109)==0; //@line 97 "testcapi_long.h"
-        if ($110) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 97 "testcapi_long.h"
-      case 33: // $bb34_i
-        var $111=$error_addr_i; //@line 98 "testcapi_long.h"
-        var $112=FUNCTION_TABLE[$111](__str24); //@line 98 "testcapi_long.h"
-        $0=$112; //@line 98 "testcapi_long.h"
+      case 31: // $bb32
+        var $104=$x; //@line 96 "testcapi_long.h"
+        var $105=_PyLong_AsUnsignedLongLong($104); //@line 96 "testcapi_long.h"
+        $uout28=$105; //@line 96 "testcapi_long.h"
+        var $106=$uout28; //@line 97 "testcapi_long.h"
+        var $107=($106)!=-1; //@line 97 "testcapi_long.h"
+        if ($107) { __label__ = 33; break; } else { __label__ = 32; break; } //@line 97 "testcapi_long.h"
+      case 32: // $bb33
+        var $108=_PyErr_Occurred(); //@line 97 "testcapi_long.h"
+        var $109=($108)==0; //@line 97 "testcapi_long.h"
+        if ($109) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 97 "testcapi_long.h"
+      case 33: // $bb34
+        var $110=$error_addr; //@line 98 "testcapi_long.h"
+        var $111=FUNCTION_TABLE[$110](__str24); //@line 98 "testcapi_long.h"
+        $0=$111; //@line 98 "testcapi_long.h"
         __label__ = 82; break; //@line 98 "testcapi_long.h"
-      case 34: // $bb35_i
-        var $113=HEAP[_PyExc_OverflowError]; //@line 100 "testcapi_long.h"
-        var $114=_PyErr_ExceptionMatches($113); //@line 100 "testcapi_long.h"
-        var $115=($114)==0; //@line 100 "testcapi_long.h"
-        if ($115) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 100 "testcapi_long.h"
-      case 35: // $bb36_i
-        var $116=$error_addr_i; //@line 101 "testcapi_long.h"
-        var $117=FUNCTION_TABLE[$116](__str25); //@line 101 "testcapi_long.h"
-        $0=$117; //@line 101 "testcapi_long.h"
+      case 34: // $bb35
+        var $112=HEAP[_PyExc_OverflowError]; //@line 100 "testcapi_long.h"
+        var $113=_PyErr_ExceptionMatches($112); //@line 100 "testcapi_long.h"
+        var $114=($113)==0; //@line 100 "testcapi_long.h"
+        if ($114) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 100 "testcapi_long.h"
+      case 35: // $bb36
+        var $115=$error_addr; //@line 101 "testcapi_long.h"
+        var $116=FUNCTION_TABLE[$115](__str25); //@line 101 "testcapi_long.h"
+        $0=$116; //@line 101 "testcapi_long.h"
         __label__ = 82; break; //@line 101 "testcapi_long.h"
-      case 36: // $bb37_i
+      case 36: // $bb37
         _PyErr_Clear(); //@line 104 "testcapi_long.h"
-        var $118=$x_i; //@line 105 "testcapi_long.h"
-        var $119=$118; //@line 105 "testcapi_long.h"
-        var $120=HEAP[$119]; //@line 105 "testcapi_long.h"
-        var $121=($120) - 1; //@line 105 "testcapi_long.h"
-        var $122=$x_i; //@line 105 "testcapi_long.h"
-        var $123=$122; //@line 105 "testcapi_long.h"
-        HEAP[$123]=$121; //@line 105 "testcapi_long.h"
-        var $124=$x_i; //@line 105 "testcapi_long.h"
-        var $125=$124; //@line 105 "testcapi_long.h"
-        var $126=HEAP[$125]; //@line 105 "testcapi_long.h"
-        var $127=($126)==0; //@line 105 "testcapi_long.h"
-        if ($127) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 105 "testcapi_long.h"
-      case 37: // $bb38_i
-        var $128=$x_i; //@line 105 "testcapi_long.h"
-        var $129=$128+4; //@line 105 "testcapi_long.h"
-        var $130=HEAP[$129]; //@line 105 "testcapi_long.h"
-        var $131=$130+24; //@line 105 "testcapi_long.h"
-        var $132=HEAP[$131]; //@line 105 "testcapi_long.h"
-        var $133=$x_i; //@line 105 "testcapi_long.h"
-        FUNCTION_TABLE[$132]($133); //@line 105 "testcapi_long.h"
+        var $117=$x; //@line 105 "testcapi_long.h"
+        var $118=$117; //@line 105 "testcapi_long.h"
+        var $119=HEAP[$118]; //@line 105 "testcapi_long.h"
+        var $120=($119) - 1; //@line 105 "testcapi_long.h"
+        var $121=$x; //@line 105 "testcapi_long.h"
+        var $122=$121; //@line 105 "testcapi_long.h"
+        HEAP[$122]=$120; //@line 105 "testcapi_long.h"
+        var $123=$x; //@line 105 "testcapi_long.h"
+        var $124=$123; //@line 105 "testcapi_long.h"
+        var $125=HEAP[$124]; //@line 105 "testcapi_long.h"
+        var $126=($125)==0; //@line 105 "testcapi_long.h"
+        if ($126) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 105 "testcapi_long.h"
+      case 37: // $bb38
+        var $127=$x; //@line 105 "testcapi_long.h"
+        var $128=$127+4; //@line 105 "testcapi_long.h"
+        var $129=HEAP[$128]; //@line 105 "testcapi_long.h"
+        var $130=$129+24; //@line 105 "testcapi_long.h"
+        var $131=HEAP[$130]; //@line 105 "testcapi_long.h"
+        var $132=$x; //@line 105 "testcapi_long.h"
+        FUNCTION_TABLE[$131]($132); //@line 105 "testcapi_long.h"
         __label__ = 38; break; //@line 105 "testcapi_long.h"
-      case 38: // $bb39_i
-        $x_i=0; //@line 105 "testcapi_long.h"
-        var $134=$NBITS_i; //@line 108 "testcapi_long.h"
-        var $135=_PyLong_FromLong($134); //@line 108 "testcapi_long.h"
-        $y_i=$135; //@line 108 "testcapi_long.h"
-        var $136=($135)==0; //@line 109 "testcapi_long.h"
-        if ($136) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 109 "testcapi_long.h"
-      case 39: // $bb40_i
-        var $137=$error_addr_i; //@line 110 "testcapi_long.h"
-        var $138=FUNCTION_TABLE[$137](__str22); //@line 110 "testcapi_long.h"
-        $0=$138; //@line 110 "testcapi_long.h"
+      case 38: // $bb39
+        $x=0; //@line 105 "testcapi_long.h"
+        var $133=$NBITS; //@line 108 "testcapi_long.h"
+        var $134=_PyLong_FromLong($133); //@line 108 "testcapi_long.h"
+        $y=$134; //@line 108 "testcapi_long.h"
+        var $135=($134)==0; //@line 109 "testcapi_long.h"
+        if ($135) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 109 "testcapi_long.h"
+      case 39: // $bb40
+        var $136=$error_addr; //@line 110 "testcapi_long.h"
+        var $137=FUNCTION_TABLE[$136](__str22); //@line 110 "testcapi_long.h"
+        $0=$137; //@line 110 "testcapi_long.h"
         __label__ = 82; break; //@line 110 "testcapi_long.h"
-      case 40: // $bb41_i
-        var $139=$one_i; //@line 113 "testcapi_long.h"
-        var $140=$y_i; //@line 113 "testcapi_long.h"
-        var $141=_PyNumber_Lshift($139, $140); //@line 113 "testcapi_long.h"
-        $x_i=$141; //@line 113 "testcapi_long.h"
-        var $142=$y_i; //@line 114 "testcapi_long.h"
-        var $143=$142; //@line 114 "testcapi_long.h"
-        var $144=HEAP[$143]; //@line 114 "testcapi_long.h"
-        var $145=($144) - 1; //@line 114 "testcapi_long.h"
-        var $146=$y_i; //@line 114 "testcapi_long.h"
-        var $147=$146; //@line 114 "testcapi_long.h"
-        HEAP[$147]=$145; //@line 114 "testcapi_long.h"
-        var $148=$y_i; //@line 114 "testcapi_long.h"
-        var $149=$148; //@line 114 "testcapi_long.h"
-        var $150=HEAP[$149]; //@line 114 "testcapi_long.h"
-        var $151=($150)==0; //@line 114 "testcapi_long.h"
-        if ($151) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 114 "testcapi_long.h"
-      case 41: // $bb42_i
-        var $152=$y_i; //@line 114 "testcapi_long.h"
-        var $153=$152+4; //@line 114 "testcapi_long.h"
-        var $154=HEAP[$153]; //@line 114 "testcapi_long.h"
-        var $155=$154+24; //@line 114 "testcapi_long.h"
-        var $156=HEAP[$155]; //@line 114 "testcapi_long.h"
-        var $157=$y_i; //@line 114 "testcapi_long.h"
-        FUNCTION_TABLE[$156]($157); //@line 114 "testcapi_long.h"
+      case 40: // $bb41
+        var $138=$one; //@line 113 "testcapi_long.h"
+        var $139=$y; //@line 113 "testcapi_long.h"
+        var $140=_PyNumber_Lshift($138, $139); //@line 113 "testcapi_long.h"
+        $x=$140; //@line 113 "testcapi_long.h"
+        var $141=$y; //@line 114 "testcapi_long.h"
+        var $142=$141; //@line 114 "testcapi_long.h"
+        var $143=HEAP[$142]; //@line 114 "testcapi_long.h"
+        var $144=($143) - 1; //@line 114 "testcapi_long.h"
+        var $145=$y; //@line 114 "testcapi_long.h"
+        var $146=$145; //@line 114 "testcapi_long.h"
+        HEAP[$146]=$144; //@line 114 "testcapi_long.h"
+        var $147=$y; //@line 114 "testcapi_long.h"
+        var $148=$147; //@line 114 "testcapi_long.h"
+        var $149=HEAP[$148]; //@line 114 "testcapi_long.h"
+        var $150=($149)==0; //@line 114 "testcapi_long.h"
+        if ($150) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 114 "testcapi_long.h"
+      case 41: // $bb42
+        var $151=$y; //@line 114 "testcapi_long.h"
+        var $152=$151+4; //@line 114 "testcapi_long.h"
+        var $153=HEAP[$152]; //@line 114 "testcapi_long.h"
+        var $154=$153+24; //@line 114 "testcapi_long.h"
+        var $155=HEAP[$154]; //@line 114 "testcapi_long.h"
+        var $156=$y; //@line 114 "testcapi_long.h"
+        FUNCTION_TABLE[$155]($156); //@line 114 "testcapi_long.h"
         __label__ = 42; break; //@line 114 "testcapi_long.h"
-      case 42: // $bb43_i
-        $y_i=0; //@line 114 "testcapi_long.h"
-        var $158=$x_i; //@line 115 "testcapi_long.h"
-        var $159=($158)==0; //@line 115 "testcapi_long.h"
-        if ($159) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 115 "testcapi_long.h"
-      case 43: // $bb44_i
-        var $160=$error_addr_i; //@line 116 "testcapi_long.h"
-        var $161=FUNCTION_TABLE[$160](__str26); //@line 116 "testcapi_long.h"
-        $0=$161; //@line 116 "testcapi_long.h"
+      case 42: // $bb43
+        $y=0; //@line 114 "testcapi_long.h"
+        var $157=$x; //@line 115 "testcapi_long.h"
+        var $158=($157)==0; //@line 115 "testcapi_long.h"
+        if ($158) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 115 "testcapi_long.h"
+      case 43: // $bb44
+        var $159=$error_addr; //@line 116 "testcapi_long.h"
+        var $160=FUNCTION_TABLE[$159](__str26); //@line 116 "testcapi_long.h"
+        $0=$160; //@line 116 "testcapi_long.h"
         __label__ = 82; break; //@line 116 "testcapi_long.h"
-      case 44: // $bb45_i
-        var $162=$x_i; //@line 119 "testcapi_long.h"
-        var $163=_PyLong_AsUnsignedLongLong($162); //@line 119 "testcapi_long.h"
-        $uout28_i=$163; //@line 119 "testcapi_long.h"
-        var $164=$uout28_i; //@line 120 "testcapi_long.h"
-        var $165=($164)!=-1; //@line 120 "testcapi_long.h"
-        if ($165) { __label__ = 46; break; } else { __label__ = 45; break; } //@line 120 "testcapi_long.h"
-      case 45: // $bb46_i
-        var $166=_PyErr_Occurred(); //@line 120 "testcapi_long.h"
-        var $167=($166)==0; //@line 120 "testcapi_long.h"
-        if ($167) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 120 "testcapi_long.h"
-      case 46: // $bb47_i
-        var $168=$error_addr_i; //@line 121 "testcapi_long.h"
-        var $169=FUNCTION_TABLE[$168](__str27); //@line 121 "testcapi_long.h"
-        $0=$169; //@line 121 "testcapi_long.h"
+      case 44: // $bb45
+        var $161=$x; //@line 119 "testcapi_long.h"
+        var $162=_PyLong_AsUnsignedLongLong($161); //@line 119 "testcapi_long.h"
+        $uout28=$162; //@line 119 "testcapi_long.h"
+        var $163=$uout28; //@line 120 "testcapi_long.h"
+        var $164=($163)!=-1; //@line 120 "testcapi_long.h"
+        if ($164) { __label__ = 46; break; } else { __label__ = 45; break; } //@line 120 "testcapi_long.h"
+      case 45: // $bb46
+        var $165=_PyErr_Occurred(); //@line 120 "testcapi_long.h"
+        var $166=($165)==0; //@line 120 "testcapi_long.h"
+        if ($166) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 120 "testcapi_long.h"
+      case 46: // $bb47
+        var $167=$error_addr; //@line 121 "testcapi_long.h"
+        var $168=FUNCTION_TABLE[$167](__str27); //@line 121 "testcapi_long.h"
+        $0=$168; //@line 121 "testcapi_long.h"
         __label__ = 82; break; //@line 121 "testcapi_long.h"
-      case 47: // $bb48_i
-        var $170=HEAP[_PyExc_OverflowError]; //@line 124 "testcapi_long.h"
-        var $171=_PyErr_ExceptionMatches($170); //@line 124 "testcapi_long.h"
-        var $172=($171)==0; //@line 124 "testcapi_long.h"
-        if ($172) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 124 "testcapi_long.h"
-      case 48: // $bb49_i
-        var $173=$error_addr_i; //@line 125 "testcapi_long.h"
-        var $174=FUNCTION_TABLE[$173](__str28); //@line 125 "testcapi_long.h"
-        $0=$174; //@line 125 "testcapi_long.h"
+      case 47: // $bb48
+        var $169=HEAP[_PyExc_OverflowError]; //@line 124 "testcapi_long.h"
+        var $170=_PyErr_ExceptionMatches($169); //@line 124 "testcapi_long.h"
+        var $171=($170)==0; //@line 124 "testcapi_long.h"
+        if ($171) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 124 "testcapi_long.h"
+      case 48: // $bb49
+        var $172=$error_addr; //@line 125 "testcapi_long.h"
+        var $173=FUNCTION_TABLE[$172](__str28); //@line 125 "testcapi_long.h"
+        $0=$173; //@line 125 "testcapi_long.h"
         __label__ = 82; break; //@line 125 "testcapi_long.h"
-      case 49: // $bb50_i
+      case 49: // $bb50
         _PyErr_Clear(); //@line 128 "testcapi_long.h"
-        var $175=$x_i; //@line 132 "testcapi_long.h"
-        var $176=$one_i; //@line 132 "testcapi_long.h"
-        var $177=_PyNumber_Rshift($175, $176); //@line 132 "testcapi_long.h"
-        $y_i=$177; //@line 132 "testcapi_long.h"
-        var $178=$x_i; //@line 133 "testcapi_long.h"
-        var $179=$178; //@line 133 "testcapi_long.h"
-        var $180=HEAP[$179]; //@line 133 "testcapi_long.h"
-        var $181=($180) - 1; //@line 133 "testcapi_long.h"
-        var $182=$x_i; //@line 133 "testcapi_long.h"
-        var $183=$182; //@line 133 "testcapi_long.h"
-        HEAP[$183]=$181; //@line 133 "testcapi_long.h"
-        var $184=$x_i; //@line 133 "testcapi_long.h"
-        var $185=$184; //@line 133 "testcapi_long.h"
-        var $186=HEAP[$185]; //@line 133 "testcapi_long.h"
-        var $187=($186)==0; //@line 133 "testcapi_long.h"
-        if ($187) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 133 "testcapi_long.h"
-      case 50: // $bb51_i
-        var $188=$x_i; //@line 133 "testcapi_long.h"
-        var $189=$188+4; //@line 133 "testcapi_long.h"
-        var $190=HEAP[$189]; //@line 133 "testcapi_long.h"
-        var $191=$190+24; //@line 133 "testcapi_long.h"
-        var $192=HEAP[$191]; //@line 133 "testcapi_long.h"
-        var $193=$x_i; //@line 133 "testcapi_long.h"
-        FUNCTION_TABLE[$192]($193); //@line 133 "testcapi_long.h"
+        var $174=$x; //@line 132 "testcapi_long.h"
+        var $175=$one; //@line 132 "testcapi_long.h"
+        var $176=_PyNumber_Rshift($174, $175); //@line 132 "testcapi_long.h"
+        $y=$176; //@line 132 "testcapi_long.h"
+        var $177=$x; //@line 133 "testcapi_long.h"
+        var $178=$177; //@line 133 "testcapi_long.h"
+        var $179=HEAP[$178]; //@line 133 "testcapi_long.h"
+        var $180=($179) - 1; //@line 133 "testcapi_long.h"
+        var $181=$x; //@line 133 "testcapi_long.h"
+        var $182=$181; //@line 133 "testcapi_long.h"
+        HEAP[$182]=$180; //@line 133 "testcapi_long.h"
+        var $183=$x; //@line 133 "testcapi_long.h"
+        var $184=$183; //@line 133 "testcapi_long.h"
+        var $185=HEAP[$184]; //@line 133 "testcapi_long.h"
+        var $186=($185)==0; //@line 133 "testcapi_long.h"
+        if ($186) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 133 "testcapi_long.h"
+      case 50: // $bb51
+        var $187=$x; //@line 133 "testcapi_long.h"
+        var $188=$187+4; //@line 133 "testcapi_long.h"
+        var $189=HEAP[$188]; //@line 133 "testcapi_long.h"
+        var $190=$189+24; //@line 133 "testcapi_long.h"
+        var $191=HEAP[$190]; //@line 133 "testcapi_long.h"
+        var $192=$x; //@line 133 "testcapi_long.h"
+        FUNCTION_TABLE[$191]($192); //@line 133 "testcapi_long.h"
         __label__ = 51; break; //@line 133 "testcapi_long.h"
-      case 51: // $bb52_i
-        $x_i=0; //@line 133 "testcapi_long.h"
-        var $194=$y_i; //@line 134 "testcapi_long.h"
-        var $195=($194)==0; //@line 134 "testcapi_long.h"
-        if ($195) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 134 "testcapi_long.h"
-      case 52: // $bb53_i
-        var $196=$error_addr_i; //@line 135 "testcapi_long.h"
-        var $197=FUNCTION_TABLE[$196](__str29); //@line 135 "testcapi_long.h"
-        $0=$197; //@line 135 "testcapi_long.h"
+      case 51: // $bb52
+        $x=0; //@line 133 "testcapi_long.h"
+        var $193=$y; //@line 134 "testcapi_long.h"
+        var $194=($193)==0; //@line 134 "testcapi_long.h"
+        if ($194) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 134 "testcapi_long.h"
+      case 52: // $bb53
+        var $195=$error_addr; //@line 135 "testcapi_long.h"
+        var $196=FUNCTION_TABLE[$195](__str29); //@line 135 "testcapi_long.h"
+        $0=$196; //@line 135 "testcapi_long.h"
         __label__ = 82; break; //@line 135 "testcapi_long.h"
-      case 53: // $bb54_i
-        var $198=$y_i; //@line 138 "testcapi_long.h"
-        var $199=_PyLong_AsLongLong($198); //@line 138 "testcapi_long.h"
-        $out27_i=$199; //@line 138 "testcapi_long.h"
-        var $200=$out27_i; //@line 139 "testcapi_long.h"
-        var $201=($200)!=-1; //@line 139 "testcapi_long.h"
-        if ($201) { __label__ = 55; break; } else { __label__ = 54; break; } //@line 139 "testcapi_long.h"
-      case 54: // $bb55_i
-        var $202=_PyErr_Occurred(); //@line 139 "testcapi_long.h"
-        var $203=($202)==0; //@line 139 "testcapi_long.h"
-        if ($203) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 139 "testcapi_long.h"
-      case 55: // $bb56_i
-        var $204=$error_addr_i; //@line 140 "testcapi_long.h"
-        var $205=FUNCTION_TABLE[$204](__str30); //@line 140 "testcapi_long.h"
-        $0=$205; //@line 140 "testcapi_long.h"
+      case 53: // $bb54
+        var $197=$y; //@line 138 "testcapi_long.h"
+        var $198=_PyLong_AsLongLong($197); //@line 138 "testcapi_long.h"
+        $out27=$198; //@line 138 "testcapi_long.h"
+        var $199=$out27; //@line 139 "testcapi_long.h"
+        var $200=($199)!=-1; //@line 139 "testcapi_long.h"
+        if ($200) { __label__ = 55; break; } else { __label__ = 54; break; } //@line 139 "testcapi_long.h"
+      case 54: // $bb55
+        var $201=_PyErr_Occurred(); //@line 139 "testcapi_long.h"
+        var $202=($201)==0; //@line 139 "testcapi_long.h"
+        if ($202) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 139 "testcapi_long.h"
+      case 55: // $bb56
+        var $203=$error_addr; //@line 140 "testcapi_long.h"
+        var $204=FUNCTION_TABLE[$203](__str30); //@line 140 "testcapi_long.h"
+        $0=$204; //@line 140 "testcapi_long.h"
         __label__ = 82; break; //@line 140 "testcapi_long.h"
-      case 56: // $bb57_i
-        var $206=HEAP[_PyExc_OverflowError]; //@line 143 "testcapi_long.h"
-        var $207=_PyErr_ExceptionMatches($206); //@line 143 "testcapi_long.h"
-        var $208=($207)==0; //@line 143 "testcapi_long.h"
-        if ($208) { __label__ = 57; break; } else { __label__ = 58; break; } //@line 143 "testcapi_long.h"
-      case 57: // $bb58_i
-        var $209=$error_addr_i; //@line 144 "testcapi_long.h"
-        var $210=FUNCTION_TABLE[$209](__str31); //@line 144 "testcapi_long.h"
-        $0=$210; //@line 144 "testcapi_long.h"
+      case 56: // $bb57
+        var $205=HEAP[_PyExc_OverflowError]; //@line 143 "testcapi_long.h"
+        var $206=_PyErr_ExceptionMatches($205); //@line 143 "testcapi_long.h"
+        var $207=($206)==0; //@line 143 "testcapi_long.h"
+        if ($207) { __label__ = 57; break; } else { __label__ = 58; break; } //@line 143 "testcapi_long.h"
+      case 57: // $bb58
+        var $208=$error_addr; //@line 144 "testcapi_long.h"
+        var $209=FUNCTION_TABLE[$208](__str31); //@line 144 "testcapi_long.h"
+        $0=$209; //@line 144 "testcapi_long.h"
         __label__ = 82; break; //@line 144 "testcapi_long.h"
-      case 58: // $bb59_i
+      case 58: // $bb59
         _PyErr_Clear(); //@line 147 "testcapi_long.h"
-        var $211=$y_i; //@line 151 "testcapi_long.h"
-        var $212=_PyNumber_Negative($211); //@line 151 "testcapi_long.h"
-        $x_i=$212; //@line 151 "testcapi_long.h"
-        var $213=$y_i; //@line 152 "testcapi_long.h"
-        var $214=$213; //@line 152 "testcapi_long.h"
-        var $215=HEAP[$214]; //@line 152 "testcapi_long.h"
-        var $216=($215) - 1; //@line 152 "testcapi_long.h"
-        var $217=$y_i; //@line 152 "testcapi_long.h"
-        var $218=$217; //@line 152 "testcapi_long.h"
-        HEAP[$218]=$216; //@line 152 "testcapi_long.h"
-        var $219=$y_i; //@line 152 "testcapi_long.h"
-        var $220=$219; //@line 152 "testcapi_long.h"
-        var $221=HEAP[$220]; //@line 152 "testcapi_long.h"
-        var $222=($221)==0; //@line 152 "testcapi_long.h"
-        if ($222) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 152 "testcapi_long.h"
-      case 59: // $bb60_i
-        var $223=$y_i; //@line 152 "testcapi_long.h"
-        var $224=$223+4; //@line 152 "testcapi_long.h"
-        var $225=HEAP[$224]; //@line 152 "testcapi_long.h"
-        var $226=$225+24; //@line 152 "testcapi_long.h"
-        var $227=HEAP[$226]; //@line 152 "testcapi_long.h"
-        var $228=$y_i; //@line 152 "testcapi_long.h"
-        FUNCTION_TABLE[$227]($228); //@line 152 "testcapi_long.h"
+        var $210=$y; //@line 151 "testcapi_long.h"
+        var $211=_PyNumber_Negative($210); //@line 151 "testcapi_long.h"
+        $x=$211; //@line 151 "testcapi_long.h"
+        var $212=$y; //@line 152 "testcapi_long.h"
+        var $213=$212; //@line 152 "testcapi_long.h"
+        var $214=HEAP[$213]; //@line 152 "testcapi_long.h"
+        var $215=($214) - 1; //@line 152 "testcapi_long.h"
+        var $216=$y; //@line 152 "testcapi_long.h"
+        var $217=$216; //@line 152 "testcapi_long.h"
+        HEAP[$217]=$215; //@line 152 "testcapi_long.h"
+        var $218=$y; //@line 152 "testcapi_long.h"
+        var $219=$218; //@line 152 "testcapi_long.h"
+        var $220=HEAP[$219]; //@line 152 "testcapi_long.h"
+        var $221=($220)==0; //@line 152 "testcapi_long.h"
+        if ($221) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 152 "testcapi_long.h"
+      case 59: // $bb60
+        var $222=$y; //@line 152 "testcapi_long.h"
+        var $223=$222+4; //@line 152 "testcapi_long.h"
+        var $224=HEAP[$223]; //@line 152 "testcapi_long.h"
+        var $225=$224+24; //@line 152 "testcapi_long.h"
+        var $226=HEAP[$225]; //@line 152 "testcapi_long.h"
+        var $227=$y; //@line 152 "testcapi_long.h"
+        FUNCTION_TABLE[$226]($227); //@line 152 "testcapi_long.h"
         __label__ = 60; break; //@line 152 "testcapi_long.h"
-      case 60: // $bb61_i
-        $y_i=0; //@line 152 "testcapi_long.h"
-        var $229=$x_i; //@line 153 "testcapi_long.h"
-        var $230=($229)==0; //@line 153 "testcapi_long.h"
-        if ($230) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 153 "testcapi_long.h"
-      case 61: // $bb62_i
-        var $231=$error_addr_i; //@line 154 "testcapi_long.h"
-        var $232=FUNCTION_TABLE[$231](__str23); //@line 154 "testcapi_long.h"
-        $0=$232; //@line 154 "testcapi_long.h"
+      case 60: // $bb61
+        $y=0; //@line 152 "testcapi_long.h"
+        var $228=$x; //@line 153 "testcapi_long.h"
+        var $229=($228)==0; //@line 153 "testcapi_long.h"
+        if ($229) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 153 "testcapi_long.h"
+      case 61: // $bb62
+        var $230=$error_addr; //@line 154 "testcapi_long.h"
+        var $231=FUNCTION_TABLE[$230](__str23); //@line 154 "testcapi_long.h"
+        $0=$231; //@line 154 "testcapi_long.h"
         __label__ = 82; break; //@line 154 "testcapi_long.h"
-      case 62: // $bb63_i
-        var $233=$x_i; //@line 157 "testcapi_long.h"
-        var $234=$one_i; //@line 157 "testcapi_long.h"
-        var $235=_PyNumber_Subtract($233, $234); //@line 157 "testcapi_long.h"
-        $y_i=$235; //@line 157 "testcapi_long.h"
-        var $236=$x_i; //@line 158 "testcapi_long.h"
-        var $237=$236; //@line 158 "testcapi_long.h"
-        var $238=HEAP[$237]; //@line 158 "testcapi_long.h"
-        var $239=($238) - 1; //@line 158 "testcapi_long.h"
-        var $240=$x_i; //@line 158 "testcapi_long.h"
-        var $241=$240; //@line 158 "testcapi_long.h"
-        HEAP[$241]=$239; //@line 158 "testcapi_long.h"
-        var $242=$x_i; //@line 158 "testcapi_long.h"
-        var $243=$242; //@line 158 "testcapi_long.h"
-        var $244=HEAP[$243]; //@line 158 "testcapi_long.h"
-        var $245=($244)==0; //@line 158 "testcapi_long.h"
-        if ($245) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 158 "testcapi_long.h"
-      case 63: // $bb64_i
-        var $246=$x_i; //@line 158 "testcapi_long.h"
-        var $247=$246+4; //@line 158 "testcapi_long.h"
-        var $248=HEAP[$247]; //@line 158 "testcapi_long.h"
-        var $249=$248+24; //@line 158 "testcapi_long.h"
-        var $250=HEAP[$249]; //@line 158 "testcapi_long.h"
-        var $251=$x_i; //@line 158 "testcapi_long.h"
-        FUNCTION_TABLE[$250]($251); //@line 158 "testcapi_long.h"
+      case 62: // $bb63
+        var $232=$x; //@line 157 "testcapi_long.h"
+        var $233=$one; //@line 157 "testcapi_long.h"
+        var $234=_PyNumber_Subtract($232, $233); //@line 157 "testcapi_long.h"
+        $y=$234; //@line 157 "testcapi_long.h"
+        var $235=$x; //@line 158 "testcapi_long.h"
+        var $236=$235; //@line 158 "testcapi_long.h"
+        var $237=HEAP[$236]; //@line 158 "testcapi_long.h"
+        var $238=($237) - 1; //@line 158 "testcapi_long.h"
+        var $239=$x; //@line 158 "testcapi_long.h"
+        var $240=$239; //@line 158 "testcapi_long.h"
+        HEAP[$240]=$238; //@line 158 "testcapi_long.h"
+        var $241=$x; //@line 158 "testcapi_long.h"
+        var $242=$241; //@line 158 "testcapi_long.h"
+        var $243=HEAP[$242]; //@line 158 "testcapi_long.h"
+        var $244=($243)==0; //@line 158 "testcapi_long.h"
+        if ($244) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 158 "testcapi_long.h"
+      case 63: // $bb64
+        var $245=$x; //@line 158 "testcapi_long.h"
+        var $246=$245+4; //@line 158 "testcapi_long.h"
+        var $247=HEAP[$246]; //@line 158 "testcapi_long.h"
+        var $248=$247+24; //@line 158 "testcapi_long.h"
+        var $249=HEAP[$248]; //@line 158 "testcapi_long.h"
+        var $250=$x; //@line 158 "testcapi_long.h"
+        FUNCTION_TABLE[$249]($250); //@line 158 "testcapi_long.h"
         __label__ = 64; break; //@line 158 "testcapi_long.h"
-      case 64: // $bb65_i
-        $x_i=0; //@line 158 "testcapi_long.h"
-        var $252=$y_i; //@line 159 "testcapi_long.h"
-        var $253=($252)==0; //@line 159 "testcapi_long.h"
-        if ($253) { __label__ = 65; break; } else { __label__ = 66; break; } //@line 159 "testcapi_long.h"
-      case 65: // $bb66_i
-        var $254=$error_addr_i; //@line 160 "testcapi_long.h"
-        var $255=FUNCTION_TABLE[$254](__str32); //@line 160 "testcapi_long.h"
-        $0=$255; //@line 160 "testcapi_long.h"
+      case 64: // $bb65
+        $x=0; //@line 158 "testcapi_long.h"
+        var $251=$y; //@line 159 "testcapi_long.h"
+        var $252=($251)==0; //@line 159 "testcapi_long.h"
+        if ($252) { __label__ = 65; break; } else { __label__ = 66; break; } //@line 159 "testcapi_long.h"
+      case 65: // $bb66
+        var $253=$error_addr; //@line 160 "testcapi_long.h"
+        var $254=FUNCTION_TABLE[$253](__str32); //@line 160 "testcapi_long.h"
+        $0=$254; //@line 160 "testcapi_long.h"
         __label__ = 82; break; //@line 160 "testcapi_long.h"
-      case 66: // $bb67_i
-        var $256=$y_i; //@line 163 "testcapi_long.h"
-        var $257=_PyLong_AsLongLong($256); //@line 163 "testcapi_long.h"
-        $out27_i=$257; //@line 163 "testcapi_long.h"
-        var $258=$out27_i; //@line 164 "testcapi_long.h"
-        var $259=($258)!=-1; //@line 164 "testcapi_long.h"
-        if ($259) { __label__ = 68; break; } else { __label__ = 67; break; } //@line 164 "testcapi_long.h"
-      case 67: // $bb68_i
-        var $260=_PyErr_Occurred(); //@line 164 "testcapi_long.h"
-        var $261=($260)==0; //@line 164 "testcapi_long.h"
-        if ($261) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 164 "testcapi_long.h"
-      case 68: // $bb69_i
-        var $262=$error_addr_i; //@line 165 "testcapi_long.h"
-        var $263=FUNCTION_TABLE[$262](__str33); //@line 165 "testcapi_long.h"
-        $0=$263; //@line 165 "testcapi_long.h"
+      case 66: // $bb67
+        var $255=$y; //@line 163 "testcapi_long.h"
+        var $256=_PyLong_AsLongLong($255); //@line 163 "testcapi_long.h"
+        $out27=$256; //@line 163 "testcapi_long.h"
+        var $257=$out27; //@line 164 "testcapi_long.h"
+        var $258=($257)!=-1; //@line 164 "testcapi_long.h"
+        if ($258) { __label__ = 68; break; } else { __label__ = 67; break; } //@line 164 "testcapi_long.h"
+      case 67: // $bb68
+        var $259=_PyErr_Occurred(); //@line 164 "testcapi_long.h"
+        var $260=($259)==0; //@line 164 "testcapi_long.h"
+        if ($260) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 164 "testcapi_long.h"
+      case 68: // $bb69
+        var $261=$error_addr; //@line 165 "testcapi_long.h"
+        var $262=FUNCTION_TABLE[$261](__str33); //@line 165 "testcapi_long.h"
+        $0=$262; //@line 165 "testcapi_long.h"
         __label__ = 82; break; //@line 165 "testcapi_long.h"
-      case 69: // $bb70_i
-        var $264=HEAP[_PyExc_OverflowError]; //@line 168 "testcapi_long.h"
-        var $265=_PyErr_ExceptionMatches($264); //@line 168 "testcapi_long.h"
-        var $266=($265)==0; //@line 168 "testcapi_long.h"
-        if ($266) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 168 "testcapi_long.h"
-      case 70: // $bb71_i
-        var $267=$error_addr_i; //@line 169 "testcapi_long.h"
-        var $268=FUNCTION_TABLE[$267](__str34); //@line 169 "testcapi_long.h"
-        $0=$268; //@line 169 "testcapi_long.h"
+      case 69: // $bb70
+        var $263=HEAP[_PyExc_OverflowError]; //@line 168 "testcapi_long.h"
+        var $264=_PyErr_ExceptionMatches($263); //@line 168 "testcapi_long.h"
+        var $265=($264)==0; //@line 168 "testcapi_long.h"
+        if ($265) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 168 "testcapi_long.h"
+      case 70: // $bb71
+        var $266=$error_addr; //@line 169 "testcapi_long.h"
+        var $267=FUNCTION_TABLE[$266](__str34); //@line 169 "testcapi_long.h"
+        $0=$267; //@line 169 "testcapi_long.h"
         __label__ = 82; break; //@line 169 "testcapi_long.h"
-      case 71: // $bb72_i
+      case 71: // $bb72
         _PyErr_Clear(); //@line 172 "testcapi_long.h"
-        var $269=$y_i; //@line 173 "testcapi_long.h"
-        var $270=$269; //@line 173 "testcapi_long.h"
-        var $271=HEAP[$270]; //@line 173 "testcapi_long.h"
-        var $272=($271) - 1; //@line 173 "testcapi_long.h"
-        var $273=$y_i; //@line 173 "testcapi_long.h"
-        var $274=$273; //@line 173 "testcapi_long.h"
-        HEAP[$274]=$272; //@line 173 "testcapi_long.h"
-        var $275=$y_i; //@line 173 "testcapi_long.h"
-        var $276=$275; //@line 173 "testcapi_long.h"
-        var $277=HEAP[$276]; //@line 173 "testcapi_long.h"
-        var $278=($277)==0; //@line 173 "testcapi_long.h"
-        if ($278) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 173 "testcapi_long.h"
-      case 72: // $bb73_i
-        var $279=$y_i; //@line 173 "testcapi_long.h"
-        var $280=$279+4; //@line 173 "testcapi_long.h"
-        var $281=HEAP[$280]; //@line 173 "testcapi_long.h"
-        var $282=$281+24; //@line 173 "testcapi_long.h"
-        var $283=HEAP[$282]; //@line 173 "testcapi_long.h"
-        var $284=$y_i; //@line 173 "testcapi_long.h"
-        FUNCTION_TABLE[$283]($284); //@line 173 "testcapi_long.h"
+        var $268=$y; //@line 173 "testcapi_long.h"
+        var $269=$268; //@line 173 "testcapi_long.h"
+        var $270=HEAP[$269]; //@line 173 "testcapi_long.h"
+        var $271=($270) - 1; //@line 173 "testcapi_long.h"
+        var $272=$y; //@line 173 "testcapi_long.h"
+        var $273=$272; //@line 173 "testcapi_long.h"
+        HEAP[$273]=$271; //@line 173 "testcapi_long.h"
+        var $274=$y; //@line 173 "testcapi_long.h"
+        var $275=$274; //@line 173 "testcapi_long.h"
+        var $276=HEAP[$275]; //@line 173 "testcapi_long.h"
+        var $277=($276)==0; //@line 173 "testcapi_long.h"
+        if ($277) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 173 "testcapi_long.h"
+      case 72: // $bb73
+        var $278=$y; //@line 173 "testcapi_long.h"
+        var $279=$278+4; //@line 173 "testcapi_long.h"
+        var $280=HEAP[$279]; //@line 173 "testcapi_long.h"
+        var $281=$280+24; //@line 173 "testcapi_long.h"
+        var $282=HEAP[$281]; //@line 173 "testcapi_long.h"
+        var $283=$y; //@line 173 "testcapi_long.h"
+        FUNCTION_TABLE[$282]($283); //@line 173 "testcapi_long.h"
         __label__ = 73; break; //@line 173 "testcapi_long.h"
-      case 73: // $bb74_i
-        $y_i=0; //@line 173 "testcapi_long.h"
-        var $285=$x_i; //@line 175 "testcapi_long.h"
-        var $286=($285)!=0; //@line 175 "testcapi_long.h"
-        if ($286) { __label__ = 74; break; } else { __label__ = 79; break; } //@line 175 "testcapi_long.h"
-      case 74: // $bb75_i
-        var $287=$x_i; //@line 175 "testcapi_long.h"
-        var $288=$287; //@line 175 "testcapi_long.h"
-        var $289=HEAP[$288]; //@line 175 "testcapi_long.h"
-        var $290=($289) - 1; //@line 175 "testcapi_long.h"
-        var $291=$x_i; //@line 175 "testcapi_long.h"
-        var $292=$291; //@line 175 "testcapi_long.h"
-        HEAP[$292]=$290; //@line 175 "testcapi_long.h"
-        var $293=$x_i; //@line 175 "testcapi_long.h"
-        var $294=$293; //@line 175 "testcapi_long.h"
-        var $295=HEAP[$294]; //@line 175 "testcapi_long.h"
-        var $296=($295)==0; //@line 175 "testcapi_long.h"
-        if ($296) { __label__ = 75; break; } else { __label__ = 76; break; } //@line 175 "testcapi_long.h"
-      case 75: // $bb76_i
-        var $297=$x_i; //@line 175 "testcapi_long.h"
-        var $298=$297+4; //@line 175 "testcapi_long.h"
-        var $299=HEAP[$298]; //@line 175 "testcapi_long.h"
-        var $300=$299+24; //@line 175 "testcapi_long.h"
-        var $301=HEAP[$300]; //@line 175 "testcapi_long.h"
-        var $302=$x_i; //@line 175 "testcapi_long.h"
-        FUNCTION_TABLE[$301]($302); //@line 175 "testcapi_long.h"
+      case 73: // $bb74
+        $y=0; //@line 173 "testcapi_long.h"
+        var $284=$x; //@line 175 "testcapi_long.h"
+        var $285=($284)!=0; //@line 175 "testcapi_long.h"
+        if ($285) { __label__ = 74; break; } else { __label__ = 79; break; } //@line 175 "testcapi_long.h"
+      case 74: // $bb75
+        var $286=$x; //@line 175 "testcapi_long.h"
+        var $287=$286; //@line 175 "testcapi_long.h"
+        var $288=HEAP[$287]; //@line 175 "testcapi_long.h"
+        var $289=($288) - 1; //@line 175 "testcapi_long.h"
+        var $290=$x; //@line 175 "testcapi_long.h"
+        var $291=$290; //@line 175 "testcapi_long.h"
+        HEAP[$291]=$289; //@line 175 "testcapi_long.h"
+        var $292=$x; //@line 175 "testcapi_long.h"
+        var $293=$292; //@line 175 "testcapi_long.h"
+        var $294=HEAP[$293]; //@line 175 "testcapi_long.h"
+        var $295=($294)==0; //@line 175 "testcapi_long.h"
+        if ($295) { __label__ = 75; break; } else { __label__ = 76; break; } //@line 175 "testcapi_long.h"
+      case 75: // $bb76
+        var $296=$x; //@line 175 "testcapi_long.h"
+        var $297=$296+4; //@line 175 "testcapi_long.h"
+        var $298=HEAP[$297]; //@line 175 "testcapi_long.h"
+        var $299=$298+24; //@line 175 "testcapi_long.h"
+        var $300=HEAP[$299]; //@line 175 "testcapi_long.h"
+        var $301=$x; //@line 175 "testcapi_long.h"
+        FUNCTION_TABLE[$300]($301); //@line 175 "testcapi_long.h"
         __label__ = 76; break; //@line 175 "testcapi_long.h"
-      case 76: // $bb77_i
-        var $_pr_i=$y_i;
-        var $303=($_pr_i)!=0; //@line 176 "testcapi_long.h"
-        if ($303) { __label__ = 77; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
-      case 77: // $bb78_i
-        var $304=$y_i; //@line 176 "testcapi_long.h"
-        var $305=$304; //@line 176 "testcapi_long.h"
-        var $306=HEAP[$305]; //@line 176 "testcapi_long.h"
-        var $307=($306) - 1; //@line 176 "testcapi_long.h"
-        var $308=$y_i; //@line 176 "testcapi_long.h"
-        var $309=$308; //@line 176 "testcapi_long.h"
-        HEAP[$309]=$307; //@line 176 "testcapi_long.h"
-        var $310=$y_i; //@line 176 "testcapi_long.h"
-        var $311=$310; //@line 176 "testcapi_long.h"
-        var $312=HEAP[$311]; //@line 176 "testcapi_long.h"
-        var $313=($312)==0; //@line 176 "testcapi_long.h"
-        if ($313) { __label__ = 78; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
-      case 78: // $bb79_i
-        var $314=$y_i; //@line 176 "testcapi_long.h"
-        var $315=$314+4; //@line 176 "testcapi_long.h"
-        var $316=HEAP[$315]; //@line 176 "testcapi_long.h"
-        var $317=$316+24; //@line 176 "testcapi_long.h"
-        var $318=HEAP[$317]; //@line 176 "testcapi_long.h"
-        var $319=$y_i; //@line 176 "testcapi_long.h"
-        FUNCTION_TABLE[$318]($319); //@line 176 "testcapi_long.h"
+      case 76: // $bb77
+        var $_pr=$y;
+        var $302=($_pr)!=0; //@line 176 "testcapi_long.h"
+        if ($302) { __label__ = 77; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
+      case 77: // $bb78
+        var $303=$y; //@line 176 "testcapi_long.h"
+        var $304=$303; //@line 176 "testcapi_long.h"
+        var $305=HEAP[$304]; //@line 176 "testcapi_long.h"
+        var $306=($305) - 1; //@line 176 "testcapi_long.h"
+        var $307=$y; //@line 176 "testcapi_long.h"
+        var $308=$307; //@line 176 "testcapi_long.h"
+        HEAP[$308]=$306; //@line 176 "testcapi_long.h"
+        var $309=$y; //@line 176 "testcapi_long.h"
+        var $310=$309; //@line 176 "testcapi_long.h"
+        var $311=HEAP[$310]; //@line 176 "testcapi_long.h"
+        var $312=($311)==0; //@line 176 "testcapi_long.h"
+        if ($312) { __label__ = 78; break; } else { __label__ = 79; break; } //@line 176 "testcapi_long.h"
+      case 78: // $bb79
+        var $313=$y; //@line 176 "testcapi_long.h"
+        var $314=$313+4; //@line 176 "testcapi_long.h"
+        var $315=HEAP[$314]; //@line 176 "testcapi_long.h"
+        var $316=$315+24; //@line 176 "testcapi_long.h"
+        var $317=HEAP[$316]; //@line 176 "testcapi_long.h"
+        var $318=$y; //@line 176 "testcapi_long.h"
+        FUNCTION_TABLE[$317]($318); //@line 176 "testcapi_long.h"
         __label__ = 79; break; //@line 176 "testcapi_long.h"
-      case 79: // $bb80_i
-        var $320=$one_i; //@line 177 "testcapi_long.h"
-        var $321=$320; //@line 177 "testcapi_long.h"
-        var $322=HEAP[$321]; //@line 177 "testcapi_long.h"
-        var $323=($322) - 1; //@line 177 "testcapi_long.h"
-        var $324=$one_i; //@line 177 "testcapi_long.h"
-        var $325=$324; //@line 177 "testcapi_long.h"
-        HEAP[$325]=$323; //@line 177 "testcapi_long.h"
-        var $326=$one_i; //@line 177 "testcapi_long.h"
-        var $327=$326; //@line 177 "testcapi_long.h"
-        var $328=HEAP[$327]; //@line 177 "testcapi_long.h"
-        var $329=($328)==0; //@line 177 "testcapi_long.h"
-        if ($329) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 177 "testcapi_long.h"
-      case 80: // $bb81_i
-        var $330=$one_i; //@line 177 "testcapi_long.h"
-        var $331=$330+4; //@line 177 "testcapi_long.h"
-        var $332=HEAP[$331]; //@line 177 "testcapi_long.h"
-        var $333=$332+24; //@line 177 "testcapi_long.h"
-        var $334=HEAP[$333]; //@line 177 "testcapi_long.h"
-        var $335=$one_i; //@line 177 "testcapi_long.h"
-        FUNCTION_TABLE[$334]($335); //@line 177 "testcapi_long.h"
+      case 79: // $bb80
+        var $319=$one; //@line 177 "testcapi_long.h"
+        var $320=$319; //@line 177 "testcapi_long.h"
+        var $321=HEAP[$320]; //@line 177 "testcapi_long.h"
+        var $322=($321) - 1; //@line 177 "testcapi_long.h"
+        var $323=$one; //@line 177 "testcapi_long.h"
+        var $324=$323; //@line 177 "testcapi_long.h"
+        HEAP[$324]=$322; //@line 177 "testcapi_long.h"
+        var $325=$one; //@line 177 "testcapi_long.h"
+        var $326=$325; //@line 177 "testcapi_long.h"
+        var $327=HEAP[$326]; //@line 177 "testcapi_long.h"
+        var $328=($327)==0; //@line 177 "testcapi_long.h"
+        if ($328) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 177 "testcapi_long.h"
+      case 80: // $bb81
+        var $329=$one; //@line 177 "testcapi_long.h"
+        var $330=$329+4; //@line 177 "testcapi_long.h"
+        var $331=HEAP[$330]; //@line 177 "testcapi_long.h"
+        var $332=$331+24; //@line 177 "testcapi_long.h"
+        var $333=HEAP[$332]; //@line 177 "testcapi_long.h"
+        var $334=$one; //@line 177 "testcapi_long.h"
+        FUNCTION_TABLE[$333]($334); //@line 177 "testcapi_long.h"
         __label__ = 81; break; //@line 177 "testcapi_long.h"
-      case 81: // $bb82_i
-        var $336=HEAP[__Py_NoneStruct]; //@line 180 "testcapi_long.h"
-        var $337=($336) + 1; //@line 180 "testcapi_long.h"
-        HEAP[__Py_NoneStruct]=$337; //@line 180 "testcapi_long.h"
+      case 81: // $bb82
+        var $335=HEAP[__Py_NoneStruct]; //@line 180 "testcapi_long.h"
+        var $336=($335) + 1; //@line 180 "testcapi_long.h"
+        HEAP[__Py_NoneStruct]=$336; //@line 180 "testcapi_long.h"
         $0=__Py_NoneStruct; //@line 181 "testcapi_long.h"
         __label__ = 82; break; //@line 181 "testcapi_long.h"
-      case 82: // $test_longlong_api_inner_exit
-        var $338=$0; //@line 47 "testcapi_long.h"
-        $retval_i=$338; //@line 47 "testcapi_long.h"
-        var $retval84_i=$retval_i; //@line 47 "testcapi_long.h"
-        $1=$retval84_i; //@line 445 "_testcapimodule.c"
-        var $339=$1; //@line 445 "_testcapimodule.c"
-        $retval=$339; //@line 445 "_testcapimodule.c"
-        var $retval1=$retval; //@line 445 "_testcapimodule.c"
+      case 82: // $bb83
+        var $337=$0; //@line 47 "testcapi_long.h"
+        $retval=$337; //@line 47 "testcapi_long.h"
+        var $retval84=$retval; //@line 47 "testcapi_long.h"
         ;
-        return $retval1; //@line 445 "_testcapimodule.c"
+        return $retval84; //@line 47 "testcapi_long.h"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _test_longlong_api($self, $args) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $args_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    $args_addr=$args;
+    var $1=_test_longlong_api_inner(); //@line 445 "_testcapimodule.c"
+    $0=$1; //@line 445 "_testcapimodule.c"
+    var $2=$0; //@line 445 "_testcapimodule.c"
+    $retval=$2; //@line 445 "_testcapimodule.c"
+    var $retval1=$retval; //@line 445 "_testcapimodule.c"
+    ;
+    return $retval1; //@line 445 "_testcapimodule.c"
   }
   
 
@@ -4013,7 +4053,7 @@ var __str228;
         HEAP[$10]=$11; //@line 803 "_testcapimodule.c"
         HEAP[$value]=-1; //@line 805 "_testcapimodule.c"
         var $12=$tuple; //@line 806 "_testcapimodule.c"
-        var $13=_PyArg_ParseTuple($12, __str52, $value); //@line 806 "_testcapimodule.c"
+        var $13=_PyArg_ParseTuple($12, __str52, allocate([$value,0,0,0], ["i64*",0,0,0], ALLOC_STACK)); //@line 806 "_testcapimodule.c"
         var $14=($13) < 0; //@line 806 "_testcapimodule.c"
         if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 806 "_testcapimodule.c"
       case 5: // $bb4
@@ -4066,7 +4106,7 @@ var __str228;
         HEAP[$39]=$40; //@line 817 "_testcapimodule.c"
         HEAP[$value]=-1; //@line 819 "_testcapimodule.c"
         var $41=$tuple; //@line 820 "_testcapimodule.c"
-        var $42=_PyArg_ParseTuple($41, __str52, $value); //@line 820 "_testcapimodule.c"
+        var $42=_PyArg_ParseTuple($41, __str52, allocate([$value,0,0,0], ["i64*",0,0,0], ALLOC_STACK)); //@line 820 "_testcapimodule.c"
         var $43=($42) < 0; //@line 820 "_testcapimodule.c"
         if ($43) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 820 "_testcapimodule.c"
       case 13: // $bb12
@@ -4135,7 +4175,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 838 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str56, $a, $b, $c); //@line 838 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str56, allocate([$a,0,0,0,$b,0,0,0,$c,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 838 "_testcapimodule.c"
         var $3=($2)==0; //@line 838 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 838 "_testcapimodule.c"
       case 1: // $bb
@@ -4145,7 +4185,7 @@ var __str228;
         var $4=HEAP[$c]; //@line 840 "_testcapimodule.c"
         var $5=HEAP[$b]; //@line 840 "_testcapimodule.c"
         var $6=HEAP[$a]; //@line 840 "_testcapimodule.c"
-        var $7=_Py_BuildValue(__str57, $6, $5, $4); //@line 840 "_testcapimodule.c"
+        var $7=_Py_BuildValue(__str57, allocate([$6,0,0,0,$5,0,0,0,$4,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 840 "_testcapimodule.c"
         $0=$7; //@line 840 "_testcapimodule.c"
         __label__ = 3; break; //@line 840 "_testcapimodule.c"
       case 3: // $bb2
@@ -4188,7 +4228,7 @@ var __str228;
         var $10=$int_args+28; //@line 850 "_testcapimodule.c"
         var $11=$int_args+32; //@line 850 "_testcapimodule.c"
         var $12=$int_args+36; //@line 850 "_testcapimodule.c"
-        var $13=_PyArg_ParseTupleAndKeywords($1, $2, __str58, _keywords_9777, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12); //@line 850 "_testcapimodule.c"
+        var $13=_PyArg_ParseTupleAndKeywords($1, $2, __str58, _keywords_9777, allocate([$3,0,0,0,$4,0,0,0,$5,0,0,0,$6,0,0,0,$7,0,0,0,$8,0,0,0,$9,0,0,0,$10,0,0,0,$11,0,0,0,$12,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 850 "_testcapimodule.c"
         var $14=($13)==0; //@line 850 "_testcapimodule.c"
         if ($14) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 850 "_testcapimodule.c"
       case 1: // $bb
@@ -4215,7 +4255,7 @@ var __str228;
         var $32=HEAP[$31]; //@line 854 "_testcapimodule.c"
         var $33=$int_args; //@line 854 "_testcapimodule.c"
         var $34=HEAP[$33]; //@line 854 "_testcapimodule.c"
-        var $35=_Py_BuildValue(__str64, $34, $32, $30, $28, $26, $24, $22, $20, $18, $16); //@line 854 "_testcapimodule.c"
+        var $35=_Py_BuildValue(__str64, allocate([$34,0,0,0,$32,0,0,0,$30,0,0,0,$28,0,0,0,$26,0,0,0,$24,0,0,0,$22,0,0,0,$20,0,0,0,$18,0,0,0,$16,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 854 "_testcapimodule.c"
         $0=$35; //@line 854 "_testcapimodule.c"
         __label__ = 3; break; //@line 854 "_testcapimodule.c"
       case 3: // $bb3
@@ -4243,7 +4283,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 866 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str65, $value); //@line 866 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str65, allocate([$value,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 866 "_testcapimodule.c"
         var $3=($2)==0; //@line 866 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 866 "_testcapimodule.c"
       case 1: // $bb
@@ -4280,7 +4320,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 875 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str66, $value); //@line 875 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str66, allocate([$value,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 875 "_testcapimodule.c"
         var $3=($2)==0; //@line 875 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 875 "_testcapimodule.c"
       case 1: // $bb
@@ -4317,7 +4357,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 884 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str67, $value); //@line 884 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str67, allocate([$value,0,0,0], ["i16*",0,0,0], ALLOC_STACK)); //@line 884 "_testcapimodule.c"
         var $3=($2)==0; //@line 884 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 884 "_testcapimodule.c"
       case 1: // $bb
@@ -4354,7 +4394,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 893 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str68, $value); //@line 893 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str68, allocate([$value,0,0,0], ["i16*",0,0,0], ALLOC_STACK)); //@line 893 "_testcapimodule.c"
         var $3=($2)==0; //@line 893 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 893 "_testcapimodule.c"
       case 1: // $bb
@@ -4391,7 +4431,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 902 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str69, $value); //@line 902 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str69, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 902 "_testcapimodule.c"
         var $3=($2)==0; //@line 902 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 902 "_testcapimodule.c"
       case 1: // $bb
@@ -4427,7 +4467,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 911 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str70, $value); //@line 911 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str70, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 911 "_testcapimodule.c"
         var $3=($2)==0; //@line 911 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 911 "_testcapimodule.c"
       case 1: // $bb
@@ -4463,7 +4503,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 920 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str71, $value); //@line 920 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str71, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 920 "_testcapimodule.c"
         var $3=($2)==0; //@line 920 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 920 "_testcapimodule.c"
       case 1: // $bb
@@ -4499,7 +4539,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 929 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str72, $value); //@line 929 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str72, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 929 "_testcapimodule.c"
         var $3=($2)==0; //@line 929 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 929 "_testcapimodule.c"
       case 1: // $bb
@@ -4535,7 +4575,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 938 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str73, $value); //@line 938 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str73, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 938 "_testcapimodule.c"
         var $3=($2)==0; //@line 938 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 938 "_testcapimodule.c"
       case 1: // $bb
@@ -4571,7 +4611,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 948 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str74, $value); //@line 948 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str74, allocate([$value,0,0,0], ["i64*",0,0,0], ALLOC_STACK)); //@line 948 "_testcapimodule.c"
         var $3=($2)==0; //@line 948 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 948 "_testcapimodule.c"
       case 1: // $bb
@@ -4607,7 +4647,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 957 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str75, $value); //@line 957 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str75, allocate([$value,0,0,0], ["i64*",0,0,0], ALLOC_STACK)); //@line 957 "_testcapimodule.c"
         var $3=($2)==0; //@line 957 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 957 "_testcapimodule.c"
       case 1: // $bb
@@ -4679,7 +4719,7 @@ var __str228;
         HEAP[$15]=$16; //@line 985 "_testcapimodule.c"
         HEAP[$value]=0; //@line 987 "_testcapimodule.c"
         var $17=$tuple; //@line 988 "_testcapimodule.c"
-        var $18=_PyArg_ParseTuple($17, __str78, $value); //@line 988 "_testcapimodule.c"
+        var $18=_PyArg_ParseTuple($17, __str78, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 988 "_testcapimodule.c"
         var $19=($18) < 0; //@line 988 "_testcapimodule.c"
         if ($19) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 988 "_testcapimodule.c"
       case 7: // $bb6
@@ -4743,7 +4783,7 @@ var __str228;
         HEAP[$49]=$50; //@line 1004 "_testcapimodule.c"
         HEAP[$value]=0; //@line 1006 "_testcapimodule.c"
         var $51=$tuple; //@line 1007 "_testcapimodule.c"
-        var $52=_PyArg_ParseTuple($51, __str78, $value); //@line 1007 "_testcapimodule.c"
+        var $52=_PyArg_ParseTuple($51, __str78, allocate([$value,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 1007 "_testcapimodule.c"
         var $53=($52) < 0; //@line 1007 "_testcapimodule.c"
         if ($53) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1007 "_testcapimodule.c"
       case 17: // $bb16
@@ -4839,7 +4879,7 @@ var __str228;
         HEAP[$12]=$13; //@line 1045 "_testcapimodule.c"
         HEAP[$value]=0; //@line 1047 "_testcapimodule.c"
         var $14=$tuple; //@line 1048 "_testcapimodule.c"
-        var $15=_PyArg_ParseTuple($14, __str84, $value); //@line 1048 "_testcapimodule.c"
+        var $15=_PyArg_ParseTuple($14, __str84, allocate([$value,0,0,0], ["i16**",0,0,0], ALLOC_STACK)); //@line 1048 "_testcapimodule.c"
         var $16=($15) < 0; //@line 1048 "_testcapimodule.c"
         if ($16) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1048 "_testcapimodule.c"
       case 5: // $bb4
@@ -4860,7 +4900,7 @@ var __str228;
       case 8: // $bb7
         HEAP[$value]=0; //@line 1053 "_testcapimodule.c"
         var $24=$tuple; //@line 1054 "_testcapimodule.c"
-        var $25=_PyArg_ParseTuple($24, __str87, $value, $len); //@line 1054 "_testcapimodule.c"
+        var $25=_PyArg_ParseTuple($24, __str87, allocate([$value,0,0,0,$len,0,0,0], ["i16**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1054 "_testcapimodule.c"
         var $26=($25) < 0; //@line 1054 "_testcapimodule.c"
         if ($26) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1054 "_testcapimodule.c"
       case 9: // $bb8
@@ -5177,7 +5217,7 @@ var __str228;
         __label__ = 13; break; //@line 1117 "_testcapimodule.c"
       case 2: // $bb1
         var $4=$tuple; //@line 1118 "_testcapimodule.c"
-        var $5=_PyArg_ParseTuple($4, __str93); //@line 1118 "_testcapimodule.c"
+        var $5=_PyArg_ParseTuple($4, __str93, allocate(1, "i32", ALLOC_STACK)); //@line 1118 "_testcapimodule.c"
         $result=$5; //@line 1118 "_testcapimodule.c"
         var $6=$result; //@line 1118 "_testcapimodule.c"
         var $7=($6) < 0; //@line 1118 "_testcapimodule.c"
@@ -5191,7 +5231,7 @@ var __str228;
       case 4: // $bb3
         var $11=$tuple; //@line 1123 "_testcapimodule.c"
         var $12=$dict; //@line 1123 "_testcapimodule.c"
-        var $13=_PyArg_ParseTupleAndKeywords($11, $12, __str93, _kwlist_10129); //@line 1123 "_testcapimodule.c"
+        var $13=_PyArg_ParseTupleAndKeywords($11, $12, __str93, _kwlist_10129, allocate(1, "i32", ALLOC_STACK)); //@line 1123 "_testcapimodule.c"
         $result=$13; //@line 1123 "_testcapimodule.c"
         __label__ = 5; break; //@line 1124 "_testcapimodule.c"
       case 5: // $done
@@ -5282,7 +5322,7 @@ var __str228;
         $args_addr=$args;
         HEAP[$errors]=0; //@line 1137 "_testcapimodule.c"
         var $1=$args_addr; //@line 1138 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str94, $encoding, $errors); //@line 1138 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str94, allocate([$encoding,0,0,0,$errors,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 1138 "_testcapimodule.c"
         var $3=($2)==0; //@line 1138 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1138 "_testcapimodule.c"
       case 1: // $bb
@@ -5321,7 +5361,7 @@ var __str228;
         $args_addr=$args;
         HEAP[$errors]=0; //@line 1147 "_testcapimodule.c"
         var $1=$args_addr; //@line 1148 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str95, $encoding, $errors); //@line 1148 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str95, allocate([$encoding,0,0,0,$errors,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 1148 "_testcapimodule.c"
         var $3=($2)==0; //@line 1148 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1148 "_testcapimodule.c"
       case 1: // $bb
@@ -5467,7 +5507,7 @@ var __str228;
         $o2=$2; //@line 1203 "_testcapimodule.c"
         var $3=$o1; //@line 1204 "_testcapimodule.c"
         var $4=$o2; //@line 1204 "_testcapimodule.c"
-        var $5=_PyTuple_Pack(2, $3, $4); //@line 1204 "_testcapimodule.c"
+        var $5=_PyTuple_Pack(2, allocate([$3,0,0,0,$4,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1204 "_testcapimodule.c"
         $tuple=$5; //@line 1204 "_testcapimodule.c"
         var $6=$o1; //@line 1205 "_testcapimodule.c"
         var $7=($6)!=0; //@line 1205 "_testcapimodule.c"
@@ -5551,7 +5591,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1217 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str99, $exc, $num_args); //@line 1217 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str99, allocate([$exc,0,0,0,$num_args,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1217 "_testcapimodule.c"
         var $3=($2)==0; //@line 1217 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1217 "_testcapimodule.c"
       case 1: // $bb
@@ -5581,7 +5621,7 @@ var __str228;
         if ($19) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1220 "_testcapimodule.c"
       case 5: // $bb4
         var $20=HEAP[_PyExc_TypeError]; //@line 1221 "_testcapimodule.c"
-        var $21=_PyErr_Format($20, __str100); //@line 1221 "_testcapimodule.c"
+        var $21=_PyErr_Format($20, __str100, allocate(1, "i32", ALLOC_STACK)); //@line 1221 "_testcapimodule.c"
         $0=0; //@line 1222 "_testcapimodule.c"
         __label__ = 18; break; //@line 1222 "_testcapimodule.c"
       case 6: // $bb5
@@ -5756,7 +5796,7 @@ var __str228;
         var $msg;
         $self_addr=$self;
         $args_addr=$args;
-        var $1=_PyString_FromFormat(__str103, 1); //@line 1406 "_testcapimodule.c"
+        var $1=_PyString_FromFormat(__str103, allocate([1,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1406 "_testcapimodule.c"
         $result=$1; //@line 1406 "_testcapimodule.c"
         var $2=$result; //@line 1406 "_testcapimodule.c"
         var $3=($2)==0; //@line 1406 "_testcapimodule.c"
@@ -5796,7 +5836,7 @@ var __str228;
         FUNCTION_TABLE[$22]($23); //@line 1406 "_testcapimodule.c"
         __label__ = 6; break; //@line 1406 "_testcapimodule.c"
       case 6: // $bb5
-        var $24=_PyString_FromFormat(__str106, 1); //@line 1407 "_testcapimodule.c"
+        var $24=_PyString_FromFormat(__str106, allocate([1,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1407 "_testcapimodule.c"
         $result=$24; //@line 1407 "_testcapimodule.c"
         var $25=($24)==0; //@line 1407 "_testcapimodule.c"
         if ($25) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1407 "_testcapimodule.c"
@@ -5835,7 +5875,7 @@ var __str228;
         FUNCTION_TABLE[$44]($45); //@line 1407 "_testcapimodule.c"
         __label__ = 12; break; //@line 1407 "_testcapimodule.c"
       case 12: // $bb11
-        var $46=_PyString_FromFormat(__str108, 1); //@line 1409 "_testcapimodule.c"
+        var $46=_PyString_FromFormat(__str108, allocate([1,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1409 "_testcapimodule.c"
         $result=$46; //@line 1409 "_testcapimodule.c"
         var $47=($46)==0; //@line 1409 "_testcapimodule.c"
         if ($47) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1409 "_testcapimodule.c"
@@ -5874,7 +5914,7 @@ var __str228;
         FUNCTION_TABLE[$66]($67); //@line 1409 "_testcapimodule.c"
         __label__ = 18; break; //@line 1409 "_testcapimodule.c"
       case 18: // $bb17
-        var $68=_PyString_FromFormat(__str110, 1); //@line 1412 "_testcapimodule.c"
+        var $68=_PyString_FromFormat(__str110, allocate([1,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1412 "_testcapimodule.c"
         $result=$68; //@line 1412 "_testcapimodule.c"
         var $69=($68)==0; //@line 1412 "_testcapimodule.c"
         if ($69) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1412 "_testcapimodule.c"
@@ -5913,7 +5953,7 @@ var __str228;
         FUNCTION_TABLE[$88]($89); //@line 1412 "_testcapimodule.c"
         __label__ = 24; break; //@line 1412 "_testcapimodule.c"
       case 24: // $bb23
-        var $90=_PyString_FromFormat(__str112, 1); //@line 1413 "_testcapimodule.c"
+        var $90=_PyString_FromFormat(__str112, allocate([1,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1413 "_testcapimodule.c"
         $result=$90; //@line 1413 "_testcapimodule.c"
         var $91=($90)==0; //@line 1413 "_testcapimodule.c"
         if ($91) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1413 "_testcapimodule.c"
@@ -5952,7 +5992,7 @@ var __str228;
         FUNCTION_TABLE[$110]($111); //@line 1413 "_testcapimodule.c"
         __label__ = 30; break; //@line 1413 "_testcapimodule.c"
       case 30: // $bb29
-        var $112=_PyString_FromFormat(__str114, 1); //@line 1414 "_testcapimodule.c"
+        var $112=_PyString_FromFormat(__str114, allocate([1,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1414 "_testcapimodule.c"
         $result=$112; //@line 1414 "_testcapimodule.c"
         var $113=($112)==0; //@line 1414 "_testcapimodule.c"
         if ($113) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1414 "_testcapimodule.c"
@@ -5991,7 +6031,7 @@ var __str228;
         FUNCTION_TABLE[$132]($133); //@line 1414 "_testcapimodule.c"
         __label__ = 36; break; //@line 1414 "_testcapimodule.c"
       case 36: // $bb35
-        var $134=_PyString_FromFormat(__str116, 1); //@line 1418 "_testcapimodule.c"
+        var $134=_PyString_FromFormat(__str116, allocate([1,0,0,0,0,0,0,0], ["i64",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 1418 "_testcapimodule.c"
         $result=$134; //@line 1418 "_testcapimodule.c"
         var $135=($134)==0; //@line 1418 "_testcapimodule.c"
         if ($135) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 1418 "_testcapimodule.c"
@@ -6030,7 +6070,7 @@ var __str228;
         FUNCTION_TABLE[$154]($155); //@line 1418 "_testcapimodule.c"
         __label__ = 42; break; //@line 1418 "_testcapimodule.c"
       case 42: // $bb41
-        var $156=_PyString_FromFormat(__str118, 1); //@line 1419 "_testcapimodule.c"
+        var $156=_PyString_FromFormat(__str118, allocate([1,0,0,0,0,0,0,0], ["i64",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 1419 "_testcapimodule.c"
         $result=$156; //@line 1419 "_testcapimodule.c"
         var $157=($156)==0; //@line 1419 "_testcapimodule.c"
         if ($157) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 1419 "_testcapimodule.c"
@@ -6414,7 +6454,7 @@ var __str228;
         var $127=$known; //@line 1541 "_testcapimodule.c"
         var $128=$127+4; //@line 1541 "_testcapimodule.c"
         var $129=HEAP[$128]; //@line 1541 "_testcapimodule.c"
-        var $130=_sprintf(_buffer_10522, __str143, __str144, $129, $126); //@line 1541 "_testcapimodule.c"
+        var $130=_sprintf(_buffer_10522, __str143, allocate([__str144,0,0,0,$129,0,0,0,$126,0,0,0], ["i8*",0,0,0,"i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1541 "_testcapimodule.c"
         $error=_buffer_10522; //@line 1541 "_testcapimodule.c"
         __label__ = 57; break; //@line 1541 "_testcapimodule.c"
       case 30: // $bb30
@@ -6510,7 +6550,7 @@ var __str228;
         var $193=$known; //@line 1553 "_testcapimodule.c"
         var $194=$193+4; //@line 1553 "_testcapimodule.c"
         var $195=HEAP[$194]; //@line 1553 "_testcapimodule.c"
-        var $196=_sprintf(_buffer_10522, __str143, __str139, $195, $192); //@line 1553 "_testcapimodule.c"
+        var $196=_sprintf(_buffer_10522, __str143, allocate([__str139,0,0,0,$195,0,0,0,$192,0,0,0], ["i8*",0,0,0,"i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1553 "_testcapimodule.c"
         $error=_buffer_10522; //@line 1553 "_testcapimodule.c"
         __label__ = 57; break; //@line 1553 "_testcapimodule.c"
       case 40: // $bb40
@@ -6574,11 +6614,11 @@ var __str228;
         var $239=HEAP[$238]; //@line 1560 "_testcapimodule.c"
         if ($233) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1559 "_testcapimodule.c"
       case 46: // $bb46
-        var $240=_sprintf(_buffer_10522, __str143, __str146, $239, $236); //@line 1560 "_testcapimodule.c"
+        var $240=_sprintf(_buffer_10522, __str143, allocate([__str146,0,0,0,$239,0,0,0,$236,0,0,0], ["i8*",0,0,0,"i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1560 "_testcapimodule.c"
         $error=_buffer_10522; //@line 1560 "_testcapimodule.c"
         __label__ = 57; break; //@line 1560 "_testcapimodule.c"
       case 47: // $bb47
-        var $241=_sprintf(_buffer_10522, __str143, __str141, $239, $236); //@line 1563 "_testcapimodule.c"
+        var $241=_sprintf(_buffer_10522, __str143, allocate([__str141,0,0,0,$239,0,0,0,$236,0,0,0], ["i8*",0,0,0,"i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1563 "_testcapimodule.c"
         $error=_buffer_10522; //@line 1563 "_testcapimodule.c"
         __label__ = 57; break; //@line 1563 "_testcapimodule.c"
       case 48: // $bb48
@@ -6702,7 +6742,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1597 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str148, $traceback, $file); //@line 1597 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str148, allocate([$traceback,0,0,0,$file,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1597 "_testcapimodule.c"
         var $3=($2)==0; //@line 1597 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1597 "_testcapimodule.c"
       case 1: // $bb
@@ -6752,7 +6792,7 @@ var __str228;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1615 "_testcapimodule.c"
-        var $2=_PyArg_ParseTuple($1, __str149, $filename, $funcname, $firstlineno); //@line 1615 "_testcapimodule.c"
+        var $2=_PyArg_ParseTuple($1, __str149, allocate([$filename,0,0,0,$funcname,0,0,0,$firstlineno,0,0,0], ["i8**",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1615 "_testcapimodule.c"
         var $3=($2)==0; //@line 1615 "_testcapimodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1615 "_testcapimodule.c"
       case 1: // $bb
@@ -6800,7 +6840,7 @@ var __str228;
         HEAP[$dict]=0; //@line 1630 "_testcapimodule.c"
         var $1=$args_addr; //@line 1634 "_testcapimodule.c"
         var $2=$kwargs_addr; //@line 1634 "_testcapimodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str150, _kwlist_10723, $name, $doc, $base, $dict); //@line 1634 "_testcapimodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str150, _kwlist_10723, allocate([$name,0,0,0,$doc,0,0,0,$base,0,0,0,$dict,0,0,0], ["i8**",0,0,0,"i8**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1634 "_testcapimodule.c"
         var $4=($3)==0; //@line 1634 "_testcapimodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1634 "_testcapimodule.c"
       case 1: // $bb
@@ -6900,7 +6940,7 @@ var __str228;
         var $47=$46; //@line 1771 "_testcapimodule.c"
         var $48=$args_addr; //@line 1771 "_testcapimodule.c"
         var $49=$kwargs_addr; //@line 1771 "_testcapimodule.c"
-        var $50=_PyArg_ParseTupleAndKeywords($48, $49, __str198, _keywords_10762, $47, $44, $41, $38, $35, $32, $29, $26, $23, $20, $17, $s, $string_len, $14, $11); //@line 1771 "_testcapimodule.c"
+        var $50=_PyArg_ParseTupleAndKeywords($48, $49, __str198, _keywords_10762, allocate([$47,0,0,0,$44,0,0,0,$41,0,0,0,$38,0,0,0,$35,0,0,0,$32,0,0,0,$29,0,0,0,$26,0,0,0,$23,0,0,0,$20,0,0,0,$17,0,0,0,$s,0,0,0,$string_len,0,0,0,$14,0,0,0,$11,0,0,0], ["i8*",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"i16*",0,0,0,"i16*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"float*",0,0,0,"double*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i64*",0,0,0,"i64*",0,0,0], ALLOC_STACK)); //@line 1771 "_testcapimodule.c"
         var $51=($50)==0; //@line 1771 "_testcapimodule.c"
         if ($51) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 1771 "_testcapimodule.c"
       case 3: // $bb2

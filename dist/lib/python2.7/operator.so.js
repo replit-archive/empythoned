@@ -61,8 +61,8 @@ var $struct_attrgetterobject___SIZE = 16; // %struct.attrgetterobject
 var $struct_methodcallerobject___SIZE = 20; // %struct.methodcallerobject
   
 var _operator_doc;
-var _Py_Py3kWarningFlag;
-var _PyExc_DeprecationWarning;
+
+
 var __str;
 var __str1;
 var __str2;
@@ -99,7 +99,7 @@ var __str32;
 var __str33;
 var __str34;
 var __str35;
-var __Py_NoneStruct;
+
 var __str36;
 var __str37;
 var __str38;
@@ -110,8 +110,8 @@ var __str42;
 var __str43;
 var __str44;
 var __str45;
-var __Py_TrueStruct;
-var __Py_ZeroStruct;
+
+
 var __str46;
 var __str47;
 var __str48;
@@ -291,7 +291,7 @@ var __str218;
 var _itemgetter_type;
 var __str219;
 var __str220;
-var _PyExc_TypeError;
+
 var __str221;
 var __str222;
 var ___PRETTY_FUNCTION___9429;
@@ -385,56 +385,113 @@ var __str228;
 
 
 
+  function _op_isCallable($x) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $x_addr;
+        var $retval;
+        var $0;
+        $x_addr=$x;
+        var $1=HEAP[_Py_Py3kWarningFlag]; //@line 72 "operator.c"
+        var $2=($1)!=0; //@line 72 "operator.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 72 "operator.c"
+      case 1: // $bb
+        var $3=HEAP[_PyExc_DeprecationWarning]; //@line 72 "operator.c"
+        var $4=_PyErr_WarnEx($3, __str, 1); //@line 72 "operator.c"
+        var $5=($4) < 0; //@line 72 "operator.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 72 "operator.c"
+      case 2: // $bb1
+        $0=-1; //@line 74 "operator.c"
+        __label__ = 4; break; //@line 74 "operator.c"
+      case 3: // $bb2
+        var $6=$x_addr; //@line 75 "operator.c"
+        var $7=_PyCallable_Check($6); //@line 75 "operator.c"
+        $0=$7; //@line 75 "operator.c"
+        __label__ = 4; break; //@line 75 "operator.c"
+      case 4: // $bb3
+        var $8=$0; //@line 74 "operator.c"
+        $retval=$8; //@line 74 "operator.c"
+        var $retval4=$retval; //@line 74 "operator.c"
+        ;
+        return $retval4; //@line 74 "operator.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _op_sequenceIncludes($seq, $ob) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $seq_addr;
+        var $ob_addr;
+        var $retval;
+        var $0;
+        $seq_addr=$seq;
+        $ob_addr=$ob;
+        var $1=HEAP[_Py_Py3kWarningFlag]; //@line 81 "operator.c"
+        var $2=($1)!=0; //@line 81 "operator.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 81 "operator.c"
+      case 1: // $bb
+        var $3=HEAP[_PyExc_DeprecationWarning]; //@line 81 "operator.c"
+        var $4=_PyErr_WarnEx($3, __str1, 1); //@line 81 "operator.c"
+        var $5=($4) < 0; //@line 81 "operator.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 81 "operator.c"
+      case 2: // $bb1
+        $0=-1; //@line 83 "operator.c"
+        __label__ = 4; break; //@line 83 "operator.c"
+      case 3: // $bb2
+        var $6=$seq_addr; //@line 84 "operator.c"
+        var $7=$ob_addr; //@line 84 "operator.c"
+        var $8=_PySequence_Contains($6, $7); //@line 84 "operator.c"
+        $0=$8; //@line 84 "operator.c"
+        __label__ = 4; break; //@line 84 "operator.c"
+      case 4: // $bb3
+        var $9=$0; //@line 83 "operator.c"
+        $retval=$9; //@line 83 "operator.c"
+        var $retval4=$retval; //@line 83 "operator.c"
+        ;
+        return $retval4; //@line 83 "operator.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _isCallable($s, $a1) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $x_addr_i;
-        var $retval_i;
-        var $0;
         var $s_addr;
         var $a1_addr;
         var $retval;
-        var $1;
+        var $0;
         var $r;
         $s_addr=$s;
         $a1_addr=$a1;
-        var $2=$a1_addr; //@line 87 "operator.c"
-        $x_addr_i=$2;
-        var $3=HEAP[_Py_Py3kWarningFlag]; //@line 72 "operator.c"
-        var $4=($3)!=0; //@line 72 "operator.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 72 "operator.c"
-      case 1: // $bb_i
-        var $5=HEAP[_PyExc_DeprecationWarning]; //@line 72 "operator.c"
-        var $6=_PyErr_WarnEx($5, __str, 1); //@line 72 "operator.c"
-        var $7=($6) < 0; //@line 72 "operator.c"
-        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 72 "operator.c"
-      case 2: // $op_isCallable_exit_thread
-        $0=-1; //@line 74 "operator.c"
-        $retval_i=-1; //@line 74 "operator.c"
-        $r=-1; //@line 87 "operator.c"
-        __label__ = 4; break;
-      case 3: // $op_isCallable_exit
-        var $8=$x_addr_i; //@line 75 "operator.c"
-        var $9=_PyCallable_Check($8); //@line 75 "operator.c"
-        $0=$9; //@line 75 "operator.c"
-        $retval_i=$9; //@line 74 "operator.c"
-        $r=$9; //@line 87 "operator.c"
-        var $10=($9)==-1; //@line 87 "operator.c"
-        if ($10) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 87 "operator.c"
-      case 4: // $bb
-        $1=0; //@line 87 "operator.c"
-        __label__ = 6; break; //@line 87 "operator.c"
-      case 5: // $bb1
-        var $11=$r; //@line 87 "operator.c"
-        var $12=_PyBool_FromLong($11); //@line 87 "operator.c"
-        $1=$12; //@line 87 "operator.c"
-        __label__ = 6; break; //@line 87 "operator.c"
-      case 6: // $bb2
-        var $13=$1; //@line 87 "operator.c"
-        $retval=$13; //@line 87 "operator.c"
+        var $1=$a1_addr; //@line 87 "operator.c"
+        var $2=_op_isCallable($1); //@line 87 "operator.c"
+        $r=$2; //@line 87 "operator.c"
+        var $3=$r; //@line 87 "operator.c"
+        var $4=($3)==-1; //@line 87 "operator.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 87 "operator.c"
+      case 1: // $bb
+        $0=0; //@line 87 "operator.c"
+        __label__ = 3; break; //@line 87 "operator.c"
+      case 2: // $bb1
+        var $5=$r; //@line 87 "operator.c"
+        var $6=_PyBool_FromLong($5); //@line 87 "operator.c"
+        $0=$6; //@line 87 "operator.c"
+        __label__ = 3; break; //@line 87 "operator.c"
+      case 3: // $bb2
+        var $7=$0; //@line 87 "operator.c"
+        $retval=$7; //@line 87 "operator.c"
         var $retval3=$retval; //@line 87 "operator.c"
         ;
         return $retval3; //@line 87 "operator.c"
@@ -534,7 +591,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 90 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str2, 2, 2, $a1, $a2); //@line 90 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str2, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 90 "operator.c"
         var $3=($2)==0; //@line 90 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 90 "operator.c"
       case 1: // $bb
@@ -572,7 +629,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 91 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str3, 2, 2, $a1, $a2); //@line 91 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str3, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 91 "operator.c"
         var $3=($2)==0; //@line 91 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 91 "operator.c"
       case 1: // $bb
@@ -610,7 +667,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 92 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str4, 2, 2, $a1, $a2); //@line 92 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str4, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 92 "operator.c"
         var $3=($2)==0; //@line 92 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 92 "operator.c"
       case 1: // $bb
@@ -648,7 +705,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 93 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str5, 2, 2, $a1, $a2); //@line 93 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str5, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 93 "operator.c"
         var $3=($2)==0; //@line 93 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 93 "operator.c"
       case 1: // $bb
@@ -686,7 +743,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 94 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str6, 2, 2, $a1, $a2); //@line 94 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str6, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 94 "operator.c"
         var $3=($2)==0; //@line 94 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 94 "operator.c"
       case 1: // $bb
@@ -724,7 +781,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 95 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str7, 2, 2, $a1, $a2); //@line 95 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str7, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 95 "operator.c"
         var $3=($2)==0; //@line 95 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 95 "operator.c"
       case 1: // $bb
@@ -762,7 +819,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 96 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str8, 2, 2, $a1, $a2); //@line 96 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str8, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 96 "operator.c"
         var $3=($2)==0; //@line 96 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 96 "operator.c"
       case 1: // $bb
@@ -905,7 +962,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 102 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str9, 2, 2, $a1, $a2); //@line 102 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str9, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 102 "operator.c"
         var $3=($2)==0; //@line 102 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 102 "operator.c"
       case 1: // $bb
@@ -943,7 +1000,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 103 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str10, 2, 2, $a1, $a2); //@line 103 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str10, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 103 "operator.c"
         var $3=($2)==0; //@line 103 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 103 "operator.c"
       case 1: // $bb
@@ -1019,7 +1076,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 105 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str11, 2, 2, $a1, $a2); //@line 105 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str11, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 105 "operator.c"
         var $3=($2)==0; //@line 105 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 105 "operator.c"
       case 1: // $bb
@@ -1057,7 +1114,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 106 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str12, 2, 2, $a1, $a2); //@line 106 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str12, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 106 "operator.c"
         var $3=($2)==0; //@line 106 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 106 "operator.c"
       case 1: // $bb
@@ -1095,7 +1152,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 107 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str13, 2, 2, $a1, $a2); //@line 107 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str13, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 107 "operator.c"
         var $3=($2)==0; //@line 107 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 107 "operator.c"
       case 1: // $bb
@@ -1133,7 +1190,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 108 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str14, 2, 2, $a1, $a2); //@line 108 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str14, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 108 "operator.c"
         var $3=($2)==0; //@line 108 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 108 "operator.c"
       case 1: // $bb
@@ -1171,7 +1228,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 109 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str15, 2, 2, $a1, $a2); //@line 109 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str15, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 109 "operator.c"
         var $3=($2)==0; //@line 109 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 109 "operator.c"
       case 1: // $bb
@@ -1209,7 +1266,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 110 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str16, 2, 2, $a1, $a2); //@line 110 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str16, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 110 "operator.c"
         var $3=($2)==0; //@line 110 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 110 "operator.c"
       case 1: // $bb
@@ -1247,7 +1304,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 111 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str17, 2, 2, $a1, $a2); //@line 111 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str17, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 111 "operator.c"
         var $3=($2)==0; //@line 111 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 111 "operator.c"
       case 1: // $bb
@@ -1285,7 +1342,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 112 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str18, 2, 2, $a1, $a2); //@line 112 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str18, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 112 "operator.c"
         var $3=($2)==0; //@line 112 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 112 "operator.c"
       case 1: // $bb
@@ -1323,7 +1380,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 113 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str19, 2, 2, $a1, $a2); //@line 113 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str19, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 113 "operator.c"
         var $3=($2)==0; //@line 113 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 113 "operator.c"
       case 1: // $bb
@@ -1361,7 +1418,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 114 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str20, 2, 2, $a1, $a2); //@line 114 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str20, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 114 "operator.c"
         var $3=($2)==0; //@line 114 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 114 "operator.c"
       case 1: // $bb
@@ -1399,7 +1456,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 115 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str21, 2, 2, $a1, $a2); //@line 115 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str21, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 115 "operator.c"
         var $3=($2)==0; //@line 115 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 115 "operator.c"
       case 1: // $bb
@@ -1437,7 +1494,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 116 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str22, 2, 2, $a1, $a2); //@line 116 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str22, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 116 "operator.c"
         var $3=($2)==0; //@line 116 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 116 "operator.c"
       case 1: // $bb
@@ -1475,7 +1532,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 117 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str23, 2, 2, $a1, $a2); //@line 117 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str23, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 117 "operator.c"
         var $3=($2)==0; //@line 117 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 117 "operator.c"
       case 1: // $bb
@@ -1513,7 +1570,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 118 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str24, 2, 2, $a1, $a2); //@line 118 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str24, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 118 "operator.c"
         var $3=($2)==0; //@line 118 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 118 "operator.c"
       case 1: // $bb
@@ -1551,7 +1608,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 119 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str25, 2, 2, $a1, $a2); //@line 119 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str25, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 119 "operator.c"
         var $3=($2)==0; //@line 119 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 119 "operator.c"
       case 1: // $bb
@@ -1627,7 +1684,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 121 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str26, 2, 2, $a1, $a2); //@line 121 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str26, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 121 "operator.c"
         var $3=($2)==0; //@line 121 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 121 "operator.c"
       case 1: // $bb
@@ -1665,7 +1722,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 122 "operator.c"
-        var $2=_PyArg_ParseTuple($1, __str27, $a1, $a2); //@line 122 "operator.c"
+        var $2=_PyArg_ParseTuple($1, __str27, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 122 "operator.c"
         var $3=($2)==0; //@line 122 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 122 "operator.c"
       case 1: // $bb
@@ -1703,7 +1760,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 123 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str28, 2, 2, $a1, $a2); //@line 123 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str28, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 123 "operator.c"
         var $3=($2)==0; //@line 123 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 123 "operator.c"
       case 1: // $bb
@@ -1741,7 +1798,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 124 "operator.c"
-        var $2=_PyArg_ParseTuple($1, __str29, $a1, $a2); //@line 124 "operator.c"
+        var $2=_PyArg_ParseTuple($1, __str29, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 124 "operator.c"
         var $3=($2)==0; //@line 124 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 124 "operator.c"
       case 1: // $bb
@@ -1780,7 +1837,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 125 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str30, 2, 2, $a1, $a2); //@line 125 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str30, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 125 "operator.c"
         var $3=($2)==0; //@line 125 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 125 "operator.c"
       case 1: // $bb
@@ -1819,64 +1876,41 @@ var __str228;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $seq_addr_i;
-        var $ob_addr_i;
-        var $retval_i;
-        var $0;
         var $s_addr;
         var $a_addr;
         var $retval;
-        var $1;
+        var $0;
         var $a1=__stackBase__;
         var $a2=__stackBase__+4;
         var $r;
         $s_addr=$s;
         $a_addr=$a;
-        var $2=$a_addr; //@line 126 "operator.c"
-        var $3=_PyArg_UnpackTuple($2, __str31, 2, 2, $a1, $a2); //@line 126 "operator.c"
-        var $4=($3)==0; //@line 126 "operator.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 126 "operator.c"
+        var $1=$a_addr; //@line 126 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str31, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 126 "operator.c"
+        var $3=($2)==0; //@line 126 "operator.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 126 "operator.c"
       case 1: // $bb
-        $1=0; //@line 126 "operator.c"
-        __label__ = 8; break; //@line 126 "operator.c"
+        $0=0; //@line 126 "operator.c"
+        __label__ = 5; break; //@line 126 "operator.c"
       case 2: // $bb1
-        var $5=HEAP[$a2]; //@line 126 "operator.c"
-        var $6=HEAP[$a1]; //@line 126 "operator.c"
-        $seq_addr_i=$6;
-        $ob_addr_i=$5;
-        var $7=HEAP[_Py_Py3kWarningFlag]; //@line 81 "operator.c"
-        var $8=($7)!=0; //@line 81 "operator.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 81 "operator.c"
-      case 3: // $bb_i
-        var $9=HEAP[_PyExc_DeprecationWarning]; //@line 81 "operator.c"
-        var $10=_PyErr_WarnEx($9, __str1, 1); //@line 81 "operator.c"
-        var $11=($10) < 0; //@line 81 "operator.c"
-        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 81 "operator.c"
-      case 4: // $op_sequenceIncludes_exit_thread
-        $0=-1; //@line 83 "operator.c"
-        $retval_i=-1; //@line 83 "operator.c"
-        $r=-1; //@line 126 "operator.c"
-        __label__ = 6; break;
-      case 5: // $op_sequenceIncludes_exit
-        var $12=$seq_addr_i; //@line 84 "operator.c"
-        var $13=$ob_addr_i; //@line 84 "operator.c"
-        var $14=_PySequence_Contains($12, $13); //@line 84 "operator.c"
-        $0=$14; //@line 84 "operator.c"
-        $retval_i=$14; //@line 83 "operator.c"
-        $r=$14; //@line 126 "operator.c"
-        var $15=($14)==-1; //@line 126 "operator.c"
-        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 126 "operator.c"
-      case 6: // $bb2
-        $1=0; //@line 126 "operator.c"
-        __label__ = 8; break; //@line 126 "operator.c"
-      case 7: // $bb3
-        var $16=$r; //@line 126 "operator.c"
-        var $17=_PyBool_FromLong($16); //@line 126 "operator.c"
-        $1=$17; //@line 126 "operator.c"
-        __label__ = 8; break; //@line 126 "operator.c"
-      case 8: // $bb4
-        var $18=$1; //@line 126 "operator.c"
-        $retval=$18; //@line 126 "operator.c"
+        var $4=HEAP[$a2]; //@line 126 "operator.c"
+        var $5=HEAP[$a1]; //@line 126 "operator.c"
+        var $6=_op_sequenceIncludes($5, $4); //@line 126 "operator.c"
+        $r=$6; //@line 126 "operator.c"
+        var $7=$r; //@line 126 "operator.c"
+        var $8=($7)==-1; //@line 126 "operator.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 126 "operator.c"
+      case 3: // $bb2
+        $0=0; //@line 126 "operator.c"
+        __label__ = 5; break; //@line 126 "operator.c"
+      case 4: // $bb3
+        var $9=$r; //@line 126 "operator.c"
+        var $10=_PyBool_FromLong($9); //@line 126 "operator.c"
+        $0=$10; //@line 126 "operator.c"
+        __label__ = 5; break; //@line 126 "operator.c"
+      case 5: // $bb4
+        var $11=$0; //@line 126 "operator.c"
+        $retval=$11; //@line 126 "operator.c"
         var $retval5=$retval; //@line 126 "operator.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 126 "operator.c"
@@ -1901,7 +1935,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 127 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str32, 2, 2, $a1, $a2); //@line 127 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str32, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 127 "operator.c"
         var $3=($2)==0; //@line 127 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 127 "operator.c"
       case 1: // $bb
@@ -1950,7 +1984,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 128 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str33, 2, 2, $a1, $a2); //@line 128 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str33, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 128 "operator.c"
         var $3=($2)==0; //@line 128 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 128 "operator.c"
       case 1: // $bb
@@ -2036,7 +2070,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 130 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str34, 2, 2, $a1, $a2); //@line 130 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str34, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 130 "operator.c"
         var $3=($2)==0; //@line 130 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 130 "operator.c"
       case 1: // $bb
@@ -2074,7 +2108,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 131 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str35, 2, 2, $a1, $a2); //@line 131 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str35, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 131 "operator.c"
         var $3=($2)==0; //@line 131 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 131 "operator.c"
       case 1: // $bb
@@ -2122,7 +2156,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 132 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str36, 3, 3, $a1, $a2, $a3); //@line 132 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str36, 3, 3, allocate([$a1,0,0,0,$a2,0,0,0,$a3,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 132 "operator.c"
         var $3=($2)==0; //@line 132 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 132 "operator.c"
       case 1: // $bb
@@ -2170,7 +2204,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 133 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str37, 2, 2, $a1, $a2); //@line 133 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str37, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 133 "operator.c"
         var $3=($2)==0; //@line 133 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 133 "operator.c"
       case 1: // $bb
@@ -2208,7 +2242,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 134 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str38, 2, 2, $a1, $a2); //@line 134 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str38, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 134 "operator.c"
         var $3=($2)==0; //@line 134 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 134 "operator.c"
       case 1: // $bb
@@ -2246,7 +2280,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 135 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str39, 2, 2, $a1, $a2); //@line 135 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str39, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 135 "operator.c"
         var $3=($2)==0; //@line 135 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 135 "operator.c"
       case 1: // $bb
@@ -2284,7 +2318,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 136 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str40, 2, 2, $a1, $a2); //@line 136 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str40, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 136 "operator.c"
         var $3=($2)==0; //@line 136 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 136 "operator.c"
       case 1: // $bb
@@ -2322,7 +2356,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 137 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str41, 2, 2, $a1, $a2); //@line 137 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str41, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 137 "operator.c"
         var $3=($2)==0; //@line 137 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 137 "operator.c"
       case 1: // $bb
@@ -2360,7 +2394,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 138 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str42, 2, 2, $a1, $a2); //@line 138 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str42, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 138 "operator.c"
         var $3=($2)==0; //@line 138 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 138 "operator.c"
       case 1: // $bb
@@ -2398,7 +2432,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 144 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str43, 2, 2, $a1, $a2); //@line 144 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str43, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 144 "operator.c"
         var $3=($2)!=0; //@line 144 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 144 "operator.c"
       case 1: // $bb
@@ -2436,7 +2470,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 153 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str44, 2, 2, $a1, $a2); //@line 153 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str44, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 153 "operator.c"
         var $3=($2)!=0; //@line 153 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 153 "operator.c"
       case 1: // $bb
@@ -2498,7 +2532,7 @@ var __str228;
         $a_addr=$a;
         $result=0; //@line 167 "operator.c"
         var $1=$a_addr; //@line 168 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str45, 2, 2, $a1, $a2); //@line 168 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str45, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 168 "operator.c"
         var $3=($2)!=0; //@line 168 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 168 "operator.c"
       case 1: // $bb
@@ -2554,7 +2588,7 @@ var __str228;
         $a_addr=$a;
         $result=0; //@line 178 "operator.c"
         var $1=$a_addr; //@line 179 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str46, 2, 2, $a1, $a2); //@line 179 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str46, 2, 2, allocate([$a1,0,0,0,$a2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 179 "operator.c"
         var $3=($2)!=0; //@line 179 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 179 "operator.c"
       case 1: // $bb
@@ -2608,7 +2642,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 192 "operator.c"
-        var $2=_PyArg_ParseTuple($1, __str47, $a1, $a2, $a3); //@line 192 "operator.c"
+        var $2=_PyArg_ParseTuple($1, __str47, allocate([$a1,0,0,0,$a2,0,0,0,$a3,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 192 "operator.c"
         var $3=($2)==0; //@line 192 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 192 "operator.c"
       case 1: // $bb
@@ -2649,7 +2683,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 203 "operator.c"
-        var $2=_PyArg_ParseTuple($1, __str48, $a1, $a2, $a3, $a4); //@line 203 "operator.c"
+        var $2=_PyArg_ParseTuple($1, __str48, allocate([$a1,0,0,0,$a2,0,0,0,$a3,0,0,0,$a4,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 203 "operator.c"
         var $3=($2)==0; //@line 203 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 203 "operator.c"
       case 1: // $bb
@@ -2699,7 +2733,7 @@ var __str228;
         $s_addr=$s;
         $a_addr=$a;
         var $1=$a_addr; //@line 218 "operator.c"
-        var $2=_PyArg_ParseTuple($1, __str49, $a1, $a2, $a3); //@line 218 "operator.c"
+        var $2=_PyArg_ParseTuple($1, __str49, allocate([$a1,0,0,0,$a2,0,0,0,$a3,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 218 "operator.c"
         var $3=($2)==0; //@line 218 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 218 "operator.c"
       case 1: // $bb
@@ -2767,7 +2801,7 @@ var __str228;
         var $10=$args_addr; //@line 347 "operator.c"
         if ($9) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 346 "operator.c"
       case 3: // $bb2
-        var $11=_PyArg_UnpackTuple($10, __str214, 1, 1, $item); //@line 347 "operator.c"
+        var $11=_PyArg_UnpackTuple($10, __str214, 1, 1, allocate([$item,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 347 "operator.c"
         var $12=($11)==0; //@line 347 "operator.c"
         if ($12) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 347 "operator.c"
       case 4: // $bb3
@@ -2945,7 +2979,7 @@ var __str228;
         var $3=HEAP[$2]; //@line 384 "operator.c"
         $nitems=$3; //@line 384 "operator.c"
         var $4=$args_addr; //@line 386 "operator.c"
-        var $5=_PyArg_UnpackTuple($4, __str214, 1, 1, $obj); //@line 386 "operator.c"
+        var $5=_PyArg_UnpackTuple($4, __str214, 1, 1, allocate([$obj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 386 "operator.c"
         var $6=($5)==0; //@line 386 "operator.c"
         if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 386 "operator.c"
       case 1: // $bb
@@ -3108,7 +3142,7 @@ var __str228;
         var $10=$args_addr; //@line 484 "operator.c"
         if ($9) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 483 "operator.c"
       case 3: // $bb2
-        var $11=_PyArg_UnpackTuple($10, __str220, 1, 1, $attr); //@line 484 "operator.c"
+        var $11=_PyArg_UnpackTuple($10, __str220, 1, 1, allocate([$attr,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 484 "operator.c"
         var $12=($11)==0; //@line 484 "operator.c"
         if ($12) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 484 "operator.c"
       case 4: // $bb3
@@ -3481,7 +3515,7 @@ var __str228;
         var $3=HEAP[$2]; //@line 564 "operator.c"
         $nattrs=$3; //@line 564 "operator.c"
         var $4=$args_addr; //@line 566 "operator.c"
-        var $5=_PyArg_UnpackTuple($4, __str220, 1, 1, $obj); //@line 566 "operator.c"
+        var $5=_PyArg_UnpackTuple($4, __str220, 1, 1, allocate([$obj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 566 "operator.c"
         var $6=($5)==0; //@line 566 "operator.c"
         if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 566 "operator.c"
       case 1: // $bb
@@ -3948,7 +3982,7 @@ var __str228;
         $args_addr=$args;
         $kw_addr=$kw;
         var $1=$args_addr; //@line 713 "operator.c"
-        var $2=_PyArg_UnpackTuple($1, __str226, 1, 1, $obj); //@line 713 "operator.c"
+        var $2=_PyArg_UnpackTuple($1, __str226, 1, 1, allocate([$obj,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 713 "operator.c"
         var $3=($2)==0; //@line 713 "operator.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 713 "operator.c"
       case 1: // $bb

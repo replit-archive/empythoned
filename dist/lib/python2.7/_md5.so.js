@@ -61,7 +61,7 @@ var $struct_md5_state_t___SIZE = 88; // %struct.md5_state_t
 var $struct_md5object___SIZE = 96; // %struct.md5object
   
 var __str;
-var __Py_NoneStruct;
+
 var _update_doc;
 var _digest_doc;
 var _hexdigest_doc;
@@ -85,7 +85,7 @@ var __str11;
 var _new_doc;
 var __str12;
 var _md5_functions;
-var _PyType_Type;
+
 var __str13;
 var __str14;
 var _pad_1849;
@@ -106,6 +106,42 @@ var _pad_1849;
 
 
 
+
+  function _newmd5object() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $md5p;
+        var $1=__PyObject_New(_MD5type); //@line 30 "md5module.c"
+        var $2=$1; //@line 30 "md5module.c"
+        $md5p=$2; //@line 30 "md5module.c"
+        var $3=$md5p; //@line 31 "md5module.c"
+        var $4=($3)==0; //@line 31 "md5module.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 31 "md5module.c"
+      case 1: // $bb
+        $0=0; //@line 32 "md5module.c"
+        __label__ = 3; break; //@line 32 "md5module.c"
+      case 2: // $bb1
+        var $5=$md5p; //@line 34 "md5module.c"
+        var $6=$5+8; //@line 34 "md5module.c"
+        _md5_init($6); //@line 34 "md5module.c"
+        var $7=$md5p; //@line 35 "md5module.c"
+        $0=$7; //@line 35 "md5module.c"
+        __label__ = 3; break; //@line 35 "md5module.c"
+      case 3: // $bb2
+        var $8=$0; //@line 32 "md5module.c"
+        $retval=$8; //@line 32 "md5module.c"
+        var $retval3=$retval; //@line 32 "md5module.c"
+        ;
+        return $retval3; //@line 32 "md5module.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
 
   function _md5_dealloc($md5p) {
     ;
@@ -135,7 +171,7 @@ var _pad_1849;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 55 "md5module.c"
-        var $2=_PyArg_ParseTuple($1, __str, $view); //@line 55 "md5module.c"
+        var $2=_PyArg_ParseTuple($1, __str, allocate([$view,0,0,0], ["%struct.Py_buffer*",0,0,0], ALLOC_STACK)); //@line 55 "md5module.c"
         var $3=($2)==0; //@line 55 "md5module.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 55 "md5module.c"
       case 1: // $bb
@@ -303,82 +339,34 @@ var _pad_1849;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pms_addr_i_i;
-        var $retval_i;
-        var $0;
-        var $md5p_i;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $md5p;
         $self_addr=$self;
-        var $2=__PyObject_New(_MD5type); //@line 30 "md5module.c"
-        var $3=$2; //@line 30 "md5module.c"
-        $md5p_i=$3; //@line 30 "md5module.c"
-        var $4=$md5p_i; //@line 31 "md5module.c"
-        var $5=($4)==0; //@line 31 "md5module.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 31 "md5module.c"
-      case 1: // $newmd5object_exit_thread
-        $0=0; //@line 32 "md5module.c"
-        $retval_i=0; //@line 32 "md5module.c"
-        $md5p=0; //@line 131 "md5module.c"
-        __label__ = 3; break;
-      case 2: // $newmd5object_exit
-        var $6=$md5p_i; //@line 34 "md5module.c"
-        var $7=$6+8; //@line 34 "md5module.c"
-        $pms_addr_i_i=$7;
-        var $8=$pms_addr_i_i; //@line 316 "md5.c"
-        var $9=$8; //@line 316 "md5.c"
-        var $10=$9+4; //@line 316 "md5.c"
-        HEAP[$10]=0; //@line 316 "md5.c"
-        var $11=$pms_addr_i_i; //@line 316 "md5.c"
-        var $12=$11; //@line 316 "md5.c"
-        var $13=$12+4; //@line 316 "md5.c"
-        var $14=HEAP[$13]; //@line 316 "md5.c"
-        var $15=$pms_addr_i_i; //@line 316 "md5.c"
-        var $16=$15; //@line 316 "md5.c"
-        var $17=$16; //@line 316 "md5.c"
-        HEAP[$17]=$14; //@line 316 "md5.c"
-        var $18=$pms_addr_i_i; //@line 317 "md5.c"
-        var $19=$18+8; //@line 317 "md5.c"
-        var $20=$19; //@line 317 "md5.c"
-        HEAP[$20]=1732584193; //@line 317 "md5.c"
-        var $21=$pms_addr_i_i; //@line 318 "md5.c"
-        var $22=$21+8; //@line 318 "md5.c"
-        var $23=$22+4; //@line 318 "md5.c"
-        HEAP[$23]=-271733879; //@line 318 "md5.c"
-        var $24=$pms_addr_i_i; //@line 319 "md5.c"
-        var $25=$24+8; //@line 319 "md5.c"
-        var $26=$25+8; //@line 319 "md5.c"
-        HEAP[$26]=-1732584194; //@line 319 "md5.c"
-        var $27=$pms_addr_i_i; //@line 320 "md5.c"
-        var $28=$27+8; //@line 320 "md5.c"
-        var $29=$28+12; //@line 320 "md5.c"
-        HEAP[$29]=271733878; //@line 320 "md5.c"
-        var $30=$md5p_i; //@line 35 "md5module.c"
-        $0=$30; //@line 35 "md5module.c"
-        $retval_i=$30; //@line 32 "md5module.c"
-        $md5p=$30; //@line 131 "md5module.c"
-        var $31=($30)==0; //@line 131 "md5module.c"
-        if ($31) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 131 "md5module.c"
-      case 3: // $bb
-        $1=0; //@line 132 "md5module.c"
-        __label__ = 5; break; //@line 132 "md5module.c"
-      case 4: // $bb1
-        var $32=$md5p; //@line 134 "md5module.c"
-        var $33=$32+8; //@line 134 "md5module.c"
-        var $34=$self_addr; //@line 134 "md5module.c"
-        var $35=$34+8; //@line 134 "md5module.c"
-        var $36=$33; //@line 134 "md5module.c"
-        var $37=$35; //@line 134 "md5module.c"
-        _llvm_memcpy_p0i8_p0i8_i32($36, $37, 88, 4, 0); //@line 134 "md5module.c"
-        var $38=$md5p; //@line 136 "md5module.c"
-        var $39=$38; //@line 136 "md5module.c"
-        $1=$39; //@line 136 "md5module.c"
-        __label__ = 5; break; //@line 136 "md5module.c"
-      case 5: // $bb2
-        var $40=$1; //@line 132 "md5module.c"
-        $retval=$40; //@line 132 "md5module.c"
+        var $1=_newmd5object(); //@line 131 "md5module.c"
+        $md5p=$1; //@line 131 "md5module.c"
+        var $2=$md5p; //@line 131 "md5module.c"
+        var $3=($2)==0; //@line 131 "md5module.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 131 "md5module.c"
+      case 1: // $bb
+        $0=0; //@line 132 "md5module.c"
+        __label__ = 3; break; //@line 132 "md5module.c"
+      case 2: // $bb1
+        var $4=$md5p; //@line 134 "md5module.c"
+        var $5=$4+8; //@line 134 "md5module.c"
+        var $6=$self_addr; //@line 134 "md5module.c"
+        var $7=$6+8; //@line 134 "md5module.c"
+        var $8=$5; //@line 134 "md5module.c"
+        var $9=$7; //@line 134 "md5module.c"
+        _llvm_memcpy_p0i8_p0i8_i32($8, $9, 88, 4, 0); //@line 134 "md5module.c"
+        var $10=$md5p; //@line 136 "md5module.c"
+        var $11=$10; //@line 136 "md5module.c"
+        $0=$11; //@line 136 "md5module.c"
+        __label__ = 3; break; //@line 136 "md5module.c"
+      case 3: // $bb2
+        var $12=$0; //@line 132 "md5module.c"
+        $retval=$12; //@line 132 "md5module.c"
         var $retval3=$retval; //@line 132 "md5module.c"
         ;
         return $retval3; //@line 132 "md5module.c"
@@ -453,104 +441,56 @@ var _pad_1849;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pms_addr_i_i;
-        var $retval_i;
-        var $0;
-        var $md5p_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $md5p;
         var $view=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
         var $view1=$view; //@line 264 "md5module.c"
         _llvm_memset_p0i8_i32($view1, 0, 52, 4, 0); //@line 264 "md5module.c"
-        var $2=$args_addr; //@line 266 "md5module.c"
-        var $3=_PyArg_ParseTuple($2, __str11, $view); //@line 266 "md5module.c"
-        var $4=($3)==0; //@line 266 "md5module.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 266 "md5module.c"
+        var $1=$args_addr; //@line 266 "md5module.c"
+        var $2=_PyArg_ParseTuple($1, __str11, allocate([$view,0,0,0], ["%struct.Py_buffer*",0,0,0], ALLOC_STACK)); //@line 266 "md5module.c"
+        var $3=($2)==0; //@line 266 "md5module.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 266 "md5module.c"
       case 1: // $bb
-        $1=0; //@line 267 "md5module.c"
-        __label__ = 9; break; //@line 267 "md5module.c"
+        $0=0; //@line 267 "md5module.c"
+        __label__ = 7; break; //@line 267 "md5module.c"
       case 2: // $bb2
-        var $5=__PyObject_New(_MD5type); //@line 30 "md5module.c"
-        var $6=$5; //@line 30 "md5module.c"
-        $md5p_i=$6; //@line 30 "md5module.c"
-        var $7=$md5p_i; //@line 31 "md5module.c"
-        var $8=($7)==0; //@line 31 "md5module.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 31 "md5module.c"
-      case 3: // $newmd5object_exit_thread
-        $0=0; //@line 32 "md5module.c"
-        $retval_i=0; //@line 32 "md5module.c"
-        $md5p=0; //@line 269 "md5module.c"
-        __label__ = 5; break;
-      case 4: // $newmd5object_exit
-        var $9=$md5p_i; //@line 34 "md5module.c"
-        var $10=$9+8; //@line 34 "md5module.c"
-        $pms_addr_i_i=$10;
-        var $11=$pms_addr_i_i; //@line 316 "md5.c"
-        var $12=$11; //@line 316 "md5.c"
-        var $13=$12+4; //@line 316 "md5.c"
-        HEAP[$13]=0; //@line 316 "md5.c"
-        var $14=$pms_addr_i_i; //@line 316 "md5.c"
-        var $15=$14; //@line 316 "md5.c"
-        var $16=$15+4; //@line 316 "md5.c"
-        var $17=HEAP[$16]; //@line 316 "md5.c"
-        var $18=$pms_addr_i_i; //@line 316 "md5.c"
-        var $19=$18; //@line 316 "md5.c"
-        var $20=$19; //@line 316 "md5.c"
-        HEAP[$20]=$17; //@line 316 "md5.c"
-        var $21=$pms_addr_i_i; //@line 317 "md5.c"
-        var $22=$21+8; //@line 317 "md5.c"
-        var $23=$22; //@line 317 "md5.c"
-        HEAP[$23]=1732584193; //@line 317 "md5.c"
-        var $24=$pms_addr_i_i; //@line 318 "md5.c"
-        var $25=$24+8; //@line 318 "md5.c"
-        var $26=$25+4; //@line 318 "md5.c"
-        HEAP[$26]=-271733879; //@line 318 "md5.c"
-        var $27=$pms_addr_i_i; //@line 319 "md5.c"
-        var $28=$27+8; //@line 319 "md5.c"
-        var $29=$28+8; //@line 319 "md5.c"
-        HEAP[$29]=-1732584194; //@line 319 "md5.c"
-        var $30=$pms_addr_i_i; //@line 320 "md5.c"
-        var $31=$30+8; //@line 320 "md5.c"
-        var $32=$31+12; //@line 320 "md5.c"
-        HEAP[$32]=271733878; //@line 320 "md5.c"
-        var $33=$md5p_i; //@line 35 "md5module.c"
-        $0=$33; //@line 35 "md5module.c"
-        $retval_i=$33; //@line 32 "md5module.c"
-        $md5p=$33; //@line 269 "md5module.c"
-        var $34=($33)==0; //@line 269 "md5module.c"
-        if ($34) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 269 "md5module.c"
-      case 5: // $bb3
+        var $4=_newmd5object(); //@line 269 "md5module.c"
+        $md5p=$4; //@line 269 "md5module.c"
+        var $5=$md5p; //@line 269 "md5module.c"
+        var $6=($5)==0; //@line 269 "md5module.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 269 "md5module.c"
+      case 3: // $bb3
         _PyBuffer_Release($view); //@line 270 "md5module.c"
-        $1=0; //@line 271 "md5module.c"
-        __label__ = 9; break; //@line 271 "md5module.c"
-      case 6: // $bb4
-        var $35=$view+8; //@line 274 "md5module.c"
-        var $36=HEAP[$35]; //@line 274 "md5module.c"
-        var $37=($36) > 0; //@line 274 "md5module.c"
-        if ($37) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 274 "md5module.c"
-      case 7: // $bb5
-        var $38=$view+8; //@line 275 "md5module.c"
-        var $39=HEAP[$38]; //@line 275 "md5module.c"
-        var $40=$view; //@line 275 "md5module.c"
-        var $41=HEAP[$40]; //@line 275 "md5module.c"
-        var $42=$md5p; //@line 275 "md5module.c"
-        var $43=$42+8; //@line 275 "md5module.c"
-        _md5_append($43, $41, $39); //@line 275 "md5module.c"
-        __label__ = 8; break; //@line 275 "md5module.c"
-      case 8: // $bb6
+        $0=0; //@line 271 "md5module.c"
+        __label__ = 7; break; //@line 271 "md5module.c"
+      case 4: // $bb4
+        var $7=$view+8; //@line 274 "md5module.c"
+        var $8=HEAP[$7]; //@line 274 "md5module.c"
+        var $9=($8) > 0; //@line 274 "md5module.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 274 "md5module.c"
+      case 5: // $bb5
+        var $10=$view+8; //@line 275 "md5module.c"
+        var $11=HEAP[$10]; //@line 275 "md5module.c"
+        var $12=$view; //@line 275 "md5module.c"
+        var $13=HEAP[$12]; //@line 275 "md5module.c"
+        var $14=$md5p; //@line 275 "md5module.c"
+        var $15=$14+8; //@line 275 "md5module.c"
+        _md5_append($15, $13, $11); //@line 275 "md5module.c"
+        __label__ = 6; break; //@line 275 "md5module.c"
+      case 6: // $bb6
         _PyBuffer_Release($view); //@line 278 "md5module.c"
-        var $44=$md5p; //@line 280 "md5module.c"
-        var $45=$44; //@line 280 "md5module.c"
-        $1=$45; //@line 280 "md5module.c"
-        __label__ = 9; break; //@line 280 "md5module.c"
-      case 9: // $bb7
-        var $46=$1; //@line 267 "md5module.c"
-        $retval=$46; //@line 267 "md5module.c"
+        var $16=$md5p; //@line 280 "md5module.c"
+        var $17=$16; //@line 280 "md5module.c"
+        $0=$17; //@line 280 "md5module.c"
+        __label__ = 7; break; //@line 280 "md5module.c"
+      case 7: // $bb7
+        var $18=$0; //@line 267 "md5module.c"
+        $retval=$18; //@line 267 "md5module.c"
         var $retval8=$retval; //@line 267 "md5module.c"
         STACKTOP = __stackBase__;
         return $retval8; //@line 267 "md5module.c"

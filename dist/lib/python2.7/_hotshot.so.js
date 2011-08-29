@@ -94,17 +94,17 @@ var $struct_rusage___SIZE = 72; // %struct.rusage
   var $struct_rusage___FLATTENER = [0,8,16,20,24,28,32,36,40,44,48,52,56,60,64,68];
 var _ProfilerError;
 var _logreader_close__doc__;
-var __Py_NoneStruct;
+
 var _logreader_fileno__doc__;
-var _PyExc_ValueError;
+
 var __str;
-var _PyExc_EOFError;
+
 var __str1;
 var __str2;
 var __str3;
-var _PyExc_IndexError;
+
 var __str4;
-var _PyExc_IOError;
+
 var __str5;
 var __str6;
 var ___PRETTY_FUNCTION___8917;
@@ -122,9 +122,9 @@ var _runcall__doc__;
 var __str12;
 var _runcode__doc__;
 var __str13;
-var _PyCode_Type;
-var _PyDict_Type;
-var _PyExc_TypeError;
+
+
+
 var __str14;
 var _start__doc__;
 var _stop__doc__;
@@ -140,8 +140,8 @@ var __str22;
 var __str23;
 var __str24;
 var _profiler_members;
-var __Py_TrueStruct;
-var __Py_ZeroStruct;
+
+
 var __str25;
 var __str26;
 var _profiler_getsets;
@@ -160,7 +160,7 @@ var __str31;
 var _LogReaderType;
 var __str32;
 var __str33;
-var _PyExc_RuntimeError;
+
 var __str34;
 var __str35;
 var __str36;
@@ -192,7 +192,7 @@ var __str58;
 var __str59;
 var __str60;
 var _functions;
-var _PyType_Type;
+
 var __str61;
 var __str62;
 var __str63;
@@ -697,6 +697,26 @@ var __str74;
   }
   
 
+  function _eof_error($self) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    $self_addr=$self;
+    var $0=$self_addr; //@line 379 "_hotshot.c"
+    var $1=$0+12; //@line 379 "_hotshot.c"
+    var $2=HEAP[$1]; //@line 379 "_hotshot.c"
+    var $3=_fclose($2); //@line 379 "_hotshot.c"
+    var $4=$self_addr; //@line 380 "_hotshot.c"
+    var $5=$4+12; //@line 380 "_hotshot.c"
+    HEAP[$5]=0; //@line 380 "_hotshot.c"
+    var $6=HEAP[_PyExc_EOFError]; //@line 381 "_hotshot.c"
+    _PyErr_SetString($6, __str1); //@line 381 "_hotshot.c"
+    ;
+    return; //@line 383 "_hotshot.c"
+  }
+  
+
   function _logreader_tp_iternext($self) {
     var __stackBase__  = STACKTOP; STACKTOP += 16; _memset(__stackBase__, 0, 16);
     var __label__;
@@ -704,7 +724,6 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
         var $self_addr;
         var $retval;
         var $0;
@@ -952,89 +971,80 @@ var __str74;
         if ($101) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 480 "_hotshot.c"
       case 33: // $bb35
         var $102=$self_addr; //@line 481 "_hotshot.c"
-        $self_addr_i=$102;
-        var $103=$self_addr_i; //@line 379 "_hotshot.c"
-        var $104=$103+12; //@line 379 "_hotshot.c"
-        var $105=HEAP[$104]; //@line 379 "_hotshot.c"
-        var $106=_fclose($105); //@line 379 "_hotshot.c"
-        var $107=$self_addr_i; //@line 380 "_hotshot.c"
-        var $108=$107+12; //@line 380 "_hotshot.c"
-        HEAP[$108]=0; //@line 380 "_hotshot.c"
-        var $109=HEAP[_PyExc_EOFError]; //@line 381 "_hotshot.c"
-        _PyErr_SetString($109, __str1); //@line 381 "_hotshot.c"
+        _eof_error($102); //@line 481 "_hotshot.c"
         __label__ = 43; break; //@line 481 "_hotshot.c"
       case 34: // $bb36
-        var $110=$err; //@line 483 "_hotshot.c"
-        var $111=($110)==0; //@line 483 "_hotshot.c"
-        if ($111) { __label__ = 35; break; } else { __label__ = 43; break; } //@line 483 "_hotshot.c"
+        var $103=$err; //@line 483 "_hotshot.c"
+        var $104=($103)==0; //@line 483 "_hotshot.c"
+        if ($104) { __label__ = 35; break; } else { __label__ = 43; break; } //@line 483 "_hotshot.c"
       case 35: // $bb37
-        var $112=_PyTuple_New(4); //@line 484 "_hotshot.c"
-        $result=$112; //@line 484 "_hotshot.c"
-        var $113=$result; //@line 485 "_hotshot.c"
-        var $114=($113)==0; //@line 485 "_hotshot.c"
-        if ($114) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 485 "_hotshot.c"
+        var $105=_PyTuple_New(4); //@line 484 "_hotshot.c"
+        $result=$105; //@line 484 "_hotshot.c"
+        var $106=$result; //@line 485 "_hotshot.c"
+        var $107=($106)==0; //@line 485 "_hotshot.c"
+        if ($107) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 485 "_hotshot.c"
       case 36: // $bb38
         $0=0; //@line 486 "_hotshot.c"
         __label__ = 44; break; //@line 486 "_hotshot.c"
       case 37: // $bb39
-        var $115=$result; //@line 487 "_hotshot.c"
-        var $116=$115; //@line 487 "_hotshot.c"
-        var $117=$what; //@line 487 "_hotshot.c"
-        var $118=_PyInt_FromLong($117); //@line 487 "_hotshot.c"
-        var $119=$116+12; //@line 487 "_hotshot.c"
-        var $120=$119; //@line 487 "_hotshot.c"
-        HEAP[$120]=$118; //@line 487 "_hotshot.c"
-        var $121=$result; //@line 488 "_hotshot.c"
-        var $122=$121; //@line 488 "_hotshot.c"
-        var $123=HEAP[$fileno]; //@line 488 "_hotshot.c"
-        var $124=_PyInt_FromLong($123); //@line 488 "_hotshot.c"
-        var $125=$122+12; //@line 488 "_hotshot.c"
-        var $126=$125+8; //@line 488 "_hotshot.c"
-        HEAP[$126]=$124; //@line 488 "_hotshot.c"
-        var $127=HEAP[$s1]; //@line 489 "_hotshot.c"
-        var $128=($127)==0; //@line 489 "_hotshot.c"
-        var $129=$result; //@line 490 "_hotshot.c"
-        var $130=$129; //@line 490 "_hotshot.c"
-        if ($128) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 489 "_hotshot.c"
+        var $108=$result; //@line 487 "_hotshot.c"
+        var $109=$108; //@line 487 "_hotshot.c"
+        var $110=$what; //@line 487 "_hotshot.c"
+        var $111=_PyInt_FromLong($110); //@line 487 "_hotshot.c"
+        var $112=$109+12; //@line 487 "_hotshot.c"
+        var $113=$112; //@line 487 "_hotshot.c"
+        HEAP[$113]=$111; //@line 487 "_hotshot.c"
+        var $114=$result; //@line 488 "_hotshot.c"
+        var $115=$114; //@line 488 "_hotshot.c"
+        var $116=HEAP[$fileno]; //@line 488 "_hotshot.c"
+        var $117=_PyInt_FromLong($116); //@line 488 "_hotshot.c"
+        var $118=$115+12; //@line 488 "_hotshot.c"
+        var $119=$118+8; //@line 488 "_hotshot.c"
+        HEAP[$119]=$117; //@line 488 "_hotshot.c"
+        var $120=HEAP[$s1]; //@line 489 "_hotshot.c"
+        var $121=($120)==0; //@line 489 "_hotshot.c"
+        var $122=$result; //@line 490 "_hotshot.c"
+        var $123=$122; //@line 490 "_hotshot.c"
+        if ($121) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 489 "_hotshot.c"
       case 38: // $bb40
-        var $131=HEAP[$tdelta]; //@line 490 "_hotshot.c"
-        var $132=_PyInt_FromLong($131); //@line 490 "_hotshot.c"
-        var $133=$130+12; //@line 490 "_hotshot.c"
-        var $134=$133+4; //@line 490 "_hotshot.c"
-        HEAP[$134]=$132; //@line 490 "_hotshot.c"
+        var $124=HEAP[$tdelta]; //@line 490 "_hotshot.c"
+        var $125=_PyInt_FromLong($124); //@line 490 "_hotshot.c"
+        var $126=$123+12; //@line 490 "_hotshot.c"
+        var $127=$126+4; //@line 490 "_hotshot.c"
+        HEAP[$127]=$125; //@line 490 "_hotshot.c"
         __label__ = 40; break; //@line 490 "_hotshot.c"
       case 39: // $bb41
-        var $135=HEAP[$s1]; //@line 492 "_hotshot.c"
-        var $136=$130+12; //@line 492 "_hotshot.c"
-        var $137=$136+4; //@line 492 "_hotshot.c"
-        HEAP[$137]=$135; //@line 492 "_hotshot.c"
+        var $128=HEAP[$s1]; //@line 492 "_hotshot.c"
+        var $129=$123+12; //@line 492 "_hotshot.c"
+        var $130=$129+4; //@line 492 "_hotshot.c"
+        HEAP[$130]=$128; //@line 492 "_hotshot.c"
         __label__ = 40; break; //@line 492 "_hotshot.c"
       case 40: // $bb42
-        var $138=$s2; //@line 493 "_hotshot.c"
-        var $139=($138)==0; //@line 493 "_hotshot.c"
-        var $140=$result; //@line 494 "_hotshot.c"
-        var $141=$140; //@line 494 "_hotshot.c"
-        if ($139) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 493 "_hotshot.c"
+        var $131=$s2; //@line 493 "_hotshot.c"
+        var $132=($131)==0; //@line 493 "_hotshot.c"
+        var $133=$result; //@line 494 "_hotshot.c"
+        var $134=$133; //@line 494 "_hotshot.c"
+        if ($132) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 493 "_hotshot.c"
       case 41: // $bb43
-        var $142=HEAP[$lineno]; //@line 494 "_hotshot.c"
-        var $143=_PyInt_FromLong($142); //@line 494 "_hotshot.c"
-        var $144=$141+12; //@line 494 "_hotshot.c"
-        var $145=$144+12; //@line 494 "_hotshot.c"
-        HEAP[$145]=$143; //@line 494 "_hotshot.c"
+        var $135=HEAP[$lineno]; //@line 494 "_hotshot.c"
+        var $136=_PyInt_FromLong($135); //@line 494 "_hotshot.c"
+        var $137=$134+12; //@line 494 "_hotshot.c"
+        var $138=$137+12; //@line 494 "_hotshot.c"
+        HEAP[$138]=$136; //@line 494 "_hotshot.c"
         __label__ = 43; break; //@line 494 "_hotshot.c"
       case 42: // $bb44
-        var $146=$141+12; //@line 496 "_hotshot.c"
-        var $147=$146+12; //@line 496 "_hotshot.c"
-        var $148=$s2; //@line 496 "_hotshot.c"
-        HEAP[$147]=$148; //@line 496 "_hotshot.c"
+        var $139=$134+12; //@line 496 "_hotshot.c"
+        var $140=$139+12; //@line 496 "_hotshot.c"
+        var $141=$s2; //@line 496 "_hotshot.c"
+        HEAP[$140]=$141; //@line 496 "_hotshot.c"
         __label__ = 43; break; //@line 496 "_hotshot.c"
       case 43: // $bb45
-        var $149=$result; //@line 525 "_hotshot.c"
-        $0=$149; //@line 525 "_hotshot.c"
+        var $142=$result; //@line 525 "_hotshot.c"
+        $0=$142; //@line 525 "_hotshot.c"
         __label__ = 44; break; //@line 525 "_hotshot.c"
       case 44: // $bb46
-        var $150=$0; //@line 403 "_hotshot.c"
-        $retval=$150; //@line 403 "_hotshot.c"
+        var $143=$0; //@line 403 "_hotshot.c"
+        $retval=$143; //@line 403 "_hotshot.c"
         var $retval47=$retval; //@line 403 "_hotshot.c"
         STACKTOP = __stackBase__;
         return $retval47; //@line 403 "_hotshot.c"
@@ -1157,8 +1167,6 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $self_addr_i;
         var $self_addr;
         var $retval;
         var $0;
@@ -1184,7 +1192,7 @@ var __str74;
         var $15=($13)==($14); //@line 558 "_hotshot.c"
         var $16=$self_addr; //@line 559 "_hotshot.c"
         var $17=$16+16; //@line 559 "_hotshot.c"
-        if ($15) { __label__ = 9; break; } else { __label__ = 1; break; } //@line 558 "_hotshot.c"
+        if ($15) { __label__ = 3; break; } else { __label__ = 1; break; } //@line 558 "_hotshot.c"
       case 1: // $bb1
         var $18=HEAP[$17]; //@line 561 "_hotshot.c"
         var $19=$written; //@line 561 "_hotshot.c"
@@ -1207,7 +1215,7 @@ var __str74;
         HEAP[$34]=$32; //@line 563 "_hotshot.c"
         var $35=$written; //@line 564 "_hotshot.c"
         var $36=($35)==0; //@line 564 "_hotshot.c"
-        if ($36) { __label__ = 2; break; } else { __label__ = 10; break; } //@line 564 "_hotshot.c"
+        if ($36) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 564 "_hotshot.c"
       case 2: // $bb2
         var $37=$self_addr; //@line 565 "_hotshot.c"
         var $38=$37+12; //@line 565 "_hotshot.c"
@@ -1218,102 +1226,40 @@ var __str74;
         var $42=$s; //@line 566 "_hotshot.c"
         var $43=_PyErr_SetFromErrnoWithFilename($41, $42); //@line 566 "_hotshot.c"
         var $44=$self_addr; //@line 567 "_hotshot.c"
-        $self_addr_i=$44;
-        var $45=$self_addr_i; //@line 976 "_hotshot.c"
-        var $46=$45+10276; //@line 976 "_hotshot.c"
-        var $47=HEAP[$46]; //@line 976 "_hotshot.c"
-        var $48=($47)!=0; //@line 976 "_hotshot.c"
-        if ($48) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 976 "_hotshot.c"
-      case 3: // $bb_i
-        var $49=$self_addr_i; //@line 977 "_hotshot.c"
-        var $50=$49+10276; //@line 977 "_hotshot.c"
-        HEAP[$50]=0; //@line 977 "_hotshot.c"
-        var $51=$self_addr_i; //@line 978 "_hotshot.c"
-        var $52=$51+10264; //@line 978 "_hotshot.c"
-        var $53=HEAP[$52]; //@line 978 "_hotshot.c"
-        var $54=($53)!=0; //@line 978 "_hotshot.c"
-        if ($54) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 978 "_hotshot.c"
-      case 4: // $bb1_i
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 6; break; //@line 979 "_hotshot.c"
-      case 5: // $bb2_i
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 6; break; //@line 981 "_hotshot.c"
-      case 6: // $bb3_i
-        var $55=$self_addr_i; //@line 983 "_hotshot.c"
-        var $56=$55+16; //@line 983 "_hotshot.c"
-        var $57=HEAP[$56]; //@line 983 "_hotshot.c"
-        var $58=($57) > 0; //@line 983 "_hotshot.c"
-        if ($58) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 983 "_hotshot.c"
-      case 7: // $bb4_i
-        var $59=$self_addr_i; //@line 985 "_hotshot.c"
-        var $60=_flush_data($59); //@line 985 "_hotshot.c"
-        __label__ = 8; break; //@line 985 "_hotshot.c"
-      case 8: // $do_stop_exit
+        _do_stop($44); //@line 567 "_hotshot.c"
         $0=-1; //@line 568 "_hotshot.c"
-        __label__ = 19; break; //@line 568 "_hotshot.c"
-      case 9: // $bb3
+        __label__ = 7; break; //@line 568 "_hotshot.c"
+      case 3: // $bb3
         HEAP[$17]=0; //@line 559 "_hotshot.c"
         var $_pr=$written;
-        var $61=($_pr)!=0; //@line 571 "_hotshot.c"
-        if ($61) { __label__ = 10; break; } else { __label__ = 18; break; } //@line 571 "_hotshot.c"
-      case 10: // $bb4
-        var $62=$self_addr; //@line 572 "_hotshot.c"
-        var $63=$62+10260; //@line 572 "_hotshot.c"
-        var $64=HEAP[$63]; //@line 572 "_hotshot.c"
-        var $65=_fflush($64); //@line 572 "_hotshot.c"
-        var $66=($65)!=0; //@line 572 "_hotshot.c"
-        if ($66) { __label__ = 11; break; } else { __label__ = 18; break; } //@line 572 "_hotshot.c"
-      case 11: // $bb5
-        var $67=$self_addr; //@line 573 "_hotshot.c"
-        var $68=$67+12; //@line 573 "_hotshot.c"
-        var $69=HEAP[$68]; //@line 573 "_hotshot.c"
-        var $70=_PyString_AsString($69); //@line 573 "_hotshot.c"
-        $s6=$70; //@line 573 "_hotshot.c"
-        var $71=HEAP[_PyExc_IOError]; //@line 574 "_hotshot.c"
-        var $72=$s6; //@line 574 "_hotshot.c"
-        var $73=_PyErr_SetFromErrnoWithFilename($71, $72); //@line 574 "_hotshot.c"
-        var $74=$self_addr; //@line 575 "_hotshot.c"
-        $self_addr_i1=$74;
-        var $75=$self_addr_i1; //@line 976 "_hotshot.c"
-        var $76=$75+10276; //@line 976 "_hotshot.c"
-        var $77=HEAP[$76]; //@line 976 "_hotshot.c"
-        var $78=($77)!=0; //@line 976 "_hotshot.c"
-        if ($78) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 976 "_hotshot.c"
-      case 12: // $bb_i2
-        var $79=$self_addr_i1; //@line 977 "_hotshot.c"
-        var $80=$79+10276; //@line 977 "_hotshot.c"
-        HEAP[$80]=0; //@line 977 "_hotshot.c"
-        var $81=$self_addr_i1; //@line 978 "_hotshot.c"
-        var $82=$81+10264; //@line 978 "_hotshot.c"
-        var $83=HEAP[$82]; //@line 978 "_hotshot.c"
-        var $84=($83)!=0; //@line 978 "_hotshot.c"
-        if ($84) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 978 "_hotshot.c"
-      case 13: // $bb1_i3
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 15; break; //@line 979 "_hotshot.c"
-      case 14: // $bb2_i4
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 15; break; //@line 981 "_hotshot.c"
-      case 15: // $bb3_i5
-        var $85=$self_addr_i1; //@line 983 "_hotshot.c"
-        var $86=$85+16; //@line 983 "_hotshot.c"
-        var $87=HEAP[$86]; //@line 983 "_hotshot.c"
-        var $88=($87) > 0; //@line 983 "_hotshot.c"
-        if ($88) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 983 "_hotshot.c"
-      case 16: // $bb4_i6
-        var $89=$self_addr_i1; //@line 985 "_hotshot.c"
-        var $90=_flush_data($89); //@line 985 "_hotshot.c"
-        __label__ = 17; break; //@line 985 "_hotshot.c"
-      case 17: // $do_stop_exit7
+        var $45=($_pr)!=0; //@line 571 "_hotshot.c"
+        if ($45) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 571 "_hotshot.c"
+      case 4: // $bb4
+        var $46=$self_addr; //@line 572 "_hotshot.c"
+        var $47=$46+10260; //@line 572 "_hotshot.c"
+        var $48=HEAP[$47]; //@line 572 "_hotshot.c"
+        var $49=_fflush($48); //@line 572 "_hotshot.c"
+        var $50=($49)!=0; //@line 572 "_hotshot.c"
+        if ($50) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 572 "_hotshot.c"
+      case 5: // $bb5
+        var $51=$self_addr; //@line 573 "_hotshot.c"
+        var $52=$51+12; //@line 573 "_hotshot.c"
+        var $53=HEAP[$52]; //@line 573 "_hotshot.c"
+        var $54=_PyString_AsString($53); //@line 573 "_hotshot.c"
+        $s6=$54; //@line 573 "_hotshot.c"
+        var $55=HEAP[_PyExc_IOError]; //@line 574 "_hotshot.c"
+        var $56=$s6; //@line 574 "_hotshot.c"
+        var $57=_PyErr_SetFromErrnoWithFilename($55, $56); //@line 574 "_hotshot.c"
+        var $58=$self_addr; //@line 575 "_hotshot.c"
+        _do_stop($58); //@line 575 "_hotshot.c"
         $0=-1; //@line 576 "_hotshot.c"
-        __label__ = 19; break; //@line 576 "_hotshot.c"
-      case 18: // $bb7
+        __label__ = 7; break; //@line 576 "_hotshot.c"
+      case 6: // $bb7
         $0=0; //@line 579 "_hotshot.c"
-        __label__ = 19; break; //@line 579 "_hotshot.c"
-      case 19: // $bb8
-        var $91=$0; //@line 568 "_hotshot.c"
-        $retval=$91; //@line 568 "_hotshot.c"
+        __label__ = 7; break; //@line 579 "_hotshot.c"
+      case 7: // $bb8
+        var $59=$0; //@line 568 "_hotshot.c"
+        $retval=$59; //@line 568 "_hotshot.c"
         var $retval9=$retval; //@line 568 "_hotshot.c"
         ;
         return $retval9; //@line 568 "_hotshot.c"
@@ -1329,122 +1275,136 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $value_addr_i;
-        var $retval_i;
-        var $0;
-        var $partial_i;
         var $self_addr;
         var $s_addr;
         var $len_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $s_addr=$s;
         $len_addr=$len;
-        var $2=$self_addr; //@line 626 "_hotshot.c"
-        var $3=$2+16; //@line 626 "_hotshot.c"
-        var $4=HEAP[$3]; //@line 626 "_hotshot.c"
-        var $5=$len_addr; //@line 626 "_hotshot.c"
-        var $6=($4) + 5; //@line 626 "_hotshot.c"
-        var $7=($6) + ($5); //@line 626 "_hotshot.c"
-        var $8=($7) > 10239; //@line 626 "_hotshot.c"
-        if ($8) { __lastLabel__ = -1; __label__ = 1; break; } else { __lastLabel__ = -1; __label__ = 4; break; } //@line 626 "_hotshot.c"
+        var $1=$self_addr; //@line 626 "_hotshot.c"
+        var $2=$1+16; //@line 626 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 626 "_hotshot.c"
+        var $4=$len_addr; //@line 626 "_hotshot.c"
+        var $5=($3) + 5; //@line 626 "_hotshot.c"
+        var $6=($5) + ($4); //@line 626 "_hotshot.c"
+        var $7=($6) > 10239; //@line 626 "_hotshot.c"
+        if ($7) { __lastLabel__ = -1; __label__ = 1; break; } else { __lastLabel__ = -1; __label__ = 4; break; } //@line 626 "_hotshot.c"
       case 1: // $bb
-        var $9=$self_addr; //@line 627 "_hotshot.c"
-        var $10=_flush_data($9); //@line 627 "_hotshot.c"
-        var $11=($10) < 0; //@line 627 "_hotshot.c"
-        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 627 "_hotshot.c"
+        var $8=$self_addr; //@line 627 "_hotshot.c"
+        var $9=_flush_data($8); //@line 627 "_hotshot.c"
+        var $10=($9) < 0; //@line 627 "_hotshot.c"
+        if ($10) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 627 "_hotshot.c"
       case 2: // $bb1
-        $1=-1; //@line 628 "_hotshot.c"
-        __label__ = 13; break; //@line 628 "_hotshot.c"
+        $0=-1; //@line 628 "_hotshot.c"
+        __label__ = 9; break; //@line 628 "_hotshot.c"
       case 3: // $bb2thread_pre_split
         var $_pr=$len_addr;
         __lastLabel__ = 3; __label__ = 4; break;
       case 4: // $bb2
-        var $12=__lastLabel__ == 3 ? $_pr : ($5);
-        var $13=($12)==2147483647; //@line 630 "_hotshot.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 630 "_hotshot.c"
+        var $11=__lastLabel__ == 3 ? $_pr : ($4);
+        var $12=($11)==2147483647; //@line 630 "_hotshot.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 630 "_hotshot.c"
       case 5: // $bb3
         ___assert_fail(__str5, __str6, 630, ___PRETTY_FUNCTION___8917); //@line 630 "_hotshot.c"
         throw "Reached an unreachable!" //@line 630 "_hotshot.c"
       case 6: // $bb4
-        var $14=$self_addr; //@line 631 "_hotshot.c"
-        var $15=$len_addr; //@line 631 "_hotshot.c"
-        $self_addr_i=$14;
-        $value_addr_i=$15;
-        __label__ = 7; break; //@line 584 "_hotshot.c"
-      case 7: // $bb_i
-        var $16=$value_addr_i; //@line 588 "_hotshot.c"
-        var $17=((($16)) & 255); //@line 588 "_hotshot.c"
-        var $18=($17) & 127; //@line 588 "_hotshot.c"
-        $partial_i=$18; //@line 588 "_hotshot.c"
-        var $19=$value_addr_i; //@line 589 "_hotshot.c"
-        var $20=($19) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i=$20; //@line 589 "_hotshot.c"
-        var $21=($20)!=0; //@line 590 "_hotshot.c"
-        if ($21) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 590 "_hotshot.c"
-      case 8: // $bb1_i
-        var $22=$partial_i; //@line 591 "_hotshot.c"
-        var $23=($22) | -128; //@line 591 "_hotshot.c"
-        $partial_i=$23; //@line 591 "_hotshot.c"
-        __label__ = 9; break; //@line 591 "_hotshot.c"
-      case 9: // $bb2_i
-        var $24=$self_addr_i; //@line 592 "_hotshot.c"
-        var $25=$24+16; //@line 592 "_hotshot.c"
-        var $26=HEAP[$25]; //@line 592 "_hotshot.c"
-        var $27=$self_addr_i; //@line 592 "_hotshot.c"
-        var $28=$27+20; //@line 592 "_hotshot.c"
-        var $29=$28+$26; //@line 592 "_hotshot.c"
-        var $30=$partial_i; //@line 592 "_hotshot.c"
-        HEAP[$29]=$30; //@line 592 "_hotshot.c"
-        var $31=$self_addr_i; //@line 593 "_hotshot.c"
-        var $32=$31+16; //@line 593 "_hotshot.c"
-        var $33=HEAP[$32]; //@line 593 "_hotshot.c"
-        var $34=($33) + 1; //@line 593 "_hotshot.c"
-        var $35=$self_addr_i; //@line 593 "_hotshot.c"
-        var $36=$35+16; //@line 593 "_hotshot.c"
-        HEAP[$36]=$34; //@line 593 "_hotshot.c"
-        var $37=$value_addr_i; //@line 594 "_hotshot.c"
-        var $38=($37)!=0; //@line 594 "_hotshot.c"
-        if ($38) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 594 "_hotshot.c"
-      case 10: // $pack_packed_int_exit
-        $0=0; //@line 595 "_hotshot.c"
-        var $39=$0; //@line 595 "_hotshot.c"
-        $retval_i=$39; //@line 595 "_hotshot.c"
-        var $retval4_i=$retval_i; //@line 595 "_hotshot.c"
-        var $40=($retval4_i) < 0; //@line 631 "_hotshot.c"
-        if ($40) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 631 "_hotshot.c"
-      case 11: // $bb5
-        $1=-1; //@line 632 "_hotshot.c"
-        __label__ = 13; break; //@line 632 "_hotshot.c"
-      case 12: // $bb6
-        var $41=$len_addr; //@line 633 "_hotshot.c"
-        var $42=$self_addr; //@line 633 "_hotshot.c"
-        var $43=$42+20; //@line 633 "_hotshot.c"
-        var $44=$43; //@line 633 "_hotshot.c"
-        var $45=$self_addr; //@line 633 "_hotshot.c"
-        var $46=$45+16; //@line 633 "_hotshot.c"
-        var $47=HEAP[$46]; //@line 633 "_hotshot.c"
-        var $48=$44+$47; //@line 633 "_hotshot.c"
-        var $49=$s_addr; //@line 633 "_hotshot.c"
-        _llvm_memcpy_p0i8_p0i8_i32($48, $49, $41, 1, 0); //@line 633 "_hotshot.c"
-        var $50=$self_addr; //@line 634 "_hotshot.c"
-        var $51=$50+16; //@line 634 "_hotshot.c"
-        var $52=HEAP[$51]; //@line 634 "_hotshot.c"
-        var $53=$len_addr; //@line 634 "_hotshot.c"
-        var $54=($53) + ($52); //@line 634 "_hotshot.c"
-        var $55=$self_addr; //@line 634 "_hotshot.c"
-        var $56=$55+16; //@line 634 "_hotshot.c"
-        HEAP[$56]=$54; //@line 634 "_hotshot.c"
-        $1=0; //@line 635 "_hotshot.c"
-        __label__ = 13; break; //@line 635 "_hotshot.c"
-      case 13: // $bb7
-        var $57=$1; //@line 628 "_hotshot.c"
-        $retval=$57; //@line 628 "_hotshot.c"
+        var $13=$self_addr; //@line 631 "_hotshot.c"
+        var $14=$len_addr; //@line 631 "_hotshot.c"
+        var $15=_pack_packed_int($13, $14); //@line 631 "_hotshot.c"
+        var $16=($15) < 0; //@line 631 "_hotshot.c"
+        if ($16) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 631 "_hotshot.c"
+      case 7: // $bb5
+        $0=-1; //@line 632 "_hotshot.c"
+        __label__ = 9; break; //@line 632 "_hotshot.c"
+      case 8: // $bb6
+        var $17=$len_addr; //@line 633 "_hotshot.c"
+        var $18=$self_addr; //@line 633 "_hotshot.c"
+        var $19=$18+20; //@line 633 "_hotshot.c"
+        var $20=$19; //@line 633 "_hotshot.c"
+        var $21=$self_addr; //@line 633 "_hotshot.c"
+        var $22=$21+16; //@line 633 "_hotshot.c"
+        var $23=HEAP[$22]; //@line 633 "_hotshot.c"
+        var $24=$20+$23; //@line 633 "_hotshot.c"
+        var $25=$s_addr; //@line 633 "_hotshot.c"
+        _llvm_memcpy_p0i8_p0i8_i32($24, $25, $17, 1, 0); //@line 633 "_hotshot.c"
+        var $26=$self_addr; //@line 634 "_hotshot.c"
+        var $27=$26+16; //@line 634 "_hotshot.c"
+        var $28=HEAP[$27]; //@line 634 "_hotshot.c"
+        var $29=$len_addr; //@line 634 "_hotshot.c"
+        var $30=($29) + ($28); //@line 634 "_hotshot.c"
+        var $31=$self_addr; //@line 634 "_hotshot.c"
+        var $32=$31+16; //@line 634 "_hotshot.c"
+        HEAP[$32]=$30; //@line 634 "_hotshot.c"
+        $0=0; //@line 635 "_hotshot.c"
+        __label__ = 9; break; //@line 635 "_hotshot.c"
+      case 9: // $bb7
+        var $33=$0; //@line 628 "_hotshot.c"
+        $retval=$33; //@line 628 "_hotshot.c"
         var $retval8=$retval; //@line 628 "_hotshot.c"
         ;
         return $retval8; //@line 628 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_packed_int($self, $value) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $value_addr;
+        var $retval;
+        var $0;
+        var $partial;
+        $self_addr=$self;
+        $value_addr=$value;
+        __label__ = 1; break; //@line 584 "_hotshot.c"
+      case 1: // $bb
+        var $1=$value_addr; //@line 588 "_hotshot.c"
+        var $2=((($1)) & 255); //@line 588 "_hotshot.c"
+        var $3=($2) & 127; //@line 588 "_hotshot.c"
+        $partial=$3; //@line 588 "_hotshot.c"
+        var $4=$value_addr; //@line 589 "_hotshot.c"
+        var $5=($4) >> 7; //@line 589 "_hotshot.c"
+        $value_addr=$5; //@line 589 "_hotshot.c"
+        var $6=($5)!=0; //@line 590 "_hotshot.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 590 "_hotshot.c"
+      case 2: // $bb1
+        var $7=$partial; //@line 591 "_hotshot.c"
+        var $8=($7) | -128; //@line 591 "_hotshot.c"
+        $partial=$8; //@line 591 "_hotshot.c"
+        __label__ = 3; break; //@line 591 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 592 "_hotshot.c"
+        var $10=$9+16; //@line 592 "_hotshot.c"
+        var $11=HEAP[$10]; //@line 592 "_hotshot.c"
+        var $12=$self_addr; //@line 592 "_hotshot.c"
+        var $13=$12+20; //@line 592 "_hotshot.c"
+        var $14=$13+$11; //@line 592 "_hotshot.c"
+        var $15=$partial; //@line 592 "_hotshot.c"
+        HEAP[$14]=$15; //@line 592 "_hotshot.c"
+        var $16=$self_addr; //@line 593 "_hotshot.c"
+        var $17=$16+16; //@line 593 "_hotshot.c"
+        var $18=HEAP[$17]; //@line 593 "_hotshot.c"
+        var $19=($18) + 1; //@line 593 "_hotshot.c"
+        var $20=$self_addr; //@line 593 "_hotshot.c"
+        var $21=$20+16; //@line 593 "_hotshot.c"
+        HEAP[$21]=$19; //@line 593 "_hotshot.c"
+        var $22=$value_addr; //@line 594 "_hotshot.c"
+        var $23=($22)!=0; //@line 594 "_hotshot.c"
+        if ($23) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 594 "_hotshot.c"
+      case 4: // $bb3
+        $0=0; //@line 595 "_hotshot.c"
+        var $24=$0; //@line 595 "_hotshot.c"
+        $retval=$24; //@line 595 "_hotshot.c"
+        var $retval4=$retval; //@line 595 "_hotshot.c"
+        ;
+        return $retval4; //@line 595 "_hotshot.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1532,1144 +1492,980 @@ var __str74;
   }
   
 
-  function _tracer_callback($self, $frame, $what, $arg) {
-    var __stackBase__  = STACKTOP; STACKTOP += 24; _memset(__stackBase__, 0, 24);
+  function _pack_define_file($self, $fileno, $filename) {
+    ;
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i76;
-        var $lineno_addr_i77;
-        var $retval_i78;
+        var $self_addr;
+        var $fileno_addr;
+        var $filename_addr;
+        var $retval;
         var $0;
-        var $self_addr_i_i57;
-        var $value_addr_i_i58;
-        var $retval_i_i59;
-        var $1;
-        var $partial_i_i60;
-        var $self_addr_i61;
-        var $lineno_addr_i62;
-        var $tdelta_addr_i63;
-        var $retval_i64;
-        var $2;
-        var $self_addr_i44;
-        var $retval_i45;
-        var $3;
-        var $tdelta_i46;
-        var $tv_i47=__stackBase__;
-        var $self_addr_i34;
-        var $tdelta_addr_i35;
-        var $retval_i36;
-        var $4;
-        var $self_addr_i21;
-        var $retval_i22;
-        var $5;
-        var $tdelta_i23;
-        var $tv_i24=__stackBase__+8;
-        var $self_addr_i1_i;
-        var $value_addr_i2_i;
-        var $retval_i3_i;
-        var $6;
-        var $partial_i4_i;
-        var $self_addr_i_i8;
-        var $value_addr_i_i;
-        var $retval_i_i9;
-        var $7;
-        var $partial_i_i;
-        var $self_addr_i10;
-        var $fileno_addr_i;
-        var $tdelta_addr_i;
-        var $lineno_addr_i;
-        var $retval_i11;
-        var $8;
-        var $self_addr_i1;
-        var $retval_i2;
-        var $9;
-        var $tdelta_i;
-        var $tv_i=__stackBase__+16;
-        var $self_addr_i1_i_i;
-        var $value_addr_i2_i_i;
-        var $retval_i3_i_i;
-        var $10;
-        var $partial_i4_i_i;
-        var $self_addr_i_i1_i;
-        var $value_addr_i_i2_i;
-        var $retval_i_i3_i;
-        var $11;
-        var $partial_i_i4_i;
-        var $self_addr_i5_i;
-        var $fileno_addr_i6_i;
-        var $lineno_addr_i_i;
-        var $funcname_addr_i_i;
-        var $retval_i7_i;
-        var $12;
-        var $len_i8_i;
-        var $self_addr_i_i_i;
-        var $value_addr_i_i_i;
-        var $retval_i_i_i;
-        var $13;
-        var $partial_i_i_i;
-        var $self_addr_i_i;
-        var $fileno_addr_i_i;
-        var $filename_addr_i_i;
-        var $retval_i_i;
-        var $14;
-        var $len_i_i;
-        var $self_addr_i;
-        var $fcode_addr_i;
-        var $retval_i;
-        var $15;
-        var $obj_i;
-        var $dict_i;
-        var $fileno_i;
-        var $name_i;
+        var $len;
+        $self_addr=$self;
+        $fileno_addr=$fileno;
+        $filename_addr=$filename;
+        var $1=$filename_addr; //@line 658 "_hotshot.c"
+        var $2=_strlen($1); //@line 658 "_hotshot.c"
+        $len=$2; //@line 658 "_hotshot.c"
+        var $3=$self_addr; //@line 660 "_hotshot.c"
+        var $4=$3+16; //@line 660 "_hotshot.c"
+        var $5=HEAP[$4]; //@line 660 "_hotshot.c"
+        var $6=$len; //@line 660 "_hotshot.c"
+        var $7=($5) + 11; //@line 660 "_hotshot.c"
+        var $8=($7) + ($6); //@line 660 "_hotshot.c"
+        var $9=($8) > 10239; //@line 660 "_hotshot.c"
+        if ($9) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 660 "_hotshot.c"
+      case 1: // $bb
+        var $10=$self_addr; //@line 661 "_hotshot.c"
+        var $11=_flush_data($10); //@line 661 "_hotshot.c"
+        var $12=($11) < 0; //@line 661 "_hotshot.c"
+        if ($12) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 661 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 662 "_hotshot.c"
+        __label__ = 6; break; //@line 662 "_hotshot.c"
+      case 3: // $bb2
+        var $13=$self_addr; //@line 664 "_hotshot.c"
+        var $14=$13+16; //@line 664 "_hotshot.c"
+        var $15=HEAP[$14]; //@line 664 "_hotshot.c"
+        var $16=$self_addr; //@line 664 "_hotshot.c"
+        var $17=$16+20; //@line 664 "_hotshot.c"
+        var $18=$17+$15; //@line 664 "_hotshot.c"
+        HEAP[$18]=35; //@line 664 "_hotshot.c"
+        var $19=$self_addr; //@line 665 "_hotshot.c"
+        var $20=$19+16; //@line 665 "_hotshot.c"
+        var $21=HEAP[$20]; //@line 665 "_hotshot.c"
+        var $22=($21) + 1; //@line 665 "_hotshot.c"
+        var $23=$self_addr; //@line 665 "_hotshot.c"
+        var $24=$23+16; //@line 665 "_hotshot.c"
+        HEAP[$24]=$22; //@line 665 "_hotshot.c"
+        var $25=$self_addr; //@line 666 "_hotshot.c"
+        var $26=$fileno_addr; //@line 666 "_hotshot.c"
+        var $27=_pack_packed_int($25, $26); //@line 666 "_hotshot.c"
+        var $28=($27) < 0; //@line 666 "_hotshot.c"
+        if ($28) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 666 "_hotshot.c"
+      case 4: // $bb3
+        $0=-1; //@line 667 "_hotshot.c"
+        __label__ = 6; break; //@line 667 "_hotshot.c"
+      case 5: // $bb4
+        var $29=$self_addr; //@line 668 "_hotshot.c"
+        var $30=$filename_addr; //@line 668 "_hotshot.c"
+        var $31=$len; //@line 668 "_hotshot.c"
+        var $32=_pack_string($29, $30, $31); //@line 668 "_hotshot.c"
+        $0=$32; //@line 668 "_hotshot.c"
+        __label__ = 6; break; //@line 668 "_hotshot.c"
+      case 6: // $bb5
+        var $33=$0; //@line 662 "_hotshot.c"
+        $retval=$33; //@line 662 "_hotshot.c"
+        var $retval6=$retval; //@line 662 "_hotshot.c"
+        ;
+        return $retval6; //@line 662 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_define_func($self, $fileno, $lineno, $funcname) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $fileno_addr;
+        var $lineno_addr;
+        var $funcname_addr;
+        var $retval;
+        var $0;
+        var $len;
+        $self_addr=$self;
+        $fileno_addr=$fileno;
+        $lineno_addr=$lineno;
+        $funcname_addr=$funcname;
+        var $1=$funcname_addr; //@line 675 "_hotshot.c"
+        var $2=_strlen($1); //@line 675 "_hotshot.c"
+        $len=$2; //@line 675 "_hotshot.c"
+        var $3=$self_addr; //@line 677 "_hotshot.c"
+        var $4=$3+16; //@line 677 "_hotshot.c"
+        var $5=HEAP[$4]; //@line 677 "_hotshot.c"
+        var $6=$len; //@line 677 "_hotshot.c"
+        var $7=($5) + 16; //@line 677 "_hotshot.c"
+        var $8=($7) + ($6); //@line 677 "_hotshot.c"
+        var $9=($8) > 10239; //@line 677 "_hotshot.c"
+        if ($9) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 677 "_hotshot.c"
+      case 1: // $bb
+        var $10=$self_addr; //@line 678 "_hotshot.c"
+        var $11=_flush_data($10); //@line 678 "_hotshot.c"
+        var $12=($11) < 0; //@line 678 "_hotshot.c"
+        if ($12) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 678 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 679 "_hotshot.c"
+        __label__ = 8; break; //@line 679 "_hotshot.c"
+      case 3: // $bb2
+        var $13=$self_addr; //@line 681 "_hotshot.c"
+        var $14=$13+16; //@line 681 "_hotshot.c"
+        var $15=HEAP[$14]; //@line 681 "_hotshot.c"
+        var $16=$self_addr; //@line 681 "_hotshot.c"
+        var $17=$16+20; //@line 681 "_hotshot.c"
+        var $18=$17+$15; //@line 681 "_hotshot.c"
+        HEAP[$18]=67; //@line 681 "_hotshot.c"
+        var $19=$self_addr; //@line 682 "_hotshot.c"
+        var $20=$19+16; //@line 682 "_hotshot.c"
+        var $21=HEAP[$20]; //@line 682 "_hotshot.c"
+        var $22=($21) + 1; //@line 682 "_hotshot.c"
+        var $23=$self_addr; //@line 682 "_hotshot.c"
+        var $24=$23+16; //@line 682 "_hotshot.c"
+        HEAP[$24]=$22; //@line 682 "_hotshot.c"
+        var $25=$self_addr; //@line 683 "_hotshot.c"
+        var $26=$fileno_addr; //@line 683 "_hotshot.c"
+        var $27=_pack_packed_int($25, $26); //@line 683 "_hotshot.c"
+        var $28=($27) < 0; //@line 683 "_hotshot.c"
+        if ($28) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 683 "_hotshot.c"
+      case 4: // $bb3
+        $0=-1; //@line 684 "_hotshot.c"
+        __label__ = 8; break; //@line 684 "_hotshot.c"
+      case 5: // $bb4
+        var $29=$self_addr; //@line 685 "_hotshot.c"
+        var $30=$lineno_addr; //@line 685 "_hotshot.c"
+        var $31=_pack_packed_int($29, $30); //@line 685 "_hotshot.c"
+        var $32=($31) < 0; //@line 685 "_hotshot.c"
+        if ($32) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 685 "_hotshot.c"
+      case 6: // $bb5
+        $0=-1; //@line 686 "_hotshot.c"
+        __label__ = 8; break; //@line 686 "_hotshot.c"
+      case 7: // $bb6
+        var $33=$self_addr; //@line 687 "_hotshot.c"
+        var $34=$funcname_addr; //@line 687 "_hotshot.c"
+        var $35=$len; //@line 687 "_hotshot.c"
+        var $36=_pack_string($33, $34, $35); //@line 687 "_hotshot.c"
+        $0=$36; //@line 687 "_hotshot.c"
+        __label__ = 8; break; //@line 687 "_hotshot.c"
+      case 8: // $bb7
+        var $37=$0; //@line 679 "_hotshot.c"
+        $retval=$37; //@line 679 "_hotshot.c"
+        var $retval8=$retval; //@line 679 "_hotshot.c"
+        ;
+        return $retval8; //@line 679 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_line_times($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 693 "_hotshot.c"
+        var $2=$1+16; //@line 693 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 693 "_hotshot.c"
+        var $4=($3) + 2; //@line 693 "_hotshot.c"
+        var $5=($4) > 10239; //@line 693 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 693 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 694 "_hotshot.c"
+        var $7=_flush_data($6); //@line 694 "_hotshot.c"
+        var $8=($7) < 0; //@line 694 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 694 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 695 "_hotshot.c"
+        __label__ = 4; break; //@line 695 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 697 "_hotshot.c"
+        var $10=$9+16; //@line 697 "_hotshot.c"
+        var $11=HEAP[$10]; //@line 697 "_hotshot.c"
+        var $12=$self_addr; //@line 697 "_hotshot.c"
+        var $13=$12+20; //@line 697 "_hotshot.c"
+        var $14=$13+$11; //@line 697 "_hotshot.c"
+        HEAP[$14]=51; //@line 697 "_hotshot.c"
+        var $15=$self_addr; //@line 698 "_hotshot.c"
+        var $16=$15+16; //@line 698 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 698 "_hotshot.c"
+        var $18=($17) + 1; //@line 698 "_hotshot.c"
+        var $19=$self_addr; //@line 698 "_hotshot.c"
+        var $20=$19+10268; //@line 698 "_hotshot.c"
+        var $21=HEAP[$20]; //@line 698 "_hotshot.c"
+        var $22=($21)!=0; //@line 698 "_hotshot.c"
+        var $23=($22); //@line 698 "_hotshot.c"
+        var $24=$self_addr; //@line 698 "_hotshot.c"
+        var $25=$24+20; //@line 698 "_hotshot.c"
+        var $26=$25+$18; //@line 698 "_hotshot.c"
+        HEAP[$26]=$23; //@line 698 "_hotshot.c"
+        var $27=$self_addr; //@line 699 "_hotshot.c"
+        var $28=$27+16; //@line 699 "_hotshot.c"
+        var $29=HEAP[$28]; //@line 699 "_hotshot.c"
+        var $30=($29) + 2; //@line 699 "_hotshot.c"
+        var $31=$self_addr; //@line 699 "_hotshot.c"
+        var $32=$31+16; //@line 699 "_hotshot.c"
+        HEAP[$32]=$30; //@line 699 "_hotshot.c"
+        $0=0; //@line 700 "_hotshot.c"
+        __label__ = 4; break; //@line 700 "_hotshot.c"
+      case 4: // $bb3
+        ;
+        return;
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_frame_times($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 706 "_hotshot.c"
+        var $2=$1+16; //@line 706 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 706 "_hotshot.c"
+        var $4=($3) + 2; //@line 706 "_hotshot.c"
+        var $5=($4) > 10239; //@line 706 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 706 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 707 "_hotshot.c"
+        var $7=_flush_data($6); //@line 707 "_hotshot.c"
+        var $8=($7) < 0; //@line 707 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 707 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 708 "_hotshot.c"
+        __label__ = 4; break; //@line 708 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 710 "_hotshot.c"
+        var $10=$9+16; //@line 710 "_hotshot.c"
+        var $11=HEAP[$10]; //@line 710 "_hotshot.c"
+        var $12=$self_addr; //@line 710 "_hotshot.c"
+        var $13=$12+20; //@line 710 "_hotshot.c"
+        var $14=$13+$11; //@line 710 "_hotshot.c"
+        HEAP[$14]=83; //@line 710 "_hotshot.c"
+        var $15=$self_addr; //@line 711 "_hotshot.c"
+        var $16=$15+16; //@line 711 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 711 "_hotshot.c"
+        var $18=($17) + 1; //@line 711 "_hotshot.c"
+        var $19=$self_addr; //@line 711 "_hotshot.c"
+        var $20=$19+10272; //@line 711 "_hotshot.c"
+        var $21=HEAP[$20]; //@line 711 "_hotshot.c"
+        var $22=($21)!=0; //@line 711 "_hotshot.c"
+        var $23=($22); //@line 711 "_hotshot.c"
+        var $24=$self_addr; //@line 711 "_hotshot.c"
+        var $25=$24+20; //@line 711 "_hotshot.c"
+        var $26=$25+$18; //@line 711 "_hotshot.c"
+        HEAP[$26]=$23; //@line 711 "_hotshot.c"
+        var $27=$self_addr; //@line 712 "_hotshot.c"
+        var $28=$27+16; //@line 712 "_hotshot.c"
+        var $29=HEAP[$28]; //@line 712 "_hotshot.c"
+        var $30=($29) + 2; //@line 712 "_hotshot.c"
+        var $31=$self_addr; //@line 712 "_hotshot.c"
+        var $32=$31+16; //@line 712 "_hotshot.c"
+        HEAP[$32]=$30; //@line 712 "_hotshot.c"
+        $0=0; //@line 713 "_hotshot.c"
+        __label__ = 4; break; //@line 713 "_hotshot.c"
+      case 4: // $bb3
+        ;
+        return;
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _tracer_callback($self, $frame, $what, $arg) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $self_addr;
         var $frame_addr;
         var $what_addr;
         var $arg_addr;
         var $retval;
         var $iftmp_44;
-        var $16;
+        var $0;
         var $fileno;
         $self_addr=$self;
         $frame_addr=$frame;
         $what_addr=$what;
         $arg_addr=$arg;
-        var $17=$what_addr; //@line 864 "_hotshot.c"
-        if ($17 == 0) {
+        var $1=$what_addr; //@line 864 "_hotshot.c"
+        if ($1 == 0) {
           __label__ = 1; break;
         }
-        else if ($17 == 2) {
-          __label__ = 94; break;
+        else if ($1 == 2) {
+          __label__ = 8; break;
         }
-        else if ($17 == 3) {
-          __label__ = 81; break;
+        else if ($1 == 3) {
+          __label__ = 7; break;
         }
         else {
-        __label__ = 117; break;
+        __label__ = 11; break;
         }
         
       case 1: // $bb
-        var $18=$frame_addr; //@line 866 "_hotshot.c"
-        var $19=$18+16; //@line 866 "_hotshot.c"
-        var $20=HEAP[$19]; //@line 866 "_hotshot.c"
-        var $21=$self_addr; //@line 866 "_hotshot.c"
-        $self_addr_i=$21;
-        $fcode_addr_i=$20;
-        var $22=$fcode_addr_i; //@line 776 "_hotshot.c"
-        var $23=$22+48; //@line 776 "_hotshot.c"
-        var $24=HEAP[$23]; //@line 776 "_hotshot.c"
-        var $25=$self_addr_i; //@line 776 "_hotshot.c"
-        var $26=$25+8; //@line 776 "_hotshot.c"
-        var $27=HEAP[$26]; //@line 776 "_hotshot.c"
-        var $28=_PyDict_GetItem($27, $24); //@line 776 "_hotshot.c"
-        $obj_i=$28; //@line 776 "_hotshot.c"
-        var $29=$obj_i; //@line 777 "_hotshot.c"
-        var $30=($29)==0; //@line 777 "_hotshot.c"
-        if ($30) { __label__ = 2; break; } else { __label__ = 24; break; } //@line 777 "_hotshot.c"
-      case 2: // $bb_i
-        var $31=_PyDict_New(); //@line 779 "_hotshot.c"
-        $dict_i=$31; //@line 779 "_hotshot.c"
-        var $32=$dict_i; //@line 780 "_hotshot.c"
-        var $33=($32)==0; //@line 780 "_hotshot.c"
-        if ($33) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 780 "_hotshot.c"
-      case 3: // $bb1_i
-        $15=-1; //@line 781 "_hotshot.c"
-        __label__ = 54; break; //@line 781 "_hotshot.c"
-      case 4: // $bb2_i
-        var $34=$self_addr_i; //@line 783 "_hotshot.c"
-        var $35=$34+10280; //@line 783 "_hotshot.c"
-        var $36=HEAP[$35]; //@line 783 "_hotshot.c"
-        $fileno_i=$36; //@line 783 "_hotshot.c"
-        var $37=$fileno_i; //@line 784 "_hotshot.c"
-        var $38=$dict_i; //@line 784 "_hotshot.c"
-        var $39=_Py_BuildValue(__str7, $37, $38); //@line 784 "_hotshot.c"
-        $obj_i=$39; //@line 784 "_hotshot.c"
-        var $40=$obj_i; //@line 785 "_hotshot.c"
-        var $41=($40)==0; //@line 785 "_hotshot.c"
-        if ($41) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 785 "_hotshot.c"
-      case 5: // $bb3_i
-        $15=-1; //@line 786 "_hotshot.c"
-        __label__ = 54; break; //@line 786 "_hotshot.c"
-      case 6: // $bb4_i
-        var $42=$fcode_addr_i; //@line 788 "_hotshot.c"
-        var $43=$42+48; //@line 788 "_hotshot.c"
-        var $44=HEAP[$43]; //@line 788 "_hotshot.c"
-        var $45=$self_addr_i; //@line 788 "_hotshot.c"
-        var $46=$45+8; //@line 788 "_hotshot.c"
-        var $47=HEAP[$46]; //@line 788 "_hotshot.c"
-        var $48=$obj_i; //@line 788 "_hotshot.c"
-        var $49=_PyDict_SetItem($47, $44, $48); //@line 788 "_hotshot.c"
-        var $50=($49)!=0; //@line 788 "_hotshot.c"
-        if ($50) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 788 "_hotshot.c"
-      case 7: // $bb5_i
-        var $51=$obj_i; //@line 789 "_hotshot.c"
-        var $52=$51; //@line 789 "_hotshot.c"
-        var $53=HEAP[$52]; //@line 789 "_hotshot.c"
-        var $54=($53) - 1; //@line 789 "_hotshot.c"
-        var $55=$obj_i; //@line 789 "_hotshot.c"
-        var $56=$55; //@line 789 "_hotshot.c"
-        HEAP[$56]=$54; //@line 789 "_hotshot.c"
-        var $57=$obj_i; //@line 789 "_hotshot.c"
-        var $58=$57; //@line 789 "_hotshot.c"
-        var $59=HEAP[$58]; //@line 789 "_hotshot.c"
-        var $60=($59)==0; //@line 789 "_hotshot.c"
-        if ($60) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 789 "_hotshot.c"
-      case 8: // $bb6_i
-        var $61=$obj_i; //@line 789 "_hotshot.c"
-        var $62=$61+4; //@line 789 "_hotshot.c"
-        var $63=HEAP[$62]; //@line 789 "_hotshot.c"
-        var $64=$63+24; //@line 789 "_hotshot.c"
-        var $65=HEAP[$64]; //@line 789 "_hotshot.c"
-        var $66=$obj_i; //@line 789 "_hotshot.c"
-        FUNCTION_TABLE[$65]($66); //@line 789 "_hotshot.c"
-        __label__ = 9; break; //@line 789 "_hotshot.c"
-      case 9: // $bb7_i
-        $15=-1; //@line 790 "_hotshot.c"
-        __label__ = 54; break; //@line 790 "_hotshot.c"
-      case 10: // $bb8_i
-        var $67=$self_addr_i; //@line 792 "_hotshot.c"
-        var $68=$67+10280; //@line 792 "_hotshot.c"
-        var $69=HEAP[$68]; //@line 792 "_hotshot.c"
-        var $70=($69) + 1; //@line 792 "_hotshot.c"
-        var $71=$self_addr_i; //@line 792 "_hotshot.c"
-        var $72=$71+10280; //@line 792 "_hotshot.c"
-        HEAP[$72]=$70; //@line 792 "_hotshot.c"
-        var $73=$obj_i; //@line 793 "_hotshot.c"
-        var $74=$73; //@line 793 "_hotshot.c"
-        var $75=HEAP[$74]; //@line 793 "_hotshot.c"
-        var $76=($75) - 1; //@line 793 "_hotshot.c"
-        var $77=$obj_i; //@line 793 "_hotshot.c"
-        var $78=$77; //@line 793 "_hotshot.c"
-        HEAP[$78]=$76; //@line 793 "_hotshot.c"
-        var $79=$obj_i; //@line 793 "_hotshot.c"
-        var $80=$79; //@line 793 "_hotshot.c"
-        var $81=HEAP[$80]; //@line 793 "_hotshot.c"
-        var $82=($81)==0; //@line 793 "_hotshot.c"
-        if ($82) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 793 "_hotshot.c"
-      case 11: // $bb9_i
-        var $83=$obj_i; //@line 793 "_hotshot.c"
-        var $84=$83+4; //@line 793 "_hotshot.c"
-        var $85=HEAP[$84]; //@line 793 "_hotshot.c"
-        var $86=$85+24; //@line 793 "_hotshot.c"
-        var $87=HEAP[$86]; //@line 793 "_hotshot.c"
-        var $88=$obj_i; //@line 793 "_hotshot.c"
-        FUNCTION_TABLE[$87]($88); //@line 793 "_hotshot.c"
-        __label__ = 12; break; //@line 793 "_hotshot.c"
-      case 12: // $bb10_i
-        var $89=$fcode_addr_i; //@line 794 "_hotshot.c"
-        var $90=$89+48; //@line 794 "_hotshot.c"
-        var $91=HEAP[$90]; //@line 794 "_hotshot.c"
-        var $92=$91; //@line 794 "_hotshot.c"
-        var $93=$92+20; //@line 794 "_hotshot.c"
-        var $94=$93; //@line 794 "_hotshot.c"
-        var $95=$self_addr_i; //@line 794 "_hotshot.c"
-        var $96=$fileno_i; //@line 794 "_hotshot.c"
-        $self_addr_i_i=$95;
-        $fileno_addr_i_i=$96;
-        $filename_addr_i_i=$94;
-        var $97=$filename_addr_i_i; //@line 658 "_hotshot.c"
-        var $98=_strlen($97); //@line 658 "_hotshot.c"
-        $len_i_i=$98; //@line 658 "_hotshot.c"
-        var $99=$self_addr_i_i; //@line 660 "_hotshot.c"
-        var $100=$99+16; //@line 660 "_hotshot.c"
-        var $101=HEAP[$100]; //@line 660 "_hotshot.c"
-        var $102=$len_i_i; //@line 660 "_hotshot.c"
-        var $103=($101) + 11; //@line 660 "_hotshot.c"
-        var $104=($103) + ($102); //@line 660 "_hotshot.c"
-        var $105=($104) > 10239; //@line 660 "_hotshot.c"
-        if ($105) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 660 "_hotshot.c"
-      case 13: // $bb_i_i
-        var $106=$self_addr_i_i; //@line 661 "_hotshot.c"
-        var $107=_flush_data($106); //@line 661 "_hotshot.c"
-        var $108=($107) < 0; //@line 661 "_hotshot.c"
-        if ($108) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 661 "_hotshot.c"
-      case 14: // $bb1_i_i
-        $14=-1; //@line 662 "_hotshot.c"
-        __label__ = 21; break; //@line 662 "_hotshot.c"
-      case 15: // $bb2_i_i
-        var $109=$self_addr_i_i; //@line 664 "_hotshot.c"
-        var $110=$109+16; //@line 664 "_hotshot.c"
-        var $111=HEAP[$110]; //@line 664 "_hotshot.c"
-        var $112=$self_addr_i_i; //@line 664 "_hotshot.c"
-        var $113=$112+20; //@line 664 "_hotshot.c"
-        var $114=$113+$111; //@line 664 "_hotshot.c"
-        HEAP[$114]=35; //@line 664 "_hotshot.c"
-        var $115=$self_addr_i_i; //@line 665 "_hotshot.c"
-        var $116=$115+16; //@line 665 "_hotshot.c"
-        var $117=HEAP[$116]; //@line 665 "_hotshot.c"
-        var $118=($117) + 1; //@line 665 "_hotshot.c"
-        var $119=$self_addr_i_i; //@line 665 "_hotshot.c"
-        var $120=$119+16; //@line 665 "_hotshot.c"
-        HEAP[$120]=$118; //@line 665 "_hotshot.c"
-        var $121=$self_addr_i_i; //@line 666 "_hotshot.c"
-        var $122=$fileno_addr_i_i; //@line 666 "_hotshot.c"
-        $self_addr_i_i_i=$121;
-        $value_addr_i_i_i=$122;
-        __label__ = 16; break; //@line 584 "_hotshot.c"
-      case 16: // $bb_i_i_i
-        var $123=$value_addr_i_i_i; //@line 588 "_hotshot.c"
-        var $124=((($123)) & 255); //@line 588 "_hotshot.c"
-        var $125=($124) & 127; //@line 588 "_hotshot.c"
-        $partial_i_i_i=$125; //@line 588 "_hotshot.c"
-        var $126=$value_addr_i_i_i; //@line 589 "_hotshot.c"
-        var $127=($126) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i_i_i=$127; //@line 589 "_hotshot.c"
-        var $128=($127)!=0; //@line 590 "_hotshot.c"
-        if ($128) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 590 "_hotshot.c"
-      case 17: // $bb1_i_i_i
-        var $129=$partial_i_i_i; //@line 591 "_hotshot.c"
-        var $130=($129) | -128; //@line 591 "_hotshot.c"
-        $partial_i_i_i=$130; //@line 591 "_hotshot.c"
-        __label__ = 18; break; //@line 591 "_hotshot.c"
-      case 18: // $bb2_i_i_i
-        var $131=$self_addr_i_i_i; //@line 592 "_hotshot.c"
-        var $132=$131+16; //@line 592 "_hotshot.c"
-        var $133=HEAP[$132]; //@line 592 "_hotshot.c"
-        var $134=$self_addr_i_i_i; //@line 592 "_hotshot.c"
-        var $135=$134+20; //@line 592 "_hotshot.c"
-        var $136=$135+$133; //@line 592 "_hotshot.c"
-        var $137=$partial_i_i_i; //@line 592 "_hotshot.c"
-        HEAP[$136]=$137; //@line 592 "_hotshot.c"
-        var $138=$self_addr_i_i_i; //@line 593 "_hotshot.c"
-        var $139=$138+16; //@line 593 "_hotshot.c"
-        var $140=HEAP[$139]; //@line 593 "_hotshot.c"
-        var $141=($140) + 1; //@line 593 "_hotshot.c"
-        var $142=$self_addr_i_i_i; //@line 593 "_hotshot.c"
-        var $143=$142+16; //@line 593 "_hotshot.c"
-        HEAP[$143]=$141; //@line 593 "_hotshot.c"
-        var $144=$value_addr_i_i_i; //@line 594 "_hotshot.c"
-        var $145=($144)!=0; //@line 594 "_hotshot.c"
-        if ($145) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 594 "_hotshot.c"
-      case 19: // $pack_packed_int_exit_i_i
-        $13=0; //@line 595 "_hotshot.c"
-        var $146=$13; //@line 595 "_hotshot.c"
-        $retval_i_i_i=$146; //@line 595 "_hotshot.c"
-        var $retval4_i_i_i=$retval_i_i_i; //@line 595 "_hotshot.c"
-        var $147=($retval4_i_i_i) < 0; //@line 666 "_hotshot.c"
-        if ($147) { __label__ = 20; break; } else { __label__ = 22; break; } //@line 666 "_hotshot.c"
-      case 20: // $bb3_i_i
-        $14=-1; //@line 667 "_hotshot.c"
-        __label__ = 21; break; //@line 667 "_hotshot.c"
-      case 21: // $pack_define_file_exit_thread_i
-        $retval_i_i=-1; //@line 662 "_hotshot.c"
-        __label__ = 23; break;
-      case 22: // $pack_define_file_exit_i
-        var $148=$self_addr_i_i; //@line 668 "_hotshot.c"
-        var $149=$filename_addr_i_i; //@line 668 "_hotshot.c"
-        var $150=$len_i_i; //@line 668 "_hotshot.c"
-        var $151=_pack_string($148, $149, $150); //@line 668 "_hotshot.c"
-        $14=$151; //@line 668 "_hotshot.c"
-        $retval_i_i=$151; //@line 662 "_hotshot.c"
-        var $152=($151) < 0; //@line 794 "_hotshot.c"
-        if ($152) { __label__ = 23; break; } else { __label__ = 25; break; } //@line 794 "_hotshot.c"
-      case 23: // $bb11_i
-        $15=-1; //@line 796 "_hotshot.c"
-        __label__ = 54; break; //@line 796 "_hotshot.c"
-      case 24: // $bb13_i
-        var $153=$obj_i; //@line 800 "_hotshot.c"
-        var $154=$153; //@line 800 "_hotshot.c"
-        var $155=$154+12; //@line 800 "_hotshot.c"
-        var $156=$155; //@line 800 "_hotshot.c"
-        var $157=HEAP[$156]; //@line 800 "_hotshot.c"
-        var $158=$157; //@line 800 "_hotshot.c"
-        var $159=$158+8; //@line 800 "_hotshot.c"
-        var $160=HEAP[$159]; //@line 800 "_hotshot.c"
-        $fileno_i=$160; //@line 800 "_hotshot.c"
-        var $161=$obj_i; //@line 801 "_hotshot.c"
-        var $162=$161; //@line 801 "_hotshot.c"
-        var $163=$162+12; //@line 801 "_hotshot.c"
-        var $164=$163+4; //@line 801 "_hotshot.c"
-        var $165=HEAP[$164]; //@line 801 "_hotshot.c"
-        $dict_i=$165; //@line 801 "_hotshot.c"
-        __label__ = 25; break; //@line 801 "_hotshot.c"
-      case 25: // $bb14_i
-        var $166=$fcode_addr_i; //@line 804 "_hotshot.c"
-        var $167=$166+56; //@line 804 "_hotshot.c"
-        var $168=HEAP[$167]; //@line 804 "_hotshot.c"
-        var $169=_PyInt_FromLong($168); //@line 804 "_hotshot.c"
-        $obj_i=$169; //@line 804 "_hotshot.c"
-        var $170=($169)==0; //@line 805 "_hotshot.c"
-        if ($170) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 805 "_hotshot.c"
-      case 26: // $bb15_i
-        _PyErr_Clear(); //@line 807 "_hotshot.c"
-        __label__ = 55; break; //@line 807 "_hotshot.c"
-      case 27: // $bb16_i
-        var $171=$dict_i; //@line 810 "_hotshot.c"
-        var $172=$obj_i; //@line 810 "_hotshot.c"
-        var $173=_PyDict_GetItem($171, $172); //@line 810 "_hotshot.c"
-        $name_i=$173; //@line 810 "_hotshot.c"
-        var $174=$name_i; //@line 811 "_hotshot.c"
-        var $175=($174)==0; //@line 811 "_hotshot.c"
-        if ($175) { __label__ = 28; break; } else { __label__ = 52; break; } //@line 811 "_hotshot.c"
-      case 28: // $bb17_i
-        var $176=$fcode_addr_i; //@line 812 "_hotshot.c"
-        var $177=$176+52; //@line 812 "_hotshot.c"
-        var $178=HEAP[$177]; //@line 812 "_hotshot.c"
-        var $179=$178; //@line 812 "_hotshot.c"
-        var $180=$179+20; //@line 812 "_hotshot.c"
-        var $181=$180; //@line 812 "_hotshot.c"
-        var $182=$fcode_addr_i; //@line 812 "_hotshot.c"
-        var $183=$182+56; //@line 812 "_hotshot.c"
-        var $184=HEAP[$183]; //@line 812 "_hotshot.c"
-        var $185=$self_addr_i; //@line 812 "_hotshot.c"
-        var $186=$fileno_i; //@line 812 "_hotshot.c"
-        $self_addr_i5_i=$185;
-        $fileno_addr_i6_i=$186;
-        $lineno_addr_i_i=$184;
-        $funcname_addr_i_i=$181;
-        var $187=$funcname_addr_i_i; //@line 675 "_hotshot.c"
-        var $188=_strlen($187); //@line 675 "_hotshot.c"
-        $len_i8_i=$188; //@line 675 "_hotshot.c"
-        var $189=$self_addr_i5_i; //@line 677 "_hotshot.c"
-        var $190=$189+16; //@line 677 "_hotshot.c"
-        var $191=HEAP[$190]; //@line 677 "_hotshot.c"
-        var $192=$len_i8_i; //@line 677 "_hotshot.c"
-        var $193=($191) + 16; //@line 677 "_hotshot.c"
-        var $194=($193) + ($192); //@line 677 "_hotshot.c"
-        var $195=($194) > 10239; //@line 677 "_hotshot.c"
-        if ($195) { __label__ = 29; break; } else { __label__ = 31; break; } //@line 677 "_hotshot.c"
-      case 29: // $bb_i9_i
-        var $196=$self_addr_i5_i; //@line 678 "_hotshot.c"
-        var $197=_flush_data($196); //@line 678 "_hotshot.c"
-        var $198=($197) < 0; //@line 678 "_hotshot.c"
-        if ($198) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 678 "_hotshot.c"
-      case 30: // $bb1_i10_i
-        $12=-1; //@line 679 "_hotshot.c"
-        __label__ = 43; break; //@line 679 "_hotshot.c"
-      case 31: // $bb2_i11_i
-        var $199=$self_addr_i5_i; //@line 681 "_hotshot.c"
-        var $200=$199+16; //@line 681 "_hotshot.c"
-        var $201=HEAP[$200]; //@line 681 "_hotshot.c"
-        var $202=$self_addr_i5_i; //@line 681 "_hotshot.c"
-        var $203=$202+20; //@line 681 "_hotshot.c"
-        var $204=$203+$201; //@line 681 "_hotshot.c"
-        HEAP[$204]=67; //@line 681 "_hotshot.c"
-        var $205=$self_addr_i5_i; //@line 682 "_hotshot.c"
-        var $206=$205+16; //@line 682 "_hotshot.c"
-        var $207=HEAP[$206]; //@line 682 "_hotshot.c"
-        var $208=($207) + 1; //@line 682 "_hotshot.c"
-        var $209=$self_addr_i5_i; //@line 682 "_hotshot.c"
-        var $210=$209+16; //@line 682 "_hotshot.c"
-        HEAP[$210]=$208; //@line 682 "_hotshot.c"
-        var $211=$self_addr_i5_i; //@line 683 "_hotshot.c"
-        var $212=$fileno_addr_i6_i; //@line 683 "_hotshot.c"
-        $self_addr_i_i1_i=$211;
-        $value_addr_i_i2_i=$212;
-        __label__ = 32; break; //@line 584 "_hotshot.c"
-      case 32: // $bb_i_i12_i
-        var $213=$value_addr_i_i2_i; //@line 588 "_hotshot.c"
-        var $214=((($213)) & 255); //@line 588 "_hotshot.c"
-        var $215=($214) & 127; //@line 588 "_hotshot.c"
-        $partial_i_i4_i=$215; //@line 588 "_hotshot.c"
-        var $216=$value_addr_i_i2_i; //@line 589 "_hotshot.c"
-        var $217=($216) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i_i2_i=$217; //@line 589 "_hotshot.c"
-        var $218=($217)!=0; //@line 590 "_hotshot.c"
-        if ($218) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 590 "_hotshot.c"
-      case 33: // $bb1_i_i13_i
-        var $219=$partial_i_i4_i; //@line 591 "_hotshot.c"
-        var $220=($219) | -128; //@line 591 "_hotshot.c"
-        $partial_i_i4_i=$220; //@line 591 "_hotshot.c"
-        __label__ = 34; break; //@line 591 "_hotshot.c"
-      case 34: // $bb2_i_i14_i
-        var $221=$self_addr_i_i1_i; //@line 592 "_hotshot.c"
-        var $222=$221+16; //@line 592 "_hotshot.c"
-        var $223=HEAP[$222]; //@line 592 "_hotshot.c"
-        var $224=$self_addr_i_i1_i; //@line 592 "_hotshot.c"
-        var $225=$224+20; //@line 592 "_hotshot.c"
-        var $226=$225+$223; //@line 592 "_hotshot.c"
-        var $227=$partial_i_i4_i; //@line 592 "_hotshot.c"
-        HEAP[$226]=$227; //@line 592 "_hotshot.c"
-        var $228=$self_addr_i_i1_i; //@line 593 "_hotshot.c"
-        var $229=$228+16; //@line 593 "_hotshot.c"
-        var $230=HEAP[$229]; //@line 593 "_hotshot.c"
-        var $231=($230) + 1; //@line 593 "_hotshot.c"
-        var $232=$self_addr_i_i1_i; //@line 593 "_hotshot.c"
-        var $233=$232+16; //@line 593 "_hotshot.c"
-        HEAP[$233]=$231; //@line 593 "_hotshot.c"
-        var $234=$value_addr_i_i2_i; //@line 594 "_hotshot.c"
-        var $235=($234)!=0; //@line 594 "_hotshot.c"
-        if ($235) { __label__ = 32; break; } else { __label__ = 35; break; } //@line 594 "_hotshot.c"
-      case 35: // $pack_packed_int_exit_i16_i
-        $11=0; //@line 595 "_hotshot.c"
-        var $236=$11; //@line 595 "_hotshot.c"
-        $retval_i_i3_i=$236; //@line 595 "_hotshot.c"
-        var $retval4_i_i15_i=$retval_i_i3_i; //@line 595 "_hotshot.c"
-        var $237=($retval4_i_i15_i) < 0; //@line 683 "_hotshot.c"
-        if ($237) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 683 "_hotshot.c"
-      case 36: // $bb3_i17_i
-        $12=-1; //@line 684 "_hotshot.c"
-        __label__ = 43; break; //@line 684 "_hotshot.c"
-      case 37: // $bb4_i18_i
-        var $238=$self_addr_i5_i; //@line 685 "_hotshot.c"
-        var $239=$lineno_addr_i_i; //@line 685 "_hotshot.c"
-        $self_addr_i1_i_i=$238;
-        $value_addr_i2_i_i=$239;
-        __label__ = 38; break; //@line 584 "_hotshot.c"
-      case 38: // $bb_i5_i_i
-        var $240=$value_addr_i2_i_i; //@line 588 "_hotshot.c"
-        var $241=((($240)) & 255); //@line 588 "_hotshot.c"
-        var $242=($241) & 127; //@line 588 "_hotshot.c"
-        $partial_i4_i_i=$242; //@line 588 "_hotshot.c"
-        var $243=$value_addr_i2_i_i; //@line 589 "_hotshot.c"
-        var $244=($243) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i2_i_i=$244; //@line 589 "_hotshot.c"
-        var $245=($244)!=0; //@line 590 "_hotshot.c"
-        if ($245) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 590 "_hotshot.c"
-      case 39: // $bb1_i6_i_i
-        var $246=$partial_i4_i_i; //@line 591 "_hotshot.c"
-        var $247=($246) | -128; //@line 591 "_hotshot.c"
-        $partial_i4_i_i=$247; //@line 591 "_hotshot.c"
-        __label__ = 40; break; //@line 591 "_hotshot.c"
-      case 40: // $bb2_i7_i_i
-        var $248=$self_addr_i1_i_i; //@line 592 "_hotshot.c"
-        var $249=$248+16; //@line 592 "_hotshot.c"
-        var $250=HEAP[$249]; //@line 592 "_hotshot.c"
-        var $251=$self_addr_i1_i_i; //@line 592 "_hotshot.c"
-        var $252=$251+20; //@line 592 "_hotshot.c"
-        var $253=$252+$250; //@line 592 "_hotshot.c"
-        var $254=$partial_i4_i_i; //@line 592 "_hotshot.c"
-        HEAP[$253]=$254; //@line 592 "_hotshot.c"
-        var $255=$self_addr_i1_i_i; //@line 593 "_hotshot.c"
-        var $256=$255+16; //@line 593 "_hotshot.c"
-        var $257=HEAP[$256]; //@line 593 "_hotshot.c"
-        var $258=($257) + 1; //@line 593 "_hotshot.c"
-        var $259=$self_addr_i1_i_i; //@line 593 "_hotshot.c"
-        var $260=$259+16; //@line 593 "_hotshot.c"
-        HEAP[$260]=$258; //@line 593 "_hotshot.c"
-        var $261=$value_addr_i2_i_i; //@line 594 "_hotshot.c"
-        var $262=($261)!=0; //@line 594 "_hotshot.c"
-        if ($262) { __label__ = 38; break; } else { __label__ = 41; break; } //@line 594 "_hotshot.c"
-      case 41: // $pack_packed_int_exit9_i_i
-        $10=0; //@line 595 "_hotshot.c"
-        var $263=$10; //@line 595 "_hotshot.c"
-        $retval_i3_i_i=$263; //@line 595 "_hotshot.c"
-        var $retval4_i8_i_i=$retval_i3_i_i; //@line 595 "_hotshot.c"
-        var $264=($retval4_i8_i_i) < 0; //@line 685 "_hotshot.c"
-        if ($264) { __label__ = 42; break; } else { __label__ = 44; break; } //@line 685 "_hotshot.c"
-      case 42: // $bb5_i_i
-        $12=-1; //@line 686 "_hotshot.c"
-        __label__ = 43; break; //@line 686 "_hotshot.c"
-      case 43: // $pack_define_func_exit_thread_i
-        $retval_i7_i=-1; //@line 679 "_hotshot.c"
-        __label__ = 45; break;
-      case 44: // $pack_define_func_exit_i
-        var $265=$self_addr_i5_i; //@line 687 "_hotshot.c"
-        var $266=$funcname_addr_i_i; //@line 687 "_hotshot.c"
-        var $267=$len_i8_i; //@line 687 "_hotshot.c"
-        var $268=_pack_string($265, $266, $267); //@line 687 "_hotshot.c"
-        $12=$268; //@line 687 "_hotshot.c"
-        $retval_i7_i=$268; //@line 679 "_hotshot.c"
-        var $269=($268) < 0; //@line 812 "_hotshot.c"
-        if ($269) { __label__ = 45; break; } else { __label__ = 48; break; } //@line 812 "_hotshot.c"
-      case 45: // $bb18_i
-        var $270=$obj_i; //@line 814 "_hotshot.c"
-        var $271=$270; //@line 814 "_hotshot.c"
-        var $272=HEAP[$271]; //@line 814 "_hotshot.c"
-        var $273=($272) - 1; //@line 814 "_hotshot.c"
-        var $274=$obj_i; //@line 814 "_hotshot.c"
-        var $275=$274; //@line 814 "_hotshot.c"
-        HEAP[$275]=$273; //@line 814 "_hotshot.c"
-        var $276=$obj_i; //@line 814 "_hotshot.c"
-        var $277=$276; //@line 814 "_hotshot.c"
-        var $278=HEAP[$277]; //@line 814 "_hotshot.c"
-        var $279=($278)==0; //@line 814 "_hotshot.c"
-        if ($279) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 814 "_hotshot.c"
-      case 46: // $bb19_i
-        var $280=$obj_i; //@line 814 "_hotshot.c"
-        var $281=$280+4; //@line 814 "_hotshot.c"
-        var $282=HEAP[$281]; //@line 814 "_hotshot.c"
-        var $283=$282+24; //@line 814 "_hotshot.c"
-        var $284=HEAP[$283]; //@line 814 "_hotshot.c"
-        var $285=$obj_i; //@line 814 "_hotshot.c"
-        FUNCTION_TABLE[$284]($285); //@line 814 "_hotshot.c"
-        __label__ = 47; break; //@line 814 "_hotshot.c"
-      case 47: // $bb20_i
-        $15=-1; //@line 815 "_hotshot.c"
-        __label__ = 54; break; //@line 815 "_hotshot.c"
-      case 48: // $bb21_i
-        var $286=$fcode_addr_i; //@line 817 "_hotshot.c"
-        var $287=$286+52; //@line 817 "_hotshot.c"
-        var $288=HEAP[$287]; //@line 817 "_hotshot.c"
-        var $289=$dict_i; //@line 817 "_hotshot.c"
-        var $290=$obj_i; //@line 817 "_hotshot.c"
-        var $291=_PyDict_SetItem($289, $290, $288); //@line 817 "_hotshot.c"
-        var $292=($291)!=0; //@line 817 "_hotshot.c"
-        if ($292) { __label__ = 49; break; } else { __label__ = 52; break; } //@line 817 "_hotshot.c"
-      case 49: // $bb22_i
-        var $293=$obj_i; //@line 818 "_hotshot.c"
-        var $294=$293; //@line 818 "_hotshot.c"
-        var $295=HEAP[$294]; //@line 818 "_hotshot.c"
-        var $296=($295) - 1; //@line 818 "_hotshot.c"
-        var $297=$obj_i; //@line 818 "_hotshot.c"
-        var $298=$297; //@line 818 "_hotshot.c"
-        HEAP[$298]=$296; //@line 818 "_hotshot.c"
-        var $299=$obj_i; //@line 818 "_hotshot.c"
-        var $300=$299; //@line 818 "_hotshot.c"
-        var $301=HEAP[$300]; //@line 818 "_hotshot.c"
-        var $302=($301)==0; //@line 818 "_hotshot.c"
-        if ($302) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 818 "_hotshot.c"
-      case 50: // $bb23_i
-        var $303=$obj_i; //@line 818 "_hotshot.c"
-        var $304=$303+4; //@line 818 "_hotshot.c"
-        var $305=HEAP[$304]; //@line 818 "_hotshot.c"
-        var $306=$305+24; //@line 818 "_hotshot.c"
-        var $307=HEAP[$306]; //@line 818 "_hotshot.c"
-        var $308=$obj_i; //@line 818 "_hotshot.c"
-        FUNCTION_TABLE[$307]($308); //@line 818 "_hotshot.c"
-        __label__ = 51; break; //@line 818 "_hotshot.c"
-      case 51: // $bb24_i
-        $15=-1; //@line 819 "_hotshot.c"
-        __label__ = 54; break; //@line 819 "_hotshot.c"
-      case 52: // $bb25_i
-        var $309=$obj_i; //@line 822 "_hotshot.c"
-        var $310=$309; //@line 822 "_hotshot.c"
-        var $311=HEAP[$310]; //@line 822 "_hotshot.c"
-        var $312=($311) - 1; //@line 822 "_hotshot.c"
-        var $313=$obj_i; //@line 822 "_hotshot.c"
-        var $314=$313; //@line 822 "_hotshot.c"
-        HEAP[$314]=$312; //@line 822 "_hotshot.c"
-        var $315=$obj_i; //@line 822 "_hotshot.c"
-        var $316=$315; //@line 822 "_hotshot.c"
-        var $317=HEAP[$316]; //@line 822 "_hotshot.c"
-        var $318=($317)==0; //@line 822 "_hotshot.c"
-        if ($318) { __label__ = 53; break; } else { __label__ = 55; break; } //@line 822 "_hotshot.c"
-      case 53: // $bb26_i
-        var $319=$obj_i; //@line 822 "_hotshot.c"
-        var $320=$319+4; //@line 822 "_hotshot.c"
-        var $321=HEAP[$320]; //@line 822 "_hotshot.c"
-        var $322=$321+24; //@line 822 "_hotshot.c"
-        var $323=HEAP[$322]; //@line 822 "_hotshot.c"
-        var $324=$obj_i; //@line 822 "_hotshot.c"
-        FUNCTION_TABLE[$323]($324); //@line 822 "_hotshot.c"
-        __label__ = 55; break; //@line 822 "_hotshot.c"
-      case 54: // $get_fileno_exit_thread
-        $retval_i=-1; //@line 781 "_hotshot.c"
-        $fileno=-1; //@line 866 "_hotshot.c"
-        __label__ = 56; break;
-      case 55: // $get_fileno_exit
-        var $325=$fileno_i; //@line 824 "_hotshot.c"
-        $15=$325; //@line 824 "_hotshot.c"
-        $retval_i=$325; //@line 781 "_hotshot.c"
-        $fileno=$325; //@line 866 "_hotshot.c"
-        var $326=($325) < 0; //@line 867 "_hotshot.c"
-        if ($326) { __label__ = 56; break; } else { __label__ = 57; break; } //@line 867 "_hotshot.c"
-      case 56: // $bb1
-        $16=-1; //@line 868 "_hotshot.c"
-        __label__ = 118; break; //@line 868 "_hotshot.c"
-      case 57: // $bb2
-        var $327=$frame_addr; //@line 869 "_hotshot.c"
-        var $328=$327+16; //@line 869 "_hotshot.c"
-        var $329=HEAP[$328]; //@line 869 "_hotshot.c"
-        var $330=$329+56; //@line 869 "_hotshot.c"
-        var $331=HEAP[$330]; //@line 869 "_hotshot.c"
-        var $332=$self_addr; //@line 869 "_hotshot.c"
-        var $333=$332+10272; //@line 869 "_hotshot.c"
-        var $334=HEAP[$333]; //@line 869 "_hotshot.c"
-        var $335=($334)!=0; //@line 869 "_hotshot.c"
-        if ($335) { __label__ = 58; break; } else { __label__ = 65; break; } //@line 869 "_hotshot.c"
-      case 58: // $bb3
-        var $336=$self_addr; //@line 869 "_hotshot.c"
-        $self_addr_i1=$336;
-        var $337=_gettimeofday($tv_i, 0); //@line 841 "_hotshot.c"
-        var $338=$tv_i+4; //@line 843 "_hotshot.c"
-        var $339=HEAP[$338]; //@line 843 "_hotshot.c"
-        var $340=$self_addr_i1; //@line 843 "_hotshot.c"
-        var $341=$340+10284; //@line 843 "_hotshot.c"
-        var $342=$341+4; //@line 843 "_hotshot.c"
-        var $343=HEAP[$342]; //@line 843 "_hotshot.c"
-        var $344=($339) - ($343); //@line 843 "_hotshot.c"
-        $tdelta_i=$344; //@line 843 "_hotshot.c"
-        var $345=$tv_i; //@line 844 "_hotshot.c"
-        var $346=HEAP[$345]; //@line 844 "_hotshot.c"
-        var $347=$self_addr_i1; //@line 844 "_hotshot.c"
-        var $348=$347+10284; //@line 844 "_hotshot.c"
-        var $349=$348; //@line 844 "_hotshot.c"
-        var $350=HEAP[$349]; //@line 844 "_hotshot.c"
-        var $351=($346)!=($350); //@line 844 "_hotshot.c"
-        if ($351) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 844 "_hotshot.c"
-      case 59: // $bb_i3
-        var $352=$tv_i; //@line 845 "_hotshot.c"
-        var $353=HEAP[$352]; //@line 845 "_hotshot.c"
-        var $354=$self_addr_i1; //@line 845 "_hotshot.c"
-        var $355=$354+10284; //@line 845 "_hotshot.c"
-        var $356=$355; //@line 845 "_hotshot.c"
-        var $357=HEAP[$356]; //@line 845 "_hotshot.c"
-        var $358=($353) - ($357); //@line 845 "_hotshot.c"
-        var $359=($358) * 1000000; //@line 845 "_hotshot.c"
-        var $360=$tdelta_i; //@line 845 "_hotshot.c"
-        var $361=($359) + ($360); //@line 845 "_hotshot.c"
-        $tdelta_i=$361; //@line 845 "_hotshot.c"
-        __lastLabel__ = 59; __label__ = 61; break; //@line 845 "_hotshot.c"
-      case 60: // $bb1thread_pre_split_i
-        var $_pr_i=$tdelta_i;
-        __lastLabel__ = 60; __label__ = 61; break;
-      case 61: // $bb1_i4
-        var $362=__lastLabel__ == 60 ? $_pr_i : ($361);
-        var $363=($362) < 0; //@line 848 "_hotshot.c"
-        if ($363) { __label__ = 62; break; } else { __label__ = 63; break; } //@line 848 "_hotshot.c"
-      case 62: // $bb2_i5
-        $9=0; //@line 849 "_hotshot.c"
-        __label__ = 64; break; //@line 849 "_hotshot.c"
-      case 63: // $bb3_i6
-        var $364=$self_addr_i1; //@line 851 "_hotshot.c"
-        var $365=$364+10284; //@line 851 "_hotshot.c"
-        var $366=$365; //@line 851 "_hotshot.c"
-        var $367=$tv_i; //@line 851 "_hotshot.c"
-        var $368=HEAP[$367]; //@line 851 "_hotshot.c"
-        HEAP[$366]=$368; //@line 851 "_hotshot.c"
-        var $369=$365+4; //@line 851 "_hotshot.c"
-        var $370=$tv_i+4; //@line 851 "_hotshot.c"
-        var $371=HEAP[$370]; //@line 851 "_hotshot.c"
-        HEAP[$369]=$371; //@line 851 "_hotshot.c"
-        var $372=$tdelta_i; //@line 852 "_hotshot.c"
-        $9=$372; //@line 852 "_hotshot.c"
-        __label__ = 64; break; //@line 852 "_hotshot.c"
-      case 64: // $get_tdelta_exit
-        var $373=$9; //@line 849 "_hotshot.c"
-        $retval_i2=$373; //@line 849 "_hotshot.c"
-        var $retval5_i=$retval_i2; //@line 849 "_hotshot.c"
-        $iftmp_44=$retval5_i; //@line 869 "_hotshot.c"
-        __label__ = 66; break; //@line 869 "_hotshot.c"
-      case 65: // $bb4
+        var $2=$frame_addr; //@line 866 "_hotshot.c"
+        var $3=$2+16; //@line 866 "_hotshot.c"
+        var $4=HEAP[$3]; //@line 866 "_hotshot.c"
+        var $5=$self_addr; //@line 866 "_hotshot.c"
+        var $6=_get_fileno($5, $4); //@line 866 "_hotshot.c"
+        $fileno=$6; //@line 866 "_hotshot.c"
+        var $7=$fileno; //@line 867 "_hotshot.c"
+        var $8=($7) < 0; //@line 867 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 867 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 868 "_hotshot.c"
+        __label__ = 12; break; //@line 868 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$frame_addr; //@line 869 "_hotshot.c"
+        var $10=$9+16; //@line 869 "_hotshot.c"
+        var $11=HEAP[$10]; //@line 869 "_hotshot.c"
+        var $12=$11+56; //@line 869 "_hotshot.c"
+        var $13=HEAP[$12]; //@line 869 "_hotshot.c"
+        var $14=$self_addr; //@line 869 "_hotshot.c"
+        var $15=$14+10272; //@line 869 "_hotshot.c"
+        var $16=HEAP[$15]; //@line 869 "_hotshot.c"
+        var $17=($16)!=0; //@line 869 "_hotshot.c"
+        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 869 "_hotshot.c"
+      case 4: // $bb3
+        var $18=$self_addr; //@line 869 "_hotshot.c"
+        var $19=_get_tdelta($18); //@line 869 "_hotshot.c"
+        $iftmp_44=$19; //@line 869 "_hotshot.c"
+        __label__ = 6; break; //@line 869 "_hotshot.c"
+      case 5: // $bb4
         $iftmp_44=-1; //@line 869 "_hotshot.c"
-        __label__ = 66; break; //@line 869 "_hotshot.c"
-      case 66: // $bb5
-        var $374=$self_addr; //@line 869 "_hotshot.c"
-        var $375=$fileno; //@line 869 "_hotshot.c"
-        var $376=$iftmp_44; //@line 869 "_hotshot.c"
-        $self_addr_i10=$374;
-        $fileno_addr_i=$375;
-        $tdelta_addr_i=$376;
-        $lineno_addr_i=$331;
-        var $377=$self_addr_i10; //@line 719 "_hotshot.c"
-        var $378=$377+16; //@line 719 "_hotshot.c"
-        var $379=HEAP[$378]; //@line 719 "_hotshot.c"
-        var $380=($379) + 16; //@line 719 "_hotshot.c"
-        var $381=($380) > 10239; //@line 719 "_hotshot.c"
-        if ($381) { __label__ = 67; break; } else { __label__ = 69; break; } //@line 719 "_hotshot.c"
-      case 67: // $bb_i12
-        var $382=$self_addr_i10; //@line 720 "_hotshot.c"
-        var $383=_flush_data($382); //@line 720 "_hotshot.c"
-        var $384=($383) < 0; //@line 720 "_hotshot.c"
-        if ($384) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 720 "_hotshot.c"
-      case 68: // $bb1_i13
-        $8=-1; //@line 721 "_hotshot.c"
-        __label__ = 80; break; //@line 721 "_hotshot.c"
-      case 69: // $bb2_i14
-        var $385=$self_addr_i10; //@line 723 "_hotshot.c"
-        var $386=$fileno_addr_i; //@line 723 "_hotshot.c"
-        var $387=_pack_modified_packed_int($385, $386, 0); //@line 723 "_hotshot.c"
-        var $388=$self_addr_i10; //@line 724 "_hotshot.c"
-        var $389=$lineno_addr_i; //@line 724 "_hotshot.c"
-        $self_addr_i_i8=$388;
-        $value_addr_i_i=$389;
-        __label__ = 70; break; //@line 584 "_hotshot.c"
-      case 70: // $bb_i_i15
-        var $390=$value_addr_i_i; //@line 588 "_hotshot.c"
-        var $391=((($390)) & 255); //@line 588 "_hotshot.c"
-        var $392=($391) & 127; //@line 588 "_hotshot.c"
-        $partial_i_i=$392; //@line 588 "_hotshot.c"
-        var $393=$value_addr_i_i; //@line 589 "_hotshot.c"
-        var $394=($393) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i_i=$394; //@line 589 "_hotshot.c"
-        var $395=($394)!=0; //@line 590 "_hotshot.c"
-        if ($395) { __label__ = 71; break; } else { __label__ = 72; break; } //@line 590 "_hotshot.c"
-      case 71: // $bb1_i_i16
-        var $396=$partial_i_i; //@line 591 "_hotshot.c"
-        var $397=($396) | -128; //@line 591 "_hotshot.c"
-        $partial_i_i=$397; //@line 591 "_hotshot.c"
-        __label__ = 72; break; //@line 591 "_hotshot.c"
-      case 72: // $bb2_i_i17
-        var $398=$self_addr_i_i8; //@line 592 "_hotshot.c"
-        var $399=$398+16; //@line 592 "_hotshot.c"
-        var $400=HEAP[$399]; //@line 592 "_hotshot.c"
-        var $401=$self_addr_i_i8; //@line 592 "_hotshot.c"
-        var $402=$401+20; //@line 592 "_hotshot.c"
-        var $403=$402+$400; //@line 592 "_hotshot.c"
-        var $404=$partial_i_i; //@line 592 "_hotshot.c"
-        HEAP[$403]=$404; //@line 592 "_hotshot.c"
-        var $405=$self_addr_i_i8; //@line 593 "_hotshot.c"
-        var $406=$405+16; //@line 593 "_hotshot.c"
-        var $407=HEAP[$406]; //@line 593 "_hotshot.c"
-        var $408=($407) + 1; //@line 593 "_hotshot.c"
-        var $409=$self_addr_i_i8; //@line 593 "_hotshot.c"
-        var $410=$409+16; //@line 593 "_hotshot.c"
-        HEAP[$410]=$408; //@line 593 "_hotshot.c"
-        var $411=$value_addr_i_i; //@line 594 "_hotshot.c"
-        var $412=($411)!=0; //@line 594 "_hotshot.c"
-        if ($412) { __label__ = 70; break; } else { __label__ = 73; break; } //@line 594 "_hotshot.c"
-      case 73: // $pack_packed_int_exit_i
-        $7=0; //@line 595 "_hotshot.c"
-        var $413=$7; //@line 595 "_hotshot.c"
-        $retval_i_i9=$413; //@line 595 "_hotshot.c"
-        var $414=$self_addr_i10; //@line 725 "_hotshot.c"
-        var $415=$414+10272; //@line 725 "_hotshot.c"
-        var $416=HEAP[$415]; //@line 725 "_hotshot.c"
-        var $417=($416)!=0; //@line 725 "_hotshot.c"
-        if ($417) { __label__ = 74; break; } else { __label__ = 79; break; } //@line 725 "_hotshot.c"
-      case 74: // $bb3_i18
-        var $418=$self_addr_i10; //@line 726 "_hotshot.c"
-        var $419=$tdelta_addr_i; //@line 726 "_hotshot.c"
-        $self_addr_i1_i=$418;
-        $value_addr_i2_i=$419;
-        __label__ = 75; break; //@line 584 "_hotshot.c"
-      case 75: // $bb_i5_i
-        var $420=$value_addr_i2_i; //@line 588 "_hotshot.c"
-        var $421=((($420)) & 255); //@line 588 "_hotshot.c"
-        var $422=($421) & 127; //@line 588 "_hotshot.c"
-        $partial_i4_i=$422; //@line 588 "_hotshot.c"
-        var $423=$value_addr_i2_i; //@line 589 "_hotshot.c"
-        var $424=($423) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i2_i=$424; //@line 589 "_hotshot.c"
-        var $425=($424)!=0; //@line 590 "_hotshot.c"
-        if ($425) { __label__ = 76; break; } else { __label__ = 77; break; } //@line 590 "_hotshot.c"
-      case 76: // $bb1_i6_i
-        var $426=$partial_i4_i; //@line 591 "_hotshot.c"
-        var $427=($426) | -128; //@line 591 "_hotshot.c"
-        $partial_i4_i=$427; //@line 591 "_hotshot.c"
-        __label__ = 77; break; //@line 591 "_hotshot.c"
-      case 77: // $bb2_i7_i
-        var $428=$self_addr_i1_i; //@line 592 "_hotshot.c"
-        var $429=$428+16; //@line 592 "_hotshot.c"
-        var $430=HEAP[$429]; //@line 592 "_hotshot.c"
-        var $431=$self_addr_i1_i; //@line 592 "_hotshot.c"
-        var $432=$431+20; //@line 592 "_hotshot.c"
-        var $433=$432+$430; //@line 592 "_hotshot.c"
-        var $434=$partial_i4_i; //@line 592 "_hotshot.c"
-        HEAP[$433]=$434; //@line 592 "_hotshot.c"
-        var $435=$self_addr_i1_i; //@line 593 "_hotshot.c"
-        var $436=$435+16; //@line 593 "_hotshot.c"
-        var $437=HEAP[$436]; //@line 593 "_hotshot.c"
-        var $438=($437) + 1; //@line 593 "_hotshot.c"
-        var $439=$self_addr_i1_i; //@line 593 "_hotshot.c"
-        var $440=$439+16; //@line 593 "_hotshot.c"
-        HEAP[$440]=$438; //@line 593 "_hotshot.c"
-        var $441=$value_addr_i2_i; //@line 594 "_hotshot.c"
-        var $442=($441)!=0; //@line 594 "_hotshot.c"
-        if ($442) { __label__ = 75; break; } else { __label__ = 78; break; } //@line 594 "_hotshot.c"
-      case 78: // $pack_packed_int_exit9_i
-        $6=0; //@line 595 "_hotshot.c"
-        var $443=$6; //@line 595 "_hotshot.c"
-        $retval_i3_i=$443; //@line 595 "_hotshot.c"
-        var $retval4_i8_i=$retval_i3_i; //@line 595 "_hotshot.c"
-        $8=$retval4_i8_i; //@line 726 "_hotshot.c"
-        __label__ = 80; break; //@line 726 "_hotshot.c"
-      case 79: // $bb4_i19
-        $8=0; //@line 728 "_hotshot.c"
-        __label__ = 80; break; //@line 728 "_hotshot.c"
-      case 80: // $pack_enter_exit
-        var $444=$8; //@line 721 "_hotshot.c"
-        $retval_i11=$444; //@line 721 "_hotshot.c"
-        var $retval6_i=$retval_i11; //@line 721 "_hotshot.c"
-        $16=$retval6_i; //@line 869 "_hotshot.c"
-        __label__ = 118; break; //@line 869 "_hotshot.c"
-      case 81: // $bb6
-        var $445=$self_addr; //@line 874 "_hotshot.c"
-        $self_addr_i21=$445;
-        var $446=_gettimeofday($tv_i24, 0); //@line 841 "_hotshot.c"
-        var $447=$tv_i24+4; //@line 843 "_hotshot.c"
-        var $448=HEAP[$447]; //@line 843 "_hotshot.c"
-        var $449=$self_addr_i21; //@line 843 "_hotshot.c"
-        var $450=$449+10284; //@line 843 "_hotshot.c"
-        var $451=$450+4; //@line 843 "_hotshot.c"
-        var $452=HEAP[$451]; //@line 843 "_hotshot.c"
-        var $453=($448) - ($452); //@line 843 "_hotshot.c"
-        $tdelta_i23=$453; //@line 843 "_hotshot.c"
-        var $454=$tv_i24; //@line 844 "_hotshot.c"
-        var $455=HEAP[$454]; //@line 844 "_hotshot.c"
-        var $456=$self_addr_i21; //@line 844 "_hotshot.c"
-        var $457=$456+10284; //@line 844 "_hotshot.c"
-        var $458=$457; //@line 844 "_hotshot.c"
-        var $459=HEAP[$458]; //@line 844 "_hotshot.c"
-        var $460=($455)!=($459); //@line 844 "_hotshot.c"
-        if ($460) { __label__ = 82; break; } else { __label__ = 83; break; } //@line 844 "_hotshot.c"
-      case 82: // $bb_i25
-        var $461=$tv_i24; //@line 845 "_hotshot.c"
-        var $462=HEAP[$461]; //@line 845 "_hotshot.c"
-        var $463=$self_addr_i21; //@line 845 "_hotshot.c"
-        var $464=$463+10284; //@line 845 "_hotshot.c"
-        var $465=$464; //@line 845 "_hotshot.c"
-        var $466=HEAP[$465]; //@line 845 "_hotshot.c"
-        var $467=($462) - ($466); //@line 845 "_hotshot.c"
-        var $468=($467) * 1000000; //@line 845 "_hotshot.c"
-        var $469=$tdelta_i23; //@line 845 "_hotshot.c"
-        var $470=($468) + ($469); //@line 845 "_hotshot.c"
-        $tdelta_i23=$470; //@line 845 "_hotshot.c"
-        __lastLabel__ = 82; __label__ = 84; break; //@line 845 "_hotshot.c"
-      case 83: // $bb1thread_pre_split_i27
-        var $_pr_i26=$tdelta_i23;
-        __lastLabel__ = 83; __label__ = 84; break;
-      case 84: // $bb1_i28
-        var $471=__lastLabel__ == 83 ? $_pr_i26 : ($470);
-        var $472=($471) < 0; //@line 848 "_hotshot.c"
-        if ($472) { __label__ = 85; break; } else { __label__ = 86; break; } //@line 848 "_hotshot.c"
-      case 85: // $bb2_i29
-        $5=0; //@line 849 "_hotshot.c"
-        __label__ = 87; break; //@line 849 "_hotshot.c"
-      case 86: // $bb3_i30
-        var $473=$self_addr_i21; //@line 851 "_hotshot.c"
-        var $474=$473+10284; //@line 851 "_hotshot.c"
-        var $475=$474; //@line 851 "_hotshot.c"
-        var $476=$tv_i24; //@line 851 "_hotshot.c"
-        var $477=HEAP[$476]; //@line 851 "_hotshot.c"
-        HEAP[$475]=$477; //@line 851 "_hotshot.c"
-        var $478=$474+4; //@line 851 "_hotshot.c"
-        var $479=$tv_i24+4; //@line 851 "_hotshot.c"
-        var $480=HEAP[$479]; //@line 851 "_hotshot.c"
-        HEAP[$478]=$480; //@line 851 "_hotshot.c"
-        var $481=$tdelta_i23; //@line 852 "_hotshot.c"
-        $5=$481; //@line 852 "_hotshot.c"
-        __label__ = 87; break; //@line 852 "_hotshot.c"
-      case 87: // $get_tdelta_exit33
-        var $482=$5; //@line 849 "_hotshot.c"
-        $retval_i22=$482; //@line 849 "_hotshot.c"
-        var $retval5_i31=$retval_i22; //@line 849 "_hotshot.c"
-        var $483=$self_addr; //@line 874 "_hotshot.c"
-        $self_addr_i34=$483;
-        $tdelta_addr_i35=$retval5_i31;
-        var $484=$self_addr_i34; //@line 734 "_hotshot.c"
-        var $485=$484+16; //@line 734 "_hotshot.c"
-        var $486=HEAP[$485]; //@line 734 "_hotshot.c"
-        var $487=($486) + 6; //@line 734 "_hotshot.c"
-        var $488=($487) > 10239; //@line 734 "_hotshot.c"
-        if ($488) { __label__ = 88; break; } else { __label__ = 90; break; } //@line 734 "_hotshot.c"
-      case 88: // $bb_i37
-        var $489=$self_addr_i34; //@line 735 "_hotshot.c"
-        var $490=_flush_data($489); //@line 735 "_hotshot.c"
-        var $491=($490) < 0; //@line 735 "_hotshot.c"
-        if ($491) { __label__ = 89; break; } else { __label__ = 90; break; } //@line 735 "_hotshot.c"
-      case 89: // $bb1_i38
-        $4=-1; //@line 736 "_hotshot.c"
-        __label__ = 93; break; //@line 736 "_hotshot.c"
-      case 90: // $bb2_i39
-        var $492=$self_addr_i34; //@line 738 "_hotshot.c"
-        var $493=$492+10272; //@line 738 "_hotshot.c"
-        var $494=HEAP[$493]; //@line 738 "_hotshot.c"
-        var $495=($494)!=0; //@line 738 "_hotshot.c"
-        var $496=$self_addr_i34; //@line 739 "_hotshot.c"
-        if ($495) { __label__ = 91; break; } else { __label__ = 92; break; } //@line 738 "_hotshot.c"
-      case 91: // $bb3_i40
-        var $497=$tdelta_addr_i35; //@line 739 "_hotshot.c"
-        var $498=_pack_modified_packed_int($496, $497, 1); //@line 739 "_hotshot.c"
-        $4=$498; //@line 739 "_hotshot.c"
-        __label__ = 93; break; //@line 739 "_hotshot.c"
-      case 92: // $bb4_i41
-        var $499=$496+16; //@line 740 "_hotshot.c"
-        var $500=HEAP[$499]; //@line 740 "_hotshot.c"
-        var $501=$self_addr_i34; //@line 740 "_hotshot.c"
-        var $502=$501+20; //@line 740 "_hotshot.c"
-        var $503=$502+$500; //@line 740 "_hotshot.c"
-        HEAP[$503]=1; //@line 740 "_hotshot.c"
-        var $504=$self_addr_i34; //@line 741 "_hotshot.c"
-        var $505=$504+16; //@line 741 "_hotshot.c"
-        var $506=HEAP[$505]; //@line 741 "_hotshot.c"
-        var $507=($506) + 1; //@line 741 "_hotshot.c"
-        var $508=$self_addr_i34; //@line 741 "_hotshot.c"
-        var $509=$508+16; //@line 741 "_hotshot.c"
-        HEAP[$509]=$507; //@line 741 "_hotshot.c"
-        $4=0; //@line 742 "_hotshot.c"
-        __label__ = 93; break; //@line 742 "_hotshot.c"
-      case 93: // $pack_exit_exit
-        var $510=$4; //@line 736 "_hotshot.c"
-        $retval_i36=$510; //@line 736 "_hotshot.c"
-        var $retval6_i42=$retval_i36; //@line 736 "_hotshot.c"
-        $16=$retval6_i42; //@line 874 "_hotshot.c"
-        __label__ = 118; break; //@line 874 "_hotshot.c"
-      case 94: // $bb7
-        var $511=$self_addr; //@line 877 "_hotshot.c"
-        var $512=$511+10268; //@line 877 "_hotshot.c"
-        var $513=HEAP[$512]; //@line 877 "_hotshot.c"
-        var $514=($513)!=0; //@line 877 "_hotshot.c"
-        if ($514) { __label__ = 95; break; } else { __label__ = 112; break; } //@line 877 "_hotshot.c"
-      case 95: // $bb8
-        var $515=$self_addr; //@line 878 "_hotshot.c"
-        $self_addr_i44=$515;
-        var $516=_gettimeofday($tv_i47, 0); //@line 841 "_hotshot.c"
-        var $517=$tv_i47+4; //@line 843 "_hotshot.c"
-        var $518=HEAP[$517]; //@line 843 "_hotshot.c"
-        var $519=$self_addr_i44; //@line 843 "_hotshot.c"
-        var $520=$519+10284; //@line 843 "_hotshot.c"
-        var $521=$520+4; //@line 843 "_hotshot.c"
-        var $522=HEAP[$521]; //@line 843 "_hotshot.c"
-        var $523=($518) - ($522); //@line 843 "_hotshot.c"
-        $tdelta_i46=$523; //@line 843 "_hotshot.c"
-        var $524=$tv_i47; //@line 844 "_hotshot.c"
-        var $525=HEAP[$524]; //@line 844 "_hotshot.c"
-        var $526=$self_addr_i44; //@line 844 "_hotshot.c"
-        var $527=$526+10284; //@line 844 "_hotshot.c"
-        var $528=$527; //@line 844 "_hotshot.c"
-        var $529=HEAP[$528]; //@line 844 "_hotshot.c"
-        var $530=($525)!=($529); //@line 844 "_hotshot.c"
-        if ($530) { __label__ = 96; break; } else { __label__ = 97; break; } //@line 844 "_hotshot.c"
-      case 96: // $bb_i48
-        var $531=$tv_i47; //@line 845 "_hotshot.c"
-        var $532=HEAP[$531]; //@line 845 "_hotshot.c"
-        var $533=$self_addr_i44; //@line 845 "_hotshot.c"
-        var $534=$533+10284; //@line 845 "_hotshot.c"
-        var $535=$534; //@line 845 "_hotshot.c"
-        var $536=HEAP[$535]; //@line 845 "_hotshot.c"
-        var $537=($532) - ($536); //@line 845 "_hotshot.c"
-        var $538=($537) * 1000000; //@line 845 "_hotshot.c"
-        var $539=$tdelta_i46; //@line 845 "_hotshot.c"
-        var $540=($538) + ($539); //@line 845 "_hotshot.c"
-        $tdelta_i46=$540; //@line 845 "_hotshot.c"
-        __lastLabel__ = 96; __label__ = 98; break; //@line 845 "_hotshot.c"
-      case 97: // $bb1thread_pre_split_i50
-        var $_pr_i49=$tdelta_i46;
-        __lastLabel__ = 97; __label__ = 98; break;
-      case 98: // $bb1_i51
-        var $541=__lastLabel__ == 97 ? $_pr_i49 : ($540);
-        var $542=($541) < 0; //@line 848 "_hotshot.c"
-        if ($542) { __label__ = 99; break; } else { __label__ = 100; break; } //@line 848 "_hotshot.c"
-      case 99: // $bb2_i52
-        $3=0; //@line 849 "_hotshot.c"
-        __label__ = 101; break; //@line 849 "_hotshot.c"
-      case 100: // $bb3_i53
-        var $543=$self_addr_i44; //@line 851 "_hotshot.c"
-        var $544=$543+10284; //@line 851 "_hotshot.c"
-        var $545=$544; //@line 851 "_hotshot.c"
-        var $546=$tv_i47; //@line 851 "_hotshot.c"
-        var $547=HEAP[$546]; //@line 851 "_hotshot.c"
-        HEAP[$545]=$547; //@line 851 "_hotshot.c"
-        var $548=$544+4; //@line 851 "_hotshot.c"
-        var $549=$tv_i47+4; //@line 851 "_hotshot.c"
-        var $550=HEAP[$549]; //@line 851 "_hotshot.c"
-        HEAP[$548]=$550; //@line 851 "_hotshot.c"
-        var $551=$tdelta_i46; //@line 852 "_hotshot.c"
-        $3=$551; //@line 852 "_hotshot.c"
-        __label__ = 101; break; //@line 852 "_hotshot.c"
-      case 101: // $get_tdelta_exit56
-        var $552=$3; //@line 849 "_hotshot.c"
-        $retval_i45=$552; //@line 849 "_hotshot.c"
-        var $retval5_i54=$retval_i45; //@line 849 "_hotshot.c"
-        var $553=$frame_addr; //@line 878 "_hotshot.c"
-        var $554=$553+64; //@line 878 "_hotshot.c"
-        var $555=HEAP[$554]; //@line 878 "_hotshot.c"
-        var $556=$self_addr; //@line 878 "_hotshot.c"
-        $self_addr_i61=$556;
-        $lineno_addr_i62=$555;
-        $tdelta_addr_i63=$retval5_i54;
-        var $557=$self_addr_i61; //@line 758 "_hotshot.c"
-        var $558=$557+16; //@line 758 "_hotshot.c"
-        var $559=HEAP[$558]; //@line 758 "_hotshot.c"
-        var $560=($559) + 11; //@line 758 "_hotshot.c"
-        var $561=($560) > 10239; //@line 758 "_hotshot.c"
-        if ($561) { __label__ = 102; break; } else { __label__ = 104; break; } //@line 758 "_hotshot.c"
-      case 102: // $bb_i65
-        var $562=$self_addr_i61; //@line 759 "_hotshot.c"
-        var $563=_flush_data($562); //@line 759 "_hotshot.c"
-        var $564=($563) < 0; //@line 759 "_hotshot.c"
-        if ($564) { __label__ = 103; break; } else { __label__ = 104; break; } //@line 759 "_hotshot.c"
-      case 103: // $bb1_i66
-        $2=0; //@line 760 "_hotshot.c"
-        __label__ = 111; break; //@line 760 "_hotshot.c"
-      case 104: // $bb2_i67
-        var $565=$self_addr_i61; //@line 762 "_hotshot.c"
-        var $566=$lineno_addr_i62; //@line 762 "_hotshot.c"
-        var $567=_pack_modified_packed_int($565, $566, 2); //@line 762 "_hotshot.c"
-        var $568=($567) < 0; //@line 762 "_hotshot.c"
-        if ($568) { __label__ = 105; break; } else { __label__ = 106; break; } //@line 762 "_hotshot.c"
-      case 105: // $bb3_i68
-        $2=-1; //@line 763 "_hotshot.c"
-        __label__ = 111; break; //@line 763 "_hotshot.c"
-      case 106: // $bb4_i69
-        var $569=$self_addr_i61; //@line 764 "_hotshot.c"
-        var $570=$tdelta_addr_i63; //@line 764 "_hotshot.c"
-        $self_addr_i_i57=$569;
-        $value_addr_i_i58=$570;
-        __label__ = 107; break; //@line 584 "_hotshot.c"
-      case 107: // $bb_i_i70
-        var $571=$value_addr_i_i58; //@line 588 "_hotshot.c"
-        var $572=((($571)) & 255); //@line 588 "_hotshot.c"
-        var $573=($572) & 127; //@line 588 "_hotshot.c"
-        $partial_i_i60=$573; //@line 588 "_hotshot.c"
-        var $574=$value_addr_i_i58; //@line 589 "_hotshot.c"
-        var $575=($574) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i_i58=$575; //@line 589 "_hotshot.c"
-        var $576=($575)!=0; //@line 590 "_hotshot.c"
-        if ($576) { __label__ = 108; break; } else { __label__ = 109; break; } //@line 590 "_hotshot.c"
-      case 108: // $bb1_i_i71
-        var $577=$partial_i_i60; //@line 591 "_hotshot.c"
-        var $578=($577) | -128; //@line 591 "_hotshot.c"
-        $partial_i_i60=$578; //@line 591 "_hotshot.c"
-        __label__ = 109; break; //@line 591 "_hotshot.c"
-      case 109: // $bb2_i_i72
-        var $579=$self_addr_i_i57; //@line 592 "_hotshot.c"
-        var $580=$579+16; //@line 592 "_hotshot.c"
-        var $581=HEAP[$580]; //@line 592 "_hotshot.c"
-        var $582=$self_addr_i_i57; //@line 592 "_hotshot.c"
-        var $583=$582+20; //@line 592 "_hotshot.c"
-        var $584=$583+$581; //@line 592 "_hotshot.c"
-        var $585=$partial_i_i60; //@line 592 "_hotshot.c"
-        HEAP[$584]=$585; //@line 592 "_hotshot.c"
-        var $586=$self_addr_i_i57; //@line 593 "_hotshot.c"
-        var $587=$586+16; //@line 593 "_hotshot.c"
-        var $588=HEAP[$587]; //@line 593 "_hotshot.c"
-        var $589=($588) + 1; //@line 593 "_hotshot.c"
-        var $590=$self_addr_i_i57; //@line 593 "_hotshot.c"
-        var $591=$590+16; //@line 593 "_hotshot.c"
-        HEAP[$591]=$589; //@line 593 "_hotshot.c"
-        var $592=$value_addr_i_i58; //@line 594 "_hotshot.c"
-        var $593=($592)!=0; //@line 594 "_hotshot.c"
-        if ($593) { __label__ = 107; break; } else { __label__ = 110; break; } //@line 594 "_hotshot.c"
-      case 110: // $pack_packed_int_exit_i73
-        $1=0; //@line 595 "_hotshot.c"
-        var $594=$1; //@line 595 "_hotshot.c"
-        $retval_i_i59=$594; //@line 595 "_hotshot.c"
-        var $retval4_i_i=$retval_i_i59; //@line 595 "_hotshot.c"
-        $2=$retval4_i_i; //@line 764 "_hotshot.c"
-        __label__ = 111; break; //@line 764 "_hotshot.c"
-      case 111: // $pack_lineno_tdelta_exit
-        var $595=$2; //@line 760 "_hotshot.c"
-        $retval_i64=$595; //@line 760 "_hotshot.c"
-        var $retval6_i74=$retval_i64; //@line 760 "_hotshot.c"
-        $16=$retval6_i74; //@line 878 "_hotshot.c"
-        __label__ = 118; break; //@line 878 "_hotshot.c"
-      case 112: // $bb9
-        var $596=$frame_addr; //@line 881 "_hotshot.c"
-        var $597=$596+64; //@line 881 "_hotshot.c"
-        var $598=HEAP[$597]; //@line 881 "_hotshot.c"
-        var $599=$self_addr; //@line 881 "_hotshot.c"
-        $self_addr_i76=$599;
-        $lineno_addr_i77=$598;
-        var $600=$self_addr_i76; //@line 748 "_hotshot.c"
-        var $601=$600+16; //@line 748 "_hotshot.c"
-        var $602=HEAP[$601]; //@line 748 "_hotshot.c"
-        var $603=($602) + 6; //@line 748 "_hotshot.c"
-        var $604=($603) > 10239; //@line 748 "_hotshot.c"
-        if ($604) { __label__ = 113; break; } else { __label__ = 115; break; } //@line 748 "_hotshot.c"
-      case 113: // $bb_i79
-        var $605=$self_addr_i76; //@line 749 "_hotshot.c"
-        var $606=_flush_data($605); //@line 749 "_hotshot.c"
-        var $607=($606) < 0; //@line 749 "_hotshot.c"
-        if ($607) { __label__ = 114; break; } else { __label__ = 115; break; } //@line 749 "_hotshot.c"
-      case 114: // $bb1_i80
-        $0=-1; //@line 750 "_hotshot.c"
-        __label__ = 116; break; //@line 750 "_hotshot.c"
-      case 115: // $bb2_i81
-        var $608=$self_addr_i76; //@line 752 "_hotshot.c"
-        var $609=$lineno_addr_i77; //@line 752 "_hotshot.c"
-        var $610=_pack_modified_packed_int($608, $609, 2); //@line 752 "_hotshot.c"
-        $0=$610; //@line 752 "_hotshot.c"
-        __label__ = 116; break; //@line 752 "_hotshot.c"
-      case 116: // $pack_lineno_exit
-        var $611=$0; //@line 750 "_hotshot.c"
-        $retval_i78=$611; //@line 750 "_hotshot.c"
-        var $retval4_i=$retval_i78; //@line 750 "_hotshot.c"
-        $16=$retval4_i; //@line 881 "_hotshot.c"
-        __label__ = 118; break; //@line 881 "_hotshot.c"
-      case 117: // $bb10
-        $16=0; //@line 887 "_hotshot.c"
-        __label__ = 118; break; //@line 887 "_hotshot.c"
-      case 118: // $bb11
-        var $612=$16; //@line 868 "_hotshot.c"
-        $retval=$612; //@line 868 "_hotshot.c"
+        __label__ = 6; break; //@line 869 "_hotshot.c"
+      case 6: // $bb5
+        var $20=$self_addr; //@line 869 "_hotshot.c"
+        var $21=$fileno; //@line 869 "_hotshot.c"
+        var $22=$iftmp_44; //@line 869 "_hotshot.c"
+        var $23=_pack_enter($20, $21, $22, $13); //@line 869 "_hotshot.c"
+        $0=$23; //@line 869 "_hotshot.c"
+        __label__ = 12; break; //@line 869 "_hotshot.c"
+      case 7: // $bb6
+        var $24=$self_addr; //@line 874 "_hotshot.c"
+        var $25=_get_tdelta($24); //@line 874 "_hotshot.c"
+        var $26=$self_addr; //@line 874 "_hotshot.c"
+        var $27=_pack_exit($26, $25); //@line 874 "_hotshot.c"
+        $0=$27; //@line 874 "_hotshot.c"
+        __label__ = 12; break; //@line 874 "_hotshot.c"
+      case 8: // $bb7
+        var $28=$self_addr; //@line 877 "_hotshot.c"
+        var $29=$28+10268; //@line 877 "_hotshot.c"
+        var $30=HEAP[$29]; //@line 877 "_hotshot.c"
+        var $31=($30)!=0; //@line 877 "_hotshot.c"
+        if ($31) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 877 "_hotshot.c"
+      case 9: // $bb8
+        var $32=$self_addr; //@line 878 "_hotshot.c"
+        var $33=_get_tdelta($32); //@line 878 "_hotshot.c"
+        var $34=$frame_addr; //@line 878 "_hotshot.c"
+        var $35=$34+64; //@line 878 "_hotshot.c"
+        var $36=HEAP[$35]; //@line 878 "_hotshot.c"
+        var $37=$self_addr; //@line 878 "_hotshot.c"
+        var $38=_pack_lineno_tdelta($37, $36, $33); //@line 878 "_hotshot.c"
+        $0=$38; //@line 878 "_hotshot.c"
+        __label__ = 12; break; //@line 878 "_hotshot.c"
+      case 10: // $bb9
+        var $39=$frame_addr; //@line 881 "_hotshot.c"
+        var $40=$39+64; //@line 881 "_hotshot.c"
+        var $41=HEAP[$40]; //@line 881 "_hotshot.c"
+        var $42=$self_addr; //@line 881 "_hotshot.c"
+        var $43=_pack_lineno($42, $41); //@line 881 "_hotshot.c"
+        $0=$43; //@line 881 "_hotshot.c"
+        __label__ = 12; break; //@line 881 "_hotshot.c"
+      case 11: // $bb10
+        $0=0; //@line 887 "_hotshot.c"
+        __label__ = 12; break; //@line 887 "_hotshot.c"
+      case 12: // $bb11
+        var $44=$0; //@line 868 "_hotshot.c"
+        $retval=$44; //@line 868 "_hotshot.c"
         var $retval12=$retval; //@line 868 "_hotshot.c"
-        STACKTOP = __stackBase__;
+        ;
         return $retval12; //@line 868 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _get_fileno($self, $fcode) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $fcode_addr;
+        var $retval;
+        var $0;
+        var $obj;
+        var $dict;
+        var $fileno;
+        var $name;
+        $self_addr=$self;
+        $fcode_addr=$fcode;
+        var $1=$fcode_addr; //@line 776 "_hotshot.c"
+        var $2=$1+48; //@line 776 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 776 "_hotshot.c"
+        var $4=$self_addr; //@line 776 "_hotshot.c"
+        var $5=$4+8; //@line 776 "_hotshot.c"
+        var $6=HEAP[$5]; //@line 776 "_hotshot.c"
+        var $7=_PyDict_GetItem($6, $3); //@line 776 "_hotshot.c"
+        $obj=$7; //@line 776 "_hotshot.c"
+        var $8=$obj; //@line 777 "_hotshot.c"
+        var $9=($8)==0; //@line 777 "_hotshot.c"
+        if ($9) { __label__ = 1; break; } else { __label__ = 13; break; } //@line 777 "_hotshot.c"
+      case 1: // $bb
+        var $10=_PyDict_New(); //@line 779 "_hotshot.c"
+        $dict=$10; //@line 779 "_hotshot.c"
+        var $11=$dict; //@line 780 "_hotshot.c"
+        var $12=($11)==0; //@line 780 "_hotshot.c"
+        if ($12) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 780 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 781 "_hotshot.c"
+        __label__ = 28; break; //@line 781 "_hotshot.c"
+      case 3: // $bb2
+        var $13=$self_addr; //@line 783 "_hotshot.c"
+        var $14=$13+10280; //@line 783 "_hotshot.c"
+        var $15=HEAP[$14]; //@line 783 "_hotshot.c"
+        $fileno=$15; //@line 783 "_hotshot.c"
+        var $16=$fileno; //@line 784 "_hotshot.c"
+        var $17=$dict; //@line 784 "_hotshot.c"
+        var $18=_Py_BuildValue(__str7, allocate([$16,0,0,0,$17,0,0,0], ["i32",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 784 "_hotshot.c"
+        $obj=$18; //@line 784 "_hotshot.c"
+        var $19=$obj; //@line 785 "_hotshot.c"
+        var $20=($19)==0; //@line 785 "_hotshot.c"
+        if ($20) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 785 "_hotshot.c"
+      case 4: // $bb3
+        $0=-1; //@line 786 "_hotshot.c"
+        __label__ = 28; break; //@line 786 "_hotshot.c"
+      case 5: // $bb4
+        var $21=$fcode_addr; //@line 788 "_hotshot.c"
+        var $22=$21+48; //@line 788 "_hotshot.c"
+        var $23=HEAP[$22]; //@line 788 "_hotshot.c"
+        var $24=$self_addr; //@line 788 "_hotshot.c"
+        var $25=$24+8; //@line 788 "_hotshot.c"
+        var $26=HEAP[$25]; //@line 788 "_hotshot.c"
+        var $27=$obj; //@line 788 "_hotshot.c"
+        var $28=_PyDict_SetItem($26, $23, $27); //@line 788 "_hotshot.c"
+        var $29=($28)!=0; //@line 788 "_hotshot.c"
+        if ($29) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 788 "_hotshot.c"
+      case 6: // $bb5
+        var $30=$obj; //@line 789 "_hotshot.c"
+        var $31=$30; //@line 789 "_hotshot.c"
+        var $32=HEAP[$31]; //@line 789 "_hotshot.c"
+        var $33=($32) - 1; //@line 789 "_hotshot.c"
+        var $34=$obj; //@line 789 "_hotshot.c"
+        var $35=$34; //@line 789 "_hotshot.c"
+        HEAP[$35]=$33; //@line 789 "_hotshot.c"
+        var $36=$obj; //@line 789 "_hotshot.c"
+        var $37=$36; //@line 789 "_hotshot.c"
+        var $38=HEAP[$37]; //@line 789 "_hotshot.c"
+        var $39=($38)==0; //@line 789 "_hotshot.c"
+        if ($39) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 789 "_hotshot.c"
+      case 7: // $bb6
+        var $40=$obj; //@line 789 "_hotshot.c"
+        var $41=$40+4; //@line 789 "_hotshot.c"
+        var $42=HEAP[$41]; //@line 789 "_hotshot.c"
+        var $43=$42+24; //@line 789 "_hotshot.c"
+        var $44=HEAP[$43]; //@line 789 "_hotshot.c"
+        var $45=$obj; //@line 789 "_hotshot.c"
+        FUNCTION_TABLE[$44]($45); //@line 789 "_hotshot.c"
+        __label__ = 8; break; //@line 789 "_hotshot.c"
+      case 8: // $bb7
+        $0=-1; //@line 790 "_hotshot.c"
+        __label__ = 28; break; //@line 790 "_hotshot.c"
+      case 9: // $bb8
+        var $46=$self_addr; //@line 792 "_hotshot.c"
+        var $47=$46+10280; //@line 792 "_hotshot.c"
+        var $48=HEAP[$47]; //@line 792 "_hotshot.c"
+        var $49=($48) + 1; //@line 792 "_hotshot.c"
+        var $50=$self_addr; //@line 792 "_hotshot.c"
+        var $51=$50+10280; //@line 792 "_hotshot.c"
+        HEAP[$51]=$49; //@line 792 "_hotshot.c"
+        var $52=$obj; //@line 793 "_hotshot.c"
+        var $53=$52; //@line 793 "_hotshot.c"
+        var $54=HEAP[$53]; //@line 793 "_hotshot.c"
+        var $55=($54) - 1; //@line 793 "_hotshot.c"
+        var $56=$obj; //@line 793 "_hotshot.c"
+        var $57=$56; //@line 793 "_hotshot.c"
+        HEAP[$57]=$55; //@line 793 "_hotshot.c"
+        var $58=$obj; //@line 793 "_hotshot.c"
+        var $59=$58; //@line 793 "_hotshot.c"
+        var $60=HEAP[$59]; //@line 793 "_hotshot.c"
+        var $61=($60)==0; //@line 793 "_hotshot.c"
+        if ($61) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 793 "_hotshot.c"
+      case 10: // $bb9
+        var $62=$obj; //@line 793 "_hotshot.c"
+        var $63=$62+4; //@line 793 "_hotshot.c"
+        var $64=HEAP[$63]; //@line 793 "_hotshot.c"
+        var $65=$64+24; //@line 793 "_hotshot.c"
+        var $66=HEAP[$65]; //@line 793 "_hotshot.c"
+        var $67=$obj; //@line 793 "_hotshot.c"
+        FUNCTION_TABLE[$66]($67); //@line 793 "_hotshot.c"
+        __label__ = 11; break; //@line 793 "_hotshot.c"
+      case 11: // $bb10
+        var $68=$fcode_addr; //@line 794 "_hotshot.c"
+        var $69=$68+48; //@line 794 "_hotshot.c"
+        var $70=HEAP[$69]; //@line 794 "_hotshot.c"
+        var $71=$70; //@line 794 "_hotshot.c"
+        var $72=$71+20; //@line 794 "_hotshot.c"
+        var $73=$72; //@line 794 "_hotshot.c"
+        var $74=$self_addr; //@line 794 "_hotshot.c"
+        var $75=$fileno; //@line 794 "_hotshot.c"
+        var $76=_pack_define_file($74, $75, $73); //@line 794 "_hotshot.c"
+        var $77=($76) < 0; //@line 794 "_hotshot.c"
+        if ($77) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 794 "_hotshot.c"
+      case 12: // $bb11
+        $0=-1; //@line 796 "_hotshot.c"
+        __label__ = 28; break; //@line 796 "_hotshot.c"
+      case 13: // $bb13
+        var $78=$obj; //@line 800 "_hotshot.c"
+        var $79=$78; //@line 800 "_hotshot.c"
+        var $80=$79+12; //@line 800 "_hotshot.c"
+        var $81=$80; //@line 800 "_hotshot.c"
+        var $82=HEAP[$81]; //@line 800 "_hotshot.c"
+        var $83=$82; //@line 800 "_hotshot.c"
+        var $84=$83+8; //@line 800 "_hotshot.c"
+        var $85=HEAP[$84]; //@line 800 "_hotshot.c"
+        $fileno=$85; //@line 800 "_hotshot.c"
+        var $86=$obj; //@line 801 "_hotshot.c"
+        var $87=$86; //@line 801 "_hotshot.c"
+        var $88=$87+12; //@line 801 "_hotshot.c"
+        var $89=$88+4; //@line 801 "_hotshot.c"
+        var $90=HEAP[$89]; //@line 801 "_hotshot.c"
+        $dict=$90; //@line 801 "_hotshot.c"
+        __label__ = 14; break; //@line 801 "_hotshot.c"
+      case 14: // $bb14
+        var $91=$fcode_addr; //@line 804 "_hotshot.c"
+        var $92=$91+56; //@line 804 "_hotshot.c"
+        var $93=HEAP[$92]; //@line 804 "_hotshot.c"
+        var $94=_PyInt_FromLong($93); //@line 804 "_hotshot.c"
+        $obj=$94; //@line 804 "_hotshot.c"
+        var $95=($94)==0; //@line 805 "_hotshot.c"
+        if ($95) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 805 "_hotshot.c"
+      case 15: // $bb15
+        _PyErr_Clear(); //@line 807 "_hotshot.c"
+        __label__ = 27; break; //@line 807 "_hotshot.c"
+      case 16: // $bb16
+        var $96=$dict; //@line 810 "_hotshot.c"
+        var $97=$obj; //@line 810 "_hotshot.c"
+        var $98=_PyDict_GetItem($96, $97); //@line 810 "_hotshot.c"
+        $name=$98; //@line 810 "_hotshot.c"
+        var $99=$name; //@line 811 "_hotshot.c"
+        var $100=($99)==0; //@line 811 "_hotshot.c"
+        if ($100) { __label__ = 17; break; } else { __label__ = 25; break; } //@line 811 "_hotshot.c"
+      case 17: // $bb17
+        var $101=$fcode_addr; //@line 812 "_hotshot.c"
+        var $102=$101+52; //@line 812 "_hotshot.c"
+        var $103=HEAP[$102]; //@line 812 "_hotshot.c"
+        var $104=$103; //@line 812 "_hotshot.c"
+        var $105=$104+20; //@line 812 "_hotshot.c"
+        var $106=$105; //@line 812 "_hotshot.c"
+        var $107=$fcode_addr; //@line 812 "_hotshot.c"
+        var $108=$107+56; //@line 812 "_hotshot.c"
+        var $109=HEAP[$108]; //@line 812 "_hotshot.c"
+        var $110=$self_addr; //@line 812 "_hotshot.c"
+        var $111=$fileno; //@line 812 "_hotshot.c"
+        var $112=_pack_define_func($110, $111, $109, $106); //@line 812 "_hotshot.c"
+        var $113=($112) < 0; //@line 812 "_hotshot.c"
+        if ($113) { __label__ = 18; break; } else { __label__ = 21; break; } //@line 812 "_hotshot.c"
+      case 18: // $bb18
+        var $114=$obj; //@line 814 "_hotshot.c"
+        var $115=$114; //@line 814 "_hotshot.c"
+        var $116=HEAP[$115]; //@line 814 "_hotshot.c"
+        var $117=($116) - 1; //@line 814 "_hotshot.c"
+        var $118=$obj; //@line 814 "_hotshot.c"
+        var $119=$118; //@line 814 "_hotshot.c"
+        HEAP[$119]=$117; //@line 814 "_hotshot.c"
+        var $120=$obj; //@line 814 "_hotshot.c"
+        var $121=$120; //@line 814 "_hotshot.c"
+        var $122=HEAP[$121]; //@line 814 "_hotshot.c"
+        var $123=($122)==0; //@line 814 "_hotshot.c"
+        if ($123) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 814 "_hotshot.c"
+      case 19: // $bb19
+        var $124=$obj; //@line 814 "_hotshot.c"
+        var $125=$124+4; //@line 814 "_hotshot.c"
+        var $126=HEAP[$125]; //@line 814 "_hotshot.c"
+        var $127=$126+24; //@line 814 "_hotshot.c"
+        var $128=HEAP[$127]; //@line 814 "_hotshot.c"
+        var $129=$obj; //@line 814 "_hotshot.c"
+        FUNCTION_TABLE[$128]($129); //@line 814 "_hotshot.c"
+        __label__ = 20; break; //@line 814 "_hotshot.c"
+      case 20: // $bb20
+        $0=-1; //@line 815 "_hotshot.c"
+        __label__ = 28; break; //@line 815 "_hotshot.c"
+      case 21: // $bb21
+        var $130=$fcode_addr; //@line 817 "_hotshot.c"
+        var $131=$130+52; //@line 817 "_hotshot.c"
+        var $132=HEAP[$131]; //@line 817 "_hotshot.c"
+        var $133=$dict; //@line 817 "_hotshot.c"
+        var $134=$obj; //@line 817 "_hotshot.c"
+        var $135=_PyDict_SetItem($133, $134, $132); //@line 817 "_hotshot.c"
+        var $136=($135)!=0; //@line 817 "_hotshot.c"
+        if ($136) { __label__ = 22; break; } else { __label__ = 25; break; } //@line 817 "_hotshot.c"
+      case 22: // $bb22
+        var $137=$obj; //@line 818 "_hotshot.c"
+        var $138=$137; //@line 818 "_hotshot.c"
+        var $139=HEAP[$138]; //@line 818 "_hotshot.c"
+        var $140=($139) - 1; //@line 818 "_hotshot.c"
+        var $141=$obj; //@line 818 "_hotshot.c"
+        var $142=$141; //@line 818 "_hotshot.c"
+        HEAP[$142]=$140; //@line 818 "_hotshot.c"
+        var $143=$obj; //@line 818 "_hotshot.c"
+        var $144=$143; //@line 818 "_hotshot.c"
+        var $145=HEAP[$144]; //@line 818 "_hotshot.c"
+        var $146=($145)==0; //@line 818 "_hotshot.c"
+        if ($146) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 818 "_hotshot.c"
+      case 23: // $bb23
+        var $147=$obj; //@line 818 "_hotshot.c"
+        var $148=$147+4; //@line 818 "_hotshot.c"
+        var $149=HEAP[$148]; //@line 818 "_hotshot.c"
+        var $150=$149+24; //@line 818 "_hotshot.c"
+        var $151=HEAP[$150]; //@line 818 "_hotshot.c"
+        var $152=$obj; //@line 818 "_hotshot.c"
+        FUNCTION_TABLE[$151]($152); //@line 818 "_hotshot.c"
+        __label__ = 24; break; //@line 818 "_hotshot.c"
+      case 24: // $bb24
+        $0=-1; //@line 819 "_hotshot.c"
+        __label__ = 28; break; //@line 819 "_hotshot.c"
+      case 25: // $bb25
+        var $153=$obj; //@line 822 "_hotshot.c"
+        var $154=$153; //@line 822 "_hotshot.c"
+        var $155=HEAP[$154]; //@line 822 "_hotshot.c"
+        var $156=($155) - 1; //@line 822 "_hotshot.c"
+        var $157=$obj; //@line 822 "_hotshot.c"
+        var $158=$157; //@line 822 "_hotshot.c"
+        HEAP[$158]=$156; //@line 822 "_hotshot.c"
+        var $159=$obj; //@line 822 "_hotshot.c"
+        var $160=$159; //@line 822 "_hotshot.c"
+        var $161=HEAP[$160]; //@line 822 "_hotshot.c"
+        var $162=($161)==0; //@line 822 "_hotshot.c"
+        if ($162) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 822 "_hotshot.c"
+      case 26: // $bb26
+        var $163=$obj; //@line 822 "_hotshot.c"
+        var $164=$163+4; //@line 822 "_hotshot.c"
+        var $165=HEAP[$164]; //@line 822 "_hotshot.c"
+        var $166=$165+24; //@line 822 "_hotshot.c"
+        var $167=HEAP[$166]; //@line 822 "_hotshot.c"
+        var $168=$obj; //@line 822 "_hotshot.c"
+        FUNCTION_TABLE[$167]($168); //@line 822 "_hotshot.c"
+        __label__ = 27; break; //@line 822 "_hotshot.c"
+      case 27: // $bb27
+        var $169=$fileno; //@line 824 "_hotshot.c"
+        $0=$169; //@line 824 "_hotshot.c"
+        __label__ = 28; break; //@line 824 "_hotshot.c"
+      case 28: // $bb28
+        var $170=$0; //@line 781 "_hotshot.c"
+        $retval=$170; //@line 781 "_hotshot.c"
+        var $retval29=$retval; //@line 781 "_hotshot.c"
+        ;
+        return $retval29; //@line 781 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _get_tdelta($self) {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        var $tdelta;
+        var $tv=__stackBase__;
+        $self_addr=$self;
+        var $1=_gettimeofday($tv, 0); //@line 841 "_hotshot.c"
+        var $2=$tv+4; //@line 843 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 843 "_hotshot.c"
+        var $4=$self_addr; //@line 843 "_hotshot.c"
+        var $5=$4+10284; //@line 843 "_hotshot.c"
+        var $6=$5+4; //@line 843 "_hotshot.c"
+        var $7=HEAP[$6]; //@line 843 "_hotshot.c"
+        var $8=($3) - ($7); //@line 843 "_hotshot.c"
+        $tdelta=$8; //@line 843 "_hotshot.c"
+        var $9=$tv; //@line 844 "_hotshot.c"
+        var $10=HEAP[$9]; //@line 844 "_hotshot.c"
+        var $11=$self_addr; //@line 844 "_hotshot.c"
+        var $12=$11+10284; //@line 844 "_hotshot.c"
+        var $13=$12; //@line 844 "_hotshot.c"
+        var $14=HEAP[$13]; //@line 844 "_hotshot.c"
+        var $15=($10)!=($14); //@line 844 "_hotshot.c"
+        if ($15) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 844 "_hotshot.c"
+      case 1: // $bb
+        var $16=$tv; //@line 845 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 845 "_hotshot.c"
+        var $18=$self_addr; //@line 845 "_hotshot.c"
+        var $19=$18+10284; //@line 845 "_hotshot.c"
+        var $20=$19; //@line 845 "_hotshot.c"
+        var $21=HEAP[$20]; //@line 845 "_hotshot.c"
+        var $22=($17) - ($21); //@line 845 "_hotshot.c"
+        var $23=($22) * 1000000; //@line 845 "_hotshot.c"
+        var $24=$tdelta; //@line 845 "_hotshot.c"
+        var $25=($23) + ($24); //@line 845 "_hotshot.c"
+        $tdelta=$25; //@line 845 "_hotshot.c"
+        __lastLabel__ = 1; __label__ = 3; break; //@line 845 "_hotshot.c"
+      case 2: // $bb1thread_pre_split
+        var $_pr=$tdelta;
+        __lastLabel__ = 2; __label__ = 3; break;
+      case 3: // $bb1
+        var $26=__lastLabel__ == 2 ? $_pr : ($25);
+        var $27=($26) < 0; //@line 848 "_hotshot.c"
+        if ($27) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 848 "_hotshot.c"
+      case 4: // $bb2
+        $0=0; //@line 849 "_hotshot.c"
+        __label__ = 6; break; //@line 849 "_hotshot.c"
+      case 5: // $bb3
+        var $28=$self_addr; //@line 851 "_hotshot.c"
+        var $29=$28+10284; //@line 851 "_hotshot.c"
+        var $30=$29; //@line 851 "_hotshot.c"
+        var $31=$tv; //@line 851 "_hotshot.c"
+        var $32=HEAP[$31]; //@line 851 "_hotshot.c"
+        HEAP[$30]=$32; //@line 851 "_hotshot.c"
+        var $33=$29+4; //@line 851 "_hotshot.c"
+        var $34=$tv+4; //@line 851 "_hotshot.c"
+        var $35=HEAP[$34]; //@line 851 "_hotshot.c"
+        HEAP[$33]=$35; //@line 851 "_hotshot.c"
+        var $36=$tdelta; //@line 852 "_hotshot.c"
+        $0=$36; //@line 852 "_hotshot.c"
+        __label__ = 6; break; //@line 852 "_hotshot.c"
+      case 6: // $bb4
+        var $37=$0; //@line 849 "_hotshot.c"
+        $retval=$37; //@line 849 "_hotshot.c"
+        var $retval5=$retval; //@line 849 "_hotshot.c"
+        STACKTOP = __stackBase__;
+        return $retval5; //@line 849 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_enter($self, $fileno, $tdelta, $lineno) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $fileno_addr;
+        var $tdelta_addr;
+        var $lineno_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        $fileno_addr=$fileno;
+        $tdelta_addr=$tdelta;
+        $lineno_addr=$lineno;
+        var $1=$self_addr; //@line 719 "_hotshot.c"
+        var $2=$1+16; //@line 719 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 719 "_hotshot.c"
+        var $4=($3) + 16; //@line 719 "_hotshot.c"
+        var $5=($4) > 10239; //@line 719 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 719 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 720 "_hotshot.c"
+        var $7=_flush_data($6); //@line 720 "_hotshot.c"
+        var $8=($7) < 0; //@line 720 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 720 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 721 "_hotshot.c"
+        __label__ = 6; break; //@line 721 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 723 "_hotshot.c"
+        var $10=$fileno_addr; //@line 723 "_hotshot.c"
+        var $11=_pack_modified_packed_int($9, $10, 0); //@line 723 "_hotshot.c"
+        var $12=$self_addr; //@line 724 "_hotshot.c"
+        var $13=$lineno_addr; //@line 724 "_hotshot.c"
+        var $14=_pack_packed_int($12, $13); //@line 724 "_hotshot.c"
+        var $15=$self_addr; //@line 725 "_hotshot.c"
+        var $16=$15+10272; //@line 725 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 725 "_hotshot.c"
+        var $18=($17)!=0; //@line 725 "_hotshot.c"
+        if ($18) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 725 "_hotshot.c"
+      case 4: // $bb3
+        var $19=$self_addr; //@line 726 "_hotshot.c"
+        var $20=$tdelta_addr; //@line 726 "_hotshot.c"
+        var $21=_pack_packed_int($19, $20); //@line 726 "_hotshot.c"
+        $0=$21; //@line 726 "_hotshot.c"
+        __label__ = 6; break; //@line 726 "_hotshot.c"
+      case 5: // $bb4
+        $0=0; //@line 728 "_hotshot.c"
+        __label__ = 6; break; //@line 728 "_hotshot.c"
+      case 6: // $bb5
+        var $22=$0; //@line 721 "_hotshot.c"
+        $retval=$22; //@line 721 "_hotshot.c"
+        var $retval6=$retval; //@line 721 "_hotshot.c"
+        ;
+        return $retval6; //@line 721 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_exit($self, $tdelta) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $tdelta_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        $tdelta_addr=$tdelta;
+        var $1=$self_addr; //@line 734 "_hotshot.c"
+        var $2=$1+16; //@line 734 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 734 "_hotshot.c"
+        var $4=($3) + 6; //@line 734 "_hotshot.c"
+        var $5=($4) > 10239; //@line 734 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 734 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 735 "_hotshot.c"
+        var $7=_flush_data($6); //@line 735 "_hotshot.c"
+        var $8=($7) < 0; //@line 735 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 735 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 736 "_hotshot.c"
+        __label__ = 6; break; //@line 736 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 738 "_hotshot.c"
+        var $10=$9+10272; //@line 738 "_hotshot.c"
+        var $11=HEAP[$10]; //@line 738 "_hotshot.c"
+        var $12=($11)!=0; //@line 738 "_hotshot.c"
+        var $13=$self_addr; //@line 739 "_hotshot.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 738 "_hotshot.c"
+      case 4: // $bb3
+        var $14=$tdelta_addr; //@line 739 "_hotshot.c"
+        var $15=_pack_modified_packed_int($13, $14, 1); //@line 739 "_hotshot.c"
+        $0=$15; //@line 739 "_hotshot.c"
+        __label__ = 6; break; //@line 739 "_hotshot.c"
+      case 5: // $bb4
+        var $16=$13+16; //@line 740 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 740 "_hotshot.c"
+        var $18=$self_addr; //@line 740 "_hotshot.c"
+        var $19=$18+20; //@line 740 "_hotshot.c"
+        var $20=$19+$17; //@line 740 "_hotshot.c"
+        HEAP[$20]=1; //@line 740 "_hotshot.c"
+        var $21=$self_addr; //@line 741 "_hotshot.c"
+        var $22=$21+16; //@line 741 "_hotshot.c"
+        var $23=HEAP[$22]; //@line 741 "_hotshot.c"
+        var $24=($23) + 1; //@line 741 "_hotshot.c"
+        var $25=$self_addr; //@line 741 "_hotshot.c"
+        var $26=$25+16; //@line 741 "_hotshot.c"
+        HEAP[$26]=$24; //@line 741 "_hotshot.c"
+        $0=0; //@line 742 "_hotshot.c"
+        __label__ = 6; break; //@line 742 "_hotshot.c"
+      case 6: // $bb5
+        var $27=$0; //@line 736 "_hotshot.c"
+        $retval=$27; //@line 736 "_hotshot.c"
+        var $retval6=$retval; //@line 736 "_hotshot.c"
+        ;
+        return $retval6; //@line 736 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_lineno_tdelta($self, $lineno, $tdelta) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $lineno_addr;
+        var $tdelta_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        $lineno_addr=$lineno;
+        $tdelta_addr=$tdelta;
+        var $1=$self_addr; //@line 758 "_hotshot.c"
+        var $2=$1+16; //@line 758 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 758 "_hotshot.c"
+        var $4=($3) + 11; //@line 758 "_hotshot.c"
+        var $5=($4) > 10239; //@line 758 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 758 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 759 "_hotshot.c"
+        var $7=_flush_data($6); //@line 759 "_hotshot.c"
+        var $8=($7) < 0; //@line 759 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 759 "_hotshot.c"
+      case 2: // $bb1
+        $0=0; //@line 760 "_hotshot.c"
+        __label__ = 6; break; //@line 760 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 762 "_hotshot.c"
+        var $10=$lineno_addr; //@line 762 "_hotshot.c"
+        var $11=_pack_modified_packed_int($9, $10, 2); //@line 762 "_hotshot.c"
+        var $12=($11) < 0; //@line 762 "_hotshot.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 762 "_hotshot.c"
+      case 4: // $bb3
+        $0=-1; //@line 763 "_hotshot.c"
+        __label__ = 6; break; //@line 763 "_hotshot.c"
+      case 5: // $bb4
+        var $13=$self_addr; //@line 764 "_hotshot.c"
+        var $14=$tdelta_addr; //@line 764 "_hotshot.c"
+        var $15=_pack_packed_int($13, $14); //@line 764 "_hotshot.c"
+        $0=$15; //@line 764 "_hotshot.c"
+        __label__ = 6; break; //@line 764 "_hotshot.c"
+      case 6: // $bb5
+        var $16=$0; //@line 760 "_hotshot.c"
+        $retval=$16; //@line 760 "_hotshot.c"
+        var $retval6=$retval; //@line 760 "_hotshot.c"
+        ;
+        return $retval6; //@line 760 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _pack_lineno($self, $lineno) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $lineno_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        $lineno_addr=$lineno;
+        var $1=$self_addr; //@line 748 "_hotshot.c"
+        var $2=$1+16; //@line 748 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 748 "_hotshot.c"
+        var $4=($3) + 6; //@line 748 "_hotshot.c"
+        var $5=($4) > 10239; //@line 748 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 748 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 749 "_hotshot.c"
+        var $7=_flush_data($6); //@line 749 "_hotshot.c"
+        var $8=($7) < 0; //@line 749 "_hotshot.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 749 "_hotshot.c"
+      case 2: // $bb1
+        $0=-1; //@line 750 "_hotshot.c"
+        __label__ = 4; break; //@line 750 "_hotshot.c"
+      case 3: // $bb2
+        var $9=$self_addr; //@line 752 "_hotshot.c"
+        var $10=$lineno_addr; //@line 752 "_hotshot.c"
+        var $11=_pack_modified_packed_int($9, $10, 2); //@line 752 "_hotshot.c"
+        $0=$11; //@line 752 "_hotshot.c"
+        __label__ = 4; break; //@line 752 "_hotshot.c"
+      case 4: // $bb3
+        var $12=$0; //@line 750 "_hotshot.c"
+        $retval=$12; //@line 750 "_hotshot.c"
+        var $retval4=$retval; //@line 750 "_hotshot.c"
+        ;
+        return $retval4; //@line 750 "_hotshot.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -2681,17 +2477,12 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $value_addr_i;
-        var $retval_i;
-        var $0;
-        var $partial_i;
         var $self_addr;
         var $value_addr;
         var $modsize_addr;
         var $subfield_addr;
         var $retval;
-        var $1;
+        var $0;
         var $bits;
         var $partial;
         var $b;
@@ -2699,115 +2490,74 @@ var __str74;
         $value_addr=$value;
         $modsize_addr=2;
         $subfield_addr=$subfield;
-        var $2=$modsize_addr; //@line 608 "_hotshot.c"
-        var $3=7 - ($2); //@line 608 "_hotshot.c"
-        $bits=$3; //@line 608 "_hotshot.c"
-        var $4=$bits; //@line 609 "_hotshot.c"
-        var $5=_maxvalues_8890+$4*4; //@line 609 "_hotshot.c"
-        var $6=HEAP[$5]; //@line 609 "_hotshot.c"
-        var $7=$value_addr; //@line 609 "_hotshot.c"
-        var $8=($7) & ($6); //@line 609 "_hotshot.c"
-        $partial=$8; //@line 609 "_hotshot.c"
-        var $9=$partial; //@line 610 "_hotshot.c"
-        var $10=$modsize_addr; //@line 610 "_hotshot.c"
-        var $11=($9) << ($10); //@line 610 "_hotshot.c"
-        var $12=((($11)) & 255); //@line 610 "_hotshot.c"
-        var $13=$subfield_addr; //@line 610 "_hotshot.c"
-        var $14=((($13)) & 255); //@line 610 "_hotshot.c"
-        var $15=($12) | ($14); //@line 610 "_hotshot.c"
-        $b=$15; //@line 610 "_hotshot.c"
-        var $16=$partial; //@line 612 "_hotshot.c"
-        var $17=$value_addr; //@line 612 "_hotshot.c"
-        var $18=($16)!=($17); //@line 612 "_hotshot.c"
-        if ($18) { __label__ = 1; break; } else { __label__ = 6; break; } //@line 612 "_hotshot.c"
+        var $1=$modsize_addr; //@line 608 "_hotshot.c"
+        var $2=7 - ($1); //@line 608 "_hotshot.c"
+        $bits=$2; //@line 608 "_hotshot.c"
+        var $3=$bits; //@line 609 "_hotshot.c"
+        var $4=_maxvalues_8890+$3*4; //@line 609 "_hotshot.c"
+        var $5=HEAP[$4]; //@line 609 "_hotshot.c"
+        var $6=$value_addr; //@line 609 "_hotshot.c"
+        var $7=($6) & ($5); //@line 609 "_hotshot.c"
+        $partial=$7; //@line 609 "_hotshot.c"
+        var $8=$partial; //@line 610 "_hotshot.c"
+        var $9=$modsize_addr; //@line 610 "_hotshot.c"
+        var $10=($8) << ($9); //@line 610 "_hotshot.c"
+        var $11=((($10)) & 255); //@line 610 "_hotshot.c"
+        var $12=$subfield_addr; //@line 610 "_hotshot.c"
+        var $13=((($12)) & 255); //@line 610 "_hotshot.c"
+        var $14=($11) | ($13); //@line 610 "_hotshot.c"
+        $b=$14; //@line 610 "_hotshot.c"
+        var $15=$partial; //@line 612 "_hotshot.c"
+        var $16=$value_addr; //@line 612 "_hotshot.c"
+        var $17=($15)!=($16); //@line 612 "_hotshot.c"
+        if ($17) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 612 "_hotshot.c"
       case 1: // $bb
-        var $19=$b; //@line 613 "_hotshot.c"
-        var $20=($19) | -128; //@line 613 "_hotshot.c"
-        $b=$20; //@line 613 "_hotshot.c"
-        var $21=$self_addr; //@line 614 "_hotshot.c"
-        var $22=$21+16; //@line 614 "_hotshot.c"
-        var $23=HEAP[$22]; //@line 614 "_hotshot.c"
-        var $24=$self_addr; //@line 614 "_hotshot.c"
-        var $25=$24+20; //@line 614 "_hotshot.c"
-        var $26=$25+$23; //@line 614 "_hotshot.c"
-        var $27=$b; //@line 614 "_hotshot.c"
-        HEAP[$26]=$27; //@line 614 "_hotshot.c"
-        var $28=$self_addr; //@line 615 "_hotshot.c"
-        var $29=$28+16; //@line 615 "_hotshot.c"
-        var $30=HEAP[$29]; //@line 615 "_hotshot.c"
-        var $31=($30) + 1; //@line 615 "_hotshot.c"
-        var $32=$self_addr; //@line 615 "_hotshot.c"
-        var $33=$32+16; //@line 615 "_hotshot.c"
-        HEAP[$33]=$31; //@line 615 "_hotshot.c"
-        var $34=$value_addr; //@line 616 "_hotshot.c"
-        var $35=$bits; //@line 616 "_hotshot.c"
-        var $36=($34) >> ($35); //@line 616 "_hotshot.c"
-        var $37=$self_addr; //@line 616 "_hotshot.c"
-        $self_addr_i=$37;
-        $value_addr_i=$36;
-        __label__ = 2; break; //@line 584 "_hotshot.c"
-      case 2: // $bb_i
-        var $38=$value_addr_i; //@line 588 "_hotshot.c"
-        var $39=((($38)) & 255); //@line 588 "_hotshot.c"
-        var $40=($39) & 127; //@line 588 "_hotshot.c"
-        $partial_i=$40; //@line 588 "_hotshot.c"
-        var $41=$value_addr_i; //@line 589 "_hotshot.c"
-        var $42=($41) >> 7; //@line 589 "_hotshot.c"
-        $value_addr_i=$42; //@line 589 "_hotshot.c"
-        var $43=($42)!=0; //@line 590 "_hotshot.c"
-        if ($43) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 590 "_hotshot.c"
-      case 3: // $bb1_i
-        var $44=$partial_i; //@line 591 "_hotshot.c"
-        var $45=($44) | -128; //@line 591 "_hotshot.c"
-        $partial_i=$45; //@line 591 "_hotshot.c"
-        __label__ = 4; break; //@line 591 "_hotshot.c"
-      case 4: // $bb2_i
-        var $46=$self_addr_i; //@line 592 "_hotshot.c"
-        var $47=$46+16; //@line 592 "_hotshot.c"
-        var $48=HEAP[$47]; //@line 592 "_hotshot.c"
-        var $49=$self_addr_i; //@line 592 "_hotshot.c"
-        var $50=$49+20; //@line 592 "_hotshot.c"
-        var $51=$50+$48; //@line 592 "_hotshot.c"
-        var $52=$partial_i; //@line 592 "_hotshot.c"
-        HEAP[$51]=$52; //@line 592 "_hotshot.c"
-        var $53=$self_addr_i; //@line 593 "_hotshot.c"
-        var $54=$53+16; //@line 593 "_hotshot.c"
-        var $55=HEAP[$54]; //@line 593 "_hotshot.c"
-        var $56=($55) + 1; //@line 593 "_hotshot.c"
-        var $57=$self_addr_i; //@line 593 "_hotshot.c"
-        var $58=$57+16; //@line 593 "_hotshot.c"
-        HEAP[$58]=$56; //@line 593 "_hotshot.c"
-        var $59=$value_addr_i; //@line 594 "_hotshot.c"
-        var $60=($59)!=0; //@line 594 "_hotshot.c"
-        if ($60) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 594 "_hotshot.c"
-      case 5: // $pack_packed_int_exit
-        $0=0; //@line 595 "_hotshot.c"
-        var $61=$0; //@line 595 "_hotshot.c"
-        $retval_i=$61; //@line 595 "_hotshot.c"
-        var $retval4_i=$retval_i; //@line 595 "_hotshot.c"
-        $1=$retval4_i; //@line 616 "_hotshot.c"
-        __label__ = 7; break; //@line 616 "_hotshot.c"
-      case 6: // $bb1
-        var $62=$self_addr; //@line 618 "_hotshot.c"
-        var $63=$62+16; //@line 618 "_hotshot.c"
-        var $64=HEAP[$63]; //@line 618 "_hotshot.c"
-        var $65=$self_addr; //@line 618 "_hotshot.c"
-        var $66=$65+20; //@line 618 "_hotshot.c"
-        var $67=$66+$64; //@line 618 "_hotshot.c"
-        var $68=$b; //@line 618 "_hotshot.c"
-        HEAP[$67]=$68; //@line 618 "_hotshot.c"
-        var $69=$self_addr; //@line 619 "_hotshot.c"
-        var $70=$69+16; //@line 619 "_hotshot.c"
-        var $71=HEAP[$70]; //@line 619 "_hotshot.c"
-        var $72=($71) + 1; //@line 619 "_hotshot.c"
-        var $73=$self_addr; //@line 619 "_hotshot.c"
-        var $74=$73+16; //@line 619 "_hotshot.c"
-        HEAP[$74]=$72; //@line 619 "_hotshot.c"
-        $1=0; //@line 620 "_hotshot.c"
-        __label__ = 7; break; //@line 620 "_hotshot.c"
-      case 7: // $bb2
-        var $75=$1; //@line 616 "_hotshot.c"
-        $retval=$75; //@line 616 "_hotshot.c"
+        var $18=$b; //@line 613 "_hotshot.c"
+        var $19=($18) | -128; //@line 613 "_hotshot.c"
+        $b=$19; //@line 613 "_hotshot.c"
+        var $20=$self_addr; //@line 614 "_hotshot.c"
+        var $21=$20+16; //@line 614 "_hotshot.c"
+        var $22=HEAP[$21]; //@line 614 "_hotshot.c"
+        var $23=$self_addr; //@line 614 "_hotshot.c"
+        var $24=$23+20; //@line 614 "_hotshot.c"
+        var $25=$24+$22; //@line 614 "_hotshot.c"
+        var $26=$b; //@line 614 "_hotshot.c"
+        HEAP[$25]=$26; //@line 614 "_hotshot.c"
+        var $27=$self_addr; //@line 615 "_hotshot.c"
+        var $28=$27+16; //@line 615 "_hotshot.c"
+        var $29=HEAP[$28]; //@line 615 "_hotshot.c"
+        var $30=($29) + 1; //@line 615 "_hotshot.c"
+        var $31=$self_addr; //@line 615 "_hotshot.c"
+        var $32=$31+16; //@line 615 "_hotshot.c"
+        HEAP[$32]=$30; //@line 615 "_hotshot.c"
+        var $33=$value_addr; //@line 616 "_hotshot.c"
+        var $34=$bits; //@line 616 "_hotshot.c"
+        var $35=($33) >> ($34); //@line 616 "_hotshot.c"
+        var $36=$self_addr; //@line 616 "_hotshot.c"
+        var $37=_pack_packed_int($36, $35); //@line 616 "_hotshot.c"
+        $0=$37; //@line 616 "_hotshot.c"
+        __label__ = 3; break; //@line 616 "_hotshot.c"
+      case 2: // $bb1
+        var $38=$self_addr; //@line 618 "_hotshot.c"
+        var $39=$38+16; //@line 618 "_hotshot.c"
+        var $40=HEAP[$39]; //@line 618 "_hotshot.c"
+        var $41=$self_addr; //@line 618 "_hotshot.c"
+        var $42=$41+20; //@line 618 "_hotshot.c"
+        var $43=$42+$40; //@line 618 "_hotshot.c"
+        var $44=$b; //@line 618 "_hotshot.c"
+        HEAP[$43]=$44; //@line 618 "_hotshot.c"
+        var $45=$self_addr; //@line 619 "_hotshot.c"
+        var $46=$45+16; //@line 619 "_hotshot.c"
+        var $47=HEAP[$46]; //@line 619 "_hotshot.c"
+        var $48=($47) + 1; //@line 619 "_hotshot.c"
+        var $49=$self_addr; //@line 619 "_hotshot.c"
+        var $50=$49+16; //@line 619 "_hotshot.c"
+        HEAP[$50]=$48; //@line 619 "_hotshot.c"
+        $0=0; //@line 620 "_hotshot.c"
+        __label__ = 3; break; //@line 620 "_hotshot.c"
+      case 3: // $bb2
+        var $51=$0; //@line 616 "_hotshot.c"
+        $retval=$51; //@line 616 "_hotshot.c"
         var $retval3=$retval; //@line 616 "_hotshot.c"
         ;
         return $retval3; //@line 616 "_hotshot.c"
@@ -2954,6 +2704,132 @@ var __str74;
   }
   
 
+  function _do_start($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        $self_addr=$self;
+        var $0=$self_addr; //@line 965 "_hotshot.c"
+        var $1=$0+10276; //@line 965 "_hotshot.c"
+        HEAP[$1]=1; //@line 965 "_hotshot.c"
+        var $2=$self_addr; //@line 966 "_hotshot.c"
+        var $3=$2+10284; //@line 966 "_hotshot.c"
+        var $4=_gettimeofday($3, 0); //@line 966 "_hotshot.c"
+        var $5=$self_addr; //@line 967 "_hotshot.c"
+        var $6=$5+10264; //@line 967 "_hotshot.c"
+        var $7=HEAP[$6]; //@line 967 "_hotshot.c"
+        var $8=($7)!=0; //@line 967 "_hotshot.c"
+        var $9=$self_addr; //@line 968 "_hotshot.c"
+        var $10=$9; //@line 968 "_hotshot.c"
+        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 967 "_hotshot.c"
+      case 1: // $bb
+        _PyEval_SetTrace((FUNCTION_TABLE_OFFSET + 2), $10); //@line 968 "_hotshot.c"
+        __label__ = 3; break; //@line 968 "_hotshot.c"
+      case 2: // $bb1
+        _PyEval_SetProfile((FUNCTION_TABLE_OFFSET + 2), $10); //@line 970 "_hotshot.c"
+        __label__ = 3; break; //@line 970 "_hotshot.c"
+      case 3: // $return
+        ;
+        return; //@line 971 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _do_stop($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        $self_addr=$self;
+        var $0=$self_addr; //@line 976 "_hotshot.c"
+        var $1=$0+10276; //@line 976 "_hotshot.c"
+        var $2=HEAP[$1]; //@line 976 "_hotshot.c"
+        var $3=($2)!=0; //@line 976 "_hotshot.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 976 "_hotshot.c"
+      case 1: // $bb
+        var $4=$self_addr; //@line 977 "_hotshot.c"
+        var $5=$4+10276; //@line 977 "_hotshot.c"
+        HEAP[$5]=0; //@line 977 "_hotshot.c"
+        var $6=$self_addr; //@line 978 "_hotshot.c"
+        var $7=$6+10264; //@line 978 "_hotshot.c"
+        var $8=HEAP[$7]; //@line 978 "_hotshot.c"
+        var $9=($8)!=0; //@line 978 "_hotshot.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 978 "_hotshot.c"
+      case 2: // $bb1
+        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
+        __label__ = 4; break; //@line 979 "_hotshot.c"
+      case 3: // $bb2
+        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
+        __label__ = 4; break; //@line 981 "_hotshot.c"
+      case 4: // $bb3
+        var $10=$self_addr; //@line 983 "_hotshot.c"
+        var $11=$10+16; //@line 983 "_hotshot.c"
+        var $12=HEAP[$11]; //@line 983 "_hotshot.c"
+        var $13=($12) > 0; //@line 983 "_hotshot.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 983 "_hotshot.c"
+      case 5: // $bb4
+        var $14=$self_addr; //@line 985 "_hotshot.c"
+        var $15=_flush_data($14); //@line 985 "_hotshot.c"
+        __label__ = 6; break; //@line 985 "_hotshot.c"
+      case 6: // $return
+        ;
+        return; //@line 987 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _is_available($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 992 "_hotshot.c"
+        var $2=$1+10276; //@line 992 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 992 "_hotshot.c"
+        var $4=($3)!=0; //@line 992 "_hotshot.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 992 "_hotshot.c"
+      case 1: // $bb
+        var $5=HEAP[_ProfilerError]; //@line 993 "_hotshot.c"
+        _PyErr_SetString($5, __str8); //@line 993 "_hotshot.c"
+        $0=0; //@line 994 "_hotshot.c"
+        __label__ = 5; break; //@line 994 "_hotshot.c"
+      case 2: // $bb1
+        var $6=$self_addr; //@line 996 "_hotshot.c"
+        var $7=$6+10260; //@line 996 "_hotshot.c"
+        var $8=HEAP[$7]; //@line 996 "_hotshot.c"
+        var $9=($8)==0; //@line 996 "_hotshot.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 996 "_hotshot.c"
+      case 3: // $bb2
+        var $10=HEAP[_ProfilerError]; //@line 997 "_hotshot.c"
+        _PyErr_SetString($10, __str9); //@line 997 "_hotshot.c"
+        $0=0; //@line 998 "_hotshot.c"
+        __label__ = 5; break; //@line 998 "_hotshot.c"
+      case 4: // $bb3
+        $0=1; //@line 1000 "_hotshot.c"
+        __label__ = 5; break; //@line 1000 "_hotshot.c"
+      case 5: // $bb4
+        var $11=$0; //@line 994 "_hotshot.c"
+        $retval=$11; //@line 994 "_hotshot.c"
+        var $retval5=$retval; //@line 994 "_hotshot.c"
+        ;
+        return $retval5; //@line 994 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _profiler_addinfo($self, $args) {
     var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
@@ -2971,7 +2847,7 @@ var __str74;
         $args_addr=$args;
         $result=0; //@line 1013 "_hotshot.c"
         var $1=$args_addr; //@line 1016 "_hotshot.c"
-        var $2=_PyArg_ParseTuple($1, __str10, $key, $value); //@line 1016 "_hotshot.c"
+        var $2=_PyArg_ParseTuple($1, __str10, allocate([$key,0,0,0,$value,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 1016 "_hotshot.c"
         var $3=($2)!=0; //@line 1016 "_hotshot.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 1016 "_hotshot.c"
       case 1: // $bb
@@ -3020,65 +2896,33 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
         var $self_addr;
         var $retval;
         var $0;
         $self_addr=$self;
         var $1=$self_addr; //@line 1036 "_hotshot.c"
-        $self_addr_i=$1;
-        var $2=$self_addr_i; //@line 976 "_hotshot.c"
-        var $3=$2+10276; //@line 976 "_hotshot.c"
-        var $4=HEAP[$3]; //@line 976 "_hotshot.c"
-        var $5=($4)!=0; //@line 976 "_hotshot.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 976 "_hotshot.c"
-      case 1: // $bb_i
-        var $6=$self_addr_i; //@line 977 "_hotshot.c"
-        var $7=$6+10276; //@line 977 "_hotshot.c"
-        HEAP[$7]=0; //@line 977 "_hotshot.c"
-        var $8=$self_addr_i; //@line 978 "_hotshot.c"
-        var $9=$8+10264; //@line 978 "_hotshot.c"
-        var $10=HEAP[$9]; //@line 978 "_hotshot.c"
-        var $11=($10)!=0; //@line 978 "_hotshot.c"
-        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 978 "_hotshot.c"
-      case 2: // $bb1_i
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 4; break; //@line 979 "_hotshot.c"
-      case 3: // $bb2_i
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 4; break; //@line 981 "_hotshot.c"
-      case 4: // $bb3_i
-        var $12=$self_addr_i; //@line 983 "_hotshot.c"
-        var $13=$12+16; //@line 983 "_hotshot.c"
-        var $14=HEAP[$13]; //@line 983 "_hotshot.c"
-        var $15=($14) > 0; //@line 983 "_hotshot.c"
-        if ($15) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 983 "_hotshot.c"
-      case 5: // $bb4_i
-        var $16=$self_addr_i; //@line 985 "_hotshot.c"
-        var $17=_flush_data($16); //@line 985 "_hotshot.c"
-        __label__ = 6; break; //@line 985 "_hotshot.c"
-      case 6: // $do_stop_exit
-        var $18=$self_addr; //@line 1037 "_hotshot.c"
-        var $19=$18+10260; //@line 1037 "_hotshot.c"
-        var $20=HEAP[$19]; //@line 1037 "_hotshot.c"
-        var $21=($20)!=0; //@line 1037 "_hotshot.c"
-        if ($21) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1037 "_hotshot.c"
-      case 7: // $bb
-        var $22=$self_addr; //@line 1038 "_hotshot.c"
-        var $23=$22+10260; //@line 1038 "_hotshot.c"
-        var $24=HEAP[$23]; //@line 1038 "_hotshot.c"
-        var $25=_fclose($24); //@line 1038 "_hotshot.c"
-        var $26=$self_addr; //@line 1039 "_hotshot.c"
-        var $27=$26+10260; //@line 1039 "_hotshot.c"
-        HEAP[$27]=0; //@line 1039 "_hotshot.c"
-        __label__ = 8; break; //@line 1039 "_hotshot.c"
-      case 8: // $bb1
-        var $28=HEAP[__Py_NoneStruct]; //@line 1041 "_hotshot.c"
-        var $29=($28) + 1; //@line 1041 "_hotshot.c"
-        HEAP[__Py_NoneStruct]=$29; //@line 1041 "_hotshot.c"
+        _do_stop($1); //@line 1036 "_hotshot.c"
+        var $2=$self_addr; //@line 1037 "_hotshot.c"
+        var $3=$2+10260; //@line 1037 "_hotshot.c"
+        var $4=HEAP[$3]; //@line 1037 "_hotshot.c"
+        var $5=($4)!=0; //@line 1037 "_hotshot.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1037 "_hotshot.c"
+      case 1: // $bb
+        var $6=$self_addr; //@line 1038 "_hotshot.c"
+        var $7=$6+10260; //@line 1038 "_hotshot.c"
+        var $8=HEAP[$7]; //@line 1038 "_hotshot.c"
+        var $9=_fclose($8); //@line 1038 "_hotshot.c"
+        var $10=$self_addr; //@line 1039 "_hotshot.c"
+        var $11=$10+10260; //@line 1039 "_hotshot.c"
+        HEAP[$11]=0; //@line 1039 "_hotshot.c"
+        __label__ = 2; break; //@line 1039 "_hotshot.c"
+      case 2: // $bb1
+        var $12=HEAP[__Py_NoneStruct]; //@line 1041 "_hotshot.c"
+        var $13=($12) + 1; //@line 1041 "_hotshot.c"
+        HEAP[__Py_NoneStruct]=$13; //@line 1041 "_hotshot.c"
         $0=__Py_NoneStruct; //@line 1042 "_hotshot.c"
-        var $30=$0; //@line 1042 "_hotshot.c"
-        $retval=$30; //@line 1042 "_hotshot.c"
+        var $14=$0; //@line 1042 "_hotshot.c"
+        $retval=$14; //@line 1042 "_hotshot.c"
         var $retval2=$retval; //@line 1042 "_hotshot.c"
         ;
         return $retval2; //@line 1042 "_hotshot.c"
@@ -3132,15 +2976,10 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i4;
-        var $self_addr_i1;
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result;
         var $callargs=__stackBase__;
         var $callkw=__stackBase__+4;
@@ -3150,104 +2989,31 @@ var __str74;
         $result=0; //@line 1065 "_hotshot.c"
         HEAP[$callargs]=0; //@line 1066 "_hotshot.c"
         HEAP[$callkw]=0; //@line 1067 "_hotshot.c"
-        var $2=$args_addr; //@line 1070 "_hotshot.c"
-        var $3=_PyArg_UnpackTuple($2, __str12, 1, 3, $callable, $callargs, $callkw); //@line 1070 "_hotshot.c"
-        var $4=($3)!=0; //@line 1070 "_hotshot.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 15; break; } //@line 1070 "_hotshot.c"
+        var $1=$args_addr; //@line 1070 "_hotshot.c"
+        var $2=_PyArg_UnpackTuple($1, __str12, 1, 3, allocate([$callable,0,0,0,$callargs,0,0,0,$callkw,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1070 "_hotshot.c"
+        var $3=($2)!=0; //@line 1070 "_hotshot.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1070 "_hotshot.c"
       case 1: // $bb
-        var $5=$self_addr; //@line 1072 "_hotshot.c"
-        $self_addr_i=$5;
-        var $6=$self_addr_i; //@line 992 "_hotshot.c"
-        var $7=$6+10276; //@line 992 "_hotshot.c"
-        var $8=HEAP[$7]; //@line 992 "_hotshot.c"
-        var $9=($8)!=0; //@line 992 "_hotshot.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 992 "_hotshot.c"
-      case 2: // $bb_i
-        var $10=HEAP[_ProfilerError]; //@line 993 "_hotshot.c"
-        _PyErr_SetString($10, __str8); //@line 993 "_hotshot.c"
-        $0=0; //@line 994 "_hotshot.c"
-        __label__ = 5; break; //@line 994 "_hotshot.c"
-      case 3: // $bb1_i
-        var $11=$self_addr_i; //@line 996 "_hotshot.c"
-        var $12=$11+10260; //@line 996 "_hotshot.c"
-        var $13=HEAP[$12]; //@line 996 "_hotshot.c"
-        var $14=($13)==0; //@line 996 "_hotshot.c"
-        if ($14) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 996 "_hotshot.c"
-      case 4: // $bb2_i
-        var $15=HEAP[_ProfilerError]; //@line 997 "_hotshot.c"
-        _PyErr_SetString($15, __str9); //@line 997 "_hotshot.c"
-        $0=0; //@line 998 "_hotshot.c"
-        __label__ = 5; break; //@line 998 "_hotshot.c"
-      case 5: // $is_available_exit_thread
-        $retval_i=0; //@line 994 "_hotshot.c"
-        __label__ = 15; break;
-      case 6: // $bb1
-        $0=1; //@line 1000 "_hotshot.c"
-        $retval_i=1; //@line 994 "_hotshot.c"
-        var $16=$self_addr; //@line 1073 "_hotshot.c"
-        $self_addr_i1=$16;
-        var $17=$self_addr_i1; //@line 965 "_hotshot.c"
-        var $18=$17+10276; //@line 965 "_hotshot.c"
-        HEAP[$18]=1; //@line 965 "_hotshot.c"
-        var $19=$self_addr_i1; //@line 966 "_hotshot.c"
-        var $20=$19+10284; //@line 966 "_hotshot.c"
-        var $21=_gettimeofday($20, 0); //@line 966 "_hotshot.c"
-        var $22=$self_addr_i1; //@line 967 "_hotshot.c"
-        var $23=$22+10264; //@line 967 "_hotshot.c"
-        var $24=HEAP[$23]; //@line 967 "_hotshot.c"
-        var $25=($24)!=0; //@line 967 "_hotshot.c"
-        var $26=$self_addr_i1; //@line 968 "_hotshot.c"
-        var $27=$26; //@line 968 "_hotshot.c"
-        if ($25) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 967 "_hotshot.c"
-      case 7: // $bb_i2
-        _PyEval_SetTrace((FUNCTION_TABLE_OFFSET + 2), $27); //@line 968 "_hotshot.c"
-        __label__ = 9; break; //@line 968 "_hotshot.c"
-      case 8: // $bb1_i3
-        _PyEval_SetProfile((FUNCTION_TABLE_OFFSET + 2), $27); //@line 970 "_hotshot.c"
-        __label__ = 9; break; //@line 970 "_hotshot.c"
-      case 9: // $do_start_exit
-        var $28=HEAP[$callkw]; //@line 1074 "_hotshot.c"
-        var $29=HEAP[$callargs]; //@line 1074 "_hotshot.c"
-        var $30=HEAP[$callable]; //@line 1074 "_hotshot.c"
-        var $31=_PyEval_CallObjectWithKeywords($30, $29, $28); //@line 1074 "_hotshot.c"
-        $result=$31; //@line 1074 "_hotshot.c"
-        var $32=$self_addr; //@line 1075 "_hotshot.c"
-        $self_addr_i4=$32;
-        var $33=$self_addr_i4; //@line 976 "_hotshot.c"
-        var $34=$33+10276; //@line 976 "_hotshot.c"
-        var $35=HEAP[$34]; //@line 976 "_hotshot.c"
-        var $36=($35)!=0; //@line 976 "_hotshot.c"
-        if ($36) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 976 "_hotshot.c"
-      case 10: // $bb_i5
-        var $37=$self_addr_i4; //@line 977 "_hotshot.c"
-        var $38=$37+10276; //@line 977 "_hotshot.c"
-        HEAP[$38]=0; //@line 977 "_hotshot.c"
-        var $39=$self_addr_i4; //@line 978 "_hotshot.c"
-        var $40=$39+10264; //@line 978 "_hotshot.c"
-        var $41=HEAP[$40]; //@line 978 "_hotshot.c"
-        var $42=($41)!=0; //@line 978 "_hotshot.c"
-        if ($42) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 978 "_hotshot.c"
-      case 11: // $bb1_i6
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 13; break; //@line 979 "_hotshot.c"
-      case 12: // $bb2_i7
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 13; break; //@line 981 "_hotshot.c"
-      case 13: // $bb3_i8
-        var $43=$self_addr_i4; //@line 983 "_hotshot.c"
-        var $44=$43+16; //@line 983 "_hotshot.c"
-        var $45=HEAP[$44]; //@line 983 "_hotshot.c"
-        var $46=($45) > 0; //@line 983 "_hotshot.c"
-        if ($46) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 983 "_hotshot.c"
-      case 14: // $bb4_i
-        var $47=$self_addr_i4; //@line 985 "_hotshot.c"
-        var $48=_flush_data($47); //@line 985 "_hotshot.c"
-        __label__ = 15; break; //@line 985 "_hotshot.c"
-      case 15: // $bb2
-        var $49=$result; //@line 1078 "_hotshot.c"
-        $1=$49; //@line 1078 "_hotshot.c"
-        var $50=$1; //@line 1078 "_hotshot.c"
-        $retval=$50; //@line 1078 "_hotshot.c"
+        var $4=$self_addr; //@line 1072 "_hotshot.c"
+        var $5=_is_available($4); //@line 1072 "_hotshot.c"
+        var $6=($5)!=0; //@line 1072 "_hotshot.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1072 "_hotshot.c"
+      case 2: // $bb1
+        var $7=$self_addr; //@line 1073 "_hotshot.c"
+        _do_start($7); //@line 1073 "_hotshot.c"
+        var $8=HEAP[$callkw]; //@line 1074 "_hotshot.c"
+        var $9=HEAP[$callargs]; //@line 1074 "_hotshot.c"
+        var $10=HEAP[$callable]; //@line 1074 "_hotshot.c"
+        var $11=_PyEval_CallObjectWithKeywords($10, $9, $8); //@line 1074 "_hotshot.c"
+        $result=$11; //@line 1074 "_hotshot.c"
+        var $12=$self_addr; //@line 1075 "_hotshot.c"
+        _do_stop($12); //@line 1075 "_hotshot.c"
+        __label__ = 3; break; //@line 1075 "_hotshot.c"
+      case 3: // $bb2
+        var $13=$result; //@line 1078 "_hotshot.c"
+        $0=$13; //@line 1078 "_hotshot.c"
+        var $14=$0; //@line 1078 "_hotshot.c"
+        $retval=$14; //@line 1078 "_hotshot.c"
         var $retval3=$retval; //@line 1078 "_hotshot.c"
         STACKTOP = __stackBase__;
         return $retval3; //@line 1078 "_hotshot.c"
@@ -3262,15 +3028,10 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i5;
-        var $self_addr_i2;
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result;
         var $code=__stackBase__;
         var $globals=__stackBase__+4;
@@ -3279,131 +3040,58 @@ var __str74;
         $args_addr=$args;
         $result=0; //@line 1089 "_hotshot.c"
         HEAP[$locals]=0; //@line 1092 "_hotshot.c"
-        var $2=$args_addr; //@line 1094 "_hotshot.c"
-        var $3=_PyArg_ParseTuple($2, __str13, _PyCode_Type, $code, _PyDict_Type, $globals, $locals); //@line 1094 "_hotshot.c"
-        var $4=($3)!=0; //@line 1094 "_hotshot.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 19; break; } //@line 1094 "_hotshot.c"
+        var $1=$args_addr; //@line 1094 "_hotshot.c"
+        var $2=_PyArg_ParseTuple($1, __str13, allocate([_PyCode_Type,0,0,0,$code,0,0,0,_PyDict_Type,0,0,0,$globals,0,0,0,$locals,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyCodeObject**",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1094 "_hotshot.c"
+        var $3=($2)!=0; //@line 1094 "_hotshot.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 1094 "_hotshot.c"
       case 1: // $bb
-        var $5=$self_addr; //@line 1098 "_hotshot.c"
-        $self_addr_i=$5;
-        var $6=$self_addr_i; //@line 992 "_hotshot.c"
-        var $7=$6+10276; //@line 992 "_hotshot.c"
-        var $8=HEAP[$7]; //@line 992 "_hotshot.c"
-        var $9=($8)!=0; //@line 992 "_hotshot.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 992 "_hotshot.c"
-      case 2: // $bb_i
-        var $10=HEAP[_ProfilerError]; //@line 993 "_hotshot.c"
-        _PyErr_SetString($10, __str8); //@line 993 "_hotshot.c"
-        $0=0; //@line 994 "_hotshot.c"
-        __label__ = 5; break; //@line 994 "_hotshot.c"
-      case 3: // $bb1_i
-        var $11=$self_addr_i; //@line 996 "_hotshot.c"
-        var $12=$11+10260; //@line 996 "_hotshot.c"
-        var $13=HEAP[$12]; //@line 996 "_hotshot.c"
-        var $14=($13)==0; //@line 996 "_hotshot.c"
-        if ($14) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 996 "_hotshot.c"
-      case 4: // $bb2_i
-        var $15=HEAP[_ProfilerError]; //@line 997 "_hotshot.c"
-        _PyErr_SetString($15, __str9); //@line 997 "_hotshot.c"
-        $0=0; //@line 998 "_hotshot.c"
-        __label__ = 5; break; //@line 998 "_hotshot.c"
-      case 5: // $is_available_exit_thread
-        $retval_i=0; //@line 994 "_hotshot.c"
-        __label__ = 19; break;
-      case 6: // $bb1
-        $0=1; //@line 1000 "_hotshot.c"
-        $retval_i=1; //@line 994 "_hotshot.c"
-        var $16=HEAP[$locals]; //@line 1099 "_hotshot.c"
-        var $17=($16)==0; //@line 1099 "_hotshot.c"
-        var $18=HEAP[$locals]; //@line 1099 "_hotshot.c"
-        var $19=($18)==(__Py_NoneStruct); //@line 1099 "_hotshot.c"
-        var $or_cond=($17) | ($19);
-        if ($or_cond) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1099 "_hotshot.c"
-      case 7: // $bb3
-        var $20=HEAP[$globals]; //@line 1100 "_hotshot.c"
-        HEAP[$locals]=$20; //@line 1100 "_hotshot.c"
-        __label__ = 10; break; //@line 1100 "_hotshot.c"
-      case 8: // $bb4
-        var $21=HEAP[$locals]; //@line 1101 "_hotshot.c"
-        var $22=$21+4; //@line 1101 "_hotshot.c"
-        var $23=HEAP[$22]; //@line 1101 "_hotshot.c"
-        var $24=$23+84; //@line 1101 "_hotshot.c"
-        var $25=HEAP[$24]; //@line 1101 "_hotshot.c"
-        var $26=($25) & 536870912; //@line 1101 "_hotshot.c"
-        var $27=($26)==0; //@line 1101 "_hotshot.c"
-        if ($27) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1101 "_hotshot.c"
-      case 9: // $bb5
-        var $28=HEAP[_PyExc_TypeError]; //@line 1102 "_hotshot.c"
-        _PyErr_SetString($28, __str14); //@line 1102 "_hotshot.c"
-        $1=0; //@line 1104 "_hotshot.c"
-        __label__ = 20; break; //@line 1104 "_hotshot.c"
-      case 10: // $bb6
-        var $29=$self_addr; //@line 1106 "_hotshot.c"
-        $self_addr_i2=$29;
-        var $30=$self_addr_i2; //@line 965 "_hotshot.c"
-        var $31=$30+10276; //@line 965 "_hotshot.c"
-        HEAP[$31]=1; //@line 965 "_hotshot.c"
-        var $32=$self_addr_i2; //@line 966 "_hotshot.c"
-        var $33=$32+10284; //@line 966 "_hotshot.c"
-        var $34=_gettimeofday($33, 0); //@line 966 "_hotshot.c"
-        var $35=$self_addr_i2; //@line 967 "_hotshot.c"
-        var $36=$35+10264; //@line 967 "_hotshot.c"
-        var $37=HEAP[$36]; //@line 967 "_hotshot.c"
-        var $38=($37)!=0; //@line 967 "_hotshot.c"
-        var $39=$self_addr_i2; //@line 968 "_hotshot.c"
-        var $40=$39; //@line 968 "_hotshot.c"
-        if ($38) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 967 "_hotshot.c"
-      case 11: // $bb_i3
-        _PyEval_SetTrace((FUNCTION_TABLE_OFFSET + 2), $40); //@line 968 "_hotshot.c"
-        __label__ = 13; break; //@line 968 "_hotshot.c"
-      case 12: // $bb1_i4
-        _PyEval_SetProfile((FUNCTION_TABLE_OFFSET + 2), $40); //@line 970 "_hotshot.c"
-        __label__ = 13; break; //@line 970 "_hotshot.c"
-      case 13: // $do_start_exit
-        var $41=HEAP[$locals]; //@line 1107 "_hotshot.c"
-        var $42=HEAP[$globals]; //@line 1107 "_hotshot.c"
-        var $43=HEAP[$code]; //@line 1107 "_hotshot.c"
-        var $44=_PyEval_EvalCode($43, $42, $41); //@line 1107 "_hotshot.c"
-        $result=$44; //@line 1107 "_hotshot.c"
-        var $45=$self_addr; //@line 1108 "_hotshot.c"
-        $self_addr_i5=$45;
-        var $46=$self_addr_i5; //@line 976 "_hotshot.c"
-        var $47=$46+10276; //@line 976 "_hotshot.c"
-        var $48=HEAP[$47]; //@line 976 "_hotshot.c"
-        var $49=($48)!=0; //@line 976 "_hotshot.c"
-        if ($49) { __label__ = 14; break; } else { __label__ = 17; break; } //@line 976 "_hotshot.c"
-      case 14: // $bb_i6
-        var $50=$self_addr_i5; //@line 977 "_hotshot.c"
-        var $51=$50+10276; //@line 977 "_hotshot.c"
-        HEAP[$51]=0; //@line 977 "_hotshot.c"
-        var $52=$self_addr_i5; //@line 978 "_hotshot.c"
-        var $53=$52+10264; //@line 978 "_hotshot.c"
-        var $54=HEAP[$53]; //@line 978 "_hotshot.c"
-        var $55=($54)!=0; //@line 978 "_hotshot.c"
-        if ($55) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 978 "_hotshot.c"
-      case 15: // $bb1_i7
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 17; break; //@line 979 "_hotshot.c"
-      case 16: // $bb2_i8
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 17; break; //@line 981 "_hotshot.c"
-      case 17: // $bb3_i9
-        var $56=$self_addr_i5; //@line 983 "_hotshot.c"
-        var $57=$56+16; //@line 983 "_hotshot.c"
-        var $58=HEAP[$57]; //@line 983 "_hotshot.c"
-        var $59=($58) > 0; //@line 983 "_hotshot.c"
-        if ($59) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 983 "_hotshot.c"
-      case 18: // $bb4_i
-        var $60=$self_addr_i5; //@line 985 "_hotshot.c"
-        var $61=_flush_data($60); //@line 985 "_hotshot.c"
-        __label__ = 19; break; //@line 985 "_hotshot.c"
-      case 19: // $bb7
-        var $62=$result; //@line 1117 "_hotshot.c"
-        $1=$62; //@line 1117 "_hotshot.c"
-        __label__ = 20; break; //@line 1117 "_hotshot.c"
-      case 20: // $bb8
-        var $63=$1; //@line 1104 "_hotshot.c"
-        $retval=$63; //@line 1104 "_hotshot.c"
+        var $4=$self_addr; //@line 1098 "_hotshot.c"
+        var $5=_is_available($4); //@line 1098 "_hotshot.c"
+        var $6=($5)!=0; //@line 1098 "_hotshot.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 7; break; } //@line 1098 "_hotshot.c"
+      case 2: // $bb1
+        var $7=HEAP[$locals]; //@line 1099 "_hotshot.c"
+        var $8=($7)==0; //@line 1099 "_hotshot.c"
+        var $9=HEAP[$locals]; //@line 1099 "_hotshot.c"
+        var $10=($9)==(__Py_NoneStruct); //@line 1099 "_hotshot.c"
+        var $or_cond=($8) | ($10);
+        if ($or_cond) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1099 "_hotshot.c"
+      case 3: // $bb3
+        var $11=HEAP[$globals]; //@line 1100 "_hotshot.c"
+        HEAP[$locals]=$11; //@line 1100 "_hotshot.c"
+        __label__ = 6; break; //@line 1100 "_hotshot.c"
+      case 4: // $bb4
+        var $12=HEAP[$locals]; //@line 1101 "_hotshot.c"
+        var $13=$12+4; //@line 1101 "_hotshot.c"
+        var $14=HEAP[$13]; //@line 1101 "_hotshot.c"
+        var $15=$14+84; //@line 1101 "_hotshot.c"
+        var $16=HEAP[$15]; //@line 1101 "_hotshot.c"
+        var $17=($16) & 536870912; //@line 1101 "_hotshot.c"
+        var $18=($17)==0; //@line 1101 "_hotshot.c"
+        if ($18) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1101 "_hotshot.c"
+      case 5: // $bb5
+        var $19=HEAP[_PyExc_TypeError]; //@line 1102 "_hotshot.c"
+        _PyErr_SetString($19, __str14); //@line 1102 "_hotshot.c"
+        $0=0; //@line 1104 "_hotshot.c"
+        __label__ = 8; break; //@line 1104 "_hotshot.c"
+      case 6: // $bb6
+        var $20=$self_addr; //@line 1106 "_hotshot.c"
+        _do_start($20); //@line 1106 "_hotshot.c"
+        var $21=HEAP[$locals]; //@line 1107 "_hotshot.c"
+        var $22=HEAP[$globals]; //@line 1107 "_hotshot.c"
+        var $23=HEAP[$code]; //@line 1107 "_hotshot.c"
+        var $24=_PyEval_EvalCode($23, $22, $21); //@line 1107 "_hotshot.c"
+        $result=$24; //@line 1107 "_hotshot.c"
+        var $25=$self_addr; //@line 1108 "_hotshot.c"
+        _do_stop($25); //@line 1108 "_hotshot.c"
+        __label__ = 7; break; //@line 1108 "_hotshot.c"
+      case 7: // $bb7
+        var $26=$result; //@line 1117 "_hotshot.c"
+        $0=$26; //@line 1117 "_hotshot.c"
+        __label__ = 8; break; //@line 1117 "_hotshot.c"
+      case 8: // $bb8
+        var $27=$0; //@line 1104 "_hotshot.c"
+        $retval=$27; //@line 1104 "_hotshot.c"
         var $retval9=$retval; //@line 1104 "_hotshot.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 1104 "_hotshot.c"
@@ -3418,83 +3106,35 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result;
         $self_addr=$self;
         $args_addr=$args;
         $result=0; //@line 1127 "_hotshot.c"
-        var $2=$self_addr; //@line 1129 "_hotshot.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 992 "_hotshot.c"
-        var $4=$3+10276; //@line 992 "_hotshot.c"
-        var $5=HEAP[$4]; //@line 992 "_hotshot.c"
-        var $6=($5)!=0; //@line 992 "_hotshot.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 992 "_hotshot.c"
-      case 1: // $bb_i
-        var $7=HEAP[_ProfilerError]; //@line 993 "_hotshot.c"
-        _PyErr_SetString($7, __str8); //@line 993 "_hotshot.c"
-        $0=0; //@line 994 "_hotshot.c"
-        __label__ = 4; break; //@line 994 "_hotshot.c"
-      case 2: // $bb1_i
-        var $8=$self_addr_i; //@line 996 "_hotshot.c"
-        var $9=$8+10260; //@line 996 "_hotshot.c"
-        var $10=HEAP[$9]; //@line 996 "_hotshot.c"
-        var $11=($10)==0; //@line 996 "_hotshot.c"
-        if ($11) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 996 "_hotshot.c"
-      case 3: // $bb2_i
-        var $12=HEAP[_ProfilerError]; //@line 997 "_hotshot.c"
-        _PyErr_SetString($12, __str9); //@line 997 "_hotshot.c"
-        $0=0; //@line 998 "_hotshot.c"
-        __label__ = 4; break; //@line 998 "_hotshot.c"
-      case 4: // $is_available_exit_thread
-        $retval_i=0; //@line 994 "_hotshot.c"
-        __label__ = 9; break;
-      case 5: // $bb
-        $0=1; //@line 1000 "_hotshot.c"
-        $retval_i=1; //@line 994 "_hotshot.c"
-        var $13=$self_addr; //@line 1130 "_hotshot.c"
-        $self_addr_i1=$13;
-        var $14=$self_addr_i1; //@line 965 "_hotshot.c"
-        var $15=$14+10276; //@line 965 "_hotshot.c"
-        HEAP[$15]=1; //@line 965 "_hotshot.c"
-        var $16=$self_addr_i1; //@line 966 "_hotshot.c"
-        var $17=$16+10284; //@line 966 "_hotshot.c"
-        var $18=_gettimeofday($17, 0); //@line 966 "_hotshot.c"
-        var $19=$self_addr_i1; //@line 967 "_hotshot.c"
-        var $20=$19+10264; //@line 967 "_hotshot.c"
-        var $21=HEAP[$20]; //@line 967 "_hotshot.c"
-        var $22=($21)!=0; //@line 967 "_hotshot.c"
-        var $23=$self_addr_i1; //@line 968 "_hotshot.c"
-        var $24=$23; //@line 968 "_hotshot.c"
-        if ($22) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 967 "_hotshot.c"
-      case 6: // $bb_i2
-        _PyEval_SetTrace((FUNCTION_TABLE_OFFSET + 2), $24); //@line 968 "_hotshot.c"
-        __label__ = 8; break; //@line 968 "_hotshot.c"
-      case 7: // $bb1_i3
-        _PyEval_SetProfile((FUNCTION_TABLE_OFFSET + 2), $24); //@line 970 "_hotshot.c"
-        __label__ = 8; break; //@line 970 "_hotshot.c"
-      case 8: // $do_start_exit
+        var $1=$self_addr; //@line 1129 "_hotshot.c"
+        var $2=_is_available($1); //@line 1129 "_hotshot.c"
+        var $3=($2)!=0; //@line 1129 "_hotshot.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1129 "_hotshot.c"
+      case 1: // $bb
+        var $4=$self_addr; //@line 1130 "_hotshot.c"
+        _do_start($4); //@line 1130 "_hotshot.c"
         $result=__Py_NoneStruct; //@line 1131 "_hotshot.c"
-        var $25=$result; //@line 1132 "_hotshot.c"
-        var $26=$25; //@line 1132 "_hotshot.c"
-        var $27=HEAP[$26]; //@line 1132 "_hotshot.c"
-        var $28=($27) + 1; //@line 1132 "_hotshot.c"
-        var $29=$result; //@line 1132 "_hotshot.c"
-        var $30=$29; //@line 1132 "_hotshot.c"
-        HEAP[$30]=$28; //@line 1132 "_hotshot.c"
-        __label__ = 9; break; //@line 1132 "_hotshot.c"
-      case 9: // $bb1
-        var $31=$result; //@line 1134 "_hotshot.c"
-        $1=$31; //@line 1134 "_hotshot.c"
-        var $32=$1; //@line 1134 "_hotshot.c"
-        $retval=$32; //@line 1134 "_hotshot.c"
+        var $5=$result; //@line 1132 "_hotshot.c"
+        var $6=$5; //@line 1132 "_hotshot.c"
+        var $7=HEAP[$6]; //@line 1132 "_hotshot.c"
+        var $8=($7) + 1; //@line 1132 "_hotshot.c"
+        var $9=$result; //@line 1132 "_hotshot.c"
+        var $10=$9; //@line 1132 "_hotshot.c"
+        HEAP[$10]=$8; //@line 1132 "_hotshot.c"
+        __label__ = 2; break; //@line 1132 "_hotshot.c"
+      case 2: // $bb1
+        var $11=$result; //@line 1134 "_hotshot.c"
+        $0=$11; //@line 1134 "_hotshot.c"
+        var $12=$0; //@line 1134 "_hotshot.c"
+        $retval=$12; //@line 1134 "_hotshot.c"
         var $retval2=$retval; //@line 1134 "_hotshot.c"
         ;
         return $retval2; //@line 1134 "_hotshot.c"
@@ -3509,7 +3149,6 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
         var $self_addr;
         var $args_addr;
         var $retval;
@@ -3526,55 +3165,24 @@ var __str74;
       case 1: // $bb
         var $5=HEAP[_ProfilerError]; //@line 1147 "_hotshot.c"
         _PyErr_SetString($5, __str15); //@line 1147 "_hotshot.c"
-        __label__ = 9; break; //@line 1147 "_hotshot.c"
+        __label__ = 3; break; //@line 1147 "_hotshot.c"
       case 2: // $bb1
         var $6=$self_addr; //@line 1149 "_hotshot.c"
-        $self_addr_i=$6;
-        var $7=$self_addr_i; //@line 976 "_hotshot.c"
-        var $8=$7+10276; //@line 976 "_hotshot.c"
-        var $9=HEAP[$8]; //@line 976 "_hotshot.c"
-        var $10=($9)!=0; //@line 976 "_hotshot.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 976 "_hotshot.c"
-      case 3: // $bb_i
-        var $11=$self_addr_i; //@line 977 "_hotshot.c"
-        var $12=$11+10276; //@line 977 "_hotshot.c"
-        HEAP[$12]=0; //@line 977 "_hotshot.c"
-        var $13=$self_addr_i; //@line 978 "_hotshot.c"
-        var $14=$13+10264; //@line 978 "_hotshot.c"
-        var $15=HEAP[$14]; //@line 978 "_hotshot.c"
-        var $16=($15)!=0; //@line 978 "_hotshot.c"
-        if ($16) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 978 "_hotshot.c"
-      case 4: // $bb1_i
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 6; break; //@line 979 "_hotshot.c"
-      case 5: // $bb2_i
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 6; break; //@line 981 "_hotshot.c"
-      case 6: // $bb3_i
-        var $17=$self_addr_i; //@line 983 "_hotshot.c"
-        var $18=$17+16; //@line 983 "_hotshot.c"
-        var $19=HEAP[$18]; //@line 983 "_hotshot.c"
-        var $20=($19) > 0; //@line 983 "_hotshot.c"
-        if ($20) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 983 "_hotshot.c"
-      case 7: // $bb4_i
-        var $21=$self_addr_i; //@line 985 "_hotshot.c"
-        var $22=_flush_data($21); //@line 985 "_hotshot.c"
-        __label__ = 8; break; //@line 985 "_hotshot.c"
-      case 8: // $do_stop_exit
+        _do_stop($6); //@line 1149 "_hotshot.c"
         $result=__Py_NoneStruct; //@line 1150 "_hotshot.c"
-        var $23=$result; //@line 1151 "_hotshot.c"
-        var $24=$23; //@line 1151 "_hotshot.c"
-        var $25=HEAP[$24]; //@line 1151 "_hotshot.c"
-        var $26=($25) + 1; //@line 1151 "_hotshot.c"
-        var $27=$result; //@line 1151 "_hotshot.c"
-        var $28=$27; //@line 1151 "_hotshot.c"
-        HEAP[$28]=$26; //@line 1151 "_hotshot.c"
-        __label__ = 9; break; //@line 1151 "_hotshot.c"
-      case 9: // $bb2
-        var $29=$result; //@line 1153 "_hotshot.c"
-        $0=$29; //@line 1153 "_hotshot.c"
-        var $30=$0; //@line 1153 "_hotshot.c"
-        $retval=$30; //@line 1153 "_hotshot.c"
+        var $7=$result; //@line 1151 "_hotshot.c"
+        var $8=$7; //@line 1151 "_hotshot.c"
+        var $9=HEAP[$8]; //@line 1151 "_hotshot.c"
+        var $10=($9) + 1; //@line 1151 "_hotshot.c"
+        var $11=$result; //@line 1151 "_hotshot.c"
+        var $12=$11; //@line 1151 "_hotshot.c"
+        HEAP[$12]=$10; //@line 1151 "_hotshot.c"
+        __label__ = 3; break; //@line 1151 "_hotshot.c"
+      case 3: // $bb2
+        var $13=$result; //@line 1153 "_hotshot.c"
+        $0=$13; //@line 1153 "_hotshot.c"
+        var $14=$0; //@line 1153 "_hotshot.c"
+        $retval=$14; //@line 1153 "_hotshot.c"
         var $retval3=$retval; //@line 1153 "_hotshot.c"
         ;
         return $retval3; //@line 1153 "_hotshot.c"
@@ -3589,121 +3197,89 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
         var $self_addr;
         $self_addr=$self;
         var $0=$self_addr; //@line 1162 "_hotshot.c"
-        $self_addr_i=$0;
-        var $1=$self_addr_i; //@line 976 "_hotshot.c"
-        var $2=$1+10276; //@line 976 "_hotshot.c"
-        var $3=HEAP[$2]; //@line 976 "_hotshot.c"
-        var $4=($3)!=0; //@line 976 "_hotshot.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 976 "_hotshot.c"
-      case 1: // $bb_i
-        var $5=$self_addr_i; //@line 977 "_hotshot.c"
-        var $6=$5+10276; //@line 977 "_hotshot.c"
-        HEAP[$6]=0; //@line 977 "_hotshot.c"
-        var $7=$self_addr_i; //@line 978 "_hotshot.c"
-        var $8=$7+10264; //@line 978 "_hotshot.c"
-        var $9=HEAP[$8]; //@line 978 "_hotshot.c"
-        var $10=($9)!=0; //@line 978 "_hotshot.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 978 "_hotshot.c"
-      case 2: // $bb1_i
-        _PyEval_SetTrace(0, 0); //@line 979 "_hotshot.c"
-        __label__ = 4; break; //@line 979 "_hotshot.c"
-      case 3: // $bb2_i
-        _PyEval_SetProfile(0, 0); //@line 981 "_hotshot.c"
-        __label__ = 4; break; //@line 981 "_hotshot.c"
-      case 4: // $bb3_i
-        var $11=$self_addr_i; //@line 983 "_hotshot.c"
-        var $12=$11+16; //@line 983 "_hotshot.c"
-        var $13=HEAP[$12]; //@line 983 "_hotshot.c"
-        var $14=($13) > 0; //@line 983 "_hotshot.c"
-        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 983 "_hotshot.c"
-      case 5: // $bb4_i
-        var $15=$self_addr_i; //@line 985 "_hotshot.c"
-        var $16=_flush_data($15); //@line 985 "_hotshot.c"
-        __label__ = 6; break; //@line 985 "_hotshot.c"
-      case 6: // $do_stop_exit
-        var $17=$self_addr; //@line 1163 "_hotshot.c"
-        var $18=$17+10260; //@line 1163 "_hotshot.c"
-        var $19=HEAP[$18]; //@line 1163 "_hotshot.c"
-        var $20=($19)!=0; //@line 1163 "_hotshot.c"
-        if ($20) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1163 "_hotshot.c"
-      case 7: // $bb
-        var $21=$self_addr; //@line 1164 "_hotshot.c"
-        var $22=$21+10260; //@line 1164 "_hotshot.c"
-        var $23=HEAP[$22]; //@line 1164 "_hotshot.c"
-        var $24=_fclose($23); //@line 1164 "_hotshot.c"
-        __label__ = 8; break; //@line 1164 "_hotshot.c"
-      case 8: // $bb1
-        var $25=$self_addr; //@line 1165 "_hotshot.c"
-        var $26=$25+8; //@line 1165 "_hotshot.c"
+        _do_stop($0); //@line 1162 "_hotshot.c"
+        var $1=$self_addr; //@line 1163 "_hotshot.c"
+        var $2=$1+10260; //@line 1163 "_hotshot.c"
+        var $3=HEAP[$2]; //@line 1163 "_hotshot.c"
+        var $4=($3)!=0; //@line 1163 "_hotshot.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1163 "_hotshot.c"
+      case 1: // $bb
+        var $5=$self_addr; //@line 1164 "_hotshot.c"
+        var $6=$5+10260; //@line 1164 "_hotshot.c"
+        var $7=HEAP[$6]; //@line 1164 "_hotshot.c"
+        var $8=_fclose($7); //@line 1164 "_hotshot.c"
+        __label__ = 2; break; //@line 1164 "_hotshot.c"
+      case 2: // $bb1
+        var $9=$self_addr; //@line 1165 "_hotshot.c"
+        var $10=$9+8; //@line 1165 "_hotshot.c"
+        var $11=HEAP[$10]; //@line 1165 "_hotshot.c"
+        var $12=($11)!=0; //@line 1165 "_hotshot.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 1165 "_hotshot.c"
+      case 3: // $bb2
+        var $13=$self_addr; //@line 1165 "_hotshot.c"
+        var $14=$13+8; //@line 1165 "_hotshot.c"
+        var $15=HEAP[$14]; //@line 1165 "_hotshot.c"
+        var $16=$15; //@line 1165 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 1165 "_hotshot.c"
+        var $18=($17) - 1; //@line 1165 "_hotshot.c"
+        var $19=$15; //@line 1165 "_hotshot.c"
+        HEAP[$19]=$18; //@line 1165 "_hotshot.c"
+        var $20=$15; //@line 1165 "_hotshot.c"
+        var $21=HEAP[$20]; //@line 1165 "_hotshot.c"
+        var $22=($21)==0; //@line 1165 "_hotshot.c"
+        if ($22) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1165 "_hotshot.c"
+      case 4: // $bb3
+        var $23=$self_addr; //@line 1165 "_hotshot.c"
+        var $24=$23+8; //@line 1165 "_hotshot.c"
+        var $25=HEAP[$24]; //@line 1165 "_hotshot.c"
+        var $26=$25+4; //@line 1165 "_hotshot.c"
         var $27=HEAP[$26]; //@line 1165 "_hotshot.c"
-        var $28=($27)!=0; //@line 1165 "_hotshot.c"
-        if ($28) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 1165 "_hotshot.c"
-      case 9: // $bb2
-        var $29=$self_addr; //@line 1165 "_hotshot.c"
-        var $30=$29+8; //@line 1165 "_hotshot.c"
-        var $31=HEAP[$30]; //@line 1165 "_hotshot.c"
-        var $32=$31; //@line 1165 "_hotshot.c"
-        var $33=HEAP[$32]; //@line 1165 "_hotshot.c"
-        var $34=($33) - 1; //@line 1165 "_hotshot.c"
-        var $35=$31; //@line 1165 "_hotshot.c"
-        HEAP[$35]=$34; //@line 1165 "_hotshot.c"
-        var $36=$31; //@line 1165 "_hotshot.c"
-        var $37=HEAP[$36]; //@line 1165 "_hotshot.c"
-        var $38=($37)==0; //@line 1165 "_hotshot.c"
-        if ($38) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 1165 "_hotshot.c"
-      case 10: // $bb3
-        var $39=$self_addr; //@line 1165 "_hotshot.c"
-        var $40=$39+8; //@line 1165 "_hotshot.c"
-        var $41=HEAP[$40]; //@line 1165 "_hotshot.c"
-        var $42=$41+4; //@line 1165 "_hotshot.c"
-        var $43=HEAP[$42]; //@line 1165 "_hotshot.c"
-        var $44=$43+24; //@line 1165 "_hotshot.c"
-        var $45=HEAP[$44]; //@line 1165 "_hotshot.c"
-        var $46=$self_addr; //@line 1165 "_hotshot.c"
-        var $47=$46+8; //@line 1165 "_hotshot.c"
-        var $48=HEAP[$47]; //@line 1165 "_hotshot.c"
-        FUNCTION_TABLE[$45]($48); //@line 1165 "_hotshot.c"
-        __label__ = 11; break; //@line 1165 "_hotshot.c"
-      case 11: // $bb4
-        var $49=$self_addr; //@line 1166 "_hotshot.c"
-        var $50=$49+12; //@line 1166 "_hotshot.c"
+        var $28=$27+24; //@line 1165 "_hotshot.c"
+        var $29=HEAP[$28]; //@line 1165 "_hotshot.c"
+        var $30=$self_addr; //@line 1165 "_hotshot.c"
+        var $31=$30+8; //@line 1165 "_hotshot.c"
+        var $32=HEAP[$31]; //@line 1165 "_hotshot.c"
+        FUNCTION_TABLE[$29]($32); //@line 1165 "_hotshot.c"
+        __label__ = 5; break; //@line 1165 "_hotshot.c"
+      case 5: // $bb4
+        var $33=$self_addr; //@line 1166 "_hotshot.c"
+        var $34=$33+12; //@line 1166 "_hotshot.c"
+        var $35=HEAP[$34]; //@line 1166 "_hotshot.c"
+        var $36=($35)!=0; //@line 1166 "_hotshot.c"
+        if ($36) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 1166 "_hotshot.c"
+      case 6: // $bb5
+        var $37=$self_addr; //@line 1166 "_hotshot.c"
+        var $38=$37+12; //@line 1166 "_hotshot.c"
+        var $39=HEAP[$38]; //@line 1166 "_hotshot.c"
+        var $40=$39; //@line 1166 "_hotshot.c"
+        var $41=HEAP[$40]; //@line 1166 "_hotshot.c"
+        var $42=($41) - 1; //@line 1166 "_hotshot.c"
+        var $43=$39; //@line 1166 "_hotshot.c"
+        HEAP[$43]=$42; //@line 1166 "_hotshot.c"
+        var $44=$39; //@line 1166 "_hotshot.c"
+        var $45=HEAP[$44]; //@line 1166 "_hotshot.c"
+        var $46=($45)==0; //@line 1166 "_hotshot.c"
+        if ($46) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1166 "_hotshot.c"
+      case 7: // $bb6
+        var $47=$self_addr; //@line 1166 "_hotshot.c"
+        var $48=$47+12; //@line 1166 "_hotshot.c"
+        var $49=HEAP[$48]; //@line 1166 "_hotshot.c"
+        var $50=$49+4; //@line 1166 "_hotshot.c"
         var $51=HEAP[$50]; //@line 1166 "_hotshot.c"
-        var $52=($51)!=0; //@line 1166 "_hotshot.c"
-        if ($52) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 1166 "_hotshot.c"
-      case 12: // $bb5
-        var $53=$self_addr; //@line 1166 "_hotshot.c"
-        var $54=$53+12; //@line 1166 "_hotshot.c"
-        var $55=HEAP[$54]; //@line 1166 "_hotshot.c"
-        var $56=$55; //@line 1166 "_hotshot.c"
-        var $57=HEAP[$56]; //@line 1166 "_hotshot.c"
-        var $58=($57) - 1; //@line 1166 "_hotshot.c"
-        var $59=$55; //@line 1166 "_hotshot.c"
-        HEAP[$59]=$58; //@line 1166 "_hotshot.c"
-        var $60=$55; //@line 1166 "_hotshot.c"
-        var $61=HEAP[$60]; //@line 1166 "_hotshot.c"
-        var $62=($61)==0; //@line 1166 "_hotshot.c"
-        if ($62) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1166 "_hotshot.c"
-      case 13: // $bb6
-        var $63=$self_addr; //@line 1166 "_hotshot.c"
-        var $64=$63+12; //@line 1166 "_hotshot.c"
-        var $65=HEAP[$64]; //@line 1166 "_hotshot.c"
-        var $66=$65+4; //@line 1166 "_hotshot.c"
-        var $67=HEAP[$66]; //@line 1166 "_hotshot.c"
-        var $68=$67+24; //@line 1166 "_hotshot.c"
-        var $69=HEAP[$68]; //@line 1166 "_hotshot.c"
-        var $70=$self_addr; //@line 1166 "_hotshot.c"
-        var $71=$70+12; //@line 1166 "_hotshot.c"
-        var $72=HEAP[$71]; //@line 1166 "_hotshot.c"
-        FUNCTION_TABLE[$69]($72); //@line 1166 "_hotshot.c"
-        __label__ = 14; break; //@line 1166 "_hotshot.c"
-      case 14: // $bb7
-        var $73=$self_addr; //@line 1167 "_hotshot.c"
-        var $74=$73; //@line 1167 "_hotshot.c"
-        _PyObject_Free($74); //@line 1167 "_hotshot.c"
+        var $52=$51+24; //@line 1166 "_hotshot.c"
+        var $53=HEAP[$52]; //@line 1166 "_hotshot.c"
+        var $54=$self_addr; //@line 1166 "_hotshot.c"
+        var $55=$54+12; //@line 1166 "_hotshot.c"
+        var $56=HEAP[$55]; //@line 1166 "_hotshot.c"
+        FUNCTION_TABLE[$53]($56); //@line 1166 "_hotshot.c"
+        __label__ = 8; break; //@line 1166 "_hotshot.c"
+      case 8: // $bb7
+        var $57=$self_addr; //@line 1167 "_hotshot.c"
+        var $58=$57; //@line 1167 "_hotshot.c"
+        _PyObject_Free($58); //@line 1167 "_hotshot.c"
         ;
         return; //@line 1168 "_hotshot.c"
       default: assert(0, "bad label: " + __label__);
@@ -3811,8 +3387,6 @@ var __str74;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $self_addr_i;
         var $unused_addr;
         var $args_addr;
         var $retval;
@@ -3826,7 +3400,7 @@ var __str74;
         $self=0; //@line 1346 "_hotshot.c"
         $err=0; //@line 1349 "_hotshot.c"
         var $1=$args_addr; //@line 1351 "_hotshot.c"
-        var $2=_PyArg_ParseTuple($1, __str32, $filename); //@line 1351 "_hotshot.c"
+        var $2=_PyArg_ParseTuple($1, __str32, allocate([$filename,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 1351 "_hotshot.c"
         var $3=($2)!=0; //@line 1351 "_hotshot.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 13; break; } //@line 1351 "_hotshot.c"
       case 1: // $bb
@@ -3881,89 +3455,71 @@ var __str74;
         if ($36) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1367 "_hotshot.c"
       case 6: // $bb5
         var $37=$self; //@line 1368 "_hotshot.c"
-        $self_addr_i=$37;
-        var $38=$self_addr_i; //@line 379 "_hotshot.c"
-        var $39=$38+12; //@line 379 "_hotshot.c"
-        var $40=HEAP[$39]; //@line 379 "_hotshot.c"
-        var $41=_fclose($40); //@line 379 "_hotshot.c"
-        var $42=$self_addr_i; //@line 380 "_hotshot.c"
-        var $43=$42+12; //@line 380 "_hotshot.c"
-        HEAP[$43]=0; //@line 380 "_hotshot.c"
-        var $44=HEAP[_PyExc_EOFError]; //@line 381 "_hotshot.c"
-        _PyErr_SetString($44, __str1); //@line 381 "_hotshot.c"
+        _eof_error($37); //@line 1368 "_hotshot.c"
         __label__ = 14; break; //@line 1368 "_hotshot.c"
       case 7: // $bb6
-        var $45=$c; //@line 1371 "_hotshot.c"
-        var $46=($45)!=19; //@line 1371 "_hotshot.c"
-        var $47=$self; //@line 1372 "_hotshot.c"
-        if ($46) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1371 "_hotshot.c"
+        var $38=$c; //@line 1371 "_hotshot.c"
+        var $39=($38)!=19; //@line 1371 "_hotshot.c"
+        var $40=$self; //@line 1372 "_hotshot.c"
+        if ($39) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1371 "_hotshot.c"
       case 8: // $bb7
-        var $48=$47+12; //@line 1372 "_hotshot.c"
-        var $49=HEAP[$48]; //@line 1372 "_hotshot.c"
-        var $50=$c; //@line 1372 "_hotshot.c"
-        var $51=_ungetc($50, $49); //@line 1372 "_hotshot.c"
+        var $41=$40+12; //@line 1372 "_hotshot.c"
+        var $42=HEAP[$41]; //@line 1372 "_hotshot.c"
+        var $43=$c; //@line 1372 "_hotshot.c"
+        var $44=_ungetc($43, $42); //@line 1372 "_hotshot.c"
         __label__ = 13; break; //@line 1372 "_hotshot.c"
       case 9: // $bb8
-        var $52=_unpack_add_info($47); //@line 1375 "_hotshot.c"
-        $err=$52; //@line 1375 "_hotshot.c"
-        var $53=$err; //@line 1376 "_hotshot.c"
-        var $54=($53)!=0; //@line 1376 "_hotshot.c"
-        if ($54) { __label__ = 10; break; } else { __label__ = 5; break; } //@line 1376 "_hotshot.c"
+        var $45=_unpack_add_info($40); //@line 1375 "_hotshot.c"
+        $err=$45; //@line 1375 "_hotshot.c"
+        var $46=$err; //@line 1376 "_hotshot.c"
+        var $47=($46)!=0; //@line 1376 "_hotshot.c"
+        if ($47) { __label__ = 10; break; } else { __label__ = 5; break; } //@line 1376 "_hotshot.c"
       case 10: // $bb9
-        var $55=$err; //@line 1377 "_hotshot.c"
-        var $56=($55)==-1; //@line 1377 "_hotshot.c"
-        if ($56) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1377 "_hotshot.c"
+        var $48=$err; //@line 1377 "_hotshot.c"
+        var $49=($48)==-1; //@line 1377 "_hotshot.c"
+        if ($49) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1377 "_hotshot.c"
       case 11: // $bb10
-        var $57=$self; //@line 1378 "_hotshot.c"
-        $self_addr_i1=$57;
-        var $58=$self_addr_i1; //@line 379 "_hotshot.c"
-        var $59=$58+12; //@line 379 "_hotshot.c"
-        var $60=HEAP[$59]; //@line 379 "_hotshot.c"
-        var $61=_fclose($60); //@line 379 "_hotshot.c"
-        var $62=$self_addr_i1; //@line 380 "_hotshot.c"
-        var $63=$62+12; //@line 380 "_hotshot.c"
-        HEAP[$63]=0; //@line 380 "_hotshot.c"
-        var $64=HEAP[_PyExc_EOFError]; //@line 381 "_hotshot.c"
-        _PyErr_SetString($64, __str1); //@line 381 "_hotshot.c"
+        var $50=$self; //@line 1378 "_hotshot.c"
+        _eof_error($50); //@line 1378 "_hotshot.c"
         __label__ = 14; break; //@line 1378 "_hotshot.c"
       case 12: // $bb11
-        var $65=HEAP[_PyExc_RuntimeError]; //@line 1380 "_hotshot.c"
-        _PyErr_SetString($65, __str34); //@line 1380 "_hotshot.c"
+        var $51=HEAP[_PyExc_RuntimeError]; //@line 1380 "_hotshot.c"
+        _PyErr_SetString($51, __str34); //@line 1380 "_hotshot.c"
         __label__ = 14; break; //@line 1380 "_hotshot.c"
       case 13: // $bb14
-        var $66=$self; //@line 1387 "_hotshot.c"
-        var $67=$66; //@line 1387 "_hotshot.c"
-        $0=$67; //@line 1387 "_hotshot.c"
+        var $52=$self; //@line 1387 "_hotshot.c"
+        var $53=$52; //@line 1387 "_hotshot.c"
+        $0=$53; //@line 1387 "_hotshot.c"
         __label__ = 17; break; //@line 1387 "_hotshot.c"
       case 14: // $error
-        var $68=$self; //@line 1389 "_hotshot.c"
-        var $69=$68; //@line 1389 "_hotshot.c"
-        var $70=$69; //@line 1389 "_hotshot.c"
-        var $71=HEAP[$70]; //@line 1389 "_hotshot.c"
-        var $72=($71) - 1; //@line 1389 "_hotshot.c"
-        var $73=$69; //@line 1389 "_hotshot.c"
-        HEAP[$73]=$72; //@line 1389 "_hotshot.c"
-        var $74=$69; //@line 1389 "_hotshot.c"
-        var $75=HEAP[$74]; //@line 1389 "_hotshot.c"
-        var $76=($75)==0; //@line 1389 "_hotshot.c"
-        if ($76) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 1389 "_hotshot.c"
+        var $54=$self; //@line 1389 "_hotshot.c"
+        var $55=$54; //@line 1389 "_hotshot.c"
+        var $56=$55; //@line 1389 "_hotshot.c"
+        var $57=HEAP[$56]; //@line 1389 "_hotshot.c"
+        var $58=($57) - 1; //@line 1389 "_hotshot.c"
+        var $59=$55; //@line 1389 "_hotshot.c"
+        HEAP[$59]=$58; //@line 1389 "_hotshot.c"
+        var $60=$55; //@line 1389 "_hotshot.c"
+        var $61=HEAP[$60]; //@line 1389 "_hotshot.c"
+        var $62=($61)==0; //@line 1389 "_hotshot.c"
+        if ($62) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 1389 "_hotshot.c"
       case 15: // $bb15
-        var $77=$self; //@line 1389 "_hotshot.c"
-        var $78=$77; //@line 1389 "_hotshot.c"
-        var $79=$78+4; //@line 1389 "_hotshot.c"
-        var $80=HEAP[$79]; //@line 1389 "_hotshot.c"
-        var $81=$80+24; //@line 1389 "_hotshot.c"
-        var $82=HEAP[$81]; //@line 1389 "_hotshot.c"
-        var $83=$self; //@line 1389 "_hotshot.c"
-        var $84=$83; //@line 1389 "_hotshot.c"
-        FUNCTION_TABLE[$82]($84); //@line 1389 "_hotshot.c"
+        var $63=$self; //@line 1389 "_hotshot.c"
+        var $64=$63; //@line 1389 "_hotshot.c"
+        var $65=$64+4; //@line 1389 "_hotshot.c"
+        var $66=HEAP[$65]; //@line 1389 "_hotshot.c"
+        var $67=$66+24; //@line 1389 "_hotshot.c"
+        var $68=HEAP[$67]; //@line 1389 "_hotshot.c"
+        var $69=$self; //@line 1389 "_hotshot.c"
+        var $70=$69; //@line 1389 "_hotshot.c"
+        FUNCTION_TABLE[$68]($70); //@line 1389 "_hotshot.c"
         __label__ = 16; break; //@line 1389 "_hotshot.c"
       case 16: // $bb16
         $0=0; //@line 1390 "_hotshot.c"
         __label__ = 17; break; //@line 1390 "_hotshot.c"
       case 17: // $bb17
-        var $85=$0; //@line 1387 "_hotshot.c"
-        $retval=$85; //@line 1387 "_hotshot.c"
+        var $71=$0; //@line 1387 "_hotshot.c"
+        $retval=$71; //@line 1387 "_hotshot.c"
         var $retval18=$retval; //@line 1387 "_hotshot.c"
         STACKTOP = __stackBase__;
         return $retval18; //@line 1387 "_hotshot.c"
@@ -4057,73 +3613,249 @@ var __str74;
   }
   
 
-  function _hotshot_profiler($unused, $args) {
-    var __stackBase__  = STACKTOP; STACKTOP += 4108; _memset(__stackBase__, 0, 4108);
+  function _write_header($self) {
+    var __stackBase__  = STACKTOP; STACKTOP += 4096; _memset(__stackBase__, 0, 4096);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1_i;
+        var $self_addr;
+        var $retval;
+        var $iftmp_79;
+        var $iftmp_78;
+        var $iftmp_77;
         var $0;
-        var $self_addr_i_i;
-        var $1;
-        var $self_addr_i;
-        var $retval_i;
-        var $iftmp_79_i;
-        var $iftmp_78_i;
-        var $iftmp_77_i;
-        var $2;
-        var $buffer_i;
-        var $cwdbuffer_i=__stackBase__;
-        var $temp_i;
-        var $i_i;
-        var $len_i;
-        var $item_i;
+        var $buffer;
+        var $cwdbuffer=__stackBase__;
+        var $temp;
+        var $i;
+        var $len;
+        var $item;
+        $self_addr=$self;
+        var $1=_get_version_string(); //@line 1430 "_hotshot.c"
+        $buffer=$1; //@line 1430 "_hotshot.c"
+        var $2=$buffer; //@line 1431 "_hotshot.c"
+        var $3=($2)==0; //@line 1431 "_hotshot.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1431 "_hotshot.c"
+      case 1: // $bb
+        var $4=_PyErr_NoMemory(); //@line 1432 "_hotshot.c"
+        $0=-1; //@line 1433 "_hotshot.c"
+        __label__ = 23; break; //@line 1433 "_hotshot.c"
+      case 2: // $bb1
+        var $5=$self_addr; //@line 1435 "_hotshot.c"
+        var $6=$buffer; //@line 1435 "_hotshot.c"
+        var $7=_pack_add_info($5, __str36, $6); //@line 1435 "_hotshot.c"
+        var $8=$self_addr; //@line 1436 "_hotshot.c"
+        var $9=$8+10272; //@line 1436 "_hotshot.c"
+        var $10=HEAP[$9]; //@line 1436 "_hotshot.c"
+        var $11=($10)!=0; //@line 1436 "_hotshot.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1436 "_hotshot.c"
+      case 3: // $bb2
+        $iftmp_77=__str37; //@line 1436 "_hotshot.c"
+        __label__ = 5; break; //@line 1436 "_hotshot.c"
+      case 4: // $bb3
+        $iftmp_77=__str38; //@line 1436 "_hotshot.c"
+        __label__ = 5; break; //@line 1436 "_hotshot.c"
+      case 5: // $bb4
+        var $12=$self_addr; //@line 1436 "_hotshot.c"
+        var $13=$iftmp_77; //@line 1436 "_hotshot.c"
+        var $14=_pack_add_info($12, __str39, $13); //@line 1436 "_hotshot.c"
+        var $15=$self_addr; //@line 1438 "_hotshot.c"
+        var $16=$15+10264; //@line 1438 "_hotshot.c"
+        var $17=HEAP[$16]; //@line 1438 "_hotshot.c"
+        var $18=($17)!=0; //@line 1438 "_hotshot.c"
+        if ($18) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1438 "_hotshot.c"
+      case 6: // $bb5
+        $iftmp_78=__str37; //@line 1438 "_hotshot.c"
+        __label__ = 8; break; //@line 1438 "_hotshot.c"
+      case 7: // $bb6
+        $iftmp_78=__str38; //@line 1438 "_hotshot.c"
+        __label__ = 8; break; //@line 1438 "_hotshot.c"
+      case 8: // $bb7
+        var $19=$self_addr; //@line 1438 "_hotshot.c"
+        var $20=$iftmp_78; //@line 1438 "_hotshot.c"
+        var $21=_pack_add_info($19, __str40, $20); //@line 1438 "_hotshot.c"
+        var $22=$self_addr; //@line 1440 "_hotshot.c"
+        var $23=$22+10268; //@line 1440 "_hotshot.c"
+        var $24=HEAP[$23]; //@line 1440 "_hotshot.c"
+        var $25=($24)!=0; //@line 1440 "_hotshot.c"
+        if ($25) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1440 "_hotshot.c"
+      case 9: // $bb8
+        $iftmp_79=__str37; //@line 1440 "_hotshot.c"
+        __label__ = 11; break; //@line 1440 "_hotshot.c"
+      case 10: // $bb9
+        $iftmp_79=__str38; //@line 1440 "_hotshot.c"
+        __label__ = 11; break; //@line 1440 "_hotshot.c"
+      case 11: // $bb10
+        var $26=$self_addr; //@line 1440 "_hotshot.c"
+        var $27=$iftmp_79; //@line 1440 "_hotshot.c"
+        var $28=_pack_add_info($26, __str41, $27); //@line 1440 "_hotshot.c"
+        var $29=_Py_GetPlatform(); //@line 1442 "_hotshot.c"
+        var $30=$self_addr; //@line 1442 "_hotshot.c"
+        var $31=_pack_add_info($30, __str42, $29); //@line 1442 "_hotshot.c"
+        var $32=_Py_GetProgramFullPath(); //@line 1443 "_hotshot.c"
+        var $33=$self_addr; //@line 1443 "_hotshot.c"
+        var $34=_pack_add_info($33, __str43, $32); //@line 1443 "_hotshot.c"
+        var $35=$buffer; //@line 1444 "_hotshot.c"
+        _free($35); //@line 1444 "_hotshot.c"
+        var $36=_Py_GetVersion(); //@line 1445 "_hotshot.c"
+        $buffer=$36; //@line 1445 "_hotshot.c"
+        var $37=($36)==0; //@line 1446 "_hotshot.c"
+        if ($37) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1446 "_hotshot.c"
+      case 12: // $bb11
+        _PyErr_Clear(); //@line 1447 "_hotshot.c"
+        __label__ = 14; break; //@line 1447 "_hotshot.c"
+      case 13: // $bb12
+        var $38=$self_addr; //@line 1449 "_hotshot.c"
+        var $39=$buffer; //@line 1449 "_hotshot.c"
+        var $40=_pack_add_info($38, __str44, $39); //@line 1449 "_hotshot.c"
+        __label__ = 14; break; //@line 1449 "_hotshot.c"
+      case 14: // $bb13
+        var $41=HEAP[_rusage_diff]; //@line 1455 "_hotshot.c"
+        var $cwdbuffer14=$cwdbuffer; //@line 1455 "_hotshot.c"
+        var $42=_PyOS_snprintf($cwdbuffer14, 4096, __str45, allocate([$41,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1455 "_hotshot.c"
+        var $43=$self_addr; //@line 1456 "_hotshot.c"
+        var $cwdbuffer15=$cwdbuffer; //@line 1456 "_hotshot.c"
+        var $44=_pack_add_info($43, __str46, $cwdbuffer15); //@line 1456 "_hotshot.c"
+        var $45=HEAP[_timeofday_diff]; //@line 1457 "_hotshot.c"
+        var $cwdbuffer16=$cwdbuffer; //@line 1457 "_hotshot.c"
+        var $46=_PyOS_snprintf($cwdbuffer16, 4096, __str45, allocate([$45,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1457 "_hotshot.c"
+        var $47=$self_addr; //@line 1458 "_hotshot.c"
+        var $cwdbuffer17=$cwdbuffer; //@line 1458 "_hotshot.c"
+        var $48=_pack_add_info($47, __str47, $cwdbuffer17); //@line 1458 "_hotshot.c"
+        var $cwdbuffer18=$cwdbuffer; //@line 1461 "_hotshot.c"
+        var $49=_getcwd($cwdbuffer18, 4096); //@line 1461 "_hotshot.c"
+        var $50=$self_addr; //@line 1461 "_hotshot.c"
+        var $51=_pack_add_info($50, __str48, $49); //@line 1461 "_hotshot.c"
+        var $52=_PySys_GetObject(__str49); //@line 1464 "_hotshot.c"
+        $temp=$52; //@line 1464 "_hotshot.c"
+        var $53=($52)==0; //@line 1465 "_hotshot.c"
+        if ($53) { __label__ = 16; break; } else { __label__ = 15; break; } //@line 1465 "_hotshot.c"
+      case 15: // $bb19
+        var $54=$temp; //@line 1465 "_hotshot.c"
+        var $55=$54+4; //@line 1465 "_hotshot.c"
+        var $56=HEAP[$55]; //@line 1465 "_hotshot.c"
+        var $57=$56+84; //@line 1465 "_hotshot.c"
+        var $58=HEAP[$57]; //@line 1465 "_hotshot.c"
+        var $59=($58) & 33554432; //@line 1465 "_hotshot.c"
+        var $60=($59)==0; //@line 1465 "_hotshot.c"
+        if ($60) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1465 "_hotshot.c"
+      case 16: // $bb20
+        var $61=HEAP[_PyExc_RuntimeError]; //@line 1466 "_hotshot.c"
+        _PyErr_SetString($61, __str50); //@line 1466 "_hotshot.c"
+        $0=-1; //@line 1467 "_hotshot.c"
+        __label__ = 23; break; //@line 1467 "_hotshot.c"
+      case 17: // $bb21
+        var $62=$temp; //@line 1469 "_hotshot.c"
+        var $63=$62; //@line 1469 "_hotshot.c"
+        var $64=$63+8; //@line 1469 "_hotshot.c"
+        var $65=HEAP[$64]; //@line 1469 "_hotshot.c"
+        $len=$65; //@line 1469 "_hotshot.c"
+        $i=0; //@line 1470 "_hotshot.c"
+        var $66=$i; //@line 1470 "_hotshot.c"
+        var $67=$len; //@line 1470 "_hotshot.c"
+        var $68=($66) < ($67); //@line 1470 "_hotshot.c"
+        if ($68) { __label__ = 18; break; } else { __label__ = 22; break; } //@line 1470 "_hotshot.c"
+      case 18: // $bb22
+        var $69=$temp; //@line 1471 "_hotshot.c"
+        var $70=$69; //@line 1471 "_hotshot.c"
+        var $71=$70+12; //@line 1471 "_hotshot.c"
+        var $72=HEAP[$71]; //@line 1471 "_hotshot.c"
+        var $73=$i; //@line 1471 "_hotshot.c"
+        var $74=$72+4*$73; //@line 1471 "_hotshot.c"
+        var $75=HEAP[$74]; //@line 1471 "_hotshot.c"
+        $item=$75; //@line 1471 "_hotshot.c"
+        var $76=$item; //@line 1472 "_hotshot.c"
+        var $77=_PyString_AsString($76); //@line 1472 "_hotshot.c"
+        $buffer=$77; //@line 1472 "_hotshot.c"
+        var $78=($77)==0; //@line 1473 "_hotshot.c"
+        var $79=$self_addr; //@line 1474 "_hotshot.c"
+        if ($78) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1473 "_hotshot.c"
+      case 19: // $bb23
+        var $80=_pack_add_info($79, __str51, __str52); //@line 1474 "_hotshot.c"
+        _PyErr_Clear(); //@line 1475 "_hotshot.c"
+        __label__ = 21; break; //@line 1475 "_hotshot.c"
+      case 20: // $bb24
+        var $81=$buffer; //@line 1478 "_hotshot.c"
+        var $82=_pack_add_info($79, __str51, $81); //@line 1478 "_hotshot.c"
+        __label__ = 21; break; //@line 1478 "_hotshot.c"
+      case 21: // $bb25
+        var $83=$i; //@line 1470 "_hotshot.c"
+        var $84=($83) + 1; //@line 1470 "_hotshot.c"
+        $i=$84; //@line 1470 "_hotshot.c"
+        var $85=$i; //@line 1470 "_hotshot.c"
+        var $86=$len; //@line 1470 "_hotshot.c"
+        var $87=($85) < ($86); //@line 1470 "_hotshot.c"
+        if ($87) { __label__ = 18; break; } else { __label__ = 22; break; } //@line 1470 "_hotshot.c"
+      case 22: // $bb27
+        var $88=$self_addr; //@line 1481 "_hotshot.c"
+        _pack_frame_times($88); //@line 1481 "_hotshot.c"
+        var $89=$self_addr; //@line 1482 "_hotshot.c"
+        _pack_line_times($89); //@line 1482 "_hotshot.c"
+        $0=0; //@line 1484 "_hotshot.c"
+        __label__ = 23; break; //@line 1484 "_hotshot.c"
+      case 23: // $bb28
+        var $90=$0; //@line 1433 "_hotshot.c"
+        $retval=$90; //@line 1433 "_hotshot.c"
+        var $retval29=$retval; //@line 1433 "_hotshot.c"
+        STACKTOP = __stackBase__;
+        return $retval29; //@line 1433 "_hotshot.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _hotshot_profiler($unused, $args) {
+    var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $unused_addr;
         var $args_addr;
         var $retval;
         var $iftmp_86;
-        var $3;
-        var $logfilename=__stackBase__+4096;
+        var $0;
+        var $logfilename=__stackBase__;
         var $self;
-        var $lineevents=__stackBase__+4100;
-        var $linetimings=__stackBase__+4104;
+        var $lineevents=__stackBase__+4;
+        var $linetimings=__stackBase__+8;
         $unused_addr=$unused;
         $args_addr=$args;
         $self=0; //@line 1495 "_hotshot.c"
         HEAP[$lineevents]=0; //@line 1496 "_hotshot.c"
         HEAP[$linetimings]=1; //@line 1497 "_hotshot.c"
-        var $4=$args_addr; //@line 1499 "_hotshot.c"
-        var $5=_PyArg_ParseTuple($4, __str53, $logfilename, $lineevents, $linetimings); //@line 1499 "_hotshot.c"
-        var $6=($5)!=0; //@line 1499 "_hotshot.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 51; break; } //@line 1499 "_hotshot.c"
+        var $1=$args_addr; //@line 1499 "_hotshot.c"
+        var $2=_PyArg_ParseTuple($1, __str53, allocate([$logfilename,0,0,0,$lineevents,0,0,0,$linetimings,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1499 "_hotshot.c"
+        var $3=($2)!=0; //@line 1499 "_hotshot.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 21; break; } //@line 1499 "_hotshot.c"
       case 1: // $bb
-        var $7=__PyObject_New(_ProfilerType); //@line 1501 "_hotshot.c"
-        var $8=$7; //@line 1501 "_hotshot.c"
-        $self=$8; //@line 1501 "_hotshot.c"
-        var $9=$self; //@line 1502 "_hotshot.c"
-        var $10=($9)==0; //@line 1502 "_hotshot.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1502 "_hotshot.c"
+        var $4=__PyObject_New(_ProfilerType); //@line 1501 "_hotshot.c"
+        var $5=$4; //@line 1501 "_hotshot.c"
+        $self=$5; //@line 1501 "_hotshot.c"
+        var $6=$self; //@line 1502 "_hotshot.c"
+        var $7=($6)==0; //@line 1502 "_hotshot.c"
+        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1502 "_hotshot.c"
       case 2: // $bb1
-        $3=0; //@line 1503 "_hotshot.c"
-        __label__ = 52; break; //@line 1503 "_hotshot.c"
+        $0=0; //@line 1503 "_hotshot.c"
+        __label__ = 22; break; //@line 1503 "_hotshot.c"
       case 3: // $bb2
-        var $11=$self; //@line 1504 "_hotshot.c"
-        var $12=$11+10272; //@line 1504 "_hotshot.c"
-        HEAP[$12]=1; //@line 1504 "_hotshot.c"
-        var $13=HEAP[$lineevents]; //@line 1505 "_hotshot.c"
-        var $14=($13)!=0; //@line 1505 "_hotshot.c"
-        var $15=($14); //@line 1505 "_hotshot.c"
-        var $16=$self; //@line 1505 "_hotshot.c"
-        var $17=$16+10264; //@line 1505 "_hotshot.c"
-        HEAP[$17]=$15; //@line 1505 "_hotshot.c"
-        var $18=HEAP[$lineevents]; //@line 1506 "_hotshot.c"
-        var $19=($18)==0; //@line 1506 "_hotshot.c"
-        if ($19) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 1506 "_hotshot.c"
+        var $8=$self; //@line 1504 "_hotshot.c"
+        var $9=$8+10272; //@line 1504 "_hotshot.c"
+        HEAP[$9]=1; //@line 1504 "_hotshot.c"
+        var $10=HEAP[$lineevents]; //@line 1505 "_hotshot.c"
+        var $11=($10)!=0; //@line 1505 "_hotshot.c"
+        var $12=($11); //@line 1505 "_hotshot.c"
+        var $13=$self; //@line 1505 "_hotshot.c"
+        var $14=$13+10264; //@line 1505 "_hotshot.c"
+        HEAP[$14]=$12; //@line 1505 "_hotshot.c"
+        var $15=HEAP[$lineevents]; //@line 1506 "_hotshot.c"
+        var $16=($15)==0; //@line 1506 "_hotshot.c"
+        if ($16) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 1506 "_hotshot.c"
       case 4: // $bb3
-        var $20=HEAP[$linetimings]; //@line 1506 "_hotshot.c"
-        var $21=($20)==0; //@line 1506 "_hotshot.c"
-        if ($21) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 1506 "_hotshot.c"
+        var $17=HEAP[$linetimings]; //@line 1506 "_hotshot.c"
+        var $18=($17)==0; //@line 1506 "_hotshot.c"
+        if ($18) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 1506 "_hotshot.c"
       case 5: // $bb4
         $iftmp_86=1; //@line 1506 "_hotshot.c"
         __label__ = 7; break; //@line 1506 "_hotshot.c"
@@ -4131,412 +3863,161 @@ var __str74;
         $iftmp_86=0; //@line 1506 "_hotshot.c"
         __label__ = 7; break; //@line 1506 "_hotshot.c"
       case 7: // $bb6
-        var $22=$self; //@line 1506 "_hotshot.c"
-        var $23=$22+10268; //@line 1506 "_hotshot.c"
-        var $24=$iftmp_86; //@line 1506 "_hotshot.c"
-        HEAP[$23]=$24; //@line 1506 "_hotshot.c"
-        var $25=$self; //@line 1507 "_hotshot.c"
-        var $26=$25+16; //@line 1507 "_hotshot.c"
-        HEAP[$26]=0; //@line 1507 "_hotshot.c"
-        var $27=$self; //@line 1508 "_hotshot.c"
-        var $28=$27+10276; //@line 1508 "_hotshot.c"
-        HEAP[$28]=0; //@line 1508 "_hotshot.c"
-        var $29=$self; //@line 1509 "_hotshot.c"
-        var $30=$29+10280; //@line 1509 "_hotshot.c"
-        HEAP[$30]=0; //@line 1509 "_hotshot.c"
-        var $31=$self; //@line 1510 "_hotshot.c"
-        var $32=$31+10260; //@line 1510 "_hotshot.c"
-        HEAP[$32]=0; //@line 1510 "_hotshot.c"
-        var $33=$args_addr; //@line 1511 "_hotshot.c"
-        var $34=$33; //@line 1511 "_hotshot.c"
-        var $35=$34+12; //@line 1511 "_hotshot.c"
-        var $36=$35; //@line 1511 "_hotshot.c"
-        var $37=HEAP[$36]; //@line 1511 "_hotshot.c"
-        var $38=$self; //@line 1511 "_hotshot.c"
-        var $39=$38+12; //@line 1511 "_hotshot.c"
-        HEAP[$39]=$37; //@line 1511 "_hotshot.c"
-        var $40=$self; //@line 1512 "_hotshot.c"
-        var $41=$40+12; //@line 1512 "_hotshot.c"
-        var $42=HEAP[$41]; //@line 1512 "_hotshot.c"
-        var $43=$42; //@line 1512 "_hotshot.c"
-        var $44=HEAP[$43]; //@line 1512 "_hotshot.c"
-        var $45=($44) + 1; //@line 1512 "_hotshot.c"
-        var $46=$42; //@line 1512 "_hotshot.c"
-        HEAP[$46]=$45; //@line 1512 "_hotshot.c"
-        var $47=_PyDict_New(); //@line 1513 "_hotshot.c"
-        var $48=$self; //@line 1513 "_hotshot.c"
-        var $49=$48+8; //@line 1513 "_hotshot.c"
-        HEAP[$49]=$47; //@line 1513 "_hotshot.c"
-        var $50=$self; //@line 1514 "_hotshot.c"
-        var $51=$50+8; //@line 1514 "_hotshot.c"
-        var $52=HEAP[$51]; //@line 1514 "_hotshot.c"
-        var $53=($52)==0; //@line 1514 "_hotshot.c"
-        if ($53) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 1514 "_hotshot.c"
+        var $19=$self; //@line 1506 "_hotshot.c"
+        var $20=$19+10268; //@line 1506 "_hotshot.c"
+        var $21=$iftmp_86; //@line 1506 "_hotshot.c"
+        HEAP[$20]=$21; //@line 1506 "_hotshot.c"
+        var $22=$self; //@line 1507 "_hotshot.c"
+        var $23=$22+16; //@line 1507 "_hotshot.c"
+        HEAP[$23]=0; //@line 1507 "_hotshot.c"
+        var $24=$self; //@line 1508 "_hotshot.c"
+        var $25=$24+10276; //@line 1508 "_hotshot.c"
+        HEAP[$25]=0; //@line 1508 "_hotshot.c"
+        var $26=$self; //@line 1509 "_hotshot.c"
+        var $27=$26+10280; //@line 1509 "_hotshot.c"
+        HEAP[$27]=0; //@line 1509 "_hotshot.c"
+        var $28=$self; //@line 1510 "_hotshot.c"
+        var $29=$28+10260; //@line 1510 "_hotshot.c"
+        HEAP[$29]=0; //@line 1510 "_hotshot.c"
+        var $30=$args_addr; //@line 1511 "_hotshot.c"
+        var $31=$30; //@line 1511 "_hotshot.c"
+        var $32=$31+12; //@line 1511 "_hotshot.c"
+        var $33=$32; //@line 1511 "_hotshot.c"
+        var $34=HEAP[$33]; //@line 1511 "_hotshot.c"
+        var $35=$self; //@line 1511 "_hotshot.c"
+        var $36=$35+12; //@line 1511 "_hotshot.c"
+        HEAP[$36]=$34; //@line 1511 "_hotshot.c"
+        var $37=$self; //@line 1512 "_hotshot.c"
+        var $38=$37+12; //@line 1512 "_hotshot.c"
+        var $39=HEAP[$38]; //@line 1512 "_hotshot.c"
+        var $40=$39; //@line 1512 "_hotshot.c"
+        var $41=HEAP[$40]; //@line 1512 "_hotshot.c"
+        var $42=($41) + 1; //@line 1512 "_hotshot.c"
+        var $43=$39; //@line 1512 "_hotshot.c"
+        HEAP[$43]=$42; //@line 1512 "_hotshot.c"
+        var $44=_PyDict_New(); //@line 1513 "_hotshot.c"
+        var $45=$self; //@line 1513 "_hotshot.c"
+        var $46=$45+8; //@line 1513 "_hotshot.c"
+        HEAP[$46]=$44; //@line 1513 "_hotshot.c"
+        var $47=$self; //@line 1514 "_hotshot.c"
+        var $48=$47+8; //@line 1514 "_hotshot.c"
+        var $49=HEAP[$48]; //@line 1514 "_hotshot.c"
+        var $50=($49)==0; //@line 1514 "_hotshot.c"
+        if ($50) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 1514 "_hotshot.c"
       case 8: // $bb7
-        var $54=$self; //@line 1515 "_hotshot.c"
-        var $55=$54; //@line 1515 "_hotshot.c"
-        var $56=$55; //@line 1515 "_hotshot.c"
-        var $57=HEAP[$56]; //@line 1515 "_hotshot.c"
-        var $58=($57) - 1; //@line 1515 "_hotshot.c"
-        var $59=$55; //@line 1515 "_hotshot.c"
-        HEAP[$59]=$58; //@line 1515 "_hotshot.c"
-        var $60=$55; //@line 1515 "_hotshot.c"
-        var $61=HEAP[$60]; //@line 1515 "_hotshot.c"
-        var $62=($61)==0; //@line 1515 "_hotshot.c"
-        if ($62) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1515 "_hotshot.c"
+        var $51=$self; //@line 1515 "_hotshot.c"
+        var $52=$51; //@line 1515 "_hotshot.c"
+        var $53=$52; //@line 1515 "_hotshot.c"
+        var $54=HEAP[$53]; //@line 1515 "_hotshot.c"
+        var $55=($54) - 1; //@line 1515 "_hotshot.c"
+        var $56=$52; //@line 1515 "_hotshot.c"
+        HEAP[$56]=$55; //@line 1515 "_hotshot.c"
+        var $57=$52; //@line 1515 "_hotshot.c"
+        var $58=HEAP[$57]; //@line 1515 "_hotshot.c"
+        var $59=($58)==0; //@line 1515 "_hotshot.c"
+        if ($59) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1515 "_hotshot.c"
       case 9: // $bb8
-        var $63=$self; //@line 1515 "_hotshot.c"
-        var $64=$63; //@line 1515 "_hotshot.c"
-        var $65=$64+4; //@line 1515 "_hotshot.c"
-        var $66=HEAP[$65]; //@line 1515 "_hotshot.c"
-        var $67=$66+24; //@line 1515 "_hotshot.c"
-        var $68=HEAP[$67]; //@line 1515 "_hotshot.c"
-        var $69=$self; //@line 1515 "_hotshot.c"
-        var $70=$69; //@line 1515 "_hotshot.c"
-        FUNCTION_TABLE[$68]($70); //@line 1515 "_hotshot.c"
+        var $60=$self; //@line 1515 "_hotshot.c"
+        var $61=$60; //@line 1515 "_hotshot.c"
+        var $62=$61+4; //@line 1515 "_hotshot.c"
+        var $63=HEAP[$62]; //@line 1515 "_hotshot.c"
+        var $64=$63+24; //@line 1515 "_hotshot.c"
+        var $65=HEAP[$64]; //@line 1515 "_hotshot.c"
+        var $66=$self; //@line 1515 "_hotshot.c"
+        var $67=$66; //@line 1515 "_hotshot.c"
+        FUNCTION_TABLE[$65]($67); //@line 1515 "_hotshot.c"
         __label__ = 10; break; //@line 1515 "_hotshot.c"
       case 10: // $bb9
-        $3=0; //@line 1516 "_hotshot.c"
-        __label__ = 52; break; //@line 1516 "_hotshot.c"
+        $0=0; //@line 1516 "_hotshot.c"
+        __label__ = 22; break; //@line 1516 "_hotshot.c"
       case 11: // $bb10
-        var $71=HEAP[$logfilename]; //@line 1518 "_hotshot.c"
-        var $72=___01fopen64_($71, __str54); //@line 1518 "_hotshot.c"
-        var $73=$self; //@line 1518 "_hotshot.c"
-        var $74=$73+10260; //@line 1518 "_hotshot.c"
-        HEAP[$74]=$72; //@line 1518 "_hotshot.c"
-        var $75=$self; //@line 1519 "_hotshot.c"
-        var $76=$75+10260; //@line 1519 "_hotshot.c"
-        var $77=HEAP[$76]; //@line 1519 "_hotshot.c"
-        var $78=($77)==0; //@line 1519 "_hotshot.c"
-        if ($78) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 1519 "_hotshot.c"
+        var $68=HEAP[$logfilename]; //@line 1518 "_hotshot.c"
+        var $69=___01fopen64_($68, __str54); //@line 1518 "_hotshot.c"
+        var $70=$self; //@line 1518 "_hotshot.c"
+        var $71=$70+10260; //@line 1518 "_hotshot.c"
+        HEAP[$71]=$69; //@line 1518 "_hotshot.c"
+        var $72=$self; //@line 1519 "_hotshot.c"
+        var $73=$72+10260; //@line 1519 "_hotshot.c"
+        var $74=HEAP[$73]; //@line 1519 "_hotshot.c"
+        var $75=($74)==0; //@line 1519 "_hotshot.c"
+        if ($75) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 1519 "_hotshot.c"
       case 12: // $bb11
-        var $79=$self; //@line 1520 "_hotshot.c"
-        var $80=$79; //@line 1520 "_hotshot.c"
-        var $81=$80; //@line 1520 "_hotshot.c"
-        var $82=HEAP[$81]; //@line 1520 "_hotshot.c"
-        var $83=($82) - 1; //@line 1520 "_hotshot.c"
-        var $84=$80; //@line 1520 "_hotshot.c"
-        HEAP[$84]=$83; //@line 1520 "_hotshot.c"
-        var $85=$80; //@line 1520 "_hotshot.c"
-        var $86=HEAP[$85]; //@line 1520 "_hotshot.c"
-        var $87=($86)==0; //@line 1520 "_hotshot.c"
-        if ($87) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1520 "_hotshot.c"
+        var $76=$self; //@line 1520 "_hotshot.c"
+        var $77=$76; //@line 1520 "_hotshot.c"
+        var $78=$77; //@line 1520 "_hotshot.c"
+        var $79=HEAP[$78]; //@line 1520 "_hotshot.c"
+        var $80=($79) - 1; //@line 1520 "_hotshot.c"
+        var $81=$77; //@line 1520 "_hotshot.c"
+        HEAP[$81]=$80; //@line 1520 "_hotshot.c"
+        var $82=$77; //@line 1520 "_hotshot.c"
+        var $83=HEAP[$82]; //@line 1520 "_hotshot.c"
+        var $84=($83)==0; //@line 1520 "_hotshot.c"
+        if ($84) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1520 "_hotshot.c"
       case 13: // $bb12
-        var $88=$self; //@line 1520 "_hotshot.c"
-        var $89=$88; //@line 1520 "_hotshot.c"
-        var $90=$89+4; //@line 1520 "_hotshot.c"
-        var $91=HEAP[$90]; //@line 1520 "_hotshot.c"
-        var $92=$91+24; //@line 1520 "_hotshot.c"
-        var $93=HEAP[$92]; //@line 1520 "_hotshot.c"
-        var $94=$self; //@line 1520 "_hotshot.c"
-        var $95=$94; //@line 1520 "_hotshot.c"
-        FUNCTION_TABLE[$93]($95); //@line 1520 "_hotshot.c"
+        var $85=$self; //@line 1520 "_hotshot.c"
+        var $86=$85; //@line 1520 "_hotshot.c"
+        var $87=$86+4; //@line 1520 "_hotshot.c"
+        var $88=HEAP[$87]; //@line 1520 "_hotshot.c"
+        var $89=$88+24; //@line 1520 "_hotshot.c"
+        var $90=HEAP[$89]; //@line 1520 "_hotshot.c"
+        var $91=$self; //@line 1520 "_hotshot.c"
+        var $92=$91; //@line 1520 "_hotshot.c"
+        FUNCTION_TABLE[$90]($92); //@line 1520 "_hotshot.c"
         __label__ = 14; break; //@line 1520 "_hotshot.c"
       case 14: // $bb13
-        var $96=HEAP[$logfilename]; //@line 1521 "_hotshot.c"
-        var $97=HEAP[_PyExc_IOError]; //@line 1521 "_hotshot.c"
-        var $98=_PyErr_SetFromErrnoWithFilename($97, $96); //@line 1521 "_hotshot.c"
-        $3=0; //@line 1522 "_hotshot.c"
-        __label__ = 52; break; //@line 1522 "_hotshot.c"
+        var $93=HEAP[$logfilename]; //@line 1521 "_hotshot.c"
+        var $94=HEAP[_PyExc_IOError]; //@line 1521 "_hotshot.c"
+        var $95=_PyErr_SetFromErrnoWithFilename($94, $93); //@line 1521 "_hotshot.c"
+        $0=0; //@line 1522 "_hotshot.c"
+        __label__ = 22; break; //@line 1522 "_hotshot.c"
       case 15: // $bb14
-        var $99=HEAP[_timeofday_diff]; //@line 1524 "_hotshot.c"
-        var $100=($99)==0; //@line 1524 "_hotshot.c"
-        if ($100) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1524 "_hotshot.c"
+        var $96=HEAP[_timeofday_diff]; //@line 1524 "_hotshot.c"
+        var $97=($96)==0; //@line 1524 "_hotshot.c"
+        if ($97) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1524 "_hotshot.c"
       case 16: // $bb15
         _calibrate(); //@line 1529 "_hotshot.c"
         _calibrate(); //@line 1530 "_hotshot.c"
         _calibrate(); //@line 1531 "_hotshot.c"
         __label__ = 17; break; //@line 1531 "_hotshot.c"
       case 17: // $bb16
-        var $101=$self; //@line 1533 "_hotshot.c"
-        $self_addr_i=$101;
-        var $102=_get_version_string(); //@line 1430 "_hotshot.c"
-        $buffer_i=$102; //@line 1430 "_hotshot.c"
-        var $103=($102)==0; //@line 1431 "_hotshot.c"
-        if ($103) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 1431 "_hotshot.c"
-      case 18: // $bb_i
-        var $104=_PyErr_NoMemory(); //@line 1432 "_hotshot.c"
-        $2=-1; //@line 1433 "_hotshot.c"
-        __label__ = 48; break; //@line 1433 "_hotshot.c"
-      case 19: // $bb1_i
-        var $105=$self_addr_i; //@line 1435 "_hotshot.c"
-        var $106=$buffer_i; //@line 1435 "_hotshot.c"
-        var $107=_pack_add_info($105, __str36, $106); //@line 1435 "_hotshot.c"
-        var $108=$self_addr_i; //@line 1436 "_hotshot.c"
-        var $109=$108+10272; //@line 1436 "_hotshot.c"
-        var $110=HEAP[$109]; //@line 1436 "_hotshot.c"
-        var $111=($110)!=0; //@line 1436 "_hotshot.c"
-        if ($111) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1436 "_hotshot.c"
-      case 20: // $bb2_i
-        $iftmp_77_i=__str37; //@line 1436 "_hotshot.c"
-        __label__ = 22; break; //@line 1436 "_hotshot.c"
-      case 21: // $bb3_i
-        $iftmp_77_i=__str38; //@line 1436 "_hotshot.c"
-        __label__ = 22; break; //@line 1436 "_hotshot.c"
-      case 22: // $bb4_i
-        var $112=$self_addr_i; //@line 1436 "_hotshot.c"
-        var $113=$iftmp_77_i; //@line 1436 "_hotshot.c"
-        var $114=_pack_add_info($112, __str39, $113); //@line 1436 "_hotshot.c"
-        var $115=$self_addr_i; //@line 1438 "_hotshot.c"
-        var $116=$115+10264; //@line 1438 "_hotshot.c"
-        var $117=HEAP[$116]; //@line 1438 "_hotshot.c"
-        var $118=($117)!=0; //@line 1438 "_hotshot.c"
-        if ($118) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 1438 "_hotshot.c"
-      case 23: // $bb5_i
-        $iftmp_78_i=__str37; //@line 1438 "_hotshot.c"
-        __label__ = 25; break; //@line 1438 "_hotshot.c"
-      case 24: // $bb6_i
-        $iftmp_78_i=__str38; //@line 1438 "_hotshot.c"
-        __label__ = 25; break; //@line 1438 "_hotshot.c"
-      case 25: // $bb7_i
-        var $119=$self_addr_i; //@line 1438 "_hotshot.c"
-        var $120=$iftmp_78_i; //@line 1438 "_hotshot.c"
-        var $121=_pack_add_info($119, __str40, $120); //@line 1438 "_hotshot.c"
-        var $122=$self_addr_i; //@line 1440 "_hotshot.c"
-        var $123=$122+10268; //@line 1440 "_hotshot.c"
-        var $124=HEAP[$123]; //@line 1440 "_hotshot.c"
-        var $125=($124)!=0; //@line 1440 "_hotshot.c"
-        if ($125) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 1440 "_hotshot.c"
-      case 26: // $bb8_i
-        $iftmp_79_i=__str37; //@line 1440 "_hotshot.c"
-        __label__ = 28; break; //@line 1440 "_hotshot.c"
-      case 27: // $bb9_i
-        $iftmp_79_i=__str38; //@line 1440 "_hotshot.c"
-        __label__ = 28; break; //@line 1440 "_hotshot.c"
-      case 28: // $bb10_i
-        var $126=$self_addr_i; //@line 1440 "_hotshot.c"
-        var $127=$iftmp_79_i; //@line 1440 "_hotshot.c"
-        var $128=_pack_add_info($126, __str41, $127); //@line 1440 "_hotshot.c"
-        var $129=_Py_GetPlatform(); //@line 1442 "_hotshot.c"
-        var $130=$self_addr_i; //@line 1442 "_hotshot.c"
-        var $131=_pack_add_info($130, __str42, $129); //@line 1442 "_hotshot.c"
-        var $132=_Py_GetProgramFullPath(); //@line 1443 "_hotshot.c"
-        var $133=$self_addr_i; //@line 1443 "_hotshot.c"
-        var $134=_pack_add_info($133, __str43, $132); //@line 1443 "_hotshot.c"
-        var $135=$buffer_i; //@line 1444 "_hotshot.c"
-        _free($135); //@line 1444 "_hotshot.c"
-        var $136=_Py_GetVersion(); //@line 1445 "_hotshot.c"
-        $buffer_i=$136; //@line 1445 "_hotshot.c"
-        var $137=($136)==0; //@line 1446 "_hotshot.c"
-        if ($137) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 1446 "_hotshot.c"
-      case 29: // $bb11_i
-        _PyErr_Clear(); //@line 1447 "_hotshot.c"
-        __label__ = 31; break; //@line 1447 "_hotshot.c"
-      case 30: // $bb12_i
-        var $138=$self_addr_i; //@line 1449 "_hotshot.c"
-        var $139=$buffer_i; //@line 1449 "_hotshot.c"
-        var $140=_pack_add_info($138, __str44, $139); //@line 1449 "_hotshot.c"
-        __label__ = 31; break; //@line 1449 "_hotshot.c"
-      case 31: // $bb13_i
-        var $141=HEAP[_rusage_diff]; //@line 1455 "_hotshot.c"
-        var $cwdbuffer14_i=$cwdbuffer_i; //@line 1455 "_hotshot.c"
-        var $142=_PyOS_snprintf($cwdbuffer14_i, 4096, __str45, $141); //@line 1455 "_hotshot.c"
-        var $143=$self_addr_i; //@line 1456 "_hotshot.c"
-        var $cwdbuffer15_i=$cwdbuffer_i; //@line 1456 "_hotshot.c"
-        var $144=_pack_add_info($143, __str46, $cwdbuffer15_i); //@line 1456 "_hotshot.c"
-        var $145=HEAP[_timeofday_diff]; //@line 1457 "_hotshot.c"
-        var $cwdbuffer16_i=$cwdbuffer_i; //@line 1457 "_hotshot.c"
-        var $146=_PyOS_snprintf($cwdbuffer16_i, 4096, __str45, $145); //@line 1457 "_hotshot.c"
-        var $147=$self_addr_i; //@line 1458 "_hotshot.c"
-        var $cwdbuffer17_i=$cwdbuffer_i; //@line 1458 "_hotshot.c"
-        var $148=_pack_add_info($147, __str47, $cwdbuffer17_i); //@line 1458 "_hotshot.c"
-        var $cwdbuffer18_i=$cwdbuffer_i; //@line 1461 "_hotshot.c"
-        var $149=_getcwd($cwdbuffer18_i, 4096); //@line 1461 "_hotshot.c"
-        var $150=$self_addr_i; //@line 1461 "_hotshot.c"
-        var $151=_pack_add_info($150, __str48, $149); //@line 1461 "_hotshot.c"
-        var $152=_PySys_GetObject(__str49); //@line 1464 "_hotshot.c"
-        $temp_i=$152; //@line 1464 "_hotshot.c"
-        var $153=($152)==0; //@line 1465 "_hotshot.c"
-        if ($153) { __label__ = 33; break; } else { __label__ = 32; break; } //@line 1465 "_hotshot.c"
-      case 32: // $bb19_i
-        var $154=$temp_i; //@line 1465 "_hotshot.c"
-        var $155=$154+4; //@line 1465 "_hotshot.c"
-        var $156=HEAP[$155]; //@line 1465 "_hotshot.c"
-        var $157=$156+84; //@line 1465 "_hotshot.c"
-        var $158=HEAP[$157]; //@line 1465 "_hotshot.c"
-        var $159=($158) & 33554432; //@line 1465 "_hotshot.c"
-        var $160=($159)==0; //@line 1465 "_hotshot.c"
-        if ($160) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 1465 "_hotshot.c"
-      case 33: // $bb20_i
-        var $161=HEAP[_PyExc_RuntimeError]; //@line 1466 "_hotshot.c"
-        _PyErr_SetString($161, __str50); //@line 1466 "_hotshot.c"
-        $2=-1; //@line 1467 "_hotshot.c"
-        __label__ = 48; break; //@line 1467 "_hotshot.c"
-      case 34: // $bb21_i
-        var $162=$temp_i; //@line 1469 "_hotshot.c"
-        var $163=$162; //@line 1469 "_hotshot.c"
-        var $164=$163+8; //@line 1469 "_hotshot.c"
-        var $165=HEAP[$164]; //@line 1469 "_hotshot.c"
-        $len_i=$165; //@line 1469 "_hotshot.c"
-        $i_i=0; //@line 1470 "_hotshot.c"
-        var $166=$i_i; //@line 1470 "_hotshot.c"
-        var $167=$len_i; //@line 1470 "_hotshot.c"
-        var $168=($166) < ($167); //@line 1470 "_hotshot.c"
-        if ($168) { __label__ = 35; break; } else { __label__ = 39; break; } //@line 1470 "_hotshot.c"
-      case 35: // $bb22_i
-        var $169=$temp_i; //@line 1471 "_hotshot.c"
-        var $170=$169; //@line 1471 "_hotshot.c"
-        var $171=$170+12; //@line 1471 "_hotshot.c"
-        var $172=HEAP[$171]; //@line 1471 "_hotshot.c"
-        var $173=$i_i; //@line 1471 "_hotshot.c"
-        var $174=$172+4*$173; //@line 1471 "_hotshot.c"
-        var $175=HEAP[$174]; //@line 1471 "_hotshot.c"
-        $item_i=$175; //@line 1471 "_hotshot.c"
-        var $176=$item_i; //@line 1472 "_hotshot.c"
-        var $177=_PyString_AsString($176); //@line 1472 "_hotshot.c"
-        $buffer_i=$177; //@line 1472 "_hotshot.c"
-        var $178=($177)==0; //@line 1473 "_hotshot.c"
-        var $179=$self_addr_i; //@line 1474 "_hotshot.c"
-        if ($178) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 1473 "_hotshot.c"
-      case 36: // $bb23_i
-        var $180=_pack_add_info($179, __str51, __str52); //@line 1474 "_hotshot.c"
-        _PyErr_Clear(); //@line 1475 "_hotshot.c"
-        __label__ = 38; break; //@line 1475 "_hotshot.c"
-      case 37: // $bb24_i
-        var $181=$buffer_i; //@line 1478 "_hotshot.c"
-        var $182=_pack_add_info($179, __str51, $181); //@line 1478 "_hotshot.c"
-        __label__ = 38; break; //@line 1478 "_hotshot.c"
-      case 38: // $bb25_i
-        var $183=$i_i; //@line 1470 "_hotshot.c"
-        var $184=($183) + 1; //@line 1470 "_hotshot.c"
-        $i_i=$184; //@line 1470 "_hotshot.c"
-        var $185=$i_i; //@line 1470 "_hotshot.c"
-        var $186=$len_i; //@line 1470 "_hotshot.c"
-        var $187=($185) < ($186); //@line 1470 "_hotshot.c"
-        if ($187) { __label__ = 35; break; } else { __label__ = 39; break; } //@line 1470 "_hotshot.c"
-      case 39: // $bb27_i
-        var $188=$self_addr_i; //@line 1481 "_hotshot.c"
-        $self_addr_i_i=$188;
-        var $189=$self_addr_i_i; //@line 706 "_hotshot.c"
-        var $190=$189+16; //@line 706 "_hotshot.c"
-        var $191=HEAP[$190]; //@line 706 "_hotshot.c"
-        var $192=($191) + 2; //@line 706 "_hotshot.c"
-        var $193=($192) > 10239; //@line 706 "_hotshot.c"
-        if ($193) { __label__ = 40; break; } else { __label__ = 42; break; } //@line 706 "_hotshot.c"
-      case 40: // $bb_i_i
-        var $194=$self_addr_i_i; //@line 707 "_hotshot.c"
-        var $195=_flush_data($194); //@line 707 "_hotshot.c"
-        var $196=($195) < 0; //@line 707 "_hotshot.c"
-        if ($196) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 707 "_hotshot.c"
-      case 41: // $bb1_i_i
-        $1=-1; //@line 708 "_hotshot.c"
-        __label__ = 43; break; //@line 708 "_hotshot.c"
-      case 42: // $bb2_i_i
-        var $197=$self_addr_i_i; //@line 710 "_hotshot.c"
-        var $198=$197+16; //@line 710 "_hotshot.c"
-        var $199=HEAP[$198]; //@line 710 "_hotshot.c"
-        var $200=$self_addr_i_i; //@line 710 "_hotshot.c"
-        var $201=$200+20; //@line 710 "_hotshot.c"
-        var $202=$201+$199; //@line 710 "_hotshot.c"
-        HEAP[$202]=83; //@line 710 "_hotshot.c"
-        var $203=$self_addr_i_i; //@line 711 "_hotshot.c"
-        var $204=$203+16; //@line 711 "_hotshot.c"
-        var $205=HEAP[$204]; //@line 711 "_hotshot.c"
-        var $206=($205) + 1; //@line 711 "_hotshot.c"
-        var $207=$self_addr_i_i; //@line 711 "_hotshot.c"
-        var $208=$207+10272; //@line 711 "_hotshot.c"
-        var $209=HEAP[$208]; //@line 711 "_hotshot.c"
-        var $210=($209)!=0; //@line 711 "_hotshot.c"
-        var $211=($210); //@line 711 "_hotshot.c"
-        var $212=$self_addr_i_i; //@line 711 "_hotshot.c"
-        var $213=$212+20; //@line 711 "_hotshot.c"
-        var $214=$213+$206; //@line 711 "_hotshot.c"
-        HEAP[$214]=$211; //@line 711 "_hotshot.c"
-        var $215=$self_addr_i_i; //@line 712 "_hotshot.c"
-        var $216=$215+16; //@line 712 "_hotshot.c"
-        var $217=HEAP[$216]; //@line 712 "_hotshot.c"
-        var $218=($217) + 2; //@line 712 "_hotshot.c"
-        var $219=$self_addr_i_i; //@line 712 "_hotshot.c"
-        var $220=$219+16; //@line 712 "_hotshot.c"
-        HEAP[$220]=$218; //@line 712 "_hotshot.c"
-        $1=0; //@line 713 "_hotshot.c"
-        __label__ = 43; break; //@line 713 "_hotshot.c"
-      case 43: // $pack_frame_times_exit_i
-        var $221=$self_addr_i; //@line 1482 "_hotshot.c"
-        $self_addr_i1_i=$221;
-        var $222=$self_addr_i1_i; //@line 693 "_hotshot.c"
-        var $223=$222+16; //@line 693 "_hotshot.c"
-        var $224=HEAP[$223]; //@line 693 "_hotshot.c"
-        var $225=($224) + 2; //@line 693 "_hotshot.c"
-        var $226=($225) > 10239; //@line 693 "_hotshot.c"
-        if ($226) { __label__ = 44; break; } else { __label__ = 46; break; } //@line 693 "_hotshot.c"
-      case 44: // $bb_i2_i
-        var $227=$self_addr_i1_i; //@line 694 "_hotshot.c"
-        var $228=_flush_data($227); //@line 694 "_hotshot.c"
-        var $229=($228) < 0; //@line 694 "_hotshot.c"
-        if ($229) { __label__ = 45; break; } else { __label__ = 46; break; } //@line 694 "_hotshot.c"
-      case 45: // $bb1_i3_i
-        $0=-1; //@line 695 "_hotshot.c"
-        __label__ = 47; break; //@line 695 "_hotshot.c"
-      case 46: // $bb2_i4_i
-        var $230=$self_addr_i1_i; //@line 697 "_hotshot.c"
-        var $231=$230+16; //@line 697 "_hotshot.c"
-        var $232=HEAP[$231]; //@line 697 "_hotshot.c"
-        var $233=$self_addr_i1_i; //@line 697 "_hotshot.c"
-        var $234=$233+20; //@line 697 "_hotshot.c"
-        var $235=$234+$232; //@line 697 "_hotshot.c"
-        HEAP[$235]=51; //@line 697 "_hotshot.c"
-        var $236=$self_addr_i1_i; //@line 698 "_hotshot.c"
-        var $237=$236+16; //@line 698 "_hotshot.c"
-        var $238=HEAP[$237]; //@line 698 "_hotshot.c"
-        var $239=($238) + 1; //@line 698 "_hotshot.c"
-        var $240=$self_addr_i1_i; //@line 698 "_hotshot.c"
-        var $241=$240+10268; //@line 698 "_hotshot.c"
-        var $242=HEAP[$241]; //@line 698 "_hotshot.c"
-        var $243=($242)!=0; //@line 698 "_hotshot.c"
-        var $244=($243); //@line 698 "_hotshot.c"
-        var $245=$self_addr_i1_i; //@line 698 "_hotshot.c"
-        var $246=$245+20; //@line 698 "_hotshot.c"
-        var $247=$246+$239; //@line 698 "_hotshot.c"
-        HEAP[$247]=$244; //@line 698 "_hotshot.c"
-        var $248=$self_addr_i1_i; //@line 699 "_hotshot.c"
-        var $249=$248+16; //@line 699 "_hotshot.c"
-        var $250=HEAP[$249]; //@line 699 "_hotshot.c"
-        var $251=($250) + 2; //@line 699 "_hotshot.c"
-        var $252=$self_addr_i1_i; //@line 699 "_hotshot.c"
-        var $253=$252+16; //@line 699 "_hotshot.c"
-        HEAP[$253]=$251; //@line 699 "_hotshot.c"
-        $0=0; //@line 700 "_hotshot.c"
-        __label__ = 47; break; //@line 700 "_hotshot.c"
-      case 47: // $write_header_exit
-        $2=0; //@line 1484 "_hotshot.c"
-        $retval_i=0; //@line 1433 "_hotshot.c"
-        __label__ = 51; break;
-      case 48: // $bb17
-        $retval_i=-1; //@line 1433 "_hotshot.c"
-        var $254=$self; //@line 1535 "_hotshot.c"
-        var $255=$254; //@line 1535 "_hotshot.c"
-        var $256=$255; //@line 1535 "_hotshot.c"
-        var $257=HEAP[$256]; //@line 1535 "_hotshot.c"
-        var $258=($257) - 1; //@line 1535 "_hotshot.c"
-        var $259=$255; //@line 1535 "_hotshot.c"
-        HEAP[$259]=$258; //@line 1535 "_hotshot.c"
-        var $260=$255; //@line 1535 "_hotshot.c"
-        var $261=HEAP[$260]; //@line 1535 "_hotshot.c"
-        var $262=($261)==0; //@line 1535 "_hotshot.c"
-        if ($262) { __label__ = 49; break; } else { __label__ = 50; break; } //@line 1535 "_hotshot.c"
-      case 49: // $bb18
-        var $263=$self; //@line 1535 "_hotshot.c"
-        var $264=$263; //@line 1535 "_hotshot.c"
-        var $265=$264+4; //@line 1535 "_hotshot.c"
-        var $266=HEAP[$265]; //@line 1535 "_hotshot.c"
-        var $267=$266+24; //@line 1535 "_hotshot.c"
-        var $268=HEAP[$267]; //@line 1535 "_hotshot.c"
-        var $269=$self; //@line 1535 "_hotshot.c"
-        var $270=$269; //@line 1535 "_hotshot.c"
-        FUNCTION_TABLE[$268]($270); //@line 1535 "_hotshot.c"
-        __label__ = 50; break; //@line 1535 "_hotshot.c"
-      case 50: // $bb19
+        var $98=$self; //@line 1533 "_hotshot.c"
+        var $99=_write_header($98); //@line 1533 "_hotshot.c"
+        var $100=($99)!=0; //@line 1533 "_hotshot.c"
+        if ($100) { __label__ = 18; break; } else { __label__ = 21; break; } //@line 1533 "_hotshot.c"
+      case 18: // $bb17
+        var $101=$self; //@line 1535 "_hotshot.c"
+        var $102=$101; //@line 1535 "_hotshot.c"
+        var $103=$102; //@line 1535 "_hotshot.c"
+        var $104=HEAP[$103]; //@line 1535 "_hotshot.c"
+        var $105=($104) - 1; //@line 1535 "_hotshot.c"
+        var $106=$102; //@line 1535 "_hotshot.c"
+        HEAP[$106]=$105; //@line 1535 "_hotshot.c"
+        var $107=$102; //@line 1535 "_hotshot.c"
+        var $108=HEAP[$107]; //@line 1535 "_hotshot.c"
+        var $109=($108)==0; //@line 1535 "_hotshot.c"
+        if ($109) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1535 "_hotshot.c"
+      case 19: // $bb18
+        var $110=$self; //@line 1535 "_hotshot.c"
+        var $111=$110; //@line 1535 "_hotshot.c"
+        var $112=$111+4; //@line 1535 "_hotshot.c"
+        var $113=HEAP[$112]; //@line 1535 "_hotshot.c"
+        var $114=$113+24; //@line 1535 "_hotshot.c"
+        var $115=HEAP[$114]; //@line 1535 "_hotshot.c"
+        var $116=$self; //@line 1535 "_hotshot.c"
+        var $117=$116; //@line 1535 "_hotshot.c"
+        FUNCTION_TABLE[$115]($117); //@line 1535 "_hotshot.c"
+        __label__ = 20; break; //@line 1535 "_hotshot.c"
+      case 20: // $bb19
         $self=0; //@line 1536 "_hotshot.c"
-        __label__ = 51; break; //@line 1536 "_hotshot.c"
-      case 51: // $bb20
-        var $271=$self; //@line 1539 "_hotshot.c"
-        var $272=$271; //@line 1539 "_hotshot.c"
-        $3=$272; //@line 1539 "_hotshot.c"
-        __label__ = 52; break; //@line 1539 "_hotshot.c"
-      case 52: // $bb21
-        var $273=$3; //@line 1503 "_hotshot.c"
-        $retval=$273; //@line 1503 "_hotshot.c"
+        __label__ = 21; break; //@line 1536 "_hotshot.c"
+      case 21: // $bb20
+        var $118=$self; //@line 1539 "_hotshot.c"
+        var $119=$118; //@line 1539 "_hotshot.c"
+        $0=$119; //@line 1539 "_hotshot.c"
+        __label__ = 22; break; //@line 1539 "_hotshot.c"
+      case 22: // $bb21
+        var $120=$0; //@line 1503 "_hotshot.c"
+        $retval=$120; //@line 1503 "_hotshot.c"
         var $retval22=$retval; //@line 1503 "_hotshot.c"
         STACKTOP = __stackBase__;
         return $retval22; //@line 1503 "_hotshot.c"
@@ -4562,7 +4043,7 @@ var __str74;
         $args_addr=$args;
         $result=0; //@line 1551 "_hotshot.c"
         var $1=$args_addr; //@line 1553 "_hotshot.c"
-        var $2=_PyArg_ParseTuple($1, __str55, $logfilename); //@line 1553 "_hotshot.c"
+        var $2=_PyArg_ParseTuple($1, __str55, allocate([$logfilename,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 1553 "_hotshot.c"
         var $3=($2)!=0; //@line 1553 "_hotshot.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1553 "_hotshot.c"
       case 1: // $bb
@@ -4623,7 +4104,7 @@ var __str74;
       case 2: // $bb1
         var $3=HEAP[_rusage_diff]; //@line 1593 "_hotshot.c"
         var $4=HEAP[_timeofday_diff]; //@line 1593 "_hotshot.c"
-        var $5=_Py_BuildValue(__str56, $4, $3); //@line 1593 "_hotshot.c"
+        var $5=_Py_BuildValue(__str56, allocate([$4,0,0,0,$3,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1593 "_hotshot.c"
         $0=$5; //@line 1593 "_hotshot.c"
         var $6=$0; //@line 1593 "_hotshot.c"
         $retval=$6; //@line 1593 "_hotshot.c"

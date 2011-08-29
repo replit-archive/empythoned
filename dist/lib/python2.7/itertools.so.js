@@ -80,7 +80,7 @@ var $struct_teedataobject___SIZE = 248; // %struct.teedataobject
   
 var $struct_teeobject___SIZE = 20; // %struct.teeobject
   
-var __Py_NoneStruct;
+
 var __str;
 var _kwargs_8351;
 var __str1;
@@ -108,12 +108,12 @@ var _tee_methods;
 var __str13;
 var _tee_type;
 var __str14;
-var _PyExc_ValueError;
+
 var __str15;
 var _tee_doc;
 var __str16;
 var __str17;
-var _PyExc_StopIteration;
+
 var _cycle_doc;
 var __str18;
 var _cycle_type;
@@ -137,12 +137,12 @@ var __str30;
 var _islice_type;
 var __str31;
 var __str32;
-var _PyTuple_Type;
+
 var _starmap_doc;
 var __str33;
 var _starmap_type;
 var __str34;
-var _PyExc_TypeError;
+
 var __str35;
 var _imap_doc;
 var __str36;
@@ -194,7 +194,7 @@ var __str58;
 var _compress_type;
 var __str59;
 var __str60;
-var _PyBool_Type;
+
 var _ifilter_doc;
 var __str61;
 var _ifilter_type;
@@ -244,7 +244,7 @@ var _repeat_methods;
 var _repeat_doc;
 var __str90;
 var _repeat_type;
-var _PyDict_Type;
+
 var __str91;
 var __str92;
 var ___PRETTY_FUNCTION___12366;
@@ -255,7 +255,7 @@ var _iziplongest_type;
 var _module_doc;
 var _module_methods;
 var _C_280_12667;
-var _PyType_Type;
+
 var __str95;
 var __str96;
 var ___PRETTY_FUNCTION___12663;
@@ -337,7 +337,7 @@ var ___PRETTY_FUNCTION___12663;
         HEAP[$keyfunc]=__Py_NoneStruct; //@line 31 "itertoolsmodule.c"
         var $1=$args_addr; //@line 33 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 33 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str, _kwargs_8351, $it, $keyfunc); //@line 33 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str, _kwargs_8351, allocate([$it,0,0,0,$keyfunc,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 33 "itertoolsmodule.c"
         var $4=($3)==0; //@line 33 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 33 "itertoolsmodule.c"
       case 1: // $bb
@@ -757,14 +757,9 @@ var ___PRETTY_FUNCTION___12663;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $parent_addr_i;
-        var $tgtkey_addr_i;
-        var $retval_i;
-        var $0;
-        var $igo_i;
         var $gbo_addr;
         var $retval;
-        var $1;
+        var $0;
         var $newvalue;
         var $newkey;
         var $r;
@@ -774,303 +769,325 @@ var ___PRETTY_FUNCTION___12663;
         $gbo_addr=$gbo;
         __label__ = 1; break; //@line 78 "itertoolsmodule.c"
       case 1: // $bb
-        var $2=$gbo_addr; //@line 83 "itertoolsmodule.c"
-        var $3=$2+20; //@line 83 "itertoolsmodule.c"
-        var $4=HEAP[$3]; //@line 83 "itertoolsmodule.c"
-        var $5=($4)!=0; //@line 83 "itertoolsmodule.c"
-        if ($5) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 83 "itertoolsmodule.c"
+        var $1=$gbo_addr; //@line 83 "itertoolsmodule.c"
+        var $2=$1+20; //@line 83 "itertoolsmodule.c"
+        var $3=HEAP[$2]; //@line 83 "itertoolsmodule.c"
+        var $4=($3)!=0; //@line 83 "itertoolsmodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 83 "itertoolsmodule.c"
       case 2: // $bb1
-        var $6=$gbo_addr; //@line 85 "itertoolsmodule.c"
-        var $7=$6+16; //@line 85 "itertoolsmodule.c"
-        var $8=HEAP[$7]; //@line 85 "itertoolsmodule.c"
-        var $9=($8)==0; //@line 85 "itertoolsmodule.c"
-        if ($9) { __label__ = 20; break; } else { __label__ = 3; break; } //@line 85 "itertoolsmodule.c"
+        var $5=$gbo_addr; //@line 85 "itertoolsmodule.c"
+        var $6=$5+16; //@line 85 "itertoolsmodule.c"
+        var $7=HEAP[$6]; //@line 85 "itertoolsmodule.c"
+        var $8=($7)==0; //@line 85 "itertoolsmodule.c"
+        if ($8) { __label__ = 20; break; } else { __label__ = 3; break; } //@line 85 "itertoolsmodule.c"
       case 3: // $bb2
-        var $10=$gbo_addr; //@line 90 "itertoolsmodule.c"
-        var $11=$10+20; //@line 90 "itertoolsmodule.c"
-        var $12=HEAP[$11]; //@line 90 "itertoolsmodule.c"
-        var $13=$gbo_addr; //@line 90 "itertoolsmodule.c"
-        var $14=$13+16; //@line 90 "itertoolsmodule.c"
-        var $15=HEAP[$14]; //@line 90 "itertoolsmodule.c"
-        var $16=_PyObject_RichCompareBool($15, $12, 2); //@line 90 "itertoolsmodule.c"
-        $rcmp=$16; //@line 90 "itertoolsmodule.c"
-        var $17=$rcmp; //@line 92 "itertoolsmodule.c"
-        var $18=($17)==-1; //@line 92 "itertoolsmodule.c"
-        if ($18) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 92 "itertoolsmodule.c"
+        var $9=$gbo_addr; //@line 90 "itertoolsmodule.c"
+        var $10=$9+20; //@line 90 "itertoolsmodule.c"
+        var $11=HEAP[$10]; //@line 90 "itertoolsmodule.c"
+        var $12=$gbo_addr; //@line 90 "itertoolsmodule.c"
+        var $13=$12+16; //@line 90 "itertoolsmodule.c"
+        var $14=HEAP[$13]; //@line 90 "itertoolsmodule.c"
+        var $15=_PyObject_RichCompareBool($14, $11, 2); //@line 90 "itertoolsmodule.c"
+        $rcmp=$15; //@line 90 "itertoolsmodule.c"
+        var $16=$rcmp; //@line 92 "itertoolsmodule.c"
+        var $17=($16)==-1; //@line 92 "itertoolsmodule.c"
+        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 92 "itertoolsmodule.c"
       case 4: // $bb3
-        $1=0; //@line 93 "itertoolsmodule.c"
-        __label__ = 30; break; //@line 93 "itertoolsmodule.c"
+        $0=0; //@line 93 "itertoolsmodule.c"
+        __label__ = 28; break; //@line 93 "itertoolsmodule.c"
       case 5: // $bb4
-        var $19=$rcmp; //@line 94 "itertoolsmodule.c"
-        var $20=($19)==0; //@line 94 "itertoolsmodule.c"
-        if ($20) { __label__ = 20; break; } else { __label__ = 6; break; } //@line 94 "itertoolsmodule.c"
+        var $18=$rcmp; //@line 94 "itertoolsmodule.c"
+        var $19=($18)==0; //@line 94 "itertoolsmodule.c"
+        if ($19) { __label__ = 20; break; } else { __label__ = 6; break; } //@line 94 "itertoolsmodule.c"
       case 6: // $bb5
-        var $21=$gbo_addr; //@line 98 "itertoolsmodule.c"
-        var $22=$21+8; //@line 98 "itertoolsmodule.c"
-        var $23=HEAP[$22]; //@line 98 "itertoolsmodule.c"
-        var $24=_PyIter_Next($23); //@line 98 "itertoolsmodule.c"
-        $newvalue=$24; //@line 98 "itertoolsmodule.c"
-        var $25=($24)==0; //@line 99 "itertoolsmodule.c"
-        if ($25) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 99 "itertoolsmodule.c"
+        var $20=$gbo_addr; //@line 98 "itertoolsmodule.c"
+        var $21=$20+8; //@line 98 "itertoolsmodule.c"
+        var $22=HEAP[$21]; //@line 98 "itertoolsmodule.c"
+        var $23=_PyIter_Next($22); //@line 98 "itertoolsmodule.c"
+        $newvalue=$23; //@line 98 "itertoolsmodule.c"
+        var $24=($23)==0; //@line 99 "itertoolsmodule.c"
+        if ($24) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 99 "itertoolsmodule.c"
       case 7: // $bb6
-        $1=0; //@line 100 "itertoolsmodule.c"
-        __label__ = 30; break; //@line 100 "itertoolsmodule.c"
+        $0=0; //@line 100 "itertoolsmodule.c"
+        __label__ = 28; break; //@line 100 "itertoolsmodule.c"
       case 8: // $bb7
-        var $26=$gbo_addr; //@line 102 "itertoolsmodule.c"
-        var $27=$26+12; //@line 102 "itertoolsmodule.c"
-        var $28=HEAP[$27]; //@line 102 "itertoolsmodule.c"
-        var $29=($28)==(__Py_NoneStruct); //@line 102 "itertoolsmodule.c"
-        if ($29) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 102 "itertoolsmodule.c"
+        var $25=$gbo_addr; //@line 102 "itertoolsmodule.c"
+        var $26=$25+12; //@line 102 "itertoolsmodule.c"
+        var $27=HEAP[$26]; //@line 102 "itertoolsmodule.c"
+        var $28=($27)==(__Py_NoneStruct); //@line 102 "itertoolsmodule.c"
+        if ($28) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 102 "itertoolsmodule.c"
       case 9: // $bb8
-        var $30=$newvalue; //@line 103 "itertoolsmodule.c"
-        $newkey=$30; //@line 103 "itertoolsmodule.c"
-        var $31=$newvalue; //@line 104 "itertoolsmodule.c"
-        var $32=$31; //@line 104 "itertoolsmodule.c"
-        var $33=HEAP[$32]; //@line 104 "itertoolsmodule.c"
-        var $34=($33) + 1; //@line 104 "itertoolsmodule.c"
-        var $35=$newvalue; //@line 104 "itertoolsmodule.c"
-        var $36=$35; //@line 104 "itertoolsmodule.c"
-        HEAP[$36]=$34; //@line 104 "itertoolsmodule.c"
+        var $29=$newvalue; //@line 103 "itertoolsmodule.c"
+        $newkey=$29; //@line 103 "itertoolsmodule.c"
+        var $30=$newvalue; //@line 104 "itertoolsmodule.c"
+        var $31=$30; //@line 104 "itertoolsmodule.c"
+        var $32=HEAP[$31]; //@line 104 "itertoolsmodule.c"
+        var $33=($32) + 1; //@line 104 "itertoolsmodule.c"
+        var $34=$newvalue; //@line 104 "itertoolsmodule.c"
+        var $35=$34; //@line 104 "itertoolsmodule.c"
+        HEAP[$35]=$33; //@line 104 "itertoolsmodule.c"
         __label__ = 14; break; //@line 104 "itertoolsmodule.c"
       case 10: // $bb9
-        var $37=$gbo_addr; //@line 106 "itertoolsmodule.c"
-        var $38=$37+12; //@line 106 "itertoolsmodule.c"
-        var $39=HEAP[$38]; //@line 106 "itertoolsmodule.c"
-        var $40=$newvalue; //@line 106 "itertoolsmodule.c"
-        var $41=_PyObject_CallFunctionObjArgs($39, $40, 0); //@line 106 "itertoolsmodule.c"
-        $newkey=$41; //@line 106 "itertoolsmodule.c"
-        var $42=$newkey; //@line 108 "itertoolsmodule.c"
-        var $43=($42)==0; //@line 108 "itertoolsmodule.c"
-        if ($43) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 108 "itertoolsmodule.c"
+        var $36=$gbo_addr; //@line 106 "itertoolsmodule.c"
+        var $37=$36+12; //@line 106 "itertoolsmodule.c"
+        var $38=HEAP[$37]; //@line 106 "itertoolsmodule.c"
+        var $39=$newvalue; //@line 106 "itertoolsmodule.c"
+        var $40=_PyObject_CallFunctionObjArgs($38, allocate([$39,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 106 "itertoolsmodule.c"
+        $newkey=$40; //@line 106 "itertoolsmodule.c"
+        var $41=$newkey; //@line 108 "itertoolsmodule.c"
+        var $42=($41)==0; //@line 108 "itertoolsmodule.c"
+        if ($42) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 108 "itertoolsmodule.c"
       case 11: // $bb10
-        var $44=$newvalue; //@line 109 "itertoolsmodule.c"
-        var $45=$44; //@line 109 "itertoolsmodule.c"
-        var $46=HEAP[$45]; //@line 109 "itertoolsmodule.c"
-        var $47=($46) - 1; //@line 109 "itertoolsmodule.c"
-        var $48=$newvalue; //@line 109 "itertoolsmodule.c"
-        var $49=$48; //@line 109 "itertoolsmodule.c"
-        HEAP[$49]=$47; //@line 109 "itertoolsmodule.c"
-        var $50=$newvalue; //@line 109 "itertoolsmodule.c"
-        var $51=$50; //@line 109 "itertoolsmodule.c"
-        var $52=HEAP[$51]; //@line 109 "itertoolsmodule.c"
-        var $53=($52)==0; //@line 109 "itertoolsmodule.c"
-        if ($53) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 109 "itertoolsmodule.c"
+        var $43=$newvalue; //@line 109 "itertoolsmodule.c"
+        var $44=$43; //@line 109 "itertoolsmodule.c"
+        var $45=HEAP[$44]; //@line 109 "itertoolsmodule.c"
+        var $46=($45) - 1; //@line 109 "itertoolsmodule.c"
+        var $47=$newvalue; //@line 109 "itertoolsmodule.c"
+        var $48=$47; //@line 109 "itertoolsmodule.c"
+        HEAP[$48]=$46; //@line 109 "itertoolsmodule.c"
+        var $49=$newvalue; //@line 109 "itertoolsmodule.c"
+        var $50=$49; //@line 109 "itertoolsmodule.c"
+        var $51=HEAP[$50]; //@line 109 "itertoolsmodule.c"
+        var $52=($51)==0; //@line 109 "itertoolsmodule.c"
+        if ($52) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 109 "itertoolsmodule.c"
       case 12: // $bb11
-        var $54=$newvalue; //@line 109 "itertoolsmodule.c"
-        var $55=$54+4; //@line 109 "itertoolsmodule.c"
-        var $56=HEAP[$55]; //@line 109 "itertoolsmodule.c"
-        var $57=$56+24; //@line 109 "itertoolsmodule.c"
-        var $58=HEAP[$57]; //@line 109 "itertoolsmodule.c"
-        var $59=$newvalue; //@line 109 "itertoolsmodule.c"
-        FUNCTION_TABLE[$58]($59); //@line 109 "itertoolsmodule.c"
+        var $53=$newvalue; //@line 109 "itertoolsmodule.c"
+        var $54=$53+4; //@line 109 "itertoolsmodule.c"
+        var $55=HEAP[$54]; //@line 109 "itertoolsmodule.c"
+        var $56=$55+24; //@line 109 "itertoolsmodule.c"
+        var $57=HEAP[$56]; //@line 109 "itertoolsmodule.c"
+        var $58=$newvalue; //@line 109 "itertoolsmodule.c"
+        FUNCTION_TABLE[$57]($58); //@line 109 "itertoolsmodule.c"
         __label__ = 13; break; //@line 109 "itertoolsmodule.c"
       case 13: // $bb12
-        $1=0; //@line 110 "itertoolsmodule.c"
-        __label__ = 30; break; //@line 110 "itertoolsmodule.c"
+        $0=0; //@line 110 "itertoolsmodule.c"
+        __label__ = 28; break; //@line 110 "itertoolsmodule.c"
       case 14: // $bb13
-        var $60=$gbo_addr; //@line 114 "itertoolsmodule.c"
-        var $61=$60+20; //@line 114 "itertoolsmodule.c"
-        var $62=HEAP[$61]; //@line 114 "itertoolsmodule.c"
-        $tmp=$62; //@line 114 "itertoolsmodule.c"
-        var $63=$gbo_addr; //@line 115 "itertoolsmodule.c"
-        var $64=$63+20; //@line 115 "itertoolsmodule.c"
-        var $65=$newkey; //@line 115 "itertoolsmodule.c"
-        HEAP[$64]=$65; //@line 115 "itertoolsmodule.c"
-        var $66=$tmp; //@line 116 "itertoolsmodule.c"
-        var $67=($66)!=0; //@line 116 "itertoolsmodule.c"
-        if ($67) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 116 "itertoolsmodule.c"
+        var $59=$gbo_addr; //@line 114 "itertoolsmodule.c"
+        var $60=$59+20; //@line 114 "itertoolsmodule.c"
+        var $61=HEAP[$60]; //@line 114 "itertoolsmodule.c"
+        $tmp=$61; //@line 114 "itertoolsmodule.c"
+        var $62=$gbo_addr; //@line 115 "itertoolsmodule.c"
+        var $63=$62+20; //@line 115 "itertoolsmodule.c"
+        var $64=$newkey; //@line 115 "itertoolsmodule.c"
+        HEAP[$63]=$64; //@line 115 "itertoolsmodule.c"
+        var $65=$tmp; //@line 116 "itertoolsmodule.c"
+        var $66=($65)!=0; //@line 116 "itertoolsmodule.c"
+        if ($66) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 116 "itertoolsmodule.c"
       case 15: // $bb14
-        var $68=$tmp; //@line 116 "itertoolsmodule.c"
-        var $69=$68; //@line 116 "itertoolsmodule.c"
-        var $70=HEAP[$69]; //@line 116 "itertoolsmodule.c"
-        var $71=($70) - 1; //@line 116 "itertoolsmodule.c"
-        var $72=$tmp; //@line 116 "itertoolsmodule.c"
-        var $73=$72; //@line 116 "itertoolsmodule.c"
-        HEAP[$73]=$71; //@line 116 "itertoolsmodule.c"
-        var $74=$tmp; //@line 116 "itertoolsmodule.c"
-        var $75=$74; //@line 116 "itertoolsmodule.c"
-        var $76=HEAP[$75]; //@line 116 "itertoolsmodule.c"
-        var $77=($76)==0; //@line 116 "itertoolsmodule.c"
-        if ($77) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 116 "itertoolsmodule.c"
+        var $67=$tmp; //@line 116 "itertoolsmodule.c"
+        var $68=$67; //@line 116 "itertoolsmodule.c"
+        var $69=HEAP[$68]; //@line 116 "itertoolsmodule.c"
+        var $70=($69) - 1; //@line 116 "itertoolsmodule.c"
+        var $71=$tmp; //@line 116 "itertoolsmodule.c"
+        var $72=$71; //@line 116 "itertoolsmodule.c"
+        HEAP[$72]=$70; //@line 116 "itertoolsmodule.c"
+        var $73=$tmp; //@line 116 "itertoolsmodule.c"
+        var $74=$73; //@line 116 "itertoolsmodule.c"
+        var $75=HEAP[$74]; //@line 116 "itertoolsmodule.c"
+        var $76=($75)==0; //@line 116 "itertoolsmodule.c"
+        if ($76) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 116 "itertoolsmodule.c"
       case 16: // $bb15
-        var $78=$tmp; //@line 116 "itertoolsmodule.c"
-        var $79=$78+4; //@line 116 "itertoolsmodule.c"
-        var $80=HEAP[$79]; //@line 116 "itertoolsmodule.c"
-        var $81=$80+24; //@line 116 "itertoolsmodule.c"
-        var $82=HEAP[$81]; //@line 116 "itertoolsmodule.c"
-        var $83=$tmp; //@line 116 "itertoolsmodule.c"
-        FUNCTION_TABLE[$82]($83); //@line 116 "itertoolsmodule.c"
+        var $77=$tmp; //@line 116 "itertoolsmodule.c"
+        var $78=$77+4; //@line 116 "itertoolsmodule.c"
+        var $79=HEAP[$78]; //@line 116 "itertoolsmodule.c"
+        var $80=$79+24; //@line 116 "itertoolsmodule.c"
+        var $81=HEAP[$80]; //@line 116 "itertoolsmodule.c"
+        var $82=$tmp; //@line 116 "itertoolsmodule.c"
+        FUNCTION_TABLE[$81]($82); //@line 116 "itertoolsmodule.c"
         __label__ = 17; break; //@line 116 "itertoolsmodule.c"
       case 17: // $bb16
-        var $84=$gbo_addr; //@line 118 "itertoolsmodule.c"
-        var $85=$84+24; //@line 118 "itertoolsmodule.c"
-        var $86=HEAP[$85]; //@line 118 "itertoolsmodule.c"
-        $tmp=$86; //@line 118 "itertoolsmodule.c"
-        var $87=$gbo_addr; //@line 119 "itertoolsmodule.c"
-        var $88=$87+24; //@line 119 "itertoolsmodule.c"
-        var $89=$newvalue; //@line 119 "itertoolsmodule.c"
-        HEAP[$88]=$89; //@line 119 "itertoolsmodule.c"
-        var $90=$tmp; //@line 120 "itertoolsmodule.c"
-        var $91=($90)!=0; //@line 120 "itertoolsmodule.c"
-        if ($91) { __label__ = 18; break; } else { __label__ = 1; break; } //@line 120 "itertoolsmodule.c"
+        var $83=$gbo_addr; //@line 118 "itertoolsmodule.c"
+        var $84=$83+24; //@line 118 "itertoolsmodule.c"
+        var $85=HEAP[$84]; //@line 118 "itertoolsmodule.c"
+        $tmp=$85; //@line 118 "itertoolsmodule.c"
+        var $86=$gbo_addr; //@line 119 "itertoolsmodule.c"
+        var $87=$86+24; //@line 119 "itertoolsmodule.c"
+        var $88=$newvalue; //@line 119 "itertoolsmodule.c"
+        HEAP[$87]=$88; //@line 119 "itertoolsmodule.c"
+        var $89=$tmp; //@line 120 "itertoolsmodule.c"
+        var $90=($89)!=0; //@line 120 "itertoolsmodule.c"
+        if ($90) { __label__ = 18; break; } else { __label__ = 1; break; } //@line 120 "itertoolsmodule.c"
       case 18: // $bb17
-        var $92=$tmp; //@line 120 "itertoolsmodule.c"
-        var $93=$92; //@line 120 "itertoolsmodule.c"
-        var $94=HEAP[$93]; //@line 120 "itertoolsmodule.c"
-        var $95=($94) - 1; //@line 120 "itertoolsmodule.c"
-        var $96=$tmp; //@line 120 "itertoolsmodule.c"
-        var $97=$96; //@line 120 "itertoolsmodule.c"
-        HEAP[$97]=$95; //@line 120 "itertoolsmodule.c"
-        var $98=$tmp; //@line 120 "itertoolsmodule.c"
-        var $99=$98; //@line 120 "itertoolsmodule.c"
-        var $100=HEAP[$99]; //@line 120 "itertoolsmodule.c"
-        var $101=($100)==0; //@line 120 "itertoolsmodule.c"
-        if ($101) { __label__ = 19; break; } else { __label__ = 1; break; } //@line 120 "itertoolsmodule.c"
+        var $91=$tmp; //@line 120 "itertoolsmodule.c"
+        var $92=$91; //@line 120 "itertoolsmodule.c"
+        var $93=HEAP[$92]; //@line 120 "itertoolsmodule.c"
+        var $94=($93) - 1; //@line 120 "itertoolsmodule.c"
+        var $95=$tmp; //@line 120 "itertoolsmodule.c"
+        var $96=$95; //@line 120 "itertoolsmodule.c"
+        HEAP[$96]=$94; //@line 120 "itertoolsmodule.c"
+        var $97=$tmp; //@line 120 "itertoolsmodule.c"
+        var $98=$97; //@line 120 "itertoolsmodule.c"
+        var $99=HEAP[$98]; //@line 120 "itertoolsmodule.c"
+        var $100=($99)==0; //@line 120 "itertoolsmodule.c"
+        if ($100) { __label__ = 19; break; } else { __label__ = 1; break; } //@line 120 "itertoolsmodule.c"
       case 19: // $bb18
-        var $102=$tmp; //@line 120 "itertoolsmodule.c"
-        var $103=$102+4; //@line 120 "itertoolsmodule.c"
-        var $104=HEAP[$103]; //@line 120 "itertoolsmodule.c"
-        var $105=$104+24; //@line 120 "itertoolsmodule.c"
-        var $106=HEAP[$105]; //@line 120 "itertoolsmodule.c"
-        var $107=$tmp; //@line 120 "itertoolsmodule.c"
-        FUNCTION_TABLE[$106]($107); //@line 120 "itertoolsmodule.c"
+        var $101=$tmp; //@line 120 "itertoolsmodule.c"
+        var $102=$101+4; //@line 120 "itertoolsmodule.c"
+        var $103=HEAP[$102]; //@line 120 "itertoolsmodule.c"
+        var $104=$103+24; //@line 120 "itertoolsmodule.c"
+        var $105=HEAP[$104]; //@line 120 "itertoolsmodule.c"
+        var $106=$tmp; //@line 120 "itertoolsmodule.c"
+        FUNCTION_TABLE[$105]($106); //@line 120 "itertoolsmodule.c"
         __label__ = 1; break; //@line 120 "itertoolsmodule.c"
       case 20: // $bb20
-        var $108=$gbo_addr; //@line 123 "itertoolsmodule.c"
-        var $109=$108+20; //@line 123 "itertoolsmodule.c"
-        var $110=HEAP[$109]; //@line 123 "itertoolsmodule.c"
-        var $111=$110; //@line 123 "itertoolsmodule.c"
-        var $112=HEAP[$111]; //@line 123 "itertoolsmodule.c"
-        var $113=($112) + 1; //@line 123 "itertoolsmodule.c"
-        var $114=$110; //@line 123 "itertoolsmodule.c"
-        HEAP[$114]=$113; //@line 123 "itertoolsmodule.c"
-        var $115=$gbo_addr; //@line 124 "itertoolsmodule.c"
-        var $116=$115+16; //@line 124 "itertoolsmodule.c"
-        var $117=HEAP[$116]; //@line 124 "itertoolsmodule.c"
-        $tmp=$117; //@line 124 "itertoolsmodule.c"
-        var $118=$gbo_addr; //@line 125 "itertoolsmodule.c"
-        var $119=$118+20; //@line 125 "itertoolsmodule.c"
-        var $120=HEAP[$119]; //@line 125 "itertoolsmodule.c"
-        var $121=$gbo_addr; //@line 125 "itertoolsmodule.c"
-        var $122=$121+16; //@line 125 "itertoolsmodule.c"
-        HEAP[$122]=$120; //@line 125 "itertoolsmodule.c"
-        var $123=$tmp; //@line 126 "itertoolsmodule.c"
-        var $124=($123)!=0; //@line 126 "itertoolsmodule.c"
-        if ($124) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 126 "itertoolsmodule.c"
+        var $107=$gbo_addr; //@line 123 "itertoolsmodule.c"
+        var $108=$107+20; //@line 123 "itertoolsmodule.c"
+        var $109=HEAP[$108]; //@line 123 "itertoolsmodule.c"
+        var $110=$109; //@line 123 "itertoolsmodule.c"
+        var $111=HEAP[$110]; //@line 123 "itertoolsmodule.c"
+        var $112=($111) + 1; //@line 123 "itertoolsmodule.c"
+        var $113=$109; //@line 123 "itertoolsmodule.c"
+        HEAP[$113]=$112; //@line 123 "itertoolsmodule.c"
+        var $114=$gbo_addr; //@line 124 "itertoolsmodule.c"
+        var $115=$114+16; //@line 124 "itertoolsmodule.c"
+        var $116=HEAP[$115]; //@line 124 "itertoolsmodule.c"
+        $tmp=$116; //@line 124 "itertoolsmodule.c"
+        var $117=$gbo_addr; //@line 125 "itertoolsmodule.c"
+        var $118=$117+20; //@line 125 "itertoolsmodule.c"
+        var $119=HEAP[$118]; //@line 125 "itertoolsmodule.c"
+        var $120=$gbo_addr; //@line 125 "itertoolsmodule.c"
+        var $121=$120+16; //@line 125 "itertoolsmodule.c"
+        HEAP[$121]=$119; //@line 125 "itertoolsmodule.c"
+        var $122=$tmp; //@line 126 "itertoolsmodule.c"
+        var $123=($122)!=0; //@line 126 "itertoolsmodule.c"
+        if ($123) { __label__ = 21; break; } else { __label__ = 23; break; } //@line 126 "itertoolsmodule.c"
       case 21: // $bb21
-        var $125=$tmp; //@line 126 "itertoolsmodule.c"
-        var $126=$125; //@line 126 "itertoolsmodule.c"
-        var $127=HEAP[$126]; //@line 126 "itertoolsmodule.c"
-        var $128=($127) - 1; //@line 126 "itertoolsmodule.c"
-        var $129=$tmp; //@line 126 "itertoolsmodule.c"
-        var $130=$129; //@line 126 "itertoolsmodule.c"
-        HEAP[$130]=$128; //@line 126 "itertoolsmodule.c"
-        var $131=$tmp; //@line 126 "itertoolsmodule.c"
-        var $132=$131; //@line 126 "itertoolsmodule.c"
-        var $133=HEAP[$132]; //@line 126 "itertoolsmodule.c"
-        var $134=($133)==0; //@line 126 "itertoolsmodule.c"
-        if ($134) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 126 "itertoolsmodule.c"
+        var $124=$tmp; //@line 126 "itertoolsmodule.c"
+        var $125=$124; //@line 126 "itertoolsmodule.c"
+        var $126=HEAP[$125]; //@line 126 "itertoolsmodule.c"
+        var $127=($126) - 1; //@line 126 "itertoolsmodule.c"
+        var $128=$tmp; //@line 126 "itertoolsmodule.c"
+        var $129=$128; //@line 126 "itertoolsmodule.c"
+        HEAP[$129]=$127; //@line 126 "itertoolsmodule.c"
+        var $130=$tmp; //@line 126 "itertoolsmodule.c"
+        var $131=$130; //@line 126 "itertoolsmodule.c"
+        var $132=HEAP[$131]; //@line 126 "itertoolsmodule.c"
+        var $133=($132)==0; //@line 126 "itertoolsmodule.c"
+        if ($133) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 126 "itertoolsmodule.c"
       case 22: // $bb22
-        var $135=$tmp; //@line 126 "itertoolsmodule.c"
-        var $136=$135+4; //@line 126 "itertoolsmodule.c"
-        var $137=HEAP[$136]; //@line 126 "itertoolsmodule.c"
-        var $138=$137+24; //@line 126 "itertoolsmodule.c"
-        var $139=HEAP[$138]; //@line 126 "itertoolsmodule.c"
-        var $140=$tmp; //@line 126 "itertoolsmodule.c"
-        FUNCTION_TABLE[$139]($140); //@line 126 "itertoolsmodule.c"
+        var $134=$tmp; //@line 126 "itertoolsmodule.c"
+        var $135=$134+4; //@line 126 "itertoolsmodule.c"
+        var $136=HEAP[$135]; //@line 126 "itertoolsmodule.c"
+        var $137=$136+24; //@line 126 "itertoolsmodule.c"
+        var $138=HEAP[$137]; //@line 126 "itertoolsmodule.c"
+        var $139=$tmp; //@line 126 "itertoolsmodule.c"
+        FUNCTION_TABLE[$138]($139); //@line 126 "itertoolsmodule.c"
         __label__ = 23; break; //@line 126 "itertoolsmodule.c"
       case 23: // $bb23
-        var $141=$gbo_addr; //@line 128 "itertoolsmodule.c"
-        var $142=$141+16; //@line 128 "itertoolsmodule.c"
-        var $143=HEAP[$142]; //@line 128 "itertoolsmodule.c"
-        var $144=$gbo_addr; //@line 128 "itertoolsmodule.c"
-        $parent_addr_i=$144;
-        $tgtkey_addr_i=$143;
-        var $145=__PyObject_GC_New(__grouper_type); //@line 201 "itertoolsmodule.c"
-        var $146=$145; //@line 201 "itertoolsmodule.c"
-        $igo_i=$146; //@line 201 "itertoolsmodule.c"
-        var $147=($146)==0; //@line 202 "itertoolsmodule.c"
-        if ($147) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 202 "itertoolsmodule.c"
-      case 24: // $_grouper_create_exit_thread
-        $0=0; //@line 203 "itertoolsmodule.c"
-        $retval_i=0; //@line 203 "itertoolsmodule.c"
-        $grouper=0; //@line 128 "itertoolsmodule.c"
-        __label__ = 26; break;
-      case 25: // $_grouper_create_exit
-        var $148=$parent_addr_i; //@line 204 "itertoolsmodule.c"
-        var $149=$148; //@line 204 "itertoolsmodule.c"
-        var $150=$igo_i; //@line 204 "itertoolsmodule.c"
-        var $151=$150+8; //@line 204 "itertoolsmodule.c"
-        HEAP[$151]=$149; //@line 204 "itertoolsmodule.c"
-        var $152=$parent_addr_i; //@line 205 "itertoolsmodule.c"
-        var $153=$152; //@line 205 "itertoolsmodule.c"
-        var $154=$153; //@line 205 "itertoolsmodule.c"
-        var $155=HEAP[$154]; //@line 205 "itertoolsmodule.c"
-        var $156=($155) + 1; //@line 205 "itertoolsmodule.c"
-        var $157=$153; //@line 205 "itertoolsmodule.c"
-        HEAP[$157]=$156; //@line 205 "itertoolsmodule.c"
-        var $158=$igo_i; //@line 206 "itertoolsmodule.c"
-        var $159=$158+12; //@line 206 "itertoolsmodule.c"
-        var $160=$tgtkey_addr_i; //@line 206 "itertoolsmodule.c"
-        HEAP[$159]=$160; //@line 206 "itertoolsmodule.c"
-        var $161=$tgtkey_addr_i; //@line 207 "itertoolsmodule.c"
-        var $162=$161; //@line 207 "itertoolsmodule.c"
-        var $163=HEAP[$162]; //@line 207 "itertoolsmodule.c"
-        var $164=($163) + 1; //@line 207 "itertoolsmodule.c"
-        var $165=$tgtkey_addr_i; //@line 207 "itertoolsmodule.c"
-        var $166=$165; //@line 207 "itertoolsmodule.c"
-        HEAP[$166]=$164; //@line 207 "itertoolsmodule.c"
-        var $167=$igo_i; //@line 209 "itertoolsmodule.c"
-        var $168=$167; //@line 209 "itertoolsmodule.c"
-        _PyObject_GC_Track($168); //@line 209 "itertoolsmodule.c"
-        var $169=$igo_i; //@line 210 "itertoolsmodule.c"
-        var $170=$169; //@line 210 "itertoolsmodule.c"
-        $0=$170; //@line 210 "itertoolsmodule.c"
-        $retval_i=$170; //@line 203 "itertoolsmodule.c"
-        $grouper=$170; //@line 128 "itertoolsmodule.c"
-        var $171=($170)==0; //@line 129 "itertoolsmodule.c"
-        if ($171) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 129 "itertoolsmodule.c"
-      case 26: // $bb24
-        $1=0; //@line 130 "itertoolsmodule.c"
-        __label__ = 30; break; //@line 130 "itertoolsmodule.c"
-      case 27: // $bb25
-        var $172=$gbo_addr; //@line 132 "itertoolsmodule.c"
-        var $173=$172+20; //@line 132 "itertoolsmodule.c"
-        var $174=HEAP[$173]; //@line 132 "itertoolsmodule.c"
-        var $175=$grouper; //@line 132 "itertoolsmodule.c"
-        var $176=_PyTuple_Pack(2, $174, $175); //@line 132 "itertoolsmodule.c"
-        $r=$176; //@line 132 "itertoolsmodule.c"
-        var $177=$grouper; //@line 133 "itertoolsmodule.c"
-        var $178=$177; //@line 133 "itertoolsmodule.c"
-        var $179=HEAP[$178]; //@line 133 "itertoolsmodule.c"
-        var $180=($179) - 1; //@line 133 "itertoolsmodule.c"
-        var $181=$grouper; //@line 133 "itertoolsmodule.c"
-        var $182=$181; //@line 133 "itertoolsmodule.c"
-        HEAP[$182]=$180; //@line 133 "itertoolsmodule.c"
-        var $183=$grouper; //@line 133 "itertoolsmodule.c"
-        var $184=$183; //@line 133 "itertoolsmodule.c"
-        var $185=HEAP[$184]; //@line 133 "itertoolsmodule.c"
-        var $186=($185)==0; //@line 133 "itertoolsmodule.c"
-        if ($186) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 133 "itertoolsmodule.c"
-      case 28: // $bb26
-        var $187=$grouper; //@line 133 "itertoolsmodule.c"
-        var $188=$187+4; //@line 133 "itertoolsmodule.c"
-        var $189=HEAP[$188]; //@line 133 "itertoolsmodule.c"
-        var $190=$189+24; //@line 133 "itertoolsmodule.c"
-        var $191=HEAP[$190]; //@line 133 "itertoolsmodule.c"
-        var $192=$grouper; //@line 133 "itertoolsmodule.c"
-        FUNCTION_TABLE[$191]($192); //@line 133 "itertoolsmodule.c"
-        __label__ = 29; break; //@line 133 "itertoolsmodule.c"
-      case 29: // $bb27
-        var $193=$r; //@line 134 "itertoolsmodule.c"
-        $1=$193; //@line 134 "itertoolsmodule.c"
-        __label__ = 30; break; //@line 134 "itertoolsmodule.c"
-      case 30: // $bb28
-        var $194=$1; //@line 93 "itertoolsmodule.c"
-        $retval=$194; //@line 93 "itertoolsmodule.c"
+        var $140=$gbo_addr; //@line 128 "itertoolsmodule.c"
+        var $141=$140+16; //@line 128 "itertoolsmodule.c"
+        var $142=HEAP[$141]; //@line 128 "itertoolsmodule.c"
+        var $143=$gbo_addr; //@line 128 "itertoolsmodule.c"
+        var $144=__grouper_create($143, $142); //@line 128 "itertoolsmodule.c"
+        $grouper=$144; //@line 128 "itertoolsmodule.c"
+        var $145=($144)==0; //@line 129 "itertoolsmodule.c"
+        if ($145) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 129 "itertoolsmodule.c"
+      case 24: // $bb24
+        $0=0; //@line 130 "itertoolsmodule.c"
+        __label__ = 28; break; //@line 130 "itertoolsmodule.c"
+      case 25: // $bb25
+        var $146=$gbo_addr; //@line 132 "itertoolsmodule.c"
+        var $147=$146+20; //@line 132 "itertoolsmodule.c"
+        var $148=HEAP[$147]; //@line 132 "itertoolsmodule.c"
+        var $149=$grouper; //@line 132 "itertoolsmodule.c"
+        var $150=_PyTuple_Pack(2, allocate([$148,0,0,0,$149,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 132 "itertoolsmodule.c"
+        $r=$150; //@line 132 "itertoolsmodule.c"
+        var $151=$grouper; //@line 133 "itertoolsmodule.c"
+        var $152=$151; //@line 133 "itertoolsmodule.c"
+        var $153=HEAP[$152]; //@line 133 "itertoolsmodule.c"
+        var $154=($153) - 1; //@line 133 "itertoolsmodule.c"
+        var $155=$grouper; //@line 133 "itertoolsmodule.c"
+        var $156=$155; //@line 133 "itertoolsmodule.c"
+        HEAP[$156]=$154; //@line 133 "itertoolsmodule.c"
+        var $157=$grouper; //@line 133 "itertoolsmodule.c"
+        var $158=$157; //@line 133 "itertoolsmodule.c"
+        var $159=HEAP[$158]; //@line 133 "itertoolsmodule.c"
+        var $160=($159)==0; //@line 133 "itertoolsmodule.c"
+        if ($160) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 133 "itertoolsmodule.c"
+      case 26: // $bb26
+        var $161=$grouper; //@line 133 "itertoolsmodule.c"
+        var $162=$161+4; //@line 133 "itertoolsmodule.c"
+        var $163=HEAP[$162]; //@line 133 "itertoolsmodule.c"
+        var $164=$163+24; //@line 133 "itertoolsmodule.c"
+        var $165=HEAP[$164]; //@line 133 "itertoolsmodule.c"
+        var $166=$grouper; //@line 133 "itertoolsmodule.c"
+        FUNCTION_TABLE[$165]($166); //@line 133 "itertoolsmodule.c"
+        __label__ = 27; break; //@line 133 "itertoolsmodule.c"
+      case 27: // $bb27
+        var $167=$r; //@line 134 "itertoolsmodule.c"
+        $0=$167; //@line 134 "itertoolsmodule.c"
+        __label__ = 28; break; //@line 134 "itertoolsmodule.c"
+      case 28: // $bb28
+        var $168=$0; //@line 93 "itertoolsmodule.c"
+        $retval=$168; //@line 93 "itertoolsmodule.c"
         var $retval29=$retval; //@line 93 "itertoolsmodule.c"
         ;
         return $retval29; //@line 93 "itertoolsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function __grouper_create($parent, $tgtkey) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $parent_addr;
+        var $tgtkey_addr;
+        var $retval;
+        var $0;
+        var $igo;
+        $parent_addr=$parent;
+        $tgtkey_addr=$tgtkey;
+        var $1=__PyObject_GC_New(__grouper_type); //@line 201 "itertoolsmodule.c"
+        var $2=$1; //@line 201 "itertoolsmodule.c"
+        $igo=$2; //@line 201 "itertoolsmodule.c"
+        var $3=$igo; //@line 202 "itertoolsmodule.c"
+        var $4=($3)==0; //@line 202 "itertoolsmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 202 "itertoolsmodule.c"
+      case 1: // $bb
+        $0=0; //@line 203 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 203 "itertoolsmodule.c"
+      case 2: // $bb1
+        var $5=$parent_addr; //@line 204 "itertoolsmodule.c"
+        var $6=$5; //@line 204 "itertoolsmodule.c"
+        var $7=$igo; //@line 204 "itertoolsmodule.c"
+        var $8=$7+8; //@line 204 "itertoolsmodule.c"
+        HEAP[$8]=$6; //@line 204 "itertoolsmodule.c"
+        var $9=$parent_addr; //@line 205 "itertoolsmodule.c"
+        var $10=$9; //@line 205 "itertoolsmodule.c"
+        var $11=$10; //@line 205 "itertoolsmodule.c"
+        var $12=HEAP[$11]; //@line 205 "itertoolsmodule.c"
+        var $13=($12) + 1; //@line 205 "itertoolsmodule.c"
+        var $14=$10; //@line 205 "itertoolsmodule.c"
+        HEAP[$14]=$13; //@line 205 "itertoolsmodule.c"
+        var $15=$igo; //@line 206 "itertoolsmodule.c"
+        var $16=$15+12; //@line 206 "itertoolsmodule.c"
+        var $17=$tgtkey_addr; //@line 206 "itertoolsmodule.c"
+        HEAP[$16]=$17; //@line 206 "itertoolsmodule.c"
+        var $18=$tgtkey_addr; //@line 207 "itertoolsmodule.c"
+        var $19=$18; //@line 207 "itertoolsmodule.c"
+        var $20=HEAP[$19]; //@line 207 "itertoolsmodule.c"
+        var $21=($20) + 1; //@line 207 "itertoolsmodule.c"
+        var $22=$tgtkey_addr; //@line 207 "itertoolsmodule.c"
+        var $23=$22; //@line 207 "itertoolsmodule.c"
+        HEAP[$23]=$21; //@line 207 "itertoolsmodule.c"
+        var $24=$igo; //@line 209 "itertoolsmodule.c"
+        var $25=$24; //@line 209 "itertoolsmodule.c"
+        _PyObject_GC_Track($25); //@line 209 "itertoolsmodule.c"
+        var $26=$igo; //@line 210 "itertoolsmodule.c"
+        var $27=$26; //@line 210 "itertoolsmodule.c"
+        $0=$27; //@line 210 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 210 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $28=$0; //@line 203 "itertoolsmodule.c"
+        $retval=$28; //@line 203 "itertoolsmodule.c"
+        var $retval3=$retval; //@line 203 "itertoolsmodule.c"
+        ;
+        return $retval3; //@line 203 "itertoolsmodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1280,7 +1297,7 @@ var ___PRETTY_FUNCTION___12663;
         var $27=$26+12; //@line 246 "itertoolsmodule.c"
         var $28=HEAP[$27]; //@line 246 "itertoolsmodule.c"
         var $29=$newvalue; //@line 246 "itertoolsmodule.c"
-        var $30=_PyObject_CallFunctionObjArgs($28, $29, 0); //@line 246 "itertoolsmodule.c"
+        var $30=_PyObject_CallFunctionObjArgs($28, allocate([$29,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 246 "itertoolsmodule.c"
         $newkey=$30; //@line 246 "itertoolsmodule.c"
         var $31=$newkey; //@line 248 "itertoolsmodule.c"
         var $32=($31)==0; //@line 248 "itertoolsmodule.c"
@@ -1405,6 +1422,210 @@ var ___PRETTY_FUNCTION___12663;
         var $retval20=$retval; //@line 240 "itertoolsmodule.c"
         ;
         return $retval20; //@line 240 "itertoolsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _teedataobject_new($it) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $it_addr;
+        var $retval;
+        var $0;
+        var $tdo;
+        $it_addr=$it;
+        var $1=__PyObject_GC_New(_teedataobject_type); //@line 351 "itertoolsmodule.c"
+        var $2=$1; //@line 351 "itertoolsmodule.c"
+        $tdo=$2; //@line 351 "itertoolsmodule.c"
+        var $3=$tdo; //@line 352 "itertoolsmodule.c"
+        var $4=($3)==0; //@line 352 "itertoolsmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 352 "itertoolsmodule.c"
+      case 1: // $bb
+        $0=0; //@line 353 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 353 "itertoolsmodule.c"
+      case 2: // $bb1
+        var $5=$tdo; //@line 355 "itertoolsmodule.c"
+        var $6=$5+12; //@line 355 "itertoolsmodule.c"
+        HEAP[$6]=0; //@line 355 "itertoolsmodule.c"
+        var $7=$tdo; //@line 356 "itertoolsmodule.c"
+        var $8=$7+16; //@line 356 "itertoolsmodule.c"
+        HEAP[$8]=0; //@line 356 "itertoolsmodule.c"
+        var $9=$it_addr; //@line 357 "itertoolsmodule.c"
+        var $10=$9; //@line 357 "itertoolsmodule.c"
+        var $11=HEAP[$10]; //@line 357 "itertoolsmodule.c"
+        var $12=($11) + 1; //@line 357 "itertoolsmodule.c"
+        var $13=$it_addr; //@line 357 "itertoolsmodule.c"
+        var $14=$13; //@line 357 "itertoolsmodule.c"
+        HEAP[$14]=$12; //@line 357 "itertoolsmodule.c"
+        var $15=$tdo; //@line 358 "itertoolsmodule.c"
+        var $16=$15+8; //@line 358 "itertoolsmodule.c"
+        var $17=$it_addr; //@line 358 "itertoolsmodule.c"
+        HEAP[$16]=$17; //@line 358 "itertoolsmodule.c"
+        var $18=$tdo; //@line 359 "itertoolsmodule.c"
+        var $19=$18; //@line 359 "itertoolsmodule.c"
+        _PyObject_GC_Track($19); //@line 359 "itertoolsmodule.c"
+        var $20=$tdo; //@line 360 "itertoolsmodule.c"
+        var $21=$20; //@line 360 "itertoolsmodule.c"
+        $0=$21; //@line 360 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 360 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $22=$0; //@line 353 "itertoolsmodule.c"
+        $retval=$22; //@line 353 "itertoolsmodule.c"
+        var $retval3=$retval; //@line 353 "itertoolsmodule.c"
+        ;
+        return $retval3; //@line 353 "itertoolsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _teedataobject_jumplink($tdo) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $tdo_addr;
+        var $retval;
+        var $0;
+        $tdo_addr=$tdo;
+        var $1=$tdo_addr; //@line 366 "itertoolsmodule.c"
+        var $2=$1+16; //@line 366 "itertoolsmodule.c"
+        var $3=HEAP[$2]; //@line 366 "itertoolsmodule.c"
+        var $4=($3)==0; //@line 366 "itertoolsmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 366 "itertoolsmodule.c"
+      case 1: // $bb
+        var $5=$tdo_addr; //@line 367 "itertoolsmodule.c"
+        var $6=$5+8; //@line 367 "itertoolsmodule.c"
+        var $7=HEAP[$6]; //@line 367 "itertoolsmodule.c"
+        var $8=_teedataobject_new($7); //@line 367 "itertoolsmodule.c"
+        var $9=$tdo_addr; //@line 367 "itertoolsmodule.c"
+        var $10=$9+16; //@line 367 "itertoolsmodule.c"
+        HEAP[$10]=$8; //@line 367 "itertoolsmodule.c"
+        __label__ = 2; break; //@line 367 "itertoolsmodule.c"
+      case 2: // $bb1
+        var $11=$tdo_addr; //@line 368 "itertoolsmodule.c"
+        var $12=$11+16; //@line 368 "itertoolsmodule.c"
+        var $13=HEAP[$12]; //@line 368 "itertoolsmodule.c"
+        var $14=($13)!=0; //@line 368 "itertoolsmodule.c"
+        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 368 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $15=$tdo_addr; //@line 368 "itertoolsmodule.c"
+        var $16=$15+16; //@line 368 "itertoolsmodule.c"
+        var $17=HEAP[$16]; //@line 368 "itertoolsmodule.c"
+        var $18=$17; //@line 368 "itertoolsmodule.c"
+        var $19=HEAP[$18]; //@line 368 "itertoolsmodule.c"
+        var $20=($19) + 1; //@line 368 "itertoolsmodule.c"
+        var $21=$17; //@line 368 "itertoolsmodule.c"
+        HEAP[$21]=$20; //@line 368 "itertoolsmodule.c"
+        __label__ = 4; break; //@line 368 "itertoolsmodule.c"
+      case 4: // $bb3
+        var $22=$tdo_addr; //@line 369 "itertoolsmodule.c"
+        var $23=$22+16; //@line 369 "itertoolsmodule.c"
+        var $24=HEAP[$23]; //@line 369 "itertoolsmodule.c"
+        $0=$24; //@line 369 "itertoolsmodule.c"
+        var $25=$0; //@line 369 "itertoolsmodule.c"
+        $retval=$25; //@line 369 "itertoolsmodule.c"
+        var $retval4=$retval; //@line 369 "itertoolsmodule.c"
+        ;
+        return $retval4; //@line 369 "itertoolsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _teedataobject_getitem($tdo, $i) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $tdo_addr;
+        var $i_addr;
+        var $retval;
+        var $0;
+        var $value;
+        $tdo_addr=$tdo;
+        $i_addr=$i;
+        var $1=$i_addr; //@line 377 "itertoolsmodule.c"
+        var $2=($1) > 56; //@line 377 "itertoolsmodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 377 "itertoolsmodule.c"
+      case 1: // $bb
+        ___assert_fail(__str8, __str5, 377, ___PRETTY_FUNCTION___8768); //@line 377 "itertoolsmodule.c"
+        throw "Reached an unreachable!" //@line 377 "itertoolsmodule.c"
+      case 2: // $bb1
+        var $3=$tdo_addr; //@line 378 "itertoolsmodule.c"
+        var $4=$3+12; //@line 378 "itertoolsmodule.c"
+        var $5=HEAP[$4]; //@line 378 "itertoolsmodule.c"
+        var $6=$i_addr; //@line 378 "itertoolsmodule.c"
+        var $7=($5) > ($6); //@line 378 "itertoolsmodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 378 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $8=$i_addr; //@line 379 "itertoolsmodule.c"
+        var $9=$tdo_addr; //@line 379 "itertoolsmodule.c"
+        var $10=$9+20; //@line 379 "itertoolsmodule.c"
+        var $11=$10+$8*4; //@line 379 "itertoolsmodule.c"
+        var $12=HEAP[$11]; //@line 379 "itertoolsmodule.c"
+        $value=$12; //@line 379 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 379 "itertoolsmodule.c"
+      case 4: // $bb3
+        var $13=$tdo_addr; //@line 382 "itertoolsmodule.c"
+        var $14=$13+12; //@line 382 "itertoolsmodule.c"
+        var $15=HEAP[$14]; //@line 382 "itertoolsmodule.c"
+        var $16=$i_addr; //@line 382 "itertoolsmodule.c"
+        var $17=($15)!=($16); //@line 382 "itertoolsmodule.c"
+        if ($17) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 382 "itertoolsmodule.c"
+      case 5: // $bb4
+        ___assert_fail(__str9, __str5, 382, ___PRETTY_FUNCTION___8768); //@line 382 "itertoolsmodule.c"
+        throw "Reached an unreachable!" //@line 382 "itertoolsmodule.c"
+      case 6: // $bb5
+        var $18=$tdo_addr; //@line 383 "itertoolsmodule.c"
+        var $19=$18+8; //@line 383 "itertoolsmodule.c"
+        var $20=HEAP[$19]; //@line 383 "itertoolsmodule.c"
+        var $21=_PyIter_Next($20); //@line 383 "itertoolsmodule.c"
+        $value=$21; //@line 383 "itertoolsmodule.c"
+        var $22=$value; //@line 384 "itertoolsmodule.c"
+        var $23=($22)==0; //@line 384 "itertoolsmodule.c"
+        if ($23) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 384 "itertoolsmodule.c"
+      case 7: // $bb6
+        $0=0; //@line 385 "itertoolsmodule.c"
+        __label__ = 10; break; //@line 385 "itertoolsmodule.c"
+      case 8: // $bb7
+        var $24=$tdo_addr; //@line 386 "itertoolsmodule.c"
+        var $25=$24+12; //@line 386 "itertoolsmodule.c"
+        var $26=HEAP[$25]; //@line 386 "itertoolsmodule.c"
+        var $27=($26) + 1; //@line 386 "itertoolsmodule.c"
+        var $28=$tdo_addr; //@line 386 "itertoolsmodule.c"
+        var $29=$28+12; //@line 386 "itertoolsmodule.c"
+        HEAP[$29]=$27; //@line 386 "itertoolsmodule.c"
+        var $30=$i_addr; //@line 387 "itertoolsmodule.c"
+        var $31=$tdo_addr; //@line 387 "itertoolsmodule.c"
+        var $32=$31+20; //@line 387 "itertoolsmodule.c"
+        var $33=$32+$30*4; //@line 387 "itertoolsmodule.c"
+        var $34=$value; //@line 387 "itertoolsmodule.c"
+        HEAP[$33]=$34; //@line 387 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 387 "itertoolsmodule.c"
+      case 9: // $bb8
+        var $35=$value; //@line 389 "itertoolsmodule.c"
+        var $36=$35; //@line 389 "itertoolsmodule.c"
+        var $37=HEAP[$36]; //@line 389 "itertoolsmodule.c"
+        var $38=($37) + 1; //@line 389 "itertoolsmodule.c"
+        var $39=$value; //@line 389 "itertoolsmodule.c"
+        var $40=$39; //@line 389 "itertoolsmodule.c"
+        HEAP[$40]=$38; //@line 389 "itertoolsmodule.c"
+        var $41=$value; //@line 390 "itertoolsmodule.c"
+        $0=$41; //@line 390 "itertoolsmodule.c"
+        __label__ = 10; break; //@line 390 "itertoolsmodule.c"
+      case 10: // $bb9
+        var $42=$0; //@line 385 "itertoolsmodule.c"
+        $retval=$42; //@line 385 "itertoolsmodule.c"
+        var $retval10=$retval; //@line 385 "itertoolsmodule.c"
+        ;
+        return $retval10; //@line 385 "itertoolsmodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1702,248 +1923,89 @@ var ___PRETTY_FUNCTION___12663;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $tdo_addr_i1;
-        var $i_addr_i;
-        var $retval_i2;
-        var $0;
-        var $value_i;
-        var $it_addr_i_i;
-        var $retval_i_i;
-        var $1;
-        var $tdo_i_i;
-        var $tdo_addr_i;
-        var $retval_i;
-        var $2;
         var $to_addr;
         var $retval;
-        var $3;
+        var $0;
         var $value;
         var $link;
         $to_addr=$to;
-        var $4=$to_addr; //@line 476 "itertoolsmodule.c"
-        var $5=$4+12; //@line 476 "itertoolsmodule.c"
-        var $6=HEAP[$5]; //@line 476 "itertoolsmodule.c"
-        var $7=($6) > 56; //@line 476 "itertoolsmodule.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 11; break; } //@line 476 "itertoolsmodule.c"
+        var $1=$to_addr; //@line 476 "itertoolsmodule.c"
+        var $2=$1+12; //@line 476 "itertoolsmodule.c"
+        var $3=HEAP[$2]; //@line 476 "itertoolsmodule.c"
+        var $4=($3) > 56; //@line 476 "itertoolsmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 476 "itertoolsmodule.c"
       case 1: // $bb
-        var $8=$to_addr; //@line 477 "itertoolsmodule.c"
-        var $9=$8+8; //@line 477 "itertoolsmodule.c"
-        var $10=HEAP[$9]; //@line 477 "itertoolsmodule.c"
-        $tdo_addr_i=$10;
-        var $11=$tdo_addr_i; //@line 366 "itertoolsmodule.c"
-        var $12=$11+16; //@line 366 "itertoolsmodule.c"
-        var $13=HEAP[$12]; //@line 366 "itertoolsmodule.c"
-        var $14=($13)==0; //@line 366 "itertoolsmodule.c"
-        if ($14) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 366 "itertoolsmodule.c"
-      case 2: // $bb_i
-        var $15=$tdo_addr_i; //@line 367 "itertoolsmodule.c"
-        var $16=$15+8; //@line 367 "itertoolsmodule.c"
-        var $17=HEAP[$16]; //@line 367 "itertoolsmodule.c"
-        $it_addr_i_i=$17;
-        var $18=__PyObject_GC_New(_teedataobject_type); //@line 351 "itertoolsmodule.c"
-        var $19=$18; //@line 351 "itertoolsmodule.c"
-        $tdo_i_i=$19; //@line 351 "itertoolsmodule.c"
-        var $20=$tdo_i_i; //@line 352 "itertoolsmodule.c"
-        var $21=($20)==0; //@line 352 "itertoolsmodule.c"
-        if ($21) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 352 "itertoolsmodule.c"
-      case 3: // $bb_i_i
-        $1=0; //@line 353 "itertoolsmodule.c"
-        __label__ = 5; break; //@line 353 "itertoolsmodule.c"
-      case 4: // $bb1_i_i
-        var $22=$tdo_i_i; //@line 355 "itertoolsmodule.c"
-        var $23=$22+12; //@line 355 "itertoolsmodule.c"
-        HEAP[$23]=0; //@line 355 "itertoolsmodule.c"
-        var $24=$tdo_i_i; //@line 356 "itertoolsmodule.c"
-        var $25=$24+16; //@line 356 "itertoolsmodule.c"
-        HEAP[$25]=0; //@line 356 "itertoolsmodule.c"
-        var $26=$it_addr_i_i; //@line 357 "itertoolsmodule.c"
-        var $27=$26; //@line 357 "itertoolsmodule.c"
-        var $28=HEAP[$27]; //@line 357 "itertoolsmodule.c"
-        var $29=($28) + 1; //@line 357 "itertoolsmodule.c"
-        var $30=$it_addr_i_i; //@line 357 "itertoolsmodule.c"
-        var $31=$30; //@line 357 "itertoolsmodule.c"
-        HEAP[$31]=$29; //@line 357 "itertoolsmodule.c"
-        var $32=$tdo_i_i; //@line 358 "itertoolsmodule.c"
-        var $33=$32+8; //@line 358 "itertoolsmodule.c"
-        var $34=$it_addr_i_i; //@line 358 "itertoolsmodule.c"
-        HEAP[$33]=$34; //@line 358 "itertoolsmodule.c"
-        var $35=$tdo_i_i; //@line 359 "itertoolsmodule.c"
-        var $36=$35; //@line 359 "itertoolsmodule.c"
-        _PyObject_GC_Track($36); //@line 359 "itertoolsmodule.c"
-        var $37=$tdo_i_i; //@line 360 "itertoolsmodule.c"
-        var $38=$37; //@line 360 "itertoolsmodule.c"
-        $1=$38; //@line 360 "itertoolsmodule.c"
-        __label__ = 5; break; //@line 360 "itertoolsmodule.c"
-      case 5: // $teedataobject_new_exit_i
-        var $39=$1; //@line 353 "itertoolsmodule.c"
-        $retval_i_i=$39; //@line 353 "itertoolsmodule.c"
-        var $retval3_i_i=$retval_i_i; //@line 353 "itertoolsmodule.c"
-        var $40=$tdo_addr_i; //@line 367 "itertoolsmodule.c"
-        var $41=$40+16; //@line 367 "itertoolsmodule.c"
-        HEAP[$41]=$retval3_i_i; //@line 367 "itertoolsmodule.c"
-        __label__ = 6; break; //@line 367 "itertoolsmodule.c"
-      case 6: // $bb1_i
-        var $42=$tdo_addr_i; //@line 368 "itertoolsmodule.c"
-        var $43=$42+16; //@line 368 "itertoolsmodule.c"
-        var $44=HEAP[$43]; //@line 368 "itertoolsmodule.c"
-        var $45=($44)!=0; //@line 368 "itertoolsmodule.c"
-        if ($45) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 368 "itertoolsmodule.c"
-      case 7: // $bb2_i
-        var $46=$tdo_addr_i; //@line 368 "itertoolsmodule.c"
-        var $47=$46+16; //@line 368 "itertoolsmodule.c"
-        var $48=HEAP[$47]; //@line 368 "itertoolsmodule.c"
-        var $49=$48; //@line 368 "itertoolsmodule.c"
-        var $50=HEAP[$49]; //@line 368 "itertoolsmodule.c"
-        var $51=($50) + 1; //@line 368 "itertoolsmodule.c"
-        var $52=$48; //@line 368 "itertoolsmodule.c"
-        HEAP[$52]=$51; //@line 368 "itertoolsmodule.c"
-        __label__ = 8; break; //@line 368 "itertoolsmodule.c"
-      case 8: // $teedataobject_jumplink_exit
-        var $53=$tdo_addr_i; //@line 369 "itertoolsmodule.c"
-        var $54=$53+16; //@line 369 "itertoolsmodule.c"
-        var $55=HEAP[$54]; //@line 369 "itertoolsmodule.c"
-        $2=$55; //@line 369 "itertoolsmodule.c"
-        var $56=$2; //@line 369 "itertoolsmodule.c"
-        $retval_i=$56; //@line 369 "itertoolsmodule.c"
-        var $retval4_i=$retval_i; //@line 369 "itertoolsmodule.c"
-        $link=$retval4_i; //@line 477 "itertoolsmodule.c"
-        var $57=$to_addr; //@line 478 "itertoolsmodule.c"
-        var $58=$57+8; //@line 478 "itertoolsmodule.c"
-        var $59=HEAP[$58]; //@line 478 "itertoolsmodule.c"
-        var $60=$59; //@line 478 "itertoolsmodule.c"
-        var $61=$60; //@line 478 "itertoolsmodule.c"
-        var $62=HEAP[$61]; //@line 478 "itertoolsmodule.c"
-        var $63=($62) - 1; //@line 478 "itertoolsmodule.c"
-        var $64=$60; //@line 478 "itertoolsmodule.c"
-        HEAP[$64]=$63; //@line 478 "itertoolsmodule.c"
-        var $65=$60; //@line 478 "itertoolsmodule.c"
-        var $66=HEAP[$65]; //@line 478 "itertoolsmodule.c"
-        var $67=($66)==0; //@line 478 "itertoolsmodule.c"
-        if ($67) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 478 "itertoolsmodule.c"
-      case 9: // $bb1
-        var $68=$to_addr; //@line 478 "itertoolsmodule.c"
-        var $69=$68+8; //@line 478 "itertoolsmodule.c"
-        var $70=HEAP[$69]; //@line 478 "itertoolsmodule.c"
-        var $71=$70; //@line 478 "itertoolsmodule.c"
-        var $72=$71+4; //@line 478 "itertoolsmodule.c"
-        var $73=HEAP[$72]; //@line 478 "itertoolsmodule.c"
-        var $74=$73+24; //@line 478 "itertoolsmodule.c"
-        var $75=HEAP[$74]; //@line 478 "itertoolsmodule.c"
-        var $76=$to_addr; //@line 478 "itertoolsmodule.c"
-        var $77=$76+8; //@line 478 "itertoolsmodule.c"
-        var $78=HEAP[$77]; //@line 478 "itertoolsmodule.c"
-        var $79=$78; //@line 478 "itertoolsmodule.c"
-        FUNCTION_TABLE[$75]($79); //@line 478 "itertoolsmodule.c"
-        __label__ = 10; break; //@line 478 "itertoolsmodule.c"
-      case 10: // $bb2
-        var $80=$link; //@line 479 "itertoolsmodule.c"
-        var $81=$80; //@line 479 "itertoolsmodule.c"
-        var $82=$to_addr; //@line 479 "itertoolsmodule.c"
-        var $83=$82+8; //@line 479 "itertoolsmodule.c"
-        HEAP[$83]=$81; //@line 479 "itertoolsmodule.c"
-        var $84=$to_addr; //@line 480 "itertoolsmodule.c"
-        var $85=$84+12; //@line 480 "itertoolsmodule.c"
-        HEAP[$85]=0; //@line 480 "itertoolsmodule.c"
-        __label__ = 11; break; //@line 480 "itertoolsmodule.c"
-      case 11: // $bb3
-        var $86=$to_addr; //@line 482 "itertoolsmodule.c"
-        var $87=$86+12; //@line 482 "itertoolsmodule.c"
-        var $88=HEAP[$87]; //@line 482 "itertoolsmodule.c"
-        var $89=$to_addr; //@line 482 "itertoolsmodule.c"
-        var $90=$89+8; //@line 482 "itertoolsmodule.c"
-        var $91=HEAP[$90]; //@line 482 "itertoolsmodule.c"
-        $tdo_addr_i1=$91;
-        $i_addr_i=$88;
-        var $92=($88) > 56; //@line 377 "itertoolsmodule.c"
-        if ($92) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 377 "itertoolsmodule.c"
-      case 12: // $bb_i3
-        ___assert_fail(__str8, __str5, 377, ___PRETTY_FUNCTION___8768); //@line 377 "itertoolsmodule.c"
-        throw "Reached an unreachable!" //@line 377 "itertoolsmodule.c"
-      case 13: // $bb1_i4
-        var $93=$tdo_addr_i1; //@line 378 "itertoolsmodule.c"
-        var $94=$93+12; //@line 378 "itertoolsmodule.c"
-        var $95=HEAP[$94]; //@line 378 "itertoolsmodule.c"
-        var $96=$i_addr_i; //@line 378 "itertoolsmodule.c"
-        var $97=($95) > ($96); //@line 378 "itertoolsmodule.c"
-        if ($97) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 378 "itertoolsmodule.c"
-      case 14: // $bb2_i5
-        var $98=$i_addr_i; //@line 379 "itertoolsmodule.c"
-        var $99=$tdo_addr_i1; //@line 379 "itertoolsmodule.c"
-        var $100=$99+20; //@line 379 "itertoolsmodule.c"
-        var $101=$100+$98*4; //@line 379 "itertoolsmodule.c"
-        var $102=HEAP[$101]; //@line 379 "itertoolsmodule.c"
-        $value_i=$102; //@line 379 "itertoolsmodule.c"
-        __label__ = 20; break; //@line 379 "itertoolsmodule.c"
-      case 15: // $bb3_i
-        var $103=$tdo_addr_i1; //@line 382 "itertoolsmodule.c"
-        var $104=$103+12; //@line 382 "itertoolsmodule.c"
-        var $105=HEAP[$104]; //@line 382 "itertoolsmodule.c"
-        var $106=$i_addr_i; //@line 382 "itertoolsmodule.c"
-        var $107=($105)!=($106); //@line 382 "itertoolsmodule.c"
-        if ($107) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 382 "itertoolsmodule.c"
-      case 16: // $bb4_i
-        ___assert_fail(__str9, __str5, 382, ___PRETTY_FUNCTION___8768); //@line 382 "itertoolsmodule.c"
-        throw "Reached an unreachable!" //@line 382 "itertoolsmodule.c"
-      case 17: // $bb5_i
-        var $108=$tdo_addr_i1; //@line 383 "itertoolsmodule.c"
-        var $109=$108+8; //@line 383 "itertoolsmodule.c"
-        var $110=HEAP[$109]; //@line 383 "itertoolsmodule.c"
-        var $111=_PyIter_Next($110); //@line 383 "itertoolsmodule.c"
-        $value_i=$111; //@line 383 "itertoolsmodule.c"
-        var $112=$value_i; //@line 384 "itertoolsmodule.c"
-        var $113=($112)==0; //@line 384 "itertoolsmodule.c"
-        if ($113) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 384 "itertoolsmodule.c"
-      case 18: // $teedataobject_getitem_exit_thread
-        $0=0; //@line 385 "itertoolsmodule.c"
-        $retval_i2=0; //@line 385 "itertoolsmodule.c"
-        $value=0; //@line 482 "itertoolsmodule.c"
-        __label__ = 21; break;
-      case 19: // $bb7_i
-        var $114=$tdo_addr_i1; //@line 386 "itertoolsmodule.c"
-        var $115=$114+12; //@line 386 "itertoolsmodule.c"
-        var $116=HEAP[$115]; //@line 386 "itertoolsmodule.c"
-        var $117=($116) + 1; //@line 386 "itertoolsmodule.c"
-        var $118=$tdo_addr_i1; //@line 386 "itertoolsmodule.c"
-        var $119=$118+12; //@line 386 "itertoolsmodule.c"
-        HEAP[$119]=$117; //@line 386 "itertoolsmodule.c"
-        var $120=$i_addr_i; //@line 387 "itertoolsmodule.c"
-        var $121=$tdo_addr_i1; //@line 387 "itertoolsmodule.c"
-        var $122=$121+20; //@line 387 "itertoolsmodule.c"
-        var $123=$122+$120*4; //@line 387 "itertoolsmodule.c"
-        var $124=$value_i; //@line 387 "itertoolsmodule.c"
-        HEAP[$123]=$124; //@line 387 "itertoolsmodule.c"
-        __label__ = 20; break; //@line 387 "itertoolsmodule.c"
-      case 20: // $teedataobject_getitem_exit
-        var $125=$value_i; //@line 389 "itertoolsmodule.c"
-        var $126=$125; //@line 389 "itertoolsmodule.c"
-        var $127=HEAP[$126]; //@line 389 "itertoolsmodule.c"
-        var $128=($127) + 1; //@line 389 "itertoolsmodule.c"
-        var $129=$value_i; //@line 389 "itertoolsmodule.c"
-        var $130=$129; //@line 389 "itertoolsmodule.c"
-        HEAP[$130]=$128; //@line 389 "itertoolsmodule.c"
-        var $131=$value_i; //@line 390 "itertoolsmodule.c"
-        $0=$131; //@line 390 "itertoolsmodule.c"
-        $retval_i2=$131; //@line 385 "itertoolsmodule.c"
-        $value=$131; //@line 482 "itertoolsmodule.c"
-        var $132=($131)==0; //@line 483 "itertoolsmodule.c"
-        if ($132) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 483 "itertoolsmodule.c"
-      case 21: // $bb4
-        $3=0; //@line 484 "itertoolsmodule.c"
-        __label__ = 23; break; //@line 484 "itertoolsmodule.c"
-      case 22: // $bb5
-        var $133=$to_addr; //@line 485 "itertoolsmodule.c"
-        var $134=$133+12; //@line 485 "itertoolsmodule.c"
-        var $135=HEAP[$134]; //@line 485 "itertoolsmodule.c"
-        var $136=($135) + 1; //@line 485 "itertoolsmodule.c"
-        var $137=$to_addr; //@line 485 "itertoolsmodule.c"
-        var $138=$137+12; //@line 485 "itertoolsmodule.c"
-        HEAP[$138]=$136; //@line 485 "itertoolsmodule.c"
-        var $139=$value; //@line 486 "itertoolsmodule.c"
-        $3=$139; //@line 486 "itertoolsmodule.c"
-        __label__ = 23; break; //@line 486 "itertoolsmodule.c"
-      case 23: // $bb6
-        var $140=$3; //@line 484 "itertoolsmodule.c"
-        $retval=$140; //@line 484 "itertoolsmodule.c"
+        var $5=$to_addr; //@line 477 "itertoolsmodule.c"
+        var $6=$5+8; //@line 477 "itertoolsmodule.c"
+        var $7=HEAP[$6]; //@line 477 "itertoolsmodule.c"
+        var $8=_teedataobject_jumplink($7); //@line 477 "itertoolsmodule.c"
+        $link=$8; //@line 477 "itertoolsmodule.c"
+        var $9=$to_addr; //@line 478 "itertoolsmodule.c"
+        var $10=$9+8; //@line 478 "itertoolsmodule.c"
+        var $11=HEAP[$10]; //@line 478 "itertoolsmodule.c"
+        var $12=$11; //@line 478 "itertoolsmodule.c"
+        var $13=$12; //@line 478 "itertoolsmodule.c"
+        var $14=HEAP[$13]; //@line 478 "itertoolsmodule.c"
+        var $15=($14) - 1; //@line 478 "itertoolsmodule.c"
+        var $16=$12; //@line 478 "itertoolsmodule.c"
+        HEAP[$16]=$15; //@line 478 "itertoolsmodule.c"
+        var $17=$12; //@line 478 "itertoolsmodule.c"
+        var $18=HEAP[$17]; //@line 478 "itertoolsmodule.c"
+        var $19=($18)==0; //@line 478 "itertoolsmodule.c"
+        if ($19) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 478 "itertoolsmodule.c"
+      case 2: // $bb1
+        var $20=$to_addr; //@line 478 "itertoolsmodule.c"
+        var $21=$20+8; //@line 478 "itertoolsmodule.c"
+        var $22=HEAP[$21]; //@line 478 "itertoolsmodule.c"
+        var $23=$22; //@line 478 "itertoolsmodule.c"
+        var $24=$23+4; //@line 478 "itertoolsmodule.c"
+        var $25=HEAP[$24]; //@line 478 "itertoolsmodule.c"
+        var $26=$25+24; //@line 478 "itertoolsmodule.c"
+        var $27=HEAP[$26]; //@line 478 "itertoolsmodule.c"
+        var $28=$to_addr; //@line 478 "itertoolsmodule.c"
+        var $29=$28+8; //@line 478 "itertoolsmodule.c"
+        var $30=HEAP[$29]; //@line 478 "itertoolsmodule.c"
+        var $31=$30; //@line 478 "itertoolsmodule.c"
+        FUNCTION_TABLE[$27]($31); //@line 478 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 478 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $32=$link; //@line 479 "itertoolsmodule.c"
+        var $33=$32; //@line 479 "itertoolsmodule.c"
+        var $34=$to_addr; //@line 479 "itertoolsmodule.c"
+        var $35=$34+8; //@line 479 "itertoolsmodule.c"
+        HEAP[$35]=$33; //@line 479 "itertoolsmodule.c"
+        var $36=$to_addr; //@line 480 "itertoolsmodule.c"
+        var $37=$36+12; //@line 480 "itertoolsmodule.c"
+        HEAP[$37]=0; //@line 480 "itertoolsmodule.c"
+        __label__ = 4; break; //@line 480 "itertoolsmodule.c"
+      case 4: // $bb3
+        var $38=$to_addr; //@line 482 "itertoolsmodule.c"
+        var $39=$38+12; //@line 482 "itertoolsmodule.c"
+        var $40=HEAP[$39]; //@line 482 "itertoolsmodule.c"
+        var $41=$to_addr; //@line 482 "itertoolsmodule.c"
+        var $42=$41+8; //@line 482 "itertoolsmodule.c"
+        var $43=HEAP[$42]; //@line 482 "itertoolsmodule.c"
+        var $44=_teedataobject_getitem($43, $40); //@line 482 "itertoolsmodule.c"
+        $value=$44; //@line 482 "itertoolsmodule.c"
+        var $45=($44)==0; //@line 483 "itertoolsmodule.c"
+        if ($45) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 483 "itertoolsmodule.c"
+      case 5: // $bb4
+        $0=0; //@line 484 "itertoolsmodule.c"
+        __label__ = 7; break; //@line 484 "itertoolsmodule.c"
+      case 6: // $bb5
+        var $46=$to_addr; //@line 485 "itertoolsmodule.c"
+        var $47=$46+12; //@line 485 "itertoolsmodule.c"
+        var $48=HEAP[$47]; //@line 485 "itertoolsmodule.c"
+        var $49=($48) + 1; //@line 485 "itertoolsmodule.c"
+        var $50=$to_addr; //@line 485 "itertoolsmodule.c"
+        var $51=$50+12; //@line 485 "itertoolsmodule.c"
+        HEAP[$51]=$49; //@line 485 "itertoolsmodule.c"
+        var $52=$value; //@line 486 "itertoolsmodule.c"
+        $0=$52; //@line 486 "itertoolsmodule.c"
+        __label__ = 7; break; //@line 486 "itertoolsmodule.c"
+      case 7: // $bb6
+        var $53=$0; //@line 484 "itertoolsmodule.c"
+        $retval=$53; //@line 484 "itertoolsmodule.c"
         var $retval7=$retval; //@line 484 "itertoolsmodule.c"
         ;
         return $retval7; //@line 484 "itertoolsmodule.c"
@@ -2071,153 +2133,111 @@ var ___PRETTY_FUNCTION___12663;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $it_addr_i;
-        var $retval_i;
-        var $0;
-        var $tdo_i;
         var $iterable_addr;
         var $retval;
-        var $1;
+        var $0;
         var $to;
         var $it;
         $iterable_addr=$iterable;
         $it=0; //@line 518 "itertoolsmodule.c"
-        var $2=$iterable_addr; //@line 520 "itertoolsmodule.c"
-        var $3=_PyObject_GetIter($2); //@line 520 "itertoolsmodule.c"
-        $it=$3; //@line 520 "itertoolsmodule.c"
-        var $4=$it; //@line 521 "itertoolsmodule.c"
-        var $5=($4)==0; //@line 521 "itertoolsmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 521 "itertoolsmodule.c"
+        var $1=$iterable_addr; //@line 520 "itertoolsmodule.c"
+        var $2=_PyObject_GetIter($1); //@line 520 "itertoolsmodule.c"
+        $it=$2; //@line 520 "itertoolsmodule.c"
+        var $3=$it; //@line 521 "itertoolsmodule.c"
+        var $4=($3)==0; //@line 521 "itertoolsmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 521 "itertoolsmodule.c"
       case 1: // $bb
-        $1=0; //@line 522 "itertoolsmodule.c"
-        __label__ = 16; break; //@line 522 "itertoolsmodule.c"
+        $0=0; //@line 522 "itertoolsmodule.c"
+        __label__ = 13; break; //@line 522 "itertoolsmodule.c"
       case 2: // $bb1
-        var $6=$it; //@line 523 "itertoolsmodule.c"
-        var $7=$6+4; //@line 523 "itertoolsmodule.c"
-        var $8=HEAP[$7]; //@line 523 "itertoolsmodule.c"
-        var $9=($8)==(_tee_type); //@line 523 "itertoolsmodule.c"
-        if ($9) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 523 "itertoolsmodule.c"
+        var $5=$it; //@line 523 "itertoolsmodule.c"
+        var $6=$5+4; //@line 523 "itertoolsmodule.c"
+        var $7=HEAP[$6]; //@line 523 "itertoolsmodule.c"
+        var $8=($7)==(_tee_type); //@line 523 "itertoolsmodule.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 523 "itertoolsmodule.c"
       case 3: // $bb2
-        var $10=$it; //@line 523 "itertoolsmodule.c"
-        var $11=$10+4; //@line 523 "itertoolsmodule.c"
-        var $12=HEAP[$11]; //@line 523 "itertoolsmodule.c"
-        var $13=_PyType_IsSubtype($12, _tee_type); //@line 523 "itertoolsmodule.c"
-        var $14=($13)!=0; //@line 523 "itertoolsmodule.c"
-        if ($14) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 523 "itertoolsmodule.c"
+        var $9=$it; //@line 523 "itertoolsmodule.c"
+        var $10=$9+4; //@line 523 "itertoolsmodule.c"
+        var $11=HEAP[$10]; //@line 523 "itertoolsmodule.c"
+        var $12=_PyType_IsSubtype($11, _tee_type); //@line 523 "itertoolsmodule.c"
+        var $13=($12)!=0; //@line 523 "itertoolsmodule.c"
+        if ($13) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 523 "itertoolsmodule.c"
       case 4: // $bb3
-        var $15=$it; //@line 524 "itertoolsmodule.c"
-        var $16=$15; //@line 524 "itertoolsmodule.c"
-        var $17=_tee_copy($16); //@line 524 "itertoolsmodule.c"
-        var $18=$17; //@line 524 "itertoolsmodule.c"
-        $to=$18; //@line 524 "itertoolsmodule.c"
-        __label__ = 12; break; //@line 524 "itertoolsmodule.c"
+        var $14=$it; //@line 524 "itertoolsmodule.c"
+        var $15=$14; //@line 524 "itertoolsmodule.c"
+        var $16=_tee_copy($15); //@line 524 "itertoolsmodule.c"
+        var $17=$16; //@line 524 "itertoolsmodule.c"
+        $to=$17; //@line 524 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 524 "itertoolsmodule.c"
       case 5: // $bb4
-        var $19=__PyObject_GC_New(_tee_type); //@line 528 "itertoolsmodule.c"
-        var $20=$19; //@line 528 "itertoolsmodule.c"
-        $to=$20; //@line 528 "itertoolsmodule.c"
-        var $21=$to; //@line 529 "itertoolsmodule.c"
-        var $22=($21)==0; //@line 529 "itertoolsmodule.c"
-        if ($22) { __label__ = 12; break; } else { __label__ = 6; break; } //@line 529 "itertoolsmodule.c"
+        var $18=__PyObject_GC_New(_tee_type); //@line 528 "itertoolsmodule.c"
+        var $19=$18; //@line 528 "itertoolsmodule.c"
+        $to=$19; //@line 528 "itertoolsmodule.c"
+        var $20=$to; //@line 529 "itertoolsmodule.c"
+        var $21=($20)==0; //@line 529 "itertoolsmodule.c"
+        if ($21) { __label__ = 9; break; } else { __label__ = 6; break; } //@line 529 "itertoolsmodule.c"
       case 6: // $bb5
-        var $23=$it; //@line 531 "itertoolsmodule.c"
-        $it_addr_i=$23;
-        var $24=__PyObject_GC_New(_teedataobject_type); //@line 351 "itertoolsmodule.c"
-        var $25=$24; //@line 351 "itertoolsmodule.c"
-        $tdo_i=$25; //@line 351 "itertoolsmodule.c"
-        var $26=$tdo_i; //@line 352 "itertoolsmodule.c"
-        var $27=($26)==0; //@line 352 "itertoolsmodule.c"
-        if ($27) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 352 "itertoolsmodule.c"
-      case 7: // $bb_i
-        $0=0; //@line 353 "itertoolsmodule.c"
-        __label__ = 9; break; //@line 353 "itertoolsmodule.c"
-      case 8: // $bb1_i
-        var $28=$tdo_i; //@line 355 "itertoolsmodule.c"
-        var $29=$28+12; //@line 355 "itertoolsmodule.c"
-        HEAP[$29]=0; //@line 355 "itertoolsmodule.c"
-        var $30=$tdo_i; //@line 356 "itertoolsmodule.c"
-        var $31=$30+16; //@line 356 "itertoolsmodule.c"
-        HEAP[$31]=0; //@line 356 "itertoolsmodule.c"
-        var $32=$it_addr_i; //@line 357 "itertoolsmodule.c"
-        var $33=$32; //@line 357 "itertoolsmodule.c"
-        var $34=HEAP[$33]; //@line 357 "itertoolsmodule.c"
-        var $35=($34) + 1; //@line 357 "itertoolsmodule.c"
-        var $36=$it_addr_i; //@line 357 "itertoolsmodule.c"
-        var $37=$36; //@line 357 "itertoolsmodule.c"
-        HEAP[$37]=$35; //@line 357 "itertoolsmodule.c"
-        var $38=$tdo_i; //@line 358 "itertoolsmodule.c"
-        var $39=$38+8; //@line 358 "itertoolsmodule.c"
-        var $40=$it_addr_i; //@line 358 "itertoolsmodule.c"
-        HEAP[$39]=$40; //@line 358 "itertoolsmodule.c"
-        var $41=$tdo_i; //@line 359 "itertoolsmodule.c"
-        var $42=$41; //@line 359 "itertoolsmodule.c"
-        _PyObject_GC_Track($42); //@line 359 "itertoolsmodule.c"
-        var $43=$tdo_i; //@line 360 "itertoolsmodule.c"
-        var $44=$43; //@line 360 "itertoolsmodule.c"
-        $0=$44; //@line 360 "itertoolsmodule.c"
-        __label__ = 9; break; //@line 360 "itertoolsmodule.c"
-      case 9: // $teedataobject_new_exit
-        var $45=$0; //@line 353 "itertoolsmodule.c"
-        $retval_i=$45; //@line 353 "itertoolsmodule.c"
-        var $retval3_i=$retval_i; //@line 353 "itertoolsmodule.c"
-        var $46=$retval3_i; //@line 531 "itertoolsmodule.c"
-        var $47=$to; //@line 531 "itertoolsmodule.c"
-        var $48=$47+8; //@line 531 "itertoolsmodule.c"
-        HEAP[$48]=$46; //@line 531 "itertoolsmodule.c"
-        var $49=$to; //@line 532 "itertoolsmodule.c"
-        var $50=$49+8; //@line 532 "itertoolsmodule.c"
-        var $51=HEAP[$50]; //@line 532 "itertoolsmodule.c"
-        var $52=($51)==0; //@line 532 "itertoolsmodule.c"
-        var $53=$to; //@line 533 "itertoolsmodule.c"
-        if ($52) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 532 "itertoolsmodule.c"
-      case 10: // $bb6
-        var $54=$53; //@line 533 "itertoolsmodule.c"
-        _PyObject_GC_Del($54); //@line 533 "itertoolsmodule.c"
+        var $22=$it; //@line 531 "itertoolsmodule.c"
+        var $23=_teedataobject_new($22); //@line 531 "itertoolsmodule.c"
+        var $24=$23; //@line 531 "itertoolsmodule.c"
+        var $25=$to; //@line 531 "itertoolsmodule.c"
+        var $26=$25+8; //@line 531 "itertoolsmodule.c"
+        HEAP[$26]=$24; //@line 531 "itertoolsmodule.c"
+        var $27=$to; //@line 532 "itertoolsmodule.c"
+        var $28=$27+8; //@line 532 "itertoolsmodule.c"
+        var $29=HEAP[$28]; //@line 532 "itertoolsmodule.c"
+        var $30=($29)==0; //@line 532 "itertoolsmodule.c"
+        var $31=$to; //@line 533 "itertoolsmodule.c"
+        if ($30) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 532 "itertoolsmodule.c"
+      case 7: // $bb6
+        var $32=$31; //@line 533 "itertoolsmodule.c"
+        _PyObject_GC_Del($32); //@line 533 "itertoolsmodule.c"
         $to=0; //@line 534 "itertoolsmodule.c"
-        __label__ = 12; break; //@line 534 "itertoolsmodule.c"
-      case 11: // $bb7
-        var $55=$53+12; //@line 538 "itertoolsmodule.c"
-        HEAP[$55]=0; //@line 538 "itertoolsmodule.c"
-        var $56=$to; //@line 539 "itertoolsmodule.c"
-        var $57=$56+16; //@line 539 "itertoolsmodule.c"
-        HEAP[$57]=0; //@line 539 "itertoolsmodule.c"
-        var $58=$to; //@line 540 "itertoolsmodule.c"
-        var $59=$58; //@line 540 "itertoolsmodule.c"
-        _PyObject_GC_Track($59); //@line 540 "itertoolsmodule.c"
-        __label__ = 12; break; //@line 541 "itertoolsmodule.c"
-      case 12: // $done
-        var $60=$it; //@line 542 "itertoolsmodule.c"
-        var $61=($60)!=0; //@line 542 "itertoolsmodule.c"
-        if ($61) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 542 "itertoolsmodule.c"
-      case 13: // $bb8
-        var $62=$it; //@line 542 "itertoolsmodule.c"
-        var $63=$62; //@line 542 "itertoolsmodule.c"
-        var $64=HEAP[$63]; //@line 542 "itertoolsmodule.c"
-        var $65=($64) - 1; //@line 542 "itertoolsmodule.c"
-        var $66=$it; //@line 542 "itertoolsmodule.c"
-        var $67=$66; //@line 542 "itertoolsmodule.c"
-        HEAP[$67]=$65; //@line 542 "itertoolsmodule.c"
-        var $68=$it; //@line 542 "itertoolsmodule.c"
-        var $69=$68; //@line 542 "itertoolsmodule.c"
-        var $70=HEAP[$69]; //@line 542 "itertoolsmodule.c"
-        var $71=($70)==0; //@line 542 "itertoolsmodule.c"
-        if ($71) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 542 "itertoolsmodule.c"
-      case 14: // $bb9
-        var $72=$it; //@line 542 "itertoolsmodule.c"
-        var $73=$72+4; //@line 542 "itertoolsmodule.c"
-        var $74=HEAP[$73]; //@line 542 "itertoolsmodule.c"
-        var $75=$74+24; //@line 542 "itertoolsmodule.c"
-        var $76=HEAP[$75]; //@line 542 "itertoolsmodule.c"
-        var $77=$it; //@line 542 "itertoolsmodule.c"
-        FUNCTION_TABLE[$76]($77); //@line 542 "itertoolsmodule.c"
-        __label__ = 15; break; //@line 542 "itertoolsmodule.c"
-      case 15: // $bb10
-        var $78=$to; //@line 543 "itertoolsmodule.c"
-        var $79=$78; //@line 543 "itertoolsmodule.c"
-        $1=$79; //@line 543 "itertoolsmodule.c"
-        __label__ = 16; break; //@line 543 "itertoolsmodule.c"
-      case 16: // $bb11
-        var $80=$1; //@line 522 "itertoolsmodule.c"
-        $retval=$80; //@line 522 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 534 "itertoolsmodule.c"
+      case 8: // $bb7
+        var $33=$31+12; //@line 538 "itertoolsmodule.c"
+        HEAP[$33]=0; //@line 538 "itertoolsmodule.c"
+        var $34=$to; //@line 539 "itertoolsmodule.c"
+        var $35=$34+16; //@line 539 "itertoolsmodule.c"
+        HEAP[$35]=0; //@line 539 "itertoolsmodule.c"
+        var $36=$to; //@line 540 "itertoolsmodule.c"
+        var $37=$36; //@line 540 "itertoolsmodule.c"
+        _PyObject_GC_Track($37); //@line 540 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 541 "itertoolsmodule.c"
+      case 9: // $done
+        var $38=$it; //@line 542 "itertoolsmodule.c"
+        var $39=($38)!=0; //@line 542 "itertoolsmodule.c"
+        if ($39) { __label__ = 10; break; } else { __label__ = 12; break; } //@line 542 "itertoolsmodule.c"
+      case 10: // $bb8
+        var $40=$it; //@line 542 "itertoolsmodule.c"
+        var $41=$40; //@line 542 "itertoolsmodule.c"
+        var $42=HEAP[$41]; //@line 542 "itertoolsmodule.c"
+        var $43=($42) - 1; //@line 542 "itertoolsmodule.c"
+        var $44=$it; //@line 542 "itertoolsmodule.c"
+        var $45=$44; //@line 542 "itertoolsmodule.c"
+        HEAP[$45]=$43; //@line 542 "itertoolsmodule.c"
+        var $46=$it; //@line 542 "itertoolsmodule.c"
+        var $47=$46; //@line 542 "itertoolsmodule.c"
+        var $48=HEAP[$47]; //@line 542 "itertoolsmodule.c"
+        var $49=($48)==0; //@line 542 "itertoolsmodule.c"
+        if ($49) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 542 "itertoolsmodule.c"
+      case 11: // $bb9
+        var $50=$it; //@line 542 "itertoolsmodule.c"
+        var $51=$50+4; //@line 542 "itertoolsmodule.c"
+        var $52=HEAP[$51]; //@line 542 "itertoolsmodule.c"
+        var $53=$52+24; //@line 542 "itertoolsmodule.c"
+        var $54=HEAP[$53]; //@line 542 "itertoolsmodule.c"
+        var $55=$it; //@line 542 "itertoolsmodule.c"
+        FUNCTION_TABLE[$54]($55); //@line 542 "itertoolsmodule.c"
+        __label__ = 12; break; //@line 542 "itertoolsmodule.c"
+      case 12: // $bb10
+        var $56=$to; //@line 543 "itertoolsmodule.c"
+        var $57=$56; //@line 543 "itertoolsmodule.c"
+        $0=$57; //@line 543 "itertoolsmodule.c"
+        __label__ = 13; break; //@line 543 "itertoolsmodule.c"
+      case 13: // $bb11
+        var $58=$0; //@line 522 "itertoolsmodule.c"
+        $retval=$58; //@line 522 "itertoolsmodule.c"
         var $retval12=$retval; //@line 522 "itertoolsmodule.c"
         ;
         return $retval12; //@line 522 "itertoolsmodule.c"
@@ -2242,7 +2262,7 @@ var ___PRETTY_FUNCTION___12663;
         $args_addr=$args;
         $kw_addr=$kw;
         var $1=$args_addr; //@line 551 "itertoolsmodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str11, 1, 1, $iterable); //@line 551 "itertoolsmodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str11, 1, 1, allocate([$iterable,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 551 "itertoolsmodule.c"
         var $3=($2)==0; //@line 551 "itertoolsmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 551 "itertoolsmodule.c"
       case 1: // $bb
@@ -2372,7 +2392,7 @@ var ___PRETTY_FUNCTION___12663;
         $args_addr=$args;
         HEAP[$n]=2; //@line 627 "itertoolsmodule.c"
         var $1=$args_addr; //@line 630 "itertoolsmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str14, $iterable, $n); //@line 630 "itertoolsmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str14, allocate([$iterable,0,0,0,$n,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 630 "itertoolsmodule.c"
         var $3=($2)==0; //@line 630 "itertoolsmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 630 "itertoolsmodule.c"
       case 1: // $bb
@@ -2510,7 +2530,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 26; break; //@line 656 "itertoolsmodule.c"
       case 21: // $bb21
         var $78=$copyable; //@line 657 "itertoolsmodule.c"
-        var $79=_PyObject_CallMethod($78, __str12, 0); //@line 657 "itertoolsmodule.c"
+        var $79=_PyObject_CallMethod($78, __str12, 0, allocate(1, "i32", ALLOC_STACK)); //@line 657 "itertoolsmodule.c"
         $copyable=$79; //@line 657 "itertoolsmodule.c"
         var $80=$copyable; //@line 658 "itertoolsmodule.c"
         var $81=($80)==0; //@line 658 "itertoolsmodule.c"
@@ -2602,7 +2622,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 18; break; //@line 691 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 693 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str17, 1, 1, $iterable); //@line 693 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str17, 1, 1, allocate([$iterable,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 693 "itertoolsmodule.c"
         var $8=($7)==0; //@line 693 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 693 "itertoolsmodule.c"
       case 4: // $bb3
@@ -3073,7 +3093,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 12; break; //@line 842 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 844 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str20, 2, 2, $func, $seq); //@line 844 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str20, 2, 2, allocate([$func,0,0,0,$seq,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 844 "itertoolsmodule.c"
         var $8=($7)==0; //@line 844 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 844 "itertoolsmodule.c"
       case 4: // $bb3
@@ -3371,7 +3391,7 @@ var ___PRETTY_FUNCTION___12663;
         var $19=$18+8; //@line 899 "itertoolsmodule.c"
         var $20=HEAP[$19]; //@line 899 "itertoolsmodule.c"
         var $21=$item; //@line 899 "itertoolsmodule.c"
-        var $22=_PyObject_CallFunctionObjArgs($20, $21, 0); //@line 899 "itertoolsmodule.c"
+        var $22=_PyObject_CallFunctionObjArgs($20, allocate([$21,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 899 "itertoolsmodule.c"
         $good=$22; //@line 899 "itertoolsmodule.c"
         var $23=$good; //@line 900 "itertoolsmodule.c"
         var $24=($23)==0; //@line 900 "itertoolsmodule.c"
@@ -3501,7 +3521,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 12; break; //@line 984 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 986 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str23, 2, 2, $func, $seq); //@line 986 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str23, 2, 2, allocate([$func,0,0,0,$seq,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 986 "itertoolsmodule.c"
         var $8=($7)==0; //@line 986 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 986 "itertoolsmodule.c"
       case 4: // $bb3
@@ -3794,7 +3814,7 @@ var ___PRETTY_FUNCTION___12663;
         var $18=$17+8; //@line 1039 "itertoolsmodule.c"
         var $19=HEAP[$18]; //@line 1039 "itertoolsmodule.c"
         var $20=$item; //@line 1039 "itertoolsmodule.c"
-        var $21=_PyObject_CallFunctionObjArgs($19, $20, 0); //@line 1039 "itertoolsmodule.c"
+        var $21=_PyObject_CallFunctionObjArgs($19, allocate([$20,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1039 "itertoolsmodule.c"
         $good=$21; //@line 1039 "itertoolsmodule.c"
         var $22=$good; //@line 1040 "itertoolsmodule.c"
         var $23=($22)==0; //@line 1040 "itertoolsmodule.c"
@@ -3939,7 +3959,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 41; break; //@line 1127 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 1129 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str26, 2, 4, $seq, $a1, $a2, $a3); //@line 1129 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str26, 2, 4, allocate([$seq,0,0,0,$a1,0,0,0,$a2,0,0,0,$a3,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1129 "itertoolsmodule.c"
         var $8=($7)==0; //@line 1129 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1129 "itertoolsmodule.c"
       case 4: // $bb3
@@ -4453,7 +4473,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 12; break; //@line 1316 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 1318 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str32, 2, 2, $func, $seq); //@line 1318 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str32, 2, 2, allocate([$func,0,0,0,$seq,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1318 "itertoolsmodule.c"
         var $8=($7)==0; //@line 1318 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1318 "itertoolsmodule.c"
       case 4: // $bb3
@@ -5897,7 +5917,7 @@ var ___PRETTY_FUNCTION___12663;
         var $8=$tmpargs; //@line 1802 "itertoolsmodule.c"
         var $9=$kwds_addr; //@line 1802 "itertoolsmodule.c"
         var $kwlist3=$kwlist; //@line 1802 "itertoolsmodule.c"
-        var $10=_PyArg_ParseTupleAndKeywords($8, $9, __str41, $kwlist3, $repeat); //@line 1802 "itertoolsmodule.c"
+        var $10=_PyArg_ParseTupleAndKeywords($8, $9, __str41, $kwlist3, allocate([$repeat,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 1802 "itertoolsmodule.c"
         var $11=($10)==0; //@line 1802 "itertoolsmodule.c"
         var $12=$tmpargs; //@line 1803 "itertoolsmodule.c"
         var $13=$12; //@line 1803 "itertoolsmodule.c"
@@ -6729,7 +6749,7 @@ var ___PRETTY_FUNCTION___12663;
         $indices=0; //@line 2048 "itertoolsmodule.c"
         var $1=$args_addr; //@line 2052 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 2052 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str46, _kwargs_10542, $iterable, $r); //@line 2052 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str46, _kwargs_10542, allocate([$iterable,0,0,0,$r,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2052 "itertoolsmodule.c"
         var $4=($3)==0; //@line 2052 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2052 "itertoolsmodule.c"
       case 1: // $bb
@@ -7433,7 +7453,7 @@ var ___PRETTY_FUNCTION___12663;
         $indices=0; //@line 2297 "itertoolsmodule.c"
         var $1=$args_addr; //@line 2301 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 2301 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str51, _kwargs_10765, $iterable, $r); //@line 2301 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str51, _kwargs_10765, allocate([$iterable,0,0,0,$r,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2301 "itertoolsmodule.c"
         var $4=($3)==0; //@line 2301 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2301 "itertoolsmodule.c"
       case 1: // $bb
@@ -8146,7 +8166,7 @@ var ___PRETTY_FUNCTION___12663;
         $cycles=0; //@line 2543 "itertoolsmodule.c"
         var $1=$args_addr; //@line 2547 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 2547 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str53, _kwargs_10993, $iterable, $robj); //@line 2547 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str53, _kwargs_10993, allocate([$iterable,0,0,0,$robj,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2547 "itertoolsmodule.c"
         var $4=($3)==0; //@line 2547 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2547 "itertoolsmodule.c"
       case 1: // $bb
@@ -8960,7 +8980,7 @@ var ___PRETTY_FUNCTION___12663;
         $selectors=0; //@line 2784 "itertoolsmodule.c"
         var $1=$args_addr; //@line 2788 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 2788 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str55, _kwargs_11231, $seq1, $seq2); //@line 2788 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str55, _kwargs_11231, allocate([$seq1,0,0,0,$seq2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2788 "itertoolsmodule.c"
         var $4=($3)==0; //@line 2788 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2788 "itertoolsmodule.c"
       case 1: // $bb
@@ -9416,7 +9436,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 12; break; //@line 2935 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 2937 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str60, 2, 2, $func, $seq); //@line 2937 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str60, 2, 2, allocate([$func,0,0,0,$seq,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 2937 "itertoolsmodule.c"
         var $8=($7)==0; //@line 2937 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2937 "itertoolsmodule.c"
       case 4: // $bb3
@@ -9719,7 +9739,7 @@ var ___PRETTY_FUNCTION___12663;
         var $24=$23+8; //@line 2993 "itertoolsmodule.c"
         var $25=HEAP[$24]; //@line 2993 "itertoolsmodule.c"
         var $26=$item; //@line 2993 "itertoolsmodule.c"
-        var $27=_PyObject_CallFunctionObjArgs($25, $26, 0); //@line 2993 "itertoolsmodule.c"
+        var $27=_PyObject_CallFunctionObjArgs($25, allocate([$26,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 2993 "itertoolsmodule.c"
         $good=$27; //@line 2993 "itertoolsmodule.c"
         var $28=$good; //@line 2995 "itertoolsmodule.c"
         var $29=($28)==0; //@line 2995 "itertoolsmodule.c"
@@ -9848,7 +9868,7 @@ var ___PRETTY_FUNCTION___12663;
         __label__ = 12; break; //@line 3078 "itertoolsmodule.c"
       case 3: // $bb2
         var $6=$args_addr; //@line 3080 "itertoolsmodule.c"
-        var $7=_PyArg_UnpackTuple($6, __str63, 2, 2, $func, $seq); //@line 3080 "itertoolsmodule.c"
+        var $7=_PyArg_UnpackTuple($6, __str63, 2, 2, allocate([$func,0,0,0,$seq,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 3080 "itertoolsmodule.c"
         var $8=($7)==0; //@line 3080 "itertoolsmodule.c"
         if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 3080 "itertoolsmodule.c"
       case 4: // $bb3
@@ -10151,7 +10171,7 @@ var ___PRETTY_FUNCTION___12663;
         var $24=$23+8; //@line 3136 "itertoolsmodule.c"
         var $25=HEAP[$24]; //@line 3136 "itertoolsmodule.c"
         var $26=$item; //@line 3136 "itertoolsmodule.c"
-        var $27=_PyObject_CallFunctionObjArgs($25, $26, 0); //@line 3136 "itertoolsmodule.c"
+        var $27=_PyObject_CallFunctionObjArgs($25, allocate([$26,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 3136 "itertoolsmodule.c"
         $good=$27; //@line 3136 "itertoolsmodule.c"
         var $28=$good; //@line 3138 "itertoolsmodule.c"
         var $29=($28)==0; //@line 3138 "itertoolsmodule.c"
@@ -10275,7 +10295,7 @@ var ___PRETTY_FUNCTION___12663;
         HEAP[$long_step]=0; //@line 3237 "itertoolsmodule.c"
         var $1=$args_addr; //@line 3240 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 3240 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str65, _kwlist_11697, $long_cnt, $long_step); //@line 3240 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str65, _kwlist_11697, allocate([$long_cnt,0,0,0,$long_step,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 3240 "itertoolsmodule.c"
         var $4=($3)==0; //@line 3240 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3240 "itertoolsmodule.c"
       case 1: // $bb
@@ -10725,98 +10745,112 @@ var ___PRETTY_FUNCTION___12663;
   }
   
 
+  function _count_nextlong($lz) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $lz_addr;
+        var $retval;
+        var $0;
+        var $long_cnt;
+        var $stepped_up;
+        $lz_addr=$lz;
+        var $1=$lz_addr; //@line 3326 "itertoolsmodule.c"
+        var $2=$1+12; //@line 3326 "itertoolsmodule.c"
+        var $3=HEAP[$2]; //@line 3326 "itertoolsmodule.c"
+        $long_cnt=$3; //@line 3326 "itertoolsmodule.c"
+        var $4=$long_cnt; //@line 3327 "itertoolsmodule.c"
+        var $5=($4)==0; //@line 3327 "itertoolsmodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 3327 "itertoolsmodule.c"
+      case 1: // $bb
+        var $6=_PyInt_FromSsize_t(2147483647); //@line 3329 "itertoolsmodule.c"
+        $long_cnt=$6; //@line 3329 "itertoolsmodule.c"
+        var $7=$long_cnt; //@line 3330 "itertoolsmodule.c"
+        var $8=($7)==0; //@line 3330 "itertoolsmodule.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 3330 "itertoolsmodule.c"
+      case 2: // $bb1
+        $0=0; //@line 3331 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 3331 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $9=$lz_addr; //@line 3333 "itertoolsmodule.c"
+        var $10=$9+8; //@line 3333 "itertoolsmodule.c"
+        var $11=HEAP[$10]; //@line 3333 "itertoolsmodule.c"
+        var $12=($11)!=2147483647; //@line 3333 "itertoolsmodule.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 3333 "itertoolsmodule.c"
+      case 4: // $bb3
+        var $13=$long_cnt; //@line 3333 "itertoolsmodule.c"
+        var $14=($13)==0; //@line 3333 "itertoolsmodule.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 3333 "itertoolsmodule.c"
+      case 5: // $bb4
+        ___assert_fail(__str72, __str5, 3333, ___PRETTY_FUNCTION___11885); //@line 3333 "itertoolsmodule.c"
+        throw "Reached an unreachable!" //@line 3333 "itertoolsmodule.c"
+      case 6: // $bb5
+        var $15=$lz_addr; //@line 3335 "itertoolsmodule.c"
+        var $16=$15+16; //@line 3335 "itertoolsmodule.c"
+        var $17=HEAP[$16]; //@line 3335 "itertoolsmodule.c"
+        var $18=$long_cnt; //@line 3335 "itertoolsmodule.c"
+        var $19=_PyNumber_Add($18, $17); //@line 3335 "itertoolsmodule.c"
+        $stepped_up=$19; //@line 3335 "itertoolsmodule.c"
+        var $20=$stepped_up; //@line 3336 "itertoolsmodule.c"
+        var $21=($20)==0; //@line 3336 "itertoolsmodule.c"
+        if ($21) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 3336 "itertoolsmodule.c"
+      case 7: // $bb6
+        $0=0; //@line 3337 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 3337 "itertoolsmodule.c"
+      case 8: // $bb7
+        var $22=$lz_addr; //@line 3338 "itertoolsmodule.c"
+        var $23=$22+12; //@line 3338 "itertoolsmodule.c"
+        var $24=$stepped_up; //@line 3338 "itertoolsmodule.c"
+        HEAP[$23]=$24; //@line 3338 "itertoolsmodule.c"
+        var $25=$long_cnt; //@line 3339 "itertoolsmodule.c"
+        $0=$25; //@line 3339 "itertoolsmodule.c"
+        __label__ = 9; break; //@line 3339 "itertoolsmodule.c"
+      case 9: // $bb8
+        var $26=$0; //@line 3331 "itertoolsmodule.c"
+        $retval=$26; //@line 3331 "itertoolsmodule.c"
+        var $retval9=$retval; //@line 3331 "itertoolsmodule.c"
+        ;
+        return $retval9; //@line 3331 "itertoolsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _count_next($lz) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $lz_addr_i;
-        var $retval_i;
-        var $0;
-        var $long_cnt_i;
-        var $stepped_up_i;
         var $lz_addr;
         var $retval;
-        var $1;
+        var $0;
         $lz_addr=$lz;
-        var $2=$lz_addr; //@line 3345 "itertoolsmodule.c"
-        var $3=$2+8; //@line 3345 "itertoolsmodule.c"
-        var $4=HEAP[$3]; //@line 3345 "itertoolsmodule.c"
-        var $5=($4)==2147483647; //@line 3345 "itertoolsmodule.c"
-        var $6=$lz_addr; //@line 3346 "itertoolsmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 11; break; } //@line 3345 "itertoolsmodule.c"
+        var $1=$lz_addr; //@line 3345 "itertoolsmodule.c"
+        var $2=$1+8; //@line 3345 "itertoolsmodule.c"
+        var $3=HEAP[$2]; //@line 3345 "itertoolsmodule.c"
+        var $4=($3)==2147483647; //@line 3345 "itertoolsmodule.c"
+        var $5=$lz_addr; //@line 3346 "itertoolsmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3345 "itertoolsmodule.c"
       case 1: // $bb
-        $lz_addr_i=$6;
-        var $7=$lz_addr_i; //@line 3326 "itertoolsmodule.c"
-        var $8=$7+12; //@line 3326 "itertoolsmodule.c"
-        var $9=HEAP[$8]; //@line 3326 "itertoolsmodule.c"
-        $long_cnt_i=$9; //@line 3326 "itertoolsmodule.c"
-        var $10=$long_cnt_i; //@line 3327 "itertoolsmodule.c"
-        var $11=($10)==0; //@line 3327 "itertoolsmodule.c"
-        if ($11) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 3327 "itertoolsmodule.c"
-      case 2: // $bb_i
-        var $12=_PyInt_FromSsize_t(2147483647); //@line 3329 "itertoolsmodule.c"
-        $long_cnt_i=$12; //@line 3329 "itertoolsmodule.c"
-        var $13=$long_cnt_i; //@line 3330 "itertoolsmodule.c"
-        var $14=($13)==0; //@line 3330 "itertoolsmodule.c"
-        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3330 "itertoolsmodule.c"
-      case 3: // $bb1_i
-        $0=0; //@line 3331 "itertoolsmodule.c"
-        __label__ = 10; break; //@line 3331 "itertoolsmodule.c"
-      case 4: // $bb2_i
-        var $15=$lz_addr_i; //@line 3333 "itertoolsmodule.c"
-        var $16=$15+8; //@line 3333 "itertoolsmodule.c"
-        var $17=HEAP[$16]; //@line 3333 "itertoolsmodule.c"
-        var $18=($17)!=2147483647; //@line 3333 "itertoolsmodule.c"
-        if ($18) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 3333 "itertoolsmodule.c"
-      case 5: // $bb3_i
-        var $19=$long_cnt_i; //@line 3333 "itertoolsmodule.c"
-        var $20=($19)==0; //@line 3333 "itertoolsmodule.c"
-        if ($20) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 3333 "itertoolsmodule.c"
-      case 6: // $bb4_i
-        ___assert_fail(__str72, __str5, 3333, ___PRETTY_FUNCTION___11885); //@line 3333 "itertoolsmodule.c"
-        throw "Reached an unreachable!" //@line 3333 "itertoolsmodule.c"
-      case 7: // $bb5_i
-        var $21=$lz_addr_i; //@line 3335 "itertoolsmodule.c"
-        var $22=$21+16; //@line 3335 "itertoolsmodule.c"
-        var $23=HEAP[$22]; //@line 3335 "itertoolsmodule.c"
-        var $24=$long_cnt_i; //@line 3335 "itertoolsmodule.c"
-        var $25=_PyNumber_Add($24, $23); //@line 3335 "itertoolsmodule.c"
-        $stepped_up_i=$25; //@line 3335 "itertoolsmodule.c"
-        var $26=$stepped_up_i; //@line 3336 "itertoolsmodule.c"
-        var $27=($26)==0; //@line 3336 "itertoolsmodule.c"
-        if ($27) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 3336 "itertoolsmodule.c"
-      case 8: // $bb6_i
-        $0=0; //@line 3337 "itertoolsmodule.c"
-        __label__ = 10; break; //@line 3337 "itertoolsmodule.c"
-      case 9: // $bb7_i
-        var $28=$lz_addr_i; //@line 3338 "itertoolsmodule.c"
-        var $29=$28+12; //@line 3338 "itertoolsmodule.c"
-        var $30=$stepped_up_i; //@line 3338 "itertoolsmodule.c"
-        HEAP[$29]=$30; //@line 3338 "itertoolsmodule.c"
-        var $31=$long_cnt_i; //@line 3339 "itertoolsmodule.c"
-        $0=$31; //@line 3339 "itertoolsmodule.c"
-        __label__ = 10; break; //@line 3339 "itertoolsmodule.c"
-      case 10: // $count_nextlong_exit
-        var $32=$0; //@line 3331 "itertoolsmodule.c"
-        $retval_i=$32; //@line 3331 "itertoolsmodule.c"
-        var $retval9_i=$retval_i; //@line 3331 "itertoolsmodule.c"
-        $1=$retval9_i; //@line 3346 "itertoolsmodule.c"
-        __label__ = 12; break; //@line 3346 "itertoolsmodule.c"
-      case 11: // $bb1
-        var $33=$6+8; //@line 3347 "itertoolsmodule.c"
-        var $34=HEAP[$33]; //@line 3347 "itertoolsmodule.c"
-        var $35=($34) + 1; //@line 3347 "itertoolsmodule.c"
-        var $36=$lz_addr; //@line 3347 "itertoolsmodule.c"
-        var $37=$36+8; //@line 3347 "itertoolsmodule.c"
-        HEAP[$37]=$35; //@line 3347 "itertoolsmodule.c"
-        var $38=_PyInt_FromSsize_t($34); //@line 3347 "itertoolsmodule.c"
-        $1=$38; //@line 3347 "itertoolsmodule.c"
-        __label__ = 12; break; //@line 3347 "itertoolsmodule.c"
-      case 12: // $bb2
-        var $39=$1; //@line 3346 "itertoolsmodule.c"
-        $retval=$39; //@line 3346 "itertoolsmodule.c"
+        var $6=_count_nextlong($5); //@line 3346 "itertoolsmodule.c"
+        $0=$6; //@line 3346 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 3346 "itertoolsmodule.c"
+      case 2: // $bb1
+        var $7=$5+8; //@line 3347 "itertoolsmodule.c"
+        var $8=HEAP[$7]; //@line 3347 "itertoolsmodule.c"
+        var $9=($8) + 1; //@line 3347 "itertoolsmodule.c"
+        var $10=$lz_addr; //@line 3347 "itertoolsmodule.c"
+        var $11=$10+8; //@line 3347 "itertoolsmodule.c"
+        HEAP[$11]=$9; //@line 3347 "itertoolsmodule.c"
+        var $12=_PyInt_FromSsize_t($8); //@line 3347 "itertoolsmodule.c"
+        $0=$12; //@line 3347 "itertoolsmodule.c"
+        __label__ = 3; break; //@line 3347 "itertoolsmodule.c"
+      case 3: // $bb2
+        var $13=$0; //@line 3346 "itertoolsmodule.c"
+        $retval=$13; //@line 3346 "itertoolsmodule.c"
         var $retval3=$retval; //@line 3346 "itertoolsmodule.c"
         ;
         return $retval3; //@line 3346 "itertoolsmodule.c"
@@ -10849,7 +10883,7 @@ var ___PRETTY_FUNCTION___12663;
       case 1: // $bb
         var $6=$5+8; //@line 3357 "itertoolsmodule.c"
         var $7=HEAP[$6]; //@line 3357 "itertoolsmodule.c"
-        var $8=_PyString_FromFormat(__str73, $7); //@line 3357 "itertoolsmodule.c"
+        var $8=_PyString_FromFormat(__str73, allocate([$7,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 3357 "itertoolsmodule.c"
         $0=$8; //@line 3357 "itertoolsmodule.c"
         __label__ = 15; break; //@line 3357 "itertoolsmodule.c"
       case 2: // $bb1
@@ -10888,7 +10922,7 @@ var ___PRETTY_FUNCTION___12663;
         var $31=$30; //@line 3365 "itertoolsmodule.c"
         var $32=$31+20; //@line 3365 "itertoolsmodule.c"
         var $33=$32; //@line 3365 "itertoolsmodule.c"
-        var $34=_PyString_FromFormat(__str74, $33); //@line 3365 "itertoolsmodule.c"
+        var $34=_PyString_FromFormat(__str74, allocate([$33,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 3365 "itertoolsmodule.c"
         $result=$34; //@line 3365 "itertoolsmodule.c"
         __label__ = 9; break; //@line 3365 "itertoolsmodule.c"
       case 7: // $bb6
@@ -10908,7 +10942,7 @@ var ___PRETTY_FUNCTION___12663;
         var $45=$44; //@line 3370 "itertoolsmodule.c"
         var $46=$45+20; //@line 3370 "itertoolsmodule.c"
         var $47=$46; //@line 3370 "itertoolsmodule.c"
-        var $48=_PyString_FromFormat(__str75, $47, $43); //@line 3370 "itertoolsmodule.c"
+        var $48=_PyString_FromFormat(__str75, allocate([$47,0,0,0,$43,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 3370 "itertoolsmodule.c"
         $result=$48; //@line 3370 "itertoolsmodule.c"
         __label__ = 9; break; //@line 3370 "itertoolsmodule.c"
       case 9: // $bb8
@@ -11000,7 +11034,7 @@ var ___PRETTY_FUNCTION___12663;
         var $12=$11; //@line 3383 "itertoolsmodule.c"
         var $13=$12+4; //@line 3383 "itertoolsmodule.c"
         var $14=HEAP[$13]; //@line 3383 "itertoolsmodule.c"
-        var $15=_Py_BuildValue(__str76, $14, $10, $7); //@line 3383 "itertoolsmodule.c"
+        var $15=_Py_BuildValue(__str76, allocate([$14,0,0,0,$10,0,0,0,$7,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 3383 "itertoolsmodule.c"
         $0=$15; //@line 3383 "itertoolsmodule.c"
         __label__ = 3; break; //@line 3383 "itertoolsmodule.c"
       case 2: // $bb1
@@ -11010,7 +11044,7 @@ var ___PRETTY_FUNCTION___12663;
         var $19=$18; //@line 3384 "itertoolsmodule.c"
         var $20=$19+4; //@line 3384 "itertoolsmodule.c"
         var $21=HEAP[$20]; //@line 3384 "itertoolsmodule.c"
-        var $22=_Py_BuildValue(__str77, $21, $17); //@line 3384 "itertoolsmodule.c"
+        var $22=_Py_BuildValue(__str77, allocate([$21,0,0,0,$17,0,0,0], ["%struct._typeobject*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3384 "itertoolsmodule.c"
         $0=$22; //@line 3384 "itertoolsmodule.c"
         __label__ = 3; break; //@line 3384 "itertoolsmodule.c"
       case 3: // $bb2
@@ -11107,7 +11141,7 @@ var ___PRETTY_FUNCTION___12663;
         var $32=$i; //@line 3488 "itertoolsmodule.c"
         var $33=($32) + 1; //@line 3488 "itertoolsmodule.c"
         var $34=HEAP[_PyExc_TypeError]; //@line 3488 "itertoolsmodule.c"
-        var $35=_PyErr_Format($34, __str81, $33); //@line 3488 "itertoolsmodule.c"
+        var $35=_PyErr_Format($34, __str81, allocate([$33,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 3488 "itertoolsmodule.c"
         __label__ = 11; break; //@line 3488 "itertoolsmodule.c"
       case 11: // $bb10
         var $36=$ittuple; //@line 3491 "itertoolsmodule.c"
@@ -11700,7 +11734,7 @@ var ___PRETTY_FUNCTION___12663;
         HEAP[$cnt]=-1; //@line 3651 "itertoolsmodule.c"
         var $1=$args_addr; //@line 3654 "itertoolsmodule.c"
         var $2=$kwds_addr; //@line 3654 "itertoolsmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str83, _kwargs_12229, $element, $cnt); //@line 3654 "itertoolsmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str83, _kwargs_12229, allocate([$element,0,0,0,$cnt,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 3654 "itertoolsmodule.c"
         var $4=($3)==0; //@line 3654 "itertoolsmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3654 "itertoolsmodule.c"
       case 1: // $bb
@@ -11961,7 +11995,7 @@ var ___PRETTY_FUNCTION___12663;
         var $12=$11; //@line 3706 "itertoolsmodule.c"
         var $13=$12+20; //@line 3706 "itertoolsmodule.c"
         var $14=$13; //@line 3706 "itertoolsmodule.c"
-        var $15=_PyString_FromFormat(__str86, $14); //@line 3706 "itertoolsmodule.c"
+        var $15=_PyString_FromFormat(__str86, allocate([$14,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 3706 "itertoolsmodule.c"
         $result=$15; //@line 3706 "itertoolsmodule.c"
         __label__ = 5; break; //@line 3706 "itertoolsmodule.c"
       case 4: // $bb3
@@ -11972,7 +12006,7 @@ var ___PRETTY_FUNCTION___12663;
         var $20=$19; //@line 3709 "itertoolsmodule.c"
         var $21=$20+20; //@line 3709 "itertoolsmodule.c"
         var $22=$21; //@line 3709 "itertoolsmodule.c"
-        var $23=_PyString_FromFormat(__str87, $22, $18); //@line 3709 "itertoolsmodule.c"
+        var $23=_PyString_FromFormat(__str87, allocate([$22,0,0,0,$18,0,0,0], ["i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3709 "itertoolsmodule.c"
         $result=$23; //@line 3709 "itertoolsmodule.c"
         __label__ = 5; break; //@line 3709 "itertoolsmodule.c"
       case 5: // $bb4
@@ -12155,7 +12189,7 @@ var ___PRETTY_FUNCTION___12663;
         var $44=$i; //@line 3827 "itertoolsmodule.c"
         var $45=($44) + 1; //@line 3827 "itertoolsmodule.c"
         var $46=HEAP[_PyExc_TypeError]; //@line 3827 "itertoolsmodule.c"
-        var $47=_PyErr_Format($46, __str93, $45); //@line 3827 "itertoolsmodule.c"
+        var $47=_PyErr_Format($46, __str93, allocate([$45,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 3827 "itertoolsmodule.c"
         __label__ = 14; break; //@line 3827 "itertoolsmodule.c"
       case 14: // $bb13
         var $48=$ittuple; //@line 3830 "itertoolsmodule.c"

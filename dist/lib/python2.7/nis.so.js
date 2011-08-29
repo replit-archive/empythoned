@@ -161,6 +161,27 @@ var __str30;
 
 
 
+  function _nis_error($err) {
+    ;
+    var __label__;
+  
+    var $err_addr;
+    var $retval;
+    var $0;
+    $err_addr=$err;
+    var $1=$err_addr; //@line 52 "nismodule.c"
+    var $2=_yperr_string($1); //@line 52 "nismodule.c"
+    var $3=HEAP[_NisError]; //@line 52 "nismodule.c"
+    _PyErr_SetString($3, $2); //@line 52 "nismodule.c"
+    $0=0; //@line 53 "nismodule.c"
+    var $4=$0; //@line 53 "nismodule.c"
+    $retval=$4; //@line 53 "nismodule.c"
+    var $retval1=$retval; //@line 53 "nismodule.c"
+    ;
+    return $retval1; //@line 53 "nismodule.c"
+  }
+  
+
   function _nis_mapname($map, $pfix) {
     ;
     var __label__;
@@ -484,46 +505,35 @@ var __str30;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $err_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $domain=__stackBase__;
         var $err;
         var $res;
         $self_addr=$self;
-        var $2=_yp_get_default_domain($domain); //@line 150 "nismodule.c"
-        $err=$2; //@line 150 "nismodule.c"
-        var $3=$err; //@line 150 "nismodule.c"
-        var $4=($3)!=0; //@line 150 "nismodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 150 "nismodule.c"
+        var $1=_yp_get_default_domain($domain); //@line 150 "nismodule.c"
+        $err=$1; //@line 150 "nismodule.c"
+        var $2=$err; //@line 150 "nismodule.c"
+        var $3=($2)!=0; //@line 150 "nismodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 150 "nismodule.c"
       case 1: // $bb
-        var $5=$err; //@line 151 "nismodule.c"
-        $err_addr_i=$5;
-        var $6=$err_addr_i; //@line 52 "nismodule.c"
-        var $7=_yperr_string($6); //@line 52 "nismodule.c"
-        var $8=HEAP[_NisError]; //@line 52 "nismodule.c"
-        _PyErr_SetString($8, $7); //@line 52 "nismodule.c"
-        $0=0; //@line 53 "nismodule.c"
-        var $9=$0; //@line 53 "nismodule.c"
-        $retval_i=$9; //@line 53 "nismodule.c"
-        var $retval1_i=$retval_i; //@line 53 "nismodule.c"
-        $1=$retval1_i; //@line 151 "nismodule.c"
+        var $4=$err; //@line 151 "nismodule.c"
+        var $5=_nis_error($4); //@line 151 "nismodule.c"
+        $0=$5; //@line 151 "nismodule.c"
         __label__ = 3; break; //@line 151 "nismodule.c"
       case 2: // $bb1
-        var $10=HEAP[$domain]; //@line 153 "nismodule.c"
-        var $11=_strlen($10); //@line 153 "nismodule.c"
-        var $12=HEAP[$domain]; //@line 153 "nismodule.c"
-        var $13=_PyString_FromStringAndSize($12, $11); //@line 153 "nismodule.c"
-        $res=$13; //@line 153 "nismodule.c"
-        var $14=$res; //@line 154 "nismodule.c"
-        $1=$14; //@line 154 "nismodule.c"
+        var $6=HEAP[$domain]; //@line 153 "nismodule.c"
+        var $7=_strlen($6); //@line 153 "nismodule.c"
+        var $8=HEAP[$domain]; //@line 153 "nismodule.c"
+        var $9=_PyString_FromStringAndSize($8, $7); //@line 153 "nismodule.c"
+        $res=$9; //@line 153 "nismodule.c"
+        var $10=$res; //@line 154 "nismodule.c"
+        $0=$10; //@line 154 "nismodule.c"
         __label__ = 3; break; //@line 154 "nismodule.c"
       case 3: // $bb2
-        var $15=$1; //@line 151 "nismodule.c"
-        $retval=$15; //@line 151 "nismodule.c"
+        var $11=$0; //@line 151 "nismodule.c"
+        $retval=$11; //@line 151 "nismodule.c"
         var $retval3=$retval; //@line 151 "nismodule.c"
         STACKTOP = __stackBase__;
         return $retval3; //@line 151 "nismodule.c"
@@ -539,17 +549,11 @@ var __str30;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $err_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $err_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $args_addr;
         var $kwdict_addr;
         var $retval;
-        var $2;
+        var $0;
         var $match=__stackBase__;
         var $domain=__stackBase__+4;
         var $keylen=__stackBase__+8;
@@ -563,95 +567,79 @@ var __str30;
         $args_addr=$args;
         $kwdict_addr=$kwdict;
         HEAP[$domain]=0; //@line 161 "nismodule.c"
-        var $3=$args_addr; //@line 169 "nismodule.c"
-        var $4=$kwdict_addr; //@line 169 "nismodule.c"
-        var $5=_PyArg_ParseTupleAndKeywords($3, $4, __str16, _kwlist_9940, $key, $keylen, $map, $domain); //@line 169 "nismodule.c"
-        var $6=($5)==0; //@line 169 "nismodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 169 "nismodule.c"
+        var $1=$args_addr; //@line 169 "nismodule.c"
+        var $2=$kwdict_addr; //@line 169 "nismodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str16, _kwlist_9940, allocate([$key,0,0,0,$keylen,0,0,0,$map,0,0,0,$domain,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 169 "nismodule.c"
+        var $4=($3)==0; //@line 169 "nismodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 169 "nismodule.c"
       case 1: // $bb
-        $2=0; //@line 172 "nismodule.c"
+        $0=0; //@line 172 "nismodule.c"
         __label__ = 12; break; //@line 172 "nismodule.c"
       case 2: // $bb1
-        var $7=HEAP[$domain]; //@line 173 "nismodule.c"
-        var $8=($7)==0; //@line 173 "nismodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 173 "nismodule.c"
+        var $5=HEAP[$domain]; //@line 173 "nismodule.c"
+        var $6=($5)==0; //@line 173 "nismodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 173 "nismodule.c"
       case 3: // $bb2
-        var $9=_yp_get_default_domain($domain); //@line 173 "nismodule.c"
-        $err=$9; //@line 173 "nismodule.c"
-        var $10=$err; //@line 173 "nismodule.c"
-        var $11=($10)!=0; //@line 173 "nismodule.c"
-        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 173 "nismodule.c"
+        var $7=_yp_get_default_domain($domain); //@line 173 "nismodule.c"
+        $err=$7; //@line 173 "nismodule.c"
+        var $8=$err; //@line 173 "nismodule.c"
+        var $9=($8)!=0; //@line 173 "nismodule.c"
+        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 173 "nismodule.c"
       case 4: // $bb3
-        var $12=$err; //@line 174 "nismodule.c"
-        $err_addr_i=$12;
-        var $13=$err_addr_i; //@line 52 "nismodule.c"
-        var $14=_yperr_string($13); //@line 52 "nismodule.c"
-        var $15=HEAP[_NisError]; //@line 52 "nismodule.c"
-        _PyErr_SetString($15, $14); //@line 52 "nismodule.c"
-        $1=0; //@line 53 "nismodule.c"
-        var $16=$1; //@line 53 "nismodule.c"
-        $retval_i=$16; //@line 53 "nismodule.c"
-        var $retval1_i=$retval_i; //@line 53 "nismodule.c"
-        $2=$retval1_i; //@line 174 "nismodule.c"
+        var $10=$err; //@line 174 "nismodule.c"
+        var $11=_nis_error($10); //@line 174 "nismodule.c"
+        $0=$11; //@line 174 "nismodule.c"
         __label__ = 12; break; //@line 174 "nismodule.c"
       case 5: // $bb4
-        var $17=HEAP[$map]; //@line 175 "nismodule.c"
-        var $18=_nis_mapname($17, $fix); //@line 175 "nismodule.c"
-        HEAP[$map]=$18; //@line 175 "nismodule.c"
-        var $19=HEAP[$fix]; //@line 176 "nismodule.c"
-        var $20=($19)!=0; //@line 176 "nismodule.c"
-        if ($20) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 176 "nismodule.c"
+        var $12=HEAP[$map]; //@line 175 "nismodule.c"
+        var $13=_nis_mapname($12, $fix); //@line 175 "nismodule.c"
+        HEAP[$map]=$13; //@line 175 "nismodule.c"
+        var $14=HEAP[$fix]; //@line 176 "nismodule.c"
+        var $15=($14)!=0; //@line 176 "nismodule.c"
+        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 176 "nismodule.c"
       case 6: // $bb5
-        var $21=HEAP[$keylen]; //@line 177 "nismodule.c"
-        var $22=($21) + 1; //@line 177 "nismodule.c"
-        HEAP[$keylen]=$22; //@line 177 "nismodule.c"
+        var $16=HEAP[$keylen]; //@line 177 "nismodule.c"
+        var $17=($16) + 1; //@line 177 "nismodule.c"
+        HEAP[$keylen]=$17; //@line 177 "nismodule.c"
         __label__ = 7; break; //@line 177 "nismodule.c"
       case 7: // $bb6
-        var $23=HEAP[$keylen]; //@line 179 "nismodule.c"
-        var $24=HEAP[$key]; //@line 179 "nismodule.c"
-        var $25=HEAP[$map]; //@line 179 "nismodule.c"
-        var $26=HEAP[$domain]; //@line 179 "nismodule.c"
-        var $27=_yp_match($26, $25, $24, $23, $match, $len); //@line 179 "nismodule.c"
-        $err=$27; //@line 179 "nismodule.c"
-        var $28=HEAP[$fix]; //@line 181 "nismodule.c"
-        var $29=($28)!=0; //@line 181 "nismodule.c"
-        if ($29) { __lastLabel__ = 7; __label__ = 8; break; } else { __lastLabel__ = 7; __label__ = 9; break; } //@line 181 "nismodule.c"
+        var $18=HEAP[$keylen]; //@line 179 "nismodule.c"
+        var $19=HEAP[$key]; //@line 179 "nismodule.c"
+        var $20=HEAP[$map]; //@line 179 "nismodule.c"
+        var $21=HEAP[$domain]; //@line 179 "nismodule.c"
+        var $22=_yp_match($21, $20, $19, $18, $match, $len); //@line 179 "nismodule.c"
+        $err=$22; //@line 179 "nismodule.c"
+        var $23=HEAP[$fix]; //@line 181 "nismodule.c"
+        var $24=($23)!=0; //@line 181 "nismodule.c"
+        if ($24) { __lastLabel__ = 7; __label__ = 8; break; } else { __lastLabel__ = 7; __label__ = 9; break; } //@line 181 "nismodule.c"
       case 8: // $bb7
-        var $30=HEAP[$len]; //@line 182 "nismodule.c"
-        var $31=($30) - 1; //@line 182 "nismodule.c"
-        HEAP[$len]=$31; //@line 182 "nismodule.c"
+        var $25=HEAP[$len]; //@line 182 "nismodule.c"
+        var $26=($25) - 1; //@line 182 "nismodule.c"
+        HEAP[$len]=$26; //@line 182 "nismodule.c"
         var $_pr=$err;
         __lastLabel__ = 8; __label__ = 9; break; //@line 182 "nismodule.c"
       case 9: // $bb8
-        var $32=__lastLabel__ == 8 ? $_pr : ($27);
-        var $33=($32)!=0; //@line 183 "nismodule.c"
-        if ($33) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 183 "nismodule.c"
+        var $27=__lastLabel__ == 8 ? $_pr : ($22);
+        var $28=($27)!=0; //@line 183 "nismodule.c"
+        if ($28) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 183 "nismodule.c"
       case 10: // $bb9
-        var $34=$err; //@line 184 "nismodule.c"
-        $err_addr_i1=$34;
-        var $35=$err_addr_i1; //@line 52 "nismodule.c"
-        var $36=_yperr_string($35); //@line 52 "nismodule.c"
-        var $37=HEAP[_NisError]; //@line 52 "nismodule.c"
-        _PyErr_SetString($37, $36); //@line 52 "nismodule.c"
-        $0=0; //@line 53 "nismodule.c"
-        var $38=$0; //@line 53 "nismodule.c"
-        $retval_i2=$38; //@line 53 "nismodule.c"
-        var $retval1_i3=$retval_i2; //@line 53 "nismodule.c"
-        $2=$retval1_i3; //@line 184 "nismodule.c"
+        var $29=$err; //@line 184 "nismodule.c"
+        var $30=_nis_error($29); //@line 184 "nismodule.c"
+        $0=$30; //@line 184 "nismodule.c"
         __label__ = 12; break; //@line 184 "nismodule.c"
       case 11: // $bb10
-        var $39=HEAP[$len]; //@line 185 "nismodule.c"
-        var $40=HEAP[$match]; //@line 185 "nismodule.c"
-        var $41=_PyString_FromStringAndSize($40, $39); //@line 185 "nismodule.c"
-        $res=$41; //@line 185 "nismodule.c"
-        var $42=HEAP[$match]; //@line 186 "nismodule.c"
-        _free($42); //@line 186 "nismodule.c"
-        var $43=$res; //@line 187 "nismodule.c"
-        $2=$43; //@line 187 "nismodule.c"
+        var $31=HEAP[$len]; //@line 185 "nismodule.c"
+        var $32=HEAP[$match]; //@line 185 "nismodule.c"
+        var $33=_PyString_FromStringAndSize($32, $31); //@line 185 "nismodule.c"
+        $res=$33; //@line 185 "nismodule.c"
+        var $34=HEAP[$match]; //@line 186 "nismodule.c"
+        _free($34); //@line 186 "nismodule.c"
+        var $35=$res; //@line 187 "nismodule.c"
+        $0=$35; //@line 187 "nismodule.c"
         __label__ = 12; break; //@line 187 "nismodule.c"
       case 12: // $bb11
-        var $44=$2; //@line 172 "nismodule.c"
-        $retval=$44; //@line 172 "nismodule.c"
+        var $36=$0; //@line 172 "nismodule.c"
+        $retval=$36; //@line 172 "nismodule.c"
         var $retval12=$retval; //@line 172 "nismodule.c"
         STACKTOP = __stackBase__;
         return $retval12; //@line 172 "nismodule.c"
@@ -666,17 +654,11 @@ var __str30;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $err_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $err_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $args_addr;
         var $kwdict_addr;
         var $retval;
-        var $2;
+        var $0;
         var $domain=__stackBase__;
         var $map=__stackBase__+4;
         var $cb=__stackBase__+8;
@@ -687,112 +669,96 @@ var __str30;
         $args_addr=$args;
         $kwdict_addr=$kwdict;
         HEAP[$domain]=0; //@line 193 "nismodule.c"
-        var $3=$args_addr; //@line 201 "nismodule.c"
-        var $4=$kwdict_addr; //@line 201 "nismodule.c"
-        var $5=_PyArg_ParseTupleAndKeywords($3, $4, __str20, _kwlist_9988, $map, $domain); //@line 201 "nismodule.c"
-        var $6=($5)==0; //@line 201 "nismodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 201 "nismodule.c"
+        var $1=$args_addr; //@line 201 "nismodule.c"
+        var $2=$kwdict_addr; //@line 201 "nismodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str20, _kwlist_9988, allocate([$map,0,0,0,$domain,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 201 "nismodule.c"
+        var $4=($3)==0; //@line 201 "nismodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 201 "nismodule.c"
       case 1: // $bb
-        $2=0; //@line 203 "nismodule.c"
+        $0=0; //@line 203 "nismodule.c"
         __label__ = 12; break; //@line 203 "nismodule.c"
       case 2: // $bb1
-        var $7=HEAP[$domain]; //@line 204 "nismodule.c"
-        var $8=($7)==0; //@line 204 "nismodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 204 "nismodule.c"
+        var $5=HEAP[$domain]; //@line 204 "nismodule.c"
+        var $6=($5)==0; //@line 204 "nismodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 204 "nismodule.c"
       case 3: // $bb2
-        var $9=_yp_get_default_domain($domain); //@line 204 "nismodule.c"
-        $err=$9; //@line 204 "nismodule.c"
-        var $10=$err; //@line 204 "nismodule.c"
-        var $11=($10)!=0; //@line 204 "nismodule.c"
-        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 204 "nismodule.c"
+        var $7=_yp_get_default_domain($domain); //@line 204 "nismodule.c"
+        $err=$7; //@line 204 "nismodule.c"
+        var $8=$err; //@line 204 "nismodule.c"
+        var $9=($8)!=0; //@line 204 "nismodule.c"
+        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 204 "nismodule.c"
       case 4: // $bb3
-        var $12=$err; //@line 205 "nismodule.c"
-        $err_addr_i=$12;
-        var $13=$err_addr_i; //@line 52 "nismodule.c"
-        var $14=_yperr_string($13); //@line 52 "nismodule.c"
-        var $15=HEAP[_NisError]; //@line 52 "nismodule.c"
-        _PyErr_SetString($15, $14); //@line 52 "nismodule.c"
-        $1=0; //@line 53 "nismodule.c"
-        var $16=$1; //@line 53 "nismodule.c"
-        $retval_i=$16; //@line 53 "nismodule.c"
-        var $retval1_i=$retval_i; //@line 53 "nismodule.c"
-        $2=$retval1_i; //@line 205 "nismodule.c"
+        var $10=$err; //@line 205 "nismodule.c"
+        var $11=_nis_error($10); //@line 205 "nismodule.c"
+        $0=$11; //@line 205 "nismodule.c"
         __label__ = 12; break; //@line 205 "nismodule.c"
       case 5: // $bb4
-        var $17=_PyDict_New(); //@line 206 "nismodule.c"
-        $dict=$17; //@line 206 "nismodule.c"
-        var $18=($17)==0; //@line 207 "nismodule.c"
-        if ($18) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 207 "nismodule.c"
+        var $12=_PyDict_New(); //@line 206 "nismodule.c"
+        $dict=$12; //@line 206 "nismodule.c"
+        var $13=($12)==0; //@line 207 "nismodule.c"
+        if ($13) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 207 "nismodule.c"
       case 6: // $bb5
-        $2=0; //@line 208 "nismodule.c"
+        $0=0; //@line 208 "nismodule.c"
         __label__ = 12; break; //@line 208 "nismodule.c"
       case 7: // $bb6
-        var $19=$cb; //@line 209 "nismodule.c"
-        HEAP[$19]=(FUNCTION_TABLE_OFFSET + 2); //@line 209 "nismodule.c"
-        var $20=$data; //@line 210 "nismodule.c"
-        var $21=$dict; //@line 210 "nismodule.c"
-        HEAP[$20]=$21; //@line 210 "nismodule.c"
-        var $22=HEAP[$map]; //@line 211 "nismodule.c"
-        var $23=$data+4; //@line 211 "nismodule.c"
-        var $24=_nis_mapname($22, $23); //@line 211 "nismodule.c"
-        HEAP[$map]=$24; //@line 211 "nismodule.c"
+        var $14=$cb; //@line 209 "nismodule.c"
+        HEAP[$14]=(FUNCTION_TABLE_OFFSET + 2); //@line 209 "nismodule.c"
+        var $15=$data; //@line 210 "nismodule.c"
+        var $16=$dict; //@line 210 "nismodule.c"
+        HEAP[$15]=$16; //@line 210 "nismodule.c"
+        var $17=HEAP[$map]; //@line 211 "nismodule.c"
+        var $18=$data+4; //@line 211 "nismodule.c"
+        var $19=_nis_mapname($17, $18); //@line 211 "nismodule.c"
+        HEAP[$map]=$19; //@line 211 "nismodule.c"
         var $data7=$data; //@line 212 "nismodule.c"
-        var $25=$cb+4; //@line 212 "nismodule.c"
-        HEAP[$25]=$data7; //@line 212 "nismodule.c"
-        var $26=_PyEval_SaveThread(); //@line 213 "nismodule.c"
-        var $27=$data+8; //@line 213 "nismodule.c"
-        HEAP[$27]=$26; //@line 213 "nismodule.c"
-        var $28=HEAP[$map]; //@line 214 "nismodule.c"
-        var $29=HEAP[$domain]; //@line 214 "nismodule.c"
-        var $30=_yp_all($29, $28, $cb); //@line 214 "nismodule.c"
-        $err=$30; //@line 214 "nismodule.c"
-        var $31=$data+8; //@line 215 "nismodule.c"
-        var $32=HEAP[$31]; //@line 215 "nismodule.c"
-        _PyEval_RestoreThread($32); //@line 215 "nismodule.c"
-        var $33=$err; //@line 216 "nismodule.c"
-        var $34=($33)!=0; //@line 216 "nismodule.c"
-        var $35=$dict; //@line 217 "nismodule.c"
-        if ($34) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 216 "nismodule.c"
+        var $20=$cb+4; //@line 212 "nismodule.c"
+        HEAP[$20]=$data7; //@line 212 "nismodule.c"
+        var $21=_PyEval_SaveThread(); //@line 213 "nismodule.c"
+        var $22=$data+8; //@line 213 "nismodule.c"
+        HEAP[$22]=$21; //@line 213 "nismodule.c"
+        var $23=HEAP[$map]; //@line 214 "nismodule.c"
+        var $24=HEAP[$domain]; //@line 214 "nismodule.c"
+        var $25=_yp_all($24, $23, $cb); //@line 214 "nismodule.c"
+        $err=$25; //@line 214 "nismodule.c"
+        var $26=$data+8; //@line 215 "nismodule.c"
+        var $27=HEAP[$26]; //@line 215 "nismodule.c"
+        _PyEval_RestoreThread($27); //@line 215 "nismodule.c"
+        var $28=$err; //@line 216 "nismodule.c"
+        var $29=($28)!=0; //@line 216 "nismodule.c"
+        var $30=$dict; //@line 217 "nismodule.c"
+        if ($29) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 216 "nismodule.c"
       case 8: // $bb9
-        var $36=$35; //@line 217 "nismodule.c"
-        var $37=HEAP[$36]; //@line 217 "nismodule.c"
-        var $38=($37) - 1; //@line 217 "nismodule.c"
-        var $39=$dict; //@line 217 "nismodule.c"
-        var $40=$39; //@line 217 "nismodule.c"
-        HEAP[$40]=$38; //@line 217 "nismodule.c"
-        var $41=$dict; //@line 217 "nismodule.c"
-        var $42=$41; //@line 217 "nismodule.c"
-        var $43=HEAP[$42]; //@line 217 "nismodule.c"
-        var $44=($43)==0; //@line 217 "nismodule.c"
-        if ($44) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 217 "nismodule.c"
+        var $31=$30; //@line 217 "nismodule.c"
+        var $32=HEAP[$31]; //@line 217 "nismodule.c"
+        var $33=($32) - 1; //@line 217 "nismodule.c"
+        var $34=$dict; //@line 217 "nismodule.c"
+        var $35=$34; //@line 217 "nismodule.c"
+        HEAP[$35]=$33; //@line 217 "nismodule.c"
+        var $36=$dict; //@line 217 "nismodule.c"
+        var $37=$36; //@line 217 "nismodule.c"
+        var $38=HEAP[$37]; //@line 217 "nismodule.c"
+        var $39=($38)==0; //@line 217 "nismodule.c"
+        if ($39) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 217 "nismodule.c"
       case 9: // $bb10
+        var $40=$dict; //@line 217 "nismodule.c"
+        var $41=$40+4; //@line 217 "nismodule.c"
+        var $42=HEAP[$41]; //@line 217 "nismodule.c"
+        var $43=$42+24; //@line 217 "nismodule.c"
+        var $44=HEAP[$43]; //@line 217 "nismodule.c"
         var $45=$dict; //@line 217 "nismodule.c"
-        var $46=$45+4; //@line 217 "nismodule.c"
-        var $47=HEAP[$46]; //@line 217 "nismodule.c"
-        var $48=$47+24; //@line 217 "nismodule.c"
-        var $49=HEAP[$48]; //@line 217 "nismodule.c"
-        var $50=$dict; //@line 217 "nismodule.c"
-        FUNCTION_TABLE[$49]($50); //@line 217 "nismodule.c"
+        FUNCTION_TABLE[$44]($45); //@line 217 "nismodule.c"
         __label__ = 10; break; //@line 217 "nismodule.c"
       case 10: // $bb11
-        var $51=$err; //@line 218 "nismodule.c"
-        $err_addr_i1=$51;
-        var $52=$err_addr_i1; //@line 52 "nismodule.c"
-        var $53=_yperr_string($52); //@line 52 "nismodule.c"
-        var $54=HEAP[_NisError]; //@line 52 "nismodule.c"
-        _PyErr_SetString($54, $53); //@line 52 "nismodule.c"
-        $0=0; //@line 53 "nismodule.c"
-        var $55=$0; //@line 53 "nismodule.c"
-        $retval_i2=$55; //@line 53 "nismodule.c"
-        var $retval1_i3=$retval_i2; //@line 53 "nismodule.c"
-        $2=$retval1_i3; //@line 218 "nismodule.c"
+        var $46=$err; //@line 218 "nismodule.c"
+        var $47=_nis_error($46); //@line 218 "nismodule.c"
+        $0=$47; //@line 218 "nismodule.c"
         __label__ = 12; break; //@line 218 "nismodule.c"
       case 11: // $bb12
-        $2=$35; //@line 220 "nismodule.c"
+        $0=$30; //@line 220 "nismodule.c"
         __label__ = 12; break; //@line 220 "nismodule.c"
       case 12: // $bb13
-        var $56=$2; //@line 203 "nismodule.c"
-        $retval=$56; //@line 203 "nismodule.c"
+        var $48=$0; //@line 203 "nismodule.c"
+        $retval=$48; //@line 203 "nismodule.c"
         var $retval14=$retval; //@line 203 "nismodule.c"
         STACKTOP = __stackBase__;
         return $retval14; //@line 203 "nismodule.c"
@@ -835,59 +801,115 @@ var __str30;
   }
   
 
+  function _nis_xdr_mapname($xdrs, $objp) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $xdrs_addr;
+        var $objp_addr;
+        var $retval;
+        var $0;
+        $xdrs_addr=$xdrs;
+        $objp_addr=$objp;
+        var $1=$xdrs_addr; //@line 281 "nismodule.c"
+        var $2=$objp_addr; //@line 281 "nismodule.c"
+        var $3=_xdr_string($1, $2, 64); //@line 281 "nismodule.c"
+        var $4=($3)==0; //@line 281 "nismodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 281 "nismodule.c"
+      case 1: // $bb
+        $0=0; //@line 282 "nismodule.c"
+        __label__ = 3; break; //@line 282 "nismodule.c"
+      case 2: // $bb1
+        $0=1; //@line 284 "nismodule.c"
+        __label__ = 3; break; //@line 284 "nismodule.c"
+      case 3: // $bb2
+        var $5=$0; //@line 282 "nismodule.c"
+        $retval=$5; //@line 282 "nismodule.c"
+        var $retval3=$retval; //@line 282 "nismodule.c"
+        ;
+        return $retval3; //@line 282 "nismodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _nis_xdr_ypmaplist($xdrs, $objp) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $xdrs_addr_i;
-        var $objp_addr_i;
-        var $retval_i;
-        var $0;
         var $xdrs_addr;
         var $objp_addr;
         var $retval;
-        var $1;
+        var $0;
         $xdrs_addr=$xdrs;
         $objp_addr=$objp;
-        var $2=$objp_addr; //@line 291 "nismodule.c"
-        var $3=$2; //@line 291 "nismodule.c"
-        var $4=$xdrs_addr; //@line 291 "nismodule.c"
-        $xdrs_addr_i=$4;
-        $objp_addr_i=$3;
-        var $5=$xdrs_addr_i; //@line 281 "nismodule.c"
-        var $6=$objp_addr_i; //@line 281 "nismodule.c"
-        var $7=_xdr_string($5, $6, 64); //@line 281 "nismodule.c"
-        var $8=($7)==0; //@line 281 "nismodule.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 281 "nismodule.c"
+        var $1=$objp_addr; //@line 291 "nismodule.c"
+        var $2=$1; //@line 291 "nismodule.c"
+        var $3=$xdrs_addr; //@line 291 "nismodule.c"
+        var $4=_nis_xdr_mapname($3, $2); //@line 291 "nismodule.c"
+        var $5=($4)==0; //@line 291 "nismodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 291 "nismodule.c"
       case 1: // $bb
-        $0=0; //@line 282 "nismodule.c"
-        $retval_i=0; //@line 282 "nismodule.c"
-        $1=0; //@line 292 "nismodule.c"
+        $0=0; //@line 292 "nismodule.c"
         __label__ = 5; break; //@line 292 "nismodule.c"
       case 2: // $bb1
-        $0=1; //@line 284 "nismodule.c"
-        $retval_i=1; //@line 282 "nismodule.c"
-        var $9=$objp_addr; //@line 294 "nismodule.c"
-        var $10=$9+4; //@line 294 "nismodule.c"
-        var $11=$10; //@line 294 "nismodule.c"
-        var $12=$xdrs_addr; //@line 294 "nismodule.c"
-        var $13=_xdr_pointer($12, $11, 8, (FUNCTION_TABLE_OFFSET + 4)); //@line 294 "nismodule.c"
-        var $14=($13)==0; //@line 294 "nismodule.c"
-        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 294 "nismodule.c"
+        var $6=$objp_addr; //@line 294 "nismodule.c"
+        var $7=$6+4; //@line 294 "nismodule.c"
+        var $8=$7; //@line 294 "nismodule.c"
+        var $9=$xdrs_addr; //@line 294 "nismodule.c"
+        var $10=_xdr_pointer($9, $8, 8, (FUNCTION_TABLE_OFFSET + 4)); //@line 294 "nismodule.c"
+        var $11=($10)==0; //@line 294 "nismodule.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 294 "nismodule.c"
       case 3: // $bb2
-        $1=0; //@line 297 "nismodule.c"
+        $0=0; //@line 297 "nismodule.c"
         __label__ = 5; break; //@line 297 "nismodule.c"
       case 4: // $bb3
-        $1=1; //@line 299 "nismodule.c"
+        $0=1; //@line 299 "nismodule.c"
         __label__ = 5; break; //@line 299 "nismodule.c"
       case 5: // $bb4
-        var $15=$1; //@line 292 "nismodule.c"
-        $retval=$15; //@line 292 "nismodule.c"
+        var $12=$0; //@line 292 "nismodule.c"
+        $retval=$12; //@line 292 "nismodule.c"
         var $retval5=$retval; //@line 292 "nismodule.c"
         ;
         return $retval5; //@line 292 "nismodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _nis_xdr_ypstat($xdrs, $objp) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $xdrs_addr;
+        var $objp_addr;
+        var $retval;
+        var $0;
+        $xdrs_addr=$xdrs;
+        $objp_addr=$objp;
+        var $1=$xdrs_addr; //@line 306 "nismodule.c"
+        var $2=$objp_addr; //@line 306 "nismodule.c"
+        var $3=_xdr_enum($1, $2); //@line 306 "nismodule.c"
+        var $4=($3)==0; //@line 306 "nismodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 306 "nismodule.c"
+      case 1: // $bb
+        $0=0; //@line 307 "nismodule.c"
+        __label__ = 3; break; //@line 307 "nismodule.c"
+      case 2: // $bb1
+        $0=1; //@line 309 "nismodule.c"
+        __label__ = 3; break; //@line 309 "nismodule.c"
+      case 3: // $bb2
+        var $5=$0; //@line 307 "nismodule.c"
+        $retval=$5; //@line 307 "nismodule.c"
+        var $retval3=$retval; //@line 307 "nismodule.c"
+        ;
+        return $retval3; //@line 307 "nismodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -899,50 +921,38 @@ var __str30;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $xdrs_addr_i;
-        var $objp_addr_i;
-        var $retval_i;
-        var $0;
         var $xdrs_addr;
         var $objp_addr;
         var $retval;
-        var $1;
+        var $0;
         $xdrs_addr=$xdrs;
         $objp_addr=$objp;
-        var $2=$objp_addr; //@line 317 "nismodule.c"
-        var $3=$2; //@line 317 "nismodule.c"
-        var $4=$xdrs_addr; //@line 317 "nismodule.c"
-        $xdrs_addr_i=$4;
-        $objp_addr_i=$3;
-        var $5=$xdrs_addr_i; //@line 306 "nismodule.c"
-        var $6=$objp_addr_i; //@line 306 "nismodule.c"
-        var $7=_xdr_enum($5, $6); //@line 306 "nismodule.c"
-        var $8=($7)==0; //@line 306 "nismodule.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 306 "nismodule.c"
+        var $1=$objp_addr; //@line 317 "nismodule.c"
+        var $2=$1; //@line 317 "nismodule.c"
+        var $3=$xdrs_addr; //@line 317 "nismodule.c"
+        var $4=_nis_xdr_ypstat($3, $2); //@line 317 "nismodule.c"
+        var $5=($4)==0; //@line 317 "nismodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 317 "nismodule.c"
       case 1: // $bb
-        $0=0; //@line 307 "nismodule.c"
-        $retval_i=0; //@line 307 "nismodule.c"
-        $1=0; //@line 318 "nismodule.c"
+        $0=0; //@line 318 "nismodule.c"
         __label__ = 5; break; //@line 318 "nismodule.c"
       case 2: // $bb1
-        $0=1; //@line 309 "nismodule.c"
-        $retval_i=1; //@line 307 "nismodule.c"
-        var $9=$objp_addr; //@line 320 "nismodule.c"
-        var $10=$9+4; //@line 320 "nismodule.c"
-        var $11=$10; //@line 320 "nismodule.c"
-        var $12=$xdrs_addr; //@line 320 "nismodule.c"
-        var $13=_xdr_pointer($12, $11, 8, (FUNCTION_TABLE_OFFSET + 4)); //@line 320 "nismodule.c"
-        var $14=($13)==0; //@line 320 "nismodule.c"
-        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 320 "nismodule.c"
+        var $6=$objp_addr; //@line 320 "nismodule.c"
+        var $7=$6+4; //@line 320 "nismodule.c"
+        var $8=$7; //@line 320 "nismodule.c"
+        var $9=$xdrs_addr; //@line 320 "nismodule.c"
+        var $10=_xdr_pointer($9, $8, 8, (FUNCTION_TABLE_OFFSET + 4)); //@line 320 "nismodule.c"
+        var $11=($10)==0; //@line 320 "nismodule.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 320 "nismodule.c"
       case 3: // $bb2
-        $1=0; //@line 323 "nismodule.c"
+        $0=0; //@line 323 "nismodule.c"
         __label__ = 5; break; //@line 323 "nismodule.c"
       case 4: // $bb3
-        $1=1; //@line 325 "nismodule.c"
+        $0=1; //@line 325 "nismodule.c"
         __label__ = 5; break; //@line 325 "nismodule.c"
       case 5: // $bb4
-        var $15=$1; //@line 318 "nismodule.c"
-        $retval=$15; //@line 318 "nismodule.c"
+        var $12=$0; //@line 318 "nismodule.c"
+        $retval=$12; //@line 318 "nismodule.c"
         var $retval5=$retval; //@line 318 "nismodule.c"
         ;
         return $retval5; //@line 318 "nismodule.c"
@@ -951,33 +961,167 @@ var __str30;
   }
   
 
-  function _nis_maps($self, $args, $kwdict) {
-    var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
+  function _nisproc_maplist_2($argp, $clnt) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $argp_addr;
+        var $clnt_addr;
+        var $retval;
+        var $0;
+        $argp_addr=$argp;
+        $clnt_addr=$clnt;
+        _llvm_memset_p0i8_i32(_res_10110, 0, 8, 1, 0); //@line 335 "nismodule.c"
+        var $1=$clnt_addr; //@line 336 "nismodule.c"
+        var $2=$1+4; //@line 336 "nismodule.c"
+        var $3=HEAP[$2]; //@line 336 "nismodule.c"
+        var $4=$3; //@line 336 "nismodule.c"
+        var $5=HEAP[$4]; //@line 336 "nismodule.c"
+        var $6=$argp_addr; //@line 336 "nismodule.c"
+        var $7=$6; //@line 336 "nismodule.c"
+        var $8=$clnt_addr; //@line 336 "nismodule.c"
+        var $9=FUNCTION_TABLE[$5]($8, 11, (FUNCTION_TABLE_OFFSET + 6), $7, (FUNCTION_TABLE_OFFSET + 8), _res_10110, 25, 0); //@line 336 "nismodule.c"
+        var $10=($9)!=0; //@line 336 "nismodule.c"
+        if ($10) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 336 "nismodule.c"
+      case 1: // $bb
+        $0=0; //@line 341 "nismodule.c"
+        __label__ = 3; break; //@line 341 "nismodule.c"
+      case 2: // $bb2
+        $0=_res_10110; //@line 343 "nismodule.c"
+        __label__ = 3; break; //@line 343 "nismodule.c"
+      case 3: // $bb3
+        var $11=$0; //@line 341 "nismodule.c"
+        $retval=$11; //@line 341 "nismodule.c"
+        var $retval4=$retval; //@line 341 "nismodule.c"
+        ;
+        return $retval4; //@line 341 "nismodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _nis_maplist($dom) {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $argp_addr_i_i;
-        var $clnt_addr_i_i;
-        var $retval_i_i;
+        var $dom_addr=__stackBase__;
+        var $retval;
         var $0;
-        var $dom_addr_i=__stackBase__;
-        var $retval_i1;
-        var $1;
-        var $list_i;
-        var $cl_i;
-        var $server_i=__stackBase__+4;
-        var $mapi_i;
-        var $err_addr_i;
-        var $retval_i;
-        var $2;
+        var $list;
+        var $cl;
+        var $server=__stackBase__+4;
+        var $mapi;
+        HEAP[$dom_addr]=$dom;
+        HEAP[$server]=0; //@line 352 "nismodule.c"
+        $mapi=0; //@line 353 "nismodule.c"
+        __lastLabel__ = -1; __label__ = 2; break; //@line 353 "nismodule.c"
+      case 1: // $bb
+        var $1=$mapi; //@line 356 "nismodule.c"
+        var $2=_aliases+$1*12; //@line 356 "nismodule.c"
+        var $3=$2+4; //@line 356 "nismodule.c"
+        var $4=HEAP[$3]; //@line 356 "nismodule.c"
+        var $5=HEAP[$dom_addr]; //@line 356 "nismodule.c"
+        var $6=_yp_master($5, $4, $server); //@line 356 "nismodule.c"
+        var $7=$mapi; //@line 357 "nismodule.c"
+        var $8=($7) + 1; //@line 357 "nismodule.c"
+        $mapi=$8; //@line 357 "nismodule.c"
+        var $_pr=HEAP[$server];
+        __lastLabel__ = 1; __label__ = 2; break; //@line 357 "nismodule.c"
+      case 2: // $bb1
+        var $9=__lastLabel__ == 1 ? $_pr : (0);
+        var $10=($9)!=0; //@line 355 "nismodule.c"
+        if ($10) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 355 "nismodule.c"
+      case 3: // $bb2
+        var $11=$mapi; //@line 355 "nismodule.c"
+        var $12=_aliases+$11*12; //@line 355 "nismodule.c"
+        var $13=$12+4; //@line 355 "nismodule.c"
+        var $14=HEAP[$13]; //@line 355 "nismodule.c"
+        var $15=($14)!=0; //@line 355 "nismodule.c"
+        if ($15) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 355 "nismodule.c"
+      case 4: // $bb3
+        var $16=HEAP[$server]; //@line 359 "nismodule.c"
+        var $17=($16)==0; //@line 359 "nismodule.c"
+        if ($17) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 359 "nismodule.c"
+      case 5: // $bb4
+        var $18=HEAP[_NisError]; //@line 360 "nismodule.c"
+        _PyErr_SetString($18, __str21); //@line 360 "nismodule.c"
+        $0=0; //@line 361 "nismodule.c"
+        __label__ = 12; break; //@line 361 "nismodule.c"
+      case 6: // $bb5
+        var $19=HEAP[$server]; //@line 363 "nismodule.c"
+        var $20=_clnt_create($19, 100004, 2, __str22); //@line 363 "nismodule.c"
+        $cl=$20; //@line 363 "nismodule.c"
+        var $21=$cl; //@line 364 "nismodule.c"
+        var $22=($21)==0; //@line 364 "nismodule.c"
+        if ($22) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 364 "nismodule.c"
+      case 7: // $bb6
+        var $23=HEAP[$server]; //@line 365 "nismodule.c"
+        var $24=_clnt_spcreateerror($23); //@line 365 "nismodule.c"
+        var $25=HEAP[_NisError]; //@line 365 "nismodule.c"
+        _PyErr_SetString($25, $24); //@line 365 "nismodule.c"
+        __label__ = 11; break; //@line 365 "nismodule.c"
+      case 8: // $bb7
+        var $26=$cl; //@line 368 "nismodule.c"
+        var $27=_nisproc_maplist_2($dom_addr, $26); //@line 368 "nismodule.c"
+        $list=$27; //@line 368 "nismodule.c"
+        var $28=$cl; //@line 369 "nismodule.c"
+        var $29=$28+4; //@line 369 "nismodule.c"
+        var $30=HEAP[$29]; //@line 369 "nismodule.c"
+        var $31=$30+16; //@line 369 "nismodule.c"
+        var $32=HEAP[$31]; //@line 369 "nismodule.c"
+        var $33=$cl; //@line 369 "nismodule.c"
+        FUNCTION_TABLE[$32]($33); //@line 369 "nismodule.c"
+        var $34=$list; //@line 370 "nismodule.c"
+        var $35=($34)==0; //@line 370 "nismodule.c"
+        if ($35) { __label__ = 11; break; } else { __label__ = 9; break; } //@line 370 "nismodule.c"
+      case 9: // $bb8
+        var $36=$list; //@line 372 "nismodule.c"
+        var $37=$36; //@line 372 "nismodule.c"
+        var $38=HEAP[$37]; //@line 372 "nismodule.c"
+        var $39=($38)!=1; //@line 372 "nismodule.c"
+        if ($39) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 372 "nismodule.c"
+      case 10: // $bb9
+        var $40=HEAP[$server]; //@line 375 "nismodule.c"
+        _free($40); //@line 375 "nismodule.c"
+        var $41=$list; //@line 376 "nismodule.c"
+        var $42=$41+4; //@line 376 "nismodule.c"
+        var $43=HEAP[$42]; //@line 376 "nismodule.c"
+        $0=$43; //@line 376 "nismodule.c"
+        __label__ = 12; break; //@line 376 "nismodule.c"
+      case 11: // $finally
+        var $44=HEAP[$server]; //@line 379 "nismodule.c"
+        _free($44); //@line 379 "nismodule.c"
+        $0=0; //@line 380 "nismodule.c"
+        __label__ = 12; break; //@line 380 "nismodule.c"
+      case 12: // $bb10
+        var $45=$0; //@line 361 "nismodule.c"
+        $retval=$45; //@line 361 "nismodule.c"
+        var $retval11=$retval; //@line 361 "nismodule.c"
+        STACKTOP = __stackBase__;
+        return $retval11; //@line 361 "nismodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _nis_maps($self, $args, $kwdict) {
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $self_addr;
         var $args_addr;
         var $kwdict_addr;
         var $retval;
-        var $3;
-        var $domain=__stackBase__+8;
+        var $0;
+        var $domain=__stackBase__;
         var $maps;
         var $list;
         var $err;
@@ -986,244 +1130,129 @@ var __str30;
         $args_addr=$args;
         $kwdict_addr=$kwdict;
         HEAP[$domain]=0; //@line 386 "nismodule.c"
-        var $4=$args_addr; //@line 392 "nismodule.c"
-        var $5=$kwdict_addr; //@line 392 "nismodule.c"
-        var $6=_PyArg_ParseTupleAndKeywords($4, $5, __str23, _kwlist_10170, $domain); //@line 392 "nismodule.c"
-        var $7=($6)==0; //@line 392 "nismodule.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 392 "nismodule.c"
+        var $1=$args_addr; //@line 392 "nismodule.c"
+        var $2=$kwdict_addr; //@line 392 "nismodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str23, _kwlist_10170, allocate([$domain,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 392 "nismodule.c"
+        var $4=($3)==0; //@line 392 "nismodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 392 "nismodule.c"
       case 1: // $bb
-        $3=0; //@line 394 "nismodule.c"
-        __label__ = 35; break; //@line 394 "nismodule.c"
+        $0=0; //@line 394 "nismodule.c"
+        __label__ = 20; break; //@line 394 "nismodule.c"
       case 2: // $bb1
-        var $8=HEAP[$domain]; //@line 395 "nismodule.c"
-        var $9=($8)==0; //@line 395 "nismodule.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 395 "nismodule.c"
+        var $5=HEAP[$domain]; //@line 395 "nismodule.c"
+        var $6=($5)==0; //@line 395 "nismodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 395 "nismodule.c"
       case 3: // $bb2
-        var $10=_yp_get_default_domain($domain); //@line 395 "nismodule.c"
-        $err=$10; //@line 395 "nismodule.c"
-        var $11=$err; //@line 395 "nismodule.c"
-        var $12=($11)!=0; //@line 395 "nismodule.c"
-        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 395 "nismodule.c"
+        var $7=_yp_get_default_domain($domain); //@line 395 "nismodule.c"
+        $err=$7; //@line 395 "nismodule.c"
+        var $8=$err; //@line 395 "nismodule.c"
+        var $9=($8)!=0; //@line 395 "nismodule.c"
+        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 395 "nismodule.c"
       case 4: // $bb3
-        var $13=$err; //@line 396 "nismodule.c"
-        $err_addr_i=$13;
-        var $14=$err_addr_i; //@line 52 "nismodule.c"
-        var $15=_yperr_string($14); //@line 52 "nismodule.c"
-        var $16=HEAP[_NisError]; //@line 52 "nismodule.c"
-        _PyErr_SetString($16, $15); //@line 52 "nismodule.c"
-        $2=0; //@line 53 "nismodule.c"
-        var $17=$2; //@line 53 "nismodule.c"
-        $retval_i=$17; //@line 53 "nismodule.c"
-        $3=0; //@line 397 "nismodule.c"
-        __label__ = 35; break; //@line 397 "nismodule.c"
+        var $10=$err; //@line 396 "nismodule.c"
+        var $11=_nis_error($10); //@line 396 "nismodule.c"
+        $0=0; //@line 397 "nismodule.c"
+        __label__ = 20; break; //@line 397 "nismodule.c"
       case 5: // $bb4
-        var $18=HEAP[$domain]; //@line 400 "nismodule.c"
-        HEAP[$dom_addr_i]=$18;
-        HEAP[$server_i]=0; //@line 352 "nismodule.c"
-        $mapi_i=0; //@line 353 "nismodule.c"
-        __lastLabel__ = 5; __label__ = 7; break; //@line 353 "nismodule.c"
-      case 6: // $bb_i
-        var $19=$mapi_i; //@line 356 "nismodule.c"
-        var $20=_aliases+$19*12; //@line 356 "nismodule.c"
-        var $21=$20+4; //@line 356 "nismodule.c"
-        var $22=HEAP[$21]; //@line 356 "nismodule.c"
-        var $23=HEAP[$dom_addr_i]; //@line 356 "nismodule.c"
-        var $24=_yp_master($23, $22, $server_i); //@line 356 "nismodule.c"
-        var $25=$mapi_i; //@line 357 "nismodule.c"
-        var $26=($25) + 1; //@line 357 "nismodule.c"
-        $mapi_i=$26; //@line 357 "nismodule.c"
-        var $_pr_i=HEAP[$server_i];
-        __lastLabel__ = 6; __label__ = 7; break; //@line 357 "nismodule.c"
-      case 7: // $bb1_i
-        var $27=__lastLabel__ == 6 ? $_pr_i : (0);
-        var $28=($27)!=0; //@line 355 "nismodule.c"
-        if ($28) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 355 "nismodule.c"
-      case 8: // $bb2_i
-        var $29=$mapi_i; //@line 355 "nismodule.c"
-        var $30=_aliases+$29*12; //@line 355 "nismodule.c"
-        var $31=$30+4; //@line 355 "nismodule.c"
-        var $32=HEAP[$31]; //@line 355 "nismodule.c"
-        var $33=($32)!=0; //@line 355 "nismodule.c"
-        if ($33) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 355 "nismodule.c"
-      case 9: // $bb3_i
-        var $34=HEAP[$server_i]; //@line 359 "nismodule.c"
-        var $35=($34)==0; //@line 359 "nismodule.c"
-        if ($35) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 359 "nismodule.c"
-      case 10: // $bb4_i
-        var $36=HEAP[_NisError]; //@line 360 "nismodule.c"
-        _PyErr_SetString($36, __str21); //@line 360 "nismodule.c"
-        $1=0; //@line 361 "nismodule.c"
-        __label__ = 19; break; //@line 361 "nismodule.c"
-      case 11: // $bb5_i
-        var $37=HEAP[$server_i]; //@line 363 "nismodule.c"
-        var $38=_clnt_create($37, 100004, 2, __str22); //@line 363 "nismodule.c"
-        $cl_i=$38; //@line 363 "nismodule.c"
-        var $39=$cl_i; //@line 364 "nismodule.c"
-        var $40=($39)==0; //@line 364 "nismodule.c"
-        if ($40) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 364 "nismodule.c"
-      case 12: // $bb6_i
-        var $41=HEAP[$server_i]; //@line 365 "nismodule.c"
-        var $42=_clnt_spcreateerror($41); //@line 365 "nismodule.c"
-        var $43=HEAP[_NisError]; //@line 365 "nismodule.c"
-        _PyErr_SetString($43, $42); //@line 365 "nismodule.c"
-        __label__ = 18; break; //@line 365 "nismodule.c"
-      case 13: // $bb7_i
-        var $44=$cl_i; //@line 368 "nismodule.c"
-        $argp_addr_i_i=$dom_addr_i;
-        $clnt_addr_i_i=$44;
-        _llvm_memset_p0i8_i32(_res_10110, 0, 8, 1, 0); //@line 335 "nismodule.c"
-        var $45=$clnt_addr_i_i; //@line 336 "nismodule.c"
-        var $46=$45+4; //@line 336 "nismodule.c"
-        var $47=HEAP[$46]; //@line 336 "nismodule.c"
-        var $48=$47; //@line 336 "nismodule.c"
-        var $49=HEAP[$48]; //@line 336 "nismodule.c"
-        var $50=$argp_addr_i_i; //@line 336 "nismodule.c"
-        var $51=$50; //@line 336 "nismodule.c"
-        var $52=$clnt_addr_i_i; //@line 336 "nismodule.c"
-        var $53=FUNCTION_TABLE[$49]($52, 11, (FUNCTION_TABLE_OFFSET + 6), $51, (FUNCTION_TABLE_OFFSET + 8), _res_10110, 25, 0); //@line 336 "nismodule.c"
-        var $54=($53)!=0; //@line 336 "nismodule.c"
-        if ($54) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 336 "nismodule.c"
-      case 14: // $bb_i_i
-        $0=0; //@line 341 "nismodule.c"
-        __label__ = 16; break; //@line 341 "nismodule.c"
-      case 15: // $bb2_i_i
-        $0=_res_10110; //@line 343 "nismodule.c"
-        __label__ = 16; break; //@line 343 "nismodule.c"
-      case 16: // $nisproc_maplist_2_exit_i
-        var $55=$0; //@line 341 "nismodule.c"
-        $retval_i_i=$55; //@line 341 "nismodule.c"
-        var $retval4_i_i=$retval_i_i; //@line 341 "nismodule.c"
-        $list_i=$retval4_i_i; //@line 368 "nismodule.c"
-        var $56=$cl_i; //@line 369 "nismodule.c"
-        var $57=$56+4; //@line 369 "nismodule.c"
-        var $58=HEAP[$57]; //@line 369 "nismodule.c"
-        var $59=$58+16; //@line 369 "nismodule.c"
-        var $60=HEAP[$59]; //@line 369 "nismodule.c"
-        var $61=$cl_i; //@line 369 "nismodule.c"
-        FUNCTION_TABLE[$60]($61); //@line 369 "nismodule.c"
-        var $62=$list_i; //@line 370 "nismodule.c"
-        var $63=($62)==0; //@line 370 "nismodule.c"
-        if ($63) { __label__ = 18; break; } else { __label__ = 17; break; } //@line 370 "nismodule.c"
-      case 17: // $bb8_i
-        var $64=$list_i; //@line 372 "nismodule.c"
-        var $65=$64; //@line 372 "nismodule.c"
-        var $66=HEAP[$65]; //@line 372 "nismodule.c"
-        var $67=($66)!=1; //@line 372 "nismodule.c"
-        if ($67) { __label__ = 18; break; } else { __label__ = 20; break; } //@line 372 "nismodule.c"
-      case 18: // $finally_i
-        var $68=HEAP[$server_i]; //@line 379 "nismodule.c"
-        _free($68); //@line 379 "nismodule.c"
-        $1=0; //@line 380 "nismodule.c"
-        __label__ = 19; break; //@line 380 "nismodule.c"
-      case 19: // $nis_maplist_exit_thread
-        $retval_i1=0; //@line 361 "nismodule.c"
-        $maps=0; //@line 400 "nismodule.c"
-        __label__ = 21; break;
-      case 20: // $nis_maplist_exit
-        var $69=HEAP[$server_i]; //@line 375 "nismodule.c"
-        _free($69); //@line 375 "nismodule.c"
-        var $70=$list_i; //@line 376 "nismodule.c"
-        var $71=$70+4; //@line 376 "nismodule.c"
-        var $72=HEAP[$71]; //@line 376 "nismodule.c"
-        $1=$72; //@line 376 "nismodule.c"
-        $retval_i1=$72; //@line 361 "nismodule.c"
-        $maps=$72; //@line 400 "nismodule.c"
-        var $73=($72)==0; //@line 400 "nismodule.c"
-        if ($73) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 400 "nismodule.c"
-      case 21: // $bb5
-        $3=0; //@line 401 "nismodule.c"
-        __label__ = 35; break; //@line 401 "nismodule.c"
-      case 22: // $bb6
-        var $74=_PyList_New(0); //@line 402 "nismodule.c"
-        $list=$74; //@line 402 "nismodule.c"
-        var $75=$list; //@line 402 "nismodule.c"
-        var $76=($75)==0; //@line 402 "nismodule.c"
-        if ($76) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 402 "nismodule.c"
-      case 23: // $bb7
-        $3=0; //@line 403 "nismodule.c"
-        __label__ = 35; break; //@line 403 "nismodule.c"
-      case 24: // $bb8
-        var $77=$maps; //@line 404 "nismodule.c"
-        __lastLabel__ = 24; __label__ = 33; break; //@line 404 "nismodule.c"
-      case 25: // $bb9
-        var $78=$maps; //@line 405 "nismodule.c"
-        var $79=$78; //@line 405 "nismodule.c"
-        var $80=HEAP[$79]; //@line 405 "nismodule.c"
-        var $81=_PyString_FromString($80); //@line 405 "nismodule.c"
-        $str=$81; //@line 405 "nismodule.c"
-        var $82=$str; //@line 406 "nismodule.c"
-        var $83=($82)==0; //@line 406 "nismodule.c"
-        if ($83) { __label__ = 27; break; } else { __label__ = 26; break; } //@line 406 "nismodule.c"
-      case 26: // $bb10
-        var $84=$list; //@line 406 "nismodule.c"
-        var $85=$str; //@line 406 "nismodule.c"
-        var $86=_PyList_Append($84, $85); //@line 406 "nismodule.c"
-        var $87=($86) < 0; //@line 406 "nismodule.c"
-        if ($87) { __label__ = 27; break; } else { __label__ = 30; break; } //@line 406 "nismodule.c"
-      case 27: // $bb11
-        var $88=$list; //@line 408 "nismodule.c"
-        var $89=$88; //@line 408 "nismodule.c"
-        var $90=HEAP[$89]; //@line 408 "nismodule.c"
-        var $91=($90) - 1; //@line 408 "nismodule.c"
-        var $92=$list; //@line 408 "nismodule.c"
-        var $93=$92; //@line 408 "nismodule.c"
-        HEAP[$93]=$91; //@line 408 "nismodule.c"
-        var $94=$list; //@line 408 "nismodule.c"
-        var $95=$94; //@line 408 "nismodule.c"
-        var $96=HEAP[$95]; //@line 408 "nismodule.c"
-        var $97=($96)==0; //@line 408 "nismodule.c"
-        if ($97) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 408 "nismodule.c"
-      case 28: // $bb12
-        var $98=$list; //@line 408 "nismodule.c"
-        var $99=$98+4; //@line 408 "nismodule.c"
-        var $100=HEAP[$99]; //@line 408 "nismodule.c"
-        var $101=$100+24; //@line 408 "nismodule.c"
-        var $102=HEAP[$101]; //@line 408 "nismodule.c"
-        var $103=$list; //@line 408 "nismodule.c"
-        FUNCTION_TABLE[$102]($103); //@line 408 "nismodule.c"
-        __label__ = 29; break; //@line 408 "nismodule.c"
-      case 29: // $bb13
+        var $12=HEAP[$domain]; //@line 400 "nismodule.c"
+        var $13=_nis_maplist($12); //@line 400 "nismodule.c"
+        $maps=$13; //@line 400 "nismodule.c"
+        var $14=($13)==0; //@line 400 "nismodule.c"
+        if ($14) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 400 "nismodule.c"
+      case 6: // $bb5
+        $0=0; //@line 401 "nismodule.c"
+        __label__ = 20; break; //@line 401 "nismodule.c"
+      case 7: // $bb6
+        var $15=_PyList_New(0); //@line 402 "nismodule.c"
+        $list=$15; //@line 402 "nismodule.c"
+        var $16=$list; //@line 402 "nismodule.c"
+        var $17=($16)==0; //@line 402 "nismodule.c"
+        if ($17) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 402 "nismodule.c"
+      case 8: // $bb7
+        $0=0; //@line 403 "nismodule.c"
+        __label__ = 20; break; //@line 403 "nismodule.c"
+      case 9: // $bb8
+        var $18=$maps; //@line 404 "nismodule.c"
+        __lastLabel__ = 9; __label__ = 18; break; //@line 404 "nismodule.c"
+      case 10: // $bb9
+        var $19=$maps; //@line 405 "nismodule.c"
+        var $20=$19; //@line 405 "nismodule.c"
+        var $21=HEAP[$20]; //@line 405 "nismodule.c"
+        var $22=_PyString_FromString($21); //@line 405 "nismodule.c"
+        $str=$22; //@line 405 "nismodule.c"
+        var $23=$str; //@line 406 "nismodule.c"
+        var $24=($23)==0; //@line 406 "nismodule.c"
+        if ($24) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 406 "nismodule.c"
+      case 11: // $bb10
+        var $25=$list; //@line 406 "nismodule.c"
+        var $26=$str; //@line 406 "nismodule.c"
+        var $27=_PyList_Append($25, $26); //@line 406 "nismodule.c"
+        var $28=($27) < 0; //@line 406 "nismodule.c"
+        if ($28) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 406 "nismodule.c"
+      case 12: // $bb11
+        var $29=$list; //@line 408 "nismodule.c"
+        var $30=$29; //@line 408 "nismodule.c"
+        var $31=HEAP[$30]; //@line 408 "nismodule.c"
+        var $32=($31) - 1; //@line 408 "nismodule.c"
+        var $33=$list; //@line 408 "nismodule.c"
+        var $34=$33; //@line 408 "nismodule.c"
+        HEAP[$34]=$32; //@line 408 "nismodule.c"
+        var $35=$list; //@line 408 "nismodule.c"
+        var $36=$35; //@line 408 "nismodule.c"
+        var $37=HEAP[$36]; //@line 408 "nismodule.c"
+        var $38=($37)==0; //@line 408 "nismodule.c"
+        if ($38) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 408 "nismodule.c"
+      case 13: // $bb12
+        var $39=$list; //@line 408 "nismodule.c"
+        var $40=$39+4; //@line 408 "nismodule.c"
+        var $41=HEAP[$40]; //@line 408 "nismodule.c"
+        var $42=$41+24; //@line 408 "nismodule.c"
+        var $43=HEAP[$42]; //@line 408 "nismodule.c"
+        var $44=$list; //@line 408 "nismodule.c"
+        FUNCTION_TABLE[$43]($44); //@line 408 "nismodule.c"
+        __label__ = 14; break; //@line 408 "nismodule.c"
+      case 14: // $bb13
         $list=0; //@line 409 "nismodule.c"
-        __label__ = 34; break; //@line 409 "nismodule.c"
-      case 30: // $bb14
-        var $104=$str; //@line 412 "nismodule.c"
-        var $105=$104; //@line 412 "nismodule.c"
-        var $106=HEAP[$105]; //@line 412 "nismodule.c"
-        var $107=($106) - 1; //@line 412 "nismodule.c"
-        var $108=$str; //@line 412 "nismodule.c"
-        var $109=$108; //@line 412 "nismodule.c"
-        HEAP[$109]=$107; //@line 412 "nismodule.c"
-        var $110=$str; //@line 412 "nismodule.c"
-        var $111=$110; //@line 412 "nismodule.c"
-        var $112=HEAP[$111]; //@line 412 "nismodule.c"
-        var $113=($112)==0; //@line 412 "nismodule.c"
-        if ($113) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 412 "nismodule.c"
-      case 31: // $bb15
-        var $114=$str; //@line 412 "nismodule.c"
-        var $115=$114+4; //@line 412 "nismodule.c"
-        var $116=HEAP[$115]; //@line 412 "nismodule.c"
-        var $117=$116+24; //@line 412 "nismodule.c"
-        var $118=HEAP[$117]; //@line 412 "nismodule.c"
-        var $119=$str; //@line 412 "nismodule.c"
-        FUNCTION_TABLE[$118]($119); //@line 412 "nismodule.c"
-        __label__ = 32; break; //@line 412 "nismodule.c"
-      case 32: // $bb16
-        var $120=$maps; //@line 404 "nismodule.c"
-        var $121=$120+4; //@line 404 "nismodule.c"
-        var $122=HEAP[$121]; //@line 404 "nismodule.c"
-        $maps=$122; //@line 404 "nismodule.c"
-        __lastLabel__ = 32; __label__ = 33; break; //@line 404 "nismodule.c"
-      case 33: // $bb17
-        var $123=__lastLabel__ == 32 ? $122 : ($77);
-        var $124=($123)!=0; //@line 404 "nismodule.c"
-        if ($124) { __label__ = 25; break; } else { __label__ = 34; break; } //@line 404 "nismodule.c"
-      case 34: // $bb18
-        var $125=$list; //@line 415 "nismodule.c"
-        $3=$125; //@line 415 "nismodule.c"
-        __label__ = 35; break; //@line 415 "nismodule.c"
-      case 35: // $bb19
-        var $126=$3; //@line 394 "nismodule.c"
-        $retval=$126; //@line 394 "nismodule.c"
+        __label__ = 19; break; //@line 409 "nismodule.c"
+      case 15: // $bb14
+        var $45=$str; //@line 412 "nismodule.c"
+        var $46=$45; //@line 412 "nismodule.c"
+        var $47=HEAP[$46]; //@line 412 "nismodule.c"
+        var $48=($47) - 1; //@line 412 "nismodule.c"
+        var $49=$str; //@line 412 "nismodule.c"
+        var $50=$49; //@line 412 "nismodule.c"
+        HEAP[$50]=$48; //@line 412 "nismodule.c"
+        var $51=$str; //@line 412 "nismodule.c"
+        var $52=$51; //@line 412 "nismodule.c"
+        var $53=HEAP[$52]; //@line 412 "nismodule.c"
+        var $54=($53)==0; //@line 412 "nismodule.c"
+        if ($54) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 412 "nismodule.c"
+      case 16: // $bb15
+        var $55=$str; //@line 412 "nismodule.c"
+        var $56=$55+4; //@line 412 "nismodule.c"
+        var $57=HEAP[$56]; //@line 412 "nismodule.c"
+        var $58=$57+24; //@line 412 "nismodule.c"
+        var $59=HEAP[$58]; //@line 412 "nismodule.c"
+        var $60=$str; //@line 412 "nismodule.c"
+        FUNCTION_TABLE[$59]($60); //@line 412 "nismodule.c"
+        __label__ = 17; break; //@line 412 "nismodule.c"
+      case 17: // $bb16
+        var $61=$maps; //@line 404 "nismodule.c"
+        var $62=$61+4; //@line 404 "nismodule.c"
+        var $63=HEAP[$62]; //@line 404 "nismodule.c"
+        $maps=$63; //@line 404 "nismodule.c"
+        __lastLabel__ = 17; __label__ = 18; break; //@line 404 "nismodule.c"
+      case 18: // $bb17
+        var $64=__lastLabel__ == 17 ? $63 : ($18);
+        var $65=($64)!=0; //@line 404 "nismodule.c"
+        if ($65) { __label__ = 10; break; } else { __label__ = 19; break; } //@line 404 "nismodule.c"
+      case 19: // $bb18
+        var $66=$list; //@line 415 "nismodule.c"
+        $0=$66; //@line 415 "nismodule.c"
+        __label__ = 20; break; //@line 415 "nismodule.c"
+      case 20: // $bb19
+        var $67=$0; //@line 394 "nismodule.c"
+        $retval=$67; //@line 394 "nismodule.c"
         var $retval20=$retval; //@line 394 "nismodule.c"
         STACKTOP = __stackBase__;
         return $retval20; //@line 394 "nismodule.c"

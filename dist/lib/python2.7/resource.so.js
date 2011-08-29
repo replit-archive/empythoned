@@ -103,7 +103,7 @@ var _struct_rusage_fields;
 var _struct_rusage_desc;
 var __str32;
 var __str33;
-var _PyExc_ValueError;
+
 var __str34;
 var _ResourceError;
 var _StructRUsageType;
@@ -113,7 +113,7 @@ var __str37;
 var __str38;
 var __str39;
 var __str40;
-var __Py_NoneStruct;
+
 var __str41;
 var __str42;
 var __str43;
@@ -181,7 +181,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 68 "resource.c"
-        var $2=_PyArg_ParseTuple($1, __str33, $who); //@line 68 "resource.c"
+        var $2=_PyArg_ParseTuple($1, __str33, allocate([$who,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 68 "resource.c"
         var $3=($2)==0; //@line 68 "resource.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 68 "resource.c"
       case 1: // $bb
@@ -418,7 +418,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 119 "resource.c"
-        var $2=_PyArg_ParseTuple($1, __str35, $resource); //@line 119 "resource.c"
+        var $2=_PyArg_ParseTuple($1, __str35, allocate([$resource,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 119 "resource.c"
         var $3=($2)==0; //@line 119 "resource.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 119 "resource.c"
       case 1: // $bb
@@ -451,7 +451,7 @@ var __str63;
         var $15=HEAP[$14]; //@line 135 "resource.c"
         var $16=$rl; //@line 135 "resource.c"
         var $17=HEAP[$16]; //@line 135 "resource.c"
-        var $18=_Py_BuildValue(__str37, $17, $15); //@line 135 "resource.c"
+        var $18=_Py_BuildValue(__str37, allocate([$17,0,0,0,0,0,0,0,$15,0,0,0,0,0,0,0], ["i64",0,0,0,0,0,0,0,"i64",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 135 "resource.c"
         $0=$18; //@line 135 "resource.c"
         __label__ = 7; break; //@line 135 "resource.c"
       case 7: // $bb7
@@ -484,7 +484,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 150 "resource.c"
-        var $2=_PyArg_ParseTuple($1, __str38, $resource, $curobj, $maxobj); //@line 150 "resource.c"
+        var $2=_PyArg_ParseTuple($1, __str38, allocate([$resource,0,0,0,$curobj,0,0,0,$maxobj,0,0,0], ["i32*",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 150 "resource.c"
         var $3=($2)==0; //@line 150 "resource.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 150 "resource.c"
       case 1: // $bb
@@ -640,7 +640,7 @@ var __str63;
     var $1=_getpagesize(); //@line 201 "resource.c"
     $pagesize=$1; //@line 201 "resource.c"
     var $2=$pagesize; //@line 210 "resource.c"
-    var $3=_Py_BuildValue(__str41, $2); //@line 210 "resource.c"
+    var $3=_Py_BuildValue(__str41, allocate([$2,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 210 "resource.c"
     $0=$3; //@line 210 "resource.c"
     var $4=$0; //@line 210 "resource.c"
     $retval=$4; //@line 210 "resource.c"

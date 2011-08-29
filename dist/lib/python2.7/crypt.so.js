@@ -77,7 +77,7 @@ var _crypt_methods;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 22 "cryptmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str, $word, $salt); //@line 22 "cryptmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str, allocate([$word,0,0,0,$salt,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 22 "cryptmodule.c"
         var $3=($2)==0; //@line 22 "cryptmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 22 "cryptmodule.c"
       case 1: // $bb
@@ -87,7 +87,7 @@ var _crypt_methods;
         var $4=HEAP[$salt]; //@line 27 "cryptmodule.c"
         var $5=HEAP[$word]; //@line 27 "cryptmodule.c"
         var $6=_crypt($5, $4); //@line 27 "cryptmodule.c"
-        var $7=_Py_BuildValue(__str1, $6); //@line 27 "cryptmodule.c"
+        var $7=_Py_BuildValue(__str1, allocate([$6,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 27 "cryptmodule.c"
         $0=$7; //@line 27 "cryptmodule.c"
         __label__ = 3; break; //@line 27 "cryptmodule.c"
       case 3: // $bb2

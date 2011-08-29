@@ -56,7 +56,7 @@ var _keywords_8364;
 var __str2;
 var __str3;
 var __str4;
-var __Py_NoneStruct;
+
 var __str5;
 var __str6;
 var __str7;
@@ -123,24 +123,117 @@ var __str47;
 
 
 
+  function _syslog_get_argv() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $argv_len;
+        var $scriptobj;
+        var $atslash;
+        var $argv;
+        var $1=_PySys_GetObject(__str); //@line 74 "syslogmodule.c"
+        $argv=$1; //@line 74 "syslogmodule.c"
+        var $2=$argv; //@line 76 "syslogmodule.c"
+        var $3=($2)==0; //@line 76 "syslogmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 76 "syslogmodule.c"
+      case 1: // $bb
+        $0=0; //@line 77 "syslogmodule.c"
+        __label__ = 13; break; //@line 77 "syslogmodule.c"
+      case 2: // $bb1
+        var $4=$argv; //@line 80 "syslogmodule.c"
+        var $5=_PyList_Size($4); //@line 80 "syslogmodule.c"
+        $argv_len=$5; //@line 80 "syslogmodule.c"
+        var $6=$argv_len; //@line 81 "syslogmodule.c"
+        var $7=($6)==-1; //@line 81 "syslogmodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 81 "syslogmodule.c"
+      case 3: // $bb2
+        _PyErr_Clear(); //@line 82 "syslogmodule.c"
+        $0=0; //@line 83 "syslogmodule.c"
+        __label__ = 13; break; //@line 83 "syslogmodule.c"
+      case 4: // $bb3
+        var $8=$argv_len; //@line 85 "syslogmodule.c"
+        var $9=($8)==0; //@line 85 "syslogmodule.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 85 "syslogmodule.c"
+      case 5: // $bb4
+        $0=0; //@line 86 "syslogmodule.c"
+        __label__ = 13; break; //@line 86 "syslogmodule.c"
+      case 6: // $bb5
+        var $10=$argv; //@line 89 "syslogmodule.c"
+        var $11=_PyList_GetItem($10, 0); //@line 89 "syslogmodule.c"
+        $scriptobj=$11; //@line 89 "syslogmodule.c"
+        var $12=$scriptobj; //@line 90 "syslogmodule.c"
+        var $13=$12+4; //@line 90 "syslogmodule.c"
+        var $14=HEAP[$13]; //@line 90 "syslogmodule.c"
+        var $15=$14+84; //@line 90 "syslogmodule.c"
+        var $16=HEAP[$15]; //@line 90 "syslogmodule.c"
+        var $17=($16) & 134217728; //@line 90 "syslogmodule.c"
+        var $18=($17)==0; //@line 90 "syslogmodule.c"
+        if ($18) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 90 "syslogmodule.c"
+      case 7: // $bb6
+        $0=0; //@line 91 "syslogmodule.c"
+        __label__ = 13; break; //@line 91 "syslogmodule.c"
+      case 8: // $bb7
+        var $19=$scriptobj; //@line 93 "syslogmodule.c"
+        var $20=$19; //@line 93 "syslogmodule.c"
+        var $21=$20+8; //@line 93 "syslogmodule.c"
+        var $22=HEAP[$21]; //@line 93 "syslogmodule.c"
+        var $23=($22)==0; //@line 93 "syslogmodule.c"
+        if ($23) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 93 "syslogmodule.c"
+      case 9: // $bb8
+        $0=0; //@line 94 "syslogmodule.c"
+        __label__ = 13; break; //@line 94 "syslogmodule.c"
+      case 10: // $bb9
+        var $24=$scriptobj; //@line 97 "syslogmodule.c"
+        var $25=_PyString_AsString($24); //@line 97 "syslogmodule.c"
+        var $26=_strrchr($25, 47); //@line 97 "syslogmodule.c"
+        $atslash=$26; //@line 97 "syslogmodule.c"
+        var $27=$atslash; //@line 98 "syslogmodule.c"
+        var $28=($27)!=0; //@line 98 "syslogmodule.c"
+        if ($28) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 98 "syslogmodule.c"
+      case 11: // $bb10
+        var $29=$atslash; //@line 99 "syslogmodule.c"
+        var $30=$29+1; //@line 99 "syslogmodule.c"
+        var $31=_PyString_FromString($30); //@line 99 "syslogmodule.c"
+        $0=$31; //@line 99 "syslogmodule.c"
+        __label__ = 13; break; //@line 99 "syslogmodule.c"
+      case 12: // $bb11
+        var $32=$scriptobj; //@line 101 "syslogmodule.c"
+        var $33=$32; //@line 101 "syslogmodule.c"
+        var $34=HEAP[$33]; //@line 101 "syslogmodule.c"
+        var $35=($34) + 1; //@line 101 "syslogmodule.c"
+        var $36=$scriptobj; //@line 101 "syslogmodule.c"
+        var $37=$36; //@line 101 "syslogmodule.c"
+        HEAP[$37]=$35; //@line 101 "syslogmodule.c"
+        var $38=$scriptobj; //@line 102 "syslogmodule.c"
+        $0=$38; //@line 102 "syslogmodule.c"
+        __label__ = 13; break; //@line 102 "syslogmodule.c"
+      case 13: // $bb12
+        var $39=$0; //@line 77 "syslogmodule.c"
+        $retval=$39; //@line 77 "syslogmodule.c"
+        var $retval13=$retval; //@line 77 "syslogmodule.c"
+        ;
+        return $retval13; //@line 77 "syslogmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _syslog_openlog($self, $args, $kwds) {
     var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $argv_len_i;
-        var $scriptobj_i;
-        var $atslash_i;
-        var $argv_i;
         var $self_addr;
         var $args_addr;
         var $kwds_addr;
         var $retval;
         var $iftmp_11;
-        var $1;
+        var $0;
         var $logopt=__stackBase__;
         var $facility=__stackBase__+4;
         var $new_S_ident_o=__stackBase__+8;
@@ -150,161 +243,83 @@ var __str47;
         HEAP[$logopt]=0; //@line 112 "syslogmodule.c"
         HEAP[$facility]=8; //@line 113 "syslogmodule.c"
         HEAP[$new_S_ident_o]=0; //@line 114 "syslogmodule.c"
-        var $2=$args_addr; //@line 117 "syslogmodule.c"
-        var $3=$kwds_addr; //@line 117 "syslogmodule.c"
-        var $4=_PyArg_ParseTupleAndKeywords($2, $3, __str1, _keywords_8364, $new_S_ident_o, $logopt, $facility); //@line 117 "syslogmodule.c"
-        var $5=($4)==0; //@line 117 "syslogmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 117 "syslogmodule.c"
+        var $1=$args_addr; //@line 117 "syslogmodule.c"
+        var $2=$kwds_addr; //@line 117 "syslogmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str1, _keywords_8364, allocate([$new_S_ident_o,0,0,0,$logopt,0,0,0,$facility,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 117 "syslogmodule.c"
+        var $4=($3)==0; //@line 117 "syslogmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 117 "syslogmodule.c"
       case 1: // $bb
-        $1=0; //@line 119 "syslogmodule.c"
-        __label__ = 25; break; //@line 119 "syslogmodule.c"
+        $0=0; //@line 119 "syslogmodule.c"
+        __label__ = 12; break; //@line 119 "syslogmodule.c"
       case 2: // $bb1
-        var $6=HEAP[$new_S_ident_o]; //@line 121 "syslogmodule.c"
-        var $7=($6)!=0; //@line 121 "syslogmodule.c"
-        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 121 "syslogmodule.c"
+        var $5=HEAP[$new_S_ident_o]; //@line 121 "syslogmodule.c"
+        var $6=($5)!=0; //@line 121 "syslogmodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 121 "syslogmodule.c"
       case 3: // $bb3
-        var $8=HEAP[$new_S_ident_o]; //@line 121 "syslogmodule.c"
-        var $9=$8; //@line 121 "syslogmodule.c"
-        var $10=HEAP[$9]; //@line 121 "syslogmodule.c"
-        var $11=($10) + 1; //@line 121 "syslogmodule.c"
-        var $12=$8; //@line 121 "syslogmodule.c"
-        HEAP[$12]=$11; //@line 121 "syslogmodule.c"
+        var $7=HEAP[$new_S_ident_o]; //@line 121 "syslogmodule.c"
+        var $8=$7; //@line 121 "syslogmodule.c"
+        var $9=HEAP[$8]; //@line 121 "syslogmodule.c"
+        var $10=($9) + 1; //@line 121 "syslogmodule.c"
+        var $11=$7; //@line 121 "syslogmodule.c"
+        HEAP[$11]=$10; //@line 121 "syslogmodule.c"
         var $_pr=HEAP[$new_S_ident_o];
-        var $13=($_pr)==0; //@line 124 "syslogmodule.c"
-        if ($13) { __label__ = 4; break; } else { __label__ = 18; break; } //@line 124 "syslogmodule.c"
+        var $12=($_pr)==0; //@line 124 "syslogmodule.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 124 "syslogmodule.c"
       case 4: // $bb4
-        var $14=_PySys_GetObject(__str); //@line 74 "syslogmodule.c"
-        $argv_i=$14; //@line 74 "syslogmodule.c"
-        var $15=($14)==0; //@line 76 "syslogmodule.c"
-        if ($15) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 76 "syslogmodule.c"
-      case 5: // $bb_i
-        $0=0; //@line 77 "syslogmodule.c"
-        __label__ = 17; break; //@line 77 "syslogmodule.c"
-      case 6: // $bb1_i
-        var $16=$argv_i; //@line 80 "syslogmodule.c"
-        var $17=_PyList_Size($16); //@line 80 "syslogmodule.c"
-        $argv_len_i=$17; //@line 80 "syslogmodule.c"
-        var $18=$argv_len_i; //@line 81 "syslogmodule.c"
-        var $19=($18)==-1; //@line 81 "syslogmodule.c"
-        if ($19) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 81 "syslogmodule.c"
-      case 7: // $bb2_i
-        _PyErr_Clear(); //@line 82 "syslogmodule.c"
-        $0=0; //@line 83 "syslogmodule.c"
-        __label__ = 17; break; //@line 83 "syslogmodule.c"
-      case 8: // $bb3_i
-        var $20=$argv_len_i; //@line 85 "syslogmodule.c"
-        var $21=($20)==0; //@line 85 "syslogmodule.c"
-        if ($21) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 85 "syslogmodule.c"
-      case 9: // $bb4_i
-        $0=0; //@line 86 "syslogmodule.c"
-        __label__ = 17; break; //@line 86 "syslogmodule.c"
-      case 10: // $bb5_i
-        var $22=$argv_i; //@line 89 "syslogmodule.c"
-        var $23=_PyList_GetItem($22, 0); //@line 89 "syslogmodule.c"
-        $scriptobj_i=$23; //@line 89 "syslogmodule.c"
-        var $24=$scriptobj_i; //@line 90 "syslogmodule.c"
-        var $25=$24+4; //@line 90 "syslogmodule.c"
-        var $26=HEAP[$25]; //@line 90 "syslogmodule.c"
-        var $27=$26+84; //@line 90 "syslogmodule.c"
-        var $28=HEAP[$27]; //@line 90 "syslogmodule.c"
-        var $29=($28) & 134217728; //@line 90 "syslogmodule.c"
-        var $30=($29)==0; //@line 90 "syslogmodule.c"
-        if ($30) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 90 "syslogmodule.c"
-      case 11: // $bb6_i
-        $0=0; //@line 91 "syslogmodule.c"
-        __label__ = 17; break; //@line 91 "syslogmodule.c"
-      case 12: // $bb7_i
-        var $31=$scriptobj_i; //@line 93 "syslogmodule.c"
-        var $32=$31; //@line 93 "syslogmodule.c"
-        var $33=$32+8; //@line 93 "syslogmodule.c"
-        var $34=HEAP[$33]; //@line 93 "syslogmodule.c"
-        var $35=($34)==0; //@line 93 "syslogmodule.c"
-        if ($35) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 93 "syslogmodule.c"
-      case 13: // $bb8_i
-        $0=0; //@line 94 "syslogmodule.c"
-        __label__ = 17; break; //@line 94 "syslogmodule.c"
-      case 14: // $bb9_i
-        var $36=$scriptobj_i; //@line 97 "syslogmodule.c"
-        var $37=_PyString_AsString($36); //@line 97 "syslogmodule.c"
-        var $38=_strrchr($37, 47); //@line 97 "syslogmodule.c"
-        $atslash_i=$38; //@line 97 "syslogmodule.c"
-        var $39=$atslash_i; //@line 98 "syslogmodule.c"
-        var $40=($39)!=0; //@line 98 "syslogmodule.c"
-        if ($40) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 98 "syslogmodule.c"
-      case 15: // $bb10_i
-        var $41=$atslash_i; //@line 99 "syslogmodule.c"
-        var $42=$41+1; //@line 99 "syslogmodule.c"
-        var $43=_PyString_FromString($42); //@line 99 "syslogmodule.c"
-        $0=$43; //@line 99 "syslogmodule.c"
-        __label__ = 17; break; //@line 99 "syslogmodule.c"
-      case 16: // $bb11_i
-        var $44=$scriptobj_i; //@line 101 "syslogmodule.c"
-        var $45=$44; //@line 101 "syslogmodule.c"
-        var $46=HEAP[$45]; //@line 101 "syslogmodule.c"
-        var $47=($46) + 1; //@line 101 "syslogmodule.c"
-        var $48=$scriptobj_i; //@line 101 "syslogmodule.c"
-        var $49=$48; //@line 101 "syslogmodule.c"
-        HEAP[$49]=$47; //@line 101 "syslogmodule.c"
-        var $50=$scriptobj_i; //@line 102 "syslogmodule.c"
-        $0=$50; //@line 102 "syslogmodule.c"
-        __label__ = 17; break; //@line 102 "syslogmodule.c"
-      case 17: // $syslog_get_argv_exit
-        var $51=$0; //@line 77 "syslogmodule.c"
-        $retval_i=$51; //@line 77 "syslogmodule.c"
-        var $retval13_i=$retval_i; //@line 77 "syslogmodule.c"
-        HEAP[$new_S_ident_o]=$retval13_i; //@line 125 "syslogmodule.c"
-        __label__ = 18; break; //@line 125 "syslogmodule.c"
-      case 18: // $bb5
-        var $52=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
-        var $53=($52)!=0; //@line 128 "syslogmodule.c"
-        if ($53) { __label__ = 19; break; } else { __label__ = 21; break; } //@line 128 "syslogmodule.c"
-      case 19: // $bb6
-        var $54=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
-        var $55=$54; //@line 128 "syslogmodule.c"
-        var $56=HEAP[$55]; //@line 128 "syslogmodule.c"
-        var $57=($56) - 1; //@line 128 "syslogmodule.c"
-        var $58=$54; //@line 128 "syslogmodule.c"
-        HEAP[$58]=$57; //@line 128 "syslogmodule.c"
-        var $59=$54; //@line 128 "syslogmodule.c"
-        var $60=HEAP[$59]; //@line 128 "syslogmodule.c"
-        var $61=($60)==0; //@line 128 "syslogmodule.c"
-        if ($61) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 128 "syslogmodule.c"
-      case 20: // $bb7
-        var $62=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
-        var $63=$62+4; //@line 128 "syslogmodule.c"
-        var $64=HEAP[$63]; //@line 128 "syslogmodule.c"
-        var $65=$64+24; //@line 128 "syslogmodule.c"
-        var $66=HEAP[$65]; //@line 128 "syslogmodule.c"
-        var $67=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
-        FUNCTION_TABLE[$66]($67); //@line 128 "syslogmodule.c"
-        __label__ = 21; break; //@line 128 "syslogmodule.c"
-      case 21: // $bb8
-        var $68=HEAP[$new_S_ident_o]; //@line 129 "syslogmodule.c"
-        HEAP[_S_ident_o]=$68; //@line 129 "syslogmodule.c"
-        var $69=HEAP[$facility]; //@line 136 "syslogmodule.c"
-        var $70=HEAP[$logopt]; //@line 136 "syslogmodule.c"
-        var $71=($68)!=0; //@line 136 "syslogmodule.c"
-        if ($71) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 136 "syslogmodule.c"
-      case 22: // $bb9
-        var $72=HEAP[_S_ident_o]; //@line 136 "syslogmodule.c"
-        var $73=_PyString_AsString($72); //@line 136 "syslogmodule.c"
-        $iftmp_11=$73; //@line 136 "syslogmodule.c"
-        __label__ = 24; break; //@line 136 "syslogmodule.c"
-      case 23: // $bb10
+        var $13=_syslog_get_argv(); //@line 125 "syslogmodule.c"
+        HEAP[$new_S_ident_o]=$13; //@line 125 "syslogmodule.c"
+        __label__ = 5; break; //@line 125 "syslogmodule.c"
+      case 5: // $bb5
+        var $14=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
+        var $15=($14)!=0; //@line 128 "syslogmodule.c"
+        if ($15) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 128 "syslogmodule.c"
+      case 6: // $bb6
+        var $16=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
+        var $17=$16; //@line 128 "syslogmodule.c"
+        var $18=HEAP[$17]; //@line 128 "syslogmodule.c"
+        var $19=($18) - 1; //@line 128 "syslogmodule.c"
+        var $20=$16; //@line 128 "syslogmodule.c"
+        HEAP[$20]=$19; //@line 128 "syslogmodule.c"
+        var $21=$16; //@line 128 "syslogmodule.c"
+        var $22=HEAP[$21]; //@line 128 "syslogmodule.c"
+        var $23=($22)==0; //@line 128 "syslogmodule.c"
+        if ($23) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 128 "syslogmodule.c"
+      case 7: // $bb7
+        var $24=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
+        var $25=$24+4; //@line 128 "syslogmodule.c"
+        var $26=HEAP[$25]; //@line 128 "syslogmodule.c"
+        var $27=$26+24; //@line 128 "syslogmodule.c"
+        var $28=HEAP[$27]; //@line 128 "syslogmodule.c"
+        var $29=HEAP[_S_ident_o]; //@line 128 "syslogmodule.c"
+        FUNCTION_TABLE[$28]($29); //@line 128 "syslogmodule.c"
+        __label__ = 8; break; //@line 128 "syslogmodule.c"
+      case 8: // $bb8
+        var $30=HEAP[$new_S_ident_o]; //@line 129 "syslogmodule.c"
+        HEAP[_S_ident_o]=$30; //@line 129 "syslogmodule.c"
+        var $31=HEAP[$facility]; //@line 136 "syslogmodule.c"
+        var $32=HEAP[$logopt]; //@line 136 "syslogmodule.c"
+        var $33=($30)!=0; //@line 136 "syslogmodule.c"
+        if ($33) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 136 "syslogmodule.c"
+      case 9: // $bb9
+        var $34=HEAP[_S_ident_o]; //@line 136 "syslogmodule.c"
+        var $35=_PyString_AsString($34); //@line 136 "syslogmodule.c"
+        $iftmp_11=$35; //@line 136 "syslogmodule.c"
+        __label__ = 11; break; //@line 136 "syslogmodule.c"
+      case 10: // $bb10
         $iftmp_11=0; //@line 136 "syslogmodule.c"
-        __label__ = 24; break; //@line 136 "syslogmodule.c"
-      case 24: // $bb11
-        var $74=$iftmp_11; //@line 136 "syslogmodule.c"
-        _openlog($74, $70, $69); //@line 136 "syslogmodule.c"
+        __label__ = 11; break; //@line 136 "syslogmodule.c"
+      case 11: // $bb11
+        var $36=$iftmp_11; //@line 136 "syslogmodule.c"
+        _openlog($36, $32, $31); //@line 136 "syslogmodule.c"
         HEAP[_S_log_open_b]=1;
-        var $75=HEAP[__Py_NoneStruct]; //@line 139 "syslogmodule.c"
-        var $76=($75) + 1; //@line 139 "syslogmodule.c"
-        HEAP[__Py_NoneStruct]=$76; //@line 139 "syslogmodule.c"
-        $1=__Py_NoneStruct; //@line 140 "syslogmodule.c"
-        __label__ = 25; break; //@line 140 "syslogmodule.c"
-      case 25: // $bb12
-        var $77=$1; //@line 119 "syslogmodule.c"
-        $retval=$77; //@line 119 "syslogmodule.c"
+        var $37=HEAP[__Py_NoneStruct]; //@line 139 "syslogmodule.c"
+        var $38=($37) + 1; //@line 139 "syslogmodule.c"
+        HEAP[__Py_NoneStruct]=$38; //@line 139 "syslogmodule.c"
+        $0=__Py_NoneStruct; //@line 140 "syslogmodule.c"
+        __label__ = 12; break; //@line 140 "syslogmodule.c"
+      case 12: // $bb12
+        var $39=$0; //@line 119 "syslogmodule.c"
+        $retval=$39; //@line 119 "syslogmodule.c"
         var $retval13=$retval; //@line 119 "syslogmodule.c"
         STACKTOP = __stackBase__;
         return $retval13; //@line 119 "syslogmodule.c"
@@ -331,13 +346,13 @@ var __str47;
         $args_addr=$args;
         HEAP[$priority]=6; //@line 148 "syslogmodule.c"
         var $1=$args_addr; //@line 150 "syslogmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str5, $priority, $message); //@line 150 "syslogmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str5, allocate([$priority,0,0,0,$message,0,0,0], ["i32*",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 150 "syslogmodule.c"
         var $3=($2)==0; //@line 150 "syslogmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 150 "syslogmodule.c"
       case 1: // $bb
         _PyErr_Clear(); //@line 152 "syslogmodule.c"
         var $4=$args_addr; //@line 153 "syslogmodule.c"
-        var $5=_PyArg_ParseTuple($4, __str6, $message); //@line 153 "syslogmodule.c"
+        var $5=_PyArg_ParseTuple($4, __str6, allocate([$message,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 153 "syslogmodule.c"
         var $6=($5)==0; //@line 153 "syslogmodule.c"
         if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 153 "syslogmodule.c"
       case 2: // $bb1
@@ -409,7 +424,7 @@ var __str47;
       case 10: // $bb9
         var $49=HEAP[$message]; //@line 174 "syslogmodule.c"
         var $50=HEAP[$priority]; //@line 174 "syslogmodule.c"
-        _syslog($50, __str7, $49); //@line 174 "syslogmodule.c"
+        _syslog($50, __str7, allocate([$49,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 174 "syslogmodule.c"
         var $51=HEAP[__Py_NoneStruct]; //@line 176 "syslogmodule.c"
         var $52=($51) + 1; //@line 176 "syslogmodule.c"
         HEAP[__Py_NoneStruct]=$52; //@line 176 "syslogmodule.c"
@@ -501,7 +516,7 @@ var __str47;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 198 "syslogmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str8, $maskpri); //@line 198 "syslogmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str8, allocate([$maskpri,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 198 "syslogmodule.c"
         var $3=($2)==0; //@line 198 "syslogmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 198 "syslogmodule.c"
       case 1: // $bb
@@ -541,7 +556,7 @@ var __str47;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 209 "syslogmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str9, $pri); //@line 209 "syslogmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str9, allocate([$pri,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 209 "syslogmodule.c"
         var $3=($2)==0; //@line 209 "syslogmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 209 "syslogmodule.c"
       case 1: // $bb
@@ -581,7 +596,7 @@ var __str47;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 220 "syslogmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str10, $pri); //@line 220 "syslogmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str10, allocate([$pri,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 220 "syslogmodule.c"
         var $3=($2)==0; //@line 220 "syslogmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 220 "syslogmodule.c"
       case 1: // $bb

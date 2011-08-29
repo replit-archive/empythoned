@@ -64,8 +64,8 @@ var $struct_stat___SIZE = 96; // %struct.stat
   var $struct_stat___FLATTENER = [0,8,12,16,20,24,28,32,40,44,52,56,64,72,80,88];
 var $struct_timespec___SIZE = 8; // %struct.timespec
   
-var __Py_NoneStruct;
-var _PyExc_ValueError;
+
+
 var __str;
 var __str1;
 var __str2;
@@ -76,7 +76,7 @@ var ___PRETTY_FUNCTION___8493;
 var __str6;
 var __str7;
 var __str8;
-var _PyExc_TypeError;
+
 var __str9;
 var __str10;
 var __str11;
@@ -107,12 +107,12 @@ var __str34;
 var __str35;
 var __str36;
 var _mmap_object_methods;
-var _PyExc_SystemError;
+
 var __str37;
 var __str38;
-var _PyExc_IndexError;
+
 var __str39;
-var _PySlice_Type;
+
 var __str40;
 var __str41;
 var __str42;
@@ -129,7 +129,7 @@ var _mmap_as_buffer;
 var _mmap_doc;
 var __str50;
 var _mmap_object_type;
-var _PyExc_OverflowError;
+
 var __str51;
 var __str52;
 var __str53;
@@ -147,7 +147,7 @@ var __str63;
 var __str64;
 var __str65;
 var __str66;
-var _PyExc_EnvironmentError;
+
 var __str67;
 var __str68;
 var __str69;
@@ -209,6 +209,22 @@ var __str82;
 
 
 
+
+  function _my_getpagesize() {
+    ;
+    var __label__;
+  
+    var $retval;
+    var $0;
+    var $1=_sysconf(30); //@line 60 "mmapmodule.c"
+    $0=$1; //@line 60 "mmapmodule.c"
+    var $2=$0; //@line 60 "mmapmodule.c"
+    $retval=$2; //@line 60 "mmapmodule.c"
+    var $retval1=$retval; //@line 60 "mmapmodule.c"
+    ;
+    return $retval1; //@line 60 "mmapmodule.c"
+  }
+  
 
   function _mmap_object_dealloc($m_obj) {
     ;
@@ -392,7 +408,7 @@ var __str82;
         HEAP[$26]=$24; //@line 209 "mmapmodule.c"
         var $27=$value; //@line 210 "mmapmodule.c"
         var $28=($27); //@line 210 "mmapmodule.c"
-        var $29=__Py_BuildValue_SizeT(__str1, $28); //@line 210 "mmapmodule.c"
+        var $29=__Py_BuildValue_SizeT(__str1, allocate([$28,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 210 "mmapmodule.c"
         $0=$29; //@line 210 "mmapmodule.c"
         __label__ = 5; break; //@line 210 "mmapmodule.c"
       case 4: // $bb3
@@ -539,7 +555,7 @@ var __str82;
         __label__ = 12; break; //@line 246 "mmapmodule.c"
       case 2: // $bb1
         var $6=$args_addr; //@line 247 "mmapmodule.c"
-        var $7=__PyArg_ParseTuple_SizeT($6, __str3, $num_bytes); //@line 247 "mmapmodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str3, allocate([$num_bytes,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 247 "mmapmodule.c"
         var $8=($7)==0; //@line 247 "mmapmodule.c"
         if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 247 "mmapmodule.c"
       case 3: // $bb2
@@ -594,7 +610,7 @@ var __str82;
         var $36=$35+16; //@line 264 "mmapmodule.c"
         var $37=HEAP[$36]; //@line 264 "mmapmodule.c"
         var $38=$34+$37; //@line 264 "mmapmodule.c"
-        var $39=__Py_BuildValue_SizeT(__str6, $38, $31); //@line 264 "mmapmodule.c"
+        var $39=__Py_BuildValue_SizeT(__str6, allocate([$38,0,0,0,$31,0,0,0], ["i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 264 "mmapmodule.c"
         $result=$39; //@line 264 "mmapmodule.c"
         var $40=$self_addr; //@line 265 "mmapmodule.c"
         var $41=$40+16; //@line 265 "mmapmodule.c"
@@ -675,7 +691,7 @@ var __str82;
       case 5: // $bb4
         var $14=$args_addr; //@line 280 "mmapmodule.c"
         var $15=$iftmp_15; //@line 280 "mmapmodule.c"
-        var $16=__PyArg_ParseTuple_SizeT($14, $15, $needle, $len, $start, $end); //@line 280 "mmapmodule.c"
+        var $16=__PyArg_ParseTuple_SizeT($14, $15, allocate([$needle,0,0,0,$len,0,0,0,$start,0,0,0,$end,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 280 "mmapmodule.c"
         var $17=($16)==0; //@line 280 "mmapmodule.c"
         if ($17) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 280 "mmapmodule.c"
       case 6: // $bb5
@@ -898,101 +914,163 @@ var __str82;
   }
   
 
+  function _is_writeable($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 334 "mmapmodule.c"
+        var $2=$1+32; //@line 334 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 334 "mmapmodule.c"
+        var $4=($3)!=1; //@line 334 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 334 "mmapmodule.c"
+      case 1: // $bb
+        $0=1; //@line 335 "mmapmodule.c"
+        __label__ = 3; break; //@line 335 "mmapmodule.c"
+      case 2: // $bb1
+        var $5=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
+        var $6=_PyErr_Format($5, __str9, allocate(1, "i32", ALLOC_STACK)); //@line 336 "mmapmodule.c"
+        $0=0; //@line 337 "mmapmodule.c"
+        __label__ = 3; break; //@line 337 "mmapmodule.c"
+      case 3: // $bb2
+        var $7=$0; //@line 335 "mmapmodule.c"
+        $retval=$7; //@line 335 "mmapmodule.c"
+        var $retval3=$retval; //@line 335 "mmapmodule.c"
+        ;
+        return $retval3; //@line 335 "mmapmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _is_resizeable($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 343 "mmapmodule.c"
+        var $2=$1+32; //@line 343 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 343 "mmapmodule.c"
+        var $4=($3)==2; //@line 343 "mmapmodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 343 "mmapmodule.c"
+      case 1: // $bb
+        var $5=$self_addr; //@line 343 "mmapmodule.c"
+        var $6=$5+32; //@line 343 "mmapmodule.c"
+        var $7=HEAP[$6]; //@line 343 "mmapmodule.c"
+        var $8=($7)==0; //@line 343 "mmapmodule.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 343 "mmapmodule.c"
+      case 2: // $bb1
+        $0=1; //@line 344 "mmapmodule.c"
+        __label__ = 4; break; //@line 344 "mmapmodule.c"
+      case 3: // $bb2
+        var $9=HEAP[_PyExc_TypeError]; //@line 345 "mmapmodule.c"
+        var $10=_PyErr_Format($9, __str10, allocate(1, "i32", ALLOC_STACK)); //@line 345 "mmapmodule.c"
+        $0=0; //@line 347 "mmapmodule.c"
+        __label__ = 4; break; //@line 347 "mmapmodule.c"
+      case 4: // $bb3
+        var $11=$0; //@line 344 "mmapmodule.c"
+        $retval=$11; //@line 344 "mmapmodule.c"
+        var $retval4=$retval; //@line 344 "mmapmodule.c"
+        ;
+        return $retval4; //@line 344 "mmapmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _mmap_write_method($self, $args) {
     var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $length=__stackBase__;
         var $data=__stackBase__+4;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$self_addr; //@line 358 "mmapmodule.c"
-        var $3=$2+8; //@line 358 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 358 "mmapmodule.c"
-        var $5=($4)==0; //@line 358 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 358 "mmapmodule.c"
+        var $1=$self_addr; //@line 358 "mmapmodule.c"
+        var $2=$1+8; //@line 358 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 358 "mmapmodule.c"
+        var $4=($3)==0; //@line 358 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 358 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 358 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 358 "mmapmodule.c"
-        $1=0; //@line 358 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 358 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 358 "mmapmodule.c"
+        $0=0; //@line 358 "mmapmodule.c"
         __label__ = 9; break; //@line 358 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$args_addr; //@line 359 "mmapmodule.c"
-        var $8=__PyArg_ParseTuple_SizeT($7, __str11, $data, $length); //@line 359 "mmapmodule.c"
-        var $9=($8)==0; //@line 359 "mmapmodule.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 359 "mmapmodule.c"
+        var $6=$args_addr; //@line 359 "mmapmodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str11, allocate([$data,0,0,0,$length,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 359 "mmapmodule.c"
+        var $8=($7)==0; //@line 359 "mmapmodule.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 359 "mmapmodule.c"
       case 3: // $bb2
-        $1=0; //@line 360 "mmapmodule.c"
+        $0=0; //@line 360 "mmapmodule.c"
         __label__ = 9; break; //@line 360 "mmapmodule.c"
       case 4: // $bb3
-        var $10=$self_addr; //@line 362 "mmapmodule.c"
-        $self_addr_i=$10;
-        var $11=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $12=$11+32; //@line 334 "mmapmodule.c"
-        var $13=HEAP[$12]; //@line 334 "mmapmodule.c"
-        var $14=($13)!=1; //@line 334 "mmapmodule.c"
-        if ($14) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 334 "mmapmodule.c"
+        var $9=$self_addr; //@line 362 "mmapmodule.c"
+        var $10=_is_writeable($9); //@line 362 "mmapmodule.c"
+        var $11=($10)==0; //@line 362 "mmapmodule.c"
+        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 362 "mmapmodule.c"
       case 5: // $bb4
-        var $15=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $16=_PyErr_Format($15, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        $1=0; //@line 363 "mmapmodule.c"
+        $0=0; //@line 363 "mmapmodule.c"
         __label__ = 9; break; //@line 363 "mmapmodule.c"
       case 6: // $bb5
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
+        var $12=$self_addr; //@line 365 "mmapmodule.c"
+        var $13=$12+16; //@line 365 "mmapmodule.c"
+        var $14=HEAP[$13]; //@line 365 "mmapmodule.c"
+        var $15=HEAP[$length]; //@line 365 "mmapmodule.c"
+        var $16=($15) + ($14); //@line 365 "mmapmodule.c"
         var $17=$self_addr; //@line 365 "mmapmodule.c"
-        var $18=$17+16; //@line 365 "mmapmodule.c"
+        var $18=$17+12; //@line 365 "mmapmodule.c"
         var $19=HEAP[$18]; //@line 365 "mmapmodule.c"
-        var $20=HEAP[$length]; //@line 365 "mmapmodule.c"
-        var $21=($20) + ($19); //@line 365 "mmapmodule.c"
-        var $22=$self_addr; //@line 365 "mmapmodule.c"
-        var $23=$22+12; //@line 365 "mmapmodule.c"
-        var $24=HEAP[$23]; //@line 365 "mmapmodule.c"
-        var $25=($21) > ($24); //@line 365 "mmapmodule.c"
-        if ($25) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 365 "mmapmodule.c"
+        var $20=($16) > ($19); //@line 365 "mmapmodule.c"
+        if ($20) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 365 "mmapmodule.c"
       case 7: // $bb6
-        var $26=HEAP[_PyExc_ValueError]; //@line 366 "mmapmodule.c"
-        _PyErr_SetString($26, __str12); //@line 366 "mmapmodule.c"
-        $1=0; //@line 367 "mmapmodule.c"
+        var $21=HEAP[_PyExc_ValueError]; //@line 366 "mmapmodule.c"
+        _PyErr_SetString($21, __str12); //@line 366 "mmapmodule.c"
+        $0=0; //@line 367 "mmapmodule.c"
         __label__ = 9; break; //@line 367 "mmapmodule.c"
       case 8: // $bb7
-        var $27=HEAP[$length]; //@line 369 "mmapmodule.c"
-        var $28=HEAP[$data]; //@line 369 "mmapmodule.c"
-        var $29=$self_addr; //@line 369 "mmapmodule.c"
-        var $30=$29+8; //@line 369 "mmapmodule.c"
-        var $31=HEAP[$30]; //@line 369 "mmapmodule.c"
-        var $32=$self_addr; //@line 369 "mmapmodule.c"
-        var $33=$32+16; //@line 369 "mmapmodule.c"
-        var $34=HEAP[$33]; //@line 369 "mmapmodule.c"
-        var $35=$31+$34; //@line 369 "mmapmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($35, $28, $27, 1, 0); //@line 369 "mmapmodule.c"
+        var $22=HEAP[$length]; //@line 369 "mmapmodule.c"
+        var $23=HEAP[$data]; //@line 369 "mmapmodule.c"
+        var $24=$self_addr; //@line 369 "mmapmodule.c"
+        var $25=$24+8; //@line 369 "mmapmodule.c"
+        var $26=HEAP[$25]; //@line 369 "mmapmodule.c"
+        var $27=$self_addr; //@line 369 "mmapmodule.c"
+        var $28=$27+16; //@line 369 "mmapmodule.c"
+        var $29=HEAP[$28]; //@line 369 "mmapmodule.c"
+        var $30=$26+$29; //@line 369 "mmapmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($30, $23, $22, 1, 0); //@line 369 "mmapmodule.c"
+        var $31=$self_addr; //@line 370 "mmapmodule.c"
+        var $32=$31+16; //@line 370 "mmapmodule.c"
+        var $33=HEAP[$32]; //@line 370 "mmapmodule.c"
+        var $34=HEAP[$length]; //@line 370 "mmapmodule.c"
+        var $35=($34) + ($33); //@line 370 "mmapmodule.c"
         var $36=$self_addr; //@line 370 "mmapmodule.c"
         var $37=$36+16; //@line 370 "mmapmodule.c"
-        var $38=HEAP[$37]; //@line 370 "mmapmodule.c"
-        var $39=HEAP[$length]; //@line 370 "mmapmodule.c"
-        var $40=($39) + ($38); //@line 370 "mmapmodule.c"
-        var $41=$self_addr; //@line 370 "mmapmodule.c"
-        var $42=$41+16; //@line 370 "mmapmodule.c"
-        HEAP[$42]=$40; //@line 370 "mmapmodule.c"
-        var $43=HEAP[__Py_NoneStruct]; //@line 371 "mmapmodule.c"
-        var $44=($43) + 1; //@line 371 "mmapmodule.c"
-        HEAP[__Py_NoneStruct]=$44; //@line 371 "mmapmodule.c"
-        $1=__Py_NoneStruct; //@line 372 "mmapmodule.c"
+        HEAP[$37]=$35; //@line 370 "mmapmodule.c"
+        var $38=HEAP[__Py_NoneStruct]; //@line 371 "mmapmodule.c"
+        var $39=($38) + 1; //@line 371 "mmapmodule.c"
+        HEAP[__Py_NoneStruct]=$39; //@line 371 "mmapmodule.c"
+        $0=__Py_NoneStruct; //@line 372 "mmapmodule.c"
         __label__ = 9; break; //@line 372 "mmapmodule.c"
       case 9: // $bb8
-        var $45=$1; //@line 358 "mmapmodule.c"
-        $retval=$45; //@line 358 "mmapmodule.c"
+        var $40=$0; //@line 358 "mmapmodule.c"
+        $retval=$40; //@line 358 "mmapmodule.c"
         var $retval9=$retval; //@line 358 "mmapmodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 358 "mmapmodule.c"
@@ -1007,90 +1085,78 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $value=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$self_addr; //@line 381 "mmapmodule.c"
-        var $3=$2+8; //@line 381 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 381 "mmapmodule.c"
-        var $5=($4)==0; //@line 381 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 381 "mmapmodule.c"
+        var $1=$self_addr; //@line 381 "mmapmodule.c"
+        var $2=$1+8; //@line 381 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 381 "mmapmodule.c"
+        var $4=($3)==0; //@line 381 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 381 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 381 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 381 "mmapmodule.c"
-        $1=0; //@line 381 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 381 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 381 "mmapmodule.c"
+        $0=0; //@line 381 "mmapmodule.c"
         __label__ = 9; break; //@line 381 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$args_addr; //@line 382 "mmapmodule.c"
-        var $8=__PyArg_ParseTuple_SizeT($7, __str13, $value); //@line 382 "mmapmodule.c"
-        var $9=($8)==0; //@line 382 "mmapmodule.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 382 "mmapmodule.c"
+        var $6=$args_addr; //@line 382 "mmapmodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str13, allocate([$value,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 382 "mmapmodule.c"
+        var $8=($7)==0; //@line 382 "mmapmodule.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 382 "mmapmodule.c"
       case 3: // $bb2
-        $1=0; //@line 383 "mmapmodule.c"
+        $0=0; //@line 383 "mmapmodule.c"
         __label__ = 9; break; //@line 383 "mmapmodule.c"
       case 4: // $bb3
-        var $10=$self_addr; //@line 385 "mmapmodule.c"
-        $self_addr_i=$10;
-        var $11=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $12=$11+32; //@line 334 "mmapmodule.c"
-        var $13=HEAP[$12]; //@line 334 "mmapmodule.c"
-        var $14=($13)!=1; //@line 334 "mmapmodule.c"
-        if ($14) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 334 "mmapmodule.c"
+        var $9=$self_addr; //@line 385 "mmapmodule.c"
+        var $10=_is_writeable($9); //@line 385 "mmapmodule.c"
+        var $11=($10)==0; //@line 385 "mmapmodule.c"
+        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 385 "mmapmodule.c"
       case 5: // $bb4
-        var $15=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $16=_PyErr_Format($15, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        $1=0; //@line 386 "mmapmodule.c"
+        $0=0; //@line 386 "mmapmodule.c"
         __label__ = 9; break; //@line 386 "mmapmodule.c"
       case 6: // $bb5
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
-        var $17=$self_addr; //@line 388 "mmapmodule.c"
-        var $18=$17+16; //@line 388 "mmapmodule.c"
-        var $19=HEAP[$18]; //@line 388 "mmapmodule.c"
-        var $20=$self_addr; //@line 388 "mmapmodule.c"
-        var $21=$20+12; //@line 388 "mmapmodule.c"
-        var $22=HEAP[$21]; //@line 388 "mmapmodule.c"
-        var $23=($19) < ($22); //@line 388 "mmapmodule.c"
-        if ($23) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 388 "mmapmodule.c"
+        var $12=$self_addr; //@line 388 "mmapmodule.c"
+        var $13=$12+16; //@line 388 "mmapmodule.c"
+        var $14=HEAP[$13]; //@line 388 "mmapmodule.c"
+        var $15=$self_addr; //@line 388 "mmapmodule.c"
+        var $16=$15+12; //@line 388 "mmapmodule.c"
+        var $17=HEAP[$16]; //@line 388 "mmapmodule.c"
+        var $18=($14) < ($17); //@line 388 "mmapmodule.c"
+        if ($18) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 388 "mmapmodule.c"
       case 7: // $bb6
-        var $24=$self_addr; //@line 389 "mmapmodule.c"
-        var $25=$24+8; //@line 389 "mmapmodule.c"
-        var $26=HEAP[$25]; //@line 389 "mmapmodule.c"
-        var $27=$self_addr; //@line 389 "mmapmodule.c"
-        var $28=$27+16; //@line 389 "mmapmodule.c"
-        var $29=HEAP[$28]; //@line 389 "mmapmodule.c"
-        var $30=HEAP[$value]; //@line 389 "mmapmodule.c"
-        var $31=$26+$29; //@line 389 "mmapmodule.c"
-        HEAP[$31]=$30; //@line 389 "mmapmodule.c"
-        var $32=$self_addr; //@line 390 "mmapmodule.c"
-        var $33=$32+16; //@line 390 "mmapmodule.c"
-        var $34=HEAP[$33]; //@line 390 "mmapmodule.c"
-        var $35=($34) + 1; //@line 390 "mmapmodule.c"
-        var $36=$self_addr; //@line 390 "mmapmodule.c"
-        var $37=$36+16; //@line 390 "mmapmodule.c"
-        HEAP[$37]=$35; //@line 390 "mmapmodule.c"
-        var $38=HEAP[__Py_NoneStruct]; //@line 391 "mmapmodule.c"
-        var $39=($38) + 1; //@line 391 "mmapmodule.c"
-        HEAP[__Py_NoneStruct]=$39; //@line 391 "mmapmodule.c"
-        $1=__Py_NoneStruct; //@line 392 "mmapmodule.c"
+        var $19=$self_addr; //@line 389 "mmapmodule.c"
+        var $20=$19+8; //@line 389 "mmapmodule.c"
+        var $21=HEAP[$20]; //@line 389 "mmapmodule.c"
+        var $22=$self_addr; //@line 389 "mmapmodule.c"
+        var $23=$22+16; //@line 389 "mmapmodule.c"
+        var $24=HEAP[$23]; //@line 389 "mmapmodule.c"
+        var $25=HEAP[$value]; //@line 389 "mmapmodule.c"
+        var $26=$21+$24; //@line 389 "mmapmodule.c"
+        HEAP[$26]=$25; //@line 389 "mmapmodule.c"
+        var $27=$self_addr; //@line 390 "mmapmodule.c"
+        var $28=$27+16; //@line 390 "mmapmodule.c"
+        var $29=HEAP[$28]; //@line 390 "mmapmodule.c"
+        var $30=($29) + 1; //@line 390 "mmapmodule.c"
+        var $31=$self_addr; //@line 390 "mmapmodule.c"
+        var $32=$31+16; //@line 390 "mmapmodule.c"
+        HEAP[$32]=$30; //@line 390 "mmapmodule.c"
+        var $33=HEAP[__Py_NoneStruct]; //@line 391 "mmapmodule.c"
+        var $34=($33) + 1; //@line 391 "mmapmodule.c"
+        HEAP[__Py_NoneStruct]=$34; //@line 391 "mmapmodule.c"
+        $0=__Py_NoneStruct; //@line 392 "mmapmodule.c"
         __label__ = 9; break; //@line 392 "mmapmodule.c"
       case 8: // $bb7
-        var $40=HEAP[_PyExc_ValueError]; //@line 395 "mmapmodule.c"
-        _PyErr_SetString($40, __str14); //@line 395 "mmapmodule.c"
-        $1=0; //@line 396 "mmapmodule.c"
+        var $35=HEAP[_PyExc_ValueError]; //@line 395 "mmapmodule.c"
+        _PyErr_SetString($35, __str14); //@line 395 "mmapmodule.c"
+        $0=0; //@line 396 "mmapmodule.c"
         __label__ = 9; break; //@line 396 "mmapmodule.c"
       case 9: // $bb8
-        var $41=$1; //@line 381 "mmapmodule.c"
-        $retval=$41; //@line 381 "mmapmodule.c"
+        var $36=$0; //@line 381 "mmapmodule.c"
+        $retval=$36; //@line 381 "mmapmodule.c"
         var $retval9=$retval; //@line 381 "mmapmodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 381 "mmapmodule.c"
@@ -1157,110 +1223,90 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $new_size=__stackBase__;
         var $newmap;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$self_addr; //@line 457 "mmapmodule.c"
-        var $3=$2+8; //@line 457 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 457 "mmapmodule.c"
-        var $5=($4)==0; //@line 457 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 457 "mmapmodule.c"
+        var $1=$self_addr; //@line 457 "mmapmodule.c"
+        var $2=$1+8; //@line 457 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 457 "mmapmodule.c"
+        var $4=($3)==0; //@line 457 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 457 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 457 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 457 "mmapmodule.c"
-        $1=0; //@line 457 "mmapmodule.c"
-        __label__ = 12; break; //@line 457 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 457 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 457 "mmapmodule.c"
+        $0=0; //@line 457 "mmapmodule.c"
+        __label__ = 10; break; //@line 457 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$args_addr; //@line 458 "mmapmodule.c"
-        var $8=__PyArg_ParseTuple_SizeT($7, __str15, $new_size); //@line 458 "mmapmodule.c"
-        var $9=($8)==0; //@line 458 "mmapmodule.c"
-        if ($9) { __label__ = 6; break; } else { __label__ = 3; break; } //@line 458 "mmapmodule.c"
+        var $6=$args_addr; //@line 458 "mmapmodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str15, allocate([$new_size,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 458 "mmapmodule.c"
+        var $8=($7)==0; //@line 458 "mmapmodule.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 458 "mmapmodule.c"
       case 3: // $bb2
-        var $10=$self_addr; //@line 458 "mmapmodule.c"
-        $self_addr_i=$10;
-        var $11=$self_addr_i; //@line 343 "mmapmodule.c"
-        var $12=$11+32; //@line 343 "mmapmodule.c"
-        var $13=HEAP[$12]; //@line 343 "mmapmodule.c"
-        var $14=($13)==2; //@line 343 "mmapmodule.c"
-        if ($14) { __label__ = 7; break; } else { __label__ = 4; break; } //@line 343 "mmapmodule.c"
-      case 4: // $bb_i
-        var $15=$self_addr_i; //@line 343 "mmapmodule.c"
-        var $16=$15+32; //@line 343 "mmapmodule.c"
-        var $17=HEAP[$16]; //@line 343 "mmapmodule.c"
-        var $18=($17)==0; //@line 343 "mmapmodule.c"
-        if ($18) { __label__ = 7; break; } else { __label__ = 5; break; } //@line 343 "mmapmodule.c"
-      case 5: // $is_resizeable_exit_thread
-        var $19=HEAP[_PyExc_TypeError]; //@line 345 "mmapmodule.c"
-        var $20=_PyErr_Format($19, __str10); //@line 345 "mmapmodule.c"
-        $0=0; //@line 347 "mmapmodule.c"
-        $retval_i=0; //@line 344 "mmapmodule.c"
-        __label__ = 6; break;
-      case 6: // $bb3
-        $1=0; //@line 460 "mmapmodule.c"
-        __label__ = 12; break; //@line 460 "mmapmodule.c"
-      case 7: // $bb4
-        $0=1; //@line 344 "mmapmodule.c"
-        $retval_i=1; //@line 344 "mmapmodule.c"
-        var $21=$self_addr; //@line 520 "mmapmodule.c"
-        var $22=$21+20; //@line 520 "mmapmodule.c"
-        var $23=HEAP[$22]; //@line 520 "mmapmodule.c"
-        var $24=HEAP[$new_size]; //@line 520 "mmapmodule.c"
-        var $25=($24); //@line 520 "mmapmodule.c"
-        var $26=($25) + ($23); //@line 520 "mmapmodule.c"
-        var $27=$self_addr; //@line 520 "mmapmodule.c"
-        var $28=$27+28; //@line 520 "mmapmodule.c"
-        var $29=HEAP[$28]; //@line 520 "mmapmodule.c"
-        var $30=___01ftruncate64_($29, $26); //@line 520 "mmapmodule.c"
-        var $31=($30)==-1; //@line 520 "mmapmodule.c"
-        if ($31) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 520 "mmapmodule.c"
-      case 8: // $bb5
-        var $32=HEAP[_mmap_module_error]; //@line 521 "mmapmodule.c"
-        var $33=_PyErr_SetFromErrno($32); //@line 521 "mmapmodule.c"
-        $1=0; //@line 522 "mmapmodule.c"
-        __label__ = 12; break; //@line 522 "mmapmodule.c"
-      case 9: // $bb6
-        var $34=HEAP[$new_size]; //@line 526 "mmapmodule.c"
-        var $35=$self_addr; //@line 526 "mmapmodule.c"
-        var $36=$35+12; //@line 526 "mmapmodule.c"
-        var $37=HEAP[$36]; //@line 526 "mmapmodule.c"
-        var $38=$self_addr; //@line 526 "mmapmodule.c"
-        var $39=$38+8; //@line 526 "mmapmodule.c"
-        var $40=HEAP[$39]; //@line 526 "mmapmodule.c"
-        var $41=_mremap($40, $37, $34, 1); //@line 526 "mmapmodule.c"
-        $newmap=$41; //@line 526 "mmapmodule.c"
-        var $42=$newmap; //@line 534 "mmapmodule.c"
-        var $43=($42)==4294967295; //@line 534 "mmapmodule.c"
-        if ($43) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 534 "mmapmodule.c"
-      case 10: // $bb7
-        var $44=HEAP[_mmap_module_error]; //@line 536 "mmapmodule.c"
-        var $45=_PyErr_SetFromErrno($44); //@line 536 "mmapmodule.c"
-        $1=0; //@line 537 "mmapmodule.c"
-        __label__ = 12; break; //@line 537 "mmapmodule.c"
-      case 11: // $bb8
-        var $46=$newmap; //@line 539 "mmapmodule.c"
-        var $47=$self_addr; //@line 539 "mmapmodule.c"
-        var $48=$47+8; //@line 539 "mmapmodule.c"
-        HEAP[$48]=$46; //@line 539 "mmapmodule.c"
-        var $49=HEAP[$new_size]; //@line 540 "mmapmodule.c"
-        var $50=$self_addr; //@line 540 "mmapmodule.c"
-        var $51=$50+12; //@line 540 "mmapmodule.c"
-        HEAP[$51]=$49; //@line 540 "mmapmodule.c"
-        var $52=HEAP[__Py_NoneStruct]; //@line 541 "mmapmodule.c"
-        var $53=($52) + 1; //@line 541 "mmapmodule.c"
-        HEAP[__Py_NoneStruct]=$53; //@line 541 "mmapmodule.c"
-        $1=__Py_NoneStruct; //@line 542 "mmapmodule.c"
-        __label__ = 12; break; //@line 542 "mmapmodule.c"
-      case 12: // $bb9
-        var $54=$1; //@line 457 "mmapmodule.c"
-        $retval=$54; //@line 457 "mmapmodule.c"
+        var $9=$self_addr; //@line 458 "mmapmodule.c"
+        var $10=_is_resizeable($9); //@line 458 "mmapmodule.c"
+        var $11=($10)==0; //@line 458 "mmapmodule.c"
+        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 458 "mmapmodule.c"
+      case 4: // $bb3
+        $0=0; //@line 460 "mmapmodule.c"
+        __label__ = 10; break; //@line 460 "mmapmodule.c"
+      case 5: // $bb4
+        var $12=$self_addr; //@line 520 "mmapmodule.c"
+        var $13=$12+20; //@line 520 "mmapmodule.c"
+        var $14=HEAP[$13]; //@line 520 "mmapmodule.c"
+        var $15=HEAP[$new_size]; //@line 520 "mmapmodule.c"
+        var $16=($15); //@line 520 "mmapmodule.c"
+        var $17=($16) + ($14); //@line 520 "mmapmodule.c"
+        var $18=$self_addr; //@line 520 "mmapmodule.c"
+        var $19=$18+28; //@line 520 "mmapmodule.c"
+        var $20=HEAP[$19]; //@line 520 "mmapmodule.c"
+        var $21=___01ftruncate64_($20, $17); //@line 520 "mmapmodule.c"
+        var $22=($21)==-1; //@line 520 "mmapmodule.c"
+        if ($22) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 520 "mmapmodule.c"
+      case 6: // $bb5
+        var $23=HEAP[_mmap_module_error]; //@line 521 "mmapmodule.c"
+        var $24=_PyErr_SetFromErrno($23); //@line 521 "mmapmodule.c"
+        $0=0; //@line 522 "mmapmodule.c"
+        __label__ = 10; break; //@line 522 "mmapmodule.c"
+      case 7: // $bb6
+        var $25=HEAP[$new_size]; //@line 526 "mmapmodule.c"
+        var $26=$self_addr; //@line 526 "mmapmodule.c"
+        var $27=$26+12; //@line 526 "mmapmodule.c"
+        var $28=HEAP[$27]; //@line 526 "mmapmodule.c"
+        var $29=$self_addr; //@line 526 "mmapmodule.c"
+        var $30=$29+8; //@line 526 "mmapmodule.c"
+        var $31=HEAP[$30]; //@line 526 "mmapmodule.c"
+        var $32=_mremap($31, $28, $25, 1, allocate(1, "i32", ALLOC_STACK)); //@line 526 "mmapmodule.c"
+        $newmap=$32; //@line 526 "mmapmodule.c"
+        var $33=$newmap; //@line 534 "mmapmodule.c"
+        var $34=($33)==-1; //@line 534 "mmapmodule.c"
+        if ($34) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 534 "mmapmodule.c"
+      case 8: // $bb7
+        var $35=HEAP[_mmap_module_error]; //@line 536 "mmapmodule.c"
+        var $36=_PyErr_SetFromErrno($35); //@line 536 "mmapmodule.c"
+        $0=0; //@line 537 "mmapmodule.c"
+        __label__ = 10; break; //@line 537 "mmapmodule.c"
+      case 9: // $bb8
+        var $37=$newmap; //@line 539 "mmapmodule.c"
+        var $38=$self_addr; //@line 539 "mmapmodule.c"
+        var $39=$38+8; //@line 539 "mmapmodule.c"
+        HEAP[$39]=$37; //@line 539 "mmapmodule.c"
+        var $40=HEAP[$new_size]; //@line 540 "mmapmodule.c"
+        var $41=$self_addr; //@line 540 "mmapmodule.c"
+        var $42=$41+12; //@line 540 "mmapmodule.c"
+        HEAP[$42]=$40; //@line 540 "mmapmodule.c"
+        var $43=HEAP[__Py_NoneStruct]; //@line 541 "mmapmodule.c"
+        var $44=($43) + 1; //@line 541 "mmapmodule.c"
+        HEAP[__Py_NoneStruct]=$44; //@line 541 "mmapmodule.c"
+        $0=__Py_NoneStruct; //@line 542 "mmapmodule.c"
+        __label__ = 10; break; //@line 542 "mmapmodule.c"
+      case 10: // $bb9
+        var $45=$0; //@line 457 "mmapmodule.c"
+        $retval=$45; //@line 457 "mmapmodule.c"
         var $retval10=$retval; //@line 457 "mmapmodule.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 457 "mmapmodule.c"
@@ -1340,7 +1386,7 @@ var __str82;
         __label__ = 12; break; //@line 560 "mmapmodule.c"
       case 2: // $bb1
         var $9=$args_addr; //@line 561 "mmapmodule.c"
-        var $10=__PyArg_ParseTuple_SizeT($9, __str16, $offset, $size); //@line 561 "mmapmodule.c"
+        var $10=__PyArg_ParseTuple_SizeT($9, __str16, allocate([$offset,0,0,0,$size,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 561 "mmapmodule.c"
         var $11=($10)==0; //@line 561 "mmapmodule.c"
         if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 561 "mmapmodule.c"
       case 3: // $bb2
@@ -1434,7 +1480,7 @@ var __str82;
         __label__ = 15; break; //@line 592 "mmapmodule.c"
       case 2: // $bb1
         var $6=$args_addr; //@line 593 "mmapmodule.c"
-        var $7=__PyArg_ParseTuple_SizeT($6, __str18, $dist, $how); //@line 593 "mmapmodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str18, allocate([$dist,0,0,0,$how,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 593 "mmapmodule.c"
         var $8=($7)==0; //@line 593 "mmapmodule.c"
         if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 593 "mmapmodule.c"
       case 3: // $bb2
@@ -1539,124 +1585,110 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $dest=__stackBase__;
         var $src=__stackBase__+4;
         var $cnt=__stackBase__+8;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$self_addr; //@line 633 "mmapmodule.c"
-        var $3=$2+8; //@line 633 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 633 "mmapmodule.c"
-        var $5=($4)==0; //@line 633 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 633 "mmapmodule.c"
+        var $1=$self_addr; //@line 633 "mmapmodule.c"
+        var $2=$1+8; //@line 633 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 633 "mmapmodule.c"
+        var $4=($3)==0; //@line 633 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 633 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 633 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 633 "mmapmodule.c"
-        $1=0; //@line 633 "mmapmodule.c"
-        __label__ = 14; break; //@line 633 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 633 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 633 "mmapmodule.c"
+        $0=0; //@line 633 "mmapmodule.c"
+        __label__ = 13; break; //@line 633 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$args_addr; //@line 634 "mmapmodule.c"
-        var $8=__PyArg_ParseTuple_SizeT($7, __str21, $dest, $src, $cnt); //@line 634 "mmapmodule.c"
-        var $9=($8)==0; //@line 634 "mmapmodule.c"
-        if ($9) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 634 "mmapmodule.c"
+        var $6=$args_addr; //@line 634 "mmapmodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str21, allocate([$dest,0,0,0,$src,0,0,0,$cnt,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 634 "mmapmodule.c"
+        var $8=($7)==0; //@line 634 "mmapmodule.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 634 "mmapmodule.c"
       case 3: // $bb2
-        var $10=$self_addr; //@line 634 "mmapmodule.c"
-        $self_addr_i=$10;
-        var $11=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $12=$11+32; //@line 334 "mmapmodule.c"
-        var $13=HEAP[$12]; //@line 334 "mmapmodule.c"
-        var $14=($13)!=1; //@line 334 "mmapmodule.c"
-        if ($14) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 334 "mmapmodule.c"
-      case 4: // $is_writeable_exit_thread
-        var $15=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $16=_PyErr_Format($15, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        __label__ = 5; break;
-      case 5: // $bb3
-        $1=0; //@line 636 "mmapmodule.c"
-        __label__ = 14; break; //@line 636 "mmapmodule.c"
-      case 6: // $bb4
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
+        var $9=$self_addr; //@line 634 "mmapmodule.c"
+        var $10=_is_writeable($9); //@line 634 "mmapmodule.c"
+        var $11=($10)==0; //@line 634 "mmapmodule.c"
+        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 634 "mmapmodule.c"
+      case 4: // $bb3
+        $0=0; //@line 636 "mmapmodule.c"
+        __label__ = 13; break; //@line 636 "mmapmodule.c"
+      case 5: // $bb4
+        var $12=HEAP[$cnt]; //@line 639 "mmapmodule.c"
+        var $13=HEAP[$dest]; //@line 639 "mmapmodule.c"
+        var $14=($13) + ($12); //@line 639 "mmapmodule.c"
+        var $15=HEAP[$cnt]; //@line 639 "mmapmodule.c"
+        var $16=($14) < ($15); //@line 639 "mmapmodule.c"
+        if ($16) { __label__ = 11; break; } else { __label__ = 6; break; } //@line 639 "mmapmodule.c"
+      case 6: // $bb5
         var $17=HEAP[$cnt]; //@line 639 "mmapmodule.c"
-        var $18=HEAP[$dest]; //@line 639 "mmapmodule.c"
+        var $18=HEAP[$src]; //@line 639 "mmapmodule.c"
         var $19=($18) + ($17); //@line 639 "mmapmodule.c"
         var $20=HEAP[$cnt]; //@line 639 "mmapmodule.c"
         var $21=($19) < ($20); //@line 639 "mmapmodule.c"
-        if ($21) { __label__ = 12; break; } else { __label__ = 7; break; } //@line 639 "mmapmodule.c"
-      case 7: // $bb5
-        var $22=HEAP[$cnt]; //@line 639 "mmapmodule.c"
-        var $23=HEAP[$src]; //@line 639 "mmapmodule.c"
-        var $24=($23) + ($22); //@line 639 "mmapmodule.c"
-        var $25=HEAP[$cnt]; //@line 639 "mmapmodule.c"
+        if ($21) { __label__ = 11; break; } else { __label__ = 7; break; } //@line 639 "mmapmodule.c"
+      case 7: // $bb6
+        var $22=$self_addr; //@line 639 "mmapmodule.c"
+        var $23=$22+12; //@line 639 "mmapmodule.c"
+        var $24=HEAP[$23]; //@line 639 "mmapmodule.c"
+        var $25=HEAP[$src]; //@line 639 "mmapmodule.c"
         var $26=($24) < ($25); //@line 639 "mmapmodule.c"
-        if ($26) { __label__ = 12; break; } else { __label__ = 8; break; } //@line 639 "mmapmodule.c"
-      case 8: // $bb6
-        var $27=$self_addr; //@line 639 "mmapmodule.c"
-        var $28=$27+12; //@line 639 "mmapmodule.c"
-        var $29=HEAP[$28]; //@line 639 "mmapmodule.c"
-        var $30=HEAP[$src]; //@line 639 "mmapmodule.c"
-        var $31=($29) < ($30); //@line 639 "mmapmodule.c"
-        if ($31) { __label__ = 12; break; } else { __label__ = 9; break; } //@line 639 "mmapmodule.c"
-      case 9: // $bb7
-        var $32=HEAP[$src]; //@line 639 "mmapmodule.c"
-        var $33=HEAP[$cnt]; //@line 639 "mmapmodule.c"
-        var $34=($33) + ($32); //@line 639 "mmapmodule.c"
-        var $35=$self_addr; //@line 639 "mmapmodule.c"
-        var $36=$35+12; //@line 639 "mmapmodule.c"
-        var $37=HEAP[$36]; //@line 639 "mmapmodule.c"
-        var $38=($34) > ($37); //@line 639 "mmapmodule.c"
-        if ($38) { __label__ = 12; break; } else { __label__ = 10; break; } //@line 639 "mmapmodule.c"
-      case 10: // $bb8
-        var $39=$self_addr; //@line 639 "mmapmodule.c"
-        var $40=$39+12; //@line 639 "mmapmodule.c"
-        var $41=HEAP[$40]; //@line 639 "mmapmodule.c"
-        var $42=HEAP[$dest]; //@line 639 "mmapmodule.c"
-        var $43=($41) < ($42); //@line 639 "mmapmodule.c"
-        if ($43) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 639 "mmapmodule.c"
-      case 11: // $bb9
-        var $44=HEAP[$dest]; //@line 639 "mmapmodule.c"
-        var $45=HEAP[$cnt]; //@line 639 "mmapmodule.c"
-        var $46=($45) + ($44); //@line 639 "mmapmodule.c"
-        var $47=$self_addr; //@line 639 "mmapmodule.c"
-        var $48=$47+12; //@line 639 "mmapmodule.c"
-        var $49=HEAP[$48]; //@line 639 "mmapmodule.c"
-        var $50=($46) > ($49); //@line 639 "mmapmodule.c"
-        if ($50) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 639 "mmapmodule.c"
-      case 12: // $bb10
-        var $51=HEAP[_PyExc_ValueError]; //@line 642 "mmapmodule.c"
-        _PyErr_SetString($51, __str22); //@line 642 "mmapmodule.c"
-        $1=0; //@line 644 "mmapmodule.c"
-        __label__ = 14; break; //@line 644 "mmapmodule.c"
-      case 13: // $bb11
-        var $52=HEAP[$cnt]; //@line 646 "mmapmodule.c"
+        if ($26) { __label__ = 11; break; } else { __label__ = 8; break; } //@line 639 "mmapmodule.c"
+      case 8: // $bb7
+        var $27=HEAP[$src]; //@line 639 "mmapmodule.c"
+        var $28=HEAP[$cnt]; //@line 639 "mmapmodule.c"
+        var $29=($28) + ($27); //@line 639 "mmapmodule.c"
+        var $30=$self_addr; //@line 639 "mmapmodule.c"
+        var $31=$30+12; //@line 639 "mmapmodule.c"
+        var $32=HEAP[$31]; //@line 639 "mmapmodule.c"
+        var $33=($29) > ($32); //@line 639 "mmapmodule.c"
+        if ($33) { __label__ = 11; break; } else { __label__ = 9; break; } //@line 639 "mmapmodule.c"
+      case 9: // $bb8
+        var $34=$self_addr; //@line 639 "mmapmodule.c"
+        var $35=$34+12; //@line 639 "mmapmodule.c"
+        var $36=HEAP[$35]; //@line 639 "mmapmodule.c"
+        var $37=HEAP[$dest]; //@line 639 "mmapmodule.c"
+        var $38=($36) < ($37); //@line 639 "mmapmodule.c"
+        if ($38) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 639 "mmapmodule.c"
+      case 10: // $bb9
+        var $39=HEAP[$dest]; //@line 639 "mmapmodule.c"
+        var $40=HEAP[$cnt]; //@line 639 "mmapmodule.c"
+        var $41=($40) + ($39); //@line 639 "mmapmodule.c"
+        var $42=$self_addr; //@line 639 "mmapmodule.c"
+        var $43=$42+12; //@line 639 "mmapmodule.c"
+        var $44=HEAP[$43]; //@line 639 "mmapmodule.c"
+        var $45=($41) > ($44); //@line 639 "mmapmodule.c"
+        if ($45) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 639 "mmapmodule.c"
+      case 11: // $bb10
+        var $46=HEAP[_PyExc_ValueError]; //@line 642 "mmapmodule.c"
+        _PyErr_SetString($46, __str22); //@line 642 "mmapmodule.c"
+        $0=0; //@line 644 "mmapmodule.c"
+        __label__ = 13; break; //@line 644 "mmapmodule.c"
+      case 12: // $bb11
+        var $47=HEAP[$cnt]; //@line 646 "mmapmodule.c"
+        var $48=$self_addr; //@line 646 "mmapmodule.c"
+        var $49=$48+8; //@line 646 "mmapmodule.c"
+        var $50=HEAP[$49]; //@line 646 "mmapmodule.c"
+        var $51=HEAP[$src]; //@line 646 "mmapmodule.c"
+        var $52=$50+$51; //@line 646 "mmapmodule.c"
         var $53=$self_addr; //@line 646 "mmapmodule.c"
         var $54=$53+8; //@line 646 "mmapmodule.c"
         var $55=HEAP[$54]; //@line 646 "mmapmodule.c"
-        var $56=HEAP[$src]; //@line 646 "mmapmodule.c"
+        var $56=HEAP[$dest]; //@line 646 "mmapmodule.c"
         var $57=$55+$56; //@line 646 "mmapmodule.c"
-        var $58=$self_addr; //@line 646 "mmapmodule.c"
-        var $59=$58+8; //@line 646 "mmapmodule.c"
-        var $60=HEAP[$59]; //@line 646 "mmapmodule.c"
-        var $61=HEAP[$dest]; //@line 646 "mmapmodule.c"
-        var $62=$60+$61; //@line 646 "mmapmodule.c"
-        _llvm_memmove_p0i8_p0i8_i32($62, $57, $52, 1, 0); //@line 646 "mmapmodule.c"
-        var $63=HEAP[__Py_NoneStruct]; //@line 647 "mmapmodule.c"
-        var $64=($63) + 1; //@line 647 "mmapmodule.c"
-        HEAP[__Py_NoneStruct]=$64; //@line 647 "mmapmodule.c"
-        $1=__Py_NoneStruct; //@line 648 "mmapmodule.c"
-        __label__ = 14; break; //@line 648 "mmapmodule.c"
-      case 14: // $bb12
-        var $65=$1; //@line 633 "mmapmodule.c"
-        $retval=$65; //@line 633 "mmapmodule.c"
+        _llvm_memmove_p0i8_p0i8_i32($57, $52, $47, 1, 0); //@line 646 "mmapmodule.c"
+        var $58=HEAP[__Py_NoneStruct]; //@line 647 "mmapmodule.c"
+        var $59=($58) + 1; //@line 647 "mmapmodule.c"
+        HEAP[__Py_NoneStruct]=$59; //@line 647 "mmapmodule.c"
+        $0=__Py_NoneStruct; //@line 648 "mmapmodule.c"
+        __label__ = 13; break; //@line 648 "mmapmodule.c"
+      case 13: // $bb12
+        var $60=$0; //@line 633 "mmapmodule.c"
+        $retval=$60; //@line 633 "mmapmodule.c"
         var $retval13=$retval; //@line 633 "mmapmodule.c"
         STACKTOP = __stackBase__;
         return $retval13; //@line 633 "mmapmodule.c"
@@ -1726,67 +1758,55 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $index_addr;
         var $ptr_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $index_addr=$index;
         $ptr_addr=$ptr;
-        var $2=$self_addr; //@line 688 "mmapmodule.c"
-        var $3=$2+8; //@line 688 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 688 "mmapmodule.c"
-        var $5=($4)==0; //@line 688 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 688 "mmapmodule.c"
+        var $1=$self_addr; //@line 688 "mmapmodule.c"
+        var $2=$1+8; //@line 688 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 688 "mmapmodule.c"
+        var $4=($3)==0; //@line 688 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 688 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 688 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 688 "mmapmodule.c"
-        $1=-1; //@line 688 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 688 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 688 "mmapmodule.c"
+        $0=-1; //@line 688 "mmapmodule.c"
         __label__ = 7; break; //@line 688 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$index_addr; //@line 689 "mmapmodule.c"
-        var $8=($7)!=0; //@line 689 "mmapmodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 689 "mmapmodule.c"
+        var $6=$index_addr; //@line 689 "mmapmodule.c"
+        var $7=($6)!=0; //@line 689 "mmapmodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 689 "mmapmodule.c"
       case 3: // $bb2
-        var $9=HEAP[_PyExc_SystemError]; //@line 690 "mmapmodule.c"
-        _PyErr_SetString($9, __str37); //@line 690 "mmapmodule.c"
-        $1=-1; //@line 692 "mmapmodule.c"
+        var $8=HEAP[_PyExc_SystemError]; //@line 690 "mmapmodule.c"
+        _PyErr_SetString($8, __str37); //@line 690 "mmapmodule.c"
+        $0=-1; //@line 692 "mmapmodule.c"
         __label__ = 7; break; //@line 692 "mmapmodule.c"
       case 4: // $bb3
-        var $10=$self_addr; //@line 694 "mmapmodule.c"
-        $self_addr_i=$10;
-        var $11=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $12=$11+32; //@line 334 "mmapmodule.c"
-        var $13=HEAP[$12]; //@line 334 "mmapmodule.c"
-        var $14=($13)!=1; //@line 334 "mmapmodule.c"
-        if ($14) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 334 "mmapmodule.c"
+        var $9=$self_addr; //@line 694 "mmapmodule.c"
+        var $10=_is_writeable($9); //@line 694 "mmapmodule.c"
+        var $11=($10)==0; //@line 694 "mmapmodule.c"
+        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 694 "mmapmodule.c"
       case 5: // $bb4
-        var $15=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $16=_PyErr_Format($15, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        $1=-1; //@line 695 "mmapmodule.c"
+        $0=-1; //@line 695 "mmapmodule.c"
         __label__ = 7; break; //@line 695 "mmapmodule.c"
       case 6: // $bb5
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
-        var $17=$self_addr; //@line 696 "mmapmodule.c"
-        var $18=$17+8; //@line 696 "mmapmodule.c"
-        var $19=HEAP[$18]; //@line 696 "mmapmodule.c"
-        var $20=$ptr_addr; //@line 696 "mmapmodule.c"
-        HEAP[$20]=$19; //@line 696 "mmapmodule.c"
-        var $21=$self_addr; //@line 697 "mmapmodule.c"
-        var $22=$21+12; //@line 697 "mmapmodule.c"
-        var $23=HEAP[$22]; //@line 697 "mmapmodule.c"
-        $1=$23; //@line 697 "mmapmodule.c"
+        var $12=$self_addr; //@line 696 "mmapmodule.c"
+        var $13=$12+8; //@line 696 "mmapmodule.c"
+        var $14=HEAP[$13]; //@line 696 "mmapmodule.c"
+        var $15=$ptr_addr; //@line 696 "mmapmodule.c"
+        HEAP[$15]=$14; //@line 696 "mmapmodule.c"
+        var $16=$self_addr; //@line 697 "mmapmodule.c"
+        var $17=$16+12; //@line 697 "mmapmodule.c"
+        var $18=HEAP[$17]; //@line 697 "mmapmodule.c"
+        $0=$18; //@line 697 "mmapmodule.c"
         __label__ = 7; break; //@line 697 "mmapmodule.c"
       case 7: // $bb6
-        var $24=$1; //@line 688 "mmapmodule.c"
-        $retval=$24; //@line 688 "mmapmodule.c"
+        var $19=$0; //@line 688 "mmapmodule.c"
+        $retval=$19; //@line 688 "mmapmodule.c"
         var $retval7=$retval; //@line 688 "mmapmodule.c"
         ;
         return $retval7; //@line 688 "mmapmodule.c"
@@ -2382,151 +2402,139 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $ilow_addr;
         var $ihigh_addr;
         var $v_addr;
         var $retval;
-        var $1;
+        var $0;
         var $buf;
         $self_addr=$self;
         $ilow_addr=$ilow;
         $ihigh_addr=$ihigh;
         $v_addr=$v;
-        var $2=$self_addr; //@line 834 "mmapmodule.c"
-        var $3=$2+8; //@line 834 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 834 "mmapmodule.c"
-        var $5=($4)==0; //@line 834 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 834 "mmapmodule.c"
+        var $1=$self_addr; //@line 834 "mmapmodule.c"
+        var $2=$1+8; //@line 834 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 834 "mmapmodule.c"
+        var $4=($3)==0; //@line 834 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 834 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 834 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 834 "mmapmodule.c"
-        $1=-1; //@line 834 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 834 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 834 "mmapmodule.c"
+        $0=-1; //@line 834 "mmapmodule.c"
         __label__ = 21; break; //@line 834 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$ilow_addr; //@line 835 "mmapmodule.c"
-        var $8=($7) < 0; //@line 835 "mmapmodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 835 "mmapmodule.c"
+        var $6=$ilow_addr; //@line 835 "mmapmodule.c"
+        var $7=($6) < 0; //@line 835 "mmapmodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 835 "mmapmodule.c"
       case 3: // $bb2
         $ilow_addr=0; //@line 836 "mmapmodule.c"
         __label__ = 6; break; //@line 836 "mmapmodule.c"
       case 4: // $bb3
-        var $9=$ilow_addr; //@line 837 "mmapmodule.c"
-        var $10=$self_addr; //@line 837 "mmapmodule.c"
-        var $11=$10+12; //@line 837 "mmapmodule.c"
-        var $12=HEAP[$11]; //@line 837 "mmapmodule.c"
-        var $13=($9) > ($12); //@line 837 "mmapmodule.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 837 "mmapmodule.c"
+        var $8=$ilow_addr; //@line 837 "mmapmodule.c"
+        var $9=$self_addr; //@line 837 "mmapmodule.c"
+        var $10=$9+12; //@line 837 "mmapmodule.c"
+        var $11=HEAP[$10]; //@line 837 "mmapmodule.c"
+        var $12=($8) > ($11); //@line 837 "mmapmodule.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 837 "mmapmodule.c"
       case 5: // $bb4
-        var $14=$self_addr; //@line 838 "mmapmodule.c"
-        var $15=$14+12; //@line 838 "mmapmodule.c"
-        var $16=HEAP[$15]; //@line 838 "mmapmodule.c"
-        $ilow_addr=$16; //@line 838 "mmapmodule.c"
+        var $13=$self_addr; //@line 838 "mmapmodule.c"
+        var $14=$13+12; //@line 838 "mmapmodule.c"
+        var $15=HEAP[$14]; //@line 838 "mmapmodule.c"
+        $ilow_addr=$15; //@line 838 "mmapmodule.c"
         __label__ = 6; break; //@line 838 "mmapmodule.c"
       case 6: // $bb5
-        var $17=$ihigh_addr; //@line 839 "mmapmodule.c"
-        var $18=($17) < 0; //@line 839 "mmapmodule.c"
-        if ($18) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 839 "mmapmodule.c"
+        var $16=$ihigh_addr; //@line 839 "mmapmodule.c"
+        var $17=($16) < 0; //@line 839 "mmapmodule.c"
+        if ($17) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 839 "mmapmodule.c"
       case 7: // $bb6
         $ihigh_addr=0; //@line 840 "mmapmodule.c"
         __label__ = 8; break; //@line 840 "mmapmodule.c"
       case 8: // $bb7
-        var $19=$ihigh_addr; //@line 841 "mmapmodule.c"
-        var $20=$ilow_addr; //@line 841 "mmapmodule.c"
-        var $21=($19) < ($20); //@line 841 "mmapmodule.c"
-        if ($21) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 841 "mmapmodule.c"
+        var $18=$ihigh_addr; //@line 841 "mmapmodule.c"
+        var $19=$ilow_addr; //@line 841 "mmapmodule.c"
+        var $20=($18) < ($19); //@line 841 "mmapmodule.c"
+        if ($20) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 841 "mmapmodule.c"
       case 9: // $bb8
-        var $22=$ilow_addr; //@line 842 "mmapmodule.c"
-        $ihigh_addr=$22; //@line 842 "mmapmodule.c"
+        var $21=$ilow_addr; //@line 842 "mmapmodule.c"
+        $ihigh_addr=$21; //@line 842 "mmapmodule.c"
         __label__ = 12; break; //@line 842 "mmapmodule.c"
       case 10: // $bb9
-        var $23=$ihigh_addr; //@line 843 "mmapmodule.c"
-        var $24=$self_addr; //@line 843 "mmapmodule.c"
-        var $25=$24+12; //@line 843 "mmapmodule.c"
-        var $26=HEAP[$25]; //@line 843 "mmapmodule.c"
-        var $27=($23) > ($26); //@line 843 "mmapmodule.c"
-        if ($27) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 843 "mmapmodule.c"
+        var $22=$ihigh_addr; //@line 843 "mmapmodule.c"
+        var $23=$self_addr; //@line 843 "mmapmodule.c"
+        var $24=$23+12; //@line 843 "mmapmodule.c"
+        var $25=HEAP[$24]; //@line 843 "mmapmodule.c"
+        var $26=($22) > ($25); //@line 843 "mmapmodule.c"
+        if ($26) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 843 "mmapmodule.c"
       case 11: // $bb10
-        var $28=$self_addr; //@line 844 "mmapmodule.c"
-        var $29=$28+12; //@line 844 "mmapmodule.c"
-        var $30=HEAP[$29]; //@line 844 "mmapmodule.c"
-        $ihigh_addr=$30; //@line 844 "mmapmodule.c"
+        var $27=$self_addr; //@line 844 "mmapmodule.c"
+        var $28=$27+12; //@line 844 "mmapmodule.c"
+        var $29=HEAP[$28]; //@line 844 "mmapmodule.c"
+        $ihigh_addr=$29; //@line 844 "mmapmodule.c"
         __label__ = 12; break; //@line 844 "mmapmodule.c"
       case 12: // $bb11
-        var $31=$v_addr; //@line 846 "mmapmodule.c"
-        var $32=($31)==0; //@line 846 "mmapmodule.c"
-        if ($32) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 846 "mmapmodule.c"
+        var $30=$v_addr; //@line 846 "mmapmodule.c"
+        var $31=($30)==0; //@line 846 "mmapmodule.c"
+        if ($31) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 846 "mmapmodule.c"
       case 13: // $bb12
-        var $33=HEAP[_PyExc_TypeError]; //@line 847 "mmapmodule.c"
-        _PyErr_SetString($33, __str44); //@line 847 "mmapmodule.c"
-        $1=-1; //@line 849 "mmapmodule.c"
+        var $32=HEAP[_PyExc_TypeError]; //@line 847 "mmapmodule.c"
+        _PyErr_SetString($32, __str44); //@line 847 "mmapmodule.c"
+        $0=-1; //@line 849 "mmapmodule.c"
         __label__ = 21; break; //@line 849 "mmapmodule.c"
       case 14: // $bb13
-        var $34=$v_addr; //@line 851 "mmapmodule.c"
-        var $35=$34+4; //@line 851 "mmapmodule.c"
-        var $36=HEAP[$35]; //@line 851 "mmapmodule.c"
-        var $37=$36+84; //@line 851 "mmapmodule.c"
-        var $38=HEAP[$37]; //@line 851 "mmapmodule.c"
-        var $39=($38) & 134217728; //@line 851 "mmapmodule.c"
-        var $40=($39)==0; //@line 851 "mmapmodule.c"
-        if ($40) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 851 "mmapmodule.c"
+        var $33=$v_addr; //@line 851 "mmapmodule.c"
+        var $34=$33+4; //@line 851 "mmapmodule.c"
+        var $35=HEAP[$34]; //@line 851 "mmapmodule.c"
+        var $36=$35+84; //@line 851 "mmapmodule.c"
+        var $37=HEAP[$36]; //@line 851 "mmapmodule.c"
+        var $38=($37) & 134217728; //@line 851 "mmapmodule.c"
+        var $39=($38)==0; //@line 851 "mmapmodule.c"
+        if ($39) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 851 "mmapmodule.c"
       case 15: // $bb14
-        var $41=HEAP[_PyExc_IndexError]; //@line 852 "mmapmodule.c"
-        _PyErr_SetString($41, __str45); //@line 852 "mmapmodule.c"
-        $1=-1; //@line 854 "mmapmodule.c"
+        var $40=HEAP[_PyExc_IndexError]; //@line 852 "mmapmodule.c"
+        _PyErr_SetString($40, __str45); //@line 852 "mmapmodule.c"
+        $0=-1; //@line 854 "mmapmodule.c"
         __label__ = 21; break; //@line 854 "mmapmodule.c"
       case 16: // $bb15
-        var $42=$v_addr; //@line 856 "mmapmodule.c"
-        var $43=_PyString_Size($42); //@line 856 "mmapmodule.c"
-        var $44=$ihigh_addr; //@line 856 "mmapmodule.c"
-        var $45=$ilow_addr; //@line 856 "mmapmodule.c"
-        var $46=($44) - ($45); //@line 856 "mmapmodule.c"
-        var $47=($43)!=($46); //@line 856 "mmapmodule.c"
-        if ($47) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 856 "mmapmodule.c"
+        var $41=$v_addr; //@line 856 "mmapmodule.c"
+        var $42=_PyString_Size($41); //@line 856 "mmapmodule.c"
+        var $43=$ihigh_addr; //@line 856 "mmapmodule.c"
+        var $44=$ilow_addr; //@line 856 "mmapmodule.c"
+        var $45=($43) - ($44); //@line 856 "mmapmodule.c"
+        var $46=($42)!=($45); //@line 856 "mmapmodule.c"
+        if ($46) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 856 "mmapmodule.c"
       case 17: // $bb16
-        var $48=HEAP[_PyExc_IndexError]; //@line 857 "mmapmodule.c"
-        _PyErr_SetString($48, __str46); //@line 857 "mmapmodule.c"
-        $1=-1; //@line 859 "mmapmodule.c"
+        var $47=HEAP[_PyExc_IndexError]; //@line 857 "mmapmodule.c"
+        _PyErr_SetString($47, __str46); //@line 857 "mmapmodule.c"
+        $0=-1; //@line 859 "mmapmodule.c"
         __label__ = 21; break; //@line 859 "mmapmodule.c"
       case 18: // $bb17
-        var $49=$self_addr; //@line 861 "mmapmodule.c"
-        $self_addr_i=$49;
-        var $50=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $51=$50+32; //@line 334 "mmapmodule.c"
-        var $52=HEAP[$51]; //@line 334 "mmapmodule.c"
-        var $53=($52)!=1; //@line 334 "mmapmodule.c"
-        if ($53) { __label__ = 20; break; } else { __label__ = 19; break; } //@line 334 "mmapmodule.c"
+        var $48=$self_addr; //@line 861 "mmapmodule.c"
+        var $49=_is_writeable($48); //@line 861 "mmapmodule.c"
+        var $50=($49)==0; //@line 861 "mmapmodule.c"
+        if ($50) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 861 "mmapmodule.c"
       case 19: // $bb18
-        var $54=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $55=_PyErr_Format($54, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        $1=-1; //@line 862 "mmapmodule.c"
+        $0=-1; //@line 862 "mmapmodule.c"
         __label__ = 21; break; //@line 862 "mmapmodule.c"
       case 20: // $bb19
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
-        var $56=$v_addr; //@line 863 "mmapmodule.c"
-        var $57=_PyString_AsString($56); //@line 863 "mmapmodule.c"
-        $buf=$57; //@line 863 "mmapmodule.c"
-        var $58=$ihigh_addr; //@line 864 "mmapmodule.c"
+        var $51=$v_addr; //@line 863 "mmapmodule.c"
+        var $52=_PyString_AsString($51); //@line 863 "mmapmodule.c"
+        $buf=$52; //@line 863 "mmapmodule.c"
+        var $53=$ihigh_addr; //@line 864 "mmapmodule.c"
+        var $54=$ilow_addr; //@line 864 "mmapmodule.c"
+        var $55=($53) - ($54); //@line 864 "mmapmodule.c"
+        var $56=$self_addr; //@line 864 "mmapmodule.c"
+        var $57=$56+8; //@line 864 "mmapmodule.c"
+        var $58=HEAP[$57]; //@line 864 "mmapmodule.c"
         var $59=$ilow_addr; //@line 864 "mmapmodule.c"
-        var $60=($58) - ($59); //@line 864 "mmapmodule.c"
-        var $61=$self_addr; //@line 864 "mmapmodule.c"
-        var $62=$61+8; //@line 864 "mmapmodule.c"
-        var $63=HEAP[$62]; //@line 864 "mmapmodule.c"
-        var $64=$ilow_addr; //@line 864 "mmapmodule.c"
-        var $65=$63+$64; //@line 864 "mmapmodule.c"
-        var $66=$buf; //@line 864 "mmapmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($65, $66, $60, 1, 0); //@line 864 "mmapmodule.c"
-        $1=0; //@line 865 "mmapmodule.c"
+        var $60=$58+$59; //@line 864 "mmapmodule.c"
+        var $61=$buf; //@line 864 "mmapmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($60, $61, $55, 1, 0); //@line 864 "mmapmodule.c"
+        $0=0; //@line 865 "mmapmodule.c"
         __label__ = 21; break; //@line 865 "mmapmodule.c"
       case 21: // $bb20
-        var $67=$1; //@line 834 "mmapmodule.c"
-        $retval=$67; //@line 834 "mmapmodule.c"
+        var $62=$0; //@line 834 "mmapmodule.c"
+        $retval=$62; //@line 834 "mmapmodule.c"
         var $retval21=$retval; //@line 834 "mmapmodule.c"
         ;
         return $retval21; //@line 834 "mmapmodule.c"
@@ -2541,107 +2549,95 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $i_addr;
         var $v_addr;
         var $retval;
-        var $1;
+        var $0;
         var $buf;
         $self_addr=$self;
         $i_addr=$i;
         $v_addr=$v;
-        var $2=$self_addr; //@line 873 "mmapmodule.c"
-        var $3=$2+8; //@line 873 "mmapmodule.c"
-        var $4=HEAP[$3]; //@line 873 "mmapmodule.c"
-        var $5=($4)==0; //@line 873 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 873 "mmapmodule.c"
+        var $1=$self_addr; //@line 873 "mmapmodule.c"
+        var $2=$1+8; //@line 873 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 873 "mmapmodule.c"
+        var $4=($3)==0; //@line 873 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 873 "mmapmodule.c"
       case 1: // $bb
-        var $6=HEAP[_PyExc_ValueError]; //@line 873 "mmapmodule.c"
-        _PyErr_SetString($6, __str); //@line 873 "mmapmodule.c"
-        $1=-1; //@line 873 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 873 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 873 "mmapmodule.c"
+        $0=-1; //@line 873 "mmapmodule.c"
         __label__ = 13; break; //@line 873 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$i_addr; //@line 874 "mmapmodule.c"
-        var $8=($7) < 0; //@line 874 "mmapmodule.c"
-        if ($8) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 874 "mmapmodule.c"
+        var $6=$i_addr; //@line 874 "mmapmodule.c"
+        var $7=($6) < 0; //@line 874 "mmapmodule.c"
+        if ($7) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 874 "mmapmodule.c"
       case 3: // $bb2
-        var $9=$i_addr; //@line 874 "mmapmodule.c"
-        var $10=$self_addr; //@line 874 "mmapmodule.c"
-        var $11=$10+12; //@line 874 "mmapmodule.c"
-        var $12=HEAP[$11]; //@line 874 "mmapmodule.c"
-        var $13=($9) >= ($12); //@line 874 "mmapmodule.c"
-        if ($13) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 874 "mmapmodule.c"
+        var $8=$i_addr; //@line 874 "mmapmodule.c"
+        var $9=$self_addr; //@line 874 "mmapmodule.c"
+        var $10=$9+12; //@line 874 "mmapmodule.c"
+        var $11=HEAP[$10]; //@line 874 "mmapmodule.c"
+        var $12=($8) >= ($11); //@line 874 "mmapmodule.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 874 "mmapmodule.c"
       case 4: // $bb3
-        var $14=HEAP[_PyExc_IndexError]; //@line 875 "mmapmodule.c"
-        _PyErr_SetString($14, __str39); //@line 875 "mmapmodule.c"
-        $1=-1; //@line 876 "mmapmodule.c"
+        var $13=HEAP[_PyExc_IndexError]; //@line 875 "mmapmodule.c"
+        _PyErr_SetString($13, __str39); //@line 875 "mmapmodule.c"
+        $0=-1; //@line 876 "mmapmodule.c"
         __label__ = 13; break; //@line 876 "mmapmodule.c"
       case 5: // $bb4
-        var $15=$v_addr; //@line 878 "mmapmodule.c"
-        var $16=($15)==0; //@line 878 "mmapmodule.c"
-        if ($16) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 878 "mmapmodule.c"
+        var $14=$v_addr; //@line 878 "mmapmodule.c"
+        var $15=($14)==0; //@line 878 "mmapmodule.c"
+        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 878 "mmapmodule.c"
       case 6: // $bb5
-        var $17=HEAP[_PyExc_TypeError]; //@line 879 "mmapmodule.c"
-        _PyErr_SetString($17, __str47); //@line 879 "mmapmodule.c"
-        $1=-1; //@line 881 "mmapmodule.c"
+        var $16=HEAP[_PyExc_TypeError]; //@line 879 "mmapmodule.c"
+        _PyErr_SetString($16, __str47); //@line 879 "mmapmodule.c"
+        $0=-1; //@line 881 "mmapmodule.c"
         __label__ = 13; break; //@line 881 "mmapmodule.c"
       case 7: // $bb6
-        var $18=$v_addr; //@line 883 "mmapmodule.c"
-        var $19=$18+4; //@line 883 "mmapmodule.c"
-        var $20=HEAP[$19]; //@line 883 "mmapmodule.c"
-        var $21=$20+84; //@line 883 "mmapmodule.c"
-        var $22=HEAP[$21]; //@line 883 "mmapmodule.c"
-        var $23=($22) & 134217728; //@line 883 "mmapmodule.c"
-        var $24=($23)==0; //@line 883 "mmapmodule.c"
-        if ($24) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 883 "mmapmodule.c"
+        var $17=$v_addr; //@line 883 "mmapmodule.c"
+        var $18=$17+4; //@line 883 "mmapmodule.c"
+        var $19=HEAP[$18]; //@line 883 "mmapmodule.c"
+        var $20=$19+84; //@line 883 "mmapmodule.c"
+        var $21=HEAP[$20]; //@line 883 "mmapmodule.c"
+        var $22=($21) & 134217728; //@line 883 "mmapmodule.c"
+        var $23=($22)==0; //@line 883 "mmapmodule.c"
+        if ($23) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 883 "mmapmodule.c"
       case 8: // $bb7
-        var $25=$v_addr; //@line 883 "mmapmodule.c"
-        var $26=_PyString_Size($25); //@line 883 "mmapmodule.c"
-        var $27=($26)!=1; //@line 883 "mmapmodule.c"
-        if ($27) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 883 "mmapmodule.c"
+        var $24=$v_addr; //@line 883 "mmapmodule.c"
+        var $25=_PyString_Size($24); //@line 883 "mmapmodule.c"
+        var $26=($25)!=1; //@line 883 "mmapmodule.c"
+        if ($26) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 883 "mmapmodule.c"
       case 9: // $bb8
-        var $28=HEAP[_PyExc_IndexError]; //@line 884 "mmapmodule.c"
-        _PyErr_SetString($28, __str48); //@line 884 "mmapmodule.c"
-        $1=-1; //@line 886 "mmapmodule.c"
+        var $27=HEAP[_PyExc_IndexError]; //@line 884 "mmapmodule.c"
+        _PyErr_SetString($27, __str48); //@line 884 "mmapmodule.c"
+        $0=-1; //@line 886 "mmapmodule.c"
         __label__ = 13; break; //@line 886 "mmapmodule.c"
       case 10: // $bb9
-        var $29=$self_addr; //@line 888 "mmapmodule.c"
-        $self_addr_i=$29;
-        var $30=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $31=$30+32; //@line 334 "mmapmodule.c"
-        var $32=HEAP[$31]; //@line 334 "mmapmodule.c"
-        var $33=($32)!=1; //@line 334 "mmapmodule.c"
-        if ($33) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 334 "mmapmodule.c"
+        var $28=$self_addr; //@line 888 "mmapmodule.c"
+        var $29=_is_writeable($28); //@line 888 "mmapmodule.c"
+        var $30=($29)==0; //@line 888 "mmapmodule.c"
+        if ($30) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 888 "mmapmodule.c"
       case 11: // $bb10
-        var $34=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $35=_PyErr_Format($34, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        $1=-1; //@line 889 "mmapmodule.c"
+        $0=-1; //@line 889 "mmapmodule.c"
         __label__ = 13; break; //@line 889 "mmapmodule.c"
       case 12: // $bb11
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
-        var $36=$v_addr; //@line 890 "mmapmodule.c"
-        var $37=_PyString_AsString($36); //@line 890 "mmapmodule.c"
-        $buf=$37; //@line 890 "mmapmodule.c"
-        var $38=$self_addr; //@line 891 "mmapmodule.c"
-        var $39=$38+8; //@line 891 "mmapmodule.c"
-        var $40=HEAP[$39]; //@line 891 "mmapmodule.c"
-        var $41=$buf; //@line 891 "mmapmodule.c"
-        var $42=$41; //@line 891 "mmapmodule.c"
-        var $43=HEAP[$42]; //@line 891 "mmapmodule.c"
-        var $44=$i_addr; //@line 891 "mmapmodule.c"
-        var $45=$40+$44; //@line 891 "mmapmodule.c"
-        HEAP[$45]=$43; //@line 891 "mmapmodule.c"
-        $1=0; //@line 892 "mmapmodule.c"
+        var $31=$v_addr; //@line 890 "mmapmodule.c"
+        var $32=_PyString_AsString($31); //@line 890 "mmapmodule.c"
+        $buf=$32; //@line 890 "mmapmodule.c"
+        var $33=$self_addr; //@line 891 "mmapmodule.c"
+        var $34=$33+8; //@line 891 "mmapmodule.c"
+        var $35=HEAP[$34]; //@line 891 "mmapmodule.c"
+        var $36=$buf; //@line 891 "mmapmodule.c"
+        var $37=$36; //@line 891 "mmapmodule.c"
+        var $38=HEAP[$37]; //@line 891 "mmapmodule.c"
+        var $39=$i_addr; //@line 891 "mmapmodule.c"
+        var $40=$35+$39; //@line 891 "mmapmodule.c"
+        HEAP[$40]=$38; //@line 891 "mmapmodule.c"
+        $0=0; //@line 892 "mmapmodule.c"
         __label__ = 13; break; //@line 892 "mmapmodule.c"
       case 13: // $bb12
-        var $46=$1; //@line 873 "mmapmodule.c"
-        $retval=$46; //@line 873 "mmapmodule.c"
+        var $41=$0; //@line 873 "mmapmodule.c"
+        $retval=$41; //@line 873 "mmapmodule.c"
         var $retval13=$retval; //@line 873 "mmapmodule.c"
         ;
         return $retval13; //@line 873 "mmapmodule.c"
@@ -2657,17 +2653,11 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $self_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $item_addr;
         var $value_addr;
         var $retval;
-        var $2;
+        var $0;
         var $i;
         var $buf;
         var $start=__stackBase__;
@@ -2681,302 +2671,284 @@ var __str82;
         $self_addr=$self;
         $item_addr=$item;
         $value_addr=$value;
-        var $3=$self_addr; //@line 898 "mmapmodule.c"
-        var $4=$3+8; //@line 898 "mmapmodule.c"
-        var $5=HEAP[$4]; //@line 898 "mmapmodule.c"
-        var $6=($5)==0; //@line 898 "mmapmodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 898 "mmapmodule.c"
+        var $1=$self_addr; //@line 898 "mmapmodule.c"
+        var $2=$1+8; //@line 898 "mmapmodule.c"
+        var $3=HEAP[$2]; //@line 898 "mmapmodule.c"
+        var $4=($3)==0; //@line 898 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 898 "mmapmodule.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 898 "mmapmodule.c"
-        _PyErr_SetString($7, __str); //@line 898 "mmapmodule.c"
-        $2=-1; //@line 898 "mmapmodule.c"
+        var $5=HEAP[_PyExc_ValueError]; //@line 898 "mmapmodule.c"
+        _PyErr_SetString($5, __str); //@line 898 "mmapmodule.c"
+        $0=-1; //@line 898 "mmapmodule.c"
         __label__ = 46; break; //@line 898 "mmapmodule.c"
       case 2: // $bb1
-        var $8=$item_addr; //@line 900 "mmapmodule.c"
-        var $9=$8+4; //@line 900 "mmapmodule.c"
+        var $6=$item_addr; //@line 900 "mmapmodule.c"
+        var $7=$6+4; //@line 900 "mmapmodule.c"
+        var $8=HEAP[$7]; //@line 900 "mmapmodule.c"
+        var $9=$8+48; //@line 900 "mmapmodule.c"
         var $10=HEAP[$9]; //@line 900 "mmapmodule.c"
-        var $11=$10+48; //@line 900 "mmapmodule.c"
-        var $12=HEAP[$11]; //@line 900 "mmapmodule.c"
-        var $13=($12)==0; //@line 900 "mmapmodule.c"
-        if ($13) { __label__ = 23; break; } else { __label__ = 3; break; } //@line 900 "mmapmodule.c"
+        var $11=($10)==0; //@line 900 "mmapmodule.c"
+        if ($11) { __label__ = 23; break; } else { __label__ = 3; break; } //@line 900 "mmapmodule.c"
       case 3: // $bb2
-        var $14=$item_addr; //@line 900 "mmapmodule.c"
-        var $15=$14+4; //@line 900 "mmapmodule.c"
+        var $12=$item_addr; //@line 900 "mmapmodule.c"
+        var $13=$12+4; //@line 900 "mmapmodule.c"
+        var $14=HEAP[$13]; //@line 900 "mmapmodule.c"
+        var $15=$14+84; //@line 900 "mmapmodule.c"
         var $16=HEAP[$15]; //@line 900 "mmapmodule.c"
-        var $17=$16+84; //@line 900 "mmapmodule.c"
-        var $18=HEAP[$17]; //@line 900 "mmapmodule.c"
-        var $19=($18) & 131072; //@line 900 "mmapmodule.c"
-        var $20=($19)==0; //@line 900 "mmapmodule.c"
-        if ($20) { __label__ = 23; break; } else { __label__ = 4; break; } //@line 900 "mmapmodule.c"
+        var $17=($16) & 131072; //@line 900 "mmapmodule.c"
+        var $18=($17)==0; //@line 900 "mmapmodule.c"
+        if ($18) { __label__ = 23; break; } else { __label__ = 4; break; } //@line 900 "mmapmodule.c"
       case 4: // $bb3
-        var $21=$item_addr; //@line 900 "mmapmodule.c"
-        var $22=$21+4; //@line 900 "mmapmodule.c"
+        var $19=$item_addr; //@line 900 "mmapmodule.c"
+        var $20=$19+4; //@line 900 "mmapmodule.c"
+        var $21=HEAP[$20]; //@line 900 "mmapmodule.c"
+        var $22=$21+48; //@line 900 "mmapmodule.c"
         var $23=HEAP[$22]; //@line 900 "mmapmodule.c"
-        var $24=$23+48; //@line 900 "mmapmodule.c"
+        var $24=$23+152; //@line 900 "mmapmodule.c"
         var $25=HEAP[$24]; //@line 900 "mmapmodule.c"
-        var $26=$25+152; //@line 900 "mmapmodule.c"
-        var $27=HEAP[$26]; //@line 900 "mmapmodule.c"
-        var $28=($27)==0; //@line 900 "mmapmodule.c"
-        if ($28) { __label__ = 23; break; } else { __label__ = 5; break; } //@line 900 "mmapmodule.c"
+        var $26=($25)==0; //@line 900 "mmapmodule.c"
+        if ($26) { __label__ = 23; break; } else { __label__ = 5; break; } //@line 900 "mmapmodule.c"
       case 5: // $bb4
-        var $29=HEAP[_PyExc_IndexError]; //@line 901 "mmapmodule.c"
-        var $30=$item_addr; //@line 901 "mmapmodule.c"
-        var $31=_PyNumber_AsSsize_t($30, $29); //@line 901 "mmapmodule.c"
-        $i=$31; //@line 901 "mmapmodule.c"
-        var $32=$i; //@line 904 "mmapmodule.c"
-        var $33=($32)==-1; //@line 904 "mmapmodule.c"
-        if ($33) { __lastLabel__ = 5; __label__ = 6; break; } else { __lastLabel__ = 5; __label__ = 9; break; } //@line 904 "mmapmodule.c"
+        var $27=HEAP[_PyExc_IndexError]; //@line 901 "mmapmodule.c"
+        var $28=$item_addr; //@line 901 "mmapmodule.c"
+        var $29=_PyNumber_AsSsize_t($28, $27); //@line 901 "mmapmodule.c"
+        $i=$29; //@line 901 "mmapmodule.c"
+        var $30=$i; //@line 904 "mmapmodule.c"
+        var $31=($30)==-1; //@line 904 "mmapmodule.c"
+        if ($31) { __lastLabel__ = 5; __label__ = 6; break; } else { __lastLabel__ = 5; __label__ = 9; break; } //@line 904 "mmapmodule.c"
       case 6: // $bb5
-        var $34=_PyErr_Occurred(); //@line 904 "mmapmodule.c"
-        var $35=($34)!=0; //@line 904 "mmapmodule.c"
-        if ($35) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 904 "mmapmodule.c"
+        var $32=_PyErr_Occurred(); //@line 904 "mmapmodule.c"
+        var $33=($32)!=0; //@line 904 "mmapmodule.c"
+        if ($33) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 904 "mmapmodule.c"
       case 7: // $bb6
-        $2=-1; //@line 905 "mmapmodule.c"
+        $0=-1; //@line 905 "mmapmodule.c"
         __label__ = 46; break; //@line 905 "mmapmodule.c"
       case 8: // $bb7thread_pre_split
         var $_pr=$i;
         __lastLabel__ = 8; __label__ = 9; break;
       case 9: // $bb7
-        var $36=__lastLabel__ == 8 ? $_pr : ($32);
-        var $37=($36) < 0; //@line 906 "mmapmodule.c"
-        if ($37) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 906 "mmapmodule.c"
+        var $34=__lastLabel__ == 8 ? $_pr : ($30);
+        var $35=($34) < 0; //@line 906 "mmapmodule.c"
+        if ($35) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 906 "mmapmodule.c"
       case 10: // $bb8
-        var $38=$self_addr; //@line 907 "mmapmodule.c"
-        var $39=$38+12; //@line 907 "mmapmodule.c"
-        var $40=HEAP[$39]; //@line 907 "mmapmodule.c"
-        var $41=$i; //@line 907 "mmapmodule.c"
-        var $42=($41) + ($40); //@line 907 "mmapmodule.c"
-        $i=$42; //@line 907 "mmapmodule.c"
+        var $36=$self_addr; //@line 907 "mmapmodule.c"
+        var $37=$36+12; //@line 907 "mmapmodule.c"
+        var $38=HEAP[$37]; //@line 907 "mmapmodule.c"
+        var $39=$i; //@line 907 "mmapmodule.c"
+        var $40=($39) + ($38); //@line 907 "mmapmodule.c"
+        $i=$40; //@line 907 "mmapmodule.c"
         __lastLabel__ = 10; __label__ = 12; break; //@line 907 "mmapmodule.c"
       case 11: // $bb9thread_pre_split
-        var $_pr7=$i;
+        var $_pr1=$i;
         __lastLabel__ = 11; __label__ = 12; break;
       case 12: // $bb9
-        var $43=__lastLabel__ == 11 ? $_pr7 : ($42);
-        var $44=($43) < 0; //@line 908 "mmapmodule.c"
-        if ($44) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 908 "mmapmodule.c"
+        var $41=__lastLabel__ == 11 ? $_pr1 : ($40);
+        var $42=($41) < 0; //@line 908 "mmapmodule.c"
+        if ($42) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 908 "mmapmodule.c"
       case 13: // $bb10
-        var $45=$i; //@line 908 "mmapmodule.c"
-        var $46=$self_addr; //@line 908 "mmapmodule.c"
-        var $47=$46+12; //@line 908 "mmapmodule.c"
-        var $48=HEAP[$47]; //@line 908 "mmapmodule.c"
-        var $49=($45) >= ($48); //@line 908 "mmapmodule.c"
-        if ($49) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 908 "mmapmodule.c"
+        var $43=$i; //@line 908 "mmapmodule.c"
+        var $44=$self_addr; //@line 908 "mmapmodule.c"
+        var $45=$44+12; //@line 908 "mmapmodule.c"
+        var $46=HEAP[$45]; //@line 908 "mmapmodule.c"
+        var $47=($43) >= ($46); //@line 908 "mmapmodule.c"
+        if ($47) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 908 "mmapmodule.c"
       case 14: // $bb11
-        var $50=HEAP[_PyExc_IndexError]; //@line 909 "mmapmodule.c"
-        _PyErr_SetString($50, __str39); //@line 909 "mmapmodule.c"
-        $2=-1; //@line 911 "mmapmodule.c"
+        var $48=HEAP[_PyExc_IndexError]; //@line 909 "mmapmodule.c"
+        _PyErr_SetString($48, __str39); //@line 909 "mmapmodule.c"
+        $0=-1; //@line 911 "mmapmodule.c"
         __label__ = 46; break; //@line 911 "mmapmodule.c"
       case 15: // $bb12
-        var $51=$value_addr; //@line 913 "mmapmodule.c"
-        var $52=($51)==0; //@line 913 "mmapmodule.c"
-        if ($52) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 913 "mmapmodule.c"
+        var $49=$value_addr; //@line 913 "mmapmodule.c"
+        var $50=($49)==0; //@line 913 "mmapmodule.c"
+        if ($50) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 913 "mmapmodule.c"
       case 16: // $bb13
-        var $53=HEAP[_PyExc_TypeError]; //@line 914 "mmapmodule.c"
-        _PyErr_SetString($53, __str47); //@line 914 "mmapmodule.c"
-        $2=-1; //@line 916 "mmapmodule.c"
+        var $51=HEAP[_PyExc_TypeError]; //@line 914 "mmapmodule.c"
+        _PyErr_SetString($51, __str47); //@line 914 "mmapmodule.c"
+        $0=-1; //@line 916 "mmapmodule.c"
         __label__ = 46; break; //@line 916 "mmapmodule.c"
       case 17: // $bb14
-        var $54=$value_addr; //@line 918 "mmapmodule.c"
-        var $55=$54+4; //@line 918 "mmapmodule.c"
+        var $52=$value_addr; //@line 918 "mmapmodule.c"
+        var $53=$52+4; //@line 918 "mmapmodule.c"
+        var $54=HEAP[$53]; //@line 918 "mmapmodule.c"
+        var $55=$54+84; //@line 918 "mmapmodule.c"
         var $56=HEAP[$55]; //@line 918 "mmapmodule.c"
-        var $57=$56+84; //@line 918 "mmapmodule.c"
-        var $58=HEAP[$57]; //@line 918 "mmapmodule.c"
-        var $59=($58) & 134217728; //@line 918 "mmapmodule.c"
-        var $60=($59)==0; //@line 918 "mmapmodule.c"
-        if ($60) { __label__ = 19; break; } else { __label__ = 18; break; } //@line 918 "mmapmodule.c"
+        var $57=($56) & 134217728; //@line 918 "mmapmodule.c"
+        var $58=($57)==0; //@line 918 "mmapmodule.c"
+        if ($58) { __label__ = 19; break; } else { __label__ = 18; break; } //@line 918 "mmapmodule.c"
       case 18: // $bb15
-        var $61=$value_addr; //@line 918 "mmapmodule.c"
-        var $62=_PyString_Size($61); //@line 918 "mmapmodule.c"
-        var $63=($62)!=1; //@line 918 "mmapmodule.c"
-        if ($63) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 918 "mmapmodule.c"
+        var $59=$value_addr; //@line 918 "mmapmodule.c"
+        var $60=_PyString_Size($59); //@line 918 "mmapmodule.c"
+        var $61=($60)!=1; //@line 918 "mmapmodule.c"
+        if ($61) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 918 "mmapmodule.c"
       case 19: // $bb16
-        var $64=HEAP[_PyExc_IndexError]; //@line 919 "mmapmodule.c"
-        _PyErr_SetString($64, __str48); //@line 919 "mmapmodule.c"
-        $2=-1; //@line 921 "mmapmodule.c"
+        var $62=HEAP[_PyExc_IndexError]; //@line 919 "mmapmodule.c"
+        _PyErr_SetString($62, __str48); //@line 919 "mmapmodule.c"
+        $0=-1; //@line 921 "mmapmodule.c"
         __label__ = 46; break; //@line 921 "mmapmodule.c"
       case 20: // $bb17
-        var $65=$self_addr; //@line 923 "mmapmodule.c"
-        $self_addr_i=$65;
-        var $66=$self_addr_i; //@line 334 "mmapmodule.c"
-        var $67=$66+32; //@line 334 "mmapmodule.c"
-        var $68=HEAP[$67]; //@line 334 "mmapmodule.c"
-        var $69=($68)!=1; //@line 334 "mmapmodule.c"
-        if ($69) { __label__ = 22; break; } else { __label__ = 21; break; } //@line 334 "mmapmodule.c"
+        var $63=$self_addr; //@line 923 "mmapmodule.c"
+        var $64=_is_writeable($63); //@line 923 "mmapmodule.c"
+        var $65=($64)==0; //@line 923 "mmapmodule.c"
+        if ($65) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 923 "mmapmodule.c"
       case 21: // $bb18
-        var $70=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $71=_PyErr_Format($70, __str9); //@line 336 "mmapmodule.c"
-        $1=0; //@line 337 "mmapmodule.c"
-        $retval_i=0; //@line 335 "mmapmodule.c"
-        $2=-1; //@line 924 "mmapmodule.c"
+        $0=-1; //@line 924 "mmapmodule.c"
         __label__ = 46; break; //@line 924 "mmapmodule.c"
       case 22: // $bb19
-        $1=1; //@line 335 "mmapmodule.c"
-        $retval_i=1; //@line 335 "mmapmodule.c"
-        var $72=$value_addr; //@line 925 "mmapmodule.c"
-        var $73=_PyString_AsString($72); //@line 925 "mmapmodule.c"
-        $buf=$73; //@line 925 "mmapmodule.c"
-        var $74=$self_addr; //@line 926 "mmapmodule.c"
-        var $75=$74+8; //@line 926 "mmapmodule.c"
-        var $76=HEAP[$75]; //@line 926 "mmapmodule.c"
-        var $77=$buf; //@line 926 "mmapmodule.c"
-        var $78=$77; //@line 926 "mmapmodule.c"
-        var $79=HEAP[$78]; //@line 926 "mmapmodule.c"
-        var $80=$i; //@line 926 "mmapmodule.c"
-        var $81=$76+$80; //@line 926 "mmapmodule.c"
-        HEAP[$81]=$79; //@line 926 "mmapmodule.c"
-        $2=0; //@line 927 "mmapmodule.c"
+        var $66=$value_addr; //@line 925 "mmapmodule.c"
+        var $67=_PyString_AsString($66); //@line 925 "mmapmodule.c"
+        $buf=$67; //@line 925 "mmapmodule.c"
+        var $68=$self_addr; //@line 926 "mmapmodule.c"
+        var $69=$68+8; //@line 926 "mmapmodule.c"
+        var $70=HEAP[$69]; //@line 926 "mmapmodule.c"
+        var $71=$buf; //@line 926 "mmapmodule.c"
+        var $72=$71; //@line 926 "mmapmodule.c"
+        var $73=HEAP[$72]; //@line 926 "mmapmodule.c"
+        var $74=$i; //@line 926 "mmapmodule.c"
+        var $75=$70+$74; //@line 926 "mmapmodule.c"
+        HEAP[$75]=$73; //@line 926 "mmapmodule.c"
+        $0=0; //@line 927 "mmapmodule.c"
         __label__ = 46; break; //@line 927 "mmapmodule.c"
       case 23: // $bb20
-        var $82=$item_addr; //@line 929 "mmapmodule.c"
-        var $83=$82+4; //@line 929 "mmapmodule.c"
-        var $84=HEAP[$83]; //@line 929 "mmapmodule.c"
-        var $85=($84)==(_PySlice_Type); //@line 929 "mmapmodule.c"
-        if ($85) { __label__ = 24; break; } else { __label__ = 45; break; } //@line 929 "mmapmodule.c"
+        var $76=$item_addr; //@line 929 "mmapmodule.c"
+        var $77=$76+4; //@line 929 "mmapmodule.c"
+        var $78=HEAP[$77]; //@line 929 "mmapmodule.c"
+        var $79=($78)==(_PySlice_Type); //@line 929 "mmapmodule.c"
+        if ($79) { __label__ = 24; break; } else { __label__ = 45; break; } //@line 929 "mmapmodule.c"
       case 24: // $bb21
-        var $86=$self_addr; //@line 932 "mmapmodule.c"
-        var $87=$86+12; //@line 932 "mmapmodule.c"
-        var $88=HEAP[$87]; //@line 932 "mmapmodule.c"
-        var $89=$item_addr; //@line 932 "mmapmodule.c"
-        var $90=$89; //@line 932 "mmapmodule.c"
-        var $91=_PySlice_GetIndicesEx($90, $88, $start, $stop, $step, $slicelen); //@line 932 "mmapmodule.c"
-        var $92=($91) < 0; //@line 932 "mmapmodule.c"
-        if ($92) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 932 "mmapmodule.c"
+        var $80=$self_addr; //@line 932 "mmapmodule.c"
+        var $81=$80+12; //@line 932 "mmapmodule.c"
+        var $82=HEAP[$81]; //@line 932 "mmapmodule.c"
+        var $83=$item_addr; //@line 932 "mmapmodule.c"
+        var $84=$83; //@line 932 "mmapmodule.c"
+        var $85=_PySlice_GetIndicesEx($84, $82, $start, $stop, $step, $slicelen); //@line 932 "mmapmodule.c"
+        var $86=($85) < 0; //@line 932 "mmapmodule.c"
+        if ($86) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 932 "mmapmodule.c"
       case 25: // $bb22
-        $2=-1; //@line 935 "mmapmodule.c"
+        $0=-1; //@line 935 "mmapmodule.c"
         __label__ = 46; break; //@line 935 "mmapmodule.c"
       case 26: // $bb23
-        var $93=$value_addr; //@line 937 "mmapmodule.c"
-        var $94=($93)==0; //@line 937 "mmapmodule.c"
-        if ($94) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 937 "mmapmodule.c"
+        var $87=$value_addr; //@line 937 "mmapmodule.c"
+        var $88=($87)==0; //@line 937 "mmapmodule.c"
+        if ($88) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 937 "mmapmodule.c"
       case 27: // $bb24
-        var $95=HEAP[_PyExc_TypeError]; //@line 938 "mmapmodule.c"
-        _PyErr_SetString($95, __str44); //@line 938 "mmapmodule.c"
-        $2=-1; //@line 940 "mmapmodule.c"
+        var $89=HEAP[_PyExc_TypeError]; //@line 938 "mmapmodule.c"
+        _PyErr_SetString($89, __str44); //@line 938 "mmapmodule.c"
+        $0=-1; //@line 940 "mmapmodule.c"
         __label__ = 46; break; //@line 940 "mmapmodule.c"
       case 28: // $bb25
-        var $96=$value_addr; //@line 942 "mmapmodule.c"
-        var $97=$96+4; //@line 942 "mmapmodule.c"
-        var $98=HEAP[$97]; //@line 942 "mmapmodule.c"
-        var $99=$98+84; //@line 942 "mmapmodule.c"
-        var $100=HEAP[$99]; //@line 942 "mmapmodule.c"
-        var $101=($100) & 134217728; //@line 942 "mmapmodule.c"
-        var $102=($101)==0; //@line 942 "mmapmodule.c"
-        if ($102) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 942 "mmapmodule.c"
+        var $90=$value_addr; //@line 942 "mmapmodule.c"
+        var $91=$90+4; //@line 942 "mmapmodule.c"
+        var $92=HEAP[$91]; //@line 942 "mmapmodule.c"
+        var $93=$92+84; //@line 942 "mmapmodule.c"
+        var $94=HEAP[$93]; //@line 942 "mmapmodule.c"
+        var $95=($94) & 134217728; //@line 942 "mmapmodule.c"
+        var $96=($95)==0; //@line 942 "mmapmodule.c"
+        if ($96) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 942 "mmapmodule.c"
       case 29: // $bb26
-        var $103=HEAP[_PyExc_IndexError]; //@line 943 "mmapmodule.c"
-        _PyErr_SetString($103, __str45); //@line 943 "mmapmodule.c"
-        $2=-1; //@line 945 "mmapmodule.c"
+        var $97=HEAP[_PyExc_IndexError]; //@line 943 "mmapmodule.c"
+        _PyErr_SetString($97, __str45); //@line 943 "mmapmodule.c"
+        $0=-1; //@line 945 "mmapmodule.c"
         __label__ = 46; break; //@line 945 "mmapmodule.c"
       case 30: // $bb27
-        var $104=$value_addr; //@line 947 "mmapmodule.c"
-        var $105=_PyString_Size($104); //@line 947 "mmapmodule.c"
-        var $106=HEAP[$slicelen]; //@line 947 "mmapmodule.c"
-        var $107=($105)!=($106); //@line 947 "mmapmodule.c"
-        if ($107) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 947 "mmapmodule.c"
+        var $98=$value_addr; //@line 947 "mmapmodule.c"
+        var $99=_PyString_Size($98); //@line 947 "mmapmodule.c"
+        var $100=HEAP[$slicelen]; //@line 947 "mmapmodule.c"
+        var $101=($99)!=($100); //@line 947 "mmapmodule.c"
+        if ($101) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 947 "mmapmodule.c"
       case 31: // $bb28
-        var $108=HEAP[_PyExc_IndexError]; //@line 948 "mmapmodule.c"
-        _PyErr_SetString($108, __str46); //@line 948 "mmapmodule.c"
-        $2=-1; //@line 950 "mmapmodule.c"
+        var $102=HEAP[_PyExc_IndexError]; //@line 948 "mmapmodule.c"
+        _PyErr_SetString($102, __str46); //@line 948 "mmapmodule.c"
+        $0=-1; //@line 950 "mmapmodule.c"
         __label__ = 46; break; //@line 950 "mmapmodule.c"
       case 32: // $bb29
-        var $109=$self_addr; //@line 952 "mmapmodule.c"
-        $self_addr_i1=$109;
-        var $110=$self_addr_i1; //@line 334 "mmapmodule.c"
-        var $111=$110+32; //@line 334 "mmapmodule.c"
-        var $112=HEAP[$111]; //@line 334 "mmapmodule.c"
-        var $113=($112)!=1; //@line 334 "mmapmodule.c"
-        if ($113) { __label__ = 34; break; } else { __label__ = 33; break; } //@line 334 "mmapmodule.c"
+        var $103=$self_addr; //@line 952 "mmapmodule.c"
+        var $104=_is_writeable($103); //@line 952 "mmapmodule.c"
+        var $105=($104)==0; //@line 952 "mmapmodule.c"
+        if ($105) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 952 "mmapmodule.c"
       case 33: // $bb30
-        var $114=HEAP[_PyExc_TypeError]; //@line 336 "mmapmodule.c"
-        var $115=_PyErr_Format($114, __str9); //@line 336 "mmapmodule.c"
-        $0=0; //@line 337 "mmapmodule.c"
-        $retval_i2=0; //@line 335 "mmapmodule.c"
-        $2=-1; //@line 953 "mmapmodule.c"
+        $0=-1; //@line 953 "mmapmodule.c"
         __label__ = 46; break; //@line 953 "mmapmodule.c"
       case 34: // $bb31
-        $0=1; //@line 335 "mmapmodule.c"
-        $retval_i2=1; //@line 335 "mmapmodule.c"
-        var $116=HEAP[$slicelen]; //@line 955 "mmapmodule.c"
-        var $117=($116)==0; //@line 955 "mmapmodule.c"
-        if ($117) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 955 "mmapmodule.c"
+        var $106=HEAP[$slicelen]; //@line 955 "mmapmodule.c"
+        var $107=($106)==0; //@line 955 "mmapmodule.c"
+        if ($107) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 955 "mmapmodule.c"
       case 35: // $bb32
-        $2=0; //@line 956 "mmapmodule.c"
+        $0=0; //@line 956 "mmapmodule.c"
         __label__ = 46; break; //@line 956 "mmapmodule.c"
       case 36: // $bb33
-        var $118=HEAP[$step]; //@line 957 "mmapmodule.c"
-        var $119=($118)==1; //@line 957 "mmapmodule.c"
-        var $120=$value_addr; //@line 958 "mmapmodule.c"
-        var $121=_PyString_AsString($120); //@line 958 "mmapmodule.c"
-        if ($119) { __label__ = 37; break; } else { __label__ = 40; break; } //@line 957 "mmapmodule.c"
+        var $108=HEAP[$step]; //@line 957 "mmapmodule.c"
+        var $109=($108)==1; //@line 957 "mmapmodule.c"
+        var $110=$value_addr; //@line 958 "mmapmodule.c"
+        var $111=_PyString_AsString($110); //@line 958 "mmapmodule.c"
+        if ($109) { __label__ = 37; break; } else { __label__ = 40; break; } //@line 957 "mmapmodule.c"
       case 37: // $bb34
-        $buf35=$121; //@line 958 "mmapmodule.c"
-        var $122=$buf35; //@line 960 "mmapmodule.c"
-        var $123=($122)==0; //@line 960 "mmapmodule.c"
-        if ($123) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 960 "mmapmodule.c"
+        $buf35=$111; //@line 958 "mmapmodule.c"
+        var $112=$buf35; //@line 960 "mmapmodule.c"
+        var $113=($112)==0; //@line 960 "mmapmodule.c"
+        if ($113) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 960 "mmapmodule.c"
       case 38: // $bb36
-        $2=-1; //@line 961 "mmapmodule.c"
+        $0=-1; //@line 961 "mmapmodule.c"
         __label__ = 46; break; //@line 961 "mmapmodule.c"
       case 39: // $bb37
-        var $124=HEAP[$slicelen]; //@line 962 "mmapmodule.c"
-        var $125=$self_addr; //@line 962 "mmapmodule.c"
-        var $126=$125+8; //@line 962 "mmapmodule.c"
-        var $127=HEAP[$126]; //@line 962 "mmapmodule.c"
-        var $128=HEAP[$start]; //@line 962 "mmapmodule.c"
-        var $129=$127+$128; //@line 962 "mmapmodule.c"
-        var $130=$buf35; //@line 962 "mmapmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($129, $130, $124, 1, 0); //@line 962 "mmapmodule.c"
-        $2=0; //@line 963 "mmapmodule.c"
+        var $114=HEAP[$slicelen]; //@line 962 "mmapmodule.c"
+        var $115=$self_addr; //@line 962 "mmapmodule.c"
+        var $116=$115+8; //@line 962 "mmapmodule.c"
+        var $117=HEAP[$116]; //@line 962 "mmapmodule.c"
+        var $118=HEAP[$start]; //@line 962 "mmapmodule.c"
+        var $119=$117+$118; //@line 962 "mmapmodule.c"
+        var $120=$buf35; //@line 962 "mmapmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($119, $120, $114, 1, 0); //@line 962 "mmapmodule.c"
+        $0=0; //@line 963 "mmapmodule.c"
         __label__ = 46; break; //@line 963 "mmapmodule.c"
       case 40: // $bb38
-        $buf40=$121; //@line 967 "mmapmodule.c"
-        var $131=$buf40; //@line 969 "mmapmodule.c"
-        var $132=($131)==0; //@line 969 "mmapmodule.c"
-        if ($132) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 969 "mmapmodule.c"
+        $buf40=$111; //@line 967 "mmapmodule.c"
+        var $121=$buf40; //@line 969 "mmapmodule.c"
+        var $122=($121)==0; //@line 969 "mmapmodule.c"
+        if ($122) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 969 "mmapmodule.c"
       case 41: // $bb41
-        $2=-1; //@line 970 "mmapmodule.c"
+        $0=-1; //@line 970 "mmapmodule.c"
         __label__ = 46; break; //@line 970 "mmapmodule.c"
       case 42: // $bb42
-        var $133=HEAP[$start]; //@line 971 "mmapmodule.c"
-        $cur=$133; //@line 971 "mmapmodule.c"
+        var $123=HEAP[$start]; //@line 971 "mmapmodule.c"
+        $cur=$123; //@line 971 "mmapmodule.c"
         $i39=0; //@line 971 "mmapmodule.c"
-        var $134=HEAP[$slicelen]; //@line 971 "mmapmodule.c"
-        var $135=$i39; //@line 971 "mmapmodule.c"
-        var $136=($135) < ($134); //@line 971 "mmapmodule.c"
-        if ($136) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 971 "mmapmodule.c"
+        var $124=HEAP[$slicelen]; //@line 971 "mmapmodule.c"
+        var $125=$i39; //@line 971 "mmapmodule.c"
+        var $126=($125) < ($124); //@line 971 "mmapmodule.c"
+        if ($126) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 971 "mmapmodule.c"
       case 43: // $bb43
-        var $137=$self_addr; //@line 973 "mmapmodule.c"
-        var $138=$137+8; //@line 973 "mmapmodule.c"
-        var $139=HEAP[$138]; //@line 973 "mmapmodule.c"
-        var $140=$buf40; //@line 973 "mmapmodule.c"
-        var $141=$i39; //@line 973 "mmapmodule.c"
-        var $142=$140+$141; //@line 973 "mmapmodule.c"
-        var $143=HEAP[$142]; //@line 973 "mmapmodule.c"
-        var $144=$cur; //@line 973 "mmapmodule.c"
-        var $145=$139+$144; //@line 973 "mmapmodule.c"
-        HEAP[$145]=$143; //@line 973 "mmapmodule.c"
-        var $146=HEAP[$step]; //@line 972 "mmapmodule.c"
-        var $147=$cur; //@line 972 "mmapmodule.c"
-        var $148=($147) + ($146); //@line 972 "mmapmodule.c"
-        $cur=$148; //@line 972 "mmapmodule.c"
-        var $149=$i39; //@line 972 "mmapmodule.c"
-        var $150=($149) + 1; //@line 972 "mmapmodule.c"
-        $i39=$150; //@line 972 "mmapmodule.c"
-        var $151=HEAP[$slicelen]; //@line 971 "mmapmodule.c"
-        var $152=$i39; //@line 971 "mmapmodule.c"
-        var $153=($152) < ($151); //@line 971 "mmapmodule.c"
-        if ($153) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 971 "mmapmodule.c"
+        var $127=$self_addr; //@line 973 "mmapmodule.c"
+        var $128=$127+8; //@line 973 "mmapmodule.c"
+        var $129=HEAP[$128]; //@line 973 "mmapmodule.c"
+        var $130=$buf40; //@line 973 "mmapmodule.c"
+        var $131=$i39; //@line 973 "mmapmodule.c"
+        var $132=$130+$131; //@line 973 "mmapmodule.c"
+        var $133=HEAP[$132]; //@line 973 "mmapmodule.c"
+        var $134=$cur; //@line 973 "mmapmodule.c"
+        var $135=$129+$134; //@line 973 "mmapmodule.c"
+        HEAP[$135]=$133; //@line 973 "mmapmodule.c"
+        var $136=HEAP[$step]; //@line 972 "mmapmodule.c"
+        var $137=$cur; //@line 972 "mmapmodule.c"
+        var $138=($137) + ($136); //@line 972 "mmapmodule.c"
+        $cur=$138; //@line 972 "mmapmodule.c"
+        var $139=$i39; //@line 972 "mmapmodule.c"
+        var $140=($139) + 1; //@line 972 "mmapmodule.c"
+        $i39=$140; //@line 972 "mmapmodule.c"
+        var $141=HEAP[$slicelen]; //@line 971 "mmapmodule.c"
+        var $142=$i39; //@line 971 "mmapmodule.c"
+        var $143=($142) < ($141); //@line 971 "mmapmodule.c"
+        if ($143) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 971 "mmapmodule.c"
       case 44: // $bb45
-        $2=0; //@line 975 "mmapmodule.c"
+        $0=0; //@line 975 "mmapmodule.c"
         __label__ = 46; break; //@line 975 "mmapmodule.c"
       case 45: // $bb46
-        var $154=HEAP[_PyExc_TypeError]; //@line 979 "mmapmodule.c"
-        _PyErr_SetString($154, __str49); //@line 979 "mmapmodule.c"
-        $2=-1; //@line 981 "mmapmodule.c"
+        var $144=HEAP[_PyExc_TypeError]; //@line 979 "mmapmodule.c"
+        _PyErr_SetString($144, __str49); //@line 979 "mmapmodule.c"
+        $0=-1; //@line 981 "mmapmodule.c"
         __label__ = 46; break; //@line 981 "mmapmodule.c"
       case 46: // $bb47
-        var $155=$2; //@line 898 "mmapmodule.c"
-        $retval=$155; //@line 898 "mmapmodule.c"
+        var $145=$0; //@line 898 "mmapmodule.c"
+        $retval=$145; //@line 898 "mmapmodule.c"
         var $retval48=$retval; //@line 898 "mmapmodule.c"
         STACKTOP = __stackBase__;
         return $retval48; //@line 898 "mmapmodule.c"
@@ -2985,23 +2957,112 @@ var __str82;
   }
   
 
-  function _new_mmap_object($type, $args, $kwdict) {
-    var __stackBase__  = STACKTOP; STACKTOP += 124; _memset(__stackBase__, 0, 124);
+  function __GetMapSize($o) {
+    ;
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $o_addr_i;
-        var $param_addr_i;
-        var $retval_i;
+        var $o_addr;
+        var $param_addr;
+        var $retval;
         var $0;
-        var $i_i;
+        var $i;
+        $o_addr=$o;
+        $param_addr=__str33;
+        var $1=$o_addr; //@line 1086 "mmapmodule.c"
+        var $2=($1)==0; //@line 1086 "mmapmodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1086 "mmapmodule.c"
+      case 1: // $bb
+        $0=0; //@line 1087 "mmapmodule.c"
+        __label__ = 13; break; //@line 1087 "mmapmodule.c"
+      case 2: // $bb1
+        var $3=$o_addr; //@line 1088 "mmapmodule.c"
+        var $4=$3+4; //@line 1088 "mmapmodule.c"
+        var $5=HEAP[$4]; //@line 1088 "mmapmodule.c"
+        var $6=$5+48; //@line 1088 "mmapmodule.c"
+        var $7=HEAP[$6]; //@line 1088 "mmapmodule.c"
+        var $8=($7)!=0; //@line 1088 "mmapmodule.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 12; break; } //@line 1088 "mmapmodule.c"
+      case 3: // $bb2
+        var $9=$o_addr; //@line 1088 "mmapmodule.c"
+        var $10=$9+4; //@line 1088 "mmapmodule.c"
+        var $11=HEAP[$10]; //@line 1088 "mmapmodule.c"
+        var $12=$11+84; //@line 1088 "mmapmodule.c"
+        var $13=HEAP[$12]; //@line 1088 "mmapmodule.c"
+        var $14=($13) & 131072; //@line 1088 "mmapmodule.c"
+        var $15=($14)!=0; //@line 1088 "mmapmodule.c"
+        if ($15) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 1088 "mmapmodule.c"
+      case 4: // $bb3
+        var $16=$o_addr; //@line 1088 "mmapmodule.c"
+        var $17=$16+4; //@line 1088 "mmapmodule.c"
+        var $18=HEAP[$17]; //@line 1088 "mmapmodule.c"
+        var $19=$18+48; //@line 1088 "mmapmodule.c"
+        var $20=HEAP[$19]; //@line 1088 "mmapmodule.c"
+        var $21=$20+152; //@line 1088 "mmapmodule.c"
+        var $22=HEAP[$21]; //@line 1088 "mmapmodule.c"
+        var $23=($22)!=0; //@line 1088 "mmapmodule.c"
+        if ($23) { __label__ = 5; break; } else { __label__ = 12; break; } //@line 1088 "mmapmodule.c"
+      case 5: // $bb4
+        var $24=HEAP[_PyExc_OverflowError]; //@line 1089 "mmapmodule.c"
+        var $25=$o_addr; //@line 1089 "mmapmodule.c"
+        var $26=_PyNumber_AsSsize_t($25, $24); //@line 1089 "mmapmodule.c"
+        $i=$26; //@line 1089 "mmapmodule.c"
+        var $27=$i; //@line 1090 "mmapmodule.c"
+        var $28=($27)==-1; //@line 1090 "mmapmodule.c"
+        if ($28) { __lastLabel__ = 5; __label__ = 6; break; } else { __lastLabel__ = 5; __label__ = 9; break; } //@line 1090 "mmapmodule.c"
+      case 6: // $bb5
+        var $29=_PyErr_Occurred(); //@line 1090 "mmapmodule.c"
+        var $30=($29)!=0; //@line 1090 "mmapmodule.c"
+        if ($30) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1090 "mmapmodule.c"
+      case 7: // $bb6
+        $0=-1; //@line 1091 "mmapmodule.c"
+        __label__ = 13; break; //@line 1091 "mmapmodule.c"
+      case 8: // $bb7thread_pre_split
+        var $_pr=$i;
+        __lastLabel__ = 8; __label__ = 9; break;
+      case 9: // $bb7
+        var $31=__lastLabel__ == 8 ? $_pr : ($27);
+        var $32=($31) < 0; //@line 1092 "mmapmodule.c"
+        if ($32) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 1092 "mmapmodule.c"
+      case 10: // $bb8
+        var $33=HEAP[_PyExc_OverflowError]; //@line 1093 "mmapmodule.c"
+        var $34=$param_addr; //@line 1093 "mmapmodule.c"
+        var $35=_PyErr_Format($33, __str51, allocate([$34,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1093 "mmapmodule.c"
+        $0=-1; //@line 1096 "mmapmodule.c"
+        __label__ = 13; break; //@line 1096 "mmapmodule.c"
+      case 11: // $bb9
+        var $36=$i; //@line 1098 "mmapmodule.c"
+        $0=$36; //@line 1098 "mmapmodule.c"
+        __label__ = 13; break; //@line 1098 "mmapmodule.c"
+      case 12: // $bb10
+        var $37=HEAP[_PyExc_TypeError]; //@line 1101 "mmapmodule.c"
+        _PyErr_SetString($37, __str52); //@line 1101 "mmapmodule.c"
+        $0=-1; //@line 1102 "mmapmodule.c"
+        __label__ = 13; break; //@line 1102 "mmapmodule.c"
+      case 13: // $bb11
+        var $38=$0; //@line 1087 "mmapmodule.c"
+        $retval=$38; //@line 1087 "mmapmodule.c"
+        var $retval12=$retval; //@line 1087 "mmapmodule.c"
+        ;
+        return $retval12; //@line 1087 "mmapmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _new_mmap_object($type, $args, $kwdict) {
+    var __stackBase__  = STACKTOP; STACKTOP += 124; _memset(__stackBase__, 0, 124);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $type_addr;
         var $args_addr;
         var $kwdict_addr;
         var $retval;
-        var $1;
+        var $0;
         var $st=__stackBase__;
         var $m_obj;
         var $map_size_obj=__stackBase__+96;
@@ -3022,393 +3083,317 @@ var __str82;
         HEAP[$prot]=3; //@line 1122 "mmapmodule.c"
         $devzero=-1; //@line 1123 "mmapmodule.c"
         HEAP[$access]=0; //@line 1124 "mmapmodule.c"
-        var $2=$args_addr; //@line 1129 "mmapmodule.c"
-        var $3=$kwdict_addr; //@line 1129 "mmapmodule.c"
-        var $4=__PyArg_ParseTupleAndKeywords_SizeT($2, $3, __str53, _keywords_9448, $fd, $map_size_obj, $flags, $prot, $access, $offset); //@line 1129 "mmapmodule.c"
-        var $5=($4)==0; //@line 1129 "mmapmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1129 "mmapmodule.c"
+        var $1=$args_addr; //@line 1129 "mmapmodule.c"
+        var $2=$kwdict_addr; //@line 1129 "mmapmodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str53, _keywords_9448, allocate([$fd,0,0,0,$map_size_obj,0,0,0,$flags,0,0,0,$prot,0,0,0,$access,0,0,0,$offset,0,0,0], ["i32*",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i64*",0,0,0], ALLOC_STACK)); //@line 1129 "mmapmodule.c"
+        var $4=($3)==0; //@line 1129 "mmapmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1129 "mmapmodule.c"
       case 1: // $bb
-        $1=0; //@line 1132 "mmapmodule.c"
-        __label__ = 58; break; //@line 1132 "mmapmodule.c"
+        $0=0; //@line 1132 "mmapmodule.c"
+        __label__ = 45; break; //@line 1132 "mmapmodule.c"
       case 2: // $bb1
-        var $6=HEAP[$map_size_obj]; //@line 1133 "mmapmodule.c"
-        $o_addr_i=$6;
-        $param_addr_i=__str33;
-        var $7=$o_addr_i; //@line 1086 "mmapmodule.c"
-        var $8=($7)==0; //@line 1086 "mmapmodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1086 "mmapmodule.c"
-      case 3: // $_GetMapSize_exit_thread1
-        $0=0; //@line 1087 "mmapmodule.c"
-        $retval_i=0; //@line 1087 "mmapmodule.c"
-        $map_size=0; //@line 1133 "mmapmodule.c"
-        __label__ = 17; break;
-      case 4: // $bb1_i
-        var $9=$o_addr_i; //@line 1088 "mmapmodule.c"
-        var $10=$9+4; //@line 1088 "mmapmodule.c"
-        var $11=HEAP[$10]; //@line 1088 "mmapmodule.c"
-        var $12=$11+48; //@line 1088 "mmapmodule.c"
-        var $13=HEAP[$12]; //@line 1088 "mmapmodule.c"
-        var $14=($13)!=0; //@line 1088 "mmapmodule.c"
-        if ($14) { __label__ = 5; break; } else { __label__ = 13; break; } //@line 1088 "mmapmodule.c"
-      case 5: // $bb2_i
-        var $15=$o_addr_i; //@line 1088 "mmapmodule.c"
-        var $16=$15+4; //@line 1088 "mmapmodule.c"
-        var $17=HEAP[$16]; //@line 1088 "mmapmodule.c"
-        var $18=$17+84; //@line 1088 "mmapmodule.c"
-        var $19=HEAP[$18]; //@line 1088 "mmapmodule.c"
-        var $20=($19) & 131072; //@line 1088 "mmapmodule.c"
-        var $21=($20)!=0; //@line 1088 "mmapmodule.c"
-        if ($21) { __label__ = 6; break; } else { __label__ = 13; break; } //@line 1088 "mmapmodule.c"
-      case 6: // $bb3_i
-        var $22=$o_addr_i; //@line 1088 "mmapmodule.c"
-        var $23=$22+4; //@line 1088 "mmapmodule.c"
-        var $24=HEAP[$23]; //@line 1088 "mmapmodule.c"
-        var $25=$24+48; //@line 1088 "mmapmodule.c"
-        var $26=HEAP[$25]; //@line 1088 "mmapmodule.c"
-        var $27=$26+152; //@line 1088 "mmapmodule.c"
-        var $28=HEAP[$27]; //@line 1088 "mmapmodule.c"
-        var $29=($28)!=0; //@line 1088 "mmapmodule.c"
-        if ($29) { __label__ = 7; break; } else { __label__ = 13; break; } //@line 1088 "mmapmodule.c"
-      case 7: // $bb4_i
-        var $30=HEAP[_PyExc_OverflowError]; //@line 1089 "mmapmodule.c"
-        var $31=$o_addr_i; //@line 1089 "mmapmodule.c"
-        var $32=_PyNumber_AsSsize_t($31, $30); //@line 1089 "mmapmodule.c"
-        $i_i=$32; //@line 1089 "mmapmodule.c"
-        var $33=$i_i; //@line 1090 "mmapmodule.c"
-        var $34=($33)==-1; //@line 1090 "mmapmodule.c"
-        if ($34) { __lastLabel__ = 7; __label__ = 8; break; } else { __lastLabel__ = 7; __label__ = 11; break; } //@line 1090 "mmapmodule.c"
-      case 8: // $bb5_i
-        var $35=_PyErr_Occurred(); //@line 1090 "mmapmodule.c"
-        var $36=($35)!=0; //@line 1090 "mmapmodule.c"
-        if ($36) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1090 "mmapmodule.c"
-      case 9: // $bb6_i
-        $0=-1; //@line 1091 "mmapmodule.c"
-        __label__ = 14; break; //@line 1091 "mmapmodule.c"
-      case 10: // $bb7thread_pre_split_i
-        var $_pr_i=$i_i;
-        __lastLabel__ = 10; __label__ = 11; break;
-      case 11: // $bb7_i
-        var $37=__lastLabel__ == 10 ? $_pr_i : ($33);
-        var $38=($37) < 0; //@line 1092 "mmapmodule.c"
-        if ($38) { __label__ = 12; break; } else { __label__ = 15; break; } //@line 1092 "mmapmodule.c"
-      case 12: // $bb8_i
-        var $39=HEAP[_PyExc_OverflowError]; //@line 1093 "mmapmodule.c"
-        var $40=$param_addr_i; //@line 1093 "mmapmodule.c"
-        var $41=_PyErr_Format($39, __str51, $40); //@line 1093 "mmapmodule.c"
-        $0=-1; //@line 1096 "mmapmodule.c"
-        __label__ = 14; break; //@line 1096 "mmapmodule.c"
-      case 13: // $bb10_i
-        var $42=HEAP[_PyExc_TypeError]; //@line 1101 "mmapmodule.c"
-        _PyErr_SetString($42, __str52); //@line 1101 "mmapmodule.c"
-        $0=-1; //@line 1102 "mmapmodule.c"
-        __label__ = 14; break; //@line 1102 "mmapmodule.c"
-      case 14: // $_GetMapSize_exit_thread
-        $retval_i=-1; //@line 1087 "mmapmodule.c"
-        $map_size=-1; //@line 1133 "mmapmodule.c"
-        __label__ = 16; break;
-      case 15: // $_GetMapSize_exit
-        var $43=$i_i; //@line 1098 "mmapmodule.c"
-        $0=$43; //@line 1098 "mmapmodule.c"
-        $retval_i=$43; //@line 1087 "mmapmodule.c"
-        $map_size=$43; //@line 1133 "mmapmodule.c"
-        var $44=($43) < 0; //@line 1134 "mmapmodule.c"
-        if ($44) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1134 "mmapmodule.c"
-      case 16: // $bb2
-        $1=0; //@line 1135 "mmapmodule.c"
-        __label__ = 58; break; //@line 1135 "mmapmodule.c"
-      case 17: // $bb3
-        var $45=HEAP[$offset]; //@line 1136 "mmapmodule.c"
-        var $46=($45) < 0; //@line 1136 "mmapmodule.c"
-        if ($46) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 1136 "mmapmodule.c"
-      case 18: // $bb4
-        var $47=HEAP[_PyExc_OverflowError]; //@line 1137 "mmapmodule.c"
-        _PyErr_SetString($47, __str60); //@line 1137 "mmapmodule.c"
-        $1=0; //@line 1139 "mmapmodule.c"
-        __label__ = 58; break; //@line 1139 "mmapmodule.c"
-      case 19: // $bb5
-        var $48=HEAP[$access]; //@line 1142 "mmapmodule.c"
-        var $49=($48)!=0; //@line 1142 "mmapmodule.c"
-        if ($49) { __label__ = 20; break; } else { __label__ = 27; break; } //@line 1142 "mmapmodule.c"
-      case 20: // $bb6
-        var $50=HEAP[$flags]; //@line 1142 "mmapmodule.c"
-        var $51=($50)!=1; //@line 1142 "mmapmodule.c"
-        if ($51) { __label__ = 22; break; } else { __label__ = 21; break; } //@line 1142 "mmapmodule.c"
-      case 21: // $bb7
-        var $52=HEAP[$prot]; //@line 1142 "mmapmodule.c"
-        var $53=($52)!=3; //@line 1142 "mmapmodule.c"
-        if ($53) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1142 "mmapmodule.c"
-      case 22: // $bb8
-        var $54=HEAP[_PyExc_ValueError]; //@line 1144 "mmapmodule.c"
-        var $55=_PyErr_Format($54, __str61); //@line 1144 "mmapmodule.c"
-        $1=$55; //@line 1144 "mmapmodule.c"
-        __label__ = 58; break; //@line 1144 "mmapmodule.c"
-      case 23: // $bb9
+        var $5=HEAP[$map_size_obj]; //@line 1133 "mmapmodule.c"
+        var $6=__GetMapSize($5); //@line 1133 "mmapmodule.c"
+        $map_size=$6; //@line 1133 "mmapmodule.c"
+        var $7=$map_size; //@line 1134 "mmapmodule.c"
+        var $8=($7) < 0; //@line 1134 "mmapmodule.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1134 "mmapmodule.c"
+      case 3: // $bb2
+        $0=0; //@line 1135 "mmapmodule.c"
+        __label__ = 45; break; //@line 1135 "mmapmodule.c"
+      case 4: // $bb3
+        var $9=HEAP[$offset]; //@line 1136 "mmapmodule.c"
+        var $10=($9) < 0; //@line 1136 "mmapmodule.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1136 "mmapmodule.c"
+      case 5: // $bb4
+        var $11=HEAP[_PyExc_OverflowError]; //@line 1137 "mmapmodule.c"
+        _PyErr_SetString($11, __str60); //@line 1137 "mmapmodule.c"
+        $0=0; //@line 1139 "mmapmodule.c"
+        __label__ = 45; break; //@line 1139 "mmapmodule.c"
+      case 6: // $bb5
+        var $12=HEAP[$access]; //@line 1142 "mmapmodule.c"
+        var $13=($12)!=0; //@line 1142 "mmapmodule.c"
+        if ($13) { __label__ = 7; break; } else { __label__ = 14; break; } //@line 1142 "mmapmodule.c"
+      case 7: // $bb6
+        var $14=HEAP[$flags]; //@line 1142 "mmapmodule.c"
+        var $15=($14)!=1; //@line 1142 "mmapmodule.c"
+        if ($15) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 1142 "mmapmodule.c"
+      case 8: // $bb7
+        var $16=HEAP[$prot]; //@line 1142 "mmapmodule.c"
+        var $17=($16)!=3; //@line 1142 "mmapmodule.c"
+        if ($17) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1142 "mmapmodule.c"
+      case 9: // $bb8
+        var $18=HEAP[_PyExc_ValueError]; //@line 1144 "mmapmodule.c"
+        var $19=_PyErr_Format($18, __str61, allocate(1, "i32", ALLOC_STACK)); //@line 1144 "mmapmodule.c"
+        $0=$19; //@line 1144 "mmapmodule.c"
+        __label__ = 45; break; //@line 1144 "mmapmodule.c"
+      case 10: // $bb9
         var $_pr=HEAP[$access];
         if ($_pr == 0) {
-          __label__ = 27; break;
+          __label__ = 14; break;
         }
         else if ($_pr == 1) {
-          __label__ = 24; break;
+          __label__ = 11; break;
         }
         else if ($_pr == 2) {
-          __label__ = 25; break;
+          __label__ = 12; break;
         }
         else if ($_pr == 3) {
-          __label__ = 26; break;
+          __label__ = 13; break;
         }
         else {
-        __label__ = 32; break;
+        __label__ = 19; break;
         }
         
-      case 24: // $bb10
+      case 11: // $bb10
         HEAP[$flags]=1; //@line 1148 "mmapmodule.c"
         HEAP[$prot]=1; //@line 1149 "mmapmodule.c"
-        __label__ = 33; break; //@line 1149 "mmapmodule.c"
-      case 25: // $bb11
+        __label__ = 20; break; //@line 1149 "mmapmodule.c"
+      case 12: // $bb11
         HEAP[$flags]=1; //@line 1152 "mmapmodule.c"
         HEAP[$prot]=3; //@line 1153 "mmapmodule.c"
-        __label__ = 33; break; //@line 1153 "mmapmodule.c"
-      case 26: // $bb12
+        __label__ = 20; break; //@line 1153 "mmapmodule.c"
+      case 13: // $bb12
         HEAP[$flags]=2; //@line 1156 "mmapmodule.c"
         HEAP[$prot]=3; //@line 1157 "mmapmodule.c"
-        __label__ = 33; break; //@line 1157 "mmapmodule.c"
-      case 27: // $bb13
-        var $56=HEAP[$prot]; //@line 1161 "mmapmodule.c"
-        var $57=($56) & 1; //@line 1161 "mmapmodule.c"
-        var $58=((($57)) & 255); //@line 1161 "mmapmodule.c"
-        var $toBool=($58)!=0; //@line 1161 "mmapmodule.c"
+        __label__ = 20; break; //@line 1157 "mmapmodule.c"
+      case 14: // $bb13
+        var $20=HEAP[$prot]; //@line 1161 "mmapmodule.c"
+        var $21=($20) & 1; //@line 1161 "mmapmodule.c"
+        var $22=((($21)) & 255); //@line 1161 "mmapmodule.c"
+        var $toBool=($22)!=0; //@line 1161 "mmapmodule.c"
         var $toBoolnot=($toBool) ^ 1; //@line 1161 "mmapmodule.c"
         var $toBoolnot14=($toBoolnot); //@line 1161 "mmapmodule.c"
         var $toBool16=($toBoolnot14)!=0; //@line 1161 "mmapmodule.c"
-        if ($toBool16) { __label__ = 29; break; } else { __label__ = 28; break; } //@line 1161 "mmapmodule.c"
-      case 28: // $bb17
-        var $59=HEAP[$prot]; //@line 1161 "mmapmodule.c"
-        var $60=($59) & 2; //@line 1161 "mmapmodule.c"
-        var $61=($60)==0; //@line 1161 "mmapmodule.c"
-        if ($61) { __label__ = 29; break; } else { __label__ = 33; break; } //@line 1161 "mmapmodule.c"
-      case 29: // $bb19
-        var $62=HEAP[$prot]; //@line 1164 "mmapmodule.c"
-        var $63=($62) & 2; //@line 1164 "mmapmodule.c"
-        var $64=($63)!=0; //@line 1164 "mmapmodule.c"
-        if ($64) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 1164 "mmapmodule.c"
-      case 30: // $bb20
+        if ($toBool16) { __label__ = 16; break; } else { __label__ = 15; break; } //@line 1161 "mmapmodule.c"
+      case 15: // $bb17
+        var $23=HEAP[$prot]; //@line 1161 "mmapmodule.c"
+        var $24=($23) & 2; //@line 1161 "mmapmodule.c"
+        var $25=($24)==0; //@line 1161 "mmapmodule.c"
+        if ($25) { __label__ = 16; break; } else { __label__ = 20; break; } //@line 1161 "mmapmodule.c"
+      case 16: // $bb19
+        var $26=HEAP[$prot]; //@line 1164 "mmapmodule.c"
+        var $27=($26) & 2; //@line 1164 "mmapmodule.c"
+        var $28=($27)!=0; //@line 1164 "mmapmodule.c"
+        if ($28) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1164 "mmapmodule.c"
+      case 17: // $bb20
         HEAP[$access]=2; //@line 1165 "mmapmodule.c"
-        __label__ = 33; break; //@line 1165 "mmapmodule.c"
-      case 31: // $bb21
+        __label__ = 20; break; //@line 1165 "mmapmodule.c"
+      case 18: // $bb21
         HEAP[$access]=1; //@line 1168 "mmapmodule.c"
-        __label__ = 33; break; //@line 1168 "mmapmodule.c"
-      case 32: // $bb23
-        var $65=HEAP[_PyExc_ValueError]; //@line 1172 "mmapmodule.c"
-        var $66=_PyErr_Format($65, __str62); //@line 1172 "mmapmodule.c"
-        $1=$66; //@line 1172 "mmapmodule.c"
-        __label__ = 58; break; //@line 1172 "mmapmodule.c"
-      case 33: // $bb24
-        var $67=HEAP[$fd]; //@line 1189 "mmapmodule.c"
-        var $68=($67)!=-1; //@line 1189 "mmapmodule.c"
-        if ($68) { __label__ = 34; break; } else { __label__ = 43; break; } //@line 1189 "mmapmodule.c"
-      case 34: // $bb25
-        var $69=HEAP[$fd]; //@line 1189 "mmapmodule.c"
-        var $70=___01fstat64_($69, $st); //@line 1189 "mmapmodule.c"
-        var $71=($70)==0; //@line 1189 "mmapmodule.c"
-        if ($71) { __label__ = 35; break; } else { __label__ = 43; break; } //@line 1189 "mmapmodule.c"
-      case 35: // $bb26
-        var $72=$st+16; //@line 1189 "mmapmodule.c"
-        var $73=HEAP[$72]; //@line 1189 "mmapmodule.c"
-        var $74=($73) & 61440; //@line 1189 "mmapmodule.c"
-        var $75=($74)==32768; //@line 1189 "mmapmodule.c"
-        if ($75) { __label__ = 36; break; } else { __label__ = 43; break; } //@line 1189 "mmapmodule.c"
-      case 36: // $bb27
-        var $76=$map_size; //@line 1190 "mmapmodule.c"
-        var $77=($76)==0; //@line 1190 "mmapmodule.c"
-        if ($77) { __label__ = 37; break; } else { __label__ = 41; break; } //@line 1190 "mmapmodule.c"
-      case 37: // $bb28
-        var $78=$st+44; //@line 1191 "mmapmodule.c"
-        var $79=HEAP[$78]; //@line 1191 "mmapmodule.c"
-        var $80=HEAP[$offset]; //@line 1191 "mmapmodule.c"
-        var $81=($79) <= ($80); //@line 1191 "mmapmodule.c"
-        if ($81) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 1191 "mmapmodule.c"
-      case 38: // $bb29
-        var $82=HEAP[_PyExc_ValueError]; //@line 1192 "mmapmodule.c"
-        _PyErr_SetString($82, __str63); //@line 1192 "mmapmodule.c"
-        $1=0; //@line 1194 "mmapmodule.c"
-        __label__ = 58; break; //@line 1194 "mmapmodule.c"
-      case 39: // $bb30
-        var $83=$st+44; //@line 1196 "mmapmodule.c"
-        var $84=HEAP[$83]; //@line 1196 "mmapmodule.c"
-        var $85=HEAP[$offset]; //@line 1196 "mmapmodule.c"
-        var $86=($84) - ($85); //@line 1196 "mmapmodule.c"
-        $calc_size=$86; //@line 1196 "mmapmodule.c"
-        var $87=$calc_size; //@line 1197 "mmapmodule.c"
-        var $88=((($87)) & 4294967295); //@line 1197 "mmapmodule.c"
-        $map_size=$88; //@line 1197 "mmapmodule.c"
-        var $89=$map_size; //@line 1198 "mmapmodule.c"
-        var $90=($89); //@line 1198 "mmapmodule.c"
-        var $91=$calc_size; //@line 1198 "mmapmodule.c"
-        var $92=($90)!=($91); //@line 1198 "mmapmodule.c"
-        if ($92) { __label__ = 40; break; } else { __label__ = 43; break; } //@line 1198 "mmapmodule.c"
-      case 40: // $bb31
-        var $93=HEAP[_PyExc_ValueError]; //@line 1199 "mmapmodule.c"
-        _PyErr_SetString($93, __str64); //@line 1199 "mmapmodule.c"
-        $1=0; //@line 1201 "mmapmodule.c"
-        __label__ = 58; break; //@line 1201 "mmapmodule.c"
-      case 41: // $bb33
-        var $94=$map_size; //@line 1203 "mmapmodule.c"
-        var $95=($94); //@line 1203 "mmapmodule.c"
-        var $96=HEAP[$offset]; //@line 1203 "mmapmodule.c"
-        var $97=($95) + ($96); //@line 1203 "mmapmodule.c"
-        var $98=$st+44; //@line 1203 "mmapmodule.c"
-        var $99=HEAP[$98]; //@line 1203 "mmapmodule.c"
-        var $100=($97) > ($99); //@line 1203 "mmapmodule.c"
-        if ($100) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 1203 "mmapmodule.c"
-      case 42: // $bb34
-        var $101=HEAP[_PyExc_ValueError]; //@line 1204 "mmapmodule.c"
-        _PyErr_SetString($101, __str65); //@line 1204 "mmapmodule.c"
-        $1=0; //@line 1206 "mmapmodule.c"
-        __label__ = 58; break; //@line 1206 "mmapmodule.c"
-      case 43: // $bb35
-        var $102=$type_addr; //@line 1210 "mmapmodule.c"
-        var $103=$102+152; //@line 1210 "mmapmodule.c"
-        var $104=HEAP[$103]; //@line 1210 "mmapmodule.c"
-        var $105=$type_addr; //@line 1210 "mmapmodule.c"
-        var $106=FUNCTION_TABLE[$104]($105, 0); //@line 1210 "mmapmodule.c"
-        var $107=$106; //@line 1210 "mmapmodule.c"
-        $m_obj=$107; //@line 1210 "mmapmodule.c"
-        var $108=($107)==0; //@line 1211 "mmapmodule.c"
-        if ($108) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 1211 "mmapmodule.c"
-      case 44: // $bb36
-        $1=0; //@line 1211 "mmapmodule.c"
-        __label__ = 58; break; //@line 1211 "mmapmodule.c"
-      case 45: // $bb37
-        var $109=$m_obj; //@line 1212 "mmapmodule.c"
-        var $110=$109+8; //@line 1212 "mmapmodule.c"
-        HEAP[$110]=0; //@line 1212 "mmapmodule.c"
-        var $111=$map_size; //@line 1213 "mmapmodule.c"
-        var $112=$m_obj; //@line 1213 "mmapmodule.c"
-        var $113=$112+12; //@line 1213 "mmapmodule.c"
-        HEAP[$113]=$111; //@line 1213 "mmapmodule.c"
-        var $114=$m_obj; //@line 1214 "mmapmodule.c"
-        var $115=$114+16; //@line 1214 "mmapmodule.c"
-        HEAP[$115]=0; //@line 1214 "mmapmodule.c"
-        var $116=HEAP[$offset]; //@line 1215 "mmapmodule.c"
-        var $117=$m_obj; //@line 1215 "mmapmodule.c"
-        var $118=$117+20; //@line 1215 "mmapmodule.c"
-        HEAP[$118]=$116; //@line 1215 "mmapmodule.c"
-        var $119=HEAP[$fd]; //@line 1216 "mmapmodule.c"
-        var $120=($119)==-1; //@line 1216 "mmapmodule.c"
-        if ($120) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1216 "mmapmodule.c"
-      case 46: // $bb38
-        var $121=$m_obj; //@line 1217 "mmapmodule.c"
-        var $122=$121+28; //@line 1217 "mmapmodule.c"
-        HEAP[$122]=-1; //@line 1217 "mmapmodule.c"
-        var $123=HEAP[$flags]; //@line 1224 "mmapmodule.c"
-        var $124=($123) | 32; //@line 1224 "mmapmodule.c"
-        HEAP[$flags]=$124; //@line 1224 "mmapmodule.c"
-        __label__ = 51; break; //@line 1224 "mmapmodule.c"
-      case 47: // $bb39
-        var $125=HEAP[$fd]; //@line 1235 "mmapmodule.c"
-        var $126=_dup($125); //@line 1235 "mmapmodule.c"
-        var $127=$m_obj; //@line 1235 "mmapmodule.c"
-        var $128=$127+28; //@line 1235 "mmapmodule.c"
-        HEAP[$128]=$126; //@line 1235 "mmapmodule.c"
-        var $129=$m_obj; //@line 1236 "mmapmodule.c"
-        var $130=$129+28; //@line 1236 "mmapmodule.c"
-        var $131=HEAP[$130]; //@line 1236 "mmapmodule.c"
-        var $132=($131)==-1; //@line 1236 "mmapmodule.c"
-        if ($132) { __label__ = 48; break; } else { __label__ = 51; break; } //@line 1236 "mmapmodule.c"
-      case 48: // $bb40
-        var $133=$m_obj; //@line 1237 "mmapmodule.c"
-        var $134=$133; //@line 1237 "mmapmodule.c"
-        var $135=$134; //@line 1237 "mmapmodule.c"
-        var $136=HEAP[$135]; //@line 1237 "mmapmodule.c"
-        var $137=($136) - 1; //@line 1237 "mmapmodule.c"
-        var $138=$134; //@line 1237 "mmapmodule.c"
-        HEAP[$138]=$137; //@line 1237 "mmapmodule.c"
-        var $139=$134; //@line 1237 "mmapmodule.c"
-        var $140=HEAP[$139]; //@line 1237 "mmapmodule.c"
-        var $141=($140)==0; //@line 1237 "mmapmodule.c"
-        if ($141) { __label__ = 49; break; } else { __label__ = 50; break; } //@line 1237 "mmapmodule.c"
-      case 49: // $bb41
-        var $142=$m_obj; //@line 1237 "mmapmodule.c"
-        var $143=$142; //@line 1237 "mmapmodule.c"
-        var $144=$143+4; //@line 1237 "mmapmodule.c"
-        var $145=HEAP[$144]; //@line 1237 "mmapmodule.c"
-        var $146=$145+24; //@line 1237 "mmapmodule.c"
-        var $147=HEAP[$146]; //@line 1237 "mmapmodule.c"
-        var $148=$m_obj; //@line 1237 "mmapmodule.c"
-        var $149=$148; //@line 1237 "mmapmodule.c"
-        FUNCTION_TABLE[$147]($149); //@line 1237 "mmapmodule.c"
-        __label__ = 50; break; //@line 1237 "mmapmodule.c"
-      case 50: // $bb42
-        var $150=HEAP[_mmap_module_error]; //@line 1238 "mmapmodule.c"
-        var $151=_PyErr_SetFromErrno($150); //@line 1238 "mmapmodule.c"
-        $1=0; //@line 1239 "mmapmodule.c"
-        __label__ = 58; break; //@line 1239 "mmapmodule.c"
-      case 51: // $bb43
-        var $152=HEAP[$offset]; //@line 1243 "mmapmodule.c"
-        var $153=HEAP[$fd]; //@line 1243 "mmapmodule.c"
-        var $154=HEAP[$flags]; //@line 1243 "mmapmodule.c"
-        var $155=HEAP[$prot]; //@line 1243 "mmapmodule.c"
-        var $156=$map_size; //@line 1243 "mmapmodule.c"
-        var $157=___01mmap64_(0, $156, $155, $154, $153, $152); //@line 1243 "mmapmodule.c"
-        var $158=$m_obj; //@line 1243 "mmapmodule.c"
-        var $159=$158+8; //@line 1243 "mmapmodule.c"
-        HEAP[$159]=$157; //@line 1243 "mmapmodule.c"
-        var $160=$devzero; //@line 1247 "mmapmodule.c"
-        var $161=($160)!=-1; //@line 1247 "mmapmodule.c"
-        if ($161) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 1247 "mmapmodule.c"
-      case 52: // $bb44
-        var $162=$devzero; //@line 1248 "mmapmodule.c"
-        var $163=_close($162); //@line 1248 "mmapmodule.c"
-        __label__ = 53; break; //@line 1248 "mmapmodule.c"
-      case 53: // $bb45
-        var $164=$m_obj; //@line 1251 "mmapmodule.c"
-        var $165=$164+8; //@line 1251 "mmapmodule.c"
-        var $166=HEAP[$165]; //@line 1251 "mmapmodule.c"
-        var $167=($166)==4294967295; //@line 1251 "mmapmodule.c"
-        if ($167) { __label__ = 54; break; } else { __label__ = 57; break; } //@line 1251 "mmapmodule.c"
-      case 54: // $bb46
-        var $168=$m_obj; //@line 1252 "mmapmodule.c"
-        var $169=$168+8; //@line 1252 "mmapmodule.c"
-        HEAP[$169]=0; //@line 1252 "mmapmodule.c"
-        var $170=$m_obj; //@line 1253 "mmapmodule.c"
-        var $171=$170; //@line 1253 "mmapmodule.c"
-        var $172=$171; //@line 1253 "mmapmodule.c"
-        var $173=HEAP[$172]; //@line 1253 "mmapmodule.c"
-        var $174=($173) - 1; //@line 1253 "mmapmodule.c"
-        var $175=$171; //@line 1253 "mmapmodule.c"
-        HEAP[$175]=$174; //@line 1253 "mmapmodule.c"
-        var $176=$171; //@line 1253 "mmapmodule.c"
-        var $177=HEAP[$176]; //@line 1253 "mmapmodule.c"
-        var $178=($177)==0; //@line 1253 "mmapmodule.c"
-        if ($178) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 1253 "mmapmodule.c"
-      case 55: // $bb47
-        var $179=$m_obj; //@line 1253 "mmapmodule.c"
-        var $180=$179; //@line 1253 "mmapmodule.c"
-        var $181=$180+4; //@line 1253 "mmapmodule.c"
-        var $182=HEAP[$181]; //@line 1253 "mmapmodule.c"
-        var $183=$182+24; //@line 1253 "mmapmodule.c"
-        var $184=HEAP[$183]; //@line 1253 "mmapmodule.c"
-        var $185=$m_obj; //@line 1253 "mmapmodule.c"
-        var $186=$185; //@line 1253 "mmapmodule.c"
-        FUNCTION_TABLE[$184]($186); //@line 1253 "mmapmodule.c"
-        __label__ = 56; break; //@line 1253 "mmapmodule.c"
-      case 56: // $bb48
-        var $187=HEAP[_mmap_module_error]; //@line 1254 "mmapmodule.c"
-        var $188=_PyErr_SetFromErrno($187); //@line 1254 "mmapmodule.c"
-        $1=0; //@line 1255 "mmapmodule.c"
-        __label__ = 58; break; //@line 1255 "mmapmodule.c"
-      case 57: // $bb49
-        var $189=HEAP[$access]; //@line 1257 "mmapmodule.c"
-        var $190=$m_obj; //@line 1257 "mmapmodule.c"
-        var $191=$190+32; //@line 1257 "mmapmodule.c"
-        HEAP[$191]=$189; //@line 1257 "mmapmodule.c"
-        var $192=$m_obj; //@line 1258 "mmapmodule.c"
-        var $193=$192; //@line 1258 "mmapmodule.c"
-        $1=$193; //@line 1258 "mmapmodule.c"
-        __label__ = 58; break; //@line 1258 "mmapmodule.c"
-      case 58: // $bb50
-        var $194=$1; //@line 1132 "mmapmodule.c"
-        $retval=$194; //@line 1132 "mmapmodule.c"
+        __label__ = 20; break; //@line 1168 "mmapmodule.c"
+      case 19: // $bb23
+        var $29=HEAP[_PyExc_ValueError]; //@line 1172 "mmapmodule.c"
+        var $30=_PyErr_Format($29, __str62, allocate(1, "i32", ALLOC_STACK)); //@line 1172 "mmapmodule.c"
+        $0=$30; //@line 1172 "mmapmodule.c"
+        __label__ = 45; break; //@line 1172 "mmapmodule.c"
+      case 20: // $bb24
+        var $31=HEAP[$fd]; //@line 1189 "mmapmodule.c"
+        var $32=($31)!=-1; //@line 1189 "mmapmodule.c"
+        if ($32) { __label__ = 21; break; } else { __label__ = 30; break; } //@line 1189 "mmapmodule.c"
+      case 21: // $bb25
+        var $33=HEAP[$fd]; //@line 1189 "mmapmodule.c"
+        var $34=___01fstat64_($33, $st); //@line 1189 "mmapmodule.c"
+        var $35=($34)==0; //@line 1189 "mmapmodule.c"
+        if ($35) { __label__ = 22; break; } else { __label__ = 30; break; } //@line 1189 "mmapmodule.c"
+      case 22: // $bb26
+        var $36=$st+16; //@line 1189 "mmapmodule.c"
+        var $37=HEAP[$36]; //@line 1189 "mmapmodule.c"
+        var $38=($37) & 61440; //@line 1189 "mmapmodule.c"
+        var $39=($38)==32768; //@line 1189 "mmapmodule.c"
+        if ($39) { __label__ = 23; break; } else { __label__ = 30; break; } //@line 1189 "mmapmodule.c"
+      case 23: // $bb27
+        var $40=$map_size; //@line 1190 "mmapmodule.c"
+        var $41=($40)==0; //@line 1190 "mmapmodule.c"
+        if ($41) { __label__ = 24; break; } else { __label__ = 28; break; } //@line 1190 "mmapmodule.c"
+      case 24: // $bb28
+        var $42=$st+44; //@line 1191 "mmapmodule.c"
+        var $43=HEAP[$42]; //@line 1191 "mmapmodule.c"
+        var $44=HEAP[$offset]; //@line 1191 "mmapmodule.c"
+        var $45=($43) <= ($44); //@line 1191 "mmapmodule.c"
+        if ($45) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1191 "mmapmodule.c"
+      case 25: // $bb29
+        var $46=HEAP[_PyExc_ValueError]; //@line 1192 "mmapmodule.c"
+        _PyErr_SetString($46, __str63); //@line 1192 "mmapmodule.c"
+        $0=0; //@line 1194 "mmapmodule.c"
+        __label__ = 45; break; //@line 1194 "mmapmodule.c"
+      case 26: // $bb30
+        var $47=$st+44; //@line 1196 "mmapmodule.c"
+        var $48=HEAP[$47]; //@line 1196 "mmapmodule.c"
+        var $49=HEAP[$offset]; //@line 1196 "mmapmodule.c"
+        var $50=($48) - ($49); //@line 1196 "mmapmodule.c"
+        $calc_size=$50; //@line 1196 "mmapmodule.c"
+        var $51=$calc_size; //@line 1197 "mmapmodule.c"
+        var $52=((($51)) & 4294967295); //@line 1197 "mmapmodule.c"
+        $map_size=$52; //@line 1197 "mmapmodule.c"
+        var $53=$map_size; //@line 1198 "mmapmodule.c"
+        var $54=($53); //@line 1198 "mmapmodule.c"
+        var $55=$calc_size; //@line 1198 "mmapmodule.c"
+        var $56=($54)!=($55); //@line 1198 "mmapmodule.c"
+        if ($56) { __label__ = 27; break; } else { __label__ = 30; break; } //@line 1198 "mmapmodule.c"
+      case 27: // $bb31
+        var $57=HEAP[_PyExc_ValueError]; //@line 1199 "mmapmodule.c"
+        _PyErr_SetString($57, __str64); //@line 1199 "mmapmodule.c"
+        $0=0; //@line 1201 "mmapmodule.c"
+        __label__ = 45; break; //@line 1201 "mmapmodule.c"
+      case 28: // $bb33
+        var $58=$map_size; //@line 1203 "mmapmodule.c"
+        var $59=($58); //@line 1203 "mmapmodule.c"
+        var $60=HEAP[$offset]; //@line 1203 "mmapmodule.c"
+        var $61=($59) + ($60); //@line 1203 "mmapmodule.c"
+        var $62=$st+44; //@line 1203 "mmapmodule.c"
+        var $63=HEAP[$62]; //@line 1203 "mmapmodule.c"
+        var $64=($61) > ($63); //@line 1203 "mmapmodule.c"
+        if ($64) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 1203 "mmapmodule.c"
+      case 29: // $bb34
+        var $65=HEAP[_PyExc_ValueError]; //@line 1204 "mmapmodule.c"
+        _PyErr_SetString($65, __str65); //@line 1204 "mmapmodule.c"
+        $0=0; //@line 1206 "mmapmodule.c"
+        __label__ = 45; break; //@line 1206 "mmapmodule.c"
+      case 30: // $bb35
+        var $66=$type_addr; //@line 1210 "mmapmodule.c"
+        var $67=$66+152; //@line 1210 "mmapmodule.c"
+        var $68=HEAP[$67]; //@line 1210 "mmapmodule.c"
+        var $69=$type_addr; //@line 1210 "mmapmodule.c"
+        var $70=FUNCTION_TABLE[$68]($69, 0); //@line 1210 "mmapmodule.c"
+        var $71=$70; //@line 1210 "mmapmodule.c"
+        $m_obj=$71; //@line 1210 "mmapmodule.c"
+        var $72=($71)==0; //@line 1211 "mmapmodule.c"
+        if ($72) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1211 "mmapmodule.c"
+      case 31: // $bb36
+        $0=0; //@line 1211 "mmapmodule.c"
+        __label__ = 45; break; //@line 1211 "mmapmodule.c"
+      case 32: // $bb37
+        var $73=$m_obj; //@line 1212 "mmapmodule.c"
+        var $74=$73+8; //@line 1212 "mmapmodule.c"
+        HEAP[$74]=0; //@line 1212 "mmapmodule.c"
+        var $75=$map_size; //@line 1213 "mmapmodule.c"
+        var $76=$m_obj; //@line 1213 "mmapmodule.c"
+        var $77=$76+12; //@line 1213 "mmapmodule.c"
+        HEAP[$77]=$75; //@line 1213 "mmapmodule.c"
+        var $78=$m_obj; //@line 1214 "mmapmodule.c"
+        var $79=$78+16; //@line 1214 "mmapmodule.c"
+        HEAP[$79]=0; //@line 1214 "mmapmodule.c"
+        var $80=HEAP[$offset]; //@line 1215 "mmapmodule.c"
+        var $81=$m_obj; //@line 1215 "mmapmodule.c"
+        var $82=$81+20; //@line 1215 "mmapmodule.c"
+        HEAP[$82]=$80; //@line 1215 "mmapmodule.c"
+        var $83=HEAP[$fd]; //@line 1216 "mmapmodule.c"
+        var $84=($83)==-1; //@line 1216 "mmapmodule.c"
+        if ($84) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 1216 "mmapmodule.c"
+      case 33: // $bb38
+        var $85=$m_obj; //@line 1217 "mmapmodule.c"
+        var $86=$85+28; //@line 1217 "mmapmodule.c"
+        HEAP[$86]=-1; //@line 1217 "mmapmodule.c"
+        var $87=HEAP[$flags]; //@line 1224 "mmapmodule.c"
+        var $88=($87) | 32; //@line 1224 "mmapmodule.c"
+        HEAP[$flags]=$88; //@line 1224 "mmapmodule.c"
+        __label__ = 38; break; //@line 1224 "mmapmodule.c"
+      case 34: // $bb39
+        var $89=HEAP[$fd]; //@line 1235 "mmapmodule.c"
+        var $90=_dup($89); //@line 1235 "mmapmodule.c"
+        var $91=$m_obj; //@line 1235 "mmapmodule.c"
+        var $92=$91+28; //@line 1235 "mmapmodule.c"
+        HEAP[$92]=$90; //@line 1235 "mmapmodule.c"
+        var $93=$m_obj; //@line 1236 "mmapmodule.c"
+        var $94=$93+28; //@line 1236 "mmapmodule.c"
+        var $95=HEAP[$94]; //@line 1236 "mmapmodule.c"
+        var $96=($95)==-1; //@line 1236 "mmapmodule.c"
+        if ($96) { __label__ = 35; break; } else { __label__ = 38; break; } //@line 1236 "mmapmodule.c"
+      case 35: // $bb40
+        var $97=$m_obj; //@line 1237 "mmapmodule.c"
+        var $98=$97; //@line 1237 "mmapmodule.c"
+        var $99=$98; //@line 1237 "mmapmodule.c"
+        var $100=HEAP[$99]; //@line 1237 "mmapmodule.c"
+        var $101=($100) - 1; //@line 1237 "mmapmodule.c"
+        var $102=$98; //@line 1237 "mmapmodule.c"
+        HEAP[$102]=$101; //@line 1237 "mmapmodule.c"
+        var $103=$98; //@line 1237 "mmapmodule.c"
+        var $104=HEAP[$103]; //@line 1237 "mmapmodule.c"
+        var $105=($104)==0; //@line 1237 "mmapmodule.c"
+        if ($105) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 1237 "mmapmodule.c"
+      case 36: // $bb41
+        var $106=$m_obj; //@line 1237 "mmapmodule.c"
+        var $107=$106; //@line 1237 "mmapmodule.c"
+        var $108=$107+4; //@line 1237 "mmapmodule.c"
+        var $109=HEAP[$108]; //@line 1237 "mmapmodule.c"
+        var $110=$109+24; //@line 1237 "mmapmodule.c"
+        var $111=HEAP[$110]; //@line 1237 "mmapmodule.c"
+        var $112=$m_obj; //@line 1237 "mmapmodule.c"
+        var $113=$112; //@line 1237 "mmapmodule.c"
+        FUNCTION_TABLE[$111]($113); //@line 1237 "mmapmodule.c"
+        __label__ = 37; break; //@line 1237 "mmapmodule.c"
+      case 37: // $bb42
+        var $114=HEAP[_mmap_module_error]; //@line 1238 "mmapmodule.c"
+        var $115=_PyErr_SetFromErrno($114); //@line 1238 "mmapmodule.c"
+        $0=0; //@line 1239 "mmapmodule.c"
+        __label__ = 45; break; //@line 1239 "mmapmodule.c"
+      case 38: // $bb43
+        var $116=HEAP[$offset]; //@line 1243 "mmapmodule.c"
+        var $117=HEAP[$fd]; //@line 1243 "mmapmodule.c"
+        var $118=HEAP[$flags]; //@line 1243 "mmapmodule.c"
+        var $119=HEAP[$prot]; //@line 1243 "mmapmodule.c"
+        var $120=$map_size; //@line 1243 "mmapmodule.c"
+        var $121=___01mmap64_(0, $120, $119, $118, $117, $116); //@line 1243 "mmapmodule.c"
+        var $122=$m_obj; //@line 1243 "mmapmodule.c"
+        var $123=$122+8; //@line 1243 "mmapmodule.c"
+        HEAP[$123]=$121; //@line 1243 "mmapmodule.c"
+        var $124=$devzero; //@line 1247 "mmapmodule.c"
+        var $125=($124)!=-1; //@line 1247 "mmapmodule.c"
+        if ($125) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 1247 "mmapmodule.c"
+      case 39: // $bb44
+        var $126=$devzero; //@line 1248 "mmapmodule.c"
+        var $127=_close($126); //@line 1248 "mmapmodule.c"
+        __label__ = 40; break; //@line 1248 "mmapmodule.c"
+      case 40: // $bb45
+        var $128=$m_obj; //@line 1251 "mmapmodule.c"
+        var $129=$128+8; //@line 1251 "mmapmodule.c"
+        var $130=HEAP[$129]; //@line 1251 "mmapmodule.c"
+        var $131=($130)==-1; //@line 1251 "mmapmodule.c"
+        if ($131) { __label__ = 41; break; } else { __label__ = 44; break; } //@line 1251 "mmapmodule.c"
+      case 41: // $bb46
+        var $132=$m_obj; //@line 1252 "mmapmodule.c"
+        var $133=$132+8; //@line 1252 "mmapmodule.c"
+        HEAP[$133]=0; //@line 1252 "mmapmodule.c"
+        var $134=$m_obj; //@line 1253 "mmapmodule.c"
+        var $135=$134; //@line 1253 "mmapmodule.c"
+        var $136=$135; //@line 1253 "mmapmodule.c"
+        var $137=HEAP[$136]; //@line 1253 "mmapmodule.c"
+        var $138=($137) - 1; //@line 1253 "mmapmodule.c"
+        var $139=$135; //@line 1253 "mmapmodule.c"
+        HEAP[$139]=$138; //@line 1253 "mmapmodule.c"
+        var $140=$135; //@line 1253 "mmapmodule.c"
+        var $141=HEAP[$140]; //@line 1253 "mmapmodule.c"
+        var $142=($141)==0; //@line 1253 "mmapmodule.c"
+        if ($142) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 1253 "mmapmodule.c"
+      case 42: // $bb47
+        var $143=$m_obj; //@line 1253 "mmapmodule.c"
+        var $144=$143; //@line 1253 "mmapmodule.c"
+        var $145=$144+4; //@line 1253 "mmapmodule.c"
+        var $146=HEAP[$145]; //@line 1253 "mmapmodule.c"
+        var $147=$146+24; //@line 1253 "mmapmodule.c"
+        var $148=HEAP[$147]; //@line 1253 "mmapmodule.c"
+        var $149=$m_obj; //@line 1253 "mmapmodule.c"
+        var $150=$149; //@line 1253 "mmapmodule.c"
+        FUNCTION_TABLE[$148]($150); //@line 1253 "mmapmodule.c"
+        __label__ = 43; break; //@line 1253 "mmapmodule.c"
+      case 43: // $bb48
+        var $151=HEAP[_mmap_module_error]; //@line 1254 "mmapmodule.c"
+        var $152=_PyErr_SetFromErrno($151); //@line 1254 "mmapmodule.c"
+        $0=0; //@line 1255 "mmapmodule.c"
+        __label__ = 45; break; //@line 1255 "mmapmodule.c"
+      case 44: // $bb49
+        var $153=HEAP[$access]; //@line 1257 "mmapmodule.c"
+        var $154=$m_obj; //@line 1257 "mmapmodule.c"
+        var $155=$154+32; //@line 1257 "mmapmodule.c"
+        HEAP[$155]=$153; //@line 1257 "mmapmodule.c"
+        var $156=$m_obj; //@line 1258 "mmapmodule.c"
+        var $157=$156; //@line 1258 "mmapmodule.c"
+        $0=$157; //@line 1258 "mmapmodule.c"
+        __label__ = 45; break; //@line 1258 "mmapmodule.c"
+      case 45: // $bb50
+        var $158=$0; //@line 1132 "mmapmodule.c"
+        $retval=$158; //@line 1132 "mmapmodule.c"
         var $retval51=$retval; //@line 1132 "mmapmodule.c"
         STACKTOP = __stackBase__;
         return $retval51; //@line 1132 "mmapmodule.c"
@@ -3479,79 +3464,67 @@ var __str82;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i1;
-        var $0;
-        var $retval_i;
-        var $1;
         var $dict;
         var $module;
-        var $2=_PyType_Ready(_mmap_object_type); //@line 1470 "mmapmodule.c"
-        var $3=($2) < 0; //@line 1470 "mmapmodule.c"
-        if ($3) { __label__ = 5; break; } else { __label__ = 1; break; } //@line 1470 "mmapmodule.c"
+        var $0=_PyType_Ready(_mmap_object_type); //@line 1470 "mmapmodule.c"
+        var $1=($0) < 0; //@line 1470 "mmapmodule.c"
+        if ($1) { __label__ = 5; break; } else { __label__ = 1; break; } //@line 1470 "mmapmodule.c"
       case 1: // $bb
-        var $4=_Py_InitModule4(__str66, 0, 0, 0, 1013); //@line 1473 "mmapmodule.c"
-        $module=$4; //@line 1473 "mmapmodule.c"
-        var $5=$module; //@line 1474 "mmapmodule.c"
-        var $6=($5)==0; //@line 1474 "mmapmodule.c"
-        if ($6) { __label__ = 5; break; } else { __label__ = 2; break; } //@line 1474 "mmapmodule.c"
+        var $2=_Py_InitModule4(__str66, 0, 0, 0, 1013); //@line 1473 "mmapmodule.c"
+        $module=$2; //@line 1473 "mmapmodule.c"
+        var $3=$module; //@line 1474 "mmapmodule.c"
+        var $4=($3)==0; //@line 1474 "mmapmodule.c"
+        if ($4) { __label__ = 5; break; } else { __label__ = 2; break; } //@line 1474 "mmapmodule.c"
       case 2: // $bb1
-        var $7=$module; //@line 1476 "mmapmodule.c"
-        var $8=_PyModule_GetDict($7); //@line 1476 "mmapmodule.c"
-        $dict=$8; //@line 1476 "mmapmodule.c"
-        var $9=$dict; //@line 1477 "mmapmodule.c"
-        var $10=($9)==0; //@line 1477 "mmapmodule.c"
-        if ($10) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 1477 "mmapmodule.c"
+        var $5=$module; //@line 1476 "mmapmodule.c"
+        var $6=_PyModule_GetDict($5); //@line 1476 "mmapmodule.c"
+        $dict=$6; //@line 1476 "mmapmodule.c"
+        var $7=$dict; //@line 1477 "mmapmodule.c"
+        var $8=($7)==0; //@line 1477 "mmapmodule.c"
+        if ($8) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 1477 "mmapmodule.c"
       case 3: // $bb2
-        var $11=HEAP[_PyExc_EnvironmentError]; //@line 1479 "mmapmodule.c"
-        var $12=_PyErr_NewException(__str67, $11, 0); //@line 1479 "mmapmodule.c"
-        HEAP[_mmap_module_error]=$12; //@line 1479 "mmapmodule.c"
-        var $13=HEAP[_mmap_module_error]; //@line 1481 "mmapmodule.c"
-        var $14=($13)==0; //@line 1481 "mmapmodule.c"
-        if ($14) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 1481 "mmapmodule.c"
+        var $9=HEAP[_PyExc_EnvironmentError]; //@line 1479 "mmapmodule.c"
+        var $10=_PyErr_NewException(__str67, $9, 0); //@line 1479 "mmapmodule.c"
+        HEAP[_mmap_module_error]=$10; //@line 1479 "mmapmodule.c"
+        var $11=HEAP[_mmap_module_error]; //@line 1481 "mmapmodule.c"
+        var $12=($11)==0; //@line 1481 "mmapmodule.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 1481 "mmapmodule.c"
       case 4: // $bb3
-        var $15=HEAP[_mmap_module_error]; //@line 1483 "mmapmodule.c"
-        var $16=$dict; //@line 1483 "mmapmodule.c"
-        var $17=_PyDict_SetItemString($16, __str68, $15); //@line 1483 "mmapmodule.c"
-        var $18=$dict; //@line 1484 "mmapmodule.c"
-        var $19=_PyDict_SetItemString($18, __str66, _mmap_object_type); //@line 1484 "mmapmodule.c"
-        var $20=$dict; //@line 1486 "mmapmodule.c"
-        _setint($20, __str69, 4); //@line 1486 "mmapmodule.c"
-        var $21=$dict; //@line 1489 "mmapmodule.c"
-        _setint($21, __str70, 1); //@line 1489 "mmapmodule.c"
-        var $22=$dict; //@line 1492 "mmapmodule.c"
-        _setint($22, __str71, 2); //@line 1492 "mmapmodule.c"
-        var $23=$dict; //@line 1496 "mmapmodule.c"
-        _setint($23, __str72, 1); //@line 1496 "mmapmodule.c"
-        var $24=$dict; //@line 1499 "mmapmodule.c"
-        _setint($24, __str73, 2); //@line 1499 "mmapmodule.c"
-        var $25=$dict; //@line 1502 "mmapmodule.c"
-        _setint($25, __str74, 2048); //@line 1502 "mmapmodule.c"
-        var $26=$dict; //@line 1505 "mmapmodule.c"
-        _setint($26, __str75, 4096); //@line 1505 "mmapmodule.c"
-        var $27=$dict; //@line 1508 "mmapmodule.c"
-        _setint($27, __str76, 32); //@line 1508 "mmapmodule.c"
-        var $28=$dict; //@line 1509 "mmapmodule.c"
-        _setint($28, __str77, 32); //@line 1509 "mmapmodule.c"
-        var $29=_sysconf(30); //@line 60 "mmapmodule.c"
-        $1=$29; //@line 60 "mmapmodule.c"
-        var $30=$1; //@line 60 "mmapmodule.c"
-        $retval_i=$30; //@line 60 "mmapmodule.c"
-        var $retval1_i=$retval_i; //@line 60 "mmapmodule.c"
-        var $31=$dict; //@line 1512 "mmapmodule.c"
-        _setint($31, __str78, $retval1_i); //@line 1512 "mmapmodule.c"
-        var $32=_sysconf(30); //@line 60 "mmapmodule.c"
-        $0=$32; //@line 60 "mmapmodule.c"
-        var $33=$0; //@line 60 "mmapmodule.c"
-        $retval_i1=$33; //@line 60 "mmapmodule.c"
-        var $retval1_i2=$retval_i1; //@line 60 "mmapmodule.c"
-        var $34=$dict; //@line 1514 "mmapmodule.c"
-        _setint($34, __str79, $retval1_i2); //@line 1514 "mmapmodule.c"
-        var $35=$dict; //@line 1516 "mmapmodule.c"
-        _setint($35, __str80, 1); //@line 1516 "mmapmodule.c"
-        var $36=$dict; //@line 1517 "mmapmodule.c"
-        _setint($36, __str81, 2); //@line 1517 "mmapmodule.c"
-        var $37=$dict; //@line 1518 "mmapmodule.c"
-        _setint($37, __str82, 3); //@line 1518 "mmapmodule.c"
+        var $13=HEAP[_mmap_module_error]; //@line 1483 "mmapmodule.c"
+        var $14=$dict; //@line 1483 "mmapmodule.c"
+        var $15=_PyDict_SetItemString($14, __str68, $13); //@line 1483 "mmapmodule.c"
+        var $16=$dict; //@line 1484 "mmapmodule.c"
+        var $17=_PyDict_SetItemString($16, __str66, _mmap_object_type); //@line 1484 "mmapmodule.c"
+        var $18=$dict; //@line 1486 "mmapmodule.c"
+        _setint($18, __str69, 4); //@line 1486 "mmapmodule.c"
+        var $19=$dict; //@line 1489 "mmapmodule.c"
+        _setint($19, __str70, 1); //@line 1489 "mmapmodule.c"
+        var $20=$dict; //@line 1492 "mmapmodule.c"
+        _setint($20, __str71, 2); //@line 1492 "mmapmodule.c"
+        var $21=$dict; //@line 1496 "mmapmodule.c"
+        _setint($21, __str72, 1); //@line 1496 "mmapmodule.c"
+        var $22=$dict; //@line 1499 "mmapmodule.c"
+        _setint($22, __str73, 2); //@line 1499 "mmapmodule.c"
+        var $23=$dict; //@line 1502 "mmapmodule.c"
+        _setint($23, __str74, 2048); //@line 1502 "mmapmodule.c"
+        var $24=$dict; //@line 1505 "mmapmodule.c"
+        _setint($24, __str75, 4096); //@line 1505 "mmapmodule.c"
+        var $25=$dict; //@line 1508 "mmapmodule.c"
+        _setint($25, __str76, 32); //@line 1508 "mmapmodule.c"
+        var $26=$dict; //@line 1509 "mmapmodule.c"
+        _setint($26, __str77, 32); //@line 1509 "mmapmodule.c"
+        var $27=_my_getpagesize(); //@line 1512 "mmapmodule.c"
+        var $28=$dict; //@line 1512 "mmapmodule.c"
+        _setint($28, __str78, $27); //@line 1512 "mmapmodule.c"
+        var $29=_my_getpagesize(); //@line 1514 "mmapmodule.c"
+        var $30=$dict; //@line 1514 "mmapmodule.c"
+        _setint($30, __str79, $29); //@line 1514 "mmapmodule.c"
+        var $31=$dict; //@line 1516 "mmapmodule.c"
+        _setint($31, __str80, 1); //@line 1516 "mmapmodule.c"
+        var $32=$dict; //@line 1517 "mmapmodule.c"
+        _setint($32, __str81, 2); //@line 1517 "mmapmodule.c"
+        var $33=$dict; //@line 1518 "mmapmodule.c"
+        _setint($33, __str82, 3); //@line 1518 "mmapmodule.c"
         __label__ = 5; break; //@line 1518 "mmapmodule.c"
       case 5: // $return
         ;

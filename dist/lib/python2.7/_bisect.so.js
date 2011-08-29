@@ -48,7 +48,7 @@ var $struct__IO_marker___SIZE = 12; // %struct._IO_marker
   
 var $struct__typeobject___SIZE = 196; // %struct._typeobject
   
-var _PyExc_ValueError;
+
 var __str;
 var __str1;
 var _keywords_8354;
@@ -59,10 +59,10 @@ var __str5;
 var _bisect_right_doc;
 var __str6;
 var _keywords_8380;
-var _PyList_Type;
+
 var __str7;
 var __str8;
-var __Py_NoneStruct;
+
 var _insort_right_doc;
 var __str9;
 var _keywords_8467;
@@ -240,7 +240,7 @@ var __str18;
         HEAP[$hi]=-1; //@line 45 "_bisectmodule.c"
         var $1=$args_addr; //@line 49 "_bisectmodule.c"
         var $2=$kw_addr; //@line 49 "_bisectmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str1, _keywords_8354, $list, $item, $lo, $hi); //@line 49 "_bisectmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str1, _keywords_8354, allocate([$list,0,0,0,$item,0,0,0,$lo,0,0,0,$hi,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 49 "_bisectmodule.c"
         var $4=($3)==0; //@line 49 "_bisectmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 49 "_bisectmodule.c"
       case 1: // $bb
@@ -299,7 +299,7 @@ var __str18;
         HEAP[$hi]=-1; //@line 75 "_bisectmodule.c"
         var $1=$args_addr; //@line 79 "_bisectmodule.c"
         var $2=$kw_addr; //@line 79 "_bisectmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str6, _keywords_8380, $list, $item, $lo, $hi); //@line 79 "_bisectmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str6, _keywords_8380, allocate([$list,0,0,0,$item,0,0,0,$lo,0,0,0,$hi,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 79 "_bisectmodule.c"
         var $4=($3)==0; //@line 79 "_bisectmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 79 "_bisectmodule.c"
       case 1: // $bb
@@ -335,7 +335,7 @@ var __str18;
         $0=0; //@line 87 "_bisectmodule.c"
         __label__ = 12; break; //@line 87 "_bisectmodule.c"
       case 7: // $bb7
-        var $21=_PyObject_CallMethod($17, __str7, __str8, $18, $16); //@line 89 "_bisectmodule.c"
+        var $21=_PyObject_CallMethod($17, __str7, __str8, allocate([$18,0,0,0,$16,0,0,0], ["i32",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 89 "_bisectmodule.c"
         $result=$21; //@line 89 "_bisectmodule.c"
         var $22=$result; //@line 91 "_bisectmodule.c"
         var $23=($22)==0; //@line 91 "_bisectmodule.c"
@@ -526,7 +526,7 @@ var __str18;
         HEAP[$hi]=-1; //@line 146 "_bisectmodule.c"
         var $1=$args_addr; //@line 150 "_bisectmodule.c"
         var $2=$kw_addr; //@line 150 "_bisectmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str9, _keywords_8467, $list, $item, $lo, $hi); //@line 150 "_bisectmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str9, _keywords_8467, allocate([$list,0,0,0,$item,0,0,0,$lo,0,0,0,$hi,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 150 "_bisectmodule.c"
         var $4=($3)==0; //@line 150 "_bisectmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 150 "_bisectmodule.c"
       case 1: // $bb
@@ -585,7 +585,7 @@ var __str18;
         HEAP[$hi]=-1; //@line 176 "_bisectmodule.c"
         var $1=$args_addr; //@line 180 "_bisectmodule.c"
         var $2=$kw_addr; //@line 180 "_bisectmodule.c"
-        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str10, _keywords_8493, $list, $item, $lo, $hi); //@line 180 "_bisectmodule.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str10, _keywords_8493, allocate([$list,0,0,0,$item,0,0,0,$lo,0,0,0,$hi,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 180 "_bisectmodule.c"
         var $4=($3)==0; //@line 180 "_bisectmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 180 "_bisectmodule.c"
       case 1: // $bb
@@ -621,7 +621,7 @@ var __str18;
         $0=0; //@line 188 "_bisectmodule.c"
         __label__ = 12; break; //@line 188 "_bisectmodule.c"
       case 7: // $bb7
-        var $21=_PyObject_CallMethod($17, __str7, __str11, $18, $16); //@line 190 "_bisectmodule.c"
+        var $21=_PyObject_CallMethod($17, __str7, __str11, allocate([$18,0,0,0,$16,0,0,0], ["i32",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 190 "_bisectmodule.c"
         $result=$21; //@line 190 "_bisectmodule.c"
         var $22=$result; //@line 192 "_bisectmodule.c"
         var $23=($22)==0; //@line 192 "_bisectmodule.c"
