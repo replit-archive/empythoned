@@ -37,8 +37,9 @@ ADDITIONAL_CC_ARGS = [
   '-UHAVE_UTIMES',
   # Tell expat we actually have MEMMOVE, despite its belief in the opposite.
   '-DHAVE_MEMMOVE',
-  # Tell elementtree that we have expat available.
+  # Tell elementtree that we have expat available for compilation.
   '-DUSE_PYEXPAT_CAPI',
+  '-DHAVE_EXPAT_CONFIG_H',
 ]
 ALLOWED_LINK_ARGS = [
   # Don't allow linking to external libraries.
