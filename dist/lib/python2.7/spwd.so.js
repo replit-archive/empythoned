@@ -83,11 +83,11 @@ var _struct_spwd_type_fields;
 var _struct_spwd__doc__;
 var _struct_spwd_type_desc;
 var __str18;
-var __Py_NoneStruct;
+
 var _StructSpwdType;
 var _spwd_getspnam__doc__;
 var __str19;
-var _PyExc_KeyError;
+
 var __str20;
 var _spwd_getspall__doc__;
 var __str21;
@@ -116,18 +116,53 @@ var __str24;
 
 
 
+  function _sets($v, $i, $val) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $v_addr;
+        var $i_addr;
+        var $val_addr;
+        $v_addr=$v;
+        $i_addr=$i;
+        $val_addr=$val;
+        var $0=$val_addr; //@line 62 "spwdmodule.c"
+        var $1=($0)!=0; //@line 62 "spwdmodule.c"
+        var $2=$v_addr; //@line 63 "spwdmodule.c"
+        var $3=$2; //@line 63 "spwdmodule.c"
+        var $4=$i_addr; //@line 63 "spwdmodule.c"
+        if ($1) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 62 "spwdmodule.c"
+      case 1: // $bb
+        var $5=$val_addr; //@line 63 "spwdmodule.c"
+        var $6=_PyString_FromString($5); //@line 63 "spwdmodule.c"
+        var $7=$3+12; //@line 63 "spwdmodule.c"
+        var $8=$7+$4*4; //@line 63 "spwdmodule.c"
+        HEAP[$8]=$6; //@line 63 "spwdmodule.c"
+        __label__ = 3; break; //@line 63 "spwdmodule.c"
+      case 2: // $bb1
+        var $9=$3+12; //@line 65 "spwdmodule.c"
+        var $10=$9+$4*4; //@line 65 "spwdmodule.c"
+        HEAP[$10]=__Py_NoneStruct; //@line 65 "spwdmodule.c"
+        var $11=HEAP[__Py_NoneStruct]; //@line 66 "spwdmodule.c"
+        var $12=($11) + 1; //@line 66 "spwdmodule.c"
+        HEAP[__Py_NoneStruct]=$12; //@line 66 "spwdmodule.c"
+        __label__ = 3; break; //@line 66 "spwdmodule.c"
+      case 3: // $return
+        ;
+        return; //@line 68 "spwdmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _mkspent($p) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $v_addr_i1;
-        var $i_addr_i2;
-        var $val_addr_i3;
-        var $v_addr_i;
-        var $i_addr_i;
-        var $val_addr_i;
         var $p_addr;
         var $retval;
         var $0;
@@ -142,7 +177,7 @@ var __str24;
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 74 "spwdmodule.c"
       case 1: // $bb
         $0=0; //@line 75 "spwdmodule.c"
-        __label__ = 13; break; //@line 75 "spwdmodule.c"
+        __label__ = 7; break; //@line 75 "spwdmodule.c"
       case 2: // $bb1
         var $4=$p_addr; //@line 80 "spwdmodule.c"
         var $5=$4; //@line 80 "spwdmodule.c"
@@ -152,188 +187,141 @@ var __str24;
         var $9=($8) + 1; //@line 80 "spwdmodule.c"
         $setIndex=$9; //@line 80 "spwdmodule.c"
         var $10=$v; //@line 80 "spwdmodule.c"
-        $v_addr_i=$10;
-        $i_addr_i=$7;
-        $val_addr_i=$6;
-        var $11=$val_addr_i; //@line 62 "spwdmodule.c"
-        var $12=($11)!=0; //@line 62 "spwdmodule.c"
-        var $13=$v_addr_i; //@line 63 "spwdmodule.c"
-        var $14=$13; //@line 63 "spwdmodule.c"
-        var $15=$i_addr_i; //@line 63 "spwdmodule.c"
-        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 62 "spwdmodule.c"
-      case 3: // $bb_i
-        var $16=$val_addr_i; //@line 63 "spwdmodule.c"
-        var $17=_PyString_FromString($16); //@line 63 "spwdmodule.c"
-        var $18=$14+12; //@line 63 "spwdmodule.c"
-        var $19=$18+$15*4; //@line 63 "spwdmodule.c"
-        HEAP[$19]=$17; //@line 63 "spwdmodule.c"
-        __label__ = 5; break; //@line 63 "spwdmodule.c"
-      case 4: // $bb1_i
-        var $20=$14+12; //@line 65 "spwdmodule.c"
-        var $21=$20+$15*4; //@line 65 "spwdmodule.c"
-        HEAP[$21]=__Py_NoneStruct; //@line 65 "spwdmodule.c"
-        var $22=HEAP[__Py_NoneStruct]; //@line 66 "spwdmodule.c"
-        var $23=($22) + 1; //@line 66 "spwdmodule.c"
-        HEAP[__Py_NoneStruct]=$23; //@line 66 "spwdmodule.c"
-        __label__ = 5; break; //@line 66 "spwdmodule.c"
-      case 5: // $sets_exit
-        var $24=$p_addr; //@line 81 "spwdmodule.c"
-        var $25=$24+4; //@line 81 "spwdmodule.c"
-        var $26=HEAP[$25]; //@line 81 "spwdmodule.c"
-        var $27=$setIndex; //@line 81 "spwdmodule.c"
-        var $28=$setIndex; //@line 81 "spwdmodule.c"
-        var $29=($28) + 1; //@line 81 "spwdmodule.c"
-        $setIndex=$29; //@line 81 "spwdmodule.c"
-        var $30=$v; //@line 81 "spwdmodule.c"
-        $v_addr_i1=$30;
-        $i_addr_i2=$27;
-        $val_addr_i3=$26;
-        var $31=($26)!=0; //@line 62 "spwdmodule.c"
-        var $32=$v_addr_i1; //@line 63 "spwdmodule.c"
-        var $33=$32; //@line 63 "spwdmodule.c"
-        var $34=$i_addr_i2; //@line 63 "spwdmodule.c"
-        if ($31) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 62 "spwdmodule.c"
-      case 6: // $bb_i4
-        var $35=$val_addr_i3; //@line 63 "spwdmodule.c"
-        var $36=_PyString_FromString($35); //@line 63 "spwdmodule.c"
-        var $37=$33+12; //@line 63 "spwdmodule.c"
-        var $38=$37+$34*4; //@line 63 "spwdmodule.c"
-        HEAP[$38]=$36; //@line 63 "spwdmodule.c"
-        __label__ = 8; break; //@line 63 "spwdmodule.c"
-      case 7: // $bb1_i5
-        var $39=$33+12; //@line 65 "spwdmodule.c"
-        var $40=$39+$34*4; //@line 65 "spwdmodule.c"
-        HEAP[$40]=__Py_NoneStruct; //@line 65 "spwdmodule.c"
-        var $41=HEAP[__Py_NoneStruct]; //@line 66 "spwdmodule.c"
-        var $42=($41) + 1; //@line 66 "spwdmodule.c"
-        HEAP[__Py_NoneStruct]=$42; //@line 66 "spwdmodule.c"
-        __label__ = 8; break; //@line 66 "spwdmodule.c"
-      case 8: // $sets_exit6
-        var $43=$v; //@line 82 "spwdmodule.c"
-        var $44=$43; //@line 82 "spwdmodule.c"
-        var $45=$setIndex; //@line 82 "spwdmodule.c"
-        var $46=$p_addr; //@line 82 "spwdmodule.c"
-        var $47=$46+8; //@line 82 "spwdmodule.c"
-        var $48=HEAP[$47]; //@line 82 "spwdmodule.c"
-        var $49=_PyInt_FromLong($48); //@line 82 "spwdmodule.c"
-        var $50=$44+12; //@line 82 "spwdmodule.c"
-        var $51=$50+$45*4; //@line 82 "spwdmodule.c"
-        HEAP[$51]=$49; //@line 82 "spwdmodule.c"
-        var $52=$setIndex; //@line 82 "spwdmodule.c"
-        var $53=($52) + 1; //@line 82 "spwdmodule.c"
-        $setIndex=$53; //@line 82 "spwdmodule.c"
-        var $54=$v; //@line 83 "spwdmodule.c"
-        var $55=$54; //@line 83 "spwdmodule.c"
-        var $56=$setIndex; //@line 83 "spwdmodule.c"
-        var $57=$p_addr; //@line 83 "spwdmodule.c"
-        var $58=$57+12; //@line 83 "spwdmodule.c"
-        var $59=HEAP[$58]; //@line 83 "spwdmodule.c"
-        var $60=_PyInt_FromLong($59); //@line 83 "spwdmodule.c"
-        var $61=$55+12; //@line 83 "spwdmodule.c"
-        var $62=$61+$56*4; //@line 83 "spwdmodule.c"
-        HEAP[$62]=$60; //@line 83 "spwdmodule.c"
-        var $63=$setIndex; //@line 83 "spwdmodule.c"
-        var $64=($63) + 1; //@line 83 "spwdmodule.c"
-        $setIndex=$64; //@line 83 "spwdmodule.c"
-        var $65=$v; //@line 84 "spwdmodule.c"
-        var $66=$65; //@line 84 "spwdmodule.c"
-        var $67=$setIndex; //@line 84 "spwdmodule.c"
-        var $68=$p_addr; //@line 84 "spwdmodule.c"
-        var $69=$68+16; //@line 84 "spwdmodule.c"
-        var $70=HEAP[$69]; //@line 84 "spwdmodule.c"
-        var $71=_PyInt_FromLong($70); //@line 84 "spwdmodule.c"
-        var $72=$66+12; //@line 84 "spwdmodule.c"
-        var $73=$72+$67*4; //@line 84 "spwdmodule.c"
-        HEAP[$73]=$71; //@line 84 "spwdmodule.c"
-        var $74=$setIndex; //@line 84 "spwdmodule.c"
-        var $75=($74) + 1; //@line 84 "spwdmodule.c"
-        $setIndex=$75; //@line 84 "spwdmodule.c"
-        var $76=$v; //@line 85 "spwdmodule.c"
-        var $77=$76; //@line 85 "spwdmodule.c"
-        var $78=$setIndex; //@line 85 "spwdmodule.c"
-        var $79=$p_addr; //@line 85 "spwdmodule.c"
-        var $80=$79+20; //@line 85 "spwdmodule.c"
-        var $81=HEAP[$80]; //@line 85 "spwdmodule.c"
-        var $82=_PyInt_FromLong($81); //@line 85 "spwdmodule.c"
-        var $83=$77+12; //@line 85 "spwdmodule.c"
-        var $84=$83+$78*4; //@line 85 "spwdmodule.c"
-        HEAP[$84]=$82; //@line 85 "spwdmodule.c"
-        var $85=$setIndex; //@line 85 "spwdmodule.c"
-        var $86=($85) + 1; //@line 85 "spwdmodule.c"
-        $setIndex=$86; //@line 85 "spwdmodule.c"
-        var $87=$v; //@line 86 "spwdmodule.c"
-        var $88=$87; //@line 86 "spwdmodule.c"
-        var $89=$setIndex; //@line 86 "spwdmodule.c"
-        var $90=$p_addr; //@line 86 "spwdmodule.c"
-        var $91=$90+24; //@line 86 "spwdmodule.c"
-        var $92=HEAP[$91]; //@line 86 "spwdmodule.c"
-        var $93=_PyInt_FromLong($92); //@line 86 "spwdmodule.c"
-        var $94=$88+12; //@line 86 "spwdmodule.c"
-        var $95=$94+$89*4; //@line 86 "spwdmodule.c"
-        HEAP[$95]=$93; //@line 86 "spwdmodule.c"
-        var $96=$setIndex; //@line 86 "spwdmodule.c"
-        var $97=($96) + 1; //@line 86 "spwdmodule.c"
-        $setIndex=$97; //@line 86 "spwdmodule.c"
-        var $98=$v; //@line 87 "spwdmodule.c"
-        var $99=$98; //@line 87 "spwdmodule.c"
-        var $100=$setIndex; //@line 87 "spwdmodule.c"
-        var $101=$p_addr; //@line 87 "spwdmodule.c"
-        var $102=$101+28; //@line 87 "spwdmodule.c"
-        var $103=HEAP[$102]; //@line 87 "spwdmodule.c"
-        var $104=_PyInt_FromLong($103); //@line 87 "spwdmodule.c"
-        var $105=$99+12; //@line 87 "spwdmodule.c"
-        var $106=$105+$100*4; //@line 87 "spwdmodule.c"
-        HEAP[$106]=$104; //@line 87 "spwdmodule.c"
-        var $107=$setIndex; //@line 87 "spwdmodule.c"
-        var $108=($107) + 1; //@line 87 "spwdmodule.c"
-        $setIndex=$108; //@line 87 "spwdmodule.c"
-        var $109=$v; //@line 88 "spwdmodule.c"
-        var $110=$109; //@line 88 "spwdmodule.c"
-        var $111=$setIndex; //@line 88 "spwdmodule.c"
-        var $112=$p_addr; //@line 88 "spwdmodule.c"
-        var $113=$112+32; //@line 88 "spwdmodule.c"
-        var $114=HEAP[$113]; //@line 88 "spwdmodule.c"
-        var $115=_PyInt_FromLong($114); //@line 88 "spwdmodule.c"
-        var $116=$110+12; //@line 88 "spwdmodule.c"
-        var $117=$116+$111*4; //@line 88 "spwdmodule.c"
-        HEAP[$117]=$115; //@line 88 "spwdmodule.c"
-        var $118=$setIndex; //@line 88 "spwdmodule.c"
-        var $119=($118) + 1; //@line 88 "spwdmodule.c"
-        $setIndex=$119; //@line 88 "spwdmodule.c"
-        var $120=_PyErr_Occurred(); //@line 93 "spwdmodule.c"
-        var $121=($120)!=0; //@line 93 "spwdmodule.c"
-        var $122=$v; //@line 94 "spwdmodule.c"
-        if ($121) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 93 "spwdmodule.c"
-      case 9: // $bb2
-        var $123=$122; //@line 94 "spwdmodule.c"
-        var $124=HEAP[$123]; //@line 94 "spwdmodule.c"
-        var $125=($124) - 1; //@line 94 "spwdmodule.c"
-        var $126=$v; //@line 94 "spwdmodule.c"
-        var $127=$126; //@line 94 "spwdmodule.c"
-        HEAP[$127]=$125; //@line 94 "spwdmodule.c"
-        var $128=$v; //@line 94 "spwdmodule.c"
-        var $129=$128; //@line 94 "spwdmodule.c"
-        var $130=HEAP[$129]; //@line 94 "spwdmodule.c"
-        var $131=($130)==0; //@line 94 "spwdmodule.c"
-        if ($131) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 94 "spwdmodule.c"
-      case 10: // $bb3
-        var $132=$v; //@line 94 "spwdmodule.c"
-        var $133=$132+4; //@line 94 "spwdmodule.c"
-        var $134=HEAP[$133]; //@line 94 "spwdmodule.c"
-        var $135=$134+24; //@line 94 "spwdmodule.c"
-        var $136=HEAP[$135]; //@line 94 "spwdmodule.c"
-        var $137=$v; //@line 94 "spwdmodule.c"
-        FUNCTION_TABLE[$136]($137); //@line 94 "spwdmodule.c"
-        __label__ = 11; break; //@line 94 "spwdmodule.c"
-      case 11: // $bb4
+        _sets($10, $7, $6); //@line 80 "spwdmodule.c"
+        var $11=$p_addr; //@line 81 "spwdmodule.c"
+        var $12=$11+4; //@line 81 "spwdmodule.c"
+        var $13=HEAP[$12]; //@line 81 "spwdmodule.c"
+        var $14=$setIndex; //@line 81 "spwdmodule.c"
+        var $15=$setIndex; //@line 81 "spwdmodule.c"
+        var $16=($15) + 1; //@line 81 "spwdmodule.c"
+        $setIndex=$16; //@line 81 "spwdmodule.c"
+        var $17=$v; //@line 81 "spwdmodule.c"
+        _sets($17, $14, $13); //@line 81 "spwdmodule.c"
+        var $18=$v; //@line 82 "spwdmodule.c"
+        var $19=$18; //@line 82 "spwdmodule.c"
+        var $20=$setIndex; //@line 82 "spwdmodule.c"
+        var $21=$p_addr; //@line 82 "spwdmodule.c"
+        var $22=$21+8; //@line 82 "spwdmodule.c"
+        var $23=HEAP[$22]; //@line 82 "spwdmodule.c"
+        var $24=_PyInt_FromLong($23); //@line 82 "spwdmodule.c"
+        var $25=$19+12; //@line 82 "spwdmodule.c"
+        var $26=$25+$20*4; //@line 82 "spwdmodule.c"
+        HEAP[$26]=$24; //@line 82 "spwdmodule.c"
+        var $27=$setIndex; //@line 82 "spwdmodule.c"
+        var $28=($27) + 1; //@line 82 "spwdmodule.c"
+        $setIndex=$28; //@line 82 "spwdmodule.c"
+        var $29=$v; //@line 83 "spwdmodule.c"
+        var $30=$29; //@line 83 "spwdmodule.c"
+        var $31=$setIndex; //@line 83 "spwdmodule.c"
+        var $32=$p_addr; //@line 83 "spwdmodule.c"
+        var $33=$32+12; //@line 83 "spwdmodule.c"
+        var $34=HEAP[$33]; //@line 83 "spwdmodule.c"
+        var $35=_PyInt_FromLong($34); //@line 83 "spwdmodule.c"
+        var $36=$30+12; //@line 83 "spwdmodule.c"
+        var $37=$36+$31*4; //@line 83 "spwdmodule.c"
+        HEAP[$37]=$35; //@line 83 "spwdmodule.c"
+        var $38=$setIndex; //@line 83 "spwdmodule.c"
+        var $39=($38) + 1; //@line 83 "spwdmodule.c"
+        $setIndex=$39; //@line 83 "spwdmodule.c"
+        var $40=$v; //@line 84 "spwdmodule.c"
+        var $41=$40; //@line 84 "spwdmodule.c"
+        var $42=$setIndex; //@line 84 "spwdmodule.c"
+        var $43=$p_addr; //@line 84 "spwdmodule.c"
+        var $44=$43+16; //@line 84 "spwdmodule.c"
+        var $45=HEAP[$44]; //@line 84 "spwdmodule.c"
+        var $46=_PyInt_FromLong($45); //@line 84 "spwdmodule.c"
+        var $47=$41+12; //@line 84 "spwdmodule.c"
+        var $48=$47+$42*4; //@line 84 "spwdmodule.c"
+        HEAP[$48]=$46; //@line 84 "spwdmodule.c"
+        var $49=$setIndex; //@line 84 "spwdmodule.c"
+        var $50=($49) + 1; //@line 84 "spwdmodule.c"
+        $setIndex=$50; //@line 84 "spwdmodule.c"
+        var $51=$v; //@line 85 "spwdmodule.c"
+        var $52=$51; //@line 85 "spwdmodule.c"
+        var $53=$setIndex; //@line 85 "spwdmodule.c"
+        var $54=$p_addr; //@line 85 "spwdmodule.c"
+        var $55=$54+20; //@line 85 "spwdmodule.c"
+        var $56=HEAP[$55]; //@line 85 "spwdmodule.c"
+        var $57=_PyInt_FromLong($56); //@line 85 "spwdmodule.c"
+        var $58=$52+12; //@line 85 "spwdmodule.c"
+        var $59=$58+$53*4; //@line 85 "spwdmodule.c"
+        HEAP[$59]=$57; //@line 85 "spwdmodule.c"
+        var $60=$setIndex; //@line 85 "spwdmodule.c"
+        var $61=($60) + 1; //@line 85 "spwdmodule.c"
+        $setIndex=$61; //@line 85 "spwdmodule.c"
+        var $62=$v; //@line 86 "spwdmodule.c"
+        var $63=$62; //@line 86 "spwdmodule.c"
+        var $64=$setIndex; //@line 86 "spwdmodule.c"
+        var $65=$p_addr; //@line 86 "spwdmodule.c"
+        var $66=$65+24; //@line 86 "spwdmodule.c"
+        var $67=HEAP[$66]; //@line 86 "spwdmodule.c"
+        var $68=_PyInt_FromLong($67); //@line 86 "spwdmodule.c"
+        var $69=$63+12; //@line 86 "spwdmodule.c"
+        var $70=$69+$64*4; //@line 86 "spwdmodule.c"
+        HEAP[$70]=$68; //@line 86 "spwdmodule.c"
+        var $71=$setIndex; //@line 86 "spwdmodule.c"
+        var $72=($71) + 1; //@line 86 "spwdmodule.c"
+        $setIndex=$72; //@line 86 "spwdmodule.c"
+        var $73=$v; //@line 87 "spwdmodule.c"
+        var $74=$73; //@line 87 "spwdmodule.c"
+        var $75=$setIndex; //@line 87 "spwdmodule.c"
+        var $76=$p_addr; //@line 87 "spwdmodule.c"
+        var $77=$76+28; //@line 87 "spwdmodule.c"
+        var $78=HEAP[$77]; //@line 87 "spwdmodule.c"
+        var $79=_PyInt_FromLong($78); //@line 87 "spwdmodule.c"
+        var $80=$74+12; //@line 87 "spwdmodule.c"
+        var $81=$80+$75*4; //@line 87 "spwdmodule.c"
+        HEAP[$81]=$79; //@line 87 "spwdmodule.c"
+        var $82=$setIndex; //@line 87 "spwdmodule.c"
+        var $83=($82) + 1; //@line 87 "spwdmodule.c"
+        $setIndex=$83; //@line 87 "spwdmodule.c"
+        var $84=$v; //@line 88 "spwdmodule.c"
+        var $85=$84; //@line 88 "spwdmodule.c"
+        var $86=$setIndex; //@line 88 "spwdmodule.c"
+        var $87=$p_addr; //@line 88 "spwdmodule.c"
+        var $88=$87+32; //@line 88 "spwdmodule.c"
+        var $89=HEAP[$88]; //@line 88 "spwdmodule.c"
+        var $90=_PyInt_FromLong($89); //@line 88 "spwdmodule.c"
+        var $91=$85+12; //@line 88 "spwdmodule.c"
+        var $92=$91+$86*4; //@line 88 "spwdmodule.c"
+        HEAP[$92]=$90; //@line 88 "spwdmodule.c"
+        var $93=$setIndex; //@line 88 "spwdmodule.c"
+        var $94=($93) + 1; //@line 88 "spwdmodule.c"
+        $setIndex=$94; //@line 88 "spwdmodule.c"
+        var $95=_PyErr_Occurred(); //@line 93 "spwdmodule.c"
+        var $96=($95)!=0; //@line 93 "spwdmodule.c"
+        var $97=$v; //@line 94 "spwdmodule.c"
+        if ($96) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 93 "spwdmodule.c"
+      case 3: // $bb2
+        var $98=$97; //@line 94 "spwdmodule.c"
+        var $99=HEAP[$98]; //@line 94 "spwdmodule.c"
+        var $100=($99) - 1; //@line 94 "spwdmodule.c"
+        var $101=$v; //@line 94 "spwdmodule.c"
+        var $102=$101; //@line 94 "spwdmodule.c"
+        HEAP[$102]=$100; //@line 94 "spwdmodule.c"
+        var $103=$v; //@line 94 "spwdmodule.c"
+        var $104=$103; //@line 94 "spwdmodule.c"
+        var $105=HEAP[$104]; //@line 94 "spwdmodule.c"
+        var $106=($105)==0; //@line 94 "spwdmodule.c"
+        if ($106) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 94 "spwdmodule.c"
+      case 4: // $bb3
+        var $107=$v; //@line 94 "spwdmodule.c"
+        var $108=$107+4; //@line 94 "spwdmodule.c"
+        var $109=HEAP[$108]; //@line 94 "spwdmodule.c"
+        var $110=$109+24; //@line 94 "spwdmodule.c"
+        var $111=HEAP[$110]; //@line 94 "spwdmodule.c"
+        var $112=$v; //@line 94 "spwdmodule.c"
+        FUNCTION_TABLE[$111]($112); //@line 94 "spwdmodule.c"
+        __label__ = 5; break; //@line 94 "spwdmodule.c"
+      case 5: // $bb4
         $0=0; //@line 95 "spwdmodule.c"
-        __label__ = 13; break; //@line 95 "spwdmodule.c"
-      case 12: // $bb5
-        $0=$122; //@line 98 "spwdmodule.c"
-        __label__ = 13; break; //@line 98 "spwdmodule.c"
-      case 13: // $bb6
-        var $138=$0; //@line 75 "spwdmodule.c"
-        $retval=$138; //@line 75 "spwdmodule.c"
+        __label__ = 7; break; //@line 95 "spwdmodule.c"
+      case 6: // $bb5
+        $0=$97; //@line 98 "spwdmodule.c"
+        __label__ = 7; break; //@line 98 "spwdmodule.c"
+      case 7: // $bb6
+        var $113=$0; //@line 75 "spwdmodule.c"
+        $retval=$113; //@line 75 "spwdmodule.c"
         var $retval7=$retval; //@line 75 "spwdmodule.c"
         ;
         return $retval7; //@line 75 "spwdmodule.c"
@@ -357,7 +345,7 @@ var __str24;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 116 "spwdmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str19, $name); //@line 116 "spwdmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str19, allocate([$name,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 116 "spwdmodule.c"
         var $3=($2)==0; //@line 116 "spwdmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 116 "spwdmodule.c"
       case 1: // $bb

@@ -129,9 +129,9 @@ var __str8;
 var __str9;
 var __str10;
 var __str11;
-var _PyExc_OverflowError;
+
 var __str12;
-var _PyExc_ValueError;
+
 var __str13;
 var __str14;
 var __str15;
@@ -152,11 +152,11 @@ var ___PRETTY_FUNCTION___8752;
 var __str27;
 var __str28;
 var __str29;
-var __Py_NoneStruct;
+
 var __str30;
 var ___PRETTY_FUNCTION___8976;
 var __str31;
-var _PyExc_TypeError;
+
 var __str32;
 var __str33;
 var ___PRETTY_FUNCTION___9023;
@@ -240,8 +240,8 @@ var __str100;
 var __str101;
 var __str102;
 var ___PRETTY_FUNCTION___9835;
-var __Py_TrueStruct;
-var __Py_ZeroStruct;
+
+
 var __str103;
 var _us_per_us;
 var _us_per_ms;
@@ -256,13 +256,13 @@ var ___PRETTY_FUNCTION___9958;
 var __str105;
 var __str106;
 var __str107;
-var __Py_NotImplementedStruct;
+
 var __str108;
 var ___PRETTY_FUNCTION___10169;
 var __str109;
 var __str110;
 var ___PRETTY_FUNCTION___10356;
-var _PyFloat_Type;
+
 var __str111;
 var __str112;
 var __str113;
@@ -280,7 +280,7 @@ var __str123;
 var __str124;
 var __str125;
 var __str126;
-var _PyExc_SystemError;
+
 var __str127;
 var __str128;
 var __str129;
@@ -343,7 +343,7 @@ var _date_doc;
 var _date_as_number;
 var __str176;
 var _PyDateTime_DateType;
-var _PyExc_NotImplementedError;
+
 var __str177;
 var __str178;
 var __str179;
@@ -483,7 +483,7 @@ var ___PRETTY_FUNCTION___14028;
 var __str280;
 var __str281;
 var __str282;
-var _PyExc_IOError;
+
 var _time_doc283;
 var _clock_doc;
 var __str1284;
@@ -552,7 +552,7 @@ var __str55338;
 var __str58341;
 var _time_methods342;
 var _module_doc;
-var _Py_IgnoreEnvironmentFlag;
+
 var __str59343;
 var _initialized_b;
 
@@ -730,79 +730,137 @@ var _initialized_b;
   }
   
 
+  function _round_to_long($x) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $x_addr;
+        var $retval;
+        var $0;
+        $x_addr=$x;
+        var $1=$x_addr; //@line 150 "datetimemodule.c"
+        var $2=($1) >= 0; //@line 150 "datetimemodule.c"
+        var $3=$x_addr; //@line 151 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 150 "datetimemodule.c"
+      case 1: // $bb
+        var $4=($3) + 0.5; //@line 151 "datetimemodule.c"
+        var $5=_floor($4); //@line 151 "datetimemodule.c"
+        $x_addr=$5; //@line 151 "datetimemodule.c"
+        __label__ = 3; break; //@line 151 "datetimemodule.c"
+      case 2: // $bb1
+        var $6=($3) - 0.5; //@line 153 "datetimemodule.c"
+        var $7=_ceil($6); //@line 153 "datetimemodule.c"
+        $x_addr=$7; //@line 153 "datetimemodule.c"
+        __label__ = 3; break; //@line 153 "datetimemodule.c"
+      case 3: // $bb2
+        var $8=$x_addr; //@line 154 "datetimemodule.c"
+        var $9=((($8))|0); //@line 154 "datetimemodule.c"
+        $0=$9; //@line 154 "datetimemodule.c"
+        var $10=$0; //@line 154 "datetimemodule.c"
+        $retval=$10; //@line 154 "datetimemodule.c"
+        var $retval3=$retval; //@line 154 "datetimemodule.c"
+        ;
+        return $retval3; //@line 154 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _is_leap($year) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $year_addr;
+        var $retval;
+        var $iftmp_0;
+        var $0;
+        var $ayear;
+        $year_addr=$year;
+        var $1=$year_addr; //@line 184 "datetimemodule.c"
+        $ayear=$1; //@line 184 "datetimemodule.c"
+        var $2=$ayear; //@line 185 "datetimemodule.c"
+        var $3=($2) & 3; //@line 185 "datetimemodule.c"
+        var $4=($3)!=0; //@line 185 "datetimemodule.c"
+        if ($4) { __label__ = 4; break; } else { __label__ = 1; break; } //@line 185 "datetimemodule.c"
+      case 1: // $bb
+        var $5=$ayear; //@line 185 "datetimemodule.c"
+        var $6=($5) % 100; //@line 185 "datetimemodule.c"
+        var $7=($6)!=0; //@line 185 "datetimemodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 185 "datetimemodule.c"
+      case 2: // $bb1
+        var $8=$ayear; //@line 185 "datetimemodule.c"
+        var $9=($8) % 400; //@line 185 "datetimemodule.c"
+        var $10=($9)==0; //@line 185 "datetimemodule.c"
+        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 185 "datetimemodule.c"
+      case 3: // $bb2
+        $iftmp_0=1; //@line 185 "datetimemodule.c"
+        __label__ = 5; break; //@line 185 "datetimemodule.c"
+      case 4: // $bb3
+        $iftmp_0=0; //@line 185 "datetimemodule.c"
+        __label__ = 5; break; //@line 185 "datetimemodule.c"
+      case 5: // $bb4
+        var $11=$iftmp_0; //@line 185 "datetimemodule.c"
+        $0=$11; //@line 185 "datetimemodule.c"
+        var $12=$0; //@line 185 "datetimemodule.c"
+        $retval=$12; //@line 185 "datetimemodule.c"
+        var $retval5=$retval; //@line 185 "datetimemodule.c"
+        ;
+        return $retval5; //@line 185 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _days_in_month($year, $month) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $retval_i;
-        var $iftmp_0_i;
-        var $0;
-        var $ayear_i;
         var $year_addr;
         var $month_addr;
         var $retval;
-        var $1;
+        var $0;
         $year_addr=$year;
         $month_addr=$month;
-        var $2=$month_addr; //@line 192 "datetimemodule.c"
-        var $3=($2) <= 0; //@line 192 "datetimemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 192 "datetimemodule.c"
+        var $1=$month_addr; //@line 192 "datetimemodule.c"
+        var $2=($1) <= 0; //@line 192 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 192 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str3, __str1, 192, ___PRETTY_FUNCTION___8488); //@line 192 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 192 "datetimemodule.c"
       case 2: // $bb1
-        var $4=$month_addr; //@line 193 "datetimemodule.c"
-        var $5=($4) > 12; //@line 193 "datetimemodule.c"
-        if ($5) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 193 "datetimemodule.c"
+        var $3=$month_addr; //@line 193 "datetimemodule.c"
+        var $4=($3) > 12; //@line 193 "datetimemodule.c"
+        if ($4) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 193 "datetimemodule.c"
       case 3: // $bb2
         ___assert_fail(__str4, __str1, 193, ___PRETTY_FUNCTION___8488); //@line 193 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 193 "datetimemodule.c"
       case 4: // $bb3
-        var $6=$month_addr; //@line 194 "datetimemodule.c"
-        var $7=($6)!=2; //@line 194 "datetimemodule.c"
-        if ($7) { __label__ = 10; break; } else { __label__ = 5; break; } //@line 194 "datetimemodule.c"
+        var $5=$month_addr; //@line 194 "datetimemodule.c"
+        var $6=($5)!=2; //@line 194 "datetimemodule.c"
+        if ($6) { __label__ = 7; break; } else { __label__ = 5; break; } //@line 194 "datetimemodule.c"
       case 5: // $bb4
-        var $8=$year_addr; //@line 194 "datetimemodule.c"
-        $year_addr_i=$8;
-        var $9=$year_addr_i; //@line 184 "datetimemodule.c"
-        $ayear_i=$9; //@line 184 "datetimemodule.c"
-        var $10=$ayear_i; //@line 185 "datetimemodule.c"
-        var $11=($10) & 3; //@line 185 "datetimemodule.c"
-        var $12=($11)!=0; //@line 185 "datetimemodule.c"
-        if ($12) { __label__ = 8; break; } else { __label__ = 6; break; } //@line 185 "datetimemodule.c"
-      case 6: // $bb_i
-        var $13=$ayear_i; //@line 185 "datetimemodule.c"
-        var $14=($13) % 100; //@line 185 "datetimemodule.c"
-        var $15=($14)!=0; //@line 185 "datetimemodule.c"
-        if ($15) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 185 "datetimemodule.c"
-      case 7: // $bb1_i
-        var $16=$ayear_i; //@line 185 "datetimemodule.c"
-        var $17=($16) % 400; //@line 185 "datetimemodule.c"
-        var $18=($17)==0; //@line 185 "datetimemodule.c"
-        if ($18) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 185 "datetimemodule.c"
-      case 8: // $is_leap_exit_thread
-        $iftmp_0_i=0; //@line 185 "datetimemodule.c"
-        $0=0; //@line 185 "datetimemodule.c"
-        $retval_i=0; //@line 185 "datetimemodule.c"
-        __label__ = 10; break;
-      case 9: // $bb5
-        $iftmp_0_i=1; //@line 185 "datetimemodule.c"
-        $0=1; //@line 185 "datetimemodule.c"
-        $retval_i=1; //@line 185 "datetimemodule.c"
-        $1=29; //@line 195 "datetimemodule.c"
-        __label__ = 11; break; //@line 195 "datetimemodule.c"
-      case 10: // $bb6
-        var $19=$month_addr; //@line 197 "datetimemodule.c"
-        var $20=__days_in_month+$19*4; //@line 197 "datetimemodule.c"
-        var $21=HEAP[$20]; //@line 197 "datetimemodule.c"
-        $1=$21; //@line 197 "datetimemodule.c"
-        __label__ = 11; break; //@line 197 "datetimemodule.c"
-      case 11: // $bb7
-        var $22=$1; //@line 195 "datetimemodule.c"
-        $retval=$22; //@line 195 "datetimemodule.c"
+        var $7=$year_addr; //@line 194 "datetimemodule.c"
+        var $8=_is_leap($7); //@line 194 "datetimemodule.c"
+        var $9=($8)==0; //@line 194 "datetimemodule.c"
+        if ($9) { __label__ = 7; break; } else { __label__ = 6; break; } //@line 194 "datetimemodule.c"
+      case 6: // $bb5
+        $0=29; //@line 195 "datetimemodule.c"
+        __label__ = 8; break; //@line 195 "datetimemodule.c"
+      case 7: // $bb6
+        var $10=$month_addr; //@line 197 "datetimemodule.c"
+        var $11=__days_in_month+$10*4; //@line 197 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 197 "datetimemodule.c"
+        $0=$12; //@line 197 "datetimemodule.c"
+        __label__ = 8; break; //@line 197 "datetimemodule.c"
+      case 8: // $bb7
+        var $13=$0; //@line 195 "datetimemodule.c"
+        $retval=$13; //@line 195 "datetimemodule.c"
         var $retval8=$retval; //@line 195 "datetimemodule.c"
         ;
         return $retval8; //@line 195 "datetimemodule.c"
@@ -817,76 +875,49 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $retval_i;
-        var $iftmp_0_i;
-        var $0;
-        var $ayear_i;
         var $year_addr;
         var $month_addr;
         var $retval;
-        var $1;
+        var $0;
         var $days;
         $year_addr=$year;
         $month_addr=$month;
-        var $2=$month_addr; //@line 206 "datetimemodule.c"
-        var $3=($2) <= 0; //@line 206 "datetimemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 206 "datetimemodule.c"
+        var $1=$month_addr; //@line 206 "datetimemodule.c"
+        var $2=($1) <= 0; //@line 206 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 206 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str3, __str1, 206, ___PRETTY_FUNCTION___8505); //@line 206 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 206 "datetimemodule.c"
       case 2: // $bb1
-        var $4=$month_addr; //@line 207 "datetimemodule.c"
-        var $5=($4) > 12; //@line 207 "datetimemodule.c"
-        if ($5) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 207 "datetimemodule.c"
+        var $3=$month_addr; //@line 207 "datetimemodule.c"
+        var $4=($3) > 12; //@line 207 "datetimemodule.c"
+        if ($4) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 207 "datetimemodule.c"
       case 3: // $bb2
         ___assert_fail(__str4, __str1, 207, ___PRETTY_FUNCTION___8505); //@line 207 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 207 "datetimemodule.c"
       case 4: // $bb3
-        var $6=$month_addr; //@line 208 "datetimemodule.c"
-        var $7=__days_before_month+$6*4; //@line 208 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 208 "datetimemodule.c"
-        $days=$8; //@line 208 "datetimemodule.c"
-        var $9=$month_addr; //@line 209 "datetimemodule.c"
-        var $10=($9) > 2; //@line 209 "datetimemodule.c"
-        if ($10) { __label__ = 5; break; } else { __label__ = 10; break; } //@line 209 "datetimemodule.c"
+        var $5=$month_addr; //@line 208 "datetimemodule.c"
+        var $6=__days_before_month+$5*4; //@line 208 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 208 "datetimemodule.c"
+        $days=$7; //@line 208 "datetimemodule.c"
+        var $8=$month_addr; //@line 209 "datetimemodule.c"
+        var $9=($8) > 2; //@line 209 "datetimemodule.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 209 "datetimemodule.c"
       case 5: // $bb4
-        var $11=$year_addr; //@line 209 "datetimemodule.c"
-        $year_addr_i=$11;
-        var $12=$year_addr_i; //@line 184 "datetimemodule.c"
-        $ayear_i=$12; //@line 184 "datetimemodule.c"
-        var $13=$ayear_i; //@line 185 "datetimemodule.c"
-        var $14=($13) & 3; //@line 185 "datetimemodule.c"
-        var $15=($14)!=0; //@line 185 "datetimemodule.c"
-        if ($15) { __label__ = 8; break; } else { __label__ = 6; break; } //@line 185 "datetimemodule.c"
-      case 6: // $bb_i
-        var $16=$ayear_i; //@line 185 "datetimemodule.c"
-        var $17=($16) % 100; //@line 185 "datetimemodule.c"
-        var $18=($17)!=0; //@line 185 "datetimemodule.c"
-        if ($18) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 185 "datetimemodule.c"
-      case 7: // $bb1_i
-        var $19=$ayear_i; //@line 185 "datetimemodule.c"
-        var $20=($19) % 400; //@line 185 "datetimemodule.c"
-        var $21=($20)==0; //@line 185 "datetimemodule.c"
-        if ($21) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 185 "datetimemodule.c"
-      case 8: // $is_leap_exit
-        $iftmp_0_i=0; //@line 185 "datetimemodule.c"
-        $0=0; //@line 185 "datetimemodule.c"
-        $retval_i=0; //@line 185 "datetimemodule.c"
-        __label__ = 10; break;
-      case 9: // $bb5
-        $iftmp_0_i=1; //@line 185 "datetimemodule.c"
-        $0=1; //@line 185 "datetimemodule.c"
-        $retval_i=1; //@line 185 "datetimemodule.c"
-        var $22=$days; //@line 210 "datetimemodule.c"
-        var $23=($22) + 1; //@line 210 "datetimemodule.c"
-        $days=$23; //@line 210 "datetimemodule.c"
-        __label__ = 10; break; //@line 210 "datetimemodule.c"
-      case 10: // $bb6
-        var $24=$days; //@line 211 "datetimemodule.c"
-        $1=$24; //@line 211 "datetimemodule.c"
-        var $25=$1; //@line 211 "datetimemodule.c"
-        $retval=$25; //@line 211 "datetimemodule.c"
+        var $10=$year_addr; //@line 209 "datetimemodule.c"
+        var $11=_is_leap($10); //@line 209 "datetimemodule.c"
+        var $12=($11)!=0; //@line 209 "datetimemodule.c"
+        if ($12) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 209 "datetimemodule.c"
+      case 6: // $bb5
+        var $13=$days; //@line 210 "datetimemodule.c"
+        var $14=($13) + 1; //@line 210 "datetimemodule.c"
+        $days=$14; //@line 210 "datetimemodule.c"
+        __label__ = 7; break; //@line 210 "datetimemodule.c"
+      case 7: // $bb6
+        var $15=$days; //@line 211 "datetimemodule.c"
+        $0=$15; //@line 211 "datetimemodule.c"
+        var $16=$0; //@line 211 "datetimemodule.c"
+        $retval=$16; //@line 211 "datetimemodule.c"
         var $retval7=$retval; //@line 211 "datetimemodule.c"
         ;
         return $retval7; //@line 211 "datetimemodule.c"
@@ -960,11 +991,6 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $retval_i;
-        var $iftmp_0_i;
-        var $0;
-        var $ayear_i;
         var $ordinal_addr;
         var $year_addr;
         var $month_addr;
@@ -982,94 +1008,94 @@ var _initialized_b;
         $year_addr=$year;
         $month_addr=$month;
         $day_addr=$day;
-        var $1=$ordinal_addr; //@line 270 "datetimemodule.c"
-        var $2=($1) <= 0; //@line 270 "datetimemodule.c"
-        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 270 "datetimemodule.c"
+        var $0=$ordinal_addr; //@line 270 "datetimemodule.c"
+        var $1=($0) <= 0; //@line 270 "datetimemodule.c"
+        if ($1) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 270 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str7, __str1, 270, ___PRETTY_FUNCTION___8550); //@line 270 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 270 "datetimemodule.c"
       case 2: // $bb1
-        var $3=$ordinal_addr; //@line 271 "datetimemodule.c"
-        var $4=($3) - 1; //@line 271 "datetimemodule.c"
-        $ordinal_addr=$4; //@line 271 "datetimemodule.c"
-        var $5=$ordinal_addr; //@line 272 "datetimemodule.c"
-        var $6=((($5)/146097)|0); //@line 272 "datetimemodule.c"
-        $n400=$6; //@line 272 "datetimemodule.c"
-        var $7=$ordinal_addr; //@line 273 "datetimemodule.c"
-        var $8=($7) % 146097; //@line 273 "datetimemodule.c"
-        $n=$8; //@line 273 "datetimemodule.c"
-        var $9=$n400; //@line 274 "datetimemodule.c"
-        var $10=($9) * 400; //@line 274 "datetimemodule.c"
-        var $11=($10) + 1; //@line 274 "datetimemodule.c"
-        var $12=$year_addr; //@line 274 "datetimemodule.c"
-        HEAP[$12]=$11; //@line 274 "datetimemodule.c"
-        var $13=$n; //@line 283 "datetimemodule.c"
-        var $14=((($13)/36524)|0); //@line 283 "datetimemodule.c"
-        $n100=$14; //@line 283 "datetimemodule.c"
-        var $15=$n; //@line 284 "datetimemodule.c"
-        var $16=($15) % 36524; //@line 284 "datetimemodule.c"
-        $n=$16; //@line 284 "datetimemodule.c"
-        var $17=$n; //@line 287 "datetimemodule.c"
-        var $18=((($17)/1461)|0); //@line 287 "datetimemodule.c"
-        $n4=$18; //@line 287 "datetimemodule.c"
-        var $19=$n; //@line 288 "datetimemodule.c"
-        var $20=($19) % 1461; //@line 288 "datetimemodule.c"
-        $n=$20; //@line 288 "datetimemodule.c"
-        var $21=$n; //@line 294 "datetimemodule.c"
-        var $22=((($21)/365)|0); //@line 294 "datetimemodule.c"
-        $n1=$22; //@line 294 "datetimemodule.c"
-        var $23=$n; //@line 295 "datetimemodule.c"
-        var $24=($23) % 365; //@line 295 "datetimemodule.c"
-        $n=$24; //@line 295 "datetimemodule.c"
-        var $25=$year_addr; //@line 297 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 297 "datetimemodule.c"
-        var $27=$n100; //@line 297 "datetimemodule.c"
-        var $28=($27) * 25; //@line 297 "datetimemodule.c"
-        var $29=$n4; //@line 297 "datetimemodule.c"
-        var $30=($28) + ($29); //@line 297 "datetimemodule.c"
-        var $31=($30) * 4; //@line 297 "datetimemodule.c"
-        var $32=$n1; //@line 297 "datetimemodule.c"
-        var $33=($32) + ($26); //@line 297 "datetimemodule.c"
-        var $34=($33) + ($31); //@line 297 "datetimemodule.c"
-        var $35=$year_addr; //@line 297 "datetimemodule.c"
-        HEAP[$35]=$34; //@line 297 "datetimemodule.c"
-        var $36=$n1; //@line 298 "datetimemodule.c"
-        var $37=($36)==4; //@line 298 "datetimemodule.c"
-        if ($37) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 298 "datetimemodule.c"
+        var $2=$ordinal_addr; //@line 271 "datetimemodule.c"
+        var $3=($2) - 1; //@line 271 "datetimemodule.c"
+        $ordinal_addr=$3; //@line 271 "datetimemodule.c"
+        var $4=$ordinal_addr; //@line 272 "datetimemodule.c"
+        var $5=((($4)/146097)|0); //@line 272 "datetimemodule.c"
+        $n400=$5; //@line 272 "datetimemodule.c"
+        var $6=$ordinal_addr; //@line 273 "datetimemodule.c"
+        var $7=($6) % 146097; //@line 273 "datetimemodule.c"
+        $n=$7; //@line 273 "datetimemodule.c"
+        var $8=$n400; //@line 274 "datetimemodule.c"
+        var $9=($8) * 400; //@line 274 "datetimemodule.c"
+        var $10=($9) + 1; //@line 274 "datetimemodule.c"
+        var $11=$year_addr; //@line 274 "datetimemodule.c"
+        HEAP[$11]=$10; //@line 274 "datetimemodule.c"
+        var $12=$n; //@line 283 "datetimemodule.c"
+        var $13=((($12)/36524)|0); //@line 283 "datetimemodule.c"
+        $n100=$13; //@line 283 "datetimemodule.c"
+        var $14=$n; //@line 284 "datetimemodule.c"
+        var $15=($14) % 36524; //@line 284 "datetimemodule.c"
+        $n=$15; //@line 284 "datetimemodule.c"
+        var $16=$n; //@line 287 "datetimemodule.c"
+        var $17=((($16)/1461)|0); //@line 287 "datetimemodule.c"
+        $n4=$17; //@line 287 "datetimemodule.c"
+        var $18=$n; //@line 288 "datetimemodule.c"
+        var $19=($18) % 1461; //@line 288 "datetimemodule.c"
+        $n=$19; //@line 288 "datetimemodule.c"
+        var $20=$n; //@line 294 "datetimemodule.c"
+        var $21=((($20)/365)|0); //@line 294 "datetimemodule.c"
+        $n1=$21; //@line 294 "datetimemodule.c"
+        var $22=$n; //@line 295 "datetimemodule.c"
+        var $23=($22) % 365; //@line 295 "datetimemodule.c"
+        $n=$23; //@line 295 "datetimemodule.c"
+        var $24=$year_addr; //@line 297 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 297 "datetimemodule.c"
+        var $26=$n100; //@line 297 "datetimemodule.c"
+        var $27=($26) * 25; //@line 297 "datetimemodule.c"
+        var $28=$n4; //@line 297 "datetimemodule.c"
+        var $29=($27) + ($28); //@line 297 "datetimemodule.c"
+        var $30=($29) * 4; //@line 297 "datetimemodule.c"
+        var $31=$n1; //@line 297 "datetimemodule.c"
+        var $32=($31) + ($25); //@line 297 "datetimemodule.c"
+        var $33=($32) + ($30); //@line 297 "datetimemodule.c"
+        var $34=$year_addr; //@line 297 "datetimemodule.c"
+        HEAP[$34]=$33; //@line 297 "datetimemodule.c"
+        var $35=$n1; //@line 298 "datetimemodule.c"
+        var $36=($35)==4; //@line 298 "datetimemodule.c"
+        if ($36) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 298 "datetimemodule.c"
       case 3: // $bb2
-        var $38=$n100; //@line 298 "datetimemodule.c"
-        var $39=($38)==4; //@line 298 "datetimemodule.c"
-        if ($39) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 298 "datetimemodule.c"
+        var $37=$n100; //@line 298 "datetimemodule.c"
+        var $38=($37)==4; //@line 298 "datetimemodule.c"
+        if ($38) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 298 "datetimemodule.c"
       case 4: // $bb3
-        var $40=$n; //@line 299 "datetimemodule.c"
-        var $41=($40)!=0; //@line 299 "datetimemodule.c"
-        if ($41) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 299 "datetimemodule.c"
+        var $39=$n; //@line 299 "datetimemodule.c"
+        var $40=($39)!=0; //@line 299 "datetimemodule.c"
+        if ($40) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 299 "datetimemodule.c"
       case 5: // $bb4
         ___assert_fail(__str8, __str1, 299, ___PRETTY_FUNCTION___8550); //@line 299 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 299 "datetimemodule.c"
       case 6: // $bb5
-        var $42=$year_addr; //@line 300 "datetimemodule.c"
-        var $43=HEAP[$42]; //@line 300 "datetimemodule.c"
-        var $44=($43) - 1; //@line 300 "datetimemodule.c"
-        var $45=$year_addr; //@line 300 "datetimemodule.c"
-        HEAP[$45]=$44; //@line 300 "datetimemodule.c"
-        var $46=$month_addr; //@line 301 "datetimemodule.c"
-        HEAP[$46]=12; //@line 301 "datetimemodule.c"
-        var $47=$day_addr; //@line 302 "datetimemodule.c"
-        HEAP[$47]=31; //@line 302 "datetimemodule.c"
-        __label__ = 30; break; //@line 302 "datetimemodule.c"
+        var $41=$year_addr; //@line 300 "datetimemodule.c"
+        var $42=HEAP[$41]; //@line 300 "datetimemodule.c"
+        var $43=($42) - 1; //@line 300 "datetimemodule.c"
+        var $44=$year_addr; //@line 300 "datetimemodule.c"
+        HEAP[$44]=$43; //@line 300 "datetimemodule.c"
+        var $45=$month_addr; //@line 301 "datetimemodule.c"
+        HEAP[$45]=12; //@line 301 "datetimemodule.c"
+        var $46=$day_addr; //@line 302 "datetimemodule.c"
+        HEAP[$46]=31; //@line 302 "datetimemodule.c"
+        __label__ = 25; break; //@line 302 "datetimemodule.c"
       case 7: // $bb6
-        var $48=$n1; //@line 310 "datetimemodule.c"
-        var $49=($48)!=3; //@line 310 "datetimemodule.c"
-        if ($49) { __label__ = 11; break; } else { __label__ = 8; break; } //@line 310 "datetimemodule.c"
+        var $47=$n1; //@line 310 "datetimemodule.c"
+        var $48=($47)!=3; //@line 310 "datetimemodule.c"
+        if ($48) { __label__ = 11; break; } else { __label__ = 8; break; } //@line 310 "datetimemodule.c"
       case 8: // $bb7
-        var $50=$n4; //@line 310 "datetimemodule.c"
-        var $51=($50)!=24; //@line 310 "datetimemodule.c"
-        if ($51) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 310 "datetimemodule.c"
+        var $49=$n4; //@line 310 "datetimemodule.c"
+        var $50=($49)!=24; //@line 310 "datetimemodule.c"
+        if ($50) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 310 "datetimemodule.c"
       case 9: // $bb8
-        var $52=$n100; //@line 310 "datetimemodule.c"
-        var $53=($52)==3; //@line 310 "datetimemodule.c"
-        if ($53) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 310 "datetimemodule.c"
+        var $51=$n100; //@line 310 "datetimemodule.c"
+        var $52=($51)==3; //@line 310 "datetimemodule.c"
+        if ($52) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 310 "datetimemodule.c"
       case 10: // $bb9
         $iftmp_3=1; //@line 310 "datetimemodule.c"
         __label__ = 12; break; //@line 310 "datetimemodule.c"
@@ -1077,123 +1103,232 @@ var _initialized_b;
         $iftmp_3=0; //@line 310 "datetimemodule.c"
         __label__ = 12; break; //@line 310 "datetimemodule.c"
       case 12: // $bb11
-        var $54=$iftmp_3; //@line 310 "datetimemodule.c"
-        $leapyear=$54; //@line 310 "datetimemodule.c"
-        var $55=$year_addr; //@line 311 "datetimemodule.c"
-        var $56=HEAP[$55]; //@line 311 "datetimemodule.c"
-        $year_addr_i=$56;
-        var $57=$year_addr_i; //@line 184 "datetimemodule.c"
-        $ayear_i=$57; //@line 184 "datetimemodule.c"
-        var $58=$ayear_i; //@line 185 "datetimemodule.c"
-        var $59=($58) & 3; //@line 185 "datetimemodule.c"
-        var $60=($59)!=0; //@line 185 "datetimemodule.c"
-        if ($60) { __label__ = 16; break; } else { __label__ = 13; break; } //@line 185 "datetimemodule.c"
-      case 13: // $bb_i
-        var $61=$ayear_i; //@line 185 "datetimemodule.c"
-        var $62=($61) % 100; //@line 185 "datetimemodule.c"
-        var $63=($62)!=0; //@line 185 "datetimemodule.c"
-        if ($63) { __label__ = 15; break; } else { __label__ = 14; break; } //@line 185 "datetimemodule.c"
-      case 14: // $bb1_i
-        var $64=$ayear_i; //@line 185 "datetimemodule.c"
-        var $65=($64) % 400; //@line 185 "datetimemodule.c"
-        var $66=($65)==0; //@line 185 "datetimemodule.c"
-        if ($66) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 185 "datetimemodule.c"
-      case 15: // $bb2_i
-        $iftmp_0_i=1; //@line 185 "datetimemodule.c"
-        __label__ = 17; break; //@line 185 "datetimemodule.c"
-      case 16: // $bb3_i
-        $iftmp_0_i=0; //@line 185 "datetimemodule.c"
-        __label__ = 17; break; //@line 185 "datetimemodule.c"
-      case 17: // $is_leap_exit
-        var $67=$iftmp_0_i; //@line 185 "datetimemodule.c"
-        $0=$67; //@line 185 "datetimemodule.c"
-        var $68=$0; //@line 185 "datetimemodule.c"
-        $retval_i=$68; //@line 185 "datetimemodule.c"
-        var $retval5_i=$retval_i; //@line 185 "datetimemodule.c"
-        var $69=$leapyear; //@line 311 "datetimemodule.c"
-        var $70=($retval5_i)!=($69); //@line 311 "datetimemodule.c"
-        if ($70) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 311 "datetimemodule.c"
-      case 18: // $bb12
+        var $53=$iftmp_3; //@line 310 "datetimemodule.c"
+        $leapyear=$53; //@line 310 "datetimemodule.c"
+        var $54=$year_addr; //@line 311 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 311 "datetimemodule.c"
+        var $56=_is_leap($55); //@line 311 "datetimemodule.c"
+        var $57=$leapyear; //@line 311 "datetimemodule.c"
+        var $58=($56)!=($57); //@line 311 "datetimemodule.c"
+        if ($58) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 311 "datetimemodule.c"
+      case 13: // $bb12
         ___assert_fail(__str9, __str1, 311, ___PRETTY_FUNCTION___8550); //@line 311 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 311 "datetimemodule.c"
-      case 19: // $bb13
-        var $71=$n; //@line 312 "datetimemodule.c"
-        var $72=($71) + 50; //@line 312 "datetimemodule.c"
-        var $73=($72) >> 5; //@line 312 "datetimemodule.c"
-        var $74=$month_addr; //@line 312 "datetimemodule.c"
-        HEAP[$74]=$73; //@line 312 "datetimemodule.c"
-        var $75=$month_addr; //@line 313 "datetimemodule.c"
-        var $76=HEAP[$75]; //@line 313 "datetimemodule.c"
-        var $77=__days_before_month+$76*4; //@line 313 "datetimemodule.c"
-        var $78=HEAP[$77]; //@line 313 "datetimemodule.c"
-        var $79=$month_addr; //@line 313 "datetimemodule.c"
-        var $80=HEAP[$79]; //@line 313 "datetimemodule.c"
-        var $81=($80) <= 2; //@line 313 "datetimemodule.c"
-        if ($81) { __label__ = 22; break; } else { __label__ = 20; break; } //@line 313 "datetimemodule.c"
-      case 20: // $bb14
-        var $82=$leapyear; //@line 313 "datetimemodule.c"
-        var $83=($82)==0; //@line 313 "datetimemodule.c"
-        if ($83) { __label__ = 22; break; } else { __label__ = 21; break; } //@line 313 "datetimemodule.c"
-      case 21: // $bb15
+      case 14: // $bb13
+        var $59=$n; //@line 312 "datetimemodule.c"
+        var $60=($59) + 50; //@line 312 "datetimemodule.c"
+        var $61=($60) >> 5; //@line 312 "datetimemodule.c"
+        var $62=$month_addr; //@line 312 "datetimemodule.c"
+        HEAP[$62]=$61; //@line 312 "datetimemodule.c"
+        var $63=$month_addr; //@line 313 "datetimemodule.c"
+        var $64=HEAP[$63]; //@line 313 "datetimemodule.c"
+        var $65=__days_before_month+$64*4; //@line 313 "datetimemodule.c"
+        var $66=HEAP[$65]; //@line 313 "datetimemodule.c"
+        var $67=$month_addr; //@line 313 "datetimemodule.c"
+        var $68=HEAP[$67]; //@line 313 "datetimemodule.c"
+        var $69=($68) <= 2; //@line 313 "datetimemodule.c"
+        if ($69) { __label__ = 17; break; } else { __label__ = 15; break; } //@line 313 "datetimemodule.c"
+      case 15: // $bb14
+        var $70=$leapyear; //@line 313 "datetimemodule.c"
+        var $71=($70)==0; //@line 313 "datetimemodule.c"
+        if ($71) { __label__ = 17; break; } else { __label__ = 16; break; } //@line 313 "datetimemodule.c"
+      case 16: // $bb15
         $iftmp_4=1; //@line 313 "datetimemodule.c"
-        __label__ = 23; break; //@line 313 "datetimemodule.c"
-      case 22: // $bb16
+        __label__ = 18; break; //@line 313 "datetimemodule.c"
+      case 17: // $bb16
         $iftmp_4=0; //@line 313 "datetimemodule.c"
-        __label__ = 23; break; //@line 313 "datetimemodule.c"
-      case 23: // $bb17
-        var $84=$iftmp_4; //@line 313 "datetimemodule.c"
-        var $85=($84) + ($78); //@line 313 "datetimemodule.c"
-        $preceding=$85; //@line 313 "datetimemodule.c"
-        var $86=$preceding; //@line 314 "datetimemodule.c"
-        var $87=$n; //@line 314 "datetimemodule.c"
-        var $88=($86) > ($87); //@line 314 "datetimemodule.c"
-        if ($88) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 314 "datetimemodule.c"
-      case 24: // $bb18
-        var $89=$month_addr; //@line 316 "datetimemodule.c"
-        var $90=HEAP[$89]; //@line 316 "datetimemodule.c"
-        var $91=($90) - 1; //@line 316 "datetimemodule.c"
-        var $92=$month_addr; //@line 316 "datetimemodule.c"
-        HEAP[$92]=$91; //@line 316 "datetimemodule.c"
-        var $93=$month_addr; //@line 317 "datetimemodule.c"
-        var $94=HEAP[$93]; //@line 317 "datetimemodule.c"
-        var $95=$year_addr; //@line 317 "datetimemodule.c"
-        var $96=HEAP[$95]; //@line 317 "datetimemodule.c"
-        var $97=_days_in_month($96, $94); //@line 317 "datetimemodule.c"
-        var $98=$preceding; //@line 317 "datetimemodule.c"
-        var $99=($98) - ($97); //@line 317 "datetimemodule.c"
-        $preceding=$99; //@line 317 "datetimemodule.c"
-        __label__ = 25; break; //@line 317 "datetimemodule.c"
-      case 25: // $bb19
-        var $100=$n; //@line 319 "datetimemodule.c"
-        var $101=$preceding; //@line 319 "datetimemodule.c"
-        var $102=($100) - ($101); //@line 319 "datetimemodule.c"
-        $n=$102; //@line 319 "datetimemodule.c"
-        var $103=($102) < 0; //@line 320 "datetimemodule.c"
-        if ($103) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 320 "datetimemodule.c"
-      case 26: // $bb20
+        __label__ = 18; break; //@line 313 "datetimemodule.c"
+      case 18: // $bb17
+        var $72=$iftmp_4; //@line 313 "datetimemodule.c"
+        var $73=($72) + ($66); //@line 313 "datetimemodule.c"
+        $preceding=$73; //@line 313 "datetimemodule.c"
+        var $74=$preceding; //@line 314 "datetimemodule.c"
+        var $75=$n; //@line 314 "datetimemodule.c"
+        var $76=($74) > ($75); //@line 314 "datetimemodule.c"
+        if ($76) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 314 "datetimemodule.c"
+      case 19: // $bb18
+        var $77=$month_addr; //@line 316 "datetimemodule.c"
+        var $78=HEAP[$77]; //@line 316 "datetimemodule.c"
+        var $79=($78) - 1; //@line 316 "datetimemodule.c"
+        var $80=$month_addr; //@line 316 "datetimemodule.c"
+        HEAP[$80]=$79; //@line 316 "datetimemodule.c"
+        var $81=$month_addr; //@line 317 "datetimemodule.c"
+        var $82=HEAP[$81]; //@line 317 "datetimemodule.c"
+        var $83=$year_addr; //@line 317 "datetimemodule.c"
+        var $84=HEAP[$83]; //@line 317 "datetimemodule.c"
+        var $85=_days_in_month($84, $82); //@line 317 "datetimemodule.c"
+        var $86=$preceding; //@line 317 "datetimemodule.c"
+        var $87=($86) - ($85); //@line 317 "datetimemodule.c"
+        $preceding=$87; //@line 317 "datetimemodule.c"
+        __label__ = 20; break; //@line 317 "datetimemodule.c"
+      case 20: // $bb19
+        var $88=$n; //@line 319 "datetimemodule.c"
+        var $89=$preceding; //@line 319 "datetimemodule.c"
+        var $90=($88) - ($89); //@line 319 "datetimemodule.c"
+        $n=$90; //@line 319 "datetimemodule.c"
+        var $91=($90) < 0; //@line 320 "datetimemodule.c"
+        if ($91) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 320 "datetimemodule.c"
+      case 21: // $bb20
         ___assert_fail(__str10, __str1, 320, ___PRETTY_FUNCTION___8550); //@line 320 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 320 "datetimemodule.c"
-      case 27: // $bb21
-        var $104=$month_addr; //@line 321 "datetimemodule.c"
-        var $105=HEAP[$104]; //@line 321 "datetimemodule.c"
-        var $106=$year_addr; //@line 321 "datetimemodule.c"
-        var $107=HEAP[$106]; //@line 321 "datetimemodule.c"
-        var $108=_days_in_month($107, $105); //@line 321 "datetimemodule.c"
-        var $109=$n; //@line 321 "datetimemodule.c"
-        var $110=($108) <= ($109); //@line 321 "datetimemodule.c"
-        if ($110) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 321 "datetimemodule.c"
-      case 28: // $bb22
+      case 22: // $bb21
+        var $92=$month_addr; //@line 321 "datetimemodule.c"
+        var $93=HEAP[$92]; //@line 321 "datetimemodule.c"
+        var $94=$year_addr; //@line 321 "datetimemodule.c"
+        var $95=HEAP[$94]; //@line 321 "datetimemodule.c"
+        var $96=_days_in_month($95, $93); //@line 321 "datetimemodule.c"
+        var $97=$n; //@line 321 "datetimemodule.c"
+        var $98=($96) <= ($97); //@line 321 "datetimemodule.c"
+        if ($98) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 321 "datetimemodule.c"
+      case 23: // $bb22
         ___assert_fail(__str11, __str1, 321, ___PRETTY_FUNCTION___8550); //@line 321 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 321 "datetimemodule.c"
-      case 29: // $bb23
-        var $111=$n; //@line 323 "datetimemodule.c"
-        var $112=($111) + 1; //@line 323 "datetimemodule.c"
-        var $113=$day_addr; //@line 323 "datetimemodule.c"
-        HEAP[$113]=$112; //@line 323 "datetimemodule.c"
-        __label__ = 30; break; //@line 323 "datetimemodule.c"
-      case 30: // $return
+      case 24: // $bb23
+        var $99=$n; //@line 323 "datetimemodule.c"
+        var $100=($99) + 1; //@line 323 "datetimemodule.c"
+        var $101=$day_addr; //@line 323 "datetimemodule.c"
+        HEAP[$101]=$100; //@line 323 "datetimemodule.c"
+        __label__ = 25; break; //@line 323 "datetimemodule.c"
+      case 25: // $return
         ;
         return; //@line 303 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _ymd_to_ord($year, $month, $day) {
+    ;
+    var __label__;
+  
+    var $year_addr;
+    var $month_addr;
+    var $day_addr;
+    var $retval;
+    var $0;
+    $year_addr=$year;
+    $month_addr=$month;
+    $day_addr=$day;
+    var $1=$year_addr; //@line 330 "datetimemodule.c"
+    var $2=_days_before_year($1); //@line 330 "datetimemodule.c"
+    var $3=$year_addr; //@line 330 "datetimemodule.c"
+    var $4=$month_addr; //@line 330 "datetimemodule.c"
+    var $5=_days_before_month($3, $4); //@line 330 "datetimemodule.c"
+    var $6=$day_addr; //@line 330 "datetimemodule.c"
+    var $7=($5) + ($2); //@line 330 "datetimemodule.c"
+    var $8=($7) + ($6); //@line 330 "datetimemodule.c"
+    $0=$8; //@line 330 "datetimemodule.c"
+    var $9=$0; //@line 330 "datetimemodule.c"
+    $retval=$9; //@line 330 "datetimemodule.c"
+    var $retval1=$retval; //@line 330 "datetimemodule.c"
+    ;
+    return $retval1; //@line 330 "datetimemodule.c"
+  }
+  
+
+  function _weekday($year, $month, $day) {
+    ;
+    var __label__;
+  
+    var $year_addr;
+    var $month_addr;
+    var $day_addr;
+    var $retval;
+    var $0;
+    $year_addr=$year;
+    $month_addr=$month;
+    $day_addr=$day;
+    var $1=$year_addr; //@line 337 "datetimemodule.c"
+    var $2=$month_addr; //@line 337 "datetimemodule.c"
+    var $3=$day_addr; //@line 337 "datetimemodule.c"
+    var $4=_ymd_to_ord($1, $2, $3); //@line 337 "datetimemodule.c"
+    var $5=($4) + 6; //@line 337 "datetimemodule.c"
+    var $6=($5) % 7; //@line 337 "datetimemodule.c"
+    $0=$6; //@line 337 "datetimemodule.c"
+    var $7=$0; //@line 337 "datetimemodule.c"
+    $retval=$7; //@line 337 "datetimemodule.c"
+    var $retval1=$retval; //@line 337 "datetimemodule.c"
+    ;
+    return $retval1; //@line 337 "datetimemodule.c"
+  }
+  
+
+  function _iso_week1_monday($year) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $year_addr;
+        var $retval;
+        var $0;
+        var $first_day;
+        var $first_weekday;
+        var $week1_monday;
+        $year_addr=$year;
+        var $1=$year_addr; //@line 346 "datetimemodule.c"
+        var $2=_ymd_to_ord($1, 1, 1); //@line 346 "datetimemodule.c"
+        $first_day=$2; //@line 346 "datetimemodule.c"
+        var $3=$first_day; //@line 348 "datetimemodule.c"
+        var $4=($3) + 6; //@line 348 "datetimemodule.c"
+        var $5=($4) % 7; //@line 348 "datetimemodule.c"
+        $first_weekday=$5; //@line 348 "datetimemodule.c"
+        var $6=$first_day; //@line 350 "datetimemodule.c"
+        var $7=$first_weekday; //@line 350 "datetimemodule.c"
+        var $8=($6) - ($7); //@line 350 "datetimemodule.c"
+        $week1_monday=$8; //@line 350 "datetimemodule.c"
+        var $9=$first_weekday; //@line 352 "datetimemodule.c"
+        var $10=($9) > 3; //@line 352 "datetimemodule.c"
+        if ($10) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 352 "datetimemodule.c"
+      case 1: // $bb
+        var $11=$week1_monday; //@line 353 "datetimemodule.c"
+        var $12=($11) + 7; //@line 353 "datetimemodule.c"
+        $week1_monday=$12; //@line 353 "datetimemodule.c"
+        __label__ = 2; break; //@line 353 "datetimemodule.c"
+      case 2: // $bb1
+        var $13=$week1_monday; //@line 354 "datetimemodule.c"
+        $0=$13; //@line 354 "datetimemodule.c"
+        var $14=$0; //@line 354 "datetimemodule.c"
+        $retval=$14; //@line 354 "datetimemodule.c"
+        var $retval2=$retval; //@line 354 "datetimemodule.c"
+        ;
+        return $retval2; //@line 354 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _check_delta_day_range($days) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $days_addr;
+        var $retval;
+        var $0;
+        $days_addr=$days;
+        var $1=$days_addr; //@line 367 "datetimemodule.c"
+        var $2=($1) >= -999999999; //@line 367 "datetimemodule.c"
+        var $3=$days_addr; //@line 367 "datetimemodule.c"
+        var $4=($3) <= 999999999; //@line 367 "datetimemodule.c"
+        var $or_cond=($2) & ($4);
+        if ($or_cond) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 367 "datetimemodule.c"
+      case 1: // $bb1
+        $0=0; //@line 368 "datetimemodule.c"
+        __label__ = 3; break; //@line 368 "datetimemodule.c"
+      case 2: // $bb2
+        var $5=HEAP[_PyExc_OverflowError]; //@line 369 "datetimemodule.c"
+        var $6=$days_addr; //@line 369 "datetimemodule.c"
+        var $7=_PyErr_Format($5, __str12, allocate([$6,0,0,0,999999999,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 369 "datetimemodule.c"
+        $0=-1; //@line 372 "datetimemodule.c"
+        __label__ = 3; break; //@line 372 "datetimemodule.c"
+      case 3: // $bb3
+        var $8=$0; //@line 368 "datetimemodule.c"
+        $retval=$8; //@line 368 "datetimemodule.c"
+        var $retval4=$retval; //@line 368 "datetimemodule.c"
+        ;
+        return $retval4; //@line 368 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1434,238 +1569,349 @@ var _initialized_b;
   }
   
 
-  function _normalize_date($year, $month, $day) {
+  function _normalize_d_s_us($d, $s, $us) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i_i;
-        var $month_addr_i_i;
-        var $day_addr_i_i;
-        var $retval_i_i;
-        var $0;
-        var $y_addr_i;
-        var $m_addr_i;
-        var $d_addr_i;
-        var $retval_i;
-        var $1;
-        var $dim_i;
-        var $ordinal_i;
-        var $year_addr;
-        var $month_addr;
-        var $day_addr;
-        var $retval;
-        var $2;
-        $year_addr=$year;
-        $month_addr=$month;
-        $day_addr=$day;
-        var $3=$year_addr; //@line 566 "datetimemodule.c"
-        var $4=$month_addr; //@line 566 "datetimemodule.c"
-        var $5=$day_addr; //@line 566 "datetimemodule.c"
-        $y_addr_i=$3;
-        $m_addr_i=$4;
-        $d_addr_i=$5;
-        var $6=$m_addr_i; //@line 497 "datetimemodule.c"
-        var $7=HEAP[$6]; //@line 497 "datetimemodule.c"
-        var $8=($7) <= 0; //@line 497 "datetimemodule.c"
-        if ($8) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 497 "datetimemodule.c"
-      case 1: // $bb_i
-        var $9=$m_addr_i; //@line 497 "datetimemodule.c"
-        var $10=HEAP[$9]; //@line 497 "datetimemodule.c"
-        var $11=($10) > 12; //@line 497 "datetimemodule.c"
-        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 497 "datetimemodule.c"
-      case 2: // $bb1_i
-        var $12=$m_addr_i; //@line 498 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 498 "datetimemodule.c"
-        var $14=($13) - 1; //@line 498 "datetimemodule.c"
-        var $15=$m_addr_i; //@line 498 "datetimemodule.c"
-        HEAP[$15]=$14; //@line 498 "datetimemodule.c"
-        var $16=$y_addr_i; //@line 499 "datetimemodule.c"
-        var $17=$m_addr_i; //@line 499 "datetimemodule.c"
-        _normalize_pair($16, $17, 12); //@line 499 "datetimemodule.c"
-        var $18=$m_addr_i; //@line 500 "datetimemodule.c"
-        var $19=HEAP[$18]; //@line 500 "datetimemodule.c"
-        var $20=($19) + 1; //@line 500 "datetimemodule.c"
-        var $21=$m_addr_i; //@line 500 "datetimemodule.c"
-        HEAP[$21]=$20; //@line 500 "datetimemodule.c"
-        __label__ = 3; break; //@line 500 "datetimemodule.c"
-      case 3: // $bb2_i
-        var $22=$m_addr_i; //@line 505 "datetimemodule.c"
-        var $23=HEAP[$22]; //@line 505 "datetimemodule.c"
-        var $24=($23) <= 0; //@line 505 "datetimemodule.c"
-        if ($24) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 505 "datetimemodule.c"
-      case 4: // $bb3_i
-        var $25=$m_addr_i; //@line 505 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 505 "datetimemodule.c"
-        var $27=($26) > 12; //@line 505 "datetimemodule.c"
-        if ($27) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 505 "datetimemodule.c"
-      case 5: // $bb4_i
-        ___assert_fail(__str26, __str1, 505, ___PRETTY_FUNCTION___8752); //@line 505 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 505 "datetimemodule.c"
-      case 6: // $bb5_i
-        var $28=$m_addr_i; //@line 512 "datetimemodule.c"
-        var $29=HEAP[$28]; //@line 512 "datetimemodule.c"
-        var $30=$y_addr_i; //@line 512 "datetimemodule.c"
-        var $31=HEAP[$30]; //@line 512 "datetimemodule.c"
-        var $32=_days_in_month($31, $29); //@line 512 "datetimemodule.c"
-        $dim_i=$32; //@line 512 "datetimemodule.c"
-        var $33=$d_addr_i; //@line 513 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 513 "datetimemodule.c"
-        var $35=($34) <= 0; //@line 513 "datetimemodule.c"
-        if ($35) { __label__ = 8; break; } else { __label__ = 7; break; } //@line 513 "datetimemodule.c"
-      case 7: // $bb6_i
-        var $36=$d_addr_i; //@line 513 "datetimemodule.c"
-        var $37=HEAP[$36]; //@line 513 "datetimemodule.c"
-        var $38=$dim_i; //@line 513 "datetimemodule.c"
-        var $39=($37) > ($38); //@line 513 "datetimemodule.c"
-        if ($39) { __label__ = 8; break; } else { __label__ = 17; break; } //@line 513 "datetimemodule.c"
-      case 8: // $bb7_i
-        var $40=$d_addr_i; //@line 518 "datetimemodule.c"
-        var $41=HEAP[$40]; //@line 518 "datetimemodule.c"
-        var $42=($41)==0; //@line 518 "datetimemodule.c"
-        if ($42) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 518 "datetimemodule.c"
-      case 9: // $bb8_i
-        var $43=$m_addr_i; //@line 519 "datetimemodule.c"
-        var $44=HEAP[$43]; //@line 519 "datetimemodule.c"
-        var $45=($44) - 1; //@line 519 "datetimemodule.c"
-        var $46=$m_addr_i; //@line 519 "datetimemodule.c"
-        HEAP[$46]=$45; //@line 519 "datetimemodule.c"
-        var $47=$m_addr_i; //@line 520 "datetimemodule.c"
-        var $48=HEAP[$47]; //@line 520 "datetimemodule.c"
-        var $49=($48) > 0; //@line 520 "datetimemodule.c"
-        if ($49) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 520 "datetimemodule.c"
-      case 10: // $bb9_i
-        var $50=$m_addr_i; //@line 521 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 521 "datetimemodule.c"
-        var $52=$y_addr_i; //@line 521 "datetimemodule.c"
-        var $53=HEAP[$52]; //@line 521 "datetimemodule.c"
-        var $54=_days_in_month($53, $51); //@line 521 "datetimemodule.c"
-        var $55=$d_addr_i; //@line 521 "datetimemodule.c"
-        HEAP[$55]=$54; //@line 521 "datetimemodule.c"
-        __label__ = 17; break; //@line 521 "datetimemodule.c"
-      case 11: // $bb10_i
-        var $56=$y_addr_i; //@line 523 "datetimemodule.c"
-        var $57=HEAP[$56]; //@line 523 "datetimemodule.c"
-        var $58=($57) - 1; //@line 523 "datetimemodule.c"
-        var $59=$y_addr_i; //@line 523 "datetimemodule.c"
-        HEAP[$59]=$58; //@line 523 "datetimemodule.c"
-        var $60=$m_addr_i; //@line 524 "datetimemodule.c"
-        HEAP[$60]=12; //@line 524 "datetimemodule.c"
-        var $61=$d_addr_i; //@line 525 "datetimemodule.c"
-        HEAP[$61]=31; //@line 525 "datetimemodule.c"
-        __label__ = 17; break; //@line 525 "datetimemodule.c"
-      case 12: // $bb12_i
-        var $62=$d_addr_i; //@line 528 "datetimemodule.c"
-        var $63=HEAP[$62]; //@line 528 "datetimemodule.c"
-        var $64=$dim_i; //@line 528 "datetimemodule.c"
-        var $65=($64) + 1; //@line 528 "datetimemodule.c"
-        var $66=($63)==($65); //@line 528 "datetimemodule.c"
-        var $67=$m_addr_i; //@line 530 "datetimemodule.c"
-        var $68=HEAP[$67]; //@line 530 "datetimemodule.c"
-        if ($66) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 528 "datetimemodule.c"
-      case 13: // $bb13_i
-        var $69=($68) + 1; //@line 530 "datetimemodule.c"
-        var $70=$m_addr_i; //@line 530 "datetimemodule.c"
-        HEAP[$70]=$69; //@line 530 "datetimemodule.c"
-        var $71=$d_addr_i; //@line 531 "datetimemodule.c"
-        HEAP[$71]=1; //@line 531 "datetimemodule.c"
-        var $72=$m_addr_i; //@line 532 "datetimemodule.c"
-        var $73=HEAP[$72]; //@line 532 "datetimemodule.c"
-        var $74=($73) > 12; //@line 532 "datetimemodule.c"
-        if ($74) { __label__ = 14; break; } else { __label__ = 17; break; } //@line 532 "datetimemodule.c"
-      case 14: // $bb14_i
-        var $75=$m_addr_i; //@line 533 "datetimemodule.c"
-        HEAP[$75]=1; //@line 533 "datetimemodule.c"
-        var $76=$y_addr_i; //@line 534 "datetimemodule.c"
-        var $77=HEAP[$76]; //@line 534 "datetimemodule.c"
-        var $78=($77) + 1; //@line 534 "datetimemodule.c"
-        var $79=$y_addr_i; //@line 534 "datetimemodule.c"
-        HEAP[$79]=$78; //@line 534 "datetimemodule.c"
-        __label__ = 17; break; //@line 534 "datetimemodule.c"
-      case 15: // $bb16_i
-        var $80=$y_addr_i; //@line 539 "datetimemodule.c"
-        var $81=HEAP[$80]; //@line 539 "datetimemodule.c"
-        $year_addr_i_i=$81;
-        $month_addr_i_i=$68;
-        $day_addr_i_i=1;
-        var $82=$year_addr_i_i; //@line 330 "datetimemodule.c"
-        var $83=_days_before_year($82); //@line 330 "datetimemodule.c"
-        var $84=$year_addr_i_i; //@line 330 "datetimemodule.c"
-        var $85=$month_addr_i_i; //@line 330 "datetimemodule.c"
-        var $86=_days_before_month($84, $85); //@line 330 "datetimemodule.c"
-        var $87=$day_addr_i_i; //@line 330 "datetimemodule.c"
-        var $88=($86) + ($83); //@line 330 "datetimemodule.c"
-        var $89=($88) + ($87); //@line 330 "datetimemodule.c"
-        $0=$89; //@line 330 "datetimemodule.c"
-        var $90=$0; //@line 330 "datetimemodule.c"
-        $retval_i_i=$90; //@line 330 "datetimemodule.c"
-        var $retval1_i_i=$retval_i_i; //@line 330 "datetimemodule.c"
-        var $91=$d_addr_i; //@line 539 "datetimemodule.c"
-        var $92=HEAP[$91]; //@line 539 "datetimemodule.c"
-        var $93=($retval1_i_i) + -1; //@line 539 "datetimemodule.c"
-        var $94=($93) + ($92);
-        $ordinal_i=$94; //@line 539 "datetimemodule.c"
-        var $95=$ordinal_i; //@line 540 "datetimemodule.c"
-        var $96=($95) <= 0; //@line 540 "datetimemodule.c"
-        var $97=$ordinal_i; //@line 540 "datetimemodule.c"
-        var $98=($97) > 3652059; //@line 540 "datetimemodule.c"
-        var $or_cond_i=($96) | ($98);
-        if ($or_cond_i) { __label__ = 24; break; } else { __label__ = 16; break; } //@line 540 "datetimemodule.c"
-      case 16: // $bb18_i
-        var $99=$ordinal_i; //@line 543 "datetimemodule.c"
-        var $100=$y_addr_i; //@line 543 "datetimemodule.c"
-        var $101=$m_addr_i; //@line 543 "datetimemodule.c"
-        var $102=$d_addr_i; //@line 543 "datetimemodule.c"
-        _ord_to_ymd($99, $100, $101, $102); //@line 543 "datetimemodule.c"
-        $1=0; //@line 544 "datetimemodule.c"
-        __label__ = 25; break; //@line 544 "datetimemodule.c"
-      case 17: // $bb19_i
-        var $103=$m_addr_i; //@line 548 "datetimemodule.c"
-        var $104=HEAP[$103]; //@line 548 "datetimemodule.c"
-        var $105=($104) <= 0; //@line 548 "datetimemodule.c"
-        if ($105) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 548 "datetimemodule.c"
-      case 18: // $bb20_i
-        ___assert_fail(__str27, __str1, 548, ___PRETTY_FUNCTION___8752); //@line 548 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 548 "datetimemodule.c"
-      case 19: // $bb21_i
-        var $106=$d_addr_i; //@line 549 "datetimemodule.c"
-        var $107=HEAP[$106]; //@line 549 "datetimemodule.c"
-        var $108=($107) <= 0; //@line 549 "datetimemodule.c"
-        if ($108) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 549 "datetimemodule.c"
-      case 20: // $bb22_i
-        ___assert_fail(__str28, __str1, 549, ___PRETTY_FUNCTION___8752); //@line 549 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 549 "datetimemodule.c"
-      case 21: // $bb23_i
-        var $109=$y_addr_i; //@line 550 "datetimemodule.c"
-        var $110=HEAP[$109]; //@line 550 "datetimemodule.c"
-        var $111=($110) > 0; //@line 550 "datetimemodule.c"
-        if ($111) { __label__ = 22; break; } else { __label__ = 24; break; } //@line 550 "datetimemodule.c"
-      case 22: // $bb24_i
-        var $112=$y_addr_i; //@line 550 "datetimemodule.c"
-        var $113=HEAP[$112]; //@line 550 "datetimemodule.c"
-        var $114=($113) <= 9999; //@line 550 "datetimemodule.c"
-        if ($114) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 550 "datetimemodule.c"
-      case 23: // $bb25_i
-        $1=0; //@line 551 "datetimemodule.c"
-        __label__ = 25; break; //@line 551 "datetimemodule.c"
-      case 24: // $error_i
-        var $115=HEAP[_PyExc_OverflowError]; //@line 553 "datetimemodule.c"
-        _PyErr_SetString($115, __str29); //@line 553 "datetimemodule.c"
-        $1=-1; //@line 555 "datetimemodule.c"
-        __label__ = 25; break; //@line 555 "datetimemodule.c"
-      case 25: // $normalize_y_m_d_exit
-        var $116=$1; //@line 544 "datetimemodule.c"
-        $retval_i=$116; //@line 544 "datetimemodule.c"
-        var $retval27_i=$retval_i; //@line 544 "datetimemodule.c"
-        $2=$retval27_i; //@line 566 "datetimemodule.c"
-        var $117=$2; //@line 566 "datetimemodule.c"
-        $retval=$117; //@line 566 "datetimemodule.c"
-        var $retval1=$retval; //@line 566 "datetimemodule.c"
+        var $d_addr;
+        var $s_addr;
+        var $us_addr;
+        $d_addr=$d;
+        $s_addr=$s;
+        $us_addr=$us;
+        var $0=$us_addr; //@line 462 "datetimemodule.c"
+        var $1=HEAP[$0]; //@line 462 "datetimemodule.c"
+        var $2=($1) < 0; //@line 462 "datetimemodule.c"
+        if ($2) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 462 "datetimemodule.c"
+      case 1: // $bb
+        var $3=$us_addr; //@line 462 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 462 "datetimemodule.c"
+        var $5=($4) > 999999; //@line 462 "datetimemodule.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 462 "datetimemodule.c"
+      case 2: // $bb1
+        var $6=$s_addr; //@line 463 "datetimemodule.c"
+        var $7=$us_addr; //@line 463 "datetimemodule.c"
+        _normalize_pair($6, $7, 1000000); //@line 463 "datetimemodule.c"
+        __label__ = 3; break; //@line 463 "datetimemodule.c"
+      case 3: // $bb2
+        var $8=$s_addr; //@line 469 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 469 "datetimemodule.c"
+        var $10=($9) < 0; //@line 469 "datetimemodule.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 469 "datetimemodule.c"
+      case 4: // $bb3
+        var $11=$s_addr; //@line 469 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 469 "datetimemodule.c"
+        var $13=($12) > 86399; //@line 469 "datetimemodule.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 469 "datetimemodule.c"
+      case 5: // $bb4
+        var $14=$d_addr; //@line 470 "datetimemodule.c"
+        var $15=$s_addr; //@line 470 "datetimemodule.c"
+        _normalize_pair($14, $15, 86400); //@line 470 "datetimemodule.c"
+        __label__ = 6; break; //@line 470 "datetimemodule.c"
+      case 6: // $bb5
+        var $16=$s_addr; //@line 476 "datetimemodule.c"
+        var $17=HEAP[$16]; //@line 476 "datetimemodule.c"
+        var $18=($17) < 0; //@line 476 "datetimemodule.c"
+        if ($18) { __label__ = 8; break; } else { __label__ = 7; break; } //@line 476 "datetimemodule.c"
+      case 7: // $bb6
+        var $19=$s_addr; //@line 476 "datetimemodule.c"
+        var $20=HEAP[$19]; //@line 476 "datetimemodule.c"
+        var $21=($20) > 86399; //@line 476 "datetimemodule.c"
+        if ($21) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 476 "datetimemodule.c"
+      case 8: // $bb7
+        ___assert_fail(__str24, __str1, 476, ___PRETTY_FUNCTION___8725); //@line 476 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 476 "datetimemodule.c"
+      case 9: // $bb8
+        var $22=$us_addr; //@line 477 "datetimemodule.c"
+        var $23=HEAP[$22]; //@line 477 "datetimemodule.c"
+        var $24=($23) < 0; //@line 477 "datetimemodule.c"
+        if ($24) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 477 "datetimemodule.c"
+      case 10: // $bb9
+        var $25=$us_addr; //@line 477 "datetimemodule.c"
+        var $26=HEAP[$25]; //@line 477 "datetimemodule.c"
+        var $27=($26) > 999999; //@line 477 "datetimemodule.c"
+        if ($27) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 477 "datetimemodule.c"
+      case 11: // $bb10
+        ___assert_fail(__str25, __str1, 477, ___PRETTY_FUNCTION___8725); //@line 477 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 477 "datetimemodule.c"
+      case 12: // $return
         ;
-        return $retval1; //@line 566 "datetimemodule.c"
+        return; //@line 478 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _normalize_y_m_d($y, $m, $d) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $y_addr;
+        var $m_addr;
+        var $d_addr;
+        var $retval;
+        var $0;
+        var $dim;
+        var $ordinal;
+        $y_addr=$y;
+        $m_addr=$m;
+        $d_addr=$d;
+        var $1=$m_addr; //@line 497 "datetimemodule.c"
+        var $2=HEAP[$1]; //@line 497 "datetimemodule.c"
+        var $3=($2) <= 0; //@line 497 "datetimemodule.c"
+        if ($3) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 497 "datetimemodule.c"
+      case 1: // $bb
+        var $4=$m_addr; //@line 497 "datetimemodule.c"
+        var $5=HEAP[$4]; //@line 497 "datetimemodule.c"
+        var $6=($5) > 12; //@line 497 "datetimemodule.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 497 "datetimemodule.c"
+      case 2: // $bb1
+        var $7=$m_addr; //@line 498 "datetimemodule.c"
+        var $8=HEAP[$7]; //@line 498 "datetimemodule.c"
+        var $9=($8) - 1; //@line 498 "datetimemodule.c"
+        var $10=$m_addr; //@line 498 "datetimemodule.c"
+        HEAP[$10]=$9; //@line 498 "datetimemodule.c"
+        var $11=$y_addr; //@line 499 "datetimemodule.c"
+        var $12=$m_addr; //@line 499 "datetimemodule.c"
+        _normalize_pair($11, $12, 12); //@line 499 "datetimemodule.c"
+        var $13=$m_addr; //@line 500 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 500 "datetimemodule.c"
+        var $15=($14) + 1; //@line 500 "datetimemodule.c"
+        var $16=$m_addr; //@line 500 "datetimemodule.c"
+        HEAP[$16]=$15; //@line 500 "datetimemodule.c"
+        __label__ = 3; break; //@line 500 "datetimemodule.c"
+      case 3: // $bb2
+        var $17=$m_addr; //@line 505 "datetimemodule.c"
+        var $18=HEAP[$17]; //@line 505 "datetimemodule.c"
+        var $19=($18) <= 0; //@line 505 "datetimemodule.c"
+        if ($19) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 505 "datetimemodule.c"
+      case 4: // $bb3
+        var $20=$m_addr; //@line 505 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 505 "datetimemodule.c"
+        var $22=($21) > 12; //@line 505 "datetimemodule.c"
+        if ($22) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 505 "datetimemodule.c"
+      case 5: // $bb4
+        ___assert_fail(__str26, __str1, 505, ___PRETTY_FUNCTION___8752); //@line 505 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 505 "datetimemodule.c"
+      case 6: // $bb5
+        var $23=$m_addr; //@line 512 "datetimemodule.c"
+        var $24=HEAP[$23]; //@line 512 "datetimemodule.c"
+        var $25=$y_addr; //@line 512 "datetimemodule.c"
+        var $26=HEAP[$25]; //@line 512 "datetimemodule.c"
+        var $27=_days_in_month($26, $24); //@line 512 "datetimemodule.c"
+        $dim=$27; //@line 512 "datetimemodule.c"
+        var $28=$d_addr; //@line 513 "datetimemodule.c"
+        var $29=HEAP[$28]; //@line 513 "datetimemodule.c"
+        var $30=($29) <= 0; //@line 513 "datetimemodule.c"
+        if ($30) { __label__ = 8; break; } else { __label__ = 7; break; } //@line 513 "datetimemodule.c"
+      case 7: // $bb6
+        var $31=$d_addr; //@line 513 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 513 "datetimemodule.c"
+        var $33=$dim; //@line 513 "datetimemodule.c"
+        var $34=($32) > ($33); //@line 513 "datetimemodule.c"
+        if ($34) { __label__ = 8; break; } else { __label__ = 17; break; } //@line 513 "datetimemodule.c"
+      case 8: // $bb7
+        var $35=$d_addr; //@line 518 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 518 "datetimemodule.c"
+        var $37=($36)==0; //@line 518 "datetimemodule.c"
+        if ($37) { __label__ = 9; break; } else { __label__ = 12; break; } //@line 518 "datetimemodule.c"
+      case 9: // $bb8
+        var $38=$m_addr; //@line 519 "datetimemodule.c"
+        var $39=HEAP[$38]; //@line 519 "datetimemodule.c"
+        var $40=($39) - 1; //@line 519 "datetimemodule.c"
+        var $41=$m_addr; //@line 519 "datetimemodule.c"
+        HEAP[$41]=$40; //@line 519 "datetimemodule.c"
+        var $42=$m_addr; //@line 520 "datetimemodule.c"
+        var $43=HEAP[$42]; //@line 520 "datetimemodule.c"
+        var $44=($43) > 0; //@line 520 "datetimemodule.c"
+        if ($44) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 520 "datetimemodule.c"
+      case 10: // $bb9
+        var $45=$m_addr; //@line 521 "datetimemodule.c"
+        var $46=HEAP[$45]; //@line 521 "datetimemodule.c"
+        var $47=$y_addr; //@line 521 "datetimemodule.c"
+        var $48=HEAP[$47]; //@line 521 "datetimemodule.c"
+        var $49=_days_in_month($48, $46); //@line 521 "datetimemodule.c"
+        var $50=$d_addr; //@line 521 "datetimemodule.c"
+        HEAP[$50]=$49; //@line 521 "datetimemodule.c"
+        __label__ = 17; break; //@line 521 "datetimemodule.c"
+      case 11: // $bb10
+        var $51=$y_addr; //@line 523 "datetimemodule.c"
+        var $52=HEAP[$51]; //@line 523 "datetimemodule.c"
+        var $53=($52) - 1; //@line 523 "datetimemodule.c"
+        var $54=$y_addr; //@line 523 "datetimemodule.c"
+        HEAP[$54]=$53; //@line 523 "datetimemodule.c"
+        var $55=$m_addr; //@line 524 "datetimemodule.c"
+        HEAP[$55]=12; //@line 524 "datetimemodule.c"
+        var $56=$d_addr; //@line 525 "datetimemodule.c"
+        HEAP[$56]=31; //@line 525 "datetimemodule.c"
+        __label__ = 17; break; //@line 525 "datetimemodule.c"
+      case 12: // $bb12
+        var $57=$d_addr; //@line 528 "datetimemodule.c"
+        var $58=HEAP[$57]; //@line 528 "datetimemodule.c"
+        var $59=$dim; //@line 528 "datetimemodule.c"
+        var $60=($59) + 1; //@line 528 "datetimemodule.c"
+        var $61=($58)==($60); //@line 528 "datetimemodule.c"
+        var $62=$m_addr; //@line 530 "datetimemodule.c"
+        var $63=HEAP[$62]; //@line 530 "datetimemodule.c"
+        if ($61) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 528 "datetimemodule.c"
+      case 13: // $bb13
+        var $64=($63) + 1; //@line 530 "datetimemodule.c"
+        var $65=$m_addr; //@line 530 "datetimemodule.c"
+        HEAP[$65]=$64; //@line 530 "datetimemodule.c"
+        var $66=$d_addr; //@line 531 "datetimemodule.c"
+        HEAP[$66]=1; //@line 531 "datetimemodule.c"
+        var $67=$m_addr; //@line 532 "datetimemodule.c"
+        var $68=HEAP[$67]; //@line 532 "datetimemodule.c"
+        var $69=($68) > 12; //@line 532 "datetimemodule.c"
+        if ($69) { __label__ = 14; break; } else { __label__ = 17; break; } //@line 532 "datetimemodule.c"
+      case 14: // $bb14
+        var $70=$m_addr; //@line 533 "datetimemodule.c"
+        HEAP[$70]=1; //@line 533 "datetimemodule.c"
+        var $71=$y_addr; //@line 534 "datetimemodule.c"
+        var $72=HEAP[$71]; //@line 534 "datetimemodule.c"
+        var $73=($72) + 1; //@line 534 "datetimemodule.c"
+        var $74=$y_addr; //@line 534 "datetimemodule.c"
+        HEAP[$74]=$73; //@line 534 "datetimemodule.c"
+        __label__ = 17; break; //@line 534 "datetimemodule.c"
+      case 15: // $bb16
+        var $75=$y_addr; //@line 539 "datetimemodule.c"
+        var $76=HEAP[$75]; //@line 539 "datetimemodule.c"
+        var $77=_ymd_to_ord($76, $63, 1); //@line 539 "datetimemodule.c"
+        var $78=$d_addr; //@line 539 "datetimemodule.c"
+        var $79=HEAP[$78]; //@line 539 "datetimemodule.c"
+        var $80=($77) + -1; //@line 539 "datetimemodule.c"
+        var $81=($80) + ($79);
+        $ordinal=$81; //@line 539 "datetimemodule.c"
+        var $82=$ordinal; //@line 540 "datetimemodule.c"
+        var $83=($82) <= 0; //@line 540 "datetimemodule.c"
+        var $84=$ordinal; //@line 540 "datetimemodule.c"
+        var $85=($84) > 3652059; //@line 540 "datetimemodule.c"
+        var $or_cond=($83) | ($85);
+        if ($or_cond) { __label__ = 24; break; } else { __label__ = 16; break; } //@line 540 "datetimemodule.c"
+      case 16: // $bb18
+        var $86=$ordinal; //@line 543 "datetimemodule.c"
+        var $87=$y_addr; //@line 543 "datetimemodule.c"
+        var $88=$m_addr; //@line 543 "datetimemodule.c"
+        var $89=$d_addr; //@line 543 "datetimemodule.c"
+        _ord_to_ymd($86, $87, $88, $89); //@line 543 "datetimemodule.c"
+        $0=0; //@line 544 "datetimemodule.c"
+        __label__ = 25; break; //@line 544 "datetimemodule.c"
+      case 17: // $bb19
+        var $90=$m_addr; //@line 548 "datetimemodule.c"
+        var $91=HEAP[$90]; //@line 548 "datetimemodule.c"
+        var $92=($91) <= 0; //@line 548 "datetimemodule.c"
+        if ($92) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 548 "datetimemodule.c"
+      case 18: // $bb20
+        ___assert_fail(__str27, __str1, 548, ___PRETTY_FUNCTION___8752); //@line 548 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 548 "datetimemodule.c"
+      case 19: // $bb21
+        var $93=$d_addr; //@line 549 "datetimemodule.c"
+        var $94=HEAP[$93]; //@line 549 "datetimemodule.c"
+        var $95=($94) <= 0; //@line 549 "datetimemodule.c"
+        if ($95) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 549 "datetimemodule.c"
+      case 20: // $bb22
+        ___assert_fail(__str28, __str1, 549, ___PRETTY_FUNCTION___8752); //@line 549 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 549 "datetimemodule.c"
+      case 21: // $bb23
+        var $96=$y_addr; //@line 550 "datetimemodule.c"
+        var $97=HEAP[$96]; //@line 550 "datetimemodule.c"
+        var $98=($97) > 0; //@line 550 "datetimemodule.c"
+        if ($98) { __label__ = 22; break; } else { __label__ = 24; break; } //@line 550 "datetimemodule.c"
+      case 22: // $bb24
+        var $99=$y_addr; //@line 550 "datetimemodule.c"
+        var $100=HEAP[$99]; //@line 550 "datetimemodule.c"
+        var $101=($100) <= 9999; //@line 550 "datetimemodule.c"
+        if ($101) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 550 "datetimemodule.c"
+      case 23: // $bb25
+        $0=0; //@line 551 "datetimemodule.c"
+        __label__ = 25; break; //@line 551 "datetimemodule.c"
+      case 24: // $error
+        var $102=HEAP[_PyExc_OverflowError]; //@line 553 "datetimemodule.c"
+        _PyErr_SetString($102, __str29); //@line 553 "datetimemodule.c"
+        $0=-1; //@line 555 "datetimemodule.c"
+        __label__ = 25; break; //@line 555 "datetimemodule.c"
+      case 25: // $bb26
+        var $103=$0; //@line 544 "datetimemodule.c"
+        $retval=$103; //@line 544 "datetimemodule.c"
+        var $retval27=$retval; //@line 544 "datetimemodule.c"
+        ;
+        return $retval27; //@line 544 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _normalize_date($year, $month, $day) {
+    ;
+    var __label__;
+  
+    var $year_addr;
+    var $month_addr;
+    var $day_addr;
+    var $retval;
+    var $0;
+    $year_addr=$year;
+    $month_addr=$month;
+    $day_addr=$day;
+    var $1=$year_addr; //@line 566 "datetimemodule.c"
+    var $2=$month_addr; //@line 566 "datetimemodule.c"
+    var $3=$day_addr; //@line 566 "datetimemodule.c"
+    var $4=_normalize_y_m_d($1, $2, $3); //@line 566 "datetimemodule.c"
+    $0=$4; //@line 566 "datetimemodule.c"
+    var $5=$0; //@line 566 "datetimemodule.c"
+    $retval=$5; //@line 566 "datetimemodule.c"
+    var $retval1=$retval; //@line 566 "datetimemodule.c"
+    ;
+    return $retval1; //@line 566 "datetimemodule.c"
+  }
+  
+
+  function _normalize_datetime($year, $month, $day, $hour, $minute, $second, $microsecond) {
+    ;
+    var __label__;
+  
+    var $year_addr;
+    var $month_addr;
+    var $day_addr;
+    var $hour_addr;
+    var $minute_addr;
+    var $second_addr;
+    var $microsecond_addr;
+    var $retval;
+    var $0;
+    $year_addr=$year;
+    $month_addr=$month;
+    $day_addr=$day;
+    $hour_addr=$hour;
+    $minute_addr=$minute;
+    $second_addr=$second;
+    $microsecond_addr=$microsecond;
+    var $1=$second_addr; //@line 577 "datetimemodule.c"
+    var $2=$microsecond_addr; //@line 577 "datetimemodule.c"
+    _normalize_pair($1, $2, 1000000); //@line 577 "datetimemodule.c"
+    var $3=$minute_addr; //@line 578 "datetimemodule.c"
+    var $4=$second_addr; //@line 578 "datetimemodule.c"
+    _normalize_pair($3, $4, 60); //@line 578 "datetimemodule.c"
+    var $5=$hour_addr; //@line 579 "datetimemodule.c"
+    var $6=$minute_addr; //@line 579 "datetimemodule.c"
+    _normalize_pair($5, $6, 60); //@line 579 "datetimemodule.c"
+    var $7=$day_addr; //@line 580 "datetimemodule.c"
+    var $8=$hour_addr; //@line 580 "datetimemodule.c"
+    _normalize_pair($7, $8, 24); //@line 580 "datetimemodule.c"
+    var $9=$year_addr; //@line 581 "datetimemodule.c"
+    var $10=$month_addr; //@line 581 "datetimemodule.c"
+    var $11=$day_addr; //@line 581 "datetimemodule.c"
+    var $12=_normalize_date($9, $10, $11); //@line 581 "datetimemodule.c"
+    $0=$12; //@line 581 "datetimemodule.c"
+    var $13=$0; //@line 581 "datetimemodule.c"
+    $retval=$13; //@line 581 "datetimemodule.c"
+    var $retval1=$retval; //@line 581 "datetimemodule.c"
+    ;
+    return $retval1; //@line 581 "datetimemodule.c"
   }
   
 
@@ -1781,16 +2027,58 @@ var _initialized_b;
   }
   
 
+  function _set_date_fields($self, $y, $m, $d) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $y_addr;
+    var $m_addr;
+    var $d_addr;
+    $self_addr=$self;
+    $y_addr=$y;
+    $m_addr=$m;
+    $d_addr=$d;
+    var $0=$self_addr; //@line 644 "datetimemodule.c"
+    var $1=$0+8; //@line 644 "datetimemodule.c"
+    HEAP[$1]=-1; //@line 644 "datetimemodule.c"
+    var $2=$y_addr; //@line 645 "datetimemodule.c"
+    var $3=($2) & 65280; //@line 645 "datetimemodule.c"
+    var $4=($3) >> 8; //@line 645 "datetimemodule.c"
+    var $5=((($4)) & 255); //@line 645 "datetimemodule.c"
+    var $6=$self_addr; //@line 645 "datetimemodule.c"
+    var $7=$6+13; //@line 645 "datetimemodule.c"
+    var $8=$7; //@line 645 "datetimemodule.c"
+    HEAP[$8]=$5; //@line 645 "datetimemodule.c"
+    var $9=$y_addr; //@line 645 "datetimemodule.c"
+    var $10=((($9)) & 255); //@line 645 "datetimemodule.c"
+    var $11=$self_addr; //@line 645 "datetimemodule.c"
+    var $12=$11+13; //@line 645 "datetimemodule.c"
+    var $13=$12+1; //@line 645 "datetimemodule.c"
+    HEAP[$13]=$10; //@line 645 "datetimemodule.c"
+    var $14=$m_addr; //@line 646 "datetimemodule.c"
+    var $15=((($14)) & 255); //@line 646 "datetimemodule.c"
+    var $16=$self_addr; //@line 646 "datetimemodule.c"
+    var $17=$16+13; //@line 646 "datetimemodule.c"
+    var $18=$17+2; //@line 646 "datetimemodule.c"
+    HEAP[$18]=$15; //@line 646 "datetimemodule.c"
+    var $19=$d_addr; //@line 647 "datetimemodule.c"
+    var $20=((($19)) & 255); //@line 647 "datetimemodule.c"
+    var $21=$self_addr; //@line 647 "datetimemodule.c"
+    var $22=$21+13; //@line 647 "datetimemodule.c"
+    var $23=$22+3; //@line 647 "datetimemodule.c"
+    HEAP[$23]=$20; //@line 647 "datetimemodule.c"
+    ;
+    return; //@line 648 "datetimemodule.c"
+  }
+  
+
   function _new_date_ex($year, $month, $day, $type) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $y_addr_i;
-        var $m_addr_i;
-        var $d_addr_i;
         var $year_addr;
         var $month_addr;
         var $day_addr;
@@ -1817,46 +2105,14 @@ var _initialized_b;
         var $10=$year_addr; //@line 662 "datetimemodule.c"
         var $11=$month_addr; //@line 662 "datetimemodule.c"
         var $12=$day_addr; //@line 662 "datetimemodule.c"
-        $self_addr_i=$9;
-        $y_addr_i=$10;
-        $m_addr_i=$11;
-        $d_addr_i=$12;
-        var $13=$self_addr_i; //@line 644 "datetimemodule.c"
-        var $14=$13+8; //@line 644 "datetimemodule.c"
-        HEAP[$14]=-1; //@line 644 "datetimemodule.c"
-        var $15=$y_addr_i; //@line 645 "datetimemodule.c"
-        var $16=($15) & 65280; //@line 645 "datetimemodule.c"
-        var $17=($16) >> 8; //@line 645 "datetimemodule.c"
-        var $18=((($17)) & 255); //@line 645 "datetimemodule.c"
-        var $19=$self_addr_i; //@line 645 "datetimemodule.c"
-        var $20=$19+13; //@line 645 "datetimemodule.c"
-        var $21=$20; //@line 645 "datetimemodule.c"
-        HEAP[$21]=$18; //@line 645 "datetimemodule.c"
-        var $22=$y_addr_i; //@line 645 "datetimemodule.c"
-        var $23=((($22)) & 255); //@line 645 "datetimemodule.c"
-        var $24=$self_addr_i; //@line 645 "datetimemodule.c"
-        var $25=$24+13; //@line 645 "datetimemodule.c"
-        var $26=$25+1; //@line 645 "datetimemodule.c"
-        HEAP[$26]=$23; //@line 645 "datetimemodule.c"
-        var $27=$m_addr_i; //@line 646 "datetimemodule.c"
-        var $28=((($27)) & 255); //@line 646 "datetimemodule.c"
-        var $29=$self_addr_i; //@line 646 "datetimemodule.c"
-        var $30=$29+13; //@line 646 "datetimemodule.c"
-        var $31=$30+2; //@line 646 "datetimemodule.c"
-        HEAP[$31]=$28; //@line 646 "datetimemodule.c"
-        var $32=$d_addr_i; //@line 647 "datetimemodule.c"
-        var $33=((($32)) & 255); //@line 647 "datetimemodule.c"
-        var $34=$self_addr_i; //@line 647 "datetimemodule.c"
-        var $35=$34+13; //@line 647 "datetimemodule.c"
-        var $36=$35+3; //@line 647 "datetimemodule.c"
-        HEAP[$36]=$33; //@line 647 "datetimemodule.c"
+        _set_date_fields($9, $10, $11, $12); //@line 662 "datetimemodule.c"
         __label__ = 2; break; //@line 662 "datetimemodule.c"
       case 2: // $bb1
-        var $37=$self; //@line 663 "datetimemodule.c"
-        var $38=$37; //@line 663 "datetimemodule.c"
-        $0=$38; //@line 663 "datetimemodule.c"
-        var $39=$0; //@line 663 "datetimemodule.c"
-        $retval=$39; //@line 663 "datetimemodule.c"
+        var $13=$self; //@line 663 "datetimemodule.c"
+        var $14=$13; //@line 663 "datetimemodule.c"
+        $0=$14; //@line 663 "datetimemodule.c"
+        var $15=$0; //@line 663 "datetimemodule.c"
+        $retval=$15; //@line 663 "datetimemodule.c"
         var $retval2=$retval; //@line 663 "datetimemodule.c"
         ;
         return $retval2; //@line 663 "datetimemodule.c"
@@ -1871,10 +2127,6 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $y_addr_i;
-        var $m_addr_i;
-        var $d_addr_i;
         var $year_addr;
         var $month_addr;
         var $day_addr;
@@ -1923,101 +2175,69 @@ var _initialized_b;
         var $19=$year_addr; //@line 680 "datetimemodule.c"
         var $20=$month_addr; //@line 680 "datetimemodule.c"
         var $21=$day_addr; //@line 680 "datetimemodule.c"
-        $self_addr_i=$18;
-        $y_addr_i=$19;
-        $m_addr_i=$20;
-        $d_addr_i=$21;
-        var $22=$self_addr_i; //@line 644 "datetimemodule.c"
-        var $23=$22+8; //@line 644 "datetimemodule.c"
-        HEAP[$23]=-1; //@line 644 "datetimemodule.c"
-        var $24=$y_addr_i; //@line 645 "datetimemodule.c"
-        var $25=($24) & 65280; //@line 645 "datetimemodule.c"
-        var $26=($25) >> 8; //@line 645 "datetimemodule.c"
-        var $27=((($26)) & 255); //@line 645 "datetimemodule.c"
-        var $28=$self_addr_i; //@line 645 "datetimemodule.c"
-        var $29=$28+13; //@line 645 "datetimemodule.c"
-        var $30=$29; //@line 645 "datetimemodule.c"
-        HEAP[$30]=$27; //@line 645 "datetimemodule.c"
-        var $31=$y_addr_i; //@line 645 "datetimemodule.c"
-        var $32=((($31)) & 255); //@line 645 "datetimemodule.c"
-        var $33=$self_addr_i; //@line 645 "datetimemodule.c"
-        var $34=$33+13; //@line 645 "datetimemodule.c"
-        var $35=$34+1; //@line 645 "datetimemodule.c"
-        HEAP[$35]=$32; //@line 645 "datetimemodule.c"
-        var $36=$m_addr_i; //@line 646 "datetimemodule.c"
-        var $37=((($36)) & 255); //@line 646 "datetimemodule.c"
-        var $38=$self_addr_i; //@line 646 "datetimemodule.c"
-        var $39=$38+13; //@line 646 "datetimemodule.c"
-        var $40=$39+2; //@line 646 "datetimemodule.c"
-        HEAP[$40]=$37; //@line 646 "datetimemodule.c"
-        var $41=$d_addr_i; //@line 647 "datetimemodule.c"
-        var $42=((($41)) & 255); //@line 647 "datetimemodule.c"
-        var $43=$self_addr_i; //@line 647 "datetimemodule.c"
-        var $44=$43+13; //@line 647 "datetimemodule.c"
-        var $45=$44+3; //@line 647 "datetimemodule.c"
-        HEAP[$45]=$42; //@line 647 "datetimemodule.c"
-        var $46=$hour_addr; //@line 681 "datetimemodule.c"
-        var $47=((($46)) & 255); //@line 681 "datetimemodule.c"
-        var $48=$self; //@line 681 "datetimemodule.c"
-        var $49=$48+13; //@line 681 "datetimemodule.c"
-        var $50=$49+4; //@line 681 "datetimemodule.c"
-        HEAP[$50]=$47; //@line 681 "datetimemodule.c"
-        var $51=$minute_addr; //@line 682 "datetimemodule.c"
-        var $52=((($51)) & 255); //@line 682 "datetimemodule.c"
-        var $53=$self; //@line 682 "datetimemodule.c"
-        var $54=$53+13; //@line 682 "datetimemodule.c"
-        var $55=$54+5; //@line 682 "datetimemodule.c"
-        HEAP[$55]=$52; //@line 682 "datetimemodule.c"
-        var $56=$second_addr; //@line 683 "datetimemodule.c"
-        var $57=((($56)) & 255); //@line 683 "datetimemodule.c"
-        var $58=$self; //@line 683 "datetimemodule.c"
-        var $59=$58+13; //@line 683 "datetimemodule.c"
-        var $60=$59+6; //@line 683 "datetimemodule.c"
-        HEAP[$60]=$57; //@line 683 "datetimemodule.c"
-        var $61=$usecond_addr; //@line 684 "datetimemodule.c"
-        var $62=($61) & 16711680; //@line 684 "datetimemodule.c"
-        var $63=($62) >> 16; //@line 684 "datetimemodule.c"
-        var $64=((($63)) & 255); //@line 684 "datetimemodule.c"
-        var $65=$self; //@line 684 "datetimemodule.c"
-        var $66=$65+13; //@line 684 "datetimemodule.c"
-        var $67=$66+7; //@line 684 "datetimemodule.c"
-        HEAP[$67]=$64; //@line 684 "datetimemodule.c"
-        var $68=$usecond_addr; //@line 684 "datetimemodule.c"
-        var $69=($68) & 65280; //@line 684 "datetimemodule.c"
-        var $70=($69) >> 8; //@line 684 "datetimemodule.c"
-        var $71=((($70)) & 255); //@line 684 "datetimemodule.c"
-        var $72=$self; //@line 684 "datetimemodule.c"
-        var $73=$72+13; //@line 684 "datetimemodule.c"
-        var $74=$73+8; //@line 684 "datetimemodule.c"
-        HEAP[$74]=$71; //@line 684 "datetimemodule.c"
-        var $75=$usecond_addr; //@line 684 "datetimemodule.c"
-        var $76=((($75)) & 255); //@line 684 "datetimemodule.c"
-        var $77=$self; //@line 684 "datetimemodule.c"
-        var $78=$77+13; //@line 684 "datetimemodule.c"
-        var $79=$78+9; //@line 684 "datetimemodule.c"
-        HEAP[$79]=$76; //@line 684 "datetimemodule.c"
-        var $80=$aware; //@line 685 "datetimemodule.c"
-        var $81=($80)!=0; //@line 685 "datetimemodule.c"
-        if ($81) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 685 "datetimemodule.c"
+        _set_date_fields($18, $19, $20, $21); //@line 680 "datetimemodule.c"
+        var $22=$hour_addr; //@line 681 "datetimemodule.c"
+        var $23=((($22)) & 255); //@line 681 "datetimemodule.c"
+        var $24=$self; //@line 681 "datetimemodule.c"
+        var $25=$24+13; //@line 681 "datetimemodule.c"
+        var $26=$25+4; //@line 681 "datetimemodule.c"
+        HEAP[$26]=$23; //@line 681 "datetimemodule.c"
+        var $27=$minute_addr; //@line 682 "datetimemodule.c"
+        var $28=((($27)) & 255); //@line 682 "datetimemodule.c"
+        var $29=$self; //@line 682 "datetimemodule.c"
+        var $30=$29+13; //@line 682 "datetimemodule.c"
+        var $31=$30+5; //@line 682 "datetimemodule.c"
+        HEAP[$31]=$28; //@line 682 "datetimemodule.c"
+        var $32=$second_addr; //@line 683 "datetimemodule.c"
+        var $33=((($32)) & 255); //@line 683 "datetimemodule.c"
+        var $34=$self; //@line 683 "datetimemodule.c"
+        var $35=$34+13; //@line 683 "datetimemodule.c"
+        var $36=$35+6; //@line 683 "datetimemodule.c"
+        HEAP[$36]=$33; //@line 683 "datetimemodule.c"
+        var $37=$usecond_addr; //@line 684 "datetimemodule.c"
+        var $38=($37) & 16711680; //@line 684 "datetimemodule.c"
+        var $39=($38) >> 16; //@line 684 "datetimemodule.c"
+        var $40=((($39)) & 255); //@line 684 "datetimemodule.c"
+        var $41=$self; //@line 684 "datetimemodule.c"
+        var $42=$41+13; //@line 684 "datetimemodule.c"
+        var $43=$42+7; //@line 684 "datetimemodule.c"
+        HEAP[$43]=$40; //@line 684 "datetimemodule.c"
+        var $44=$usecond_addr; //@line 684 "datetimemodule.c"
+        var $45=($44) & 65280; //@line 684 "datetimemodule.c"
+        var $46=($45) >> 8; //@line 684 "datetimemodule.c"
+        var $47=((($46)) & 255); //@line 684 "datetimemodule.c"
+        var $48=$self; //@line 684 "datetimemodule.c"
+        var $49=$48+13; //@line 684 "datetimemodule.c"
+        var $50=$49+8; //@line 684 "datetimemodule.c"
+        HEAP[$50]=$47; //@line 684 "datetimemodule.c"
+        var $51=$usecond_addr; //@line 684 "datetimemodule.c"
+        var $52=((($51)) & 255); //@line 684 "datetimemodule.c"
+        var $53=$self; //@line 684 "datetimemodule.c"
+        var $54=$53+13; //@line 684 "datetimemodule.c"
+        var $55=$54+9; //@line 684 "datetimemodule.c"
+        HEAP[$55]=$52; //@line 684 "datetimemodule.c"
+        var $56=$aware; //@line 685 "datetimemodule.c"
+        var $57=($56)!=0; //@line 685 "datetimemodule.c"
+        if ($57) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 685 "datetimemodule.c"
       case 2: // $bb1
-        var $82=$tzinfo_addr; //@line 686 "datetimemodule.c"
-        var $83=$82; //@line 686 "datetimemodule.c"
-        var $84=HEAP[$83]; //@line 686 "datetimemodule.c"
-        var $85=($84) + 1; //@line 686 "datetimemodule.c"
-        var $86=$tzinfo_addr; //@line 686 "datetimemodule.c"
-        var $87=$86; //@line 686 "datetimemodule.c"
-        HEAP[$87]=$85; //@line 686 "datetimemodule.c"
-        var $88=$self; //@line 687 "datetimemodule.c"
-        var $89=$88+24; //@line 687 "datetimemodule.c"
-        var $90=$tzinfo_addr; //@line 687 "datetimemodule.c"
-        HEAP[$89]=$90; //@line 687 "datetimemodule.c"
+        var $58=$tzinfo_addr; //@line 686 "datetimemodule.c"
+        var $59=$58; //@line 686 "datetimemodule.c"
+        var $60=HEAP[$59]; //@line 686 "datetimemodule.c"
+        var $61=($60) + 1; //@line 686 "datetimemodule.c"
+        var $62=$tzinfo_addr; //@line 686 "datetimemodule.c"
+        var $63=$62; //@line 686 "datetimemodule.c"
+        HEAP[$63]=$61; //@line 686 "datetimemodule.c"
+        var $64=$self; //@line 687 "datetimemodule.c"
+        var $65=$64+24; //@line 687 "datetimemodule.c"
+        var $66=$tzinfo_addr; //@line 687 "datetimemodule.c"
+        HEAP[$65]=$66; //@line 687 "datetimemodule.c"
         __label__ = 3; break; //@line 687 "datetimemodule.c"
       case 3: // $bb2
-        var $91=$self; //@line 690 "datetimemodule.c"
-        var $92=$91; //@line 690 "datetimemodule.c"
-        $0=$92; //@line 690 "datetimemodule.c"
-        var $93=$0; //@line 690 "datetimemodule.c"
-        $retval=$93; //@line 690 "datetimemodule.c"
+        var $67=$self; //@line 690 "datetimemodule.c"
+        var $68=$67; //@line 690 "datetimemodule.c"
+        $0=$68; //@line 690 "datetimemodule.c"
+        var $69=$0; //@line 690 "datetimemodule.c"
+        $retval=$69; //@line 690 "datetimemodule.c"
         var $retval3=$retval; //@line 690 "datetimemodule.c"
         ;
         return $retval3; //@line 690 "datetimemodule.c"
@@ -2148,165 +2368,213 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $days_addr_i;
-        var $retval_i;
-        var $0;
-        var $d_addr_i;
-        var $s_addr_i;
-        var $us_addr_i;
         var $days_addr=__stackBase__;
         var $seconds_addr=__stackBase__+4;
         var $microseconds_addr=__stackBase__+8;
         var $normalize_addr;
         var $type_addr;
         var $retval;
-        var $1;
+        var $0;
         var $self;
         HEAP[$days_addr]=$days;
         HEAP[$seconds_addr]=$seconds;
         HEAP[$microseconds_addr]=$microseconds;
         $normalize_addr=$normalize;
         $type_addr=$type;
-        var $2=$normalize_addr; //@line 736 "datetimemodule.c"
-        var $3=($2)!=0; //@line 736 "datetimemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 13; break; } //@line 736 "datetimemodule.c"
+        var $1=$normalize_addr; //@line 736 "datetimemodule.c"
+        var $2=($1)!=0; //@line 736 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 736 "datetimemodule.c"
       case 1: // $bb
-        $d_addr_i=$days_addr;
-        $s_addr_i=$seconds_addr;
-        $us_addr_i=$microseconds_addr;
-        var $4=$us_addr_i; //@line 462 "datetimemodule.c"
-        var $5=HEAP[$4]; //@line 462 "datetimemodule.c"
-        var $6=($5) < 0; //@line 462 "datetimemodule.c"
-        if ($6) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 462 "datetimemodule.c"
-      case 2: // $bb_i
-        var $7=$us_addr_i; //@line 462 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 462 "datetimemodule.c"
-        var $9=($8) > 999999; //@line 462 "datetimemodule.c"
-        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 462 "datetimemodule.c"
-      case 3: // $bb1_i
-        var $10=$s_addr_i; //@line 463 "datetimemodule.c"
-        var $11=$us_addr_i; //@line 463 "datetimemodule.c"
-        _normalize_pair($10, $11, 1000000); //@line 463 "datetimemodule.c"
-        __label__ = 4; break; //@line 463 "datetimemodule.c"
-      case 4: // $bb2_i
-        var $12=$s_addr_i; //@line 469 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 469 "datetimemodule.c"
-        var $14=($13) < 0; //@line 469 "datetimemodule.c"
-        if ($14) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 469 "datetimemodule.c"
-      case 5: // $bb3_i
-        var $15=$s_addr_i; //@line 469 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 469 "datetimemodule.c"
-        var $17=($16) > 86399; //@line 469 "datetimemodule.c"
-        if ($17) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 469 "datetimemodule.c"
-      case 6: // $bb4_i
-        var $18=$d_addr_i; //@line 470 "datetimemodule.c"
-        var $19=$s_addr_i; //@line 470 "datetimemodule.c"
-        _normalize_pair($18, $19, 86400); //@line 470 "datetimemodule.c"
-        __label__ = 7; break; //@line 470 "datetimemodule.c"
-      case 7: // $bb5_i
-        var $20=$s_addr_i; //@line 476 "datetimemodule.c"
-        var $21=HEAP[$20]; //@line 476 "datetimemodule.c"
-        var $22=($21) < 0; //@line 476 "datetimemodule.c"
-        if ($22) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 476 "datetimemodule.c"
-      case 8: // $bb6_i
-        var $23=$s_addr_i; //@line 476 "datetimemodule.c"
-        var $24=HEAP[$23]; //@line 476 "datetimemodule.c"
-        var $25=($24) > 86399; //@line 476 "datetimemodule.c"
-        if ($25) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 476 "datetimemodule.c"
-      case 9: // $bb7_i
-        ___assert_fail(__str24, __str1, 476, ___PRETTY_FUNCTION___8725); //@line 476 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 476 "datetimemodule.c"
-      case 10: // $bb8_i
-        var $26=$us_addr_i; //@line 477 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 477 "datetimemodule.c"
-        var $28=($27) < 0; //@line 477 "datetimemodule.c"
-        if ($28) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 477 "datetimemodule.c"
-      case 11: // $bb9_i
-        var $29=$us_addr_i; //@line 477 "datetimemodule.c"
-        var $30=HEAP[$29]; //@line 477 "datetimemodule.c"
-        var $31=($30) > 999999; //@line 477 "datetimemodule.c"
-        if ($31) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 477 "datetimemodule.c"
-      case 12: // $bb10_i
-        ___assert_fail(__str25, __str1, 477, ___PRETTY_FUNCTION___8725); //@line 477 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 477 "datetimemodule.c"
-      case 13: // $bb1
-        var $32=HEAP[$seconds_addr]; //@line 738 "datetimemodule.c"
-        var $33=($32) < 0; //@line 738 "datetimemodule.c"
-        var $34=HEAP[$seconds_addr]; //@line 738 "datetimemodule.c"
-        var $35=($34) > 86399; //@line 738 "datetimemodule.c"
-        var $or_cond=($33) | ($35);
-        if ($or_cond) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 738 "datetimemodule.c"
-      case 14: // $bb3
+        _normalize_d_s_us($days_addr, $seconds_addr, $microseconds_addr); //@line 737 "datetimemodule.c"
+        __label__ = 2; break; //@line 737 "datetimemodule.c"
+      case 2: // $bb1
+        var $3=HEAP[$seconds_addr]; //@line 738 "datetimemodule.c"
+        var $4=($3) < 0; //@line 738 "datetimemodule.c"
+        var $5=HEAP[$seconds_addr]; //@line 738 "datetimemodule.c"
+        var $6=($5) > 86399; //@line 738 "datetimemodule.c"
+        var $or_cond=($4) | ($6);
+        if ($or_cond) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 738 "datetimemodule.c"
+      case 3: // $bb3
         ___assert_fail(__str30, __str1, 738, ___PRETTY_FUNCTION___8976); //@line 738 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 738 "datetimemodule.c"
-      case 15: // $bb4
-        var $36=HEAP[$microseconds_addr]; //@line 739 "datetimemodule.c"
-        var $37=($36) < 0; //@line 739 "datetimemodule.c"
-        var $38=HEAP[$microseconds_addr]; //@line 739 "datetimemodule.c"
-        var $39=($38) > 999999; //@line 739 "datetimemodule.c"
-        var $or_cond3=($37) | ($39);
-        if ($or_cond3) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 739 "datetimemodule.c"
-      case 16: // $bb6
+      case 4: // $bb4
+        var $7=HEAP[$microseconds_addr]; //@line 739 "datetimemodule.c"
+        var $8=($7) < 0; //@line 739 "datetimemodule.c"
+        var $9=HEAP[$microseconds_addr]; //@line 739 "datetimemodule.c"
+        var $10=($9) > 999999; //@line 739 "datetimemodule.c"
+        var $or_cond3=($8) | ($10);
+        if ($or_cond3) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 739 "datetimemodule.c"
+      case 5: // $bb6
         ___assert_fail(__str31, __str1, 739, ___PRETTY_FUNCTION___8976); //@line 739 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 739 "datetimemodule.c"
-      case 17: // $bb7
-        var $40=HEAP[$days_addr]; //@line 741 "datetimemodule.c"
-        $days_addr_i=$40;
-        var $41=$days_addr_i; //@line 367 "datetimemodule.c"
-        var $42=($41) >= -999999999; //@line 367 "datetimemodule.c"
-        var $43=$days_addr_i; //@line 367 "datetimemodule.c"
-        var $44=($43) <= 999999999; //@line 367 "datetimemodule.c"
-        var $or_cond_i=($42) & ($44);
-        if ($or_cond_i) { __label__ = 19; break; } else { __label__ = 18; break; } //@line 367 "datetimemodule.c"
-      case 18: // $bb8
-        var $45=HEAP[_PyExc_OverflowError]; //@line 369 "datetimemodule.c"
-        var $46=$days_addr_i; //@line 369 "datetimemodule.c"
-        var $47=_PyErr_Format($45, __str12, $46, 999999999); //@line 369 "datetimemodule.c"
-        $0=-1; //@line 372 "datetimemodule.c"
-        $retval_i=-1; //@line 368 "datetimemodule.c"
-        $1=0; //@line 742 "datetimemodule.c"
-        __label__ = 22; break; //@line 742 "datetimemodule.c"
-      case 19: // $bb9
-        $0=0; //@line 368 "datetimemodule.c"
-        $retval_i=0; //@line 368 "datetimemodule.c"
-        var $48=$type_addr; //@line 744 "datetimemodule.c"
-        var $49=$48+152; //@line 744 "datetimemodule.c"
-        var $50=HEAP[$49]; //@line 744 "datetimemodule.c"
-        var $51=$type_addr; //@line 744 "datetimemodule.c"
-        var $52=FUNCTION_TABLE[$50]($51, 0); //@line 744 "datetimemodule.c"
-        var $53=$52; //@line 744 "datetimemodule.c"
-        $self=$53; //@line 744 "datetimemodule.c"
-        var $54=$self; //@line 745 "datetimemodule.c"
-        var $55=($54)!=0; //@line 745 "datetimemodule.c"
-        if ($55) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 745 "datetimemodule.c"
-      case 20: // $bb10
-        var $56=$self; //@line 746 "datetimemodule.c"
-        var $57=$56+8; //@line 746 "datetimemodule.c"
-        HEAP[$57]=-1; //@line 746 "datetimemodule.c"
-        var $58=HEAP[$days_addr]; //@line 747 "datetimemodule.c"
-        var $59=$self; //@line 747 "datetimemodule.c"
-        var $60=$59+12; //@line 747 "datetimemodule.c"
-        HEAP[$60]=$58; //@line 747 "datetimemodule.c"
-        var $61=HEAP[$seconds_addr]; //@line 748 "datetimemodule.c"
-        var $62=$self; //@line 748 "datetimemodule.c"
-        var $63=$62+16; //@line 748 "datetimemodule.c"
-        HEAP[$63]=$61; //@line 748 "datetimemodule.c"
-        var $64=HEAP[$microseconds_addr]; //@line 749 "datetimemodule.c"
-        var $65=$self; //@line 749 "datetimemodule.c"
-        var $66=$65+20; //@line 749 "datetimemodule.c"
-        HEAP[$66]=$64; //@line 749 "datetimemodule.c"
-        __label__ = 21; break; //@line 749 "datetimemodule.c"
-      case 21: // $bb11
-        var $67=$self; //@line 751 "datetimemodule.c"
-        var $68=$67; //@line 751 "datetimemodule.c"
-        $1=$68; //@line 751 "datetimemodule.c"
-        __label__ = 22; break; //@line 751 "datetimemodule.c"
-      case 22: // $bb12
-        var $69=$1; //@line 742 "datetimemodule.c"
-        $retval=$69; //@line 742 "datetimemodule.c"
+      case 6: // $bb7
+        var $11=HEAP[$days_addr]; //@line 741 "datetimemodule.c"
+        var $12=_check_delta_day_range($11); //@line 741 "datetimemodule.c"
+        var $13=($12) < 0; //@line 741 "datetimemodule.c"
+        if ($13) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 741 "datetimemodule.c"
+      case 7: // $bb8
+        $0=0; //@line 742 "datetimemodule.c"
+        __label__ = 11; break; //@line 742 "datetimemodule.c"
+      case 8: // $bb9
+        var $14=$type_addr; //@line 744 "datetimemodule.c"
+        var $15=$14+152; //@line 744 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 744 "datetimemodule.c"
+        var $17=$type_addr; //@line 744 "datetimemodule.c"
+        var $18=FUNCTION_TABLE[$16]($17, 0); //@line 744 "datetimemodule.c"
+        var $19=$18; //@line 744 "datetimemodule.c"
+        $self=$19; //@line 744 "datetimemodule.c"
+        var $20=$self; //@line 745 "datetimemodule.c"
+        var $21=($20)!=0; //@line 745 "datetimemodule.c"
+        if ($21) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 745 "datetimemodule.c"
+      case 9: // $bb10
+        var $22=$self; //@line 746 "datetimemodule.c"
+        var $23=$22+8; //@line 746 "datetimemodule.c"
+        HEAP[$23]=-1; //@line 746 "datetimemodule.c"
+        var $24=HEAP[$days_addr]; //@line 747 "datetimemodule.c"
+        var $25=$self; //@line 747 "datetimemodule.c"
+        var $26=$25+12; //@line 747 "datetimemodule.c"
+        HEAP[$26]=$24; //@line 747 "datetimemodule.c"
+        var $27=HEAP[$seconds_addr]; //@line 748 "datetimemodule.c"
+        var $28=$self; //@line 748 "datetimemodule.c"
+        var $29=$28+16; //@line 748 "datetimemodule.c"
+        HEAP[$29]=$27; //@line 748 "datetimemodule.c"
+        var $30=HEAP[$microseconds_addr]; //@line 749 "datetimemodule.c"
+        var $31=$self; //@line 749 "datetimemodule.c"
+        var $32=$31+20; //@line 749 "datetimemodule.c"
+        HEAP[$32]=$30; //@line 749 "datetimemodule.c"
+        __label__ = 10; break; //@line 749 "datetimemodule.c"
+      case 10: // $bb11
+        var $33=$self; //@line 751 "datetimemodule.c"
+        var $34=$33; //@line 751 "datetimemodule.c"
+        $0=$34; //@line 751 "datetimemodule.c"
+        __label__ = 11; break; //@line 751 "datetimemodule.c"
+      case 11: // $bb12
+        var $35=$0; //@line 742 "datetimemodule.c"
+        $retval=$35; //@line 742 "datetimemodule.c"
         var $retval13=$retval; //@line 742 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval13; //@line 742 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _check_tzinfo_subclass($p) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $p_addr;
+        var $retval;
+        var $0;
+        $p_addr=$p;
+        var $1=$p_addr; //@line 767 "datetimemodule.c"
+        var $2=($1)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
+        if ($2) { __label__ = 3; break; } else { __label__ = 1; break; } //@line 767 "datetimemodule.c"
+      case 1: // $bb
+        var $3=$p_addr; //@line 767 "datetimemodule.c"
+        var $4=$3+4; //@line 767 "datetimemodule.c"
+        var $5=HEAP[$4]; //@line 767 "datetimemodule.c"
+        var $6=($5)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 767 "datetimemodule.c"
+      case 2: // $bb1
+        var $7=$p_addr; //@line 767 "datetimemodule.c"
+        var $8=$7+4; //@line 767 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 767 "datetimemodule.c"
+        var $10=_PyType_IsSubtype($9, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
+        var $11=($10)!=0; //@line 767 "datetimemodule.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 767 "datetimemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 768 "datetimemodule.c"
+        __label__ = 5; break; //@line 768 "datetimemodule.c"
+      case 4: // $bb3
+        var $12=$p_addr; //@line 769 "datetimemodule.c"
+        var $13=$12+4; //@line 769 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 769 "datetimemodule.c"
+        var $15=$14+12; //@line 769 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 769 "datetimemodule.c"
+        var $17=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
+        var $18=_PyErr_Format($17, __str32, allocate([$16,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 769 "datetimemodule.c"
+        $0=-1; //@line 773 "datetimemodule.c"
+        __label__ = 5; break; //@line 773 "datetimemodule.c"
+      case 5: // $bb4
+        var $19=$0; //@line 768 "datetimemodule.c"
+        $retval=$19; //@line 768 "datetimemodule.c"
+        var $retval5=$retval; //@line 768 "datetimemodule.c"
+        ;
+        return $retval5; //@line 768 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _call_tzinfo_method($tzinfo, $methname, $tzinfoarg) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $tzinfo_addr;
+        var $methname_addr;
+        var $tzinfoarg_addr;
+        var $retval;
+        var $0;
+        var $result;
+        $tzinfo_addr=$tzinfo;
+        $methname_addr=$methname;
+        $tzinfoarg_addr=$tzinfoarg;
+        var $1=$tzinfo_addr; //@line 784 "datetimemodule.c"
+        var $2=($1)==0; //@line 784 "datetimemodule.c"
+        if ($2) { __label__ = 3; break; } else { __label__ = 1; break; } //@line 784 "datetimemodule.c"
+      case 1: // $bb
+        var $3=$methname_addr; //@line 784 "datetimemodule.c"
+        var $4=($3)==0; //@line 784 "datetimemodule.c"
+        if ($4) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 784 "datetimemodule.c"
+      case 2: // $bb1
+        var $5=$tzinfoarg_addr; //@line 784 "datetimemodule.c"
+        var $6=($5)==0; //@line 784 "datetimemodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 784 "datetimemodule.c"
+      case 3: // $bb2
+        ___assert_fail(__str33, __str1, 784, ___PRETTY_FUNCTION___9023); //@line 784 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 784 "datetimemodule.c"
+      case 4: // $bb3
+        var $7=$tzinfo_addr; //@line 785 "datetimemodule.c"
+        var $8=_check_tzinfo_subclass($7); //@line 785 "datetimemodule.c"
+        var $9=($8) < 0; //@line 785 "datetimemodule.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 785 "datetimemodule.c"
+      case 5: // $bb4
+        ___assert_fail(__str34, __str1, 785, ___PRETTY_FUNCTION___9023); //@line 785 "datetimemodule.c"
+        throw "Reached an unreachable!" //@line 785 "datetimemodule.c"
+      case 6: // $bb5
+        var $10=$tzinfo_addr; //@line 786 "datetimemodule.c"
+        var $11=($10)==(__Py_NoneStruct); //@line 786 "datetimemodule.c"
+        if ($11) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 786 "datetimemodule.c"
+      case 7: // $bb6
+        $result=__Py_NoneStruct; //@line 787 "datetimemodule.c"
+        var $12=$result; //@line 788 "datetimemodule.c"
+        var $13=$12; //@line 788 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 788 "datetimemodule.c"
+        var $15=($14) + 1; //@line 788 "datetimemodule.c"
+        var $16=$result; //@line 788 "datetimemodule.c"
+        var $17=$16; //@line 788 "datetimemodule.c"
+        HEAP[$17]=$15; //@line 788 "datetimemodule.c"
+        __label__ = 9; break; //@line 788 "datetimemodule.c"
+      case 8: // $bb7
+        var $18=$tzinfo_addr; //@line 791 "datetimemodule.c"
+        var $19=$methname_addr; //@line 791 "datetimemodule.c"
+        var $20=$tzinfoarg_addr; //@line 791 "datetimemodule.c"
+        var $21=__PyObject_CallMethod_SizeT($18, $19, __str35, allocate([$20,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 791 "datetimemodule.c"
+        $result=$21; //@line 791 "datetimemodule.c"
+        __label__ = 9; break; //@line 791 "datetimemodule.c"
+      case 9: // $bb8
+        var $22=$result; //@line 792 "datetimemodule.c"
+        $0=$22; //@line 792 "datetimemodule.c"
+        var $23=$0; //@line 792 "datetimemodule.c"
+        $retval=$23; //@line 792 "datetimemodule.c"
+        var $retval9=$retval; //@line 792 "datetimemodule.c"
+        ;
+        return $retval9; //@line 792 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -2393,25 +2661,15 @@ var _initialized_b;
   function _call_utc_tzinfo_method($tzinfo, $name, $tzinfoarg, $none) {
     var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i_i;
-        var $retval_i_i;
-        var $0;
-        var $tzinfo_addr_i;
-        var $methname_addr_i;
-        var $tzinfoarg_addr_i;
-        var $retval_i;
-        var $1;
-        var $result_i;
         var $tzinfo_addr;
         var $name_addr;
         var $tzinfoarg_addr;
         var $none_addr;
         var $retval;
-        var $2;
+        var $0;
         var $u;
         var $result;
         var $days;
@@ -2421,249 +2679,197 @@ var _initialized_b;
         $tzinfoarg_addr=$tzinfoarg;
         $none_addr=$none;
         $result=-1; //@line 825 "datetimemodule.c"
-        var $3=$tzinfo_addr; //@line 827 "datetimemodule.c"
-        var $4=($3)==0; //@line 827 "datetimemodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 827 "datetimemodule.c"
+        var $1=$tzinfo_addr; //@line 827 "datetimemodule.c"
+        var $2=($1)==0; //@line 827 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 827 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str36, __str1, 827, ___PRETTY_FUNCTION___9075); //@line 827 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 827 "datetimemodule.c"
       case 2: // $bb1
-        var $5=$tzinfo_addr; //@line 828 "datetimemodule.c"
-        var $6=$5+4; //@line 828 "datetimemodule.c"
-        var $7=HEAP[$6]; //@line 828 "datetimemodule.c"
-        var $8=($7)!=(_PyDateTime_TZInfoType); //@line 828 "datetimemodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 828 "datetimemodule.c"
+        var $3=$tzinfo_addr; //@line 828 "datetimemodule.c"
+        var $4=$3+4; //@line 828 "datetimemodule.c"
+        var $5=HEAP[$4]; //@line 828 "datetimemodule.c"
+        var $6=($5)!=(_PyDateTime_TZInfoType); //@line 828 "datetimemodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 828 "datetimemodule.c"
       case 3: // $bb2
-        var $9=$tzinfo_addr; //@line 828 "datetimemodule.c"
-        var $10=$9+4; //@line 828 "datetimemodule.c"
-        var $11=HEAP[$10]; //@line 828 "datetimemodule.c"
-        var $12=_PyType_IsSubtype($11, _PyDateTime_TZInfoType); //@line 828 "datetimemodule.c"
-        var $13=($12)==0; //@line 828 "datetimemodule.c"
-        if ($13) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 828 "datetimemodule.c"
+        var $7=$tzinfo_addr; //@line 828 "datetimemodule.c"
+        var $8=$7+4; //@line 828 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 828 "datetimemodule.c"
+        var $10=_PyType_IsSubtype($9, _PyDateTime_TZInfoType); //@line 828 "datetimemodule.c"
+        var $11=($10)==0; //@line 828 "datetimemodule.c"
+        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 828 "datetimemodule.c"
       case 4: // $bb3
         ___assert_fail(__str37, __str1, 828, ___PRETTY_FUNCTION___9075); //@line 828 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 828 "datetimemodule.c"
       case 5: // $bb4
-        var $14=$tzinfoarg_addr; //@line 829 "datetimemodule.c"
-        var $15=($14)==0; //@line 829 "datetimemodule.c"
-        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 829 "datetimemodule.c"
+        var $12=$tzinfoarg_addr; //@line 829 "datetimemodule.c"
+        var $13=($12)==0; //@line 829 "datetimemodule.c"
+        if ($13) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 829 "datetimemodule.c"
       case 6: // $bb5
         ___assert_fail(__str38, __str1, 829, ___PRETTY_FUNCTION___9075); //@line 829 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 829 "datetimemodule.c"
       case 7: // $bb6
-        var $16=$none_addr; //@line 831 "datetimemodule.c"
-        HEAP[$16]=0; //@line 831 "datetimemodule.c"
-        var $17=$tzinfo_addr; //@line 832 "datetimemodule.c"
-        var $18=$name_addr; //@line 832 "datetimemodule.c"
-        var $19=$tzinfoarg_addr; //@line 832 "datetimemodule.c"
-        $tzinfo_addr_i=$17;
-        $methname_addr_i=$18;
-        $tzinfoarg_addr_i=$19;
-        var $20=$tzinfo_addr_i; //@line 784 "datetimemodule.c"
-        var $21=($20)==0; //@line 784 "datetimemodule.c"
-        if ($21) { __label__ = 10; break; } else { __label__ = 8; break; } //@line 784 "datetimemodule.c"
-      case 8: // $bb_i
-        var $22=$methname_addr_i; //@line 784 "datetimemodule.c"
-        var $23=($22)==0; //@line 784 "datetimemodule.c"
-        if ($23) { __label__ = 10; break; } else { __label__ = 9; break; } //@line 784 "datetimemodule.c"
-      case 9: // $bb1_i
-        var $24=$tzinfoarg_addr_i; //@line 784 "datetimemodule.c"
-        var $25=($24)==0; //@line 784 "datetimemodule.c"
-        if ($25) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 784 "datetimemodule.c"
-      case 10: // $bb2_i
-        ___assert_fail(__str33, __str1, 784, ___PRETTY_FUNCTION___9023); //@line 784 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 784 "datetimemodule.c"
-      case 11: // $bb3_i
-        var $26=$tzinfo_addr_i; //@line 785 "datetimemodule.c"
-        $p_addr_i_i=$26;
-        var $27=$p_addr_i_i; //@line 767 "datetimemodule.c"
-        var $28=($27)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($28) { __lastLabel__ = 11; __label__ = 16; break; } else { __lastLabel__ = 11; __label__ = 12; break; } //@line 767 "datetimemodule.c"
-      case 12: // $bb_i_i
-        var $29=$p_addr_i_i; //@line 767 "datetimemodule.c"
-        var $30=$29+4; //@line 767 "datetimemodule.c"
-        var $31=HEAP[$30]; //@line 767 "datetimemodule.c"
-        var $32=($31)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($32) { __label__ = 15; break; } else { __label__ = 13; break; } //@line 767 "datetimemodule.c"
-      case 13: // $bb1_i_i
-        var $33=$p_addr_i_i; //@line 767 "datetimemodule.c"
-        var $34=$33+4; //@line 767 "datetimemodule.c"
-        var $35=HEAP[$34]; //@line 767 "datetimemodule.c"
-        var $36=_PyType_IsSubtype($35, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $37=($36)!=0; //@line 767 "datetimemodule.c"
-        if ($37) { __label__ = 15; break; } else { __label__ = 14; break; } //@line 767 "datetimemodule.c"
-      case 14: // $bb4_i
-        var $38=$p_addr_i_i; //@line 769 "datetimemodule.c"
-        var $39=$38+4; //@line 769 "datetimemodule.c"
-        var $40=HEAP[$39]; //@line 769 "datetimemodule.c"
-        var $41=$40+12; //@line 769 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 769 "datetimemodule.c"
-        var $43=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $44=_PyErr_Format($43, __str32, $42); //@line 769 "datetimemodule.c"
-        $0=-1; //@line 773 "datetimemodule.c"
-        $retval_i_i=-1; //@line 768 "datetimemodule.c"
-        ___assert_fail(__str34, __str1, 785, ___PRETTY_FUNCTION___9023); //@line 785 "datetimemodule.c"
-        throw "Reached an unreachable!" //@line 785 "datetimemodule.c"
-      case 15: // $bb5thread_pre_split_i
-        var $_pr_i=$tzinfo_addr_i;
-        __lastLabel__ = 15; __label__ = 16; break;
-      case 16: // $bb5_i
-        var $45=__lastLabel__ == 15 ? $_pr_i : ($26);
-        $0=0; //@line 768 "datetimemodule.c"
-        $retval_i_i=0; //@line 768 "datetimemodule.c"
-        var $46=($45)==(__Py_NoneStruct); //@line 786 "datetimemodule.c"
-        if ($46) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 786 "datetimemodule.c"
-      case 17: // $bb6_i
-        $result_i=__Py_NoneStruct; //@line 787 "datetimemodule.c"
-        var $47=$result_i; //@line 788 "datetimemodule.c"
-        var $48=$47; //@line 788 "datetimemodule.c"
-        var $49=HEAP[$48]; //@line 788 "datetimemodule.c"
-        var $50=($49) + 1; //@line 788 "datetimemodule.c"
-        var $51=$result_i; //@line 788 "datetimemodule.c"
-        var $52=$51; //@line 788 "datetimemodule.c"
-        HEAP[$52]=$50; //@line 788 "datetimemodule.c"
-        var $_pr=$result_i;
-        __lastLabel__ = 17; __label__ = 19; break; //@line 788 "datetimemodule.c"
-      case 18: // $bb7_i
-        var $53=$tzinfo_addr_i; //@line 791 "datetimemodule.c"
-        var $54=$methname_addr_i; //@line 791 "datetimemodule.c"
-        var $55=$tzinfoarg_addr_i; //@line 791 "datetimemodule.c"
-        var $56=__PyObject_CallMethod_SizeT($53, $54, __str35, $55); //@line 791 "datetimemodule.c"
-        $result_i=$56; //@line 791 "datetimemodule.c"
-        __lastLabel__ = 18; __label__ = 19; break; //@line 791 "datetimemodule.c"
-      case 19: // $call_tzinfo_method_exit
-        var $57=__lastLabel__ == 17 ? $_pr : ($56);
-        $1=$57; //@line 792 "datetimemodule.c"
-        $retval_i=$57; //@line 792 "datetimemodule.c"
-        $u=$57; //@line 832 "datetimemodule.c"
-        var $58=($57)==0; //@line 833 "datetimemodule.c"
-        if ($58) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 833 "datetimemodule.c"
-      case 20: // $bb7
-        $2=-1; //@line 834 "datetimemodule.c"
-        __label__ = 36; break; //@line 834 "datetimemodule.c"
-      case 21: // $bb8
-        var $59=$u; //@line 836 "datetimemodule.c"
-        var $60=($59)==(__Py_NoneStruct); //@line 836 "datetimemodule.c"
-        if ($60) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 836 "datetimemodule.c"
-      case 22: // $bb9
+        var $14=$none_addr; //@line 831 "datetimemodule.c"
+        HEAP[$14]=0; //@line 831 "datetimemodule.c"
+        var $15=$tzinfo_addr; //@line 832 "datetimemodule.c"
+        var $16=$name_addr; //@line 832 "datetimemodule.c"
+        var $17=$tzinfoarg_addr; //@line 832 "datetimemodule.c"
+        var $18=_call_tzinfo_method($15, $16, $17); //@line 832 "datetimemodule.c"
+        $u=$18; //@line 832 "datetimemodule.c"
+        var $19=$u; //@line 833 "datetimemodule.c"
+        var $20=($19)==0; //@line 833 "datetimemodule.c"
+        if ($20) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 833 "datetimemodule.c"
+      case 8: // $bb7
+        $0=-1; //@line 834 "datetimemodule.c"
+        __label__ = 24; break; //@line 834 "datetimemodule.c"
+      case 9: // $bb8
+        var $21=$u; //@line 836 "datetimemodule.c"
+        var $22=($21)==(__Py_NoneStruct); //@line 836 "datetimemodule.c"
+        if ($22) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 836 "datetimemodule.c"
+      case 10: // $bb9
         $result=0; //@line 837 "datetimemodule.c"
-        var $61=$none_addr; //@line 838 "datetimemodule.c"
-        HEAP[$61]=1; //@line 838 "datetimemodule.c"
-        __label__ = 31; break; //@line 838 "datetimemodule.c"
-      case 23: // $bb10
-        var $62=$u; //@line 840 "datetimemodule.c"
-        var $63=$62+4; //@line 840 "datetimemodule.c"
-        var $64=HEAP[$63]; //@line 840 "datetimemodule.c"
-        var $65=($64)==(_PyDateTime_DeltaType); //@line 840 "datetimemodule.c"
-        if ($65) { __label__ = 25; break; } else { __label__ = 24; break; } //@line 840 "datetimemodule.c"
-      case 24: // $bb11
-        var $66=$u; //@line 840 "datetimemodule.c"
-        var $67=$66+4; //@line 840 "datetimemodule.c"
-        var $68=HEAP[$67]; //@line 840 "datetimemodule.c"
-        var $69=_PyType_IsSubtype($68, _PyDateTime_DeltaType); //@line 840 "datetimemodule.c"
-        var $70=($69)!=0; //@line 840 "datetimemodule.c"
-        if ($70) { __label__ = 25; break; } else { __label__ = 30; break; } //@line 840 "datetimemodule.c"
-      case 25: // $bb12
-        var $71=$u; //@line 841 "datetimemodule.c"
-        var $72=$71; //@line 841 "datetimemodule.c"
-        var $73=$72+12; //@line 841 "datetimemodule.c"
-        var $74=HEAP[$73]; //@line 841 "datetimemodule.c"
-        $days=$74; //@line 841 "datetimemodule.c"
-        var $75=$days; //@line 842 "datetimemodule.c"
-        var $76=($75) < -1; //@line 842 "datetimemodule.c"
-        var $77=$days; //@line 842 "datetimemodule.c"
-        var $78=($77) > 0; //@line 842 "datetimemodule.c"
-        var $or_cond=($76) | ($78);
-        if ($or_cond) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 842 "datetimemodule.c"
-      case 26: // $bb14
+        var $23=$none_addr; //@line 838 "datetimemodule.c"
+        HEAP[$23]=1; //@line 838 "datetimemodule.c"
+        __label__ = 19; break; //@line 838 "datetimemodule.c"
+      case 11: // $bb10
+        var $24=$u; //@line 840 "datetimemodule.c"
+        var $25=$24+4; //@line 840 "datetimemodule.c"
+        var $26=HEAP[$25]; //@line 840 "datetimemodule.c"
+        var $27=($26)==(_PyDateTime_DeltaType); //@line 840 "datetimemodule.c"
+        if ($27) { __label__ = 13; break; } else { __label__ = 12; break; } //@line 840 "datetimemodule.c"
+      case 12: // $bb11
+        var $28=$u; //@line 840 "datetimemodule.c"
+        var $29=$28+4; //@line 840 "datetimemodule.c"
+        var $30=HEAP[$29]; //@line 840 "datetimemodule.c"
+        var $31=_PyType_IsSubtype($30, _PyDateTime_DeltaType); //@line 840 "datetimemodule.c"
+        var $32=($31)!=0; //@line 840 "datetimemodule.c"
+        if ($32) { __label__ = 13; break; } else { __label__ = 18; break; } //@line 840 "datetimemodule.c"
+      case 13: // $bb12
+        var $33=$u; //@line 841 "datetimemodule.c"
+        var $34=$33; //@line 841 "datetimemodule.c"
+        var $35=$34+12; //@line 841 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 841 "datetimemodule.c"
+        $days=$36; //@line 841 "datetimemodule.c"
+        var $37=$days; //@line 842 "datetimemodule.c"
+        var $38=($37) < -1; //@line 842 "datetimemodule.c"
+        var $39=$days; //@line 842 "datetimemodule.c"
+        var $40=($39) > 0; //@line 842 "datetimemodule.c"
+        var $or_cond=($38) | ($40);
+        if ($or_cond) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 842 "datetimemodule.c"
+      case 14: // $bb14
         $result=1440; //@line 843 "datetimemodule.c"
-        __label__ = 31; break; //@line 843 "datetimemodule.c"
-      case 27: // $bb15
-        var $79=$days; //@line 848 "datetimemodule.c"
-        var $80=($79) * 86400; //@line 848 "datetimemodule.c"
-        var $81=$u; //@line 848 "datetimemodule.c"
-        var $82=$81; //@line 848 "datetimemodule.c"
-        var $83=$82+16; //@line 848 "datetimemodule.c"
-        var $84=HEAP[$83]; //@line 848 "datetimemodule.c"
-        var $85=($84) + ($80); //@line 848 "datetimemodule.c"
-        HEAP[$ss]=$85; //@line 848 "datetimemodule.c"
-        var $86=HEAP[$ss]; //@line 849 "datetimemodule.c"
-        var $87=_divmod($86, 60, $ss); //@line 849 "datetimemodule.c"
-        $result=$87; //@line 849 "datetimemodule.c"
-        var $88=HEAP[$ss]; //@line 850 "datetimemodule.c"
-        var $89=($88)!=0; //@line 850 "datetimemodule.c"
-        if ($89) { __label__ = 29; break; } else { __label__ = 28; break; } //@line 850 "datetimemodule.c"
-      case 28: // $bb16
-        var $90=$u; //@line 850 "datetimemodule.c"
-        var $91=$90; //@line 850 "datetimemodule.c"
-        var $92=$91+20; //@line 850 "datetimemodule.c"
-        var $93=HEAP[$92]; //@line 850 "datetimemodule.c"
-        var $94=($93)!=0; //@line 850 "datetimemodule.c"
-        if ($94) { __label__ = 29; break; } else { __label__ = 31; break; } //@line 850 "datetimemodule.c"
-      case 29: // $bb17
-        var $95=HEAP[_PyExc_ValueError]; //@line 851 "datetimemodule.c"
-        var $96=$name_addr; //@line 851 "datetimemodule.c"
-        var $97=_PyErr_Format($95, __str39, $96); //@line 851 "datetimemodule.c"
+        __label__ = 19; break; //@line 843 "datetimemodule.c"
+      case 15: // $bb15
+        var $41=$days; //@line 848 "datetimemodule.c"
+        var $42=($41) * 86400; //@line 848 "datetimemodule.c"
+        var $43=$u; //@line 848 "datetimemodule.c"
+        var $44=$43; //@line 848 "datetimemodule.c"
+        var $45=$44+16; //@line 848 "datetimemodule.c"
+        var $46=HEAP[$45]; //@line 848 "datetimemodule.c"
+        var $47=($46) + ($42); //@line 848 "datetimemodule.c"
+        HEAP[$ss]=$47; //@line 848 "datetimemodule.c"
+        var $48=HEAP[$ss]; //@line 849 "datetimemodule.c"
+        var $49=_divmod($48, 60, $ss); //@line 849 "datetimemodule.c"
+        $result=$49; //@line 849 "datetimemodule.c"
+        var $50=HEAP[$ss]; //@line 850 "datetimemodule.c"
+        var $51=($50)!=0; //@line 850 "datetimemodule.c"
+        if ($51) { __label__ = 17; break; } else { __label__ = 16; break; } //@line 850 "datetimemodule.c"
+      case 16: // $bb16
+        var $52=$u; //@line 850 "datetimemodule.c"
+        var $53=$52; //@line 850 "datetimemodule.c"
+        var $54=$53+20; //@line 850 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 850 "datetimemodule.c"
+        var $56=($55)!=0; //@line 850 "datetimemodule.c"
+        if ($56) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 850 "datetimemodule.c"
+      case 17: // $bb17
+        var $57=HEAP[_PyExc_ValueError]; //@line 851 "datetimemodule.c"
+        var $58=$name_addr; //@line 851 "datetimemodule.c"
+        var $59=_PyErr_Format($57, __str39, allocate([$58,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 851 "datetimemodule.c"
         $result=-1; //@line 855 "datetimemodule.c"
-        __label__ = 31; break; //@line 855 "datetimemodule.c"
-      case 30: // $bb19
-        var $98=$u; //@line 860 "datetimemodule.c"
-        var $99=$98+4; //@line 860 "datetimemodule.c"
-        var $100=HEAP[$99]; //@line 860 "datetimemodule.c"
-        var $101=$100+12; //@line 860 "datetimemodule.c"
-        var $102=HEAP[$101]; //@line 860 "datetimemodule.c"
-        var $103=HEAP[_PyExc_TypeError]; //@line 860 "datetimemodule.c"
-        var $104=$name_addr; //@line 860 "datetimemodule.c"
-        var $105=_PyErr_Format($103, __str40, $104, $102); //@line 860 "datetimemodule.c"
-        __label__ = 31; break; //@line 860 "datetimemodule.c"
-      case 31: // $bb20
-        var $106=$u; //@line 866 "datetimemodule.c"
-        var $107=$106; //@line 866 "datetimemodule.c"
-        var $108=HEAP[$107]; //@line 866 "datetimemodule.c"
-        var $109=($108) - 1; //@line 866 "datetimemodule.c"
-        var $110=$u; //@line 866 "datetimemodule.c"
-        var $111=$110; //@line 866 "datetimemodule.c"
-        HEAP[$111]=$109; //@line 866 "datetimemodule.c"
-        var $112=$u; //@line 866 "datetimemodule.c"
-        var $113=$112; //@line 866 "datetimemodule.c"
-        var $114=HEAP[$113]; //@line 866 "datetimemodule.c"
-        var $115=($114)==0; //@line 866 "datetimemodule.c"
-        if ($115) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 866 "datetimemodule.c"
-      case 32: // $bb21
-        var $116=$u; //@line 866 "datetimemodule.c"
-        var $117=$116+4; //@line 866 "datetimemodule.c"
-        var $118=HEAP[$117]; //@line 866 "datetimemodule.c"
-        var $119=$118+24; //@line 866 "datetimemodule.c"
-        var $120=HEAP[$119]; //@line 866 "datetimemodule.c"
-        var $121=$u; //@line 866 "datetimemodule.c"
-        FUNCTION_TABLE[$120]($121); //@line 866 "datetimemodule.c"
-        __label__ = 33; break; //@line 866 "datetimemodule.c"
-      case 33: // $bb22
-        var $122=$result; //@line 867 "datetimemodule.c"
-        var $123=($122) < -1439; //@line 867 "datetimemodule.c"
-        var $124=$result; //@line 867 "datetimemodule.c"
-        var $125=($124) > 1439; //@line 867 "datetimemodule.c"
-        var $or_cond3=($123) | ($125);
-        if ($or_cond3) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 867 "datetimemodule.c"
-      case 34: // $bb24
-        var $126=HEAP[_PyExc_ValueError]; //@line 868 "datetimemodule.c"
-        var $127=$name_addr; //@line 868 "datetimemodule.c"
-        var $128=$result; //@line 868 "datetimemodule.c"
-        var $129=_PyErr_Format($126, __str41, $127, $128); //@line 868 "datetimemodule.c"
+        __label__ = 19; break; //@line 855 "datetimemodule.c"
+      case 18: // $bb19
+        var $60=$u; //@line 860 "datetimemodule.c"
+        var $61=$60+4; //@line 860 "datetimemodule.c"
+        var $62=HEAP[$61]; //@line 860 "datetimemodule.c"
+        var $63=$62+12; //@line 860 "datetimemodule.c"
+        var $64=HEAP[$63]; //@line 860 "datetimemodule.c"
+        var $65=HEAP[_PyExc_TypeError]; //@line 860 "datetimemodule.c"
+        var $66=$name_addr; //@line 860 "datetimemodule.c"
+        var $67=_PyErr_Format($65, __str40, allocate([$66,0,0,0,$64,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 860 "datetimemodule.c"
+        __label__ = 19; break; //@line 860 "datetimemodule.c"
+      case 19: // $bb20
+        var $68=$u; //@line 866 "datetimemodule.c"
+        var $69=$68; //@line 866 "datetimemodule.c"
+        var $70=HEAP[$69]; //@line 866 "datetimemodule.c"
+        var $71=($70) - 1; //@line 866 "datetimemodule.c"
+        var $72=$u; //@line 866 "datetimemodule.c"
+        var $73=$72; //@line 866 "datetimemodule.c"
+        HEAP[$73]=$71; //@line 866 "datetimemodule.c"
+        var $74=$u; //@line 866 "datetimemodule.c"
+        var $75=$74; //@line 866 "datetimemodule.c"
+        var $76=HEAP[$75]; //@line 866 "datetimemodule.c"
+        var $77=($76)==0; //@line 866 "datetimemodule.c"
+        if ($77) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 866 "datetimemodule.c"
+      case 20: // $bb21
+        var $78=$u; //@line 866 "datetimemodule.c"
+        var $79=$78+4; //@line 866 "datetimemodule.c"
+        var $80=HEAP[$79]; //@line 866 "datetimemodule.c"
+        var $81=$80+24; //@line 866 "datetimemodule.c"
+        var $82=HEAP[$81]; //@line 866 "datetimemodule.c"
+        var $83=$u; //@line 866 "datetimemodule.c"
+        FUNCTION_TABLE[$82]($83); //@line 866 "datetimemodule.c"
+        __label__ = 21; break; //@line 866 "datetimemodule.c"
+      case 21: // $bb22
+        var $84=$result; //@line 867 "datetimemodule.c"
+        var $85=($84) < -1439; //@line 867 "datetimemodule.c"
+        var $86=$result; //@line 867 "datetimemodule.c"
+        var $87=($86) > 1439; //@line 867 "datetimemodule.c"
+        var $or_cond3=($85) | ($87);
+        if ($or_cond3) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 867 "datetimemodule.c"
+      case 22: // $bb24
+        var $88=HEAP[_PyExc_ValueError]; //@line 868 "datetimemodule.c"
+        var $89=$name_addr; //@line 868 "datetimemodule.c"
+        var $90=$result; //@line 868 "datetimemodule.c"
+        var $91=_PyErr_Format($88, __str41, allocate([$89,0,0,0,$90,0,0,0], ["i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 868 "datetimemodule.c"
         $result=-1; //@line 872 "datetimemodule.c"
-        __label__ = 35; break; //@line 872 "datetimemodule.c"
-      case 35: // $bb25
-        var $130=$result; //@line 874 "datetimemodule.c"
-        $2=$130; //@line 874 "datetimemodule.c"
-        __label__ = 36; break; //@line 874 "datetimemodule.c"
-      case 36: // $bb26
-        var $131=$2; //@line 834 "datetimemodule.c"
-        $retval=$131; //@line 834 "datetimemodule.c"
+        __label__ = 23; break; //@line 872 "datetimemodule.c"
+      case 23: // $bb25
+        var $92=$result; //@line 874 "datetimemodule.c"
+        $0=$92; //@line 874 "datetimemodule.c"
+        __label__ = 24; break; //@line 874 "datetimemodule.c"
+      case 24: // $bb26
+        var $93=$0; //@line 834 "datetimemodule.c"
+        $retval=$93; //@line 834 "datetimemodule.c"
         var $retval27=$retval; //@line 834 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval27; //@line 834 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _call_utcoffset($tzinfo, $tzinfoarg, $none) {
+    ;
+    var __label__;
+  
+    var $tzinfo_addr;
+    var $tzinfoarg_addr;
+    var $none_addr;
+    var $retval;
+    var $0;
+    $tzinfo_addr=$tzinfo;
+    $tzinfoarg_addr=$tzinfoarg;
+    $none_addr=$none;
+    var $1=$tzinfo_addr; //@line 888 "datetimemodule.c"
+    var $2=$tzinfoarg_addr; //@line 888 "datetimemodule.c"
+    var $3=$none_addr; //@line 888 "datetimemodule.c"
+    var $4=_call_utc_tzinfo_method($1, __str42, $2, $3); //@line 888 "datetimemodule.c"
+    $0=$4; //@line 888 "datetimemodule.c"
+    var $5=$0; //@line 888 "datetimemodule.c"
+    $retval=$5; //@line 888 "datetimemodule.c"
+    var $retval1=$retval; //@line 888 "datetimemodule.c"
+    ;
+    return $retval1; //@line 888 "datetimemodule.c"
   }
   
 
@@ -2763,141 +2969,138 @@ var _initialized_b;
   }
   
 
+  function _call_dst($tzinfo, $tzinfoarg, $none) {
+    ;
+    var __label__;
+  
+    var $tzinfo_addr;
+    var $tzinfoarg_addr;
+    var $none_addr;
+    var $retval;
+    var $0;
+    $tzinfo_addr=$tzinfo;
+    $tzinfoarg_addr=$tzinfoarg;
+    $none_addr=$none;
+    var $1=$tzinfo_addr; //@line 929 "datetimemodule.c"
+    var $2=$tzinfoarg_addr; //@line 929 "datetimemodule.c"
+    var $3=$none_addr; //@line 929 "datetimemodule.c"
+    var $4=_call_utc_tzinfo_method($1, __str44, $2, $3); //@line 929 "datetimemodule.c"
+    $0=$4; //@line 929 "datetimemodule.c"
+    var $5=$0; //@line 929 "datetimemodule.c"
+    $retval=$5; //@line 929 "datetimemodule.c"
+    var $retval1=$retval; //@line 929 "datetimemodule.c"
+    ;
+    return $retval1; //@line 929 "datetimemodule.c"
+  }
+  
+
   function _call_tzname($tzinfo, $tzinfoarg) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i;
-        var $retval_i;
-        var $0;
         var $tzinfo_addr;
         var $tzinfoarg_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result;
         $tzinfo_addr=$tzinfo;
         $tzinfoarg_addr=$tzinfoarg;
-        var $2=$tzinfo_addr; //@line 942 "datetimemodule.c"
-        var $3=($2)==0; //@line 942 "datetimemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 942 "datetimemodule.c"
+        var $1=$tzinfo_addr; //@line 942 "datetimemodule.c"
+        var $2=($1)==0; //@line 942 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 942 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str36, __str1, 942, ___PRETTY_FUNCTION___9191); //@line 942 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 942 "datetimemodule.c"
       case 2: // $bb1
-        var $4=$tzinfo_addr; //@line 943 "datetimemodule.c"
-        $p_addr_i=$4;
-        var $5=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $6=($5)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($6) { __label__ = 6; break; } else { __label__ = 3; break; } //@line 767 "datetimemodule.c"
-      case 3: // $bb_i
-        var $7=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $8=$7+4; //@line 767 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 767 "datetimemodule.c"
-        var $10=($9)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($10) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 767 "datetimemodule.c"
-      case 4: // $bb1_i
-        var $11=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $12=$11+4; //@line 767 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 767 "datetimemodule.c"
-        var $14=_PyType_IsSubtype($13, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $15=($14)!=0; //@line 767 "datetimemodule.c"
-        if ($15) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 767 "datetimemodule.c"
-      case 5: // $bb2
-        var $16=$p_addr_i; //@line 769 "datetimemodule.c"
-        var $17=$16+4; //@line 769 "datetimemodule.c"
-        var $18=HEAP[$17]; //@line 769 "datetimemodule.c"
-        var $19=$18+12; //@line 769 "datetimemodule.c"
-        var $20=HEAP[$19]; //@line 769 "datetimemodule.c"
-        var $21=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $22=_PyErr_Format($21, __str32, $20); //@line 769 "datetimemodule.c"
-        $0=-1; //@line 773 "datetimemodule.c"
-        $retval_i=-1; //@line 768 "datetimemodule.c"
+        var $3=$tzinfo_addr; //@line 943 "datetimemodule.c"
+        var $4=_check_tzinfo_subclass($3); //@line 943 "datetimemodule.c"
+        var $5=($4) < 0; //@line 943 "datetimemodule.c"
+        if ($5) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 943 "datetimemodule.c"
+      case 3: // $bb2
         ___assert_fail(__str34, __str1, 943, ___PRETTY_FUNCTION___9191); //@line 943 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 943 "datetimemodule.c"
-      case 6: // $bb3
-        $0=0; //@line 768 "datetimemodule.c"
-        $retval_i=0; //@line 768 "datetimemodule.c"
-        var $23=$tzinfoarg_addr; //@line 944 "datetimemodule.c"
-        var $24=($23)==0; //@line 944 "datetimemodule.c"
-        if ($24) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 944 "datetimemodule.c"
-      case 7: // $bb4
+      case 4: // $bb3
+        var $6=$tzinfoarg_addr; //@line 944 "datetimemodule.c"
+        var $7=($6)==0; //@line 944 "datetimemodule.c"
+        if ($7) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 944 "datetimemodule.c"
+      case 5: // $bb4
         ___assert_fail(__str38, __str1, 944, ___PRETTY_FUNCTION___9191); //@line 944 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 944 "datetimemodule.c"
-      case 8: // $bb5
-        var $25=$tzinfo_addr; //@line 946 "datetimemodule.c"
-        var $26=($25)==(__Py_NoneStruct); //@line 946 "datetimemodule.c"
-        if ($26) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 946 "datetimemodule.c"
-      case 9: // $bb6
+      case 6: // $bb5
+        var $8=$tzinfo_addr; //@line 946 "datetimemodule.c"
+        var $9=($8)==(__Py_NoneStruct); //@line 946 "datetimemodule.c"
+        if ($9) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 946 "datetimemodule.c"
+      case 7: // $bb6
         $result=__Py_NoneStruct; //@line 947 "datetimemodule.c"
-        var $27=$result; //@line 948 "datetimemodule.c"
-        var $28=$27; //@line 948 "datetimemodule.c"
-        var $29=HEAP[$28]; //@line 948 "datetimemodule.c"
-        var $30=($29) + 1; //@line 948 "datetimemodule.c"
-        var $31=$result; //@line 948 "datetimemodule.c"
-        var $32=$31; //@line 948 "datetimemodule.c"
-        HEAP[$32]=$30; //@line 948 "datetimemodule.c"
-        __label__ = 11; break; //@line 948 "datetimemodule.c"
-      case 10: // $bb7
-        var $33=$tzinfo_addr; //@line 951 "datetimemodule.c"
-        var $34=$tzinfoarg_addr; //@line 951 "datetimemodule.c"
-        var $35=__PyObject_CallMethod_SizeT($33, __str45, __str35, $34); //@line 951 "datetimemodule.c"
-        $result=$35; //@line 951 "datetimemodule.c"
-        __label__ = 11; break; //@line 951 "datetimemodule.c"
-      case 11: // $bb8
-        var $36=$result; //@line 953 "datetimemodule.c"
-        var $37=($36)!=0; //@line 953 "datetimemodule.c"
-        var $38=$result; //@line 953 "datetimemodule.c"
-        var $39=($38)!=(__Py_NoneStruct); //@line 953 "datetimemodule.c"
-        var $or_cond=($37) & ($39);
-        if ($or_cond) { __label__ = 12; break; } else { __label__ = 16; break; } //@line 953 "datetimemodule.c"
-      case 12: // $bb10
-        var $40=$result; //@line 953 "datetimemodule.c"
-        var $41=$40+4; //@line 953 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 953 "datetimemodule.c"
-        var $43=$42+84; //@line 953 "datetimemodule.c"
-        var $44=HEAP[$43]; //@line 953 "datetimemodule.c"
-        var $45=($44) & 134217728; //@line 953 "datetimemodule.c"
-        var $46=($45)==0; //@line 953 "datetimemodule.c"
-        if ($46) { __label__ = 13; break; } else { __label__ = 16; break; } //@line 953 "datetimemodule.c"
-      case 13: // $bb11
-        var $47=$result; //@line 954 "datetimemodule.c"
-        var $48=$47+4; //@line 954 "datetimemodule.c"
-        var $49=HEAP[$48]; //@line 954 "datetimemodule.c"
-        var $50=$49+12; //@line 954 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 954 "datetimemodule.c"
-        var $52=HEAP[_PyExc_TypeError]; //@line 954 "datetimemodule.c"
-        var $53=_PyErr_Format($52, __str46, $51); //@line 954 "datetimemodule.c"
-        var $54=$result; //@line 957 "datetimemodule.c"
-        var $55=$54; //@line 957 "datetimemodule.c"
-        var $56=HEAP[$55]; //@line 957 "datetimemodule.c"
-        var $57=($56) - 1; //@line 957 "datetimemodule.c"
-        var $58=$result; //@line 957 "datetimemodule.c"
-        var $59=$58; //@line 957 "datetimemodule.c"
-        HEAP[$59]=$57; //@line 957 "datetimemodule.c"
-        var $60=$result; //@line 957 "datetimemodule.c"
-        var $61=$60; //@line 957 "datetimemodule.c"
-        var $62=HEAP[$61]; //@line 957 "datetimemodule.c"
-        var $63=($62)==0; //@line 957 "datetimemodule.c"
-        if ($63) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 957 "datetimemodule.c"
-      case 14: // $bb12
-        var $64=$result; //@line 957 "datetimemodule.c"
-        var $65=$64+4; //@line 957 "datetimemodule.c"
-        var $66=HEAP[$65]; //@line 957 "datetimemodule.c"
-        var $67=$66+24; //@line 957 "datetimemodule.c"
-        var $68=HEAP[$67]; //@line 957 "datetimemodule.c"
-        var $69=$result; //@line 957 "datetimemodule.c"
-        FUNCTION_TABLE[$68]($69); //@line 957 "datetimemodule.c"
-        __label__ = 15; break; //@line 957 "datetimemodule.c"
-      case 15: // $bb13
+        var $10=$result; //@line 948 "datetimemodule.c"
+        var $11=$10; //@line 948 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 948 "datetimemodule.c"
+        var $13=($12) + 1; //@line 948 "datetimemodule.c"
+        var $14=$result; //@line 948 "datetimemodule.c"
+        var $15=$14; //@line 948 "datetimemodule.c"
+        HEAP[$15]=$13; //@line 948 "datetimemodule.c"
+        __label__ = 9; break; //@line 948 "datetimemodule.c"
+      case 8: // $bb7
+        var $16=$tzinfo_addr; //@line 951 "datetimemodule.c"
+        var $17=$tzinfoarg_addr; //@line 951 "datetimemodule.c"
+        var $18=__PyObject_CallMethod_SizeT($16, __str45, __str35, allocate([$17,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 951 "datetimemodule.c"
+        $result=$18; //@line 951 "datetimemodule.c"
+        __label__ = 9; break; //@line 951 "datetimemodule.c"
+      case 9: // $bb8
+        var $19=$result; //@line 953 "datetimemodule.c"
+        var $20=($19)!=0; //@line 953 "datetimemodule.c"
+        var $21=$result; //@line 953 "datetimemodule.c"
+        var $22=($21)!=(__Py_NoneStruct); //@line 953 "datetimemodule.c"
+        var $or_cond=($20) & ($22);
+        if ($or_cond) { __label__ = 10; break; } else { __label__ = 14; break; } //@line 953 "datetimemodule.c"
+      case 10: // $bb10
+        var $23=$result; //@line 953 "datetimemodule.c"
+        var $24=$23+4; //@line 953 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 953 "datetimemodule.c"
+        var $26=$25+84; //@line 953 "datetimemodule.c"
+        var $27=HEAP[$26]; //@line 953 "datetimemodule.c"
+        var $28=($27) & 134217728; //@line 953 "datetimemodule.c"
+        var $29=($28)==0; //@line 953 "datetimemodule.c"
+        if ($29) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 953 "datetimemodule.c"
+      case 11: // $bb11
+        var $30=$result; //@line 954 "datetimemodule.c"
+        var $31=$30+4; //@line 954 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 954 "datetimemodule.c"
+        var $33=$32+12; //@line 954 "datetimemodule.c"
+        var $34=HEAP[$33]; //@line 954 "datetimemodule.c"
+        var $35=HEAP[_PyExc_TypeError]; //@line 954 "datetimemodule.c"
+        var $36=_PyErr_Format($35, __str46, allocate([$34,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 954 "datetimemodule.c"
+        var $37=$result; //@line 957 "datetimemodule.c"
+        var $38=$37; //@line 957 "datetimemodule.c"
+        var $39=HEAP[$38]; //@line 957 "datetimemodule.c"
+        var $40=($39) - 1; //@line 957 "datetimemodule.c"
+        var $41=$result; //@line 957 "datetimemodule.c"
+        var $42=$41; //@line 957 "datetimemodule.c"
+        HEAP[$42]=$40; //@line 957 "datetimemodule.c"
+        var $43=$result; //@line 957 "datetimemodule.c"
+        var $44=$43; //@line 957 "datetimemodule.c"
+        var $45=HEAP[$44]; //@line 957 "datetimemodule.c"
+        var $46=($45)==0; //@line 957 "datetimemodule.c"
+        if ($46) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 957 "datetimemodule.c"
+      case 12: // $bb12
+        var $47=$result; //@line 957 "datetimemodule.c"
+        var $48=$47+4; //@line 957 "datetimemodule.c"
+        var $49=HEAP[$48]; //@line 957 "datetimemodule.c"
+        var $50=$49+24; //@line 957 "datetimemodule.c"
+        var $51=HEAP[$50]; //@line 957 "datetimemodule.c"
+        var $52=$result; //@line 957 "datetimemodule.c"
+        FUNCTION_TABLE[$51]($52); //@line 957 "datetimemodule.c"
+        __label__ = 13; break; //@line 957 "datetimemodule.c"
+      case 13: // $bb13
         $result=0; //@line 958 "datetimemodule.c"
-        __label__ = 16; break; //@line 958 "datetimemodule.c"
-      case 16: // $bb14
-        var $70=$result; //@line 960 "datetimemodule.c"
-        $1=$70; //@line 960 "datetimemodule.c"
-        var $71=$1; //@line 960 "datetimemodule.c"
-        $retval=$71; //@line 960 "datetimemodule.c"
+        __label__ = 14; break; //@line 958 "datetimemodule.c"
+      case 14: // $bb14
+        var $53=$result; //@line 960 "datetimemodule.c"
+        $0=$53; //@line 960 "datetimemodule.c"
+        var $54=$0; //@line 960 "datetimemodule.c"
+        $retval=$54; //@line 960 "datetimemodule.c"
         var $retval15=$retval; //@line 960 "datetimemodule.c"
         ;
         return $retval15; //@line 960 "datetimemodule.c"
@@ -2912,71 +3115,66 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $0;
         var $op_addr;
         var $tzinfoarg_addr;
         var $offset_addr;
         var $retval;
         var $iftmp_41;
         var $iftmp_40;
-        var $1;
+        var $0;
         var $none=__stackBase__;
         var $tzinfo;
         $op_addr=$op;
         $tzinfoarg_addr=$tzinfoarg;
         $offset_addr=$offset;
-        var $2=$tzinfoarg_addr; //@line 996 "datetimemodule.c"
-        var $3=($2)==0; //@line 996 "datetimemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 996 "datetimemodule.c"
+        var $1=$tzinfoarg_addr; //@line 996 "datetimemodule.c"
+        var $2=($1)==0; //@line 996 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 996 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str38, __str1, 996, ___PRETTY_FUNCTION___9239); //@line 996 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 996 "datetimemodule.c"
       case 2: // $bb1
-        var $4=$offset_addr; //@line 997 "datetimemodule.c"
-        HEAP[$4]=0; //@line 997 "datetimemodule.c"
-        var $5=$op_addr; //@line 998 "datetimemodule.c"
-        var $6=_get_tzinfo_member($5); //@line 998 "datetimemodule.c"
-        $tzinfo=$6; //@line 998 "datetimemodule.c"
-        var $7=$tzinfo; //@line 999 "datetimemodule.c"
-        var $8=($7)==(__Py_NoneStruct); //@line 999 "datetimemodule.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 999 "datetimemodule.c"
+        var $3=$offset_addr; //@line 997 "datetimemodule.c"
+        HEAP[$3]=0; //@line 997 "datetimemodule.c"
+        var $4=$op_addr; //@line 998 "datetimemodule.c"
+        var $5=_get_tzinfo_member($4); //@line 998 "datetimemodule.c"
+        $tzinfo=$5; //@line 998 "datetimemodule.c"
+        var $6=$tzinfo; //@line 999 "datetimemodule.c"
+        var $7=($6)==(__Py_NoneStruct); //@line 999 "datetimemodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 999 "datetimemodule.c"
       case 3: // $bb2
-        $1=2; //@line 1000 "datetimemodule.c"
+        $0=2; //@line 1000 "datetimemodule.c"
         __label__ = 19; break; //@line 1000 "datetimemodule.c"
       case 4: // $bb3
-        var $9=$tzinfo; //@line 1001 "datetimemodule.c"
-        var $10=($9)==0; //@line 1001 "datetimemodule.c"
-        if ($10) { __label__ = 5; break; } else { __label__ = 12; break; } //@line 1001 "datetimemodule.c"
+        var $8=$tzinfo; //@line 1001 "datetimemodule.c"
+        var $9=($8)==0; //@line 1001 "datetimemodule.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 12; break; } //@line 1001 "datetimemodule.c"
       case 5: // $bb4
-        var $11=$op_addr; //@line 1003 "datetimemodule.c"
-        var $12=$11+4; //@line 1003 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 1003 "datetimemodule.c"
-        var $14=($13)==(_PyDateTime_TimeType); //@line 1003 "datetimemodule.c"
-        if ($14) { __label__ = 9; break; } else { __label__ = 6; break; } //@line 1003 "datetimemodule.c"
+        var $10=$op_addr; //@line 1003 "datetimemodule.c"
+        var $11=$10+4; //@line 1003 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 1003 "datetimemodule.c"
+        var $13=($12)==(_PyDateTime_TimeType); //@line 1003 "datetimemodule.c"
+        if ($13) { __label__ = 9; break; } else { __label__ = 6; break; } //@line 1003 "datetimemodule.c"
       case 6: // $bb5
-        var $15=$op_addr; //@line 1003 "datetimemodule.c"
-        var $16=$15+4; //@line 1003 "datetimemodule.c"
-        var $17=HEAP[$16]; //@line 1003 "datetimemodule.c"
-        var $18=_PyType_IsSubtype($17, _PyDateTime_TimeType); //@line 1003 "datetimemodule.c"
-        var $19=($18)!=0; //@line 1003 "datetimemodule.c"
-        if ($19) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 1003 "datetimemodule.c"
+        var $14=$op_addr; //@line 1003 "datetimemodule.c"
+        var $15=$14+4; //@line 1003 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 1003 "datetimemodule.c"
+        var $17=_PyType_IsSubtype($16, _PyDateTime_TimeType); //@line 1003 "datetimemodule.c"
+        var $18=($17)!=0; //@line 1003 "datetimemodule.c"
+        if ($18) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 1003 "datetimemodule.c"
       case 7: // $bb6
-        var $20=$op_addr; //@line 1003 "datetimemodule.c"
-        var $21=$20+4; //@line 1003 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 1003 "datetimemodule.c"
-        var $23=($22)==(_PyDateTime_DateType); //@line 1003 "datetimemodule.c"
-        if ($23) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 1003 "datetimemodule.c"
+        var $19=$op_addr; //@line 1003 "datetimemodule.c"
+        var $20=$19+4; //@line 1003 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 1003 "datetimemodule.c"
+        var $22=($21)==(_PyDateTime_DateType); //@line 1003 "datetimemodule.c"
+        if ($22) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 1003 "datetimemodule.c"
       case 8: // $bb7
-        var $24=$op_addr; //@line 1003 "datetimemodule.c"
-        var $25=$24+4; //@line 1003 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 1003 "datetimemodule.c"
-        var $27=_PyType_IsSubtype($26, _PyDateTime_DateType); //@line 1003 "datetimemodule.c"
-        var $28=($27)!=0; //@line 1003 "datetimemodule.c"
-        if ($28) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1003 "datetimemodule.c"
+        var $23=$op_addr; //@line 1003 "datetimemodule.c"
+        var $24=$23+4; //@line 1003 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 1003 "datetimemodule.c"
+        var $26=_PyType_IsSubtype($25, _PyDateTime_DateType); //@line 1003 "datetimemodule.c"
+        var $27=($26)!=0; //@line 1003 "datetimemodule.c"
+        if ($27) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1003 "datetimemodule.c"
       case 9: // $bb8
         $iftmp_40=2; //@line 1003 "datetimemodule.c"
         __label__ = 11; break; //@line 1003 "datetimemodule.c"
@@ -2984,40 +3182,30 @@ var _initialized_b;
         $iftmp_40=1; //@line 1003 "datetimemodule.c"
         __label__ = 11; break; //@line 1003 "datetimemodule.c"
       case 11: // $bb10
-        var $29=$iftmp_40; //@line 1003 "datetimemodule.c"
-        $1=$29; //@line 1003 "datetimemodule.c"
+        var $28=$iftmp_40; //@line 1003 "datetimemodule.c"
+        $0=$28; //@line 1003 "datetimemodule.c"
         __label__ = 19; break; //@line 1003 "datetimemodule.c"
       case 12: // $bb11
-        var $30=$tzinfo; //@line 1006 "datetimemodule.c"
-        var $31=$tzinfoarg_addr; //@line 1006 "datetimemodule.c"
-        $tzinfo_addr_i=$30;
-        $tzinfoarg_addr_i=$31;
-        $none_addr_i=$none;
-        var $32=$tzinfo_addr_i; //@line 888 "datetimemodule.c"
-        var $33=$tzinfoarg_addr_i; //@line 888 "datetimemodule.c"
-        var $34=$none_addr_i; //@line 888 "datetimemodule.c"
-        var $35=_call_utc_tzinfo_method($32, __str42, $33, $34); //@line 888 "datetimemodule.c"
-        $0=$35; //@line 888 "datetimemodule.c"
-        var $36=$0; //@line 888 "datetimemodule.c"
-        $retval_i=$36; //@line 888 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 888 "datetimemodule.c"
-        var $37=$offset_addr; //@line 1006 "datetimemodule.c"
-        HEAP[$37]=$retval1_i; //@line 1006 "datetimemodule.c"
-        var $38=$offset_addr; //@line 1007 "datetimemodule.c"
-        var $39=HEAP[$38]; //@line 1007 "datetimemodule.c"
-        var $40=($39)==-1; //@line 1007 "datetimemodule.c"
-        if ($40) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 1007 "datetimemodule.c"
+        var $29=$tzinfo; //@line 1006 "datetimemodule.c"
+        var $30=$tzinfoarg_addr; //@line 1006 "datetimemodule.c"
+        var $31=_call_utcoffset($29, $30, $none); //@line 1006 "datetimemodule.c"
+        var $32=$offset_addr; //@line 1006 "datetimemodule.c"
+        HEAP[$32]=$31; //@line 1006 "datetimemodule.c"
+        var $33=$offset_addr; //@line 1007 "datetimemodule.c"
+        var $34=HEAP[$33]; //@line 1007 "datetimemodule.c"
+        var $35=($34)==-1; //@line 1007 "datetimemodule.c"
+        if ($35) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 1007 "datetimemodule.c"
       case 13: // $bb12
-        var $41=_PyErr_Occurred(); //@line 1007 "datetimemodule.c"
-        var $42=($41)!=0; //@line 1007 "datetimemodule.c"
-        if ($42) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1007 "datetimemodule.c"
+        var $36=_PyErr_Occurred(); //@line 1007 "datetimemodule.c"
+        var $37=($36)!=0; //@line 1007 "datetimemodule.c"
+        if ($37) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1007 "datetimemodule.c"
       case 14: // $bb13
-        $1=0; //@line 1008 "datetimemodule.c"
+        $0=0; //@line 1008 "datetimemodule.c"
         __label__ = 19; break; //@line 1008 "datetimemodule.c"
       case 15: // $bb14
-        var $43=HEAP[$none]; //@line 1009 "datetimemodule.c"
-        var $44=($43)!=0; //@line 1009 "datetimemodule.c"
-        if ($44) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1009 "datetimemodule.c"
+        var $38=HEAP[$none]; //@line 1009 "datetimemodule.c"
+        var $39=($38)!=0; //@line 1009 "datetimemodule.c"
+        if ($39) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1009 "datetimemodule.c"
       case 16: // $bb15
         $iftmp_41=2; //@line 1009 "datetimemodule.c"
         __label__ = 18; break; //@line 1009 "datetimemodule.c"
@@ -3025,12 +3213,12 @@ var _initialized_b;
         $iftmp_41=3; //@line 1009 "datetimemodule.c"
         __label__ = 18; break; //@line 1009 "datetimemodule.c"
       case 18: // $bb17
-        var $45=$iftmp_41; //@line 1009 "datetimemodule.c"
-        $1=$45; //@line 1009 "datetimemodule.c"
+        var $40=$iftmp_41; //@line 1009 "datetimemodule.c"
+        $0=$40; //@line 1009 "datetimemodule.c"
         __label__ = 19; break; //@line 1009 "datetimemodule.c"
       case 19: // $bb18
-        var $46=$1; //@line 1000 "datetimemodule.c"
-        $retval=$46; //@line 1000 "datetimemodule.c"
+        var $41=$0; //@line 1000 "datetimemodule.c"
+        $retval=$41; //@line 1000 "datetimemodule.c"
         var $retval19=$retval; //@line 1000 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval19; //@line 1000 "datetimemodule.c"
@@ -3238,116 +3426,80 @@ var _initialized_b;
     var __stackBase__  = STACKTOP; STACKTOP += 128; _memset(__stackBase__, 0, 128);
     var __label__;
   
-    var $year_addr_i_i;
-    var $month_addr_i_i;
-    var $day_addr_i_i;
-    var $retval_i_i;
-    var $0;
-    var $year_addr_i;
-    var $month_addr_i;
-    var $day_addr_i;
-    var $retval_i;
-    var $1;
     var $date_addr;
     var $hours_addr;
     var $minutes_addr;
     var $seconds_addr;
     var $retval;
-    var $2;
+    var $0;
     var $buffer=__stackBase__;
     var $wday;
     $date_addr=$date;
     $hours_addr=$hours;
     $minutes_addr=$minutes;
     $seconds_addr=$seconds;
-    var $3=$date_addr; //@line 1092 "datetimemodule.c"
-    var $4=$3+13; //@line 1092 "datetimemodule.c"
-    var $5=$4+3; //@line 1092 "datetimemodule.c"
-    var $6=HEAP[$5]; //@line 1092 "datetimemodule.c"
-    var $7=($6); //@line 1092 "datetimemodule.c"
-    var $8=$date_addr; //@line 1092 "datetimemodule.c"
-    var $9=$8+13; //@line 1092 "datetimemodule.c"
-    var $10=$9+2; //@line 1092 "datetimemodule.c"
-    var $11=HEAP[$10]; //@line 1092 "datetimemodule.c"
-    var $12=($11); //@line 1092 "datetimemodule.c"
-    var $13=$date_addr; //@line 1092 "datetimemodule.c"
-    var $14=$13+13; //@line 1092 "datetimemodule.c"
-    var $15=$14; //@line 1092 "datetimemodule.c"
-    var $16=HEAP[$15]; //@line 1092 "datetimemodule.c"
-    var $17=($16); //@line 1092 "datetimemodule.c"
-    var $18=($17) << 8; //@line 1092 "datetimemodule.c"
-    var $19=$date_addr; //@line 1092 "datetimemodule.c"
-    var $20=$19+13; //@line 1092 "datetimemodule.c"
-    var $21=$20+1; //@line 1092 "datetimemodule.c"
-    var $22=HEAP[$21]; //@line 1092 "datetimemodule.c"
-    var $23=($22); //@line 1092 "datetimemodule.c"
-    var $24=($23) | ($18); //@line 1092 "datetimemodule.c"
-    $year_addr_i=$24;
-    $month_addr_i=$12;
-    $day_addr_i=$7;
-    var $25=$year_addr_i; //@line 337 "datetimemodule.c"
-    var $26=$month_addr_i; //@line 337 "datetimemodule.c"
-    var $27=$day_addr_i; //@line 337 "datetimemodule.c"
-    $year_addr_i_i=$25;
-    $month_addr_i_i=$26;
-    $day_addr_i_i=$27;
-    var $28=$year_addr_i_i; //@line 330 "datetimemodule.c"
-    var $29=_days_before_year($28); //@line 330 "datetimemodule.c"
-    var $30=$year_addr_i_i; //@line 330 "datetimemodule.c"
-    var $31=$month_addr_i_i; //@line 330 "datetimemodule.c"
-    var $32=_days_before_month($30, $31); //@line 330 "datetimemodule.c"
-    var $33=$day_addr_i_i; //@line 330 "datetimemodule.c"
-    var $34=($32) + ($29); //@line 330 "datetimemodule.c"
-    var $35=($34) + ($33); //@line 330 "datetimemodule.c"
-    $0=$35; //@line 330 "datetimemodule.c"
-    var $36=$0; //@line 330 "datetimemodule.c"
-    $retval_i_i=$36; //@line 330 "datetimemodule.c"
-    var $retval1_i_i=$retval_i_i; //@line 330 "datetimemodule.c"
-    var $37=($retval1_i_i) + 6; //@line 337 "datetimemodule.c"
-    var $38=($37) % 7; //@line 337 "datetimemodule.c"
-    $1=$38; //@line 337 "datetimemodule.c"
-    var $39=$1; //@line 337 "datetimemodule.c"
-    $retval_i=$39; //@line 337 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 337 "datetimemodule.c"
-    $wday=$retval1_i; //@line 1092 "datetimemodule.c"
-    var $40=$date_addr; //@line 1094 "datetimemodule.c"
-    var $41=$40+13; //@line 1094 "datetimemodule.c"
-    var $42=$41; //@line 1094 "datetimemodule.c"
-    var $43=HEAP[$42]; //@line 1094 "datetimemodule.c"
-    var $44=($43); //@line 1094 "datetimemodule.c"
-    var $45=($44) << 8; //@line 1094 "datetimemodule.c"
-    var $46=$date_addr; //@line 1094 "datetimemodule.c"
-    var $47=$46+13; //@line 1094 "datetimemodule.c"
-    var $48=$47+1; //@line 1094 "datetimemodule.c"
-    var $49=HEAP[$48]; //@line 1094 "datetimemodule.c"
-    var $50=($49); //@line 1094 "datetimemodule.c"
-    var $51=($50) | ($45); //@line 1094 "datetimemodule.c"
-    var $52=$date_addr; //@line 1094 "datetimemodule.c"
-    var $53=$52+13; //@line 1094 "datetimemodule.c"
-    var $54=$53+3; //@line 1094 "datetimemodule.c"
-    var $55=HEAP[$54]; //@line 1094 "datetimemodule.c"
-    var $56=($55); //@line 1094 "datetimemodule.c"
-    var $57=$date_addr; //@line 1094 "datetimemodule.c"
-    var $58=$57+13; //@line 1094 "datetimemodule.c"
-    var $59=$58+2; //@line 1094 "datetimemodule.c"
-    var $60=HEAP[$59]; //@line 1094 "datetimemodule.c"
-    var $61=($60); //@line 1094 "datetimemodule.c"
-    var $62=($61) - 1; //@line 1094 "datetimemodule.c"
-    var $63=_MonthNames_9355+$62*4; //@line 1094 "datetimemodule.c"
-    var $64=HEAP[$63]; //@line 1094 "datetimemodule.c"
-    var $65=$wday; //@line 1094 "datetimemodule.c"
-    var $66=_DayNames_9354+$65*4; //@line 1094 "datetimemodule.c"
-    var $67=HEAP[$66]; //@line 1094 "datetimemodule.c"
+    var $1=$date_addr; //@line 1092 "datetimemodule.c"
+    var $2=$1+13; //@line 1092 "datetimemodule.c"
+    var $3=$2+3; //@line 1092 "datetimemodule.c"
+    var $4=HEAP[$3]; //@line 1092 "datetimemodule.c"
+    var $5=($4); //@line 1092 "datetimemodule.c"
+    var $6=$date_addr; //@line 1092 "datetimemodule.c"
+    var $7=$6+13; //@line 1092 "datetimemodule.c"
+    var $8=$7+2; //@line 1092 "datetimemodule.c"
+    var $9=HEAP[$8]; //@line 1092 "datetimemodule.c"
+    var $10=($9); //@line 1092 "datetimemodule.c"
+    var $11=$date_addr; //@line 1092 "datetimemodule.c"
+    var $12=$11+13; //@line 1092 "datetimemodule.c"
+    var $13=$12; //@line 1092 "datetimemodule.c"
+    var $14=HEAP[$13]; //@line 1092 "datetimemodule.c"
+    var $15=($14); //@line 1092 "datetimemodule.c"
+    var $16=($15) << 8; //@line 1092 "datetimemodule.c"
+    var $17=$date_addr; //@line 1092 "datetimemodule.c"
+    var $18=$17+13; //@line 1092 "datetimemodule.c"
+    var $19=$18+1; //@line 1092 "datetimemodule.c"
+    var $20=HEAP[$19]; //@line 1092 "datetimemodule.c"
+    var $21=($20); //@line 1092 "datetimemodule.c"
+    var $22=($21) | ($16); //@line 1092 "datetimemodule.c"
+    var $23=_weekday($22, $10, $5); //@line 1092 "datetimemodule.c"
+    $wday=$23; //@line 1092 "datetimemodule.c"
+    var $24=$date_addr; //@line 1094 "datetimemodule.c"
+    var $25=$24+13; //@line 1094 "datetimemodule.c"
+    var $26=$25; //@line 1094 "datetimemodule.c"
+    var $27=HEAP[$26]; //@line 1094 "datetimemodule.c"
+    var $28=($27); //@line 1094 "datetimemodule.c"
+    var $29=($28) << 8; //@line 1094 "datetimemodule.c"
+    var $30=$date_addr; //@line 1094 "datetimemodule.c"
+    var $31=$30+13; //@line 1094 "datetimemodule.c"
+    var $32=$31+1; //@line 1094 "datetimemodule.c"
+    var $33=HEAP[$32]; //@line 1094 "datetimemodule.c"
+    var $34=($33); //@line 1094 "datetimemodule.c"
+    var $35=($34) | ($29); //@line 1094 "datetimemodule.c"
+    var $36=$date_addr; //@line 1094 "datetimemodule.c"
+    var $37=$36+13; //@line 1094 "datetimemodule.c"
+    var $38=$37+3; //@line 1094 "datetimemodule.c"
+    var $39=HEAP[$38]; //@line 1094 "datetimemodule.c"
+    var $40=($39); //@line 1094 "datetimemodule.c"
+    var $41=$date_addr; //@line 1094 "datetimemodule.c"
+    var $42=$41+13; //@line 1094 "datetimemodule.c"
+    var $43=$42+2; //@line 1094 "datetimemodule.c"
+    var $44=HEAP[$43]; //@line 1094 "datetimemodule.c"
+    var $45=($44); //@line 1094 "datetimemodule.c"
+    var $46=($45) - 1; //@line 1094 "datetimemodule.c"
+    var $47=_MonthNames_9355+$46*4; //@line 1094 "datetimemodule.c"
+    var $48=HEAP[$47]; //@line 1094 "datetimemodule.c"
+    var $49=$wday; //@line 1094 "datetimemodule.c"
+    var $50=_DayNames_9354+$49*4; //@line 1094 "datetimemodule.c"
+    var $51=HEAP[$50]; //@line 1094 "datetimemodule.c"
     var $buffer1=$buffer; //@line 1094 "datetimemodule.c"
-    var $68=$hours_addr; //@line 1094 "datetimemodule.c"
-    var $69=$minutes_addr; //@line 1094 "datetimemodule.c"
-    var $70=$seconds_addr; //@line 1094 "datetimemodule.c"
-    var $71=_PyOS_snprintf($buffer1, 128, __str71, $67, $64, $56, $68, $69, $70, $51); //@line 1094 "datetimemodule.c"
+    var $52=$hours_addr; //@line 1094 "datetimemodule.c"
+    var $53=$minutes_addr; //@line 1094 "datetimemodule.c"
+    var $54=$seconds_addr; //@line 1094 "datetimemodule.c"
+    var $55=_PyOS_snprintf($buffer1, 128, __str71, allocate([$51,0,0,0,$48,0,0,0,$40,0,0,0,$52,0,0,0,$53,0,0,0,$54,0,0,0,$35,0,0,0], ["i8*",0,0,0,"i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1094 "datetimemodule.c"
     var $buffer2=$buffer; //@line 1098 "datetimemodule.c"
-    var $72=_PyString_FromString($buffer2); //@line 1098 "datetimemodule.c"
-    $2=$72; //@line 1098 "datetimemodule.c"
-    var $73=$2; //@line 1098 "datetimemodule.c"
-    $retval=$73; //@line 1098 "datetimemodule.c"
+    var $56=_PyString_FromString($buffer2); //@line 1098 "datetimemodule.c"
+    $0=$56; //@line 1098 "datetimemodule.c"
+    var $57=$0; //@line 1098 "datetimemodule.c"
+    $retval=$57; //@line 1098 "datetimemodule.c"
     var $retval3=$retval; //@line 1098 "datetimemodule.c"
     STACKTOP = __stackBase__;
     return $retval3; //@line 1098 "datetimemodule.c"
@@ -3360,18 +3512,13 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $0;
         var $buf_addr;
         var $buflen_addr;
         var $sep_addr;
         var $tzinfo_addr;
         var $tzinfoarg_addr;
         var $retval;
-        var $1;
+        var $0;
         var $offset;
         var $hours;
         var $minutes=__stackBase__;
@@ -3382,74 +3529,64 @@ var _initialized_b;
         $sep_addr=$sep;
         $tzinfo_addr=$tzinfo;
         $tzinfoarg_addr=$tzinfoarg;
-        var $2=$buflen_addr; //@line 1121 "datetimemodule.c"
-        var $3=($2)==0; //@line 1121 "datetimemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1121 "datetimemodule.c"
+        var $1=$buflen_addr; //@line 1121 "datetimemodule.c"
+        var $2=($1)==0; //@line 1121 "datetimemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1121 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str72, __str1, 1121, ___PRETTY_FUNCTION___9398); //@line 1121 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1121 "datetimemodule.c"
       case 2: // $bb1
-        var $4=$tzinfo_addr; //@line 1123 "datetimemodule.c"
-        var $5=$tzinfoarg_addr; //@line 1123 "datetimemodule.c"
-        $tzinfo_addr_i=$4;
-        $tzinfoarg_addr_i=$5;
-        $none_addr_i=$none;
-        var $6=$tzinfo_addr_i; //@line 888 "datetimemodule.c"
-        var $7=$tzinfoarg_addr_i; //@line 888 "datetimemodule.c"
-        var $8=$none_addr_i; //@line 888 "datetimemodule.c"
-        var $9=_call_utc_tzinfo_method($6, __str42, $7, $8); //@line 888 "datetimemodule.c"
-        $0=$9; //@line 888 "datetimemodule.c"
-        var $10=$0; //@line 888 "datetimemodule.c"
-        $retval_i=$10; //@line 888 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 888 "datetimemodule.c"
-        $offset=$retval1_i; //@line 1123 "datetimemodule.c"
-        var $11=$offset; //@line 1124 "datetimemodule.c"
-        var $12=($11)==-1; //@line 1124 "datetimemodule.c"
-        if ($12) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 1124 "datetimemodule.c"
+        var $3=$tzinfo_addr; //@line 1123 "datetimemodule.c"
+        var $4=$tzinfoarg_addr; //@line 1123 "datetimemodule.c"
+        var $5=_call_utcoffset($3, $4, $none); //@line 1123 "datetimemodule.c"
+        $offset=$5; //@line 1123 "datetimemodule.c"
+        var $6=$offset; //@line 1124 "datetimemodule.c"
+        var $7=($6)==-1; //@line 1124 "datetimemodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 1124 "datetimemodule.c"
       case 3: // $bb2
-        var $13=_PyErr_Occurred(); //@line 1124 "datetimemodule.c"
-        var $14=($13)!=0; //@line 1124 "datetimemodule.c"
-        if ($14) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1124 "datetimemodule.c"
+        var $8=_PyErr_Occurred(); //@line 1124 "datetimemodule.c"
+        var $9=($8)!=0; //@line 1124 "datetimemodule.c"
+        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1124 "datetimemodule.c"
       case 4: // $bb3
-        $1=-1; //@line 1125 "datetimemodule.c"
+        $0=-1; //@line 1125 "datetimemodule.c"
         __label__ = 10; break; //@line 1125 "datetimemodule.c"
       case 5: // $bb4
-        var $15=HEAP[$none]; //@line 1126 "datetimemodule.c"
-        var $16=($15)!=0; //@line 1126 "datetimemodule.c"
-        if ($16) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1126 "datetimemodule.c"
+        var $10=HEAP[$none]; //@line 1126 "datetimemodule.c"
+        var $11=($10)!=0; //@line 1126 "datetimemodule.c"
+        if ($11) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1126 "datetimemodule.c"
       case 6: // $bb5
-        var $17=$buf_addr; //@line 1127 "datetimemodule.c"
-        HEAP[$17]=0; //@line 1127 "datetimemodule.c"
-        $1=0; //@line 1128 "datetimemodule.c"
+        var $12=$buf_addr; //@line 1127 "datetimemodule.c"
+        HEAP[$12]=0; //@line 1127 "datetimemodule.c"
+        $0=0; //@line 1128 "datetimemodule.c"
         __label__ = 10; break; //@line 1128 "datetimemodule.c"
       case 7: // $bb6
         $sign=43; //@line 1130 "datetimemodule.c"
-        var $18=$offset; //@line 1131 "datetimemodule.c"
-        var $19=($18) < 0; //@line 1131 "datetimemodule.c"
-        if ($19) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1131 "datetimemodule.c"
+        var $13=$offset; //@line 1131 "datetimemodule.c"
+        var $14=($13) < 0; //@line 1131 "datetimemodule.c"
+        if ($14) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1131 "datetimemodule.c"
       case 8: // $bb7
         $sign=45; //@line 1132 "datetimemodule.c"
-        var $20=$offset; //@line 1133 "datetimemodule.c"
-        var $21=0 - ($20); //@line 1133 "datetimemodule.c"
-        $offset=$21; //@line 1133 "datetimemodule.c"
+        var $15=$offset; //@line 1133 "datetimemodule.c"
+        var $16=0 - ($15); //@line 1133 "datetimemodule.c"
+        $offset=$16; //@line 1133 "datetimemodule.c"
         __label__ = 9; break; //@line 1133 "datetimemodule.c"
       case 9: // $bb8
-        var $22=$offset; //@line 1135 "datetimemodule.c"
-        var $23=_divmod($22, 60, $minutes); //@line 1135 "datetimemodule.c"
-        $hours=$23; //@line 1135 "datetimemodule.c"
-        var $24=HEAP[$minutes]; //@line 1136 "datetimemodule.c"
-        var $25=$sign; //@line 1136 "datetimemodule.c"
-        var $26=($25); //@line 1136 "datetimemodule.c"
-        var $27=$buf_addr; //@line 1136 "datetimemodule.c"
-        var $28=$buflen_addr; //@line 1136 "datetimemodule.c"
-        var $29=$hours; //@line 1136 "datetimemodule.c"
-        var $30=$sep_addr; //@line 1136 "datetimemodule.c"
-        var $31=_PyOS_snprintf($27, $28, __str73, $26, $29, $30, $24); //@line 1136 "datetimemodule.c"
-        $1=0; //@line 1137 "datetimemodule.c"
+        var $17=$offset; //@line 1135 "datetimemodule.c"
+        var $18=_divmod($17, 60, $minutes); //@line 1135 "datetimemodule.c"
+        $hours=$18; //@line 1135 "datetimemodule.c"
+        var $19=HEAP[$minutes]; //@line 1136 "datetimemodule.c"
+        var $20=$sign; //@line 1136 "datetimemodule.c"
+        var $21=($20); //@line 1136 "datetimemodule.c"
+        var $22=$buf_addr; //@line 1136 "datetimemodule.c"
+        var $23=$buflen_addr; //@line 1136 "datetimemodule.c"
+        var $24=$hours; //@line 1136 "datetimemodule.c"
+        var $25=$sep_addr; //@line 1136 "datetimemodule.c"
+        var $26=_PyOS_snprintf($22, $23, __str73, allocate([$21,0,0,0,$24,0,0,0,$25,0,0,0,$19,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1136 "datetimemodule.c"
+        $0=0; //@line 1137 "datetimemodule.c"
         __label__ = 10; break; //@line 1137 "datetimemodule.c"
       case 10: // $bb9
-        var $32=$1; //@line 1125 "datetimemodule.c"
-        $retval=$32; //@line 1125 "datetimemodule.c"
+        var $27=$0; //@line 1125 "datetimemodule.c"
+        $retval=$27; //@line 1125 "datetimemodule.c"
         var $retval10=$retval; //@line 1125 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 1125 "datetimemodule.c"
@@ -3458,31 +3595,135 @@ var _initialized_b;
   }
   
 
+  function _make_freplacement($object) {
+    var __stackBase__  = STACKTOP; STACKTOP += 64; _memset(__stackBase__, 0, 64);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $object_addr;
+        var $retval;
+        var $0;
+        var $freplacement=__stackBase__;
+        $object_addr=$object;
+        var $1=$object_addr; //@line 1144 "datetimemodule.c"
+        var $2=$1+4; //@line 1144 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 1144 "datetimemodule.c"
+        var $4=($3)==(_PyDateTime_TimeType); //@line 1144 "datetimemodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 1144 "datetimemodule.c"
+      case 1: // $bb
+        var $5=$object_addr; //@line 1144 "datetimemodule.c"
+        var $6=$5+4; //@line 1144 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 1144 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_TimeType); //@line 1144 "datetimemodule.c"
+        var $9=($8)!=0; //@line 1144 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1144 "datetimemodule.c"
+      case 2: // $bb1
+        var $10=$object_addr; //@line 1145 "datetimemodule.c"
+        var $11=$10; //@line 1145 "datetimemodule.c"
+        var $12=$11+13; //@line 1145 "datetimemodule.c"
+        var $13=$12+3; //@line 1145 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 1145 "datetimemodule.c"
+        var $15=($14); //@line 1145 "datetimemodule.c"
+        var $16=($15) << 16; //@line 1145 "datetimemodule.c"
+        var $17=$object_addr; //@line 1145 "datetimemodule.c"
+        var $18=$17; //@line 1145 "datetimemodule.c"
+        var $19=$18+13; //@line 1145 "datetimemodule.c"
+        var $20=$19+4; //@line 1145 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 1145 "datetimemodule.c"
+        var $22=($21); //@line 1145 "datetimemodule.c"
+        var $23=($22) << 8; //@line 1145 "datetimemodule.c"
+        var $24=$object_addr; //@line 1145 "datetimemodule.c"
+        var $25=$24; //@line 1145 "datetimemodule.c"
+        var $26=$25+13; //@line 1145 "datetimemodule.c"
+        var $27=$26+5; //@line 1145 "datetimemodule.c"
+        var $28=HEAP[$27]; //@line 1145 "datetimemodule.c"
+        var $29=($28); //@line 1145 "datetimemodule.c"
+        var $30=($23) | ($16); //@line 1145 "datetimemodule.c"
+        var $31=($30) | ($29); //@line 1145 "datetimemodule.c"
+        var $freplacement2=$freplacement; //@line 1145 "datetimemodule.c"
+        var $32=_sprintf($freplacement2, __str74, allocate([$31,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1145 "datetimemodule.c"
+        __label__ = 7; break; //@line 1145 "datetimemodule.c"
+      case 3: // $bb3
+        var $33=$object_addr; //@line 1146 "datetimemodule.c"
+        var $34=$33+4; //@line 1146 "datetimemodule.c"
+        var $35=HEAP[$34]; //@line 1146 "datetimemodule.c"
+        var $36=($35)==(_PyDateTime_DateTimeType); //@line 1146 "datetimemodule.c"
+        if ($36) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 1146 "datetimemodule.c"
+      case 4: // $bb4
+        var $37=$object_addr; //@line 1146 "datetimemodule.c"
+        var $38=$37+4; //@line 1146 "datetimemodule.c"
+        var $39=HEAP[$38]; //@line 1146 "datetimemodule.c"
+        var $40=_PyType_IsSubtype($39, _PyDateTime_DateTimeType); //@line 1146 "datetimemodule.c"
+        var $41=($40)!=0; //@line 1146 "datetimemodule.c"
+        if ($41) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1146 "datetimemodule.c"
+      case 5: // $bb5
+        var $42=$object_addr; //@line 1147 "datetimemodule.c"
+        var $43=$42; //@line 1147 "datetimemodule.c"
+        var $44=$43+13; //@line 1147 "datetimemodule.c"
+        var $45=$44+7; //@line 1147 "datetimemodule.c"
+        var $46=HEAP[$45]; //@line 1147 "datetimemodule.c"
+        var $47=($46); //@line 1147 "datetimemodule.c"
+        var $48=($47) << 16; //@line 1147 "datetimemodule.c"
+        var $49=$object_addr; //@line 1147 "datetimemodule.c"
+        var $50=$49; //@line 1147 "datetimemodule.c"
+        var $51=$50+13; //@line 1147 "datetimemodule.c"
+        var $52=$51+8; //@line 1147 "datetimemodule.c"
+        var $53=HEAP[$52]; //@line 1147 "datetimemodule.c"
+        var $54=($53); //@line 1147 "datetimemodule.c"
+        var $55=($54) << 8; //@line 1147 "datetimemodule.c"
+        var $56=$object_addr; //@line 1147 "datetimemodule.c"
+        var $57=$56; //@line 1147 "datetimemodule.c"
+        var $58=$57+13; //@line 1147 "datetimemodule.c"
+        var $59=$58+9; //@line 1147 "datetimemodule.c"
+        var $60=HEAP[$59]; //@line 1147 "datetimemodule.c"
+        var $61=($60); //@line 1147 "datetimemodule.c"
+        var $62=($55) | ($48); //@line 1147 "datetimemodule.c"
+        var $63=($62) | ($61); //@line 1147 "datetimemodule.c"
+        var $freplacement6=$freplacement; //@line 1147 "datetimemodule.c"
+        var $64=_sprintf($freplacement6, __str74, allocate([$63,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1147 "datetimemodule.c"
+        __label__ = 7; break; //@line 1147 "datetimemodule.c"
+      case 6: // $bb7
+        var $freplacement8=$freplacement; //@line 1149 "datetimemodule.c"
+        var $65=_sprintf($freplacement8, __str74, allocate(4, "i32", ALLOC_STACK)); //@line 1149 "datetimemodule.c"
+        __label__ = 7; break; //@line 1149 "datetimemodule.c"
+      case 7: // $bb9
+        var $freplacement10=$freplacement; //@line 1151 "datetimemodule.c"
+        var $66=_strlen($freplacement10); //@line 1151 "datetimemodule.c"
+        var $freplacement11=$freplacement; //@line 1151 "datetimemodule.c"
+        var $67=_PyString_FromStringAndSize($freplacement11, $66); //@line 1151 "datetimemodule.c"
+        $0=$67; //@line 1151 "datetimemodule.c"
+        var $68=$0; //@line 1151 "datetimemodule.c"
+        $retval=$68; //@line 1151 "datetimemodule.c"
+        var $retval12=$retval; //@line 1151 "datetimemodule.c"
+        STACKTOP = __stackBase__;
+        return $retval12; //@line 1151 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _wrap_strftime($object, $format, $format_len, $timetuple, $tzinfoarg) {
-    var __stackBase__  = STACKTOP; STACKTOP += 168; _memset(__stackBase__, 0, 168);
+    var __stackBase__  = STACKTOP; STACKTOP += 104; _memset(__stackBase__, 0, 104);
     var __label__;
     var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $object_addr_i;
-        var $retval_i;
-        var $0;
-        var $freplacement_i=__stackBase__;
         var $object_addr;
         var $format_addr;
         var $format_len_addr;
         var $timetuple_addr;
         var $tzinfoarg_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result;
         var $zreplacement;
         var $Zreplacement;
         var $freplacement;
         var $pin;
         var $ch;
-        var $newfmt=__stackBase__+64;
+        var $newfmt=__stackBase__;
         var $pnew;
         var $totalnew;
         var $usednew;
@@ -3490,7 +3731,7 @@ var _initialized_b;
         var $ntoappend;
         var $year;
         var $pyyear;
-        var $buf=__stackBase__+68;
+        var $buf=__stackBase__+4;
         var $tzinfo;
         var $tzinfo38;
         var $temp;
@@ -3506,729 +3747,642 @@ var _initialized_b;
         $Zreplacement=0; //@line 1168 "datetimemodule.c"
         $freplacement=0; //@line 1169 "datetimemodule.c"
         HEAP[$newfmt]=0; //@line 1174 "datetimemodule.c"
-        var $2=$object_addr; //@line 1183 "datetimemodule.c"
-        var $3=($2)==0; //@line 1183 "datetimemodule.c"
-        if ($3) { __label__ = 3; break; } else { __label__ = 1; break; } //@line 1183 "datetimemodule.c"
+        var $1=$object_addr; //@line 1183 "datetimemodule.c"
+        var $2=($1)==0; //@line 1183 "datetimemodule.c"
+        if ($2) { __label__ = 3; break; } else { __label__ = 1; break; } //@line 1183 "datetimemodule.c"
       case 1: // $bb
-        var $4=$format_addr; //@line 1183 "datetimemodule.c"
-        var $5=($4)==0; //@line 1183 "datetimemodule.c"
-        if ($5) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 1183 "datetimemodule.c"
+        var $3=$format_addr; //@line 1183 "datetimemodule.c"
+        var $4=($3)==0; //@line 1183 "datetimemodule.c"
+        if ($4) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 1183 "datetimemodule.c"
       case 2: // $bb1
-        var $6=$timetuple_addr; //@line 1183 "datetimemodule.c"
-        var $7=($6)==0; //@line 1183 "datetimemodule.c"
-        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1183 "datetimemodule.c"
+        var $5=$timetuple_addr; //@line 1183 "datetimemodule.c"
+        var $6=($5)==0; //@line 1183 "datetimemodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1183 "datetimemodule.c"
       case 3: // $bb2
         ___assert_fail(__str75, __str1, 1183, ___PRETTY_FUNCTION___9485); //@line 1183 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1183 "datetimemodule.c"
       case 4: // $bb3
-        var $8=$timetuple_addr; //@line 1196 "datetimemodule.c"
-        var $9=_PySequence_GetItem($8, 0); //@line 1196 "datetimemodule.c"
-        $pyyear=$9; //@line 1196 "datetimemodule.c"
-        var $10=$pyyear; //@line 1197 "datetimemodule.c"
-        var $11=($10)==0; //@line 1197 "datetimemodule.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1197 "datetimemodule.c"
+        var $7=$timetuple_addr; //@line 1196 "datetimemodule.c"
+        var $8=_PySequence_GetItem($7, 0); //@line 1196 "datetimemodule.c"
+        $pyyear=$8; //@line 1196 "datetimemodule.c"
+        var $9=$pyyear; //@line 1197 "datetimemodule.c"
+        var $10=($9)==0; //@line 1197 "datetimemodule.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1197 "datetimemodule.c"
       case 5: // $bb4
-        $1=0; //@line 1197 "datetimemodule.c"
-        __label__ = 98; break; //@line 1197 "datetimemodule.c"
+        $0=0; //@line 1197 "datetimemodule.c"
+        __label__ = 91; break; //@line 1197 "datetimemodule.c"
       case 6: // $bb5
-        var $12=$pyyear; //@line 1198 "datetimemodule.c"
-        var $13=$12+4; //@line 1198 "datetimemodule.c"
-        var $14=HEAP[$13]; //@line 1198 "datetimemodule.c"
-        var $15=$14+84; //@line 1198 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 1198 "datetimemodule.c"
-        var $17=($16) & 8388608; //@line 1198 "datetimemodule.c"
-        var $18=($17)==0; //@line 1198 "datetimemodule.c"
-        if ($18) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1198 "datetimemodule.c"
+        var $11=$pyyear; //@line 1198 "datetimemodule.c"
+        var $12=$11+4; //@line 1198 "datetimemodule.c"
+        var $13=HEAP[$12]; //@line 1198 "datetimemodule.c"
+        var $14=$13+84; //@line 1198 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 1198 "datetimemodule.c"
+        var $16=($15) & 8388608; //@line 1198 "datetimemodule.c"
+        var $17=($16)==0; //@line 1198 "datetimemodule.c"
+        if ($17) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1198 "datetimemodule.c"
       case 7: // $bb6
         ___assert_fail(__str76, __str1, 1198, ___PRETTY_FUNCTION___9485); //@line 1198 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1198 "datetimemodule.c"
       case 8: // $bb7
-        var $19=$pyyear; //@line 1199 "datetimemodule.c"
-        var $20=_PyInt_AsLong($19); //@line 1199 "datetimemodule.c"
-        $year=$20; //@line 1199 "datetimemodule.c"
-        var $21=$pyyear; //@line 1200 "datetimemodule.c"
-        var $22=$21; //@line 1200 "datetimemodule.c"
-        var $23=HEAP[$22]; //@line 1200 "datetimemodule.c"
-        var $24=($23) - 1; //@line 1200 "datetimemodule.c"
-        var $25=$pyyear; //@line 1200 "datetimemodule.c"
-        var $26=$25; //@line 1200 "datetimemodule.c"
-        HEAP[$26]=$24; //@line 1200 "datetimemodule.c"
-        var $27=$pyyear; //@line 1200 "datetimemodule.c"
-        var $28=$27; //@line 1200 "datetimemodule.c"
-        var $29=HEAP[$28]; //@line 1200 "datetimemodule.c"
-        var $30=($29)==0; //@line 1200 "datetimemodule.c"
-        if ($30) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1200 "datetimemodule.c"
+        var $18=$pyyear; //@line 1199 "datetimemodule.c"
+        var $19=_PyInt_AsLong($18); //@line 1199 "datetimemodule.c"
+        $year=$19; //@line 1199 "datetimemodule.c"
+        var $20=$pyyear; //@line 1200 "datetimemodule.c"
+        var $21=$20; //@line 1200 "datetimemodule.c"
+        var $22=HEAP[$21]; //@line 1200 "datetimemodule.c"
+        var $23=($22) - 1; //@line 1200 "datetimemodule.c"
+        var $24=$pyyear; //@line 1200 "datetimemodule.c"
+        var $25=$24; //@line 1200 "datetimemodule.c"
+        HEAP[$25]=$23; //@line 1200 "datetimemodule.c"
+        var $26=$pyyear; //@line 1200 "datetimemodule.c"
+        var $27=$26; //@line 1200 "datetimemodule.c"
+        var $28=HEAP[$27]; //@line 1200 "datetimemodule.c"
+        var $29=($28)==0; //@line 1200 "datetimemodule.c"
+        if ($29) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1200 "datetimemodule.c"
       case 9: // $bb8
-        var $31=$pyyear; //@line 1200 "datetimemodule.c"
-        var $32=$31+4; //@line 1200 "datetimemodule.c"
-        var $33=HEAP[$32]; //@line 1200 "datetimemodule.c"
-        var $34=$33+24; //@line 1200 "datetimemodule.c"
-        var $35=HEAP[$34]; //@line 1200 "datetimemodule.c"
-        var $36=$pyyear; //@line 1200 "datetimemodule.c"
-        FUNCTION_TABLE[$35]($36); //@line 1200 "datetimemodule.c"
+        var $30=$pyyear; //@line 1200 "datetimemodule.c"
+        var $31=$30+4; //@line 1200 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 1200 "datetimemodule.c"
+        var $33=$32+24; //@line 1200 "datetimemodule.c"
+        var $34=HEAP[$33]; //@line 1200 "datetimemodule.c"
+        var $35=$pyyear; //@line 1200 "datetimemodule.c"
+        FUNCTION_TABLE[$34]($35); //@line 1200 "datetimemodule.c"
         __label__ = 10; break; //@line 1200 "datetimemodule.c"
       case 10: // $bb9
-        var $37=$year; //@line 1201 "datetimemodule.c"
-        var $38=($37) <= 1899; //@line 1201 "datetimemodule.c"
-        if ($38) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1201 "datetimemodule.c"
+        var $36=$year; //@line 1201 "datetimemodule.c"
+        var $37=($36) <= 1899; //@line 1201 "datetimemodule.c"
+        if ($37) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1201 "datetimemodule.c"
       case 11: // $bb10
-        var $39=HEAP[_PyExc_ValueError]; //@line 1202 "datetimemodule.c"
-        var $40=$year; //@line 1202 "datetimemodule.c"
-        var $41=_PyErr_Format($39, __str77, $40); //@line 1202 "datetimemodule.c"
-        $1=0; //@line 1206 "datetimemodule.c"
-        __label__ = 98; break; //@line 1206 "datetimemodule.c"
+        var $38=HEAP[_PyExc_ValueError]; //@line 1202 "datetimemodule.c"
+        var $39=$year; //@line 1202 "datetimemodule.c"
+        var $40=_PyErr_Format($38, __str77, allocate([$39,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1202 "datetimemodule.c"
+        $0=0; //@line 1206 "datetimemodule.c"
+        __label__ = 91; break; //@line 1206 "datetimemodule.c"
       case 12: // $bb11
-        var $42=$format_len_addr; //@line 1214 "datetimemodule.c"
-        var $43=($42) > 2147483646; //@line 1214 "datetimemodule.c"
-        if ($43) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1214 "datetimemodule.c"
+        var $41=$format_len_addr; //@line 1214 "datetimemodule.c"
+        var $42=($41) > 2147483646; //@line 1214 "datetimemodule.c"
+        if ($42) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 1214 "datetimemodule.c"
       case 13: // $bb12
-        var $44=_PyErr_NoMemory(); //@line 1215 "datetimemodule.c"
-        __label__ = 85; break; //@line 1215 "datetimemodule.c"
+        var $43=_PyErr_NoMemory(); //@line 1215 "datetimemodule.c"
+        __label__ = 78; break; //@line 1215 "datetimemodule.c"
       case 14: // $bb13
-        var $45=$format_len_addr; //@line 1219 "datetimemodule.c"
-        var $46=($45) + 1; //@line 1219 "datetimemodule.c"
-        $totalnew=$46; //@line 1219 "datetimemodule.c"
-        var $47=$totalnew; //@line 1220 "datetimemodule.c"
-        var $48=_PyString_FromStringAndSize(0, $47); //@line 1220 "datetimemodule.c"
-        HEAP[$newfmt]=$48; //@line 1220 "datetimemodule.c"
-        var $49=HEAP[$newfmt]; //@line 1221 "datetimemodule.c"
-        var $50=($49)==0; //@line 1221 "datetimemodule.c"
-        if ($50) { __label__ = 85; break; } else { __label__ = 15; break; } //@line 1221 "datetimemodule.c"
+        var $44=$format_len_addr; //@line 1219 "datetimemodule.c"
+        var $45=($44) + 1; //@line 1219 "datetimemodule.c"
+        $totalnew=$45; //@line 1219 "datetimemodule.c"
+        var $46=$totalnew; //@line 1220 "datetimemodule.c"
+        var $47=_PyString_FromStringAndSize(0, $46); //@line 1220 "datetimemodule.c"
+        HEAP[$newfmt]=$47; //@line 1220 "datetimemodule.c"
+        var $48=HEAP[$newfmt]; //@line 1221 "datetimemodule.c"
+        var $49=($48)==0; //@line 1221 "datetimemodule.c"
+        if ($49) { __label__ = 78; break; } else { __label__ = 15; break; } //@line 1221 "datetimemodule.c"
       case 15: // $bb14
-        var $51=HEAP[$newfmt]; //@line 1222 "datetimemodule.c"
-        var $52=_PyString_AsString($51); //@line 1222 "datetimemodule.c"
-        $pnew=$52; //@line 1222 "datetimemodule.c"
+        var $50=HEAP[$newfmt]; //@line 1222 "datetimemodule.c"
+        var $51=_PyString_AsString($50); //@line 1222 "datetimemodule.c"
+        $pnew=$51; //@line 1222 "datetimemodule.c"
         $usednew=0; //@line 1223 "datetimemodule.c"
-        var $53=$format_addr; //@line 1225 "datetimemodule.c"
-        $pin=$53; //@line 1225 "datetimemodule.c"
+        var $52=$format_addr; //@line 1225 "datetimemodule.c"
+        $pin=$52; //@line 1225 "datetimemodule.c"
         var $buf27=$buf; //@line 1247 "datetimemodule.c"
         var $buf31=$buf; //@line 1254 "datetimemodule.c"
-        var $freplacement2_i=$freplacement_i; //@line 1145 "datetimemodule.c"
-        var $freplacement10_i=$freplacement_i; //@line 1151 "datetimemodule.c"
-        var $freplacement11_i=$freplacement_i; //@line 1151 "datetimemodule.c"
-        var $freplacement6_i=$freplacement_i; //@line 1147 "datetimemodule.c"
-        var $freplacement8_i=$freplacement_i; //@line 1149 "datetimemodule.c"
-        __label__ = 80; break; //@line 1225 "datetimemodule.c"
+        __label__ = 73; break; //@line 1225 "datetimemodule.c"
       case 16: // $bb15
-        var $54=$ch; //@line 1227 "datetimemodule.c"
-        var $55=($54)!=37; //@line 1227 "datetimemodule.c"
-        var $56=$pin; //@line 1228 "datetimemodule.c"
-        if ($55) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1227 "datetimemodule.c"
+        var $53=$ch; //@line 1227 "datetimemodule.c"
+        var $54=($53)!=37; //@line 1227 "datetimemodule.c"
+        var $55=$pin; //@line 1228 "datetimemodule.c"
+        if ($54) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1227 "datetimemodule.c"
       case 17: // $bb16
-        var $57=$56+-1; //@line 1228 "datetimemodule.c"
-        $ptoappend=$57; //@line 1228 "datetimemodule.c"
+        var $56=$55+-1; //@line 1228 "datetimemodule.c"
+        $ptoappend=$56; //@line 1228 "datetimemodule.c"
         $ntoappend=1; //@line 1229 "datetimemodule.c"
-        __lastLabel__ = 17; __label__ = 70; break; //@line 1229 "datetimemodule.c"
+        __lastLabel__ = 17; __label__ = 63; break; //@line 1229 "datetimemodule.c"
       case 18: // $bb17
-        var $58=HEAP[$56]; //@line 1231 "datetimemodule.c"
-        $ch=$58; //@line 1231 "datetimemodule.c"
-        var $59=$ch; //@line 1231 "datetimemodule.c"
-        var $60=($59)==0; //@line 1231 "datetimemodule.c"
-        var $61=($60); //@line 1231 "datetimemodule.c"
-        var $62=$pin; //@line 1231 "datetimemodule.c"
-        var $63=$62+1; //@line 1231 "datetimemodule.c"
-        $pin=$63; //@line 1231 "datetimemodule.c"
-        var $toBool=($61)!=0; //@line 1231 "datetimemodule.c"
+        var $57=HEAP[$55]; //@line 1231 "datetimemodule.c"
+        $ch=$57; //@line 1231 "datetimemodule.c"
+        var $58=$ch; //@line 1231 "datetimemodule.c"
+        var $59=($58)==0; //@line 1231 "datetimemodule.c"
+        var $60=($59); //@line 1231 "datetimemodule.c"
+        var $61=$pin; //@line 1231 "datetimemodule.c"
+        var $62=$61+1; //@line 1231 "datetimemodule.c"
+        $pin=$62; //@line 1231 "datetimemodule.c"
+        var $toBool=($60)!=0; //@line 1231 "datetimemodule.c"
         if ($toBool) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1231 "datetimemodule.c"
       case 19: // $bb18
-        var $64=HEAP[_PyExc_ValueError]; //@line 1233 "datetimemodule.c"
-        _PyErr_SetString($64, __str78); //@line 1233 "datetimemodule.c"
-        __label__ = 85; break; //@line 1233 "datetimemodule.c"
+        var $63=HEAP[_PyExc_ValueError]; //@line 1233 "datetimemodule.c"
+        _PyErr_SetString($63, __str78); //@line 1233 "datetimemodule.c"
+        __label__ = 78; break; //@line 1233 "datetimemodule.c"
       case 20: // $bb19
-        var $65=$ch; //@line 1238 "datetimemodule.c"
-        var $66=($65)==122; //@line 1238 "datetimemodule.c"
-        if ($66) { __label__ = 21; break; } else { __label__ = 33; break; } //@line 1238 "datetimemodule.c"
+        var $64=$ch; //@line 1238 "datetimemodule.c"
+        var $65=($64)==122; //@line 1238 "datetimemodule.c"
+        if ($65) { __label__ = 21; break; } else { __label__ = 33; break; } //@line 1238 "datetimemodule.c"
       case 21: // $bb20
-        var $67=$zreplacement; //@line 1239 "datetimemodule.c"
-        var $68=($67)==0; //@line 1239 "datetimemodule.c"
-        if ($68) { __label__ = 22; break; } else { __label__ = 32; break; } //@line 1239 "datetimemodule.c"
+        var $66=$zreplacement; //@line 1239 "datetimemodule.c"
+        var $67=($66)==0; //@line 1239 "datetimemodule.c"
+        if ($67) { __label__ = 22; break; } else { __label__ = 32; break; } //@line 1239 "datetimemodule.c"
       case 22: // $bb21
-        var $69=$object_addr; //@line 1242 "datetimemodule.c"
-        var $70=_get_tzinfo_member($69); //@line 1242 "datetimemodule.c"
-        $tzinfo=$70; //@line 1242 "datetimemodule.c"
-        var $71=_PyString_FromString(__str79); //@line 1243 "datetimemodule.c"
-        $zreplacement=$71; //@line 1243 "datetimemodule.c"
-        var $72=$zreplacement; //@line 1244 "datetimemodule.c"
-        var $73=($72)==0; //@line 1244 "datetimemodule.c"
-        if ($73) { __label__ = 85; break; } else { __label__ = 23; break; } //@line 1244 "datetimemodule.c"
+        var $68=$object_addr; //@line 1242 "datetimemodule.c"
+        var $69=_get_tzinfo_member($68); //@line 1242 "datetimemodule.c"
+        $tzinfo=$69; //@line 1242 "datetimemodule.c"
+        var $70=_PyString_FromString(__str79); //@line 1243 "datetimemodule.c"
+        $zreplacement=$70; //@line 1243 "datetimemodule.c"
+        var $71=$zreplacement; //@line 1244 "datetimemodule.c"
+        var $72=($71)==0; //@line 1244 "datetimemodule.c"
+        if ($72) { __label__ = 78; break; } else { __label__ = 23; break; } //@line 1244 "datetimemodule.c"
       case 23: // $bb22
-        var $74=$tzinfo; //@line 1245 "datetimemodule.c"
-        var $75=($74)!=(__Py_NoneStruct); //@line 1245 "datetimemodule.c"
-        var $76=$tzinfo; //@line 1245 "datetimemodule.c"
-        var $77=($76)!=0; //@line 1245 "datetimemodule.c"
-        var $or_cond=($75) & ($77);
+        var $73=$tzinfo; //@line 1245 "datetimemodule.c"
+        var $74=($73)!=(__Py_NoneStruct); //@line 1245 "datetimemodule.c"
+        var $75=$tzinfo; //@line 1245 "datetimemodule.c"
+        var $76=($75)!=0; //@line 1245 "datetimemodule.c"
+        var $or_cond=($74) & ($76);
         if ($or_cond) { __label__ = 24; break; } else { __label__ = 30; break; } //@line 1245 "datetimemodule.c"
       case 24: // $bb24
-        var $78=$tzinfoarg_addr; //@line 1246 "datetimemodule.c"
-        var $79=($78)==0; //@line 1246 "datetimemodule.c"
-        if ($79) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1246 "datetimemodule.c"
+        var $77=$tzinfoarg_addr; //@line 1246 "datetimemodule.c"
+        var $78=($77)==0; //@line 1246 "datetimemodule.c"
+        if ($78) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1246 "datetimemodule.c"
       case 25: // $bb25
         ___assert_fail(__str38, __str1, 1246, ___PRETTY_FUNCTION___9485); //@line 1246 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1246 "datetimemodule.c"
       case 26: // $bb26
-        var $80=$tzinfo; //@line 1247 "datetimemodule.c"
-        var $81=$tzinfoarg_addr; //@line 1247 "datetimemodule.c"
-        var $82=_format_utcoffset($buf27, __str79, $80, $81); //@line 1247 "datetimemodule.c"
-        var $83=($82) < 0; //@line 1247 "datetimemodule.c"
-        if ($83) { __label__ = 85; break; } else { __label__ = 27; break; } //@line 1247 "datetimemodule.c"
+        var $79=$tzinfo; //@line 1247 "datetimemodule.c"
+        var $80=$tzinfoarg_addr; //@line 1247 "datetimemodule.c"
+        var $81=_format_utcoffset($buf27, __str79, $79, $80); //@line 1247 "datetimemodule.c"
+        var $82=($81) < 0; //@line 1247 "datetimemodule.c"
+        if ($82) { __label__ = 78; break; } else { __label__ = 27; break; } //@line 1247 "datetimemodule.c"
       case 27: // $bb28
-        var $84=$zreplacement; //@line 1253 "datetimemodule.c"
-        var $85=$84; //@line 1253 "datetimemodule.c"
-        var $86=HEAP[$85]; //@line 1253 "datetimemodule.c"
-        var $87=($86) - 1; //@line 1253 "datetimemodule.c"
-        var $88=$zreplacement; //@line 1253 "datetimemodule.c"
-        var $89=$88; //@line 1253 "datetimemodule.c"
-        HEAP[$89]=$87; //@line 1253 "datetimemodule.c"
-        var $90=$zreplacement; //@line 1253 "datetimemodule.c"
-        var $91=$90; //@line 1253 "datetimemodule.c"
-        var $92=HEAP[$91]; //@line 1253 "datetimemodule.c"
-        var $93=($92)==0; //@line 1253 "datetimemodule.c"
-        if ($93) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1253 "datetimemodule.c"
+        var $83=$zreplacement; //@line 1253 "datetimemodule.c"
+        var $84=$83; //@line 1253 "datetimemodule.c"
+        var $85=HEAP[$84]; //@line 1253 "datetimemodule.c"
+        var $86=($85) - 1; //@line 1253 "datetimemodule.c"
+        var $87=$zreplacement; //@line 1253 "datetimemodule.c"
+        var $88=$87; //@line 1253 "datetimemodule.c"
+        HEAP[$88]=$86; //@line 1253 "datetimemodule.c"
+        var $89=$zreplacement; //@line 1253 "datetimemodule.c"
+        var $90=$89; //@line 1253 "datetimemodule.c"
+        var $91=HEAP[$90]; //@line 1253 "datetimemodule.c"
+        var $92=($91)==0; //@line 1253 "datetimemodule.c"
+        if ($92) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1253 "datetimemodule.c"
       case 28: // $bb29
-        var $94=$zreplacement; //@line 1253 "datetimemodule.c"
-        var $95=$94+4; //@line 1253 "datetimemodule.c"
-        var $96=HEAP[$95]; //@line 1253 "datetimemodule.c"
-        var $97=$96+24; //@line 1253 "datetimemodule.c"
-        var $98=HEAP[$97]; //@line 1253 "datetimemodule.c"
-        var $99=$zreplacement; //@line 1253 "datetimemodule.c"
-        FUNCTION_TABLE[$98]($99); //@line 1253 "datetimemodule.c"
+        var $93=$zreplacement; //@line 1253 "datetimemodule.c"
+        var $94=$93+4; //@line 1253 "datetimemodule.c"
+        var $95=HEAP[$94]; //@line 1253 "datetimemodule.c"
+        var $96=$95+24; //@line 1253 "datetimemodule.c"
+        var $97=HEAP[$96]; //@line 1253 "datetimemodule.c"
+        var $98=$zreplacement; //@line 1253 "datetimemodule.c"
+        FUNCTION_TABLE[$97]($98); //@line 1253 "datetimemodule.c"
         __label__ = 29; break; //@line 1253 "datetimemodule.c"
       case 29: // $bb30
-        var $100=_PyString_FromString($buf31); //@line 1254 "datetimemodule.c"
-        $zreplacement=$100; //@line 1254 "datetimemodule.c"
-        var $101=($100)==0; //@line 1255 "datetimemodule.c"
-        if ($101) { __label__ = 85; break; } else { __label__ = 32; break; } //@line 1255 "datetimemodule.c"
+        var $99=_PyString_FromString($buf31); //@line 1254 "datetimemodule.c"
+        $zreplacement=$99; //@line 1254 "datetimemodule.c"
+        var $100=($99)==0; //@line 1255 "datetimemodule.c"
+        if ($100) { __label__ = 78; break; } else { __label__ = 32; break; } //@line 1255 "datetimemodule.c"
       case 30: // $bb32
         var $_pr=$zreplacement;
-        var $102=($_pr)==0; //@line 1258 "datetimemodule.c"
-        if ($102) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1258 "datetimemodule.c"
+        var $101=($_pr)==0; //@line 1258 "datetimemodule.c"
+        if ($101) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1258 "datetimemodule.c"
       case 31: // $bb33
         ___assert_fail(__str80, __str1, 1258, ___PRETTY_FUNCTION___9485); //@line 1258 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1258 "datetimemodule.c"
       case 32: // $bb34
-        var $103=$zreplacement; //@line 1259 "datetimemodule.c"
-        var $104=$103; //@line 1259 "datetimemodule.c"
-        var $105=$104+20; //@line 1259 "datetimemodule.c"
-        var $106=$105; //@line 1259 "datetimemodule.c"
-        $ptoappend=$106; //@line 1259 "datetimemodule.c"
-        var $107=$zreplacement; //@line 1260 "datetimemodule.c"
-        var $108=$107; //@line 1260 "datetimemodule.c"
-        var $109=$108+8; //@line 1260 "datetimemodule.c"
-        var $110=HEAP[$109]; //@line 1260 "datetimemodule.c"
-        $ntoappend=$110; //@line 1260 "datetimemodule.c"
-        __label__ = 69; break; //@line 1260 "datetimemodule.c"
+        var $102=$zreplacement; //@line 1259 "datetimemodule.c"
+        var $103=$102; //@line 1259 "datetimemodule.c"
+        var $104=$103+20; //@line 1259 "datetimemodule.c"
+        var $105=$104; //@line 1259 "datetimemodule.c"
+        $ptoappend=$105; //@line 1259 "datetimemodule.c"
+        var $106=$zreplacement; //@line 1260 "datetimemodule.c"
+        var $107=$106; //@line 1260 "datetimemodule.c"
+        var $108=$107+8; //@line 1260 "datetimemodule.c"
+        var $109=HEAP[$108]; //@line 1260 "datetimemodule.c"
+        $ntoappend=$109; //@line 1260 "datetimemodule.c"
+        __label__ = 62; break; //@line 1260 "datetimemodule.c"
       case 33: // $bb35
-        var $111=$ch; //@line 1262 "datetimemodule.c"
-        var $112=($111)==90; //@line 1262 "datetimemodule.c"
-        if ($112) { __label__ = 34; break; } else { __label__ = 55; break; } //@line 1262 "datetimemodule.c"
+        var $110=$ch; //@line 1262 "datetimemodule.c"
+        var $111=($110)==90; //@line 1262 "datetimemodule.c"
+        if ($111) { __label__ = 34; break; } else { __label__ = 55; break; } //@line 1262 "datetimemodule.c"
       case 34: // $bb36
-        var $113=$Zreplacement; //@line 1264 "datetimemodule.c"
-        var $114=($113)==0; //@line 1264 "datetimemodule.c"
-        if ($114) { __label__ = 35; break; } else { __label__ = 54; break; } //@line 1264 "datetimemodule.c"
+        var $112=$Zreplacement; //@line 1264 "datetimemodule.c"
+        var $113=($112)==0; //@line 1264 "datetimemodule.c"
+        if ($113) { __label__ = 35; break; } else { __label__ = 54; break; } //@line 1264 "datetimemodule.c"
       case 35: // $bb37
-        var $115=$object_addr; //@line 1265 "datetimemodule.c"
-        var $116=_get_tzinfo_member($115); //@line 1265 "datetimemodule.c"
-        $tzinfo38=$116; //@line 1265 "datetimemodule.c"
-        var $117=_PyString_FromString(__str79); //@line 1266 "datetimemodule.c"
-        $Zreplacement=$117; //@line 1266 "datetimemodule.c"
-        var $118=$Zreplacement; //@line 1267 "datetimemodule.c"
-        var $119=($118)==0; //@line 1267 "datetimemodule.c"
-        if ($119) { __label__ = 85; break; } else { __label__ = 36; break; } //@line 1267 "datetimemodule.c"
+        var $114=$object_addr; //@line 1265 "datetimemodule.c"
+        var $115=_get_tzinfo_member($114); //@line 1265 "datetimemodule.c"
+        $tzinfo38=$115; //@line 1265 "datetimemodule.c"
+        var $116=_PyString_FromString(__str79); //@line 1266 "datetimemodule.c"
+        $Zreplacement=$116; //@line 1266 "datetimemodule.c"
+        var $117=$Zreplacement; //@line 1267 "datetimemodule.c"
+        var $118=($117)==0; //@line 1267 "datetimemodule.c"
+        if ($118) { __label__ = 78; break; } else { __label__ = 36; break; } //@line 1267 "datetimemodule.c"
       case 36: // $bb39
-        var $120=$tzinfo38; //@line 1268 "datetimemodule.c"
-        var $121=($120)!=(__Py_NoneStruct); //@line 1268 "datetimemodule.c"
-        var $122=$tzinfo38; //@line 1268 "datetimemodule.c"
-        var $123=($122)!=0; //@line 1268 "datetimemodule.c"
-        var $or_cond3=($121) & ($123);
+        var $119=$tzinfo38; //@line 1268 "datetimemodule.c"
+        var $120=($119)!=(__Py_NoneStruct); //@line 1268 "datetimemodule.c"
+        var $121=$tzinfo38; //@line 1268 "datetimemodule.c"
+        var $122=($121)!=0; //@line 1268 "datetimemodule.c"
+        var $or_cond3=($120) & ($122);
         if ($or_cond3) { __label__ = 37; break; } else { __label__ = 52; break; } //@line 1268 "datetimemodule.c"
       case 37: // $bb41
-        var $124=$tzinfoarg_addr; //@line 1270 "datetimemodule.c"
-        var $125=($124)==0; //@line 1270 "datetimemodule.c"
-        if ($125) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 1270 "datetimemodule.c"
+        var $123=$tzinfoarg_addr; //@line 1270 "datetimemodule.c"
+        var $124=($123)==0; //@line 1270 "datetimemodule.c"
+        if ($124) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 1270 "datetimemodule.c"
       case 38: // $bb42
         ___assert_fail(__str38, __str1, 1270, ___PRETTY_FUNCTION___9485); //@line 1270 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1270 "datetimemodule.c"
       case 39: // $bb43
-        var $126=$tzinfo38; //@line 1271 "datetimemodule.c"
-        var $127=$tzinfoarg_addr; //@line 1271 "datetimemodule.c"
-        var $128=_call_tzname($126, $127); //@line 1271 "datetimemodule.c"
-        $temp=$128; //@line 1271 "datetimemodule.c"
-        var $129=$temp; //@line 1272 "datetimemodule.c"
-        var $130=($129)==0; //@line 1272 "datetimemodule.c"
-        if ($130) { __label__ = 85; break; } else { __label__ = 40; break; } //@line 1272 "datetimemodule.c"
+        var $125=$tzinfo38; //@line 1271 "datetimemodule.c"
+        var $126=$tzinfoarg_addr; //@line 1271 "datetimemodule.c"
+        var $127=_call_tzname($125, $126); //@line 1271 "datetimemodule.c"
+        $temp=$127; //@line 1271 "datetimemodule.c"
+        var $128=$temp; //@line 1272 "datetimemodule.c"
+        var $129=($128)==0; //@line 1272 "datetimemodule.c"
+        if ($129) { __label__ = 78; break; } else { __label__ = 40; break; } //@line 1272 "datetimemodule.c"
       case 40: // $bb44
-        var $131=$temp; //@line 1273 "datetimemodule.c"
-        var $132=($131)!=(__Py_NoneStruct); //@line 1273 "datetimemodule.c"
-        var $133=$temp; //@line 1274 "datetimemodule.c"
-        if ($132) { __label__ = 41; break; } else { __label__ = 50; break; } //@line 1273 "datetimemodule.c"
+        var $130=$temp; //@line 1273 "datetimemodule.c"
+        var $131=($130)!=(__Py_NoneStruct); //@line 1273 "datetimemodule.c"
+        var $132=$temp; //@line 1274 "datetimemodule.c"
+        if ($131) { __label__ = 41; break; } else { __label__ = 50; break; } //@line 1273 "datetimemodule.c"
       case 41: // $bb45
-        var $134=$133+4; //@line 1274 "datetimemodule.c"
-        var $135=HEAP[$134]; //@line 1274 "datetimemodule.c"
-        var $136=$135+84; //@line 1274 "datetimemodule.c"
-        var $137=HEAP[$136]; //@line 1274 "datetimemodule.c"
-        var $138=($137) & 134217728; //@line 1274 "datetimemodule.c"
-        var $139=($138)==0; //@line 1274 "datetimemodule.c"
-        if ($139) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 1274 "datetimemodule.c"
+        var $133=$132+4; //@line 1274 "datetimemodule.c"
+        var $134=HEAP[$133]; //@line 1274 "datetimemodule.c"
+        var $135=$134+84; //@line 1274 "datetimemodule.c"
+        var $136=HEAP[$135]; //@line 1274 "datetimemodule.c"
+        var $137=($136) & 134217728; //@line 1274 "datetimemodule.c"
+        var $138=($137)==0; //@line 1274 "datetimemodule.c"
+        if ($138) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 1274 "datetimemodule.c"
       case 42: // $bb46
         ___assert_fail(__str81, __str1, 1274, ___PRETTY_FUNCTION___9485); //@line 1274 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1274 "datetimemodule.c"
       case 43: // $bb47
-        var $140=$Zreplacement; //@line 1281 "datetimemodule.c"
-        var $141=$140; //@line 1281 "datetimemodule.c"
-        var $142=HEAP[$141]; //@line 1281 "datetimemodule.c"
-        var $143=($142) - 1; //@line 1281 "datetimemodule.c"
-        var $144=$Zreplacement; //@line 1281 "datetimemodule.c"
-        var $145=$144; //@line 1281 "datetimemodule.c"
-        HEAP[$145]=$143; //@line 1281 "datetimemodule.c"
-        var $146=$Zreplacement; //@line 1281 "datetimemodule.c"
-        var $147=$146; //@line 1281 "datetimemodule.c"
-        var $148=HEAP[$147]; //@line 1281 "datetimemodule.c"
-        var $149=($148)==0; //@line 1281 "datetimemodule.c"
-        if ($149) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 1281 "datetimemodule.c"
+        var $139=$Zreplacement; //@line 1281 "datetimemodule.c"
+        var $140=$139; //@line 1281 "datetimemodule.c"
+        var $141=HEAP[$140]; //@line 1281 "datetimemodule.c"
+        var $142=($141) - 1; //@line 1281 "datetimemodule.c"
+        var $143=$Zreplacement; //@line 1281 "datetimemodule.c"
+        var $144=$143; //@line 1281 "datetimemodule.c"
+        HEAP[$144]=$142; //@line 1281 "datetimemodule.c"
+        var $145=$Zreplacement; //@line 1281 "datetimemodule.c"
+        var $146=$145; //@line 1281 "datetimemodule.c"
+        var $147=HEAP[$146]; //@line 1281 "datetimemodule.c"
+        var $148=($147)==0; //@line 1281 "datetimemodule.c"
+        if ($148) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 1281 "datetimemodule.c"
       case 44: // $bb48
-        var $150=$Zreplacement; //@line 1281 "datetimemodule.c"
-        var $151=$150+4; //@line 1281 "datetimemodule.c"
-        var $152=HEAP[$151]; //@line 1281 "datetimemodule.c"
-        var $153=$152+24; //@line 1281 "datetimemodule.c"
-        var $154=HEAP[$153]; //@line 1281 "datetimemodule.c"
-        var $155=$Zreplacement; //@line 1281 "datetimemodule.c"
-        FUNCTION_TABLE[$154]($155); //@line 1281 "datetimemodule.c"
+        var $149=$Zreplacement; //@line 1281 "datetimemodule.c"
+        var $150=$149+4; //@line 1281 "datetimemodule.c"
+        var $151=HEAP[$150]; //@line 1281 "datetimemodule.c"
+        var $152=$151+24; //@line 1281 "datetimemodule.c"
+        var $153=HEAP[$152]; //@line 1281 "datetimemodule.c"
+        var $154=$Zreplacement; //@line 1281 "datetimemodule.c"
+        FUNCTION_TABLE[$153]($154); //@line 1281 "datetimemodule.c"
         __label__ = 45; break; //@line 1281 "datetimemodule.c"
       case 45: // $bb49
-        var $156=$temp; //@line 1282 "datetimemodule.c"
-        var $157=__PyObject_CallMethod_SizeT($156, __str82, __str83, __str84, __str85); //@line 1282 "datetimemodule.c"
-        $Zreplacement=$157; //@line 1282 "datetimemodule.c"
-        var $158=$temp; //@line 1285 "datetimemodule.c"
-        var $159=$158; //@line 1285 "datetimemodule.c"
-        var $160=HEAP[$159]; //@line 1285 "datetimemodule.c"
-        var $161=($160) - 1; //@line 1285 "datetimemodule.c"
-        var $162=$temp; //@line 1285 "datetimemodule.c"
-        var $163=$162; //@line 1285 "datetimemodule.c"
-        HEAP[$163]=$161; //@line 1285 "datetimemodule.c"
-        var $164=$temp; //@line 1285 "datetimemodule.c"
-        var $165=$164; //@line 1285 "datetimemodule.c"
-        var $166=HEAP[$165]; //@line 1285 "datetimemodule.c"
-        var $167=($166)==0; //@line 1285 "datetimemodule.c"
-        if ($167) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1285 "datetimemodule.c"
+        var $155=$temp; //@line 1282 "datetimemodule.c"
+        var $156=__PyObject_CallMethod_SizeT($155, __str82, __str83, allocate([__str84,0,0,0,__str85,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1282 "datetimemodule.c"
+        $Zreplacement=$156; //@line 1282 "datetimemodule.c"
+        var $157=$temp; //@line 1285 "datetimemodule.c"
+        var $158=$157; //@line 1285 "datetimemodule.c"
+        var $159=HEAP[$158]; //@line 1285 "datetimemodule.c"
+        var $160=($159) - 1; //@line 1285 "datetimemodule.c"
+        var $161=$temp; //@line 1285 "datetimemodule.c"
+        var $162=$161; //@line 1285 "datetimemodule.c"
+        HEAP[$162]=$160; //@line 1285 "datetimemodule.c"
+        var $163=$temp; //@line 1285 "datetimemodule.c"
+        var $164=$163; //@line 1285 "datetimemodule.c"
+        var $165=HEAP[$164]; //@line 1285 "datetimemodule.c"
+        var $166=($165)==0; //@line 1285 "datetimemodule.c"
+        if ($166) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1285 "datetimemodule.c"
       case 46: // $bb50
-        var $168=$temp; //@line 1285 "datetimemodule.c"
-        var $169=$168+4; //@line 1285 "datetimemodule.c"
-        var $170=HEAP[$169]; //@line 1285 "datetimemodule.c"
-        var $171=$170+24; //@line 1285 "datetimemodule.c"
-        var $172=HEAP[$171]; //@line 1285 "datetimemodule.c"
-        var $173=$temp; //@line 1285 "datetimemodule.c"
-        FUNCTION_TABLE[$172]($173); //@line 1285 "datetimemodule.c"
+        var $167=$temp; //@line 1285 "datetimemodule.c"
+        var $168=$167+4; //@line 1285 "datetimemodule.c"
+        var $169=HEAP[$168]; //@line 1285 "datetimemodule.c"
+        var $170=$169+24; //@line 1285 "datetimemodule.c"
+        var $171=HEAP[$170]; //@line 1285 "datetimemodule.c"
+        var $172=$temp; //@line 1285 "datetimemodule.c"
+        FUNCTION_TABLE[$171]($172); //@line 1285 "datetimemodule.c"
         __label__ = 47; break; //@line 1285 "datetimemodule.c"
       case 47: // $bb51
-        var $174=$Zreplacement; //@line 1286 "datetimemodule.c"
-        var $175=($174)==0; //@line 1286 "datetimemodule.c"
-        if ($175) { __label__ = 85; break; } else { __label__ = 48; break; } //@line 1286 "datetimemodule.c"
+        var $173=$Zreplacement; //@line 1286 "datetimemodule.c"
+        var $174=($173)==0; //@line 1286 "datetimemodule.c"
+        if ($174) { __label__ = 78; break; } else { __label__ = 48; break; } //@line 1286 "datetimemodule.c"
       case 48: // $bb52
-        var $176=$Zreplacement; //@line 1288 "datetimemodule.c"
-        var $177=$176+4; //@line 1288 "datetimemodule.c"
-        var $178=HEAP[$177]; //@line 1288 "datetimemodule.c"
-        var $179=$178+84; //@line 1288 "datetimemodule.c"
-        var $180=HEAP[$179]; //@line 1288 "datetimemodule.c"
-        var $181=($180) & 134217728; //@line 1288 "datetimemodule.c"
-        var $182=($181)==0; //@line 1288 "datetimemodule.c"
-        if ($182) { __label__ = 49; break; } else { __label__ = 52; break; } //@line 1288 "datetimemodule.c"
+        var $175=$Zreplacement; //@line 1288 "datetimemodule.c"
+        var $176=$175+4; //@line 1288 "datetimemodule.c"
+        var $177=HEAP[$176]; //@line 1288 "datetimemodule.c"
+        var $178=$177+84; //@line 1288 "datetimemodule.c"
+        var $179=HEAP[$178]; //@line 1288 "datetimemodule.c"
+        var $180=($179) & 134217728; //@line 1288 "datetimemodule.c"
+        var $181=($180)==0; //@line 1288 "datetimemodule.c"
+        if ($181) { __label__ = 49; break; } else { __label__ = 52; break; } //@line 1288 "datetimemodule.c"
       case 49: // $bb53
-        var $183=HEAP[_PyExc_TypeError]; //@line 1289 "datetimemodule.c"
-        _PyErr_SetString($183, __str86); //@line 1289 "datetimemodule.c"
-        __label__ = 85; break; //@line 1289 "datetimemodule.c"
+        var $182=HEAP[_PyExc_TypeError]; //@line 1289 "datetimemodule.c"
+        _PyErr_SetString($182, __str86); //@line 1289 "datetimemodule.c"
+        __label__ = 78; break; //@line 1289 "datetimemodule.c"
       case 50: // $bb55
-        var $184=$133; //@line 1294 "datetimemodule.c"
-        var $185=HEAP[$184]; //@line 1294 "datetimemodule.c"
-        var $186=($185) - 1; //@line 1294 "datetimemodule.c"
-        var $187=$temp; //@line 1294 "datetimemodule.c"
-        var $188=$187; //@line 1294 "datetimemodule.c"
-        HEAP[$188]=$186; //@line 1294 "datetimemodule.c"
-        var $189=$temp; //@line 1294 "datetimemodule.c"
-        var $190=$189; //@line 1294 "datetimemodule.c"
-        var $191=HEAP[$190]; //@line 1294 "datetimemodule.c"
-        var $192=($191)==0; //@line 1294 "datetimemodule.c"
-        if ($192) { __label__ = 51; break; } else { __label__ = 52; break; } //@line 1294 "datetimemodule.c"
+        var $183=$132; //@line 1294 "datetimemodule.c"
+        var $184=HEAP[$183]; //@line 1294 "datetimemodule.c"
+        var $185=($184) - 1; //@line 1294 "datetimemodule.c"
+        var $186=$temp; //@line 1294 "datetimemodule.c"
+        var $187=$186; //@line 1294 "datetimemodule.c"
+        HEAP[$187]=$185; //@line 1294 "datetimemodule.c"
+        var $188=$temp; //@line 1294 "datetimemodule.c"
+        var $189=$188; //@line 1294 "datetimemodule.c"
+        var $190=HEAP[$189]; //@line 1294 "datetimemodule.c"
+        var $191=($190)==0; //@line 1294 "datetimemodule.c"
+        if ($191) { __label__ = 51; break; } else { __label__ = 52; break; } //@line 1294 "datetimemodule.c"
       case 51: // $bb56
-        var $193=$temp; //@line 1294 "datetimemodule.c"
-        var $194=$193+4; //@line 1294 "datetimemodule.c"
-        var $195=HEAP[$194]; //@line 1294 "datetimemodule.c"
-        var $196=$195+24; //@line 1294 "datetimemodule.c"
-        var $197=HEAP[$196]; //@line 1294 "datetimemodule.c"
-        var $198=$temp; //@line 1294 "datetimemodule.c"
-        FUNCTION_TABLE[$197]($198); //@line 1294 "datetimemodule.c"
+        var $192=$temp; //@line 1294 "datetimemodule.c"
+        var $193=$192+4; //@line 1294 "datetimemodule.c"
+        var $194=HEAP[$193]; //@line 1294 "datetimemodule.c"
+        var $195=$194+24; //@line 1294 "datetimemodule.c"
+        var $196=HEAP[$195]; //@line 1294 "datetimemodule.c"
+        var $197=$temp; //@line 1294 "datetimemodule.c"
+        FUNCTION_TABLE[$196]($197); //@line 1294 "datetimemodule.c"
         __label__ = 52; break; //@line 1294 "datetimemodule.c"
       case 52: // $bb57
         var $_pr4=$Zreplacement;
-        var $199=($_pr4)==0; //@line 1297 "datetimemodule.c"
-        if ($199) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 1297 "datetimemodule.c"
+        var $198=($_pr4)==0; //@line 1297 "datetimemodule.c"
+        if ($198) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 1297 "datetimemodule.c"
       case 53: // $bb58
         ___assert_fail(__str87, __str1, 1297, ___PRETTY_FUNCTION___9485); //@line 1297 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1297 "datetimemodule.c"
       case 54: // $bb59
-        var $200=$Zreplacement; //@line 1298 "datetimemodule.c"
-        var $201=$200; //@line 1298 "datetimemodule.c"
-        var $202=$201+20; //@line 1298 "datetimemodule.c"
-        var $203=$202; //@line 1298 "datetimemodule.c"
-        $ptoappend=$203; //@line 1298 "datetimemodule.c"
-        var $204=$Zreplacement; //@line 1299 "datetimemodule.c"
-        var $205=$204; //@line 1299 "datetimemodule.c"
-        var $206=$205+8; //@line 1299 "datetimemodule.c"
-        var $207=HEAP[$206]; //@line 1299 "datetimemodule.c"
-        $ntoappend=$207; //@line 1299 "datetimemodule.c"
-        __label__ = 69; break; //@line 1299 "datetimemodule.c"
+        var $199=$Zreplacement; //@line 1298 "datetimemodule.c"
+        var $200=$199; //@line 1298 "datetimemodule.c"
+        var $201=$200+20; //@line 1298 "datetimemodule.c"
+        var $202=$201; //@line 1298 "datetimemodule.c"
+        $ptoappend=$202; //@line 1298 "datetimemodule.c"
+        var $203=$Zreplacement; //@line 1299 "datetimemodule.c"
+        var $204=$203; //@line 1299 "datetimemodule.c"
+        var $205=$204+8; //@line 1299 "datetimemodule.c"
+        var $206=HEAP[$205]; //@line 1299 "datetimemodule.c"
+        $ntoappend=$206; //@line 1299 "datetimemodule.c"
+        __label__ = 62; break; //@line 1299 "datetimemodule.c"
       case 55: // $bb60
-        var $208=$ch; //@line 1301 "datetimemodule.c"
-        var $209=($208)==102; //@line 1301 "datetimemodule.c"
-        if ($209) { __label__ = 56; break; } else { __label__ = 68; break; } //@line 1301 "datetimemodule.c"
+        var $207=$ch; //@line 1301 "datetimemodule.c"
+        var $208=($207)==102; //@line 1301 "datetimemodule.c"
+        if ($208) { __label__ = 56; break; } else { __label__ = 61; break; } //@line 1301 "datetimemodule.c"
       case 56: // $bb61
-        var $210=$freplacement; //@line 1303 "datetimemodule.c"
-        var $211=($210)==0; //@line 1303 "datetimemodule.c"
-        if ($211) { __label__ = 57; break; } else { __label__ = 65; break; } //@line 1303 "datetimemodule.c"
+        var $209=$freplacement; //@line 1303 "datetimemodule.c"
+        var $210=($209)==0; //@line 1303 "datetimemodule.c"
+        if ($210) { __label__ = 57; break; } else { __label__ = 58; break; } //@line 1303 "datetimemodule.c"
       case 57: // $bb62
-        var $212=$object_addr; //@line 1304 "datetimemodule.c"
-        $object_addr_i=$212;
-        var $213=$object_addr_i; //@line 1144 "datetimemodule.c"
-        var $214=$213+4; //@line 1144 "datetimemodule.c"
-        var $215=HEAP[$214]; //@line 1144 "datetimemodule.c"
-        var $216=($215)==(_PyDateTime_TimeType); //@line 1144 "datetimemodule.c"
-        if ($216) { __label__ = 59; break; } else { __label__ = 58; break; } //@line 1144 "datetimemodule.c"
-      case 58: // $bb_i
-        var $217=$object_addr_i; //@line 1144 "datetimemodule.c"
-        var $218=$217+4; //@line 1144 "datetimemodule.c"
-        var $219=HEAP[$218]; //@line 1144 "datetimemodule.c"
-        var $220=_PyType_IsSubtype($219, _PyDateTime_TimeType); //@line 1144 "datetimemodule.c"
-        var $221=($220)!=0; //@line 1144 "datetimemodule.c"
-        if ($221) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 1144 "datetimemodule.c"
-      case 59: // $bb1_i
-        var $222=$object_addr_i; //@line 1145 "datetimemodule.c"
-        var $223=$222; //@line 1145 "datetimemodule.c"
-        var $224=$223+13; //@line 1145 "datetimemodule.c"
-        var $225=$224+3; //@line 1145 "datetimemodule.c"
-        var $226=HEAP[$225]; //@line 1145 "datetimemodule.c"
-        var $227=($226); //@line 1145 "datetimemodule.c"
-        var $228=($227) << 16; //@line 1145 "datetimemodule.c"
-        var $229=$object_addr_i; //@line 1145 "datetimemodule.c"
-        var $230=$229; //@line 1145 "datetimemodule.c"
-        var $231=$230+13; //@line 1145 "datetimemodule.c"
-        var $232=$231+4; //@line 1145 "datetimemodule.c"
-        var $233=HEAP[$232]; //@line 1145 "datetimemodule.c"
-        var $234=($233); //@line 1145 "datetimemodule.c"
-        var $235=($234) << 8; //@line 1145 "datetimemodule.c"
-        var $236=$object_addr_i; //@line 1145 "datetimemodule.c"
-        var $237=$236; //@line 1145 "datetimemodule.c"
-        var $238=$237+13; //@line 1145 "datetimemodule.c"
-        var $239=$238+5; //@line 1145 "datetimemodule.c"
-        var $240=HEAP[$239]; //@line 1145 "datetimemodule.c"
-        var $241=($240); //@line 1145 "datetimemodule.c"
-        var $242=($235) | ($228); //@line 1145 "datetimemodule.c"
-        var $243=($242) | ($241); //@line 1145 "datetimemodule.c"
-        var $244=_sprintf($freplacement2_i, __str74, $243); //@line 1145 "datetimemodule.c"
-        __label__ = 64; break; //@line 1145 "datetimemodule.c"
-      case 60: // $bb3_i
-        var $245=$object_addr_i; //@line 1146 "datetimemodule.c"
-        var $246=$245+4; //@line 1146 "datetimemodule.c"
-        var $247=HEAP[$246]; //@line 1146 "datetimemodule.c"
-        var $248=($247)==(_PyDateTime_DateTimeType); //@line 1146 "datetimemodule.c"
-        if ($248) { __label__ = 62; break; } else { __label__ = 61; break; } //@line 1146 "datetimemodule.c"
-      case 61: // $bb4_i
-        var $249=$object_addr_i; //@line 1146 "datetimemodule.c"
-        var $250=$249+4; //@line 1146 "datetimemodule.c"
-        var $251=HEAP[$250]; //@line 1146 "datetimemodule.c"
-        var $252=_PyType_IsSubtype($251, _PyDateTime_DateTimeType); //@line 1146 "datetimemodule.c"
-        var $253=($252)!=0; //@line 1146 "datetimemodule.c"
-        if ($253) { __label__ = 62; break; } else { __label__ = 63; break; } //@line 1146 "datetimemodule.c"
-      case 62: // $bb5_i
-        var $254=$object_addr_i; //@line 1147 "datetimemodule.c"
-        var $255=$254; //@line 1147 "datetimemodule.c"
-        var $256=$255+13; //@line 1147 "datetimemodule.c"
-        var $257=$256+7; //@line 1147 "datetimemodule.c"
-        var $258=HEAP[$257]; //@line 1147 "datetimemodule.c"
-        var $259=($258); //@line 1147 "datetimemodule.c"
-        var $260=($259) << 16; //@line 1147 "datetimemodule.c"
-        var $261=$object_addr_i; //@line 1147 "datetimemodule.c"
-        var $262=$261; //@line 1147 "datetimemodule.c"
-        var $263=$262+13; //@line 1147 "datetimemodule.c"
-        var $264=$263+8; //@line 1147 "datetimemodule.c"
-        var $265=HEAP[$264]; //@line 1147 "datetimemodule.c"
-        var $266=($265); //@line 1147 "datetimemodule.c"
-        var $267=($266) << 8; //@line 1147 "datetimemodule.c"
-        var $268=$object_addr_i; //@line 1147 "datetimemodule.c"
-        var $269=$268; //@line 1147 "datetimemodule.c"
-        var $270=$269+13; //@line 1147 "datetimemodule.c"
-        var $271=$270+9; //@line 1147 "datetimemodule.c"
-        var $272=HEAP[$271]; //@line 1147 "datetimemodule.c"
-        var $273=($272); //@line 1147 "datetimemodule.c"
-        var $274=($267) | ($260); //@line 1147 "datetimemodule.c"
-        var $275=($274) | ($273); //@line 1147 "datetimemodule.c"
-        var $276=_sprintf($freplacement6_i, __str74, $275); //@line 1147 "datetimemodule.c"
-        __label__ = 64; break; //@line 1147 "datetimemodule.c"
-      case 63: // $bb7_i
-        var $277=_sprintf($freplacement8_i, __str74, 0); //@line 1149 "datetimemodule.c"
-        __label__ = 64; break; //@line 1149 "datetimemodule.c"
-      case 64: // $make_freplacement_exit
-        var $278=_strlen($freplacement10_i); //@line 1151 "datetimemodule.c"
-        var $279=_PyString_FromStringAndSize($freplacement11_i, $278); //@line 1151 "datetimemodule.c"
-        $0=$279; //@line 1151 "datetimemodule.c"
-        $retval_i=$279; //@line 1151 "datetimemodule.c"
-        $freplacement=$279; //@line 1304 "datetimemodule.c"
-        var $280=($279)==0; //@line 1305 "datetimemodule.c"
-        if ($280) { __label__ = 88; break; } else { __label__ = 65; break; } //@line 1305 "datetimemodule.c"
-      case 65: // $bb65
-        var $281=$freplacement; //@line 1309 "datetimemodule.c"
-        var $282=$281+4; //@line 1309 "datetimemodule.c"
-        var $283=HEAP[$282]; //@line 1309 "datetimemodule.c"
-        var $284=$283+84; //@line 1309 "datetimemodule.c"
-        var $285=HEAP[$284]; //@line 1309 "datetimemodule.c"
-        var $286=($285) & 134217728; //@line 1309 "datetimemodule.c"
-        var $287=($286)==0; //@line 1309 "datetimemodule.c"
-        if ($287) { __label__ = 66; break; } else { __label__ = 67; break; } //@line 1309 "datetimemodule.c"
-      case 66: // $bb66
+        var $211=$object_addr; //@line 1304 "datetimemodule.c"
+        var $212=_make_freplacement($211); //@line 1304 "datetimemodule.c"
+        $freplacement=$212; //@line 1304 "datetimemodule.c"
+        var $213=$freplacement; //@line 1305 "datetimemodule.c"
+        var $214=($213)==0; //@line 1305 "datetimemodule.c"
+        if ($214) { __label__ = 81; break; } else { __label__ = 58; break; } //@line 1305 "datetimemodule.c"
+      case 58: // $bb65
+        var $215=$freplacement; //@line 1309 "datetimemodule.c"
+        var $216=$215+4; //@line 1309 "datetimemodule.c"
+        var $217=HEAP[$216]; //@line 1309 "datetimemodule.c"
+        var $218=$217+84; //@line 1309 "datetimemodule.c"
+        var $219=HEAP[$218]; //@line 1309 "datetimemodule.c"
+        var $220=($219) & 134217728; //@line 1309 "datetimemodule.c"
+        var $221=($220)==0; //@line 1309 "datetimemodule.c"
+        if ($221) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 1309 "datetimemodule.c"
+      case 59: // $bb66
         ___assert_fail(__str89, __str1, 1309, ___PRETTY_FUNCTION___9485); //@line 1309 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1309 "datetimemodule.c"
-      case 67: // $bb67
-        var $288=$freplacement; //@line 1310 "datetimemodule.c"
-        var $289=$288; //@line 1310 "datetimemodule.c"
-        var $290=$289+20; //@line 1310 "datetimemodule.c"
-        var $291=$290; //@line 1310 "datetimemodule.c"
-        $ptoappend=$291; //@line 1310 "datetimemodule.c"
-        var $292=$freplacement; //@line 1311 "datetimemodule.c"
-        var $293=$292; //@line 1311 "datetimemodule.c"
-        var $294=$293+8; //@line 1311 "datetimemodule.c"
-        var $295=HEAP[$294]; //@line 1311 "datetimemodule.c"
-        $ntoappend=$295; //@line 1311 "datetimemodule.c"
-        __label__ = 69; break; //@line 1311 "datetimemodule.c"
-      case 68: // $bb68
-        var $296=$pin; //@line 1315 "datetimemodule.c"
-        var $297=$296+-2; //@line 1315 "datetimemodule.c"
-        $ptoappend=$297; //@line 1315 "datetimemodule.c"
+      case 60: // $bb67
+        var $222=$freplacement; //@line 1310 "datetimemodule.c"
+        var $223=$222; //@line 1310 "datetimemodule.c"
+        var $224=$223+20; //@line 1310 "datetimemodule.c"
+        var $225=$224; //@line 1310 "datetimemodule.c"
+        $ptoappend=$225; //@line 1310 "datetimemodule.c"
+        var $226=$freplacement; //@line 1311 "datetimemodule.c"
+        var $227=$226; //@line 1311 "datetimemodule.c"
+        var $228=$227+8; //@line 1311 "datetimemodule.c"
+        var $229=HEAP[$228]; //@line 1311 "datetimemodule.c"
+        $ntoappend=$229; //@line 1311 "datetimemodule.c"
+        __label__ = 62; break; //@line 1311 "datetimemodule.c"
+      case 61: // $bb68
+        var $230=$pin; //@line 1315 "datetimemodule.c"
+        var $231=$230+-2; //@line 1315 "datetimemodule.c"
+        $ptoappend=$231; //@line 1315 "datetimemodule.c"
         $ntoappend=2; //@line 1316 "datetimemodule.c"
-        __lastLabel__ = 68; __label__ = 70; break; //@line 1316 "datetimemodule.c"
-      case 69: // $bb69thread_pre_split
+        __lastLabel__ = 61; __label__ = 63; break; //@line 1316 "datetimemodule.c"
+      case 62: // $bb69thread_pre_split
         var $_pr5=$ptoappend;
-        __lastLabel__ = 69; __label__ = 70; break;
-      case 70: // $bb69
-        var $298=__lastLabel__ == 69 ? $_pr5 : (__lastLabel__ == 68 ? $297 : ($57));
-        var $299=($298)==0; //@line 1322 "datetimemodule.c"
-        if ($299) { __label__ = 71; break; } else { __label__ = 72; break; } //@line 1322 "datetimemodule.c"
-      case 71: // $bb70
+        __lastLabel__ = 62; __label__ = 63; break;
+      case 63: // $bb69
+        var $232=__lastLabel__ == 62 ? $_pr5 : (__lastLabel__ == 61 ? $231 : ($56));
+        var $233=($232)==0; //@line 1322 "datetimemodule.c"
+        if ($233) { __label__ = 64; break; } else { __label__ = 65; break; } //@line 1322 "datetimemodule.c"
+      case 64: // $bb70
         ___assert_fail(__str90, __str1, 1322, ___PRETTY_FUNCTION___9485); //@line 1322 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1322 "datetimemodule.c"
-      case 72: // $bb71
-        var $300=$ntoappend; //@line 1324 "datetimemodule.c"
-        var $301=($300)==0; //@line 1324 "datetimemodule.c"
-        if ($301) { __label__ = 80; break; } else { __label__ = 77; break; } //@line 1324 "datetimemodule.c"
-      case 73: // $bb73
-        var $302=$totalnew; //@line 1327 "datetimemodule.c"
-        var $303=($302) << 1; //@line 1327 "datetimemodule.c"
-        $bigger=$303; //@line 1327 "datetimemodule.c"
-        var $304=$bigger; //@line 1328 "datetimemodule.c"
-        var $305=($304) >>> 1; //@line 1328 "datetimemodule.c"
-        var $306=$totalnew; //@line 1328 "datetimemodule.c"
-        var $307=($305)!=($306); //@line 1328 "datetimemodule.c"
-        if ($307) { __label__ = 74; break; } else { __label__ = 75; break; } //@line 1328 "datetimemodule.c"
-      case 74: // $bb74
-        var $308=_PyErr_NoMemory(); //@line 1329 "datetimemodule.c"
-        __label__ = 85; break; //@line 1329 "datetimemodule.c"
-      case 75: // $bb75
-        var $309=$bigger; //@line 1332 "datetimemodule.c"
-        var $310=__PyString_Resize($newfmt, $309); //@line 1332 "datetimemodule.c"
-        var $311=($310) < 0; //@line 1332 "datetimemodule.c"
-        if ($311) { __label__ = 85; break; } else { __label__ = 76; break; } //@line 1332 "datetimemodule.c"
-      case 76: // $bb76
-        var $312=$bigger; //@line 1334 "datetimemodule.c"
-        $totalnew=$312; //@line 1334 "datetimemodule.c"
-        var $313=HEAP[$newfmt]; //@line 1335 "datetimemodule.c"
-        var $314=_PyString_AsString($313); //@line 1335 "datetimemodule.c"
-        var $315=$usednew; //@line 1335 "datetimemodule.c"
-        var $316=$314+$315; //@line 1335 "datetimemodule.c"
-        $pnew=$316; //@line 1335 "datetimemodule.c"
-        __label__ = 77; break; //@line 1335 "datetimemodule.c"
-      case 77: // $bb77
-        var $317=$usednew; //@line 1326 "datetimemodule.c"
-        var $318=$ntoappend; //@line 1326 "datetimemodule.c"
-        var $319=($318) + ($317); //@line 1326 "datetimemodule.c"
-        var $320=$totalnew; //@line 1326 "datetimemodule.c"
-        var $321=($319) > ($320); //@line 1326 "datetimemodule.c"
-        if ($321) { __label__ = 73; break; } else { __label__ = 78; break; } //@line 1326 "datetimemodule.c"
-      case 78: // $bb78
-        var $322=$pnew; //@line 1337 "datetimemodule.c"
-        var $323=$ptoappend; //@line 1337 "datetimemodule.c"
-        var $324=$ntoappend; //@line 1337 "datetimemodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($322, $323, $324, 1, 0); //@line 1337 "datetimemodule.c"
-        var $325=$pnew; //@line 1338 "datetimemodule.c"
-        var $326=$ntoappend; //@line 1338 "datetimemodule.c"
-        var $327=$325+$326; //@line 1338 "datetimemodule.c"
-        $pnew=$327; //@line 1338 "datetimemodule.c"
-        var $328=$usednew; //@line 1339 "datetimemodule.c"
-        var $329=$ntoappend; //@line 1339 "datetimemodule.c"
-        var $330=($329) + ($328); //@line 1339 "datetimemodule.c"
-        $usednew=$330; //@line 1339 "datetimemodule.c"
-        var $331=$usednew; //@line 1340 "datetimemodule.c"
-        var $332=$totalnew; //@line 1340 "datetimemodule.c"
-        var $333=($331) > ($332); //@line 1340 "datetimemodule.c"
-        if ($333) { __label__ = 79; break; } else { __label__ = 80; break; } //@line 1340 "datetimemodule.c"
-      case 79: // $bb79
+      case 65: // $bb71
+        var $234=$ntoappend; //@line 1324 "datetimemodule.c"
+        var $235=($234)==0; //@line 1324 "datetimemodule.c"
+        if ($235) { __label__ = 73; break; } else { __label__ = 70; break; } //@line 1324 "datetimemodule.c"
+      case 66: // $bb73
+        var $236=$totalnew; //@line 1327 "datetimemodule.c"
+        var $237=($236) << 1; //@line 1327 "datetimemodule.c"
+        $bigger=$237; //@line 1327 "datetimemodule.c"
+        var $238=$bigger; //@line 1328 "datetimemodule.c"
+        var $239=($238) >>> 1; //@line 1328 "datetimemodule.c"
+        var $240=$totalnew; //@line 1328 "datetimemodule.c"
+        var $241=($239)!=($240); //@line 1328 "datetimemodule.c"
+        if ($241) { __label__ = 67; break; } else { __label__ = 68; break; } //@line 1328 "datetimemodule.c"
+      case 67: // $bb74
+        var $242=_PyErr_NoMemory(); //@line 1329 "datetimemodule.c"
+        __label__ = 78; break; //@line 1329 "datetimemodule.c"
+      case 68: // $bb75
+        var $243=$bigger; //@line 1332 "datetimemodule.c"
+        var $244=__PyString_Resize($newfmt, $243); //@line 1332 "datetimemodule.c"
+        var $245=($244) < 0; //@line 1332 "datetimemodule.c"
+        if ($245) { __label__ = 78; break; } else { __label__ = 69; break; } //@line 1332 "datetimemodule.c"
+      case 69: // $bb76
+        var $246=$bigger; //@line 1334 "datetimemodule.c"
+        $totalnew=$246; //@line 1334 "datetimemodule.c"
+        var $247=HEAP[$newfmt]; //@line 1335 "datetimemodule.c"
+        var $248=_PyString_AsString($247); //@line 1335 "datetimemodule.c"
+        var $249=$usednew; //@line 1335 "datetimemodule.c"
+        var $250=$248+$249; //@line 1335 "datetimemodule.c"
+        $pnew=$250; //@line 1335 "datetimemodule.c"
+        __label__ = 70; break; //@line 1335 "datetimemodule.c"
+      case 70: // $bb77
+        var $251=$usednew; //@line 1326 "datetimemodule.c"
+        var $252=$ntoappend; //@line 1326 "datetimemodule.c"
+        var $253=($252) + ($251); //@line 1326 "datetimemodule.c"
+        var $254=$totalnew; //@line 1326 "datetimemodule.c"
+        var $255=($253) > ($254); //@line 1326 "datetimemodule.c"
+        if ($255) { __label__ = 66; break; } else { __label__ = 71; break; } //@line 1326 "datetimemodule.c"
+      case 71: // $bb78
+        var $256=$pnew; //@line 1337 "datetimemodule.c"
+        var $257=$ptoappend; //@line 1337 "datetimemodule.c"
+        var $258=$ntoappend; //@line 1337 "datetimemodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($256, $257, $258, 1, 0); //@line 1337 "datetimemodule.c"
+        var $259=$pnew; //@line 1338 "datetimemodule.c"
+        var $260=$ntoappend; //@line 1338 "datetimemodule.c"
+        var $261=$259+$260; //@line 1338 "datetimemodule.c"
+        $pnew=$261; //@line 1338 "datetimemodule.c"
+        var $262=$usednew; //@line 1339 "datetimemodule.c"
+        var $263=$ntoappend; //@line 1339 "datetimemodule.c"
+        var $264=($263) + ($262); //@line 1339 "datetimemodule.c"
+        $usednew=$264; //@line 1339 "datetimemodule.c"
+        var $265=$usednew; //@line 1340 "datetimemodule.c"
+        var $266=$totalnew; //@line 1340 "datetimemodule.c"
+        var $267=($265) > ($266); //@line 1340 "datetimemodule.c"
+        if ($267) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 1340 "datetimemodule.c"
+      case 72: // $bb79
         ___assert_fail(__str91, __str1, 1340, ___PRETTY_FUNCTION___9485); //@line 1340 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1340 "datetimemodule.c"
-      case 80: // $bb80
-        var $334=$pin; //@line 1226 "datetimemodule.c"
-        var $335=HEAP[$334]; //@line 1226 "datetimemodule.c"
-        $ch=$335; //@line 1226 "datetimemodule.c"
-        var $336=$ch; //@line 1226 "datetimemodule.c"
-        var $337=($336)!=0; //@line 1226 "datetimemodule.c"
-        var $338=($337); //@line 1226 "datetimemodule.c"
-        var $339=$pin; //@line 1226 "datetimemodule.c"
-        var $340=$339+1; //@line 1226 "datetimemodule.c"
-        $pin=$340; //@line 1226 "datetimemodule.c"
-        var $toBool81=($338)!=0; //@line 1226 "datetimemodule.c"
-        if ($toBool81) { __label__ = 16; break; } else { __label__ = 81; break; } //@line 1226 "datetimemodule.c"
-      case 81: // $bb82
-        var $341=$usednew; //@line 1343 "datetimemodule.c"
-        var $342=__PyString_Resize($newfmt, $341); //@line 1343 "datetimemodule.c"
-        var $343=($342) < 0; //@line 1343 "datetimemodule.c"
-        if ($343) { __label__ = 85; break; } else { __label__ = 82; break; } //@line 1343 "datetimemodule.c"
-      case 82: // $bb83
-        var $344=_PyImport_ImportModuleNoBlock(__str92); //@line 1346 "datetimemodule.c"
-        $time=$344; //@line 1346 "datetimemodule.c"
-        var $345=$time; //@line 1347 "datetimemodule.c"
-        var $346=($345)==0; //@line 1347 "datetimemodule.c"
-        if ($346) { __label__ = 85; break; } else { __label__ = 83; break; } //@line 1347 "datetimemodule.c"
-      case 83: // $bb84
-        var $347=HEAP[$newfmt]; //@line 1349 "datetimemodule.c"
-        var $348=$time; //@line 1349 "datetimemodule.c"
-        var $349=$timetuple_addr; //@line 1349 "datetimemodule.c"
-        var $350=__PyObject_CallMethod_SizeT($348, __str93, __str94, $347, $349); //@line 1349 "datetimemodule.c"
-        $result=$350; //@line 1349 "datetimemodule.c"
-        var $351=$time; //@line 1351 "datetimemodule.c"
-        var $352=$351; //@line 1351 "datetimemodule.c"
-        var $353=HEAP[$352]; //@line 1351 "datetimemodule.c"
-        var $354=($353) - 1; //@line 1351 "datetimemodule.c"
-        var $355=$time; //@line 1351 "datetimemodule.c"
-        var $356=$355; //@line 1351 "datetimemodule.c"
-        HEAP[$356]=$354; //@line 1351 "datetimemodule.c"
-        var $357=$time; //@line 1351 "datetimemodule.c"
-        var $358=$357; //@line 1351 "datetimemodule.c"
-        var $359=HEAP[$358]; //@line 1351 "datetimemodule.c"
-        var $360=($359)==0; //@line 1351 "datetimemodule.c"
-        if ($360) { __label__ = 84; break; } else { __label__ = 85; break; } //@line 1351 "datetimemodule.c"
-      case 84: // $bb85
-        var $361=$time; //@line 1351 "datetimemodule.c"
-        var $362=$361+4; //@line 1351 "datetimemodule.c"
-        var $363=HEAP[$362]; //@line 1351 "datetimemodule.c"
-        var $364=$363+24; //@line 1351 "datetimemodule.c"
-        var $365=HEAP[$364]; //@line 1351 "datetimemodule.c"
-        var $366=$time; //@line 1351 "datetimemodule.c"
-        FUNCTION_TABLE[$365]($366); //@line 1351 "datetimemodule.c"
-        __label__ = 85; break; //@line 1353 "datetimemodule.c"
-      case 85: // $Done
+      case 73: // $bb80
+        var $268=$pin; //@line 1226 "datetimemodule.c"
+        var $269=HEAP[$268]; //@line 1226 "datetimemodule.c"
+        $ch=$269; //@line 1226 "datetimemodule.c"
+        var $270=$ch; //@line 1226 "datetimemodule.c"
+        var $271=($270)!=0; //@line 1226 "datetimemodule.c"
+        var $272=($271); //@line 1226 "datetimemodule.c"
+        var $273=$pin; //@line 1226 "datetimemodule.c"
+        var $274=$273+1; //@line 1226 "datetimemodule.c"
+        $pin=$274; //@line 1226 "datetimemodule.c"
+        var $toBool81=($272)!=0; //@line 1226 "datetimemodule.c"
+        if ($toBool81) { __label__ = 16; break; } else { __label__ = 74; break; } //@line 1226 "datetimemodule.c"
+      case 74: // $bb82
+        var $275=$usednew; //@line 1343 "datetimemodule.c"
+        var $276=__PyString_Resize($newfmt, $275); //@line 1343 "datetimemodule.c"
+        var $277=($276) < 0; //@line 1343 "datetimemodule.c"
+        if ($277) { __label__ = 78; break; } else { __label__ = 75; break; } //@line 1343 "datetimemodule.c"
+      case 75: // $bb83
+        var $278=_PyImport_ImportModuleNoBlock(__str92); //@line 1346 "datetimemodule.c"
+        $time=$278; //@line 1346 "datetimemodule.c"
+        var $279=$time; //@line 1347 "datetimemodule.c"
+        var $280=($279)==0; //@line 1347 "datetimemodule.c"
+        if ($280) { __label__ = 78; break; } else { __label__ = 76; break; } //@line 1347 "datetimemodule.c"
+      case 76: // $bb84
+        var $281=HEAP[$newfmt]; //@line 1349 "datetimemodule.c"
+        var $282=$time; //@line 1349 "datetimemodule.c"
+        var $283=$timetuple_addr; //@line 1349 "datetimemodule.c"
+        var $284=__PyObject_CallMethod_SizeT($282, __str93, __str94, allocate([$281,0,0,0,$283,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 1349 "datetimemodule.c"
+        $result=$284; //@line 1349 "datetimemodule.c"
+        var $285=$time; //@line 1351 "datetimemodule.c"
+        var $286=$285; //@line 1351 "datetimemodule.c"
+        var $287=HEAP[$286]; //@line 1351 "datetimemodule.c"
+        var $288=($287) - 1; //@line 1351 "datetimemodule.c"
+        var $289=$time; //@line 1351 "datetimemodule.c"
+        var $290=$289; //@line 1351 "datetimemodule.c"
+        HEAP[$290]=$288; //@line 1351 "datetimemodule.c"
+        var $291=$time; //@line 1351 "datetimemodule.c"
+        var $292=$291; //@line 1351 "datetimemodule.c"
+        var $293=HEAP[$292]; //@line 1351 "datetimemodule.c"
+        var $294=($293)==0; //@line 1351 "datetimemodule.c"
+        if ($294) { __label__ = 77; break; } else { __label__ = 78; break; } //@line 1351 "datetimemodule.c"
+      case 77: // $bb85
+        var $295=$time; //@line 1351 "datetimemodule.c"
+        var $296=$295+4; //@line 1351 "datetimemodule.c"
+        var $297=HEAP[$296]; //@line 1351 "datetimemodule.c"
+        var $298=$297+24; //@line 1351 "datetimemodule.c"
+        var $299=HEAP[$298]; //@line 1351 "datetimemodule.c"
+        var $300=$time; //@line 1351 "datetimemodule.c"
+        FUNCTION_TABLE[$299]($300); //@line 1351 "datetimemodule.c"
+        __label__ = 78; break; //@line 1353 "datetimemodule.c"
+      case 78: // $Done
         var $_pr6=$freplacement;
-        var $367=($_pr6)!=0; //@line 1354 "datetimemodule.c"
-        if ($367) { __label__ = 86; break; } else { __label__ = 88; break; } //@line 1354 "datetimemodule.c"
-      case 86: // $bb86
-        var $368=$freplacement; //@line 1354 "datetimemodule.c"
-        var $369=$368; //@line 1354 "datetimemodule.c"
-        var $370=HEAP[$369]; //@line 1354 "datetimemodule.c"
-        var $371=($370) - 1; //@line 1354 "datetimemodule.c"
-        var $372=$freplacement; //@line 1354 "datetimemodule.c"
-        var $373=$372; //@line 1354 "datetimemodule.c"
-        HEAP[$373]=$371; //@line 1354 "datetimemodule.c"
-        var $374=$freplacement; //@line 1354 "datetimemodule.c"
-        var $375=$374; //@line 1354 "datetimemodule.c"
-        var $376=HEAP[$375]; //@line 1354 "datetimemodule.c"
-        var $377=($376)==0; //@line 1354 "datetimemodule.c"
-        if ($377) { __label__ = 87; break; } else { __label__ = 88; break; } //@line 1354 "datetimemodule.c"
-      case 87: // $bb87
-        var $378=$freplacement; //@line 1354 "datetimemodule.c"
-        var $379=$378+4; //@line 1354 "datetimemodule.c"
-        var $380=HEAP[$379]; //@line 1354 "datetimemodule.c"
-        var $381=$380+24; //@line 1354 "datetimemodule.c"
-        var $382=HEAP[$381]; //@line 1354 "datetimemodule.c"
-        var $383=$freplacement; //@line 1354 "datetimemodule.c"
-        FUNCTION_TABLE[$382]($383); //@line 1354 "datetimemodule.c"
-        __label__ = 88; break; //@line 1354 "datetimemodule.c"
-      case 88: // $bb88
-        var $384=$zreplacement; //@line 1355 "datetimemodule.c"
-        var $385=($384)!=0; //@line 1355 "datetimemodule.c"
-        if ($385) { __label__ = 89; break; } else { __label__ = 91; break; } //@line 1355 "datetimemodule.c"
-      case 89: // $bb89
-        var $386=$zreplacement; //@line 1355 "datetimemodule.c"
-        var $387=$386; //@line 1355 "datetimemodule.c"
-        var $388=HEAP[$387]; //@line 1355 "datetimemodule.c"
-        var $389=($388) - 1; //@line 1355 "datetimemodule.c"
-        var $390=$zreplacement; //@line 1355 "datetimemodule.c"
-        var $391=$390; //@line 1355 "datetimemodule.c"
-        HEAP[$391]=$389; //@line 1355 "datetimemodule.c"
-        var $392=$zreplacement; //@line 1355 "datetimemodule.c"
-        var $393=$392; //@line 1355 "datetimemodule.c"
-        var $394=HEAP[$393]; //@line 1355 "datetimemodule.c"
-        var $395=($394)==0; //@line 1355 "datetimemodule.c"
-        if ($395) { __label__ = 90; break; } else { __label__ = 91; break; } //@line 1355 "datetimemodule.c"
-      case 90: // $bb90
-        var $396=$zreplacement; //@line 1355 "datetimemodule.c"
-        var $397=$396+4; //@line 1355 "datetimemodule.c"
-        var $398=HEAP[$397]; //@line 1355 "datetimemodule.c"
-        var $399=$398+24; //@line 1355 "datetimemodule.c"
-        var $400=HEAP[$399]; //@line 1355 "datetimemodule.c"
-        var $401=$zreplacement; //@line 1355 "datetimemodule.c"
-        FUNCTION_TABLE[$400]($401); //@line 1355 "datetimemodule.c"
-        __label__ = 91; break; //@line 1355 "datetimemodule.c"
-      case 91: // $bb91
-        var $402=$Zreplacement; //@line 1356 "datetimemodule.c"
-        var $403=($402)!=0; //@line 1356 "datetimemodule.c"
-        if ($403) { __label__ = 92; break; } else { __label__ = 94; break; } //@line 1356 "datetimemodule.c"
-      case 92: // $bb92
-        var $404=$Zreplacement; //@line 1356 "datetimemodule.c"
-        var $405=$404; //@line 1356 "datetimemodule.c"
-        var $406=HEAP[$405]; //@line 1356 "datetimemodule.c"
-        var $407=($406) - 1; //@line 1356 "datetimemodule.c"
-        var $408=$Zreplacement; //@line 1356 "datetimemodule.c"
-        var $409=$408; //@line 1356 "datetimemodule.c"
-        HEAP[$409]=$407; //@line 1356 "datetimemodule.c"
-        var $410=$Zreplacement; //@line 1356 "datetimemodule.c"
-        var $411=$410; //@line 1356 "datetimemodule.c"
-        var $412=HEAP[$411]; //@line 1356 "datetimemodule.c"
-        var $413=($412)==0; //@line 1356 "datetimemodule.c"
-        if ($413) { __label__ = 93; break; } else { __label__ = 94; break; } //@line 1356 "datetimemodule.c"
-      case 93: // $bb93
-        var $414=$Zreplacement; //@line 1356 "datetimemodule.c"
-        var $415=$414+4; //@line 1356 "datetimemodule.c"
-        var $416=HEAP[$415]; //@line 1356 "datetimemodule.c"
-        var $417=$416+24; //@line 1356 "datetimemodule.c"
-        var $418=HEAP[$417]; //@line 1356 "datetimemodule.c"
-        var $419=$Zreplacement; //@line 1356 "datetimemodule.c"
-        FUNCTION_TABLE[$418]($419); //@line 1356 "datetimemodule.c"
-        __label__ = 94; break; //@line 1356 "datetimemodule.c"
-      case 94: // $bb94
-        var $420=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
-        var $421=($420)!=0; //@line 1357 "datetimemodule.c"
-        if ($421) { __label__ = 95; break; } else { __label__ = 97; break; } //@line 1357 "datetimemodule.c"
-      case 95: // $bb95
-        var $422=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
-        var $423=$422; //@line 1357 "datetimemodule.c"
-        var $424=HEAP[$423]; //@line 1357 "datetimemodule.c"
-        var $425=($424) - 1; //@line 1357 "datetimemodule.c"
-        var $426=$422; //@line 1357 "datetimemodule.c"
-        HEAP[$426]=$425; //@line 1357 "datetimemodule.c"
-        var $427=$422; //@line 1357 "datetimemodule.c"
-        var $428=HEAP[$427]; //@line 1357 "datetimemodule.c"
-        var $429=($428)==0; //@line 1357 "datetimemodule.c"
-        if ($429) { __label__ = 96; break; } else { __label__ = 97; break; } //@line 1357 "datetimemodule.c"
-      case 96: // $bb96
-        var $430=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
-        var $431=$430+4; //@line 1357 "datetimemodule.c"
-        var $432=HEAP[$431]; //@line 1357 "datetimemodule.c"
-        var $433=$432+24; //@line 1357 "datetimemodule.c"
-        var $434=HEAP[$433]; //@line 1357 "datetimemodule.c"
-        var $435=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
-        FUNCTION_TABLE[$434]($435); //@line 1357 "datetimemodule.c"
-        __label__ = 97; break; //@line 1357 "datetimemodule.c"
-      case 97: // $bb97
-        var $436=$result; //@line 1358 "datetimemodule.c"
-        $1=$436; //@line 1358 "datetimemodule.c"
-        __label__ = 98; break; //@line 1358 "datetimemodule.c"
-      case 98: // $bb98
-        var $437=$1; //@line 1197 "datetimemodule.c"
-        $retval=$437; //@line 1197 "datetimemodule.c"
+        var $301=($_pr6)!=0; //@line 1354 "datetimemodule.c"
+        if ($301) { __label__ = 79; break; } else { __label__ = 81; break; } //@line 1354 "datetimemodule.c"
+      case 79: // $bb86
+        var $302=$freplacement; //@line 1354 "datetimemodule.c"
+        var $303=$302; //@line 1354 "datetimemodule.c"
+        var $304=HEAP[$303]; //@line 1354 "datetimemodule.c"
+        var $305=($304) - 1; //@line 1354 "datetimemodule.c"
+        var $306=$freplacement; //@line 1354 "datetimemodule.c"
+        var $307=$306; //@line 1354 "datetimemodule.c"
+        HEAP[$307]=$305; //@line 1354 "datetimemodule.c"
+        var $308=$freplacement; //@line 1354 "datetimemodule.c"
+        var $309=$308; //@line 1354 "datetimemodule.c"
+        var $310=HEAP[$309]; //@line 1354 "datetimemodule.c"
+        var $311=($310)==0; //@line 1354 "datetimemodule.c"
+        if ($311) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 1354 "datetimemodule.c"
+      case 80: // $bb87
+        var $312=$freplacement; //@line 1354 "datetimemodule.c"
+        var $313=$312+4; //@line 1354 "datetimemodule.c"
+        var $314=HEAP[$313]; //@line 1354 "datetimemodule.c"
+        var $315=$314+24; //@line 1354 "datetimemodule.c"
+        var $316=HEAP[$315]; //@line 1354 "datetimemodule.c"
+        var $317=$freplacement; //@line 1354 "datetimemodule.c"
+        FUNCTION_TABLE[$316]($317); //@line 1354 "datetimemodule.c"
+        __label__ = 81; break; //@line 1354 "datetimemodule.c"
+      case 81: // $bb88
+        var $318=$zreplacement; //@line 1355 "datetimemodule.c"
+        var $319=($318)!=0; //@line 1355 "datetimemodule.c"
+        if ($319) { __label__ = 82; break; } else { __label__ = 84; break; } //@line 1355 "datetimemodule.c"
+      case 82: // $bb89
+        var $320=$zreplacement; //@line 1355 "datetimemodule.c"
+        var $321=$320; //@line 1355 "datetimemodule.c"
+        var $322=HEAP[$321]; //@line 1355 "datetimemodule.c"
+        var $323=($322) - 1; //@line 1355 "datetimemodule.c"
+        var $324=$zreplacement; //@line 1355 "datetimemodule.c"
+        var $325=$324; //@line 1355 "datetimemodule.c"
+        HEAP[$325]=$323; //@line 1355 "datetimemodule.c"
+        var $326=$zreplacement; //@line 1355 "datetimemodule.c"
+        var $327=$326; //@line 1355 "datetimemodule.c"
+        var $328=HEAP[$327]; //@line 1355 "datetimemodule.c"
+        var $329=($328)==0; //@line 1355 "datetimemodule.c"
+        if ($329) { __label__ = 83; break; } else { __label__ = 84; break; } //@line 1355 "datetimemodule.c"
+      case 83: // $bb90
+        var $330=$zreplacement; //@line 1355 "datetimemodule.c"
+        var $331=$330+4; //@line 1355 "datetimemodule.c"
+        var $332=HEAP[$331]; //@line 1355 "datetimemodule.c"
+        var $333=$332+24; //@line 1355 "datetimemodule.c"
+        var $334=HEAP[$333]; //@line 1355 "datetimemodule.c"
+        var $335=$zreplacement; //@line 1355 "datetimemodule.c"
+        FUNCTION_TABLE[$334]($335); //@line 1355 "datetimemodule.c"
+        __label__ = 84; break; //@line 1355 "datetimemodule.c"
+      case 84: // $bb91
+        var $336=$Zreplacement; //@line 1356 "datetimemodule.c"
+        var $337=($336)!=0; //@line 1356 "datetimemodule.c"
+        if ($337) { __label__ = 85; break; } else { __label__ = 87; break; } //@line 1356 "datetimemodule.c"
+      case 85: // $bb92
+        var $338=$Zreplacement; //@line 1356 "datetimemodule.c"
+        var $339=$338; //@line 1356 "datetimemodule.c"
+        var $340=HEAP[$339]; //@line 1356 "datetimemodule.c"
+        var $341=($340) - 1; //@line 1356 "datetimemodule.c"
+        var $342=$Zreplacement; //@line 1356 "datetimemodule.c"
+        var $343=$342; //@line 1356 "datetimemodule.c"
+        HEAP[$343]=$341; //@line 1356 "datetimemodule.c"
+        var $344=$Zreplacement; //@line 1356 "datetimemodule.c"
+        var $345=$344; //@line 1356 "datetimemodule.c"
+        var $346=HEAP[$345]; //@line 1356 "datetimemodule.c"
+        var $347=($346)==0; //@line 1356 "datetimemodule.c"
+        if ($347) { __label__ = 86; break; } else { __label__ = 87; break; } //@line 1356 "datetimemodule.c"
+      case 86: // $bb93
+        var $348=$Zreplacement; //@line 1356 "datetimemodule.c"
+        var $349=$348+4; //@line 1356 "datetimemodule.c"
+        var $350=HEAP[$349]; //@line 1356 "datetimemodule.c"
+        var $351=$350+24; //@line 1356 "datetimemodule.c"
+        var $352=HEAP[$351]; //@line 1356 "datetimemodule.c"
+        var $353=$Zreplacement; //@line 1356 "datetimemodule.c"
+        FUNCTION_TABLE[$352]($353); //@line 1356 "datetimemodule.c"
+        __label__ = 87; break; //@line 1356 "datetimemodule.c"
+      case 87: // $bb94
+        var $354=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
+        var $355=($354)!=0; //@line 1357 "datetimemodule.c"
+        if ($355) { __label__ = 88; break; } else { __label__ = 90; break; } //@line 1357 "datetimemodule.c"
+      case 88: // $bb95
+        var $356=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
+        var $357=$356; //@line 1357 "datetimemodule.c"
+        var $358=HEAP[$357]; //@line 1357 "datetimemodule.c"
+        var $359=($358) - 1; //@line 1357 "datetimemodule.c"
+        var $360=$356; //@line 1357 "datetimemodule.c"
+        HEAP[$360]=$359; //@line 1357 "datetimemodule.c"
+        var $361=$356; //@line 1357 "datetimemodule.c"
+        var $362=HEAP[$361]; //@line 1357 "datetimemodule.c"
+        var $363=($362)==0; //@line 1357 "datetimemodule.c"
+        if ($363) { __label__ = 89; break; } else { __label__ = 90; break; } //@line 1357 "datetimemodule.c"
+      case 89: // $bb96
+        var $364=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
+        var $365=$364+4; //@line 1357 "datetimemodule.c"
+        var $366=HEAP[$365]; //@line 1357 "datetimemodule.c"
+        var $367=$366+24; //@line 1357 "datetimemodule.c"
+        var $368=HEAP[$367]; //@line 1357 "datetimemodule.c"
+        var $369=HEAP[$newfmt]; //@line 1357 "datetimemodule.c"
+        FUNCTION_TABLE[$368]($369); //@line 1357 "datetimemodule.c"
+        __label__ = 90; break; //@line 1357 "datetimemodule.c"
+      case 90: // $bb97
+        var $370=$result; //@line 1358 "datetimemodule.c"
+        $0=$370; //@line 1358 "datetimemodule.c"
+        __label__ = 91; break; //@line 1358 "datetimemodule.c"
+      case 91: // $bb98
+        var $371=$0; //@line 1197 "datetimemodule.c"
+        $retval=$371; //@line 1197 "datetimemodule.c"
         var $retval99=$retval; //@line 1197 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval99; //@line 1197 "datetimemodule.c"
@@ -4276,7 +4430,7 @@ var _initialized_b;
         var $22=($21) | ($16); //@line 1365 "datetimemodule.c"
         var $23=$bufflen_addr; //@line 1365 "datetimemodule.c"
         var $24=$buffer_addr; //@line 1365 "datetimemodule.c"
-        var $25=_PyOS_snprintf($24, $23, __str95, $22, $10, $5); //@line 1365 "datetimemodule.c"
+        var $25=_PyOS_snprintf($24, $23, __str95, allocate([$22,0,0,0,$10,0,0,0,$5,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1365 "datetimemodule.c"
         $x=$25; //@line 1365 "datetimemodule.c"
         var $26=$bufflen_addr; //@line 1368 "datetimemodule.c"
         var $27=$x; //@line 1368 "datetimemodule.c"
@@ -4353,7 +4507,7 @@ var _initialized_b;
         var $34=($33); //@line 1378 "datetimemodule.c"
         var $35=$bufflen_addr; //@line 1378 "datetimemodule.c"
         var $36=$buffer_addr; //@line 1378 "datetimemodule.c"
-        var $37=_PyOS_snprintf($36, $35, __str97, $34, $29, $24); //@line 1378 "datetimemodule.c"
+        var $37=_PyOS_snprintf($36, $35, __str97, allocate([$34,0,0,0,$29,0,0,0,$24,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1378 "datetimemodule.c"
         $x=$37; //@line 1378 "datetimemodule.c"
         var $38=$bufflen_addr; //@line 1383 "datetimemodule.c"
         var $39=$x; //@line 1383 "datetimemodule.c"
@@ -4374,7 +4528,7 @@ var _initialized_b;
         var $47=$x; //@line 1385 "datetimemodule.c"
         var $48=$46+$47; //@line 1385 "datetimemodule.c"
         var $49=$us; //@line 1385 "datetimemodule.c"
-        var $50=_PyOS_snprintf($48, $45, __str98, $49); //@line 1385 "datetimemodule.c"
+        var $50=_PyOS_snprintf($48, $45, __str98, allocate([$49,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1385 "datetimemodule.c"
         var $51=$x; //@line 1385 "datetimemodule.c"
         var $52=($51) + ($50); //@line 1385 "datetimemodule.c"
         $x=$52; //@line 1385 "datetimemodule.c"
@@ -4402,22 +4556,66 @@ var _initialized_b;
   }
   
 
+  function _time_time() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $result;
+        var $time;
+        $result=0; //@line 1399 "datetimemodule.c"
+        var $1=_PyImport_ImportModuleNoBlock(__str92); //@line 1400 "datetimemodule.c"
+        $time=$1; //@line 1400 "datetimemodule.c"
+        var $2=$time; //@line 1402 "datetimemodule.c"
+        var $3=($2)!=0; //@line 1402 "datetimemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1402 "datetimemodule.c"
+      case 1: // $bb
+        var $4=$time; //@line 1403 "datetimemodule.c"
+        var $5=__PyObject_CallMethod_SizeT($4, __str92, __str99, allocate(1, "i32", ALLOC_STACK)); //@line 1403 "datetimemodule.c"
+        $result=$5; //@line 1403 "datetimemodule.c"
+        var $6=$time; //@line 1404 "datetimemodule.c"
+        var $7=$6; //@line 1404 "datetimemodule.c"
+        var $8=HEAP[$7]; //@line 1404 "datetimemodule.c"
+        var $9=($8) - 1; //@line 1404 "datetimemodule.c"
+        var $10=$time; //@line 1404 "datetimemodule.c"
+        var $11=$10; //@line 1404 "datetimemodule.c"
+        HEAP[$11]=$9; //@line 1404 "datetimemodule.c"
+        var $12=$time; //@line 1404 "datetimemodule.c"
+        var $13=$12; //@line 1404 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 1404 "datetimemodule.c"
+        var $15=($14)==0; //@line 1404 "datetimemodule.c"
+        if ($15) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1404 "datetimemodule.c"
+      case 2: // $bb1
+        var $16=$time; //@line 1404 "datetimemodule.c"
+        var $17=$16+4; //@line 1404 "datetimemodule.c"
+        var $18=HEAP[$17]; //@line 1404 "datetimemodule.c"
+        var $19=$18+24; //@line 1404 "datetimemodule.c"
+        var $20=HEAP[$19]; //@line 1404 "datetimemodule.c"
+        var $21=$time; //@line 1404 "datetimemodule.c"
+        FUNCTION_TABLE[$20]($21); //@line 1404 "datetimemodule.c"
+        __label__ = 3; break; //@line 1404 "datetimemodule.c"
+      case 3: // $bb2
+        var $22=$result; //@line 1406 "datetimemodule.c"
+        $0=$22; //@line 1406 "datetimemodule.c"
+        var $23=$0; //@line 1406 "datetimemodule.c"
+        $retval=$23; //@line 1406 "datetimemodule.c"
+        var $retval3=$retval; //@line 1406 "datetimemodule.c"
+        ;
+        return $retval3; //@line 1406 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _build_struct_time($y, $m, $d, $hh, $mm, $ss, $dstflag) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i_i;
-        var $month_addr_i_i;
-        var $day_addr_i_i;
-        var $retval_i_i;
-        var $0;
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $retval_i;
-        var $1;
         var $y_addr;
         var $m_addr;
         var $d_addr;
@@ -4426,7 +4624,7 @@ var _initialized_b;
         var $ss_addr;
         var $dstflag_addr;
         var $retval;
-        var $2;
+        var $0;
         var $time;
         var $result;
         $y_addr=$y;
@@ -4437,83 +4635,57 @@ var _initialized_b;
         $ss_addr=$ss;
         $dstflag_addr=$dstflag;
         $result=0; //@line 1416 "datetimemodule.c"
-        var $3=_PyImport_ImportModuleNoBlock(__str92); //@line 1418 "datetimemodule.c"
-        $time=$3; //@line 1418 "datetimemodule.c"
-        var $4=$time; //@line 1419 "datetimemodule.c"
-        var $5=($4)!=0; //@line 1419 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1419 "datetimemodule.c"
+        var $1=_PyImport_ImportModuleNoBlock(__str92); //@line 1418 "datetimemodule.c"
+        $time=$1; //@line 1418 "datetimemodule.c"
+        var $2=$time; //@line 1419 "datetimemodule.c"
+        var $3=($2)!=0; //@line 1419 "datetimemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1419 "datetimemodule.c"
       case 1: // $bb
-        var $6=$y_addr; //@line 1420 "datetimemodule.c"
-        var $7=$m_addr; //@line 1420 "datetimemodule.c"
-        var $8=_days_before_month($6, $7); //@line 1420 "datetimemodule.c"
-        var $9=$d_addr; //@line 1420 "datetimemodule.c"
-        var $10=($9) + ($8); //@line 1420 "datetimemodule.c"
-        var $11=$y_addr; //@line 1420 "datetimemodule.c"
-        var $12=$m_addr; //@line 1420 "datetimemodule.c"
-        var $13=$d_addr; //@line 1420 "datetimemodule.c"
-        $year_addr_i=$11;
-        $month_addr_i=$12;
-        $day_addr_i=$13;
-        var $14=$year_addr_i; //@line 337 "datetimemodule.c"
-        var $15=$month_addr_i; //@line 337 "datetimemodule.c"
-        var $16=$day_addr_i; //@line 337 "datetimemodule.c"
-        $year_addr_i_i=$14;
-        $month_addr_i_i=$15;
-        $day_addr_i_i=$16;
-        var $17=$year_addr_i_i; //@line 330 "datetimemodule.c"
-        var $18=_days_before_year($17); //@line 330 "datetimemodule.c"
-        var $19=$year_addr_i_i; //@line 330 "datetimemodule.c"
-        var $20=$month_addr_i_i; //@line 330 "datetimemodule.c"
-        var $21=_days_before_month($19, $20); //@line 330 "datetimemodule.c"
-        var $22=$day_addr_i_i; //@line 330 "datetimemodule.c"
-        var $23=($21) + ($18); //@line 330 "datetimemodule.c"
-        var $24=($23) + ($22); //@line 330 "datetimemodule.c"
-        $0=$24; //@line 330 "datetimemodule.c"
-        var $25=$0; //@line 330 "datetimemodule.c"
-        $retval_i_i=$25; //@line 330 "datetimemodule.c"
-        var $retval1_i_i=$retval_i_i; //@line 330 "datetimemodule.c"
-        var $26=($retval1_i_i) + 6; //@line 337 "datetimemodule.c"
-        var $27=($26) % 7; //@line 337 "datetimemodule.c"
-        $1=$27; //@line 337 "datetimemodule.c"
-        var $28=$1; //@line 337 "datetimemodule.c"
-        $retval_i=$28; //@line 337 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 337 "datetimemodule.c"
-        var $29=$time; //@line 1420 "datetimemodule.c"
-        var $30=$y_addr; //@line 1420 "datetimemodule.c"
-        var $31=$m_addr; //@line 1420 "datetimemodule.c"
-        var $32=$d_addr; //@line 1420 "datetimemodule.c"
-        var $33=$hh_addr; //@line 1420 "datetimemodule.c"
-        var $34=$mm_addr; //@line 1420 "datetimemodule.c"
-        var $35=$ss_addr; //@line 1420 "datetimemodule.c"
-        var $36=$dstflag_addr; //@line 1420 "datetimemodule.c"
-        var $37=__PyObject_CallMethod_SizeT($29, __str100, __str101, $30, $31, $32, $33, $34, $35, $retval1_i, $10, $36); //@line 1420 "datetimemodule.c"
-        $result=$37; //@line 1420 "datetimemodule.c"
-        var $38=$time; //@line 1427 "datetimemodule.c"
-        var $39=$38; //@line 1427 "datetimemodule.c"
-        var $40=HEAP[$39]; //@line 1427 "datetimemodule.c"
-        var $41=($40) - 1; //@line 1427 "datetimemodule.c"
-        var $42=$time; //@line 1427 "datetimemodule.c"
-        var $43=$42; //@line 1427 "datetimemodule.c"
-        HEAP[$43]=$41; //@line 1427 "datetimemodule.c"
-        var $44=$time; //@line 1427 "datetimemodule.c"
-        var $45=$44; //@line 1427 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 1427 "datetimemodule.c"
-        var $47=($46)==0; //@line 1427 "datetimemodule.c"
-        if ($47) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1427 "datetimemodule.c"
+        var $4=$y_addr; //@line 1420 "datetimemodule.c"
+        var $5=$m_addr; //@line 1420 "datetimemodule.c"
+        var $6=_days_before_month($4, $5); //@line 1420 "datetimemodule.c"
+        var $7=$d_addr; //@line 1420 "datetimemodule.c"
+        var $8=($7) + ($6); //@line 1420 "datetimemodule.c"
+        var $9=$y_addr; //@line 1420 "datetimemodule.c"
+        var $10=$m_addr; //@line 1420 "datetimemodule.c"
+        var $11=$d_addr; //@line 1420 "datetimemodule.c"
+        var $12=_weekday($9, $10, $11); //@line 1420 "datetimemodule.c"
+        var $13=$time; //@line 1420 "datetimemodule.c"
+        var $14=$y_addr; //@line 1420 "datetimemodule.c"
+        var $15=$m_addr; //@line 1420 "datetimemodule.c"
+        var $16=$d_addr; //@line 1420 "datetimemodule.c"
+        var $17=$hh_addr; //@line 1420 "datetimemodule.c"
+        var $18=$mm_addr; //@line 1420 "datetimemodule.c"
+        var $19=$ss_addr; //@line 1420 "datetimemodule.c"
+        var $20=$dstflag_addr; //@line 1420 "datetimemodule.c"
+        var $21=__PyObject_CallMethod_SizeT($13, __str100, __str101, allocate([$14,0,0,0,$15,0,0,0,$16,0,0,0,$17,0,0,0,$18,0,0,0,$19,0,0,0,$12,0,0,0,$8,0,0,0,$20,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1420 "datetimemodule.c"
+        $result=$21; //@line 1420 "datetimemodule.c"
+        var $22=$time; //@line 1427 "datetimemodule.c"
+        var $23=$22; //@line 1427 "datetimemodule.c"
+        var $24=HEAP[$23]; //@line 1427 "datetimemodule.c"
+        var $25=($24) - 1; //@line 1427 "datetimemodule.c"
+        var $26=$time; //@line 1427 "datetimemodule.c"
+        var $27=$26; //@line 1427 "datetimemodule.c"
+        HEAP[$27]=$25; //@line 1427 "datetimemodule.c"
+        var $28=$time; //@line 1427 "datetimemodule.c"
+        var $29=$28; //@line 1427 "datetimemodule.c"
+        var $30=HEAP[$29]; //@line 1427 "datetimemodule.c"
+        var $31=($30)==0; //@line 1427 "datetimemodule.c"
+        if ($31) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1427 "datetimemodule.c"
       case 2: // $bb1
-        var $48=$time; //@line 1427 "datetimemodule.c"
-        var $49=$48+4; //@line 1427 "datetimemodule.c"
-        var $50=HEAP[$49]; //@line 1427 "datetimemodule.c"
-        var $51=$50+24; //@line 1427 "datetimemodule.c"
-        var $52=HEAP[$51]; //@line 1427 "datetimemodule.c"
-        var $53=$time; //@line 1427 "datetimemodule.c"
-        FUNCTION_TABLE[$52]($53); //@line 1427 "datetimemodule.c"
+        var $32=$time; //@line 1427 "datetimemodule.c"
+        var $33=$32+4; //@line 1427 "datetimemodule.c"
+        var $34=HEAP[$33]; //@line 1427 "datetimemodule.c"
+        var $35=$34+24; //@line 1427 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 1427 "datetimemodule.c"
+        var $37=$time; //@line 1427 "datetimemodule.c"
+        FUNCTION_TABLE[$36]($37); //@line 1427 "datetimemodule.c"
         __label__ = 3; break; //@line 1427 "datetimemodule.c"
       case 3: // $bb2
-        var $54=$result; //@line 1429 "datetimemodule.c"
-        $2=$54; //@line 1429 "datetimemodule.c"
-        var $55=$2; //@line 1429 "datetimemodule.c"
-        $retval=$55; //@line 1429 "datetimemodule.c"
+        var $38=$result; //@line 1429 "datetimemodule.c"
+        $0=$38; //@line 1429 "datetimemodule.c"
+        var $39=$0; //@line 1429 "datetimemodule.c"
+        $retval=$39; //@line 1429 "datetimemodule.c"
         var $retval3=$retval; //@line 1429 "datetimemodule.c"
         ;
         return $retval3; //@line 1429 "datetimemodule.c"
@@ -4629,6 +4801,37 @@ var _initialized_b;
         return $retval11; //@line 1459 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _cmperror($a, $b) {
+    ;
+    var __label__;
+  
+    var $a_addr;
+    var $b_addr;
+    var $retval;
+    var $0;
+    $a_addr=$a;
+    $b_addr=$b;
+    var $1=$b_addr; //@line 1466 "datetimemodule.c"
+    var $2=$1+4; //@line 1466 "datetimemodule.c"
+    var $3=HEAP[$2]; //@line 1466 "datetimemodule.c"
+    var $4=$3+12; //@line 1466 "datetimemodule.c"
+    var $5=HEAP[$4]; //@line 1466 "datetimemodule.c"
+    var $6=$a_addr; //@line 1466 "datetimemodule.c"
+    var $7=$6+4; //@line 1466 "datetimemodule.c"
+    var $8=HEAP[$7]; //@line 1466 "datetimemodule.c"
+    var $9=$8+12; //@line 1466 "datetimemodule.c"
+    var $10=HEAP[$9]; //@line 1466 "datetimemodule.c"
+    var $11=HEAP[_PyExc_TypeError]; //@line 1466 "datetimemodule.c"
+    var $12=_PyErr_Format($11, __str103, allocate([$10,0,0,0,$5,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1466 "datetimemodule.c"
+    $0=0; //@line 1469 "datetimemodule.c"
+    var $13=$0; //@line 1469 "datetimemodule.c"
+    $retval=$13; //@line 1469 "datetimemodule.c"
+    var $retval1=$retval; //@line 1469 "datetimemodule.c"
+    ;
+    return $retval1; //@line 1469 "datetimemodule.c"
   }
   
 
@@ -5268,6 +5471,103 @@ var _initialized_b;
   }
   
 
+  function _divide_timedelta_int($delta, $intobj) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $delta_addr;
+        var $intobj_addr;
+        var $retval;
+        var $0;
+        var $pyus_in;
+        var $pyus_out;
+        var $result;
+        $delta_addr=$delta;
+        $intobj_addr=$intobj;
+        var $1=$delta_addr; //@line 1660 "datetimemodule.c"
+        var $2=_delta_to_microseconds($1); //@line 1660 "datetimemodule.c"
+        $pyus_in=$2; //@line 1660 "datetimemodule.c"
+        var $3=$pyus_in; //@line 1661 "datetimemodule.c"
+        var $4=($3)==0; //@line 1661 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1661 "datetimemodule.c"
+      case 1: // $bb
+        $0=0; //@line 1662 "datetimemodule.c"
+        __label__ = 9; break; //@line 1662 "datetimemodule.c"
+      case 2: // $bb1
+        var $5=$pyus_in; //@line 1664 "datetimemodule.c"
+        var $6=$intobj_addr; //@line 1664 "datetimemodule.c"
+        var $7=_PyNumber_FloorDivide($5, $6); //@line 1664 "datetimemodule.c"
+        $pyus_out=$7; //@line 1664 "datetimemodule.c"
+        var $8=$pyus_in; //@line 1665 "datetimemodule.c"
+        var $9=$8; //@line 1665 "datetimemodule.c"
+        var $10=HEAP[$9]; //@line 1665 "datetimemodule.c"
+        var $11=($10) - 1; //@line 1665 "datetimemodule.c"
+        var $12=$pyus_in; //@line 1665 "datetimemodule.c"
+        var $13=$12; //@line 1665 "datetimemodule.c"
+        HEAP[$13]=$11; //@line 1665 "datetimemodule.c"
+        var $14=$pyus_in; //@line 1665 "datetimemodule.c"
+        var $15=$14; //@line 1665 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 1665 "datetimemodule.c"
+        var $17=($16)==0; //@line 1665 "datetimemodule.c"
+        if ($17) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1665 "datetimemodule.c"
+      case 3: // $bb2
+        var $18=$pyus_in; //@line 1665 "datetimemodule.c"
+        var $19=$18+4; //@line 1665 "datetimemodule.c"
+        var $20=HEAP[$19]; //@line 1665 "datetimemodule.c"
+        var $21=$20+24; //@line 1665 "datetimemodule.c"
+        var $22=HEAP[$21]; //@line 1665 "datetimemodule.c"
+        var $23=$pyus_in; //@line 1665 "datetimemodule.c"
+        FUNCTION_TABLE[$22]($23); //@line 1665 "datetimemodule.c"
+        __label__ = 4; break; //@line 1665 "datetimemodule.c"
+      case 4: // $bb3
+        var $24=$pyus_out; //@line 1666 "datetimemodule.c"
+        var $25=($24)==0; //@line 1666 "datetimemodule.c"
+        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1666 "datetimemodule.c"
+      case 5: // $bb4
+        $0=0; //@line 1667 "datetimemodule.c"
+        __label__ = 9; break; //@line 1667 "datetimemodule.c"
+      case 6: // $bb5
+        var $26=$pyus_out; //@line 1669 "datetimemodule.c"
+        var $27=_microseconds_to_delta_ex($26, _PyDateTime_DeltaType); //@line 1669 "datetimemodule.c"
+        $result=$27; //@line 1669 "datetimemodule.c"
+        var $28=$pyus_out; //@line 1670 "datetimemodule.c"
+        var $29=$28; //@line 1670 "datetimemodule.c"
+        var $30=HEAP[$29]; //@line 1670 "datetimemodule.c"
+        var $31=($30) - 1; //@line 1670 "datetimemodule.c"
+        var $32=$pyus_out; //@line 1670 "datetimemodule.c"
+        var $33=$32; //@line 1670 "datetimemodule.c"
+        HEAP[$33]=$31; //@line 1670 "datetimemodule.c"
+        var $34=$pyus_out; //@line 1670 "datetimemodule.c"
+        var $35=$34; //@line 1670 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 1670 "datetimemodule.c"
+        var $37=($36)==0; //@line 1670 "datetimemodule.c"
+        if ($37) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1670 "datetimemodule.c"
+      case 7: // $bb6
+        var $38=$pyus_out; //@line 1670 "datetimemodule.c"
+        var $39=$38+4; //@line 1670 "datetimemodule.c"
+        var $40=HEAP[$39]; //@line 1670 "datetimemodule.c"
+        var $41=$40+24; //@line 1670 "datetimemodule.c"
+        var $42=HEAP[$41]; //@line 1670 "datetimemodule.c"
+        var $43=$pyus_out; //@line 1670 "datetimemodule.c"
+        FUNCTION_TABLE[$42]($43); //@line 1670 "datetimemodule.c"
+        __label__ = 8; break; //@line 1670 "datetimemodule.c"
+      case 8: // $bb7
+        var $44=$result; //@line 1671 "datetimemodule.c"
+        $0=$44; //@line 1671 "datetimemodule.c"
+        __label__ = 9; break; //@line 1671 "datetimemodule.c"
+      case 9: // $bb8
+        var $45=$0; //@line 1662 "datetimemodule.c"
+        $retval=$45; //@line 1662 "datetimemodule.c"
+        var $retval9=$retval; //@line 1662 "datetimemodule.c"
+        ;
+        return $retval9; //@line 1662 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _delta_add($left, $right) {
     ;
     var __label__;
@@ -5440,85 +5740,48 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $self_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $retval;
-        var $2;
+        var $0;
         var $result;
         $self_addr=$self;
-        var $3=$self_addr; //@line 1722 "datetimemodule.c"
-        var $4=$3+20; //@line 1722 "datetimemodule.c"
-        var $5=HEAP[$4]; //@line 1722 "datetimemodule.c"
-        var $6=($5) < 0; //@line 1722 "datetimemodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1722 "datetimemodule.c"
+        var $1=$self_addr; //@line 1722 "datetimemodule.c"
+        var $2=$1+20; //@line 1722 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 1722 "datetimemodule.c"
+        var $4=($3) < 0; //@line 1722 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1722 "datetimemodule.c"
       case 1: // $bb
         ___assert_fail(__str108, __str1, 1722, ___PRETTY_FUNCTION___10169); //@line 1722 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1722 "datetimemodule.c"
       case 2: // $bb1
-        var $7=$self_addr; //@line 1723 "datetimemodule.c"
-        var $8=$7+16; //@line 1723 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 1723 "datetimemodule.c"
-        var $10=($9) < 0; //@line 1723 "datetimemodule.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1723 "datetimemodule.c"
+        var $5=$self_addr; //@line 1723 "datetimemodule.c"
+        var $6=$5+16; //@line 1723 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 1723 "datetimemodule.c"
+        var $8=($7) < 0; //@line 1723 "datetimemodule.c"
+        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1723 "datetimemodule.c"
       case 3: // $bb2
         ___assert_fail(__str109, __str1, 1723, ___PRETTY_FUNCTION___10169); //@line 1723 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 1723 "datetimemodule.c"
       case 4: // $bb3
-        var $11=$self_addr; //@line 1725 "datetimemodule.c"
-        var $12=$11+12; //@line 1725 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 1725 "datetimemodule.c"
-        var $14=($13) < 0; //@line 1725 "datetimemodule.c"
-        var $15=$self_addr; //@line 1726 "datetimemodule.c"
-        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1725 "datetimemodule.c"
+        var $9=$self_addr; //@line 1725 "datetimemodule.c"
+        var $10=$9+12; //@line 1725 "datetimemodule.c"
+        var $11=HEAP[$10]; //@line 1725 "datetimemodule.c"
+        var $12=($11) < 0; //@line 1725 "datetimemodule.c"
+        var $13=$self_addr; //@line 1726 "datetimemodule.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1725 "datetimemodule.c"
       case 5: // $bb4
-        $self_addr_i=$15;
-        var $16=$self_addr_i; //@line 1699 "datetimemodule.c"
-        var $17=$16+20; //@line 1699 "datetimemodule.c"
-        var $18=HEAP[$17]; //@line 1699 "datetimemodule.c"
-        var $19=0 - ($18); //@line 1699 "datetimemodule.c"
-        var $20=$self_addr_i; //@line 1699 "datetimemodule.c"
-        var $21=$20+16; //@line 1699 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 1699 "datetimemodule.c"
-        var $23=0 - ($22); //@line 1699 "datetimemodule.c"
-        var $24=$self_addr_i; //@line 1699 "datetimemodule.c"
-        var $25=$24+12; //@line 1699 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 1699 "datetimemodule.c"
-        var $27=0 - ($26); //@line 1699 "datetimemodule.c"
-        var $28=_new_delta_ex($27, $23, $19, 1, _PyDateTime_DeltaType); //@line 1699 "datetimemodule.c"
-        $1=$28; //@line 1699 "datetimemodule.c"
-        var $29=$1; //@line 1699 "datetimemodule.c"
-        $retval_i=$29; //@line 1699 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 1699 "datetimemodule.c"
-        $result=$retval1_i; //@line 1726 "datetimemodule.c"
+        var $14=_delta_negative($13); //@line 1726 "datetimemodule.c"
+        $result=$14; //@line 1726 "datetimemodule.c"
         __label__ = 7; break; //@line 1726 "datetimemodule.c"
       case 6: // $bb5
-        $self_addr_i1=$15;
-        var $30=$self_addr_i1; //@line 1711 "datetimemodule.c"
-        var $31=$30+20; //@line 1711 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 1711 "datetimemodule.c"
-        var $33=$self_addr_i1; //@line 1711 "datetimemodule.c"
-        var $34=$33+16; //@line 1711 "datetimemodule.c"
-        var $35=HEAP[$34]; //@line 1711 "datetimemodule.c"
-        var $36=$self_addr_i1; //@line 1711 "datetimemodule.c"
-        var $37=$36+12; //@line 1711 "datetimemodule.c"
-        var $38=HEAP[$37]; //@line 1711 "datetimemodule.c"
-        var $39=_new_delta_ex($38, $35, $32, 0, _PyDateTime_DeltaType); //@line 1711 "datetimemodule.c"
-        $0=$39; //@line 1711 "datetimemodule.c"
-        var $40=$0; //@line 1711 "datetimemodule.c"
-        $retval_i2=$40; //@line 1711 "datetimemodule.c"
-        var $retval1_i3=$retval_i2; //@line 1711 "datetimemodule.c"
-        $result=$retval1_i3; //@line 1728 "datetimemodule.c"
+        var $15=_delta_positive($13); //@line 1728 "datetimemodule.c"
+        $result=$15; //@line 1728 "datetimemodule.c"
         __label__ = 7; break; //@line 1728 "datetimemodule.c"
       case 7: // $bb6
-        var $41=$result; //@line 1730 "datetimemodule.c"
-        $2=$41; //@line 1730 "datetimemodule.c"
-        var $42=$2; //@line 1730 "datetimemodule.c"
-        $retval=$42; //@line 1730 "datetimemodule.c"
+        var $16=$result; //@line 1730 "datetimemodule.c"
+        $0=$16; //@line 1730 "datetimemodule.c"
+        var $17=$0; //@line 1730 "datetimemodule.c"
+        $retval=$17; //@line 1730 "datetimemodule.c"
         var $retval7=$retval; //@line 1730 "datetimemodule.c"
         ;
         return $retval7; //@line 1730 "datetimemodule.c"
@@ -5642,111 +5905,90 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $a_addr_i;
-        var $b_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $other_addr;
         var $op_addr;
         var $retval;
-        var $1;
+        var $0;
         var $diff;
         $self_addr=$self;
         $other_addr=$other;
         $op_addr=$op;
         $diff=42; //@line 1762 "datetimemodule.c"
-        var $2=$other_addr; //@line 1764 "datetimemodule.c"
-        var $3=$2+4; //@line 1764 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 1764 "datetimemodule.c"
-        var $5=($4)==(_PyDateTime_DeltaType); //@line 1764 "datetimemodule.c"
-        if ($5) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 1764 "datetimemodule.c"
+        var $1=$other_addr; //@line 1764 "datetimemodule.c"
+        var $2=$1+4; //@line 1764 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 1764 "datetimemodule.c"
+        var $4=($3)==(_PyDateTime_DeltaType); //@line 1764 "datetimemodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 1764 "datetimemodule.c"
       case 1: // $bb
-        var $6=$other_addr; //@line 1764 "datetimemodule.c"
-        var $7=$6+4; //@line 1764 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 1764 "datetimemodule.c"
-        var $9=_PyType_IsSubtype($8, _PyDateTime_DeltaType); //@line 1764 "datetimemodule.c"
-        var $10=($9)!=0; //@line 1764 "datetimemodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 1764 "datetimemodule.c"
+        var $5=$other_addr; //@line 1764 "datetimemodule.c"
+        var $6=$5+4; //@line 1764 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 1764 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_DeltaType); //@line 1764 "datetimemodule.c"
+        var $9=($8)!=0; //@line 1764 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 1764 "datetimemodule.c"
       case 2: // $bb1
-        var $11=$self_addr; //@line 1765 "datetimemodule.c"
-        var $12=$11+12; //@line 1765 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 1765 "datetimemodule.c"
-        var $14=$other_addr; //@line 1765 "datetimemodule.c"
-        var $15=$14; //@line 1765 "datetimemodule.c"
-        var $16=$15+12; //@line 1765 "datetimemodule.c"
-        var $17=HEAP[$16]; //@line 1765 "datetimemodule.c"
-        var $18=($13) - ($17); //@line 1765 "datetimemodule.c"
-        $diff=$18; //@line 1765 "datetimemodule.c"
-        var $19=($18)==0; //@line 1766 "datetimemodule.c"
-        if ($19) { __label__ = 3; break; } else { __label__ = 8; break; } //@line 1766 "datetimemodule.c"
+        var $10=$self_addr; //@line 1765 "datetimemodule.c"
+        var $11=$10+12; //@line 1765 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 1765 "datetimemodule.c"
+        var $13=$other_addr; //@line 1765 "datetimemodule.c"
+        var $14=$13; //@line 1765 "datetimemodule.c"
+        var $15=$14+12; //@line 1765 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 1765 "datetimemodule.c"
+        var $17=($12) - ($16); //@line 1765 "datetimemodule.c"
+        $diff=$17; //@line 1765 "datetimemodule.c"
+        var $18=($17)==0; //@line 1766 "datetimemodule.c"
+        if ($18) { __label__ = 3; break; } else { __label__ = 8; break; } //@line 1766 "datetimemodule.c"
       case 3: // $bb2
-        var $20=$self_addr; //@line 1767 "datetimemodule.c"
-        var $21=$20+16; //@line 1767 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 1767 "datetimemodule.c"
-        var $23=$other_addr; //@line 1767 "datetimemodule.c"
-        var $24=$23; //@line 1767 "datetimemodule.c"
-        var $25=$24+16; //@line 1767 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 1767 "datetimemodule.c"
-        var $27=($22) - ($26); //@line 1767 "datetimemodule.c"
-        $diff=$27; //@line 1767 "datetimemodule.c"
-        var $28=$diff; //@line 1768 "datetimemodule.c"
-        var $29=($28)==0; //@line 1768 "datetimemodule.c"
-        if ($29) { __label__ = 4; break; } else { __label__ = 8; break; } //@line 1768 "datetimemodule.c"
+        var $19=$self_addr; //@line 1767 "datetimemodule.c"
+        var $20=$19+16; //@line 1767 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 1767 "datetimemodule.c"
+        var $22=$other_addr; //@line 1767 "datetimemodule.c"
+        var $23=$22; //@line 1767 "datetimemodule.c"
+        var $24=$23+16; //@line 1767 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 1767 "datetimemodule.c"
+        var $26=($21) - ($25); //@line 1767 "datetimemodule.c"
+        $diff=$26; //@line 1767 "datetimemodule.c"
+        var $27=$diff; //@line 1768 "datetimemodule.c"
+        var $28=($27)==0; //@line 1768 "datetimemodule.c"
+        if ($28) { __label__ = 4; break; } else { __label__ = 8; break; } //@line 1768 "datetimemodule.c"
       case 4: // $bb3
-        var $30=$self_addr; //@line 1769 "datetimemodule.c"
-        var $31=$30+20; //@line 1769 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 1769 "datetimemodule.c"
-        var $33=$other_addr; //@line 1769 "datetimemodule.c"
-        var $34=$33; //@line 1769 "datetimemodule.c"
-        var $35=$34+20; //@line 1769 "datetimemodule.c"
-        var $36=HEAP[$35]; //@line 1769 "datetimemodule.c"
-        var $37=($32) - ($36); //@line 1769 "datetimemodule.c"
-        $diff=$37; //@line 1769 "datetimemodule.c"
+        var $29=$self_addr; //@line 1769 "datetimemodule.c"
+        var $30=$29+20; //@line 1769 "datetimemodule.c"
+        var $31=HEAP[$30]; //@line 1769 "datetimemodule.c"
+        var $32=$other_addr; //@line 1769 "datetimemodule.c"
+        var $33=$32; //@line 1769 "datetimemodule.c"
+        var $34=$33+20; //@line 1769 "datetimemodule.c"
+        var $35=HEAP[$34]; //@line 1769 "datetimemodule.c"
+        var $36=($31) - ($35); //@line 1769 "datetimemodule.c"
+        $diff=$36; //@line 1769 "datetimemodule.c"
         __label__ = 8; break; //@line 1769 "datetimemodule.c"
       case 5: // $bb5
-        var $38=$op_addr; //@line 1773 "datetimemodule.c"
-        var $39=($38)==2; //@line 1773 "datetimemodule.c"
-        var $40=$op_addr; //@line 1773 "datetimemodule.c"
-        var $41=($40)==3; //@line 1773 "datetimemodule.c"
-        var $or_cond=($39) | ($41);
+        var $37=$op_addr; //@line 1773 "datetimemodule.c"
+        var $38=($37)==2; //@line 1773 "datetimemodule.c"
+        var $39=$op_addr; //@line 1773 "datetimemodule.c"
+        var $40=($39)==3; //@line 1773 "datetimemodule.c"
+        var $or_cond=($38) | ($40);
         if ($or_cond) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1773 "datetimemodule.c"
       case 6: // $bb7
         $diff=1; //@line 1774 "datetimemodule.c"
         __label__ = 8; break; //@line 1774 "datetimemodule.c"
       case 7: // $bb8
-        var $42=$self_addr; //@line 1777 "datetimemodule.c"
-        var $43=$42; //@line 1777 "datetimemodule.c"
-        var $44=$other_addr; //@line 1777 "datetimemodule.c"
-        $a_addr_i=$43;
-        $b_addr_i=$44;
-        var $45=$b_addr_i; //@line 1466 "datetimemodule.c"
-        var $46=$45+4; //@line 1466 "datetimemodule.c"
-        var $47=HEAP[$46]; //@line 1466 "datetimemodule.c"
-        var $48=$47+12; //@line 1466 "datetimemodule.c"
-        var $49=HEAP[$48]; //@line 1466 "datetimemodule.c"
-        var $50=$a_addr_i; //@line 1466 "datetimemodule.c"
-        var $51=$50+4; //@line 1466 "datetimemodule.c"
-        var $52=HEAP[$51]; //@line 1466 "datetimemodule.c"
-        var $53=$52+12; //@line 1466 "datetimemodule.c"
-        var $54=HEAP[$53]; //@line 1466 "datetimemodule.c"
-        var $55=HEAP[_PyExc_TypeError]; //@line 1466 "datetimemodule.c"
-        var $56=_PyErr_Format($55, __str103, $54, $49); //@line 1466 "datetimemodule.c"
-        $0=0; //@line 1469 "datetimemodule.c"
-        var $57=$0; //@line 1469 "datetimemodule.c"
-        $retval_i=$57; //@line 1469 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 1469 "datetimemodule.c"
-        $1=$retval1_i; //@line 1777 "datetimemodule.c"
+        var $41=$self_addr; //@line 1777 "datetimemodule.c"
+        var $42=$41; //@line 1777 "datetimemodule.c"
+        var $43=$other_addr; //@line 1777 "datetimemodule.c"
+        var $44=_cmperror($42, $43); //@line 1777 "datetimemodule.c"
+        $0=$44; //@line 1777 "datetimemodule.c"
         __label__ = 9; break; //@line 1777 "datetimemodule.c"
       case 8: // $bb9
-        var $58=$diff; //@line 1779 "datetimemodule.c"
-        var $59=$op_addr; //@line 1779 "datetimemodule.c"
-        var $60=_diff_to_bool($58, $59); //@line 1779 "datetimemodule.c"
-        $1=$60; //@line 1779 "datetimemodule.c"
+        var $45=$diff; //@line 1779 "datetimemodule.c"
+        var $46=$op_addr; //@line 1779 "datetimemodule.c"
+        var $47=_diff_to_bool($45, $46); //@line 1779 "datetimemodule.c"
+        $0=$47; //@line 1779 "datetimemodule.c"
         __label__ = 9; break; //@line 1779 "datetimemodule.c"
       case 9: // $bb10
-        var $61=$1; //@line 1777 "datetimemodule.c"
-        $retval=$61; //@line 1777 "datetimemodule.c"
+        var $48=$0; //@line 1777 "datetimemodule.c"
+        $retval=$48; //@line 1777 "datetimemodule.c"
         var $retval11=$retval; //@line 1777 "datetimemodule.c"
         ;
         return $retval11; //@line 1777 "datetimemodule.c"
@@ -5761,74 +6003,57 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $temp;
         $self_addr=$self;
-        var $2=$self_addr; //@line 1787 "datetimemodule.c"
-        var $3=$2+8; //@line 1787 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 1787 "datetimemodule.c"
-        var $5=($4)==-1; //@line 1787 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 1787 "datetimemodule.c"
+        var $1=$self_addr; //@line 1787 "datetimemodule.c"
+        var $2=$1+8; //@line 1787 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 1787 "datetimemodule.c"
+        var $4=($3)==-1; //@line 1787 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 1787 "datetimemodule.c"
       case 1: // $bb
-        var $6=$self_addr; //@line 1788 "datetimemodule.c"
-        $self_addr_i=$6;
-        var $7=$self_addr_i; //@line 2095 "datetimemodule.c"
-        var $8=$7+20; //@line 2095 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 2095 "datetimemodule.c"
-        var $10=$self_addr_i; //@line 2095 "datetimemodule.c"
-        var $11=$10+16; //@line 2095 "datetimemodule.c"
-        var $12=HEAP[$11]; //@line 2095 "datetimemodule.c"
-        var $13=$self_addr_i; //@line 2095 "datetimemodule.c"
-        var $14=$13+12; //@line 2095 "datetimemodule.c"
-        var $15=HEAP[$14]; //@line 2095 "datetimemodule.c"
-        var $16=__Py_BuildValue_SizeT(__str128, $15, $12, $9); //@line 2095 "datetimemodule.c"
-        $0=$16; //@line 2095 "datetimemodule.c"
-        var $17=$0; //@line 2095 "datetimemodule.c"
-        $retval_i=$17; //@line 2095 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 2095 "datetimemodule.c"
-        $temp=$retval1_i; //@line 1788 "datetimemodule.c"
-        var $18=$temp; //@line 1789 "datetimemodule.c"
-        var $19=($18)!=0; //@line 1789 "datetimemodule.c"
-        if ($19) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 1789 "datetimemodule.c"
+        var $5=$self_addr; //@line 1788 "datetimemodule.c"
+        var $6=_delta_getstate($5); //@line 1788 "datetimemodule.c"
+        $temp=$6; //@line 1788 "datetimemodule.c"
+        var $7=$temp; //@line 1789 "datetimemodule.c"
+        var $8=($7)!=0; //@line 1789 "datetimemodule.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 1789 "datetimemodule.c"
       case 2: // $bb1
-        var $20=$temp; //@line 1790 "datetimemodule.c"
-        var $21=_PyObject_Hash($20); //@line 1790 "datetimemodule.c"
-        var $22=$self_addr; //@line 1790 "datetimemodule.c"
-        var $23=$22+8; //@line 1790 "datetimemodule.c"
-        HEAP[$23]=$21; //@line 1790 "datetimemodule.c"
-        var $24=$temp; //@line 1791 "datetimemodule.c"
-        var $25=$24; //@line 1791 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 1791 "datetimemodule.c"
-        var $27=($26) - 1; //@line 1791 "datetimemodule.c"
-        var $28=$temp; //@line 1791 "datetimemodule.c"
-        var $29=$28; //@line 1791 "datetimemodule.c"
-        HEAP[$29]=$27; //@line 1791 "datetimemodule.c"
-        var $30=$temp; //@line 1791 "datetimemodule.c"
-        var $31=$30; //@line 1791 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 1791 "datetimemodule.c"
-        var $33=($32)==0; //@line 1791 "datetimemodule.c"
-        if ($33) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1791 "datetimemodule.c"
+        var $9=$temp; //@line 1790 "datetimemodule.c"
+        var $10=_PyObject_Hash($9); //@line 1790 "datetimemodule.c"
+        var $11=$self_addr; //@line 1790 "datetimemodule.c"
+        var $12=$11+8; //@line 1790 "datetimemodule.c"
+        HEAP[$12]=$10; //@line 1790 "datetimemodule.c"
+        var $13=$temp; //@line 1791 "datetimemodule.c"
+        var $14=$13; //@line 1791 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 1791 "datetimemodule.c"
+        var $16=($15) - 1; //@line 1791 "datetimemodule.c"
+        var $17=$temp; //@line 1791 "datetimemodule.c"
+        var $18=$17; //@line 1791 "datetimemodule.c"
+        HEAP[$18]=$16; //@line 1791 "datetimemodule.c"
+        var $19=$temp; //@line 1791 "datetimemodule.c"
+        var $20=$19; //@line 1791 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 1791 "datetimemodule.c"
+        var $22=($21)==0; //@line 1791 "datetimemodule.c"
+        if ($22) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1791 "datetimemodule.c"
       case 3: // $bb2
-        var $34=$temp; //@line 1791 "datetimemodule.c"
-        var $35=$34+4; //@line 1791 "datetimemodule.c"
-        var $36=HEAP[$35]; //@line 1791 "datetimemodule.c"
-        var $37=$36+24; //@line 1791 "datetimemodule.c"
-        var $38=HEAP[$37]; //@line 1791 "datetimemodule.c"
-        var $39=$temp; //@line 1791 "datetimemodule.c"
-        FUNCTION_TABLE[$38]($39); //@line 1791 "datetimemodule.c"
+        var $23=$temp; //@line 1791 "datetimemodule.c"
+        var $24=$23+4; //@line 1791 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 1791 "datetimemodule.c"
+        var $26=$25+24; //@line 1791 "datetimemodule.c"
+        var $27=HEAP[$26]; //@line 1791 "datetimemodule.c"
+        var $28=$temp; //@line 1791 "datetimemodule.c"
+        FUNCTION_TABLE[$27]($28); //@line 1791 "datetimemodule.c"
         __label__ = 4; break; //@line 1791 "datetimemodule.c"
       case 4: // $bb3
-        var $40=$self_addr; //@line 1794 "datetimemodule.c"
-        var $41=$40+8; //@line 1794 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 1794 "datetimemodule.c"
-        $1=$42; //@line 1794 "datetimemodule.c"
-        var $43=$1; //@line 1794 "datetimemodule.c"
-        $retval=$43; //@line 1794 "datetimemodule.c"
+        var $29=$self_addr; //@line 1794 "datetimemodule.c"
+        var $30=$29+8; //@line 1794 "datetimemodule.c"
+        var $31=HEAP[$30]; //@line 1794 "datetimemodule.c"
+        $0=$31; //@line 1794 "datetimemodule.c"
+        var $32=$0; //@line 1794 "datetimemodule.c"
+        $retval=$32; //@line 1794 "datetimemodule.c"
         var $retval4=$retval; //@line 1794 "datetimemodule.c"
         ;
         return $retval4; //@line 1794 "datetimemodule.c"
@@ -5950,154 +6175,72 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $delta_addr_i;
-        var $intobj_addr_i;
-        var $retval_i;
-        var $0;
-        var $pyus_in_i;
-        var $pyus_out_i;
-        var $result_i;
         var $left_addr;
         var $right_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result;
         $left_addr=$left;
         $right_addr=$right;
         $result=__Py_NotImplementedStruct; //@line 1820 "datetimemodule.c"
-        var $2=$left_addr; //@line 1822 "datetimemodule.c"
-        var $3=$2+4; //@line 1822 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 1822 "datetimemodule.c"
-        var $5=($4)==(_PyDateTime_DeltaType); //@line 1822 "datetimemodule.c"
-        if ($5) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 1822 "datetimemodule.c"
+        var $1=$left_addr; //@line 1822 "datetimemodule.c"
+        var $2=$1+4; //@line 1822 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 1822 "datetimemodule.c"
+        var $4=($3)==(_PyDateTime_DeltaType); //@line 1822 "datetimemodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 1822 "datetimemodule.c"
       case 1: // $bb
-        var $6=$left_addr; //@line 1822 "datetimemodule.c"
-        var $7=$6+4; //@line 1822 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 1822 "datetimemodule.c"
-        var $9=_PyType_IsSubtype($8, _PyDateTime_DeltaType); //@line 1822 "datetimemodule.c"
-        var $10=($9)!=0; //@line 1822 "datetimemodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 14; break; } //@line 1822 "datetimemodule.c"
+        var $5=$left_addr; //@line 1822 "datetimemodule.c"
+        var $6=$5+4; //@line 1822 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 1822 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_DeltaType); //@line 1822 "datetimemodule.c"
+        var $9=($8)!=0; //@line 1822 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 1822 "datetimemodule.c"
       case 2: // $bb1
-        var $11=$right_addr; //@line 1824 "datetimemodule.c"
-        var $12=$11+4; //@line 1824 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 1824 "datetimemodule.c"
-        var $14=$13+84; //@line 1824 "datetimemodule.c"
-        var $15=HEAP[$14]; //@line 1824 "datetimemodule.c"
-        var $16=($15) & 8388608; //@line 1824 "datetimemodule.c"
-        var $17=($16)!=0; //@line 1824 "datetimemodule.c"
-        if ($17) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 1824 "datetimemodule.c"
+        var $10=$right_addr; //@line 1824 "datetimemodule.c"
+        var $11=$10+4; //@line 1824 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 1824 "datetimemodule.c"
+        var $13=$12+84; //@line 1824 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 1824 "datetimemodule.c"
+        var $15=($14) & 8388608; //@line 1824 "datetimemodule.c"
+        var $16=($15)!=0; //@line 1824 "datetimemodule.c"
+        if ($16) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 1824 "datetimemodule.c"
       case 3: // $bb2
-        var $18=$right_addr; //@line 1824 "datetimemodule.c"
-        var $19=$18+4; //@line 1824 "datetimemodule.c"
-        var $20=HEAP[$19]; //@line 1824 "datetimemodule.c"
-        var $21=$20+84; //@line 1824 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 1824 "datetimemodule.c"
-        var $23=($22) & 16777216; //@line 1824 "datetimemodule.c"
-        var $24=($23)!=0; //@line 1824 "datetimemodule.c"
-        if ($24) { __label__ = 4; break; } else { __label__ = 14; break; } //@line 1824 "datetimemodule.c"
+        var $17=$right_addr; //@line 1824 "datetimemodule.c"
+        var $18=$17+4; //@line 1824 "datetimemodule.c"
+        var $19=HEAP[$18]; //@line 1824 "datetimemodule.c"
+        var $20=$19+84; //@line 1824 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 1824 "datetimemodule.c"
+        var $22=($21) & 16777216; //@line 1824 "datetimemodule.c"
+        var $23=($22)!=0; //@line 1824 "datetimemodule.c"
+        if ($23) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1824 "datetimemodule.c"
       case 4: // $bb3
-        var $25=$left_addr; //@line 1825 "datetimemodule.c"
-        var $26=$25; //@line 1825 "datetimemodule.c"
-        var $27=$right_addr; //@line 1825 "datetimemodule.c"
-        $delta_addr_i=$26;
-        $intobj_addr_i=$27;
-        var $28=$delta_addr_i; //@line 1660 "datetimemodule.c"
-        var $29=_delta_to_microseconds($28); //@line 1660 "datetimemodule.c"
-        $pyus_in_i=$29; //@line 1660 "datetimemodule.c"
-        var $30=($29)==0; //@line 1661 "datetimemodule.c"
-        if ($30) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1661 "datetimemodule.c"
-      case 5: // $bb_i
-        $0=0; //@line 1662 "datetimemodule.c"
-        __label__ = 13; break; //@line 1662 "datetimemodule.c"
-      case 6: // $bb1_i
-        var $31=$pyus_in_i; //@line 1664 "datetimemodule.c"
-        var $32=$intobj_addr_i; //@line 1664 "datetimemodule.c"
-        var $33=_PyNumber_FloorDivide($31, $32); //@line 1664 "datetimemodule.c"
-        $pyus_out_i=$33; //@line 1664 "datetimemodule.c"
-        var $34=$pyus_in_i; //@line 1665 "datetimemodule.c"
-        var $35=$34; //@line 1665 "datetimemodule.c"
-        var $36=HEAP[$35]; //@line 1665 "datetimemodule.c"
-        var $37=($36) - 1; //@line 1665 "datetimemodule.c"
-        var $38=$pyus_in_i; //@line 1665 "datetimemodule.c"
-        var $39=$38; //@line 1665 "datetimemodule.c"
-        HEAP[$39]=$37; //@line 1665 "datetimemodule.c"
-        var $40=$pyus_in_i; //@line 1665 "datetimemodule.c"
-        var $41=$40; //@line 1665 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 1665 "datetimemodule.c"
-        var $43=($42)==0; //@line 1665 "datetimemodule.c"
-        if ($43) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1665 "datetimemodule.c"
-      case 7: // $bb2_i
-        var $44=$pyus_in_i; //@line 1665 "datetimemodule.c"
-        var $45=$44+4; //@line 1665 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 1665 "datetimemodule.c"
-        var $47=$46+24; //@line 1665 "datetimemodule.c"
-        var $48=HEAP[$47]; //@line 1665 "datetimemodule.c"
-        var $49=$pyus_in_i; //@line 1665 "datetimemodule.c"
-        FUNCTION_TABLE[$48]($49); //@line 1665 "datetimemodule.c"
-        __label__ = 8; break; //@line 1665 "datetimemodule.c"
-      case 8: // $bb3_i
-        var $50=$pyus_out_i; //@line 1666 "datetimemodule.c"
-        var $51=($50)==0; //@line 1666 "datetimemodule.c"
-        if ($51) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1666 "datetimemodule.c"
-      case 9: // $bb4_i
-        $0=0; //@line 1667 "datetimemodule.c"
-        __label__ = 13; break; //@line 1667 "datetimemodule.c"
-      case 10: // $bb5_i
-        var $52=$pyus_out_i; //@line 1669 "datetimemodule.c"
-        var $53=_microseconds_to_delta_ex($52, _PyDateTime_DeltaType); //@line 1669 "datetimemodule.c"
-        $result_i=$53; //@line 1669 "datetimemodule.c"
-        var $54=$pyus_out_i; //@line 1670 "datetimemodule.c"
-        var $55=$54; //@line 1670 "datetimemodule.c"
-        var $56=HEAP[$55]; //@line 1670 "datetimemodule.c"
-        var $57=($56) - 1; //@line 1670 "datetimemodule.c"
-        var $58=$pyus_out_i; //@line 1670 "datetimemodule.c"
-        var $59=$58; //@line 1670 "datetimemodule.c"
-        HEAP[$59]=$57; //@line 1670 "datetimemodule.c"
-        var $60=$pyus_out_i; //@line 1670 "datetimemodule.c"
-        var $61=$60; //@line 1670 "datetimemodule.c"
-        var $62=HEAP[$61]; //@line 1670 "datetimemodule.c"
-        var $63=($62)==0; //@line 1670 "datetimemodule.c"
-        if ($63) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 1670 "datetimemodule.c"
-      case 11: // $bb6_i
-        var $64=$pyus_out_i; //@line 1670 "datetimemodule.c"
-        var $65=$64+4; //@line 1670 "datetimemodule.c"
-        var $66=HEAP[$65]; //@line 1670 "datetimemodule.c"
-        var $67=$66+24; //@line 1670 "datetimemodule.c"
-        var $68=HEAP[$67]; //@line 1670 "datetimemodule.c"
-        var $69=$pyus_out_i; //@line 1670 "datetimemodule.c"
-        FUNCTION_TABLE[$68]($69); //@line 1670 "datetimemodule.c"
-        __label__ = 12; break; //@line 1670 "datetimemodule.c"
-      case 12: // $bb7_i
-        var $70=$result_i; //@line 1671 "datetimemodule.c"
-        $0=$70; //@line 1671 "datetimemodule.c"
-        __label__ = 13; break; //@line 1671 "datetimemodule.c"
-      case 13: // $divide_timedelta_int_exit
-        var $71=$0; //@line 1662 "datetimemodule.c"
-        $retval_i=$71; //@line 1662 "datetimemodule.c"
-        var $retval9_i=$retval_i; //@line 1662 "datetimemodule.c"
-        $result=$retval9_i; //@line 1825 "datetimemodule.c"
-        __lastLabel__ = 13; __label__ = 15; break; //@line 1825 "datetimemodule.c"
-      case 14: // $bb4thread_pre_split
+        var $24=$left_addr; //@line 1825 "datetimemodule.c"
+        var $25=$24; //@line 1825 "datetimemodule.c"
+        var $26=$right_addr; //@line 1825 "datetimemodule.c"
+        var $27=_divide_timedelta_int($25, $26); //@line 1825 "datetimemodule.c"
+        $result=$27; //@line 1825 "datetimemodule.c"
+        __lastLabel__ = 4; __label__ = 6; break; //@line 1825 "datetimemodule.c"
+      case 5: // $bb4thread_pre_split
         var $_pr=$result;
-        __lastLabel__ = 14; __label__ = 15; break;
-      case 15: // $bb4
-        var $72=__lastLabel__ == 14 ? $_pr : ($retval9_i);
-        var $73=($72)==(__Py_NotImplementedStruct); //@line 1830 "datetimemodule.c"
-        if ($73) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1830 "datetimemodule.c"
-      case 16: // $bb5
-        var $74=$result; //@line 1831 "datetimemodule.c"
-        var $75=$74; //@line 1831 "datetimemodule.c"
-        var $76=HEAP[$75]; //@line 1831 "datetimemodule.c"
-        var $77=($76) + 1; //@line 1831 "datetimemodule.c"
-        var $78=$result; //@line 1831 "datetimemodule.c"
-        var $79=$78; //@line 1831 "datetimemodule.c"
-        HEAP[$79]=$77; //@line 1831 "datetimemodule.c"
-        __label__ = 17; break; //@line 1831 "datetimemodule.c"
-      case 17: // $bb6
-        var $80=$result; //@line 1832 "datetimemodule.c"
-        $1=$80; //@line 1832 "datetimemodule.c"
-        var $81=$1; //@line 1832 "datetimemodule.c"
-        $retval=$81; //@line 1832 "datetimemodule.c"
+        __lastLabel__ = 5; __label__ = 6; break;
+      case 6: // $bb4
+        var $28=__lastLabel__ == 5 ? $_pr : ($27);
+        var $29=($28)==(__Py_NotImplementedStruct); //@line 1830 "datetimemodule.c"
+        if ($29) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 1830 "datetimemodule.c"
+      case 7: // $bb5
+        var $30=$result; //@line 1831 "datetimemodule.c"
+        var $31=$30; //@line 1831 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 1831 "datetimemodule.c"
+        var $33=($32) + 1; //@line 1831 "datetimemodule.c"
+        var $34=$result; //@line 1831 "datetimemodule.c"
+        var $35=$34; //@line 1831 "datetimemodule.c"
+        HEAP[$35]=$33; //@line 1831 "datetimemodule.c"
+        __label__ = 8; break; //@line 1831 "datetimemodule.c"
+      case 8: // $bb6
+        var $36=$result; //@line 1832 "datetimemodule.c"
+        $0=$36; //@line 1832 "datetimemodule.c"
+        var $37=$0; //@line 1832 "datetimemodule.c"
+        $retval=$37; //@line 1832 "datetimemodule.c"
         var $retval7=$retval; //@line 1832 "datetimemodule.c"
         ;
         return $retval7; //@line 1832 "datetimemodule.c"
@@ -6450,7 +6593,7 @@ var _initialized_b;
         var $198=HEAP[$197]; //@line 1922 "datetimemodule.c"
         var $199=HEAP[_PyExc_TypeError]; //@line 1922 "datetimemodule.c"
         var $200=$tag_addr; //@line 1922 "datetimemodule.c"
-        var $201=_PyErr_Format($199, __str112, $200, $198); //@line 1922 "datetimemodule.c"
+        var $201=_PyErr_Format($199, __str112, allocate([$200,0,0,0,$198,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1922 "datetimemodule.c"
         $0=0; //@line 1925 "datetimemodule.c"
         __label__ = 42; break; //@line 1925 "datetimemodule.c"
       case 42: // $bb41
@@ -6470,14 +6613,11 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $x_addr_i;
-        var $retval_i;
-        var $0;
         var $type_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
-        var $1;
+        var $0;
         var $self;
         var $day=__stackBase__;
         var $second=__stackBase__+4;
@@ -6504,406 +6644,386 @@ var _initialized_b;
         $x=0; //@line 1942 "datetimemodule.c"
         $y=0; //@line 1943 "datetimemodule.c"
         HEAP[$leftover_us]=0; //@line 1944 "datetimemodule.c"
-        var $2=$args_addr; //@line 1951 "datetimemodule.c"
-        var $3=$kw_addr; //@line 1951 "datetimemodule.c"
-        var $4=__PyArg_ParseTupleAndKeywords_SizeT($2, $3, __str113, _keywords_10491, $day, $second, $us, $ms, $minute, $hour, $week); //@line 1951 "datetimemodule.c"
-        var $5=($4)==0; //@line 1951 "datetimemodule.c"
-        if ($5) { __label__ = 44; break; } else { __label__ = 1; break; } //@line 1951 "datetimemodule.c"
+        var $1=$args_addr; //@line 1951 "datetimemodule.c"
+        var $2=$kw_addr; //@line 1951 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str113, _keywords_10491, allocate([$day,0,0,0,$second,0,0,0,$us,0,0,0,$ms,0,0,0,$minute,0,0,0,$hour,0,0,0,$week,0,0,0], ["%struct.PyDateTime_TZInfo**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 1951 "datetimemodule.c"
+        var $4=($3)==0; //@line 1951 "datetimemodule.c"
+        if ($4) { __label__ = 41; break; } else { __label__ = 1; break; } //@line 1951 "datetimemodule.c"
       case 1: // $bb
-        var $6=_PyInt_FromLong(0); //@line 1957 "datetimemodule.c"
-        $x=$6; //@line 1957 "datetimemodule.c"
-        var $7=$x; //@line 1958 "datetimemodule.c"
-        var $8=($7)==0; //@line 1958 "datetimemodule.c"
-        if ($8) { __label__ = 44; break; } else { __label__ = 2; break; } //@line 1958 "datetimemodule.c"
+        var $5=_PyInt_FromLong(0); //@line 1957 "datetimemodule.c"
+        $x=$5; //@line 1957 "datetimemodule.c"
+        var $6=$x; //@line 1958 "datetimemodule.c"
+        var $7=($6)==0; //@line 1958 "datetimemodule.c"
+        if ($7) { __label__ = 41; break; } else { __label__ = 2; break; } //@line 1958 "datetimemodule.c"
       case 2: // $bb1
-        var $9=HEAP[$us]; //@line 1967 "datetimemodule.c"
-        var $10=($9)!=0; //@line 1967 "datetimemodule.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 1967 "datetimemodule.c"
+        var $8=HEAP[$us]; //@line 1967 "datetimemodule.c"
+        var $9=($8)!=0; //@line 1967 "datetimemodule.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 1967 "datetimemodule.c"
       case 3: // $bb2
-        var $11=HEAP[_us_per_us]; //@line 1968 "datetimemodule.c"
-        var $12=HEAP[$us]; //@line 1968 "datetimemodule.c"
-        var $13=$x; //@line 1968 "datetimemodule.c"
-        var $14=_accum(__str116, $13, $12, $11, $leftover_us); //@line 1968 "datetimemodule.c"
-        $y=$14; //@line 1968 "datetimemodule.c"
-        var $15=$x; //@line 1969 "datetimemodule.c"
-        var $16=$15; //@line 1969 "datetimemodule.c"
-        var $17=HEAP[$16]; //@line 1969 "datetimemodule.c"
-        var $18=($17) - 1; //@line 1969 "datetimemodule.c"
-        var $19=$x; //@line 1969 "datetimemodule.c"
-        var $20=$19; //@line 1969 "datetimemodule.c"
-        HEAP[$20]=$18; //@line 1969 "datetimemodule.c"
-        var $21=$x; //@line 1969 "datetimemodule.c"
-        var $22=$21; //@line 1969 "datetimemodule.c"
-        var $23=HEAP[$22]; //@line 1969 "datetimemodule.c"
-        var $24=($23)==0; //@line 1969 "datetimemodule.c"
-        if ($24) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1969 "datetimemodule.c"
+        var $10=HEAP[_us_per_us]; //@line 1968 "datetimemodule.c"
+        var $11=HEAP[$us]; //@line 1968 "datetimemodule.c"
+        var $12=$x; //@line 1968 "datetimemodule.c"
+        var $13=_accum(__str116, $12, $11, $10, $leftover_us); //@line 1968 "datetimemodule.c"
+        $y=$13; //@line 1968 "datetimemodule.c"
+        var $14=$x; //@line 1969 "datetimemodule.c"
+        var $15=$14; //@line 1969 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 1969 "datetimemodule.c"
+        var $17=($16) - 1; //@line 1969 "datetimemodule.c"
+        var $18=$x; //@line 1969 "datetimemodule.c"
+        var $19=$18; //@line 1969 "datetimemodule.c"
+        HEAP[$19]=$17; //@line 1969 "datetimemodule.c"
+        var $20=$x; //@line 1969 "datetimemodule.c"
+        var $21=$20; //@line 1969 "datetimemodule.c"
+        var $22=HEAP[$21]; //@line 1969 "datetimemodule.c"
+        var $23=($22)==0; //@line 1969 "datetimemodule.c"
+        if ($23) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1969 "datetimemodule.c"
       case 4: // $bb3
-        var $25=$x; //@line 1969 "datetimemodule.c"
-        var $26=$25+4; //@line 1969 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 1969 "datetimemodule.c"
-        var $28=$27+24; //@line 1969 "datetimemodule.c"
-        var $29=HEAP[$28]; //@line 1969 "datetimemodule.c"
-        var $30=$x; //@line 1969 "datetimemodule.c"
-        FUNCTION_TABLE[$29]($30); //@line 1969 "datetimemodule.c"
+        var $24=$x; //@line 1969 "datetimemodule.c"
+        var $25=$24+4; //@line 1969 "datetimemodule.c"
+        var $26=HEAP[$25]; //@line 1969 "datetimemodule.c"
+        var $27=$26+24; //@line 1969 "datetimemodule.c"
+        var $28=HEAP[$27]; //@line 1969 "datetimemodule.c"
+        var $29=$x; //@line 1969 "datetimemodule.c"
+        FUNCTION_TABLE[$28]($29); //@line 1969 "datetimemodule.c"
         __label__ = 5; break; //@line 1969 "datetimemodule.c"
       case 5: // $bb4
-        var $31=$y; //@line 1969 "datetimemodule.c"
-        $x=$31; //@line 1969 "datetimemodule.c"
-        var $32=($31)==0; //@line 1969 "datetimemodule.c"
-        if ($32) { __label__ = 44; break; } else { __label__ = 6; break; } //@line 1969 "datetimemodule.c"
+        var $30=$y; //@line 1969 "datetimemodule.c"
+        $x=$30; //@line 1969 "datetimemodule.c"
+        var $31=($30)==0; //@line 1969 "datetimemodule.c"
+        if ($31) { __label__ = 41; break; } else { __label__ = 6; break; } //@line 1969 "datetimemodule.c"
       case 6: // $bb5
-        var $33=HEAP[$ms]; //@line 1971 "datetimemodule.c"
-        var $34=($33)!=0; //@line 1971 "datetimemodule.c"
-        if ($34) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 1971 "datetimemodule.c"
+        var $32=HEAP[$ms]; //@line 1971 "datetimemodule.c"
+        var $33=($32)!=0; //@line 1971 "datetimemodule.c"
+        if ($33) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 1971 "datetimemodule.c"
       case 7: // $bb6
-        var $35=HEAP[_us_per_ms]; //@line 1972 "datetimemodule.c"
-        var $36=HEAP[$ms]; //@line 1972 "datetimemodule.c"
-        var $37=$x; //@line 1972 "datetimemodule.c"
-        var $38=_accum(__str117, $37, $36, $35, $leftover_us); //@line 1972 "datetimemodule.c"
-        $y=$38; //@line 1972 "datetimemodule.c"
-        var $39=$x; //@line 1973 "datetimemodule.c"
-        var $40=$39; //@line 1973 "datetimemodule.c"
-        var $41=HEAP[$40]; //@line 1973 "datetimemodule.c"
-        var $42=($41) - 1; //@line 1973 "datetimemodule.c"
-        var $43=$x; //@line 1973 "datetimemodule.c"
-        var $44=$43; //@line 1973 "datetimemodule.c"
-        HEAP[$44]=$42; //@line 1973 "datetimemodule.c"
-        var $45=$x; //@line 1973 "datetimemodule.c"
-        var $46=$45; //@line 1973 "datetimemodule.c"
-        var $47=HEAP[$46]; //@line 1973 "datetimemodule.c"
-        var $48=($47)==0; //@line 1973 "datetimemodule.c"
-        if ($48) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1973 "datetimemodule.c"
+        var $34=HEAP[_us_per_ms]; //@line 1972 "datetimemodule.c"
+        var $35=HEAP[$ms]; //@line 1972 "datetimemodule.c"
+        var $36=$x; //@line 1972 "datetimemodule.c"
+        var $37=_accum(__str117, $36, $35, $34, $leftover_us); //@line 1972 "datetimemodule.c"
+        $y=$37; //@line 1972 "datetimemodule.c"
+        var $38=$x; //@line 1973 "datetimemodule.c"
+        var $39=$38; //@line 1973 "datetimemodule.c"
+        var $40=HEAP[$39]; //@line 1973 "datetimemodule.c"
+        var $41=($40) - 1; //@line 1973 "datetimemodule.c"
+        var $42=$x; //@line 1973 "datetimemodule.c"
+        var $43=$42; //@line 1973 "datetimemodule.c"
+        HEAP[$43]=$41; //@line 1973 "datetimemodule.c"
+        var $44=$x; //@line 1973 "datetimemodule.c"
+        var $45=$44; //@line 1973 "datetimemodule.c"
+        var $46=HEAP[$45]; //@line 1973 "datetimemodule.c"
+        var $47=($46)==0; //@line 1973 "datetimemodule.c"
+        if ($47) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1973 "datetimemodule.c"
       case 8: // $bb7
-        var $49=$x; //@line 1973 "datetimemodule.c"
-        var $50=$49+4; //@line 1973 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 1973 "datetimemodule.c"
-        var $52=$51+24; //@line 1973 "datetimemodule.c"
-        var $53=HEAP[$52]; //@line 1973 "datetimemodule.c"
-        var $54=$x; //@line 1973 "datetimemodule.c"
-        FUNCTION_TABLE[$53]($54); //@line 1973 "datetimemodule.c"
+        var $48=$x; //@line 1973 "datetimemodule.c"
+        var $49=$48+4; //@line 1973 "datetimemodule.c"
+        var $50=HEAP[$49]; //@line 1973 "datetimemodule.c"
+        var $51=$50+24; //@line 1973 "datetimemodule.c"
+        var $52=HEAP[$51]; //@line 1973 "datetimemodule.c"
+        var $53=$x; //@line 1973 "datetimemodule.c"
+        FUNCTION_TABLE[$52]($53); //@line 1973 "datetimemodule.c"
         __label__ = 9; break; //@line 1973 "datetimemodule.c"
       case 9: // $bb8
-        var $55=$y; //@line 1973 "datetimemodule.c"
-        $x=$55; //@line 1973 "datetimemodule.c"
-        var $56=($55)==0; //@line 1973 "datetimemodule.c"
-        if ($56) { __label__ = 44; break; } else { __label__ = 10; break; } //@line 1973 "datetimemodule.c"
+        var $54=$y; //@line 1973 "datetimemodule.c"
+        $x=$54; //@line 1973 "datetimemodule.c"
+        var $55=($54)==0; //@line 1973 "datetimemodule.c"
+        if ($55) { __label__ = 41; break; } else { __label__ = 10; break; } //@line 1973 "datetimemodule.c"
       case 10: // $bb9
-        var $57=HEAP[$second]; //@line 1975 "datetimemodule.c"
-        var $58=($57)!=0; //@line 1975 "datetimemodule.c"
-        if ($58) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 1975 "datetimemodule.c"
+        var $56=HEAP[$second]; //@line 1975 "datetimemodule.c"
+        var $57=($56)!=0; //@line 1975 "datetimemodule.c"
+        if ($57) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 1975 "datetimemodule.c"
       case 11: // $bb10
-        var $59=HEAP[_us_per_second]; //@line 1976 "datetimemodule.c"
-        var $60=HEAP[$second]; //@line 1976 "datetimemodule.c"
-        var $61=$x; //@line 1976 "datetimemodule.c"
-        var $62=_accum(__str115, $61, $60, $59, $leftover_us); //@line 1976 "datetimemodule.c"
-        $y=$62; //@line 1976 "datetimemodule.c"
-        var $63=$x; //@line 1977 "datetimemodule.c"
-        var $64=$63; //@line 1977 "datetimemodule.c"
-        var $65=HEAP[$64]; //@line 1977 "datetimemodule.c"
-        var $66=($65) - 1; //@line 1977 "datetimemodule.c"
-        var $67=$x; //@line 1977 "datetimemodule.c"
-        var $68=$67; //@line 1977 "datetimemodule.c"
-        HEAP[$68]=$66; //@line 1977 "datetimemodule.c"
-        var $69=$x; //@line 1977 "datetimemodule.c"
-        var $70=$69; //@line 1977 "datetimemodule.c"
-        var $71=HEAP[$70]; //@line 1977 "datetimemodule.c"
-        var $72=($71)==0; //@line 1977 "datetimemodule.c"
-        if ($72) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1977 "datetimemodule.c"
+        var $58=HEAP[_us_per_second]; //@line 1976 "datetimemodule.c"
+        var $59=HEAP[$second]; //@line 1976 "datetimemodule.c"
+        var $60=$x; //@line 1976 "datetimemodule.c"
+        var $61=_accum(__str115, $60, $59, $58, $leftover_us); //@line 1976 "datetimemodule.c"
+        $y=$61; //@line 1976 "datetimemodule.c"
+        var $62=$x; //@line 1977 "datetimemodule.c"
+        var $63=$62; //@line 1977 "datetimemodule.c"
+        var $64=HEAP[$63]; //@line 1977 "datetimemodule.c"
+        var $65=($64) - 1; //@line 1977 "datetimemodule.c"
+        var $66=$x; //@line 1977 "datetimemodule.c"
+        var $67=$66; //@line 1977 "datetimemodule.c"
+        HEAP[$67]=$65; //@line 1977 "datetimemodule.c"
+        var $68=$x; //@line 1977 "datetimemodule.c"
+        var $69=$68; //@line 1977 "datetimemodule.c"
+        var $70=HEAP[$69]; //@line 1977 "datetimemodule.c"
+        var $71=($70)==0; //@line 1977 "datetimemodule.c"
+        if ($71) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1977 "datetimemodule.c"
       case 12: // $bb11
-        var $73=$x; //@line 1977 "datetimemodule.c"
-        var $74=$73+4; //@line 1977 "datetimemodule.c"
-        var $75=HEAP[$74]; //@line 1977 "datetimemodule.c"
-        var $76=$75+24; //@line 1977 "datetimemodule.c"
-        var $77=HEAP[$76]; //@line 1977 "datetimemodule.c"
-        var $78=$x; //@line 1977 "datetimemodule.c"
-        FUNCTION_TABLE[$77]($78); //@line 1977 "datetimemodule.c"
+        var $72=$x; //@line 1977 "datetimemodule.c"
+        var $73=$72+4; //@line 1977 "datetimemodule.c"
+        var $74=HEAP[$73]; //@line 1977 "datetimemodule.c"
+        var $75=$74+24; //@line 1977 "datetimemodule.c"
+        var $76=HEAP[$75]; //@line 1977 "datetimemodule.c"
+        var $77=$x; //@line 1977 "datetimemodule.c"
+        FUNCTION_TABLE[$76]($77); //@line 1977 "datetimemodule.c"
         __label__ = 13; break; //@line 1977 "datetimemodule.c"
       case 13: // $bb12
-        var $79=$y; //@line 1977 "datetimemodule.c"
-        $x=$79; //@line 1977 "datetimemodule.c"
-        var $80=($79)==0; //@line 1977 "datetimemodule.c"
-        if ($80) { __label__ = 44; break; } else { __label__ = 14; break; } //@line 1977 "datetimemodule.c"
+        var $78=$y; //@line 1977 "datetimemodule.c"
+        $x=$78; //@line 1977 "datetimemodule.c"
+        var $79=($78)==0; //@line 1977 "datetimemodule.c"
+        if ($79) { __label__ = 41; break; } else { __label__ = 14; break; } //@line 1977 "datetimemodule.c"
       case 14: // $bb13
-        var $81=HEAP[$minute]; //@line 1979 "datetimemodule.c"
-        var $82=($81)!=0; //@line 1979 "datetimemodule.c"
-        if ($82) { __label__ = 15; break; } else { __label__ = 18; break; } //@line 1979 "datetimemodule.c"
+        var $80=HEAP[$minute]; //@line 1979 "datetimemodule.c"
+        var $81=($80)!=0; //@line 1979 "datetimemodule.c"
+        if ($81) { __label__ = 15; break; } else { __label__ = 18; break; } //@line 1979 "datetimemodule.c"
       case 15: // $bb14
-        var $83=HEAP[_us_per_minute]; //@line 1980 "datetimemodule.c"
-        var $84=HEAP[$minute]; //@line 1980 "datetimemodule.c"
-        var $85=$x; //@line 1980 "datetimemodule.c"
-        var $86=_accum(__str118, $85, $84, $83, $leftover_us); //@line 1980 "datetimemodule.c"
-        $y=$86; //@line 1980 "datetimemodule.c"
-        var $87=$x; //@line 1981 "datetimemodule.c"
-        var $88=$87; //@line 1981 "datetimemodule.c"
-        var $89=HEAP[$88]; //@line 1981 "datetimemodule.c"
-        var $90=($89) - 1; //@line 1981 "datetimemodule.c"
-        var $91=$x; //@line 1981 "datetimemodule.c"
-        var $92=$91; //@line 1981 "datetimemodule.c"
-        HEAP[$92]=$90; //@line 1981 "datetimemodule.c"
-        var $93=$x; //@line 1981 "datetimemodule.c"
-        var $94=$93; //@line 1981 "datetimemodule.c"
-        var $95=HEAP[$94]; //@line 1981 "datetimemodule.c"
-        var $96=($95)==0; //@line 1981 "datetimemodule.c"
-        if ($96) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1981 "datetimemodule.c"
+        var $82=HEAP[_us_per_minute]; //@line 1980 "datetimemodule.c"
+        var $83=HEAP[$minute]; //@line 1980 "datetimemodule.c"
+        var $84=$x; //@line 1980 "datetimemodule.c"
+        var $85=_accum(__str118, $84, $83, $82, $leftover_us); //@line 1980 "datetimemodule.c"
+        $y=$85; //@line 1980 "datetimemodule.c"
+        var $86=$x; //@line 1981 "datetimemodule.c"
+        var $87=$86; //@line 1981 "datetimemodule.c"
+        var $88=HEAP[$87]; //@line 1981 "datetimemodule.c"
+        var $89=($88) - 1; //@line 1981 "datetimemodule.c"
+        var $90=$x; //@line 1981 "datetimemodule.c"
+        var $91=$90; //@line 1981 "datetimemodule.c"
+        HEAP[$91]=$89; //@line 1981 "datetimemodule.c"
+        var $92=$x; //@line 1981 "datetimemodule.c"
+        var $93=$92; //@line 1981 "datetimemodule.c"
+        var $94=HEAP[$93]; //@line 1981 "datetimemodule.c"
+        var $95=($94)==0; //@line 1981 "datetimemodule.c"
+        if ($95) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 1981 "datetimemodule.c"
       case 16: // $bb15
-        var $97=$x; //@line 1981 "datetimemodule.c"
-        var $98=$97+4; //@line 1981 "datetimemodule.c"
-        var $99=HEAP[$98]; //@line 1981 "datetimemodule.c"
-        var $100=$99+24; //@line 1981 "datetimemodule.c"
-        var $101=HEAP[$100]; //@line 1981 "datetimemodule.c"
-        var $102=$x; //@line 1981 "datetimemodule.c"
-        FUNCTION_TABLE[$101]($102); //@line 1981 "datetimemodule.c"
+        var $96=$x; //@line 1981 "datetimemodule.c"
+        var $97=$96+4; //@line 1981 "datetimemodule.c"
+        var $98=HEAP[$97]; //@line 1981 "datetimemodule.c"
+        var $99=$98+24; //@line 1981 "datetimemodule.c"
+        var $100=HEAP[$99]; //@line 1981 "datetimemodule.c"
+        var $101=$x; //@line 1981 "datetimemodule.c"
+        FUNCTION_TABLE[$100]($101); //@line 1981 "datetimemodule.c"
         __label__ = 17; break; //@line 1981 "datetimemodule.c"
       case 17: // $bb16
-        var $103=$y; //@line 1981 "datetimemodule.c"
-        $x=$103; //@line 1981 "datetimemodule.c"
-        var $104=($103)==0; //@line 1981 "datetimemodule.c"
-        if ($104) { __label__ = 44; break; } else { __label__ = 18; break; } //@line 1981 "datetimemodule.c"
+        var $102=$y; //@line 1981 "datetimemodule.c"
+        $x=$102; //@line 1981 "datetimemodule.c"
+        var $103=($102)==0; //@line 1981 "datetimemodule.c"
+        if ($103) { __label__ = 41; break; } else { __label__ = 18; break; } //@line 1981 "datetimemodule.c"
       case 18: // $bb17
-        var $105=HEAP[$hour]; //@line 1983 "datetimemodule.c"
-        var $106=($105)!=0; //@line 1983 "datetimemodule.c"
-        if ($106) { __label__ = 19; break; } else { __label__ = 22; break; } //@line 1983 "datetimemodule.c"
+        var $104=HEAP[$hour]; //@line 1983 "datetimemodule.c"
+        var $105=($104)!=0; //@line 1983 "datetimemodule.c"
+        if ($105) { __label__ = 19; break; } else { __label__ = 22; break; } //@line 1983 "datetimemodule.c"
       case 19: // $bb18
-        var $107=HEAP[_us_per_hour]; //@line 1984 "datetimemodule.c"
-        var $108=HEAP[$hour]; //@line 1984 "datetimemodule.c"
-        var $109=$x; //@line 1984 "datetimemodule.c"
-        var $110=_accum(__str119, $109, $108, $107, $leftover_us); //@line 1984 "datetimemodule.c"
-        $y=$110; //@line 1984 "datetimemodule.c"
-        var $111=$x; //@line 1985 "datetimemodule.c"
-        var $112=$111; //@line 1985 "datetimemodule.c"
-        var $113=HEAP[$112]; //@line 1985 "datetimemodule.c"
-        var $114=($113) - 1; //@line 1985 "datetimemodule.c"
-        var $115=$x; //@line 1985 "datetimemodule.c"
-        var $116=$115; //@line 1985 "datetimemodule.c"
-        HEAP[$116]=$114; //@line 1985 "datetimemodule.c"
-        var $117=$x; //@line 1985 "datetimemodule.c"
-        var $118=$117; //@line 1985 "datetimemodule.c"
-        var $119=HEAP[$118]; //@line 1985 "datetimemodule.c"
-        var $120=($119)==0; //@line 1985 "datetimemodule.c"
-        if ($120) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1985 "datetimemodule.c"
+        var $106=HEAP[_us_per_hour]; //@line 1984 "datetimemodule.c"
+        var $107=HEAP[$hour]; //@line 1984 "datetimemodule.c"
+        var $108=$x; //@line 1984 "datetimemodule.c"
+        var $109=_accum(__str119, $108, $107, $106, $leftover_us); //@line 1984 "datetimemodule.c"
+        $y=$109; //@line 1984 "datetimemodule.c"
+        var $110=$x; //@line 1985 "datetimemodule.c"
+        var $111=$110; //@line 1985 "datetimemodule.c"
+        var $112=HEAP[$111]; //@line 1985 "datetimemodule.c"
+        var $113=($112) - 1; //@line 1985 "datetimemodule.c"
+        var $114=$x; //@line 1985 "datetimemodule.c"
+        var $115=$114; //@line 1985 "datetimemodule.c"
+        HEAP[$115]=$113; //@line 1985 "datetimemodule.c"
+        var $116=$x; //@line 1985 "datetimemodule.c"
+        var $117=$116; //@line 1985 "datetimemodule.c"
+        var $118=HEAP[$117]; //@line 1985 "datetimemodule.c"
+        var $119=($118)==0; //@line 1985 "datetimemodule.c"
+        if ($119) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1985 "datetimemodule.c"
       case 20: // $bb19
-        var $121=$x; //@line 1985 "datetimemodule.c"
-        var $122=$121+4; //@line 1985 "datetimemodule.c"
-        var $123=HEAP[$122]; //@line 1985 "datetimemodule.c"
-        var $124=$123+24; //@line 1985 "datetimemodule.c"
-        var $125=HEAP[$124]; //@line 1985 "datetimemodule.c"
-        var $126=$x; //@line 1985 "datetimemodule.c"
-        FUNCTION_TABLE[$125]($126); //@line 1985 "datetimemodule.c"
+        var $120=$x; //@line 1985 "datetimemodule.c"
+        var $121=$120+4; //@line 1985 "datetimemodule.c"
+        var $122=HEAP[$121]; //@line 1985 "datetimemodule.c"
+        var $123=$122+24; //@line 1985 "datetimemodule.c"
+        var $124=HEAP[$123]; //@line 1985 "datetimemodule.c"
+        var $125=$x; //@line 1985 "datetimemodule.c"
+        FUNCTION_TABLE[$124]($125); //@line 1985 "datetimemodule.c"
         __label__ = 21; break; //@line 1985 "datetimemodule.c"
       case 21: // $bb20
-        var $127=$y; //@line 1985 "datetimemodule.c"
-        $x=$127; //@line 1985 "datetimemodule.c"
-        var $128=($127)==0; //@line 1985 "datetimemodule.c"
-        if ($128) { __label__ = 44; break; } else { __label__ = 22; break; } //@line 1985 "datetimemodule.c"
+        var $126=$y; //@line 1985 "datetimemodule.c"
+        $x=$126; //@line 1985 "datetimemodule.c"
+        var $127=($126)==0; //@line 1985 "datetimemodule.c"
+        if ($127) { __label__ = 41; break; } else { __label__ = 22; break; } //@line 1985 "datetimemodule.c"
       case 22: // $bb21
-        var $129=HEAP[$day]; //@line 1987 "datetimemodule.c"
-        var $130=($129)!=0; //@line 1987 "datetimemodule.c"
-        if ($130) { __label__ = 23; break; } else { __label__ = 26; break; } //@line 1987 "datetimemodule.c"
+        var $128=HEAP[$day]; //@line 1987 "datetimemodule.c"
+        var $129=($128)!=0; //@line 1987 "datetimemodule.c"
+        if ($129) { __label__ = 23; break; } else { __label__ = 26; break; } //@line 1987 "datetimemodule.c"
       case 23: // $bb22
-        var $131=HEAP[_us_per_day]; //@line 1988 "datetimemodule.c"
-        var $132=HEAP[$day]; //@line 1988 "datetimemodule.c"
-        var $133=$x; //@line 1988 "datetimemodule.c"
-        var $134=_accum(__str114, $133, $132, $131, $leftover_us); //@line 1988 "datetimemodule.c"
-        $y=$134; //@line 1988 "datetimemodule.c"
-        var $135=$x; //@line 1989 "datetimemodule.c"
-        var $136=$135; //@line 1989 "datetimemodule.c"
-        var $137=HEAP[$136]; //@line 1989 "datetimemodule.c"
-        var $138=($137) - 1; //@line 1989 "datetimemodule.c"
-        var $139=$x; //@line 1989 "datetimemodule.c"
-        var $140=$139; //@line 1989 "datetimemodule.c"
-        HEAP[$140]=$138; //@line 1989 "datetimemodule.c"
-        var $141=$x; //@line 1989 "datetimemodule.c"
-        var $142=$141; //@line 1989 "datetimemodule.c"
-        var $143=HEAP[$142]; //@line 1989 "datetimemodule.c"
-        var $144=($143)==0; //@line 1989 "datetimemodule.c"
-        if ($144) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 1989 "datetimemodule.c"
+        var $130=HEAP[_us_per_day]; //@line 1988 "datetimemodule.c"
+        var $131=HEAP[$day]; //@line 1988 "datetimemodule.c"
+        var $132=$x; //@line 1988 "datetimemodule.c"
+        var $133=_accum(__str114, $132, $131, $130, $leftover_us); //@line 1988 "datetimemodule.c"
+        $y=$133; //@line 1988 "datetimemodule.c"
+        var $134=$x; //@line 1989 "datetimemodule.c"
+        var $135=$134; //@line 1989 "datetimemodule.c"
+        var $136=HEAP[$135]; //@line 1989 "datetimemodule.c"
+        var $137=($136) - 1; //@line 1989 "datetimemodule.c"
+        var $138=$x; //@line 1989 "datetimemodule.c"
+        var $139=$138; //@line 1989 "datetimemodule.c"
+        HEAP[$139]=$137; //@line 1989 "datetimemodule.c"
+        var $140=$x; //@line 1989 "datetimemodule.c"
+        var $141=$140; //@line 1989 "datetimemodule.c"
+        var $142=HEAP[$141]; //@line 1989 "datetimemodule.c"
+        var $143=($142)==0; //@line 1989 "datetimemodule.c"
+        if ($143) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 1989 "datetimemodule.c"
       case 24: // $bb23
-        var $145=$x; //@line 1989 "datetimemodule.c"
-        var $146=$145+4; //@line 1989 "datetimemodule.c"
-        var $147=HEAP[$146]; //@line 1989 "datetimemodule.c"
-        var $148=$147+24; //@line 1989 "datetimemodule.c"
-        var $149=HEAP[$148]; //@line 1989 "datetimemodule.c"
-        var $150=$x; //@line 1989 "datetimemodule.c"
-        FUNCTION_TABLE[$149]($150); //@line 1989 "datetimemodule.c"
+        var $144=$x; //@line 1989 "datetimemodule.c"
+        var $145=$144+4; //@line 1989 "datetimemodule.c"
+        var $146=HEAP[$145]; //@line 1989 "datetimemodule.c"
+        var $147=$146+24; //@line 1989 "datetimemodule.c"
+        var $148=HEAP[$147]; //@line 1989 "datetimemodule.c"
+        var $149=$x; //@line 1989 "datetimemodule.c"
+        FUNCTION_TABLE[$148]($149); //@line 1989 "datetimemodule.c"
         __label__ = 25; break; //@line 1989 "datetimemodule.c"
       case 25: // $bb24
-        var $151=$y; //@line 1989 "datetimemodule.c"
-        $x=$151; //@line 1989 "datetimemodule.c"
-        var $152=($151)==0; //@line 1989 "datetimemodule.c"
-        if ($152) { __label__ = 44; break; } else { __label__ = 26; break; } //@line 1989 "datetimemodule.c"
+        var $150=$y; //@line 1989 "datetimemodule.c"
+        $x=$150; //@line 1989 "datetimemodule.c"
+        var $151=($150)==0; //@line 1989 "datetimemodule.c"
+        if ($151) { __label__ = 41; break; } else { __label__ = 26; break; } //@line 1989 "datetimemodule.c"
       case 26: // $bb25
-        var $153=HEAP[$week]; //@line 1991 "datetimemodule.c"
-        var $154=($153)!=0; //@line 1991 "datetimemodule.c"
-        if ($154) { __label__ = 27; break; } else { __label__ = 30; break; } //@line 1991 "datetimemodule.c"
+        var $152=HEAP[$week]; //@line 1991 "datetimemodule.c"
+        var $153=($152)!=0; //@line 1991 "datetimemodule.c"
+        if ($153) { __label__ = 27; break; } else { __label__ = 30; break; } //@line 1991 "datetimemodule.c"
       case 27: // $bb26
-        var $155=HEAP[_us_per_week]; //@line 1992 "datetimemodule.c"
-        var $156=HEAP[$week]; //@line 1992 "datetimemodule.c"
-        var $157=$x; //@line 1992 "datetimemodule.c"
-        var $158=_accum(__str120, $157, $156, $155, $leftover_us); //@line 1992 "datetimemodule.c"
-        $y=$158; //@line 1992 "datetimemodule.c"
-        var $159=$x; //@line 1993 "datetimemodule.c"
-        var $160=$159; //@line 1993 "datetimemodule.c"
-        var $161=HEAP[$160]; //@line 1993 "datetimemodule.c"
-        var $162=($161) - 1; //@line 1993 "datetimemodule.c"
-        var $163=$x; //@line 1993 "datetimemodule.c"
-        var $164=$163; //@line 1993 "datetimemodule.c"
-        HEAP[$164]=$162; //@line 1993 "datetimemodule.c"
-        var $165=$x; //@line 1993 "datetimemodule.c"
-        var $166=$165; //@line 1993 "datetimemodule.c"
-        var $167=HEAP[$166]; //@line 1993 "datetimemodule.c"
-        var $168=($167)==0; //@line 1993 "datetimemodule.c"
-        if ($168) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1993 "datetimemodule.c"
+        var $154=HEAP[_us_per_week]; //@line 1992 "datetimemodule.c"
+        var $155=HEAP[$week]; //@line 1992 "datetimemodule.c"
+        var $156=$x; //@line 1992 "datetimemodule.c"
+        var $157=_accum(__str120, $156, $155, $154, $leftover_us); //@line 1992 "datetimemodule.c"
+        $y=$157; //@line 1992 "datetimemodule.c"
+        var $158=$x; //@line 1993 "datetimemodule.c"
+        var $159=$158; //@line 1993 "datetimemodule.c"
+        var $160=HEAP[$159]; //@line 1993 "datetimemodule.c"
+        var $161=($160) - 1; //@line 1993 "datetimemodule.c"
+        var $162=$x; //@line 1993 "datetimemodule.c"
+        var $163=$162; //@line 1993 "datetimemodule.c"
+        HEAP[$163]=$161; //@line 1993 "datetimemodule.c"
+        var $164=$x; //@line 1993 "datetimemodule.c"
+        var $165=$164; //@line 1993 "datetimemodule.c"
+        var $166=HEAP[$165]; //@line 1993 "datetimemodule.c"
+        var $167=($166)==0; //@line 1993 "datetimemodule.c"
+        if ($167) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 1993 "datetimemodule.c"
       case 28: // $bb27
-        var $169=$x; //@line 1993 "datetimemodule.c"
-        var $170=$169+4; //@line 1993 "datetimemodule.c"
-        var $171=HEAP[$170]; //@line 1993 "datetimemodule.c"
-        var $172=$171+24; //@line 1993 "datetimemodule.c"
-        var $173=HEAP[$172]; //@line 1993 "datetimemodule.c"
-        var $174=$x; //@line 1993 "datetimemodule.c"
-        FUNCTION_TABLE[$173]($174); //@line 1993 "datetimemodule.c"
+        var $168=$x; //@line 1993 "datetimemodule.c"
+        var $169=$168+4; //@line 1993 "datetimemodule.c"
+        var $170=HEAP[$169]; //@line 1993 "datetimemodule.c"
+        var $171=$170+24; //@line 1993 "datetimemodule.c"
+        var $172=HEAP[$171]; //@line 1993 "datetimemodule.c"
+        var $173=$x; //@line 1993 "datetimemodule.c"
+        FUNCTION_TABLE[$172]($173); //@line 1993 "datetimemodule.c"
         __label__ = 29; break; //@line 1993 "datetimemodule.c"
       case 29: // $bb28
-        var $175=$y; //@line 1993 "datetimemodule.c"
-        $x=$175; //@line 1993 "datetimemodule.c"
-        var $176=($175)==0; //@line 1993 "datetimemodule.c"
-        if ($176) { __label__ = 44; break; } else { __label__ = 30; break; } //@line 1993 "datetimemodule.c"
+        var $174=$y; //@line 1993 "datetimemodule.c"
+        $x=$174; //@line 1993 "datetimemodule.c"
+        var $175=($174)==0; //@line 1993 "datetimemodule.c"
+        if ($175) { __label__ = 41; break; } else { __label__ = 30; break; } //@line 1993 "datetimemodule.c"
       case 30: // $bb29
-        var $177=HEAP[$leftover_us]; //@line 1995 "datetimemodule.c"
-        var $178=($177) != 0; //@line 1995 "datetimemodule.c"
-        if ($178) { __label__ = 31; break; } else { __label__ = 42; break; } //@line 1995 "datetimemodule.c"
+        var $176=HEAP[$leftover_us]; //@line 1995 "datetimemodule.c"
+        var $177=($176) != 0; //@line 1995 "datetimemodule.c"
+        if ($177) { __label__ = 31; break; } else { __label__ = 39; break; } //@line 1995 "datetimemodule.c"
       case 31: // $bb30
-        var $179=HEAP[$leftover_us]; //@line 1997 "datetimemodule.c"
-        $x_addr_i=$179;
-        var $180=$x_addr_i; //@line 150 "datetimemodule.c"
-        var $181=($180) >= 0; //@line 150 "datetimemodule.c"
-        var $182=$x_addr_i; //@line 151 "datetimemodule.c"
-        if ($181) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 150 "datetimemodule.c"
-      case 32: // $bb_i
-        var $183=($182) + 0.5; //@line 151 "datetimemodule.c"
-        var $184=_floor($183); //@line 151 "datetimemodule.c"
-        $x_addr_i=$184; //@line 151 "datetimemodule.c"
-        __label__ = 34; break; //@line 151 "datetimemodule.c"
-      case 33: // $bb1_i
-        var $185=($182) - 0.5; //@line 153 "datetimemodule.c"
-        var $186=_ceil($185); //@line 153 "datetimemodule.c"
-        $x_addr_i=$186; //@line 153 "datetimemodule.c"
-        __label__ = 34; break; //@line 153 "datetimemodule.c"
-      case 34: // $round_to_long_exit
-        var $187=$x_addr_i; //@line 154 "datetimemodule.c"
-        var $188=((($187))|0); //@line 154 "datetimemodule.c"
-        $0=$188; //@line 154 "datetimemodule.c"
-        var $189=$0; //@line 154 "datetimemodule.c"
-        $retval_i=$189; //@line 154 "datetimemodule.c"
-        var $retval3_i=$retval_i; //@line 154 "datetimemodule.c"
-        var $190=_PyLong_FromLong($retval3_i); //@line 1997 "datetimemodule.c"
-        $temp=$190; //@line 1997 "datetimemodule.c"
-        var $191=($190)==0; //@line 1998 "datetimemodule.c"
-        var $192=$x; //@line 1999 "datetimemodule.c"
-        if ($191) { __label__ = 35; break; } else { __label__ = 37; break; } //@line 1998 "datetimemodule.c"
-      case 35: // $bb31
-        var $193=$192; //@line 1999 "datetimemodule.c"
-        var $194=HEAP[$193]; //@line 1999 "datetimemodule.c"
-        var $195=($194) - 1; //@line 1999 "datetimemodule.c"
-        var $196=$x; //@line 1999 "datetimemodule.c"
-        var $197=$196; //@line 1999 "datetimemodule.c"
-        HEAP[$197]=$195; //@line 1999 "datetimemodule.c"
+        var $178=HEAP[$leftover_us]; //@line 1997 "datetimemodule.c"
+        var $179=_round_to_long($178); //@line 1997 "datetimemodule.c"
+        var $180=_PyLong_FromLong($179); //@line 1997 "datetimemodule.c"
+        $temp=$180; //@line 1997 "datetimemodule.c"
+        var $181=$temp; //@line 1998 "datetimemodule.c"
+        var $182=($181)==0; //@line 1998 "datetimemodule.c"
+        var $183=$x; //@line 1999 "datetimemodule.c"
+        if ($182) { __label__ = 32; break; } else { __label__ = 34; break; } //@line 1998 "datetimemodule.c"
+      case 32: // $bb31
+        var $184=$183; //@line 1999 "datetimemodule.c"
+        var $185=HEAP[$184]; //@line 1999 "datetimemodule.c"
+        var $186=($185) - 1; //@line 1999 "datetimemodule.c"
+        var $187=$x; //@line 1999 "datetimemodule.c"
+        var $188=$187; //@line 1999 "datetimemodule.c"
+        HEAP[$188]=$186; //@line 1999 "datetimemodule.c"
+        var $189=$x; //@line 1999 "datetimemodule.c"
+        var $190=$189; //@line 1999 "datetimemodule.c"
+        var $191=HEAP[$190]; //@line 1999 "datetimemodule.c"
+        var $192=($191)==0; //@line 1999 "datetimemodule.c"
+        if ($192) { __label__ = 33; break; } else { __label__ = 41; break; } //@line 1999 "datetimemodule.c"
+      case 33: // $bb32
+        var $193=$x; //@line 1999 "datetimemodule.c"
+        var $194=$193+4; //@line 1999 "datetimemodule.c"
+        var $195=HEAP[$194]; //@line 1999 "datetimemodule.c"
+        var $196=$195+24; //@line 1999 "datetimemodule.c"
+        var $197=HEAP[$196]; //@line 1999 "datetimemodule.c"
         var $198=$x; //@line 1999 "datetimemodule.c"
-        var $199=$198; //@line 1999 "datetimemodule.c"
-        var $200=HEAP[$199]; //@line 1999 "datetimemodule.c"
-        var $201=($200)==0; //@line 1999 "datetimemodule.c"
-        if ($201) { __label__ = 36; break; } else { __label__ = 44; break; } //@line 1999 "datetimemodule.c"
-      case 36: // $bb32
-        var $202=$x; //@line 1999 "datetimemodule.c"
-        var $203=$202+4; //@line 1999 "datetimemodule.c"
-        var $204=HEAP[$203]; //@line 1999 "datetimemodule.c"
-        var $205=$204+24; //@line 1999 "datetimemodule.c"
-        var $206=HEAP[$205]; //@line 1999 "datetimemodule.c"
-        var $207=$x; //@line 1999 "datetimemodule.c"
-        FUNCTION_TABLE[$206]($207); //@line 1999 "datetimemodule.c"
-        __label__ = 44; break; //@line 1999 "datetimemodule.c"
-      case 37: // $bb34
-        var $208=$temp; //@line 2002 "datetimemodule.c"
-        var $209=_PyNumber_Add($192, $208); //@line 2002 "datetimemodule.c"
-        $y=$209; //@line 2002 "datetimemodule.c"
-        var $210=$temp; //@line 2003 "datetimemodule.c"
-        var $211=$210; //@line 2003 "datetimemodule.c"
-        var $212=HEAP[$211]; //@line 2003 "datetimemodule.c"
-        var $213=($212) - 1; //@line 2003 "datetimemodule.c"
-        var $214=$temp; //@line 2003 "datetimemodule.c"
-        var $215=$214; //@line 2003 "datetimemodule.c"
-        HEAP[$215]=$213; //@line 2003 "datetimemodule.c"
+        FUNCTION_TABLE[$197]($198); //@line 1999 "datetimemodule.c"
+        __label__ = 41; break; //@line 1999 "datetimemodule.c"
+      case 34: // $bb34
+        var $199=$temp; //@line 2002 "datetimemodule.c"
+        var $200=_PyNumber_Add($183, $199); //@line 2002 "datetimemodule.c"
+        $y=$200; //@line 2002 "datetimemodule.c"
+        var $201=$temp; //@line 2003 "datetimemodule.c"
+        var $202=$201; //@line 2003 "datetimemodule.c"
+        var $203=HEAP[$202]; //@line 2003 "datetimemodule.c"
+        var $204=($203) - 1; //@line 2003 "datetimemodule.c"
+        var $205=$temp; //@line 2003 "datetimemodule.c"
+        var $206=$205; //@line 2003 "datetimemodule.c"
+        HEAP[$206]=$204; //@line 2003 "datetimemodule.c"
+        var $207=$temp; //@line 2003 "datetimemodule.c"
+        var $208=$207; //@line 2003 "datetimemodule.c"
+        var $209=HEAP[$208]; //@line 2003 "datetimemodule.c"
+        var $210=($209)==0; //@line 2003 "datetimemodule.c"
+        if ($210) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 2003 "datetimemodule.c"
+      case 35: // $bb35
+        var $211=$temp; //@line 2003 "datetimemodule.c"
+        var $212=$211+4; //@line 2003 "datetimemodule.c"
+        var $213=HEAP[$212]; //@line 2003 "datetimemodule.c"
+        var $214=$213+24; //@line 2003 "datetimemodule.c"
+        var $215=HEAP[$214]; //@line 2003 "datetimemodule.c"
         var $216=$temp; //@line 2003 "datetimemodule.c"
-        var $217=$216; //@line 2003 "datetimemodule.c"
-        var $218=HEAP[$217]; //@line 2003 "datetimemodule.c"
-        var $219=($218)==0; //@line 2003 "datetimemodule.c"
-        if ($219) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 2003 "datetimemodule.c"
-      case 38: // $bb35
-        var $220=$temp; //@line 2003 "datetimemodule.c"
-        var $221=$220+4; //@line 2003 "datetimemodule.c"
-        var $222=HEAP[$221]; //@line 2003 "datetimemodule.c"
-        var $223=$222+24; //@line 2003 "datetimemodule.c"
-        var $224=HEAP[$223]; //@line 2003 "datetimemodule.c"
-        var $225=$temp; //@line 2003 "datetimemodule.c"
-        FUNCTION_TABLE[$224]($225); //@line 2003 "datetimemodule.c"
-        __label__ = 39; break; //@line 2003 "datetimemodule.c"
-      case 39: // $bb36
-        var $226=$x; //@line 2004 "datetimemodule.c"
-        var $227=$226; //@line 2004 "datetimemodule.c"
-        var $228=HEAP[$227]; //@line 2004 "datetimemodule.c"
-        var $229=($228) - 1; //@line 2004 "datetimemodule.c"
-        var $230=$x; //@line 2004 "datetimemodule.c"
-        var $231=$230; //@line 2004 "datetimemodule.c"
-        HEAP[$231]=$229; //@line 2004 "datetimemodule.c"
+        FUNCTION_TABLE[$215]($216); //@line 2003 "datetimemodule.c"
+        __label__ = 36; break; //@line 2003 "datetimemodule.c"
+      case 36: // $bb36
+        var $217=$x; //@line 2004 "datetimemodule.c"
+        var $218=$217; //@line 2004 "datetimemodule.c"
+        var $219=HEAP[$218]; //@line 2004 "datetimemodule.c"
+        var $220=($219) - 1; //@line 2004 "datetimemodule.c"
+        var $221=$x; //@line 2004 "datetimemodule.c"
+        var $222=$221; //@line 2004 "datetimemodule.c"
+        HEAP[$222]=$220; //@line 2004 "datetimemodule.c"
+        var $223=$x; //@line 2004 "datetimemodule.c"
+        var $224=$223; //@line 2004 "datetimemodule.c"
+        var $225=HEAP[$224]; //@line 2004 "datetimemodule.c"
+        var $226=($225)==0; //@line 2004 "datetimemodule.c"
+        if ($226) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 2004 "datetimemodule.c"
+      case 37: // $bb37
+        var $227=$x; //@line 2004 "datetimemodule.c"
+        var $228=$227+4; //@line 2004 "datetimemodule.c"
+        var $229=HEAP[$228]; //@line 2004 "datetimemodule.c"
+        var $230=$229+24; //@line 2004 "datetimemodule.c"
+        var $231=HEAP[$230]; //@line 2004 "datetimemodule.c"
         var $232=$x; //@line 2004 "datetimemodule.c"
-        var $233=$232; //@line 2004 "datetimemodule.c"
-        var $234=HEAP[$233]; //@line 2004 "datetimemodule.c"
-        var $235=($234)==0; //@line 2004 "datetimemodule.c"
-        if ($235) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 2004 "datetimemodule.c"
-      case 40: // $bb37
-        var $236=$x; //@line 2004 "datetimemodule.c"
-        var $237=$236+4; //@line 2004 "datetimemodule.c"
-        var $238=HEAP[$237]; //@line 2004 "datetimemodule.c"
-        var $239=$238+24; //@line 2004 "datetimemodule.c"
-        var $240=HEAP[$239]; //@line 2004 "datetimemodule.c"
-        var $241=$x; //@line 2004 "datetimemodule.c"
-        FUNCTION_TABLE[$240]($241); //@line 2004 "datetimemodule.c"
-        __label__ = 41; break; //@line 2004 "datetimemodule.c"
-      case 41: // $bb38
-        var $242=$y; //@line 2004 "datetimemodule.c"
-        $x=$242; //@line 2004 "datetimemodule.c"
-        var $243=($242)==0; //@line 2004 "datetimemodule.c"
-        if ($243) { __label__ = 44; break; } else { __label__ = 42; break; } //@line 2004 "datetimemodule.c"
-      case 42: // $bb39
-        var $244=$x; //@line 2007 "datetimemodule.c"
-        var $245=$type_addr; //@line 2007 "datetimemodule.c"
-        var $246=_microseconds_to_delta_ex($244, $245); //@line 2007 "datetimemodule.c"
-        $self=$246; //@line 2007 "datetimemodule.c"
-        var $247=$x; //@line 2008 "datetimemodule.c"
-        var $248=$247; //@line 2008 "datetimemodule.c"
-        var $249=HEAP[$248]; //@line 2008 "datetimemodule.c"
-        var $250=($249) - 1; //@line 2008 "datetimemodule.c"
-        var $251=$x; //@line 2008 "datetimemodule.c"
-        var $252=$251; //@line 2008 "datetimemodule.c"
-        HEAP[$252]=$250; //@line 2008 "datetimemodule.c"
+        FUNCTION_TABLE[$231]($232); //@line 2004 "datetimemodule.c"
+        __label__ = 38; break; //@line 2004 "datetimemodule.c"
+      case 38: // $bb38
+        var $233=$y; //@line 2004 "datetimemodule.c"
+        $x=$233; //@line 2004 "datetimemodule.c"
+        var $234=($233)==0; //@line 2004 "datetimemodule.c"
+        if ($234) { __label__ = 41; break; } else { __label__ = 39; break; } //@line 2004 "datetimemodule.c"
+      case 39: // $bb39
+        var $235=$x; //@line 2007 "datetimemodule.c"
+        var $236=$type_addr; //@line 2007 "datetimemodule.c"
+        var $237=_microseconds_to_delta_ex($235, $236); //@line 2007 "datetimemodule.c"
+        $self=$237; //@line 2007 "datetimemodule.c"
+        var $238=$x; //@line 2008 "datetimemodule.c"
+        var $239=$238; //@line 2008 "datetimemodule.c"
+        var $240=HEAP[$239]; //@line 2008 "datetimemodule.c"
+        var $241=($240) - 1; //@line 2008 "datetimemodule.c"
+        var $242=$x; //@line 2008 "datetimemodule.c"
+        var $243=$242; //@line 2008 "datetimemodule.c"
+        HEAP[$243]=$241; //@line 2008 "datetimemodule.c"
+        var $244=$x; //@line 2008 "datetimemodule.c"
+        var $245=$244; //@line 2008 "datetimemodule.c"
+        var $246=HEAP[$245]; //@line 2008 "datetimemodule.c"
+        var $247=($246)==0; //@line 2008 "datetimemodule.c"
+        if ($247) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 2008 "datetimemodule.c"
+      case 40: // $bb40
+        var $248=$x; //@line 2008 "datetimemodule.c"
+        var $249=$248+4; //@line 2008 "datetimemodule.c"
+        var $250=HEAP[$249]; //@line 2008 "datetimemodule.c"
+        var $251=$250+24; //@line 2008 "datetimemodule.c"
+        var $252=HEAP[$251]; //@line 2008 "datetimemodule.c"
         var $253=$x; //@line 2008 "datetimemodule.c"
-        var $254=$253; //@line 2008 "datetimemodule.c"
-        var $255=HEAP[$254]; //@line 2008 "datetimemodule.c"
-        var $256=($255)==0; //@line 2008 "datetimemodule.c"
-        if ($256) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 2008 "datetimemodule.c"
-      case 43: // $bb40
-        var $257=$x; //@line 2008 "datetimemodule.c"
-        var $258=$257+4; //@line 2008 "datetimemodule.c"
-        var $259=HEAP[$258]; //@line 2008 "datetimemodule.c"
-        var $260=$259+24; //@line 2008 "datetimemodule.c"
-        var $261=HEAP[$260]; //@line 2008 "datetimemodule.c"
-        var $262=$x; //@line 2008 "datetimemodule.c"
-        FUNCTION_TABLE[$261]($262); //@line 2008 "datetimemodule.c"
-        __label__ = 44; break; //@line 2009 "datetimemodule.c"
-      case 44: // $Done
-        var $263=$self; //@line 2010 "datetimemodule.c"
-        $1=$263; //@line 2010 "datetimemodule.c"
-        var $264=$1; //@line 2010 "datetimemodule.c"
-        $retval=$264; //@line 2010 "datetimemodule.c"
+        FUNCTION_TABLE[$252]($253); //@line 2008 "datetimemodule.c"
+        __label__ = 41; break; //@line 2009 "datetimemodule.c"
+      case 41: // $Done
+        var $254=$self; //@line 2010 "datetimemodule.c"
+        $0=$254; //@line 2010 "datetimemodule.c"
+        var $255=$0; //@line 2010 "datetimemodule.c"
+        $retval=$255; //@line 2010 "datetimemodule.c"
         var $retval41=$retval; //@line 2010 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval41; //@line 2010 "datetimemodule.c"
@@ -6990,7 +7110,7 @@ var _initialized_b;
         var $17=HEAP[$16]; //@line 2027 "datetimemodule.c"
         var $18=$17+12; //@line 2027 "datetimemodule.c"
         var $19=HEAP[$18]; //@line 2027 "datetimemodule.c"
-        var $20=_PyString_FromFormat(__str121, $19, $13, $10, $7); //@line 2027 "datetimemodule.c"
+        var $20=_PyString_FromFormat(__str121, allocate([$19,0,0,0,$13,0,0,0,$10,0,0,0,$7,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2027 "datetimemodule.c"
         $0=$20; //@line 2027 "datetimemodule.c"
         __label__ = 5; break; //@line 2027 "datetimemodule.c"
       case 2: // $bb1
@@ -7011,7 +7131,7 @@ var _initialized_b;
         var $33=HEAP[$32]; //@line 2033 "datetimemodule.c"
         var $34=$33+12; //@line 2033 "datetimemodule.c"
         var $35=HEAP[$34]; //@line 2033 "datetimemodule.c"
-        var $36=_PyString_FromFormat(__str122, $35, $29, $26); //@line 2033 "datetimemodule.c"
+        var $36=_PyString_FromFormat(__str122, allocate([$35,0,0,0,$29,0,0,0,$26,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2033 "datetimemodule.c"
         $0=$36; //@line 2033 "datetimemodule.c"
         __label__ = 5; break; //@line 2033 "datetimemodule.c"
       case 4: // $bb3
@@ -7023,7 +7143,7 @@ var _initialized_b;
         var $42=HEAP[$41]; //@line 2038 "datetimemodule.c"
         var $43=$42+12; //@line 2038 "datetimemodule.c"
         var $44=HEAP[$43]; //@line 2038 "datetimemodule.c"
-        var $45=_PyString_FromFormat(__str123, $44, $38); //@line 2038 "datetimemodule.c"
+        var $45=_PyString_FromFormat(__str123, allocate([$44,0,0,0,$38,0,0,0], ["i8*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2038 "datetimemodule.c"
         $0=$45; //@line 2038 "datetimemodule.c"
         __label__ = 5; break; //@line 2038 "datetimemodule.c"
       case 5: // $bb4
@@ -7099,7 +7219,7 @@ var _initialized_b;
         var $21=$buflen; //@line 2060 "datetimemodule.c"
         var $22=$days; //@line 2060 "datetimemodule.c"
         var $23=$iftmp_141; //@line 2060 "datetimemodule.c"
-        var $24=_PyOS_snprintf($20, $21, __str125, $22, $23); //@line 2060 "datetimemodule.c"
+        var $24=_PyOS_snprintf($20, $21, __str125, allocate([$22,0,0,0,$23,0,0,0], ["i32",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 2060 "datetimemodule.c"
         $n=$24; //@line 2060 "datetimemodule.c"
         var $25=($24) < 0; //@line 2062 "datetimemodule.c"
         if ($25) { __label__ = 14; break; } else { __label__ = 5; break; } //@line 2062 "datetimemodule.c"
@@ -7124,7 +7244,7 @@ var _initialized_b;
         var $37=$pbuf; //@line 2068 "datetimemodule.c"
         var $38=$buflen; //@line 2068 "datetimemodule.c"
         var $39=$hours; //@line 2068 "datetimemodule.c"
-        var $40=_PyOS_snprintf($37, $38, __str126, $39, $36, $35); //@line 2068 "datetimemodule.c"
+        var $40=_PyOS_snprintf($37, $38, __str126, allocate([$39,0,0,0,$36,0,0,0,$35,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2068 "datetimemodule.c"
         $n=$40; //@line 2068 "datetimemodule.c"
         var $41=($40) < 0; //@line 2070 "datetimemodule.c"
         if ($41) { __label__ = 14; break; } else { __label__ = 8; break; } //@line 2070 "datetimemodule.c"
@@ -7149,7 +7269,7 @@ var _initialized_b;
         var $53=$pbuf; //@line 2076 "datetimemodule.c"
         var $54=$buflen; //@line 2076 "datetimemodule.c"
         var $55=$us; //@line 2076 "datetimemodule.c"
-        var $56=_PyOS_snprintf($53, $54, __str98, $55); //@line 2076 "datetimemodule.c"
+        var $56=_PyOS_snprintf($53, $54, __str98, allocate([$55,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 2076 "datetimemodule.c"
         $n=$56; //@line 2076 "datetimemodule.c"
         var $57=$n; //@line 2077 "datetimemodule.c"
         var $58=($57) < 0; //@line 2077 "datetimemodule.c"
@@ -7188,6 +7308,33 @@ var _initialized_b;
         return $retval20; //@line 2082 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _delta_getstate($self) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    var $1=$self_addr; //@line 2095 "datetimemodule.c"
+    var $2=$1+20; //@line 2095 "datetimemodule.c"
+    var $3=HEAP[$2]; //@line 2095 "datetimemodule.c"
+    var $4=$self_addr; //@line 2095 "datetimemodule.c"
+    var $5=$4+16; //@line 2095 "datetimemodule.c"
+    var $6=HEAP[$5]; //@line 2095 "datetimemodule.c"
+    var $7=$self_addr; //@line 2095 "datetimemodule.c"
+    var $8=$7+12; //@line 2095 "datetimemodule.c"
+    var $9=HEAP[$8]; //@line 2095 "datetimemodule.c"
+    var $10=__Py_BuildValue_SizeT(__str128, allocate([$9,0,0,0,$6,0,0,0,$3,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2095 "datetimemodule.c"
+    $0=$10; //@line 2095 "datetimemodule.c"
+    var $11=$0; //@line 2095 "datetimemodule.c"
+    $retval=$11; //@line 2095 "datetimemodule.c"
+    var $retval1=$retval; //@line 2095 "datetimemodule.c"
+    ;
+    return $retval1; //@line 2095 "datetimemodule.c"
   }
   
 
@@ -7311,37 +7458,20 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $self_addr_i;
-    var $retval_i;
-    var $0;
     var $self_addr;
     var $retval;
-    var $1;
+    var $0;
     $self_addr=$self;
-    var $2=$self_addr; //@line 2127 "datetimemodule.c"
-    $self_addr_i=$2;
-    var $3=$self_addr_i; //@line 2095 "datetimemodule.c"
-    var $4=$3+20; //@line 2095 "datetimemodule.c"
-    var $5=HEAP[$4]; //@line 2095 "datetimemodule.c"
-    var $6=$self_addr_i; //@line 2095 "datetimemodule.c"
-    var $7=$6+16; //@line 2095 "datetimemodule.c"
-    var $8=HEAP[$7]; //@line 2095 "datetimemodule.c"
-    var $9=$self_addr_i; //@line 2095 "datetimemodule.c"
-    var $10=$9+12; //@line 2095 "datetimemodule.c"
-    var $11=HEAP[$10]; //@line 2095 "datetimemodule.c"
-    var $12=__Py_BuildValue_SizeT(__str128, $11, $8, $5); //@line 2095 "datetimemodule.c"
-    $0=$12; //@line 2095 "datetimemodule.c"
-    var $13=$0; //@line 2095 "datetimemodule.c"
-    $retval_i=$13; //@line 2095 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 2095 "datetimemodule.c"
-    var $14=$self_addr; //@line 2127 "datetimemodule.c"
-    var $15=$14; //@line 2127 "datetimemodule.c"
-    var $16=$15+4; //@line 2127 "datetimemodule.c"
-    var $17=HEAP[$16]; //@line 2127 "datetimemodule.c"
-    var $18=__Py_BuildValue_SizeT(__str129, $17, $retval1_i); //@line 2127 "datetimemodule.c"
-    $1=$18; //@line 2127 "datetimemodule.c"
-    var $19=$1; //@line 2127 "datetimemodule.c"
-    $retval=$19; //@line 2127 "datetimemodule.c"
+    var $1=$self_addr; //@line 2127 "datetimemodule.c"
+    var $2=_delta_getstate($1); //@line 2127 "datetimemodule.c"
+    var $3=$self_addr; //@line 2127 "datetimemodule.c"
+    var $4=$3; //@line 2127 "datetimemodule.c"
+    var $5=$4+4; //@line 2127 "datetimemodule.c"
+    var $6=HEAP[$5]; //@line 2127 "datetimemodule.c"
+    var $7=__Py_BuildValue_SizeT(__str129, allocate([$6,0,0,0,$2,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 2127 "datetimemodule.c"
+    $0=$7; //@line 2127 "datetimemodule.c"
+    var $8=$0; //@line 2127 "datetimemodule.c"
+    $retval=$8; //@line 2127 "datetimemodule.c"
     var $retval1=$retval; //@line 2127 "datetimemodule.c"
     ;
     return $retval1; //@line 2127 "datetimemodule.c"
@@ -7524,7 +7654,7 @@ var _initialized_b;
       case 7: // $bb6
         var $51=$args_addr; //@line 2303 "datetimemodule.c"
         var $52=$kw_addr; //@line 2303 "datetimemodule.c"
-        var $53=__PyArg_ParseTupleAndKeywords_SizeT($51, $52, __str128, _date_kws, $year, $month, $day); //@line 2303 "datetimemodule.c"
+        var $53=__PyArg_ParseTupleAndKeywords_SizeT($51, $52, __str128, _date_kws, allocate([$year,0,0,0,$month,0,0,0,$day,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2303 "datetimemodule.c"
         var $54=($53)!=0; //@line 2303 "datetimemodule.c"
         if ($54) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 2303 "datetimemodule.c"
       case 8: // $bb7
@@ -7560,98 +7690,130 @@ var _initialized_b;
   }
   
 
+  function _date_local_from_time_t($cls, $ts) {
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $cls_addr;
+        var $ts_addr;
+        var $retval;
+        var $0;
+        var $tm;
+        var $t=__stackBase__;
+        var $result;
+        $cls_addr=$cls;
+        $ts_addr=$ts;
+        $result=0; //@line 2318 "datetimemodule.c"
+        var $1=$ts_addr; //@line 2320 "datetimemodule.c"
+        var $2=__PyTime_DoubleToTimet($1); //@line 2320 "datetimemodule.c"
+        HEAP[$t]=$2; //@line 2320 "datetimemodule.c"
+        var $3=HEAP[$t]; //@line 2321 "datetimemodule.c"
+        var $4=($3)==-1; //@line 2321 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 2321 "datetimemodule.c"
+      case 1: // $bb
+        var $5=_PyErr_Occurred(); //@line 2321 "datetimemodule.c"
+        var $6=($5)!=0; //@line 2321 "datetimemodule.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2321 "datetimemodule.c"
+      case 2: // $bb1
+        $0=0; //@line 2322 "datetimemodule.c"
+        __label__ = 7; break; //@line 2322 "datetimemodule.c"
+      case 3: // $bb2
+        var $7=_localtime($t); //@line 2323 "datetimemodule.c"
+        $tm=$7; //@line 2323 "datetimemodule.c"
+        var $8=($7)!=0; //@line 2324 "datetimemodule.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2324 "datetimemodule.c"
+      case 4: // $bb3
+        var $9=$tm; //@line 2325 "datetimemodule.c"
+        var $10=$9+12; //@line 2325 "datetimemodule.c"
+        var $11=HEAP[$10]; //@line 2325 "datetimemodule.c"
+        var $12=$tm; //@line 2325 "datetimemodule.c"
+        var $13=$12+16; //@line 2325 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 2325 "datetimemodule.c"
+        var $15=($14) + 1; //@line 2325 "datetimemodule.c"
+        var $16=$tm; //@line 2325 "datetimemodule.c"
+        var $17=$16+20; //@line 2325 "datetimemodule.c"
+        var $18=HEAP[$17]; //@line 2325 "datetimemodule.c"
+        var $19=($18) + 1900; //@line 2325 "datetimemodule.c"
+        var $20=$cls_addr; //@line 2325 "datetimemodule.c"
+        var $21=__PyObject_CallFunction_SizeT($20, __str128, allocate([$19,0,0,0,$15,0,0,0,$11,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2325 "datetimemodule.c"
+        $result=$21; //@line 2325 "datetimemodule.c"
+        __label__ = 6; break; //@line 2325 "datetimemodule.c"
+      case 5: // $bb4
+        var $22=HEAP[_PyExc_ValueError]; //@line 2330 "datetimemodule.c"
+        _PyErr_SetString($22, __str141); //@line 2330 "datetimemodule.c"
+        __label__ = 6; break; //@line 2330 "datetimemodule.c"
+      case 6: // $bb5
+        var $23=$result; //@line 2333 "datetimemodule.c"
+        $0=$23; //@line 2333 "datetimemodule.c"
+        __label__ = 7; break; //@line 2333 "datetimemodule.c"
+      case 7: // $bb6
+        var $24=$0; //@line 2322 "datetimemodule.c"
+        $retval=$24; //@line 2322 "datetimemodule.c"
+        var $retval7=$retval; //@line 2322 "datetimemodule.c"
+        STACKTOP = __stackBase__;
+        return $retval7; //@line 2322 "datetimemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _date_today($cls, $dummy) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $result_i;
-        var $time_i;
         var $cls_addr;
         var $dummy_addr;
         var $retval;
-        var $1;
+        var $0;
         var $time;
         var $result;
         $cls_addr=$cls;
         $dummy_addr=$dummy;
-        $result_i=0; //@line 1399 "datetimemodule.c"
-        var $2=_PyImport_ImportModuleNoBlock(__str92); //@line 1400 "datetimemodule.c"
-        $time_i=$2; //@line 1400 "datetimemodule.c"
-        var $3=$time_i; //@line 1402 "datetimemodule.c"
-        var $4=($3)!=0; //@line 1402 "datetimemodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1402 "datetimemodule.c"
-      case 1: // $bb_i
-        var $5=$time_i; //@line 1403 "datetimemodule.c"
-        var $6=__PyObject_CallMethod_SizeT($5, __str92, __str99); //@line 1403 "datetimemodule.c"
-        $result_i=$6; //@line 1403 "datetimemodule.c"
-        var $7=$time_i; //@line 1404 "datetimemodule.c"
-        var $8=$7; //@line 1404 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 1404 "datetimemodule.c"
-        var $10=($9) - 1; //@line 1404 "datetimemodule.c"
-        var $11=$time_i; //@line 1404 "datetimemodule.c"
-        var $12=$11; //@line 1404 "datetimemodule.c"
-        HEAP[$12]=$10; //@line 1404 "datetimemodule.c"
-        var $13=$time_i; //@line 1404 "datetimemodule.c"
-        var $14=$13; //@line 1404 "datetimemodule.c"
-        var $15=HEAP[$14]; //@line 1404 "datetimemodule.c"
-        var $16=($15)==0; //@line 1404 "datetimemodule.c"
-        if ($16) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1404 "datetimemodule.c"
-      case 2: // $bb1_i
-        var $17=$time_i; //@line 1404 "datetimemodule.c"
-        var $18=$17+4; //@line 1404 "datetimemodule.c"
-        var $19=HEAP[$18]; //@line 1404 "datetimemodule.c"
-        var $20=$19+24; //@line 1404 "datetimemodule.c"
-        var $21=HEAP[$20]; //@line 1404 "datetimemodule.c"
-        var $22=$time_i; //@line 1404 "datetimemodule.c"
-        FUNCTION_TABLE[$21]($22); //@line 1404 "datetimemodule.c"
-        __label__ = 3; break; //@line 1404 "datetimemodule.c"
-      case 3: // $time_time_exit
-        var $23=$result_i; //@line 1406 "datetimemodule.c"
-        $0=$23; //@line 1406 "datetimemodule.c"
-        $retval_i=$23; //@line 1406 "datetimemodule.c"
-        $time=$23; //@line 2347 "datetimemodule.c"
-        var $24=($23)==0; //@line 2348 "datetimemodule.c"
-        if ($24) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2348 "datetimemodule.c"
-      case 4: // $bb
-        $1=0; //@line 2349 "datetimemodule.c"
-        __label__ = 8; break; //@line 2349 "datetimemodule.c"
-      case 5: // $bb1
-        var $25=$cls_addr; //@line 2357 "datetimemodule.c"
-        var $26=$time; //@line 2357 "datetimemodule.c"
-        var $27=__PyObject_CallMethod_SizeT($25, __str142, __str35, $26); //@line 2357 "datetimemodule.c"
-        $result=$27; //@line 2357 "datetimemodule.c"
-        var $28=$time; //@line 2358 "datetimemodule.c"
-        var $29=$28; //@line 2358 "datetimemodule.c"
-        var $30=HEAP[$29]; //@line 2358 "datetimemodule.c"
-        var $31=($30) - 1; //@line 2358 "datetimemodule.c"
-        var $32=$time; //@line 2358 "datetimemodule.c"
-        var $33=$32; //@line 2358 "datetimemodule.c"
-        HEAP[$33]=$31; //@line 2358 "datetimemodule.c"
-        var $34=$time; //@line 2358 "datetimemodule.c"
-        var $35=$34; //@line 2358 "datetimemodule.c"
-        var $36=HEAP[$35]; //@line 2358 "datetimemodule.c"
-        var $37=($36)==0; //@line 2358 "datetimemodule.c"
-        if ($37) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2358 "datetimemodule.c"
-      case 6: // $bb2
-        var $38=$time; //@line 2358 "datetimemodule.c"
-        var $39=$38+4; //@line 2358 "datetimemodule.c"
-        var $40=HEAP[$39]; //@line 2358 "datetimemodule.c"
-        var $41=$40+24; //@line 2358 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 2358 "datetimemodule.c"
-        var $43=$time; //@line 2358 "datetimemodule.c"
-        FUNCTION_TABLE[$42]($43); //@line 2358 "datetimemodule.c"
-        __label__ = 7; break; //@line 2358 "datetimemodule.c"
-      case 7: // $bb3
-        var $44=$result; //@line 2359 "datetimemodule.c"
-        $1=$44; //@line 2359 "datetimemodule.c"
-        __label__ = 8; break; //@line 2359 "datetimemodule.c"
-      case 8: // $bb4
-        var $45=$1; //@line 2349 "datetimemodule.c"
-        $retval=$45; //@line 2349 "datetimemodule.c"
+        var $1=_time_time(); //@line 2347 "datetimemodule.c"
+        $time=$1; //@line 2347 "datetimemodule.c"
+        var $2=$time; //@line 2348 "datetimemodule.c"
+        var $3=($2)==0; //@line 2348 "datetimemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2348 "datetimemodule.c"
+      case 1: // $bb
+        $0=0; //@line 2349 "datetimemodule.c"
+        __label__ = 5; break; //@line 2349 "datetimemodule.c"
+      case 2: // $bb1
+        var $4=$cls_addr; //@line 2357 "datetimemodule.c"
+        var $5=$time; //@line 2357 "datetimemodule.c"
+        var $6=__PyObject_CallMethod_SizeT($4, __str142, __str35, allocate([$5,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 2357 "datetimemodule.c"
+        $result=$6; //@line 2357 "datetimemodule.c"
+        var $7=$time; //@line 2358 "datetimemodule.c"
+        var $8=$7; //@line 2358 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 2358 "datetimemodule.c"
+        var $10=($9) - 1; //@line 2358 "datetimemodule.c"
+        var $11=$time; //@line 2358 "datetimemodule.c"
+        var $12=$11; //@line 2358 "datetimemodule.c"
+        HEAP[$12]=$10; //@line 2358 "datetimemodule.c"
+        var $13=$time; //@line 2358 "datetimemodule.c"
+        var $14=$13; //@line 2358 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 2358 "datetimemodule.c"
+        var $16=($15)==0; //@line 2358 "datetimemodule.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2358 "datetimemodule.c"
+      case 3: // $bb2
+        var $17=$time; //@line 2358 "datetimemodule.c"
+        var $18=$17+4; //@line 2358 "datetimemodule.c"
+        var $19=HEAP[$18]; //@line 2358 "datetimemodule.c"
+        var $20=$19+24; //@line 2358 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 2358 "datetimemodule.c"
+        var $22=$time; //@line 2358 "datetimemodule.c"
+        FUNCTION_TABLE[$21]($22); //@line 2358 "datetimemodule.c"
+        __label__ = 4; break; //@line 2358 "datetimemodule.c"
+      case 4: // $bb3
+        var $23=$result; //@line 2359 "datetimemodule.c"
+        $0=$23; //@line 2359 "datetimemodule.c"
+        __label__ = 5; break; //@line 2359 "datetimemodule.c"
+      case 5: // $bb4
+        var $24=$0; //@line 2349 "datetimemodule.c"
+        $retval=$24; //@line 2349 "datetimemodule.c"
         var $retval5=$retval; //@line 2349 "datetimemodule.c"
         ;
         return $retval5; //@line 2349 "datetimemodule.c"
@@ -7661,120 +7823,35 @@ var _initialized_b;
   
 
   function _date_fromtimestamp($cls, $args) {
-    var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $x_addr_i_i;
-        var $retval_i_i;
-        var $0;
-        var $result_i_i;
-        var $diff_i_i;
-        var $cls_addr_i;
-        var $ts_addr_i;
-        var $retval_i;
-        var $1;
-        var $tm_i;
-        var $t_i=__stackBase__;
-        var $result_i;
         var $cls_addr;
         var $args_addr;
         var $retval;
-        var $2;
-        var $timestamp=__stackBase__+4;
+        var $0;
+        var $timestamp=__stackBase__;
         var $result;
         $cls_addr=$cls;
         $args_addr=$args;
         $result=0; //@line 2367 "datetimemodule.c"
-        var $3=$args_addr; //@line 2369 "datetimemodule.c"
-        var $4=__PyArg_ParseTuple_SizeT($3, __str143, $timestamp); //@line 2369 "datetimemodule.c"
-        var $5=($4)!=0; //@line 2369 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 11; break; } //@line 2369 "datetimemodule.c"
+        var $1=$args_addr; //@line 2369 "datetimemodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str143, allocate([$timestamp,0,0,0], ["double*",0,0,0], ALLOC_STACK)); //@line 2369 "datetimemodule.c"
+        var $3=($2)!=0; //@line 2369 "datetimemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2369 "datetimemodule.c"
       case 1: // $bb
-        var $6=HEAP[$timestamp]; //@line 2370 "datetimemodule.c"
-        var $7=$cls_addr; //@line 2370 "datetimemodule.c"
-        $cls_addr_i=$7;
-        $ts_addr_i=$6;
-        $result_i=0; //@line 2318 "datetimemodule.c"
-        var $8=$ts_addr_i; //@line 2320 "datetimemodule.c"
-        $x_addr_i_i=$8;
-        var $9=$x_addr_i_i; //@line 108 "timemodule.c"
-        var $10=((($9))|0); //@line 108 "timemodule.c"
-        $result_i_i=$10; //@line 108 "timemodule.c"
-        var $11=$result_i_i; //@line 118 "timemodule.c"
-        var $12=($11); //@line 118 "timemodule.c"
-        var $13=$x_addr_i_i; //@line 118 "timemodule.c"
-        var $14=($13) - ($12); //@line 118 "timemodule.c"
-        $diff_i_i=$14; //@line 118 "timemodule.c"
-        var $15=$diff_i_i; //@line 119 "timemodule.c"
-        var $16=($15) <= -1; //@line 119 "timemodule.c"
-        var $17=$diff_i_i; //@line 119 "timemodule.c"
-        var $18=($17) >= 1; //@line 119 "timemodule.c"
-        var $or_cond_i_i=($16) | ($18);
-        if ($or_cond_i_i) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 119 "timemodule.c"
-      case 2: // $_PyTime_DoubleToTimet_exit_thread_i
-        var $19=HEAP[_PyExc_ValueError]; //@line 120 "timemodule.c"
-        _PyErr_SetString($19, __str282); //@line 120 "timemodule.c"
-        $result_i_i=-1; //@line 122 "timemodule.c"
-        $0=-1; //@line 124 "timemodule.c"
-        $retval_i_i=-1; //@line 124 "timemodule.c"
-        HEAP[$t_i]=-1; //@line 2320 "datetimemodule.c"
-        __label__ = 4; break;
-      case 3: // $_PyTime_DoubleToTimet_exit_i
-        var $_pr_i=$result_i_i;
-        $0=$_pr_i; //@line 124 "timemodule.c"
-        $retval_i_i=$_pr_i; //@line 124 "timemodule.c"
-        HEAP[$t_i]=$_pr_i; //@line 2320 "datetimemodule.c"
-        var $20=($_pr_i)==-1; //@line 2321 "datetimemodule.c"
-        if ($20) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 2321 "datetimemodule.c"
-      case 4: // $bb_i
-        var $21=_PyErr_Occurred(); //@line 2321 "datetimemodule.c"
-        var $22=($21)!=0; //@line 2321 "datetimemodule.c"
-        if ($22) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2321 "datetimemodule.c"
-      case 5: // $bb1_i
-        $1=0; //@line 2322 "datetimemodule.c"
-        __label__ = 10; break; //@line 2322 "datetimemodule.c"
-      case 6: // $bb2_i
-        var $23=_localtime($t_i); //@line 2323 "datetimemodule.c"
-        $tm_i=$23; //@line 2323 "datetimemodule.c"
-        var $24=($23)!=0; //@line 2324 "datetimemodule.c"
-        if ($24) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 2324 "datetimemodule.c"
-      case 7: // $bb3_i
-        var $25=$tm_i; //@line 2325 "datetimemodule.c"
-        var $26=$25+12; //@line 2325 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 2325 "datetimemodule.c"
-        var $28=$tm_i; //@line 2325 "datetimemodule.c"
-        var $29=$28+16; //@line 2325 "datetimemodule.c"
-        var $30=HEAP[$29]; //@line 2325 "datetimemodule.c"
-        var $31=($30) + 1; //@line 2325 "datetimemodule.c"
-        var $32=$tm_i; //@line 2325 "datetimemodule.c"
-        var $33=$32+20; //@line 2325 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 2325 "datetimemodule.c"
-        var $35=($34) + 1900; //@line 2325 "datetimemodule.c"
-        var $36=$cls_addr_i; //@line 2325 "datetimemodule.c"
-        var $37=__PyObject_CallFunction_SizeT($36, __str128, $35, $31, $27); //@line 2325 "datetimemodule.c"
-        $result_i=$37; //@line 2325 "datetimemodule.c"
-        __label__ = 9; break; //@line 2325 "datetimemodule.c"
-      case 8: // $bb4_i
-        var $38=HEAP[_PyExc_ValueError]; //@line 2330 "datetimemodule.c"
-        _PyErr_SetString($38, __str141); //@line 2330 "datetimemodule.c"
-        __label__ = 9; break; //@line 2330 "datetimemodule.c"
-      case 9: // $bb5_i
-        var $39=$result_i; //@line 2333 "datetimemodule.c"
-        $1=$39; //@line 2333 "datetimemodule.c"
-        __label__ = 10; break; //@line 2333 "datetimemodule.c"
-      case 10: // $date_local_from_time_t_exit
-        var $40=$1; //@line 2322 "datetimemodule.c"
-        $retval_i=$40; //@line 2322 "datetimemodule.c"
-        var $retval7_i=$retval_i; //@line 2322 "datetimemodule.c"
-        $result=$retval7_i; //@line 2370 "datetimemodule.c"
-        __label__ = 11; break; //@line 2370 "datetimemodule.c"
-      case 11: // $bb1
-        var $41=$result; //@line 2371 "datetimemodule.c"
-        $2=$41; //@line 2371 "datetimemodule.c"
-        var $42=$2; //@line 2371 "datetimemodule.c"
-        $retval=$42; //@line 2371 "datetimemodule.c"
+        var $4=HEAP[$timestamp]; //@line 2370 "datetimemodule.c"
+        var $5=$cls_addr; //@line 2370 "datetimemodule.c"
+        var $6=_date_local_from_time_t($5, $4); //@line 2370 "datetimemodule.c"
+        $result=$6; //@line 2370 "datetimemodule.c"
+        __label__ = 2; break; //@line 2370 "datetimemodule.c"
+      case 2: // $bb1
+        var $7=$result; //@line 2371 "datetimemodule.c"
+        $0=$7; //@line 2371 "datetimemodule.c"
+        var $8=$0; //@line 2371 "datetimemodule.c"
+        $retval=$8; //@line 2371 "datetimemodule.c"
         var $retval2=$retval; //@line 2371 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval2; //@line 2371 "datetimemodule.c"
@@ -7802,7 +7879,7 @@ var _initialized_b;
         $args_addr=$args;
         $result=0; //@line 2380 "datetimemodule.c"
         var $1=$args_addr; //@line 2383 "datetimemodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str144, $ordinal); //@line 2383 "datetimemodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str144, allocate([$ordinal,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 2383 "datetimemodule.c"
         var $3=($2)!=0; //@line 2383 "datetimemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 2383 "datetimemodule.c"
       case 1: // $bb
@@ -7820,7 +7897,7 @@ var _initialized_b;
         var $9=HEAP[$month]; //@line 2393 "datetimemodule.c"
         var $10=HEAP[$year]; //@line 2393 "datetimemodule.c"
         var $11=$cls_addr; //@line 2393 "datetimemodule.c"
-        var $12=__PyObject_CallFunction_SizeT($11, __str128, $10, $9, $8); //@line 2393 "datetimemodule.c"
+        var $12=__PyObject_CallFunction_SizeT($11, __str128, allocate([$10,0,0,0,$9,0,0,0,$8,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2393 "datetimemodule.c"
         $result=$12; //@line 2393 "datetimemodule.c"
         __label__ = 4; break; //@line 2393 "datetimemodule.c"
       case 4: // $bb3
@@ -8044,202 +8121,164 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i1;
-        var $month_addr_i2;
-        var $day_addr_i3;
-        var $retval_i4;
-        var $0;
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $retval_i;
-        var $1;
         var $left_addr;
         var $right_addr;
         var $retval;
-        var $2;
+        var $0;
         var $left_ord;
         var $right_ord;
         $left_addr=$left;
         $right_addr=$right;
-        var $3=$left_addr; //@line 2454 "datetimemodule.c"
-        var $4=$3+4; //@line 2454 "datetimemodule.c"
-        var $5=HEAP[$4]; //@line 2454 "datetimemodule.c"
-        var $6=($5)==(_PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
-        if ($6) { __label__ = 4; break; } else { __label__ = 1; break; } //@line 2454 "datetimemodule.c"
+        var $1=$left_addr; //@line 2454 "datetimemodule.c"
+        var $2=$1+4; //@line 2454 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 2454 "datetimemodule.c"
+        var $4=($3)==(_PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
+        if ($4) { __label__ = 4; break; } else { __label__ = 1; break; } //@line 2454 "datetimemodule.c"
       case 1: // $bb
-        var $7=$left_addr; //@line 2454 "datetimemodule.c"
-        var $8=$7+4; //@line 2454 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 2454 "datetimemodule.c"
-        var $10=_PyType_IsSubtype($9, _PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
-        var $11=($10)!=0; //@line 2454 "datetimemodule.c"
-        if ($11) { __label__ = 4; break; } else { __label__ = 2; break; } //@line 2454 "datetimemodule.c"
+        var $5=$left_addr; //@line 2454 "datetimemodule.c"
+        var $6=$5+4; //@line 2454 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 2454 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
+        var $9=($8)!=0; //@line 2454 "datetimemodule.c"
+        if ($9) { __label__ = 4; break; } else { __label__ = 2; break; } //@line 2454 "datetimemodule.c"
       case 2: // $bb1
-        var $12=$right_addr; //@line 2454 "datetimemodule.c"
-        var $13=$12+4; //@line 2454 "datetimemodule.c"
-        var $14=HEAP[$13]; //@line 2454 "datetimemodule.c"
-        var $15=($14)==(_PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
-        if ($15) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 2454 "datetimemodule.c"
+        var $10=$right_addr; //@line 2454 "datetimemodule.c"
+        var $11=$10+4; //@line 2454 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 2454 "datetimemodule.c"
+        var $13=($12)==(_PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
+        if ($13) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 2454 "datetimemodule.c"
       case 3: // $bb2
-        var $16=$right_addr; //@line 2454 "datetimemodule.c"
-        var $17=$16+4; //@line 2454 "datetimemodule.c"
-        var $18=HEAP[$17]; //@line 2454 "datetimemodule.c"
-        var $19=_PyType_IsSubtype($18, _PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
-        var $20=($19)!=0; //@line 2454 "datetimemodule.c"
-        if ($20) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2454 "datetimemodule.c"
+        var $14=$right_addr; //@line 2454 "datetimemodule.c"
+        var $15=$14+4; //@line 2454 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 2454 "datetimemodule.c"
+        var $17=_PyType_IsSubtype($16, _PyDateTime_DateTimeType); //@line 2454 "datetimemodule.c"
+        var $18=($17)!=0; //@line 2454 "datetimemodule.c"
+        if ($18) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2454 "datetimemodule.c"
       case 4: // $bb3
-        var $21=HEAP[__Py_NotImplementedStruct]; //@line 2455 "datetimemodule.c"
-        var $22=($21) + 1; //@line 2455 "datetimemodule.c"
-        HEAP[__Py_NotImplementedStruct]=$22; //@line 2455 "datetimemodule.c"
-        $2=__Py_NotImplementedStruct; //@line 2456 "datetimemodule.c"
+        var $19=HEAP[__Py_NotImplementedStruct]; //@line 2455 "datetimemodule.c"
+        var $20=($19) + 1; //@line 2455 "datetimemodule.c"
+        HEAP[__Py_NotImplementedStruct]=$20; //@line 2455 "datetimemodule.c"
+        $0=__Py_NotImplementedStruct; //@line 2456 "datetimemodule.c"
         __label__ = 14; break; //@line 2456 "datetimemodule.c"
       case 5: // $bb4
-        var $23=$left_addr; //@line 2458 "datetimemodule.c"
-        var $24=$23+4; //@line 2458 "datetimemodule.c"
-        var $25=HEAP[$24]; //@line 2458 "datetimemodule.c"
-        var $26=($25)==(_PyDateTime_DateType); //@line 2458 "datetimemodule.c"
-        if ($26) { __label__ = 7; break; } else { __label__ = 6; break; } //@line 2458 "datetimemodule.c"
+        var $21=$left_addr; //@line 2458 "datetimemodule.c"
+        var $22=$21+4; //@line 2458 "datetimemodule.c"
+        var $23=HEAP[$22]; //@line 2458 "datetimemodule.c"
+        var $24=($23)==(_PyDateTime_DateType); //@line 2458 "datetimemodule.c"
+        if ($24) { __label__ = 7; break; } else { __label__ = 6; break; } //@line 2458 "datetimemodule.c"
       case 6: // $bb5
-        var $27=$left_addr; //@line 2458 "datetimemodule.c"
-        var $28=$27+4; //@line 2458 "datetimemodule.c"
-        var $29=HEAP[$28]; //@line 2458 "datetimemodule.c"
-        var $30=_PyType_IsSubtype($29, _PyDateTime_DateType); //@line 2458 "datetimemodule.c"
-        var $31=($30)!=0; //@line 2458 "datetimemodule.c"
-        if ($31) { __label__ = 7; break; } else { __label__ = 13; break; } //@line 2458 "datetimemodule.c"
+        var $25=$left_addr; //@line 2458 "datetimemodule.c"
+        var $26=$25+4; //@line 2458 "datetimemodule.c"
+        var $27=HEAP[$26]; //@line 2458 "datetimemodule.c"
+        var $28=_PyType_IsSubtype($27, _PyDateTime_DateType); //@line 2458 "datetimemodule.c"
+        var $29=($28)!=0; //@line 2458 "datetimemodule.c"
+        if ($29) { __label__ = 7; break; } else { __label__ = 13; break; } //@line 2458 "datetimemodule.c"
       case 7: // $bb6
-        var $32=$right_addr; //@line 2459 "datetimemodule.c"
-        var $33=$32+4; //@line 2459 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 2459 "datetimemodule.c"
-        var $35=($34)==(_PyDateTime_DateType); //@line 2459 "datetimemodule.c"
-        if ($35) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 2459 "datetimemodule.c"
+        var $30=$right_addr; //@line 2459 "datetimemodule.c"
+        var $31=$30+4; //@line 2459 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 2459 "datetimemodule.c"
+        var $33=($32)==(_PyDateTime_DateType); //@line 2459 "datetimemodule.c"
+        if ($33) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 2459 "datetimemodule.c"
       case 8: // $bb7
-        var $36=$right_addr; //@line 2459 "datetimemodule.c"
-        var $37=$36+4; //@line 2459 "datetimemodule.c"
-        var $38=HEAP[$37]; //@line 2459 "datetimemodule.c"
-        var $39=_PyType_IsSubtype($38, _PyDateTime_DateType); //@line 2459 "datetimemodule.c"
-        var $40=($39)!=0; //@line 2459 "datetimemodule.c"
-        if ($40) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2459 "datetimemodule.c"
+        var $34=$right_addr; //@line 2459 "datetimemodule.c"
+        var $35=$34+4; //@line 2459 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 2459 "datetimemodule.c"
+        var $37=_PyType_IsSubtype($36, _PyDateTime_DateType); //@line 2459 "datetimemodule.c"
+        var $38=($37)!=0; //@line 2459 "datetimemodule.c"
+        if ($38) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 2459 "datetimemodule.c"
       case 9: // $bb8
-        var $41=$left_addr; //@line 2463 "datetimemodule.c"
-        var $42=$41; //@line 2463 "datetimemodule.c"
-        var $43=$42+13; //@line 2463 "datetimemodule.c"
-        var $44=$43+3; //@line 2463 "datetimemodule.c"
-        var $45=HEAP[$44]; //@line 2463 "datetimemodule.c"
-        var $46=($45); //@line 2463 "datetimemodule.c"
-        var $47=$left_addr; //@line 2463 "datetimemodule.c"
-        var $48=$47; //@line 2463 "datetimemodule.c"
-        var $49=$48+13; //@line 2463 "datetimemodule.c"
-        var $50=$49+2; //@line 2463 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 2463 "datetimemodule.c"
-        var $52=($51); //@line 2463 "datetimemodule.c"
-        var $53=$left_addr; //@line 2463 "datetimemodule.c"
+        var $39=$left_addr; //@line 2463 "datetimemodule.c"
+        var $40=$39; //@line 2463 "datetimemodule.c"
+        var $41=$40+13; //@line 2463 "datetimemodule.c"
+        var $42=$41+3; //@line 2463 "datetimemodule.c"
+        var $43=HEAP[$42]; //@line 2463 "datetimemodule.c"
+        var $44=($43); //@line 2463 "datetimemodule.c"
+        var $45=$left_addr; //@line 2463 "datetimemodule.c"
+        var $46=$45; //@line 2463 "datetimemodule.c"
+        var $47=$46+13; //@line 2463 "datetimemodule.c"
+        var $48=$47+2; //@line 2463 "datetimemodule.c"
+        var $49=HEAP[$48]; //@line 2463 "datetimemodule.c"
+        var $50=($49); //@line 2463 "datetimemodule.c"
+        var $51=$left_addr; //@line 2463 "datetimemodule.c"
+        var $52=$51; //@line 2463 "datetimemodule.c"
+        var $53=$52+13; //@line 2463 "datetimemodule.c"
         var $54=$53; //@line 2463 "datetimemodule.c"
-        var $55=$54+13; //@line 2463 "datetimemodule.c"
-        var $56=$55; //@line 2463 "datetimemodule.c"
-        var $57=HEAP[$56]; //@line 2463 "datetimemodule.c"
-        var $58=($57); //@line 2463 "datetimemodule.c"
-        var $59=($58) << 8; //@line 2463 "datetimemodule.c"
-        var $60=$left_addr; //@line 2463 "datetimemodule.c"
-        var $61=$60; //@line 2463 "datetimemodule.c"
-        var $62=$61+13; //@line 2463 "datetimemodule.c"
-        var $63=$62+1; //@line 2463 "datetimemodule.c"
-        var $64=HEAP[$63]; //@line 2463 "datetimemodule.c"
-        var $65=($64); //@line 2463 "datetimemodule.c"
-        var $66=($65) | ($59); //@line 2463 "datetimemodule.c"
-        $year_addr_i=$66;
-        $month_addr_i=$52;
-        $day_addr_i=$46;
-        var $67=$year_addr_i; //@line 330 "datetimemodule.c"
-        var $68=_days_before_year($67); //@line 330 "datetimemodule.c"
-        var $69=$year_addr_i; //@line 330 "datetimemodule.c"
-        var $70=$month_addr_i; //@line 330 "datetimemodule.c"
-        var $71=_days_before_month($69, $70); //@line 330 "datetimemodule.c"
-        var $72=$day_addr_i; //@line 330 "datetimemodule.c"
-        var $73=($71) + ($68); //@line 330 "datetimemodule.c"
-        var $74=($73) + ($72); //@line 330 "datetimemodule.c"
-        $1=$74; //@line 330 "datetimemodule.c"
-        var $75=$1; //@line 330 "datetimemodule.c"
-        $retval_i=$75; //@line 330 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 330 "datetimemodule.c"
-        $left_ord=$retval1_i; //@line 2463 "datetimemodule.c"
-        var $76=$right_addr; //@line 2466 "datetimemodule.c"
-        var $77=$76; //@line 2466 "datetimemodule.c"
-        var $78=$77+13; //@line 2466 "datetimemodule.c"
-        var $79=$78+3; //@line 2466 "datetimemodule.c"
-        var $80=HEAP[$79]; //@line 2466 "datetimemodule.c"
-        var $81=($80); //@line 2466 "datetimemodule.c"
-        var $82=$right_addr; //@line 2466 "datetimemodule.c"
-        var $83=$82; //@line 2466 "datetimemodule.c"
-        var $84=$83+13; //@line 2466 "datetimemodule.c"
-        var $85=$84+2; //@line 2466 "datetimemodule.c"
-        var $86=HEAP[$85]; //@line 2466 "datetimemodule.c"
-        var $87=($86); //@line 2466 "datetimemodule.c"
-        var $88=$right_addr; //@line 2466 "datetimemodule.c"
-        var $89=$88; //@line 2466 "datetimemodule.c"
-        var $90=$89+13; //@line 2466 "datetimemodule.c"
-        var $91=$90; //@line 2466 "datetimemodule.c"
-        var $92=HEAP[$91]; //@line 2466 "datetimemodule.c"
-        var $93=($92); //@line 2466 "datetimemodule.c"
-        var $94=($93) << 8; //@line 2466 "datetimemodule.c"
-        var $95=$right_addr; //@line 2466 "datetimemodule.c"
-        var $96=$95; //@line 2466 "datetimemodule.c"
-        var $97=$96+13; //@line 2466 "datetimemodule.c"
-        var $98=$97+1; //@line 2466 "datetimemodule.c"
-        var $99=HEAP[$98]; //@line 2466 "datetimemodule.c"
-        var $100=($99); //@line 2466 "datetimemodule.c"
-        var $101=($100) | ($94); //@line 2466 "datetimemodule.c"
-        $year_addr_i1=$101;
-        $month_addr_i2=$87;
-        $day_addr_i3=$81;
-        var $102=$year_addr_i1; //@line 330 "datetimemodule.c"
-        var $103=_days_before_year($102); //@line 330 "datetimemodule.c"
-        var $104=$year_addr_i1; //@line 330 "datetimemodule.c"
-        var $105=$month_addr_i2; //@line 330 "datetimemodule.c"
-        var $106=_days_before_month($104, $105); //@line 330 "datetimemodule.c"
-        var $107=$day_addr_i3; //@line 330 "datetimemodule.c"
-        var $108=($106) + ($103); //@line 330 "datetimemodule.c"
-        var $109=($108) + ($107); //@line 330 "datetimemodule.c"
-        $0=$109; //@line 330 "datetimemodule.c"
-        var $110=$0; //@line 330 "datetimemodule.c"
-        $retval_i4=$110; //@line 330 "datetimemodule.c"
-        var $retval1_i5=$retval_i4; //@line 330 "datetimemodule.c"
-        $right_ord=$retval1_i5; //@line 2466 "datetimemodule.c"
-        var $111=$left_ord; //@line 2467 "datetimemodule.c"
-        var $112=$right_ord; //@line 2467 "datetimemodule.c"
-        var $113=($111) - ($112); //@line 2467 "datetimemodule.c"
-        var $114=_new_delta_ex($113, 0, 0, 0, _PyDateTime_DeltaType); //@line 2467 "datetimemodule.c"
-        $2=$114; //@line 2467 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 2463 "datetimemodule.c"
+        var $56=($55); //@line 2463 "datetimemodule.c"
+        var $57=($56) << 8; //@line 2463 "datetimemodule.c"
+        var $58=$left_addr; //@line 2463 "datetimemodule.c"
+        var $59=$58; //@line 2463 "datetimemodule.c"
+        var $60=$59+13; //@line 2463 "datetimemodule.c"
+        var $61=$60+1; //@line 2463 "datetimemodule.c"
+        var $62=HEAP[$61]; //@line 2463 "datetimemodule.c"
+        var $63=($62); //@line 2463 "datetimemodule.c"
+        var $64=($63) | ($57); //@line 2463 "datetimemodule.c"
+        var $65=_ymd_to_ord($64, $50, $44); //@line 2463 "datetimemodule.c"
+        $left_ord=$65; //@line 2463 "datetimemodule.c"
+        var $66=$right_addr; //@line 2466 "datetimemodule.c"
+        var $67=$66; //@line 2466 "datetimemodule.c"
+        var $68=$67+13; //@line 2466 "datetimemodule.c"
+        var $69=$68+3; //@line 2466 "datetimemodule.c"
+        var $70=HEAP[$69]; //@line 2466 "datetimemodule.c"
+        var $71=($70); //@line 2466 "datetimemodule.c"
+        var $72=$right_addr; //@line 2466 "datetimemodule.c"
+        var $73=$72; //@line 2466 "datetimemodule.c"
+        var $74=$73+13; //@line 2466 "datetimemodule.c"
+        var $75=$74+2; //@line 2466 "datetimemodule.c"
+        var $76=HEAP[$75]; //@line 2466 "datetimemodule.c"
+        var $77=($76); //@line 2466 "datetimemodule.c"
+        var $78=$right_addr; //@line 2466 "datetimemodule.c"
+        var $79=$78; //@line 2466 "datetimemodule.c"
+        var $80=$79+13; //@line 2466 "datetimemodule.c"
+        var $81=$80; //@line 2466 "datetimemodule.c"
+        var $82=HEAP[$81]; //@line 2466 "datetimemodule.c"
+        var $83=($82); //@line 2466 "datetimemodule.c"
+        var $84=($83) << 8; //@line 2466 "datetimemodule.c"
+        var $85=$right_addr; //@line 2466 "datetimemodule.c"
+        var $86=$85; //@line 2466 "datetimemodule.c"
+        var $87=$86+13; //@line 2466 "datetimemodule.c"
+        var $88=$87+1; //@line 2466 "datetimemodule.c"
+        var $89=HEAP[$88]; //@line 2466 "datetimemodule.c"
+        var $90=($89); //@line 2466 "datetimemodule.c"
+        var $91=($90) | ($84); //@line 2466 "datetimemodule.c"
+        var $92=_ymd_to_ord($91, $77, $71); //@line 2466 "datetimemodule.c"
+        $right_ord=$92; //@line 2466 "datetimemodule.c"
+        var $93=$left_ord; //@line 2467 "datetimemodule.c"
+        var $94=$right_ord; //@line 2467 "datetimemodule.c"
+        var $95=($93) - ($94); //@line 2467 "datetimemodule.c"
+        var $96=_new_delta_ex($95, 0, 0, 0, _PyDateTime_DeltaType); //@line 2467 "datetimemodule.c"
+        $0=$96; //@line 2467 "datetimemodule.c"
         __label__ = 14; break; //@line 2467 "datetimemodule.c"
       case 10: // $bb9
-        var $115=$right_addr; //@line 2469 "datetimemodule.c"
-        var $116=$115+4; //@line 2469 "datetimemodule.c"
-        var $117=HEAP[$116]; //@line 2469 "datetimemodule.c"
-        var $118=($117)==(_PyDateTime_DeltaType); //@line 2469 "datetimemodule.c"
-        if ($118) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 2469 "datetimemodule.c"
+        var $97=$right_addr; //@line 2469 "datetimemodule.c"
+        var $98=$97+4; //@line 2469 "datetimemodule.c"
+        var $99=HEAP[$98]; //@line 2469 "datetimemodule.c"
+        var $100=($99)==(_PyDateTime_DeltaType); //@line 2469 "datetimemodule.c"
+        if ($100) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 2469 "datetimemodule.c"
       case 11: // $bb10
-        var $119=$right_addr; //@line 2469 "datetimemodule.c"
-        var $120=$119+4; //@line 2469 "datetimemodule.c"
-        var $121=HEAP[$120]; //@line 2469 "datetimemodule.c"
-        var $122=_PyType_IsSubtype($121, _PyDateTime_DeltaType); //@line 2469 "datetimemodule.c"
-        var $123=($122)!=0; //@line 2469 "datetimemodule.c"
-        if ($123) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 2469 "datetimemodule.c"
+        var $101=$right_addr; //@line 2469 "datetimemodule.c"
+        var $102=$101+4; //@line 2469 "datetimemodule.c"
+        var $103=HEAP[$102]; //@line 2469 "datetimemodule.c"
+        var $104=_PyType_IsSubtype($103, _PyDateTime_DeltaType); //@line 2469 "datetimemodule.c"
+        var $105=($104)!=0; //@line 2469 "datetimemodule.c"
+        if ($105) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 2469 "datetimemodule.c"
       case 12: // $bb11
-        var $124=$right_addr; //@line 2471 "datetimemodule.c"
-        var $125=$124; //@line 2471 "datetimemodule.c"
-        var $126=$left_addr; //@line 2471 "datetimemodule.c"
-        var $127=$126; //@line 2471 "datetimemodule.c"
-        var $128=_add_date_timedelta($127, $125, 1); //@line 2471 "datetimemodule.c"
-        $2=$128; //@line 2471 "datetimemodule.c"
+        var $106=$right_addr; //@line 2471 "datetimemodule.c"
+        var $107=$106; //@line 2471 "datetimemodule.c"
+        var $108=$left_addr; //@line 2471 "datetimemodule.c"
+        var $109=$108; //@line 2471 "datetimemodule.c"
+        var $110=_add_date_timedelta($109, $107, 1); //@line 2471 "datetimemodule.c"
+        $0=$110; //@line 2471 "datetimemodule.c"
         __label__ = 14; break; //@line 2471 "datetimemodule.c"
       case 13: // $bb12
-        var $129=HEAP[__Py_NotImplementedStruct]; //@line 2476 "datetimemodule.c"
-        var $130=($129) + 1; //@line 2476 "datetimemodule.c"
-        HEAP[__Py_NotImplementedStruct]=$130; //@line 2476 "datetimemodule.c"
-        $2=__Py_NotImplementedStruct; //@line 2477 "datetimemodule.c"
+        var $111=HEAP[__Py_NotImplementedStruct]; //@line 2476 "datetimemodule.c"
+        var $112=($111) + 1; //@line 2476 "datetimemodule.c"
+        HEAP[__Py_NotImplementedStruct]=$112; //@line 2476 "datetimemodule.c"
+        $0=__Py_NotImplementedStruct; //@line 2477 "datetimemodule.c"
         __label__ = 14; break; //@line 2477 "datetimemodule.c"
       case 14: // $bb13
-        var $131=$2; //@line 2456 "datetimemodule.c"
-        $retval=$131; //@line 2456 "datetimemodule.c"
+        var $113=$0; //@line 2456 "datetimemodule.c"
+        $retval=$113; //@line 2456 "datetimemodule.c"
         var $retval14=$retval; //@line 2456 "datetimemodule.c"
         ;
         return $retval14; //@line 2456 "datetimemodule.c"
@@ -8289,7 +8328,7 @@ var _initialized_b;
     var $28=($27) | ($22); //@line 2490 "datetimemodule.c"
     var $buffer1=$buffer; //@line 2490 "datetimemodule.c"
     var $29=$type_name; //@line 2490 "datetimemodule.c"
-    var $30=_PyOS_snprintf($buffer1, 1028, __str121, $29, $28, $16, $11); //@line 2490 "datetimemodule.c"
+    var $30=_PyOS_snprintf($buffer1, 1028, __str121, allocate([$29,0,0,0,$28,0,0,0,$16,0,0,0,$11,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2490 "datetimemodule.c"
     var $buffer2=$buffer; //@line 2494 "datetimemodule.c"
     var $31=_PyString_FromString($buffer2); //@line 2494 "datetimemodule.c"
     $0=$31; //@line 2494 "datetimemodule.c"
@@ -8334,7 +8373,7 @@ var _initialized_b;
     $self_addr=$self;
     var $1=$self_addr; //@line 2510 "datetimemodule.c"
     var $2=$1; //@line 2510 "datetimemodule.c"
-    var $3=__PyObject_CallMethod_SizeT($2, __str146, __str99); //@line 2510 "datetimemodule.c"
+    var $3=__PyObject_CallMethod_SizeT($2, __str146, __str99, allocate(1, "i32", ALLOC_STACK)); //@line 2510 "datetimemodule.c"
     $0=$3; //@line 2510 "datetimemodule.c"
     var $4=$0; //@line 2510 "datetimemodule.c"
     $retval=$4; //@line 2510 "datetimemodule.c"
@@ -8383,7 +8422,7 @@ var _initialized_b;
         $kw_addr=$kw;
         var $1=$args_addr; //@line 2532 "datetimemodule.c"
         var $2=$kw_addr; //@line 2532 "datetimemodule.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str147, _keywords_11164, $format, $format_len); //@line 2532 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str147, _keywords_11164, allocate([$format,0,0,0,$format_len,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2532 "datetimemodule.c"
         var $4=($3)==0; //@line 2532 "datetimemodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2532 "datetimemodule.c"
       case 1: // $bb
@@ -8392,7 +8431,7 @@ var _initialized_b;
       case 2: // $bb1
         var $5=$self_addr; //@line 2536 "datetimemodule.c"
         var $6=$5; //@line 2536 "datetimemodule.c"
-        var $7=__PyObject_CallMethod_SizeT($6, __str149, __str99); //@line 2536 "datetimemodule.c"
+        var $7=__PyObject_CallMethod_SizeT($6, __str149, __str99, allocate(1, "i32", ALLOC_STACK)); //@line 2536 "datetimemodule.c"
         $tuple=$7; //@line 2536 "datetimemodule.c"
         var $8=$tuple; //@line 2537 "datetimemodule.c"
         var $9=($8)==0; //@line 2537 "datetimemodule.c"
@@ -8460,7 +8499,7 @@ var _initialized_b;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 2550 "datetimemodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str150, $format); //@line 2550 "datetimemodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str150, allocate([$format,0,0,0], ["%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 2550 "datetimemodule.c"
         var $3=($2)==0; //@line 2550 "datetimemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2550 "datetimemodule.c"
       case 1: // $bb
@@ -8515,14 +8554,14 @@ var _initialized_b;
         var $35=$34+12; //@line 2563 "datetimemodule.c"
         var $36=HEAP[$35]; //@line 2563 "datetimemodule.c"
         var $37=HEAP[_PyExc_ValueError]; //@line 2563 "datetimemodule.c"
-        var $38=_PyErr_Format($37, __str151, $36); //@line 2563 "datetimemodule.c"
+        var $38=_PyErr_Format($37, __str151, allocate([$36,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 2563 "datetimemodule.c"
         $0=0; //@line 2566 "datetimemodule.c"
         __label__ = 10; break; //@line 2566 "datetimemodule.c"
       case 9: // $bb10
         var $39=HEAP[$format]; //@line 2568 "datetimemodule.c"
         var $40=$self_addr; //@line 2568 "datetimemodule.c"
         var $41=$40; //@line 2568 "datetimemodule.c"
-        var $42=__PyObject_CallMethod_SizeT($41, __str93, __str35, $39); //@line 2568 "datetimemodule.c"
+        var $42=__PyObject_CallMethod_SizeT($41, __str93, __str35, allocate([$39,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 2568 "datetimemodule.c"
         $0=$42; //@line 2568 "datetimemodule.c"
         __label__ = 10; break; //@line 2568 "datetimemodule.c"
       case 10: // $bb11
@@ -8540,77 +8579,41 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $year_addr_i_i;
-    var $month_addr_i_i;
-    var $day_addr_i_i;
-    var $retval_i_i;
-    var $0;
-    var $year_addr_i;
-    var $month_addr_i;
-    var $day_addr_i;
-    var $retval_i;
-    var $1;
     var $self_addr;
     var $retval;
-    var $2;
+    var $0;
     var $dow;
     $self_addr=$self;
-    var $3=$self_addr; //@line 2576 "datetimemodule.c"
-    var $4=$3+13; //@line 2576 "datetimemodule.c"
-    var $5=$4+3; //@line 2576 "datetimemodule.c"
-    var $6=HEAP[$5]; //@line 2576 "datetimemodule.c"
-    var $7=($6); //@line 2576 "datetimemodule.c"
-    var $8=$self_addr; //@line 2576 "datetimemodule.c"
-    var $9=$8+13; //@line 2576 "datetimemodule.c"
-    var $10=$9+2; //@line 2576 "datetimemodule.c"
-    var $11=HEAP[$10]; //@line 2576 "datetimemodule.c"
-    var $12=($11); //@line 2576 "datetimemodule.c"
-    var $13=$self_addr; //@line 2576 "datetimemodule.c"
-    var $14=$13+13; //@line 2576 "datetimemodule.c"
-    var $15=$14; //@line 2576 "datetimemodule.c"
-    var $16=HEAP[$15]; //@line 2576 "datetimemodule.c"
-    var $17=($16); //@line 2576 "datetimemodule.c"
-    var $18=($17) << 8; //@line 2576 "datetimemodule.c"
-    var $19=$self_addr; //@line 2576 "datetimemodule.c"
-    var $20=$19+13; //@line 2576 "datetimemodule.c"
-    var $21=$20+1; //@line 2576 "datetimemodule.c"
-    var $22=HEAP[$21]; //@line 2576 "datetimemodule.c"
-    var $23=($22); //@line 2576 "datetimemodule.c"
-    var $24=($23) | ($18); //@line 2576 "datetimemodule.c"
-    $year_addr_i=$24;
-    $month_addr_i=$12;
-    $day_addr_i=$7;
-    var $25=$year_addr_i; //@line 337 "datetimemodule.c"
-    var $26=$month_addr_i; //@line 337 "datetimemodule.c"
-    var $27=$day_addr_i; //@line 337 "datetimemodule.c"
-    $year_addr_i_i=$25;
-    $month_addr_i_i=$26;
-    $day_addr_i_i=$27;
-    var $28=$year_addr_i_i; //@line 330 "datetimemodule.c"
-    var $29=_days_before_year($28); //@line 330 "datetimemodule.c"
-    var $30=$year_addr_i_i; //@line 330 "datetimemodule.c"
-    var $31=$month_addr_i_i; //@line 330 "datetimemodule.c"
-    var $32=_days_before_month($30, $31); //@line 330 "datetimemodule.c"
-    var $33=$day_addr_i_i; //@line 330 "datetimemodule.c"
-    var $34=($32) + ($29); //@line 330 "datetimemodule.c"
-    var $35=($34) + ($33); //@line 330 "datetimemodule.c"
-    $0=$35; //@line 330 "datetimemodule.c"
-    var $36=$0; //@line 330 "datetimemodule.c"
-    $retval_i_i=$36; //@line 330 "datetimemodule.c"
-    var $retval1_i_i=$retval_i_i; //@line 330 "datetimemodule.c"
-    var $37=($retval1_i_i) + 6; //@line 337 "datetimemodule.c"
-    var $38=($37) % 7; //@line 337 "datetimemodule.c"
-    $1=$38; //@line 337 "datetimemodule.c"
-    var $39=$1; //@line 337 "datetimemodule.c"
-    $retval_i=$39; //@line 337 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 337 "datetimemodule.c"
-    $dow=$retval1_i; //@line 2576 "datetimemodule.c"
-    var $40=$dow; //@line 2578 "datetimemodule.c"
-    var $41=($40) + 1; //@line 2578 "datetimemodule.c"
-    var $42=_PyInt_FromLong($41); //@line 2578 "datetimemodule.c"
-    $2=$42; //@line 2578 "datetimemodule.c"
-    var $43=$2; //@line 2578 "datetimemodule.c"
-    $retval=$43; //@line 2578 "datetimemodule.c"
+    var $1=$self_addr; //@line 2576 "datetimemodule.c"
+    var $2=$1+13; //@line 2576 "datetimemodule.c"
+    var $3=$2+3; //@line 2576 "datetimemodule.c"
+    var $4=HEAP[$3]; //@line 2576 "datetimemodule.c"
+    var $5=($4); //@line 2576 "datetimemodule.c"
+    var $6=$self_addr; //@line 2576 "datetimemodule.c"
+    var $7=$6+13; //@line 2576 "datetimemodule.c"
+    var $8=$7+2; //@line 2576 "datetimemodule.c"
+    var $9=HEAP[$8]; //@line 2576 "datetimemodule.c"
+    var $10=($9); //@line 2576 "datetimemodule.c"
+    var $11=$self_addr; //@line 2576 "datetimemodule.c"
+    var $12=$11+13; //@line 2576 "datetimemodule.c"
+    var $13=$12; //@line 2576 "datetimemodule.c"
+    var $14=HEAP[$13]; //@line 2576 "datetimemodule.c"
+    var $15=($14); //@line 2576 "datetimemodule.c"
+    var $16=($15) << 8; //@line 2576 "datetimemodule.c"
+    var $17=$self_addr; //@line 2576 "datetimemodule.c"
+    var $18=$17+13; //@line 2576 "datetimemodule.c"
+    var $19=$18+1; //@line 2576 "datetimemodule.c"
+    var $20=HEAP[$19]; //@line 2576 "datetimemodule.c"
+    var $21=($20); //@line 2576 "datetimemodule.c"
+    var $22=($21) | ($16); //@line 2576 "datetimemodule.c"
+    var $23=_weekday($22, $10, $5); //@line 2576 "datetimemodule.c"
+    $dow=$23; //@line 2576 "datetimemodule.c"
+    var $24=$dow; //@line 2578 "datetimemodule.c"
+    var $25=($24) + 1; //@line 2578 "datetimemodule.c"
+    var $26=_PyInt_FromLong($25); //@line 2578 "datetimemodule.c"
+    $0=$26; //@line 2578 "datetimemodule.c"
+    var $27=$0; //@line 2578 "datetimemodule.c"
+    $retval=$27; //@line 2578 "datetimemodule.c"
     var $retval1=$retval; //@line 2578 "datetimemodule.c"
     ;
     return $retval1; //@line 2578 "datetimemodule.c"
@@ -8623,260 +8626,92 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i29;
-        var $month_addr_i30;
-        var $day_addr_i31;
-        var $retval_i32;
-        var $0;
-        var $year_addr_i21;
-        var $retval_i22;
-        var $1;
-        var $first_day_i23;
-        var $first_weekday_i24;
-        var $week1_monday_i25;
-        var $year_addr_i16;
-        var $month_addr_i17;
-        var $day_addr_i18;
-        var $retval_i19;
-        var $2;
-        var $year_addr_i8;
-        var $retval_i9;
-        var $3;
-        var $first_day_i10;
-        var $first_weekday_i11;
-        var $week1_monday_i12;
-        var $year_addr_i3;
-        var $month_addr_i4;
-        var $day_addr_i5;
-        var $retval_i6;
-        var $4;
-        var $year_addr_i1;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $retval_i2;
-        var $5;
-        var $year_addr_i;
-        var $retval_i;
-        var $6;
-        var $first_day_i;
-        var $first_weekday_i;
-        var $week1_monday_i;
         var $self_addr;
         var $retval;
-        var $7;
+        var $0;
         var $year;
         var $week1_monday;
         var $today;
         var $week;
         var $day=__stackBase__;
         $self_addr=$self;
-        var $8=$self_addr; //@line 2584 "datetimemodule.c"
-        var $9=$8+13; //@line 2584 "datetimemodule.c"
-        var $10=$9; //@line 2584 "datetimemodule.c"
-        var $11=HEAP[$10]; //@line 2584 "datetimemodule.c"
-        var $12=($11); //@line 2584 "datetimemodule.c"
-        var $13=($12) << 8; //@line 2584 "datetimemodule.c"
-        var $14=$self_addr; //@line 2584 "datetimemodule.c"
-        var $15=$14+13; //@line 2584 "datetimemodule.c"
-        var $16=$15+1; //@line 2584 "datetimemodule.c"
-        var $17=HEAP[$16]; //@line 2584 "datetimemodule.c"
-        var $18=($17); //@line 2584 "datetimemodule.c"
-        var $19=($18) | ($13); //@line 2584 "datetimemodule.c"
-        $year=$19; //@line 2584 "datetimemodule.c"
-        var $20=$year; //@line 2585 "datetimemodule.c"
-        $year_addr_i=$20;
-        var $21=$year_addr_i; //@line 346 "datetimemodule.c"
-        $year_addr_i1=$21;
-        $month_addr_i=1;
-        $day_addr_i=1;
-        var $22=$year_addr_i1; //@line 330 "datetimemodule.c"
-        var $23=_days_before_year($22); //@line 330 "datetimemodule.c"
-        var $24=$year_addr_i1; //@line 330 "datetimemodule.c"
-        var $25=$month_addr_i; //@line 330 "datetimemodule.c"
-        var $26=_days_before_month($24, $25); //@line 330 "datetimemodule.c"
-        var $27=$day_addr_i; //@line 330 "datetimemodule.c"
-        var $28=($26) + ($23); //@line 330 "datetimemodule.c"
-        var $29=($28) + ($27); //@line 330 "datetimemodule.c"
-        $5=$29; //@line 330 "datetimemodule.c"
-        var $30=$5; //@line 330 "datetimemodule.c"
-        $retval_i2=$30; //@line 330 "datetimemodule.c"
-        var $retval1_i=$retval_i2; //@line 330 "datetimemodule.c"
-        $first_day_i=$retval1_i; //@line 346 "datetimemodule.c"
-        var $31=$first_day_i; //@line 348 "datetimemodule.c"
-        var $32=($31) + 6; //@line 348 "datetimemodule.c"
-        var $33=($32) % 7; //@line 348 "datetimemodule.c"
-        $first_weekday_i=$33; //@line 348 "datetimemodule.c"
-        var $34=$first_day_i; //@line 350 "datetimemodule.c"
-        var $35=$first_weekday_i; //@line 350 "datetimemodule.c"
-        var $36=($34) - ($35); //@line 350 "datetimemodule.c"
-        $week1_monday_i=$36; //@line 350 "datetimemodule.c"
-        var $37=$first_weekday_i; //@line 352 "datetimemodule.c"
-        var $38=($37) > 3; //@line 352 "datetimemodule.c"
-        if ($38) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 352 "datetimemodule.c"
-      case 1: // $bb_i
-        var $39=$week1_monday_i; //@line 353 "datetimemodule.c"
-        var $40=($39) + 7; //@line 353 "datetimemodule.c"
-        $week1_monday_i=$40; //@line 353 "datetimemodule.c"
-        __label__ = 2; break; //@line 353 "datetimemodule.c"
-      case 2: // $iso_week1_monday_exit
-        var $41=$week1_monday_i; //@line 354 "datetimemodule.c"
-        $6=$41; //@line 354 "datetimemodule.c"
-        var $42=$6; //@line 354 "datetimemodule.c"
-        $retval_i=$42; //@line 354 "datetimemodule.c"
-        var $retval2_i=$retval_i; //@line 354 "datetimemodule.c"
-        $week1_monday=$retval2_i; //@line 2585 "datetimemodule.c"
-        var $43=$self_addr; //@line 2586 "datetimemodule.c"
-        var $44=$43+13; //@line 2586 "datetimemodule.c"
-        var $45=$44+3; //@line 2586 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 2586 "datetimemodule.c"
-        var $47=($46); //@line 2586 "datetimemodule.c"
-        var $48=$self_addr; //@line 2586 "datetimemodule.c"
-        var $49=$48+13; //@line 2586 "datetimemodule.c"
-        var $50=$49+2; //@line 2586 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 2586 "datetimemodule.c"
-        var $52=($51); //@line 2586 "datetimemodule.c"
-        var $53=$year; //@line 2586 "datetimemodule.c"
-        $year_addr_i3=$53;
-        $month_addr_i4=$52;
-        $day_addr_i5=$47;
-        var $54=$year_addr_i3; //@line 330 "datetimemodule.c"
-        var $55=_days_before_year($54); //@line 330 "datetimemodule.c"
-        var $56=$year_addr_i3; //@line 330 "datetimemodule.c"
-        var $57=$month_addr_i4; //@line 330 "datetimemodule.c"
-        var $58=_days_before_month($56, $57); //@line 330 "datetimemodule.c"
-        var $59=$day_addr_i5; //@line 330 "datetimemodule.c"
-        var $60=($58) + ($55); //@line 330 "datetimemodule.c"
-        var $61=($60) + ($59); //@line 330 "datetimemodule.c"
-        $4=$61; //@line 330 "datetimemodule.c"
-        var $62=$4; //@line 330 "datetimemodule.c"
-        $retval_i6=$62; //@line 330 "datetimemodule.c"
-        var $retval1_i7=$retval_i6; //@line 330 "datetimemodule.c"
-        $today=$retval1_i7; //@line 2586 "datetimemodule.c"
-        var $63=$today; //@line 2590 "datetimemodule.c"
-        var $64=$week1_monday; //@line 2590 "datetimemodule.c"
-        var $65=($63) - ($64); //@line 2590 "datetimemodule.c"
-        var $66=_divmod($65, 7, $day); //@line 2590 "datetimemodule.c"
-        $week=$66; //@line 2590 "datetimemodule.c"
-        var $67=($66) < 0; //@line 2591 "datetimemodule.c"
-        if ($67) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 2591 "datetimemodule.c"
-      case 3: // $bb
-        var $68=$year; //@line 2592 "datetimemodule.c"
-        var $69=($68) - 1; //@line 2592 "datetimemodule.c"
-        $year=$69; //@line 2592 "datetimemodule.c"
-        var $70=$year; //@line 2593 "datetimemodule.c"
-        $year_addr_i8=$70;
-        var $71=$year_addr_i8; //@line 346 "datetimemodule.c"
-        $year_addr_i16=$71;
-        $month_addr_i17=1;
-        $day_addr_i18=1;
-        var $72=$year_addr_i16; //@line 330 "datetimemodule.c"
-        var $73=_days_before_year($72); //@line 330 "datetimemodule.c"
-        var $74=$year_addr_i16; //@line 330 "datetimemodule.c"
-        var $75=$month_addr_i17; //@line 330 "datetimemodule.c"
-        var $76=_days_before_month($74, $75); //@line 330 "datetimemodule.c"
-        var $77=$day_addr_i18; //@line 330 "datetimemodule.c"
-        var $78=($76) + ($73); //@line 330 "datetimemodule.c"
-        var $79=($78) + ($77); //@line 330 "datetimemodule.c"
-        $2=$79; //@line 330 "datetimemodule.c"
-        var $80=$2; //@line 330 "datetimemodule.c"
-        $retval_i19=$80; //@line 330 "datetimemodule.c"
-        var $retval1_i20=$retval_i19; //@line 330 "datetimemodule.c"
-        $first_day_i10=$retval1_i20; //@line 346 "datetimemodule.c"
-        var $81=$first_day_i10; //@line 348 "datetimemodule.c"
-        var $82=($81) + 6; //@line 348 "datetimemodule.c"
-        var $83=($82) % 7; //@line 348 "datetimemodule.c"
-        $first_weekday_i11=$83; //@line 348 "datetimemodule.c"
-        var $84=$first_day_i10; //@line 350 "datetimemodule.c"
-        var $85=$first_weekday_i11; //@line 350 "datetimemodule.c"
-        var $86=($84) - ($85); //@line 350 "datetimemodule.c"
-        $week1_monday_i12=$86; //@line 350 "datetimemodule.c"
-        var $87=$first_weekday_i11; //@line 352 "datetimemodule.c"
-        var $88=($87) > 3; //@line 352 "datetimemodule.c"
-        if ($88) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 352 "datetimemodule.c"
-      case 4: // $bb_i13
-        var $89=$week1_monday_i12; //@line 353 "datetimemodule.c"
-        var $90=($89) + 7; //@line 353 "datetimemodule.c"
-        $week1_monday_i12=$90; //@line 353 "datetimemodule.c"
-        __label__ = 5; break; //@line 353 "datetimemodule.c"
-      case 5: // $iso_week1_monday_exit15
-        var $91=$week1_monday_i12; //@line 354 "datetimemodule.c"
-        $3=$91; //@line 354 "datetimemodule.c"
-        var $92=$3; //@line 354 "datetimemodule.c"
-        $retval_i9=$92; //@line 354 "datetimemodule.c"
-        var $retval2_i14=$retval_i9; //@line 354 "datetimemodule.c"
-        $week1_monday=$retval2_i14; //@line 2593 "datetimemodule.c"
-        var $93=$today; //@line 2594 "datetimemodule.c"
-        var $94=$week1_monday; //@line 2594 "datetimemodule.c"
-        var $95=($93) - ($94); //@line 2594 "datetimemodule.c"
-        var $96=_divmod($95, 7, $day); //@line 2594 "datetimemodule.c"
-        $week=$96; //@line 2594 "datetimemodule.c"
-        __label__ = 11; break; //@line 2594 "datetimemodule.c"
-      case 6: // $bb1
-        var $97=$week; //@line 2596 "datetimemodule.c"
-        var $98=($97) > 51; //@line 2596 "datetimemodule.c"
-        if ($98) { __label__ = 7; break; } else { __label__ = 11; break; } //@line 2596 "datetimemodule.c"
-      case 7: // $bb2
-        var $99=$year; //@line 2596 "datetimemodule.c"
-        var $100=($99) + 1; //@line 2596 "datetimemodule.c"
-        $year_addr_i21=$100;
-        var $101=$year_addr_i21; //@line 346 "datetimemodule.c"
-        $year_addr_i29=$101;
-        $month_addr_i30=1;
-        $day_addr_i31=1;
-        var $102=$year_addr_i29; //@line 330 "datetimemodule.c"
-        var $103=_days_before_year($102); //@line 330 "datetimemodule.c"
-        var $104=$year_addr_i29; //@line 330 "datetimemodule.c"
-        var $105=$month_addr_i30; //@line 330 "datetimemodule.c"
-        var $106=_days_before_month($104, $105); //@line 330 "datetimemodule.c"
-        var $107=$day_addr_i31; //@line 330 "datetimemodule.c"
-        var $108=($106) + ($103); //@line 330 "datetimemodule.c"
-        var $109=($108) + ($107); //@line 330 "datetimemodule.c"
-        $0=$109; //@line 330 "datetimemodule.c"
-        var $110=$0; //@line 330 "datetimemodule.c"
-        $retval_i32=$110; //@line 330 "datetimemodule.c"
-        var $retval1_i33=$retval_i32; //@line 330 "datetimemodule.c"
-        $first_day_i23=$retval1_i33; //@line 346 "datetimemodule.c"
-        var $111=$first_day_i23; //@line 348 "datetimemodule.c"
-        var $112=($111) + 6; //@line 348 "datetimemodule.c"
-        var $113=($112) % 7; //@line 348 "datetimemodule.c"
-        $first_weekday_i24=$113; //@line 348 "datetimemodule.c"
-        var $114=$first_day_i23; //@line 350 "datetimemodule.c"
-        var $115=$first_weekday_i24; //@line 350 "datetimemodule.c"
-        var $116=($114) - ($115); //@line 350 "datetimemodule.c"
-        $week1_monday_i25=$116; //@line 350 "datetimemodule.c"
-        var $117=$first_weekday_i24; //@line 352 "datetimemodule.c"
-        var $118=($117) > 3; //@line 352 "datetimemodule.c"
-        if ($118) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 352 "datetimemodule.c"
-      case 8: // $bb_i26
-        var $119=$week1_monday_i25; //@line 353 "datetimemodule.c"
-        var $120=($119) + 7; //@line 353 "datetimemodule.c"
-        $week1_monday_i25=$120; //@line 353 "datetimemodule.c"
-        __label__ = 9; break; //@line 353 "datetimemodule.c"
-      case 9: // $iso_week1_monday_exit28
-        var $121=$week1_monday_i25; //@line 354 "datetimemodule.c"
-        $1=$121; //@line 354 "datetimemodule.c"
-        var $122=$1; //@line 354 "datetimemodule.c"
-        $retval_i22=$122; //@line 354 "datetimemodule.c"
-        var $retval2_i27=$retval_i22; //@line 354 "datetimemodule.c"
-        var $123=$today; //@line 2596 "datetimemodule.c"
-        var $124=($retval2_i27) <= ($123); //@line 2596 "datetimemodule.c"
-        if ($124) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2596 "datetimemodule.c"
-      case 10: // $bb3
-        var $125=$year; //@line 2597 "datetimemodule.c"
-        var $126=($125) + 1; //@line 2597 "datetimemodule.c"
-        $year=$126; //@line 2597 "datetimemodule.c"
+        var $1=$self_addr; //@line 2584 "datetimemodule.c"
+        var $2=$1+13; //@line 2584 "datetimemodule.c"
+        var $3=$2; //@line 2584 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 2584 "datetimemodule.c"
+        var $5=($4); //@line 2584 "datetimemodule.c"
+        var $6=($5) << 8; //@line 2584 "datetimemodule.c"
+        var $7=$self_addr; //@line 2584 "datetimemodule.c"
+        var $8=$7+13; //@line 2584 "datetimemodule.c"
+        var $9=$8+1; //@line 2584 "datetimemodule.c"
+        var $10=HEAP[$9]; //@line 2584 "datetimemodule.c"
+        var $11=($10); //@line 2584 "datetimemodule.c"
+        var $12=($11) | ($6); //@line 2584 "datetimemodule.c"
+        $year=$12; //@line 2584 "datetimemodule.c"
+        var $13=$year; //@line 2585 "datetimemodule.c"
+        var $14=_iso_week1_monday($13); //@line 2585 "datetimemodule.c"
+        $week1_monday=$14; //@line 2585 "datetimemodule.c"
+        var $15=$self_addr; //@line 2586 "datetimemodule.c"
+        var $16=$15+13; //@line 2586 "datetimemodule.c"
+        var $17=$16+3; //@line 2586 "datetimemodule.c"
+        var $18=HEAP[$17]; //@line 2586 "datetimemodule.c"
+        var $19=($18); //@line 2586 "datetimemodule.c"
+        var $20=$self_addr; //@line 2586 "datetimemodule.c"
+        var $21=$20+13; //@line 2586 "datetimemodule.c"
+        var $22=$21+2; //@line 2586 "datetimemodule.c"
+        var $23=HEAP[$22]; //@line 2586 "datetimemodule.c"
+        var $24=($23); //@line 2586 "datetimemodule.c"
+        var $25=$year; //@line 2586 "datetimemodule.c"
+        var $26=_ymd_to_ord($25, $24, $19); //@line 2586 "datetimemodule.c"
+        $today=$26; //@line 2586 "datetimemodule.c"
+        var $27=$today; //@line 2590 "datetimemodule.c"
+        var $28=$week1_monday; //@line 2590 "datetimemodule.c"
+        var $29=($27) - ($28); //@line 2590 "datetimemodule.c"
+        var $30=_divmod($29, 7, $day); //@line 2590 "datetimemodule.c"
+        $week=$30; //@line 2590 "datetimemodule.c"
+        var $31=$week; //@line 2591 "datetimemodule.c"
+        var $32=($31) < 0; //@line 2591 "datetimemodule.c"
+        if ($32) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2591 "datetimemodule.c"
+      case 1: // $bb
+        var $33=$year; //@line 2592 "datetimemodule.c"
+        var $34=($33) - 1; //@line 2592 "datetimemodule.c"
+        $year=$34; //@line 2592 "datetimemodule.c"
+        var $35=$year; //@line 2593 "datetimemodule.c"
+        var $36=_iso_week1_monday($35); //@line 2593 "datetimemodule.c"
+        $week1_monday=$36; //@line 2593 "datetimemodule.c"
+        var $37=$today; //@line 2594 "datetimemodule.c"
+        var $38=$week1_monday; //@line 2594 "datetimemodule.c"
+        var $39=($37) - ($38); //@line 2594 "datetimemodule.c"
+        var $40=_divmod($39, 7, $day); //@line 2594 "datetimemodule.c"
+        $week=$40; //@line 2594 "datetimemodule.c"
+        __label__ = 5; break; //@line 2594 "datetimemodule.c"
+      case 2: // $bb1
+        var $41=$week; //@line 2596 "datetimemodule.c"
+        var $42=($41) > 51; //@line 2596 "datetimemodule.c"
+        if ($42) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 2596 "datetimemodule.c"
+      case 3: // $bb2
+        var $43=$year; //@line 2596 "datetimemodule.c"
+        var $44=($43) + 1; //@line 2596 "datetimemodule.c"
+        var $45=_iso_week1_monday($44); //@line 2596 "datetimemodule.c"
+        var $46=$today; //@line 2596 "datetimemodule.c"
+        var $47=($45) <= ($46); //@line 2596 "datetimemodule.c"
+        if ($47) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2596 "datetimemodule.c"
+      case 4: // $bb3
+        var $48=$year; //@line 2597 "datetimemodule.c"
+        var $49=($48) + 1; //@line 2597 "datetimemodule.c"
+        $year=$49; //@line 2597 "datetimemodule.c"
         $week=0; //@line 2598 "datetimemodule.c"
-        __label__ = 11; break; //@line 2598 "datetimemodule.c"
-      case 11: // $bb4
-        var $127=HEAP[$day]; //@line 2600 "datetimemodule.c"
-        var $128=($127) + 1; //@line 2600 "datetimemodule.c"
-        var $129=$week; //@line 2600 "datetimemodule.c"
-        var $130=($129) + 1; //@line 2600 "datetimemodule.c"
-        var $131=$year; //@line 2600 "datetimemodule.c"
-        var $132=__Py_BuildValue_SizeT(__str128, $131, $130, $128); //@line 2600 "datetimemodule.c"
-        $7=$132; //@line 2600 "datetimemodule.c"
-        var $133=$7; //@line 2600 "datetimemodule.c"
-        $retval=$133; //@line 2600 "datetimemodule.c"
+        __label__ = 5; break; //@line 2598 "datetimemodule.c"
+      case 5: // $bb4
+        var $50=HEAP[$day]; //@line 2600 "datetimemodule.c"
+        var $51=($50) + 1; //@line 2600 "datetimemodule.c"
+        var $52=$week; //@line 2600 "datetimemodule.c"
+        var $53=($52) + 1; //@line 2600 "datetimemodule.c"
+        var $54=$year; //@line 2600 "datetimemodule.c"
+        var $55=__Py_BuildValue_SizeT(__str128, allocate([$54,0,0,0,$53,0,0,0,$51,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2600 "datetimemodule.c"
+        $0=$55; //@line 2600 "datetimemodule.c"
+        var $56=$0; //@line 2600 "datetimemodule.c"
+        $retval=$56; //@line 2600 "datetimemodule.c"
         var $retval5=$retval; //@line 2600 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 2600 "datetimemodule.c"
@@ -8891,97 +8726,76 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $a_addr_i;
-        var $b_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $other_addr;
         var $op_addr;
         var $retval;
-        var $1;
+        var $0;
         var $diff;
         $self_addr=$self;
         $other_addr=$other;
         $op_addr=$op;
         $diff=42; //@line 2612 "datetimemodule.c"
-        var $2=$other_addr; //@line 2614 "datetimemodule.c"
-        var $3=$2+4; //@line 2614 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 2614 "datetimemodule.c"
-        var $5=($4)==(_PyDateTime_DateType); //@line 2614 "datetimemodule.c"
-        if ($5) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 2614 "datetimemodule.c"
+        var $1=$other_addr; //@line 2614 "datetimemodule.c"
+        var $2=$1+4; //@line 2614 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 2614 "datetimemodule.c"
+        var $4=($3)==(_PyDateTime_DateType); //@line 2614 "datetimemodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 2614 "datetimemodule.c"
       case 1: // $bb
-        var $6=$other_addr; //@line 2614 "datetimemodule.c"
-        var $7=$6+4; //@line 2614 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 2614 "datetimemodule.c"
-        var $9=_PyType_IsSubtype($8, _PyDateTime_DateType); //@line 2614 "datetimemodule.c"
-        var $10=($9)!=0; //@line 2614 "datetimemodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2614 "datetimemodule.c"
+        var $5=$other_addr; //@line 2614 "datetimemodule.c"
+        var $6=$5+4; //@line 2614 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 2614 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_DateType); //@line 2614 "datetimemodule.c"
+        var $9=($8)!=0; //@line 2614 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2614 "datetimemodule.c"
       case 2: // $bb1
-        var $11=$other_addr; //@line 2615 "datetimemodule.c"
-        var $12=$11; //@line 2615 "datetimemodule.c"
-        var $13=$12+13; //@line 2615 "datetimemodule.c"
-        var $14=$13; //@line 2615 "datetimemodule.c"
-        var $15=$self_addr; //@line 2615 "datetimemodule.c"
-        var $16=$15+13; //@line 2615 "datetimemodule.c"
-        var $17=$16; //@line 2615 "datetimemodule.c"
-        var $18=_memcmp($17, $14, 4); //@line 2615 "datetimemodule.c"
-        $diff=$18; //@line 2615 "datetimemodule.c"
+        var $10=$other_addr; //@line 2615 "datetimemodule.c"
+        var $11=$10; //@line 2615 "datetimemodule.c"
+        var $12=$11+13; //@line 2615 "datetimemodule.c"
+        var $13=$12; //@line 2615 "datetimemodule.c"
+        var $14=$self_addr; //@line 2615 "datetimemodule.c"
+        var $15=$14+13; //@line 2615 "datetimemodule.c"
+        var $16=$15; //@line 2615 "datetimemodule.c"
+        var $17=_memcmp($16, $13, 4); //@line 2615 "datetimemodule.c"
+        $diff=$17; //@line 2615 "datetimemodule.c"
         __label__ = 8; break; //@line 2615 "datetimemodule.c"
       case 3: // $bb2
-        var $19=$other_addr; //@line 2618 "datetimemodule.c"
-        var $20=_PyObject_HasAttrString($19, __str149); //@line 2618 "datetimemodule.c"
-        var $21=($20)!=0; //@line 2618 "datetimemodule.c"
-        if ($21) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2618 "datetimemodule.c"
+        var $18=$other_addr; //@line 2618 "datetimemodule.c"
+        var $19=_PyObject_HasAttrString($18, __str149); //@line 2618 "datetimemodule.c"
+        var $20=($19)!=0; //@line 2618 "datetimemodule.c"
+        if ($20) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 2618 "datetimemodule.c"
       case 4: // $bb3
-        var $22=HEAP[__Py_NotImplementedStruct]; //@line 2620 "datetimemodule.c"
-        var $23=($22) + 1; //@line 2620 "datetimemodule.c"
-        HEAP[__Py_NotImplementedStruct]=$23; //@line 2620 "datetimemodule.c"
-        $1=__Py_NotImplementedStruct; //@line 2621 "datetimemodule.c"
+        var $21=HEAP[__Py_NotImplementedStruct]; //@line 2620 "datetimemodule.c"
+        var $22=($21) + 1; //@line 2620 "datetimemodule.c"
+        HEAP[__Py_NotImplementedStruct]=$22; //@line 2620 "datetimemodule.c"
+        $0=__Py_NotImplementedStruct; //@line 2621 "datetimemodule.c"
         __label__ = 9; break; //@line 2621 "datetimemodule.c"
       case 5: // $bb4
-        var $24=$op_addr; //@line 2623 "datetimemodule.c"
-        var $25=($24)==2; //@line 2623 "datetimemodule.c"
-        var $26=$op_addr; //@line 2623 "datetimemodule.c"
-        var $27=($26)==3; //@line 2623 "datetimemodule.c"
-        var $or_cond=($25) | ($27);
+        var $23=$op_addr; //@line 2623 "datetimemodule.c"
+        var $24=($23)==2; //@line 2623 "datetimemodule.c"
+        var $25=$op_addr; //@line 2623 "datetimemodule.c"
+        var $26=($25)==3; //@line 2623 "datetimemodule.c"
+        var $or_cond=($24) | ($26);
         if ($or_cond) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 2623 "datetimemodule.c"
       case 6: // $bb6
         $diff=1; //@line 2624 "datetimemodule.c"
         __label__ = 8; break; //@line 2624 "datetimemodule.c"
       case 7: // $bb7
-        var $28=$self_addr; //@line 2627 "datetimemodule.c"
-        var $29=$28; //@line 2627 "datetimemodule.c"
-        var $30=$other_addr; //@line 2627 "datetimemodule.c"
-        $a_addr_i=$29;
-        $b_addr_i=$30;
-        var $31=$b_addr_i; //@line 1466 "datetimemodule.c"
-        var $32=$31+4; //@line 1466 "datetimemodule.c"
-        var $33=HEAP[$32]; //@line 1466 "datetimemodule.c"
-        var $34=$33+12; //@line 1466 "datetimemodule.c"
-        var $35=HEAP[$34]; //@line 1466 "datetimemodule.c"
-        var $36=$a_addr_i; //@line 1466 "datetimemodule.c"
-        var $37=$36+4; //@line 1466 "datetimemodule.c"
-        var $38=HEAP[$37]; //@line 1466 "datetimemodule.c"
-        var $39=$38+12; //@line 1466 "datetimemodule.c"
-        var $40=HEAP[$39]; //@line 1466 "datetimemodule.c"
-        var $41=HEAP[_PyExc_TypeError]; //@line 1466 "datetimemodule.c"
-        var $42=_PyErr_Format($41, __str103, $40, $35); //@line 1466 "datetimemodule.c"
-        $0=0; //@line 1469 "datetimemodule.c"
-        var $43=$0; //@line 1469 "datetimemodule.c"
-        $retval_i=$43; //@line 1469 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 1469 "datetimemodule.c"
-        $1=$retval1_i; //@line 2627 "datetimemodule.c"
+        var $27=$self_addr; //@line 2627 "datetimemodule.c"
+        var $28=$27; //@line 2627 "datetimemodule.c"
+        var $29=$other_addr; //@line 2627 "datetimemodule.c"
+        var $30=_cmperror($28, $29); //@line 2627 "datetimemodule.c"
+        $0=$30; //@line 2627 "datetimemodule.c"
         __label__ = 9; break; //@line 2627 "datetimemodule.c"
       case 8: // $bb8
-        var $44=$diff; //@line 2629 "datetimemodule.c"
-        var $45=$op_addr; //@line 2629 "datetimemodule.c"
-        var $46=_diff_to_bool($44, $45); //@line 2629 "datetimemodule.c"
-        $1=$46; //@line 2629 "datetimemodule.c"
+        var $31=$diff; //@line 2629 "datetimemodule.c"
+        var $32=$op_addr; //@line 2629 "datetimemodule.c"
+        var $33=_diff_to_bool($31, $32); //@line 2629 "datetimemodule.c"
+        $0=$33; //@line 2629 "datetimemodule.c"
         __label__ = 9; break; //@line 2629 "datetimemodule.c"
       case 9: // $bb9
-        var $47=$1; //@line 2621 "datetimemodule.c"
-        $retval=$47; //@line 2621 "datetimemodule.c"
+        var $34=$0; //@line 2621 "datetimemodule.c"
+        $retval=$34; //@line 2621 "datetimemodule.c"
         var $retval10=$retval; //@line 2621 "datetimemodule.c"
         ;
         return $retval10; //@line 2621 "datetimemodule.c"
@@ -9076,7 +8890,7 @@ var _initialized_b;
         HEAP[$day]=$22; //@line 2648 "datetimemodule.c"
         var $23=$args_addr; //@line 2650 "datetimemodule.c"
         var $24=$kw_addr; //@line 2650 "datetimemodule.c"
-        var $25=__PyArg_ParseTupleAndKeywords_SizeT($23, $24, __str152, _date_kws, $year, $month, $day); //@line 2650 "datetimemodule.c"
+        var $25=__PyArg_ParseTupleAndKeywords_SizeT($23, $24, __str152, _date_kws, allocate([$year,0,0,0,$month,0,0,0,$day,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 2650 "datetimemodule.c"
         var $26=($25)==0; //@line 2650 "datetimemodule.c"
         if ($26) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 2650 "datetimemodule.c"
       case 1: // $bb
@@ -9086,7 +8900,7 @@ var _initialized_b;
         var $27=HEAP[$day]; //@line 2653 "datetimemodule.c"
         var $28=HEAP[$month]; //@line 2653 "datetimemodule.c"
         var $29=HEAP[$year]; //@line 2653 "datetimemodule.c"
-        var $30=__Py_BuildValue_SizeT(__str128, $29, $28, $27); //@line 2653 "datetimemodule.c"
+        var $30=__Py_BuildValue_SizeT(__str128, allocate([$29,0,0,0,$28,0,0,0,$27,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 2653 "datetimemodule.c"
         $tuple=$30; //@line 2653 "datetimemodule.c"
         var $31=$tuple; //@line 2654 "datetimemodule.c"
         var $32=($31)==0; //@line 2654 "datetimemodule.c"
@@ -9144,69 +8958,57 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $temp;
         $self_addr=$self;
-        var $2=$self_addr; //@line 2666 "datetimemodule.c"
-        var $3=$2+8; //@line 2666 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 2666 "datetimemodule.c"
-        var $5=($4)==-1; //@line 2666 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 2666 "datetimemodule.c"
+        var $1=$self_addr; //@line 2666 "datetimemodule.c"
+        var $2=$1+8; //@line 2666 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 2666 "datetimemodule.c"
+        var $4=($3)==-1; //@line 2666 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 2666 "datetimemodule.c"
       case 1: // $bb
-        var $6=$self_addr; //@line 2667 "datetimemodule.c"
-        $self_addr_i=$6;
-        var $7=$self_addr_i; //@line 2697 "datetimemodule.c"
-        var $8=$7+13; //@line 2697 "datetimemodule.c"
-        var $9=$8; //@line 2697 "datetimemodule.c"
-        var $10=_PyString_FromStringAndSize($9, 4); //@line 2697 "datetimemodule.c"
-        var $11=__Py_BuildValue_SizeT(__str153, $10); //@line 2697 "datetimemodule.c"
-        $0=$11; //@line 2697 "datetimemodule.c"
-        var $12=$0; //@line 2697 "datetimemodule.c"
-        $retval_i=$12; //@line 2697 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 2697 "datetimemodule.c"
-        $temp=$retval1_i; //@line 2667 "datetimemodule.c"
-        var $13=$temp; //@line 2668 "datetimemodule.c"
-        var $14=($13)!=0; //@line 2668 "datetimemodule.c"
-        if ($14) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 2668 "datetimemodule.c"
+        var $5=$self_addr; //@line 2667 "datetimemodule.c"
+        var $6=_date_getstate($5); //@line 2667 "datetimemodule.c"
+        $temp=$6; //@line 2667 "datetimemodule.c"
+        var $7=$temp; //@line 2668 "datetimemodule.c"
+        var $8=($7)!=0; //@line 2668 "datetimemodule.c"
+        if ($8) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 2668 "datetimemodule.c"
       case 2: // $bb1
-        var $15=$temp; //@line 2669 "datetimemodule.c"
-        var $16=_PyObject_Hash($15); //@line 2669 "datetimemodule.c"
-        var $17=$self_addr; //@line 2669 "datetimemodule.c"
-        var $18=$17+8; //@line 2669 "datetimemodule.c"
-        HEAP[$18]=$16; //@line 2669 "datetimemodule.c"
+        var $9=$temp; //@line 2669 "datetimemodule.c"
+        var $10=_PyObject_Hash($9); //@line 2669 "datetimemodule.c"
+        var $11=$self_addr; //@line 2669 "datetimemodule.c"
+        var $12=$11+8; //@line 2669 "datetimemodule.c"
+        HEAP[$12]=$10; //@line 2669 "datetimemodule.c"
+        var $13=$temp; //@line 2670 "datetimemodule.c"
+        var $14=$13; //@line 2670 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 2670 "datetimemodule.c"
+        var $16=($15) - 1; //@line 2670 "datetimemodule.c"
+        var $17=$temp; //@line 2670 "datetimemodule.c"
+        var $18=$17; //@line 2670 "datetimemodule.c"
+        HEAP[$18]=$16; //@line 2670 "datetimemodule.c"
         var $19=$temp; //@line 2670 "datetimemodule.c"
         var $20=$19; //@line 2670 "datetimemodule.c"
         var $21=HEAP[$20]; //@line 2670 "datetimemodule.c"
-        var $22=($21) - 1; //@line 2670 "datetimemodule.c"
-        var $23=$temp; //@line 2670 "datetimemodule.c"
-        var $24=$23; //@line 2670 "datetimemodule.c"
-        HEAP[$24]=$22; //@line 2670 "datetimemodule.c"
-        var $25=$temp; //@line 2670 "datetimemodule.c"
-        var $26=$25; //@line 2670 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 2670 "datetimemodule.c"
-        var $28=($27)==0; //@line 2670 "datetimemodule.c"
-        if ($28) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2670 "datetimemodule.c"
+        var $22=($21)==0; //@line 2670 "datetimemodule.c"
+        if ($22) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 2670 "datetimemodule.c"
       case 3: // $bb2
-        var $29=$temp; //@line 2670 "datetimemodule.c"
-        var $30=$29+4; //@line 2670 "datetimemodule.c"
-        var $31=HEAP[$30]; //@line 2670 "datetimemodule.c"
-        var $32=$31+24; //@line 2670 "datetimemodule.c"
-        var $33=HEAP[$32]; //@line 2670 "datetimemodule.c"
-        var $34=$temp; //@line 2670 "datetimemodule.c"
-        FUNCTION_TABLE[$33]($34); //@line 2670 "datetimemodule.c"
+        var $23=$temp; //@line 2670 "datetimemodule.c"
+        var $24=$23+4; //@line 2670 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 2670 "datetimemodule.c"
+        var $26=$25+24; //@line 2670 "datetimemodule.c"
+        var $27=HEAP[$26]; //@line 2670 "datetimemodule.c"
+        var $28=$temp; //@line 2670 "datetimemodule.c"
+        FUNCTION_TABLE[$27]($28); //@line 2670 "datetimemodule.c"
         __label__ = 4; break; //@line 2670 "datetimemodule.c"
       case 4: // $bb3
-        var $35=$self_addr; //@line 2673 "datetimemodule.c"
-        var $36=$35+8; //@line 2673 "datetimemodule.c"
-        var $37=HEAP[$36]; //@line 2673 "datetimemodule.c"
-        $1=$37; //@line 2673 "datetimemodule.c"
-        var $38=$1; //@line 2673 "datetimemodule.c"
-        $retval=$38; //@line 2673 "datetimemodule.c"
+        var $29=$self_addr; //@line 2673 "datetimemodule.c"
+        var $30=$29+8; //@line 2673 "datetimemodule.c"
+        var $31=HEAP[$30]; //@line 2673 "datetimemodule.c"
+        $0=$31; //@line 2673 "datetimemodule.c"
+        var $32=$0; //@line 2673 "datetimemodule.c"
+        $retval=$32; //@line 2673 "datetimemodule.c"
         var $retval4=$retval; //@line 2673 "datetimemodule.c"
         ;
         return $retval4; //@line 2673 "datetimemodule.c"
@@ -9219,56 +9021,37 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $year_addr_i;
-    var $month_addr_i;
-    var $day_addr_i;
-    var $retval_i;
-    var $0;
     var $self_addr;
     var $retval;
-    var $1;
+    var $0;
     $self_addr=$self;
-    var $2=$self_addr; //@line 2679 "datetimemodule.c"
-    var $3=$2+13; //@line 2679 "datetimemodule.c"
-    var $4=$3+3; //@line 2679 "datetimemodule.c"
-    var $5=HEAP[$4]; //@line 2679 "datetimemodule.c"
-    var $6=($5); //@line 2679 "datetimemodule.c"
-    var $7=$self_addr; //@line 2679 "datetimemodule.c"
-    var $8=$7+13; //@line 2679 "datetimemodule.c"
-    var $9=$8+2; //@line 2679 "datetimemodule.c"
-    var $10=HEAP[$9]; //@line 2679 "datetimemodule.c"
-    var $11=($10); //@line 2679 "datetimemodule.c"
-    var $12=$self_addr; //@line 2679 "datetimemodule.c"
-    var $13=$12+13; //@line 2679 "datetimemodule.c"
-    var $14=$13; //@line 2679 "datetimemodule.c"
-    var $15=HEAP[$14]; //@line 2679 "datetimemodule.c"
-    var $16=($15); //@line 2679 "datetimemodule.c"
-    var $17=($16) << 8; //@line 2679 "datetimemodule.c"
-    var $18=$self_addr; //@line 2679 "datetimemodule.c"
-    var $19=$18+13; //@line 2679 "datetimemodule.c"
-    var $20=$19+1; //@line 2679 "datetimemodule.c"
-    var $21=HEAP[$20]; //@line 2679 "datetimemodule.c"
-    var $22=($21); //@line 2679 "datetimemodule.c"
-    var $23=($22) | ($17); //@line 2679 "datetimemodule.c"
-    $year_addr_i=$23;
-    $month_addr_i=$11;
-    $day_addr_i=$6;
-    var $24=$year_addr_i; //@line 330 "datetimemodule.c"
-    var $25=_days_before_year($24); //@line 330 "datetimemodule.c"
-    var $26=$year_addr_i; //@line 330 "datetimemodule.c"
-    var $27=$month_addr_i; //@line 330 "datetimemodule.c"
-    var $28=_days_before_month($26, $27); //@line 330 "datetimemodule.c"
-    var $29=$day_addr_i; //@line 330 "datetimemodule.c"
-    var $30=($28) + ($25); //@line 330 "datetimemodule.c"
-    var $31=($30) + ($29); //@line 330 "datetimemodule.c"
-    $0=$31; //@line 330 "datetimemodule.c"
-    var $32=$0; //@line 330 "datetimemodule.c"
-    $retval_i=$32; //@line 330 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 330 "datetimemodule.c"
-    var $33=_PyInt_FromLong($retval1_i); //@line 2679 "datetimemodule.c"
-    $1=$33; //@line 2679 "datetimemodule.c"
-    var $34=$1; //@line 2679 "datetimemodule.c"
-    $retval=$34; //@line 2679 "datetimemodule.c"
+    var $1=$self_addr; //@line 2679 "datetimemodule.c"
+    var $2=$1+13; //@line 2679 "datetimemodule.c"
+    var $3=$2+3; //@line 2679 "datetimemodule.c"
+    var $4=HEAP[$3]; //@line 2679 "datetimemodule.c"
+    var $5=($4); //@line 2679 "datetimemodule.c"
+    var $6=$self_addr; //@line 2679 "datetimemodule.c"
+    var $7=$6+13; //@line 2679 "datetimemodule.c"
+    var $8=$7+2; //@line 2679 "datetimemodule.c"
+    var $9=HEAP[$8]; //@line 2679 "datetimemodule.c"
+    var $10=($9); //@line 2679 "datetimemodule.c"
+    var $11=$self_addr; //@line 2679 "datetimemodule.c"
+    var $12=$11+13; //@line 2679 "datetimemodule.c"
+    var $13=$12; //@line 2679 "datetimemodule.c"
+    var $14=HEAP[$13]; //@line 2679 "datetimemodule.c"
+    var $15=($14); //@line 2679 "datetimemodule.c"
+    var $16=($15) << 8; //@line 2679 "datetimemodule.c"
+    var $17=$self_addr; //@line 2679 "datetimemodule.c"
+    var $18=$17+13; //@line 2679 "datetimemodule.c"
+    var $19=$18+1; //@line 2679 "datetimemodule.c"
+    var $20=HEAP[$19]; //@line 2679 "datetimemodule.c"
+    var $21=($20); //@line 2679 "datetimemodule.c"
+    var $22=($21) | ($16); //@line 2679 "datetimemodule.c"
+    var $23=_ymd_to_ord($22, $10, $5); //@line 2679 "datetimemodule.c"
+    var $24=_PyInt_FromLong($23); //@line 2679 "datetimemodule.c"
+    $0=$24; //@line 2679 "datetimemodule.c"
+    var $25=$0; //@line 2679 "datetimemodule.c"
+    $retval=$25; //@line 2679 "datetimemodule.c"
     var $retval1=$retval; //@line 2679 "datetimemodule.c"
     ;
     return $retval1; //@line 2679 "datetimemodule.c"
@@ -9279,79 +9062,65 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $year_addr_i_i;
-    var $month_addr_i_i;
-    var $day_addr_i_i;
-    var $retval_i_i;
-    var $0;
-    var $year_addr_i;
-    var $month_addr_i;
-    var $day_addr_i;
-    var $retval_i;
-    var $1;
     var $self_addr;
     var $retval;
-    var $2;
+    var $0;
     var $dow;
     $self_addr=$self;
-    var $3=$self_addr; //@line 2686 "datetimemodule.c"
-    var $4=$3+13; //@line 2686 "datetimemodule.c"
-    var $5=$4+3; //@line 2686 "datetimemodule.c"
-    var $6=HEAP[$5]; //@line 2686 "datetimemodule.c"
-    var $7=($6); //@line 2686 "datetimemodule.c"
-    var $8=$self_addr; //@line 2686 "datetimemodule.c"
-    var $9=$8+13; //@line 2686 "datetimemodule.c"
-    var $10=$9+2; //@line 2686 "datetimemodule.c"
-    var $11=HEAP[$10]; //@line 2686 "datetimemodule.c"
-    var $12=($11); //@line 2686 "datetimemodule.c"
-    var $13=$self_addr; //@line 2686 "datetimemodule.c"
-    var $14=$13+13; //@line 2686 "datetimemodule.c"
-    var $15=$14; //@line 2686 "datetimemodule.c"
-    var $16=HEAP[$15]; //@line 2686 "datetimemodule.c"
-    var $17=($16); //@line 2686 "datetimemodule.c"
-    var $18=($17) << 8; //@line 2686 "datetimemodule.c"
-    var $19=$self_addr; //@line 2686 "datetimemodule.c"
-    var $20=$19+13; //@line 2686 "datetimemodule.c"
-    var $21=$20+1; //@line 2686 "datetimemodule.c"
-    var $22=HEAP[$21]; //@line 2686 "datetimemodule.c"
-    var $23=($22); //@line 2686 "datetimemodule.c"
-    var $24=($23) | ($18); //@line 2686 "datetimemodule.c"
-    $year_addr_i=$24;
-    $month_addr_i=$12;
-    $day_addr_i=$7;
-    var $25=$year_addr_i; //@line 337 "datetimemodule.c"
-    var $26=$month_addr_i; //@line 337 "datetimemodule.c"
-    var $27=$day_addr_i; //@line 337 "datetimemodule.c"
-    $year_addr_i_i=$25;
-    $month_addr_i_i=$26;
-    $day_addr_i_i=$27;
-    var $28=$year_addr_i_i; //@line 330 "datetimemodule.c"
-    var $29=_days_before_year($28); //@line 330 "datetimemodule.c"
-    var $30=$year_addr_i_i; //@line 330 "datetimemodule.c"
-    var $31=$month_addr_i_i; //@line 330 "datetimemodule.c"
-    var $32=_days_before_month($30, $31); //@line 330 "datetimemodule.c"
-    var $33=$day_addr_i_i; //@line 330 "datetimemodule.c"
-    var $34=($32) + ($29); //@line 330 "datetimemodule.c"
-    var $35=($34) + ($33); //@line 330 "datetimemodule.c"
-    $0=$35; //@line 330 "datetimemodule.c"
-    var $36=$0; //@line 330 "datetimemodule.c"
-    $retval_i_i=$36; //@line 330 "datetimemodule.c"
-    var $retval1_i_i=$retval_i_i; //@line 330 "datetimemodule.c"
-    var $37=($retval1_i_i) + 6; //@line 337 "datetimemodule.c"
-    var $38=($37) % 7; //@line 337 "datetimemodule.c"
-    $1=$38; //@line 337 "datetimemodule.c"
-    var $39=$1; //@line 337 "datetimemodule.c"
-    $retval_i=$39; //@line 337 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 337 "datetimemodule.c"
-    $dow=$retval1_i; //@line 2686 "datetimemodule.c"
-    var $40=$dow; //@line 2688 "datetimemodule.c"
-    var $41=_PyInt_FromLong($40); //@line 2688 "datetimemodule.c"
-    $2=$41; //@line 2688 "datetimemodule.c"
-    var $42=$2; //@line 2688 "datetimemodule.c"
-    $retval=$42; //@line 2688 "datetimemodule.c"
+    var $1=$self_addr; //@line 2686 "datetimemodule.c"
+    var $2=$1+13; //@line 2686 "datetimemodule.c"
+    var $3=$2+3; //@line 2686 "datetimemodule.c"
+    var $4=HEAP[$3]; //@line 2686 "datetimemodule.c"
+    var $5=($4); //@line 2686 "datetimemodule.c"
+    var $6=$self_addr; //@line 2686 "datetimemodule.c"
+    var $7=$6+13; //@line 2686 "datetimemodule.c"
+    var $8=$7+2; //@line 2686 "datetimemodule.c"
+    var $9=HEAP[$8]; //@line 2686 "datetimemodule.c"
+    var $10=($9); //@line 2686 "datetimemodule.c"
+    var $11=$self_addr; //@line 2686 "datetimemodule.c"
+    var $12=$11+13; //@line 2686 "datetimemodule.c"
+    var $13=$12; //@line 2686 "datetimemodule.c"
+    var $14=HEAP[$13]; //@line 2686 "datetimemodule.c"
+    var $15=($14); //@line 2686 "datetimemodule.c"
+    var $16=($15) << 8; //@line 2686 "datetimemodule.c"
+    var $17=$self_addr; //@line 2686 "datetimemodule.c"
+    var $18=$17+13; //@line 2686 "datetimemodule.c"
+    var $19=$18+1; //@line 2686 "datetimemodule.c"
+    var $20=HEAP[$19]; //@line 2686 "datetimemodule.c"
+    var $21=($20); //@line 2686 "datetimemodule.c"
+    var $22=($21) | ($16); //@line 2686 "datetimemodule.c"
+    var $23=_weekday($22, $10, $5); //@line 2686 "datetimemodule.c"
+    $dow=$23; //@line 2686 "datetimemodule.c"
+    var $24=$dow; //@line 2688 "datetimemodule.c"
+    var $25=_PyInt_FromLong($24); //@line 2688 "datetimemodule.c"
+    $0=$25; //@line 2688 "datetimemodule.c"
+    var $26=$0; //@line 2688 "datetimemodule.c"
+    $retval=$26; //@line 2688 "datetimemodule.c"
     var $retval1=$retval; //@line 2688 "datetimemodule.c"
     ;
     return $retval1; //@line 2688 "datetimemodule.c"
+  }
+  
+
+  function _date_getstate($self) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    var $1=$self_addr; //@line 2697 "datetimemodule.c"
+    var $2=$1+13; //@line 2697 "datetimemodule.c"
+    var $3=$2; //@line 2697 "datetimemodule.c"
+    var $4=_PyString_FromStringAndSize($3, 4); //@line 2697 "datetimemodule.c"
+    var $5=__Py_BuildValue_SizeT(__str153, allocate([$4,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 2697 "datetimemodule.c"
+    $0=$5; //@line 2697 "datetimemodule.c"
+    var $6=$0; //@line 2697 "datetimemodule.c"
+    $retval=$6; //@line 2697 "datetimemodule.c"
+    var $retval1=$retval; //@line 2697 "datetimemodule.c"
+    ;
+    return $retval1; //@line 2697 "datetimemodule.c"
   }
   
 
@@ -9359,37 +9128,45 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $self_addr_i;
-    var $retval_i;
-    var $0;
     var $self_addr;
     var $arg_addr;
     var $retval;
-    var $1;
+    var $0;
     $self_addr=$self;
     $arg_addr=$arg;
-    var $2=$self_addr; //@line 2706 "datetimemodule.c"
-    $self_addr_i=$2;
-    var $3=$self_addr_i; //@line 2697 "datetimemodule.c"
-    var $4=$3+13; //@line 2697 "datetimemodule.c"
-    var $5=$4; //@line 2697 "datetimemodule.c"
-    var $6=_PyString_FromStringAndSize($5, 4); //@line 2697 "datetimemodule.c"
-    var $7=__Py_BuildValue_SizeT(__str153, $6); //@line 2697 "datetimemodule.c"
-    $0=$7; //@line 2697 "datetimemodule.c"
-    var $8=$0; //@line 2697 "datetimemodule.c"
-    $retval_i=$8; //@line 2697 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 2697 "datetimemodule.c"
-    var $9=$self_addr; //@line 2706 "datetimemodule.c"
-    var $10=$9; //@line 2706 "datetimemodule.c"
-    var $11=$10+4; //@line 2706 "datetimemodule.c"
-    var $12=HEAP[$11]; //@line 2706 "datetimemodule.c"
-    var $13=__Py_BuildValue_SizeT(__str154, $12, $retval1_i); //@line 2706 "datetimemodule.c"
-    $1=$13; //@line 2706 "datetimemodule.c"
-    var $14=$1; //@line 2706 "datetimemodule.c"
-    $retval=$14; //@line 2706 "datetimemodule.c"
+    var $1=$self_addr; //@line 2706 "datetimemodule.c"
+    var $2=_date_getstate($1); //@line 2706 "datetimemodule.c"
+    var $3=$self_addr; //@line 2706 "datetimemodule.c"
+    var $4=$3; //@line 2706 "datetimemodule.c"
+    var $5=$4+4; //@line 2706 "datetimemodule.c"
+    var $6=HEAP[$5]; //@line 2706 "datetimemodule.c"
+    var $7=__Py_BuildValue_SizeT(__str154, allocate([$6,0,0,0,$2,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 2706 "datetimemodule.c"
+    $0=$7; //@line 2706 "datetimemodule.c"
+    var $8=$0; //@line 2706 "datetimemodule.c"
+    $retval=$8; //@line 2706 "datetimemodule.c"
     var $retval1=$retval; //@line 2706 "datetimemodule.c"
     ;
     return $retval1; //@line 2706 "datetimemodule.c"
+  }
+  
+
+  function _tzinfo_nogo($methodname) {
+    ;
+    var __label__;
+  
+    var $methodname_addr;
+    var $retval;
+    var $0;
+    $methodname_addr=$methodname;
+    var $1=HEAP[_PyExc_NotImplementedError]; //@line 2849 "datetimemodule.c"
+    var $2=$methodname_addr; //@line 2849 "datetimemodule.c"
+    var $3=_PyErr_Format($1, __str177, allocate([$2,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 2849 "datetimemodule.c"
+    $0=0; //@line 2852 "datetimemodule.c"
+    var $4=$0; //@line 2852 "datetimemodule.c"
+    $retval=$4; //@line 2852 "datetimemodule.c"
+    var $retval1=$retval; //@line 2852 "datetimemodule.c"
+    ;
+    return $retval1; //@line 2852 "datetimemodule.c"
   }
   
 
@@ -9397,26 +9174,16 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $methodname_addr_i;
-    var $retval_i;
-    var $0;
     var $self_addr;
     var $dt_addr;
     var $retval;
-    var $1;
+    var $0;
     $self_addr=$self;
     $dt_addr=$dt;
-    $methodname_addr_i=__str45;
-    var $2=HEAP[_PyExc_NotImplementedError]; //@line 2849 "datetimemodule.c"
-    var $3=$methodname_addr_i; //@line 2849 "datetimemodule.c"
-    var $4=_PyErr_Format($2, __str177, $3); //@line 2849 "datetimemodule.c"
-    $0=0; //@line 2852 "datetimemodule.c"
-    var $5=$0; //@line 2852 "datetimemodule.c"
-    $retval_i=$5; //@line 2852 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 2852 "datetimemodule.c"
-    $1=$retval1_i; //@line 2860 "datetimemodule.c"
-    var $6=$1; //@line 2860 "datetimemodule.c"
-    $retval=$6; //@line 2860 "datetimemodule.c"
+    var $1=_tzinfo_nogo(__str45); //@line 2860 "datetimemodule.c"
+    $0=$1; //@line 2860 "datetimemodule.c"
+    var $2=$0; //@line 2860 "datetimemodule.c"
+    $retval=$2; //@line 2860 "datetimemodule.c"
     var $retval1=$retval; //@line 2860 "datetimemodule.c"
     ;
     return $retval1; //@line 2860 "datetimemodule.c"
@@ -9427,26 +9194,16 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $methodname_addr_i;
-    var $retval_i;
-    var $0;
     var $self_addr;
     var $dt_addr;
     var $retval;
-    var $1;
+    var $0;
     $self_addr=$self;
     $dt_addr=$dt;
-    $methodname_addr_i=__str42;
-    var $2=HEAP[_PyExc_NotImplementedError]; //@line 2849 "datetimemodule.c"
-    var $3=$methodname_addr_i; //@line 2849 "datetimemodule.c"
-    var $4=_PyErr_Format($2, __str177, $3); //@line 2849 "datetimemodule.c"
-    $0=0; //@line 2852 "datetimemodule.c"
-    var $5=$0; //@line 2852 "datetimemodule.c"
-    $retval_i=$5; //@line 2852 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 2852 "datetimemodule.c"
-    $1=$retval1_i; //@line 2866 "datetimemodule.c"
-    var $6=$1; //@line 2866 "datetimemodule.c"
-    $retval=$6; //@line 2866 "datetimemodule.c"
+    var $1=_tzinfo_nogo(__str42); //@line 2866 "datetimemodule.c"
+    $0=$1; //@line 2866 "datetimemodule.c"
+    var $2=$0; //@line 2866 "datetimemodule.c"
+    $retval=$2; //@line 2866 "datetimemodule.c"
     var $retval1=$retval; //@line 2866 "datetimemodule.c"
     ;
     return $retval1; //@line 2866 "datetimemodule.c"
@@ -9457,26 +9214,16 @@ var _initialized_b;
     ;
     var __label__;
   
-    var $methodname_addr_i;
-    var $retval_i;
-    var $0;
     var $self_addr;
     var $dt_addr;
     var $retval;
-    var $1;
+    var $0;
     $self_addr=$self;
     $dt_addr=$dt;
-    $methodname_addr_i=__str44;
-    var $2=HEAP[_PyExc_NotImplementedError]; //@line 2849 "datetimemodule.c"
-    var $3=$methodname_addr_i; //@line 2849 "datetimemodule.c"
-    var $4=_PyErr_Format($2, __str177, $3); //@line 2849 "datetimemodule.c"
-    $0=0; //@line 2852 "datetimemodule.c"
-    var $5=$0; //@line 2852 "datetimemodule.c"
-    $retval_i=$5; //@line 2852 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 2852 "datetimemodule.c"
-    $1=$retval1_i; //@line 2872 "datetimemodule.c"
-    var $6=$1; //@line 2872 "datetimemodule.c"
-    $retval=$6; //@line 2872 "datetimemodule.c"
+    var $1=_tzinfo_nogo(__str44); //@line 2872 "datetimemodule.c"
+    $0=$1; //@line 2872 "datetimemodule.c"
+    var $2=$0; //@line 2872 "datetimemodule.c"
+    $retval=$2; //@line 2872 "datetimemodule.c"
     var $retval1=$retval; //@line 2872 "datetimemodule.c"
     ;
     return $retval1; //@line 2872 "datetimemodule.c"
@@ -9489,43 +9236,10 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i16;
-        var $month_addr_i17;
-        var $day_addr_i18;
-        var $hour_addr_i19;
-        var $minute_addr_i20;
-        var $second_addr_i21;
-        var $microsecond_addr_i22;
-        var $retval_i23;
-        var $0;
-        var $tzinfo_addr_i11;
-        var $tzinfoarg_addr_i12;
-        var $none_addr_i13;
-        var $retval_i14;
-        var $1;
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $hour_addr_i;
-        var $minute_addr_i;
-        var $second_addr_i;
-        var $microsecond_addr_i;
-        var $retval_i9;
-        var $2;
-        var $tzinfo_addr_i4;
-        var $tzinfoarg_addr_i5;
-        var $none_addr_i6;
-        var $retval_i7;
-        var $3;
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $4;
         var $self_addr;
         var $dt_addr;
         var $retval;
-        var $5;
+        var $0;
         var $y=__stackBase__;
         var $m=__stackBase__+4;
         var $d=__stackBase__+8;
@@ -9540,399 +9254,317 @@ var _initialized_b;
         var $delta;
         $self_addr=$self;
         $dt_addr=$dt;
+        var $1=$dt_addr; //@line 2885 "datetimemodule.c"
+        var $2=$1; //@line 2885 "datetimemodule.c"
+        var $3=$2+4; //@line 2885 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 2885 "datetimemodule.c"
+        var $5=($4)!=(_PyDateTime_DateTimeType); //@line 2885 "datetimemodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 2885 "datetimemodule.c"
+      case 1: // $bb
         var $6=$dt_addr; //@line 2885 "datetimemodule.c"
         var $7=$6; //@line 2885 "datetimemodule.c"
         var $8=$7+4; //@line 2885 "datetimemodule.c"
         var $9=HEAP[$8]; //@line 2885 "datetimemodule.c"
-        var $10=($9)!=(_PyDateTime_DateTimeType); //@line 2885 "datetimemodule.c"
-        if ($10) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 2885 "datetimemodule.c"
-      case 1: // $bb
-        var $11=$dt_addr; //@line 2885 "datetimemodule.c"
-        var $12=$11; //@line 2885 "datetimemodule.c"
-        var $13=$12+4; //@line 2885 "datetimemodule.c"
-        var $14=HEAP[$13]; //@line 2885 "datetimemodule.c"
-        var $15=_PyType_IsSubtype($14, _PyDateTime_DateTimeType); //@line 2885 "datetimemodule.c"
-        var $16=($15)==0; //@line 2885 "datetimemodule.c"
-        if ($16) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2885 "datetimemodule.c"
+        var $10=_PyType_IsSubtype($9, _PyDateTime_DateTimeType); //@line 2885 "datetimemodule.c"
+        var $11=($10)==0; //@line 2885 "datetimemodule.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 2885 "datetimemodule.c"
       case 2: // $bb1
-        var $17=HEAP[_PyExc_TypeError]; //@line 2886 "datetimemodule.c"
-        _PyErr_SetString($17, __str178); //@line 2886 "datetimemodule.c"
-        $5=0; //@line 2888 "datetimemodule.c"
+        var $12=HEAP[_PyExc_TypeError]; //@line 2886 "datetimemodule.c"
+        _PyErr_SetString($12, __str178); //@line 2886 "datetimemodule.c"
+        $0=0; //@line 2888 "datetimemodule.c"
         __label__ = 35; break; //@line 2888 "datetimemodule.c"
       case 3: // $bb2
-        var $18=$dt_addr; //@line 2890 "datetimemodule.c"
-        var $19=$18; //@line 2890 "datetimemodule.c"
-        var $20=$19+12; //@line 2890 "datetimemodule.c"
-        var $21=HEAP[$20]; //@line 2890 "datetimemodule.c"
-        var $22=($21)==0; //@line 2890 "datetimemodule.c"
-        if ($22) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 2890 "datetimemodule.c"
+        var $13=$dt_addr; //@line 2890 "datetimemodule.c"
+        var $14=$13; //@line 2890 "datetimemodule.c"
+        var $15=$14+12; //@line 2890 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 2890 "datetimemodule.c"
+        var $17=($16)==0; //@line 2890 "datetimemodule.c"
+        if ($17) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 2890 "datetimemodule.c"
       case 4: // $bb3
-        var $23=$dt_addr; //@line 2890 "datetimemodule.c"
-        var $24=$23+24; //@line 2890 "datetimemodule.c"
-        var $25=HEAP[$24]; //@line 2890 "datetimemodule.c"
-        var $26=$self_addr; //@line 2890 "datetimemodule.c"
-        var $27=($25)!=($26); //@line 2890 "datetimemodule.c"
-        if ($27) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2890 "datetimemodule.c"
+        var $18=$dt_addr; //@line 2890 "datetimemodule.c"
+        var $19=$18+24; //@line 2890 "datetimemodule.c"
+        var $20=HEAP[$19]; //@line 2890 "datetimemodule.c"
+        var $21=$self_addr; //@line 2890 "datetimemodule.c"
+        var $22=($20)!=($21); //@line 2890 "datetimemodule.c"
+        if ($22) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 2890 "datetimemodule.c"
       case 5: // $bb4
-        var $28=HEAP[_PyExc_ValueError]; //@line 2891 "datetimemodule.c"
-        _PyErr_SetString($28, __str179); //@line 2891 "datetimemodule.c"
-        $5=0; //@line 2893 "datetimemodule.c"
+        var $23=HEAP[_PyExc_ValueError]; //@line 2891 "datetimemodule.c"
+        _PyErr_SetString($23, __str179); //@line 2891 "datetimemodule.c"
+        $0=0; //@line 2893 "datetimemodule.c"
         __label__ = 35; break; //@line 2893 "datetimemodule.c"
       case 6: // $bb5
-        var $29=$dt_addr; //@line 2896 "datetimemodule.c"
-        var $30=$29; //@line 2896 "datetimemodule.c"
-        var $31=$dt_addr; //@line 2896 "datetimemodule.c"
-        var $32=$31+24; //@line 2896 "datetimemodule.c"
-        var $33=HEAP[$32]; //@line 2896 "datetimemodule.c"
-        $tzinfo_addr_i=$33;
-        $tzinfoarg_addr_i=$30;
-        $none_addr_i=$none;
-        var $34=$tzinfo_addr_i; //@line 888 "datetimemodule.c"
-        var $35=$tzinfoarg_addr_i; //@line 888 "datetimemodule.c"
-        var $36=$none_addr_i; //@line 888 "datetimemodule.c"
-        var $37=_call_utc_tzinfo_method($34, __str42, $35, $36); //@line 888 "datetimemodule.c"
-        $4=$37; //@line 888 "datetimemodule.c"
-        var $38=$4; //@line 888 "datetimemodule.c"
-        $retval_i=$38; //@line 888 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 888 "datetimemodule.c"
-        $off=$retval1_i; //@line 2896 "datetimemodule.c"
-        var $39=$off; //@line 2897 "datetimemodule.c"
-        var $40=($39)==-1; //@line 2897 "datetimemodule.c"
-        if ($40) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 2897 "datetimemodule.c"
+        var $24=$dt_addr; //@line 2896 "datetimemodule.c"
+        var $25=$24; //@line 2896 "datetimemodule.c"
+        var $26=$dt_addr; //@line 2896 "datetimemodule.c"
+        var $27=$26+24; //@line 2896 "datetimemodule.c"
+        var $28=HEAP[$27]; //@line 2896 "datetimemodule.c"
+        var $29=_call_utcoffset($28, $25, $none); //@line 2896 "datetimemodule.c"
+        $off=$29; //@line 2896 "datetimemodule.c"
+        var $30=$off; //@line 2897 "datetimemodule.c"
+        var $31=($30)==-1; //@line 2897 "datetimemodule.c"
+        if ($31) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 2897 "datetimemodule.c"
       case 7: // $bb6
-        var $41=_PyErr_Occurred(); //@line 2897 "datetimemodule.c"
-        var $42=($41)!=0; //@line 2897 "datetimemodule.c"
-        if ($42) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 2897 "datetimemodule.c"
+        var $32=_PyErr_Occurred(); //@line 2897 "datetimemodule.c"
+        var $33=($32)!=0; //@line 2897 "datetimemodule.c"
+        if ($33) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 2897 "datetimemodule.c"
       case 8: // $bb7
-        $5=0; //@line 2898 "datetimemodule.c"
+        $0=0; //@line 2898 "datetimemodule.c"
         __label__ = 35; break; //@line 2898 "datetimemodule.c"
       case 9: // $bb8
-        var $43=HEAP[$none]; //@line 2899 "datetimemodule.c"
-        var $44=($43)!=0; //@line 2899 "datetimemodule.c"
-        if ($44) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2899 "datetimemodule.c"
+        var $34=HEAP[$none]; //@line 2899 "datetimemodule.c"
+        var $35=($34)!=0; //@line 2899 "datetimemodule.c"
+        if ($35) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 2899 "datetimemodule.c"
       case 10: // $bb9
-        var $45=HEAP[_PyExc_ValueError]; //@line 2900 "datetimemodule.c"
-        _PyErr_SetString($45, __str180); //@line 2900 "datetimemodule.c"
-        $5=0; //@line 2902 "datetimemodule.c"
+        var $36=HEAP[_PyExc_ValueError]; //@line 2900 "datetimemodule.c"
+        _PyErr_SetString($36, __str180); //@line 2900 "datetimemodule.c"
+        $0=0; //@line 2902 "datetimemodule.c"
         __label__ = 35; break; //@line 2902 "datetimemodule.c"
       case 11: // $bb10
-        var $46=$dt_addr; //@line 2905 "datetimemodule.c"
-        var $47=$46; //@line 2905 "datetimemodule.c"
-        var $48=$dt_addr; //@line 2905 "datetimemodule.c"
-        var $49=$48+24; //@line 2905 "datetimemodule.c"
-        var $50=HEAP[$49]; //@line 2905 "datetimemodule.c"
-        $tzinfo_addr_i4=$50;
-        $tzinfoarg_addr_i5=$47;
-        $none_addr_i6=$none;
-        var $51=$tzinfo_addr_i4; //@line 929 "datetimemodule.c"
-        var $52=$tzinfoarg_addr_i5; //@line 929 "datetimemodule.c"
-        var $53=$none_addr_i6; //@line 929 "datetimemodule.c"
-        var $54=_call_utc_tzinfo_method($51, __str44, $52, $53); //@line 929 "datetimemodule.c"
-        $3=$54; //@line 929 "datetimemodule.c"
-        var $55=$3; //@line 929 "datetimemodule.c"
-        $retval_i7=$55; //@line 929 "datetimemodule.c"
-        var $retval1_i8=$retval_i7; //@line 929 "datetimemodule.c"
-        $dst=$retval1_i8; //@line 2905 "datetimemodule.c"
-        var $56=$dst; //@line 2906 "datetimemodule.c"
-        var $57=($56)==-1; //@line 2906 "datetimemodule.c"
-        if ($57) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 2906 "datetimemodule.c"
+        var $37=$dt_addr; //@line 2905 "datetimemodule.c"
+        var $38=$37; //@line 2905 "datetimemodule.c"
+        var $39=$dt_addr; //@line 2905 "datetimemodule.c"
+        var $40=$39+24; //@line 2905 "datetimemodule.c"
+        var $41=HEAP[$40]; //@line 2905 "datetimemodule.c"
+        var $42=_call_dst($41, $38, $none); //@line 2905 "datetimemodule.c"
+        $dst=$42; //@line 2905 "datetimemodule.c"
+        var $43=$dst; //@line 2906 "datetimemodule.c"
+        var $44=($43)==-1; //@line 2906 "datetimemodule.c"
+        if ($44) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 2906 "datetimemodule.c"
       case 12: // $bb11
-        var $58=_PyErr_Occurred(); //@line 2906 "datetimemodule.c"
-        var $59=($58)!=0; //@line 2906 "datetimemodule.c"
-        if ($59) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2906 "datetimemodule.c"
+        var $45=_PyErr_Occurred(); //@line 2906 "datetimemodule.c"
+        var $46=($45)!=0; //@line 2906 "datetimemodule.c"
+        if ($46) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 2906 "datetimemodule.c"
       case 13: // $bb12
-        $5=0; //@line 2907 "datetimemodule.c"
+        $0=0; //@line 2907 "datetimemodule.c"
         __label__ = 35; break; //@line 2907 "datetimemodule.c"
       case 14: // $bb13
-        var $60=HEAP[$none]; //@line 2908 "datetimemodule.c"
-        var $61=($60)!=0; //@line 2908 "datetimemodule.c"
-        if ($61) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 2908 "datetimemodule.c"
+        var $47=HEAP[$none]; //@line 2908 "datetimemodule.c"
+        var $48=($47)!=0; //@line 2908 "datetimemodule.c"
+        if ($48) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 2908 "datetimemodule.c"
       case 15: // $bb14
-        var $62=HEAP[_PyExc_ValueError]; //@line 2909 "datetimemodule.c"
-        _PyErr_SetString($62, __str181); //@line 2909 "datetimemodule.c"
-        $5=0; //@line 2911 "datetimemodule.c"
+        var $49=HEAP[_PyExc_ValueError]; //@line 2909 "datetimemodule.c"
+        _PyErr_SetString($49, __str181); //@line 2909 "datetimemodule.c"
+        $0=0; //@line 2911 "datetimemodule.c"
         __label__ = 35; break; //@line 2911 "datetimemodule.c"
       case 16: // $bb15
-        var $63=$dt_addr; //@line 2914 "datetimemodule.c"
-        var $64=$63; //@line 2914 "datetimemodule.c"
-        var $65=$64+13; //@line 2914 "datetimemodule.c"
-        var $66=$65; //@line 2914 "datetimemodule.c"
-        var $67=HEAP[$66]; //@line 2914 "datetimemodule.c"
-        var $68=($67); //@line 2914 "datetimemodule.c"
-        var $69=($68) << 8; //@line 2914 "datetimemodule.c"
-        var $70=$dt_addr; //@line 2914 "datetimemodule.c"
-        var $71=$70; //@line 2914 "datetimemodule.c"
-        var $72=$71+13; //@line 2914 "datetimemodule.c"
-        var $73=$72+1; //@line 2914 "datetimemodule.c"
-        var $74=HEAP[$73]; //@line 2914 "datetimemodule.c"
-        var $75=($74); //@line 2914 "datetimemodule.c"
-        var $76=($75) | ($69); //@line 2914 "datetimemodule.c"
-        HEAP[$y]=$76; //@line 2914 "datetimemodule.c"
-        var $77=$dt_addr; //@line 2915 "datetimemodule.c"
-        var $78=$77; //@line 2915 "datetimemodule.c"
-        var $79=$78+13; //@line 2915 "datetimemodule.c"
-        var $80=$79+2; //@line 2915 "datetimemodule.c"
-        var $81=HEAP[$80]; //@line 2915 "datetimemodule.c"
-        var $82=($81); //@line 2915 "datetimemodule.c"
-        HEAP[$m]=$82; //@line 2915 "datetimemodule.c"
-        var $83=$dt_addr; //@line 2916 "datetimemodule.c"
-        var $84=$83; //@line 2916 "datetimemodule.c"
-        var $85=$84+13; //@line 2916 "datetimemodule.c"
-        var $86=$85+3; //@line 2916 "datetimemodule.c"
-        var $87=HEAP[$86]; //@line 2916 "datetimemodule.c"
-        var $88=($87); //@line 2916 "datetimemodule.c"
-        HEAP[$d]=$88; //@line 2916 "datetimemodule.c"
-        var $89=$dt_addr; //@line 2917 "datetimemodule.c"
-        var $90=$89+13; //@line 2917 "datetimemodule.c"
-        var $91=$90+4; //@line 2917 "datetimemodule.c"
-        var $92=HEAP[$91]; //@line 2917 "datetimemodule.c"
-        var $93=($92); //@line 2917 "datetimemodule.c"
-        HEAP[$hh]=$93; //@line 2917 "datetimemodule.c"
-        var $94=$dt_addr; //@line 2918 "datetimemodule.c"
-        var $95=$94+13; //@line 2918 "datetimemodule.c"
-        var $96=$95+5; //@line 2918 "datetimemodule.c"
-        var $97=HEAP[$96]; //@line 2918 "datetimemodule.c"
-        var $98=($97); //@line 2918 "datetimemodule.c"
-        HEAP[$mm]=$98; //@line 2918 "datetimemodule.c"
-        var $99=$dt_addr; //@line 2919 "datetimemodule.c"
-        var $100=$99+13; //@line 2919 "datetimemodule.c"
-        var $101=$100+6; //@line 2919 "datetimemodule.c"
-        var $102=HEAP[$101]; //@line 2919 "datetimemodule.c"
-        var $103=($102); //@line 2919 "datetimemodule.c"
-        HEAP[$ss]=$103; //@line 2919 "datetimemodule.c"
-        var $104=$dt_addr; //@line 2920 "datetimemodule.c"
-        var $105=$104+13; //@line 2920 "datetimemodule.c"
-        var $106=$105+7; //@line 2920 "datetimemodule.c"
-        var $107=HEAP[$106]; //@line 2920 "datetimemodule.c"
-        var $108=($107); //@line 2920 "datetimemodule.c"
-        var $109=($108) << 16; //@line 2920 "datetimemodule.c"
-        var $110=$dt_addr; //@line 2920 "datetimemodule.c"
-        var $111=$110+13; //@line 2920 "datetimemodule.c"
-        var $112=$111+8; //@line 2920 "datetimemodule.c"
-        var $113=HEAP[$112]; //@line 2920 "datetimemodule.c"
-        var $114=($113); //@line 2920 "datetimemodule.c"
-        var $115=($114) << 8; //@line 2920 "datetimemodule.c"
-        var $116=$dt_addr; //@line 2920 "datetimemodule.c"
-        var $117=$116+13; //@line 2920 "datetimemodule.c"
-        var $118=$117+9; //@line 2920 "datetimemodule.c"
-        var $119=HEAP[$118]; //@line 2920 "datetimemodule.c"
-        var $120=($119); //@line 2920 "datetimemodule.c"
-        var $121=($115) | ($109); //@line 2920 "datetimemodule.c"
-        var $122=($121) | ($120); //@line 2920 "datetimemodule.c"
-        HEAP[$us]=$122; //@line 2920 "datetimemodule.c"
-        var $123=$off; //@line 2922 "datetimemodule.c"
-        var $124=$dst; //@line 2922 "datetimemodule.c"
-        var $125=($123) - ($124); //@line 2922 "datetimemodule.c"
-        $delta=$125; //@line 2922 "datetimemodule.c"
-        var $126=HEAP[$mm]; //@line 2923 "datetimemodule.c"
-        var $127=$delta; //@line 2923 "datetimemodule.c"
-        var $128=($127) + ($126); //@line 2923 "datetimemodule.c"
-        HEAP[$mm]=$128; //@line 2923 "datetimemodule.c"
-        var $129=HEAP[$mm]; //@line 2924 "datetimemodule.c"
-        var $130=($129) < 0; //@line 2924 "datetimemodule.c"
-        var $131=HEAP[$mm]; //@line 2924 "datetimemodule.c"
-        var $132=($131) > 59; //@line 2924 "datetimemodule.c"
-        var $or_cond=($130) | ($132);
+        var $50=$dt_addr; //@line 2914 "datetimemodule.c"
+        var $51=$50; //@line 2914 "datetimemodule.c"
+        var $52=$51+13; //@line 2914 "datetimemodule.c"
+        var $53=$52; //@line 2914 "datetimemodule.c"
+        var $54=HEAP[$53]; //@line 2914 "datetimemodule.c"
+        var $55=($54); //@line 2914 "datetimemodule.c"
+        var $56=($55) << 8; //@line 2914 "datetimemodule.c"
+        var $57=$dt_addr; //@line 2914 "datetimemodule.c"
+        var $58=$57; //@line 2914 "datetimemodule.c"
+        var $59=$58+13; //@line 2914 "datetimemodule.c"
+        var $60=$59+1; //@line 2914 "datetimemodule.c"
+        var $61=HEAP[$60]; //@line 2914 "datetimemodule.c"
+        var $62=($61); //@line 2914 "datetimemodule.c"
+        var $63=($62) | ($56); //@line 2914 "datetimemodule.c"
+        HEAP[$y]=$63; //@line 2914 "datetimemodule.c"
+        var $64=$dt_addr; //@line 2915 "datetimemodule.c"
+        var $65=$64; //@line 2915 "datetimemodule.c"
+        var $66=$65+13; //@line 2915 "datetimemodule.c"
+        var $67=$66+2; //@line 2915 "datetimemodule.c"
+        var $68=HEAP[$67]; //@line 2915 "datetimemodule.c"
+        var $69=($68); //@line 2915 "datetimemodule.c"
+        HEAP[$m]=$69; //@line 2915 "datetimemodule.c"
+        var $70=$dt_addr; //@line 2916 "datetimemodule.c"
+        var $71=$70; //@line 2916 "datetimemodule.c"
+        var $72=$71+13; //@line 2916 "datetimemodule.c"
+        var $73=$72+3; //@line 2916 "datetimemodule.c"
+        var $74=HEAP[$73]; //@line 2916 "datetimemodule.c"
+        var $75=($74); //@line 2916 "datetimemodule.c"
+        HEAP[$d]=$75; //@line 2916 "datetimemodule.c"
+        var $76=$dt_addr; //@line 2917 "datetimemodule.c"
+        var $77=$76+13; //@line 2917 "datetimemodule.c"
+        var $78=$77+4; //@line 2917 "datetimemodule.c"
+        var $79=HEAP[$78]; //@line 2917 "datetimemodule.c"
+        var $80=($79); //@line 2917 "datetimemodule.c"
+        HEAP[$hh]=$80; //@line 2917 "datetimemodule.c"
+        var $81=$dt_addr; //@line 2918 "datetimemodule.c"
+        var $82=$81+13; //@line 2918 "datetimemodule.c"
+        var $83=$82+5; //@line 2918 "datetimemodule.c"
+        var $84=HEAP[$83]; //@line 2918 "datetimemodule.c"
+        var $85=($84); //@line 2918 "datetimemodule.c"
+        HEAP[$mm]=$85; //@line 2918 "datetimemodule.c"
+        var $86=$dt_addr; //@line 2919 "datetimemodule.c"
+        var $87=$86+13; //@line 2919 "datetimemodule.c"
+        var $88=$87+6; //@line 2919 "datetimemodule.c"
+        var $89=HEAP[$88]; //@line 2919 "datetimemodule.c"
+        var $90=($89); //@line 2919 "datetimemodule.c"
+        HEAP[$ss]=$90; //@line 2919 "datetimemodule.c"
+        var $91=$dt_addr; //@line 2920 "datetimemodule.c"
+        var $92=$91+13; //@line 2920 "datetimemodule.c"
+        var $93=$92+7; //@line 2920 "datetimemodule.c"
+        var $94=HEAP[$93]; //@line 2920 "datetimemodule.c"
+        var $95=($94); //@line 2920 "datetimemodule.c"
+        var $96=($95) << 16; //@line 2920 "datetimemodule.c"
+        var $97=$dt_addr; //@line 2920 "datetimemodule.c"
+        var $98=$97+13; //@line 2920 "datetimemodule.c"
+        var $99=$98+8; //@line 2920 "datetimemodule.c"
+        var $100=HEAP[$99]; //@line 2920 "datetimemodule.c"
+        var $101=($100); //@line 2920 "datetimemodule.c"
+        var $102=($101) << 8; //@line 2920 "datetimemodule.c"
+        var $103=$dt_addr; //@line 2920 "datetimemodule.c"
+        var $104=$103+13; //@line 2920 "datetimemodule.c"
+        var $105=$104+9; //@line 2920 "datetimemodule.c"
+        var $106=HEAP[$105]; //@line 2920 "datetimemodule.c"
+        var $107=($106); //@line 2920 "datetimemodule.c"
+        var $108=($102) | ($96); //@line 2920 "datetimemodule.c"
+        var $109=($108) | ($107); //@line 2920 "datetimemodule.c"
+        HEAP[$us]=$109; //@line 2920 "datetimemodule.c"
+        var $110=$off; //@line 2922 "datetimemodule.c"
+        var $111=$dst; //@line 2922 "datetimemodule.c"
+        var $112=($110) - ($111); //@line 2922 "datetimemodule.c"
+        $delta=$112; //@line 2922 "datetimemodule.c"
+        var $113=HEAP[$mm]; //@line 2923 "datetimemodule.c"
+        var $114=$delta; //@line 2923 "datetimemodule.c"
+        var $115=($114) + ($113); //@line 2923 "datetimemodule.c"
+        HEAP[$mm]=$115; //@line 2923 "datetimemodule.c"
+        var $116=HEAP[$mm]; //@line 2924 "datetimemodule.c"
+        var $117=($116) < 0; //@line 2924 "datetimemodule.c"
+        var $118=HEAP[$mm]; //@line 2924 "datetimemodule.c"
+        var $119=($118) > 59; //@line 2924 "datetimemodule.c"
+        var $or_cond=($117) | ($119);
         if ($or_cond) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 2924 "datetimemodule.c"
       case 17: // $bb17
-        $year_addr_i=$y;
-        $month_addr_i=$m;
-        $day_addr_i=$d;
-        $hour_addr_i=$hh;
-        $minute_addr_i=$mm;
-        $second_addr_i=$ss;
-        $microsecond_addr_i=$us;
-        var $133=$second_addr_i; //@line 577 "datetimemodule.c"
-        var $134=$microsecond_addr_i; //@line 577 "datetimemodule.c"
-        _normalize_pair($133, $134, 1000000); //@line 577 "datetimemodule.c"
-        var $135=$minute_addr_i; //@line 578 "datetimemodule.c"
-        var $136=$second_addr_i; //@line 578 "datetimemodule.c"
-        _normalize_pair($135, $136, 60); //@line 578 "datetimemodule.c"
-        var $137=$hour_addr_i; //@line 579 "datetimemodule.c"
-        var $138=$minute_addr_i; //@line 579 "datetimemodule.c"
-        _normalize_pair($137, $138, 60); //@line 579 "datetimemodule.c"
-        var $139=$day_addr_i; //@line 580 "datetimemodule.c"
-        var $140=$hour_addr_i; //@line 580 "datetimemodule.c"
-        _normalize_pair($139, $140, 24); //@line 580 "datetimemodule.c"
-        var $141=$year_addr_i; //@line 581 "datetimemodule.c"
-        var $142=$month_addr_i; //@line 581 "datetimemodule.c"
-        var $143=$day_addr_i; //@line 581 "datetimemodule.c"
-        var $144=_normalize_date($141, $142, $143); //@line 581 "datetimemodule.c"
-        $2=$144; //@line 581 "datetimemodule.c"
-        var $145=$2; //@line 581 "datetimemodule.c"
-        $retval_i9=$145; //@line 581 "datetimemodule.c"
-        var $retval1_i10=$retval_i9; //@line 581 "datetimemodule.c"
-        var $146=($retval1_i10) < 0; //@line 2924 "datetimemodule.c"
-        if ($146) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 2924 "datetimemodule.c"
+        var $120=_normalize_datetime($y, $m, $d, $hh, $mm, $ss, $us); //@line 2924 "datetimemodule.c"
+        var $121=($120) < 0; //@line 2924 "datetimemodule.c"
+        if ($121) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 2924 "datetimemodule.c"
       case 18: // $bb18
-        $5=0; //@line 2926 "datetimemodule.c"
+        $0=0; //@line 2926 "datetimemodule.c"
         __label__ = 35; break; //@line 2926 "datetimemodule.c"
       case 19: // $bb19
-        var $147=$dt_addr; //@line 2927 "datetimemodule.c"
-        var $148=$147+24; //@line 2927 "datetimemodule.c"
-        var $149=HEAP[$148]; //@line 2927 "datetimemodule.c"
-        var $150=HEAP[$us]; //@line 2927 "datetimemodule.c"
-        var $151=HEAP[$ss]; //@line 2927 "datetimemodule.c"
-        var $152=HEAP[$mm]; //@line 2927 "datetimemodule.c"
-        var $153=HEAP[$hh]; //@line 2927 "datetimemodule.c"
-        var $154=HEAP[$d]; //@line 2927 "datetimemodule.c"
-        var $155=HEAP[$m]; //@line 2927 "datetimemodule.c"
-        var $156=HEAP[$y]; //@line 2927 "datetimemodule.c"
-        var $157=_new_datetime_ex($156, $155, $154, $153, $152, $151, $150, $149, _PyDateTime_DateTimeType); //@line 2927 "datetimemodule.c"
-        $result=$157; //@line 2927 "datetimemodule.c"
-        var $158=($157)==0; //@line 2928 "datetimemodule.c"
-        if ($158) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 2928 "datetimemodule.c"
+        var $122=$dt_addr; //@line 2927 "datetimemodule.c"
+        var $123=$122+24; //@line 2927 "datetimemodule.c"
+        var $124=HEAP[$123]; //@line 2927 "datetimemodule.c"
+        var $125=HEAP[$us]; //@line 2927 "datetimemodule.c"
+        var $126=HEAP[$ss]; //@line 2927 "datetimemodule.c"
+        var $127=HEAP[$mm]; //@line 2927 "datetimemodule.c"
+        var $128=HEAP[$hh]; //@line 2927 "datetimemodule.c"
+        var $129=HEAP[$d]; //@line 2927 "datetimemodule.c"
+        var $130=HEAP[$m]; //@line 2927 "datetimemodule.c"
+        var $131=HEAP[$y]; //@line 2927 "datetimemodule.c"
+        var $132=_new_datetime_ex($131, $130, $129, $128, $127, $126, $125, $124, _PyDateTime_DateTimeType); //@line 2927 "datetimemodule.c"
+        $result=$132; //@line 2927 "datetimemodule.c"
+        var $133=($132)==0; //@line 2928 "datetimemodule.c"
+        if ($133) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 2928 "datetimemodule.c"
       case 20: // $bb20
-        var $159=$result; //@line 2929 "datetimemodule.c"
-        $5=$159; //@line 2929 "datetimemodule.c"
+        var $134=$result; //@line 2929 "datetimemodule.c"
+        $0=$134; //@line 2929 "datetimemodule.c"
         __label__ = 35; break; //@line 2929 "datetimemodule.c"
       case 21: // $bb21
-        var $160=$dt_addr; //@line 2931 "datetimemodule.c"
-        var $161=$160+24; //@line 2931 "datetimemodule.c"
-        var $162=HEAP[$161]; //@line 2931 "datetimemodule.c"
-        var $163=$result; //@line 2931 "datetimemodule.c"
-        $tzinfo_addr_i11=$162;
-        $tzinfoarg_addr_i12=$163;
-        $none_addr_i13=$none;
-        var $164=$tzinfo_addr_i11; //@line 929 "datetimemodule.c"
-        var $165=$tzinfoarg_addr_i12; //@line 929 "datetimemodule.c"
-        var $166=$none_addr_i13; //@line 929 "datetimemodule.c"
-        var $167=_call_utc_tzinfo_method($164, __str44, $165, $166); //@line 929 "datetimemodule.c"
-        $1=$167; //@line 929 "datetimemodule.c"
-        var $168=$1; //@line 929 "datetimemodule.c"
-        $retval_i14=$168; //@line 929 "datetimemodule.c"
-        var $retval1_i15=$retval_i14; //@line 929 "datetimemodule.c"
-        $dst=$retval1_i15; //@line 2931 "datetimemodule.c"
-        var $169=$dst; //@line 2932 "datetimemodule.c"
-        var $170=($169)==-1; //@line 2932 "datetimemodule.c"
-        if ($170) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 2932 "datetimemodule.c"
+        var $135=$dt_addr; //@line 2931 "datetimemodule.c"
+        var $136=$135+24; //@line 2931 "datetimemodule.c"
+        var $137=HEAP[$136]; //@line 2931 "datetimemodule.c"
+        var $138=$result; //@line 2931 "datetimemodule.c"
+        var $139=_call_dst($137, $138, $none); //@line 2931 "datetimemodule.c"
+        $dst=$139; //@line 2931 "datetimemodule.c"
+        var $140=$dst; //@line 2932 "datetimemodule.c"
+        var $141=($140)==-1; //@line 2932 "datetimemodule.c"
+        if ($141) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 2932 "datetimemodule.c"
       case 22: // $bb22
-        var $171=_PyErr_Occurred(); //@line 2932 "datetimemodule.c"
-        var $172=($171)!=0; //@line 2932 "datetimemodule.c"
-        if ($172) { __label__ = 32; break; } else { __label__ = 23; break; } //@line 2932 "datetimemodule.c"
+        var $142=_PyErr_Occurred(); //@line 2932 "datetimemodule.c"
+        var $143=($142)!=0; //@line 2932 "datetimemodule.c"
+        if ($143) { __label__ = 32; break; } else { __label__ = 23; break; } //@line 2932 "datetimemodule.c"
       case 23: // $bb23
-        var $173=HEAP[$none]; //@line 2934 "datetimemodule.c"
-        var $174=($173)!=0; //@line 2934 "datetimemodule.c"
-        if ($174) { __label__ = 31; break; } else { __label__ = 24; break; } //@line 2934 "datetimemodule.c"
+        var $144=HEAP[$none]; //@line 2934 "datetimemodule.c"
+        var $145=($144)!=0; //@line 2934 "datetimemodule.c"
+        if ($145) { __label__ = 31; break; } else { __label__ = 24; break; } //@line 2934 "datetimemodule.c"
       case 24: // $bb24
-        var $175=$dst; //@line 2936 "datetimemodule.c"
-        var $176=($175)==0; //@line 2936 "datetimemodule.c"
-        if ($176) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 2936 "datetimemodule.c"
+        var $146=$dst; //@line 2936 "datetimemodule.c"
+        var $147=($146)==0; //@line 2936 "datetimemodule.c"
+        if ($147) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 2936 "datetimemodule.c"
       case 25: // $bb25
-        var $177=$result; //@line 2937 "datetimemodule.c"
-        $5=$177; //@line 2937 "datetimemodule.c"
+        var $148=$result; //@line 2937 "datetimemodule.c"
+        $0=$148; //@line 2937 "datetimemodule.c"
         __label__ = 35; break; //@line 2937 "datetimemodule.c"
       case 26: // $bb26
-        var $178=HEAP[$mm]; //@line 2939 "datetimemodule.c"
-        var $179=$dst; //@line 2939 "datetimemodule.c"
-        var $180=($179) + ($178); //@line 2939 "datetimemodule.c"
-        HEAP[$mm]=$180; //@line 2939 "datetimemodule.c"
-        var $181=HEAP[$mm]; //@line 2940 "datetimemodule.c"
-        var $182=($181) < 0; //@line 2940 "datetimemodule.c"
-        var $183=HEAP[$mm]; //@line 2940 "datetimemodule.c"
-        var $184=($183) > 59; //@line 2940 "datetimemodule.c"
-        var $or_cond3=($182) | ($184);
+        var $149=HEAP[$mm]; //@line 2939 "datetimemodule.c"
+        var $150=$dst; //@line 2939 "datetimemodule.c"
+        var $151=($150) + ($149); //@line 2939 "datetimemodule.c"
+        HEAP[$mm]=$151; //@line 2939 "datetimemodule.c"
+        var $152=HEAP[$mm]; //@line 2940 "datetimemodule.c"
+        var $153=($152) < 0; //@line 2940 "datetimemodule.c"
+        var $154=HEAP[$mm]; //@line 2940 "datetimemodule.c"
+        var $155=($154) > 59; //@line 2940 "datetimemodule.c"
+        var $or_cond3=($153) | ($155);
         if ($or_cond3) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 2940 "datetimemodule.c"
       case 27: // $bb28
-        $year_addr_i16=$y;
-        $month_addr_i17=$m;
-        $day_addr_i18=$d;
-        $hour_addr_i19=$hh;
-        $minute_addr_i20=$mm;
-        $second_addr_i21=$ss;
-        $microsecond_addr_i22=$us;
-        var $185=$second_addr_i21; //@line 577 "datetimemodule.c"
-        var $186=$microsecond_addr_i22; //@line 577 "datetimemodule.c"
-        _normalize_pair($185, $186, 1000000); //@line 577 "datetimemodule.c"
-        var $187=$minute_addr_i20; //@line 578 "datetimemodule.c"
-        var $188=$second_addr_i21; //@line 578 "datetimemodule.c"
-        _normalize_pair($187, $188, 60); //@line 578 "datetimemodule.c"
-        var $189=$hour_addr_i19; //@line 579 "datetimemodule.c"
-        var $190=$minute_addr_i20; //@line 579 "datetimemodule.c"
-        _normalize_pair($189, $190, 60); //@line 579 "datetimemodule.c"
-        var $191=$day_addr_i18; //@line 580 "datetimemodule.c"
-        var $192=$hour_addr_i19; //@line 580 "datetimemodule.c"
-        _normalize_pair($191, $192, 24); //@line 580 "datetimemodule.c"
-        var $193=$year_addr_i16; //@line 581 "datetimemodule.c"
-        var $194=$month_addr_i17; //@line 581 "datetimemodule.c"
-        var $195=$day_addr_i18; //@line 581 "datetimemodule.c"
-        var $196=_normalize_date($193, $194, $195); //@line 581 "datetimemodule.c"
-        $0=$196; //@line 581 "datetimemodule.c"
-        var $197=$0; //@line 581 "datetimemodule.c"
-        $retval_i23=$197; //@line 581 "datetimemodule.c"
-        var $retval1_i24=$retval_i23; //@line 581 "datetimemodule.c"
-        var $198=($retval1_i24) < 0; //@line 2940 "datetimemodule.c"
-        if ($198) { __label__ = 32; break; } else { __label__ = 28; break; } //@line 2940 "datetimemodule.c"
+        var $156=_normalize_datetime($y, $m, $d, $hh, $mm, $ss, $us); //@line 2940 "datetimemodule.c"
+        var $157=($156) < 0; //@line 2940 "datetimemodule.c"
+        if ($157) { __label__ = 32; break; } else { __label__ = 28; break; } //@line 2940 "datetimemodule.c"
       case 28: // $bb29
-        var $199=$result; //@line 2943 "datetimemodule.c"
-        var $200=$199; //@line 2943 "datetimemodule.c"
-        var $201=HEAP[$200]; //@line 2943 "datetimemodule.c"
-        var $202=($201) - 1; //@line 2943 "datetimemodule.c"
-        var $203=$result; //@line 2943 "datetimemodule.c"
-        var $204=$203; //@line 2943 "datetimemodule.c"
-        HEAP[$204]=$202; //@line 2943 "datetimemodule.c"
-        var $205=$result; //@line 2943 "datetimemodule.c"
-        var $206=$205; //@line 2943 "datetimemodule.c"
-        var $207=HEAP[$206]; //@line 2943 "datetimemodule.c"
-        var $208=($207)==0; //@line 2943 "datetimemodule.c"
-        if ($208) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 2943 "datetimemodule.c"
+        var $158=$result; //@line 2943 "datetimemodule.c"
+        var $159=$158; //@line 2943 "datetimemodule.c"
+        var $160=HEAP[$159]; //@line 2943 "datetimemodule.c"
+        var $161=($160) - 1; //@line 2943 "datetimemodule.c"
+        var $162=$result; //@line 2943 "datetimemodule.c"
+        var $163=$162; //@line 2943 "datetimemodule.c"
+        HEAP[$163]=$161; //@line 2943 "datetimemodule.c"
+        var $164=$result; //@line 2943 "datetimemodule.c"
+        var $165=$164; //@line 2943 "datetimemodule.c"
+        var $166=HEAP[$165]; //@line 2943 "datetimemodule.c"
+        var $167=($166)==0; //@line 2943 "datetimemodule.c"
+        if ($167) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 2943 "datetimemodule.c"
       case 29: // $bb30
-        var $209=$result; //@line 2943 "datetimemodule.c"
-        var $210=$209+4; //@line 2943 "datetimemodule.c"
-        var $211=HEAP[$210]; //@line 2943 "datetimemodule.c"
-        var $212=$211+24; //@line 2943 "datetimemodule.c"
-        var $213=HEAP[$212]; //@line 2943 "datetimemodule.c"
-        var $214=$result; //@line 2943 "datetimemodule.c"
-        FUNCTION_TABLE[$213]($214); //@line 2943 "datetimemodule.c"
+        var $168=$result; //@line 2943 "datetimemodule.c"
+        var $169=$168+4; //@line 2943 "datetimemodule.c"
+        var $170=HEAP[$169]; //@line 2943 "datetimemodule.c"
+        var $171=$170+24; //@line 2943 "datetimemodule.c"
+        var $172=HEAP[$171]; //@line 2943 "datetimemodule.c"
+        var $173=$result; //@line 2943 "datetimemodule.c"
+        FUNCTION_TABLE[$172]($173); //@line 2943 "datetimemodule.c"
         __label__ = 30; break; //@line 2943 "datetimemodule.c"
       case 30: // $bb31
-        var $215=$dt_addr; //@line 2944 "datetimemodule.c"
-        var $216=$215+24; //@line 2944 "datetimemodule.c"
-        var $217=HEAP[$216]; //@line 2944 "datetimemodule.c"
-        var $218=HEAP[$us]; //@line 2944 "datetimemodule.c"
-        var $219=HEAP[$ss]; //@line 2944 "datetimemodule.c"
-        var $220=HEAP[$mm]; //@line 2944 "datetimemodule.c"
-        var $221=HEAP[$hh]; //@line 2944 "datetimemodule.c"
-        var $222=HEAP[$d]; //@line 2944 "datetimemodule.c"
-        var $223=HEAP[$m]; //@line 2944 "datetimemodule.c"
-        var $224=HEAP[$y]; //@line 2944 "datetimemodule.c"
-        var $225=_new_datetime_ex($224, $223, $222, $221, $220, $219, $218, $217, _PyDateTime_DateTimeType); //@line 2944 "datetimemodule.c"
-        $result=$225; //@line 2944 "datetimemodule.c"
-        var $226=$result; //@line 2945 "datetimemodule.c"
-        $5=$226; //@line 2945 "datetimemodule.c"
+        var $174=$dt_addr; //@line 2944 "datetimemodule.c"
+        var $175=$174+24; //@line 2944 "datetimemodule.c"
+        var $176=HEAP[$175]; //@line 2944 "datetimemodule.c"
+        var $177=HEAP[$us]; //@line 2944 "datetimemodule.c"
+        var $178=HEAP[$ss]; //@line 2944 "datetimemodule.c"
+        var $179=HEAP[$mm]; //@line 2944 "datetimemodule.c"
+        var $180=HEAP[$hh]; //@line 2944 "datetimemodule.c"
+        var $181=HEAP[$d]; //@line 2944 "datetimemodule.c"
+        var $182=HEAP[$m]; //@line 2944 "datetimemodule.c"
+        var $183=HEAP[$y]; //@line 2944 "datetimemodule.c"
+        var $184=_new_datetime_ex($183, $182, $181, $180, $179, $178, $177, $176, _PyDateTime_DateTimeType); //@line 2944 "datetimemodule.c"
+        $result=$184; //@line 2944 "datetimemodule.c"
+        var $185=$result; //@line 2945 "datetimemodule.c"
+        $0=$185; //@line 2945 "datetimemodule.c"
         __label__ = 35; break; //@line 2945 "datetimemodule.c"
       case 31: // $Inconsistent
-        var $227=HEAP[_PyExc_ValueError]; //@line 2948 "datetimemodule.c"
-        _PyErr_SetString($227, __str182); //@line 2948 "datetimemodule.c"
+        var $186=HEAP[_PyExc_ValueError]; //@line 2948 "datetimemodule.c"
+        _PyErr_SetString($186, __str182); //@line 2948 "datetimemodule.c"
         __label__ = 32; break; //@line 2952 "datetimemodule.c"
       case 32: // $Fail
-        var $228=$result; //@line 2953 "datetimemodule.c"
-        var $229=$228; //@line 2953 "datetimemodule.c"
-        var $230=HEAP[$229]; //@line 2953 "datetimemodule.c"
-        var $231=($230) - 1; //@line 2953 "datetimemodule.c"
-        var $232=$result; //@line 2953 "datetimemodule.c"
-        var $233=$232; //@line 2953 "datetimemodule.c"
-        HEAP[$233]=$231; //@line 2953 "datetimemodule.c"
-        var $234=$result; //@line 2953 "datetimemodule.c"
-        var $235=$234; //@line 2953 "datetimemodule.c"
-        var $236=HEAP[$235]; //@line 2953 "datetimemodule.c"
-        var $237=($236)==0; //@line 2953 "datetimemodule.c"
-        if ($237) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 2953 "datetimemodule.c"
+        var $187=$result; //@line 2953 "datetimemodule.c"
+        var $188=$187; //@line 2953 "datetimemodule.c"
+        var $189=HEAP[$188]; //@line 2953 "datetimemodule.c"
+        var $190=($189) - 1; //@line 2953 "datetimemodule.c"
+        var $191=$result; //@line 2953 "datetimemodule.c"
+        var $192=$191; //@line 2953 "datetimemodule.c"
+        HEAP[$192]=$190; //@line 2953 "datetimemodule.c"
+        var $193=$result; //@line 2953 "datetimemodule.c"
+        var $194=$193; //@line 2953 "datetimemodule.c"
+        var $195=HEAP[$194]; //@line 2953 "datetimemodule.c"
+        var $196=($195)==0; //@line 2953 "datetimemodule.c"
+        if ($196) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 2953 "datetimemodule.c"
       case 33: // $bb32
-        var $238=$result; //@line 2953 "datetimemodule.c"
-        var $239=$238+4; //@line 2953 "datetimemodule.c"
-        var $240=HEAP[$239]; //@line 2953 "datetimemodule.c"
-        var $241=$240+24; //@line 2953 "datetimemodule.c"
-        var $242=HEAP[$241]; //@line 2953 "datetimemodule.c"
-        var $243=$result; //@line 2953 "datetimemodule.c"
-        FUNCTION_TABLE[$242]($243); //@line 2953 "datetimemodule.c"
+        var $197=$result; //@line 2953 "datetimemodule.c"
+        var $198=$197+4; //@line 2953 "datetimemodule.c"
+        var $199=HEAP[$198]; //@line 2953 "datetimemodule.c"
+        var $200=$199+24; //@line 2953 "datetimemodule.c"
+        var $201=HEAP[$200]; //@line 2953 "datetimemodule.c"
+        var $202=$result; //@line 2953 "datetimemodule.c"
+        FUNCTION_TABLE[$201]($202); //@line 2953 "datetimemodule.c"
         __label__ = 34; break; //@line 2953 "datetimemodule.c"
       case 34: // $bb33
-        $5=0; //@line 2954 "datetimemodule.c"
+        $0=0; //@line 2954 "datetimemodule.c"
         __label__ = 35; break; //@line 2954 "datetimemodule.c"
       case 35: // $bb34
-        var $244=$5; //@line 2888 "datetimemodule.c"
-        $retval=$244; //@line 2888 "datetimemodule.c"
+        var $203=$0; //@line 2888 "datetimemodule.c"
+        $retval=$203; //@line 2888 "datetimemodule.c"
         var $retval35=$retval; //@line 2888 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval35; //@line 2888 "datetimemodule.c"
@@ -10209,7 +9841,7 @@ var _initialized_b;
         var $162=$161+4; //@line 3011 "datetimemodule.c"
         var $163=HEAP[$162]; //@line 3011 "datetimemodule.c"
         var $164=$args; //@line 3011 "datetimemodule.c"
-        var $165=__Py_BuildValue_SizeT(__str154, $163, $164); //@line 3011 "datetimemodule.c"
+        var $165=__Py_BuildValue_SizeT(__str154, allocate([$163,0,0,0,$164,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3011 "datetimemodule.c"
         $0=$165; //@line 3011 "datetimemodule.c"
         __label__ = 31; break; //@line 3011 "datetimemodule.c"
       case 30: // $bb31
@@ -10218,7 +9850,7 @@ var _initialized_b;
         var $168=HEAP[$167]; //@line 3014 "datetimemodule.c"
         var $169=$args; //@line 3014 "datetimemodule.c"
         var $170=$state; //@line 3014 "datetimemodule.c"
-        var $171=__Py_BuildValue_SizeT(__str185, $168, $169, $170); //@line 3014 "datetimemodule.c"
+        var $171=__Py_BuildValue_SizeT(__str185, allocate([$168,0,0,0,$169,0,0,0,$170,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3014 "datetimemodule.c"
         $0=$171; //@line 3014 "datetimemodule.c"
         __label__ = 31; break; //@line 3014 "datetimemodule.c"
       case 31: // $bb32
@@ -10403,17 +10035,11 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $p_addr_i;
-        var $retval_i;
-        var $1;
         var $type_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
-        var $2;
+        var $0;
         var $self;
         var $state;
         var $hour=__stackBase__;
@@ -10433,220 +10059,168 @@ var _initialized_b;
         HEAP[$second]=0; //@line 3148 "datetimemodule.c"
         HEAP[$usecond]=0; //@line 3149 "datetimemodule.c"
         HEAP[$tzinfo]=__Py_NoneStruct; //@line 3150 "datetimemodule.c"
-        var $3=$args_addr; //@line 3153 "datetimemodule.c"
-        var $4=$3; //@line 3153 "datetimemodule.c"
-        var $5=$4+8; //@line 3153 "datetimemodule.c"
-        var $6=HEAP[$5]; //@line 3153 "datetimemodule.c"
-        var $7=($6) > 0; //@line 3153 "datetimemodule.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 15; break; } //@line 3153 "datetimemodule.c"
+        var $1=$args_addr; //@line 3153 "datetimemodule.c"
+        var $2=$1; //@line 3153 "datetimemodule.c"
+        var $3=$2+8; //@line 3153 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 3153 "datetimemodule.c"
+        var $5=($4) > 0; //@line 3153 "datetimemodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 12; break; } //@line 3153 "datetimemodule.c"
       case 1: // $bb
-        var $8=$args_addr; //@line 3153 "datetimemodule.c"
-        var $9=$8; //@line 3153 "datetimemodule.c"
-        var $10=$9+8; //@line 3153 "datetimemodule.c"
-        var $11=HEAP[$10]; //@line 3153 "datetimemodule.c"
-        var $12=($11) <= 2; //@line 3153 "datetimemodule.c"
-        if ($12) { __label__ = 2; break; } else { __label__ = 15; break; } //@line 3153 "datetimemodule.c"
+        var $6=$args_addr; //@line 3153 "datetimemodule.c"
+        var $7=$6; //@line 3153 "datetimemodule.c"
+        var $8=$7+8; //@line 3153 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 3153 "datetimemodule.c"
+        var $10=($9) <= 2; //@line 3153 "datetimemodule.c"
+        if ($10) { __label__ = 2; break; } else { __label__ = 12; break; } //@line 3153 "datetimemodule.c"
       case 2: // $bb1
-        var $13=$args_addr; //@line 3153 "datetimemodule.c"
+        var $11=$args_addr; //@line 3153 "datetimemodule.c"
+        var $12=$11; //@line 3153 "datetimemodule.c"
+        var $13=$12+12; //@line 3153 "datetimemodule.c"
         var $14=$13; //@line 3153 "datetimemodule.c"
-        var $15=$14+12; //@line 3153 "datetimemodule.c"
-        var $16=$15; //@line 3153 "datetimemodule.c"
-        var $17=HEAP[$16]; //@line 3153 "datetimemodule.c"
-        $state=$17; //@line 3153 "datetimemodule.c"
-        var $18=$state; //@line 3153 "datetimemodule.c"
-        var $19=$18+4; //@line 3153 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 3153 "datetimemodule.c"
+        $state=$15; //@line 3153 "datetimemodule.c"
+        var $16=$state; //@line 3153 "datetimemodule.c"
+        var $17=$16+4; //@line 3153 "datetimemodule.c"
+        var $18=HEAP[$17]; //@line 3153 "datetimemodule.c"
+        var $19=$18+84; //@line 3153 "datetimemodule.c"
         var $20=HEAP[$19]; //@line 3153 "datetimemodule.c"
-        var $21=$20+84; //@line 3153 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 3153 "datetimemodule.c"
-        var $23=($22) & 134217728; //@line 3153 "datetimemodule.c"
-        var $24=($23)!=0; //@line 3153 "datetimemodule.c"
-        if ($24) { __label__ = 3; break; } else { __label__ = 15; break; } //@line 3153 "datetimemodule.c"
+        var $21=($20) & 134217728; //@line 3153 "datetimemodule.c"
+        var $22=($21)!=0; //@line 3153 "datetimemodule.c"
+        if ($22) { __label__ = 3; break; } else { __label__ = 12; break; } //@line 3153 "datetimemodule.c"
       case 3: // $bb2
-        var $25=$state; //@line 3153 "datetimemodule.c"
-        var $26=$25; //@line 3153 "datetimemodule.c"
-        var $27=$26+8; //@line 3153 "datetimemodule.c"
-        var $28=HEAP[$27]; //@line 3153 "datetimemodule.c"
-        var $29=($28)==6; //@line 3153 "datetimemodule.c"
-        if ($29) { __label__ = 4; break; } else { __label__ = 15; break; } //@line 3153 "datetimemodule.c"
+        var $23=$state; //@line 3153 "datetimemodule.c"
+        var $24=$23; //@line 3153 "datetimemodule.c"
+        var $25=$24+8; //@line 3153 "datetimemodule.c"
+        var $26=HEAP[$25]; //@line 3153 "datetimemodule.c"
+        var $27=($26)==6; //@line 3153 "datetimemodule.c"
+        if ($27) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 3153 "datetimemodule.c"
       case 4: // $bb3
-        var $30=$state; //@line 3153 "datetimemodule.c"
+        var $28=$state; //@line 3153 "datetimemodule.c"
+        var $29=$28; //@line 3153 "datetimemodule.c"
+        var $30=$29+20; //@line 3153 "datetimemodule.c"
         var $31=$30; //@line 3153 "datetimemodule.c"
-        var $32=$31+20; //@line 3153 "datetimemodule.c"
-        var $33=$32; //@line 3153 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 3153 "datetimemodule.c"
-        var $35=($34) <= 23; //@line 3153 "datetimemodule.c"
-        if ($35) { __label__ = 5; break; } else { __label__ = 15; break; } //@line 3153 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 3153 "datetimemodule.c"
+        var $33=($32) <= 23; //@line 3153 "datetimemodule.c"
+        if ($33) { __label__ = 5; break; } else { __label__ = 12; break; } //@line 3153 "datetimemodule.c"
       case 5: // $bb4
-        var $36=$args_addr; //@line 3162 "datetimemodule.c"
-        var $37=$36; //@line 3162 "datetimemodule.c"
-        var $38=$37+8; //@line 3162 "datetimemodule.c"
-        var $39=HEAP[$38]; //@line 3162 "datetimemodule.c"
-        var $40=($39)==2; //@line 3162 "datetimemodule.c"
-        if ($40) { __label__ = 6; break; } else { __label__ = 11; break; } //@line 3162 "datetimemodule.c"
+        var $34=$args_addr; //@line 3162 "datetimemodule.c"
+        var $35=$34; //@line 3162 "datetimemodule.c"
+        var $36=$35+8; //@line 3162 "datetimemodule.c"
+        var $37=HEAP[$36]; //@line 3162 "datetimemodule.c"
+        var $38=($37)==2; //@line 3162 "datetimemodule.c"
+        if ($38) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 3162 "datetimemodule.c"
       case 6: // $bb5
-        var $41=$args_addr; //@line 3163 "datetimemodule.c"
-        var $42=$41; //@line 3163 "datetimemodule.c"
-        var $43=$42+12; //@line 3163 "datetimemodule.c"
-        var $44=$43+4; //@line 3163 "datetimemodule.c"
-        var $45=HEAP[$44]; //@line 3163 "datetimemodule.c"
-        HEAP[$tzinfo]=$45; //@line 3163 "datetimemodule.c"
-        var $46=HEAP[$tzinfo]; //@line 3164 "datetimemodule.c"
-        $p_addr_i=$46;
-        var $47=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $48=($47)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($48) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 767 "datetimemodule.c"
-      case 7: // $bb_i
-        var $49=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $50=$49+4; //@line 767 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 767 "datetimemodule.c"
-        var $52=($51)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($52) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 767 "datetimemodule.c"
-      case 8: // $bb1_i
-        var $53=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $54=$53+4; //@line 767 "datetimemodule.c"
-        var $55=HEAP[$54]; //@line 767 "datetimemodule.c"
-        var $56=_PyType_IsSubtype($55, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $57=($56)!=0; //@line 767 "datetimemodule.c"
-        if ($57) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 767 "datetimemodule.c"
-      case 9: // $check_tzinfo_subclass_exit
-        $1=0; //@line 768 "datetimemodule.c"
-        $retval_i=0; //@line 768 "datetimemodule.c"
-        __label__ = 11; break;
-      case 10: // $bb6
-        var $58=$p_addr_i; //@line 769 "datetimemodule.c"
-        var $59=$58+4; //@line 769 "datetimemodule.c"
-        var $60=HEAP[$59]; //@line 769 "datetimemodule.c"
-        var $61=$60+12; //@line 769 "datetimemodule.c"
-        var $62=HEAP[$61]; //@line 769 "datetimemodule.c"
-        var $63=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $64=_PyErr_Format($63, __str32, $62); //@line 769 "datetimemodule.c"
-        $1=-1; //@line 773 "datetimemodule.c"
-        $retval_i=-1; //@line 768 "datetimemodule.c"
-        var $65=HEAP[_PyExc_TypeError]; //@line 3165 "datetimemodule.c"
-        _PyErr_SetString($65, __str197); //@line 3165 "datetimemodule.c"
-        $2=0; //@line 3167 "datetimemodule.c"
-        __label__ = 24; break; //@line 3167 "datetimemodule.c"
-      case 11: // $bb7
-        var $66=HEAP[$tzinfo]; //@line 3170 "datetimemodule.c"
-        var $67=($66)!=(__Py_NoneStruct); //@line 3170 "datetimemodule.c"
-        var $68=($67); //@line 3170 "datetimemodule.c"
-        $aware=$68; //@line 3170 "datetimemodule.c"
-        var $69=$type_addr; //@line 3171 "datetimemodule.c"
-        var $70=$69+152; //@line 3171 "datetimemodule.c"
-        var $71=HEAP[$70]; //@line 3171 "datetimemodule.c"
-        var $72=$aware; //@line 3171 "datetimemodule.c"
-        var $73=($72); //@line 3171 "datetimemodule.c"
-        var $74=$type_addr; //@line 3171 "datetimemodule.c"
-        var $75=FUNCTION_TABLE[$71]($74, $73); //@line 3171 "datetimemodule.c"
-        var $76=$75; //@line 3171 "datetimemodule.c"
-        $me=$76; //@line 3171 "datetimemodule.c"
-        var $77=($76)!=0; //@line 3172 "datetimemodule.c"
-        if ($77) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 3172 "datetimemodule.c"
-      case 12: // $bb8
-        var $78=$state; //@line 3173 "datetimemodule.c"
-        var $79=$78; //@line 3173 "datetimemodule.c"
-        var $80=$79+20; //@line 3173 "datetimemodule.c"
-        var $81=$80; //@line 3173 "datetimemodule.c"
-        $pdata=$81; //@line 3173 "datetimemodule.c"
-        var $82=$me; //@line 3175 "datetimemodule.c"
-        var $83=$82+13; //@line 3175 "datetimemodule.c"
-        var $84=$83; //@line 3175 "datetimemodule.c"
-        var $85=$pdata; //@line 3175 "datetimemodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($84, $85, 6, 1, 0); //@line 3175 "datetimemodule.c"
-        var $86=$me; //@line 3176 "datetimemodule.c"
-        var $87=$86+8; //@line 3176 "datetimemodule.c"
-        HEAP[$87]=-1; //@line 3176 "datetimemodule.c"
-        var $88=$me; //@line 3177 "datetimemodule.c"
-        var $89=$88+12; //@line 3177 "datetimemodule.c"
-        var $90=$aware; //@line 3177 "datetimemodule.c"
-        HEAP[$89]=$90; //@line 3177 "datetimemodule.c"
-        var $91=$aware; //@line 3178 "datetimemodule.c"
-        var $92=($91)!=0; //@line 3178 "datetimemodule.c"
-        if ($92) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 3178 "datetimemodule.c"
-      case 13: // $bb9
-        var $93=HEAP[$tzinfo]; //@line 3179 "datetimemodule.c"
-        var $94=$93; //@line 3179 "datetimemodule.c"
-        var $95=HEAP[$94]; //@line 3179 "datetimemodule.c"
-        var $96=($95) + 1; //@line 3179 "datetimemodule.c"
-        var $97=$93; //@line 3179 "datetimemodule.c"
-        HEAP[$97]=$96; //@line 3179 "datetimemodule.c"
-        var $98=HEAP[$tzinfo]; //@line 3180 "datetimemodule.c"
-        var $99=$me; //@line 3180 "datetimemodule.c"
-        var $100=$99+20; //@line 3180 "datetimemodule.c"
-        HEAP[$100]=$98; //@line 3180 "datetimemodule.c"
-        __label__ = 14; break; //@line 3180 "datetimemodule.c"
-      case 14: // $bb10
-        var $101=$me; //@line 3183 "datetimemodule.c"
-        var $102=$101; //@line 3183 "datetimemodule.c"
-        $2=$102; //@line 3183 "datetimemodule.c"
-        __label__ = 24; break; //@line 3183 "datetimemodule.c"
-      case 15: // $bb11
-        var $103=$args_addr; //@line 3186 "datetimemodule.c"
-        var $104=$kw_addr; //@line 3186 "datetimemodule.c"
-        var $105=__PyArg_ParseTupleAndKeywords_SizeT($103, $104, __str198, _time_kws, $hour, $minute, $second, $usecond, $tzinfo); //@line 3186 "datetimemodule.c"
-        var $106=($105)!=0; //@line 3186 "datetimemodule.c"
-        if ($106) { __label__ = 16; break; } else { __label__ = 23; break; } //@line 3186 "datetimemodule.c"
-      case 16: // $bb12
-        var $107=HEAP[$usecond]; //@line 3189 "datetimemodule.c"
-        var $108=HEAP[$second]; //@line 3189 "datetimemodule.c"
-        var $109=HEAP[$minute]; //@line 3189 "datetimemodule.c"
-        var $110=HEAP[$hour]; //@line 3189 "datetimemodule.c"
-        var $111=_check_time_args($110, $109, $108, $107); //@line 3189 "datetimemodule.c"
-        var $112=($111) < 0; //@line 3189 "datetimemodule.c"
-        if ($112) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 3189 "datetimemodule.c"
-      case 17: // $bb13
-        $2=0; //@line 3190 "datetimemodule.c"
-        __label__ = 24; break; //@line 3190 "datetimemodule.c"
-      case 18: // $bb14
-        var $113=HEAP[$tzinfo]; //@line 3191 "datetimemodule.c"
-        $p_addr_i1=$113;
-        var $114=$p_addr_i1; //@line 767 "datetimemodule.c"
-        var $115=($114)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($115) { __label__ = 22; break; } else { __label__ = 19; break; } //@line 767 "datetimemodule.c"
-      case 19: // $bb_i3
-        var $116=$p_addr_i1; //@line 767 "datetimemodule.c"
-        var $117=$116+4; //@line 767 "datetimemodule.c"
-        var $118=HEAP[$117]; //@line 767 "datetimemodule.c"
-        var $119=($118)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($119) { __label__ = 22; break; } else { __label__ = 20; break; } //@line 767 "datetimemodule.c"
-      case 20: // $bb1_i4
-        var $120=$p_addr_i1; //@line 767 "datetimemodule.c"
-        var $121=$120+4; //@line 767 "datetimemodule.c"
-        var $122=HEAP[$121]; //@line 767 "datetimemodule.c"
-        var $123=_PyType_IsSubtype($122, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $124=($123)!=0; //@line 767 "datetimemodule.c"
-        if ($124) { __label__ = 22; break; } else { __label__ = 21; break; } //@line 767 "datetimemodule.c"
-      case 21: // $bb15
-        var $125=$p_addr_i1; //@line 769 "datetimemodule.c"
-        var $126=$125+4; //@line 769 "datetimemodule.c"
-        var $127=HEAP[$126]; //@line 769 "datetimemodule.c"
-        var $128=$127+12; //@line 769 "datetimemodule.c"
-        var $129=HEAP[$128]; //@line 769 "datetimemodule.c"
-        var $130=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $131=_PyErr_Format($130, __str32, $129); //@line 769 "datetimemodule.c"
-        $0=-1; //@line 773 "datetimemodule.c"
-        $retval_i2=-1; //@line 768 "datetimemodule.c"
-        $2=0; //@line 3192 "datetimemodule.c"
-        __label__ = 24; break; //@line 3192 "datetimemodule.c"
-      case 22: // $bb16
-        $0=0; //@line 768 "datetimemodule.c"
-        $retval_i2=0; //@line 768 "datetimemodule.c"
-        var $132=HEAP[$tzinfo]; //@line 3193 "datetimemodule.c"
-        var $133=HEAP[$usecond]; //@line 3193 "datetimemodule.c"
-        var $134=HEAP[$second]; //@line 3193 "datetimemodule.c"
-        var $135=HEAP[$minute]; //@line 3193 "datetimemodule.c"
-        var $136=HEAP[$hour]; //@line 3193 "datetimemodule.c"
-        var $137=$type_addr; //@line 3193 "datetimemodule.c"
-        var $138=_new_time_ex($136, $135, $134, $133, $132, $137); //@line 3193 "datetimemodule.c"
-        $self=$138; //@line 3193 "datetimemodule.c"
-        __label__ = 23; break; //@line 3193 "datetimemodule.c"
-      case 23: // $bb17
-        var $139=$self; //@line 3196 "datetimemodule.c"
-        $2=$139; //@line 3196 "datetimemodule.c"
-        __label__ = 24; break; //@line 3196 "datetimemodule.c"
-      case 24: // $bb18
-        var $140=$2; //@line 3167 "datetimemodule.c"
-        $retval=$140; //@line 3167 "datetimemodule.c"
+        var $39=$args_addr; //@line 3163 "datetimemodule.c"
+        var $40=$39; //@line 3163 "datetimemodule.c"
+        var $41=$40+12; //@line 3163 "datetimemodule.c"
+        var $42=$41+4; //@line 3163 "datetimemodule.c"
+        var $43=HEAP[$42]; //@line 3163 "datetimemodule.c"
+        HEAP[$tzinfo]=$43; //@line 3163 "datetimemodule.c"
+        var $44=HEAP[$tzinfo]; //@line 3164 "datetimemodule.c"
+        var $45=_check_tzinfo_subclass($44); //@line 3164 "datetimemodule.c"
+        var $46=($45) < 0; //@line 3164 "datetimemodule.c"
+        if ($46) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 3164 "datetimemodule.c"
+      case 7: // $bb6
+        var $47=HEAP[_PyExc_TypeError]; //@line 3165 "datetimemodule.c"
+        _PyErr_SetString($47, __str197); //@line 3165 "datetimemodule.c"
+        $0=0; //@line 3167 "datetimemodule.c"
+        __label__ = 19; break; //@line 3167 "datetimemodule.c"
+      case 8: // $bb7
+        var $48=HEAP[$tzinfo]; //@line 3170 "datetimemodule.c"
+        var $49=($48)!=(__Py_NoneStruct); //@line 3170 "datetimemodule.c"
+        var $50=($49); //@line 3170 "datetimemodule.c"
+        $aware=$50; //@line 3170 "datetimemodule.c"
+        var $51=$type_addr; //@line 3171 "datetimemodule.c"
+        var $52=$51+152; //@line 3171 "datetimemodule.c"
+        var $53=HEAP[$52]; //@line 3171 "datetimemodule.c"
+        var $54=$aware; //@line 3171 "datetimemodule.c"
+        var $55=($54); //@line 3171 "datetimemodule.c"
+        var $56=$type_addr; //@line 3171 "datetimemodule.c"
+        var $57=FUNCTION_TABLE[$53]($56, $55); //@line 3171 "datetimemodule.c"
+        var $58=$57; //@line 3171 "datetimemodule.c"
+        $me=$58; //@line 3171 "datetimemodule.c"
+        var $59=($58)!=0; //@line 3172 "datetimemodule.c"
+        if ($59) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 3172 "datetimemodule.c"
+      case 9: // $bb8
+        var $60=$state; //@line 3173 "datetimemodule.c"
+        var $61=$60; //@line 3173 "datetimemodule.c"
+        var $62=$61+20; //@line 3173 "datetimemodule.c"
+        var $63=$62; //@line 3173 "datetimemodule.c"
+        $pdata=$63; //@line 3173 "datetimemodule.c"
+        var $64=$me; //@line 3175 "datetimemodule.c"
+        var $65=$64+13; //@line 3175 "datetimemodule.c"
+        var $66=$65; //@line 3175 "datetimemodule.c"
+        var $67=$pdata; //@line 3175 "datetimemodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($66, $67, 6, 1, 0); //@line 3175 "datetimemodule.c"
+        var $68=$me; //@line 3176 "datetimemodule.c"
+        var $69=$68+8; //@line 3176 "datetimemodule.c"
+        HEAP[$69]=-1; //@line 3176 "datetimemodule.c"
+        var $70=$me; //@line 3177 "datetimemodule.c"
+        var $71=$70+12; //@line 3177 "datetimemodule.c"
+        var $72=$aware; //@line 3177 "datetimemodule.c"
+        HEAP[$71]=$72; //@line 3177 "datetimemodule.c"
+        var $73=$aware; //@line 3178 "datetimemodule.c"
+        var $74=($73)!=0; //@line 3178 "datetimemodule.c"
+        if ($74) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 3178 "datetimemodule.c"
+      case 10: // $bb9
+        var $75=HEAP[$tzinfo]; //@line 3179 "datetimemodule.c"
+        var $76=$75; //@line 3179 "datetimemodule.c"
+        var $77=HEAP[$76]; //@line 3179 "datetimemodule.c"
+        var $78=($77) + 1; //@line 3179 "datetimemodule.c"
+        var $79=$75; //@line 3179 "datetimemodule.c"
+        HEAP[$79]=$78; //@line 3179 "datetimemodule.c"
+        var $80=HEAP[$tzinfo]; //@line 3180 "datetimemodule.c"
+        var $81=$me; //@line 3180 "datetimemodule.c"
+        var $82=$81+20; //@line 3180 "datetimemodule.c"
+        HEAP[$82]=$80; //@line 3180 "datetimemodule.c"
+        __label__ = 11; break; //@line 3180 "datetimemodule.c"
+      case 11: // $bb10
+        var $83=$me; //@line 3183 "datetimemodule.c"
+        var $84=$83; //@line 3183 "datetimemodule.c"
+        $0=$84; //@line 3183 "datetimemodule.c"
+        __label__ = 19; break; //@line 3183 "datetimemodule.c"
+      case 12: // $bb11
+        var $85=$args_addr; //@line 3186 "datetimemodule.c"
+        var $86=$kw_addr; //@line 3186 "datetimemodule.c"
+        var $87=__PyArg_ParseTupleAndKeywords_SizeT($85, $86, __str198, _time_kws, allocate([$hour,0,0,0,$minute,0,0,0,$second,0,0,0,$usecond,0,0,0,$tzinfo,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 3186 "datetimemodule.c"
+        var $88=($87)!=0; //@line 3186 "datetimemodule.c"
+        if ($88) { __label__ = 13; break; } else { __label__ = 18; break; } //@line 3186 "datetimemodule.c"
+      case 13: // $bb12
+        var $89=HEAP[$usecond]; //@line 3189 "datetimemodule.c"
+        var $90=HEAP[$second]; //@line 3189 "datetimemodule.c"
+        var $91=HEAP[$minute]; //@line 3189 "datetimemodule.c"
+        var $92=HEAP[$hour]; //@line 3189 "datetimemodule.c"
+        var $93=_check_time_args($92, $91, $90, $89); //@line 3189 "datetimemodule.c"
+        var $94=($93) < 0; //@line 3189 "datetimemodule.c"
+        if ($94) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 3189 "datetimemodule.c"
+      case 14: // $bb13
+        $0=0; //@line 3190 "datetimemodule.c"
+        __label__ = 19; break; //@line 3190 "datetimemodule.c"
+      case 15: // $bb14
+        var $95=HEAP[$tzinfo]; //@line 3191 "datetimemodule.c"
+        var $96=_check_tzinfo_subclass($95); //@line 3191 "datetimemodule.c"
+        var $97=($96) < 0; //@line 3191 "datetimemodule.c"
+        if ($97) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 3191 "datetimemodule.c"
+      case 16: // $bb15
+        $0=0; //@line 3192 "datetimemodule.c"
+        __label__ = 19; break; //@line 3192 "datetimemodule.c"
+      case 17: // $bb16
+        var $98=HEAP[$tzinfo]; //@line 3193 "datetimemodule.c"
+        var $99=HEAP[$usecond]; //@line 3193 "datetimemodule.c"
+        var $100=HEAP[$second]; //@line 3193 "datetimemodule.c"
+        var $101=HEAP[$minute]; //@line 3193 "datetimemodule.c"
+        var $102=HEAP[$hour]; //@line 3193 "datetimemodule.c"
+        var $103=$type_addr; //@line 3193 "datetimemodule.c"
+        var $104=_new_time_ex($102, $101, $100, $99, $98, $103); //@line 3193 "datetimemodule.c"
+        $self=$104; //@line 3193 "datetimemodule.c"
+        __label__ = 18; break; //@line 3193 "datetimemodule.c"
+      case 18: // $bb17
+        var $105=$self; //@line 3196 "datetimemodule.c"
+        $0=$105; //@line 3196 "datetimemodule.c"
+        __label__ = 19; break; //@line 3196 "datetimemodule.c"
+      case 19: // $bb18
+        var $106=$0; //@line 3167 "datetimemodule.c"
+        $retval=$106; //@line 3167 "datetimemodule.c"
         var $retval19=$retval; //@line 3167 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval19; //@line 3167 "datetimemodule.c"
@@ -10917,7 +10491,7 @@ var _initialized_b;
         var $45=$m; //@line 3251 "datetimemodule.c"
         var $46=$s; //@line 3251 "datetimemodule.c"
         var $47=$us; //@line 3251 "datetimemodule.c"
-        var $48=_PyOS_snprintf($buffer1, 100, __str199, $43, $44, $45, $46, $47); //@line 3251 "datetimemodule.c"
+        var $48=_PyOS_snprintf($buffer1, 100, __str199, allocate([$43,0,0,0,$44,0,0,0,$45,0,0,0,$46,0,0,0,$47,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3251 "datetimemodule.c"
         __label__ = 5; break; //@line 3251 "datetimemodule.c"
       case 2: // $bb2
         var $49=$s; //@line 3253 "datetimemodule.c"
@@ -10929,10 +10503,10 @@ var _initialized_b;
         if ($50) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3253 "datetimemodule.c"
       case 3: // $bb3
         var $54=$s; //@line 3254 "datetimemodule.c"
-        var $55=_PyOS_snprintf($buffer4, 100, __str121, $51, $52, $53, $54); //@line 3254 "datetimemodule.c"
+        var $55=_PyOS_snprintf($buffer4, 100, __str121, allocate([$51,0,0,0,$52,0,0,0,$53,0,0,0,$54,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3254 "datetimemodule.c"
         __label__ = 5; break; //@line 3254 "datetimemodule.c"
       case 4: // $bb5
-        var $56=_PyOS_snprintf($buffer4, 100, __str122, $51, $52, $53); //@line 3257 "datetimemodule.c"
+        var $56=_PyOS_snprintf($buffer4, 100, __str122, allocate([$51,0,0,0,$52,0,0,0,$53,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3257 "datetimemodule.c"
         __label__ = 5; break; //@line 3257 "datetimemodule.c"
       case 5: // $bb7
         var $buffer8=$buffer; //@line 3259 "datetimemodule.c"
@@ -10978,7 +10552,7 @@ var _initialized_b;
     $self_addr=$self;
     var $1=$self_addr; //@line 3268 "datetimemodule.c"
     var $2=$1; //@line 3268 "datetimemodule.c"
-    var $3=__PyObject_CallMethod_SizeT($2, __str146, __str99); //@line 3268 "datetimemodule.c"
+    var $3=__PyObject_CallMethod_SizeT($2, __str146, __str99, allocate(1, "i32", ALLOC_STACK)); //@line 3268 "datetimemodule.c"
     $0=$3; //@line 3268 "datetimemodule.c"
     var $4=$0; //@line 3268 "datetimemodule.c"
     $retval=$4; //@line 3268 "datetimemodule.c"
@@ -11108,7 +10682,7 @@ var _initialized_b;
         $kw_addr=$kw;
         var $1=$args_addr; //@line 3309 "datetimemodule.c"
         var $2=$kw_addr; //@line 3309 "datetimemodule.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str147, _keywords_12042, $format, $format_len); //@line 3309 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str147, _keywords_12042, allocate([$format,0,0,0,$format_len,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 3309 "datetimemodule.c"
         var $4=($3)==0; //@line 3309 "datetimemodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3309 "datetimemodule.c"
       case 1: // $bb
@@ -11130,7 +10704,7 @@ var _initialized_b;
         var $17=$16; //@line 3317 "datetimemodule.c"
         var $18=HEAP[$17]; //@line 3317 "datetimemodule.c"
         var $19=($18); //@line 3317 "datetimemodule.c"
-        var $20=__Py_BuildValue_SizeT(__str201, 1900, 1, 1, $19, $14, $9, 0, 1, -1); //@line 3317 "datetimemodule.c"
+        var $20=__Py_BuildValue_SizeT(__str201, allocate([1900,0,0,0,1,0,0,0,1,0,0,0,$19,0,0,0,$14,0,0,0,$9,0,0,0,0,0,0,0,1,0,0,0,-1,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3317 "datetimemodule.c"
         $tuple=$20; //@line 3317 "datetimemodule.c"
         var $21=$tuple; //@line 3323 "datetimemodule.c"
         var $22=($21)==0; //@line 3323 "datetimemodule.c"
@@ -11197,15 +10771,11 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $a_addr_i;
-        var $b_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $other_addr;
         var $op_addr;
         var $retval;
-        var $1;
+        var $0;
         var $iftmp_304;
         var $diff;
         var $n1=__stackBase__;
@@ -11216,29 +10786,29 @@ var _initialized_b;
         $self_addr=$self;
         $other_addr=$other;
         $op_addr=$op;
-        var $2=$other_addr; //@line 3347 "datetimemodule.c"
-        var $3=$2+4; //@line 3347 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 3347 "datetimemodule.c"
-        var $5=($4)!=(_PyDateTime_TimeType); //@line 3347 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 8; break; } //@line 3347 "datetimemodule.c"
+        var $1=$other_addr; //@line 3347 "datetimemodule.c"
+        var $2=$1+4; //@line 3347 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 3347 "datetimemodule.c"
+        var $4=($3)!=(_PyDateTime_TimeType); //@line 3347 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 8; break; } //@line 3347 "datetimemodule.c"
       case 1: // $bb
-        var $6=$other_addr; //@line 3347 "datetimemodule.c"
-        var $7=$6+4; //@line 3347 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 3347 "datetimemodule.c"
-        var $9=_PyType_IsSubtype($8, _PyDateTime_TimeType); //@line 3347 "datetimemodule.c"
-        var $10=($9)==0; //@line 3347 "datetimemodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 8; break; } //@line 3347 "datetimemodule.c"
+        var $5=$other_addr; //@line 3347 "datetimemodule.c"
+        var $6=$5+4; //@line 3347 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 3347 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_TimeType); //@line 3347 "datetimemodule.c"
+        var $9=($8)==0; //@line 3347 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 8; break; } //@line 3347 "datetimemodule.c"
       case 2: // $bb1
-        var $11=$op_addr; //@line 3348 "datetimemodule.c"
-        var $12=($11)==2; //@line 3348 "datetimemodule.c"
-        var $13=$op_addr; //@line 3348 "datetimemodule.c"
-        var $14=($13)==3; //@line 3348 "datetimemodule.c"
-        var $or_cond=($12) | ($14);
+        var $10=$op_addr; //@line 3348 "datetimemodule.c"
+        var $11=($10)==2; //@line 3348 "datetimemodule.c"
+        var $12=$op_addr; //@line 3348 "datetimemodule.c"
+        var $13=($12)==3; //@line 3348 "datetimemodule.c"
+        var $or_cond=($11) | ($13);
         if ($or_cond) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 3348 "datetimemodule.c"
       case 3: // $bb3
-        var $15=$op_addr; //@line 3349 "datetimemodule.c"
-        var $16=($15)==2; //@line 3349 "datetimemodule.c"
-        if ($16) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 3349 "datetimemodule.c"
+        var $14=$op_addr; //@line 3349 "datetimemodule.c"
+        var $15=($14)==2; //@line 3349 "datetimemodule.c"
+        if ($15) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 3349 "datetimemodule.c"
       case 4: // $bb4
         $iftmp_304=__Py_ZeroStruct; //@line 3349 "datetimemodule.c"
         __label__ = 6; break; //@line 3349 "datetimemodule.c"
@@ -11246,229 +10816,212 @@ var _initialized_b;
         $iftmp_304=__Py_TrueStruct; //@line 3349 "datetimemodule.c"
         __label__ = 6; break; //@line 3349 "datetimemodule.c"
       case 6: // $bb6
-        var $17=$iftmp_304; //@line 3349 "datetimemodule.c"
-        $result=$17; //@line 3349 "datetimemodule.c"
-        var $18=$result; //@line 3350 "datetimemodule.c"
-        var $19=$18; //@line 3350 "datetimemodule.c"
-        var $20=HEAP[$19]; //@line 3350 "datetimemodule.c"
-        var $21=($20) + 1; //@line 3350 "datetimemodule.c"
-        var $22=$result; //@line 3350 "datetimemodule.c"
-        var $23=$22; //@line 3350 "datetimemodule.c"
-        HEAP[$23]=$21; //@line 3350 "datetimemodule.c"
-        var $24=$result; //@line 3351 "datetimemodule.c"
-        $1=$24; //@line 3351 "datetimemodule.c"
+        var $16=$iftmp_304; //@line 3349 "datetimemodule.c"
+        $result=$16; //@line 3349 "datetimemodule.c"
+        var $17=$result; //@line 3350 "datetimemodule.c"
+        var $18=$17; //@line 3350 "datetimemodule.c"
+        var $19=HEAP[$18]; //@line 3350 "datetimemodule.c"
+        var $20=($19) + 1; //@line 3350 "datetimemodule.c"
+        var $21=$result; //@line 3350 "datetimemodule.c"
+        var $22=$21; //@line 3350 "datetimemodule.c"
+        HEAP[$22]=$20; //@line 3350 "datetimemodule.c"
+        var $23=$result; //@line 3351 "datetimemodule.c"
+        $0=$23; //@line 3351 "datetimemodule.c"
         __label__ = 27; break; //@line 3351 "datetimemodule.c"
       case 7: // $bb7
-        var $25=$self_addr; //@line 3354 "datetimemodule.c"
-        var $26=$25; //@line 3354 "datetimemodule.c"
-        var $27=$other_addr; //@line 3354 "datetimemodule.c"
-        $a_addr_i=$26;
-        $b_addr_i=$27;
-        var $28=$b_addr_i; //@line 1466 "datetimemodule.c"
-        var $29=$28+4; //@line 1466 "datetimemodule.c"
-        var $30=HEAP[$29]; //@line 1466 "datetimemodule.c"
-        var $31=$30+12; //@line 1466 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 1466 "datetimemodule.c"
-        var $33=$a_addr_i; //@line 1466 "datetimemodule.c"
-        var $34=$33+4; //@line 1466 "datetimemodule.c"
-        var $35=HEAP[$34]; //@line 1466 "datetimemodule.c"
-        var $36=$35+12; //@line 1466 "datetimemodule.c"
-        var $37=HEAP[$36]; //@line 1466 "datetimemodule.c"
-        var $38=HEAP[_PyExc_TypeError]; //@line 1466 "datetimemodule.c"
-        var $39=_PyErr_Format($38, __str103, $37, $32); //@line 1466 "datetimemodule.c"
-        $0=0; //@line 1469 "datetimemodule.c"
-        var $40=$0; //@line 1469 "datetimemodule.c"
-        $retval_i=$40; //@line 1469 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 1469 "datetimemodule.c"
-        $1=$retval1_i; //@line 3354 "datetimemodule.c"
+        var $24=$self_addr; //@line 3354 "datetimemodule.c"
+        var $25=$24; //@line 3354 "datetimemodule.c"
+        var $26=$other_addr; //@line 3354 "datetimemodule.c"
+        var $27=_cmperror($25, $26); //@line 3354 "datetimemodule.c"
+        $0=$27; //@line 3354 "datetimemodule.c"
         __label__ = 27; break; //@line 3354 "datetimemodule.c"
       case 8: // $bb8
-        var $41=$self_addr; //@line 3356 "datetimemodule.c"
-        var $42=$41; //@line 3356 "datetimemodule.c"
-        var $43=$other_addr; //@line 3356 "datetimemodule.c"
-        var $44=_classify_two_utcoffsets($42, $offset1, $n1, __Py_NoneStruct, $43, $offset2, $n2, __Py_NoneStruct); //@line 3356 "datetimemodule.c"
-        var $45=($44) < 0; //@line 3356 "datetimemodule.c"
-        if ($45) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 3356 "datetimemodule.c"
+        var $28=$self_addr; //@line 3356 "datetimemodule.c"
+        var $29=$28; //@line 3356 "datetimemodule.c"
+        var $30=$other_addr; //@line 3356 "datetimemodule.c"
+        var $31=_classify_two_utcoffsets($29, $offset1, $n1, __Py_NoneStruct, $30, $offset2, $n2, __Py_NoneStruct); //@line 3356 "datetimemodule.c"
+        var $32=($31) < 0; //@line 3356 "datetimemodule.c"
+        if ($32) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 3356 "datetimemodule.c"
       case 9: // $bb9
-        $1=0; //@line 3358 "datetimemodule.c"
+        $0=0; //@line 3358 "datetimemodule.c"
         __label__ = 27; break; //@line 3358 "datetimemodule.c"
       case 10: // $bb10
-        var $46=HEAP[$n1]; //@line 3359 "datetimemodule.c"
-        var $47=($46)==1; //@line 3359 "datetimemodule.c"
-        if ($47) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 3359 "datetimemodule.c"
+        var $33=HEAP[$n1]; //@line 3359 "datetimemodule.c"
+        var $34=($33)==1; //@line 3359 "datetimemodule.c"
+        if ($34) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 3359 "datetimemodule.c"
       case 11: // $bb11
-        var $48=HEAP[$n2]; //@line 3359 "datetimemodule.c"
-        var $49=($48)==1; //@line 3359 "datetimemodule.c"
-        if ($49) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 3359 "datetimemodule.c"
+        var $35=HEAP[$n2]; //@line 3359 "datetimemodule.c"
+        var $36=($35)==1; //@line 3359 "datetimemodule.c"
+        if ($36) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 3359 "datetimemodule.c"
       case 12: // $bb12
         ___assert_fail(__str203, __str1, 3359, ___PRETTY_FUNCTION___12084); //@line 3359 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 3359 "datetimemodule.c"
       case 13: // $bb13
-        var $50=HEAP[$n1]; //@line 3364 "datetimemodule.c"
-        var $51=HEAP[$n2]; //@line 3364 "datetimemodule.c"
-        var $52=($50)==($51); //@line 3364 "datetimemodule.c"
-        if ($52) { __lastLabel__ = 13; __label__ = 14; break; } else { __lastLabel__ = 13; __label__ = 17; break; } //@line 3364 "datetimemodule.c"
+        var $37=HEAP[$n1]; //@line 3364 "datetimemodule.c"
+        var $38=HEAP[$n2]; //@line 3364 "datetimemodule.c"
+        var $39=($37)==($38); //@line 3364 "datetimemodule.c"
+        if ($39) { __lastLabel__ = 13; __label__ = 14; break; } else { __lastLabel__ = 13; __label__ = 17; break; } //@line 3364 "datetimemodule.c"
       case 14: // $bb14
-        var $53=HEAP[$offset1]; //@line 3364 "datetimemodule.c"
-        var $54=HEAP[$offset2]; //@line 3364 "datetimemodule.c"
-        var $55=($53)==($54); //@line 3364 "datetimemodule.c"
-        if ($55) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 3364 "datetimemodule.c"
+        var $40=HEAP[$offset1]; //@line 3364 "datetimemodule.c"
+        var $41=HEAP[$offset2]; //@line 3364 "datetimemodule.c"
+        var $42=($40)==($41); //@line 3364 "datetimemodule.c"
+        if ($42) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 3364 "datetimemodule.c"
       case 15: // $bb15
-        var $56=$other_addr; //@line 3365 "datetimemodule.c"
-        var $57=$56; //@line 3365 "datetimemodule.c"
-        var $58=$57+13; //@line 3365 "datetimemodule.c"
-        var $59=$58; //@line 3365 "datetimemodule.c"
-        var $60=$self_addr; //@line 3365 "datetimemodule.c"
-        var $61=$60+13; //@line 3365 "datetimemodule.c"
-        var $62=$61; //@line 3365 "datetimemodule.c"
-        var $63=_memcmp($62, $59, 6); //@line 3365 "datetimemodule.c"
-        $diff=$63; //@line 3365 "datetimemodule.c"
-        var $64=$diff; //@line 3367 "datetimemodule.c"
-        var $65=$op_addr; //@line 3367 "datetimemodule.c"
-        var $66=_diff_to_bool($64, $65); //@line 3367 "datetimemodule.c"
-        $1=$66; //@line 3367 "datetimemodule.c"
+        var $43=$other_addr; //@line 3365 "datetimemodule.c"
+        var $44=$43; //@line 3365 "datetimemodule.c"
+        var $45=$44+13; //@line 3365 "datetimemodule.c"
+        var $46=$45; //@line 3365 "datetimemodule.c"
+        var $47=$self_addr; //@line 3365 "datetimemodule.c"
+        var $48=$47+13; //@line 3365 "datetimemodule.c"
+        var $49=$48; //@line 3365 "datetimemodule.c"
+        var $50=_memcmp($49, $46, 6); //@line 3365 "datetimemodule.c"
+        $diff=$50; //@line 3365 "datetimemodule.c"
+        var $51=$diff; //@line 3367 "datetimemodule.c"
+        var $52=$op_addr; //@line 3367 "datetimemodule.c"
+        var $53=_diff_to_bool($51, $52); //@line 3367 "datetimemodule.c"
+        $0=$53; //@line 3367 "datetimemodule.c"
         __label__ = 27; break; //@line 3367 "datetimemodule.c"
       case 16: // $bb16thread_pre_split
         var $_pr=HEAP[$n1];
         __lastLabel__ = 16; __label__ = 17; break;
       case 17: // $bb16
-        var $67=__lastLabel__ == 16 ? $_pr : ($50);
-        var $68=($67)==3; //@line 3370 "datetimemodule.c"
-        if ($68) { __label__ = 18; break; } else { __label__ = 24; break; } //@line 3370 "datetimemodule.c"
+        var $54=__lastLabel__ == 16 ? $_pr : ($37);
+        var $55=($54)==3; //@line 3370 "datetimemodule.c"
+        if ($55) { __label__ = 18; break; } else { __label__ = 24; break; } //@line 3370 "datetimemodule.c"
       case 18: // $bb17
-        var $69=HEAP[$n2]; //@line 3370 "datetimemodule.c"
-        var $70=($69)==3; //@line 3370 "datetimemodule.c"
-        if ($70) { __label__ = 19; break; } else { __label__ = 24; break; } //@line 3370 "datetimemodule.c"
+        var $56=HEAP[$n2]; //@line 3370 "datetimemodule.c"
+        var $57=($56)==3; //@line 3370 "datetimemodule.c"
+        if ($57) { __label__ = 19; break; } else { __label__ = 24; break; } //@line 3370 "datetimemodule.c"
       case 19: // $bb18
-        var $71=HEAP[$offset1]; //@line 3371 "datetimemodule.c"
-        var $72=HEAP[$offset2]; //@line 3371 "datetimemodule.c"
-        var $73=($71)==($72); //@line 3371 "datetimemodule.c"
-        if ($73) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 3371 "datetimemodule.c"
+        var $58=HEAP[$offset1]; //@line 3371 "datetimemodule.c"
+        var $59=HEAP[$offset2]; //@line 3371 "datetimemodule.c"
+        var $60=($58)==($59); //@line 3371 "datetimemodule.c"
+        if ($60) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 3371 "datetimemodule.c"
       case 20: // $bb19
         ___assert_fail(__str204, __str1, 3371, ___PRETTY_FUNCTION___12084); //@line 3371 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 3371 "datetimemodule.c"
       case 21: // $bb20
-        var $74=$self_addr; //@line 3375 "datetimemodule.c"
-        var $75=$74+13; //@line 3375 "datetimemodule.c"
-        var $76=$75; //@line 3375 "datetimemodule.c"
-        var $77=HEAP[$76]; //@line 3375 "datetimemodule.c"
-        var $78=($77); //@line 3375 "datetimemodule.c"
-        var $79=($78) * 3600; //@line 3375 "datetimemodule.c"
-        var $80=$self_addr; //@line 3375 "datetimemodule.c"
-        var $81=$80+13; //@line 3375 "datetimemodule.c"
-        var $82=$81+1; //@line 3375 "datetimemodule.c"
-        var $83=HEAP[$82]; //@line 3375 "datetimemodule.c"
-        var $84=($83); //@line 3375 "datetimemodule.c"
-        var $85=HEAP[$offset1]; //@line 3375 "datetimemodule.c"
-        var $86=($84) - ($85); //@line 3375 "datetimemodule.c"
-        var $87=($86) * 60; //@line 3375 "datetimemodule.c"
-        var $88=$self_addr; //@line 3375 "datetimemodule.c"
-        var $89=$88+13; //@line 3375 "datetimemodule.c"
-        var $90=$89+2; //@line 3375 "datetimemodule.c"
-        var $91=HEAP[$90]; //@line 3375 "datetimemodule.c"
-        var $92=($91); //@line 3375 "datetimemodule.c"
-        var $93=($87) + ($79); //@line 3375 "datetimemodule.c"
-        var $94=($93) + ($92); //@line 3375 "datetimemodule.c"
-        HEAP[$offset1]=$94; //@line 3375 "datetimemodule.c"
-        var $95=$other_addr; //@line 3378 "datetimemodule.c"
-        var $96=$95; //@line 3378 "datetimemodule.c"
-        var $97=$96+13; //@line 3378 "datetimemodule.c"
-        var $98=$97; //@line 3378 "datetimemodule.c"
-        var $99=HEAP[$98]; //@line 3378 "datetimemodule.c"
-        var $100=($99); //@line 3378 "datetimemodule.c"
-        var $101=($100) * 3600; //@line 3378 "datetimemodule.c"
-        var $102=$other_addr; //@line 3378 "datetimemodule.c"
-        var $103=$102; //@line 3378 "datetimemodule.c"
-        var $104=$103+13; //@line 3378 "datetimemodule.c"
-        var $105=$104+1; //@line 3378 "datetimemodule.c"
-        var $106=HEAP[$105]; //@line 3378 "datetimemodule.c"
-        var $107=($106); //@line 3378 "datetimemodule.c"
-        var $108=HEAP[$offset2]; //@line 3378 "datetimemodule.c"
-        var $109=($107) - ($108); //@line 3378 "datetimemodule.c"
-        var $110=($109) * 60; //@line 3378 "datetimemodule.c"
-        var $111=$other_addr; //@line 3378 "datetimemodule.c"
-        var $112=$111; //@line 3378 "datetimemodule.c"
-        var $113=$112+13; //@line 3378 "datetimemodule.c"
-        var $114=$113+2; //@line 3378 "datetimemodule.c"
-        var $115=HEAP[$114]; //@line 3378 "datetimemodule.c"
-        var $116=($115); //@line 3378 "datetimemodule.c"
-        var $117=($110) + ($101); //@line 3378 "datetimemodule.c"
-        var $118=($117) + ($116); //@line 3378 "datetimemodule.c"
-        HEAP[$offset2]=$118; //@line 3378 "datetimemodule.c"
-        var $119=HEAP[$offset1]; //@line 3381 "datetimemodule.c"
-        var $120=HEAP[$offset2]; //@line 3381 "datetimemodule.c"
-        var $121=($119) - ($120); //@line 3381 "datetimemodule.c"
-        $diff=$121; //@line 3381 "datetimemodule.c"
-        var $122=$diff; //@line 3382 "datetimemodule.c"
-        var $123=($122)==0; //@line 3382 "datetimemodule.c"
-        if ($123) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 3382 "datetimemodule.c"
+        var $61=$self_addr; //@line 3375 "datetimemodule.c"
+        var $62=$61+13; //@line 3375 "datetimemodule.c"
+        var $63=$62; //@line 3375 "datetimemodule.c"
+        var $64=HEAP[$63]; //@line 3375 "datetimemodule.c"
+        var $65=($64); //@line 3375 "datetimemodule.c"
+        var $66=($65) * 3600; //@line 3375 "datetimemodule.c"
+        var $67=$self_addr; //@line 3375 "datetimemodule.c"
+        var $68=$67+13; //@line 3375 "datetimemodule.c"
+        var $69=$68+1; //@line 3375 "datetimemodule.c"
+        var $70=HEAP[$69]; //@line 3375 "datetimemodule.c"
+        var $71=($70); //@line 3375 "datetimemodule.c"
+        var $72=HEAP[$offset1]; //@line 3375 "datetimemodule.c"
+        var $73=($71) - ($72); //@line 3375 "datetimemodule.c"
+        var $74=($73) * 60; //@line 3375 "datetimemodule.c"
+        var $75=$self_addr; //@line 3375 "datetimemodule.c"
+        var $76=$75+13; //@line 3375 "datetimemodule.c"
+        var $77=$76+2; //@line 3375 "datetimemodule.c"
+        var $78=HEAP[$77]; //@line 3375 "datetimemodule.c"
+        var $79=($78); //@line 3375 "datetimemodule.c"
+        var $80=($74) + ($66); //@line 3375 "datetimemodule.c"
+        var $81=($80) + ($79); //@line 3375 "datetimemodule.c"
+        HEAP[$offset1]=$81; //@line 3375 "datetimemodule.c"
+        var $82=$other_addr; //@line 3378 "datetimemodule.c"
+        var $83=$82; //@line 3378 "datetimemodule.c"
+        var $84=$83+13; //@line 3378 "datetimemodule.c"
+        var $85=$84; //@line 3378 "datetimemodule.c"
+        var $86=HEAP[$85]; //@line 3378 "datetimemodule.c"
+        var $87=($86); //@line 3378 "datetimemodule.c"
+        var $88=($87) * 3600; //@line 3378 "datetimemodule.c"
+        var $89=$other_addr; //@line 3378 "datetimemodule.c"
+        var $90=$89; //@line 3378 "datetimemodule.c"
+        var $91=$90+13; //@line 3378 "datetimemodule.c"
+        var $92=$91+1; //@line 3378 "datetimemodule.c"
+        var $93=HEAP[$92]; //@line 3378 "datetimemodule.c"
+        var $94=($93); //@line 3378 "datetimemodule.c"
+        var $95=HEAP[$offset2]; //@line 3378 "datetimemodule.c"
+        var $96=($94) - ($95); //@line 3378 "datetimemodule.c"
+        var $97=($96) * 60; //@line 3378 "datetimemodule.c"
+        var $98=$other_addr; //@line 3378 "datetimemodule.c"
+        var $99=$98; //@line 3378 "datetimemodule.c"
+        var $100=$99+13; //@line 3378 "datetimemodule.c"
+        var $101=$100+2; //@line 3378 "datetimemodule.c"
+        var $102=HEAP[$101]; //@line 3378 "datetimemodule.c"
+        var $103=($102); //@line 3378 "datetimemodule.c"
+        var $104=($97) + ($88); //@line 3378 "datetimemodule.c"
+        var $105=($104) + ($103); //@line 3378 "datetimemodule.c"
+        HEAP[$offset2]=$105; //@line 3378 "datetimemodule.c"
+        var $106=HEAP[$offset1]; //@line 3381 "datetimemodule.c"
+        var $107=HEAP[$offset2]; //@line 3381 "datetimemodule.c"
+        var $108=($106) - ($107); //@line 3381 "datetimemodule.c"
+        $diff=$108; //@line 3381 "datetimemodule.c"
+        var $109=$diff; //@line 3382 "datetimemodule.c"
+        var $110=($109)==0; //@line 3382 "datetimemodule.c"
+        if ($110) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 3382 "datetimemodule.c"
       case 22: // $bb21
-        var $124=$self_addr; //@line 3383 "datetimemodule.c"
-        var $125=$124+13; //@line 3383 "datetimemodule.c"
-        var $126=$125+3; //@line 3383 "datetimemodule.c"
-        var $127=HEAP[$126]; //@line 3383 "datetimemodule.c"
-        var $128=($127); //@line 3383 "datetimemodule.c"
-        var $129=($128) << 16; //@line 3383 "datetimemodule.c"
-        var $130=$self_addr; //@line 3383 "datetimemodule.c"
-        var $131=$130+13; //@line 3383 "datetimemodule.c"
-        var $132=$131+4; //@line 3383 "datetimemodule.c"
-        var $133=HEAP[$132]; //@line 3383 "datetimemodule.c"
-        var $134=($133); //@line 3383 "datetimemodule.c"
-        var $135=($134) << 8; //@line 3383 "datetimemodule.c"
-        var $136=$self_addr; //@line 3383 "datetimemodule.c"
-        var $137=$136+13; //@line 3383 "datetimemodule.c"
-        var $138=$137+5; //@line 3383 "datetimemodule.c"
-        var $139=HEAP[$138]; //@line 3383 "datetimemodule.c"
-        var $140=($139); //@line 3383 "datetimemodule.c"
-        var $141=($135) | ($129); //@line 3383 "datetimemodule.c"
-        var $142=($141) | ($140); //@line 3383 "datetimemodule.c"
-        var $143=$other_addr; //@line 3383 "datetimemodule.c"
-        var $144=$143; //@line 3383 "datetimemodule.c"
-        var $145=$144+13; //@line 3383 "datetimemodule.c"
-        var $146=$145+3; //@line 3383 "datetimemodule.c"
-        var $147=HEAP[$146]; //@line 3383 "datetimemodule.c"
-        var $148=($147); //@line 3383 "datetimemodule.c"
-        var $149=($148) << 16; //@line 3383 "datetimemodule.c"
-        var $150=$other_addr; //@line 3383 "datetimemodule.c"
-        var $151=$150; //@line 3383 "datetimemodule.c"
-        var $152=$151+13; //@line 3383 "datetimemodule.c"
-        var $153=$152+4; //@line 3383 "datetimemodule.c"
-        var $154=HEAP[$153]; //@line 3383 "datetimemodule.c"
-        var $155=($154); //@line 3383 "datetimemodule.c"
-        var $156=($155) << 8; //@line 3383 "datetimemodule.c"
-        var $157=$other_addr; //@line 3383 "datetimemodule.c"
-        var $158=$157; //@line 3383 "datetimemodule.c"
-        var $159=$158+13; //@line 3383 "datetimemodule.c"
-        var $160=$159+5; //@line 3383 "datetimemodule.c"
-        var $161=HEAP[$160]; //@line 3383 "datetimemodule.c"
-        var $162=($161); //@line 3383 "datetimemodule.c"
-        var $163=($156) | ($149); //@line 3383 "datetimemodule.c"
-        var $164=($163) | ($162); //@line 3383 "datetimemodule.c"
-        var $165=($142) - ($164); //@line 3383 "datetimemodule.c"
-        $diff=$165; //@line 3383 "datetimemodule.c"
+        var $111=$self_addr; //@line 3383 "datetimemodule.c"
+        var $112=$111+13; //@line 3383 "datetimemodule.c"
+        var $113=$112+3; //@line 3383 "datetimemodule.c"
+        var $114=HEAP[$113]; //@line 3383 "datetimemodule.c"
+        var $115=($114); //@line 3383 "datetimemodule.c"
+        var $116=($115) << 16; //@line 3383 "datetimemodule.c"
+        var $117=$self_addr; //@line 3383 "datetimemodule.c"
+        var $118=$117+13; //@line 3383 "datetimemodule.c"
+        var $119=$118+4; //@line 3383 "datetimemodule.c"
+        var $120=HEAP[$119]; //@line 3383 "datetimemodule.c"
+        var $121=($120); //@line 3383 "datetimemodule.c"
+        var $122=($121) << 8; //@line 3383 "datetimemodule.c"
+        var $123=$self_addr; //@line 3383 "datetimemodule.c"
+        var $124=$123+13; //@line 3383 "datetimemodule.c"
+        var $125=$124+5; //@line 3383 "datetimemodule.c"
+        var $126=HEAP[$125]; //@line 3383 "datetimemodule.c"
+        var $127=($126); //@line 3383 "datetimemodule.c"
+        var $128=($122) | ($116); //@line 3383 "datetimemodule.c"
+        var $129=($128) | ($127); //@line 3383 "datetimemodule.c"
+        var $130=$other_addr; //@line 3383 "datetimemodule.c"
+        var $131=$130; //@line 3383 "datetimemodule.c"
+        var $132=$131+13; //@line 3383 "datetimemodule.c"
+        var $133=$132+3; //@line 3383 "datetimemodule.c"
+        var $134=HEAP[$133]; //@line 3383 "datetimemodule.c"
+        var $135=($134); //@line 3383 "datetimemodule.c"
+        var $136=($135) << 16; //@line 3383 "datetimemodule.c"
+        var $137=$other_addr; //@line 3383 "datetimemodule.c"
+        var $138=$137; //@line 3383 "datetimemodule.c"
+        var $139=$138+13; //@line 3383 "datetimemodule.c"
+        var $140=$139+4; //@line 3383 "datetimemodule.c"
+        var $141=HEAP[$140]; //@line 3383 "datetimemodule.c"
+        var $142=($141); //@line 3383 "datetimemodule.c"
+        var $143=($142) << 8; //@line 3383 "datetimemodule.c"
+        var $144=$other_addr; //@line 3383 "datetimemodule.c"
+        var $145=$144; //@line 3383 "datetimemodule.c"
+        var $146=$145+13; //@line 3383 "datetimemodule.c"
+        var $147=$146+5; //@line 3383 "datetimemodule.c"
+        var $148=HEAP[$147]; //@line 3383 "datetimemodule.c"
+        var $149=($148); //@line 3383 "datetimemodule.c"
+        var $150=($143) | ($136); //@line 3383 "datetimemodule.c"
+        var $151=($150) | ($149); //@line 3383 "datetimemodule.c"
+        var $152=($129) - ($151); //@line 3383 "datetimemodule.c"
+        $diff=$152; //@line 3383 "datetimemodule.c"
         __label__ = 23; break; //@line 3383 "datetimemodule.c"
       case 23: // $bb22
-        var $166=$diff; //@line 3385 "datetimemodule.c"
-        var $167=$op_addr; //@line 3385 "datetimemodule.c"
-        var $168=_diff_to_bool($166, $167); //@line 3385 "datetimemodule.c"
-        $1=$168; //@line 3385 "datetimemodule.c"
+        var $153=$diff; //@line 3385 "datetimemodule.c"
+        var $154=$op_addr; //@line 3385 "datetimemodule.c"
+        var $155=_diff_to_bool($153, $154); //@line 3385 "datetimemodule.c"
+        $0=$155; //@line 3385 "datetimemodule.c"
         __label__ = 27; break; //@line 3385 "datetimemodule.c"
       case 24: // $bb23
-        var $169=HEAP[$n1]; //@line 3388 "datetimemodule.c"
-        var $170=HEAP[$n2]; //@line 3388 "datetimemodule.c"
-        var $171=($169)==($170); //@line 3388 "datetimemodule.c"
-        if ($171) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 3388 "datetimemodule.c"
+        var $156=HEAP[$n1]; //@line 3388 "datetimemodule.c"
+        var $157=HEAP[$n2]; //@line 3388 "datetimemodule.c"
+        var $158=($156)==($157); //@line 3388 "datetimemodule.c"
+        if ($158) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 3388 "datetimemodule.c"
       case 25: // $bb24
         ___assert_fail(__str205, __str1, 3388, ___PRETTY_FUNCTION___12084); //@line 3388 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 3388 "datetimemodule.c"
       case 26: // $bb25
-        var $172=HEAP[_PyExc_TypeError]; //@line 3389 "datetimemodule.c"
-        _PyErr_SetString($172, __str206); //@line 3389 "datetimemodule.c"
-        $1=0; //@line 3392 "datetimemodule.c"
+        var $159=HEAP[_PyExc_TypeError]; //@line 3389 "datetimemodule.c"
+        _PyErr_SetString($159, __str206); //@line 3389 "datetimemodule.c"
+        $0=0; //@line 3392 "datetimemodule.c"
         __label__ = 27; break; //@line 3392 "datetimemodule.c"
       case 27: // $bb26
-        var $173=$1; //@line 3351 "datetimemodule.c"
-        $retval=$173; //@line 3351 "datetimemodule.c"
+        var $160=$0; //@line 3351 "datetimemodule.c"
+        $retval=$160; //@line 3351 "datetimemodule.c"
         var $retval27=$retval; //@line 3351 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval27; //@line 3351 "datetimemodule.c"
@@ -11599,7 +11152,7 @@ var _initialized_b;
         $temp=$70; //@line 3423 "datetimemodule.c"
         __lastLabel__ = 12; __label__ = 14; break; //@line 3423 "datetimemodule.c"
       case 13: // $bb13
-        var $71=__Py_BuildValue_SizeT(__str210, $69, $68, $67, $62); //@line 3428 "datetimemodule.c"
+        var $71=__Py_BuildValue_SizeT(__str210, allocate([$69,0,0,0,$68,0,0,0,$67,0,0,0,$62,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3428 "datetimemodule.c"
         $temp=$71; //@line 3428 "datetimemodule.c"
         __lastLabel__ = 13; __label__ = 14; break; //@line 3428 "datetimemodule.c"
       case 14: // $bb14
@@ -11730,7 +11283,7 @@ var _initialized_b;
         HEAP[$tzinfo]=$43; //@line 3450 "datetimemodule.c"
         var $44=$args_addr; //@line 3452 "datetimemodule.c"
         var $45=$kw_addr; //@line 3452 "datetimemodule.c"
-        var $46=__PyArg_ParseTupleAndKeywords_SizeT($44, $45, __str211, _time_kws, $hh, $mm, $ss, $us, $tzinfo); //@line 3452 "datetimemodule.c"
+        var $46=__PyArg_ParseTupleAndKeywords_SizeT($44, $45, __str211, _time_kws, allocate([$hh,0,0,0,$mm,0,0,0,$ss,0,0,0,$us,0,0,0,$tzinfo,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 3452 "datetimemodule.c"
         var $47=($46)==0; //@line 3452 "datetimemodule.c"
         if ($47) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 3452 "datetimemodule.c"
       case 4: // $bb3
@@ -11742,7 +11295,7 @@ var _initialized_b;
         var $50=HEAP[$ss]; //@line 3456 "datetimemodule.c"
         var $51=HEAP[$mm]; //@line 3456 "datetimemodule.c"
         var $52=HEAP[$hh]; //@line 3456 "datetimemodule.c"
-        var $53=__Py_BuildValue_SizeT(__str212, $52, $51, $50, $49, $48); //@line 3456 "datetimemodule.c"
+        var $53=__Py_BuildValue_SizeT(__str212, allocate([$52,0,0,0,$51,0,0,0,$50,0,0,0,$49,0,0,0,$48,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3456 "datetimemodule.c"
         $tuple=$53; //@line 3456 "datetimemodule.c"
         var $54=$tuple; //@line 3457 "datetimemodule.c"
         var $55=($54)==0; //@line 3457 "datetimemodule.c"
@@ -11800,111 +11353,96 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $offset;
         var $none=__stackBase__;
         $self_addr=$self;
-        var $2=$self_addr; //@line 3470 "datetimemodule.c"
-        var $3=$2+13; //@line 3470 "datetimemodule.c"
-        var $4=$3+2; //@line 3470 "datetimemodule.c"
-        var $5=HEAP[$4]; //@line 3470 "datetimemodule.c"
-        var $6=($5)!=0; //@line 3470 "datetimemodule.c"
-        if ($6) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 3470 "datetimemodule.c"
+        var $1=$self_addr; //@line 3470 "datetimemodule.c"
+        var $2=$1+13; //@line 3470 "datetimemodule.c"
+        var $3=$2+2; //@line 3470 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 3470 "datetimemodule.c"
+        var $5=($4)!=0; //@line 3470 "datetimemodule.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 3470 "datetimemodule.c"
       case 1: // $bb
-        var $7=$self_addr; //@line 3470 "datetimemodule.c"
-        var $8=$7+13; //@line 3470 "datetimemodule.c"
-        var $9=$8+3; //@line 3470 "datetimemodule.c"
-        var $10=HEAP[$9]; //@line 3470 "datetimemodule.c"
-        var $11=($10); //@line 3470 "datetimemodule.c"
-        var $12=($11) << 16; //@line 3470 "datetimemodule.c"
-        var $13=$self_addr; //@line 3470 "datetimemodule.c"
-        var $14=$13+13; //@line 3470 "datetimemodule.c"
-        var $15=$14+4; //@line 3470 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 3470 "datetimemodule.c"
-        var $17=($16); //@line 3470 "datetimemodule.c"
-        var $18=($17) << 8; //@line 3470 "datetimemodule.c"
-        var $19=$self_addr; //@line 3470 "datetimemodule.c"
-        var $20=$19+13; //@line 3470 "datetimemodule.c"
-        var $21=$20+5; //@line 3470 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 3470 "datetimemodule.c"
-        var $23=($22); //@line 3470 "datetimemodule.c"
-        var $24=($18) | ($12); //@line 3470 "datetimemodule.c"
-        var $25=($24) | ($23); //@line 3470 "datetimemodule.c"
-        var $26=($25)!=0; //@line 3470 "datetimemodule.c"
-        if ($26) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 3470 "datetimemodule.c"
+        var $6=$self_addr; //@line 3470 "datetimemodule.c"
+        var $7=$6+13; //@line 3470 "datetimemodule.c"
+        var $8=$7+3; //@line 3470 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 3470 "datetimemodule.c"
+        var $10=($9); //@line 3470 "datetimemodule.c"
+        var $11=($10) << 16; //@line 3470 "datetimemodule.c"
+        var $12=$self_addr; //@line 3470 "datetimemodule.c"
+        var $13=$12+13; //@line 3470 "datetimemodule.c"
+        var $14=$13+4; //@line 3470 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 3470 "datetimemodule.c"
+        var $16=($15); //@line 3470 "datetimemodule.c"
+        var $17=($16) << 8; //@line 3470 "datetimemodule.c"
+        var $18=$self_addr; //@line 3470 "datetimemodule.c"
+        var $19=$18+13; //@line 3470 "datetimemodule.c"
+        var $20=$19+5; //@line 3470 "datetimemodule.c"
+        var $21=HEAP[$20]; //@line 3470 "datetimemodule.c"
+        var $22=($21); //@line 3470 "datetimemodule.c"
+        var $23=($17) | ($11); //@line 3470 "datetimemodule.c"
+        var $24=($23) | ($22); //@line 3470 "datetimemodule.c"
+        var $25=($24)!=0; //@line 3470 "datetimemodule.c"
+        if ($25) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 3470 "datetimemodule.c"
       case 2: // $bb1
-        $1=1; //@line 3474 "datetimemodule.c"
+        $0=1; //@line 3474 "datetimemodule.c"
         __label__ = 9; break; //@line 3474 "datetimemodule.c"
       case 3: // $bb2
         $offset=0; //@line 3476 "datetimemodule.c"
-        var $27=$self_addr; //@line 3477 "datetimemodule.c"
-        var $28=$27; //@line 3477 "datetimemodule.c"
-        var $29=$28+12; //@line 3477 "datetimemodule.c"
-        var $30=HEAP[$29]; //@line 3477 "datetimemodule.c"
-        var $31=($30)!=0; //@line 3477 "datetimemodule.c"
-        if ($31) { __label__ = 4; break; } else { __label__ = 8; break; } //@line 3477 "datetimemodule.c"
+        var $26=$self_addr; //@line 3477 "datetimemodule.c"
+        var $27=$26; //@line 3477 "datetimemodule.c"
+        var $28=$27+12; //@line 3477 "datetimemodule.c"
+        var $29=HEAP[$28]; //@line 3477 "datetimemodule.c"
+        var $30=($29)!=0; //@line 3477 "datetimemodule.c"
+        if ($30) { __label__ = 4; break; } else { __label__ = 8; break; } //@line 3477 "datetimemodule.c"
       case 4: // $bb3
-        var $32=$self_addr; //@line 3477 "datetimemodule.c"
-        var $33=$32+20; //@line 3477 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 3477 "datetimemodule.c"
-        var $35=($34)!=(__Py_NoneStruct); //@line 3477 "datetimemodule.c"
-        if ($35) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 3477 "datetimemodule.c"
+        var $31=$self_addr; //@line 3477 "datetimemodule.c"
+        var $32=$31+20; //@line 3477 "datetimemodule.c"
+        var $33=HEAP[$32]; //@line 3477 "datetimemodule.c"
+        var $34=($33)!=(__Py_NoneStruct); //@line 3477 "datetimemodule.c"
+        if ($34) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 3477 "datetimemodule.c"
       case 5: // $bb4
-        var $36=$self_addr; //@line 3478 "datetimemodule.c"
-        var $37=$36+20; //@line 3478 "datetimemodule.c"
-        var $38=HEAP[$37]; //@line 3478 "datetimemodule.c"
-        $tzinfo_addr_i=$38;
-        $tzinfoarg_addr_i=__Py_NoneStruct;
-        $none_addr_i=$none;
-        var $39=$tzinfo_addr_i; //@line 888 "datetimemodule.c"
-        var $40=$tzinfoarg_addr_i; //@line 888 "datetimemodule.c"
-        var $41=$none_addr_i; //@line 888 "datetimemodule.c"
-        var $42=_call_utc_tzinfo_method($39, __str42, $40, $41); //@line 888 "datetimemodule.c"
-        $0=$42; //@line 888 "datetimemodule.c"
-        var $43=$0; //@line 888 "datetimemodule.c"
-        $retval_i=$43; //@line 888 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 888 "datetimemodule.c"
-        $offset=$retval1_i; //@line 3478 "datetimemodule.c"
-        var $44=$offset; //@line 3479 "datetimemodule.c"
-        var $45=($44)==-1; //@line 3479 "datetimemodule.c"
-        if ($45) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 3479 "datetimemodule.c"
+        var $35=$self_addr; //@line 3478 "datetimemodule.c"
+        var $36=$35+20; //@line 3478 "datetimemodule.c"
+        var $37=HEAP[$36]; //@line 3478 "datetimemodule.c"
+        var $38=_call_utcoffset($37, __Py_NoneStruct, $none); //@line 3478 "datetimemodule.c"
+        $offset=$38; //@line 3478 "datetimemodule.c"
+        var $39=$offset; //@line 3479 "datetimemodule.c"
+        var $40=($39)==-1; //@line 3479 "datetimemodule.c"
+        if ($40) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 3479 "datetimemodule.c"
       case 6: // $bb5
-        var $46=_PyErr_Occurred(); //@line 3479 "datetimemodule.c"
-        var $47=($46)!=0; //@line 3479 "datetimemodule.c"
-        if ($47) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 3479 "datetimemodule.c"
+        var $41=_PyErr_Occurred(); //@line 3479 "datetimemodule.c"
+        var $42=($41)!=0; //@line 3479 "datetimemodule.c"
+        if ($42) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 3479 "datetimemodule.c"
       case 7: // $bb6
-        $1=-1; //@line 3480 "datetimemodule.c"
+        $0=-1; //@line 3480 "datetimemodule.c"
         __label__ = 9; break; //@line 3480 "datetimemodule.c"
       case 8: // $bb7
-        var $48=$self_addr; //@line 3482 "datetimemodule.c"
-        var $49=$48+13; //@line 3482 "datetimemodule.c"
-        var $50=$49+1; //@line 3482 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 3482 "datetimemodule.c"
-        var $52=($51); //@line 3482 "datetimemodule.c"
-        var $53=$offset; //@line 3482 "datetimemodule.c"
-        var $_neg=0 - ($53);
-        var $54=$self_addr; //@line 3482 "datetimemodule.c"
-        var $55=$54+13; //@line 3482 "datetimemodule.c"
-        var $56=$55; //@line 3482 "datetimemodule.c"
-        var $57=HEAP[$56]; //@line 3482 "datetimemodule.c"
+        var $43=$self_addr; //@line 3482 "datetimemodule.c"
+        var $44=$43+13; //@line 3482 "datetimemodule.c"
+        var $45=$44+1; //@line 3482 "datetimemodule.c"
+        var $46=HEAP[$45]; //@line 3482 "datetimemodule.c"
+        var $47=($46); //@line 3482 "datetimemodule.c"
+        var $48=$offset; //@line 3482 "datetimemodule.c"
+        var $_neg=0 - ($48);
+        var $49=$self_addr; //@line 3482 "datetimemodule.c"
+        var $50=$49+13; //@line 3482 "datetimemodule.c"
+        var $51=$50; //@line 3482 "datetimemodule.c"
+        var $52=HEAP[$51]; //@line 3482 "datetimemodule.c"
+        var $53=($52); //@line 3482 "datetimemodule.c"
+        var $54=($53) * 60; //@line 3482 "datetimemodule.c"
+        var $55=($47) + ($_neg);
+        var $56=($55) + ($54); //@line 3482 "datetimemodule.c"
+        var $57=($56)!=0; //@line 3482 "datetimemodule.c"
         var $58=($57); //@line 3482 "datetimemodule.c"
-        var $59=($58) * 60; //@line 3482 "datetimemodule.c"
-        var $60=($52) + ($_neg);
-        var $61=($60) + ($59); //@line 3482 "datetimemodule.c"
-        var $62=($61)!=0; //@line 3482 "datetimemodule.c"
-        var $63=($62); //@line 3482 "datetimemodule.c"
-        $1=$63; //@line 3482 "datetimemodule.c"
+        $0=$58; //@line 3482 "datetimemodule.c"
         __label__ = 9; break; //@line 3482 "datetimemodule.c"
       case 9: // $bb8
-        var $64=$1; //@line 3474 "datetimemodule.c"
-        $retval=$64; //@line 3474 "datetimemodule.c"
+        var $59=$0; //@line 3474 "datetimemodule.c"
+        $retval=$59; //@line 3474 "datetimemodule.c"
         var $retval9=$retval; //@line 3474 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 3474 "datetimemodule.c"
@@ -11913,101 +11451,111 @@ var _initialized_b;
   }
   
 
-  function _time_reduce($self, $arg) {
+  function _time_getstate($self) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
-        var $basestate_i;
-        var $result_i;
         var $self_addr;
-        var $arg_addr;
         var $retval;
-        var $1;
+        var $0;
+        var $basestate;
+        var $result;
         $self_addr=$self;
-        $arg_addr=$arg;
-        var $2=$self_addr; //@line 3513 "datetimemodule.c"
-        $self_addr_i=$2;
-        $result_i=0; //@line 3496 "datetimemodule.c"
-        var $3=$self_addr_i; //@line 3498 "datetimemodule.c"
-        var $4=$3+13; //@line 3498 "datetimemodule.c"
-        var $5=$4; //@line 3498 "datetimemodule.c"
-        var $6=_PyString_FromStringAndSize($5, 6); //@line 3498 "datetimemodule.c"
-        $basestate_i=$6; //@line 3498 "datetimemodule.c"
-        var $7=$basestate_i; //@line 3500 "datetimemodule.c"
-        var $8=($7)!=0; //@line 3500 "datetimemodule.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 3500 "datetimemodule.c"
-      case 1: // $bb_i
-        var $9=$self_addr_i; //@line 3501 "datetimemodule.c"
-        var $10=$9; //@line 3501 "datetimemodule.c"
-        var $11=$10+12; //@line 3501 "datetimemodule.c"
-        var $12=HEAP[$11]; //@line 3501 "datetimemodule.c"
-        var $13=($12)==0; //@line 3501 "datetimemodule.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 3501 "datetimemodule.c"
-      case 2: // $bb1_i
-        var $14=$self_addr_i; //@line 3501 "datetimemodule.c"
-        var $15=$14+20; //@line 3501 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 3501 "datetimemodule.c"
-        var $17=($16)==(__Py_NoneStruct); //@line 3501 "datetimemodule.c"
-        if ($17) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3501 "datetimemodule.c"
-      case 3: // $bb2_i
-        var $18=$basestate_i; //@line 3502 "datetimemodule.c"
-        var $19=_PyTuple_Pack(1, $18); //@line 3502 "datetimemodule.c"
-        $result_i=$19; //@line 3502 "datetimemodule.c"
+        $result=0; //@line 3496 "datetimemodule.c"
+        var $1=$self_addr; //@line 3498 "datetimemodule.c"
+        var $2=$1+13; //@line 3498 "datetimemodule.c"
+        var $3=$2; //@line 3498 "datetimemodule.c"
+        var $4=_PyString_FromStringAndSize($3, 6); //@line 3498 "datetimemodule.c"
+        $basestate=$4; //@line 3498 "datetimemodule.c"
+        var $5=$basestate; //@line 3500 "datetimemodule.c"
+        var $6=($5)!=0; //@line 3500 "datetimemodule.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 3500 "datetimemodule.c"
+      case 1: // $bb
+        var $7=$self_addr; //@line 3501 "datetimemodule.c"
+        var $8=$7; //@line 3501 "datetimemodule.c"
+        var $9=$8+12; //@line 3501 "datetimemodule.c"
+        var $10=HEAP[$9]; //@line 3501 "datetimemodule.c"
+        var $11=($10)==0; //@line 3501 "datetimemodule.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 3501 "datetimemodule.c"
+      case 2: // $bb1
+        var $12=$self_addr; //@line 3501 "datetimemodule.c"
+        var $13=$12+20; //@line 3501 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 3501 "datetimemodule.c"
+        var $15=($14)==(__Py_NoneStruct); //@line 3501 "datetimemodule.c"
+        if ($15) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3501 "datetimemodule.c"
+      case 3: // $bb2
+        var $16=$basestate; //@line 3502 "datetimemodule.c"
+        var $17=_PyTuple_Pack(1, allocate([$16,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3502 "datetimemodule.c"
+        $result=$17; //@line 3502 "datetimemodule.c"
         __label__ = 5; break; //@line 3502 "datetimemodule.c"
-      case 4: // $bb3_i
-        var $20=$self_addr_i; //@line 3504 "datetimemodule.c"
-        var $21=$20+20; //@line 3504 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 3504 "datetimemodule.c"
-        var $23=$basestate_i; //@line 3504 "datetimemodule.c"
-        var $24=_PyTuple_Pack(2, $23, $22); //@line 3504 "datetimemodule.c"
-        $result_i=$24; //@line 3504 "datetimemodule.c"
+      case 4: // $bb3
+        var $18=$self_addr; //@line 3504 "datetimemodule.c"
+        var $19=$18+20; //@line 3504 "datetimemodule.c"
+        var $20=HEAP[$19]; //@line 3504 "datetimemodule.c"
+        var $21=$basestate; //@line 3504 "datetimemodule.c"
+        var $22=_PyTuple_Pack(2, allocate([$21,0,0,0,$20,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3504 "datetimemodule.c"
+        $result=$22; //@line 3504 "datetimemodule.c"
         __label__ = 5; break; //@line 3504 "datetimemodule.c"
-      case 5: // $bb4_i
-        var $25=$basestate_i; //@line 3505 "datetimemodule.c"
-        var $26=$25; //@line 3505 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 3505 "datetimemodule.c"
-        var $28=($27) - 1; //@line 3505 "datetimemodule.c"
-        var $29=$basestate_i; //@line 3505 "datetimemodule.c"
+      case 5: // $bb4
+        var $23=$basestate; //@line 3505 "datetimemodule.c"
+        var $24=$23; //@line 3505 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 3505 "datetimemodule.c"
+        var $26=($25) - 1; //@line 3505 "datetimemodule.c"
+        var $27=$basestate; //@line 3505 "datetimemodule.c"
+        var $28=$27; //@line 3505 "datetimemodule.c"
+        HEAP[$28]=$26; //@line 3505 "datetimemodule.c"
+        var $29=$basestate; //@line 3505 "datetimemodule.c"
         var $30=$29; //@line 3505 "datetimemodule.c"
-        HEAP[$30]=$28; //@line 3505 "datetimemodule.c"
-        var $31=$basestate_i; //@line 3505 "datetimemodule.c"
-        var $32=$31; //@line 3505 "datetimemodule.c"
-        var $33=HEAP[$32]; //@line 3505 "datetimemodule.c"
-        var $34=($33)==0; //@line 3505 "datetimemodule.c"
-        if ($34) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 3505 "datetimemodule.c"
-      case 6: // $bb5_i
-        var $35=$basestate_i; //@line 3505 "datetimemodule.c"
-        var $36=$35+4; //@line 3505 "datetimemodule.c"
+        var $31=HEAP[$30]; //@line 3505 "datetimemodule.c"
+        var $32=($31)==0; //@line 3505 "datetimemodule.c"
+        if ($32) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 3505 "datetimemodule.c"
+      case 6: // $bb5
+        var $33=$basestate; //@line 3505 "datetimemodule.c"
+        var $34=$33+4; //@line 3505 "datetimemodule.c"
+        var $35=HEAP[$34]; //@line 3505 "datetimemodule.c"
+        var $36=$35+24; //@line 3505 "datetimemodule.c"
         var $37=HEAP[$36]; //@line 3505 "datetimemodule.c"
-        var $38=$37+24; //@line 3505 "datetimemodule.c"
-        var $39=HEAP[$38]; //@line 3505 "datetimemodule.c"
-        var $40=$basestate_i; //@line 3505 "datetimemodule.c"
-        FUNCTION_TABLE[$39]($40); //@line 3505 "datetimemodule.c"
+        var $38=$basestate; //@line 3505 "datetimemodule.c"
+        FUNCTION_TABLE[$37]($38); //@line 3505 "datetimemodule.c"
         __label__ = 7; break; //@line 3505 "datetimemodule.c"
-      case 7: // $time_getstate_exit
-        var $41=$result_i; //@line 3507 "datetimemodule.c"
-        $0=$41; //@line 3507 "datetimemodule.c"
-        var $42=$0; //@line 3507 "datetimemodule.c"
-        $retval_i=$42; //@line 3507 "datetimemodule.c"
-        var $retval7_i=$retval_i; //@line 3507 "datetimemodule.c"
-        var $43=$self_addr; //@line 3513 "datetimemodule.c"
-        var $44=$43; //@line 3513 "datetimemodule.c"
-        var $45=$44+4; //@line 3513 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 3513 "datetimemodule.c"
-        var $47=__Py_BuildValue_SizeT(__str154, $46, $retval7_i); //@line 3513 "datetimemodule.c"
-        $1=$47; //@line 3513 "datetimemodule.c"
-        var $48=$1; //@line 3513 "datetimemodule.c"
-        $retval=$48; //@line 3513 "datetimemodule.c"
-        var $retval1=$retval; //@line 3513 "datetimemodule.c"
+      case 7: // $bb6
+        var $39=$result; //@line 3507 "datetimemodule.c"
+        $0=$39; //@line 3507 "datetimemodule.c"
+        var $40=$0; //@line 3507 "datetimemodule.c"
+        $retval=$40; //@line 3507 "datetimemodule.c"
+        var $retval7=$retval; //@line 3507 "datetimemodule.c"
         ;
-        return $retval1; //@line 3513 "datetimemodule.c"
+        return $retval7; //@line 3507 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _time_reduce($self, $arg) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $arg_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    $arg_addr=$arg;
+    var $1=$self_addr; //@line 3513 "datetimemodule.c"
+    var $2=_time_getstate($1); //@line 3513 "datetimemodule.c"
+    var $3=$self_addr; //@line 3513 "datetimemodule.c"
+    var $4=$3; //@line 3513 "datetimemodule.c"
+    var $5=$4+4; //@line 3513 "datetimemodule.c"
+    var $6=HEAP[$5]; //@line 3513 "datetimemodule.c"
+    var $7=__Py_BuildValue_SizeT(__str154, allocate([$6,0,0,0,$2,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3513 "datetimemodule.c"
+    $0=$7; //@line 3513 "datetimemodule.c"
+    var $8=$0; //@line 3513 "datetimemodule.c"
+    $retval=$8; //@line 3513 "datetimemodule.c"
+    var $retval1=$retval; //@line 3513 "datetimemodule.c"
+    ;
+    return $retval1; //@line 3513 "datetimemodule.c"
   }
   
 
@@ -12182,17 +11730,11 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $p_addr_i;
-        var $retval_i;
-        var $1;
         var $type_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
-        var $2;
+        var $0;
         var $self;
         var $state;
         var $year=__stackBase__;
@@ -12215,235 +11757,183 @@ var _initialized_b;
         HEAP[$second]=0; //@line 3678 "datetimemodule.c"
         HEAP[$usecond]=0; //@line 3679 "datetimemodule.c"
         HEAP[$tzinfo]=__Py_NoneStruct; //@line 3680 "datetimemodule.c"
-        var $3=$args_addr; //@line 3683 "datetimemodule.c"
-        var $4=$3; //@line 3683 "datetimemodule.c"
-        var $5=$4+8; //@line 3683 "datetimemodule.c"
-        var $6=HEAP[$5]; //@line 3683 "datetimemodule.c"
-        var $7=($6) > 0; //@line 3683 "datetimemodule.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 15; break; } //@line 3683 "datetimemodule.c"
+        var $1=$args_addr; //@line 3683 "datetimemodule.c"
+        var $2=$1; //@line 3683 "datetimemodule.c"
+        var $3=$2+8; //@line 3683 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 3683 "datetimemodule.c"
+        var $5=($4) > 0; //@line 3683 "datetimemodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 12; break; } //@line 3683 "datetimemodule.c"
       case 1: // $bb
-        var $8=$args_addr; //@line 3683 "datetimemodule.c"
-        var $9=$8; //@line 3683 "datetimemodule.c"
-        var $10=$9+8; //@line 3683 "datetimemodule.c"
-        var $11=HEAP[$10]; //@line 3683 "datetimemodule.c"
-        var $12=($11) <= 2; //@line 3683 "datetimemodule.c"
-        if ($12) { __label__ = 2; break; } else { __label__ = 15; break; } //@line 3683 "datetimemodule.c"
+        var $6=$args_addr; //@line 3683 "datetimemodule.c"
+        var $7=$6; //@line 3683 "datetimemodule.c"
+        var $8=$7+8; //@line 3683 "datetimemodule.c"
+        var $9=HEAP[$8]; //@line 3683 "datetimemodule.c"
+        var $10=($9) <= 2; //@line 3683 "datetimemodule.c"
+        if ($10) { __label__ = 2; break; } else { __label__ = 12; break; } //@line 3683 "datetimemodule.c"
       case 2: // $bb1
-        var $13=$args_addr; //@line 3683 "datetimemodule.c"
+        var $11=$args_addr; //@line 3683 "datetimemodule.c"
+        var $12=$11; //@line 3683 "datetimemodule.c"
+        var $13=$12+12; //@line 3683 "datetimemodule.c"
         var $14=$13; //@line 3683 "datetimemodule.c"
-        var $15=$14+12; //@line 3683 "datetimemodule.c"
-        var $16=$15; //@line 3683 "datetimemodule.c"
-        var $17=HEAP[$16]; //@line 3683 "datetimemodule.c"
-        $state=$17; //@line 3683 "datetimemodule.c"
-        var $18=$state; //@line 3683 "datetimemodule.c"
-        var $19=$18+4; //@line 3683 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 3683 "datetimemodule.c"
+        $state=$15; //@line 3683 "datetimemodule.c"
+        var $16=$state; //@line 3683 "datetimemodule.c"
+        var $17=$16+4; //@line 3683 "datetimemodule.c"
+        var $18=HEAP[$17]; //@line 3683 "datetimemodule.c"
+        var $19=$18+84; //@line 3683 "datetimemodule.c"
         var $20=HEAP[$19]; //@line 3683 "datetimemodule.c"
-        var $21=$20+84; //@line 3683 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 3683 "datetimemodule.c"
-        var $23=($22) & 134217728; //@line 3683 "datetimemodule.c"
-        var $24=($23)!=0; //@line 3683 "datetimemodule.c"
-        if ($24) { __label__ = 3; break; } else { __label__ = 15; break; } //@line 3683 "datetimemodule.c"
+        var $21=($20) & 134217728; //@line 3683 "datetimemodule.c"
+        var $22=($21)!=0; //@line 3683 "datetimemodule.c"
+        if ($22) { __label__ = 3; break; } else { __label__ = 12; break; } //@line 3683 "datetimemodule.c"
       case 3: // $bb2
-        var $25=$state; //@line 3683 "datetimemodule.c"
-        var $26=$25; //@line 3683 "datetimemodule.c"
-        var $27=$26+8; //@line 3683 "datetimemodule.c"
-        var $28=HEAP[$27]; //@line 3683 "datetimemodule.c"
-        var $29=($28)==10; //@line 3683 "datetimemodule.c"
-        if ($29) { __label__ = 4; break; } else { __label__ = 15; break; } //@line 3683 "datetimemodule.c"
+        var $23=$state; //@line 3683 "datetimemodule.c"
+        var $24=$23; //@line 3683 "datetimemodule.c"
+        var $25=$24+8; //@line 3683 "datetimemodule.c"
+        var $26=HEAP[$25]; //@line 3683 "datetimemodule.c"
+        var $27=($26)==10; //@line 3683 "datetimemodule.c"
+        if ($27) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 3683 "datetimemodule.c"
       case 4: // $bb3
-        var $30=$state; //@line 3683 "datetimemodule.c"
-        var $31=$30; //@line 3683 "datetimemodule.c"
-        var $32=$31+20; //@line 3683 "datetimemodule.c"
-        var $33=$32+2; //@line 3683 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 3683 "datetimemodule.c"
-        var $35=($34); //@line 3683 "datetimemodule.c"
-        var $36=($35) - 1; //@line 3683 "datetimemodule.c"
-        var $37=($36) <= 11; //@line 3683 "datetimemodule.c"
-        if ($37) { __label__ = 5; break; } else { __label__ = 15; break; } //@line 3683 "datetimemodule.c"
+        var $28=$state; //@line 3683 "datetimemodule.c"
+        var $29=$28; //@line 3683 "datetimemodule.c"
+        var $30=$29+20; //@line 3683 "datetimemodule.c"
+        var $31=$30+2; //@line 3683 "datetimemodule.c"
+        var $32=HEAP[$31]; //@line 3683 "datetimemodule.c"
+        var $33=($32); //@line 3683 "datetimemodule.c"
+        var $34=($33) - 1; //@line 3683 "datetimemodule.c"
+        var $35=($34) <= 11; //@line 3683 "datetimemodule.c"
+        if ($35) { __label__ = 5; break; } else { __label__ = 12; break; } //@line 3683 "datetimemodule.c"
       case 5: // $bb4
-        var $38=$args_addr; //@line 3692 "datetimemodule.c"
-        var $39=$38; //@line 3692 "datetimemodule.c"
-        var $40=$39+8; //@line 3692 "datetimemodule.c"
-        var $41=HEAP[$40]; //@line 3692 "datetimemodule.c"
-        var $42=($41)==2; //@line 3692 "datetimemodule.c"
-        if ($42) { __label__ = 6; break; } else { __label__ = 11; break; } //@line 3692 "datetimemodule.c"
+        var $36=$args_addr; //@line 3692 "datetimemodule.c"
+        var $37=$36; //@line 3692 "datetimemodule.c"
+        var $38=$37+8; //@line 3692 "datetimemodule.c"
+        var $39=HEAP[$38]; //@line 3692 "datetimemodule.c"
+        var $40=($39)==2; //@line 3692 "datetimemodule.c"
+        if ($40) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 3692 "datetimemodule.c"
       case 6: // $bb5
-        var $43=$args_addr; //@line 3693 "datetimemodule.c"
-        var $44=$43; //@line 3693 "datetimemodule.c"
-        var $45=$44+12; //@line 3693 "datetimemodule.c"
-        var $46=$45+4; //@line 3693 "datetimemodule.c"
-        var $47=HEAP[$46]; //@line 3693 "datetimemodule.c"
-        HEAP[$tzinfo]=$47; //@line 3693 "datetimemodule.c"
-        var $48=HEAP[$tzinfo]; //@line 3694 "datetimemodule.c"
-        $p_addr_i=$48;
-        var $49=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $50=($49)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($50) { __label__ = 9; break; } else { __label__ = 7; break; } //@line 767 "datetimemodule.c"
-      case 7: // $bb_i
-        var $51=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $52=$51+4; //@line 767 "datetimemodule.c"
-        var $53=HEAP[$52]; //@line 767 "datetimemodule.c"
-        var $54=($53)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($54) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 767 "datetimemodule.c"
-      case 8: // $bb1_i
-        var $55=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $56=$55+4; //@line 767 "datetimemodule.c"
-        var $57=HEAP[$56]; //@line 767 "datetimemodule.c"
-        var $58=_PyType_IsSubtype($57, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $59=($58)!=0; //@line 767 "datetimemodule.c"
-        if ($59) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 767 "datetimemodule.c"
-      case 9: // $check_tzinfo_subclass_exit
-        $1=0; //@line 768 "datetimemodule.c"
-        $retval_i=0; //@line 768 "datetimemodule.c"
-        __label__ = 11; break;
-      case 10: // $bb6
-        var $60=$p_addr_i; //@line 769 "datetimemodule.c"
-        var $61=$60+4; //@line 769 "datetimemodule.c"
-        var $62=HEAP[$61]; //@line 769 "datetimemodule.c"
-        var $63=$62+12; //@line 769 "datetimemodule.c"
-        var $64=HEAP[$63]; //@line 769 "datetimemodule.c"
-        var $65=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $66=_PyErr_Format($65, __str32, $64); //@line 769 "datetimemodule.c"
-        $1=-1; //@line 773 "datetimemodule.c"
-        $retval_i=-1; //@line 768 "datetimemodule.c"
-        var $67=HEAP[_PyExc_TypeError]; //@line 3695 "datetimemodule.c"
-        _PyErr_SetString($67, __str197); //@line 3695 "datetimemodule.c"
-        $2=0; //@line 3697 "datetimemodule.c"
-        __label__ = 26; break; //@line 3697 "datetimemodule.c"
-      case 11: // $bb7
-        var $68=HEAP[$tzinfo]; //@line 3700 "datetimemodule.c"
-        var $69=($68)!=(__Py_NoneStruct); //@line 3700 "datetimemodule.c"
-        var $70=($69); //@line 3700 "datetimemodule.c"
-        $aware=$70; //@line 3700 "datetimemodule.c"
-        var $71=$type_addr; //@line 3701 "datetimemodule.c"
-        var $72=$71+152; //@line 3701 "datetimemodule.c"
-        var $73=HEAP[$72]; //@line 3701 "datetimemodule.c"
-        var $74=$aware; //@line 3701 "datetimemodule.c"
-        var $75=($74); //@line 3701 "datetimemodule.c"
-        var $76=$type_addr; //@line 3701 "datetimemodule.c"
-        var $77=FUNCTION_TABLE[$73]($76, $75); //@line 3701 "datetimemodule.c"
-        var $78=$77; //@line 3701 "datetimemodule.c"
-        $me=$78; //@line 3701 "datetimemodule.c"
-        var $79=($78)!=0; //@line 3702 "datetimemodule.c"
-        if ($79) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 3702 "datetimemodule.c"
-      case 12: // $bb8
-        var $80=$state; //@line 3703 "datetimemodule.c"
-        var $81=$80; //@line 3703 "datetimemodule.c"
-        var $82=$81+20; //@line 3703 "datetimemodule.c"
-        var $83=$82; //@line 3703 "datetimemodule.c"
-        $pdata=$83; //@line 3703 "datetimemodule.c"
-        var $84=$me; //@line 3705 "datetimemodule.c"
-        var $85=$84+13; //@line 3705 "datetimemodule.c"
-        var $86=$85; //@line 3705 "datetimemodule.c"
-        var $87=$pdata; //@line 3705 "datetimemodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($86, $87, 10, 1, 0); //@line 3705 "datetimemodule.c"
-        var $88=$me; //@line 3706 "datetimemodule.c"
-        var $89=$88+8; //@line 3706 "datetimemodule.c"
-        HEAP[$89]=-1; //@line 3706 "datetimemodule.c"
-        var $90=$me; //@line 3707 "datetimemodule.c"
-        var $91=$90+12; //@line 3707 "datetimemodule.c"
-        var $92=$aware; //@line 3707 "datetimemodule.c"
-        HEAP[$91]=$92; //@line 3707 "datetimemodule.c"
-        var $93=$aware; //@line 3708 "datetimemodule.c"
-        var $94=($93)!=0; //@line 3708 "datetimemodule.c"
-        if ($94) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 3708 "datetimemodule.c"
-      case 13: // $bb9
-        var $95=HEAP[$tzinfo]; //@line 3709 "datetimemodule.c"
-        var $96=$95; //@line 3709 "datetimemodule.c"
-        var $97=HEAP[$96]; //@line 3709 "datetimemodule.c"
-        var $98=($97) + 1; //@line 3709 "datetimemodule.c"
-        var $99=$95; //@line 3709 "datetimemodule.c"
-        HEAP[$99]=$98; //@line 3709 "datetimemodule.c"
-        var $100=HEAP[$tzinfo]; //@line 3710 "datetimemodule.c"
-        var $101=$me; //@line 3710 "datetimemodule.c"
-        var $102=$101+24; //@line 3710 "datetimemodule.c"
-        HEAP[$102]=$100; //@line 3710 "datetimemodule.c"
-        __label__ = 14; break; //@line 3710 "datetimemodule.c"
-      case 14: // $bb10
-        var $103=$me; //@line 3713 "datetimemodule.c"
-        var $104=$103; //@line 3713 "datetimemodule.c"
-        $2=$104; //@line 3713 "datetimemodule.c"
-        __label__ = 26; break; //@line 3713 "datetimemodule.c"
-      case 15: // $bb11
-        var $105=$args_addr; //@line 3716 "datetimemodule.c"
-        var $106=$kw_addr; //@line 3716 "datetimemodule.c"
-        var $107=__PyArg_ParseTupleAndKeywords_SizeT($105, $106, __str219, _datetime_kws, $year, $month, $day, $hour, $minute, $second, $usecond, $tzinfo); //@line 3716 "datetimemodule.c"
-        var $108=($107)!=0; //@line 3716 "datetimemodule.c"
-        if ($108) { __label__ = 16; break; } else { __label__ = 25; break; } //@line 3716 "datetimemodule.c"
-      case 16: // $bb12
-        var $109=HEAP[$day]; //@line 3719 "datetimemodule.c"
-        var $110=HEAP[$month]; //@line 3719 "datetimemodule.c"
-        var $111=HEAP[$year]; //@line 3719 "datetimemodule.c"
-        var $112=_check_date_args($111, $110, $109); //@line 3719 "datetimemodule.c"
-        var $113=($112) < 0; //@line 3719 "datetimemodule.c"
-        if ($113) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 3719 "datetimemodule.c"
-      case 17: // $bb13
-        $2=0; //@line 3720 "datetimemodule.c"
-        __label__ = 26; break; //@line 3720 "datetimemodule.c"
-      case 18: // $bb14
-        var $114=HEAP[$usecond]; //@line 3721 "datetimemodule.c"
-        var $115=HEAP[$second]; //@line 3721 "datetimemodule.c"
-        var $116=HEAP[$minute]; //@line 3721 "datetimemodule.c"
-        var $117=HEAP[$hour]; //@line 3721 "datetimemodule.c"
-        var $118=_check_time_args($117, $116, $115, $114); //@line 3721 "datetimemodule.c"
-        var $119=($118) < 0; //@line 3721 "datetimemodule.c"
-        if ($119) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 3721 "datetimemodule.c"
-      case 19: // $bb15
-        $2=0; //@line 3722 "datetimemodule.c"
-        __label__ = 26; break; //@line 3722 "datetimemodule.c"
-      case 20: // $bb16
-        var $120=HEAP[$tzinfo]; //@line 3723 "datetimemodule.c"
-        $p_addr_i1=$120;
-        var $121=$p_addr_i1; //@line 767 "datetimemodule.c"
-        var $122=($121)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($122) { __label__ = 24; break; } else { __label__ = 21; break; } //@line 767 "datetimemodule.c"
-      case 21: // $bb_i3
-        var $123=$p_addr_i1; //@line 767 "datetimemodule.c"
-        var $124=$123+4; //@line 767 "datetimemodule.c"
-        var $125=HEAP[$124]; //@line 767 "datetimemodule.c"
-        var $126=($125)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($126) { __label__ = 24; break; } else { __label__ = 22; break; } //@line 767 "datetimemodule.c"
-      case 22: // $bb1_i4
-        var $127=$p_addr_i1; //@line 767 "datetimemodule.c"
-        var $128=$127+4; //@line 767 "datetimemodule.c"
-        var $129=HEAP[$128]; //@line 767 "datetimemodule.c"
-        var $130=_PyType_IsSubtype($129, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $131=($130)!=0; //@line 767 "datetimemodule.c"
-        if ($131) { __label__ = 24; break; } else { __label__ = 23; break; } //@line 767 "datetimemodule.c"
-      case 23: // $bb17
-        var $132=$p_addr_i1; //@line 769 "datetimemodule.c"
-        var $133=$132+4; //@line 769 "datetimemodule.c"
-        var $134=HEAP[$133]; //@line 769 "datetimemodule.c"
-        var $135=$134+12; //@line 769 "datetimemodule.c"
-        var $136=HEAP[$135]; //@line 769 "datetimemodule.c"
-        var $137=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $138=_PyErr_Format($137, __str32, $136); //@line 769 "datetimemodule.c"
-        $0=-1; //@line 773 "datetimemodule.c"
-        $retval_i2=-1; //@line 768 "datetimemodule.c"
-        $2=0; //@line 3724 "datetimemodule.c"
-        __label__ = 26; break; //@line 3724 "datetimemodule.c"
-      case 24: // $bb18
-        $0=0; //@line 768 "datetimemodule.c"
-        $retval_i2=0; //@line 768 "datetimemodule.c"
-        var $139=HEAP[$tzinfo]; //@line 3725 "datetimemodule.c"
-        var $140=HEAP[$usecond]; //@line 3725 "datetimemodule.c"
-        var $141=HEAP[$second]; //@line 3725 "datetimemodule.c"
-        var $142=HEAP[$minute]; //@line 3725 "datetimemodule.c"
-        var $143=HEAP[$hour]; //@line 3725 "datetimemodule.c"
-        var $144=HEAP[$day]; //@line 3725 "datetimemodule.c"
-        var $145=HEAP[$month]; //@line 3725 "datetimemodule.c"
-        var $146=HEAP[$year]; //@line 3725 "datetimemodule.c"
-        var $147=$type_addr; //@line 3725 "datetimemodule.c"
-        var $148=_new_datetime_ex($146, $145, $144, $143, $142, $141, $140, $139, $147); //@line 3725 "datetimemodule.c"
-        $self=$148; //@line 3725 "datetimemodule.c"
-        __label__ = 25; break; //@line 3725 "datetimemodule.c"
-      case 25: // $bb19
-        var $149=$self; //@line 3729 "datetimemodule.c"
-        $2=$149; //@line 3729 "datetimemodule.c"
-        __label__ = 26; break; //@line 3729 "datetimemodule.c"
-      case 26: // $bb20
-        var $150=$2; //@line 3697 "datetimemodule.c"
-        $retval=$150; //@line 3697 "datetimemodule.c"
+        var $41=$args_addr; //@line 3693 "datetimemodule.c"
+        var $42=$41; //@line 3693 "datetimemodule.c"
+        var $43=$42+12; //@line 3693 "datetimemodule.c"
+        var $44=$43+4; //@line 3693 "datetimemodule.c"
+        var $45=HEAP[$44]; //@line 3693 "datetimemodule.c"
+        HEAP[$tzinfo]=$45; //@line 3693 "datetimemodule.c"
+        var $46=HEAP[$tzinfo]; //@line 3694 "datetimemodule.c"
+        var $47=_check_tzinfo_subclass($46); //@line 3694 "datetimemodule.c"
+        var $48=($47) < 0; //@line 3694 "datetimemodule.c"
+        if ($48) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 3694 "datetimemodule.c"
+      case 7: // $bb6
+        var $49=HEAP[_PyExc_TypeError]; //@line 3695 "datetimemodule.c"
+        _PyErr_SetString($49, __str197); //@line 3695 "datetimemodule.c"
+        $0=0; //@line 3697 "datetimemodule.c"
+        __label__ = 21; break; //@line 3697 "datetimemodule.c"
+      case 8: // $bb7
+        var $50=HEAP[$tzinfo]; //@line 3700 "datetimemodule.c"
+        var $51=($50)!=(__Py_NoneStruct); //@line 3700 "datetimemodule.c"
+        var $52=($51); //@line 3700 "datetimemodule.c"
+        $aware=$52; //@line 3700 "datetimemodule.c"
+        var $53=$type_addr; //@line 3701 "datetimemodule.c"
+        var $54=$53+152; //@line 3701 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 3701 "datetimemodule.c"
+        var $56=$aware; //@line 3701 "datetimemodule.c"
+        var $57=($56); //@line 3701 "datetimemodule.c"
+        var $58=$type_addr; //@line 3701 "datetimemodule.c"
+        var $59=FUNCTION_TABLE[$55]($58, $57); //@line 3701 "datetimemodule.c"
+        var $60=$59; //@line 3701 "datetimemodule.c"
+        $me=$60; //@line 3701 "datetimemodule.c"
+        var $61=($60)!=0; //@line 3702 "datetimemodule.c"
+        if ($61) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 3702 "datetimemodule.c"
+      case 9: // $bb8
+        var $62=$state; //@line 3703 "datetimemodule.c"
+        var $63=$62; //@line 3703 "datetimemodule.c"
+        var $64=$63+20; //@line 3703 "datetimemodule.c"
+        var $65=$64; //@line 3703 "datetimemodule.c"
+        $pdata=$65; //@line 3703 "datetimemodule.c"
+        var $66=$me; //@line 3705 "datetimemodule.c"
+        var $67=$66+13; //@line 3705 "datetimemodule.c"
+        var $68=$67; //@line 3705 "datetimemodule.c"
+        var $69=$pdata; //@line 3705 "datetimemodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($68, $69, 10, 1, 0); //@line 3705 "datetimemodule.c"
+        var $70=$me; //@line 3706 "datetimemodule.c"
+        var $71=$70+8; //@line 3706 "datetimemodule.c"
+        HEAP[$71]=-1; //@line 3706 "datetimemodule.c"
+        var $72=$me; //@line 3707 "datetimemodule.c"
+        var $73=$72+12; //@line 3707 "datetimemodule.c"
+        var $74=$aware; //@line 3707 "datetimemodule.c"
+        HEAP[$73]=$74; //@line 3707 "datetimemodule.c"
+        var $75=$aware; //@line 3708 "datetimemodule.c"
+        var $76=($75)!=0; //@line 3708 "datetimemodule.c"
+        if ($76) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 3708 "datetimemodule.c"
+      case 10: // $bb9
+        var $77=HEAP[$tzinfo]; //@line 3709 "datetimemodule.c"
+        var $78=$77; //@line 3709 "datetimemodule.c"
+        var $79=HEAP[$78]; //@line 3709 "datetimemodule.c"
+        var $80=($79) + 1; //@line 3709 "datetimemodule.c"
+        var $81=$77; //@line 3709 "datetimemodule.c"
+        HEAP[$81]=$80; //@line 3709 "datetimemodule.c"
+        var $82=HEAP[$tzinfo]; //@line 3710 "datetimemodule.c"
+        var $83=$me; //@line 3710 "datetimemodule.c"
+        var $84=$83+24; //@line 3710 "datetimemodule.c"
+        HEAP[$84]=$82; //@line 3710 "datetimemodule.c"
+        __label__ = 11; break; //@line 3710 "datetimemodule.c"
+      case 11: // $bb10
+        var $85=$me; //@line 3713 "datetimemodule.c"
+        var $86=$85; //@line 3713 "datetimemodule.c"
+        $0=$86; //@line 3713 "datetimemodule.c"
+        __label__ = 21; break; //@line 3713 "datetimemodule.c"
+      case 12: // $bb11
+        var $87=$args_addr; //@line 3716 "datetimemodule.c"
+        var $88=$kw_addr; //@line 3716 "datetimemodule.c"
+        var $89=__PyArg_ParseTupleAndKeywords_SizeT($87, $88, __str219, _datetime_kws, allocate([$year,0,0,0,$month,0,0,0,$day,0,0,0,$hour,0,0,0,$minute,0,0,0,$second,0,0,0,$usecond,0,0,0,$tzinfo,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 3716 "datetimemodule.c"
+        var $90=($89)!=0; //@line 3716 "datetimemodule.c"
+        if ($90) { __label__ = 13; break; } else { __label__ = 20; break; } //@line 3716 "datetimemodule.c"
+      case 13: // $bb12
+        var $91=HEAP[$day]; //@line 3719 "datetimemodule.c"
+        var $92=HEAP[$month]; //@line 3719 "datetimemodule.c"
+        var $93=HEAP[$year]; //@line 3719 "datetimemodule.c"
+        var $94=_check_date_args($93, $92, $91); //@line 3719 "datetimemodule.c"
+        var $95=($94) < 0; //@line 3719 "datetimemodule.c"
+        if ($95) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 3719 "datetimemodule.c"
+      case 14: // $bb13
+        $0=0; //@line 3720 "datetimemodule.c"
+        __label__ = 21; break; //@line 3720 "datetimemodule.c"
+      case 15: // $bb14
+        var $96=HEAP[$usecond]; //@line 3721 "datetimemodule.c"
+        var $97=HEAP[$second]; //@line 3721 "datetimemodule.c"
+        var $98=HEAP[$minute]; //@line 3721 "datetimemodule.c"
+        var $99=HEAP[$hour]; //@line 3721 "datetimemodule.c"
+        var $100=_check_time_args($99, $98, $97, $96); //@line 3721 "datetimemodule.c"
+        var $101=($100) < 0; //@line 3721 "datetimemodule.c"
+        if ($101) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 3721 "datetimemodule.c"
+      case 16: // $bb15
+        $0=0; //@line 3722 "datetimemodule.c"
+        __label__ = 21; break; //@line 3722 "datetimemodule.c"
+      case 17: // $bb16
+        var $102=HEAP[$tzinfo]; //@line 3723 "datetimemodule.c"
+        var $103=_check_tzinfo_subclass($102); //@line 3723 "datetimemodule.c"
+        var $104=($103) < 0; //@line 3723 "datetimemodule.c"
+        if ($104) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 3723 "datetimemodule.c"
+      case 18: // $bb17
+        $0=0; //@line 3724 "datetimemodule.c"
+        __label__ = 21; break; //@line 3724 "datetimemodule.c"
+      case 19: // $bb18
+        var $105=HEAP[$tzinfo]; //@line 3725 "datetimemodule.c"
+        var $106=HEAP[$usecond]; //@line 3725 "datetimemodule.c"
+        var $107=HEAP[$second]; //@line 3725 "datetimemodule.c"
+        var $108=HEAP[$minute]; //@line 3725 "datetimemodule.c"
+        var $109=HEAP[$hour]; //@line 3725 "datetimemodule.c"
+        var $110=HEAP[$day]; //@line 3725 "datetimemodule.c"
+        var $111=HEAP[$month]; //@line 3725 "datetimemodule.c"
+        var $112=HEAP[$year]; //@line 3725 "datetimemodule.c"
+        var $113=$type_addr; //@line 3725 "datetimemodule.c"
+        var $114=_new_datetime_ex($112, $111, $110, $109, $108, $107, $106, $105, $113); //@line 3725 "datetimemodule.c"
+        $self=$114; //@line 3725 "datetimemodule.c"
+        __label__ = 20; break; //@line 3725 "datetimemodule.c"
+      case 20: // $bb19
+        var $115=$self; //@line 3729 "datetimemodule.c"
+        $0=$115; //@line 3729 "datetimemodule.c"
+        __label__ = 21; break; //@line 3729 "datetimemodule.c"
+      case 21: // $bb20
+        var $116=$0; //@line 3697 "datetimemodule.c"
+        $retval=$116; //@line 3697 "datetimemodule.c"
         var $retval21=$retval; //@line 3697 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval21; //@line 3697 "datetimemodule.c"
@@ -12514,7 +12004,7 @@ var _initialized_b;
         var $31=$cls_addr; //@line 3756 "datetimemodule.c"
         var $32=$us_addr; //@line 3756 "datetimemodule.c"
         var $33=$tzinfo_addr; //@line 3756 "datetimemodule.c"
-        var $34=__PyObject_CallFunction_SizeT($31, __str220, $30, $26, $22, $19, $16, $13, $32, $33); //@line 3756 "datetimemodule.c"
+        var $34=__PyObject_CallFunction_SizeT($31, __str220, allocate([$30,0,0,0,$26,0,0,0,$22,0,0,0,$19,0,0,0,$16,0,0,0,$13,0,0,0,$32,0,0,0,$33,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3756 "datetimemodule.c"
         $result=$34; //@line 3756 "datetimemodule.c"
         __label__ = 5; break; //@line 3756 "datetimemodule.c"
       case 4: // $bb3
@@ -12541,20 +12031,12 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $x_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $x_addr_i;
-        var $retval_i;
-        var $1;
-        var $result_i;
-        var $diff_i;
         var $cls_addr;
         var $f_addr;
         var $timestamp_addr;
         var $tzinfo_addr;
         var $retval;
-        var $2;
+        var $0;
         var $timet;
         var $fraction;
         var $us;
@@ -12562,104 +12044,61 @@ var _initialized_b;
         $f_addr=$f;
         $timestamp_addr=$timestamp;
         $tzinfo_addr=$tzinfo;
-        var $3=$timestamp_addr; //@line 3788 "datetimemodule.c"
-        $x_addr_i=$3;
-        var $4=$x_addr_i; //@line 108 "timemodule.c"
-        var $5=((($4))|0); //@line 108 "timemodule.c"
-        $result_i=$5; //@line 108 "timemodule.c"
-        var $6=$result_i; //@line 118 "timemodule.c"
-        var $7=($6); //@line 118 "timemodule.c"
-        var $8=$x_addr_i; //@line 118 "timemodule.c"
-        var $9=($8) - ($7); //@line 118 "timemodule.c"
-        $diff_i=$9; //@line 118 "timemodule.c"
-        var $10=$diff_i; //@line 119 "timemodule.c"
-        var $11=($10) <= -1; //@line 119 "timemodule.c"
-        var $12=$diff_i; //@line 119 "timemodule.c"
-        var $13=($12) >= 1; //@line 119 "timemodule.c"
-        var $or_cond_i=($11) | ($13);
-        if ($or_cond_i) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 119 "timemodule.c"
-      case 1: // $_PyTime_DoubleToTimet_exit_thread
-        var $14=HEAP[_PyExc_ValueError]; //@line 120 "timemodule.c"
-        _PyErr_SetString($14, __str282); //@line 120 "timemodule.c"
-        $result_i=-1; //@line 122 "timemodule.c"
-        $1=-1; //@line 124 "timemodule.c"
-        $retval_i=-1; //@line 124 "timemodule.c"
-        $timet=-1; //@line 3788 "datetimemodule.c"
-        __label__ = 3; break;
-      case 2: // $_PyTime_DoubleToTimet_exit
-        var $_pr=$result_i;
-        $1=$_pr; //@line 124 "timemodule.c"
-        $retval_i=$_pr; //@line 124 "timemodule.c"
-        $timet=$_pr; //@line 3788 "datetimemodule.c"
-        var $15=($_pr)==-1; //@line 3789 "datetimemodule.c"
-        if ($15) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 3789 "datetimemodule.c"
-      case 3: // $bb
-        var $16=_PyErr_Occurred(); //@line 3789 "datetimemodule.c"
-        var $17=($16)!=0; //@line 3789 "datetimemodule.c"
-        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 3789 "datetimemodule.c"
-      case 4: // $bb1
-        $2=0; //@line 3790 "datetimemodule.c"
-        __label__ = 13; break; //@line 3790 "datetimemodule.c"
-      case 5: // $bb2
-        var $18=$timet; //@line 3791 "datetimemodule.c"
-        var $19=($18); //@line 3791 "datetimemodule.c"
-        var $20=$timestamp_addr; //@line 3791 "datetimemodule.c"
-        var $21=($20) - ($19); //@line 3791 "datetimemodule.c"
-        $fraction=$21; //@line 3791 "datetimemodule.c"
-        var $22=$fraction; //@line 3792 "datetimemodule.c"
-        var $23=($22) * 1000000; //@line 3792 "datetimemodule.c"
-        $x_addr_i1=$23;
-        var $24=($23) >= 0; //@line 150 "datetimemodule.c"
-        var $25=$x_addr_i1; //@line 151 "datetimemodule.c"
-        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 150 "datetimemodule.c"
-      case 6: // $bb_i
-        var $26=($25) + 0.5; //@line 151 "datetimemodule.c"
-        var $27=_floor($26); //@line 151 "datetimemodule.c"
-        $x_addr_i1=$27; //@line 151 "datetimemodule.c"
-        __label__ = 8; break; //@line 151 "datetimemodule.c"
-      case 7: // $bb1_i3
-        var $28=($25) - 0.5; //@line 153 "datetimemodule.c"
-        var $29=_ceil($28); //@line 153 "datetimemodule.c"
-        $x_addr_i1=$29; //@line 153 "datetimemodule.c"
-        __label__ = 8; break; //@line 153 "datetimemodule.c"
-      case 8: // $round_to_long_exit
-        var $30=$x_addr_i1; //@line 154 "datetimemodule.c"
-        var $31=((($30))|0); //@line 154 "datetimemodule.c"
-        $0=$31; //@line 154 "datetimemodule.c"
-        $retval_i2=$31; //@line 154 "datetimemodule.c"
-        $us=$31; //@line 3792 "datetimemodule.c"
-        var $32=($31) < 0; //@line 3793 "datetimemodule.c"
-        if ($32) { __lastLabel__ = 8; __label__ = 9; break; } else { __lastLabel__ = 8; __label__ = 10; break; } //@line 3793 "datetimemodule.c"
-      case 9: // $bb3
-        var $33=$timet; //@line 3796 "datetimemodule.c"
-        var $34=($33) - 1; //@line 3796 "datetimemodule.c"
-        $timet=$34; //@line 3796 "datetimemodule.c"
-        var $35=$us; //@line 3797 "datetimemodule.c"
-        var $36=($35) + 1000000; //@line 3797 "datetimemodule.c"
-        $us=$36; //@line 3797 "datetimemodule.c"
-        __lastLabel__ = 9; __label__ = 10; break; //@line 3797 "datetimemodule.c"
-      case 10: // $bb4
-        var $37=__lastLabel__ == 9 ? $36 : ($31);
-        var $38=($37)==1000000; //@line 3802 "datetimemodule.c"
-        if ($38) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 3802 "datetimemodule.c"
-      case 11: // $bb5
-        var $39=$timet; //@line 3803 "datetimemodule.c"
-        var $40=($39) + 1; //@line 3803 "datetimemodule.c"
-        $timet=$40; //@line 3803 "datetimemodule.c"
+        var $1=$timestamp_addr; //@line 3788 "datetimemodule.c"
+        var $2=__PyTime_DoubleToTimet($1); //@line 3788 "datetimemodule.c"
+        $timet=$2; //@line 3788 "datetimemodule.c"
+        var $3=$timet; //@line 3789 "datetimemodule.c"
+        var $4=($3)==-1; //@line 3789 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 3789 "datetimemodule.c"
+      case 1: // $bb
+        var $5=_PyErr_Occurred(); //@line 3789 "datetimemodule.c"
+        var $6=($5)!=0; //@line 3789 "datetimemodule.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 3789 "datetimemodule.c"
+      case 2: // $bb1
+        $0=0; //@line 3790 "datetimemodule.c"
+        __label__ = 8; break; //@line 3790 "datetimemodule.c"
+      case 3: // $bb2
+        var $7=$timet; //@line 3791 "datetimemodule.c"
+        var $8=($7); //@line 3791 "datetimemodule.c"
+        var $9=$timestamp_addr; //@line 3791 "datetimemodule.c"
+        var $10=($9) - ($8); //@line 3791 "datetimemodule.c"
+        $fraction=$10; //@line 3791 "datetimemodule.c"
+        var $11=$fraction; //@line 3792 "datetimemodule.c"
+        var $12=($11) * 1000000; //@line 3792 "datetimemodule.c"
+        var $13=_round_to_long($12); //@line 3792 "datetimemodule.c"
+        $us=$13; //@line 3792 "datetimemodule.c"
+        var $14=($13) < 0; //@line 3793 "datetimemodule.c"
+        if ($14) { __lastLabel__ = 3; __label__ = 4; break; } else { __lastLabel__ = 3; __label__ = 5; break; } //@line 3793 "datetimemodule.c"
+      case 4: // $bb3
+        var $15=$timet; //@line 3796 "datetimemodule.c"
+        var $16=($15) - 1; //@line 3796 "datetimemodule.c"
+        $timet=$16; //@line 3796 "datetimemodule.c"
+        var $17=$us; //@line 3797 "datetimemodule.c"
+        var $18=($17) + 1000000; //@line 3797 "datetimemodule.c"
+        $us=$18; //@line 3797 "datetimemodule.c"
+        __lastLabel__ = 4; __label__ = 5; break; //@line 3797 "datetimemodule.c"
+      case 5: // $bb4
+        var $19=__lastLabel__ == 4 ? $18 : ($13);
+        var $20=($19)==1000000; //@line 3802 "datetimemodule.c"
+        if ($20) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 3802 "datetimemodule.c"
+      case 6: // $bb5
+        var $21=$timet; //@line 3803 "datetimemodule.c"
+        var $22=($21) + 1; //@line 3803 "datetimemodule.c"
+        $timet=$22; //@line 3803 "datetimemodule.c"
         $us=0; //@line 3804 "datetimemodule.c"
-        __label__ = 12; break; //@line 3804 "datetimemodule.c"
-      case 12: // $bb6
-        var $41=$cls_addr; //@line 3806 "datetimemodule.c"
-        var $42=$f_addr; //@line 3806 "datetimemodule.c"
-        var $43=$timet; //@line 3806 "datetimemodule.c"
-        var $44=$us; //@line 3806 "datetimemodule.c"
-        var $45=$tzinfo_addr; //@line 3806 "datetimemodule.c"
-        var $46=_datetime_from_timet_and_us($41, $42, $43, $44, $45); //@line 3806 "datetimemodule.c"
-        $2=$46; //@line 3806 "datetimemodule.c"
-        __label__ = 13; break; //@line 3806 "datetimemodule.c"
-      case 13: // $bb7
-        var $47=$2; //@line 3790 "datetimemodule.c"
-        $retval=$47; //@line 3790 "datetimemodule.c"
+        __label__ = 7; break; //@line 3804 "datetimemodule.c"
+      case 7: // $bb6
+        var $23=$cls_addr; //@line 3806 "datetimemodule.c"
+        var $24=$f_addr; //@line 3806 "datetimemodule.c"
+        var $25=$timet; //@line 3806 "datetimemodule.c"
+        var $26=$us; //@line 3806 "datetimemodule.c"
+        var $27=$tzinfo_addr; //@line 3806 "datetimemodule.c"
+        var $28=_datetime_from_timet_and_us($23, $24, $25, $26, $27); //@line 3806 "datetimemodule.c"
+        $0=$28; //@line 3806 "datetimemodule.c"
+        __label__ = 8; break; //@line 3806 "datetimemodule.c"
+      case 8: // $bb7
+        var $29=$0; //@line 3790 "datetimemodule.c"
+        $retval=$29; //@line 3790 "datetimemodule.c"
         var $retval8=$retval; //@line 3790 "datetimemodule.c"
         ;
         return $retval8; //@line 3790 "datetimemodule.c"
@@ -12668,148 +12107,128 @@ var _initialized_b;
   }
   
 
-  function _datetime_now($cls, $args, $kw) {
-    var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
+  function _datetime_best_possible($cls, $f, $tzinfo) {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
-    var __lastLabel__ = null;
+  
+    var $cls_addr;
+    var $f_addr;
+    var $tzinfo_addr;
+    var $retval;
+    var $0;
+    var $t=__stackBase__;
+    $cls_addr=$cls;
+    $f_addr=$f;
+    $tzinfo_addr=$tzinfo;
+    var $1=_gettimeofday($t, 0); //@line 3822 "datetimemodule.c"
+    var $2=$t+4; //@line 3824 "datetimemodule.c"
+    var $3=HEAP[$2]; //@line 3824 "datetimemodule.c"
+    var $4=$t; //@line 3824 "datetimemodule.c"
+    var $5=HEAP[$4]; //@line 3824 "datetimemodule.c"
+    var $6=$cls_addr; //@line 3824 "datetimemodule.c"
+    var $7=$f_addr; //@line 3824 "datetimemodule.c"
+    var $8=$tzinfo_addr; //@line 3824 "datetimemodule.c"
+    var $9=_datetime_from_timet_and_us($6, $7, $5, $3, $8); //@line 3824 "datetimemodule.c"
+    $0=$9; //@line 3824 "datetimemodule.c"
+    var $10=$0; //@line 3824 "datetimemodule.c"
+    $retval=$10; //@line 3824 "datetimemodule.c"
+    var $retval1=$retval; //@line 3824 "datetimemodule.c"
+    STACKTOP = __stackBase__;
+    return $retval1; //@line 3824 "datetimemodule.c"
+  }
+  
+
+  function _datetime_now($cls, $args, $kw) {
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
+    var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $cls_addr_i;
-        var $f_addr_i;
-        var $tzinfo_addr_i;
-        var $retval_i1;
-        var $0;
-        var $t_i=__stackBase__;
-        var $p_addr_i;
-        var $retval_i;
-        var $1;
         var $cls_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
         var $iftmp_382;
-        var $2;
+        var $0;
         var $self;
-        var $tzinfo=__stackBase__+8;
+        var $tzinfo=__stackBase__;
         var $temp;
         $cls_addr=$cls;
         $args_addr=$args;
         $kw_addr=$kw;
         HEAP[$tzinfo]=__Py_NoneStruct; //@line 3856 "datetimemodule.c"
-        var $3=$args_addr; //@line 3859 "datetimemodule.c"
-        var $4=$kw_addr; //@line 3859 "datetimemodule.c"
-        var $5=__PyArg_ParseTupleAndKeywords_SizeT($3, $4, __str222, _keywords_12654, $tzinfo); //@line 3859 "datetimemodule.c"
-        var $6=($5)==0; //@line 3859 "datetimemodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3859 "datetimemodule.c"
+        var $1=$args_addr; //@line 3859 "datetimemodule.c"
+        var $2=$kw_addr; //@line 3859 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str222, _keywords_12654, allocate([$tzinfo,0,0,0], ["%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 3859 "datetimemodule.c"
+        var $4=($3)==0; //@line 3859 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3859 "datetimemodule.c"
       case 1: // $bb
-        $2=0; //@line 3861 "datetimemodule.c"
-        __label__ = 15; break; //@line 3861 "datetimemodule.c"
+        $0=0; //@line 3861 "datetimemodule.c"
+        __label__ = 11; break; //@line 3861 "datetimemodule.c"
       case 2: // $bb1
-        var $7=HEAP[$tzinfo]; //@line 3862 "datetimemodule.c"
-        $p_addr_i=$7;
-        var $8=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $9=($8)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($9) { __lastLabel__ = 2; __label__ = 7; break; } else { __lastLabel__ = 2; __label__ = 3; break; } //@line 767 "datetimemodule.c"
-      case 3: // $bb_i
-        var $10=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $11=$10+4; //@line 767 "datetimemodule.c"
-        var $12=HEAP[$11]; //@line 767 "datetimemodule.c"
-        var $13=($12)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($13) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 767 "datetimemodule.c"
-      case 4: // $bb1_i
-        var $14=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $15=$14+4; //@line 767 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 767 "datetimemodule.c"
-        var $17=_PyType_IsSubtype($16, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $18=($17)!=0; //@line 767 "datetimemodule.c"
-        if ($18) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 767 "datetimemodule.c"
-      case 5: // $bb2
-        var $19=$p_addr_i; //@line 769 "datetimemodule.c"
-        var $20=$19+4; //@line 769 "datetimemodule.c"
-        var $21=HEAP[$20]; //@line 769 "datetimemodule.c"
-        var $22=$21+12; //@line 769 "datetimemodule.c"
-        var $23=HEAP[$22]; //@line 769 "datetimemodule.c"
-        var $24=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $25=_PyErr_Format($24, __str32, $23); //@line 769 "datetimemodule.c"
-        $1=-1; //@line 773 "datetimemodule.c"
-        $retval_i=-1; //@line 768 "datetimemodule.c"
-        $2=0; //@line 3863 "datetimemodule.c"
-        __label__ = 15; break; //@line 3863 "datetimemodule.c"
-      case 6: // $bb3thread_pre_split
-        var $_pr=HEAP[$tzinfo];
-        __lastLabel__ = 6; __label__ = 7; break;
-      case 7: // $bb3
-        var $26=__lastLabel__ == 6 ? $_pr : ($7);
-        $1=0; //@line 768 "datetimemodule.c"
-        $retval_i=0; //@line 768 "datetimemodule.c"
-        var $27=($26)==(__Py_NoneStruct); //@line 3865 "datetimemodule.c"
-        if ($27) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 3865 "datetimemodule.c"
-      case 8: // $bb4
+        var $5=HEAP[$tzinfo]; //@line 3862 "datetimemodule.c"
+        var $6=_check_tzinfo_subclass($5); //@line 3862 "datetimemodule.c"
+        var $7=($6) < 0; //@line 3862 "datetimemodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3862 "datetimemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 3863 "datetimemodule.c"
+        __label__ = 11; break; //@line 3863 "datetimemodule.c"
+      case 4: // $bb3
+        var $8=HEAP[$tzinfo]; //@line 3865 "datetimemodule.c"
+        var $9=HEAP[$tzinfo]; //@line 3865 "datetimemodule.c"
+        var $10=($9)==(__Py_NoneStruct); //@line 3865 "datetimemodule.c"
+        if ($10) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 3865 "datetimemodule.c"
+      case 5: // $bb4
         $iftmp_382=(FUNCTION_TABLE_OFFSET + 2); //@line 3865 "datetimemodule.c"
-        __label__ = 10; break; //@line 3865 "datetimemodule.c"
-      case 9: // $bb5
+        __label__ = 7; break; //@line 3865 "datetimemodule.c"
+      case 6: // $bb5
         $iftmp_382=(FUNCTION_TABLE_OFFSET + 4); //@line 3865 "datetimemodule.c"
-        __label__ = 10; break; //@line 3865 "datetimemodule.c"
-      case 10: // $bb6
-        var $28=$cls_addr; //@line 3865 "datetimemodule.c"
-        var $29=$iftmp_382; //@line 3865 "datetimemodule.c"
-        $cls_addr_i=$28;
-        $f_addr_i=$29;
-        $tzinfo_addr_i=$26;
-        var $30=_gettimeofday($t_i, 0); //@line 3822 "datetimemodule.c"
-        var $31=$t_i+4; //@line 3824 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 3824 "datetimemodule.c"
-        var $33=$t_i; //@line 3824 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 3824 "datetimemodule.c"
-        var $35=$cls_addr_i; //@line 3824 "datetimemodule.c"
-        var $36=$f_addr_i; //@line 3824 "datetimemodule.c"
-        var $37=$tzinfo_addr_i; //@line 3824 "datetimemodule.c"
-        var $38=_datetime_from_timet_and_us($35, $36, $34, $32, $37); //@line 3824 "datetimemodule.c"
-        $0=$38; //@line 3824 "datetimemodule.c"
-        $retval_i1=$38; //@line 3824 "datetimemodule.c"
-        $self=$38; //@line 3865 "datetimemodule.c"
-        var $39=($38)!=0; //@line 3868 "datetimemodule.c"
-        if ($39) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 3868 "datetimemodule.c"
-      case 11: // $bb7
-        var $40=HEAP[$tzinfo]; //@line 3868 "datetimemodule.c"
-        var $41=($40)!=(__Py_NoneStruct); //@line 3868 "datetimemodule.c"
-        if ($41) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 3868 "datetimemodule.c"
-      case 12: // $bb8
-        var $42=$self; //@line 3870 "datetimemodule.c"
-        $temp=$42; //@line 3870 "datetimemodule.c"
-        var $43=HEAP[$tzinfo]; //@line 3871 "datetimemodule.c"
-        var $44=$self; //@line 3871 "datetimemodule.c"
-        var $45=__PyObject_CallMethod_SizeT($43, __str189, __str35, $44); //@line 3871 "datetimemodule.c"
-        $self=$45; //@line 3871 "datetimemodule.c"
-        var $46=$temp; //@line 3872 "datetimemodule.c"
-        var $47=$46; //@line 3872 "datetimemodule.c"
-        var $48=HEAP[$47]; //@line 3872 "datetimemodule.c"
-        var $49=($48) - 1; //@line 3872 "datetimemodule.c"
-        var $50=$temp; //@line 3872 "datetimemodule.c"
-        var $51=$50; //@line 3872 "datetimemodule.c"
-        HEAP[$51]=$49; //@line 3872 "datetimemodule.c"
-        var $52=$temp; //@line 3872 "datetimemodule.c"
-        var $53=$52; //@line 3872 "datetimemodule.c"
-        var $54=HEAP[$53]; //@line 3872 "datetimemodule.c"
-        var $55=($54)==0; //@line 3872 "datetimemodule.c"
-        if ($55) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 3872 "datetimemodule.c"
-      case 13: // $bb9
-        var $56=$temp; //@line 3872 "datetimemodule.c"
-        var $57=$56+4; //@line 3872 "datetimemodule.c"
-        var $58=HEAP[$57]; //@line 3872 "datetimemodule.c"
-        var $59=$58+24; //@line 3872 "datetimemodule.c"
-        var $60=HEAP[$59]; //@line 3872 "datetimemodule.c"
-        var $61=$temp; //@line 3872 "datetimemodule.c"
-        FUNCTION_TABLE[$60]($61); //@line 3872 "datetimemodule.c"
-        __label__ = 14; break; //@line 3872 "datetimemodule.c"
-      case 14: // $bb10
-        var $62=$self; //@line 3874 "datetimemodule.c"
-        $2=$62; //@line 3874 "datetimemodule.c"
-        __label__ = 15; break; //@line 3874 "datetimemodule.c"
-      case 15: // $bb11
-        var $63=$2; //@line 3861 "datetimemodule.c"
-        $retval=$63; //@line 3861 "datetimemodule.c"
+        __label__ = 7; break; //@line 3865 "datetimemodule.c"
+      case 7: // $bb6
+        var $11=$cls_addr; //@line 3865 "datetimemodule.c"
+        var $12=$iftmp_382; //@line 3865 "datetimemodule.c"
+        var $13=_datetime_best_possible($11, $12, $8); //@line 3865 "datetimemodule.c"
+        $self=$13; //@line 3865 "datetimemodule.c"
+        var $14=($13)!=0; //@line 3868 "datetimemodule.c"
+        var $15=HEAP[$tzinfo]; //@line 3868 "datetimemodule.c"
+        var $16=($15)!=(__Py_NoneStruct); //@line 3868 "datetimemodule.c"
+        var $or_cond=($14) & ($16);
+        if ($or_cond) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 3868 "datetimemodule.c"
+      case 8: // $bb8
+        var $17=$self; //@line 3870 "datetimemodule.c"
+        $temp=$17; //@line 3870 "datetimemodule.c"
+        var $18=HEAP[$tzinfo]; //@line 3871 "datetimemodule.c"
+        var $19=$self; //@line 3871 "datetimemodule.c"
+        var $20=__PyObject_CallMethod_SizeT($18, __str189, __str35, allocate([$19,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3871 "datetimemodule.c"
+        $self=$20; //@line 3871 "datetimemodule.c"
+        var $21=$temp; //@line 3872 "datetimemodule.c"
+        var $22=$21; //@line 3872 "datetimemodule.c"
+        var $23=HEAP[$22]; //@line 3872 "datetimemodule.c"
+        var $24=($23) - 1; //@line 3872 "datetimemodule.c"
+        var $25=$temp; //@line 3872 "datetimemodule.c"
+        var $26=$25; //@line 3872 "datetimemodule.c"
+        HEAP[$26]=$24; //@line 3872 "datetimemodule.c"
+        var $27=$temp; //@line 3872 "datetimemodule.c"
+        var $28=$27; //@line 3872 "datetimemodule.c"
+        var $29=HEAP[$28]; //@line 3872 "datetimemodule.c"
+        var $30=($29)==0; //@line 3872 "datetimemodule.c"
+        if ($30) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 3872 "datetimemodule.c"
+      case 9: // $bb9
+        var $31=$temp; //@line 3872 "datetimemodule.c"
+        var $32=$31+4; //@line 3872 "datetimemodule.c"
+        var $33=HEAP[$32]; //@line 3872 "datetimemodule.c"
+        var $34=$33+24; //@line 3872 "datetimemodule.c"
+        var $35=HEAP[$34]; //@line 3872 "datetimemodule.c"
+        var $36=$temp; //@line 3872 "datetimemodule.c"
+        FUNCTION_TABLE[$35]($36); //@line 3872 "datetimemodule.c"
+        __label__ = 10; break; //@line 3872 "datetimemodule.c"
+      case 10: // $bb10
+        var $37=$self; //@line 3874 "datetimemodule.c"
+        $0=$37; //@line 3874 "datetimemodule.c"
+        __label__ = 11; break; //@line 3874 "datetimemodule.c"
+      case 11: // $bb11
+        var $38=$0; //@line 3861 "datetimemodule.c"
+        $retval=$38; //@line 3861 "datetimemodule.c"
         var $retval12=$retval; //@line 3861 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval12; //@line 3861 "datetimemodule.c"
@@ -12819,43 +12238,22 @@ var _initialized_b;
   
 
   function _datetime_utcnow($cls, $dummy) {
-    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+    ;
     var __label__;
   
-    var $cls_addr_i;
-    var $f_addr_i;
-    var $tzinfo_addr_i;
-    var $retval_i;
-    var $0;
-    var $t_i=__stackBase__;
     var $cls_addr;
     var $dummy_addr;
     var $retval;
-    var $1;
+    var $0;
     $cls_addr=$cls;
     $dummy_addr=$dummy;
-    var $2=$cls_addr; //@line 3883 "datetimemodule.c"
-    $cls_addr_i=$2;
-    $f_addr_i=(FUNCTION_TABLE_OFFSET + 4);
-    $tzinfo_addr_i=__Py_NoneStruct;
-    var $3=_gettimeofday($t_i, 0); //@line 3822 "datetimemodule.c"
-    var $4=$t_i+4; //@line 3824 "datetimemodule.c"
-    var $5=HEAP[$4]; //@line 3824 "datetimemodule.c"
-    var $6=$t_i; //@line 3824 "datetimemodule.c"
-    var $7=HEAP[$6]; //@line 3824 "datetimemodule.c"
-    var $8=$cls_addr_i; //@line 3824 "datetimemodule.c"
-    var $9=$f_addr_i; //@line 3824 "datetimemodule.c"
-    var $10=$tzinfo_addr_i; //@line 3824 "datetimemodule.c"
-    var $11=_datetime_from_timet_and_us($8, $9, $7, $5, $10); //@line 3824 "datetimemodule.c"
-    $0=$11; //@line 3824 "datetimemodule.c"
-    var $12=$0; //@line 3824 "datetimemodule.c"
-    $retval_i=$12; //@line 3824 "datetimemodule.c"
-    var $retval1_i=$retval_i; //@line 3824 "datetimemodule.c"
-    $1=$retval1_i; //@line 3883 "datetimemodule.c"
-    var $13=$1; //@line 3883 "datetimemodule.c"
-    $retval=$13; //@line 3883 "datetimemodule.c"
+    var $1=$cls_addr; //@line 3883 "datetimemodule.c"
+    var $2=_datetime_best_possible($1, (FUNCTION_TABLE_OFFSET + 4), __Py_NoneStruct); //@line 3883 "datetimemodule.c"
+    $0=$2; //@line 3883 "datetimemodule.c"
+    var $3=$0; //@line 3883 "datetimemodule.c"
+    $retval=$3; //@line 3883 "datetimemodule.c"
     var $retval1=$retval; //@line 3883 "datetimemodule.c"
-    STACKTOP = __stackBase__;
+    ;
     return $retval1; //@line 3883 "datetimemodule.c"
   }
   
@@ -12863,19 +12261,15 @@ var _initialized_b;
   function _datetime_fromtimestamp($cls, $args, $kw) {
     var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i;
-        var $retval_i;
-        var $0;
         var $cls_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
         var $iftmp_389;
-        var $1;
+        var $0;
         var $self;
         var $timestamp=__stackBase__;
         var $tzinfo=__stackBase__+8;
@@ -12884,107 +12278,79 @@ var _initialized_b;
         $args_addr=$args;
         $kw_addr=$kw;
         HEAP[$tzinfo]=__Py_NoneStruct; //@line 3892 "datetimemodule.c"
-        var $2=$args_addr; //@line 3895 "datetimemodule.c"
-        var $3=$kw_addr; //@line 3895 "datetimemodule.c"
-        var $4=__PyArg_ParseTupleAndKeywords_SizeT($2, $3, __str224, _keywords_12701, $timestamp, $tzinfo); //@line 3895 "datetimemodule.c"
-        var $5=($4)==0; //@line 3895 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3895 "datetimemodule.c"
+        var $1=$args_addr; //@line 3895 "datetimemodule.c"
+        var $2=$kw_addr; //@line 3895 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str224, _keywords_12701, allocate([$timestamp,0,0,0,$tzinfo,0,0,0], ["double*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 3895 "datetimemodule.c"
+        var $4=($3)==0; //@line 3895 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3895 "datetimemodule.c"
       case 1: // $bb
-        $1=0; //@line 3897 "datetimemodule.c"
-        __label__ = 15; break; //@line 3897 "datetimemodule.c"
+        $0=0; //@line 3897 "datetimemodule.c"
+        __label__ = 11; break; //@line 3897 "datetimemodule.c"
       case 2: // $bb1
-        var $6=HEAP[$tzinfo]; //@line 3898 "datetimemodule.c"
-        $p_addr_i=$6;
-        var $7=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $8=($7)==(__Py_NoneStruct); //@line 767 "datetimemodule.c"
-        if ($8) { __lastLabel__ = 2; __label__ = 7; break; } else { __lastLabel__ = 2; __label__ = 3; break; } //@line 767 "datetimemodule.c"
-      case 3: // $bb_i
-        var $9=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $10=$9+4; //@line 767 "datetimemodule.c"
-        var $11=HEAP[$10]; //@line 767 "datetimemodule.c"
-        var $12=($11)==(_PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        if ($12) { __label__ = 6; break; } else { __label__ = 4; break; } //@line 767 "datetimemodule.c"
-      case 4: // $bb1_i
-        var $13=$p_addr_i; //@line 767 "datetimemodule.c"
-        var $14=$13+4; //@line 767 "datetimemodule.c"
-        var $15=HEAP[$14]; //@line 767 "datetimemodule.c"
-        var $16=_PyType_IsSubtype($15, _PyDateTime_TZInfoType); //@line 767 "datetimemodule.c"
-        var $17=($16)!=0; //@line 767 "datetimemodule.c"
-        if ($17) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 767 "datetimemodule.c"
-      case 5: // $bb2
-        var $18=$p_addr_i; //@line 769 "datetimemodule.c"
-        var $19=$18+4; //@line 769 "datetimemodule.c"
-        var $20=HEAP[$19]; //@line 769 "datetimemodule.c"
-        var $21=$20+12; //@line 769 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 769 "datetimemodule.c"
-        var $23=HEAP[_PyExc_TypeError]; //@line 769 "datetimemodule.c"
-        var $24=_PyErr_Format($23, __str32, $22); //@line 769 "datetimemodule.c"
-        $0=-1; //@line 773 "datetimemodule.c"
-        $retval_i=-1; //@line 768 "datetimemodule.c"
-        $1=0; //@line 3899 "datetimemodule.c"
-        __label__ = 15; break; //@line 3899 "datetimemodule.c"
-      case 6: // $bb3thread_pre_split
-        var $_pr=HEAP[$tzinfo];
-        __lastLabel__ = 6; __label__ = 7; break;
-      case 7: // $bb3
-        var $25=__lastLabel__ == 6 ? $_pr : ($6);
-        $0=0; //@line 768 "datetimemodule.c"
-        $retval_i=0; //@line 768 "datetimemodule.c"
-        var $26=HEAP[$timestamp]; //@line 3901 "datetimemodule.c"
-        var $27=($25)==(__Py_NoneStruct); //@line 3901 "datetimemodule.c"
-        if ($27) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 3901 "datetimemodule.c"
-      case 8: // $bb4
+        var $5=HEAP[$tzinfo]; //@line 3898 "datetimemodule.c"
+        var $6=_check_tzinfo_subclass($5); //@line 3898 "datetimemodule.c"
+        var $7=($6) < 0; //@line 3898 "datetimemodule.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 3898 "datetimemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 3899 "datetimemodule.c"
+        __label__ = 11; break; //@line 3899 "datetimemodule.c"
+      case 4: // $bb3
+        var $8=HEAP[$tzinfo]; //@line 3901 "datetimemodule.c"
+        var $9=HEAP[$timestamp]; //@line 3901 "datetimemodule.c"
+        var $10=HEAP[$tzinfo]; //@line 3901 "datetimemodule.c"
+        var $11=($10)==(__Py_NoneStruct); //@line 3901 "datetimemodule.c"
+        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 3901 "datetimemodule.c"
+      case 5: // $bb4
         $iftmp_389=(FUNCTION_TABLE_OFFSET + 2); //@line 3901 "datetimemodule.c"
-        __label__ = 10; break; //@line 3901 "datetimemodule.c"
-      case 9: // $bb5
+        __label__ = 7; break; //@line 3901 "datetimemodule.c"
+      case 6: // $bb5
         $iftmp_389=(FUNCTION_TABLE_OFFSET + 4); //@line 3901 "datetimemodule.c"
-        __label__ = 10; break; //@line 3901 "datetimemodule.c"
-      case 10: // $bb6
-        var $28=$cls_addr; //@line 3901 "datetimemodule.c"
-        var $29=$iftmp_389; //@line 3901 "datetimemodule.c"
-        var $30=_datetime_from_timestamp($28, $29, $26, $25); //@line 3901 "datetimemodule.c"
-        $self=$30; //@line 3901 "datetimemodule.c"
-        var $31=($30)!=0; //@line 3905 "datetimemodule.c"
-        if ($31) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 3905 "datetimemodule.c"
-      case 11: // $bb7
-        var $32=HEAP[$tzinfo]; //@line 3905 "datetimemodule.c"
-        var $33=($32)!=(__Py_NoneStruct); //@line 3905 "datetimemodule.c"
-        if ($33) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 3905 "datetimemodule.c"
-      case 12: // $bb8
-        var $34=$self; //@line 3907 "datetimemodule.c"
-        $temp=$34; //@line 3907 "datetimemodule.c"
-        var $35=HEAP[$tzinfo]; //@line 3908 "datetimemodule.c"
-        var $36=$self; //@line 3908 "datetimemodule.c"
-        var $37=__PyObject_CallMethod_SizeT($35, __str189, __str35, $36); //@line 3908 "datetimemodule.c"
-        $self=$37; //@line 3908 "datetimemodule.c"
-        var $38=$temp; //@line 3909 "datetimemodule.c"
-        var $39=$38; //@line 3909 "datetimemodule.c"
-        var $40=HEAP[$39]; //@line 3909 "datetimemodule.c"
-        var $41=($40) - 1; //@line 3909 "datetimemodule.c"
-        var $42=$temp; //@line 3909 "datetimemodule.c"
-        var $43=$42; //@line 3909 "datetimemodule.c"
-        HEAP[$43]=$41; //@line 3909 "datetimemodule.c"
-        var $44=$temp; //@line 3909 "datetimemodule.c"
-        var $45=$44; //@line 3909 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 3909 "datetimemodule.c"
-        var $47=($46)==0; //@line 3909 "datetimemodule.c"
-        if ($47) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 3909 "datetimemodule.c"
-      case 13: // $bb9
-        var $48=$temp; //@line 3909 "datetimemodule.c"
-        var $49=$48+4; //@line 3909 "datetimemodule.c"
-        var $50=HEAP[$49]; //@line 3909 "datetimemodule.c"
-        var $51=$50+24; //@line 3909 "datetimemodule.c"
-        var $52=HEAP[$51]; //@line 3909 "datetimemodule.c"
-        var $53=$temp; //@line 3909 "datetimemodule.c"
-        FUNCTION_TABLE[$52]($53); //@line 3909 "datetimemodule.c"
-        __label__ = 14; break; //@line 3909 "datetimemodule.c"
-      case 14: // $bb10
-        var $54=$self; //@line 3911 "datetimemodule.c"
-        $1=$54; //@line 3911 "datetimemodule.c"
-        __label__ = 15; break; //@line 3911 "datetimemodule.c"
-      case 15: // $bb11
-        var $55=$1; //@line 3897 "datetimemodule.c"
-        $retval=$55; //@line 3897 "datetimemodule.c"
+        __label__ = 7; break; //@line 3901 "datetimemodule.c"
+      case 7: // $bb6
+        var $12=$cls_addr; //@line 3901 "datetimemodule.c"
+        var $13=$iftmp_389; //@line 3901 "datetimemodule.c"
+        var $14=_datetime_from_timestamp($12, $13, $9, $8); //@line 3901 "datetimemodule.c"
+        $self=$14; //@line 3901 "datetimemodule.c"
+        var $15=($14)!=0; //@line 3905 "datetimemodule.c"
+        var $16=HEAP[$tzinfo]; //@line 3905 "datetimemodule.c"
+        var $17=($16)!=(__Py_NoneStruct); //@line 3905 "datetimemodule.c"
+        var $or_cond=($15) & ($17);
+        if ($or_cond) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 3905 "datetimemodule.c"
+      case 8: // $bb8
+        var $18=$self; //@line 3907 "datetimemodule.c"
+        $temp=$18; //@line 3907 "datetimemodule.c"
+        var $19=HEAP[$tzinfo]; //@line 3908 "datetimemodule.c"
+        var $20=$self; //@line 3908 "datetimemodule.c"
+        var $21=__PyObject_CallMethod_SizeT($19, __str189, __str35, allocate([$20,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 3908 "datetimemodule.c"
+        $self=$21; //@line 3908 "datetimemodule.c"
+        var $22=$temp; //@line 3909 "datetimemodule.c"
+        var $23=$22; //@line 3909 "datetimemodule.c"
+        var $24=HEAP[$23]; //@line 3909 "datetimemodule.c"
+        var $25=($24) - 1; //@line 3909 "datetimemodule.c"
+        var $26=$temp; //@line 3909 "datetimemodule.c"
+        var $27=$26; //@line 3909 "datetimemodule.c"
+        HEAP[$27]=$25; //@line 3909 "datetimemodule.c"
+        var $28=$temp; //@line 3909 "datetimemodule.c"
+        var $29=$28; //@line 3909 "datetimemodule.c"
+        var $30=HEAP[$29]; //@line 3909 "datetimemodule.c"
+        var $31=($30)==0; //@line 3909 "datetimemodule.c"
+        if ($31) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 3909 "datetimemodule.c"
+      case 9: // $bb9
+        var $32=$temp; //@line 3909 "datetimemodule.c"
+        var $33=$32+4; //@line 3909 "datetimemodule.c"
+        var $34=HEAP[$33]; //@line 3909 "datetimemodule.c"
+        var $35=$34+24; //@line 3909 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 3909 "datetimemodule.c"
+        var $37=$temp; //@line 3909 "datetimemodule.c"
+        FUNCTION_TABLE[$36]($37); //@line 3909 "datetimemodule.c"
+        __label__ = 10; break; //@line 3909 "datetimemodule.c"
+      case 10: // $bb10
+        var $38=$self; //@line 3911 "datetimemodule.c"
+        $0=$38; //@line 3911 "datetimemodule.c"
+        __label__ = 11; break; //@line 3911 "datetimemodule.c"
+      case 11: // $bb11
+        var $39=$0; //@line 3897 "datetimemodule.c"
+        $retval=$39; //@line 3897 "datetimemodule.c"
         var $retval12=$retval; //@line 3897 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval12; //@line 3897 "datetimemodule.c"
@@ -13009,7 +12375,7 @@ var _initialized_b;
         $args_addr=$args;
         $result=0; //@line 3919 "datetimemodule.c"
         var $1=$args_addr; //@line 3921 "datetimemodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str226, $timestamp); //@line 3921 "datetimemodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str226, allocate([$timestamp,0,0,0], ["double*",0,0,0], ALLOC_STACK)); //@line 3921 "datetimemodule.c"
         var $3=($2)!=0; //@line 3921 "datetimemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3921 "datetimemodule.c"
       case 1: // $bb
@@ -13058,7 +12424,7 @@ var _initialized_b;
         $st=0; //@line 3932 "datetimemodule.c"
         $frac=0; //@line 3932 "datetimemodule.c"
         var $1=$args_addr; //@line 3935 "datetimemodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str227, $string, $format); //@line 3935 "datetimemodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str227, allocate([$string,0,0,0,$format,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 3935 "datetimemodule.c"
         var $3=($2)==0; //@line 3935 "datetimemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 3935 "datetimemodule.c"
       case 1: // $bb
@@ -13081,7 +12447,7 @@ var _initialized_b;
         var $9=HEAP[$format]; //@line 3945 "datetimemodule.c"
         var $10=HEAP[$string]; //@line 3945 "datetimemodule.c"
         var $11=HEAP[_module_12751]; //@line 3945 "datetimemodule.c"
-        var $12=__PyObject_CallMethod_SizeT($11, __str228, __str83, $10, $9); //@line 3945 "datetimemodule.c"
+        var $12=__PyObject_CallMethod_SizeT($11, __str228, __str83, allocate([$10,0,0,0,$9,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 3945 "datetimemodule.c"
         $obj=$12; //@line 3945 "datetimemodule.c"
         var $13=($12)!=0; //@line 3946 "datetimemodule.c"
         if ($13) { __label__ = 6; break; } else { __label__ = 35; break; } //@line 3946 "datetimemodule.c"
@@ -13237,7 +12603,7 @@ var _initialized_b;
         var $95=$ia; //@line 3983 "datetimemodule.c"
         var $96=HEAP[$95]; //@line 3983 "datetimemodule.c"
         var $97=$cls_addr; //@line 3983 "datetimemodule.c"
-        var $98=__PyObject_CallFunction_SizeT($97, __str229, $96, $94, $92, $90, $88, $86, $84); //@line 3983 "datetimemodule.c"
+        var $98=__PyObject_CallFunction_SizeT($97, __str229, allocate([$96,0,0,0,$94,0,0,0,$92,0,0,0,$90,0,0,0,$88,0,0,0,$86,0,0,0,$84,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 3983 "datetimemodule.c"
         $result=$98; //@line 3983 "datetimemodule.c"
         __label__ = 32; break; //@line 3983 "datetimemodule.c"
       case 31: // $bb33
@@ -13358,7 +12724,7 @@ var _initialized_b;
         $result=0; //@line 4004 "datetimemodule.c"
         var $1=$args_addr; //@line 4006 "datetimemodule.c"
         var $2=$kw_addr; //@line 4006 "datetimemodule.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str231, _keywords_12871, _PyDateTime_DateType, $date, _PyDateTime_TimeType, $time); //@line 4006 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str231, _keywords_12871, allocate([_PyDateTime_DateType,0,0,0,$date,0,0,0,_PyDateTime_TimeType,0,0,0,$time,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 4006 "datetimemodule.c"
         var $4=($3)!=0; //@line 4006 "datetimemodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 4006 "datetimemodule.c"
       case 1: // $bb
@@ -13445,7 +12811,7 @@ var _initialized_b;
         var $79=($78) | ($72); //@line 4013 "datetimemodule.c"
         var $80=$cls_addr; //@line 4013 "datetimemodule.c"
         var $81=$tzinfo; //@line 4013 "datetimemodule.c"
-        var $82=__PyObject_CallFunction_SizeT($80, __str220, $79, $65, $59, $53, $47, $41, $35, $81); //@line 4013 "datetimemodule.c"
+        var $82=__PyObject_CallFunction_SizeT($80, __str220, allocate([$79,0,0,0,$65,0,0,0,$59,0,0,0,$53,0,0,0,$47,0,0,0,$41,0,0,0,$35,0,0,0,$81,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 4013 "datetimemodule.c"
         $result=$82; //@line 4013 "datetimemodule.c"
         __label__ = 4; break; //@line 4013 "datetimemodule.c"
       case 4: // $bb3
@@ -13662,21 +13028,12 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $hour_addr_i;
-        var $minute_addr_i;
-        var $second_addr_i;
-        var $microsecond_addr_i;
-        var $retval_i;
-        var $0;
         var $date_addr;
         var $delta_addr;
         var $factor_addr;
         var $retval;
         var $iftmp_440;
-        var $1;
+        var $0;
         var $year=__stackBase__;
         var $month=__stackBase__+4;
         var $day=__stackBase__+8;
@@ -13687,164 +13044,138 @@ var _initialized_b;
         $date_addr=$date;
         $delta_addr=$delta;
         $factor_addr=$factor;
-        var $2=$date_addr; //@line 4076 "datetimemodule.c"
-        var $3=$2; //@line 4076 "datetimemodule.c"
-        var $4=$3+13; //@line 4076 "datetimemodule.c"
-        var $5=$4; //@line 4076 "datetimemodule.c"
-        var $6=HEAP[$5]; //@line 4076 "datetimemodule.c"
-        var $7=($6); //@line 4076 "datetimemodule.c"
-        var $8=($7) << 8; //@line 4076 "datetimemodule.c"
-        var $9=$date_addr; //@line 4076 "datetimemodule.c"
-        var $10=$9; //@line 4076 "datetimemodule.c"
-        var $11=$10+13; //@line 4076 "datetimemodule.c"
-        var $12=$11+1; //@line 4076 "datetimemodule.c"
-        var $13=HEAP[$12]; //@line 4076 "datetimemodule.c"
-        var $14=($13); //@line 4076 "datetimemodule.c"
-        var $15=($14) | ($8); //@line 4076 "datetimemodule.c"
-        HEAP[$year]=$15; //@line 4076 "datetimemodule.c"
-        var $16=$date_addr; //@line 4077 "datetimemodule.c"
-        var $17=$16; //@line 4077 "datetimemodule.c"
-        var $18=$17+13; //@line 4077 "datetimemodule.c"
-        var $19=$18+2; //@line 4077 "datetimemodule.c"
-        var $20=HEAP[$19]; //@line 4077 "datetimemodule.c"
-        var $21=($20); //@line 4077 "datetimemodule.c"
-        HEAP[$month]=$21; //@line 4077 "datetimemodule.c"
-        var $22=$date_addr; //@line 4078 "datetimemodule.c"
-        var $23=$22; //@line 4078 "datetimemodule.c"
-        var $24=$23+13; //@line 4078 "datetimemodule.c"
-        var $25=$24+3; //@line 4078 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 4078 "datetimemodule.c"
-        var $27=($26); //@line 4078 "datetimemodule.c"
-        var $28=$delta_addr; //@line 4078 "datetimemodule.c"
-        var $29=$28+12; //@line 4078 "datetimemodule.c"
-        var $30=HEAP[$29]; //@line 4078 "datetimemodule.c"
-        var $31=$factor_addr; //@line 4078 "datetimemodule.c"
-        var $32=($31) * ($30); //@line 4078 "datetimemodule.c"
-        var $33=($32) + ($27); //@line 4078 "datetimemodule.c"
-        HEAP[$day]=$33; //@line 4078 "datetimemodule.c"
-        var $34=$date_addr; //@line 4079 "datetimemodule.c"
-        var $35=$34+13; //@line 4079 "datetimemodule.c"
-        var $36=$35+4; //@line 4079 "datetimemodule.c"
-        var $37=HEAP[$36]; //@line 4079 "datetimemodule.c"
-        var $38=($37); //@line 4079 "datetimemodule.c"
-        HEAP[$hour]=$38; //@line 4079 "datetimemodule.c"
-        var $39=$date_addr; //@line 4080 "datetimemodule.c"
-        var $40=$39+13; //@line 4080 "datetimemodule.c"
-        var $41=$40+5; //@line 4080 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 4080 "datetimemodule.c"
-        var $43=($42); //@line 4080 "datetimemodule.c"
-        HEAP[$minute]=$43; //@line 4080 "datetimemodule.c"
-        var $44=$date_addr; //@line 4081 "datetimemodule.c"
-        var $45=$44+13; //@line 4081 "datetimemodule.c"
-        var $46=$45+6; //@line 4081 "datetimemodule.c"
-        var $47=HEAP[$46]; //@line 4081 "datetimemodule.c"
-        var $48=($47); //@line 4081 "datetimemodule.c"
-        var $49=$delta_addr; //@line 4081 "datetimemodule.c"
-        var $50=$49+16; //@line 4081 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 4081 "datetimemodule.c"
-        var $52=$factor_addr; //@line 4081 "datetimemodule.c"
-        var $53=($52) * ($51); //@line 4081 "datetimemodule.c"
-        var $54=($53) + ($48); //@line 4081 "datetimemodule.c"
-        HEAP[$second]=$54; //@line 4081 "datetimemodule.c"
-        var $55=$date_addr; //@line 4083 "datetimemodule.c"
-        var $56=$55+13; //@line 4083 "datetimemodule.c"
-        var $57=$56+7; //@line 4083 "datetimemodule.c"
-        var $58=HEAP[$57]; //@line 4083 "datetimemodule.c"
-        var $59=($58); //@line 4083 "datetimemodule.c"
-        var $60=($59) << 16; //@line 4083 "datetimemodule.c"
-        var $61=$date_addr; //@line 4083 "datetimemodule.c"
-        var $62=$61+13; //@line 4083 "datetimemodule.c"
-        var $63=$62+8; //@line 4083 "datetimemodule.c"
-        var $64=HEAP[$63]; //@line 4083 "datetimemodule.c"
-        var $65=($64); //@line 4083 "datetimemodule.c"
-        var $66=($65) << 8; //@line 4083 "datetimemodule.c"
-        var $67=$date_addr; //@line 4083 "datetimemodule.c"
-        var $68=$67+13; //@line 4083 "datetimemodule.c"
-        var $69=$68+9; //@line 4083 "datetimemodule.c"
-        var $70=HEAP[$69]; //@line 4083 "datetimemodule.c"
-        var $71=($70); //@line 4083 "datetimemodule.c"
-        var $72=($66) | ($60); //@line 4083 "datetimemodule.c"
-        var $73=($72) | ($71); //@line 4083 "datetimemodule.c"
-        var $74=$delta_addr; //@line 4083 "datetimemodule.c"
-        var $75=$74+20; //@line 4083 "datetimemodule.c"
-        var $76=HEAP[$75]; //@line 4083 "datetimemodule.c"
-        var $77=$factor_addr; //@line 4083 "datetimemodule.c"
-        var $78=($77) * ($76); //@line 4083 "datetimemodule.c"
-        var $79=($78) + ($73); //@line 4083 "datetimemodule.c"
-        HEAP[$microsecond]=$79; //@line 4083 "datetimemodule.c"
-        var $80=$factor_addr; //@line 4085 "datetimemodule.c"
-        var $81=($80)!=1; //@line 4085 "datetimemodule.c"
-        var $82=$factor_addr; //@line 4085 "datetimemodule.c"
-        var $83=($82)!=-1; //@line 4085 "datetimemodule.c"
-        var $or_cond=($81) & ($83);
+        var $1=$date_addr; //@line 4076 "datetimemodule.c"
+        var $2=$1; //@line 4076 "datetimemodule.c"
+        var $3=$2+13; //@line 4076 "datetimemodule.c"
+        var $4=$3; //@line 4076 "datetimemodule.c"
+        var $5=HEAP[$4]; //@line 4076 "datetimemodule.c"
+        var $6=($5); //@line 4076 "datetimemodule.c"
+        var $7=($6) << 8; //@line 4076 "datetimemodule.c"
+        var $8=$date_addr; //@line 4076 "datetimemodule.c"
+        var $9=$8; //@line 4076 "datetimemodule.c"
+        var $10=$9+13; //@line 4076 "datetimemodule.c"
+        var $11=$10+1; //@line 4076 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 4076 "datetimemodule.c"
+        var $13=($12); //@line 4076 "datetimemodule.c"
+        var $14=($13) | ($7); //@line 4076 "datetimemodule.c"
+        HEAP[$year]=$14; //@line 4076 "datetimemodule.c"
+        var $15=$date_addr; //@line 4077 "datetimemodule.c"
+        var $16=$15; //@line 4077 "datetimemodule.c"
+        var $17=$16+13; //@line 4077 "datetimemodule.c"
+        var $18=$17+2; //@line 4077 "datetimemodule.c"
+        var $19=HEAP[$18]; //@line 4077 "datetimemodule.c"
+        var $20=($19); //@line 4077 "datetimemodule.c"
+        HEAP[$month]=$20; //@line 4077 "datetimemodule.c"
+        var $21=$date_addr; //@line 4078 "datetimemodule.c"
+        var $22=$21; //@line 4078 "datetimemodule.c"
+        var $23=$22+13; //@line 4078 "datetimemodule.c"
+        var $24=$23+3; //@line 4078 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 4078 "datetimemodule.c"
+        var $26=($25); //@line 4078 "datetimemodule.c"
+        var $27=$delta_addr; //@line 4078 "datetimemodule.c"
+        var $28=$27+12; //@line 4078 "datetimemodule.c"
+        var $29=HEAP[$28]; //@line 4078 "datetimemodule.c"
+        var $30=$factor_addr; //@line 4078 "datetimemodule.c"
+        var $31=($30) * ($29); //@line 4078 "datetimemodule.c"
+        var $32=($31) + ($26); //@line 4078 "datetimemodule.c"
+        HEAP[$day]=$32; //@line 4078 "datetimemodule.c"
+        var $33=$date_addr; //@line 4079 "datetimemodule.c"
+        var $34=$33+13; //@line 4079 "datetimemodule.c"
+        var $35=$34+4; //@line 4079 "datetimemodule.c"
+        var $36=HEAP[$35]; //@line 4079 "datetimemodule.c"
+        var $37=($36); //@line 4079 "datetimemodule.c"
+        HEAP[$hour]=$37; //@line 4079 "datetimemodule.c"
+        var $38=$date_addr; //@line 4080 "datetimemodule.c"
+        var $39=$38+13; //@line 4080 "datetimemodule.c"
+        var $40=$39+5; //@line 4080 "datetimemodule.c"
+        var $41=HEAP[$40]; //@line 4080 "datetimemodule.c"
+        var $42=($41); //@line 4080 "datetimemodule.c"
+        HEAP[$minute]=$42; //@line 4080 "datetimemodule.c"
+        var $43=$date_addr; //@line 4081 "datetimemodule.c"
+        var $44=$43+13; //@line 4081 "datetimemodule.c"
+        var $45=$44+6; //@line 4081 "datetimemodule.c"
+        var $46=HEAP[$45]; //@line 4081 "datetimemodule.c"
+        var $47=($46); //@line 4081 "datetimemodule.c"
+        var $48=$delta_addr; //@line 4081 "datetimemodule.c"
+        var $49=$48+16; //@line 4081 "datetimemodule.c"
+        var $50=HEAP[$49]; //@line 4081 "datetimemodule.c"
+        var $51=$factor_addr; //@line 4081 "datetimemodule.c"
+        var $52=($51) * ($50); //@line 4081 "datetimemodule.c"
+        var $53=($52) + ($47); //@line 4081 "datetimemodule.c"
+        HEAP[$second]=$53; //@line 4081 "datetimemodule.c"
+        var $54=$date_addr; //@line 4083 "datetimemodule.c"
+        var $55=$54+13; //@line 4083 "datetimemodule.c"
+        var $56=$55+7; //@line 4083 "datetimemodule.c"
+        var $57=HEAP[$56]; //@line 4083 "datetimemodule.c"
+        var $58=($57); //@line 4083 "datetimemodule.c"
+        var $59=($58) << 16; //@line 4083 "datetimemodule.c"
+        var $60=$date_addr; //@line 4083 "datetimemodule.c"
+        var $61=$60+13; //@line 4083 "datetimemodule.c"
+        var $62=$61+8; //@line 4083 "datetimemodule.c"
+        var $63=HEAP[$62]; //@line 4083 "datetimemodule.c"
+        var $64=($63); //@line 4083 "datetimemodule.c"
+        var $65=($64) << 8; //@line 4083 "datetimemodule.c"
+        var $66=$date_addr; //@line 4083 "datetimemodule.c"
+        var $67=$66+13; //@line 4083 "datetimemodule.c"
+        var $68=$67+9; //@line 4083 "datetimemodule.c"
+        var $69=HEAP[$68]; //@line 4083 "datetimemodule.c"
+        var $70=($69); //@line 4083 "datetimemodule.c"
+        var $71=($65) | ($59); //@line 4083 "datetimemodule.c"
+        var $72=($71) | ($70); //@line 4083 "datetimemodule.c"
+        var $73=$delta_addr; //@line 4083 "datetimemodule.c"
+        var $74=$73+20; //@line 4083 "datetimemodule.c"
+        var $75=HEAP[$74]; //@line 4083 "datetimemodule.c"
+        var $76=$factor_addr; //@line 4083 "datetimemodule.c"
+        var $77=($76) * ($75); //@line 4083 "datetimemodule.c"
+        var $78=($77) + ($72); //@line 4083 "datetimemodule.c"
+        HEAP[$microsecond]=$78; //@line 4083 "datetimemodule.c"
+        var $79=$factor_addr; //@line 4085 "datetimemodule.c"
+        var $80=($79)!=1; //@line 4085 "datetimemodule.c"
+        var $81=$factor_addr; //@line 4085 "datetimemodule.c"
+        var $82=($81)!=-1; //@line 4085 "datetimemodule.c"
+        var $or_cond=($80) & ($82);
         if ($or_cond) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4085 "datetimemodule.c"
       case 1: // $bb1
         ___assert_fail(__str233, __str1, 4085, ___PRETTY_FUNCTION___13012); //@line 4085 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4085 "datetimemodule.c"
       case 2: // $bb2
-        $year_addr_i=$year;
-        $month_addr_i=$month;
-        $day_addr_i=$day;
-        $hour_addr_i=$hour;
-        $minute_addr_i=$minute;
-        $second_addr_i=$second;
-        $microsecond_addr_i=$microsecond;
-        var $84=$second_addr_i; //@line 577 "datetimemodule.c"
-        var $85=$microsecond_addr_i; //@line 577 "datetimemodule.c"
-        _normalize_pair($84, $85, 1000000); //@line 577 "datetimemodule.c"
-        var $86=$minute_addr_i; //@line 578 "datetimemodule.c"
-        var $87=$second_addr_i; //@line 578 "datetimemodule.c"
-        _normalize_pair($86, $87, 60); //@line 578 "datetimemodule.c"
-        var $88=$hour_addr_i; //@line 579 "datetimemodule.c"
-        var $89=$minute_addr_i; //@line 579 "datetimemodule.c"
-        _normalize_pair($88, $89, 60); //@line 579 "datetimemodule.c"
-        var $90=$day_addr_i; //@line 580 "datetimemodule.c"
-        var $91=$hour_addr_i; //@line 580 "datetimemodule.c"
-        _normalize_pair($90, $91, 24); //@line 580 "datetimemodule.c"
-        var $92=$year_addr_i; //@line 581 "datetimemodule.c"
-        var $93=$month_addr_i; //@line 581 "datetimemodule.c"
-        var $94=$day_addr_i; //@line 581 "datetimemodule.c"
-        var $95=_normalize_date($92, $93, $94); //@line 581 "datetimemodule.c"
-        $0=$95; //@line 581 "datetimemodule.c"
-        var $96=$0; //@line 581 "datetimemodule.c"
-        $retval_i=$96; //@line 581 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 581 "datetimemodule.c"
-        var $97=($retval1_i) < 0; //@line 4086 "datetimemodule.c"
-        if ($97) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 4086 "datetimemodule.c"
+        var $83=_normalize_datetime($year, $month, $day, $hour, $minute, $second, $microsecond); //@line 4086 "datetimemodule.c"
+        var $84=($83) < 0; //@line 4086 "datetimemodule.c"
+        if ($84) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 4086 "datetimemodule.c"
       case 3: // $bb3
-        $1=0; //@line 4088 "datetimemodule.c"
+        $0=0; //@line 4088 "datetimemodule.c"
         __label__ = 8; break; //@line 4088 "datetimemodule.c"
       case 4: // $bb4
-        var $98=$date_addr; //@line 4090 "datetimemodule.c"
-        var $99=$98; //@line 4090 "datetimemodule.c"
-        var $100=$99+12; //@line 4090 "datetimemodule.c"
-        var $101=HEAP[$100]; //@line 4090 "datetimemodule.c"
-        var $102=($101)!=0; //@line 4090 "datetimemodule.c"
-        if ($102) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4090 "datetimemodule.c"
+        var $85=$date_addr; //@line 4090 "datetimemodule.c"
+        var $86=$85; //@line 4090 "datetimemodule.c"
+        var $87=$86+12; //@line 4090 "datetimemodule.c"
+        var $88=HEAP[$87]; //@line 4090 "datetimemodule.c"
+        var $89=($88)!=0; //@line 4090 "datetimemodule.c"
+        if ($89) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4090 "datetimemodule.c"
       case 5: // $bb5
-        var $103=$date_addr; //@line 4090 "datetimemodule.c"
-        var $104=$103+24; //@line 4090 "datetimemodule.c"
-        var $105=HEAP[$104]; //@line 4090 "datetimemodule.c"
-        $iftmp_440=$105; //@line 4090 "datetimemodule.c"
+        var $90=$date_addr; //@line 4090 "datetimemodule.c"
+        var $91=$90+24; //@line 4090 "datetimemodule.c"
+        var $92=HEAP[$91]; //@line 4090 "datetimemodule.c"
+        $iftmp_440=$92; //@line 4090 "datetimemodule.c"
         __label__ = 7; break; //@line 4090 "datetimemodule.c"
       case 6: // $bb6
         $iftmp_440=__Py_NoneStruct; //@line 4090 "datetimemodule.c"
         __label__ = 7; break; //@line 4090 "datetimemodule.c"
       case 7: // $bb7
-        var $106=HEAP[$microsecond]; //@line 4090 "datetimemodule.c"
-        var $107=HEAP[$second]; //@line 4090 "datetimemodule.c"
-        var $108=HEAP[$minute]; //@line 4090 "datetimemodule.c"
-        var $109=HEAP[$hour]; //@line 4090 "datetimemodule.c"
-        var $110=HEAP[$day]; //@line 4090 "datetimemodule.c"
-        var $111=HEAP[$month]; //@line 4090 "datetimemodule.c"
-        var $112=HEAP[$year]; //@line 4090 "datetimemodule.c"
-        var $113=$iftmp_440; //@line 4090 "datetimemodule.c"
-        var $114=_new_datetime_ex($112, $111, $110, $109, $108, $107, $106, $113, _PyDateTime_DateTimeType); //@line 4090 "datetimemodule.c"
-        $1=$114; //@line 4090 "datetimemodule.c"
+        var $93=HEAP[$microsecond]; //@line 4090 "datetimemodule.c"
+        var $94=HEAP[$second]; //@line 4090 "datetimemodule.c"
+        var $95=HEAP[$minute]; //@line 4090 "datetimemodule.c"
+        var $96=HEAP[$hour]; //@line 4090 "datetimemodule.c"
+        var $97=HEAP[$day]; //@line 4090 "datetimemodule.c"
+        var $98=HEAP[$month]; //@line 4090 "datetimemodule.c"
+        var $99=HEAP[$year]; //@line 4090 "datetimemodule.c"
+        var $100=$iftmp_440; //@line 4090 "datetimemodule.c"
+        var $101=_new_datetime_ex($99, $98, $97, $96, $95, $94, $93, $100, _PyDateTime_DateTimeType); //@line 4090 "datetimemodule.c"
+        $0=$101; //@line 4090 "datetimemodule.c"
         __label__ = 8; break; //@line 4090 "datetimemodule.c"
       case 8: // $bb8
-        var $115=$1; //@line 4088 "datetimemodule.c"
-        $retval=$115; //@line 4088 "datetimemodule.c"
+        var $102=$0; //@line 4088 "datetimemodule.c"
+        $retval=$102; //@line 4088 "datetimemodule.c"
         var $retval9=$retval; //@line 4088 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 4088 "datetimemodule.c"
@@ -13943,20 +13274,10 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i1;
-        var $month_addr_i2;
-        var $day_addr_i3;
-        var $retval_i4;
-        var $0;
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $retval_i;
-        var $1;
         var $left_addr;
         var $right_addr;
         var $retval;
-        var $2;
+        var $0;
         var $result;
         var $n1=__stackBase__;
         var $n2=__stackBase__+4;
@@ -13968,296 +13289,268 @@ var _initialized_b;
         $left_addr=$left;
         $right_addr=$right;
         $result=__Py_NotImplementedStruct; //@line 4120 "datetimemodule.c"
-        var $3=$left_addr; //@line 4122 "datetimemodule.c"
-        var $4=$3+4; //@line 4122 "datetimemodule.c"
-        var $5=HEAP[$4]; //@line 4122 "datetimemodule.c"
-        var $6=($5)==(_PyDateTime_DateTimeType); //@line 4122 "datetimemodule.c"
-        if ($6) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 4122 "datetimemodule.c"
+        var $1=$left_addr; //@line 4122 "datetimemodule.c"
+        var $2=$1+4; //@line 4122 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 4122 "datetimemodule.c"
+        var $4=($3)==(_PyDateTime_DateTimeType); //@line 4122 "datetimemodule.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 4122 "datetimemodule.c"
       case 1: // $bb
-        var $7=$left_addr; //@line 4122 "datetimemodule.c"
-        var $8=$7+4; //@line 4122 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 4122 "datetimemodule.c"
-        var $10=_PyType_IsSubtype($9, _PyDateTime_DateTimeType); //@line 4122 "datetimemodule.c"
-        var $11=($10)!=0; //@line 4122 "datetimemodule.c"
-        if ($11) { __label__ = 2; break; } else { __label__ = 15; break; } //@line 4122 "datetimemodule.c"
+        var $5=$left_addr; //@line 4122 "datetimemodule.c"
+        var $6=$5+4; //@line 4122 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 4122 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_DateTimeType); //@line 4122 "datetimemodule.c"
+        var $9=($8)!=0; //@line 4122 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 15; break; } //@line 4122 "datetimemodule.c"
       case 2: // $bb1
-        var $12=$right_addr; //@line 4124 "datetimemodule.c"
-        var $13=$12+4; //@line 4124 "datetimemodule.c"
-        var $14=HEAP[$13]; //@line 4124 "datetimemodule.c"
-        var $15=($14)==(_PyDateTime_DateTimeType); //@line 4124 "datetimemodule.c"
-        if ($15) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 4124 "datetimemodule.c"
+        var $10=$right_addr; //@line 4124 "datetimemodule.c"
+        var $11=$10+4; //@line 4124 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 4124 "datetimemodule.c"
+        var $13=($12)==(_PyDateTime_DateTimeType); //@line 4124 "datetimemodule.c"
+        if ($13) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 4124 "datetimemodule.c"
       case 3: // $bb2
-        var $16=$right_addr; //@line 4124 "datetimemodule.c"
-        var $17=$16+4; //@line 4124 "datetimemodule.c"
-        var $18=HEAP[$17]; //@line 4124 "datetimemodule.c"
-        var $19=_PyType_IsSubtype($18, _PyDateTime_DateTimeType); //@line 4124 "datetimemodule.c"
-        var $20=($19)!=0; //@line 4124 "datetimemodule.c"
-        if ($20) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 4124 "datetimemodule.c"
+        var $14=$right_addr; //@line 4124 "datetimemodule.c"
+        var $15=$14+4; //@line 4124 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 4124 "datetimemodule.c"
+        var $17=_PyType_IsSubtype($16, _PyDateTime_DateTimeType); //@line 4124 "datetimemodule.c"
+        var $18=($17)!=0; //@line 4124 "datetimemodule.c"
+        if ($18) { __label__ = 4; break; } else { __label__ = 12; break; } //@line 4124 "datetimemodule.c"
       case 4: // $bb3
-        var $21=$left_addr; //@line 4130 "datetimemodule.c"
-        var $22=$left_addr; //@line 4130 "datetimemodule.c"
-        var $23=$right_addr; //@line 4130 "datetimemodule.c"
-        var $24=$right_addr; //@line 4130 "datetimemodule.c"
-        var $25=_classify_two_utcoffsets($21, $offset1, $n1, $22, $23, $offset2, $n2, $24); //@line 4130 "datetimemodule.c"
-        var $26=($25) < 0; //@line 4130 "datetimemodule.c"
-        if ($26) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4130 "datetimemodule.c"
+        var $19=$left_addr; //@line 4130 "datetimemodule.c"
+        var $20=$left_addr; //@line 4130 "datetimemodule.c"
+        var $21=$right_addr; //@line 4130 "datetimemodule.c"
+        var $22=$right_addr; //@line 4130 "datetimemodule.c"
+        var $23=_classify_two_utcoffsets($19, $offset1, $n1, $20, $21, $offset2, $n2, $22); //@line 4130 "datetimemodule.c"
+        var $24=($23) < 0; //@line 4130 "datetimemodule.c"
+        if ($24) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4130 "datetimemodule.c"
       case 5: // $bb4
-        $2=0; //@line 4133 "datetimemodule.c"
+        $0=0; //@line 4133 "datetimemodule.c"
         __label__ = 19; break; //@line 4133 "datetimemodule.c"
       case 6: // $bb5
-        var $27=HEAP[$n1]; //@line 4134 "datetimemodule.c"
-        var $28=($27)==1; //@line 4134 "datetimemodule.c"
-        if ($28) { __label__ = 8; break; } else { __label__ = 7; break; } //@line 4134 "datetimemodule.c"
+        var $25=HEAP[$n1]; //@line 4134 "datetimemodule.c"
+        var $26=($25)==1; //@line 4134 "datetimemodule.c"
+        if ($26) { __label__ = 8; break; } else { __label__ = 7; break; } //@line 4134 "datetimemodule.c"
       case 7: // $bb6
-        var $29=HEAP[$n2]; //@line 4134 "datetimemodule.c"
-        var $30=($29)==1; //@line 4134 "datetimemodule.c"
-        if ($30) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4134 "datetimemodule.c"
+        var $27=HEAP[$n2]; //@line 4134 "datetimemodule.c"
+        var $28=($27)==1; //@line 4134 "datetimemodule.c"
+        if ($28) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4134 "datetimemodule.c"
       case 8: // $bb7
         ___assert_fail(__str203, __str1, 4134, ___PRETTY_FUNCTION___13120); //@line 4134 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4134 "datetimemodule.c"
       case 9: // $bb8
-        var $31=HEAP[$n1]; //@line 4135 "datetimemodule.c"
-        var $32=HEAP[$n2]; //@line 4135 "datetimemodule.c"
-        var $33=($31)!=($32); //@line 4135 "datetimemodule.c"
-        if ($33) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 4135 "datetimemodule.c"
+        var $29=HEAP[$n1]; //@line 4135 "datetimemodule.c"
+        var $30=HEAP[$n2]; //@line 4135 "datetimemodule.c"
+        var $31=($29)!=($30); //@line 4135 "datetimemodule.c"
+        if ($31) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 4135 "datetimemodule.c"
       case 10: // $bb9
-        var $34=HEAP[_PyExc_TypeError]; //@line 4136 "datetimemodule.c"
-        _PyErr_SetString($34, __str234); //@line 4136 "datetimemodule.c"
-        $2=0; //@line 4139 "datetimemodule.c"
+        var $32=HEAP[_PyExc_TypeError]; //@line 4136 "datetimemodule.c"
+        _PyErr_SetString($32, __str234); //@line 4136 "datetimemodule.c"
+        $0=0; //@line 4139 "datetimemodule.c"
         __label__ = 19; break; //@line 4139 "datetimemodule.c"
       case 11: // $bb10
-        var $35=$left_addr; //@line 4141 "datetimemodule.c"
-        var $36=$35; //@line 4141 "datetimemodule.c"
-        var $37=$36+13; //@line 4141 "datetimemodule.c"
-        var $38=$37+3; //@line 4141 "datetimemodule.c"
-        var $39=HEAP[$38]; //@line 4141 "datetimemodule.c"
-        var $40=($39); //@line 4141 "datetimemodule.c"
-        var $41=$left_addr; //@line 4141 "datetimemodule.c"
-        var $42=$41; //@line 4141 "datetimemodule.c"
-        var $43=$42+13; //@line 4141 "datetimemodule.c"
-        var $44=$43+2; //@line 4141 "datetimemodule.c"
-        var $45=HEAP[$44]; //@line 4141 "datetimemodule.c"
-        var $46=($45); //@line 4141 "datetimemodule.c"
-        var $47=$left_addr; //@line 4141 "datetimemodule.c"
+        var $33=$left_addr; //@line 4141 "datetimemodule.c"
+        var $34=$33; //@line 4141 "datetimemodule.c"
+        var $35=$34+13; //@line 4141 "datetimemodule.c"
+        var $36=$35+3; //@line 4141 "datetimemodule.c"
+        var $37=HEAP[$36]; //@line 4141 "datetimemodule.c"
+        var $38=($37); //@line 4141 "datetimemodule.c"
+        var $39=$left_addr; //@line 4141 "datetimemodule.c"
+        var $40=$39; //@line 4141 "datetimemodule.c"
+        var $41=$40+13; //@line 4141 "datetimemodule.c"
+        var $42=$41+2; //@line 4141 "datetimemodule.c"
+        var $43=HEAP[$42]; //@line 4141 "datetimemodule.c"
+        var $44=($43); //@line 4141 "datetimemodule.c"
+        var $45=$left_addr; //@line 4141 "datetimemodule.c"
+        var $46=$45; //@line 4141 "datetimemodule.c"
+        var $47=$46+13; //@line 4141 "datetimemodule.c"
         var $48=$47; //@line 4141 "datetimemodule.c"
-        var $49=$48+13; //@line 4141 "datetimemodule.c"
-        var $50=$49; //@line 4141 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 4141 "datetimemodule.c"
-        var $52=($51); //@line 4141 "datetimemodule.c"
-        var $53=($52) << 8; //@line 4141 "datetimemodule.c"
-        var $54=$left_addr; //@line 4141 "datetimemodule.c"
-        var $55=$54; //@line 4141 "datetimemodule.c"
-        var $56=$55+13; //@line 4141 "datetimemodule.c"
-        var $57=$56+1; //@line 4141 "datetimemodule.c"
-        var $58=HEAP[$57]; //@line 4141 "datetimemodule.c"
-        var $59=($58); //@line 4141 "datetimemodule.c"
-        var $60=($59) | ($53); //@line 4141 "datetimemodule.c"
-        $year_addr_i=$60;
-        $month_addr_i=$46;
-        $day_addr_i=$40;
-        var $61=$year_addr_i; //@line 330 "datetimemodule.c"
-        var $62=_days_before_year($61); //@line 330 "datetimemodule.c"
-        var $63=$year_addr_i; //@line 330 "datetimemodule.c"
-        var $64=$month_addr_i; //@line 330 "datetimemodule.c"
-        var $65=_days_before_month($63, $64); //@line 330 "datetimemodule.c"
-        var $66=$day_addr_i; //@line 330 "datetimemodule.c"
-        var $67=($65) + ($62); //@line 330 "datetimemodule.c"
-        var $68=($67) + ($66); //@line 330 "datetimemodule.c"
-        $1=$68; //@line 330 "datetimemodule.c"
-        var $69=$1; //@line 330 "datetimemodule.c"
-        $retval_i=$69; //@line 330 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 330 "datetimemodule.c"
-        var $70=$right_addr; //@line 4141 "datetimemodule.c"
-        var $71=$70; //@line 4141 "datetimemodule.c"
-        var $72=$71+13; //@line 4141 "datetimemodule.c"
-        var $73=$72+3; //@line 4141 "datetimemodule.c"
-        var $74=HEAP[$73]; //@line 4141 "datetimemodule.c"
-        var $75=($74); //@line 4141 "datetimemodule.c"
-        var $76=$right_addr; //@line 4141 "datetimemodule.c"
-        var $77=$76; //@line 4141 "datetimemodule.c"
-        var $78=$77+13; //@line 4141 "datetimemodule.c"
-        var $79=$78+2; //@line 4141 "datetimemodule.c"
-        var $80=HEAP[$79]; //@line 4141 "datetimemodule.c"
-        var $81=($80); //@line 4141 "datetimemodule.c"
-        var $82=$right_addr; //@line 4141 "datetimemodule.c"
-        var $83=$82; //@line 4141 "datetimemodule.c"
-        var $84=$83+13; //@line 4141 "datetimemodule.c"
-        var $85=$84; //@line 4141 "datetimemodule.c"
-        var $86=HEAP[$85]; //@line 4141 "datetimemodule.c"
-        var $87=($86); //@line 4141 "datetimemodule.c"
-        var $88=($87) << 8; //@line 4141 "datetimemodule.c"
-        var $89=$right_addr; //@line 4141 "datetimemodule.c"
-        var $90=$89; //@line 4141 "datetimemodule.c"
-        var $91=$90+13; //@line 4141 "datetimemodule.c"
-        var $92=$91+1; //@line 4141 "datetimemodule.c"
-        var $93=HEAP[$92]; //@line 4141 "datetimemodule.c"
-        var $94=($93); //@line 4141 "datetimemodule.c"
-        var $95=($94) | ($88); //@line 4141 "datetimemodule.c"
-        $year_addr_i1=$95;
-        $month_addr_i2=$81;
-        $day_addr_i3=$75;
-        var $96=$year_addr_i1; //@line 330 "datetimemodule.c"
-        var $97=_days_before_year($96); //@line 330 "datetimemodule.c"
-        var $98=$year_addr_i1; //@line 330 "datetimemodule.c"
-        var $99=$month_addr_i2; //@line 330 "datetimemodule.c"
-        var $100=_days_before_month($98, $99); //@line 330 "datetimemodule.c"
-        var $101=$day_addr_i3; //@line 330 "datetimemodule.c"
-        var $102=($100) + ($97); //@line 330 "datetimemodule.c"
-        var $103=($102) + ($101); //@line 330 "datetimemodule.c"
-        $0=$103; //@line 330 "datetimemodule.c"
-        var $104=$0; //@line 330 "datetimemodule.c"
-        $retval_i4=$104; //@line 330 "datetimemodule.c"
-        var $retval1_i5=$retval_i4; //@line 330 "datetimemodule.c"
-        var $105=($retval1_i) - ($retval1_i5); //@line 4141 "datetimemodule.c"
-        $delta_d=$105; //@line 4141 "datetimemodule.c"
-        var $106=$left_addr; //@line 4151 "datetimemodule.c"
-        var $107=$106; //@line 4151 "datetimemodule.c"
-        var $108=$107+13; //@line 4151 "datetimemodule.c"
-        var $109=$108+4; //@line 4151 "datetimemodule.c"
-        var $110=HEAP[$109]; //@line 4151 "datetimemodule.c"
-        var $111=($110); //@line 4151 "datetimemodule.c"
-        var $112=$right_addr; //@line 4151 "datetimemodule.c"
-        var $113=$112; //@line 4151 "datetimemodule.c"
-        var $114=$113+13; //@line 4151 "datetimemodule.c"
-        var $115=$114+4; //@line 4151 "datetimemodule.c"
-        var $116=HEAP[$115]; //@line 4151 "datetimemodule.c"
-        var $117=($116); //@line 4151 "datetimemodule.c"
-        var $118=($111) - ($117); //@line 4151 "datetimemodule.c"
-        var $119=($118) * 3600; //@line 4151 "datetimemodule.c"
-        var $120=$left_addr; //@line 4151 "datetimemodule.c"
-        var $121=$120; //@line 4151 "datetimemodule.c"
-        var $122=$121+13; //@line 4151 "datetimemodule.c"
-        var $123=$122+5; //@line 4151 "datetimemodule.c"
-        var $124=HEAP[$123]; //@line 4151 "datetimemodule.c"
-        var $125=($124); //@line 4151 "datetimemodule.c"
-        var $126=$right_addr; //@line 4151 "datetimemodule.c"
-        var $127=$126; //@line 4151 "datetimemodule.c"
-        var $128=$127+13; //@line 4151 "datetimemodule.c"
-        var $129=$128+5; //@line 4151 "datetimemodule.c"
-        var $130=HEAP[$129]; //@line 4151 "datetimemodule.c"
-        var $131=($130); //@line 4151 "datetimemodule.c"
-        var $132=($125) - ($131); //@line 4151 "datetimemodule.c"
-        var $133=($132) * 60; //@line 4151 "datetimemodule.c"
-        var $134=$left_addr; //@line 4151 "datetimemodule.c"
-        var $135=$134; //@line 4151 "datetimemodule.c"
-        var $136=$135+13; //@line 4151 "datetimemodule.c"
-        var $137=$136+6; //@line 4151 "datetimemodule.c"
-        var $138=HEAP[$137]; //@line 4151 "datetimemodule.c"
-        var $139=($138); //@line 4151 "datetimemodule.c"
-        var $140=$right_addr; //@line 4151 "datetimemodule.c"
-        var $141=$140; //@line 4151 "datetimemodule.c"
-        var $142=$141+13; //@line 4151 "datetimemodule.c"
-        var $143=$142+6; //@line 4151 "datetimemodule.c"
-        var $144=HEAP[$143]; //@line 4151 "datetimemodule.c"
-        var $145=($144); //@line 4151 "datetimemodule.c"
-        var $_neg=0 - ($145);
-        var $146=($139) + ($119); //@line 4151 "datetimemodule.c"
-        var $147=($146) + ($133);
-        var $148=($147) + ($_neg); //@line 4151 "datetimemodule.c"
-        $delta_s=$148; //@line 4151 "datetimemodule.c"
-        var $149=$left_addr; //@line 4157 "datetimemodule.c"
-        var $150=$149; //@line 4157 "datetimemodule.c"
-        var $151=$150+13; //@line 4157 "datetimemodule.c"
-        var $152=$151+7; //@line 4157 "datetimemodule.c"
-        var $153=HEAP[$152]; //@line 4157 "datetimemodule.c"
-        var $154=($153); //@line 4157 "datetimemodule.c"
-        var $155=($154) << 16; //@line 4157 "datetimemodule.c"
-        var $156=$left_addr; //@line 4157 "datetimemodule.c"
-        var $157=$156; //@line 4157 "datetimemodule.c"
-        var $158=$157+13; //@line 4157 "datetimemodule.c"
-        var $159=$158+8; //@line 4157 "datetimemodule.c"
-        var $160=HEAP[$159]; //@line 4157 "datetimemodule.c"
-        var $161=($160); //@line 4157 "datetimemodule.c"
-        var $162=($161) << 8; //@line 4157 "datetimemodule.c"
-        var $163=$left_addr; //@line 4157 "datetimemodule.c"
-        var $164=$163; //@line 4157 "datetimemodule.c"
-        var $165=$164+13; //@line 4157 "datetimemodule.c"
-        var $166=$165+9; //@line 4157 "datetimemodule.c"
-        var $167=HEAP[$166]; //@line 4157 "datetimemodule.c"
-        var $168=($167); //@line 4157 "datetimemodule.c"
-        var $169=($162) | ($155); //@line 4157 "datetimemodule.c"
-        var $170=($169) | ($168); //@line 4157 "datetimemodule.c"
-        var $171=$right_addr; //@line 4157 "datetimemodule.c"
-        var $172=$171; //@line 4157 "datetimemodule.c"
-        var $173=$172+13; //@line 4157 "datetimemodule.c"
-        var $174=$173+7; //@line 4157 "datetimemodule.c"
-        var $175=HEAP[$174]; //@line 4157 "datetimemodule.c"
-        var $176=($175); //@line 4157 "datetimemodule.c"
-        var $177=($176) << 16; //@line 4157 "datetimemodule.c"
-        var $178=$right_addr; //@line 4157 "datetimemodule.c"
-        var $179=$178; //@line 4157 "datetimemodule.c"
-        var $180=$179+13; //@line 4157 "datetimemodule.c"
-        var $181=$180+8; //@line 4157 "datetimemodule.c"
-        var $182=HEAP[$181]; //@line 4157 "datetimemodule.c"
-        var $183=($182); //@line 4157 "datetimemodule.c"
-        var $184=($183) << 8; //@line 4157 "datetimemodule.c"
-        var $185=$right_addr; //@line 4157 "datetimemodule.c"
-        var $186=$185; //@line 4157 "datetimemodule.c"
-        var $187=$186+13; //@line 4157 "datetimemodule.c"
-        var $188=$187+9; //@line 4157 "datetimemodule.c"
-        var $189=HEAP[$188]; //@line 4157 "datetimemodule.c"
-        var $190=($189); //@line 4157 "datetimemodule.c"
-        var $191=($184) | ($177); //@line 4157 "datetimemodule.c"
-        var $192=($191) | ($190); //@line 4157 "datetimemodule.c"
-        var $193=($170) - ($192); //@line 4157 "datetimemodule.c"
-        $delta_us=$193; //@line 4157 "datetimemodule.c"
-        var $194=HEAP[$offset2]; //@line 4162 "datetimemodule.c"
-        var $195=HEAP[$offset1]; //@line 4162 "datetimemodule.c"
-        var $196=($194) - ($195); //@line 4162 "datetimemodule.c"
-        var $197=($196) * 60; //@line 4162 "datetimemodule.c"
-        var $198=$delta_s; //@line 4162 "datetimemodule.c"
-        var $199=($197) + ($198); //@line 4162 "datetimemodule.c"
-        $delta_s=$199; //@line 4162 "datetimemodule.c"
-        var $200=$delta_d; //@line 4163 "datetimemodule.c"
-        var $201=$delta_s; //@line 4163 "datetimemodule.c"
-        var $202=$delta_us; //@line 4163 "datetimemodule.c"
-        var $203=_new_delta_ex($200, $201, $202, 1, _PyDateTime_DeltaType); //@line 4163 "datetimemodule.c"
-        $result=$203; //@line 4163 "datetimemodule.c"
+        var $49=HEAP[$48]; //@line 4141 "datetimemodule.c"
+        var $50=($49); //@line 4141 "datetimemodule.c"
+        var $51=($50) << 8; //@line 4141 "datetimemodule.c"
+        var $52=$left_addr; //@line 4141 "datetimemodule.c"
+        var $53=$52; //@line 4141 "datetimemodule.c"
+        var $54=$53+13; //@line 4141 "datetimemodule.c"
+        var $55=$54+1; //@line 4141 "datetimemodule.c"
+        var $56=HEAP[$55]; //@line 4141 "datetimemodule.c"
+        var $57=($56); //@line 4141 "datetimemodule.c"
+        var $58=($57) | ($51); //@line 4141 "datetimemodule.c"
+        var $59=_ymd_to_ord($58, $44, $38); //@line 4141 "datetimemodule.c"
+        var $60=$right_addr; //@line 4141 "datetimemodule.c"
+        var $61=$60; //@line 4141 "datetimemodule.c"
+        var $62=$61+13; //@line 4141 "datetimemodule.c"
+        var $63=$62+3; //@line 4141 "datetimemodule.c"
+        var $64=HEAP[$63]; //@line 4141 "datetimemodule.c"
+        var $65=($64); //@line 4141 "datetimemodule.c"
+        var $66=$right_addr; //@line 4141 "datetimemodule.c"
+        var $67=$66; //@line 4141 "datetimemodule.c"
+        var $68=$67+13; //@line 4141 "datetimemodule.c"
+        var $69=$68+2; //@line 4141 "datetimemodule.c"
+        var $70=HEAP[$69]; //@line 4141 "datetimemodule.c"
+        var $71=($70); //@line 4141 "datetimemodule.c"
+        var $72=$right_addr; //@line 4141 "datetimemodule.c"
+        var $73=$72; //@line 4141 "datetimemodule.c"
+        var $74=$73+13; //@line 4141 "datetimemodule.c"
+        var $75=$74; //@line 4141 "datetimemodule.c"
+        var $76=HEAP[$75]; //@line 4141 "datetimemodule.c"
+        var $77=($76); //@line 4141 "datetimemodule.c"
+        var $78=($77) << 8; //@line 4141 "datetimemodule.c"
+        var $79=$right_addr; //@line 4141 "datetimemodule.c"
+        var $80=$79; //@line 4141 "datetimemodule.c"
+        var $81=$80+13; //@line 4141 "datetimemodule.c"
+        var $82=$81+1; //@line 4141 "datetimemodule.c"
+        var $83=HEAP[$82]; //@line 4141 "datetimemodule.c"
+        var $84=($83); //@line 4141 "datetimemodule.c"
+        var $85=($84) | ($78); //@line 4141 "datetimemodule.c"
+        var $86=_ymd_to_ord($85, $71, $65); //@line 4141 "datetimemodule.c"
+        var $87=($59) - ($86); //@line 4141 "datetimemodule.c"
+        $delta_d=$87; //@line 4141 "datetimemodule.c"
+        var $88=$left_addr; //@line 4151 "datetimemodule.c"
+        var $89=$88; //@line 4151 "datetimemodule.c"
+        var $90=$89+13; //@line 4151 "datetimemodule.c"
+        var $91=$90+4; //@line 4151 "datetimemodule.c"
+        var $92=HEAP[$91]; //@line 4151 "datetimemodule.c"
+        var $93=($92); //@line 4151 "datetimemodule.c"
+        var $94=$right_addr; //@line 4151 "datetimemodule.c"
+        var $95=$94; //@line 4151 "datetimemodule.c"
+        var $96=$95+13; //@line 4151 "datetimemodule.c"
+        var $97=$96+4; //@line 4151 "datetimemodule.c"
+        var $98=HEAP[$97]; //@line 4151 "datetimemodule.c"
+        var $99=($98); //@line 4151 "datetimemodule.c"
+        var $100=($93) - ($99); //@line 4151 "datetimemodule.c"
+        var $101=($100) * 3600; //@line 4151 "datetimemodule.c"
+        var $102=$left_addr; //@line 4151 "datetimemodule.c"
+        var $103=$102; //@line 4151 "datetimemodule.c"
+        var $104=$103+13; //@line 4151 "datetimemodule.c"
+        var $105=$104+5; //@line 4151 "datetimemodule.c"
+        var $106=HEAP[$105]; //@line 4151 "datetimemodule.c"
+        var $107=($106); //@line 4151 "datetimemodule.c"
+        var $108=$right_addr; //@line 4151 "datetimemodule.c"
+        var $109=$108; //@line 4151 "datetimemodule.c"
+        var $110=$109+13; //@line 4151 "datetimemodule.c"
+        var $111=$110+5; //@line 4151 "datetimemodule.c"
+        var $112=HEAP[$111]; //@line 4151 "datetimemodule.c"
+        var $113=($112); //@line 4151 "datetimemodule.c"
+        var $114=($107) - ($113); //@line 4151 "datetimemodule.c"
+        var $115=($114) * 60; //@line 4151 "datetimemodule.c"
+        var $116=$left_addr; //@line 4151 "datetimemodule.c"
+        var $117=$116; //@line 4151 "datetimemodule.c"
+        var $118=$117+13; //@line 4151 "datetimemodule.c"
+        var $119=$118+6; //@line 4151 "datetimemodule.c"
+        var $120=HEAP[$119]; //@line 4151 "datetimemodule.c"
+        var $121=($120); //@line 4151 "datetimemodule.c"
+        var $122=$right_addr; //@line 4151 "datetimemodule.c"
+        var $123=$122; //@line 4151 "datetimemodule.c"
+        var $124=$123+13; //@line 4151 "datetimemodule.c"
+        var $125=$124+6; //@line 4151 "datetimemodule.c"
+        var $126=HEAP[$125]; //@line 4151 "datetimemodule.c"
+        var $127=($126); //@line 4151 "datetimemodule.c"
+        var $_neg=0 - ($127);
+        var $128=($121) + ($101); //@line 4151 "datetimemodule.c"
+        var $129=($128) + ($115);
+        var $130=($129) + ($_neg); //@line 4151 "datetimemodule.c"
+        $delta_s=$130; //@line 4151 "datetimemodule.c"
+        var $131=$left_addr; //@line 4157 "datetimemodule.c"
+        var $132=$131; //@line 4157 "datetimemodule.c"
+        var $133=$132+13; //@line 4157 "datetimemodule.c"
+        var $134=$133+7; //@line 4157 "datetimemodule.c"
+        var $135=HEAP[$134]; //@line 4157 "datetimemodule.c"
+        var $136=($135); //@line 4157 "datetimemodule.c"
+        var $137=($136) << 16; //@line 4157 "datetimemodule.c"
+        var $138=$left_addr; //@line 4157 "datetimemodule.c"
+        var $139=$138; //@line 4157 "datetimemodule.c"
+        var $140=$139+13; //@line 4157 "datetimemodule.c"
+        var $141=$140+8; //@line 4157 "datetimemodule.c"
+        var $142=HEAP[$141]; //@line 4157 "datetimemodule.c"
+        var $143=($142); //@line 4157 "datetimemodule.c"
+        var $144=($143) << 8; //@line 4157 "datetimemodule.c"
+        var $145=$left_addr; //@line 4157 "datetimemodule.c"
+        var $146=$145; //@line 4157 "datetimemodule.c"
+        var $147=$146+13; //@line 4157 "datetimemodule.c"
+        var $148=$147+9; //@line 4157 "datetimemodule.c"
+        var $149=HEAP[$148]; //@line 4157 "datetimemodule.c"
+        var $150=($149); //@line 4157 "datetimemodule.c"
+        var $151=($144) | ($137); //@line 4157 "datetimemodule.c"
+        var $152=($151) | ($150); //@line 4157 "datetimemodule.c"
+        var $153=$right_addr; //@line 4157 "datetimemodule.c"
+        var $154=$153; //@line 4157 "datetimemodule.c"
+        var $155=$154+13; //@line 4157 "datetimemodule.c"
+        var $156=$155+7; //@line 4157 "datetimemodule.c"
+        var $157=HEAP[$156]; //@line 4157 "datetimemodule.c"
+        var $158=($157); //@line 4157 "datetimemodule.c"
+        var $159=($158) << 16; //@line 4157 "datetimemodule.c"
+        var $160=$right_addr; //@line 4157 "datetimemodule.c"
+        var $161=$160; //@line 4157 "datetimemodule.c"
+        var $162=$161+13; //@line 4157 "datetimemodule.c"
+        var $163=$162+8; //@line 4157 "datetimemodule.c"
+        var $164=HEAP[$163]; //@line 4157 "datetimemodule.c"
+        var $165=($164); //@line 4157 "datetimemodule.c"
+        var $166=($165) << 8; //@line 4157 "datetimemodule.c"
+        var $167=$right_addr; //@line 4157 "datetimemodule.c"
+        var $168=$167; //@line 4157 "datetimemodule.c"
+        var $169=$168+13; //@line 4157 "datetimemodule.c"
+        var $170=$169+9; //@line 4157 "datetimemodule.c"
+        var $171=HEAP[$170]; //@line 4157 "datetimemodule.c"
+        var $172=($171); //@line 4157 "datetimemodule.c"
+        var $173=($166) | ($159); //@line 4157 "datetimemodule.c"
+        var $174=($173) | ($172); //@line 4157 "datetimemodule.c"
+        var $175=($152) - ($174); //@line 4157 "datetimemodule.c"
+        $delta_us=$175; //@line 4157 "datetimemodule.c"
+        var $176=HEAP[$offset2]; //@line 4162 "datetimemodule.c"
+        var $177=HEAP[$offset1]; //@line 4162 "datetimemodule.c"
+        var $178=($176) - ($177); //@line 4162 "datetimemodule.c"
+        var $179=($178) * 60; //@line 4162 "datetimemodule.c"
+        var $180=$delta_s; //@line 4162 "datetimemodule.c"
+        var $181=($179) + ($180); //@line 4162 "datetimemodule.c"
+        $delta_s=$181; //@line 4162 "datetimemodule.c"
+        var $182=$delta_d; //@line 4163 "datetimemodule.c"
+        var $183=$delta_s; //@line 4163 "datetimemodule.c"
+        var $184=$delta_us; //@line 4163 "datetimemodule.c"
+        var $185=_new_delta_ex($182, $183, $184, 1, _PyDateTime_DeltaType); //@line 4163 "datetimemodule.c"
+        $result=$185; //@line 4163 "datetimemodule.c"
         __lastLabel__ = 11; __label__ = 16; break; //@line 4163 "datetimemodule.c"
       case 12: // $bb11
-        var $204=$right_addr; //@line 4165 "datetimemodule.c"
-        var $205=$204+4; //@line 4165 "datetimemodule.c"
-        var $206=HEAP[$205]; //@line 4165 "datetimemodule.c"
-        var $207=($206)==(_PyDateTime_DeltaType); //@line 4165 "datetimemodule.c"
-        if ($207) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 4165 "datetimemodule.c"
+        var $186=$right_addr; //@line 4165 "datetimemodule.c"
+        var $187=$186+4; //@line 4165 "datetimemodule.c"
+        var $188=HEAP[$187]; //@line 4165 "datetimemodule.c"
+        var $189=($188)==(_PyDateTime_DeltaType); //@line 4165 "datetimemodule.c"
+        if ($189) { __label__ = 14; break; } else { __label__ = 13; break; } //@line 4165 "datetimemodule.c"
       case 13: // $bb12
-        var $208=$right_addr; //@line 4165 "datetimemodule.c"
-        var $209=$208+4; //@line 4165 "datetimemodule.c"
-        var $210=HEAP[$209]; //@line 4165 "datetimemodule.c"
-        var $211=_PyType_IsSubtype($210, _PyDateTime_DeltaType); //@line 4165 "datetimemodule.c"
-        var $212=($211)!=0; //@line 4165 "datetimemodule.c"
-        if ($212) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 4165 "datetimemodule.c"
+        var $190=$right_addr; //@line 4165 "datetimemodule.c"
+        var $191=$190+4; //@line 4165 "datetimemodule.c"
+        var $192=HEAP[$191]; //@line 4165 "datetimemodule.c"
+        var $193=_PyType_IsSubtype($192, _PyDateTime_DeltaType); //@line 4165 "datetimemodule.c"
+        var $194=($193)!=0; //@line 4165 "datetimemodule.c"
+        if ($194) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 4165 "datetimemodule.c"
       case 14: // $bb13
-        var $213=$right_addr; //@line 4167 "datetimemodule.c"
-        var $214=$213; //@line 4167 "datetimemodule.c"
-        var $215=$left_addr; //@line 4167 "datetimemodule.c"
-        var $216=$215; //@line 4167 "datetimemodule.c"
-        var $217=_add_datetime_timedelta($216, $214, -1); //@line 4167 "datetimemodule.c"
-        $result=$217; //@line 4167 "datetimemodule.c"
+        var $195=$right_addr; //@line 4167 "datetimemodule.c"
+        var $196=$195; //@line 4167 "datetimemodule.c"
+        var $197=$left_addr; //@line 4167 "datetimemodule.c"
+        var $198=$197; //@line 4167 "datetimemodule.c"
+        var $199=_add_datetime_timedelta($198, $196, -1); //@line 4167 "datetimemodule.c"
+        $result=$199; //@line 4167 "datetimemodule.c"
         __lastLabel__ = 14; __label__ = 16; break; //@line 4167 "datetimemodule.c"
       case 15: // $bb14thread_pre_split
         var $_pr=$result;
         __lastLabel__ = 15; __label__ = 16; break;
       case 16: // $bb14
-        var $218=__lastLabel__ == 15 ? $_pr : (__lastLabel__ == 14 ? $217 : ($203));
-        var $219=($218)==(__Py_NotImplementedStruct); //@line 4174 "datetimemodule.c"
-        if ($219) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 4174 "datetimemodule.c"
+        var $200=__lastLabel__ == 15 ? $_pr : (__lastLabel__ == 14 ? $199 : ($185));
+        var $201=($200)==(__Py_NotImplementedStruct); //@line 4174 "datetimemodule.c"
+        if ($201) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 4174 "datetimemodule.c"
       case 17: // $bb15
-        var $220=$result; //@line 4175 "datetimemodule.c"
-        var $221=$220; //@line 4175 "datetimemodule.c"
-        var $222=HEAP[$221]; //@line 4175 "datetimemodule.c"
-        var $223=($222) + 1; //@line 4175 "datetimemodule.c"
-        var $224=$result; //@line 4175 "datetimemodule.c"
-        var $225=$224; //@line 4175 "datetimemodule.c"
-        HEAP[$225]=$223; //@line 4175 "datetimemodule.c"
+        var $202=$result; //@line 4175 "datetimemodule.c"
+        var $203=$202; //@line 4175 "datetimemodule.c"
+        var $204=HEAP[$203]; //@line 4175 "datetimemodule.c"
+        var $205=($204) + 1; //@line 4175 "datetimemodule.c"
+        var $206=$result; //@line 4175 "datetimemodule.c"
+        var $207=$206; //@line 4175 "datetimemodule.c"
+        HEAP[$207]=$205; //@line 4175 "datetimemodule.c"
         __label__ = 18; break; //@line 4175 "datetimemodule.c"
       case 18: // $bb16
-        var $226=$result; //@line 4176 "datetimemodule.c"
-        $2=$226; //@line 4176 "datetimemodule.c"
+        var $208=$result; //@line 4176 "datetimemodule.c"
+        $0=$208; //@line 4176 "datetimemodule.c"
         __label__ = 19; break; //@line 4176 "datetimemodule.c"
       case 19: // $bb17
-        var $227=$2; //@line 4133 "datetimemodule.c"
-        $retval=$227; //@line 4133 "datetimemodule.c"
+        var $209=$0; //@line 4133 "datetimemodule.c"
+        $retval=$209; //@line 4133 "datetimemodule.c"
         var $retval18=$retval; //@line 4133 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval18; //@line 4133 "datetimemodule.c"
@@ -14370,7 +13663,7 @@ var _initialized_b;
         var $86=($85) | ($79); //@line 4189 "datetimemodule.c"
         var $buffer1=$buffer; //@line 4189 "datetimemodule.c"
         var $87=$type_name; //@line 4189 "datetimemodule.c"
-        var $88=_PyOS_snprintf($buffer1, 1000, __str235, $87, $86, $72, $66, $60, $55, $50, $45); //@line 4189 "datetimemodule.c"
+        var $88=_PyOS_snprintf($buffer1, 1000, __str235, allocate([$87,0,0,0,$86,0,0,0,$72,0,0,0,$66,0,0,0,$60,0,0,0,$55,0,0,0,$50,0,0,0,$45,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 4189 "datetimemodule.c"
         __label__ = 5; break; //@line 4189 "datetimemodule.c"
       case 2: // $bb2
         var $89=$28+6; //@line 4197 "datetimemodule.c"
@@ -14421,7 +13714,7 @@ var _initialized_b;
         var $132=($131) | ($125); //@line 4198 "datetimemodule.c"
         var $buffer4=$buffer; //@line 4198 "datetimemodule.c"
         var $133=$type_name; //@line 4198 "datetimemodule.c"
-        var $134=_PyOS_snprintf($buffer4, 1000, __str236, $133, $132, $118, $112, $106, $101, $96); //@line 4198 "datetimemodule.c"
+        var $134=_PyOS_snprintf($buffer4, 1000, __str236, allocate([$133,0,0,0,$132,0,0,0,$118,0,0,0,$112,0,0,0,$106,0,0,0,$101,0,0,0,$96,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 4198 "datetimemodule.c"
         __label__ = 5; break; //@line 4198 "datetimemodule.c"
       case 4: // $bb5
         var $135=$93+5; //@line 4206 "datetimemodule.c"
@@ -14460,7 +13753,7 @@ var _initialized_b;
         var $168=($167) | ($161); //@line 4206 "datetimemodule.c"
         var $buffer6=$buffer; //@line 4206 "datetimemodule.c"
         var $169=$type_name; //@line 4206 "datetimemodule.c"
-        var $170=_PyOS_snprintf($buffer6, 1000, __str237, $169, $168, $154, $148, $142, $137); //@line 4206 "datetimemodule.c"
+        var $170=_PyOS_snprintf($buffer6, 1000, __str237, allocate([$169,0,0,0,$168,0,0,0,$154,0,0,0,$148,0,0,0,$142,0,0,0,$137,0,0,0], ["i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 4206 "datetimemodule.c"
         __label__ = 5; break; //@line 4206 "datetimemodule.c"
       case 5: // $bb7
         var $buffer8=$buffer; //@line 4212 "datetimemodule.c"
@@ -14508,7 +13801,7 @@ var _initialized_b;
     $self_addr=$self;
     var $1=$self_addr; //@line 4221 "datetimemodule.c"
     var $2=$1; //@line 4221 "datetimemodule.c"
-    var $3=__PyObject_CallMethod_SizeT($2, __str146, __str238, __str239); //@line 4221 "datetimemodule.c"
+    var $3=__PyObject_CallMethod_SizeT($2, __str146, __str238, allocate([__str239,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 4221 "datetimemodule.c"
     $0=$3; //@line 4221 "datetimemodule.c"
     var $4=$0; //@line 4221 "datetimemodule.c"
     $retval=$4; //@line 4221 "datetimemodule.c"
@@ -14539,7 +13832,7 @@ var _initialized_b;
         HEAP[$sep]=84; //@line 4227 "datetimemodule.c"
         var $1=$args_addr; //@line 4233 "datetimemodule.c"
         var $2=$kw_addr; //@line 4233 "datetimemodule.c"
-        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str240, _keywords_13363, $sep); //@line 4233 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str240, _keywords_13363, allocate([$sep,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 4233 "datetimemodule.c"
         var $4=($3)==0; //@line 4233 "datetimemodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4233 "datetimemodule.c"
       case 1: // $bb
@@ -14692,16 +13985,12 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $a_addr_i;
-        var $b_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $other_addr;
         var $op_addr;
         var $retval;
         var $iftmp_510;
-        var $1;
+        var $0;
         var $diff;
         var $n1=__stackBase__;
         var $n2=__stackBase__+4;
@@ -14712,53 +14001,53 @@ var _initialized_b;
         $self_addr=$self;
         $other_addr=$other;
         $op_addr=$op;
-        var $2=$other_addr; //@line 4276 "datetimemodule.c"
-        var $3=$2+4; //@line 4276 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 4276 "datetimemodule.c"
-        var $5=($4)!=(_PyDateTime_DateTimeType); //@line 4276 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 12; break; } //@line 4276 "datetimemodule.c"
+        var $1=$other_addr; //@line 4276 "datetimemodule.c"
+        var $2=$1+4; //@line 4276 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 4276 "datetimemodule.c"
+        var $4=($3)!=(_PyDateTime_DateTimeType); //@line 4276 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 12; break; } //@line 4276 "datetimemodule.c"
       case 1: // $bb
-        var $6=$other_addr; //@line 4276 "datetimemodule.c"
-        var $7=$6+4; //@line 4276 "datetimemodule.c"
-        var $8=HEAP[$7]; //@line 4276 "datetimemodule.c"
-        var $9=_PyType_IsSubtype($8, _PyDateTime_DateTimeType); //@line 4276 "datetimemodule.c"
-        var $10=($9)==0; //@line 4276 "datetimemodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 12; break; } //@line 4276 "datetimemodule.c"
+        var $5=$other_addr; //@line 4276 "datetimemodule.c"
+        var $6=$5+4; //@line 4276 "datetimemodule.c"
+        var $7=HEAP[$6]; //@line 4276 "datetimemodule.c"
+        var $8=_PyType_IsSubtype($7, _PyDateTime_DateTimeType); //@line 4276 "datetimemodule.c"
+        var $9=($8)==0; //@line 4276 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 12; break; } //@line 4276 "datetimemodule.c"
       case 2: // $bb1
-        var $11=$other_addr; //@line 4286 "datetimemodule.c"
-        var $12=_PyObject_HasAttrString($11, __str149); //@line 4286 "datetimemodule.c"
-        var $13=($12)!=0; //@line 4286 "datetimemodule.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 4286 "datetimemodule.c"
+        var $10=$other_addr; //@line 4286 "datetimemodule.c"
+        var $11=_PyObject_HasAttrString($10, __str149); //@line 4286 "datetimemodule.c"
+        var $12=($11)!=0; //@line 4286 "datetimemodule.c"
+        if ($12) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 4286 "datetimemodule.c"
       case 3: // $bb2
-        var $14=$other_addr; //@line 4286 "datetimemodule.c"
-        var $15=$14+4; //@line 4286 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 4286 "datetimemodule.c"
-        var $17=($16)!=(_PyDateTime_DateType); //@line 4286 "datetimemodule.c"
-        if ($17) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 4286 "datetimemodule.c"
+        var $13=$other_addr; //@line 4286 "datetimemodule.c"
+        var $14=$13+4; //@line 4286 "datetimemodule.c"
+        var $15=HEAP[$14]; //@line 4286 "datetimemodule.c"
+        var $16=($15)!=(_PyDateTime_DateType); //@line 4286 "datetimemodule.c"
+        if ($16) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 4286 "datetimemodule.c"
       case 4: // $bb3
-        var $18=$other_addr; //@line 4286 "datetimemodule.c"
-        var $19=$18+4; //@line 4286 "datetimemodule.c"
-        var $20=HEAP[$19]; //@line 4286 "datetimemodule.c"
-        var $21=_PyType_IsSubtype($20, _PyDateTime_DateType); //@line 4286 "datetimemodule.c"
-        var $22=($21)==0; //@line 4286 "datetimemodule.c"
-        if ($22) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4286 "datetimemodule.c"
+        var $17=$other_addr; //@line 4286 "datetimemodule.c"
+        var $18=$17+4; //@line 4286 "datetimemodule.c"
+        var $19=HEAP[$18]; //@line 4286 "datetimemodule.c"
+        var $20=_PyType_IsSubtype($19, _PyDateTime_DateType); //@line 4286 "datetimemodule.c"
+        var $21=($20)==0; //@line 4286 "datetimemodule.c"
+        if ($21) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4286 "datetimemodule.c"
       case 5: // $bb4
-        var $23=HEAP[__Py_NotImplementedStruct]; //@line 4289 "datetimemodule.c"
-        var $24=($23) + 1; //@line 4289 "datetimemodule.c"
-        HEAP[__Py_NotImplementedStruct]=$24; //@line 4289 "datetimemodule.c"
-        $1=__Py_NotImplementedStruct; //@line 4290 "datetimemodule.c"
+        var $22=HEAP[__Py_NotImplementedStruct]; //@line 4289 "datetimemodule.c"
+        var $23=($22) + 1; //@line 4289 "datetimemodule.c"
+        HEAP[__Py_NotImplementedStruct]=$23; //@line 4289 "datetimemodule.c"
+        $0=__Py_NotImplementedStruct; //@line 4290 "datetimemodule.c"
         __label__ = 35; break; //@line 4290 "datetimemodule.c"
       case 6: // $bb5
-        var $25=$op_addr; //@line 4292 "datetimemodule.c"
-        var $26=($25)==2; //@line 4292 "datetimemodule.c"
-        var $27=$op_addr; //@line 4292 "datetimemodule.c"
-        var $28=($27)==3; //@line 4292 "datetimemodule.c"
-        var $or_cond=($26) | ($28);
+        var $24=$op_addr; //@line 4292 "datetimemodule.c"
+        var $25=($24)==2; //@line 4292 "datetimemodule.c"
+        var $26=$op_addr; //@line 4292 "datetimemodule.c"
+        var $27=($26)==3; //@line 4292 "datetimemodule.c"
+        var $or_cond=($25) | ($27);
         if ($or_cond) { __label__ = 7; break; } else { __label__ = 11; break; } //@line 4292 "datetimemodule.c"
       case 7: // $bb7
-        var $29=$op_addr; //@line 4293 "datetimemodule.c"
-        var $30=($29)==2; //@line 4293 "datetimemodule.c"
-        if ($30) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4293 "datetimemodule.c"
+        var $28=$op_addr; //@line 4293 "datetimemodule.c"
+        var $29=($28)==2; //@line 4293 "datetimemodule.c"
+        if ($29) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4293 "datetimemodule.c"
       case 8: // $bb8
         $iftmp_510=__Py_ZeroStruct; //@line 4293 "datetimemodule.c"
         __label__ = 10; break; //@line 4293 "datetimemodule.c"
@@ -14766,186 +14055,169 @@ var _initialized_b;
         $iftmp_510=__Py_TrueStruct; //@line 4293 "datetimemodule.c"
         __label__ = 10; break; //@line 4293 "datetimemodule.c"
       case 10: // $bb10
-        var $31=$iftmp_510; //@line 4293 "datetimemodule.c"
-        $result=$31; //@line 4293 "datetimemodule.c"
-        var $32=$result; //@line 4294 "datetimemodule.c"
-        var $33=$32; //@line 4294 "datetimemodule.c"
-        var $34=HEAP[$33]; //@line 4294 "datetimemodule.c"
-        var $35=($34) + 1; //@line 4294 "datetimemodule.c"
-        var $36=$result; //@line 4294 "datetimemodule.c"
-        var $37=$36; //@line 4294 "datetimemodule.c"
-        HEAP[$37]=$35; //@line 4294 "datetimemodule.c"
-        var $38=$result; //@line 4295 "datetimemodule.c"
-        $1=$38; //@line 4295 "datetimemodule.c"
+        var $30=$iftmp_510; //@line 4293 "datetimemodule.c"
+        $result=$30; //@line 4293 "datetimemodule.c"
+        var $31=$result; //@line 4294 "datetimemodule.c"
+        var $32=$31; //@line 4294 "datetimemodule.c"
+        var $33=HEAP[$32]; //@line 4294 "datetimemodule.c"
+        var $34=($33) + 1; //@line 4294 "datetimemodule.c"
+        var $35=$result; //@line 4294 "datetimemodule.c"
+        var $36=$35; //@line 4294 "datetimemodule.c"
+        HEAP[$36]=$34; //@line 4294 "datetimemodule.c"
+        var $37=$result; //@line 4295 "datetimemodule.c"
+        $0=$37; //@line 4295 "datetimemodule.c"
         __label__ = 35; break; //@line 4295 "datetimemodule.c"
       case 11: // $bb11
-        var $39=$self_addr; //@line 4298 "datetimemodule.c"
-        var $40=$39; //@line 4298 "datetimemodule.c"
-        var $41=$other_addr; //@line 4298 "datetimemodule.c"
-        $a_addr_i=$40;
-        $b_addr_i=$41;
-        var $42=$b_addr_i; //@line 1466 "datetimemodule.c"
-        var $43=$42+4; //@line 1466 "datetimemodule.c"
-        var $44=HEAP[$43]; //@line 1466 "datetimemodule.c"
-        var $45=$44+12; //@line 1466 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 1466 "datetimemodule.c"
-        var $47=$a_addr_i; //@line 1466 "datetimemodule.c"
-        var $48=$47+4; //@line 1466 "datetimemodule.c"
-        var $49=HEAP[$48]; //@line 1466 "datetimemodule.c"
-        var $50=$49+12; //@line 1466 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 1466 "datetimemodule.c"
-        var $52=HEAP[_PyExc_TypeError]; //@line 1466 "datetimemodule.c"
-        var $53=_PyErr_Format($52, __str103, $51, $46); //@line 1466 "datetimemodule.c"
-        $0=0; //@line 1469 "datetimemodule.c"
-        var $54=$0; //@line 1469 "datetimemodule.c"
-        $retval_i=$54; //@line 1469 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 1469 "datetimemodule.c"
-        $1=$retval1_i; //@line 4298 "datetimemodule.c"
+        var $38=$self_addr; //@line 4298 "datetimemodule.c"
+        var $39=$38; //@line 4298 "datetimemodule.c"
+        var $40=$other_addr; //@line 4298 "datetimemodule.c"
+        var $41=_cmperror($39, $40); //@line 4298 "datetimemodule.c"
+        $0=$41; //@line 4298 "datetimemodule.c"
         __label__ = 35; break; //@line 4298 "datetimemodule.c"
       case 12: // $bb12
-        var $55=$self_addr; //@line 4301 "datetimemodule.c"
-        var $56=$55; //@line 4301 "datetimemodule.c"
-        var $57=$self_addr; //@line 4301 "datetimemodule.c"
-        var $58=$57; //@line 4301 "datetimemodule.c"
-        var $59=$other_addr; //@line 4301 "datetimemodule.c"
-        var $60=$other_addr; //@line 4301 "datetimemodule.c"
-        var $61=_classify_two_utcoffsets($58, $offset1, $n1, $56, $59, $offset2, $n2, $60); //@line 4301 "datetimemodule.c"
-        var $62=($61) < 0; //@line 4301 "datetimemodule.c"
-        if ($62) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 4301 "datetimemodule.c"
+        var $42=$self_addr; //@line 4301 "datetimemodule.c"
+        var $43=$42; //@line 4301 "datetimemodule.c"
+        var $44=$self_addr; //@line 4301 "datetimemodule.c"
+        var $45=$44; //@line 4301 "datetimemodule.c"
+        var $46=$other_addr; //@line 4301 "datetimemodule.c"
+        var $47=$other_addr; //@line 4301 "datetimemodule.c"
+        var $48=_classify_two_utcoffsets($45, $offset1, $n1, $43, $46, $offset2, $n2, $47); //@line 4301 "datetimemodule.c"
+        var $49=($48) < 0; //@line 4301 "datetimemodule.c"
+        if ($49) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 4301 "datetimemodule.c"
       case 13: // $bb13
-        $1=0; //@line 4305 "datetimemodule.c"
+        $0=0; //@line 4305 "datetimemodule.c"
         __label__ = 35; break; //@line 4305 "datetimemodule.c"
       case 14: // $bb14
-        var $63=HEAP[$n1]; //@line 4306 "datetimemodule.c"
-        var $64=($63)==1; //@line 4306 "datetimemodule.c"
-        if ($64) { __label__ = 16; break; } else { __label__ = 15; break; } //@line 4306 "datetimemodule.c"
+        var $50=HEAP[$n1]; //@line 4306 "datetimemodule.c"
+        var $51=($50)==1; //@line 4306 "datetimemodule.c"
+        if ($51) { __label__ = 16; break; } else { __label__ = 15; break; } //@line 4306 "datetimemodule.c"
       case 15: // $bb15
-        var $65=HEAP[$n2]; //@line 4306 "datetimemodule.c"
-        var $66=($65)==1; //@line 4306 "datetimemodule.c"
-        if ($66) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 4306 "datetimemodule.c"
+        var $52=HEAP[$n2]; //@line 4306 "datetimemodule.c"
+        var $53=($52)==1; //@line 4306 "datetimemodule.c"
+        if ($53) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 4306 "datetimemodule.c"
       case 16: // $bb16
         ___assert_fail(__str203, __str1, 4306, ___PRETTY_FUNCTION___13435); //@line 4306 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4306 "datetimemodule.c"
       case 17: // $bb17
-        var $67=HEAP[$n1]; //@line 4311 "datetimemodule.c"
-        var $68=HEAP[$n2]; //@line 4311 "datetimemodule.c"
-        var $69=($67)==($68); //@line 4311 "datetimemodule.c"
-        if ($69) { __lastLabel__ = 17; __label__ = 18; break; } else { __lastLabel__ = 17; __label__ = 21; break; } //@line 4311 "datetimemodule.c"
+        var $54=HEAP[$n1]; //@line 4311 "datetimemodule.c"
+        var $55=HEAP[$n2]; //@line 4311 "datetimemodule.c"
+        var $56=($54)==($55); //@line 4311 "datetimemodule.c"
+        if ($56) { __lastLabel__ = 17; __label__ = 18; break; } else { __lastLabel__ = 17; __label__ = 21; break; } //@line 4311 "datetimemodule.c"
       case 18: // $bb18
-        var $70=HEAP[$offset1]; //@line 4311 "datetimemodule.c"
-        var $71=HEAP[$offset2]; //@line 4311 "datetimemodule.c"
-        var $72=($70)==($71); //@line 4311 "datetimemodule.c"
-        if ($72) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 4311 "datetimemodule.c"
+        var $57=HEAP[$offset1]; //@line 4311 "datetimemodule.c"
+        var $58=HEAP[$offset2]; //@line 4311 "datetimemodule.c"
+        var $59=($57)==($58); //@line 4311 "datetimemodule.c"
+        if ($59) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 4311 "datetimemodule.c"
       case 19: // $bb19
-        var $73=$other_addr; //@line 4312 "datetimemodule.c"
-        var $74=$73; //@line 4312 "datetimemodule.c"
-        var $75=$74+13; //@line 4312 "datetimemodule.c"
-        var $76=$75; //@line 4312 "datetimemodule.c"
-        var $77=$self_addr; //@line 4312 "datetimemodule.c"
-        var $78=$77+13; //@line 4312 "datetimemodule.c"
-        var $79=$78; //@line 4312 "datetimemodule.c"
-        var $80=_memcmp($79, $76, 10); //@line 4312 "datetimemodule.c"
-        $diff=$80; //@line 4312 "datetimemodule.c"
-        var $81=$diff; //@line 4314 "datetimemodule.c"
-        var $82=$op_addr; //@line 4314 "datetimemodule.c"
-        var $83=_diff_to_bool($81, $82); //@line 4314 "datetimemodule.c"
-        $1=$83; //@line 4314 "datetimemodule.c"
+        var $60=$other_addr; //@line 4312 "datetimemodule.c"
+        var $61=$60; //@line 4312 "datetimemodule.c"
+        var $62=$61+13; //@line 4312 "datetimemodule.c"
+        var $63=$62; //@line 4312 "datetimemodule.c"
+        var $64=$self_addr; //@line 4312 "datetimemodule.c"
+        var $65=$64+13; //@line 4312 "datetimemodule.c"
+        var $66=$65; //@line 4312 "datetimemodule.c"
+        var $67=_memcmp($66, $63, 10); //@line 4312 "datetimemodule.c"
+        $diff=$67; //@line 4312 "datetimemodule.c"
+        var $68=$diff; //@line 4314 "datetimemodule.c"
+        var $69=$op_addr; //@line 4314 "datetimemodule.c"
+        var $70=_diff_to_bool($68, $69); //@line 4314 "datetimemodule.c"
+        $0=$70; //@line 4314 "datetimemodule.c"
         __label__ = 35; break; //@line 4314 "datetimemodule.c"
       case 20: // $bb20thread_pre_split
         var $_pr=HEAP[$n1];
         __lastLabel__ = 20; __label__ = 21; break;
       case 21: // $bb20
-        var $84=__lastLabel__ == 20 ? $_pr : ($67);
-        var $85=($84)==3; //@line 4317 "datetimemodule.c"
-        if ($85) { __label__ = 22; break; } else { __label__ = 32; break; } //@line 4317 "datetimemodule.c"
+        var $71=__lastLabel__ == 20 ? $_pr : ($54);
+        var $72=($71)==3; //@line 4317 "datetimemodule.c"
+        if ($72) { __label__ = 22; break; } else { __label__ = 32; break; } //@line 4317 "datetimemodule.c"
       case 22: // $bb21
-        var $86=HEAP[$n2]; //@line 4317 "datetimemodule.c"
-        var $87=($86)==3; //@line 4317 "datetimemodule.c"
-        if ($87) { __label__ = 23; break; } else { __label__ = 32; break; } //@line 4317 "datetimemodule.c"
+        var $73=HEAP[$n2]; //@line 4317 "datetimemodule.c"
+        var $74=($73)==3; //@line 4317 "datetimemodule.c"
+        if ($74) { __label__ = 23; break; } else { __label__ = 32; break; } //@line 4317 "datetimemodule.c"
       case 23: // $bb22
-        var $88=HEAP[$offset1]; //@line 4320 "datetimemodule.c"
-        var $89=HEAP[$offset2]; //@line 4320 "datetimemodule.c"
-        var $90=($88)==($89); //@line 4320 "datetimemodule.c"
-        if ($90) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 4320 "datetimemodule.c"
+        var $75=HEAP[$offset1]; //@line 4320 "datetimemodule.c"
+        var $76=HEAP[$offset2]; //@line 4320 "datetimemodule.c"
+        var $77=($75)==($76); //@line 4320 "datetimemodule.c"
+        if ($77) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 4320 "datetimemodule.c"
       case 24: // $bb23
         ___assert_fail(__str204, __str1, 4320, ___PRETTY_FUNCTION___13435); //@line 4320 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4320 "datetimemodule.c"
       case 25: // $bb24
-        var $91=$self_addr; //@line 4321 "datetimemodule.c"
-        var $92=$91; //@line 4321 "datetimemodule.c"
-        var $93=$other_addr; //@line 4321 "datetimemodule.c"
-        var $94=_datetime_subtract($92, $93); //@line 4321 "datetimemodule.c"
-        var $95=$94; //@line 4321 "datetimemodule.c"
-        $delta=$95; //@line 4321 "datetimemodule.c"
-        var $96=$delta; //@line 4323 "datetimemodule.c"
-        var $97=($96)==0; //@line 4323 "datetimemodule.c"
-        if ($97) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 4323 "datetimemodule.c"
+        var $78=$self_addr; //@line 4321 "datetimemodule.c"
+        var $79=$78; //@line 4321 "datetimemodule.c"
+        var $80=$other_addr; //@line 4321 "datetimemodule.c"
+        var $81=_datetime_subtract($79, $80); //@line 4321 "datetimemodule.c"
+        var $82=$81; //@line 4321 "datetimemodule.c"
+        $delta=$82; //@line 4321 "datetimemodule.c"
+        var $83=$delta; //@line 4323 "datetimemodule.c"
+        var $84=($83)==0; //@line 4323 "datetimemodule.c"
+        if ($84) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 4323 "datetimemodule.c"
       case 26: // $bb25
-        $1=0; //@line 4324 "datetimemodule.c"
+        $0=0; //@line 4324 "datetimemodule.c"
         __label__ = 35; break; //@line 4324 "datetimemodule.c"
       case 27: // $bb26
-        var $98=$delta; //@line 4325 "datetimemodule.c"
-        var $99=$98+12; //@line 4325 "datetimemodule.c"
-        var $100=HEAP[$99]; //@line 4325 "datetimemodule.c"
-        $diff=$100; //@line 4325 "datetimemodule.c"
-        var $101=$diff; //@line 4326 "datetimemodule.c"
-        var $102=($101)==0; //@line 4326 "datetimemodule.c"
-        if ($102) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 4326 "datetimemodule.c"
+        var $85=$delta; //@line 4325 "datetimemodule.c"
+        var $86=$85+12; //@line 4325 "datetimemodule.c"
+        var $87=HEAP[$86]; //@line 4325 "datetimemodule.c"
+        $diff=$87; //@line 4325 "datetimemodule.c"
+        var $88=$diff; //@line 4326 "datetimemodule.c"
+        var $89=($88)==0; //@line 4326 "datetimemodule.c"
+        if ($89) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 4326 "datetimemodule.c"
       case 28: // $bb27
-        var $103=$delta; //@line 4327 "datetimemodule.c"
-        var $104=$103+16; //@line 4327 "datetimemodule.c"
-        var $105=HEAP[$104]; //@line 4327 "datetimemodule.c"
-        var $106=$delta; //@line 4327 "datetimemodule.c"
-        var $107=$106+20; //@line 4327 "datetimemodule.c"
-        var $108=HEAP[$107]; //@line 4327 "datetimemodule.c"
-        var $109=($108) | ($105); //@line 4327 "datetimemodule.c"
-        $diff=$109; //@line 4327 "datetimemodule.c"
+        var $90=$delta; //@line 4327 "datetimemodule.c"
+        var $91=$90+16; //@line 4327 "datetimemodule.c"
+        var $92=HEAP[$91]; //@line 4327 "datetimemodule.c"
+        var $93=$delta; //@line 4327 "datetimemodule.c"
+        var $94=$93+20; //@line 4327 "datetimemodule.c"
+        var $95=HEAP[$94]; //@line 4327 "datetimemodule.c"
+        var $96=($95) | ($92); //@line 4327 "datetimemodule.c"
+        $diff=$96; //@line 4327 "datetimemodule.c"
         __label__ = 29; break; //@line 4327 "datetimemodule.c"
       case 29: // $bb28
-        var $110=$delta; //@line 4329 "datetimemodule.c"
-        var $111=$110; //@line 4329 "datetimemodule.c"
-        var $112=$111; //@line 4329 "datetimemodule.c"
-        var $113=HEAP[$112]; //@line 4329 "datetimemodule.c"
-        var $114=($113) - 1; //@line 4329 "datetimemodule.c"
-        var $115=$111; //@line 4329 "datetimemodule.c"
-        HEAP[$115]=$114; //@line 4329 "datetimemodule.c"
-        var $116=$111; //@line 4329 "datetimemodule.c"
-        var $117=HEAP[$116]; //@line 4329 "datetimemodule.c"
-        var $118=($117)==0; //@line 4329 "datetimemodule.c"
-        if ($118) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 4329 "datetimemodule.c"
+        var $97=$delta; //@line 4329 "datetimemodule.c"
+        var $98=$97; //@line 4329 "datetimemodule.c"
+        var $99=$98; //@line 4329 "datetimemodule.c"
+        var $100=HEAP[$99]; //@line 4329 "datetimemodule.c"
+        var $101=($100) - 1; //@line 4329 "datetimemodule.c"
+        var $102=$98; //@line 4329 "datetimemodule.c"
+        HEAP[$102]=$101; //@line 4329 "datetimemodule.c"
+        var $103=$98; //@line 4329 "datetimemodule.c"
+        var $104=HEAP[$103]; //@line 4329 "datetimemodule.c"
+        var $105=($104)==0; //@line 4329 "datetimemodule.c"
+        if ($105) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 4329 "datetimemodule.c"
       case 30: // $bb29
-        var $119=$delta; //@line 4329 "datetimemodule.c"
-        var $120=$119; //@line 4329 "datetimemodule.c"
-        var $121=$120+4; //@line 4329 "datetimemodule.c"
-        var $122=HEAP[$121]; //@line 4329 "datetimemodule.c"
-        var $123=$122+24; //@line 4329 "datetimemodule.c"
-        var $124=HEAP[$123]; //@line 4329 "datetimemodule.c"
-        var $125=$delta; //@line 4329 "datetimemodule.c"
-        var $126=$125; //@line 4329 "datetimemodule.c"
-        FUNCTION_TABLE[$124]($126); //@line 4329 "datetimemodule.c"
+        var $106=$delta; //@line 4329 "datetimemodule.c"
+        var $107=$106; //@line 4329 "datetimemodule.c"
+        var $108=$107+4; //@line 4329 "datetimemodule.c"
+        var $109=HEAP[$108]; //@line 4329 "datetimemodule.c"
+        var $110=$109+24; //@line 4329 "datetimemodule.c"
+        var $111=HEAP[$110]; //@line 4329 "datetimemodule.c"
+        var $112=$delta; //@line 4329 "datetimemodule.c"
+        var $113=$112; //@line 4329 "datetimemodule.c"
+        FUNCTION_TABLE[$111]($113); //@line 4329 "datetimemodule.c"
         __label__ = 31; break; //@line 4329 "datetimemodule.c"
       case 31: // $bb30
-        var $127=$diff; //@line 4330 "datetimemodule.c"
-        var $128=$op_addr; //@line 4330 "datetimemodule.c"
-        var $129=_diff_to_bool($127, $128); //@line 4330 "datetimemodule.c"
-        $1=$129; //@line 4330 "datetimemodule.c"
+        var $114=$diff; //@line 4330 "datetimemodule.c"
+        var $115=$op_addr; //@line 4330 "datetimemodule.c"
+        var $116=_diff_to_bool($114, $115); //@line 4330 "datetimemodule.c"
+        $0=$116; //@line 4330 "datetimemodule.c"
         __label__ = 35; break; //@line 4330 "datetimemodule.c"
       case 32: // $bb31
-        var $130=HEAP[$n1]; //@line 4333 "datetimemodule.c"
-        var $131=HEAP[$n2]; //@line 4333 "datetimemodule.c"
-        var $132=($130)==($131); //@line 4333 "datetimemodule.c"
-        if ($132) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 4333 "datetimemodule.c"
+        var $117=HEAP[$n1]; //@line 4333 "datetimemodule.c"
+        var $118=HEAP[$n2]; //@line 4333 "datetimemodule.c"
+        var $119=($117)==($118); //@line 4333 "datetimemodule.c"
+        if ($119) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 4333 "datetimemodule.c"
       case 33: // $bb32
         ___assert_fail(__str205, __str1, 4333, ___PRETTY_FUNCTION___13435); //@line 4333 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4333 "datetimemodule.c"
       case 34: // $bb33
-        var $133=HEAP[_PyExc_TypeError]; //@line 4334 "datetimemodule.c"
-        _PyErr_SetString($133, __str243); //@line 4334 "datetimemodule.c"
-        $1=0; //@line 4337 "datetimemodule.c"
+        var $120=HEAP[_PyExc_TypeError]; //@line 4334 "datetimemodule.c"
+        _PyErr_SetString($120, __str243); //@line 4334 "datetimemodule.c"
+        $0=0; //@line 4337 "datetimemodule.c"
         __label__ = 35; break; //@line 4337 "datetimemodule.c"
       case 35: // $bb34
-        var $134=$1; //@line 4290 "datetimemodule.c"
-        $retval=$134; //@line 4290 "datetimemodule.c"
+        var $121=$0; //@line 4290 "datetimemodule.c"
+        $retval=$121; //@line 4290 "datetimemodule.c"
         var $retval35=$retval; //@line 4290 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval35; //@line 4290 "datetimemodule.c"
@@ -14961,202 +14233,183 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $n;
         var $offset=__stackBase__;
         var $temp;
         var $days;
         var $seconds;
         $self_addr=$self;
-        var $2=$self_addr; //@line 4343 "datetimemodule.c"
-        var $3=$2+8; //@line 4343 "datetimemodule.c"
-        var $4=HEAP[$3]; //@line 4343 "datetimemodule.c"
-        var $5=($4)==-1; //@line 4343 "datetimemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 15; break; } //@line 4343 "datetimemodule.c"
+        var $1=$self_addr; //@line 4343 "datetimemodule.c"
+        var $2=$1+8; //@line 4343 "datetimemodule.c"
+        var $3=HEAP[$2]; //@line 4343 "datetimemodule.c"
+        var $4=($3)==-1; //@line 4343 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 15; break; } //@line 4343 "datetimemodule.c"
       case 1: // $bb
-        var $6=$self_addr; //@line 4348 "datetimemodule.c"
-        var $7=$6; //@line 4348 "datetimemodule.c"
-        var $8=$self_addr; //@line 4348 "datetimemodule.c"
-        var $9=$8; //@line 4348 "datetimemodule.c"
-        var $10=_classify_utcoffset($9, $7, $offset); //@line 4348 "datetimemodule.c"
-        $n=$10; //@line 4348 "datetimemodule.c"
-        var $11=$n; //@line 4350 "datetimemodule.c"
-        var $12=($11)==1; //@line 4350 "datetimemodule.c"
-        if ($12) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 4350 "datetimemodule.c"
+        var $5=$self_addr; //@line 4348 "datetimemodule.c"
+        var $6=$5; //@line 4348 "datetimemodule.c"
+        var $7=$self_addr; //@line 4348 "datetimemodule.c"
+        var $8=$7; //@line 4348 "datetimemodule.c"
+        var $9=_classify_utcoffset($8, $6, $offset); //@line 4348 "datetimemodule.c"
+        $n=$9; //@line 4348 "datetimemodule.c"
+        var $10=$n; //@line 4350 "datetimemodule.c"
+        var $11=($10)==1; //@line 4350 "datetimemodule.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 4350 "datetimemodule.c"
       case 2: // $bb1
         ___assert_fail(__str207, __str1, 4350, ___PRETTY_FUNCTION___13531); //@line 4350 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4350 "datetimemodule.c"
       case 3: // $bb2
-        var $13=$n; //@line 4351 "datetimemodule.c"
-        var $14=($13)==0; //@line 4351 "datetimemodule.c"
-        if ($14) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4351 "datetimemodule.c"
+        var $12=$n; //@line 4351 "datetimemodule.c"
+        var $13=($12)==0; //@line 4351 "datetimemodule.c"
+        if ($13) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4351 "datetimemodule.c"
       case 4: // $bb3
-        $1=-1; //@line 4352 "datetimemodule.c"
+        $0=-1; //@line 4352 "datetimemodule.c"
         __label__ = 16; break; //@line 4352 "datetimemodule.c"
       case 5: // $bb4
-        var $15=$n; //@line 4355 "datetimemodule.c"
-        var $16=($15)==2; //@line 4355 "datetimemodule.c"
-        if ($16) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 4355 "datetimemodule.c"
+        var $14=$n; //@line 4355 "datetimemodule.c"
+        var $15=($14)==2; //@line 4355 "datetimemodule.c"
+        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 4355 "datetimemodule.c"
       case 6: // $bb5
-        var $17=$self_addr; //@line 4356 "datetimemodule.c"
-        var $18=$17+13; //@line 4356 "datetimemodule.c"
-        var $19=$18; //@line 4356 "datetimemodule.c"
-        var $20=_PyString_FromStringAndSize($19, 10); //@line 4356 "datetimemodule.c"
-        $temp=$20; //@line 4356 "datetimemodule.c"
+        var $16=$self_addr; //@line 4356 "datetimemodule.c"
+        var $17=$16+13; //@line 4356 "datetimemodule.c"
+        var $18=$17; //@line 4356 "datetimemodule.c"
+        var $19=_PyString_FromStringAndSize($18, 10); //@line 4356 "datetimemodule.c"
+        $temp=$19; //@line 4356 "datetimemodule.c"
         __lastLabel__ = 6; __label__ = 12; break; //@line 4356 "datetimemodule.c"
       case 7: // $bb6
-        var $21=$n; //@line 4363 "datetimemodule.c"
-        var $22=($21)!=3; //@line 4363 "datetimemodule.c"
-        if ($22) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4363 "datetimemodule.c"
+        var $20=$n; //@line 4363 "datetimemodule.c"
+        var $21=($20)!=3; //@line 4363 "datetimemodule.c"
+        if ($21) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4363 "datetimemodule.c"
       case 8: // $bb7
         ___assert_fail(__str208, __str1, 4363, ___PRETTY_FUNCTION___13531); //@line 4363 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4363 "datetimemodule.c"
       case 9: // $bb8
-        var $23=$self_addr; //@line 4364 "datetimemodule.c"
-        var $24=$23; //@line 4364 "datetimemodule.c"
-        var $25=$24+12; //@line 4364 "datetimemodule.c"
-        var $26=HEAP[$25]; //@line 4364 "datetimemodule.c"
-        var $27=($26)==0; //@line 4364 "datetimemodule.c"
-        if ($27) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 4364 "datetimemodule.c"
+        var $22=$self_addr; //@line 4364 "datetimemodule.c"
+        var $23=$22; //@line 4364 "datetimemodule.c"
+        var $24=$23+12; //@line 4364 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 4364 "datetimemodule.c"
+        var $26=($25)==0; //@line 4364 "datetimemodule.c"
+        if ($26) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 4364 "datetimemodule.c"
       case 10: // $bb9
         ___assert_fail(__str209, __str1, 4364, ___PRETTY_FUNCTION___13531); //@line 4364 "datetimemodule.c"
         throw "Reached an unreachable!" //@line 4364 "datetimemodule.c"
       case 11: // $bb10
-        var $28=$self_addr; //@line 4365 "datetimemodule.c"
-        var $29=$28; //@line 4365 "datetimemodule.c"
-        var $30=$29+13; //@line 4365 "datetimemodule.c"
-        var $31=$30+3; //@line 4365 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 4365 "datetimemodule.c"
-        var $33=($32); //@line 4365 "datetimemodule.c"
-        var $34=$self_addr; //@line 4365 "datetimemodule.c"
-        var $35=$34; //@line 4365 "datetimemodule.c"
-        var $36=$35+13; //@line 4365 "datetimemodule.c"
-        var $37=$36+2; //@line 4365 "datetimemodule.c"
-        var $38=HEAP[$37]; //@line 4365 "datetimemodule.c"
-        var $39=($38); //@line 4365 "datetimemodule.c"
-        var $40=$self_addr; //@line 4365 "datetimemodule.c"
-        var $41=$40; //@line 4365 "datetimemodule.c"
-        var $42=$41+13; //@line 4365 "datetimemodule.c"
-        var $43=$42; //@line 4365 "datetimemodule.c"
-        var $44=HEAP[$43]; //@line 4365 "datetimemodule.c"
-        var $45=($44); //@line 4365 "datetimemodule.c"
-        var $46=($45) << 8; //@line 4365 "datetimemodule.c"
-        var $47=$self_addr; //@line 4365 "datetimemodule.c"
-        var $48=$47; //@line 4365 "datetimemodule.c"
-        var $49=$48+13; //@line 4365 "datetimemodule.c"
-        var $50=$49+1; //@line 4365 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 4365 "datetimemodule.c"
-        var $52=($51); //@line 4365 "datetimemodule.c"
-        var $53=($52) | ($46); //@line 4365 "datetimemodule.c"
-        $year_addr_i=$53;
-        $month_addr_i=$39;
-        $day_addr_i=$33;
-        var $54=$year_addr_i; //@line 330 "datetimemodule.c"
-        var $55=_days_before_year($54); //@line 330 "datetimemodule.c"
-        var $56=$year_addr_i; //@line 330 "datetimemodule.c"
-        var $57=$month_addr_i; //@line 330 "datetimemodule.c"
-        var $58=_days_before_month($56, $57); //@line 330 "datetimemodule.c"
-        var $59=$day_addr_i; //@line 330 "datetimemodule.c"
-        var $60=($58) + ($55); //@line 330 "datetimemodule.c"
-        var $61=($60) + ($59); //@line 330 "datetimemodule.c"
-        $0=$61; //@line 330 "datetimemodule.c"
-        var $62=$0; //@line 330 "datetimemodule.c"
-        $retval_i=$62; //@line 330 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 330 "datetimemodule.c"
-        $days=$retval1_i; //@line 4365 "datetimemodule.c"
-        var $63=$self_addr; //@line 4368 "datetimemodule.c"
-        var $64=$63+13; //@line 4368 "datetimemodule.c"
-        var $65=$64+4; //@line 4368 "datetimemodule.c"
-        var $66=HEAP[$65]; //@line 4368 "datetimemodule.c"
-        var $67=($66); //@line 4368 "datetimemodule.c"
-        var $68=($67) * 3600; //@line 4368 "datetimemodule.c"
-        var $69=$self_addr; //@line 4368 "datetimemodule.c"
-        var $70=$69+13; //@line 4368 "datetimemodule.c"
-        var $71=$70+5; //@line 4368 "datetimemodule.c"
-        var $72=HEAP[$71]; //@line 4368 "datetimemodule.c"
-        var $73=($72); //@line 4368 "datetimemodule.c"
-        var $74=HEAP[$offset]; //@line 4368 "datetimemodule.c"
-        var $75=($73) - ($74); //@line 4368 "datetimemodule.c"
-        var $76=($75) * 60; //@line 4368 "datetimemodule.c"
-        var $77=$self_addr; //@line 4368 "datetimemodule.c"
-        var $78=$77+13; //@line 4368 "datetimemodule.c"
-        var $79=$78+6; //@line 4368 "datetimemodule.c"
-        var $80=HEAP[$79]; //@line 4368 "datetimemodule.c"
-        var $81=($80); //@line 4368 "datetimemodule.c"
-        var $82=($76) + ($68); //@line 4368 "datetimemodule.c"
-        var $83=($82) + ($81); //@line 4368 "datetimemodule.c"
-        $seconds=$83; //@line 4368 "datetimemodule.c"
-        var $84=$self_addr; //@line 4371 "datetimemodule.c"
-        var $85=$84+13; //@line 4371 "datetimemodule.c"
-        var $86=$85+7; //@line 4371 "datetimemodule.c"
-        var $87=HEAP[$86]; //@line 4371 "datetimemodule.c"
-        var $88=($87); //@line 4371 "datetimemodule.c"
-        var $89=($88) << 16; //@line 4371 "datetimemodule.c"
-        var $90=$self_addr; //@line 4371 "datetimemodule.c"
-        var $91=$90+13; //@line 4371 "datetimemodule.c"
-        var $92=$91+8; //@line 4371 "datetimemodule.c"
-        var $93=HEAP[$92]; //@line 4371 "datetimemodule.c"
-        var $94=($93); //@line 4371 "datetimemodule.c"
-        var $95=($94) << 8; //@line 4371 "datetimemodule.c"
-        var $96=$self_addr; //@line 4371 "datetimemodule.c"
-        var $97=$96+13; //@line 4371 "datetimemodule.c"
-        var $98=$97+9; //@line 4371 "datetimemodule.c"
-        var $99=HEAP[$98]; //@line 4371 "datetimemodule.c"
-        var $100=($99); //@line 4371 "datetimemodule.c"
-        var $101=($95) | ($89); //@line 4371 "datetimemodule.c"
-        var $102=($101) | ($100); //@line 4371 "datetimemodule.c"
-        var $103=$days; //@line 4371 "datetimemodule.c"
-        var $104=$seconds; //@line 4371 "datetimemodule.c"
-        var $105=_new_delta_ex($103, $104, $102, 1, _PyDateTime_DeltaType); //@line 4371 "datetimemodule.c"
-        $temp=$105; //@line 4371 "datetimemodule.c"
+        var $27=$self_addr; //@line 4365 "datetimemodule.c"
+        var $28=$27; //@line 4365 "datetimemodule.c"
+        var $29=$28+13; //@line 4365 "datetimemodule.c"
+        var $30=$29+3; //@line 4365 "datetimemodule.c"
+        var $31=HEAP[$30]; //@line 4365 "datetimemodule.c"
+        var $32=($31); //@line 4365 "datetimemodule.c"
+        var $33=$self_addr; //@line 4365 "datetimemodule.c"
+        var $34=$33; //@line 4365 "datetimemodule.c"
+        var $35=$34+13; //@line 4365 "datetimemodule.c"
+        var $36=$35+2; //@line 4365 "datetimemodule.c"
+        var $37=HEAP[$36]; //@line 4365 "datetimemodule.c"
+        var $38=($37); //@line 4365 "datetimemodule.c"
+        var $39=$self_addr; //@line 4365 "datetimemodule.c"
+        var $40=$39; //@line 4365 "datetimemodule.c"
+        var $41=$40+13; //@line 4365 "datetimemodule.c"
+        var $42=$41; //@line 4365 "datetimemodule.c"
+        var $43=HEAP[$42]; //@line 4365 "datetimemodule.c"
+        var $44=($43); //@line 4365 "datetimemodule.c"
+        var $45=($44) << 8; //@line 4365 "datetimemodule.c"
+        var $46=$self_addr; //@line 4365 "datetimemodule.c"
+        var $47=$46; //@line 4365 "datetimemodule.c"
+        var $48=$47+13; //@line 4365 "datetimemodule.c"
+        var $49=$48+1; //@line 4365 "datetimemodule.c"
+        var $50=HEAP[$49]; //@line 4365 "datetimemodule.c"
+        var $51=($50); //@line 4365 "datetimemodule.c"
+        var $52=($51) | ($45); //@line 4365 "datetimemodule.c"
+        var $53=_ymd_to_ord($52, $38, $32); //@line 4365 "datetimemodule.c"
+        $days=$53; //@line 4365 "datetimemodule.c"
+        var $54=$self_addr; //@line 4368 "datetimemodule.c"
+        var $55=$54+13; //@line 4368 "datetimemodule.c"
+        var $56=$55+4; //@line 4368 "datetimemodule.c"
+        var $57=HEAP[$56]; //@line 4368 "datetimemodule.c"
+        var $58=($57); //@line 4368 "datetimemodule.c"
+        var $59=($58) * 3600; //@line 4368 "datetimemodule.c"
+        var $60=$self_addr; //@line 4368 "datetimemodule.c"
+        var $61=$60+13; //@line 4368 "datetimemodule.c"
+        var $62=$61+5; //@line 4368 "datetimemodule.c"
+        var $63=HEAP[$62]; //@line 4368 "datetimemodule.c"
+        var $64=($63); //@line 4368 "datetimemodule.c"
+        var $65=HEAP[$offset]; //@line 4368 "datetimemodule.c"
+        var $66=($64) - ($65); //@line 4368 "datetimemodule.c"
+        var $67=($66) * 60; //@line 4368 "datetimemodule.c"
+        var $68=$self_addr; //@line 4368 "datetimemodule.c"
+        var $69=$68+13; //@line 4368 "datetimemodule.c"
+        var $70=$69+6; //@line 4368 "datetimemodule.c"
+        var $71=HEAP[$70]; //@line 4368 "datetimemodule.c"
+        var $72=($71); //@line 4368 "datetimemodule.c"
+        var $73=($67) + ($59); //@line 4368 "datetimemodule.c"
+        var $74=($73) + ($72); //@line 4368 "datetimemodule.c"
+        $seconds=$74; //@line 4368 "datetimemodule.c"
+        var $75=$self_addr; //@line 4371 "datetimemodule.c"
+        var $76=$75+13; //@line 4371 "datetimemodule.c"
+        var $77=$76+7; //@line 4371 "datetimemodule.c"
+        var $78=HEAP[$77]; //@line 4371 "datetimemodule.c"
+        var $79=($78); //@line 4371 "datetimemodule.c"
+        var $80=($79) << 16; //@line 4371 "datetimemodule.c"
+        var $81=$self_addr; //@line 4371 "datetimemodule.c"
+        var $82=$81+13; //@line 4371 "datetimemodule.c"
+        var $83=$82+8; //@line 4371 "datetimemodule.c"
+        var $84=HEAP[$83]; //@line 4371 "datetimemodule.c"
+        var $85=($84); //@line 4371 "datetimemodule.c"
+        var $86=($85) << 8; //@line 4371 "datetimemodule.c"
+        var $87=$self_addr; //@line 4371 "datetimemodule.c"
+        var $88=$87+13; //@line 4371 "datetimemodule.c"
+        var $89=$88+9; //@line 4371 "datetimemodule.c"
+        var $90=HEAP[$89]; //@line 4371 "datetimemodule.c"
+        var $91=($90); //@line 4371 "datetimemodule.c"
+        var $92=($86) | ($80); //@line 4371 "datetimemodule.c"
+        var $93=($92) | ($91); //@line 4371 "datetimemodule.c"
+        var $94=$days; //@line 4371 "datetimemodule.c"
+        var $95=$seconds; //@line 4371 "datetimemodule.c"
+        var $96=_new_delta_ex($94, $95, $93, 1, _PyDateTime_DeltaType); //@line 4371 "datetimemodule.c"
+        $temp=$96; //@line 4371 "datetimemodule.c"
         __lastLabel__ = 11; __label__ = 12; break; //@line 4371 "datetimemodule.c"
       case 12: // $bb11
-        var $106=__lastLabel__ == 11 ? $105 : ($20);
-        var $107=($106)!=0; //@line 4376 "datetimemodule.c"
-        if ($107) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 4376 "datetimemodule.c"
+        var $97=__lastLabel__ == 11 ? $96 : ($19);
+        var $98=($97)!=0; //@line 4376 "datetimemodule.c"
+        if ($98) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 4376 "datetimemodule.c"
       case 13: // $bb12
-        var $108=$temp; //@line 4377 "datetimemodule.c"
-        var $109=_PyObject_Hash($108); //@line 4377 "datetimemodule.c"
-        var $110=$self_addr; //@line 4377 "datetimemodule.c"
-        var $111=$110+8; //@line 4377 "datetimemodule.c"
-        HEAP[$111]=$109; //@line 4377 "datetimemodule.c"
-        var $112=$temp; //@line 4378 "datetimemodule.c"
-        var $113=$112; //@line 4378 "datetimemodule.c"
-        var $114=HEAP[$113]; //@line 4378 "datetimemodule.c"
-        var $115=($114) - 1; //@line 4378 "datetimemodule.c"
-        var $116=$temp; //@line 4378 "datetimemodule.c"
-        var $117=$116; //@line 4378 "datetimemodule.c"
-        HEAP[$117]=$115; //@line 4378 "datetimemodule.c"
-        var $118=$temp; //@line 4378 "datetimemodule.c"
-        var $119=$118; //@line 4378 "datetimemodule.c"
-        var $120=HEAP[$119]; //@line 4378 "datetimemodule.c"
-        var $121=($120)==0; //@line 4378 "datetimemodule.c"
-        if ($121) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 4378 "datetimemodule.c"
+        var $99=$temp; //@line 4377 "datetimemodule.c"
+        var $100=_PyObject_Hash($99); //@line 4377 "datetimemodule.c"
+        var $101=$self_addr; //@line 4377 "datetimemodule.c"
+        var $102=$101+8; //@line 4377 "datetimemodule.c"
+        HEAP[$102]=$100; //@line 4377 "datetimemodule.c"
+        var $103=$temp; //@line 4378 "datetimemodule.c"
+        var $104=$103; //@line 4378 "datetimemodule.c"
+        var $105=HEAP[$104]; //@line 4378 "datetimemodule.c"
+        var $106=($105) - 1; //@line 4378 "datetimemodule.c"
+        var $107=$temp; //@line 4378 "datetimemodule.c"
+        var $108=$107; //@line 4378 "datetimemodule.c"
+        HEAP[$108]=$106; //@line 4378 "datetimemodule.c"
+        var $109=$temp; //@line 4378 "datetimemodule.c"
+        var $110=$109; //@line 4378 "datetimemodule.c"
+        var $111=HEAP[$110]; //@line 4378 "datetimemodule.c"
+        var $112=($111)==0; //@line 4378 "datetimemodule.c"
+        if ($112) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 4378 "datetimemodule.c"
       case 14: // $bb13
-        var $122=$temp; //@line 4378 "datetimemodule.c"
-        var $123=$122+4; //@line 4378 "datetimemodule.c"
-        var $124=HEAP[$123]; //@line 4378 "datetimemodule.c"
-        var $125=$124+24; //@line 4378 "datetimemodule.c"
-        var $126=HEAP[$125]; //@line 4378 "datetimemodule.c"
-        var $127=$temp; //@line 4378 "datetimemodule.c"
-        FUNCTION_TABLE[$126]($127); //@line 4378 "datetimemodule.c"
+        var $113=$temp; //@line 4378 "datetimemodule.c"
+        var $114=$113+4; //@line 4378 "datetimemodule.c"
+        var $115=HEAP[$114]; //@line 4378 "datetimemodule.c"
+        var $116=$115+24; //@line 4378 "datetimemodule.c"
+        var $117=HEAP[$116]; //@line 4378 "datetimemodule.c"
+        var $118=$temp; //@line 4378 "datetimemodule.c"
+        FUNCTION_TABLE[$117]($118); //@line 4378 "datetimemodule.c"
         __label__ = 15; break; //@line 4378 "datetimemodule.c"
       case 15: // $bb14
-        var $128=$self_addr; //@line 4381 "datetimemodule.c"
-        var $129=$128+8; //@line 4381 "datetimemodule.c"
-        var $130=HEAP[$129]; //@line 4381 "datetimemodule.c"
-        $1=$130; //@line 4381 "datetimemodule.c"
+        var $119=$self_addr; //@line 4381 "datetimemodule.c"
+        var $120=$119+8; //@line 4381 "datetimemodule.c"
+        var $121=HEAP[$120]; //@line 4381 "datetimemodule.c"
+        $0=$121; //@line 4381 "datetimemodule.c"
         __label__ = 16; break; //@line 4381 "datetimemodule.c"
       case 16: // $bb15
-        var $131=$1; //@line 4352 "datetimemodule.c"
-        $retval=$131; //@line 4352 "datetimemodule.c"
+        var $122=$0; //@line 4352 "datetimemodule.c"
+        $retval=$122; //@line 4352 "datetimemodule.c"
         var $retval16=$retval; //@line 4352 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval16; //@line 4352 "datetimemodule.c"
@@ -15277,7 +14530,7 @@ var _initialized_b;
         HEAP[$tzinfo]=$69; //@line 4396 "datetimemodule.c"
         var $70=$args_addr; //@line 4398 "datetimemodule.c"
         var $71=$kw_addr; //@line 4398 "datetimemodule.c"
-        var $72=__PyArg_ParseTupleAndKeywords_SizeT($70, $71, __str244, _datetime_kws, $y, $m, $d, $hh, $mm, $ss, $us, $tzinfo); //@line 4398 "datetimemodule.c"
+        var $72=__PyArg_ParseTupleAndKeywords_SizeT($70, $71, __str244, _datetime_kws, allocate([$y,0,0,0,$m,0,0,0,$d,0,0,0,$hh,0,0,0,$mm,0,0,0,$ss,0,0,0,$us,0,0,0,$tzinfo,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 4398 "datetimemodule.c"
         var $73=($72)==0; //@line 4398 "datetimemodule.c"
         if ($73) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4398 "datetimemodule.c"
       case 4: // $bb3
@@ -15292,7 +14545,7 @@ var _initialized_b;
         var $79=HEAP[$d]; //@line 4403 "datetimemodule.c"
         var $80=HEAP[$m]; //@line 4403 "datetimemodule.c"
         var $81=HEAP[$y]; //@line 4403 "datetimemodule.c"
-        var $82=__Py_BuildValue_SizeT(__str220, $81, $80, $79, $78, $77, $76, $75, $74); //@line 4403 "datetimemodule.c"
+        var $82=__Py_BuildValue_SizeT(__str220, allocate([$81,0,0,0,$80,0,0,0,$79,0,0,0,$78,0,0,0,$77,0,0,0,$76,0,0,0,$75,0,0,0,$74,0,0,0], ["i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"i32",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 4403 "datetimemodule.c"
         $tuple=$82; //@line 4403 "datetimemodule.c"
         var $83=$tuple; //@line 4404 "datetimemodule.c"
         var $84=($83)==0; //@line 4404 "datetimemodule.c"
@@ -15350,25 +14603,11 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $hour_addr_i;
-        var $minute_addr_i;
-        var $second_addr_i;
-        var $microsecond_addr_i;
-        var $retval_i2;
-        var $0;
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
-        var $2;
+        var $0;
         var $y=__stackBase__;
         var $m=__stackBase__+4;
         var $d=__stackBase__+8;
@@ -15384,240 +14623,204 @@ var _initialized_b;
         $self_addr=$self;
         $args_addr=$args;
         $kw_addr=$kw;
-        var $3=$args_addr; //@line 4421 "datetimemodule.c"
-        var $4=$kw_addr; //@line 4421 "datetimemodule.c"
-        var $5=__PyArg_ParseTupleAndKeywords_SizeT($3, $4, __str245, _keywords_13698, _PyDateTime_TZInfoType, $tzinfo); //@line 4421 "datetimemodule.c"
-        var $6=($5)==0; //@line 4421 "datetimemodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4421 "datetimemodule.c"
+        var $1=$args_addr; //@line 4421 "datetimemodule.c"
+        var $2=$kw_addr; //@line 4421 "datetimemodule.c"
+        var $3=__PyArg_ParseTupleAndKeywords_SizeT($1, $2, __str245, _keywords_13698, allocate([_PyDateTime_TZInfoType,0,0,0,$tzinfo,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 4421 "datetimemodule.c"
+        var $4=($3)==0; //@line 4421 "datetimemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 4421 "datetimemodule.c"
       case 1: // $bb
-        $2=0; //@line 4423 "datetimemodule.c"
+        $0=0; //@line 4423 "datetimemodule.c"
         __label__ = 18; break; //@line 4423 "datetimemodule.c"
       case 2: // $bb1
-        var $7=$self_addr; //@line 4425 "datetimemodule.c"
-        var $8=$7; //@line 4425 "datetimemodule.c"
-        var $9=$8+12; //@line 4425 "datetimemodule.c"
-        var $10=HEAP[$9]; //@line 4425 "datetimemodule.c"
-        var $11=($10)==0; //@line 4425 "datetimemodule.c"
-        if ($11) { __label__ = 17; break; } else { __label__ = 3; break; } //@line 4425 "datetimemodule.c"
+        var $5=$self_addr; //@line 4425 "datetimemodule.c"
+        var $6=$5; //@line 4425 "datetimemodule.c"
+        var $7=$6+12; //@line 4425 "datetimemodule.c"
+        var $8=HEAP[$7]; //@line 4425 "datetimemodule.c"
+        var $9=($8)==0; //@line 4425 "datetimemodule.c"
+        if ($9) { __label__ = 17; break; } else { __label__ = 3; break; } //@line 4425 "datetimemodule.c"
       case 3: // $bb2
-        var $12=$self_addr; //@line 4425 "datetimemodule.c"
-        var $13=$12+24; //@line 4425 "datetimemodule.c"
-        var $14=HEAP[$13]; //@line 4425 "datetimemodule.c"
-        var $15=($14)==(__Py_NoneStruct); //@line 4425 "datetimemodule.c"
-        if ($15) { __label__ = 17; break; } else { __label__ = 4; break; } //@line 4425 "datetimemodule.c"
+        var $10=$self_addr; //@line 4425 "datetimemodule.c"
+        var $11=$10+24; //@line 4425 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 4425 "datetimemodule.c"
+        var $13=($12)==(__Py_NoneStruct); //@line 4425 "datetimemodule.c"
+        if ($13) { __label__ = 17; break; } else { __label__ = 4; break; } //@line 4425 "datetimemodule.c"
       case 4: // $bb3
-        var $16=$self_addr; //@line 4429 "datetimemodule.c"
-        var $17=$16+24; //@line 4429 "datetimemodule.c"
-        var $18=HEAP[$17]; //@line 4429 "datetimemodule.c"
-        var $19=HEAP[$tzinfo]; //@line 4429 "datetimemodule.c"
-        var $20=($18)==($19); //@line 4429 "datetimemodule.c"
-        var $21=$self_addr; //@line 4430 "datetimemodule.c"
-        var $22=$21; //@line 4430 "datetimemodule.c"
-        if ($20) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4429 "datetimemodule.c"
+        var $14=$self_addr; //@line 4429 "datetimemodule.c"
+        var $15=$14+24; //@line 4429 "datetimemodule.c"
+        var $16=HEAP[$15]; //@line 4429 "datetimemodule.c"
+        var $17=HEAP[$tzinfo]; //@line 4429 "datetimemodule.c"
+        var $18=($16)==($17); //@line 4429 "datetimemodule.c"
+        var $19=$self_addr; //@line 4430 "datetimemodule.c"
+        var $20=$19; //@line 4430 "datetimemodule.c"
+        if ($18) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 4429 "datetimemodule.c"
       case 5: // $bb4
-        var $23=$22; //@line 4430 "datetimemodule.c"
-        var $24=HEAP[$23]; //@line 4430 "datetimemodule.c"
-        var $25=($24) + 1; //@line 4430 "datetimemodule.c"
-        var $26=$22; //@line 4430 "datetimemodule.c"
-        HEAP[$26]=$25; //@line 4430 "datetimemodule.c"
-        var $27=$self_addr; //@line 4431 "datetimemodule.c"
-        var $28=$27; //@line 4431 "datetimemodule.c"
-        $2=$28; //@line 4431 "datetimemodule.c"
+        var $21=$20; //@line 4430 "datetimemodule.c"
+        var $22=HEAP[$21]; //@line 4430 "datetimemodule.c"
+        var $23=($22) + 1; //@line 4430 "datetimemodule.c"
+        var $24=$20; //@line 4430 "datetimemodule.c"
+        HEAP[$24]=$23; //@line 4430 "datetimemodule.c"
+        var $25=$self_addr; //@line 4431 "datetimemodule.c"
+        var $26=$25; //@line 4431 "datetimemodule.c"
+        $0=$26; //@line 4431 "datetimemodule.c"
         __label__ = 18; break; //@line 4431 "datetimemodule.c"
       case 6: // $bb5
-        var $29=$self_addr; //@line 4435 "datetimemodule.c"
-        var $30=$29+24; //@line 4435 "datetimemodule.c"
-        var $31=HEAP[$30]; //@line 4435 "datetimemodule.c"
-        $tzinfo_addr_i=$31;
-        $tzinfoarg_addr_i=$22;
-        $none_addr_i=$none;
-        var $32=$tzinfo_addr_i; //@line 888 "datetimemodule.c"
-        var $33=$tzinfoarg_addr_i; //@line 888 "datetimemodule.c"
-        var $34=$none_addr_i; //@line 888 "datetimemodule.c"
-        var $35=_call_utc_tzinfo_method($32, __str42, $33, $34); //@line 888 "datetimemodule.c"
-        $1=$35; //@line 888 "datetimemodule.c"
-        var $36=$1; //@line 888 "datetimemodule.c"
-        $retval_i=$36; //@line 888 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 888 "datetimemodule.c"
-        $offset=$retval1_i; //@line 4435 "datetimemodule.c"
-        var $37=$offset; //@line 4436 "datetimemodule.c"
-        var $38=($37)==-1; //@line 4436 "datetimemodule.c"
-        if ($38) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 4436 "datetimemodule.c"
+        var $27=$self_addr; //@line 4435 "datetimemodule.c"
+        var $28=$27+24; //@line 4435 "datetimemodule.c"
+        var $29=HEAP[$28]; //@line 4435 "datetimemodule.c"
+        var $30=_call_utcoffset($29, $20, $none); //@line 4435 "datetimemodule.c"
+        $offset=$30; //@line 4435 "datetimemodule.c"
+        var $31=$offset; //@line 4436 "datetimemodule.c"
+        var $32=($31)==-1; //@line 4436 "datetimemodule.c"
+        if ($32) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 4436 "datetimemodule.c"
       case 7: // $bb6
-        var $39=_PyErr_Occurred(); //@line 4436 "datetimemodule.c"
-        var $40=($39)!=0; //@line 4436 "datetimemodule.c"
-        if ($40) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4436 "datetimemodule.c"
+        var $33=_PyErr_Occurred(); //@line 4436 "datetimemodule.c"
+        var $34=($33)!=0; //@line 4436 "datetimemodule.c"
+        if ($34) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4436 "datetimemodule.c"
       case 8: // $bb7
-        $2=0; //@line 4437 "datetimemodule.c"
+        $0=0; //@line 4437 "datetimemodule.c"
         __label__ = 18; break; //@line 4437 "datetimemodule.c"
       case 9: // $bb8
-        var $41=HEAP[$none]; //@line 4438 "datetimemodule.c"
-        var $42=($41)!=0; //@line 4438 "datetimemodule.c"
-        if ($42) { __label__ = 17; break; } else { __label__ = 10; break; } //@line 4438 "datetimemodule.c"
+        var $35=HEAP[$none]; //@line 4438 "datetimemodule.c"
+        var $36=($35)!=0; //@line 4438 "datetimemodule.c"
+        if ($36) { __label__ = 17; break; } else { __label__ = 10; break; } //@line 4438 "datetimemodule.c"
       case 10: // $bb9
-        var $43=$self_addr; //@line 4441 "datetimemodule.c"
-        var $44=$43; //@line 4441 "datetimemodule.c"
-        var $45=$44+13; //@line 4441 "datetimemodule.c"
-        var $46=$45; //@line 4441 "datetimemodule.c"
-        var $47=HEAP[$46]; //@line 4441 "datetimemodule.c"
-        var $48=($47); //@line 4441 "datetimemodule.c"
-        var $49=($48) << 8; //@line 4441 "datetimemodule.c"
-        var $50=$self_addr; //@line 4441 "datetimemodule.c"
-        var $51=$50; //@line 4441 "datetimemodule.c"
-        var $52=$51+13; //@line 4441 "datetimemodule.c"
-        var $53=$52+1; //@line 4441 "datetimemodule.c"
-        var $54=HEAP[$53]; //@line 4441 "datetimemodule.c"
-        var $55=($54); //@line 4441 "datetimemodule.c"
-        var $56=($55) | ($49); //@line 4441 "datetimemodule.c"
-        HEAP[$y]=$56; //@line 4441 "datetimemodule.c"
-        var $57=$self_addr; //@line 4442 "datetimemodule.c"
-        var $58=$57; //@line 4442 "datetimemodule.c"
-        var $59=$58+13; //@line 4442 "datetimemodule.c"
-        var $60=$59+2; //@line 4442 "datetimemodule.c"
-        var $61=HEAP[$60]; //@line 4442 "datetimemodule.c"
-        var $62=($61); //@line 4442 "datetimemodule.c"
-        HEAP[$m]=$62; //@line 4442 "datetimemodule.c"
-        var $63=$self_addr; //@line 4443 "datetimemodule.c"
-        var $64=$63; //@line 4443 "datetimemodule.c"
-        var $65=$64+13; //@line 4443 "datetimemodule.c"
-        var $66=$65+3; //@line 4443 "datetimemodule.c"
-        var $67=HEAP[$66]; //@line 4443 "datetimemodule.c"
-        var $68=($67); //@line 4443 "datetimemodule.c"
-        HEAP[$d]=$68; //@line 4443 "datetimemodule.c"
-        var $69=$self_addr; //@line 4444 "datetimemodule.c"
-        var $70=$69+13; //@line 4444 "datetimemodule.c"
-        var $71=$70+4; //@line 4444 "datetimemodule.c"
-        var $72=HEAP[$71]; //@line 4444 "datetimemodule.c"
-        var $73=($72); //@line 4444 "datetimemodule.c"
-        HEAP[$hh]=$73; //@line 4444 "datetimemodule.c"
-        var $74=$self_addr; //@line 4445 "datetimemodule.c"
-        var $75=$74+13; //@line 4445 "datetimemodule.c"
-        var $76=$75+5; //@line 4445 "datetimemodule.c"
-        var $77=HEAP[$76]; //@line 4445 "datetimemodule.c"
-        var $78=($77); //@line 4445 "datetimemodule.c"
-        HEAP[$mm]=$78; //@line 4445 "datetimemodule.c"
-        var $79=$self_addr; //@line 4446 "datetimemodule.c"
-        var $80=$79+13; //@line 4446 "datetimemodule.c"
-        var $81=$80+6; //@line 4446 "datetimemodule.c"
-        var $82=HEAP[$81]; //@line 4446 "datetimemodule.c"
-        var $83=($82); //@line 4446 "datetimemodule.c"
-        HEAP[$ss]=$83; //@line 4446 "datetimemodule.c"
+        var $37=$self_addr; //@line 4441 "datetimemodule.c"
+        var $38=$37; //@line 4441 "datetimemodule.c"
+        var $39=$38+13; //@line 4441 "datetimemodule.c"
+        var $40=$39; //@line 4441 "datetimemodule.c"
+        var $41=HEAP[$40]; //@line 4441 "datetimemodule.c"
+        var $42=($41); //@line 4441 "datetimemodule.c"
+        var $43=($42) << 8; //@line 4441 "datetimemodule.c"
+        var $44=$self_addr; //@line 4441 "datetimemodule.c"
+        var $45=$44; //@line 4441 "datetimemodule.c"
+        var $46=$45+13; //@line 4441 "datetimemodule.c"
+        var $47=$46+1; //@line 4441 "datetimemodule.c"
+        var $48=HEAP[$47]; //@line 4441 "datetimemodule.c"
+        var $49=($48); //@line 4441 "datetimemodule.c"
+        var $50=($49) | ($43); //@line 4441 "datetimemodule.c"
+        HEAP[$y]=$50; //@line 4441 "datetimemodule.c"
+        var $51=$self_addr; //@line 4442 "datetimemodule.c"
+        var $52=$51; //@line 4442 "datetimemodule.c"
+        var $53=$52+13; //@line 4442 "datetimemodule.c"
+        var $54=$53+2; //@line 4442 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 4442 "datetimemodule.c"
+        var $56=($55); //@line 4442 "datetimemodule.c"
+        HEAP[$m]=$56; //@line 4442 "datetimemodule.c"
+        var $57=$self_addr; //@line 4443 "datetimemodule.c"
+        var $58=$57; //@line 4443 "datetimemodule.c"
+        var $59=$58+13; //@line 4443 "datetimemodule.c"
+        var $60=$59+3; //@line 4443 "datetimemodule.c"
+        var $61=HEAP[$60]; //@line 4443 "datetimemodule.c"
+        var $62=($61); //@line 4443 "datetimemodule.c"
+        HEAP[$d]=$62; //@line 4443 "datetimemodule.c"
+        var $63=$self_addr; //@line 4444 "datetimemodule.c"
+        var $64=$63+13; //@line 4444 "datetimemodule.c"
+        var $65=$64+4; //@line 4444 "datetimemodule.c"
+        var $66=HEAP[$65]; //@line 4444 "datetimemodule.c"
+        var $67=($66); //@line 4444 "datetimemodule.c"
+        HEAP[$hh]=$67; //@line 4444 "datetimemodule.c"
+        var $68=$self_addr; //@line 4445 "datetimemodule.c"
+        var $69=$68+13; //@line 4445 "datetimemodule.c"
+        var $70=$69+5; //@line 4445 "datetimemodule.c"
+        var $71=HEAP[$70]; //@line 4445 "datetimemodule.c"
+        var $72=($71); //@line 4445 "datetimemodule.c"
+        HEAP[$mm]=$72; //@line 4445 "datetimemodule.c"
+        var $73=$self_addr; //@line 4446 "datetimemodule.c"
+        var $74=$73+13; //@line 4446 "datetimemodule.c"
+        var $75=$74+6; //@line 4446 "datetimemodule.c"
+        var $76=HEAP[$75]; //@line 4446 "datetimemodule.c"
+        var $77=($76); //@line 4446 "datetimemodule.c"
+        HEAP[$ss]=$77; //@line 4446 "datetimemodule.c"
+        var $78=$self_addr; //@line 4447 "datetimemodule.c"
+        var $79=$78+13; //@line 4447 "datetimemodule.c"
+        var $80=$79+7; //@line 4447 "datetimemodule.c"
+        var $81=HEAP[$80]; //@line 4447 "datetimemodule.c"
+        var $82=($81); //@line 4447 "datetimemodule.c"
+        var $83=($82) << 16; //@line 4447 "datetimemodule.c"
         var $84=$self_addr; //@line 4447 "datetimemodule.c"
         var $85=$84+13; //@line 4447 "datetimemodule.c"
-        var $86=$85+7; //@line 4447 "datetimemodule.c"
+        var $86=$85+8; //@line 4447 "datetimemodule.c"
         var $87=HEAP[$86]; //@line 4447 "datetimemodule.c"
         var $88=($87); //@line 4447 "datetimemodule.c"
-        var $89=($88) << 16; //@line 4447 "datetimemodule.c"
+        var $89=($88) << 8; //@line 4447 "datetimemodule.c"
         var $90=$self_addr; //@line 4447 "datetimemodule.c"
         var $91=$90+13; //@line 4447 "datetimemodule.c"
-        var $92=$91+8; //@line 4447 "datetimemodule.c"
+        var $92=$91+9; //@line 4447 "datetimemodule.c"
         var $93=HEAP[$92]; //@line 4447 "datetimemodule.c"
         var $94=($93); //@line 4447 "datetimemodule.c"
-        var $95=($94) << 8; //@line 4447 "datetimemodule.c"
-        var $96=$self_addr; //@line 4447 "datetimemodule.c"
-        var $97=$96+13; //@line 4447 "datetimemodule.c"
-        var $98=$97+9; //@line 4447 "datetimemodule.c"
-        var $99=HEAP[$98]; //@line 4447 "datetimemodule.c"
-        var $100=($99); //@line 4447 "datetimemodule.c"
-        var $101=($95) | ($89); //@line 4447 "datetimemodule.c"
-        var $102=($101) | ($100); //@line 4447 "datetimemodule.c"
-        HEAP[$us]=$102; //@line 4447 "datetimemodule.c"
-        var $103=HEAP[$mm]; //@line 4449 "datetimemodule.c"
-        var $104=$offset; //@line 4449 "datetimemodule.c"
-        var $105=($103) - ($104); //@line 4449 "datetimemodule.c"
-        HEAP[$mm]=$105; //@line 4449 "datetimemodule.c"
-        var $106=HEAP[$mm]; //@line 4450 "datetimemodule.c"
-        var $107=($106) < 0; //@line 4450 "datetimemodule.c"
-        var $108=HEAP[$mm]; //@line 4450 "datetimemodule.c"
-        var $109=($108) > 59; //@line 4450 "datetimemodule.c"
-        var $or_cond=($107) | ($109);
+        var $95=($89) | ($83); //@line 4447 "datetimemodule.c"
+        var $96=($95) | ($94); //@line 4447 "datetimemodule.c"
+        HEAP[$us]=$96; //@line 4447 "datetimemodule.c"
+        var $97=HEAP[$mm]; //@line 4449 "datetimemodule.c"
+        var $98=$offset; //@line 4449 "datetimemodule.c"
+        var $99=($97) - ($98); //@line 4449 "datetimemodule.c"
+        HEAP[$mm]=$99; //@line 4449 "datetimemodule.c"
+        var $100=HEAP[$mm]; //@line 4450 "datetimemodule.c"
+        var $101=($100) < 0; //@line 4450 "datetimemodule.c"
+        var $102=HEAP[$mm]; //@line 4450 "datetimemodule.c"
+        var $103=($102) > 59; //@line 4450 "datetimemodule.c"
+        var $or_cond=($101) | ($103);
         if ($or_cond) { __label__ = 11; break; } else { __label__ = 13; break; } //@line 4450 "datetimemodule.c"
       case 11: // $bb11
-        $year_addr_i=$y;
-        $month_addr_i=$m;
-        $day_addr_i=$d;
-        $hour_addr_i=$hh;
-        $minute_addr_i=$mm;
-        $second_addr_i=$ss;
-        $microsecond_addr_i=$us;
-        var $110=$second_addr_i; //@line 577 "datetimemodule.c"
-        var $111=$microsecond_addr_i; //@line 577 "datetimemodule.c"
-        _normalize_pair($110, $111, 1000000); //@line 577 "datetimemodule.c"
-        var $112=$minute_addr_i; //@line 578 "datetimemodule.c"
-        var $113=$second_addr_i; //@line 578 "datetimemodule.c"
-        _normalize_pair($112, $113, 60); //@line 578 "datetimemodule.c"
-        var $114=$hour_addr_i; //@line 579 "datetimemodule.c"
-        var $115=$minute_addr_i; //@line 579 "datetimemodule.c"
-        _normalize_pair($114, $115, 60); //@line 579 "datetimemodule.c"
-        var $116=$day_addr_i; //@line 580 "datetimemodule.c"
-        var $117=$hour_addr_i; //@line 580 "datetimemodule.c"
-        _normalize_pair($116, $117, 24); //@line 580 "datetimemodule.c"
-        var $118=$year_addr_i; //@line 581 "datetimemodule.c"
-        var $119=$month_addr_i; //@line 581 "datetimemodule.c"
-        var $120=$day_addr_i; //@line 581 "datetimemodule.c"
-        var $121=_normalize_date($118, $119, $120); //@line 581 "datetimemodule.c"
-        $0=$121; //@line 581 "datetimemodule.c"
-        var $122=$0; //@line 581 "datetimemodule.c"
-        $retval_i2=$122; //@line 581 "datetimemodule.c"
-        var $retval1_i3=$retval_i2; //@line 581 "datetimemodule.c"
-        var $123=($retval1_i3) < 0; //@line 4450 "datetimemodule.c"
-        if ($123) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 4450 "datetimemodule.c"
+        var $104=_normalize_datetime($y, $m, $d, $hh, $mm, $ss, $us); //@line 4450 "datetimemodule.c"
+        var $105=($104) < 0; //@line 4450 "datetimemodule.c"
+        if ($105) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 4450 "datetimemodule.c"
       case 12: // $bb12
-        $2=0; //@line 4452 "datetimemodule.c"
+        $0=0; //@line 4452 "datetimemodule.c"
         __label__ = 18; break; //@line 4452 "datetimemodule.c"
       case 13: // $bb13
-        var $124=HEAP[$tzinfo]; //@line 4455 "datetimemodule.c"
-        var $125=HEAP[$us]; //@line 4455 "datetimemodule.c"
-        var $126=HEAP[$ss]; //@line 4455 "datetimemodule.c"
-        var $127=HEAP[$mm]; //@line 4455 "datetimemodule.c"
-        var $128=HEAP[$hh]; //@line 4455 "datetimemodule.c"
-        var $129=HEAP[$d]; //@line 4455 "datetimemodule.c"
-        var $130=HEAP[$m]; //@line 4455 "datetimemodule.c"
-        var $131=HEAP[$y]; //@line 4455 "datetimemodule.c"
-        var $132=_new_datetime_ex($131, $130, $129, $128, $127, $126, $125, $124, _PyDateTime_DateTimeType); //@line 4455 "datetimemodule.c"
-        $result=$132; //@line 4455 "datetimemodule.c"
-        var $133=($132)!=0; //@line 4456 "datetimemodule.c"
-        if ($133) { __label__ = 14; break; } else { __label__ = 16; break; } //@line 4456 "datetimemodule.c"
+        var $106=HEAP[$tzinfo]; //@line 4455 "datetimemodule.c"
+        var $107=HEAP[$us]; //@line 4455 "datetimemodule.c"
+        var $108=HEAP[$ss]; //@line 4455 "datetimemodule.c"
+        var $109=HEAP[$mm]; //@line 4455 "datetimemodule.c"
+        var $110=HEAP[$hh]; //@line 4455 "datetimemodule.c"
+        var $111=HEAP[$d]; //@line 4455 "datetimemodule.c"
+        var $112=HEAP[$m]; //@line 4455 "datetimemodule.c"
+        var $113=HEAP[$y]; //@line 4455 "datetimemodule.c"
+        var $114=_new_datetime_ex($113, $112, $111, $110, $109, $108, $107, $106, _PyDateTime_DateTimeType); //@line 4455 "datetimemodule.c"
+        $result=$114; //@line 4455 "datetimemodule.c"
+        var $115=($114)!=0; //@line 4456 "datetimemodule.c"
+        if ($115) { __label__ = 14; break; } else { __label__ = 16; break; } //@line 4456 "datetimemodule.c"
       case 14: // $bb14
-        var $134=$result; //@line 4457 "datetimemodule.c"
-        $temp=$134; //@line 4457 "datetimemodule.c"
-        var $135=HEAP[$tzinfo]; //@line 4459 "datetimemodule.c"
-        var $136=$temp; //@line 4459 "datetimemodule.c"
-        var $137=__PyObject_CallMethod_SizeT($135, __str189, __str35, $136); //@line 4459 "datetimemodule.c"
-        $result=$137; //@line 4459 "datetimemodule.c"
-        var $138=$temp; //@line 4460 "datetimemodule.c"
-        var $139=$138; //@line 4460 "datetimemodule.c"
-        var $140=HEAP[$139]; //@line 4460 "datetimemodule.c"
-        var $141=($140) - 1; //@line 4460 "datetimemodule.c"
-        var $142=$temp; //@line 4460 "datetimemodule.c"
-        var $143=$142; //@line 4460 "datetimemodule.c"
-        HEAP[$143]=$141; //@line 4460 "datetimemodule.c"
-        var $144=$temp; //@line 4460 "datetimemodule.c"
-        var $145=$144; //@line 4460 "datetimemodule.c"
-        var $146=HEAP[$145]; //@line 4460 "datetimemodule.c"
-        var $147=($146)==0; //@line 4460 "datetimemodule.c"
-        if ($147) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 4460 "datetimemodule.c"
+        var $116=$result; //@line 4457 "datetimemodule.c"
+        $temp=$116; //@line 4457 "datetimemodule.c"
+        var $117=HEAP[$tzinfo]; //@line 4459 "datetimemodule.c"
+        var $118=$temp; //@line 4459 "datetimemodule.c"
+        var $119=__PyObject_CallMethod_SizeT($117, __str189, __str35, allocate([$118,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 4459 "datetimemodule.c"
+        $result=$119; //@line 4459 "datetimemodule.c"
+        var $120=$temp; //@line 4460 "datetimemodule.c"
+        var $121=$120; //@line 4460 "datetimemodule.c"
+        var $122=HEAP[$121]; //@line 4460 "datetimemodule.c"
+        var $123=($122) - 1; //@line 4460 "datetimemodule.c"
+        var $124=$temp; //@line 4460 "datetimemodule.c"
+        var $125=$124; //@line 4460 "datetimemodule.c"
+        HEAP[$125]=$123; //@line 4460 "datetimemodule.c"
+        var $126=$temp; //@line 4460 "datetimemodule.c"
+        var $127=$126; //@line 4460 "datetimemodule.c"
+        var $128=HEAP[$127]; //@line 4460 "datetimemodule.c"
+        var $129=($128)==0; //@line 4460 "datetimemodule.c"
+        if ($129) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 4460 "datetimemodule.c"
       case 15: // $bb15
-        var $148=$temp; //@line 4460 "datetimemodule.c"
-        var $149=$148+4; //@line 4460 "datetimemodule.c"
-        var $150=HEAP[$149]; //@line 4460 "datetimemodule.c"
-        var $151=$150+24; //@line 4460 "datetimemodule.c"
-        var $152=HEAP[$151]; //@line 4460 "datetimemodule.c"
-        var $153=$temp; //@line 4460 "datetimemodule.c"
-        FUNCTION_TABLE[$152]($153); //@line 4460 "datetimemodule.c"
+        var $130=$temp; //@line 4460 "datetimemodule.c"
+        var $131=$130+4; //@line 4460 "datetimemodule.c"
+        var $132=HEAP[$131]; //@line 4460 "datetimemodule.c"
+        var $133=$132+24; //@line 4460 "datetimemodule.c"
+        var $134=HEAP[$133]; //@line 4460 "datetimemodule.c"
+        var $135=$temp; //@line 4460 "datetimemodule.c"
+        FUNCTION_TABLE[$134]($135); //@line 4460 "datetimemodule.c"
         __label__ = 16; break; //@line 4460 "datetimemodule.c"
       case 16: // $bb16
-        var $154=$result; //@line 4462 "datetimemodule.c"
-        $2=$154; //@line 4462 "datetimemodule.c"
+        var $136=$result; //@line 4462 "datetimemodule.c"
+        $0=$136; //@line 4462 "datetimemodule.c"
         __label__ = 18; break; //@line 4462 "datetimemodule.c"
       case 17: // $NeedAware
-        var $155=HEAP[_PyExc_ValueError]; //@line 4465 "datetimemodule.c"
-        _PyErr_SetString($155, __str246); //@line 4465 "datetimemodule.c"
-        $2=0; //@line 4467 "datetimemodule.c"
+        var $137=HEAP[_PyExc_ValueError]; //@line 4465 "datetimemodule.c"
+        _PyErr_SetString($137, __str246); //@line 4465 "datetimemodule.c"
+        $0=0; //@line 4467 "datetimemodule.c"
         __label__ = 18; break; //@line 4467 "datetimemodule.c"
       case 18: // $bb17
-        var $156=$2; //@line 4423 "datetimemodule.c"
-        $retval=$156; //@line 4423 "datetimemodule.c"
+        var $138=$0; //@line 4423 "datetimemodule.c"
+        $retval=$138; //@line 4423 "datetimemodule.c"
         var $retval18=$retval; //@line 4423 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval18; //@line 4423 "datetimemodule.c"
@@ -15632,121 +14835,106 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         var $dstflag;
         var $none=__stackBase__;
         $self_addr=$self;
         $dstflag=-1; //@line 4473 "datetimemodule.c"
-        var $2=$self_addr; //@line 4475 "datetimemodule.c"
-        var $3=$2; //@line 4475 "datetimemodule.c"
-        var $4=$3+12; //@line 4475 "datetimemodule.c"
-        var $5=HEAP[$4]; //@line 4475 "datetimemodule.c"
-        var $6=($5)!=0; //@line 4475 "datetimemodule.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 9; break; } //@line 4475 "datetimemodule.c"
+        var $1=$self_addr; //@line 4475 "datetimemodule.c"
+        var $2=$1; //@line 4475 "datetimemodule.c"
+        var $3=$2+12; //@line 4475 "datetimemodule.c"
+        var $4=HEAP[$3]; //@line 4475 "datetimemodule.c"
+        var $5=($4)!=0; //@line 4475 "datetimemodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 9; break; } //@line 4475 "datetimemodule.c"
       case 1: // $bb
-        var $7=$self_addr; //@line 4475 "datetimemodule.c"
-        var $8=$7+24; //@line 4475 "datetimemodule.c"
-        var $9=HEAP[$8]; //@line 4475 "datetimemodule.c"
-        var $10=($9)!=(__Py_NoneStruct); //@line 4475 "datetimemodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 9; break; } //@line 4475 "datetimemodule.c"
+        var $6=$self_addr; //@line 4475 "datetimemodule.c"
+        var $7=$6+24; //@line 4475 "datetimemodule.c"
+        var $8=HEAP[$7]; //@line 4475 "datetimemodule.c"
+        var $9=($8)!=(__Py_NoneStruct); //@line 4475 "datetimemodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 9; break; } //@line 4475 "datetimemodule.c"
       case 2: // $bb1
-        var $11=$self_addr; //@line 4478 "datetimemodule.c"
-        var $12=$11; //@line 4478 "datetimemodule.c"
-        var $13=$self_addr; //@line 4478 "datetimemodule.c"
-        var $14=$13+24; //@line 4478 "datetimemodule.c"
-        var $15=HEAP[$14]; //@line 4478 "datetimemodule.c"
-        $tzinfo_addr_i=$15;
-        $tzinfoarg_addr_i=$12;
-        $none_addr_i=$none;
-        var $16=$tzinfo_addr_i; //@line 929 "datetimemodule.c"
-        var $17=$tzinfoarg_addr_i; //@line 929 "datetimemodule.c"
-        var $18=$none_addr_i; //@line 929 "datetimemodule.c"
-        var $19=_call_utc_tzinfo_method($16, __str44, $17, $18); //@line 929 "datetimemodule.c"
-        $0=$19; //@line 929 "datetimemodule.c"
-        var $20=$0; //@line 929 "datetimemodule.c"
-        $retval_i=$20; //@line 929 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 929 "datetimemodule.c"
-        $dstflag=$retval1_i; //@line 4478 "datetimemodule.c"
-        var $21=$dstflag; //@line 4479 "datetimemodule.c"
-        var $22=($21)==-1; //@line 4479 "datetimemodule.c"
-        if ($22) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 4479 "datetimemodule.c"
+        var $10=$self_addr; //@line 4478 "datetimemodule.c"
+        var $11=$10; //@line 4478 "datetimemodule.c"
+        var $12=$self_addr; //@line 4478 "datetimemodule.c"
+        var $13=$12+24; //@line 4478 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 4478 "datetimemodule.c"
+        var $15=_call_dst($14, $11, $none); //@line 4478 "datetimemodule.c"
+        $dstflag=$15; //@line 4478 "datetimemodule.c"
+        var $16=$dstflag; //@line 4479 "datetimemodule.c"
+        var $17=($16)==-1; //@line 4479 "datetimemodule.c"
+        if ($17) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 4479 "datetimemodule.c"
       case 3: // $bb2
-        var $23=_PyErr_Occurred(); //@line 4479 "datetimemodule.c"
-        var $24=($23)!=0; //@line 4479 "datetimemodule.c"
-        if ($24) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4479 "datetimemodule.c"
+        var $18=_PyErr_Occurred(); //@line 4479 "datetimemodule.c"
+        var $19=($18)!=0; //@line 4479 "datetimemodule.c"
+        if ($19) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4479 "datetimemodule.c"
       case 4: // $bb3
-        $1=0; //@line 4480 "datetimemodule.c"
+        $0=0; //@line 4480 "datetimemodule.c"
         __label__ = 10; break; //@line 4480 "datetimemodule.c"
       case 5: // $bb4
-        var $25=HEAP[$none]; //@line 4482 "datetimemodule.c"
-        var $26=($25)!=0; //@line 4482 "datetimemodule.c"
-        if ($26) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 4482 "datetimemodule.c"
+        var $20=HEAP[$none]; //@line 4482 "datetimemodule.c"
+        var $21=($20)!=0; //@line 4482 "datetimemodule.c"
+        if ($21) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 4482 "datetimemodule.c"
       case 6: // $bb5
         $dstflag=-1; //@line 4483 "datetimemodule.c"
         __label__ = 9; break; //@line 4483 "datetimemodule.c"
       case 7: // $bb6
-        var $27=$dstflag; //@line 4484 "datetimemodule.c"
-        var $28=($27)!=0; //@line 4484 "datetimemodule.c"
-        if ($28) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4484 "datetimemodule.c"
+        var $22=$dstflag; //@line 4484 "datetimemodule.c"
+        var $23=($22)!=0; //@line 4484 "datetimemodule.c"
+        if ($23) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 4484 "datetimemodule.c"
       case 8: // $bb7
         $dstflag=1; //@line 4485 "datetimemodule.c"
         __label__ = 9; break; //@line 4485 "datetimemodule.c"
       case 9: // $bb8
+        var $24=$self_addr; //@line 4488 "datetimemodule.c"
+        var $25=$24+13; //@line 4488 "datetimemodule.c"
+        var $26=$25+6; //@line 4488 "datetimemodule.c"
+        var $27=HEAP[$26]; //@line 4488 "datetimemodule.c"
+        var $28=($27); //@line 4488 "datetimemodule.c"
         var $29=$self_addr; //@line 4488 "datetimemodule.c"
         var $30=$29+13; //@line 4488 "datetimemodule.c"
-        var $31=$30+6; //@line 4488 "datetimemodule.c"
+        var $31=$30+5; //@line 4488 "datetimemodule.c"
         var $32=HEAP[$31]; //@line 4488 "datetimemodule.c"
         var $33=($32); //@line 4488 "datetimemodule.c"
         var $34=$self_addr; //@line 4488 "datetimemodule.c"
         var $35=$34+13; //@line 4488 "datetimemodule.c"
-        var $36=$35+5; //@line 4488 "datetimemodule.c"
+        var $36=$35+4; //@line 4488 "datetimemodule.c"
         var $37=HEAP[$36]; //@line 4488 "datetimemodule.c"
         var $38=($37); //@line 4488 "datetimemodule.c"
         var $39=$self_addr; //@line 4488 "datetimemodule.c"
-        var $40=$39+13; //@line 4488 "datetimemodule.c"
-        var $41=$40+4; //@line 4488 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 4488 "datetimemodule.c"
-        var $43=($42); //@line 4488 "datetimemodule.c"
-        var $44=$self_addr; //@line 4488 "datetimemodule.c"
-        var $45=$44; //@line 4488 "datetimemodule.c"
-        var $46=$45+13; //@line 4488 "datetimemodule.c"
-        var $47=$46+3; //@line 4488 "datetimemodule.c"
-        var $48=HEAP[$47]; //@line 4488 "datetimemodule.c"
-        var $49=($48); //@line 4488 "datetimemodule.c"
-        var $50=$self_addr; //@line 4488 "datetimemodule.c"
-        var $51=$50; //@line 4488 "datetimemodule.c"
-        var $52=$51+13; //@line 4488 "datetimemodule.c"
-        var $53=$52+2; //@line 4488 "datetimemodule.c"
-        var $54=HEAP[$53]; //@line 4488 "datetimemodule.c"
-        var $55=($54); //@line 4488 "datetimemodule.c"
-        var $56=$self_addr; //@line 4488 "datetimemodule.c"
-        var $57=$56; //@line 4488 "datetimemodule.c"
-        var $58=$57+13; //@line 4488 "datetimemodule.c"
+        var $40=$39; //@line 4488 "datetimemodule.c"
+        var $41=$40+13; //@line 4488 "datetimemodule.c"
+        var $42=$41+3; //@line 4488 "datetimemodule.c"
+        var $43=HEAP[$42]; //@line 4488 "datetimemodule.c"
+        var $44=($43); //@line 4488 "datetimemodule.c"
+        var $45=$self_addr; //@line 4488 "datetimemodule.c"
+        var $46=$45; //@line 4488 "datetimemodule.c"
+        var $47=$46+13; //@line 4488 "datetimemodule.c"
+        var $48=$47+2; //@line 4488 "datetimemodule.c"
+        var $49=HEAP[$48]; //@line 4488 "datetimemodule.c"
+        var $50=($49); //@line 4488 "datetimemodule.c"
+        var $51=$self_addr; //@line 4488 "datetimemodule.c"
+        var $52=$51; //@line 4488 "datetimemodule.c"
+        var $53=$52+13; //@line 4488 "datetimemodule.c"
+        var $54=$53; //@line 4488 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 4488 "datetimemodule.c"
+        var $56=($55); //@line 4488 "datetimemodule.c"
+        var $57=($56) << 8; //@line 4488 "datetimemodule.c"
+        var $58=$self_addr; //@line 4488 "datetimemodule.c"
         var $59=$58; //@line 4488 "datetimemodule.c"
-        var $60=HEAP[$59]; //@line 4488 "datetimemodule.c"
-        var $61=($60); //@line 4488 "datetimemodule.c"
-        var $62=($61) << 8; //@line 4488 "datetimemodule.c"
-        var $63=$self_addr; //@line 4488 "datetimemodule.c"
-        var $64=$63; //@line 4488 "datetimemodule.c"
-        var $65=$64+13; //@line 4488 "datetimemodule.c"
-        var $66=$65+1; //@line 4488 "datetimemodule.c"
-        var $67=HEAP[$66]; //@line 4488 "datetimemodule.c"
-        var $68=($67); //@line 4488 "datetimemodule.c"
-        var $69=($68) | ($62); //@line 4488 "datetimemodule.c"
-        var $70=$dstflag; //@line 4488 "datetimemodule.c"
-        var $71=_build_struct_time($69, $55, $49, $43, $38, $33, $70); //@line 4488 "datetimemodule.c"
-        $1=$71; //@line 4488 "datetimemodule.c"
+        var $60=$59+13; //@line 4488 "datetimemodule.c"
+        var $61=$60+1; //@line 4488 "datetimemodule.c"
+        var $62=HEAP[$61]; //@line 4488 "datetimemodule.c"
+        var $63=($62); //@line 4488 "datetimemodule.c"
+        var $64=($63) | ($57); //@line 4488 "datetimemodule.c"
+        var $65=$dstflag; //@line 4488 "datetimemodule.c"
+        var $66=_build_struct_time($64, $50, $44, $38, $33, $28, $65); //@line 4488 "datetimemodule.c"
+        $0=$66; //@line 4488 "datetimemodule.c"
         __label__ = 10; break; //@line 4488 "datetimemodule.c"
       case 10: // $bb9
-        var $72=$1; //@line 4480 "datetimemodule.c"
-        $retval=$72; //@line 4480 "datetimemodule.c"
+        var $67=$0; //@line 4480 "datetimemodule.c"
+        $retval=$67; //@line 4480 "datetimemodule.c"
         var $retval10=$retval; //@line 4480 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 4480 "datetimemodule.c"
@@ -15932,23 +15120,9 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $year_addr_i;
-        var $month_addr_i;
-        var $day_addr_i;
-        var $hour_addr_i;
-        var $minute_addr_i;
-        var $second_addr_i;
-        var $microsecond_addr_i;
-        var $retval_i1;
-        var $0;
-        var $tzinfo_addr_i;
-        var $tzinfoarg_addr_i;
-        var $none_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $retval;
-        var $2;
+        var $0;
         var $y=__stackBase__;
         var $m=__stackBase__+4;
         var $d=__stackBase__+8;
@@ -15960,162 +15134,126 @@ var _initialized_b;
         var $none=__stackBase__+28;
         var $stat;
         $self_addr=$self;
-        var $3=$self_addr; //@line 4528 "datetimemodule.c"
+        var $1=$self_addr; //@line 4528 "datetimemodule.c"
+        var $2=$1; //@line 4528 "datetimemodule.c"
+        var $3=$2+13; //@line 4528 "datetimemodule.c"
         var $4=$3; //@line 4528 "datetimemodule.c"
-        var $5=$4+13; //@line 4528 "datetimemodule.c"
-        var $6=$5; //@line 4528 "datetimemodule.c"
-        var $7=HEAP[$6]; //@line 4528 "datetimemodule.c"
-        var $8=($7); //@line 4528 "datetimemodule.c"
-        var $9=($8) << 8; //@line 4528 "datetimemodule.c"
-        var $10=$self_addr; //@line 4528 "datetimemodule.c"
-        var $11=$10; //@line 4528 "datetimemodule.c"
-        var $12=$11+13; //@line 4528 "datetimemodule.c"
-        var $13=$12+1; //@line 4528 "datetimemodule.c"
-        var $14=HEAP[$13]; //@line 4528 "datetimemodule.c"
-        var $15=($14); //@line 4528 "datetimemodule.c"
-        var $16=($15) | ($9); //@line 4528 "datetimemodule.c"
-        HEAP[$y]=$16; //@line 4528 "datetimemodule.c"
-        var $17=$self_addr; //@line 4529 "datetimemodule.c"
-        var $18=$17; //@line 4529 "datetimemodule.c"
-        var $19=$18+13; //@line 4529 "datetimemodule.c"
-        var $20=$19+2; //@line 4529 "datetimemodule.c"
-        var $21=HEAP[$20]; //@line 4529 "datetimemodule.c"
-        var $22=($21); //@line 4529 "datetimemodule.c"
-        HEAP[$m]=$22; //@line 4529 "datetimemodule.c"
-        var $23=$self_addr; //@line 4530 "datetimemodule.c"
-        var $24=$23; //@line 4530 "datetimemodule.c"
-        var $25=$24+13; //@line 4530 "datetimemodule.c"
-        var $26=$25+3; //@line 4530 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 4530 "datetimemodule.c"
-        var $28=($27); //@line 4530 "datetimemodule.c"
-        HEAP[$d]=$28; //@line 4530 "datetimemodule.c"
-        var $29=$self_addr; //@line 4531 "datetimemodule.c"
-        var $30=$29+13; //@line 4531 "datetimemodule.c"
-        var $31=$30+4; //@line 4531 "datetimemodule.c"
-        var $32=HEAP[$31]; //@line 4531 "datetimemodule.c"
-        var $33=($32); //@line 4531 "datetimemodule.c"
-        HEAP[$hh]=$33; //@line 4531 "datetimemodule.c"
-        var $34=$self_addr; //@line 4532 "datetimemodule.c"
-        var $35=$34+13; //@line 4532 "datetimemodule.c"
-        var $36=$35+5; //@line 4532 "datetimemodule.c"
-        var $37=HEAP[$36]; //@line 4532 "datetimemodule.c"
-        var $38=($37); //@line 4532 "datetimemodule.c"
-        HEAP[$mm]=$38; //@line 4532 "datetimemodule.c"
-        var $39=$self_addr; //@line 4533 "datetimemodule.c"
-        var $40=$39+13; //@line 4533 "datetimemodule.c"
-        var $41=$40+6; //@line 4533 "datetimemodule.c"
-        var $42=HEAP[$41]; //@line 4533 "datetimemodule.c"
-        var $43=($42); //@line 4533 "datetimemodule.c"
-        HEAP[$ss]=$43; //@line 4533 "datetimemodule.c"
+        var $5=HEAP[$4]; //@line 4528 "datetimemodule.c"
+        var $6=($5); //@line 4528 "datetimemodule.c"
+        var $7=($6) << 8; //@line 4528 "datetimemodule.c"
+        var $8=$self_addr; //@line 4528 "datetimemodule.c"
+        var $9=$8; //@line 4528 "datetimemodule.c"
+        var $10=$9+13; //@line 4528 "datetimemodule.c"
+        var $11=$10+1; //@line 4528 "datetimemodule.c"
+        var $12=HEAP[$11]; //@line 4528 "datetimemodule.c"
+        var $13=($12); //@line 4528 "datetimemodule.c"
+        var $14=($13) | ($7); //@line 4528 "datetimemodule.c"
+        HEAP[$y]=$14; //@line 4528 "datetimemodule.c"
+        var $15=$self_addr; //@line 4529 "datetimemodule.c"
+        var $16=$15; //@line 4529 "datetimemodule.c"
+        var $17=$16+13; //@line 4529 "datetimemodule.c"
+        var $18=$17+2; //@line 4529 "datetimemodule.c"
+        var $19=HEAP[$18]; //@line 4529 "datetimemodule.c"
+        var $20=($19); //@line 4529 "datetimemodule.c"
+        HEAP[$m]=$20; //@line 4529 "datetimemodule.c"
+        var $21=$self_addr; //@line 4530 "datetimemodule.c"
+        var $22=$21; //@line 4530 "datetimemodule.c"
+        var $23=$22+13; //@line 4530 "datetimemodule.c"
+        var $24=$23+3; //@line 4530 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 4530 "datetimemodule.c"
+        var $26=($25); //@line 4530 "datetimemodule.c"
+        HEAP[$d]=$26; //@line 4530 "datetimemodule.c"
+        var $27=$self_addr; //@line 4531 "datetimemodule.c"
+        var $28=$27+13; //@line 4531 "datetimemodule.c"
+        var $29=$28+4; //@line 4531 "datetimemodule.c"
+        var $30=HEAP[$29]; //@line 4531 "datetimemodule.c"
+        var $31=($30); //@line 4531 "datetimemodule.c"
+        HEAP[$hh]=$31; //@line 4531 "datetimemodule.c"
+        var $32=$self_addr; //@line 4532 "datetimemodule.c"
+        var $33=$32+13; //@line 4532 "datetimemodule.c"
+        var $34=$33+5; //@line 4532 "datetimemodule.c"
+        var $35=HEAP[$34]; //@line 4532 "datetimemodule.c"
+        var $36=($35); //@line 4532 "datetimemodule.c"
+        HEAP[$mm]=$36; //@line 4532 "datetimemodule.c"
+        var $37=$self_addr; //@line 4533 "datetimemodule.c"
+        var $38=$37+13; //@line 4533 "datetimemodule.c"
+        var $39=$38+6; //@line 4533 "datetimemodule.c"
+        var $40=HEAP[$39]; //@line 4533 "datetimemodule.c"
+        var $41=($40); //@line 4533 "datetimemodule.c"
+        HEAP[$ss]=$41; //@line 4533 "datetimemodule.c"
         HEAP[$us]=0; //@line 4534 "datetimemodule.c"
         $offset=0; //@line 4535 "datetimemodule.c"
-        var $44=$self_addr; //@line 4537 "datetimemodule.c"
-        var $45=$44; //@line 4537 "datetimemodule.c"
-        var $46=$45+12; //@line 4537 "datetimemodule.c"
-        var $47=HEAP[$46]; //@line 4537 "datetimemodule.c"
-        var $48=($47)!=0; //@line 4537 "datetimemodule.c"
-        if ($48) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 4537 "datetimemodule.c"
+        var $42=$self_addr; //@line 4537 "datetimemodule.c"
+        var $43=$42; //@line 4537 "datetimemodule.c"
+        var $44=$43+12; //@line 4537 "datetimemodule.c"
+        var $45=HEAP[$44]; //@line 4537 "datetimemodule.c"
+        var $46=($45)!=0; //@line 4537 "datetimemodule.c"
+        if ($46) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 4537 "datetimemodule.c"
       case 1: // $bb
-        var $49=$self_addr; //@line 4537 "datetimemodule.c"
-        var $50=$49+24; //@line 4537 "datetimemodule.c"
-        var $51=HEAP[$50]; //@line 4537 "datetimemodule.c"
-        var $52=($51)!=(__Py_NoneStruct); //@line 4537 "datetimemodule.c"
-        if ($52) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 4537 "datetimemodule.c"
+        var $47=$self_addr; //@line 4537 "datetimemodule.c"
+        var $48=$47+24; //@line 4537 "datetimemodule.c"
+        var $49=HEAP[$48]; //@line 4537 "datetimemodule.c"
+        var $50=($49)!=(__Py_NoneStruct); //@line 4537 "datetimemodule.c"
+        if ($50) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 4537 "datetimemodule.c"
       case 2: // $bb1
+        var $51=$self_addr; //@line 4540 "datetimemodule.c"
+        var $52=$51; //@line 4540 "datetimemodule.c"
         var $53=$self_addr; //@line 4540 "datetimemodule.c"
-        var $54=$53; //@line 4540 "datetimemodule.c"
-        var $55=$self_addr; //@line 4540 "datetimemodule.c"
-        var $56=$55+24; //@line 4540 "datetimemodule.c"
-        var $57=HEAP[$56]; //@line 4540 "datetimemodule.c"
-        $tzinfo_addr_i=$57;
-        $tzinfoarg_addr_i=$54;
-        $none_addr_i=$none;
-        var $58=$tzinfo_addr_i; //@line 888 "datetimemodule.c"
-        var $59=$tzinfoarg_addr_i; //@line 888 "datetimemodule.c"
-        var $60=$none_addr_i; //@line 888 "datetimemodule.c"
-        var $61=_call_utc_tzinfo_method($58, __str42, $59, $60); //@line 888 "datetimemodule.c"
-        $1=$61; //@line 888 "datetimemodule.c"
-        var $62=$1; //@line 888 "datetimemodule.c"
-        $retval_i=$62; //@line 888 "datetimemodule.c"
-        var $retval1_i=$retval_i; //@line 888 "datetimemodule.c"
-        $offset=$retval1_i; //@line 4540 "datetimemodule.c"
-        var $63=$offset; //@line 4541 "datetimemodule.c"
-        var $64=($63)==-1; //@line 4541 "datetimemodule.c"
-        if ($64) { __lastLabel__ = 2; __label__ = 3; break; } else { __lastLabel__ = 2; __label__ = 6; break; } //@line 4541 "datetimemodule.c"
+        var $54=$53+24; //@line 4540 "datetimemodule.c"
+        var $55=HEAP[$54]; //@line 4540 "datetimemodule.c"
+        var $56=_call_utcoffset($55, $52, $none); //@line 4540 "datetimemodule.c"
+        $offset=$56; //@line 4540 "datetimemodule.c"
+        var $57=$offset; //@line 4541 "datetimemodule.c"
+        var $58=($57)==-1; //@line 4541 "datetimemodule.c"
+        if ($58) { __lastLabel__ = 2; __label__ = 3; break; } else { __lastLabel__ = 2; __label__ = 6; break; } //@line 4541 "datetimemodule.c"
       case 3: // $bb2
-        var $65=_PyErr_Occurred(); //@line 4541 "datetimemodule.c"
-        var $66=($65)!=0; //@line 4541 "datetimemodule.c"
-        if ($66) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4541 "datetimemodule.c"
+        var $59=_PyErr_Occurred(); //@line 4541 "datetimemodule.c"
+        var $60=($59)!=0; //@line 4541 "datetimemodule.c"
+        if ($60) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 4541 "datetimemodule.c"
       case 4: // $bb3
-        $2=0; //@line 4542 "datetimemodule.c"
+        $0=0; //@line 4542 "datetimemodule.c"
         __label__ = 12; break; //@line 4542 "datetimemodule.c"
       case 5: // $bb4thread_pre_split
         var $_pr=$offset;
         __lastLabel__ = 5; __label__ = 6; break;
       case 6: // $bb4
-        var $67=__lastLabel__ == 5 ? $_pr : ($63);
-        var $68=($67)!=0; //@line 4547 "datetimemodule.c"
-        if ($68) { __label__ = 7; break; } else { __label__ = 11; break; } //@line 4547 "datetimemodule.c"
+        var $61=__lastLabel__ == 5 ? $_pr : ($57);
+        var $62=($61)!=0; //@line 4547 "datetimemodule.c"
+        if ($62) { __label__ = 7; break; } else { __label__ = 11; break; } //@line 4547 "datetimemodule.c"
       case 7: // $bb5
-        var $69=HEAP[$mm]; //@line 4551 "datetimemodule.c"
-        var $70=$offset; //@line 4551 "datetimemodule.c"
-        var $71=($69) - ($70); //@line 4551 "datetimemodule.c"
-        HEAP[$mm]=$71; //@line 4551 "datetimemodule.c"
-        $year_addr_i=$y;
-        $month_addr_i=$m;
-        $day_addr_i=$d;
-        $hour_addr_i=$hh;
-        $minute_addr_i=$mm;
-        $second_addr_i=$ss;
-        $microsecond_addr_i=$us;
-        var $72=$second_addr_i; //@line 577 "datetimemodule.c"
-        var $73=$microsecond_addr_i; //@line 577 "datetimemodule.c"
-        _normalize_pair($72, $73, 1000000); //@line 577 "datetimemodule.c"
-        var $74=$minute_addr_i; //@line 578 "datetimemodule.c"
-        var $75=$second_addr_i; //@line 578 "datetimemodule.c"
-        _normalize_pair($74, $75, 60); //@line 578 "datetimemodule.c"
-        var $76=$hour_addr_i; //@line 579 "datetimemodule.c"
-        var $77=$minute_addr_i; //@line 579 "datetimemodule.c"
-        _normalize_pair($76, $77, 60); //@line 579 "datetimemodule.c"
-        var $78=$day_addr_i; //@line 580 "datetimemodule.c"
-        var $79=$hour_addr_i; //@line 580 "datetimemodule.c"
-        _normalize_pair($78, $79, 24); //@line 580 "datetimemodule.c"
-        var $80=$year_addr_i; //@line 581 "datetimemodule.c"
-        var $81=$month_addr_i; //@line 581 "datetimemodule.c"
-        var $82=$day_addr_i; //@line 581 "datetimemodule.c"
-        var $83=_normalize_date($80, $81, $82); //@line 581 "datetimemodule.c"
-        $0=$83; //@line 581 "datetimemodule.c"
-        var $84=$0; //@line 581 "datetimemodule.c"
-        $retval_i1=$84; //@line 581 "datetimemodule.c"
-        var $retval1_i2=$retval_i1; //@line 581 "datetimemodule.c"
-        $stat=$retval1_i2; //@line 4552 "datetimemodule.c"
-        var $85=$stat; //@line 4553 "datetimemodule.c"
-        var $86=($85) < 0; //@line 4553 "datetimemodule.c"
-        if ($86) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 4553 "datetimemodule.c"
+        var $63=HEAP[$mm]; //@line 4551 "datetimemodule.c"
+        var $64=$offset; //@line 4551 "datetimemodule.c"
+        var $65=($63) - ($64); //@line 4551 "datetimemodule.c"
+        HEAP[$mm]=$65; //@line 4551 "datetimemodule.c"
+        var $66=_normalize_datetime($y, $m, $d, $hh, $mm, $ss, $us); //@line 4552 "datetimemodule.c"
+        $stat=$66; //@line 4552 "datetimemodule.c"
+        var $67=$stat; //@line 4553 "datetimemodule.c"
+        var $68=($67) < 0; //@line 4553 "datetimemodule.c"
+        if ($68) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 4553 "datetimemodule.c"
       case 8: // $bb6
-        var $87=HEAP[_PyExc_OverflowError]; //@line 4557 "datetimemodule.c"
-        var $88=_PyErr_ExceptionMatches($87); //@line 4557 "datetimemodule.c"
-        var $89=($88)!=0; //@line 4557 "datetimemodule.c"
-        if ($89) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 4557 "datetimemodule.c"
+        var $69=HEAP[_PyExc_OverflowError]; //@line 4557 "datetimemodule.c"
+        var $70=_PyErr_ExceptionMatches($69); //@line 4557 "datetimemodule.c"
+        var $71=($70)!=0; //@line 4557 "datetimemodule.c"
+        if ($71) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 4557 "datetimemodule.c"
       case 9: // $bb7
         _PyErr_Clear(); //@line 4558 "datetimemodule.c"
         __label__ = 11; break; //@line 4558 "datetimemodule.c"
       case 10: // $bb8
-        $2=0; //@line 4560 "datetimemodule.c"
+        $0=0; //@line 4560 "datetimemodule.c"
         __label__ = 12; break; //@line 4560 "datetimemodule.c"
       case 11: // $bb9
-        var $90=HEAP[$ss]; //@line 4563 "datetimemodule.c"
-        var $91=HEAP[$mm]; //@line 4563 "datetimemodule.c"
-        var $92=HEAP[$hh]; //@line 4563 "datetimemodule.c"
-        var $93=HEAP[$d]; //@line 4563 "datetimemodule.c"
-        var $94=HEAP[$m]; //@line 4563 "datetimemodule.c"
-        var $95=HEAP[$y]; //@line 4563 "datetimemodule.c"
-        var $96=_build_struct_time($95, $94, $93, $92, $91, $90, 0); //@line 4563 "datetimemodule.c"
-        $2=$96; //@line 4563 "datetimemodule.c"
+        var $72=HEAP[$ss]; //@line 4563 "datetimemodule.c"
+        var $73=HEAP[$mm]; //@line 4563 "datetimemodule.c"
+        var $74=HEAP[$hh]; //@line 4563 "datetimemodule.c"
+        var $75=HEAP[$d]; //@line 4563 "datetimemodule.c"
+        var $76=HEAP[$m]; //@line 4563 "datetimemodule.c"
+        var $77=HEAP[$y]; //@line 4563 "datetimemodule.c"
+        var $78=_build_struct_time($77, $76, $75, $74, $73, $72, 0); //@line 4563 "datetimemodule.c"
+        $0=$78; //@line 4563 "datetimemodule.c"
         __label__ = 12; break; //@line 4563 "datetimemodule.c"
       case 12: // $bb10
-        var $97=$2; //@line 4542 "datetimemodule.c"
-        $retval=$97; //@line 4542 "datetimemodule.c"
+        var $79=$0; //@line 4542 "datetimemodule.c"
+        $retval=$79; //@line 4542 "datetimemodule.c"
         var $retval11=$retval; //@line 4542 "datetimemodule.c"
         STACKTOP = __stackBase__;
         return $retval11; //@line 4542 "datetimemodule.c"
@@ -16124,101 +15262,111 @@ var _initialized_b;
   }
   
 
-  function _datetime_reduce($self, $arg) {
+  function _datetime_getstate($self) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
-        var $basestate_i;
-        var $result_i;
         var $self_addr;
-        var $arg_addr;
         var $retval;
-        var $1;
+        var $0;
+        var $basestate;
+        var $result;
         $self_addr=$self;
-        $arg_addr=$arg;
-        var $2=$self_addr; //@line 4594 "datetimemodule.c"
-        $self_addr_i=$2;
-        $result_i=0; //@line 4577 "datetimemodule.c"
-        var $3=$self_addr_i; //@line 4579 "datetimemodule.c"
-        var $4=$3+13; //@line 4579 "datetimemodule.c"
-        var $5=$4; //@line 4579 "datetimemodule.c"
-        var $6=_PyString_FromStringAndSize($5, 10); //@line 4579 "datetimemodule.c"
-        $basestate_i=$6; //@line 4579 "datetimemodule.c"
-        var $7=$basestate_i; //@line 4581 "datetimemodule.c"
-        var $8=($7)!=0; //@line 4581 "datetimemodule.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 4581 "datetimemodule.c"
-      case 1: // $bb_i
-        var $9=$self_addr_i; //@line 4582 "datetimemodule.c"
-        var $10=$9; //@line 4582 "datetimemodule.c"
-        var $11=$10+12; //@line 4582 "datetimemodule.c"
-        var $12=HEAP[$11]; //@line 4582 "datetimemodule.c"
-        var $13=($12)==0; //@line 4582 "datetimemodule.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 4582 "datetimemodule.c"
-      case 2: // $bb1_i
-        var $14=$self_addr_i; //@line 4582 "datetimemodule.c"
-        var $15=$14+24; //@line 4582 "datetimemodule.c"
-        var $16=HEAP[$15]; //@line 4582 "datetimemodule.c"
-        var $17=($16)==(__Py_NoneStruct); //@line 4582 "datetimemodule.c"
-        if ($17) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 4582 "datetimemodule.c"
-      case 3: // $bb2_i
-        var $18=$basestate_i; //@line 4583 "datetimemodule.c"
-        var $19=_PyTuple_Pack(1, $18); //@line 4583 "datetimemodule.c"
-        $result_i=$19; //@line 4583 "datetimemodule.c"
+        $result=0; //@line 4577 "datetimemodule.c"
+        var $1=$self_addr; //@line 4579 "datetimemodule.c"
+        var $2=$1+13; //@line 4579 "datetimemodule.c"
+        var $3=$2; //@line 4579 "datetimemodule.c"
+        var $4=_PyString_FromStringAndSize($3, 10); //@line 4579 "datetimemodule.c"
+        $basestate=$4; //@line 4579 "datetimemodule.c"
+        var $5=$basestate; //@line 4581 "datetimemodule.c"
+        var $6=($5)!=0; //@line 4581 "datetimemodule.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 4581 "datetimemodule.c"
+      case 1: // $bb
+        var $7=$self_addr; //@line 4582 "datetimemodule.c"
+        var $8=$7; //@line 4582 "datetimemodule.c"
+        var $9=$8+12; //@line 4582 "datetimemodule.c"
+        var $10=HEAP[$9]; //@line 4582 "datetimemodule.c"
+        var $11=($10)==0; //@line 4582 "datetimemodule.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 2; break; } //@line 4582 "datetimemodule.c"
+      case 2: // $bb1
+        var $12=$self_addr; //@line 4582 "datetimemodule.c"
+        var $13=$12+24; //@line 4582 "datetimemodule.c"
+        var $14=HEAP[$13]; //@line 4582 "datetimemodule.c"
+        var $15=($14)==(__Py_NoneStruct); //@line 4582 "datetimemodule.c"
+        if ($15) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 4582 "datetimemodule.c"
+      case 3: // $bb2
+        var $16=$basestate; //@line 4583 "datetimemodule.c"
+        var $17=_PyTuple_Pack(1, allocate([$16,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 4583 "datetimemodule.c"
+        $result=$17; //@line 4583 "datetimemodule.c"
         __label__ = 5; break; //@line 4583 "datetimemodule.c"
-      case 4: // $bb3_i
-        var $20=$self_addr_i; //@line 4585 "datetimemodule.c"
-        var $21=$20+24; //@line 4585 "datetimemodule.c"
-        var $22=HEAP[$21]; //@line 4585 "datetimemodule.c"
-        var $23=$basestate_i; //@line 4585 "datetimemodule.c"
-        var $24=_PyTuple_Pack(2, $23, $22); //@line 4585 "datetimemodule.c"
-        $result_i=$24; //@line 4585 "datetimemodule.c"
+      case 4: // $bb3
+        var $18=$self_addr; //@line 4585 "datetimemodule.c"
+        var $19=$18+24; //@line 4585 "datetimemodule.c"
+        var $20=HEAP[$19]; //@line 4585 "datetimemodule.c"
+        var $21=$basestate; //@line 4585 "datetimemodule.c"
+        var $22=_PyTuple_Pack(2, allocate([$21,0,0,0,$20,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 4585 "datetimemodule.c"
+        $result=$22; //@line 4585 "datetimemodule.c"
         __label__ = 5; break; //@line 4585 "datetimemodule.c"
-      case 5: // $bb4_i
-        var $25=$basestate_i; //@line 4586 "datetimemodule.c"
-        var $26=$25; //@line 4586 "datetimemodule.c"
-        var $27=HEAP[$26]; //@line 4586 "datetimemodule.c"
-        var $28=($27) - 1; //@line 4586 "datetimemodule.c"
-        var $29=$basestate_i; //@line 4586 "datetimemodule.c"
+      case 5: // $bb4
+        var $23=$basestate; //@line 4586 "datetimemodule.c"
+        var $24=$23; //@line 4586 "datetimemodule.c"
+        var $25=HEAP[$24]; //@line 4586 "datetimemodule.c"
+        var $26=($25) - 1; //@line 4586 "datetimemodule.c"
+        var $27=$basestate; //@line 4586 "datetimemodule.c"
+        var $28=$27; //@line 4586 "datetimemodule.c"
+        HEAP[$28]=$26; //@line 4586 "datetimemodule.c"
+        var $29=$basestate; //@line 4586 "datetimemodule.c"
         var $30=$29; //@line 4586 "datetimemodule.c"
-        HEAP[$30]=$28; //@line 4586 "datetimemodule.c"
-        var $31=$basestate_i; //@line 4586 "datetimemodule.c"
-        var $32=$31; //@line 4586 "datetimemodule.c"
-        var $33=HEAP[$32]; //@line 4586 "datetimemodule.c"
-        var $34=($33)==0; //@line 4586 "datetimemodule.c"
-        if ($34) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 4586 "datetimemodule.c"
-      case 6: // $bb5_i
-        var $35=$basestate_i; //@line 4586 "datetimemodule.c"
-        var $36=$35+4; //@line 4586 "datetimemodule.c"
+        var $31=HEAP[$30]; //@line 4586 "datetimemodule.c"
+        var $32=($31)==0; //@line 4586 "datetimemodule.c"
+        if ($32) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 4586 "datetimemodule.c"
+      case 6: // $bb5
+        var $33=$basestate; //@line 4586 "datetimemodule.c"
+        var $34=$33+4; //@line 4586 "datetimemodule.c"
+        var $35=HEAP[$34]; //@line 4586 "datetimemodule.c"
+        var $36=$35+24; //@line 4586 "datetimemodule.c"
         var $37=HEAP[$36]; //@line 4586 "datetimemodule.c"
-        var $38=$37+24; //@line 4586 "datetimemodule.c"
-        var $39=HEAP[$38]; //@line 4586 "datetimemodule.c"
-        var $40=$basestate_i; //@line 4586 "datetimemodule.c"
-        FUNCTION_TABLE[$39]($40); //@line 4586 "datetimemodule.c"
+        var $38=$basestate; //@line 4586 "datetimemodule.c"
+        FUNCTION_TABLE[$37]($38); //@line 4586 "datetimemodule.c"
         __label__ = 7; break; //@line 4586 "datetimemodule.c"
-      case 7: // $datetime_getstate_exit
-        var $41=$result_i; //@line 4588 "datetimemodule.c"
-        $0=$41; //@line 4588 "datetimemodule.c"
-        var $42=$0; //@line 4588 "datetimemodule.c"
-        $retval_i=$42; //@line 4588 "datetimemodule.c"
-        var $retval7_i=$retval_i; //@line 4588 "datetimemodule.c"
-        var $43=$self_addr; //@line 4594 "datetimemodule.c"
-        var $44=$43; //@line 4594 "datetimemodule.c"
-        var $45=$44+4; //@line 4594 "datetimemodule.c"
-        var $46=HEAP[$45]; //@line 4594 "datetimemodule.c"
-        var $47=__Py_BuildValue_SizeT(__str154, $46, $retval7_i); //@line 4594 "datetimemodule.c"
-        $1=$47; //@line 4594 "datetimemodule.c"
-        var $48=$1; //@line 4594 "datetimemodule.c"
-        $retval=$48; //@line 4594 "datetimemodule.c"
-        var $retval1=$retval; //@line 4594 "datetimemodule.c"
+      case 7: // $bb6
+        var $39=$result; //@line 4588 "datetimemodule.c"
+        $0=$39; //@line 4588 "datetimemodule.c"
+        var $40=$0; //@line 4588 "datetimemodule.c"
+        $retval=$40; //@line 4588 "datetimemodule.c"
+        var $retval7=$retval; //@line 4588 "datetimemodule.c"
         ;
-        return $retval1; //@line 4594 "datetimemodule.c"
+        return $retval7; //@line 4588 "datetimemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
+  }
+  
+
+  function _datetime_reduce($self, $arg) {
+    ;
+    var __label__;
+  
+    var $self_addr;
+    var $arg_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    $arg_addr=$arg;
+    var $1=$self_addr; //@line 4594 "datetimemodule.c"
+    var $2=_datetime_getstate($1); //@line 4594 "datetimemodule.c"
+    var $3=$self_addr; //@line 4594 "datetimemodule.c"
+    var $4=$3; //@line 4594 "datetimemodule.c"
+    var $5=$4+4; //@line 4594 "datetimemodule.c"
+    var $6=HEAP[$5]; //@line 4594 "datetimemodule.c"
+    var $7=__Py_BuildValue_SizeT(__str154, allocate([$6,0,0,0,$2,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 4594 "datetimemodule.c"
+    $0=$7; //@line 4594 "datetimemodule.c"
+    var $8=$0; //@line 4594 "datetimemodule.c"
+    $retval=$8; //@line 4594 "datetimemodule.c"
+    var $retval1=$retval; //@line 4594 "datetimemodule.c"
+    ;
+    return $retval1; //@line 4594 "datetimemodule.c"
   }
   
 
@@ -16807,70 +15955,38 @@ var _initialized_b;
   
 
   function _time_time346($self, $unused) {
-    var __stackBase__  = STACKTOP; STACKTOP += 20; _memset(__stackBase__, 0, 20);
+    ;
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $t_i=__stackBase__;
-        var $t2_i=__stackBase__+8;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         var $secs;
         $self_addr=$self;
         $unused_addr=$unused;
-        var $2=_gettimeofday($t_i, 0); //@line 907 "timemodule.c"
-        var $3=($2)==0; //@line 907 "timemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 907 "timemodule.c"
-      case 1: // $bb_i
-        var $4=$t_i; //@line 908 "timemodule.c"
-        var $5=HEAP[$4]; //@line 908 "timemodule.c"
-        var $6=($5); //@line 908 "timemodule.c"
-        var $7=$t_i+4; //@line 908 "timemodule.c"
-        var $8=HEAP[$7]; //@line 908 "timemodule.c"
-        var $9=($8); //@line 908 "timemodule.c"
-        var $10=($9) * 0.000001; //@line 908 "timemodule.c"
-        var $11=($6) + ($10); //@line 908 "timemodule.c"
-        $0=$11; //@line 908 "timemodule.c"
-        __lastLabel__ = 1; __label__ = 3; break; //@line 908 "timemodule.c"
-      case 2: // $bb1_i
-        var $12=_ftime($t2_i); //@line 916 "timemodule.c"
-        var $13=$t2_i; //@line 917 "timemodule.c"
-        var $14=HEAP[$13]; //@line 917 "timemodule.c"
-        var $15=($14); //@line 917 "timemodule.c"
-        var $16=$t2_i+4; //@line 917 "timemodule.c"
-        var $17=HEAP[$16]; //@line 917 "timemodule.c"
-        var $18=($17); //@line 917 "timemodule.c"
-        var $19=($18) * 0.001; //@line 917 "timemodule.c"
-        var $20=($15) + ($19); //@line 917 "timemodule.c"
-        $0=$20; //@line 917 "timemodule.c"
-        __lastLabel__ = 2; __label__ = 3; break; //@line 917 "timemodule.c"
-      case 3: // $floattime_exit
-        var $21=__lastLabel__ == 1 ? $11 : ($20);
-        $retval_i=$21; //@line 908 "timemodule.c"
-        $secs=$21; //@line 131 "timemodule.c"
-        var $22=($21) == 0; //@line 132 "timemodule.c"
-        if ($22) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 132 "timemodule.c"
-      case 4: // $bb
-        var $23=HEAP[_PyExc_IOError]; //@line 133 "timemodule.c"
-        var $24=_PyErr_SetFromErrno($23); //@line 133 "timemodule.c"
-        $1=0; //@line 134 "timemodule.c"
-        __label__ = 6; break; //@line 134 "timemodule.c"
-      case 5: // $bb1
-        var $25=$secs; //@line 136 "timemodule.c"
-        var $26=_PyFloat_FromDouble($25); //@line 136 "timemodule.c"
-        $1=$26; //@line 136 "timemodule.c"
-        __label__ = 6; break; //@line 136 "timemodule.c"
-      case 6: // $bb2
-        var $27=$1; //@line 134 "timemodule.c"
-        $retval=$27; //@line 134 "timemodule.c"
+        var $1=_floattime(); //@line 131 "timemodule.c"
+        $secs=$1; //@line 131 "timemodule.c"
+        var $2=$secs; //@line 132 "timemodule.c"
+        var $3=($2) == 0; //@line 132 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 132 "timemodule.c"
+      case 1: // $bb
+        var $4=HEAP[_PyExc_IOError]; //@line 133 "timemodule.c"
+        var $5=_PyErr_SetFromErrno($4); //@line 133 "timemodule.c"
+        $0=0; //@line 134 "timemodule.c"
+        __label__ = 3; break; //@line 134 "timemodule.c"
+      case 2: // $bb1
+        var $6=$secs; //@line 136 "timemodule.c"
+        var $7=_PyFloat_FromDouble($6); //@line 136 "timemodule.c"
+        $0=$7; //@line 136 "timemodule.c"
+        __label__ = 3; break; //@line 136 "timemodule.c"
+      case 3: // $bb2
+        var $8=$0; //@line 134 "timemodule.c"
+        $retval=$8; //@line 134 "timemodule.c"
         var $retval3=$retval; //@line 134 "timemodule.c"
-        STACKTOP = __stackBase__;
+        ;
         return $retval3; //@line 134 "timemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
@@ -16901,77 +16017,197 @@ var _initialized_b;
   
 
   function _time_sleep($self, $args) {
-    var __stackBase__  = STACKTOP; STACKTOP += 16; _memset(__stackBase__, 0, 16);
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $secs_addr_i;
-        var $retval_i;
-        var $0;
-        var $t_i=__stackBase__;
-        var $frac_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
-        var $secs=__stackBase__+8;
+        var $0;
+        var $secs=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 204 "timemodule.c"
-        var $3=_PyArg_ParseTuple($2, __str1284, $secs); //@line 204 "timemodule.c"
-        var $4=($3)==0; //@line 204 "timemodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 204 "timemodule.c"
+        var $1=$args_addr; //@line 204 "timemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str1284, allocate([$secs,0,0,0], ["double*",0,0,0], ALLOC_STACK)); //@line 204 "timemodule.c"
+        var $3=($2)==0; //@line 204 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 204 "timemodule.c"
       case 1: // $bb
-        $1=0; //@line 205 "timemodule.c"
-        __label__ = 6; break; //@line 205 "timemodule.c"
+        $0=0; //@line 205 "timemodule.c"
+        __label__ = 5; break; //@line 205 "timemodule.c"
       case 2: // $bb1
-        var $5=HEAP[$secs]; //@line 206 "timemodule.c"
-        $secs_addr_i=$5;
-        var $6=$secs_addr_i; //@line 938 "timemodule.c"
-        var $7=_fmod($6, 1); //@line 938 "timemodule.c"
-        $frac_i=$7; //@line 938 "timemodule.c"
-        var $8=$secs_addr_i; //@line 939 "timemodule.c"
-        var $9=_floor($8); //@line 939 "timemodule.c"
-        $secs_addr_i=$9; //@line 939 "timemodule.c"
-        var $10=$secs_addr_i; //@line 940 "timemodule.c"
-        var $11=((($10))|0); //@line 940 "timemodule.c"
-        var $12=$t_i; //@line 940 "timemodule.c"
-        HEAP[$12]=$11; //@line 940 "timemodule.c"
-        var $13=$frac_i; //@line 941 "timemodule.c"
-        var $14=($13) * 1000000; //@line 941 "timemodule.c"
-        var $15=((($14))|0); //@line 941 "timemodule.c"
-        var $16=$t_i+4; //@line 941 "timemodule.c"
-        HEAP[$16]=$15; //@line 941 "timemodule.c"
-        var $17=_select(0, 0, 0, 0, $t_i); //@line 943 "timemodule.c"
-        var $18=($17)!=0; //@line 943 "timemodule.c"
-        if ($18) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 943 "timemodule.c"
-      case 3: // $bb_i
-        var $19=___errno_location(); //@line 945 "timemodule.c"
-        var $20=HEAP[$19]; //@line 945 "timemodule.c"
-        var $21=($20)!=4; //@line 945 "timemodule.c"
-        if ($21) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 945 "timemodule.c"
-      case 4: // $bb2
-        var $22=HEAP[_PyExc_IOError]; //@line 950 "timemodule.c"
-        var $23=_PyErr_SetFromErrno($22); //@line 950 "timemodule.c"
-        $0=-1; //@line 951 "timemodule.c"
-        $retval_i=-1; //@line 951 "timemodule.c"
-        $1=0; //@line 207 "timemodule.c"
-        __label__ = 6; break; //@line 207 "timemodule.c"
-      case 5: // $bb3
-        $0=0; //@line 1051 "timemodule.c"
-        $retval_i=0; //@line 951 "timemodule.c"
-        var $24=HEAP[__Py_NoneStruct]; //@line 208 "timemodule.c"
-        var $25=($24) + 1; //@line 208 "timemodule.c"
-        HEAP[__Py_NoneStruct]=$25; //@line 208 "timemodule.c"
-        $1=__Py_NoneStruct; //@line 209 "timemodule.c"
-        __label__ = 6; break; //@line 209 "timemodule.c"
-      case 6: // $bb4
-        var $26=$1; //@line 205 "timemodule.c"
-        $retval=$26; //@line 205 "timemodule.c"
+        var $4=HEAP[$secs]; //@line 206 "timemodule.c"
+        var $5=_floatsleep($4); //@line 206 "timemodule.c"
+        var $6=($5)!=0; //@line 206 "timemodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 206 "timemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 207 "timemodule.c"
+        __label__ = 5; break; //@line 207 "timemodule.c"
+      case 4: // $bb3
+        var $7=HEAP[__Py_NoneStruct]; //@line 208 "timemodule.c"
+        var $8=($7) + 1; //@line 208 "timemodule.c"
+        HEAP[__Py_NoneStruct]=$8; //@line 208 "timemodule.c"
+        $0=__Py_NoneStruct; //@line 209 "timemodule.c"
+        __label__ = 5; break; //@line 209 "timemodule.c"
+      case 5: // $bb4
+        var $9=$0; //@line 205 "timemodule.c"
+        $retval=$9; //@line 205 "timemodule.c"
         var $retval5=$retval; //@line 205 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 205 "timemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _tmtotuple($p) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $p_addr;
+        var $retval;
+        var $0;
+        var $v;
+        $p_addr=$p;
+        var $1=_PyStructSequence_New(_StructTimeType); //@line 250 "timemodule.c"
+        $v=$1; //@line 250 "timemodule.c"
+        var $2=$v; //@line 251 "timemodule.c"
+        var $3=($2)==0; //@line 251 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 251 "timemodule.c"
+      case 1: // $bb
+        $0=0; //@line 252 "timemodule.c"
+        __label__ = 8; break; //@line 252 "timemodule.c"
+      case 2: // $bb1
+        var $4=$v; //@line 256 "timemodule.c"
+        var $5=$4; //@line 256 "timemodule.c"
+        var $6=$p_addr; //@line 256 "timemodule.c"
+        var $7=$6+20; //@line 256 "timemodule.c"
+        var $8=HEAP[$7]; //@line 256 "timemodule.c"
+        var $9=($8) + 1900; //@line 256 "timemodule.c"
+        var $10=_PyInt_FromLong($9); //@line 256 "timemodule.c"
+        var $11=$5+12; //@line 256 "timemodule.c"
+        var $12=$11; //@line 256 "timemodule.c"
+        HEAP[$12]=$10; //@line 256 "timemodule.c"
+        var $13=$v; //@line 257 "timemodule.c"
+        var $14=$13; //@line 257 "timemodule.c"
+        var $15=$p_addr; //@line 257 "timemodule.c"
+        var $16=$15+16; //@line 257 "timemodule.c"
+        var $17=HEAP[$16]; //@line 257 "timemodule.c"
+        var $18=($17) + 1; //@line 257 "timemodule.c"
+        var $19=_PyInt_FromLong($18); //@line 257 "timemodule.c"
+        var $20=$14+12; //@line 257 "timemodule.c"
+        var $21=$20+4; //@line 257 "timemodule.c"
+        HEAP[$21]=$19; //@line 257 "timemodule.c"
+        var $22=$v; //@line 258 "timemodule.c"
+        var $23=$22; //@line 258 "timemodule.c"
+        var $24=$p_addr; //@line 258 "timemodule.c"
+        var $25=$24+12; //@line 258 "timemodule.c"
+        var $26=HEAP[$25]; //@line 258 "timemodule.c"
+        var $27=_PyInt_FromLong($26); //@line 258 "timemodule.c"
+        var $28=$23+12; //@line 258 "timemodule.c"
+        var $29=$28+8; //@line 258 "timemodule.c"
+        HEAP[$29]=$27; //@line 258 "timemodule.c"
+        var $30=$v; //@line 259 "timemodule.c"
+        var $31=$30; //@line 259 "timemodule.c"
+        var $32=$p_addr; //@line 259 "timemodule.c"
+        var $33=$32+8; //@line 259 "timemodule.c"
+        var $34=HEAP[$33]; //@line 259 "timemodule.c"
+        var $35=_PyInt_FromLong($34); //@line 259 "timemodule.c"
+        var $36=$31+12; //@line 259 "timemodule.c"
+        var $37=$36+12; //@line 259 "timemodule.c"
+        HEAP[$37]=$35; //@line 259 "timemodule.c"
+        var $38=$v; //@line 260 "timemodule.c"
+        var $39=$38; //@line 260 "timemodule.c"
+        var $40=$p_addr; //@line 260 "timemodule.c"
+        var $41=$40+4; //@line 260 "timemodule.c"
+        var $42=HEAP[$41]; //@line 260 "timemodule.c"
+        var $43=_PyInt_FromLong($42); //@line 260 "timemodule.c"
+        var $44=$39+12; //@line 260 "timemodule.c"
+        var $45=$44+16; //@line 260 "timemodule.c"
+        HEAP[$45]=$43; //@line 260 "timemodule.c"
+        var $46=$v; //@line 261 "timemodule.c"
+        var $47=$46; //@line 261 "timemodule.c"
+        var $48=$p_addr; //@line 261 "timemodule.c"
+        var $49=$48; //@line 261 "timemodule.c"
+        var $50=HEAP[$49]; //@line 261 "timemodule.c"
+        var $51=_PyInt_FromLong($50); //@line 261 "timemodule.c"
+        var $52=$47+12; //@line 261 "timemodule.c"
+        var $53=$52+20; //@line 261 "timemodule.c"
+        HEAP[$53]=$51; //@line 261 "timemodule.c"
+        var $54=$v; //@line 262 "timemodule.c"
+        var $55=$54; //@line 262 "timemodule.c"
+        var $56=$p_addr; //@line 262 "timemodule.c"
+        var $57=$56+24; //@line 262 "timemodule.c"
+        var $58=HEAP[$57]; //@line 262 "timemodule.c"
+        var $59=($58) + 6; //@line 262 "timemodule.c"
+        var $60=($59) % 7; //@line 262 "timemodule.c"
+        var $61=_PyInt_FromLong($60); //@line 262 "timemodule.c"
+        var $62=$55+12; //@line 262 "timemodule.c"
+        var $63=$62+24; //@line 262 "timemodule.c"
+        HEAP[$63]=$61; //@line 262 "timemodule.c"
+        var $64=$v; //@line 263 "timemodule.c"
+        var $65=$64; //@line 263 "timemodule.c"
+        var $66=$p_addr; //@line 263 "timemodule.c"
+        var $67=$66+28; //@line 263 "timemodule.c"
+        var $68=HEAP[$67]; //@line 263 "timemodule.c"
+        var $69=($68) + 1; //@line 263 "timemodule.c"
+        var $70=_PyInt_FromLong($69); //@line 263 "timemodule.c"
+        var $71=$65+12; //@line 263 "timemodule.c"
+        var $72=$71+28; //@line 263 "timemodule.c"
+        HEAP[$72]=$70; //@line 263 "timemodule.c"
+        var $73=$v; //@line 264 "timemodule.c"
+        var $74=$73; //@line 264 "timemodule.c"
+        var $75=$p_addr; //@line 264 "timemodule.c"
+        var $76=$75+32; //@line 264 "timemodule.c"
+        var $77=HEAP[$76]; //@line 264 "timemodule.c"
+        var $78=_PyInt_FromLong($77); //@line 264 "timemodule.c"
+        var $79=$74+12; //@line 264 "timemodule.c"
+        var $80=$79+32; //@line 264 "timemodule.c"
+        HEAP[$80]=$78; //@line 264 "timemodule.c"
+        var $81=_PyErr_Occurred(); //@line 266 "timemodule.c"
+        var $82=($81)!=0; //@line 266 "timemodule.c"
+        var $83=$v; //@line 267 "timemodule.c"
+        if ($82) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 266 "timemodule.c"
+      case 3: // $bb2
+        var $84=($83)!=0; //@line 267 "timemodule.c"
+        if ($84) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 267 "timemodule.c"
+      case 4: // $bb3
+        var $85=$v; //@line 267 "timemodule.c"
+        var $86=$85; //@line 267 "timemodule.c"
+        var $87=HEAP[$86]; //@line 267 "timemodule.c"
+        var $88=($87) - 1; //@line 267 "timemodule.c"
+        var $89=$v; //@line 267 "timemodule.c"
+        var $90=$89; //@line 267 "timemodule.c"
+        HEAP[$90]=$88; //@line 267 "timemodule.c"
+        var $91=$v; //@line 267 "timemodule.c"
+        var $92=$91; //@line 267 "timemodule.c"
+        var $93=HEAP[$92]; //@line 267 "timemodule.c"
+        var $94=($93)==0; //@line 267 "timemodule.c"
+        if ($94) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 267 "timemodule.c"
+      case 5: // $bb4
+        var $95=$v; //@line 267 "timemodule.c"
+        var $96=$95+4; //@line 267 "timemodule.c"
+        var $97=HEAP[$96]; //@line 267 "timemodule.c"
+        var $98=$97+24; //@line 267 "timemodule.c"
+        var $99=HEAP[$98]; //@line 267 "timemodule.c"
+        var $100=$v; //@line 267 "timemodule.c"
+        FUNCTION_TABLE[$99]($100); //@line 267 "timemodule.c"
+        __label__ = 6; break; //@line 267 "timemodule.c"
+      case 6: // $bb5
+        $0=0; //@line 268 "timemodule.c"
+        __label__ = 8; break; //@line 268 "timemodule.c"
+      case 7: // $bb6
+        $0=$83; //@line 271 "timemodule.c"
+        __label__ = 8; break; //@line 271 "timemodule.c"
+      case 8: // $bb7
+        var $101=$0; //@line 252 "timemodule.c"
+        $retval=$101; //@line 252 "timemodule.c"
+        var $retval8=$retval; //@line 252 "timemodule.c"
+        ;
+        return $retval8; //@line 252 "timemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -16983,225 +16219,57 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i;
-        var $retval_i1;
-        var $0;
-        var $v_i;
-        var $x_addr_i;
-        var $retval_i;
-        var $1;
-        var $result_i;
-        var $diff_i;
         var $when_addr;
         var $function_addr;
         var $retval;
-        var $2;
+        var $0;
         var $p;
         var $whent=__stackBase__;
         $when_addr=$when;
         $function_addr=$function;
-        var $3=$when_addr; //@line 278 "timemodule.c"
-        $x_addr_i=$3;
-        var $4=$x_addr_i; //@line 108 "timemodule.c"
-        var $5=((($4))|0); //@line 108 "timemodule.c"
-        $result_i=$5; //@line 108 "timemodule.c"
-        var $6=$result_i; //@line 118 "timemodule.c"
-        var $7=($6); //@line 118 "timemodule.c"
-        var $8=$x_addr_i; //@line 118 "timemodule.c"
-        var $9=($8) - ($7); //@line 118 "timemodule.c"
-        $diff_i=$9; //@line 118 "timemodule.c"
-        var $10=$diff_i; //@line 119 "timemodule.c"
-        var $11=($10) <= -1; //@line 119 "timemodule.c"
-        var $12=$diff_i; //@line 119 "timemodule.c"
-        var $13=($12) >= 1; //@line 119 "timemodule.c"
-        var $or_cond_i=($11) | ($13);
-        if ($or_cond_i) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 119 "timemodule.c"
-      case 1: // $_PyTime_DoubleToTimet_exit_thread
-        var $14=HEAP[_PyExc_ValueError]; //@line 120 "timemodule.c"
-        _PyErr_SetString($14, __str282); //@line 120 "timemodule.c"
-        $result_i=-1; //@line 122 "timemodule.c"
-        $1=-1; //@line 124 "timemodule.c"
-        $retval_i=-1; //@line 124 "timemodule.c"
-        HEAP[$whent]=-1; //@line 278 "timemodule.c"
-        __label__ = 3; break;
-      case 2: // $_PyTime_DoubleToTimet_exit
-        var $_pr=$result_i;
-        $1=$_pr; //@line 124 "timemodule.c"
-        $retval_i=$_pr; //@line 124 "timemodule.c"
-        HEAP[$whent]=$_pr; //@line 278 "timemodule.c"
-        var $15=($_pr)==-1; //@line 280 "timemodule.c"
-        if ($15) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 280 "timemodule.c"
-      case 3: // $bb
-        var $16=_PyErr_Occurred(); //@line 280 "timemodule.c"
-        var $17=($16)!=0; //@line 280 "timemodule.c"
-        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 280 "timemodule.c"
-      case 4: // $bb1
-        $2=0; //@line 281 "timemodule.c"
-        __label__ = 18; break; //@line 281 "timemodule.c"
-      case 5: // $bb2
-        var $18=___errno_location(); //@line 282 "timemodule.c"
-        HEAP[$18]=0; //@line 282 "timemodule.c"
-        var $19=$function_addr; //@line 283 "timemodule.c"
-        var $20=FUNCTION_TABLE[$19]($whent); //@line 283 "timemodule.c"
-        $p=$20; //@line 283 "timemodule.c"
-        var $21=($20)==0; //@line 284 "timemodule.c"
-        if ($21) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 284 "timemodule.c"
-      case 6: // $bb3
-        var $22=___errno_location(); //@line 286 "timemodule.c"
-        var $23=HEAP[$22]; //@line 286 "timemodule.c"
-        var $24=($23)==0; //@line 286 "timemodule.c"
-        if ($24) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 286 "timemodule.c"
-      case 7: // $bb4
-        var $25=___errno_location(); //@line 287 "timemodule.c"
-        HEAP[$25]=22; //@line 287 "timemodule.c"
-        __label__ = 8; break; //@line 287 "timemodule.c"
-      case 8: // $bb5
-        var $26=HEAP[_PyExc_ValueError]; //@line 289 "timemodule.c"
-        var $27=_PyErr_SetFromErrno($26); //@line 289 "timemodule.c"
-        $2=$27; //@line 289 "timemodule.c"
-        __label__ = 18; break; //@line 289 "timemodule.c"
-      case 9: // $bb6
-        var $28=$p; //@line 291 "timemodule.c"
-        $p_addr_i=$28;
-        var $29=_PyStructSequence_New(_StructTimeType); //@line 250 "timemodule.c"
-        $v_i=$29; //@line 250 "timemodule.c"
-        var $30=$v_i; //@line 251 "timemodule.c"
-        var $31=($30)==0; //@line 251 "timemodule.c"
-        if ($31) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 251 "timemodule.c"
-      case 10: // $bb_i
-        $0=0; //@line 252 "timemodule.c"
-        __label__ = 17; break; //@line 252 "timemodule.c"
-      case 11: // $bb1_i2
-        var $32=$v_i; //@line 256 "timemodule.c"
-        var $33=$32; //@line 256 "timemodule.c"
-        var $34=$p_addr_i; //@line 256 "timemodule.c"
-        var $35=$34+20; //@line 256 "timemodule.c"
-        var $36=HEAP[$35]; //@line 256 "timemodule.c"
-        var $37=($36) + 1900; //@line 256 "timemodule.c"
-        var $38=_PyInt_FromLong($37); //@line 256 "timemodule.c"
-        var $39=$33+12; //@line 256 "timemodule.c"
-        var $40=$39; //@line 256 "timemodule.c"
-        HEAP[$40]=$38; //@line 256 "timemodule.c"
-        var $41=$v_i; //@line 257 "timemodule.c"
-        var $42=$41; //@line 257 "timemodule.c"
-        var $43=$p_addr_i; //@line 257 "timemodule.c"
-        var $44=$43+16; //@line 257 "timemodule.c"
-        var $45=HEAP[$44]; //@line 257 "timemodule.c"
-        var $46=($45) + 1; //@line 257 "timemodule.c"
-        var $47=_PyInt_FromLong($46); //@line 257 "timemodule.c"
-        var $48=$42+12; //@line 257 "timemodule.c"
-        var $49=$48+4; //@line 257 "timemodule.c"
-        HEAP[$49]=$47; //@line 257 "timemodule.c"
-        var $50=$v_i; //@line 258 "timemodule.c"
-        var $51=$50; //@line 258 "timemodule.c"
-        var $52=$p_addr_i; //@line 258 "timemodule.c"
-        var $53=$52+12; //@line 258 "timemodule.c"
-        var $54=HEAP[$53]; //@line 258 "timemodule.c"
-        var $55=_PyInt_FromLong($54); //@line 258 "timemodule.c"
-        var $56=$51+12; //@line 258 "timemodule.c"
-        var $57=$56+8; //@line 258 "timemodule.c"
-        HEAP[$57]=$55; //@line 258 "timemodule.c"
-        var $58=$v_i; //@line 259 "timemodule.c"
-        var $59=$58; //@line 259 "timemodule.c"
-        var $60=$p_addr_i; //@line 259 "timemodule.c"
-        var $61=$60+8; //@line 259 "timemodule.c"
-        var $62=HEAP[$61]; //@line 259 "timemodule.c"
-        var $63=_PyInt_FromLong($62); //@line 259 "timemodule.c"
-        var $64=$59+12; //@line 259 "timemodule.c"
-        var $65=$64+12; //@line 259 "timemodule.c"
-        HEAP[$65]=$63; //@line 259 "timemodule.c"
-        var $66=$v_i; //@line 260 "timemodule.c"
-        var $67=$66; //@line 260 "timemodule.c"
-        var $68=$p_addr_i; //@line 260 "timemodule.c"
-        var $69=$68+4; //@line 260 "timemodule.c"
-        var $70=HEAP[$69]; //@line 260 "timemodule.c"
-        var $71=_PyInt_FromLong($70); //@line 260 "timemodule.c"
-        var $72=$67+12; //@line 260 "timemodule.c"
-        var $73=$72+16; //@line 260 "timemodule.c"
-        HEAP[$73]=$71; //@line 260 "timemodule.c"
-        var $74=$v_i; //@line 261 "timemodule.c"
-        var $75=$74; //@line 261 "timemodule.c"
-        var $76=$p_addr_i; //@line 261 "timemodule.c"
-        var $77=$76; //@line 261 "timemodule.c"
-        var $78=HEAP[$77]; //@line 261 "timemodule.c"
-        var $79=_PyInt_FromLong($78); //@line 261 "timemodule.c"
-        var $80=$75+12; //@line 261 "timemodule.c"
-        var $81=$80+20; //@line 261 "timemodule.c"
-        HEAP[$81]=$79; //@line 261 "timemodule.c"
-        var $82=$v_i; //@line 262 "timemodule.c"
-        var $83=$82; //@line 262 "timemodule.c"
-        var $84=$p_addr_i; //@line 262 "timemodule.c"
-        var $85=$84+24; //@line 262 "timemodule.c"
-        var $86=HEAP[$85]; //@line 262 "timemodule.c"
-        var $87=($86) + 6; //@line 262 "timemodule.c"
-        var $88=($87) % 7; //@line 262 "timemodule.c"
-        var $89=_PyInt_FromLong($88); //@line 262 "timemodule.c"
-        var $90=$83+12; //@line 262 "timemodule.c"
-        var $91=$90+24; //@line 262 "timemodule.c"
-        HEAP[$91]=$89; //@line 262 "timemodule.c"
-        var $92=$v_i; //@line 263 "timemodule.c"
-        var $93=$92; //@line 263 "timemodule.c"
-        var $94=$p_addr_i; //@line 263 "timemodule.c"
-        var $95=$94+28; //@line 263 "timemodule.c"
-        var $96=HEAP[$95]; //@line 263 "timemodule.c"
-        var $97=($96) + 1; //@line 263 "timemodule.c"
-        var $98=_PyInt_FromLong($97); //@line 263 "timemodule.c"
-        var $99=$93+12; //@line 263 "timemodule.c"
-        var $100=$99+28; //@line 263 "timemodule.c"
-        HEAP[$100]=$98; //@line 263 "timemodule.c"
-        var $101=$v_i; //@line 264 "timemodule.c"
-        var $102=$101; //@line 264 "timemodule.c"
-        var $103=$p_addr_i; //@line 264 "timemodule.c"
-        var $104=$103+32; //@line 264 "timemodule.c"
-        var $105=HEAP[$104]; //@line 264 "timemodule.c"
-        var $106=_PyInt_FromLong($105); //@line 264 "timemodule.c"
-        var $107=$102+12; //@line 264 "timemodule.c"
-        var $108=$107+32; //@line 264 "timemodule.c"
-        HEAP[$108]=$106; //@line 264 "timemodule.c"
-        var $109=_PyErr_Occurred(); //@line 266 "timemodule.c"
-        var $110=($109)!=0; //@line 266 "timemodule.c"
-        var $111=$v_i; //@line 267 "timemodule.c"
-        if ($110) { __label__ = 12; break; } else { __label__ = 16; break; } //@line 266 "timemodule.c"
-      case 12: // $bb2_i
-        var $112=($111)!=0; //@line 267 "timemodule.c"
-        if ($112) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 267 "timemodule.c"
-      case 13: // $bb3_i
-        var $113=$v_i; //@line 267 "timemodule.c"
-        var $114=$113; //@line 267 "timemodule.c"
-        var $115=HEAP[$114]; //@line 267 "timemodule.c"
-        var $116=($115) - 1; //@line 267 "timemodule.c"
-        var $117=$v_i; //@line 267 "timemodule.c"
-        var $118=$117; //@line 267 "timemodule.c"
-        HEAP[$118]=$116; //@line 267 "timemodule.c"
-        var $119=$v_i; //@line 267 "timemodule.c"
-        var $120=$119; //@line 267 "timemodule.c"
-        var $121=HEAP[$120]; //@line 267 "timemodule.c"
-        var $122=($121)==0; //@line 267 "timemodule.c"
-        if ($122) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 267 "timemodule.c"
-      case 14: // $bb4_i
-        var $123=$v_i; //@line 267 "timemodule.c"
-        var $124=$123+4; //@line 267 "timemodule.c"
-        var $125=HEAP[$124]; //@line 267 "timemodule.c"
-        var $126=$125+24; //@line 267 "timemodule.c"
-        var $127=HEAP[$126]; //@line 267 "timemodule.c"
-        var $128=$v_i; //@line 267 "timemodule.c"
-        FUNCTION_TABLE[$127]($128); //@line 267 "timemodule.c"
-        __label__ = 15; break; //@line 267 "timemodule.c"
-      case 15: // $bb5_i
-        $0=0; //@line 268 "timemodule.c"
-        __label__ = 17; break; //@line 268 "timemodule.c"
-      case 16: // $bb6_i
-        $0=$111; //@line 271 "timemodule.c"
-        __label__ = 17; break; //@line 271 "timemodule.c"
-      case 17: // $tmtotuple_exit
-        var $129=$0; //@line 252 "timemodule.c"
-        $retval_i1=$129; //@line 252 "timemodule.c"
-        var $retval8_i=$retval_i1; //@line 252 "timemodule.c"
-        $2=$retval8_i; //@line 291 "timemodule.c"
-        __label__ = 18; break; //@line 291 "timemodule.c"
-      case 18: // $bb7
-        var $130=$2; //@line 281 "timemodule.c"
-        $retval=$130; //@line 281 "timemodule.c"
+        var $1=$when_addr; //@line 278 "timemodule.c"
+        var $2=__PyTime_DoubleToTimet($1); //@line 278 "timemodule.c"
+        HEAP[$whent]=$2; //@line 278 "timemodule.c"
+        var $3=HEAP[$whent]; //@line 280 "timemodule.c"
+        var $4=($3)==-1; //@line 280 "timemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 280 "timemodule.c"
+      case 1: // $bb
+        var $5=_PyErr_Occurred(); //@line 280 "timemodule.c"
+        var $6=($5)!=0; //@line 280 "timemodule.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 280 "timemodule.c"
+      case 2: // $bb1
+        $0=0; //@line 281 "timemodule.c"
+        __label__ = 8; break; //@line 281 "timemodule.c"
+      case 3: // $bb2
+        var $7=___errno_location(); //@line 282 "timemodule.c"
+        HEAP[$7]=0; //@line 282 "timemodule.c"
+        var $8=$function_addr; //@line 283 "timemodule.c"
+        var $9=FUNCTION_TABLE[$8]($whent); //@line 283 "timemodule.c"
+        $p=$9; //@line 283 "timemodule.c"
+        var $10=($9)==0; //@line 284 "timemodule.c"
+        if ($10) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 284 "timemodule.c"
+      case 4: // $bb3
+        var $11=___errno_location(); //@line 286 "timemodule.c"
+        var $12=HEAP[$11]; //@line 286 "timemodule.c"
+        var $13=($12)==0; //@line 286 "timemodule.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 286 "timemodule.c"
+      case 5: // $bb4
+        var $14=___errno_location(); //@line 287 "timemodule.c"
+        HEAP[$14]=22; //@line 287 "timemodule.c"
+        __label__ = 6; break; //@line 287 "timemodule.c"
+      case 6: // $bb5
+        var $15=HEAP[_PyExc_ValueError]; //@line 289 "timemodule.c"
+        var $16=_PyErr_SetFromErrno($15); //@line 289 "timemodule.c"
+        $0=$16; //@line 289 "timemodule.c"
+        __label__ = 8; break; //@line 289 "timemodule.c"
+      case 7: // $bb6
+        var $17=$p; //@line 291 "timemodule.c"
+        var $18=_tmtotuple($17); //@line 291 "timemodule.c"
+        $0=$18; //@line 291 "timemodule.c"
+        __label__ = 8; break; //@line 291 "timemodule.c"
+      case 8: // $bb7
+        var $19=$0; //@line 281 "timemodule.c"
+        $retval=$19; //@line 281 "timemodule.c"
         var $retval8=$retval; //@line 281 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval8; //@line 281 "timemodule.c"
@@ -17211,96 +16279,63 @@ var _initialized_b;
   
 
   function _parse_time_double_args($args, $format, $pwhen) {
-    var __stackBase__  = STACKTOP; STACKTOP += 24; _memset(__stackBase__, 0, 24);
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $t_i=__stackBase__;
-        var $t2_i=__stackBase__+8;
         var $args_addr;
         var $format_addr;
         var $pwhen_addr;
         var $retval;
-        var $1;
-        var $ot=__stackBase__+20;
+        var $0;
+        var $ot=__stackBase__;
         var $when;
         $args_addr=$args;
         $format_addr=$format;
         $pwhen_addr=$pwhen;
         HEAP[$ot]=0; //@line 301 "timemodule.c"
-        var $2=$args_addr; //@line 303 "timemodule.c"
-        var $3=$format_addr; //@line 303 "timemodule.c"
-        var $4=_PyArg_ParseTuple($2, $3, $ot); //@line 303 "timemodule.c"
-        var $5=($4)==0; //@line 303 "timemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 303 "timemodule.c"
+        var $1=$args_addr; //@line 303 "timemodule.c"
+        var $2=$format_addr; //@line 303 "timemodule.c"
+        var $3=_PyArg_ParseTuple($1, $2, allocate([$ot,0,0,0], ["%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 303 "timemodule.c"
+        var $4=($3)==0; //@line 303 "timemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 303 "timemodule.c"
       case 1: // $bb
-        $1=0; //@line 304 "timemodule.c"
-        __label__ = 11; break; //@line 304 "timemodule.c"
+        $0=0; //@line 304 "timemodule.c"
+        __label__ = 8; break; //@line 304 "timemodule.c"
       case 2: // $bb1
-        var $6=HEAP[$ot]; //@line 305 "timemodule.c"
-        var $7=($6)==0; //@line 305 "timemodule.c"
-        var $8=HEAP[$ot]; //@line 305 "timemodule.c"
-        var $9=($8)==(__Py_NoneStruct); //@line 305 "timemodule.c"
-        var $or_cond=($7) | ($9);
-        if ($or_cond) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 305 "timemodule.c"
+        var $5=HEAP[$ot]; //@line 305 "timemodule.c"
+        var $6=($5)==0; //@line 305 "timemodule.c"
+        var $7=HEAP[$ot]; //@line 305 "timemodule.c"
+        var $8=($7)==(__Py_NoneStruct); //@line 305 "timemodule.c"
+        var $or_cond=($6) | ($8);
+        if ($or_cond) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 305 "timemodule.c"
       case 3: // $bb3
-        var $10=_gettimeofday($t_i, 0); //@line 907 "timemodule.c"
-        var $11=($10)==0; //@line 907 "timemodule.c"
-        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 907 "timemodule.c"
-      case 4: // $bb_i
-        var $12=$t_i; //@line 908 "timemodule.c"
-        var $13=HEAP[$12]; //@line 908 "timemodule.c"
-        var $14=($13); //@line 908 "timemodule.c"
-        var $15=$t_i+4; //@line 908 "timemodule.c"
-        var $16=HEAP[$15]; //@line 908 "timemodule.c"
-        var $17=($16); //@line 908 "timemodule.c"
-        var $18=($17) * 0.000001; //@line 908 "timemodule.c"
-        var $19=($14) + ($18); //@line 908 "timemodule.c"
-        $0=$19; //@line 908 "timemodule.c"
-        __label__ = 6; break; //@line 908 "timemodule.c"
-      case 5: // $bb1_i
-        var $20=_ftime($t2_i); //@line 916 "timemodule.c"
-        var $21=$t2_i; //@line 917 "timemodule.c"
-        var $22=HEAP[$21]; //@line 917 "timemodule.c"
-        var $23=($22); //@line 917 "timemodule.c"
-        var $24=$t2_i+4; //@line 917 "timemodule.c"
-        var $25=HEAP[$24]; //@line 917 "timemodule.c"
-        var $26=($25); //@line 917 "timemodule.c"
-        var $27=($26) * 0.001; //@line 917 "timemodule.c"
-        var $28=($23) + ($27); //@line 917 "timemodule.c"
-        $0=$28; //@line 917 "timemodule.c"
-        __label__ = 6; break; //@line 917 "timemodule.c"
-      case 6: // $floattime_exit
-        var $29=$0; //@line 908 "timemodule.c"
-        $retval_i=$29; //@line 908 "timemodule.c"
-        var $retval4_i=$retval_i; //@line 908 "timemodule.c"
-        var $30=$pwhen_addr; //@line 306 "timemodule.c"
-        HEAP[$30]=$retval4_i; //@line 306 "timemodule.c"
-        __label__ = 10; break; //@line 306 "timemodule.c"
-      case 7: // $bb4
-        var $31=HEAP[$ot]; //@line 308 "timemodule.c"
-        var $32=_PyFloat_AsDouble($31); //@line 308 "timemodule.c"
-        $when=$32; //@line 308 "timemodule.c"
-        var $33=_PyErr_Occurred(); //@line 309 "timemodule.c"
-        var $34=($33)!=0; //@line 309 "timemodule.c"
-        if ($34) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 309 "timemodule.c"
-      case 8: // $bb5
-        $1=0; //@line 310 "timemodule.c"
-        __label__ = 11; break; //@line 310 "timemodule.c"
-      case 9: // $bb6
-        var $35=$pwhen_addr; //@line 311 "timemodule.c"
-        var $36=$when; //@line 311 "timemodule.c"
-        HEAP[$35]=$36; //@line 311 "timemodule.c"
-        __label__ = 10; break; //@line 311 "timemodule.c"
-      case 10: // $bb7
-        $1=1; //@line 313 "timemodule.c"
-        __label__ = 11; break; //@line 313 "timemodule.c"
-      case 11: // $bb8
-        var $37=$1; //@line 304 "timemodule.c"
-        $retval=$37; //@line 304 "timemodule.c"
+        var $9=_floattime(); //@line 306 "timemodule.c"
+        var $10=$pwhen_addr; //@line 306 "timemodule.c"
+        HEAP[$10]=$9; //@line 306 "timemodule.c"
+        __label__ = 7; break; //@line 306 "timemodule.c"
+      case 4: // $bb4
+        var $11=HEAP[$ot]; //@line 308 "timemodule.c"
+        var $12=_PyFloat_AsDouble($11); //@line 308 "timemodule.c"
+        $when=$12; //@line 308 "timemodule.c"
+        var $13=_PyErr_Occurred(); //@line 309 "timemodule.c"
+        var $14=($13)!=0; //@line 309 "timemodule.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 309 "timemodule.c"
+      case 5: // $bb5
+        $0=0; //@line 310 "timemodule.c"
+        __label__ = 8; break; //@line 310 "timemodule.c"
+      case 6: // $bb6
+        var $15=$pwhen_addr; //@line 311 "timemodule.c"
+        var $16=$when; //@line 311 "timemodule.c"
+        HEAP[$15]=$16; //@line 311 "timemodule.c"
+        __label__ = 7; break; //@line 311 "timemodule.c"
+      case 7: // $bb7
+        $0=1; //@line 313 "timemodule.c"
+        __label__ = 8; break; //@line 313 "timemodule.c"
+      case 8: // $bb8
+        var $17=$0; //@line 304 "timemodule.c"
+        $retval=$17; //@line 304 "timemodule.c"
         var $retval9=$retval; //@line 304 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 304 "timemodule.c"
@@ -17415,7 +16450,7 @@ var _initialized_b;
         var $17=$p_addr; //@line 354 "timemodule.c"
         var $18=$17+16; //@line 354 "timemodule.c"
         var $19=$args_addr; //@line 354 "timemodule.c"
-        var $20=_PyArg_Parse($19, __str24307, $y, $18, $16, $14, $12, $10, $8, $6, $4); //@line 354 "timemodule.c"
+        var $20=_PyArg_Parse($19, __str24307, allocate([$y,0,0,0,$18,0,0,0,$16,0,0,0,$14,0,0,0,$12,0,0,0,$10,0,0,0,$8,0,0,0,$6,0,0,0,$4,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 354 "timemodule.c"
         var $21=($20)==0; //@line 354 "timemodule.c"
         if ($21) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 354 "timemodule.c"
       case 1: // $bb
@@ -17546,7 +16581,7 @@ var _initialized_b;
         var $buf1=$buf; //@line 402 "timemodule.c"
         _llvm_memset_p0i8_i32($buf1, 0, 44, 1, 0); //@line 402 "timemodule.c"
         var $1=$args_addr; //@line 404 "timemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str28311, $fmt, $tup); //@line 404 "timemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str28311, allocate([$fmt,0,0,0,$tup,0,0,0], ["i8**",0,0,0,"%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 404 "timemodule.c"
         var $3=($2)==0; //@line 404 "timemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 404 "timemodule.c"
       case 1: // $bb
@@ -17798,7 +16833,7 @@ var _initialized_b;
       case 2: // $bb1
         var $4=$strptime_module; //@line 548 "timemodule.c"
         var $5=$args_addr; //@line 548 "timemodule.c"
-        var $6=_PyObject_CallMethod($4, __str37320, __str35, $5); //@line 548 "timemodule.c"
+        var $6=_PyObject_CallMethod($4, __str37320, __str35, allocate([$5,0,0,0], ["%struct.PyDateTime_TZInfo*",0,0,0], ALLOC_STACK)); //@line 548 "timemodule.c"
         $strptime_result=$6; //@line 548 "timemodule.c"
         var $7=$strptime_module; //@line 550 "timemodule.c"
         var $8=$7; //@line 550 "timemodule.c"
@@ -17854,7 +16889,7 @@ var _initialized_b;
         $args_addr=$args;
         HEAP[$tup]=0; //@line 564 "timemodule.c"
         var $1=$args_addr; //@line 567 "timemodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str39322, 0, 1, $tup); //@line 567 "timemodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str39322, 0, 1, allocate([$tup,0,0,0], ["%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 567 "timemodule.c"
         var $3=($2)==0; //@line 567 "timemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 567 "timemodule.c"
       case 1: // $bb
@@ -17923,15 +16958,10 @@ var _initialized_b;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $x_addr_i;
-        var $retval_i;
-        var $0;
-        var $result_i;
-        var $diff_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $ot=__stackBase__;
         var $tt=__stackBase__+4;
         var $p;
@@ -17939,102 +16969,77 @@ var _initialized_b;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$ot]=0; //@line 594 "timemodule.c"
-        var $2=$args_addr; //@line 598 "timemodule.c"
-        var $3=_PyArg_UnpackTuple($2, __str160, 0, 1, $ot); //@line 598 "timemodule.c"
-        var $4=($3)==0; //@line 598 "timemodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 598 "timemodule.c"
+        var $1=$args_addr; //@line 598 "timemodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str160, 0, 1, allocate([$ot,0,0,0], ["%struct.PyDateTime_TZInfo**",0,0,0], ALLOC_STACK)); //@line 598 "timemodule.c"
+        var $3=($2)==0; //@line 598 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 598 "timemodule.c"
       case 1: // $bb
-        $1=0; //@line 599 "timemodule.c"
-        __label__ = 16; break; //@line 599 "timemodule.c"
+        $0=0; //@line 599 "timemodule.c"
+        __label__ = 14; break; //@line 599 "timemodule.c"
       case 2: // $bb1
-        var $5=HEAP[$ot]; //@line 600 "timemodule.c"
-        var $6=($5)==0; //@line 600 "timemodule.c"
-        var $7=HEAP[$ot]; //@line 600 "timemodule.c"
-        var $8=($7)==(__Py_NoneStruct); //@line 600 "timemodule.c"
-        var $or_cond=($6) | ($8);
+        var $4=HEAP[$ot]; //@line 600 "timemodule.c"
+        var $5=($4)==0; //@line 600 "timemodule.c"
+        var $6=HEAP[$ot]; //@line 600 "timemodule.c"
+        var $7=($6)==(__Py_NoneStruct); //@line 600 "timemodule.c"
+        var $or_cond=($5) | ($7);
         if ($or_cond) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 600 "timemodule.c"
       case 3: // $bb3
-        var $9=_time(0); //@line 601 "timemodule.c"
-        HEAP[$tt]=$9; //@line 601 "timemodule.c"
-        __label__ = 11; break; //@line 601 "timemodule.c"
+        var $8=_time(0); //@line 601 "timemodule.c"
+        HEAP[$tt]=$8; //@line 601 "timemodule.c"
+        __label__ = 9; break; //@line 601 "timemodule.c"
       case 4: // $bb4
-        var $10=HEAP[$ot]; //@line 603 "timemodule.c"
-        var $11=_PyFloat_AsDouble($10); //@line 603 "timemodule.c"
-        $dt=$11; //@line 603 "timemodule.c"
-        var $12=_PyErr_Occurred(); //@line 604 "timemodule.c"
-        var $13=($12)!=0; //@line 604 "timemodule.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 604 "timemodule.c"
+        var $9=HEAP[$ot]; //@line 603 "timemodule.c"
+        var $10=_PyFloat_AsDouble($9); //@line 603 "timemodule.c"
+        $dt=$10; //@line 603 "timemodule.c"
+        var $11=_PyErr_Occurred(); //@line 604 "timemodule.c"
+        var $12=($11)!=0; //@line 604 "timemodule.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 604 "timemodule.c"
       case 5: // $bb5
-        $1=0; //@line 605 "timemodule.c"
-        __label__ = 16; break; //@line 605 "timemodule.c"
+        $0=0; //@line 605 "timemodule.c"
+        __label__ = 14; break; //@line 605 "timemodule.c"
       case 6: // $bb6
-        var $14=$dt; //@line 606 "timemodule.c"
-        $x_addr_i=$14;
-        var $15=$x_addr_i; //@line 108 "timemodule.c"
-        var $16=((($15))|0); //@line 108 "timemodule.c"
-        $result_i=$16; //@line 108 "timemodule.c"
-        var $17=$result_i; //@line 118 "timemodule.c"
-        var $18=($17); //@line 118 "timemodule.c"
-        var $19=$x_addr_i; //@line 118 "timemodule.c"
-        var $20=($19) - ($18); //@line 118 "timemodule.c"
-        $diff_i=$20; //@line 118 "timemodule.c"
-        var $21=$diff_i; //@line 119 "timemodule.c"
-        var $22=($21) <= -1; //@line 119 "timemodule.c"
-        var $23=$diff_i; //@line 119 "timemodule.c"
-        var $24=($23) >= 1; //@line 119 "timemodule.c"
-        var $or_cond_i=($22) | ($24);
-        if ($or_cond_i) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 119 "timemodule.c"
-      case 7: // $_PyTime_DoubleToTimet_exit_thread
-        var $25=HEAP[_PyExc_ValueError]; //@line 120 "timemodule.c"
-        _PyErr_SetString($25, __str282); //@line 120 "timemodule.c"
-        $result_i=-1; //@line 122 "timemodule.c"
-        $0=-1; //@line 124 "timemodule.c"
-        $retval_i=-1; //@line 124 "timemodule.c"
-        HEAP[$tt]=-1; //@line 606 "timemodule.c"
-        __label__ = 9; break;
-      case 8: // $_PyTime_DoubleToTimet_exit
-        var $_pr=$result_i;
-        $0=$_pr; //@line 124 "timemodule.c"
-        $retval_i=$_pr; //@line 124 "timemodule.c"
-        HEAP[$tt]=$_pr; //@line 606 "timemodule.c"
-        var $26=($_pr)==-1; //@line 607 "timemodule.c"
-        if ($26) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 607 "timemodule.c"
-      case 9: // $bb7
-        var $27=_PyErr_Occurred(); //@line 607 "timemodule.c"
-        var $28=($27)!=0; //@line 607 "timemodule.c"
-        if ($28) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 607 "timemodule.c"
-      case 10: // $bb8
-        $1=0; //@line 608 "timemodule.c"
-        __label__ = 16; break; //@line 608 "timemodule.c"
-      case 11: // $bb9
-        var $29=_ctime($tt); //@line 610 "timemodule.c"
-        $p=$29; //@line 610 "timemodule.c"
-        var $30=($29)==0; //@line 611 "timemodule.c"
-        if ($30) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 611 "timemodule.c"
-      case 12: // $bb10
-        var $31=HEAP[_PyExc_ValueError]; //@line 612 "timemodule.c"
-        _PyErr_SetString($31, __str42325); //@line 612 "timemodule.c"
-        $1=0; //@line 613 "timemodule.c"
-        __label__ = 16; break; //@line 613 "timemodule.c"
-      case 13: // $bb11
-        var $32=$p; //@line 615 "timemodule.c"
-        var $33=$32+24; //@line 615 "timemodule.c"
-        var $34=HEAP[$33]; //@line 615 "timemodule.c"
-        var $35=($34)==10; //@line 615 "timemodule.c"
-        if ($35) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 615 "timemodule.c"
-      case 14: // $bb12
-        var $36=$p; //@line 616 "timemodule.c"
-        var $37=$36+24; //@line 616 "timemodule.c"
-        HEAP[$37]=0; //@line 616 "timemodule.c"
-        __label__ = 15; break; //@line 616 "timemodule.c"
-      case 15: // $bb13
-        var $38=$p; //@line 617 "timemodule.c"
-        var $39=_PyString_FromString($38); //@line 617 "timemodule.c"
-        $1=$39; //@line 617 "timemodule.c"
-        __label__ = 16; break; //@line 617 "timemodule.c"
-      case 16: // $bb14
-        var $40=$1; //@line 599 "timemodule.c"
-        $retval=$40; //@line 599 "timemodule.c"
+        var $13=$dt; //@line 606 "timemodule.c"
+        var $14=__PyTime_DoubleToTimet($13); //@line 606 "timemodule.c"
+        HEAP[$tt]=$14; //@line 606 "timemodule.c"
+        var $15=HEAP[$tt]; //@line 607 "timemodule.c"
+        var $16=($15)==-1; //@line 607 "timemodule.c"
+        if ($16) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 607 "timemodule.c"
+      case 7: // $bb7
+        var $17=_PyErr_Occurred(); //@line 607 "timemodule.c"
+        var $18=($17)!=0; //@line 607 "timemodule.c"
+        if ($18) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 607 "timemodule.c"
+      case 8: // $bb8
+        $0=0; //@line 608 "timemodule.c"
+        __label__ = 14; break; //@line 608 "timemodule.c"
+      case 9: // $bb9
+        var $19=_ctime($tt); //@line 610 "timemodule.c"
+        $p=$19; //@line 610 "timemodule.c"
+        var $20=($19)==0; //@line 611 "timemodule.c"
+        if ($20) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 611 "timemodule.c"
+      case 10: // $bb10
+        var $21=HEAP[_PyExc_ValueError]; //@line 612 "timemodule.c"
+        _PyErr_SetString($21, __str42325); //@line 612 "timemodule.c"
+        $0=0; //@line 613 "timemodule.c"
+        __label__ = 14; break; //@line 613 "timemodule.c"
+      case 11: // $bb11
+        var $22=$p; //@line 615 "timemodule.c"
+        var $23=$22+24; //@line 615 "timemodule.c"
+        var $24=HEAP[$23]; //@line 615 "timemodule.c"
+        var $25=($24)==10; //@line 615 "timemodule.c"
+        if ($25) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 615 "timemodule.c"
+      case 12: // $bb12
+        var $26=$p; //@line 616 "timemodule.c"
+        var $27=$26+24; //@line 616 "timemodule.c"
+        HEAP[$27]=0; //@line 616 "timemodule.c"
+        __label__ = 13; break; //@line 616 "timemodule.c"
+      case 13: // $bb13
+        var $28=$p; //@line 617 "timemodule.c"
+        var $29=_PyString_FromString($28); //@line 617 "timemodule.c"
+        $0=$29; //@line 617 "timemodule.c"
+        __label__ = 14; break; //@line 617 "timemodule.c"
+      case 14: // $bb14
+        var $30=$0; //@line 599 "timemodule.c"
+        $retval=$30; //@line 599 "timemodule.c"
         var $retval15=$retval; //@line 599 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval15; //@line 599 "timemodule.c"
@@ -18258,7 +17263,7 @@ var _initialized_b;
         var $49=_PyModule_AddIntConstant($48, __str48331, $47); //@line 750 "timemodule.c"
         var $julyname9=$julyname; //@line 752 "timemodule.c"
         var $janname10=$janname; //@line 752 "timemodule.c"
-        var $50=_Py_BuildValue(__str49332, $julyname9, $janname10); //@line 752 "timemodule.c"
+        var $50=_Py_BuildValue(__str49332, allocate([$julyname9,0,0,0,$janname10,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 752 "timemodule.c"
         var $51=$m_addr; //@line 752 "timemodule.c"
         var $52=_PyModule_AddObject($51, __str45, $50); //@line 752 "timemodule.c"
         __label__ = 9; break; //@line 752 "timemodule.c"
@@ -18276,7 +17281,7 @@ var _initialized_b;
         var $63=_PyModule_AddIntConstant($62, __str48331, $61); //@line 758 "timemodule.c"
         var $janname12=$janname; //@line 760 "timemodule.c"
         var $julyname13=$julyname; //@line 760 "timemodule.c"
-        var $64=_Py_BuildValue(__str49332, $janname12, $julyname13); //@line 760 "timemodule.c"
+        var $64=_Py_BuildValue(__str49332, allocate([$janname12,0,0,0,$julyname13,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 760 "timemodule.c"
         var $65=$m_addr; //@line 760 "timemodule.c"
         var $66=_PyModule_AddObject($65, __str45, $64); //@line 760 "timemodule.c"
         __label__ = 9; break; //@line 760 "timemodule.c"
@@ -18361,6 +17366,107 @@ var _initialized_b;
       case 10: // $return
         ;
         return; //@line 856 "timemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _floattime() {
+    var __stackBase__  = STACKTOP; STACKTOP += 20; _memset(__stackBase__, 0, 20);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $t=__stackBase__;
+        var $t2=__stackBase__+8;
+        var $1=_gettimeofday($t, 0); //@line 907 "timemodule.c"
+        var $2=($1)==0; //@line 907 "timemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 907 "timemodule.c"
+      case 1: // $bb
+        var $3=$t; //@line 908 "timemodule.c"
+        var $4=HEAP[$3]; //@line 908 "timemodule.c"
+        var $5=($4); //@line 908 "timemodule.c"
+        var $6=$t+4; //@line 908 "timemodule.c"
+        var $7=HEAP[$6]; //@line 908 "timemodule.c"
+        var $8=($7); //@line 908 "timemodule.c"
+        var $9=($8) * 0.000001; //@line 908 "timemodule.c"
+        var $10=($5) + ($9); //@line 908 "timemodule.c"
+        $0=$10; //@line 908 "timemodule.c"
+        __label__ = 3; break; //@line 908 "timemodule.c"
+      case 2: // $bb1
+        var $11=_ftime($t2); //@line 916 "timemodule.c"
+        var $12=$t2; //@line 917 "timemodule.c"
+        var $13=HEAP[$12]; //@line 917 "timemodule.c"
+        var $14=($13); //@line 917 "timemodule.c"
+        var $15=$t2+4; //@line 917 "timemodule.c"
+        var $16=HEAP[$15]; //@line 917 "timemodule.c"
+        var $17=($16); //@line 917 "timemodule.c"
+        var $18=($17) * 0.001; //@line 917 "timemodule.c"
+        var $19=($14) + ($18); //@line 917 "timemodule.c"
+        $0=$19; //@line 917 "timemodule.c"
+        __label__ = 3; break; //@line 917 "timemodule.c"
+      case 3: // $bb3
+        var $20=$0; //@line 908 "timemodule.c"
+        $retval=$20; //@line 908 "timemodule.c"
+        var $retval4=$retval; //@line 908 "timemodule.c"
+        STACKTOP = __stackBase__;
+        return $retval4; //@line 908 "timemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _floatsleep($secs) {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $secs_addr;
+        var $retval;
+        var $0;
+        var $t=__stackBase__;
+        var $frac;
+        $secs_addr=$secs;
+        var $1=$secs_addr; //@line 938 "timemodule.c"
+        var $2=_fmod($1, 1); //@line 938 "timemodule.c"
+        $frac=$2; //@line 938 "timemodule.c"
+        var $3=$secs_addr; //@line 939 "timemodule.c"
+        var $4=_floor($3); //@line 939 "timemodule.c"
+        $secs_addr=$4; //@line 939 "timemodule.c"
+        var $5=$secs_addr; //@line 940 "timemodule.c"
+        var $6=((($5))|0); //@line 940 "timemodule.c"
+        var $7=$t; //@line 940 "timemodule.c"
+        HEAP[$7]=$6; //@line 940 "timemodule.c"
+        var $8=$frac; //@line 941 "timemodule.c"
+        var $9=($8) * 1000000; //@line 941 "timemodule.c"
+        var $10=((($9))|0); //@line 941 "timemodule.c"
+        var $11=$t+4; //@line 941 "timemodule.c"
+        HEAP[$11]=$10; //@line 941 "timemodule.c"
+        var $12=_select(0, 0, 0, 0, $t); //@line 943 "timemodule.c"
+        var $13=($12)!=0; //@line 943 "timemodule.c"
+        if ($13) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 943 "timemodule.c"
+      case 1: // $bb
+        var $14=___errno_location(); //@line 945 "timemodule.c"
+        var $15=HEAP[$14]; //@line 945 "timemodule.c"
+        var $16=($15)!=4; //@line 945 "timemodule.c"
+        if ($16) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 945 "timemodule.c"
+      case 2: // $bb1
+        var $17=HEAP[_PyExc_IOError]; //@line 950 "timemodule.c"
+        var $18=_PyErr_SetFromErrno($17); //@line 950 "timemodule.c"
+        $0=-1; //@line 951 "timemodule.c"
+        __label__ = 4; break; //@line 951 "timemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 1051 "timemodule.c"
+        __label__ = 4; break; //@line 1051 "timemodule.c"
+      case 4: // $bb3
+        var $19=$0; //@line 951 "timemodule.c"
+        $retval=$19; //@line 951 "timemodule.c"
+        var $retval4=$retval; //@line 951 "timemodule.c"
+        STACKTOP = __stackBase__;
+        return $retval4; //@line 951 "timemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }

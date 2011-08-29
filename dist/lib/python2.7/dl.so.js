@@ -58,12 +58,12 @@ var $struct__typeobject___SIZE = 196; // %struct._typeobject
   
 var $struct_dlobject___SIZE = 12; // %struct.dlobject
   
-var __Py_NoneStruct;
-var _PyExc_TypeError;
+
+
 var __str;
 var __str1;
 var __str2;
-var _PyExc_ValueError;
+
 var __str3;
 var __str4;
 var __str5;
@@ -78,10 +78,10 @@ var __str11;
 var _Dlerror;
 var __str12;
 var _dl_methods;
-var _Py_Py3kWarningFlag;
-var _PyExc_DeprecationWarning;
+
+
 var __str13;
-var _PyType_Type;
+
 var __str14;
 var __str15;
 var __str16;
@@ -116,6 +116,46 @@ var __str22;
 
 
 
+
+  function _newdlobject($handle) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $handle_addr;
+        var $retval;
+        var $0;
+        var $xp;
+        $handle_addr=$handle;
+        var $1=__PyObject_New(_Dltype); //@line 30 "dlmodule.c"
+        var $2=$1; //@line 30 "dlmodule.c"
+        $xp=$2; //@line 30 "dlmodule.c"
+        var $3=$xp; //@line 31 "dlmodule.c"
+        var $4=($3)==0; //@line 31 "dlmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 31 "dlmodule.c"
+      case 1: // $bb
+        $0=0; //@line 32 "dlmodule.c"
+        __label__ = 3; break; //@line 32 "dlmodule.c"
+      case 2: // $bb1
+        var $5=$xp; //@line 33 "dlmodule.c"
+        var $6=$5+8; //@line 33 "dlmodule.c"
+        var $7=$handle_addr; //@line 33 "dlmodule.c"
+        HEAP[$6]=$7; //@line 33 "dlmodule.c"
+        var $8=$xp; //@line 34 "dlmodule.c"
+        var $9=$8; //@line 34 "dlmodule.c"
+        $0=$9; //@line 34 "dlmodule.c"
+        __label__ = 3; break; //@line 34 "dlmodule.c"
+      case 3: // $bb2
+        var $10=$0; //@line 32 "dlmodule.c"
+        $retval=$10; //@line 32 "dlmodule.c"
+        var $retval3=$retval; //@line 32 "dlmodule.c"
+        ;
+        return $retval3; //@line 32 "dlmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
 
   function _dl_dealloc($xp) {
     ;
@@ -233,7 +273,7 @@ var __str22;
         var $23=$22+12; //@line 64 "dlmodule.c"
         var $24=HEAP[$23]; //@line 64 "dlmodule.c"
         var $25=HEAP[_PyExc_TypeError]; //@line 64 "dlmodule.c"
-        var $26=_PyErr_Format($25, __str, $24); //@line 64 "dlmodule.c"
+        var $26=_PyErr_Format($25, __str, allocate([$24,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 64 "dlmodule.c"
         $0=0; //@line 66 "dlmodule.c"
         __label__ = 5; break; //@line 66 "dlmodule.c"
       case 3: // $bb2
@@ -483,89 +523,63 @@ var __str22;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $handle_addr_i;
-        var $retval_i;
-        var $0;
-        var $xp_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $name=__stackBase__;
         var $mode=__stackBase__+4;
         var $handle;
         var $errmsg;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 174 "dlmodule.c"
-        var $3=_PyArg_ParseTuple($2, __str9, $name); //@line 174 "dlmodule.c"
-        var $4=($3)!=0; //@line 174 "dlmodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 174 "dlmodule.c"
+        var $1=$args_addr; //@line 174 "dlmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str9, allocate([$name,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 174 "dlmodule.c"
+        var $3=($2)!=0; //@line 174 "dlmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 174 "dlmodule.c"
       case 1: // $bb
         HEAP[$mode]=1; //@line 175 "dlmodule.c"
         __label__ = 4; break; //@line 175 "dlmodule.c"
       case 2: // $bb1
         _PyErr_Clear(); //@line 177 "dlmodule.c"
-        var $5=$args_addr; //@line 178 "dlmodule.c"
-        var $6=_PyArg_ParseTuple($5, __str10, $name, $mode); //@line 178 "dlmodule.c"
-        var $7=($6)==0; //@line 178 "dlmodule.c"
-        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 178 "dlmodule.c"
+        var $4=$args_addr; //@line 178 "dlmodule.c"
+        var $5=_PyArg_ParseTuple($4, __str10, allocate([$name,0,0,0,$mode,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 178 "dlmodule.c"
+        var $6=($5)==0; //@line 178 "dlmodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 178 "dlmodule.c"
       case 3: // $bb2
-        $1=0; //@line 179 "dlmodule.c"
-        __label__ = 12; break; //@line 179 "dlmodule.c"
+        $0=0; //@line 179 "dlmodule.c"
+        __label__ = 9; break; //@line 179 "dlmodule.c"
       case 4: // $bb3
-        var $8=HEAP[$mode]; //@line 187 "dlmodule.c"
-        var $9=HEAP[$name]; //@line 187 "dlmodule.c"
-        var $10=_dlopen($9, $8); //@line 187 "dlmodule.c"
-        var $11=$10; //@line 187 "dlmodule.c"
-        $handle=$11; //@line 187 "dlmodule.c"
-        var $12=($11)==0; //@line 188 "dlmodule.c"
-        if ($12) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 188 "dlmodule.c"
+        var $7=HEAP[$mode]; //@line 187 "dlmodule.c"
+        var $8=HEAP[$name]; //@line 187 "dlmodule.c"
+        var $9=_dlopen($8, $7); //@line 187 "dlmodule.c"
+        var $10=$9; //@line 187 "dlmodule.c"
+        $handle=$10; //@line 187 "dlmodule.c"
+        var $11=($10)==0; //@line 188 "dlmodule.c"
+        if ($11) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 188 "dlmodule.c"
       case 5: // $bb4
-        var $13=_dlerror(); //@line 189 "dlmodule.c"
-        $errmsg=$13; //@line 189 "dlmodule.c"
-        var $14=$errmsg; //@line 190 "dlmodule.c"
-        var $15=($14)==0; //@line 190 "dlmodule.c"
-        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 190 "dlmodule.c"
+        var $12=_dlerror(); //@line 189 "dlmodule.c"
+        $errmsg=$12; //@line 189 "dlmodule.c"
+        var $13=$errmsg; //@line 190 "dlmodule.c"
+        var $14=($13)==0; //@line 190 "dlmodule.c"
+        if ($14) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 190 "dlmodule.c"
       case 6: // $bb5
         $errmsg=__str11; //@line 191 "dlmodule.c"
         __label__ = 7; break; //@line 191 "dlmodule.c"
       case 7: // $bb6
-        var $16=HEAP[_Dlerror]; //@line 192 "dlmodule.c"
-        var $17=$errmsg; //@line 192 "dlmodule.c"
-        _PyErr_SetString($16, $17); //@line 192 "dlmodule.c"
-        $1=0; //@line 193 "dlmodule.c"
-        __label__ = 12; break; //@line 193 "dlmodule.c"
+        var $15=HEAP[_Dlerror]; //@line 192 "dlmodule.c"
+        var $16=$errmsg; //@line 192 "dlmodule.c"
+        _PyErr_SetString($15, $16); //@line 192 "dlmodule.c"
+        $0=0; //@line 193 "dlmodule.c"
+        __label__ = 9; break; //@line 193 "dlmodule.c"
       case 8: // $bb7
-        var $18=$handle; //@line 213 "dlmodule.c"
-        $handle_addr_i=$18;
-        var $19=__PyObject_New(_Dltype); //@line 30 "dlmodule.c"
-        var $20=$19; //@line 30 "dlmodule.c"
-        $xp_i=$20; //@line 30 "dlmodule.c"
-        var $21=$xp_i; //@line 31 "dlmodule.c"
-        var $22=($21)==0; //@line 31 "dlmodule.c"
-        if ($22) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 31 "dlmodule.c"
-      case 9: // $bb_i
-        $0=0; //@line 32 "dlmodule.c"
-        __label__ = 11; break; //@line 32 "dlmodule.c"
-      case 10: // $bb1_i
-        var $23=$xp_i; //@line 33 "dlmodule.c"
-        var $24=$23+8; //@line 33 "dlmodule.c"
-        var $25=$handle_addr_i; //@line 33 "dlmodule.c"
-        HEAP[$24]=$25; //@line 33 "dlmodule.c"
-        var $26=$xp_i; //@line 34 "dlmodule.c"
-        var $27=$26; //@line 34 "dlmodule.c"
-        $0=$27; //@line 34 "dlmodule.c"
-        __label__ = 11; break; //@line 34 "dlmodule.c"
-      case 11: // $newdlobject_exit
-        var $28=$0; //@line 32 "dlmodule.c"
-        $retval_i=$28; //@line 32 "dlmodule.c"
-        var $retval3_i=$retval_i; //@line 32 "dlmodule.c"
-        $1=$retval3_i; //@line 213 "dlmodule.c"
-        __label__ = 12; break; //@line 213 "dlmodule.c"
-      case 12: // $bb8
-        var $29=$1; //@line 179 "dlmodule.c"
-        $retval=$29; //@line 179 "dlmodule.c"
+        var $17=$handle; //@line 213 "dlmodule.c"
+        var $18=_newdlobject($17); //@line 213 "dlmodule.c"
+        $0=$18; //@line 213 "dlmodule.c"
+        __label__ = 9; break; //@line 213 "dlmodule.c"
+      case 9: // $bb8
+        var $19=$0; //@line 179 "dlmodule.c"
+        $retval=$19; //@line 179 "dlmodule.c"
         var $retval9=$retval; //@line 179 "dlmodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 179 "dlmodule.c"

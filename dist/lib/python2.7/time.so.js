@@ -66,13 +66,13 @@ var $struct_timeval___SIZE = 8; // %struct.timeval
   
 var $struct_tm___SIZE = 44; // %struct.tm
   
-var _PyExc_ValueError;
+
 var __str;
-var _PyExc_IOError;
+
 var _time_doc;
 var _clock_doc;
 var __str1;
-var __Py_NoneStruct;
+
 var _sleep_doc;
 var __str2;
 var __str3;
@@ -125,7 +125,7 @@ var _asctime_doc;
 var __str41;
 var __str42;
 var _ctime_doc;
-var _PyExc_OverflowError;
+
 var __str43;
 var _mktime_doc;
 var __str44;
@@ -146,7 +146,7 @@ var __str57;
 var __str58;
 var _time_methods;
 var _module_doc;
-var _Py_IgnoreEnvironmentFlag;
+
 var __str59;
 var _initialized_b;
 var __str60;
@@ -245,70 +245,38 @@ var __str60;
   
 
   function _time_time($self, $unused) {
-    var __stackBase__  = STACKTOP; STACKTOP += 20; _memset(__stackBase__, 0, 20);
+    ;
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $t_i=__stackBase__;
-        var $t2_i=__stackBase__+8;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         var $secs;
         $self_addr=$self;
         $unused_addr=$unused;
-        var $2=_gettimeofday($t_i, 0); //@line 907 "timemodule.c"
-        var $3=($2)==0; //@line 907 "timemodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 907 "timemodule.c"
-      case 1: // $bb_i
-        var $4=$t_i; //@line 908 "timemodule.c"
-        var $5=HEAP[$4]; //@line 908 "timemodule.c"
-        var $6=($5); //@line 908 "timemodule.c"
-        var $7=$t_i+4; //@line 908 "timemodule.c"
-        var $8=HEAP[$7]; //@line 908 "timemodule.c"
-        var $9=($8); //@line 908 "timemodule.c"
-        var $10=($9) * 0.000001; //@line 908 "timemodule.c"
-        var $11=($6) + ($10); //@line 908 "timemodule.c"
-        $0=$11; //@line 908 "timemodule.c"
-        __lastLabel__ = 1; __label__ = 3; break; //@line 908 "timemodule.c"
-      case 2: // $bb1_i
-        var $12=_ftime($t2_i); //@line 916 "timemodule.c"
-        var $13=$t2_i; //@line 917 "timemodule.c"
-        var $14=HEAP[$13]; //@line 917 "timemodule.c"
-        var $15=($14); //@line 917 "timemodule.c"
-        var $16=$t2_i+4; //@line 917 "timemodule.c"
-        var $17=HEAP[$16]; //@line 917 "timemodule.c"
-        var $18=($17); //@line 917 "timemodule.c"
-        var $19=($18) * 0.001; //@line 917 "timemodule.c"
-        var $20=($15) + ($19); //@line 917 "timemodule.c"
-        $0=$20; //@line 917 "timemodule.c"
-        __lastLabel__ = 2; __label__ = 3; break; //@line 917 "timemodule.c"
-      case 3: // $floattime_exit
-        var $21=__lastLabel__ == 1 ? $11 : ($20);
-        $retval_i=$21; //@line 908 "timemodule.c"
-        $secs=$21; //@line 131 "timemodule.c"
-        var $22=($21) == 0; //@line 132 "timemodule.c"
-        if ($22) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 132 "timemodule.c"
-      case 4: // $bb
-        var $23=HEAP[_PyExc_IOError]; //@line 133 "timemodule.c"
-        var $24=_PyErr_SetFromErrno($23); //@line 133 "timemodule.c"
-        $1=0; //@line 134 "timemodule.c"
-        __label__ = 6; break; //@line 134 "timemodule.c"
-      case 5: // $bb1
-        var $25=$secs; //@line 136 "timemodule.c"
-        var $26=_PyFloat_FromDouble($25); //@line 136 "timemodule.c"
-        $1=$26; //@line 136 "timemodule.c"
-        __label__ = 6; break; //@line 136 "timemodule.c"
-      case 6: // $bb2
-        var $27=$1; //@line 134 "timemodule.c"
-        $retval=$27; //@line 134 "timemodule.c"
+        var $1=_floattime(); //@line 131 "timemodule.c"
+        $secs=$1; //@line 131 "timemodule.c"
+        var $2=$secs; //@line 132 "timemodule.c"
+        var $3=($2) == 0; //@line 132 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 132 "timemodule.c"
+      case 1: // $bb
+        var $4=HEAP[_PyExc_IOError]; //@line 133 "timemodule.c"
+        var $5=_PyErr_SetFromErrno($4); //@line 133 "timemodule.c"
+        $0=0; //@line 134 "timemodule.c"
+        __label__ = 3; break; //@line 134 "timemodule.c"
+      case 2: // $bb1
+        var $6=$secs; //@line 136 "timemodule.c"
+        var $7=_PyFloat_FromDouble($6); //@line 136 "timemodule.c"
+        $0=$7; //@line 136 "timemodule.c"
+        __label__ = 3; break; //@line 136 "timemodule.c"
+      case 3: // $bb2
+        var $8=$0; //@line 134 "timemodule.c"
+        $retval=$8; //@line 134 "timemodule.c"
         var $retval3=$retval; //@line 134 "timemodule.c"
-        STACKTOP = __stackBase__;
+        ;
         return $retval3; //@line 134 "timemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
@@ -339,77 +307,197 @@ var __str60;
   
 
   function _time_sleep($self, $args) {
-    var __stackBase__  = STACKTOP; STACKTOP += 16; _memset(__stackBase__, 0, 16);
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $secs_addr_i;
-        var $retval_i;
-        var $0;
-        var $t_i=__stackBase__;
-        var $frac_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
-        var $secs=__stackBase__+8;
+        var $0;
+        var $secs=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 204 "timemodule.c"
-        var $3=_PyArg_ParseTuple($2, __str1, $secs); //@line 204 "timemodule.c"
-        var $4=($3)==0; //@line 204 "timemodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 204 "timemodule.c"
+        var $1=$args_addr; //@line 204 "timemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str1, allocate([$secs,0,0,0], ["double*",0,0,0], ALLOC_STACK)); //@line 204 "timemodule.c"
+        var $3=($2)==0; //@line 204 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 204 "timemodule.c"
       case 1: // $bb
-        $1=0; //@line 205 "timemodule.c"
-        __label__ = 6; break; //@line 205 "timemodule.c"
+        $0=0; //@line 205 "timemodule.c"
+        __label__ = 5; break; //@line 205 "timemodule.c"
       case 2: // $bb1
-        var $5=HEAP[$secs]; //@line 206 "timemodule.c"
-        $secs_addr_i=$5;
-        var $6=$secs_addr_i; //@line 938 "timemodule.c"
-        var $7=_fmod($6, 1); //@line 938 "timemodule.c"
-        $frac_i=$7; //@line 938 "timemodule.c"
-        var $8=$secs_addr_i; //@line 939 "timemodule.c"
-        var $9=_floor($8); //@line 939 "timemodule.c"
-        $secs_addr_i=$9; //@line 939 "timemodule.c"
-        var $10=$secs_addr_i; //@line 940 "timemodule.c"
-        var $11=((($10))|0); //@line 940 "timemodule.c"
-        var $12=$t_i; //@line 940 "timemodule.c"
-        HEAP[$12]=$11; //@line 940 "timemodule.c"
-        var $13=$frac_i; //@line 941 "timemodule.c"
-        var $14=($13) * 1000000; //@line 941 "timemodule.c"
-        var $15=((($14))|0); //@line 941 "timemodule.c"
-        var $16=$t_i+4; //@line 941 "timemodule.c"
-        HEAP[$16]=$15; //@line 941 "timemodule.c"
-        var $17=_select(0, 0, 0, 0, $t_i); //@line 943 "timemodule.c"
-        var $18=($17)!=0; //@line 943 "timemodule.c"
-        if ($18) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 943 "timemodule.c"
-      case 3: // $bb_i
-        var $19=___errno_location(); //@line 945 "timemodule.c"
-        var $20=HEAP[$19]; //@line 945 "timemodule.c"
-        var $21=($20)!=4; //@line 945 "timemodule.c"
-        if ($21) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 945 "timemodule.c"
-      case 4: // $bb2
-        var $22=HEAP[_PyExc_IOError]; //@line 950 "timemodule.c"
-        var $23=_PyErr_SetFromErrno($22); //@line 950 "timemodule.c"
-        $0=-1; //@line 951 "timemodule.c"
-        $retval_i=-1; //@line 951 "timemodule.c"
-        $1=0; //@line 207 "timemodule.c"
-        __label__ = 6; break; //@line 207 "timemodule.c"
-      case 5: // $bb3
-        $0=0; //@line 1051 "timemodule.c"
-        $retval_i=0; //@line 951 "timemodule.c"
-        var $24=HEAP[__Py_NoneStruct]; //@line 208 "timemodule.c"
-        var $25=($24) + 1; //@line 208 "timemodule.c"
-        HEAP[__Py_NoneStruct]=$25; //@line 208 "timemodule.c"
-        $1=__Py_NoneStruct; //@line 209 "timemodule.c"
-        __label__ = 6; break; //@line 209 "timemodule.c"
-      case 6: // $bb4
-        var $26=$1; //@line 205 "timemodule.c"
-        $retval=$26; //@line 205 "timemodule.c"
+        var $4=HEAP[$secs]; //@line 206 "timemodule.c"
+        var $5=_floatsleep($4); //@line 206 "timemodule.c"
+        var $6=($5)!=0; //@line 206 "timemodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 206 "timemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 207 "timemodule.c"
+        __label__ = 5; break; //@line 207 "timemodule.c"
+      case 4: // $bb3
+        var $7=HEAP[__Py_NoneStruct]; //@line 208 "timemodule.c"
+        var $8=($7) + 1; //@line 208 "timemodule.c"
+        HEAP[__Py_NoneStruct]=$8; //@line 208 "timemodule.c"
+        $0=__Py_NoneStruct; //@line 209 "timemodule.c"
+        __label__ = 5; break; //@line 209 "timemodule.c"
+      case 5: // $bb4
+        var $9=$0; //@line 205 "timemodule.c"
+        $retval=$9; //@line 205 "timemodule.c"
         var $retval5=$retval; //@line 205 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval5; //@line 205 "timemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _tmtotuple($p) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $p_addr;
+        var $retval;
+        var $0;
+        var $v;
+        $p_addr=$p;
+        var $1=_PyStructSequence_New(_StructTimeType); //@line 250 "timemodule.c"
+        $v=$1; //@line 250 "timemodule.c"
+        var $2=$v; //@line 251 "timemodule.c"
+        var $3=($2)==0; //@line 251 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 251 "timemodule.c"
+      case 1: // $bb
+        $0=0; //@line 252 "timemodule.c"
+        __label__ = 8; break; //@line 252 "timemodule.c"
+      case 2: // $bb1
+        var $4=$v; //@line 256 "timemodule.c"
+        var $5=$4; //@line 256 "timemodule.c"
+        var $6=$p_addr; //@line 256 "timemodule.c"
+        var $7=$6+20; //@line 256 "timemodule.c"
+        var $8=HEAP[$7]; //@line 256 "timemodule.c"
+        var $9=($8) + 1900; //@line 256 "timemodule.c"
+        var $10=_PyInt_FromLong($9); //@line 256 "timemodule.c"
+        var $11=$5+12; //@line 256 "timemodule.c"
+        var $12=$11; //@line 256 "timemodule.c"
+        HEAP[$12]=$10; //@line 256 "timemodule.c"
+        var $13=$v; //@line 257 "timemodule.c"
+        var $14=$13; //@line 257 "timemodule.c"
+        var $15=$p_addr; //@line 257 "timemodule.c"
+        var $16=$15+16; //@line 257 "timemodule.c"
+        var $17=HEAP[$16]; //@line 257 "timemodule.c"
+        var $18=($17) + 1; //@line 257 "timemodule.c"
+        var $19=_PyInt_FromLong($18); //@line 257 "timemodule.c"
+        var $20=$14+12; //@line 257 "timemodule.c"
+        var $21=$20+4; //@line 257 "timemodule.c"
+        HEAP[$21]=$19; //@line 257 "timemodule.c"
+        var $22=$v; //@line 258 "timemodule.c"
+        var $23=$22; //@line 258 "timemodule.c"
+        var $24=$p_addr; //@line 258 "timemodule.c"
+        var $25=$24+12; //@line 258 "timemodule.c"
+        var $26=HEAP[$25]; //@line 258 "timemodule.c"
+        var $27=_PyInt_FromLong($26); //@line 258 "timemodule.c"
+        var $28=$23+12; //@line 258 "timemodule.c"
+        var $29=$28+8; //@line 258 "timemodule.c"
+        HEAP[$29]=$27; //@line 258 "timemodule.c"
+        var $30=$v; //@line 259 "timemodule.c"
+        var $31=$30; //@line 259 "timemodule.c"
+        var $32=$p_addr; //@line 259 "timemodule.c"
+        var $33=$32+8; //@line 259 "timemodule.c"
+        var $34=HEAP[$33]; //@line 259 "timemodule.c"
+        var $35=_PyInt_FromLong($34); //@line 259 "timemodule.c"
+        var $36=$31+12; //@line 259 "timemodule.c"
+        var $37=$36+12; //@line 259 "timemodule.c"
+        HEAP[$37]=$35; //@line 259 "timemodule.c"
+        var $38=$v; //@line 260 "timemodule.c"
+        var $39=$38; //@line 260 "timemodule.c"
+        var $40=$p_addr; //@line 260 "timemodule.c"
+        var $41=$40+4; //@line 260 "timemodule.c"
+        var $42=HEAP[$41]; //@line 260 "timemodule.c"
+        var $43=_PyInt_FromLong($42); //@line 260 "timemodule.c"
+        var $44=$39+12; //@line 260 "timemodule.c"
+        var $45=$44+16; //@line 260 "timemodule.c"
+        HEAP[$45]=$43; //@line 260 "timemodule.c"
+        var $46=$v; //@line 261 "timemodule.c"
+        var $47=$46; //@line 261 "timemodule.c"
+        var $48=$p_addr; //@line 261 "timemodule.c"
+        var $49=$48; //@line 261 "timemodule.c"
+        var $50=HEAP[$49]; //@line 261 "timemodule.c"
+        var $51=_PyInt_FromLong($50); //@line 261 "timemodule.c"
+        var $52=$47+12; //@line 261 "timemodule.c"
+        var $53=$52+20; //@line 261 "timemodule.c"
+        HEAP[$53]=$51; //@line 261 "timemodule.c"
+        var $54=$v; //@line 262 "timemodule.c"
+        var $55=$54; //@line 262 "timemodule.c"
+        var $56=$p_addr; //@line 262 "timemodule.c"
+        var $57=$56+24; //@line 262 "timemodule.c"
+        var $58=HEAP[$57]; //@line 262 "timemodule.c"
+        var $59=($58) + 6; //@line 262 "timemodule.c"
+        var $60=($59) % 7; //@line 262 "timemodule.c"
+        var $61=_PyInt_FromLong($60); //@line 262 "timemodule.c"
+        var $62=$55+12; //@line 262 "timemodule.c"
+        var $63=$62+24; //@line 262 "timemodule.c"
+        HEAP[$63]=$61; //@line 262 "timemodule.c"
+        var $64=$v; //@line 263 "timemodule.c"
+        var $65=$64; //@line 263 "timemodule.c"
+        var $66=$p_addr; //@line 263 "timemodule.c"
+        var $67=$66+28; //@line 263 "timemodule.c"
+        var $68=HEAP[$67]; //@line 263 "timemodule.c"
+        var $69=($68) + 1; //@line 263 "timemodule.c"
+        var $70=_PyInt_FromLong($69); //@line 263 "timemodule.c"
+        var $71=$65+12; //@line 263 "timemodule.c"
+        var $72=$71+28; //@line 263 "timemodule.c"
+        HEAP[$72]=$70; //@line 263 "timemodule.c"
+        var $73=$v; //@line 264 "timemodule.c"
+        var $74=$73; //@line 264 "timemodule.c"
+        var $75=$p_addr; //@line 264 "timemodule.c"
+        var $76=$75+32; //@line 264 "timemodule.c"
+        var $77=HEAP[$76]; //@line 264 "timemodule.c"
+        var $78=_PyInt_FromLong($77); //@line 264 "timemodule.c"
+        var $79=$74+12; //@line 264 "timemodule.c"
+        var $80=$79+32; //@line 264 "timemodule.c"
+        HEAP[$80]=$78; //@line 264 "timemodule.c"
+        var $81=_PyErr_Occurred(); //@line 266 "timemodule.c"
+        var $82=($81)!=0; //@line 266 "timemodule.c"
+        var $83=$v; //@line 267 "timemodule.c"
+        if ($82) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 266 "timemodule.c"
+      case 3: // $bb2
+        var $84=($83)!=0; //@line 267 "timemodule.c"
+        if ($84) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 267 "timemodule.c"
+      case 4: // $bb3
+        var $85=$v; //@line 267 "timemodule.c"
+        var $86=$85; //@line 267 "timemodule.c"
+        var $87=HEAP[$86]; //@line 267 "timemodule.c"
+        var $88=($87) - 1; //@line 267 "timemodule.c"
+        var $89=$v; //@line 267 "timemodule.c"
+        var $90=$89; //@line 267 "timemodule.c"
+        HEAP[$90]=$88; //@line 267 "timemodule.c"
+        var $91=$v; //@line 267 "timemodule.c"
+        var $92=$91; //@line 267 "timemodule.c"
+        var $93=HEAP[$92]; //@line 267 "timemodule.c"
+        var $94=($93)==0; //@line 267 "timemodule.c"
+        if ($94) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 267 "timemodule.c"
+      case 5: // $bb4
+        var $95=$v; //@line 267 "timemodule.c"
+        var $96=$95+4; //@line 267 "timemodule.c"
+        var $97=HEAP[$96]; //@line 267 "timemodule.c"
+        var $98=$97+24; //@line 267 "timemodule.c"
+        var $99=HEAP[$98]; //@line 267 "timemodule.c"
+        var $100=$v; //@line 267 "timemodule.c"
+        FUNCTION_TABLE[$99]($100); //@line 267 "timemodule.c"
+        __label__ = 6; break; //@line 267 "timemodule.c"
+      case 6: // $bb5
+        $0=0; //@line 268 "timemodule.c"
+        __label__ = 8; break; //@line 268 "timemodule.c"
+      case 7: // $bb6
+        $0=$83; //@line 271 "timemodule.c"
+        __label__ = 8; break; //@line 271 "timemodule.c"
+      case 8: // $bb7
+        var $101=$0; //@line 252 "timemodule.c"
+        $retval=$101; //@line 252 "timemodule.c"
+        var $retval8=$retval; //@line 252 "timemodule.c"
+        ;
+        return $retval8; //@line 252 "timemodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -421,225 +509,57 @@ var __str60;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_addr_i;
-        var $retval_i1;
-        var $0;
-        var $v_i;
-        var $x_addr_i;
-        var $retval_i;
-        var $1;
-        var $result_i;
-        var $diff_i;
         var $when_addr;
         var $function_addr;
         var $retval;
-        var $2;
+        var $0;
         var $p;
         var $whent=__stackBase__;
         $when_addr=$when;
         $function_addr=$function;
-        var $3=$when_addr; //@line 278 "timemodule.c"
-        $x_addr_i=$3;
-        var $4=$x_addr_i; //@line 108 "timemodule.c"
-        var $5=((($4))|0); //@line 108 "timemodule.c"
-        $result_i=$5; //@line 108 "timemodule.c"
-        var $6=$result_i; //@line 118 "timemodule.c"
-        var $7=($6); //@line 118 "timemodule.c"
-        var $8=$x_addr_i; //@line 118 "timemodule.c"
-        var $9=($8) - ($7); //@line 118 "timemodule.c"
-        $diff_i=$9; //@line 118 "timemodule.c"
-        var $10=$diff_i; //@line 119 "timemodule.c"
-        var $11=($10) <= -1; //@line 119 "timemodule.c"
-        var $12=$diff_i; //@line 119 "timemodule.c"
-        var $13=($12) >= 1; //@line 119 "timemodule.c"
-        var $or_cond_i=($11) | ($13);
-        if ($or_cond_i) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 119 "timemodule.c"
-      case 1: // $_PyTime_DoubleToTimet_exit_thread
-        var $14=HEAP[_PyExc_ValueError]; //@line 120 "timemodule.c"
-        _PyErr_SetString($14, __str); //@line 120 "timemodule.c"
-        $result_i=-1; //@line 122 "timemodule.c"
-        $1=-1; //@line 124 "timemodule.c"
-        $retval_i=-1; //@line 124 "timemodule.c"
-        HEAP[$whent]=-1; //@line 278 "timemodule.c"
-        __label__ = 3; break;
-      case 2: // $_PyTime_DoubleToTimet_exit
-        var $_pr=$result_i;
-        $1=$_pr; //@line 124 "timemodule.c"
-        $retval_i=$_pr; //@line 124 "timemodule.c"
-        HEAP[$whent]=$_pr; //@line 278 "timemodule.c"
-        var $15=($_pr)==-1; //@line 280 "timemodule.c"
-        if ($15) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 280 "timemodule.c"
-      case 3: // $bb
-        var $16=_PyErr_Occurred(); //@line 280 "timemodule.c"
-        var $17=($16)!=0; //@line 280 "timemodule.c"
-        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 280 "timemodule.c"
-      case 4: // $bb1
-        $2=0; //@line 281 "timemodule.c"
-        __label__ = 18; break; //@line 281 "timemodule.c"
-      case 5: // $bb2
-        var $18=___errno_location(); //@line 282 "timemodule.c"
-        HEAP[$18]=0; //@line 282 "timemodule.c"
-        var $19=$function_addr; //@line 283 "timemodule.c"
-        var $20=FUNCTION_TABLE[$19]($whent); //@line 283 "timemodule.c"
-        $p=$20; //@line 283 "timemodule.c"
-        var $21=($20)==0; //@line 284 "timemodule.c"
-        if ($21) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 284 "timemodule.c"
-      case 6: // $bb3
-        var $22=___errno_location(); //@line 286 "timemodule.c"
-        var $23=HEAP[$22]; //@line 286 "timemodule.c"
-        var $24=($23)==0; //@line 286 "timemodule.c"
-        if ($24) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 286 "timemodule.c"
-      case 7: // $bb4
-        var $25=___errno_location(); //@line 287 "timemodule.c"
-        HEAP[$25]=22; //@line 287 "timemodule.c"
-        __label__ = 8; break; //@line 287 "timemodule.c"
-      case 8: // $bb5
-        var $26=HEAP[_PyExc_ValueError]; //@line 289 "timemodule.c"
-        var $27=_PyErr_SetFromErrno($26); //@line 289 "timemodule.c"
-        $2=$27; //@line 289 "timemodule.c"
-        __label__ = 18; break; //@line 289 "timemodule.c"
-      case 9: // $bb6
-        var $28=$p; //@line 291 "timemodule.c"
-        $p_addr_i=$28;
-        var $29=_PyStructSequence_New(_StructTimeType); //@line 250 "timemodule.c"
-        $v_i=$29; //@line 250 "timemodule.c"
-        var $30=$v_i; //@line 251 "timemodule.c"
-        var $31=($30)==0; //@line 251 "timemodule.c"
-        if ($31) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 251 "timemodule.c"
-      case 10: // $bb_i
-        $0=0; //@line 252 "timemodule.c"
-        __label__ = 17; break; //@line 252 "timemodule.c"
-      case 11: // $bb1_i2
-        var $32=$v_i; //@line 256 "timemodule.c"
-        var $33=$32; //@line 256 "timemodule.c"
-        var $34=$p_addr_i; //@line 256 "timemodule.c"
-        var $35=$34+20; //@line 256 "timemodule.c"
-        var $36=HEAP[$35]; //@line 256 "timemodule.c"
-        var $37=($36) + 1900; //@line 256 "timemodule.c"
-        var $38=_PyInt_FromLong($37); //@line 256 "timemodule.c"
-        var $39=$33+12; //@line 256 "timemodule.c"
-        var $40=$39; //@line 256 "timemodule.c"
-        HEAP[$40]=$38; //@line 256 "timemodule.c"
-        var $41=$v_i; //@line 257 "timemodule.c"
-        var $42=$41; //@line 257 "timemodule.c"
-        var $43=$p_addr_i; //@line 257 "timemodule.c"
-        var $44=$43+16; //@line 257 "timemodule.c"
-        var $45=HEAP[$44]; //@line 257 "timemodule.c"
-        var $46=($45) + 1; //@line 257 "timemodule.c"
-        var $47=_PyInt_FromLong($46); //@line 257 "timemodule.c"
-        var $48=$42+12; //@line 257 "timemodule.c"
-        var $49=$48+4; //@line 257 "timemodule.c"
-        HEAP[$49]=$47; //@line 257 "timemodule.c"
-        var $50=$v_i; //@line 258 "timemodule.c"
-        var $51=$50; //@line 258 "timemodule.c"
-        var $52=$p_addr_i; //@line 258 "timemodule.c"
-        var $53=$52+12; //@line 258 "timemodule.c"
-        var $54=HEAP[$53]; //@line 258 "timemodule.c"
-        var $55=_PyInt_FromLong($54); //@line 258 "timemodule.c"
-        var $56=$51+12; //@line 258 "timemodule.c"
-        var $57=$56+8; //@line 258 "timemodule.c"
-        HEAP[$57]=$55; //@line 258 "timemodule.c"
-        var $58=$v_i; //@line 259 "timemodule.c"
-        var $59=$58; //@line 259 "timemodule.c"
-        var $60=$p_addr_i; //@line 259 "timemodule.c"
-        var $61=$60+8; //@line 259 "timemodule.c"
-        var $62=HEAP[$61]; //@line 259 "timemodule.c"
-        var $63=_PyInt_FromLong($62); //@line 259 "timemodule.c"
-        var $64=$59+12; //@line 259 "timemodule.c"
-        var $65=$64+12; //@line 259 "timemodule.c"
-        HEAP[$65]=$63; //@line 259 "timemodule.c"
-        var $66=$v_i; //@line 260 "timemodule.c"
-        var $67=$66; //@line 260 "timemodule.c"
-        var $68=$p_addr_i; //@line 260 "timemodule.c"
-        var $69=$68+4; //@line 260 "timemodule.c"
-        var $70=HEAP[$69]; //@line 260 "timemodule.c"
-        var $71=_PyInt_FromLong($70); //@line 260 "timemodule.c"
-        var $72=$67+12; //@line 260 "timemodule.c"
-        var $73=$72+16; //@line 260 "timemodule.c"
-        HEAP[$73]=$71; //@line 260 "timemodule.c"
-        var $74=$v_i; //@line 261 "timemodule.c"
-        var $75=$74; //@line 261 "timemodule.c"
-        var $76=$p_addr_i; //@line 261 "timemodule.c"
-        var $77=$76; //@line 261 "timemodule.c"
-        var $78=HEAP[$77]; //@line 261 "timemodule.c"
-        var $79=_PyInt_FromLong($78); //@line 261 "timemodule.c"
-        var $80=$75+12; //@line 261 "timemodule.c"
-        var $81=$80+20; //@line 261 "timemodule.c"
-        HEAP[$81]=$79; //@line 261 "timemodule.c"
-        var $82=$v_i; //@line 262 "timemodule.c"
-        var $83=$82; //@line 262 "timemodule.c"
-        var $84=$p_addr_i; //@line 262 "timemodule.c"
-        var $85=$84+24; //@line 262 "timemodule.c"
-        var $86=HEAP[$85]; //@line 262 "timemodule.c"
-        var $87=($86) + 6; //@line 262 "timemodule.c"
-        var $88=($87) % 7; //@line 262 "timemodule.c"
-        var $89=_PyInt_FromLong($88); //@line 262 "timemodule.c"
-        var $90=$83+12; //@line 262 "timemodule.c"
-        var $91=$90+24; //@line 262 "timemodule.c"
-        HEAP[$91]=$89; //@line 262 "timemodule.c"
-        var $92=$v_i; //@line 263 "timemodule.c"
-        var $93=$92; //@line 263 "timemodule.c"
-        var $94=$p_addr_i; //@line 263 "timemodule.c"
-        var $95=$94+28; //@line 263 "timemodule.c"
-        var $96=HEAP[$95]; //@line 263 "timemodule.c"
-        var $97=($96) + 1; //@line 263 "timemodule.c"
-        var $98=_PyInt_FromLong($97); //@line 263 "timemodule.c"
-        var $99=$93+12; //@line 263 "timemodule.c"
-        var $100=$99+28; //@line 263 "timemodule.c"
-        HEAP[$100]=$98; //@line 263 "timemodule.c"
-        var $101=$v_i; //@line 264 "timemodule.c"
-        var $102=$101; //@line 264 "timemodule.c"
-        var $103=$p_addr_i; //@line 264 "timemodule.c"
-        var $104=$103+32; //@line 264 "timemodule.c"
-        var $105=HEAP[$104]; //@line 264 "timemodule.c"
-        var $106=_PyInt_FromLong($105); //@line 264 "timemodule.c"
-        var $107=$102+12; //@line 264 "timemodule.c"
-        var $108=$107+32; //@line 264 "timemodule.c"
-        HEAP[$108]=$106; //@line 264 "timemodule.c"
-        var $109=_PyErr_Occurred(); //@line 266 "timemodule.c"
-        var $110=($109)!=0; //@line 266 "timemodule.c"
-        var $111=$v_i; //@line 267 "timemodule.c"
-        if ($110) { __label__ = 12; break; } else { __label__ = 16; break; } //@line 266 "timemodule.c"
-      case 12: // $bb2_i
-        var $112=($111)!=0; //@line 267 "timemodule.c"
-        if ($112) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 267 "timemodule.c"
-      case 13: // $bb3_i
-        var $113=$v_i; //@line 267 "timemodule.c"
-        var $114=$113; //@line 267 "timemodule.c"
-        var $115=HEAP[$114]; //@line 267 "timemodule.c"
-        var $116=($115) - 1; //@line 267 "timemodule.c"
-        var $117=$v_i; //@line 267 "timemodule.c"
-        var $118=$117; //@line 267 "timemodule.c"
-        HEAP[$118]=$116; //@line 267 "timemodule.c"
-        var $119=$v_i; //@line 267 "timemodule.c"
-        var $120=$119; //@line 267 "timemodule.c"
-        var $121=HEAP[$120]; //@line 267 "timemodule.c"
-        var $122=($121)==0; //@line 267 "timemodule.c"
-        if ($122) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 267 "timemodule.c"
-      case 14: // $bb4_i
-        var $123=$v_i; //@line 267 "timemodule.c"
-        var $124=$123+4; //@line 267 "timemodule.c"
-        var $125=HEAP[$124]; //@line 267 "timemodule.c"
-        var $126=$125+24; //@line 267 "timemodule.c"
-        var $127=HEAP[$126]; //@line 267 "timemodule.c"
-        var $128=$v_i; //@line 267 "timemodule.c"
-        FUNCTION_TABLE[$127]($128); //@line 267 "timemodule.c"
-        __label__ = 15; break; //@line 267 "timemodule.c"
-      case 15: // $bb5_i
-        $0=0; //@line 268 "timemodule.c"
-        __label__ = 17; break; //@line 268 "timemodule.c"
-      case 16: // $bb6_i
-        $0=$111; //@line 271 "timemodule.c"
-        __label__ = 17; break; //@line 271 "timemodule.c"
-      case 17: // $tmtotuple_exit
-        var $129=$0; //@line 252 "timemodule.c"
-        $retval_i1=$129; //@line 252 "timemodule.c"
-        var $retval8_i=$retval_i1; //@line 252 "timemodule.c"
-        $2=$retval8_i; //@line 291 "timemodule.c"
-        __label__ = 18; break; //@line 291 "timemodule.c"
-      case 18: // $bb7
-        var $130=$2; //@line 281 "timemodule.c"
-        $retval=$130; //@line 281 "timemodule.c"
+        var $1=$when_addr; //@line 278 "timemodule.c"
+        var $2=__PyTime_DoubleToTimet($1); //@line 278 "timemodule.c"
+        HEAP[$whent]=$2; //@line 278 "timemodule.c"
+        var $3=HEAP[$whent]; //@line 280 "timemodule.c"
+        var $4=($3)==-1; //@line 280 "timemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 280 "timemodule.c"
+      case 1: // $bb
+        var $5=_PyErr_Occurred(); //@line 280 "timemodule.c"
+        var $6=($5)!=0; //@line 280 "timemodule.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 280 "timemodule.c"
+      case 2: // $bb1
+        $0=0; //@line 281 "timemodule.c"
+        __label__ = 8; break; //@line 281 "timemodule.c"
+      case 3: // $bb2
+        var $7=___errno_location(); //@line 282 "timemodule.c"
+        HEAP[$7]=0; //@line 282 "timemodule.c"
+        var $8=$function_addr; //@line 283 "timemodule.c"
+        var $9=FUNCTION_TABLE[$8]($whent); //@line 283 "timemodule.c"
+        $p=$9; //@line 283 "timemodule.c"
+        var $10=($9)==0; //@line 284 "timemodule.c"
+        if ($10) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 284 "timemodule.c"
+      case 4: // $bb3
+        var $11=___errno_location(); //@line 286 "timemodule.c"
+        var $12=HEAP[$11]; //@line 286 "timemodule.c"
+        var $13=($12)==0; //@line 286 "timemodule.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 286 "timemodule.c"
+      case 5: // $bb4
+        var $14=___errno_location(); //@line 287 "timemodule.c"
+        HEAP[$14]=22; //@line 287 "timemodule.c"
+        __label__ = 6; break; //@line 287 "timemodule.c"
+      case 6: // $bb5
+        var $15=HEAP[_PyExc_ValueError]; //@line 289 "timemodule.c"
+        var $16=_PyErr_SetFromErrno($15); //@line 289 "timemodule.c"
+        $0=$16; //@line 289 "timemodule.c"
+        __label__ = 8; break; //@line 289 "timemodule.c"
+      case 7: // $bb6
+        var $17=$p; //@line 291 "timemodule.c"
+        var $18=_tmtotuple($17); //@line 291 "timemodule.c"
+        $0=$18; //@line 291 "timemodule.c"
+        __label__ = 8; break; //@line 291 "timemodule.c"
+      case 8: // $bb7
+        var $19=$0; //@line 281 "timemodule.c"
+        $retval=$19; //@line 281 "timemodule.c"
         var $retval8=$retval; //@line 281 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval8; //@line 281 "timemodule.c"
@@ -649,96 +569,63 @@ var __str60;
   
 
   function _parse_time_double_args($args, $format, $pwhen) {
-    var __stackBase__  = STACKTOP; STACKTOP += 24; _memset(__stackBase__, 0, 24);
+    var __stackBase__  = STACKTOP; STACKTOP += 4; _memset(__stackBase__, 0, 4);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $t_i=__stackBase__;
-        var $t2_i=__stackBase__+8;
         var $args_addr;
         var $format_addr;
         var $pwhen_addr;
         var $retval;
-        var $1;
-        var $ot=__stackBase__+20;
+        var $0;
+        var $ot=__stackBase__;
         var $when;
         $args_addr=$args;
         $format_addr=$format;
         $pwhen_addr=$pwhen;
         HEAP[$ot]=0; //@line 301 "timemodule.c"
-        var $2=$args_addr; //@line 303 "timemodule.c"
-        var $3=$format_addr; //@line 303 "timemodule.c"
-        var $4=_PyArg_ParseTuple($2, $3, $ot); //@line 303 "timemodule.c"
-        var $5=($4)==0; //@line 303 "timemodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 303 "timemodule.c"
+        var $1=$args_addr; //@line 303 "timemodule.c"
+        var $2=$format_addr; //@line 303 "timemodule.c"
+        var $3=_PyArg_ParseTuple($1, $2, allocate([$ot,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 303 "timemodule.c"
+        var $4=($3)==0; //@line 303 "timemodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 303 "timemodule.c"
       case 1: // $bb
-        $1=0; //@line 304 "timemodule.c"
-        __label__ = 11; break; //@line 304 "timemodule.c"
+        $0=0; //@line 304 "timemodule.c"
+        __label__ = 8; break; //@line 304 "timemodule.c"
       case 2: // $bb1
-        var $6=HEAP[$ot]; //@line 305 "timemodule.c"
-        var $7=($6)==0; //@line 305 "timemodule.c"
-        var $8=HEAP[$ot]; //@line 305 "timemodule.c"
-        var $9=($8)==(__Py_NoneStruct); //@line 305 "timemodule.c"
-        var $or_cond=($7) | ($9);
-        if ($or_cond) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 305 "timemodule.c"
+        var $5=HEAP[$ot]; //@line 305 "timemodule.c"
+        var $6=($5)==0; //@line 305 "timemodule.c"
+        var $7=HEAP[$ot]; //@line 305 "timemodule.c"
+        var $8=($7)==(__Py_NoneStruct); //@line 305 "timemodule.c"
+        var $or_cond=($6) | ($8);
+        if ($or_cond) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 305 "timemodule.c"
       case 3: // $bb3
-        var $10=_gettimeofday($t_i, 0); //@line 907 "timemodule.c"
-        var $11=($10)==0; //@line 907 "timemodule.c"
-        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 907 "timemodule.c"
-      case 4: // $bb_i
-        var $12=$t_i; //@line 908 "timemodule.c"
-        var $13=HEAP[$12]; //@line 908 "timemodule.c"
-        var $14=($13); //@line 908 "timemodule.c"
-        var $15=$t_i+4; //@line 908 "timemodule.c"
-        var $16=HEAP[$15]; //@line 908 "timemodule.c"
-        var $17=($16); //@line 908 "timemodule.c"
-        var $18=($17) * 0.000001; //@line 908 "timemodule.c"
-        var $19=($14) + ($18); //@line 908 "timemodule.c"
-        $0=$19; //@line 908 "timemodule.c"
-        __label__ = 6; break; //@line 908 "timemodule.c"
-      case 5: // $bb1_i
-        var $20=_ftime($t2_i); //@line 916 "timemodule.c"
-        var $21=$t2_i; //@line 917 "timemodule.c"
-        var $22=HEAP[$21]; //@line 917 "timemodule.c"
-        var $23=($22); //@line 917 "timemodule.c"
-        var $24=$t2_i+4; //@line 917 "timemodule.c"
-        var $25=HEAP[$24]; //@line 917 "timemodule.c"
-        var $26=($25); //@line 917 "timemodule.c"
-        var $27=($26) * 0.001; //@line 917 "timemodule.c"
-        var $28=($23) + ($27); //@line 917 "timemodule.c"
-        $0=$28; //@line 917 "timemodule.c"
-        __label__ = 6; break; //@line 917 "timemodule.c"
-      case 6: // $floattime_exit
-        var $29=$0; //@line 908 "timemodule.c"
-        $retval_i=$29; //@line 908 "timemodule.c"
-        var $retval4_i=$retval_i; //@line 908 "timemodule.c"
-        var $30=$pwhen_addr; //@line 306 "timemodule.c"
-        HEAP[$30]=$retval4_i; //@line 306 "timemodule.c"
-        __label__ = 10; break; //@line 306 "timemodule.c"
-      case 7: // $bb4
-        var $31=HEAP[$ot]; //@line 308 "timemodule.c"
-        var $32=_PyFloat_AsDouble($31); //@line 308 "timemodule.c"
-        $when=$32; //@line 308 "timemodule.c"
-        var $33=_PyErr_Occurred(); //@line 309 "timemodule.c"
-        var $34=($33)!=0; //@line 309 "timemodule.c"
-        if ($34) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 309 "timemodule.c"
-      case 8: // $bb5
-        $1=0; //@line 310 "timemodule.c"
-        __label__ = 11; break; //@line 310 "timemodule.c"
-      case 9: // $bb6
-        var $35=$pwhen_addr; //@line 311 "timemodule.c"
-        var $36=$when; //@line 311 "timemodule.c"
-        HEAP[$35]=$36; //@line 311 "timemodule.c"
-        __label__ = 10; break; //@line 311 "timemodule.c"
-      case 10: // $bb7
-        $1=1; //@line 313 "timemodule.c"
-        __label__ = 11; break; //@line 313 "timemodule.c"
-      case 11: // $bb8
-        var $37=$1; //@line 304 "timemodule.c"
-        $retval=$37; //@line 304 "timemodule.c"
+        var $9=_floattime(); //@line 306 "timemodule.c"
+        var $10=$pwhen_addr; //@line 306 "timemodule.c"
+        HEAP[$10]=$9; //@line 306 "timemodule.c"
+        __label__ = 7; break; //@line 306 "timemodule.c"
+      case 4: // $bb4
+        var $11=HEAP[$ot]; //@line 308 "timemodule.c"
+        var $12=_PyFloat_AsDouble($11); //@line 308 "timemodule.c"
+        $when=$12; //@line 308 "timemodule.c"
+        var $13=_PyErr_Occurred(); //@line 309 "timemodule.c"
+        var $14=($13)!=0; //@line 309 "timemodule.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 309 "timemodule.c"
+      case 5: // $bb5
+        $0=0; //@line 310 "timemodule.c"
+        __label__ = 8; break; //@line 310 "timemodule.c"
+      case 6: // $bb6
+        var $15=$pwhen_addr; //@line 311 "timemodule.c"
+        var $16=$when; //@line 311 "timemodule.c"
+        HEAP[$15]=$16; //@line 311 "timemodule.c"
+        __label__ = 7; break; //@line 311 "timemodule.c"
+      case 7: // $bb7
+        $0=1; //@line 313 "timemodule.c"
+        __label__ = 8; break; //@line 313 "timemodule.c"
+      case 8: // $bb8
+        var $17=$0; //@line 304 "timemodule.c"
+        $retval=$17; //@line 304 "timemodule.c"
         var $retval9=$retval; //@line 304 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval9; //@line 304 "timemodule.c"
@@ -853,7 +740,7 @@ var __str60;
         var $17=$p_addr; //@line 354 "timemodule.c"
         var $18=$17+16; //@line 354 "timemodule.c"
         var $19=$args_addr; //@line 354 "timemodule.c"
-        var $20=_PyArg_Parse($19, __str24, $y, $18, $16, $14, $12, $10, $8, $6, $4); //@line 354 "timemodule.c"
+        var $20=_PyArg_Parse($19, __str24, allocate([$y,0,0,0,$18,0,0,0,$16,0,0,0,$14,0,0,0,$12,0,0,0,$10,0,0,0,$8,0,0,0,$6,0,0,0,$4,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 354 "timemodule.c"
         var $21=($20)==0; //@line 354 "timemodule.c"
         if ($21) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 354 "timemodule.c"
       case 1: // $bb
@@ -984,7 +871,7 @@ var __str60;
         var $buf1=$buf; //@line 402 "timemodule.c"
         _llvm_memset_p0i8_i32($buf1, 0, 44, 1, 0); //@line 402 "timemodule.c"
         var $1=$args_addr; //@line 404 "timemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str28, $fmt, $tup); //@line 404 "timemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str28, allocate([$fmt,0,0,0,$tup,0,0,0], ["i8**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 404 "timemodule.c"
         var $3=($2)==0; //@line 404 "timemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 404 "timemodule.c"
       case 1: // $bb
@@ -1236,7 +1123,7 @@ var __str60;
       case 2: // $bb1
         var $4=$strptime_module; //@line 548 "timemodule.c"
         var $5=$args_addr; //@line 548 "timemodule.c"
-        var $6=_PyObject_CallMethod($4, __str37, __str38, $5); //@line 548 "timemodule.c"
+        var $6=_PyObject_CallMethod($4, __str37, __str38, allocate([$5,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 548 "timemodule.c"
         $strptime_result=$6; //@line 548 "timemodule.c"
         var $7=$strptime_module; //@line 550 "timemodule.c"
         var $8=$7; //@line 550 "timemodule.c"
@@ -1292,7 +1179,7 @@ var __str60;
         $args_addr=$args;
         HEAP[$tup]=0; //@line 564 "timemodule.c"
         var $1=$args_addr; //@line 567 "timemodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str39, 0, 1, $tup); //@line 567 "timemodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str39, 0, 1, allocate([$tup,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 567 "timemodule.c"
         var $3=($2)==0; //@line 567 "timemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 567 "timemodule.c"
       case 1: // $bb
@@ -1361,15 +1248,10 @@ var __str60;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $x_addr_i;
-        var $retval_i;
-        var $0;
-        var $result_i;
-        var $diff_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $ot=__stackBase__;
         var $tt=__stackBase__+4;
         var $p;
@@ -1377,102 +1259,77 @@ var __str60;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$ot]=0; //@line 594 "timemodule.c"
-        var $2=$args_addr; //@line 598 "timemodule.c"
-        var $3=_PyArg_UnpackTuple($2, __str41, 0, 1, $ot); //@line 598 "timemodule.c"
-        var $4=($3)==0; //@line 598 "timemodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 598 "timemodule.c"
+        var $1=$args_addr; //@line 598 "timemodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str41, 0, 1, allocate([$ot,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 598 "timemodule.c"
+        var $3=($2)==0; //@line 598 "timemodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 598 "timemodule.c"
       case 1: // $bb
-        $1=0; //@line 599 "timemodule.c"
-        __label__ = 16; break; //@line 599 "timemodule.c"
+        $0=0; //@line 599 "timemodule.c"
+        __label__ = 14; break; //@line 599 "timemodule.c"
       case 2: // $bb1
-        var $5=HEAP[$ot]; //@line 600 "timemodule.c"
-        var $6=($5)==0; //@line 600 "timemodule.c"
-        var $7=HEAP[$ot]; //@line 600 "timemodule.c"
-        var $8=($7)==(__Py_NoneStruct); //@line 600 "timemodule.c"
-        var $or_cond=($6) | ($8);
+        var $4=HEAP[$ot]; //@line 600 "timemodule.c"
+        var $5=($4)==0; //@line 600 "timemodule.c"
+        var $6=HEAP[$ot]; //@line 600 "timemodule.c"
+        var $7=($6)==(__Py_NoneStruct); //@line 600 "timemodule.c"
+        var $or_cond=($5) | ($7);
         if ($or_cond) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 600 "timemodule.c"
       case 3: // $bb3
-        var $9=_time(0); //@line 601 "timemodule.c"
-        HEAP[$tt]=$9; //@line 601 "timemodule.c"
-        __label__ = 11; break; //@line 601 "timemodule.c"
+        var $8=_time(0); //@line 601 "timemodule.c"
+        HEAP[$tt]=$8; //@line 601 "timemodule.c"
+        __label__ = 9; break; //@line 601 "timemodule.c"
       case 4: // $bb4
-        var $10=HEAP[$ot]; //@line 603 "timemodule.c"
-        var $11=_PyFloat_AsDouble($10); //@line 603 "timemodule.c"
-        $dt=$11; //@line 603 "timemodule.c"
-        var $12=_PyErr_Occurred(); //@line 604 "timemodule.c"
-        var $13=($12)!=0; //@line 604 "timemodule.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 604 "timemodule.c"
+        var $9=HEAP[$ot]; //@line 603 "timemodule.c"
+        var $10=_PyFloat_AsDouble($9); //@line 603 "timemodule.c"
+        $dt=$10; //@line 603 "timemodule.c"
+        var $11=_PyErr_Occurred(); //@line 604 "timemodule.c"
+        var $12=($11)!=0; //@line 604 "timemodule.c"
+        if ($12) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 604 "timemodule.c"
       case 5: // $bb5
-        $1=0; //@line 605 "timemodule.c"
-        __label__ = 16; break; //@line 605 "timemodule.c"
+        $0=0; //@line 605 "timemodule.c"
+        __label__ = 14; break; //@line 605 "timemodule.c"
       case 6: // $bb6
-        var $14=$dt; //@line 606 "timemodule.c"
-        $x_addr_i=$14;
-        var $15=$x_addr_i; //@line 108 "timemodule.c"
-        var $16=((($15))|0); //@line 108 "timemodule.c"
-        $result_i=$16; //@line 108 "timemodule.c"
-        var $17=$result_i; //@line 118 "timemodule.c"
-        var $18=($17); //@line 118 "timemodule.c"
-        var $19=$x_addr_i; //@line 118 "timemodule.c"
-        var $20=($19) - ($18); //@line 118 "timemodule.c"
-        $diff_i=$20; //@line 118 "timemodule.c"
-        var $21=$diff_i; //@line 119 "timemodule.c"
-        var $22=($21) <= -1; //@line 119 "timemodule.c"
-        var $23=$diff_i; //@line 119 "timemodule.c"
-        var $24=($23) >= 1; //@line 119 "timemodule.c"
-        var $or_cond_i=($22) | ($24);
-        if ($or_cond_i) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 119 "timemodule.c"
-      case 7: // $_PyTime_DoubleToTimet_exit_thread
-        var $25=HEAP[_PyExc_ValueError]; //@line 120 "timemodule.c"
-        _PyErr_SetString($25, __str); //@line 120 "timemodule.c"
-        $result_i=-1; //@line 122 "timemodule.c"
-        $0=-1; //@line 124 "timemodule.c"
-        $retval_i=-1; //@line 124 "timemodule.c"
-        HEAP[$tt]=-1; //@line 606 "timemodule.c"
-        __label__ = 9; break;
-      case 8: // $_PyTime_DoubleToTimet_exit
-        var $_pr=$result_i;
-        $0=$_pr; //@line 124 "timemodule.c"
-        $retval_i=$_pr; //@line 124 "timemodule.c"
-        HEAP[$tt]=$_pr; //@line 606 "timemodule.c"
-        var $26=($_pr)==-1; //@line 607 "timemodule.c"
-        if ($26) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 607 "timemodule.c"
-      case 9: // $bb7
-        var $27=_PyErr_Occurred(); //@line 607 "timemodule.c"
-        var $28=($27)!=0; //@line 607 "timemodule.c"
-        if ($28) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 607 "timemodule.c"
-      case 10: // $bb8
-        $1=0; //@line 608 "timemodule.c"
-        __label__ = 16; break; //@line 608 "timemodule.c"
-      case 11: // $bb9
-        var $29=_ctime($tt); //@line 610 "timemodule.c"
-        $p=$29; //@line 610 "timemodule.c"
-        var $30=($29)==0; //@line 611 "timemodule.c"
-        if ($30) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 611 "timemodule.c"
-      case 12: // $bb10
-        var $31=HEAP[_PyExc_ValueError]; //@line 612 "timemodule.c"
-        _PyErr_SetString($31, __str42); //@line 612 "timemodule.c"
-        $1=0; //@line 613 "timemodule.c"
-        __label__ = 16; break; //@line 613 "timemodule.c"
-      case 13: // $bb11
-        var $32=$p; //@line 615 "timemodule.c"
-        var $33=$32+24; //@line 615 "timemodule.c"
-        var $34=HEAP[$33]; //@line 615 "timemodule.c"
-        var $35=($34)==10; //@line 615 "timemodule.c"
-        if ($35) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 615 "timemodule.c"
-      case 14: // $bb12
-        var $36=$p; //@line 616 "timemodule.c"
-        var $37=$36+24; //@line 616 "timemodule.c"
-        HEAP[$37]=0; //@line 616 "timemodule.c"
-        __label__ = 15; break; //@line 616 "timemodule.c"
-      case 15: // $bb13
-        var $38=$p; //@line 617 "timemodule.c"
-        var $39=_PyString_FromString($38); //@line 617 "timemodule.c"
-        $1=$39; //@line 617 "timemodule.c"
-        __label__ = 16; break; //@line 617 "timemodule.c"
-      case 16: // $bb14
-        var $40=$1; //@line 599 "timemodule.c"
-        $retval=$40; //@line 599 "timemodule.c"
+        var $13=$dt; //@line 606 "timemodule.c"
+        var $14=__PyTime_DoubleToTimet($13); //@line 606 "timemodule.c"
+        HEAP[$tt]=$14; //@line 606 "timemodule.c"
+        var $15=HEAP[$tt]; //@line 607 "timemodule.c"
+        var $16=($15)==-1; //@line 607 "timemodule.c"
+        if ($16) { __label__ = 7; break; } else { __label__ = 9; break; } //@line 607 "timemodule.c"
+      case 7: // $bb7
+        var $17=_PyErr_Occurred(); //@line 607 "timemodule.c"
+        var $18=($17)!=0; //@line 607 "timemodule.c"
+        if ($18) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 607 "timemodule.c"
+      case 8: // $bb8
+        $0=0; //@line 608 "timemodule.c"
+        __label__ = 14; break; //@line 608 "timemodule.c"
+      case 9: // $bb9
+        var $19=_ctime($tt); //@line 610 "timemodule.c"
+        $p=$19; //@line 610 "timemodule.c"
+        var $20=($19)==0; //@line 611 "timemodule.c"
+        if ($20) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 611 "timemodule.c"
+      case 10: // $bb10
+        var $21=HEAP[_PyExc_ValueError]; //@line 612 "timemodule.c"
+        _PyErr_SetString($21, __str42); //@line 612 "timemodule.c"
+        $0=0; //@line 613 "timemodule.c"
+        __label__ = 14; break; //@line 613 "timemodule.c"
+      case 11: // $bb11
+        var $22=$p; //@line 615 "timemodule.c"
+        var $23=$22+24; //@line 615 "timemodule.c"
+        var $24=HEAP[$23]; //@line 615 "timemodule.c"
+        var $25=($24)==10; //@line 615 "timemodule.c"
+        if ($25) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 615 "timemodule.c"
+      case 12: // $bb12
+        var $26=$p; //@line 616 "timemodule.c"
+        var $27=$26+24; //@line 616 "timemodule.c"
+        HEAP[$27]=0; //@line 616 "timemodule.c"
+        __label__ = 13; break; //@line 616 "timemodule.c"
+      case 13: // $bb13
+        var $28=$p; //@line 617 "timemodule.c"
+        var $29=_PyString_FromString($28); //@line 617 "timemodule.c"
+        $0=$29; //@line 617 "timemodule.c"
+        __label__ = 14; break; //@line 617 "timemodule.c"
+      case 14: // $bb14
+        var $30=$0; //@line 599 "timemodule.c"
+        $retval=$30; //@line 599 "timemodule.c"
         var $retval15=$retval; //@line 599 "timemodule.c"
         STACKTOP = __stackBase__;
         return $retval15; //@line 599 "timemodule.c"
@@ -1696,7 +1553,7 @@ var __str60;
         var $49=_PyModule_AddIntConstant($48, __str48, $47); //@line 750 "timemodule.c"
         var $julyname9=$julyname; //@line 752 "timemodule.c"
         var $janname10=$janname; //@line 752 "timemodule.c"
-        var $50=_Py_BuildValue(__str49, $julyname9, $janname10); //@line 752 "timemodule.c"
+        var $50=_Py_BuildValue(__str49, allocate([$julyname9,0,0,0,$janname10,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 752 "timemodule.c"
         var $51=$m_addr; //@line 752 "timemodule.c"
         var $52=_PyModule_AddObject($51, __str50, $50); //@line 752 "timemodule.c"
         __label__ = 9; break; //@line 752 "timemodule.c"
@@ -1714,7 +1571,7 @@ var __str60;
         var $63=_PyModule_AddIntConstant($62, __str48, $61); //@line 758 "timemodule.c"
         var $janname12=$janname; //@line 760 "timemodule.c"
         var $julyname13=$julyname; //@line 760 "timemodule.c"
-        var $64=_Py_BuildValue(__str49, $janname12, $julyname13); //@line 760 "timemodule.c"
+        var $64=_Py_BuildValue(__str49, allocate([$janname12,0,0,0,$julyname13,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 760 "timemodule.c"
         var $65=$m_addr; //@line 760 "timemodule.c"
         var $66=_PyModule_AddObject($65, __str50, $64); //@line 760 "timemodule.c"
         __label__ = 9; break; //@line 760 "timemodule.c"
@@ -1803,6 +1660,107 @@ var __str60;
     }
   }
   Module["_inittime"] = _inittime;
+
+  function _floattime() {
+    var __stackBase__  = STACKTOP; STACKTOP += 20; _memset(__stackBase__, 0, 20);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $t=__stackBase__;
+        var $t2=__stackBase__+8;
+        var $1=_gettimeofday($t, 0); //@line 907 "timemodule.c"
+        var $2=($1)==0; //@line 907 "timemodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 907 "timemodule.c"
+      case 1: // $bb
+        var $3=$t; //@line 908 "timemodule.c"
+        var $4=HEAP[$3]; //@line 908 "timemodule.c"
+        var $5=($4); //@line 908 "timemodule.c"
+        var $6=$t+4; //@line 908 "timemodule.c"
+        var $7=HEAP[$6]; //@line 908 "timemodule.c"
+        var $8=($7); //@line 908 "timemodule.c"
+        var $9=($8) * 0.000001; //@line 908 "timemodule.c"
+        var $10=($5) + ($9); //@line 908 "timemodule.c"
+        $0=$10; //@line 908 "timemodule.c"
+        __label__ = 3; break; //@line 908 "timemodule.c"
+      case 2: // $bb1
+        var $11=_ftime($t2); //@line 916 "timemodule.c"
+        var $12=$t2; //@line 917 "timemodule.c"
+        var $13=HEAP[$12]; //@line 917 "timemodule.c"
+        var $14=($13); //@line 917 "timemodule.c"
+        var $15=$t2+4; //@line 917 "timemodule.c"
+        var $16=HEAP[$15]; //@line 917 "timemodule.c"
+        var $17=($16); //@line 917 "timemodule.c"
+        var $18=($17) * 0.001; //@line 917 "timemodule.c"
+        var $19=($14) + ($18); //@line 917 "timemodule.c"
+        $0=$19; //@line 917 "timemodule.c"
+        __label__ = 3; break; //@line 917 "timemodule.c"
+      case 3: // $bb3
+        var $20=$0; //@line 908 "timemodule.c"
+        $retval=$20; //@line 908 "timemodule.c"
+        var $retval4=$retval; //@line 908 "timemodule.c"
+        STACKTOP = __stackBase__;
+        return $retval4; //@line 908 "timemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _floatsleep($secs) {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $secs_addr;
+        var $retval;
+        var $0;
+        var $t=__stackBase__;
+        var $frac;
+        $secs_addr=$secs;
+        var $1=$secs_addr; //@line 938 "timemodule.c"
+        var $2=_fmod($1, 1); //@line 938 "timemodule.c"
+        $frac=$2; //@line 938 "timemodule.c"
+        var $3=$secs_addr; //@line 939 "timemodule.c"
+        var $4=_floor($3); //@line 939 "timemodule.c"
+        $secs_addr=$4; //@line 939 "timemodule.c"
+        var $5=$secs_addr; //@line 940 "timemodule.c"
+        var $6=((($5))|0); //@line 940 "timemodule.c"
+        var $7=$t; //@line 940 "timemodule.c"
+        HEAP[$7]=$6; //@line 940 "timemodule.c"
+        var $8=$frac; //@line 941 "timemodule.c"
+        var $9=($8) * 1000000; //@line 941 "timemodule.c"
+        var $10=((($9))|0); //@line 941 "timemodule.c"
+        var $11=$t+4; //@line 941 "timemodule.c"
+        HEAP[$11]=$10; //@line 941 "timemodule.c"
+        var $12=_select(0, 0, 0, 0, $t); //@line 943 "timemodule.c"
+        var $13=($12)!=0; //@line 943 "timemodule.c"
+        if ($13) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 943 "timemodule.c"
+      case 1: // $bb
+        var $14=___errno_location(); //@line 945 "timemodule.c"
+        var $15=HEAP[$14]; //@line 945 "timemodule.c"
+        var $16=($15)!=4; //@line 945 "timemodule.c"
+        if ($16) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 945 "timemodule.c"
+      case 2: // $bb1
+        var $17=HEAP[_PyExc_IOError]; //@line 950 "timemodule.c"
+        var $18=_PyErr_SetFromErrno($17); //@line 950 "timemodule.c"
+        $0=-1; //@line 951 "timemodule.c"
+        __label__ = 4; break; //@line 951 "timemodule.c"
+      case 3: // $bb2
+        $0=0; //@line 1051 "timemodule.c"
+        __label__ = 4; break; //@line 1051 "timemodule.c"
+      case 4: // $bb3
+        var $19=$0; //@line 951 "timemodule.c"
+        $retval=$19; //@line 951 "timemodule.c"
+        var $retval4=$retval; //@line 951 "timemodule.c"
+        STACKTOP = __stackBase__;
+        return $retval4; //@line 951 "timemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
 FUNCTION_TABLE = FUNCTION_TABLE.concat([0,0,_gmtime,0,_localtime,0,_time_time,0,_time_clock,0,_time_sleep,0,_time_gmtime,0,_time_localtime,0,_time_asctime,0,_time_ctime,0,_time_mktime,0,_time_strftime,0,_time_strptime,0,_time_tzset,0]);
 
 // === Auto-generated postamble setup entry stuff ===

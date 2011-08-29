@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Empythoned</title>
-    <script src="python.js"></script>
+    <script src="python.elim.js"></script>
     <script>
       function start() {
         var input = document.getElementById('input');
@@ -20,6 +20,7 @@
             if (result !== null && result !== undefined) {
               output.value += '\n--------------------------\nResult: ' + result;
             }
+            output.scrollTop = output.scrollHeight;
           } else {
             output.value = 'Command not finished.';
           }

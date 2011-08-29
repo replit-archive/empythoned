@@ -73,7 +73,7 @@ var _decompressobj__doc__;
 var __str5;
 var _compress__doc__;
 var __str6;
-var _PyExc_MemoryError;
+
 var __str7;
 var __str8;
 var __str9;
@@ -88,7 +88,7 @@ var __str16;
 var __str17;
 var __str18;
 var __str19;
-var _PyExc_ValueError;
+
 var __str20;
 var __str21;
 var __str22;
@@ -135,7 +135,7 @@ var _Comptype;
 var __str51;
 var _Decomptype;
 var _zlib_module_documentation;
-var _PyType_Type;
+
 var __str52;
 var __str53;
 var __str54;
@@ -244,14 +244,14 @@ var __str70;
         var $11=$msg_addr; //@line 90 "zlibmodule.c"
         if ($8) { __lastLabel__ = 6; __label__ = 7; break; } else { __lastLabel__ = 6; __label__ = 8; break; } //@line 89 "zlibmodule.c"
       case 7: // $bb5
-        var $12=_PyErr_Format($9, __str3, $10, $11); //@line 90 "zlibmodule.c"
+        var $12=_PyErr_Format($9, __str3, allocate([$10,0,0,0,$11,0,0,0], ["i32",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 90 "zlibmodule.c"
         __label__ = 9; break; //@line 90 "zlibmodule.c"
       case 8: // $bb6
         var $13=__lastLabel__ == 5 ? $7 : ($11);
         var $14=__lastLabel__ == 5 ? $6 : ($10);
         var $15=__lastLabel__ == 5 ? $5 : ($9);
         var $16=$zmsg; //@line 92 "zlibmodule.c"
-        var $17=_PyErr_Format($15, __str4, $14, $13, $16); //@line 92 "zlibmodule.c"
+        var $17=_PyErr_Format($15, __str4, allocate([$14,0,0,0,$13,0,0,0,$16,0,0,0], ["i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 92 "zlibmodule.c"
         __label__ = 9; break; //@line 92 "zlibmodule.c"
       case 9: // $return
         ;
@@ -393,7 +393,7 @@ var __str70;
         $ReturnVal=0; //@line 134 "zlibmodule.c"
         HEAP[$level]=-1; //@line 136 "zlibmodule.c"
         var $1=$args_addr; //@line 140 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str6, $input, $length, $level); //@line 140 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str6, allocate([$input,0,0,0,$length,0,0,0,$level,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 140 "zlibmodule.c"
         var $3=($2)==0; //@line 140 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 140 "zlibmodule.c"
       case 1: // $bb
@@ -530,7 +530,7 @@ var __str70;
         HEAP[$wsize]=15; //@line 214 "zlibmodule.c"
         HEAP[$r_strlen]=16384; //@line 215 "zlibmodule.c"
         var $1=$args_addr; //@line 218 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str13, $input, $length, $wsize, $r_strlen); //@line 218 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str13, allocate([$input,0,0,0,$length,0,0,0,$wsize,0,0,0,$r_strlen,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 218 "zlibmodule.c"
         var $3=($2)==0; //@line 218 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 218 "zlibmodule.c"
       case 1: // $bb
@@ -734,7 +734,7 @@ var __str70;
         HEAP[$memLevel]=8; //@line 307 "zlibmodule.c"
         HEAP[$strategy]=0; //@line 307 "zlibmodule.c"
         var $1=$args_addr; //@line 309 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str18, $level, $method, $wbits, $memLevel, $strategy); //@line 309 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str18, allocate([$level,0,0,0,$method,0,0,0,$wbits,0,0,0,$memLevel,0,0,0,$strategy,0,0,0], ["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 309 "zlibmodule.c"
         var $3=($2)==0; //@line 309 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 309 "zlibmodule.c"
       case 1: // $bb
@@ -911,7 +911,7 @@ var __str70;
         $args_addr=$args;
         HEAP[$wbits]=15; //@line 344 "zlibmodule.c"
         var $1=$args_addr; //@line 346 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str22, $wbits); //@line 346 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str22, allocate([$wbits,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 346 "zlibmodule.c"
         var $3=($2)==0; //@line 346 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 346 "zlibmodule.c"
       case 1: // $bb
@@ -1274,7 +1274,7 @@ var __str70;
         $args_addr=$args;
         $length=16384; //@line 409 "zlibmodule.c"
         var $1=$args_addr; //@line 414 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str25, $input, $inplen); //@line 414 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str25, allocate([$input,0,0,0,$inplen,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 414 "zlibmodule.c"
         var $3=($2)==0; //@line 414 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 414 "zlibmodule.c"
       case 1: // $bb
@@ -1445,7 +1445,7 @@ var __str70;
         HEAP[$max_length]=0; //@line 478 "zlibmodule.c"
         $length=16384; //@line 479 "zlibmodule.c"
         var $1=$args_addr; //@line 484 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str27, $input, $inplen, $max_length); //@line 484 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str27, allocate([$input,0,0,0,$inplen,0,0,0,$max_length,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 484 "zlibmodule.c"
         var $3=($2)==0; //@line 484 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 484 "zlibmodule.c"
       case 1: // $bb
@@ -1855,7 +1855,7 @@ var __str70;
         $length=16384; //@line 600 "zlibmodule.c"
         HEAP[$flushmode]=4; //@line 602 "zlibmodule.c"
         var $1=$args_addr; //@line 605 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str30, $flushmode); //@line 605 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str30, allocate([$flushmode,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 605 "zlibmodule.c"
         var $3=($2)==0; //@line 605 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 605 "zlibmodule.c"
       case 1: // $bb
@@ -2469,7 +2469,7 @@ var __str70;
         HEAP[$length]=16384; //@line 790 "zlibmodule.c"
         HEAP[$retval1]=0; //@line 791 "zlibmodule.c"
         var $1=$args_addr; //@line 794 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str30, $length); //@line 794 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str30, allocate([$length,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 794 "zlibmodule.c"
         var $3=($2)==0; //@line 794 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 794 "zlibmodule.c"
       case 1: // $bb
@@ -2741,7 +2741,7 @@ var __str70;
         $args_addr=$args;
         HEAP[$adler32val]=1; //@line 915 "zlibmodule.c"
         var $1=$args_addr; //@line 919 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str44, $buf, $len, $adler32val); //@line 919 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str44, allocate([$buf,0,0,0,$len,0,0,0,$adler32val,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 919 "zlibmodule.c"
         var $3=($2)==0; //@line 919 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 919 "zlibmodule.c"
       case 1: // $bb
@@ -2786,7 +2786,7 @@ var __str70;
         $args_addr=$args;
         HEAP[$crc32val]=0; //@line 938 "zlibmodule.c"
         var $1=$args_addr; //@line 942 "zlibmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str45, $buf, $len, $crc32val); //@line 942 "zlibmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str45, allocate([$buf,0,0,0,$len,0,0,0,$crc32val,0,0,0], ["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 942 "zlibmodule.c"
         var $3=($2)==0; //@line 942 "zlibmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 942 "zlibmodule.c"
       case 1: // $bb

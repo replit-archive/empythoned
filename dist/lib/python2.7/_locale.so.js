@@ -88,7 +88,7 @@ var __str24;
 var __str25;
 var _strcoll__doc__;
 var __str26;
-var _PyExc_ValueError;
+
 var __str27;
 var _strxfrm__doc__;
 var __str28;
@@ -161,12 +161,12 @@ var _dcgettext__doc__;
 var __str90;
 var _textdomain__doc__;
 var __str91;
-var _PyExc_OSError;
+
 var _bindtextdomain__doc__;
 var __str92;
 var __str93;
 var _bind_textdomain_codeset__doc__;
-var __Py_NoneStruct;
+
 var __str94;
 var __str95;
 var __str96;
@@ -400,41 +400,316 @@ var __str115;
   }
   
 
-  function _PyLocale_setlocale($self, $args) {
-    var __stackBase__  = STACKTOP; STACKTOP += 264; _memset(__stackBase__, 0, 264);
+  function _fixup_ulcase() {
+    var __stackBase__  = STACKTOP; STACKTOP += 256; _memset(__stackBase__, 0, 256);
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $mods_i;
-        var $strop_i;
-        var $string_i;
-        var $ulo_i;
-        var $ul_i=__stackBase__;
-        var $n_i;
-        var $c_i;
+        var $mods;
+        var $strop;
+        var $string;
+        var $ulo;
+        var $ul=__stackBase__;
+        var $n;
+        var $c;
+        var $0=_PyImport_GetModuleDict(); //@line 100 "_localemodule.c"
+        $mods=$0; //@line 100 "_localemodule.c"
+        var $1=$mods; //@line 101 "_localemodule.c"
+        var $2=($1)==0; //@line 101 "_localemodule.c"
+        if ($2) { __label__ = 38; break; } else { __label__ = 1; break; } //@line 101 "_localemodule.c"
+      case 1: // $bb
+        var $3=$mods; //@line 103 "_localemodule.c"
+        var $4=_PyDict_GetItemString($3, __str); //@line 103 "_localemodule.c"
+        $string=$4; //@line 103 "_localemodule.c"
+        var $5=$string; //@line 104 "_localemodule.c"
+        var $6=($5)!=0; //@line 104 "_localemodule.c"
+        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 104 "_localemodule.c"
+      case 2: // $bb1
+        var $7=$string; //@line 105 "_localemodule.c"
+        var $8=_PyModule_GetDict($7); //@line 105 "_localemodule.c"
+        $string=$8; //@line 105 "_localemodule.c"
+        __label__ = 3; break; //@line 105 "_localemodule.c"
+      case 3: // $bb2
+        var $9=$mods; //@line 106 "_localemodule.c"
+        var $10=_PyDict_GetItemString($9, __str1); //@line 106 "_localemodule.c"
+        $strop=$10; //@line 106 "_localemodule.c"
+        var $11=($10)!=0; //@line 107 "_localemodule.c"
+        if ($11) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 107 "_localemodule.c"
+      case 4: // $bb3
+        var $12=$strop; //@line 108 "_localemodule.c"
+        var $13=_PyModule_GetDict($12); //@line 108 "_localemodule.c"
+        $strop=$13; //@line 108 "_localemodule.c"
+        __label__ = 5; break; //@line 108 "_localemodule.c"
+      case 5: // $bb4
+        var $14=$string; //@line 109 "_localemodule.c"
+        var $15=($14)==0; //@line 109 "_localemodule.c"
+        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 109 "_localemodule.c"
+      case 6: // $bb5
+        var $16=$strop; //@line 109 "_localemodule.c"
+        var $17=($16)==0; //@line 109 "_localemodule.c"
+        if ($17) { __label__ = 38; break; } else { __label__ = 7; break; } //@line 109 "_localemodule.c"
+      case 7: // $bb6
+        $n=0; //@line 113 "_localemodule.c"
+        $c=0; //@line 114 "_localemodule.c"
+        __label__ = 8; break;
+      case 8: // $bb7
+        var $18=___ctype_b_loc(); //@line 115 "_localemodule.c"
+        var $19=HEAP[$18]; //@line 115 "_localemodule.c"
+        var $20=$c; //@line 115 "_localemodule.c"
+        var $21=$19+2*$20; //@line 115 "_localemodule.c"
+        var $22=HEAP[$21]; //@line 115 "_localemodule.c"
+        var $23=($22); //@line 115 "_localemodule.c"
+        var $24=($23) & 256; //@line 115 "_localemodule.c"
+        var $25=($24)!=0; //@line 115 "_localemodule.c"
+        if ($25) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 115 "_localemodule.c"
+      case 9: // $bb8
+        var $26=$n; //@line 116 "_localemodule.c"
+        var $27=$c; //@line 116 "_localemodule.c"
+        var $28=((($27)) & 255); //@line 116 "_localemodule.c"
+        var $29=$ul+$26; //@line 116 "_localemodule.c"
+        HEAP[$29]=$28; //@line 116 "_localemodule.c"
+        var $30=$n; //@line 116 "_localemodule.c"
+        var $31=($30) + 1; //@line 116 "_localemodule.c"
+        $n=$31; //@line 116 "_localemodule.c"
+        __label__ = 10; break; //@line 116 "_localemodule.c"
+      case 10: // $bb9
+        var $32=$c; //@line 114 "_localemodule.c"
+        var $33=($32) + 1; //@line 114 "_localemodule.c"
+        $c=$33; //@line 114 "_localemodule.c"
+        var $34=($33) <= 255; //@line 114 "_localemodule.c"
+        if ($34) { __label__ = 8; break; } else { __label__ = 11; break; } //@line 114 "_localemodule.c"
+      case 11: // $bb11
+        var $ul12=$ul; //@line 118 "_localemodule.c"
+        var $35=$n; //@line 118 "_localemodule.c"
+        var $36=_PyString_FromStringAndSize($ul12, $35); //@line 118 "_localemodule.c"
+        $ulo=$36; //@line 118 "_localemodule.c"
+        var $37=$ulo; //@line 119 "_localemodule.c"
+        var $38=($37)==0; //@line 119 "_localemodule.c"
+        if ($38) { __label__ = 38; break; } else { __label__ = 12; break; } //@line 119 "_localemodule.c"
+      case 12: // $bb14
+        var $39=$string; //@line 121 "_localemodule.c"
+        var $40=($39)!=0; //@line 121 "_localemodule.c"
+        if ($40) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 121 "_localemodule.c"
+      case 13: // $bb15
+        var $41=$string; //@line 122 "_localemodule.c"
+        var $42=$ulo; //@line 122 "_localemodule.c"
+        var $43=_PyDict_SetItemString($41, __str2, $42); //@line 122 "_localemodule.c"
+        __label__ = 14; break; //@line 122 "_localemodule.c"
+      case 14: // $bb16
+        var $44=$strop; //@line 123 "_localemodule.c"
+        var $45=($44)!=0; //@line 123 "_localemodule.c"
+        if ($45) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 123 "_localemodule.c"
+      case 15: // $bb17
+        var $46=$strop; //@line 124 "_localemodule.c"
+        var $47=$ulo; //@line 124 "_localemodule.c"
+        var $48=_PyDict_SetItemString($46, __str2, $47); //@line 124 "_localemodule.c"
+        __label__ = 16; break; //@line 124 "_localemodule.c"
+      case 16: // $bb18
+        var $49=$ulo; //@line 125 "_localemodule.c"
+        var $50=$49; //@line 125 "_localemodule.c"
+        var $51=HEAP[$50]; //@line 125 "_localemodule.c"
+        var $52=($51) - 1; //@line 125 "_localemodule.c"
+        var $53=$ulo; //@line 125 "_localemodule.c"
+        var $54=$53; //@line 125 "_localemodule.c"
+        HEAP[$54]=$52; //@line 125 "_localemodule.c"
+        var $55=$ulo; //@line 125 "_localemodule.c"
+        var $56=$55; //@line 125 "_localemodule.c"
+        var $57=HEAP[$56]; //@line 125 "_localemodule.c"
+        var $58=($57)==0; //@line 125 "_localemodule.c"
+        if ($58) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 125 "_localemodule.c"
+      case 17: // $bb19
+        var $59=$ulo; //@line 125 "_localemodule.c"
+        var $60=$59+4; //@line 125 "_localemodule.c"
+        var $61=HEAP[$60]; //@line 125 "_localemodule.c"
+        var $62=$61+24; //@line 125 "_localemodule.c"
+        var $63=HEAP[$62]; //@line 125 "_localemodule.c"
+        var $64=$ulo; //@line 125 "_localemodule.c"
+        FUNCTION_TABLE[$63]($64); //@line 125 "_localemodule.c"
+        __label__ = 18; break; //@line 125 "_localemodule.c"
+      case 18: // $bb20
+        $n=0; //@line 128 "_localemodule.c"
+        $c=0; //@line 129 "_localemodule.c"
+        __label__ = 19; break;
+      case 19: // $bb21
+        var $65=___ctype_b_loc(); //@line 130 "_localemodule.c"
+        var $66=HEAP[$65]; //@line 130 "_localemodule.c"
+        var $67=$c; //@line 130 "_localemodule.c"
+        var $68=$66+2*$67; //@line 130 "_localemodule.c"
+        var $69=HEAP[$68]; //@line 130 "_localemodule.c"
+        var $70=($69); //@line 130 "_localemodule.c"
+        var $71=($70) & 512; //@line 130 "_localemodule.c"
+        var $72=($71)!=0; //@line 130 "_localemodule.c"
+        if ($72) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 130 "_localemodule.c"
+      case 20: // $bb22
+        var $73=$n; //@line 131 "_localemodule.c"
+        var $74=$c; //@line 131 "_localemodule.c"
+        var $75=((($74)) & 255); //@line 131 "_localemodule.c"
+        var $76=$ul+$73; //@line 131 "_localemodule.c"
+        HEAP[$76]=$75; //@line 131 "_localemodule.c"
+        var $77=$n; //@line 131 "_localemodule.c"
+        var $78=($77) + 1; //@line 131 "_localemodule.c"
+        $n=$78; //@line 131 "_localemodule.c"
+        __label__ = 21; break; //@line 131 "_localemodule.c"
+      case 21: // $bb23
+        var $79=$c; //@line 129 "_localemodule.c"
+        var $80=($79) + 1; //@line 129 "_localemodule.c"
+        $c=$80; //@line 129 "_localemodule.c"
+        var $81=($80) <= 255; //@line 129 "_localemodule.c"
+        if ($81) { __label__ = 19; break; } else { __label__ = 22; break; } //@line 129 "_localemodule.c"
+      case 22: // $bb25
+        var $ul26=$ul; //@line 133 "_localemodule.c"
+        var $82=$n; //@line 133 "_localemodule.c"
+        var $83=_PyString_FromStringAndSize($ul26, $82); //@line 133 "_localemodule.c"
+        $ulo=$83; //@line 133 "_localemodule.c"
+        var $84=$ulo; //@line 134 "_localemodule.c"
+        var $85=($84)==0; //@line 134 "_localemodule.c"
+        if ($85) { __label__ = 38; break; } else { __label__ = 23; break; } //@line 134 "_localemodule.c"
+      case 23: // $bb28
+        var $86=$string; //@line 136 "_localemodule.c"
+        var $87=($86)!=0; //@line 136 "_localemodule.c"
+        if ($87) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 136 "_localemodule.c"
+      case 24: // $bb29
+        var $88=$string; //@line 137 "_localemodule.c"
+        var $89=$ulo; //@line 137 "_localemodule.c"
+        var $90=_PyDict_SetItemString($88, __str3, $89); //@line 137 "_localemodule.c"
+        __label__ = 25; break; //@line 137 "_localemodule.c"
+      case 25: // $bb30
+        var $91=$strop; //@line 138 "_localemodule.c"
+        var $92=($91)!=0; //@line 138 "_localemodule.c"
+        if ($92) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 138 "_localemodule.c"
+      case 26: // $bb31
+        var $93=$strop; //@line 139 "_localemodule.c"
+        var $94=$ulo; //@line 139 "_localemodule.c"
+        var $95=_PyDict_SetItemString($93, __str3, $94); //@line 139 "_localemodule.c"
+        __label__ = 27; break; //@line 139 "_localemodule.c"
+      case 27: // $bb32
+        var $96=$ulo; //@line 140 "_localemodule.c"
+        var $97=$96; //@line 140 "_localemodule.c"
+        var $98=HEAP[$97]; //@line 140 "_localemodule.c"
+        var $99=($98) - 1; //@line 140 "_localemodule.c"
+        var $100=$ulo; //@line 140 "_localemodule.c"
+        var $101=$100; //@line 140 "_localemodule.c"
+        HEAP[$101]=$99; //@line 140 "_localemodule.c"
+        var $102=$ulo; //@line 140 "_localemodule.c"
+        var $103=$102; //@line 140 "_localemodule.c"
+        var $104=HEAP[$103]; //@line 140 "_localemodule.c"
+        var $105=($104)==0; //@line 140 "_localemodule.c"
+        if ($105) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 140 "_localemodule.c"
+      case 28: // $bb33
+        var $106=$ulo; //@line 140 "_localemodule.c"
+        var $107=$106+4; //@line 140 "_localemodule.c"
+        var $108=HEAP[$107]; //@line 140 "_localemodule.c"
+        var $109=$108+24; //@line 140 "_localemodule.c"
+        var $110=HEAP[$109]; //@line 140 "_localemodule.c"
+        var $111=$ulo; //@line 140 "_localemodule.c"
+        FUNCTION_TABLE[$110]($111); //@line 140 "_localemodule.c"
+        __label__ = 29; break; //@line 140 "_localemodule.c"
+      case 29: // $bb34
+        $n=0; //@line 143 "_localemodule.c"
+        $c=0; //@line 144 "_localemodule.c"
+        __label__ = 30; break;
+      case 30: // $bb35
+        var $112=___ctype_b_loc(); //@line 145 "_localemodule.c"
+        var $113=HEAP[$112]; //@line 145 "_localemodule.c"
+        var $114=$c; //@line 145 "_localemodule.c"
+        var $115=$113+2*$114; //@line 145 "_localemodule.c"
+        var $116=HEAP[$115]; //@line 145 "_localemodule.c"
+        var $117=($116); //@line 145 "_localemodule.c"
+        var $118=($117) & 1024; //@line 145 "_localemodule.c"
+        var $119=($118)!=0; //@line 145 "_localemodule.c"
+        if ($119) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 145 "_localemodule.c"
+      case 31: // $bb36
+        var $120=$n; //@line 146 "_localemodule.c"
+        var $121=$c; //@line 146 "_localemodule.c"
+        var $122=((($121)) & 255); //@line 146 "_localemodule.c"
+        var $123=$ul+$120; //@line 146 "_localemodule.c"
+        HEAP[$123]=$122; //@line 146 "_localemodule.c"
+        var $124=$n; //@line 146 "_localemodule.c"
+        var $125=($124) + 1; //@line 146 "_localemodule.c"
+        $n=$125; //@line 146 "_localemodule.c"
+        __label__ = 32; break; //@line 146 "_localemodule.c"
+      case 32: // $bb37
+        var $126=$c; //@line 144 "_localemodule.c"
+        var $127=($126) + 1; //@line 144 "_localemodule.c"
+        $c=$127; //@line 144 "_localemodule.c"
+        var $128=($127) <= 255; //@line 144 "_localemodule.c"
+        if ($128) { __label__ = 30; break; } else { __label__ = 33; break; } //@line 144 "_localemodule.c"
+      case 33: // $bb39
+        var $ul40=$ul; //@line 148 "_localemodule.c"
+        var $129=$n; //@line 148 "_localemodule.c"
+        var $130=_PyString_FromStringAndSize($ul40, $129); //@line 148 "_localemodule.c"
+        $ulo=$130; //@line 148 "_localemodule.c"
+        var $131=$ulo; //@line 149 "_localemodule.c"
+        var $132=($131)==0; //@line 149 "_localemodule.c"
+        if ($132) { __label__ = 38; break; } else { __label__ = 34; break; } //@line 149 "_localemodule.c"
+      case 34: // $bb42
+        var $133=$string; //@line 151 "_localemodule.c"
+        var $134=($133)!=0; //@line 151 "_localemodule.c"
+        if ($134) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 151 "_localemodule.c"
+      case 35: // $bb43
+        var $135=$string; //@line 152 "_localemodule.c"
+        var $136=$ulo; //@line 152 "_localemodule.c"
+        var $137=_PyDict_SetItemString($135, __str4, $136); //@line 152 "_localemodule.c"
+        __label__ = 36; break; //@line 152 "_localemodule.c"
+      case 36: // $bb44
+        var $138=$ulo; //@line 153 "_localemodule.c"
+        var $139=$138; //@line 153 "_localemodule.c"
+        var $140=HEAP[$139]; //@line 153 "_localemodule.c"
+        var $141=($140) - 1; //@line 153 "_localemodule.c"
+        var $142=$ulo; //@line 153 "_localemodule.c"
+        var $143=$142; //@line 153 "_localemodule.c"
+        HEAP[$143]=$141; //@line 153 "_localemodule.c"
+        var $144=$ulo; //@line 153 "_localemodule.c"
+        var $145=$144; //@line 153 "_localemodule.c"
+        var $146=HEAP[$145]; //@line 153 "_localemodule.c"
+        var $147=($146)==0; //@line 153 "_localemodule.c"
+        if ($147) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 153 "_localemodule.c"
+      case 37: // $bb45
+        var $148=$ulo; //@line 153 "_localemodule.c"
+        var $149=$148+4; //@line 153 "_localemodule.c"
+        var $150=HEAP[$149]; //@line 153 "_localemodule.c"
+        var $151=$150+24; //@line 153 "_localemodule.c"
+        var $152=HEAP[$151]; //@line 153 "_localemodule.c"
+        var $153=$ulo; //@line 153 "_localemodule.c"
+        FUNCTION_TABLE[$152]($153); //@line 153 "_localemodule.c"
+        __label__ = 38; break; //@line 153 "_localemodule.c"
+      case 38: // $return
+        STACKTOP = __stackBase__;
+        return; //@line 102 "_localemodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _PyLocale_setlocale($self, $args) {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $self_addr;
         var $args_addr;
         var $retval;
         var $0;
-        var $category=__stackBase__+256;
-        var $locale=__stackBase__+260;
+        var $category=__stackBase__;
+        var $locale=__stackBase__+4;
         var $result;
         var $result_object;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$locale]=0; //@line 160 "_localemodule.c"
         var $1=$args_addr; //@line 163 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str5, $category, $locale); //@line 163 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str5, allocate([$category,0,0,0,$locale,0,0,0], ["i32*",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 163 "_localemodule.c"
         var $3=($2)==0; //@line 163 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 163 "_localemodule.c"
       case 1: // $bb
         $0=0; //@line 164 "_localemodule.c"
-        __label__ = 51; break; //@line 164 "_localemodule.c"
+        __label__ = 14; break; //@line 164 "_localemodule.c"
       case 2: // $bb1
         var $4=HEAP[$locale]; //@line 174 "_localemodule.c"
         var $5=($4)!=0; //@line 174 "_localemodule.c"
-        if ($5) { __label__ = 3; break; } else { __label__ = 47; break; } //@line 174 "_localemodule.c"
+        if ($5) { __label__ = 3; break; } else { __label__ = 10; break; } //@line 174 "_localemodule.c"
       case 3: // $bb2
         var $6=HEAP[$locale]; //@line 176 "_localemodule.c"
         var $7=HEAP[$category]; //@line 176 "_localemodule.c"
@@ -447,7 +722,7 @@ var __str115;
         var $11=HEAP[_Error]; //@line 179 "_localemodule.c"
         _PyErr_SetString($11, __str6); //@line 179 "_localemodule.c"
         $0=0; //@line 180 "_localemodule.c"
-        __label__ = 51; break; //@line 180 "_localemodule.c"
+        __label__ = 14; break; //@line 180 "_localemodule.c"
       case 5: // $bb4
         var $12=$result; //@line 182 "_localemodule.c"
         var $13=_PyString_FromString($12); //@line 182 "_localemodule.c"
@@ -457,303 +732,44 @@ var __str115;
         if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 183 "_localemodule.c"
       case 6: // $bb5
         $0=0; //@line 184 "_localemodule.c"
-        __label__ = 51; break; //@line 184 "_localemodule.c"
+        __label__ = 14; break; //@line 184 "_localemodule.c"
       case 7: // $bb6
         var $16=HEAP[$category]; //@line 186 "_localemodule.c"
         var $17=($16)==0; //@line 186 "_localemodule.c"
         var $18=HEAP[$category]; //@line 186 "_localemodule.c"
         var $19=($18)==6; //@line 186 "_localemodule.c"
         var $or_cond=($17) | ($19);
-        if ($or_cond) { __label__ = 8; break; } else { __label__ = 46; break; } //@line 186 "_localemodule.c"
+        if ($or_cond) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 186 "_localemodule.c"
       case 8: // $bb8
-        var $20=_PyImport_GetModuleDict(); //@line 100 "_localemodule.c"
-        $mods_i=$20; //@line 100 "_localemodule.c"
-        var $21=$mods_i; //@line 101 "_localemodule.c"
-        var $22=($21)==0; //@line 101 "_localemodule.c"
-        if ($22) { __label__ = 46; break; } else { __label__ = 9; break; } //@line 101 "_localemodule.c"
-      case 9: // $bb_i
-        var $23=$mods_i; //@line 103 "_localemodule.c"
-        var $24=_PyDict_GetItemString($23, __str); //@line 103 "_localemodule.c"
-        $string_i=$24; //@line 103 "_localemodule.c"
-        var $25=$string_i; //@line 104 "_localemodule.c"
-        var $26=($25)!=0; //@line 104 "_localemodule.c"
-        if ($26) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 104 "_localemodule.c"
-      case 10: // $bb1_i
-        var $27=$string_i; //@line 105 "_localemodule.c"
-        var $28=_PyModule_GetDict($27); //@line 105 "_localemodule.c"
-        $string_i=$28; //@line 105 "_localemodule.c"
-        __label__ = 11; break; //@line 105 "_localemodule.c"
-      case 11: // $bb2_i
-        var $29=$mods_i; //@line 106 "_localemodule.c"
-        var $30=_PyDict_GetItemString($29, __str1); //@line 106 "_localemodule.c"
-        $strop_i=$30; //@line 106 "_localemodule.c"
-        var $31=($30)!=0; //@line 107 "_localemodule.c"
-        if ($31) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 107 "_localemodule.c"
-      case 12: // $bb3_i
-        var $32=$strop_i; //@line 108 "_localemodule.c"
-        var $33=_PyModule_GetDict($32); //@line 108 "_localemodule.c"
-        $strop_i=$33; //@line 108 "_localemodule.c"
-        __label__ = 13; break; //@line 108 "_localemodule.c"
-      case 13: // $bb4_i
-        var $34=$string_i; //@line 109 "_localemodule.c"
-        var $35=($34)==0; //@line 109 "_localemodule.c"
-        if ($35) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 109 "_localemodule.c"
-      case 14: // $bb5_i
-        var $36=$strop_i; //@line 109 "_localemodule.c"
-        var $37=($36)==0; //@line 109 "_localemodule.c"
-        if ($37) { __label__ = 46; break; } else { __label__ = 15; break; } //@line 109 "_localemodule.c"
-      case 15: // $bb6_i
-        $n_i=0; //@line 113 "_localemodule.c"
-        $c_i=0; //@line 114 "_localemodule.c"
-        __label__ = 16; break;
-      case 16: // $bb7_i
-        var $38=___ctype_b_loc(); //@line 115 "_localemodule.c"
-        var $39=HEAP[$38]; //@line 115 "_localemodule.c"
-        var $40=$c_i; //@line 115 "_localemodule.c"
-        var $41=$39+2*$40; //@line 115 "_localemodule.c"
-        var $42=HEAP[$41]; //@line 115 "_localemodule.c"
-        var $43=($42); //@line 115 "_localemodule.c"
-        var $44=($43) & 256; //@line 115 "_localemodule.c"
-        var $45=($44)!=0; //@line 115 "_localemodule.c"
-        if ($45) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 115 "_localemodule.c"
-      case 17: // $bb8_i
-        var $46=$n_i; //@line 116 "_localemodule.c"
-        var $47=$c_i; //@line 116 "_localemodule.c"
-        var $48=((($47)) & 255); //@line 116 "_localemodule.c"
-        var $49=$ul_i+$46; //@line 116 "_localemodule.c"
-        HEAP[$49]=$48; //@line 116 "_localemodule.c"
-        var $50=$n_i; //@line 116 "_localemodule.c"
-        var $51=($50) + 1; //@line 116 "_localemodule.c"
-        $n_i=$51; //@line 116 "_localemodule.c"
-        __label__ = 18; break; //@line 116 "_localemodule.c"
-      case 18: // $bb9_i
-        var $52=$c_i; //@line 114 "_localemodule.c"
-        var $53=($52) + 1; //@line 114 "_localemodule.c"
-        $c_i=$53; //@line 114 "_localemodule.c"
-        var $54=($53) <= 255; //@line 114 "_localemodule.c"
-        if ($54) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 114 "_localemodule.c"
-      case 19: // $bb11_i
-        var $ul12_i=$ul_i; //@line 118 "_localemodule.c"
-        var $55=$n_i; //@line 118 "_localemodule.c"
-        var $56=_PyString_FromStringAndSize($ul12_i, $55); //@line 118 "_localemodule.c"
-        $ulo_i=$56; //@line 118 "_localemodule.c"
-        var $57=$ulo_i; //@line 119 "_localemodule.c"
-        var $58=($57)==0; //@line 119 "_localemodule.c"
-        if ($58) { __label__ = 46; break; } else { __label__ = 20; break; } //@line 119 "_localemodule.c"
-      case 20: // $bb14_i
-        var $59=$string_i; //@line 121 "_localemodule.c"
-        var $60=($59)!=0; //@line 121 "_localemodule.c"
-        if ($60) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 121 "_localemodule.c"
-      case 21: // $bb15_i
-        var $61=$string_i; //@line 122 "_localemodule.c"
-        var $62=$ulo_i; //@line 122 "_localemodule.c"
-        var $63=_PyDict_SetItemString($61, __str2, $62); //@line 122 "_localemodule.c"
-        __label__ = 22; break; //@line 122 "_localemodule.c"
-      case 22: // $bb16_i
-        var $64=$strop_i; //@line 123 "_localemodule.c"
-        var $65=($64)!=0; //@line 123 "_localemodule.c"
-        if ($65) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 123 "_localemodule.c"
-      case 23: // $bb17_i
-        var $66=$strop_i; //@line 124 "_localemodule.c"
-        var $67=$ulo_i; //@line 124 "_localemodule.c"
-        var $68=_PyDict_SetItemString($66, __str2, $67); //@line 124 "_localemodule.c"
-        __label__ = 24; break; //@line 124 "_localemodule.c"
-      case 24: // $bb18_i
-        var $69=$ulo_i; //@line 125 "_localemodule.c"
-        var $70=$69; //@line 125 "_localemodule.c"
-        var $71=HEAP[$70]; //@line 125 "_localemodule.c"
-        var $72=($71) - 1; //@line 125 "_localemodule.c"
-        var $73=$ulo_i; //@line 125 "_localemodule.c"
-        var $74=$73; //@line 125 "_localemodule.c"
-        HEAP[$74]=$72; //@line 125 "_localemodule.c"
-        var $75=$ulo_i; //@line 125 "_localemodule.c"
-        var $76=$75; //@line 125 "_localemodule.c"
-        var $77=HEAP[$76]; //@line 125 "_localemodule.c"
-        var $78=($77)==0; //@line 125 "_localemodule.c"
-        if ($78) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 125 "_localemodule.c"
-      case 25: // $bb19_i
-        var $79=$ulo_i; //@line 125 "_localemodule.c"
-        var $80=$79+4; //@line 125 "_localemodule.c"
-        var $81=HEAP[$80]; //@line 125 "_localemodule.c"
-        var $82=$81+24; //@line 125 "_localemodule.c"
-        var $83=HEAP[$82]; //@line 125 "_localemodule.c"
-        var $84=$ulo_i; //@line 125 "_localemodule.c"
-        FUNCTION_TABLE[$83]($84); //@line 125 "_localemodule.c"
-        __label__ = 26; break; //@line 125 "_localemodule.c"
-      case 26: // $bb20_i
-        $n_i=0; //@line 128 "_localemodule.c"
-        $c_i=0; //@line 129 "_localemodule.c"
-        __label__ = 27; break;
-      case 27: // $bb21_i
-        var $85=___ctype_b_loc(); //@line 130 "_localemodule.c"
-        var $86=HEAP[$85]; //@line 130 "_localemodule.c"
-        var $87=$c_i; //@line 130 "_localemodule.c"
-        var $88=$86+2*$87; //@line 130 "_localemodule.c"
-        var $89=HEAP[$88]; //@line 130 "_localemodule.c"
-        var $90=($89); //@line 130 "_localemodule.c"
-        var $91=($90) & 512; //@line 130 "_localemodule.c"
-        var $92=($91)!=0; //@line 130 "_localemodule.c"
-        if ($92) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 130 "_localemodule.c"
-      case 28: // $bb22_i
-        var $93=$n_i; //@line 131 "_localemodule.c"
-        var $94=$c_i; //@line 131 "_localemodule.c"
-        var $95=((($94)) & 255); //@line 131 "_localemodule.c"
-        var $96=$ul_i+$93; //@line 131 "_localemodule.c"
-        HEAP[$96]=$95; //@line 131 "_localemodule.c"
-        var $97=$n_i; //@line 131 "_localemodule.c"
-        var $98=($97) + 1; //@line 131 "_localemodule.c"
-        $n_i=$98; //@line 131 "_localemodule.c"
-        __label__ = 29; break; //@line 131 "_localemodule.c"
-      case 29: // $bb23_i
-        var $99=$c_i; //@line 129 "_localemodule.c"
-        var $100=($99) + 1; //@line 129 "_localemodule.c"
-        $c_i=$100; //@line 129 "_localemodule.c"
-        var $101=($100) <= 255; //@line 129 "_localemodule.c"
-        if ($101) { __label__ = 27; break; } else { __label__ = 30; break; } //@line 129 "_localemodule.c"
-      case 30: // $bb25_i
-        var $ul26_i=$ul_i; //@line 133 "_localemodule.c"
-        var $102=$n_i; //@line 133 "_localemodule.c"
-        var $103=_PyString_FromStringAndSize($ul26_i, $102); //@line 133 "_localemodule.c"
-        $ulo_i=$103; //@line 133 "_localemodule.c"
-        var $104=$ulo_i; //@line 134 "_localemodule.c"
-        var $105=($104)==0; //@line 134 "_localemodule.c"
-        if ($105) { __label__ = 46; break; } else { __label__ = 31; break; } //@line 134 "_localemodule.c"
-      case 31: // $bb28_i
-        var $106=$string_i; //@line 136 "_localemodule.c"
-        var $107=($106)!=0; //@line 136 "_localemodule.c"
-        if ($107) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 136 "_localemodule.c"
-      case 32: // $bb29_i
-        var $108=$string_i; //@line 137 "_localemodule.c"
-        var $109=$ulo_i; //@line 137 "_localemodule.c"
-        var $110=_PyDict_SetItemString($108, __str3, $109); //@line 137 "_localemodule.c"
-        __label__ = 33; break; //@line 137 "_localemodule.c"
-      case 33: // $bb30_i
-        var $111=$strop_i; //@line 138 "_localemodule.c"
-        var $112=($111)!=0; //@line 138 "_localemodule.c"
-        if ($112) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 138 "_localemodule.c"
-      case 34: // $bb31_i
-        var $113=$strop_i; //@line 139 "_localemodule.c"
-        var $114=$ulo_i; //@line 139 "_localemodule.c"
-        var $115=_PyDict_SetItemString($113, __str3, $114); //@line 139 "_localemodule.c"
-        __label__ = 35; break; //@line 139 "_localemodule.c"
-      case 35: // $bb32_i
-        var $116=$ulo_i; //@line 140 "_localemodule.c"
-        var $117=$116; //@line 140 "_localemodule.c"
-        var $118=HEAP[$117]; //@line 140 "_localemodule.c"
-        var $119=($118) - 1; //@line 140 "_localemodule.c"
-        var $120=$ulo_i; //@line 140 "_localemodule.c"
-        var $121=$120; //@line 140 "_localemodule.c"
-        HEAP[$121]=$119; //@line 140 "_localemodule.c"
-        var $122=$ulo_i; //@line 140 "_localemodule.c"
-        var $123=$122; //@line 140 "_localemodule.c"
-        var $124=HEAP[$123]; //@line 140 "_localemodule.c"
-        var $125=($124)==0; //@line 140 "_localemodule.c"
-        if ($125) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 140 "_localemodule.c"
-      case 36: // $bb33_i
-        var $126=$ulo_i; //@line 140 "_localemodule.c"
-        var $127=$126+4; //@line 140 "_localemodule.c"
-        var $128=HEAP[$127]; //@line 140 "_localemodule.c"
-        var $129=$128+24; //@line 140 "_localemodule.c"
-        var $130=HEAP[$129]; //@line 140 "_localemodule.c"
-        var $131=$ulo_i; //@line 140 "_localemodule.c"
-        FUNCTION_TABLE[$130]($131); //@line 140 "_localemodule.c"
-        __label__ = 37; break; //@line 140 "_localemodule.c"
-      case 37: // $bb34_i
-        $n_i=0; //@line 143 "_localemodule.c"
-        $c_i=0; //@line 144 "_localemodule.c"
-        __label__ = 38; break;
-      case 38: // $bb35_i
-        var $132=___ctype_b_loc(); //@line 145 "_localemodule.c"
-        var $133=HEAP[$132]; //@line 145 "_localemodule.c"
-        var $134=$c_i; //@line 145 "_localemodule.c"
-        var $135=$133+2*$134; //@line 145 "_localemodule.c"
-        var $136=HEAP[$135]; //@line 145 "_localemodule.c"
-        var $137=($136); //@line 145 "_localemodule.c"
-        var $138=($137) & 1024; //@line 145 "_localemodule.c"
-        var $139=($138)!=0; //@line 145 "_localemodule.c"
-        if ($139) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 145 "_localemodule.c"
-      case 39: // $bb36_i
-        var $140=$n_i; //@line 146 "_localemodule.c"
-        var $141=$c_i; //@line 146 "_localemodule.c"
-        var $142=((($141)) & 255); //@line 146 "_localemodule.c"
-        var $143=$ul_i+$140; //@line 146 "_localemodule.c"
-        HEAP[$143]=$142; //@line 146 "_localemodule.c"
-        var $144=$n_i; //@line 146 "_localemodule.c"
-        var $145=($144) + 1; //@line 146 "_localemodule.c"
-        $n_i=$145; //@line 146 "_localemodule.c"
-        __label__ = 40; break; //@line 146 "_localemodule.c"
-      case 40: // $bb37_i
-        var $146=$c_i; //@line 144 "_localemodule.c"
-        var $147=($146) + 1; //@line 144 "_localemodule.c"
-        $c_i=$147; //@line 144 "_localemodule.c"
-        var $148=($147) <= 255; //@line 144 "_localemodule.c"
-        if ($148) { __label__ = 38; break; } else { __label__ = 41; break; } //@line 144 "_localemodule.c"
-      case 41: // $bb39_i
-        var $ul40_i=$ul_i; //@line 148 "_localemodule.c"
-        var $149=$n_i; //@line 148 "_localemodule.c"
-        var $150=_PyString_FromStringAndSize($ul40_i, $149); //@line 148 "_localemodule.c"
-        $ulo_i=$150; //@line 148 "_localemodule.c"
-        var $151=$ulo_i; //@line 149 "_localemodule.c"
-        var $152=($151)==0; //@line 149 "_localemodule.c"
-        if ($152) { __label__ = 46; break; } else { __label__ = 42; break; } //@line 149 "_localemodule.c"
-      case 42: // $bb42_i
-        var $153=$string_i; //@line 151 "_localemodule.c"
-        var $154=($153)!=0; //@line 151 "_localemodule.c"
-        if ($154) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 151 "_localemodule.c"
-      case 43: // $bb43_i
-        var $155=$string_i; //@line 152 "_localemodule.c"
-        var $156=$ulo_i; //@line 152 "_localemodule.c"
-        var $157=_PyDict_SetItemString($155, __str4, $156); //@line 152 "_localemodule.c"
-        __label__ = 44; break; //@line 152 "_localemodule.c"
-      case 44: // $bb44_i
-        var $158=$ulo_i; //@line 153 "_localemodule.c"
-        var $159=$158; //@line 153 "_localemodule.c"
-        var $160=HEAP[$159]; //@line 153 "_localemodule.c"
-        var $161=($160) - 1; //@line 153 "_localemodule.c"
-        var $162=$ulo_i; //@line 153 "_localemodule.c"
-        var $163=$162; //@line 153 "_localemodule.c"
-        HEAP[$163]=$161; //@line 153 "_localemodule.c"
-        var $164=$ulo_i; //@line 153 "_localemodule.c"
-        var $165=$164; //@line 153 "_localemodule.c"
-        var $166=HEAP[$165]; //@line 153 "_localemodule.c"
-        var $167=($166)==0; //@line 153 "_localemodule.c"
-        if ($167) { __label__ = 45; break; } else { __label__ = 46; break; } //@line 153 "_localemodule.c"
-      case 45: // $bb45_i
-        var $168=$ulo_i; //@line 153 "_localemodule.c"
-        var $169=$168+4; //@line 153 "_localemodule.c"
-        var $170=HEAP[$169]; //@line 153 "_localemodule.c"
-        var $171=$170+24; //@line 153 "_localemodule.c"
-        var $172=HEAP[$171]; //@line 153 "_localemodule.c"
-        var $173=$ulo_i; //@line 153 "_localemodule.c"
-        FUNCTION_TABLE[$172]($173); //@line 153 "_localemodule.c"
-        __label__ = 46; break; //@line 153 "_localemodule.c"
-      case 46: // $bb9
+        _fixup_ulcase(); //@line 187 "_localemodule.c"
+        __label__ = 9; break; //@line 187 "_localemodule.c"
+      case 9: // $bb9
         _PyErr_Clear(); //@line 189 "_localemodule.c"
-        __label__ = 50; break; //@line 189 "_localemodule.c"
-      case 47: // $bb10
-        var $174=HEAP[$category]; //@line 192 "_localemodule.c"
-        var $175=_setlocale($174, 0); //@line 192 "_localemodule.c"
-        $result=$175; //@line 192 "_localemodule.c"
-        var $176=$result; //@line 193 "_localemodule.c"
-        var $177=($176)==0; //@line 193 "_localemodule.c"
-        if ($177) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 193 "_localemodule.c"
-      case 48: // $bb11
-        var $178=HEAP[_Error]; //@line 194 "_localemodule.c"
-        _PyErr_SetString($178, __str7); //@line 194 "_localemodule.c"
+        __label__ = 13; break; //@line 189 "_localemodule.c"
+      case 10: // $bb10
+        var $20=HEAP[$category]; //@line 192 "_localemodule.c"
+        var $21=_setlocale($20, 0); //@line 192 "_localemodule.c"
+        $result=$21; //@line 192 "_localemodule.c"
+        var $22=$result; //@line 193 "_localemodule.c"
+        var $23=($22)==0; //@line 193 "_localemodule.c"
+        if ($23) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 193 "_localemodule.c"
+      case 11: // $bb11
+        var $24=HEAP[_Error]; //@line 194 "_localemodule.c"
+        _PyErr_SetString($24, __str7); //@line 194 "_localemodule.c"
         $0=0; //@line 195 "_localemodule.c"
-        __label__ = 51; break; //@line 195 "_localemodule.c"
-      case 49: // $bb12
-        var $179=$result; //@line 197 "_localemodule.c"
-        var $180=_PyString_FromString($179); //@line 197 "_localemodule.c"
-        $result_object=$180; //@line 197 "_localemodule.c"
-        __label__ = 50; break; //@line 197 "_localemodule.c"
-      case 50: // $bb13
-        var $181=$result_object; //@line 199 "_localemodule.c"
-        $0=$181; //@line 199 "_localemodule.c"
-        __label__ = 51; break; //@line 199 "_localemodule.c"
-      case 51: // $bb14
-        var $182=$0; //@line 164 "_localemodule.c"
-        $retval=$182; //@line 164 "_localemodule.c"
+        __label__ = 14; break; //@line 195 "_localemodule.c"
+      case 12: // $bb12
+        var $25=$result; //@line 197 "_localemodule.c"
+        var $26=_PyString_FromString($25); //@line 197 "_localemodule.c"
+        $result_object=$26; //@line 197 "_localemodule.c"
+        __label__ = 13; break; //@line 197 "_localemodule.c"
+      case 13: // $bb13
+        var $27=$result_object; //@line 199 "_localemodule.c"
+        $0=$27; //@line 199 "_localemodule.c"
+        __label__ = 14; break; //@line 199 "_localemodule.c"
+      case 14: // $bb14
+        var $28=$0; //@line 164 "_localemodule.c"
+        $retval=$28; //@line 164 "_localemodule.c"
         var $retval15=$retval; //@line 164 "_localemodule.c"
         STACKTOP = __stackBase__;
         return $retval15; //@line 164 "_localemodule.c"
@@ -1561,7 +1577,7 @@ var __str115;
         $rel1=0; //@line 286 "_localemodule.c"
         $rel2=0; //@line 286 "_localemodule.c"
         var $1=$args_addr; //@line 288 "_localemodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str26, 2, 2, $os1, $os2); //@line 288 "_localemodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str26, 2, 2, allocate([$os1,0,0,0,$os2,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 288 "_localemodule.c"
         var $3=($2)==0; //@line 288 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 288 "_localemodule.c"
       case 1: // $bb
@@ -1898,7 +1914,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 361 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str28, $s); //@line 361 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str28, allocate([$s,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 361 "_localemodule.c"
         var $3=($2)==0; //@line 361 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 361 "_localemodule.c"
       case 1: // $bb
@@ -1985,7 +2001,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 536 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str85, $item); //@line 536 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str85, allocate([$item,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 536 "_localemodule.c"
         var $3=($2)==0; //@line 536 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 536 "_localemodule.c"
       case 1: // $bb
@@ -2063,7 +2079,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 563 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str88, $in); //@line 563 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str88, allocate([$in,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 563 "_localemodule.c"
         var $3=($2)==0; //@line 563 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 563 "_localemodule.c"
       case 1: // $bb
@@ -2101,7 +2117,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 576 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str89, $domain, $in); //@line 576 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str89, allocate([$domain,0,0,0,$in,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 576 "_localemodule.c"
         var $3=($2)==0; //@line 576 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 576 "_localemodule.c"
       case 1: // $bb
@@ -2141,7 +2157,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 590 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str90, $domain, $msgid, $category); //@line 590 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str90, allocate([$domain,0,0,0,$msgid,0,0,0,$category,0,0,0], ["i8**",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 590 "_localemodule.c"
         var $3=($2)==0; //@line 590 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 590 "_localemodule.c"
       case 1: // $bb
@@ -2180,7 +2196,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 603 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str91, $domain); //@line 603 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str91, allocate([$domain,0,0,0], ["i8**",0,0,0], ALLOC_STACK)); //@line 603 "_localemodule.c"
         var $3=($2)==0; //@line 603 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 603 "_localemodule.c"
       case 1: // $bb
@@ -2229,7 +2245,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 621 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str92, $domain, $dirname); //@line 621 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str92, allocate([$domain,0,0,0,$dirname,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 621 "_localemodule.c"
         var $3=($2)==0; //@line 621 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 621 "_localemodule.c"
       case 1: // $bb
@@ -2289,7 +2305,7 @@ var __str115;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 644 "_localemodule.c"
-        var $2=_PyArg_ParseTuple($1, __str92, $domain, $codeset); //@line 644 "_localemodule.c"
+        var $2=_PyArg_ParseTuple($1, __str92, allocate([$domain,0,0,0,$codeset,0,0,0], ["i8**",0,0,0,"i8**",0,0,0], ALLOC_STACK)); //@line 644 "_localemodule.c"
         var $3=($2)==0; //@line 644 "_localemodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 644 "_localemodule.c"
       case 1: // $bb

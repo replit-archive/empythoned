@@ -85,10 +85,10 @@ var $struct_dequeiterobject___SIZE = 28; // %struct.dequeiterobject
 var $struct_dequeobject___SIZE = 40; // %struct.dequeobject
   
 var _numfreeblocks;
-var _PyExc_OverflowError;
+
 var __str;
 var _freeblocks;
-var _PyExc_IndexError;
+
 var __str1;
 var __str2;
 var __str3;
@@ -103,7 +103,7 @@ var _popleft_doc;
 var __str8;
 var ___PRETTY_FUNCTION___8509;
 var __str9;
-var __Py_NoneStruct;
+
 var _append_doc;
 var __str10;
 var ___PRETTY_FUNCTION___8564;
@@ -119,13 +119,13 @@ var _rotate_doc;
 var __str13;
 var ___PRETTY_FUNCTION___8974;
 var _reverse_doc;
-var _PyExc_RuntimeError;
+
 var __str14;
 var _count_doc;
 var __str15;
 var __str16;
 var ___PRETTY_FUNCTION___9049;
-var _PyExc_ValueError;
+
 var __str17;
 var _remove_doc;
 var ___PRETTY_FUNCTION___9087;
@@ -154,9 +154,9 @@ var __str33;
 var __str34;
 var __str35;
 var __str36;
-var __Py_NotImplementedStruct;
-var __Py_TrueStruct;
-var __Py_ZeroStruct;
+
+
+
 var __str37;
 var __str38;
 var __str39;
@@ -197,7 +197,7 @@ var __str62;
 var __str63;
 var _dequereviter_type;
 var _defdict_missing_doc;
-var _PyExc_KeyError;
+
 var _defdict_copy_doc;
 var __str64;
 var __str65;
@@ -207,12 +207,12 @@ var _defdict_methods;
 var __str68;
 var __str69;
 var _defdict_members;
-var _PyDict_Type;
+
 var __str70;
 var __str71;
 var __str72;
 var __str73;
-var _PyExc_TypeError;
+
 var __str74;
 var _defdict_doc;
 var __str75;
@@ -348,6 +348,39 @@ var __str78;
   }
   
 
+  function _freeblock($b) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $b_addr;
+        $b_addr=$b;
+        var $0=HEAP[_numfreeblocks]; //@line 91 "_collectionsmodule.c"
+        var $1=($0) <= 9; //@line 91 "_collectionsmodule.c"
+        if ($1) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 91 "_collectionsmodule.c"
+      case 1: // $bb
+        var $2=HEAP[_numfreeblocks]; //@line 92 "_collectionsmodule.c"
+        var $3=_freeblocks+$2*4; //@line 92 "_collectionsmodule.c"
+        var $4=$b_addr; //@line 92 "_collectionsmodule.c"
+        HEAP[$3]=$4; //@line 92 "_collectionsmodule.c"
+        var $5=HEAP[_numfreeblocks]; //@line 93 "_collectionsmodule.c"
+        var $6=($5) + 1; //@line 93 "_collectionsmodule.c"
+        HEAP[_numfreeblocks]=$6; //@line 93 "_collectionsmodule.c"
+        __label__ = 3; break; //@line 93 "_collectionsmodule.c"
+      case 2: // $bb1
+        var $7=$b_addr; //@line 95 "_collectionsmodule.c"
+        var $8=$7; //@line 95 "_collectionsmodule.c"
+        _PyMem_Free($8); //@line 95 "_collectionsmodule.c"
+        __label__ = 3; break; //@line 95 "_collectionsmodule.c"
+      case 3: // $return
+        ;
+        return; //@line 97 "_collectionsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _deque_new($type, $args, $kwds) {
     ;
     var __label__;
@@ -456,7 +489,6 @@ var __str78;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $b_addr_i;
         var $deque_addr;
         var $unused_addr;
         var $retval;
@@ -474,7 +506,7 @@ var __str78;
         var $5=HEAP[_PyExc_IndexError]; //@line 166 "_collectionsmodule.c"
         _PyErr_SetString($5, __str1); //@line 166 "_collectionsmodule.c"
         $0=0; //@line 167 "_collectionsmodule.c"
-        __label__ = 16; break; //@line 167 "_collectionsmodule.c"
+        __label__ = 13; break; //@line 167 "_collectionsmodule.c"
       case 2: // $bb1
         var $6=$deque_addr; //@line 169 "_collectionsmodule.c"
         var $7=$6+12; //@line 169 "_collectionsmodule.c"
@@ -511,7 +543,7 @@ var __str78;
         var $34=$33+20; //@line 174 "_collectionsmodule.c"
         var $35=HEAP[$34]; //@line 174 "_collectionsmodule.c"
         var $36=($35)==-1; //@line 174 "_collectionsmodule.c"
-        if ($36) { __label__ = 3; break; } else { __label__ = 15; break; } //@line 174 "_collectionsmodule.c"
+        if ($36) { __label__ = 3; break; } else { __label__ = 12; break; } //@line 174 "_collectionsmodule.c"
       case 3: // $bb2
         var $37=$deque_addr; //@line 175 "_collectionsmodule.c"
         var $38=$37+24; //@line 175 "_collectionsmodule.c"
@@ -550,7 +582,7 @@ var __str78;
         var $58=$deque_addr; //@line 180 "_collectionsmodule.c"
         var $59=$58+20; //@line 180 "_collectionsmodule.c"
         HEAP[$59]=30; //@line 180 "_collectionsmodule.c"
-        __label__ = 15; break; //@line 180 "_collectionsmodule.c"
+        __label__ = 12; break; //@line 180 "_collectionsmodule.c"
       case 9: // $bb8
         var $60=$41+12; //@line 182 "_collectionsmodule.c"
         var $61=HEAP[$60]; //@line 182 "_collectionsmodule.c"
@@ -572,43 +604,25 @@ var __str78;
         var $71=$deque_addr; //@line 184 "_collectionsmodule.c"
         var $72=$71+12; //@line 184 "_collectionsmodule.c"
         var $73=HEAP[$72]; //@line 184 "_collectionsmodule.c"
-        $b_addr_i=$73;
-        var $74=HEAP[_numfreeblocks]; //@line 91 "_collectionsmodule.c"
-        var $75=($74) <= 9; //@line 91 "_collectionsmodule.c"
-        if ($75) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 91 "_collectionsmodule.c"
-      case 12: // $bb_i
-        var $76=HEAP[_numfreeblocks]; //@line 92 "_collectionsmodule.c"
-        var $77=_freeblocks+$76*4; //@line 92 "_collectionsmodule.c"
-        var $78=$b_addr_i; //@line 92 "_collectionsmodule.c"
-        HEAP[$77]=$78; //@line 92 "_collectionsmodule.c"
-        var $79=HEAP[_numfreeblocks]; //@line 93 "_collectionsmodule.c"
-        var $80=($79) + 1; //@line 93 "_collectionsmodule.c"
-        HEAP[_numfreeblocks]=$80; //@line 93 "_collectionsmodule.c"
-        __label__ = 14; break; //@line 93 "_collectionsmodule.c"
-      case 13: // $bb1_i
-        var $81=$b_addr_i; //@line 95 "_collectionsmodule.c"
-        var $82=$81; //@line 95 "_collectionsmodule.c"
-        _PyMem_Free($82); //@line 95 "_collectionsmodule.c"
-        __label__ = 14; break; //@line 95 "_collectionsmodule.c"
-      case 14: // $freeblock_exit
-        var $83=$prevblock; //@line 185 "_collectionsmodule.c"
-        var $84=$83+4; //@line 185 "_collectionsmodule.c"
-        HEAP[$84]=0; //@line 185 "_collectionsmodule.c"
-        var $85=$deque_addr; //@line 186 "_collectionsmodule.c"
-        var $86=$85+12; //@line 186 "_collectionsmodule.c"
-        var $87=$prevblock; //@line 186 "_collectionsmodule.c"
-        HEAP[$86]=$87; //@line 186 "_collectionsmodule.c"
-        var $88=$deque_addr; //@line 187 "_collectionsmodule.c"
-        var $89=$88+20; //@line 187 "_collectionsmodule.c"
-        HEAP[$89]=61; //@line 187 "_collectionsmodule.c"
-        __label__ = 15; break; //@line 187 "_collectionsmodule.c"
-      case 15: // $bb11
-        var $90=$item; //@line 190 "_collectionsmodule.c"
-        $0=$90; //@line 190 "_collectionsmodule.c"
-        __label__ = 16; break; //@line 190 "_collectionsmodule.c"
-      case 16: // $bb12
-        var $91=$0; //@line 167 "_collectionsmodule.c"
-        $retval=$91; //@line 167 "_collectionsmodule.c"
+        _freeblock($73); //@line 184 "_collectionsmodule.c"
+        var $74=$prevblock; //@line 185 "_collectionsmodule.c"
+        var $75=$74+4; //@line 185 "_collectionsmodule.c"
+        HEAP[$75]=0; //@line 185 "_collectionsmodule.c"
+        var $76=$deque_addr; //@line 186 "_collectionsmodule.c"
+        var $77=$76+12; //@line 186 "_collectionsmodule.c"
+        var $78=$prevblock; //@line 186 "_collectionsmodule.c"
+        HEAP[$77]=$78; //@line 186 "_collectionsmodule.c"
+        var $79=$deque_addr; //@line 187 "_collectionsmodule.c"
+        var $80=$79+20; //@line 187 "_collectionsmodule.c"
+        HEAP[$80]=61; //@line 187 "_collectionsmodule.c"
+        __label__ = 12; break; //@line 187 "_collectionsmodule.c"
+      case 12: // $bb11
+        var $81=$item; //@line 190 "_collectionsmodule.c"
+        $0=$81; //@line 190 "_collectionsmodule.c"
+        __label__ = 13; break; //@line 190 "_collectionsmodule.c"
+      case 13: // $bb12
+        var $82=$0; //@line 167 "_collectionsmodule.c"
+        $retval=$82; //@line 167 "_collectionsmodule.c"
         var $retval13=$retval; //@line 167 "_collectionsmodule.c"
         ;
         return $retval13; //@line 167 "_collectionsmodule.c"
@@ -623,7 +637,6 @@ var __str78;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $b_addr_i;
         var $deque_addr;
         var $unused_addr;
         var $retval;
@@ -641,7 +654,7 @@ var __str78;
         var $5=HEAP[_PyExc_IndexError]; //@line 202 "_collectionsmodule.c"
         _PyErr_SetString($5, __str1); //@line 202 "_collectionsmodule.c"
         $0=0; //@line 203 "_collectionsmodule.c"
-        __label__ = 20; break; //@line 203 "_collectionsmodule.c"
+        __label__ = 17; break; //@line 203 "_collectionsmodule.c"
       case 2: // $bb1
         var $6=$deque_addr; //@line 205 "_collectionsmodule.c"
         var $7=$6+8; //@line 205 "_collectionsmodule.c"
@@ -687,7 +700,7 @@ var __str78;
         var $38=$37+16; //@line 211 "_collectionsmodule.c"
         var $39=HEAP[$38]; //@line 211 "_collectionsmodule.c"
         var $40=($39)==62; //@line 211 "_collectionsmodule.c"
-        if ($40) { __label__ = 5; break; } else { __label__ = 19; break; } //@line 211 "_collectionsmodule.c"
+        if ($40) { __label__ = 5; break; } else { __label__ = 16; break; } //@line 211 "_collectionsmodule.c"
       case 5: // $bb4
         var $41=$deque_addr; //@line 212 "_collectionsmodule.c"
         var $42=$41+24; //@line 212 "_collectionsmodule.c"
@@ -726,7 +739,7 @@ var __str78;
         var $62=$deque_addr; //@line 217 "_collectionsmodule.c"
         var $63=$62+20; //@line 217 "_collectionsmodule.c"
         HEAP[$63]=30; //@line 217 "_collectionsmodule.c"
-        __label__ = 19; break; //@line 217 "_collectionsmodule.c"
+        __label__ = 16; break; //@line 217 "_collectionsmodule.c"
       case 11: // $bb10
         var $64=($47)==($50); //@line 219 "_collectionsmodule.c"
         if ($64) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 219 "_collectionsmodule.c"
@@ -743,50 +756,32 @@ var __str78;
         var $70=$deque_addr; //@line 221 "_collectionsmodule.c"
         var $71=$70+8; //@line 221 "_collectionsmodule.c"
         var $72=HEAP[$71]; //@line 221 "_collectionsmodule.c"
-        $b_addr_i=$72;
-        var $73=HEAP[_numfreeblocks]; //@line 91 "_collectionsmodule.c"
-        var $74=($73) <= 9; //@line 91 "_collectionsmodule.c"
-        if ($74) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 91 "_collectionsmodule.c"
-      case 14: // $bb_i
-        var $75=HEAP[_numfreeblocks]; //@line 92 "_collectionsmodule.c"
-        var $76=_freeblocks+$75*4; //@line 92 "_collectionsmodule.c"
-        var $77=$b_addr_i; //@line 92 "_collectionsmodule.c"
-        HEAP[$76]=$77; //@line 92 "_collectionsmodule.c"
-        var $78=HEAP[_numfreeblocks]; //@line 93 "_collectionsmodule.c"
-        var $79=($78) + 1; //@line 93 "_collectionsmodule.c"
-        HEAP[_numfreeblocks]=$79; //@line 93 "_collectionsmodule.c"
-        __label__ = 16; break; //@line 93 "_collectionsmodule.c"
-      case 15: // $bb1_i
-        var $80=$b_addr_i; //@line 95 "_collectionsmodule.c"
-        var $81=$80; //@line 95 "_collectionsmodule.c"
-        _PyMem_Free($81); //@line 95 "_collectionsmodule.c"
-        __label__ = 16; break; //@line 95 "_collectionsmodule.c"
-      case 16: // $freeblock_exit
-        var $82=$prevblock; //@line 222 "_collectionsmodule.c"
-        var $83=($82)==0; //@line 222 "_collectionsmodule.c"
-        if ($83) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 222 "_collectionsmodule.c"
-      case 17: // $bb13
+        _freeblock($72); //@line 221 "_collectionsmodule.c"
+        var $73=$prevblock; //@line 222 "_collectionsmodule.c"
+        var $74=($73)==0; //@line 222 "_collectionsmodule.c"
+        if ($74) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 222 "_collectionsmodule.c"
+      case 14: // $bb13
         ___assert_fail(__str7, __str3, 222, ___PRETTY_FUNCTION___8461); //@line 222 "_collectionsmodule.c"
         throw "Reached an unreachable!" //@line 222 "_collectionsmodule.c"
-      case 18: // $bb14
-        var $84=$prevblock; //@line 223 "_collectionsmodule.c"
-        var $85=$84; //@line 223 "_collectionsmodule.c"
-        HEAP[$85]=0; //@line 223 "_collectionsmodule.c"
-        var $86=$deque_addr; //@line 224 "_collectionsmodule.c"
-        var $87=$86+8; //@line 224 "_collectionsmodule.c"
-        var $88=$prevblock; //@line 224 "_collectionsmodule.c"
-        HEAP[$87]=$88; //@line 224 "_collectionsmodule.c"
-        var $89=$deque_addr; //@line 225 "_collectionsmodule.c"
-        var $90=$89+16; //@line 225 "_collectionsmodule.c"
-        HEAP[$90]=0; //@line 225 "_collectionsmodule.c"
-        __label__ = 19; break; //@line 225 "_collectionsmodule.c"
-      case 19: // $bb15
-        var $91=$item; //@line 228 "_collectionsmodule.c"
-        $0=$91; //@line 228 "_collectionsmodule.c"
-        __label__ = 20; break; //@line 228 "_collectionsmodule.c"
-      case 20: // $bb16
-        var $92=$0; //@line 203 "_collectionsmodule.c"
-        $retval=$92; //@line 203 "_collectionsmodule.c"
+      case 15: // $bb14
+        var $75=$prevblock; //@line 223 "_collectionsmodule.c"
+        var $76=$75; //@line 223 "_collectionsmodule.c"
+        HEAP[$76]=0; //@line 223 "_collectionsmodule.c"
+        var $77=$deque_addr; //@line 224 "_collectionsmodule.c"
+        var $78=$77+8; //@line 224 "_collectionsmodule.c"
+        var $79=$prevblock; //@line 224 "_collectionsmodule.c"
+        HEAP[$78]=$79; //@line 224 "_collectionsmodule.c"
+        var $80=$deque_addr; //@line 225 "_collectionsmodule.c"
+        var $81=$80+16; //@line 225 "_collectionsmodule.c"
+        HEAP[$81]=0; //@line 225 "_collectionsmodule.c"
+        __label__ = 16; break; //@line 225 "_collectionsmodule.c"
+      case 16: // $bb15
+        var $82=$item; //@line 228 "_collectionsmodule.c"
+        $0=$82; //@line 228 "_collectionsmodule.c"
+        __label__ = 17; break; //@line 228 "_collectionsmodule.c"
+      case 17: // $bb16
+        var $83=$0; //@line 203 "_collectionsmodule.c"
+        $retval=$83; //@line 203 "_collectionsmodule.c"
         var $retval17=$retval; //@line 203 "_collectionsmodule.c"
         ;
         return $retval17; //@line 203 "_collectionsmodule.c"
@@ -2175,7 +2170,7 @@ var __str78;
         $args_addr=$args;
         HEAP[$n]=1; //@line 453 "_collectionsmodule.c"
         var $1=$args_addr; //@line 455 "_collectionsmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str12, $n); //@line 455 "_collectionsmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str12, allocate([$n,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 455 "_collectionsmodule.c"
         var $3=($2)==0; //@line 455 "_collectionsmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 455 "_collectionsmodule.c"
       case 1: // $bb
@@ -2878,22 +2873,102 @@ var __str78;
   }
   
 
+  function _deque_del_item($deque, $i) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $deque_addr;
+        var $i_addr;
+        var $retval;
+        var $0;
+        var $item;
+        $deque_addr=$deque;
+        $i_addr=$i;
+        var $1=$i_addr; //@line 658 "_collectionsmodule.c"
+        var $2=($1) < 0; //@line 658 "_collectionsmodule.c"
+        if ($2) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 658 "_collectionsmodule.c"
+      case 1: // $bb
+        var $3=$deque_addr; //@line 658 "_collectionsmodule.c"
+        var $4=$3+24; //@line 658 "_collectionsmodule.c"
+        var $5=HEAP[$4]; //@line 658 "_collectionsmodule.c"
+        var $6=$i_addr; //@line 658 "_collectionsmodule.c"
+        var $7=($5) <= ($6); //@line 658 "_collectionsmodule.c"
+        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 658 "_collectionsmodule.c"
+      case 2: // $bb1
+        ___assert_fail(__str20, __str3, 658, ___PRETTY_FUNCTION___9162); //@line 658 "_collectionsmodule.c"
+        throw "Reached an unreachable!" //@line 658 "_collectionsmodule.c"
+      case 3: // $bb2
+        var $8=$i_addr; //@line 659 "_collectionsmodule.c"
+        var $9=0 - ($8); //@line 659 "_collectionsmodule.c"
+        var $10=$deque_addr; //@line 659 "_collectionsmodule.c"
+        var $11=__deque_rotate($10, $9); //@line 659 "_collectionsmodule.c"
+        var $12=($11)==-1; //@line 659 "_collectionsmodule.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 659 "_collectionsmodule.c"
+      case 4: // $bb3
+        $0=-1; //@line 660 "_collectionsmodule.c"
+        __label__ = 10; break; //@line 660 "_collectionsmodule.c"
+      case 5: // $bb4
+        var $13=$deque_addr; //@line 662 "_collectionsmodule.c"
+        var $14=_deque_popleft($13, 0); //@line 662 "_collectionsmodule.c"
+        $item=$14; //@line 662 "_collectionsmodule.c"
+        var $15=$item; //@line 663 "_collectionsmodule.c"
+        var $16=($15)==0; //@line 663 "_collectionsmodule.c"
+        if ($16) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 663 "_collectionsmodule.c"
+      case 6: // $bb5
+        ___assert_fail(__str11, __str3, 663, ___PRETTY_FUNCTION___9162); //@line 663 "_collectionsmodule.c"
+        throw "Reached an unreachable!" //@line 663 "_collectionsmodule.c"
+      case 7: // $bb6
+        var $17=$item; //@line 664 "_collectionsmodule.c"
+        var $18=$17; //@line 664 "_collectionsmodule.c"
+        var $19=HEAP[$18]; //@line 664 "_collectionsmodule.c"
+        var $20=($19) - 1; //@line 664 "_collectionsmodule.c"
+        var $21=$item; //@line 664 "_collectionsmodule.c"
+        var $22=$21; //@line 664 "_collectionsmodule.c"
+        HEAP[$22]=$20; //@line 664 "_collectionsmodule.c"
+        var $23=$item; //@line 664 "_collectionsmodule.c"
+        var $24=$23; //@line 664 "_collectionsmodule.c"
+        var $25=HEAP[$24]; //@line 664 "_collectionsmodule.c"
+        var $26=($25)==0; //@line 664 "_collectionsmodule.c"
+        if ($26) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 664 "_collectionsmodule.c"
+      case 8: // $bb7
+        var $27=$item; //@line 664 "_collectionsmodule.c"
+        var $28=$27+4; //@line 664 "_collectionsmodule.c"
+        var $29=HEAP[$28]; //@line 664 "_collectionsmodule.c"
+        var $30=$29+24; //@line 664 "_collectionsmodule.c"
+        var $31=HEAP[$30]; //@line 664 "_collectionsmodule.c"
+        var $32=$item; //@line 664 "_collectionsmodule.c"
+        FUNCTION_TABLE[$31]($32); //@line 664 "_collectionsmodule.c"
+        __label__ = 9; break; //@line 664 "_collectionsmodule.c"
+      case 9: // $bb8
+        var $33=$deque_addr; //@line 666 "_collectionsmodule.c"
+        var $34=$i_addr; //@line 666 "_collectionsmodule.c"
+        var $35=__deque_rotate($33, $34); //@line 666 "_collectionsmodule.c"
+        $0=$35; //@line 666 "_collectionsmodule.c"
+        __label__ = 10; break; //@line 666 "_collectionsmodule.c"
+      case 10: // $bb9
+        var $36=$0; //@line 660 "_collectionsmodule.c"
+        $retval=$36; //@line 660 "_collectionsmodule.c"
+        var $retval10=$retval; //@line 660 "_collectionsmodule.c"
+        ;
+        return $retval10; //@line 660 "_collectionsmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _deque_ass_item($deque, $i, $v) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $deque_addr_i;
-        var $i_addr_i;
-        var $retval_i;
-        var $0;
-        var $item_i;
         var $deque_addr;
         var $i_addr;
         var $v_addr;
         var $retval;
-        var $1;
+        var $0;
         var $old_value;
         var $b;
         var $n;
@@ -2903,217 +2978,151 @@ var __str78;
         $deque_addr=$deque;
         $i_addr=$i;
         $v_addr=$v;
-        var $2=$deque_addr; //@line 674 "_collectionsmodule.c"
-        var $3=$2+24; //@line 674 "_collectionsmodule.c"
-        var $4=HEAP[$3]; //@line 674 "_collectionsmodule.c"
-        $len=$4; //@line 674 "_collectionsmodule.c"
-        var $5=$len; //@line 674 "_collectionsmodule.c"
-        var $6=($5) + 1; //@line 674 "_collectionsmodule.c"
-        var $7=($6) >> 1; //@line 674 "_collectionsmodule.c"
-        $halflen=$7; //@line 674 "_collectionsmodule.c"
-        var $8=$i_addr; //@line 674 "_collectionsmodule.c"
-        $index=$8; //@line 674 "_collectionsmodule.c"
-        var $9=$i_addr; //@line 676 "_collectionsmodule.c"
-        var $10=($9) < 0; //@line 676 "_collectionsmodule.c"
-        if ($10) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 676 "_collectionsmodule.c"
+        var $1=$deque_addr; //@line 674 "_collectionsmodule.c"
+        var $2=$1+24; //@line 674 "_collectionsmodule.c"
+        var $3=HEAP[$2]; //@line 674 "_collectionsmodule.c"
+        $len=$3; //@line 674 "_collectionsmodule.c"
+        var $4=$len; //@line 674 "_collectionsmodule.c"
+        var $5=($4) + 1; //@line 674 "_collectionsmodule.c"
+        var $6=($5) >> 1; //@line 674 "_collectionsmodule.c"
+        $halflen=$6; //@line 674 "_collectionsmodule.c"
+        var $7=$i_addr; //@line 674 "_collectionsmodule.c"
+        $index=$7; //@line 674 "_collectionsmodule.c"
+        var $8=$i_addr; //@line 676 "_collectionsmodule.c"
+        var $9=($8) < 0; //@line 676 "_collectionsmodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 676 "_collectionsmodule.c"
       case 1: // $bb
-        var $11=$i_addr; //@line 676 "_collectionsmodule.c"
-        var $12=$len; //@line 676 "_collectionsmodule.c"
-        var $13=($11) >= ($12); //@line 676 "_collectionsmodule.c"
-        if ($13) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 676 "_collectionsmodule.c"
+        var $10=$i_addr; //@line 676 "_collectionsmodule.c"
+        var $11=$len; //@line 676 "_collectionsmodule.c"
+        var $12=($10) >= ($11); //@line 676 "_collectionsmodule.c"
+        if ($12) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 676 "_collectionsmodule.c"
       case 2: // $bb1
-        var $14=HEAP[_PyExc_IndexError]; //@line 677 "_collectionsmodule.c"
-        _PyErr_SetString($14, __str19); //@line 677 "_collectionsmodule.c"
-        $1=-1; //@line 679 "_collectionsmodule.c"
-        __label__ = 23; break; //@line 679 "_collectionsmodule.c"
+        var $13=HEAP[_PyExc_IndexError]; //@line 677 "_collectionsmodule.c"
+        _PyErr_SetString($13, __str19); //@line 677 "_collectionsmodule.c"
+        $0=-1; //@line 679 "_collectionsmodule.c"
+        __label__ = 13; break; //@line 679 "_collectionsmodule.c"
       case 3: // $bb2
-        var $15=$v_addr; //@line 681 "_collectionsmodule.c"
-        var $16=($15)==0; //@line 681 "_collectionsmodule.c"
-        var $17=$deque_addr; //@line 682 "_collectionsmodule.c"
-        if ($16) { __label__ = 4; break; } else { __label__ = 15; break; } //@line 681 "_collectionsmodule.c"
+        var $14=$v_addr; //@line 681 "_collectionsmodule.c"
+        var $15=($14)==0; //@line 681 "_collectionsmodule.c"
+        var $16=$deque_addr; //@line 682 "_collectionsmodule.c"
+        if ($15) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 681 "_collectionsmodule.c"
       case 4: // $bb3
-        var $18=$i_addr; //@line 682 "_collectionsmodule.c"
-        $deque_addr_i=$17;
-        $i_addr_i=$18;
-        var $19=$i_addr_i; //@line 658 "_collectionsmodule.c"
-        var $20=($19) < 0; //@line 658 "_collectionsmodule.c"
-        if ($20) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 658 "_collectionsmodule.c"
-      case 5: // $bb_i
-        var $21=$deque_addr_i; //@line 658 "_collectionsmodule.c"
-        var $22=$21+24; //@line 658 "_collectionsmodule.c"
-        var $23=HEAP[$22]; //@line 658 "_collectionsmodule.c"
-        var $24=$i_addr_i; //@line 658 "_collectionsmodule.c"
-        var $25=($23) <= ($24); //@line 658 "_collectionsmodule.c"
-        if ($25) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 658 "_collectionsmodule.c"
-      case 6: // $bb1_i
-        ___assert_fail(__str20, __str3, 658, ___PRETTY_FUNCTION___9162); //@line 658 "_collectionsmodule.c"
-        throw "Reached an unreachable!" //@line 658 "_collectionsmodule.c"
-      case 7: // $bb2_i
-        var $26=$i_addr_i; //@line 659 "_collectionsmodule.c"
-        var $27=0 - ($26); //@line 659 "_collectionsmodule.c"
-        var $28=$deque_addr_i; //@line 659 "_collectionsmodule.c"
-        var $29=__deque_rotate($28, $27); //@line 659 "_collectionsmodule.c"
-        var $30=($29)==-1; //@line 659 "_collectionsmodule.c"
-        if ($30) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 659 "_collectionsmodule.c"
-      case 8: // $bb3_i
-        $0=-1; //@line 660 "_collectionsmodule.c"
-        __label__ = 14; break; //@line 660 "_collectionsmodule.c"
-      case 9: // $bb4_i
-        var $31=$deque_addr_i; //@line 662 "_collectionsmodule.c"
-        var $32=_deque_popleft($31, 0); //@line 662 "_collectionsmodule.c"
-        $item_i=$32; //@line 662 "_collectionsmodule.c"
-        var $33=$item_i; //@line 663 "_collectionsmodule.c"
-        var $34=($33)==0; //@line 663 "_collectionsmodule.c"
-        if ($34) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 663 "_collectionsmodule.c"
-      case 10: // $bb5_i
-        ___assert_fail(__str11, __str3, 663, ___PRETTY_FUNCTION___9162); //@line 663 "_collectionsmodule.c"
-        throw "Reached an unreachable!" //@line 663 "_collectionsmodule.c"
-      case 11: // $bb6_i
-        var $35=$item_i; //@line 664 "_collectionsmodule.c"
-        var $36=$35; //@line 664 "_collectionsmodule.c"
-        var $37=HEAP[$36]; //@line 664 "_collectionsmodule.c"
-        var $38=($37) - 1; //@line 664 "_collectionsmodule.c"
-        var $39=$item_i; //@line 664 "_collectionsmodule.c"
-        var $40=$39; //@line 664 "_collectionsmodule.c"
-        HEAP[$40]=$38; //@line 664 "_collectionsmodule.c"
-        var $41=$item_i; //@line 664 "_collectionsmodule.c"
-        var $42=$41; //@line 664 "_collectionsmodule.c"
-        var $43=HEAP[$42]; //@line 664 "_collectionsmodule.c"
-        var $44=($43)==0; //@line 664 "_collectionsmodule.c"
-        if ($44) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 664 "_collectionsmodule.c"
-      case 12: // $bb7_i
-        var $45=$item_i; //@line 664 "_collectionsmodule.c"
-        var $46=$45+4; //@line 664 "_collectionsmodule.c"
-        var $47=HEAP[$46]; //@line 664 "_collectionsmodule.c"
-        var $48=$47+24; //@line 664 "_collectionsmodule.c"
-        var $49=HEAP[$48]; //@line 664 "_collectionsmodule.c"
-        var $50=$item_i; //@line 664 "_collectionsmodule.c"
-        FUNCTION_TABLE[$49]($50); //@line 664 "_collectionsmodule.c"
-        __label__ = 13; break; //@line 664 "_collectionsmodule.c"
-      case 13: // $bb8_i
-        var $51=$deque_addr_i; //@line 666 "_collectionsmodule.c"
-        var $52=$i_addr_i; //@line 666 "_collectionsmodule.c"
-        var $53=__deque_rotate($51, $52); //@line 666 "_collectionsmodule.c"
-        $0=$53; //@line 666 "_collectionsmodule.c"
-        __label__ = 14; break; //@line 666 "_collectionsmodule.c"
-      case 14: // $deque_del_item_exit
-        var $54=$0; //@line 660 "_collectionsmodule.c"
-        $retval_i=$54; //@line 660 "_collectionsmodule.c"
-        var $retval10_i=$retval_i; //@line 660 "_collectionsmodule.c"
-        $1=$retval10_i; //@line 682 "_collectionsmodule.c"
-        __label__ = 23; break; //@line 682 "_collectionsmodule.c"
-      case 15: // $bb4
-        var $55=$17+16; //@line 684 "_collectionsmodule.c"
-        var $56=HEAP[$55]; //@line 684 "_collectionsmodule.c"
-        var $57=$i_addr; //@line 684 "_collectionsmodule.c"
-        var $58=($57) + ($56); //@line 684 "_collectionsmodule.c"
-        $i_addr=$58; //@line 684 "_collectionsmodule.c"
-        var $59=$i_addr; //@line 685 "_collectionsmodule.c"
-        var $60=((($59)/62)|0); //@line 685 "_collectionsmodule.c"
-        $n=$60; //@line 685 "_collectionsmodule.c"
-        var $61=$i_addr; //@line 686 "_collectionsmodule.c"
-        var $62=($61) % 62; //@line 686 "_collectionsmodule.c"
-        $i_addr=$62; //@line 686 "_collectionsmodule.c"
-        var $63=$index; //@line 687 "_collectionsmodule.c"
-        var $64=$halflen; //@line 687 "_collectionsmodule.c"
-        var $65=($63) <= ($64); //@line 687 "_collectionsmodule.c"
-        var $66=$deque_addr; //@line 688 "_collectionsmodule.c"
-        if ($65) { __label__ = 16; break; } else { __label__ = 18; break; } //@line 687 "_collectionsmodule.c"
-      case 16: // $bb5
-        var $67=$66+8; //@line 688 "_collectionsmodule.c"
-        var $68=HEAP[$67]; //@line 688 "_collectionsmodule.c"
-        $b=$68; //@line 688 "_collectionsmodule.c"
-        var $69=$n; //@line 689 "_collectionsmodule.c"
-        var $70=($69) - 1; //@line 689 "_collectionsmodule.c"
-        $n=$70; //@line 689 "_collectionsmodule.c"
-        var $71=($70)!=-1; //@line 689 "_collectionsmodule.c"
-        if ($71) { __label__ = 17; break; } else { __label__ = 20; break; } //@line 689 "_collectionsmodule.c"
-      case 17: // $bb6
-        var $72=$b; //@line 690 "_collectionsmodule.c"
-        var $73=$72+4; //@line 690 "_collectionsmodule.c"
-        var $74=HEAP[$73]; //@line 690 "_collectionsmodule.c"
-        $b=$74; //@line 690 "_collectionsmodule.c"
-        var $75=$n; //@line 689 "_collectionsmodule.c"
-        var $76=($75) - 1; //@line 689 "_collectionsmodule.c"
-        $n=$76; //@line 689 "_collectionsmodule.c"
-        var $77=($76)!=-1; //@line 689 "_collectionsmodule.c"
-        if ($77) { __label__ = 17; break; } else { __label__ = 20; break; } //@line 689 "_collectionsmodule.c"
-      case 18: // $bb9
-        var $78=$66+16; //@line 692 "_collectionsmodule.c"
-        var $79=HEAP[$78]; //@line 692 "_collectionsmodule.c"
-        var $80=$len; //@line 692 "_collectionsmodule.c"
-        var $81=($79) + -1; //@line 692 "_collectionsmodule.c"
-        var $82=($81) + ($80);
-        var $83=((($82)/62)|0); //@line 692 "_collectionsmodule.c"
-        var $84=$n; //@line 692 "_collectionsmodule.c"
-        var $85=($83) - ($84); //@line 692 "_collectionsmodule.c"
-        $n=$85; //@line 692 "_collectionsmodule.c"
-        var $86=$deque_addr; //@line 693 "_collectionsmodule.c"
-        var $87=$86+12; //@line 693 "_collectionsmodule.c"
-        var $88=HEAP[$87]; //@line 693 "_collectionsmodule.c"
-        $b=$88; //@line 693 "_collectionsmodule.c"
-        var $89=$n; //@line 694 "_collectionsmodule.c"
-        var $90=($89) - 1; //@line 694 "_collectionsmodule.c"
-        $n=$90; //@line 694 "_collectionsmodule.c"
-        var $91=($90)!=-1; //@line 694 "_collectionsmodule.c"
-        if ($91) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 694 "_collectionsmodule.c"
-      case 19: // $bb10
-        var $92=$b; //@line 695 "_collectionsmodule.c"
-        var $93=$92; //@line 695 "_collectionsmodule.c"
-        var $94=HEAP[$93]; //@line 695 "_collectionsmodule.c"
-        $b=$94; //@line 695 "_collectionsmodule.c"
-        var $95=$n; //@line 694 "_collectionsmodule.c"
-        var $96=($95) - 1; //@line 694 "_collectionsmodule.c"
-        $n=$96; //@line 694 "_collectionsmodule.c"
-        var $97=($96)!=-1; //@line 694 "_collectionsmodule.c"
-        if ($97) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 694 "_collectionsmodule.c"
-      case 20: // $bb12
-        var $98=$v_addr; //@line 697 "_collectionsmodule.c"
-        var $99=$98; //@line 697 "_collectionsmodule.c"
-        var $100=HEAP[$99]; //@line 697 "_collectionsmodule.c"
-        var $101=($100) + 1; //@line 697 "_collectionsmodule.c"
-        var $102=$v_addr; //@line 697 "_collectionsmodule.c"
-        var $103=$102; //@line 697 "_collectionsmodule.c"
-        HEAP[$103]=$101; //@line 697 "_collectionsmodule.c"
-        var $104=$i_addr; //@line 698 "_collectionsmodule.c"
-        var $105=$b; //@line 698 "_collectionsmodule.c"
-        var $106=$105+8; //@line 698 "_collectionsmodule.c"
-        var $107=$106+$104*4; //@line 698 "_collectionsmodule.c"
-        var $108=HEAP[$107]; //@line 698 "_collectionsmodule.c"
-        $old_value=$108; //@line 698 "_collectionsmodule.c"
-        var $109=$i_addr; //@line 699 "_collectionsmodule.c"
-        var $110=$b; //@line 699 "_collectionsmodule.c"
-        var $111=$110+8; //@line 699 "_collectionsmodule.c"
-        var $112=$111+$109*4; //@line 699 "_collectionsmodule.c"
-        var $113=$v_addr; //@line 699 "_collectionsmodule.c"
-        HEAP[$112]=$113; //@line 699 "_collectionsmodule.c"
-        var $114=$old_value; //@line 700 "_collectionsmodule.c"
-        var $115=$114; //@line 700 "_collectionsmodule.c"
-        var $116=HEAP[$115]; //@line 700 "_collectionsmodule.c"
-        var $117=($116) - 1; //@line 700 "_collectionsmodule.c"
-        var $118=$old_value; //@line 700 "_collectionsmodule.c"
-        var $119=$118; //@line 700 "_collectionsmodule.c"
-        HEAP[$119]=$117; //@line 700 "_collectionsmodule.c"
-        var $120=$old_value; //@line 700 "_collectionsmodule.c"
-        var $121=$120; //@line 700 "_collectionsmodule.c"
-        var $122=HEAP[$121]; //@line 700 "_collectionsmodule.c"
-        var $123=($122)==0; //@line 700 "_collectionsmodule.c"
-        if ($123) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 700 "_collectionsmodule.c"
-      case 21: // $bb13
-        var $124=$old_value; //@line 700 "_collectionsmodule.c"
-        var $125=$124+4; //@line 700 "_collectionsmodule.c"
-        var $126=HEAP[$125]; //@line 700 "_collectionsmodule.c"
-        var $127=$126+24; //@line 700 "_collectionsmodule.c"
-        var $128=HEAP[$127]; //@line 700 "_collectionsmodule.c"
-        var $129=$old_value; //@line 700 "_collectionsmodule.c"
-        FUNCTION_TABLE[$128]($129); //@line 700 "_collectionsmodule.c"
-        __label__ = 22; break; //@line 700 "_collectionsmodule.c"
-      case 22: // $bb14
-        $1=0; //@line 701 "_collectionsmodule.c"
-        __label__ = 23; break; //@line 701 "_collectionsmodule.c"
-      case 23: // $bb15
-        var $130=$1; //@line 679 "_collectionsmodule.c"
-        $retval=$130; //@line 679 "_collectionsmodule.c"
+        var $17=$i_addr; //@line 682 "_collectionsmodule.c"
+        var $18=_deque_del_item($16, $17); //@line 682 "_collectionsmodule.c"
+        $0=$18; //@line 682 "_collectionsmodule.c"
+        __label__ = 13; break; //@line 682 "_collectionsmodule.c"
+      case 5: // $bb4
+        var $19=$16+16; //@line 684 "_collectionsmodule.c"
+        var $20=HEAP[$19]; //@line 684 "_collectionsmodule.c"
+        var $21=$i_addr; //@line 684 "_collectionsmodule.c"
+        var $22=($21) + ($20); //@line 684 "_collectionsmodule.c"
+        $i_addr=$22; //@line 684 "_collectionsmodule.c"
+        var $23=$i_addr; //@line 685 "_collectionsmodule.c"
+        var $24=((($23)/62)|0); //@line 685 "_collectionsmodule.c"
+        $n=$24; //@line 685 "_collectionsmodule.c"
+        var $25=$i_addr; //@line 686 "_collectionsmodule.c"
+        var $26=($25) % 62; //@line 686 "_collectionsmodule.c"
+        $i_addr=$26; //@line 686 "_collectionsmodule.c"
+        var $27=$index; //@line 687 "_collectionsmodule.c"
+        var $28=$halflen; //@line 687 "_collectionsmodule.c"
+        var $29=($27) <= ($28); //@line 687 "_collectionsmodule.c"
+        var $30=$deque_addr; //@line 688 "_collectionsmodule.c"
+        if ($29) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 687 "_collectionsmodule.c"
+      case 6: // $bb5
+        var $31=$30+8; //@line 688 "_collectionsmodule.c"
+        var $32=HEAP[$31]; //@line 688 "_collectionsmodule.c"
+        $b=$32; //@line 688 "_collectionsmodule.c"
+        var $33=$n; //@line 689 "_collectionsmodule.c"
+        var $34=($33) - 1; //@line 689 "_collectionsmodule.c"
+        $n=$34; //@line 689 "_collectionsmodule.c"
+        var $35=($34)!=-1; //@line 689 "_collectionsmodule.c"
+        if ($35) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 689 "_collectionsmodule.c"
+      case 7: // $bb6
+        var $36=$b; //@line 690 "_collectionsmodule.c"
+        var $37=$36+4; //@line 690 "_collectionsmodule.c"
+        var $38=HEAP[$37]; //@line 690 "_collectionsmodule.c"
+        $b=$38; //@line 690 "_collectionsmodule.c"
+        var $39=$n; //@line 689 "_collectionsmodule.c"
+        var $40=($39) - 1; //@line 689 "_collectionsmodule.c"
+        $n=$40; //@line 689 "_collectionsmodule.c"
+        var $41=($40)!=-1; //@line 689 "_collectionsmodule.c"
+        if ($41) { __label__ = 7; break; } else { __label__ = 10; break; } //@line 689 "_collectionsmodule.c"
+      case 8: // $bb9
+        var $42=$30+16; //@line 692 "_collectionsmodule.c"
+        var $43=HEAP[$42]; //@line 692 "_collectionsmodule.c"
+        var $44=$len; //@line 692 "_collectionsmodule.c"
+        var $45=($43) + -1; //@line 692 "_collectionsmodule.c"
+        var $46=($45) + ($44);
+        var $47=((($46)/62)|0); //@line 692 "_collectionsmodule.c"
+        var $48=$n; //@line 692 "_collectionsmodule.c"
+        var $49=($47) - ($48); //@line 692 "_collectionsmodule.c"
+        $n=$49; //@line 692 "_collectionsmodule.c"
+        var $50=$deque_addr; //@line 693 "_collectionsmodule.c"
+        var $51=$50+12; //@line 693 "_collectionsmodule.c"
+        var $52=HEAP[$51]; //@line 693 "_collectionsmodule.c"
+        $b=$52; //@line 693 "_collectionsmodule.c"
+        var $53=$n; //@line 694 "_collectionsmodule.c"
+        var $54=($53) - 1; //@line 694 "_collectionsmodule.c"
+        $n=$54; //@line 694 "_collectionsmodule.c"
+        var $55=($54)!=-1; //@line 694 "_collectionsmodule.c"
+        if ($55) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 694 "_collectionsmodule.c"
+      case 9: // $bb10
+        var $56=$b; //@line 695 "_collectionsmodule.c"
+        var $57=$56; //@line 695 "_collectionsmodule.c"
+        var $58=HEAP[$57]; //@line 695 "_collectionsmodule.c"
+        $b=$58; //@line 695 "_collectionsmodule.c"
+        var $59=$n; //@line 694 "_collectionsmodule.c"
+        var $60=($59) - 1; //@line 694 "_collectionsmodule.c"
+        $n=$60; //@line 694 "_collectionsmodule.c"
+        var $61=($60)!=-1; //@line 694 "_collectionsmodule.c"
+        if ($61) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 694 "_collectionsmodule.c"
+      case 10: // $bb12
+        var $62=$v_addr; //@line 697 "_collectionsmodule.c"
+        var $63=$62; //@line 697 "_collectionsmodule.c"
+        var $64=HEAP[$63]; //@line 697 "_collectionsmodule.c"
+        var $65=($64) + 1; //@line 697 "_collectionsmodule.c"
+        var $66=$v_addr; //@line 697 "_collectionsmodule.c"
+        var $67=$66; //@line 697 "_collectionsmodule.c"
+        HEAP[$67]=$65; //@line 697 "_collectionsmodule.c"
+        var $68=$i_addr; //@line 698 "_collectionsmodule.c"
+        var $69=$b; //@line 698 "_collectionsmodule.c"
+        var $70=$69+8; //@line 698 "_collectionsmodule.c"
+        var $71=$70+$68*4; //@line 698 "_collectionsmodule.c"
+        var $72=HEAP[$71]; //@line 698 "_collectionsmodule.c"
+        $old_value=$72; //@line 698 "_collectionsmodule.c"
+        var $73=$i_addr; //@line 699 "_collectionsmodule.c"
+        var $74=$b; //@line 699 "_collectionsmodule.c"
+        var $75=$74+8; //@line 699 "_collectionsmodule.c"
+        var $76=$75+$73*4; //@line 699 "_collectionsmodule.c"
+        var $77=$v_addr; //@line 699 "_collectionsmodule.c"
+        HEAP[$76]=$77; //@line 699 "_collectionsmodule.c"
+        var $78=$old_value; //@line 700 "_collectionsmodule.c"
+        var $79=$78; //@line 700 "_collectionsmodule.c"
+        var $80=HEAP[$79]; //@line 700 "_collectionsmodule.c"
+        var $81=($80) - 1; //@line 700 "_collectionsmodule.c"
+        var $82=$old_value; //@line 700 "_collectionsmodule.c"
+        var $83=$82; //@line 700 "_collectionsmodule.c"
+        HEAP[$83]=$81; //@line 700 "_collectionsmodule.c"
+        var $84=$old_value; //@line 700 "_collectionsmodule.c"
+        var $85=$84; //@line 700 "_collectionsmodule.c"
+        var $86=HEAP[$85]; //@line 700 "_collectionsmodule.c"
+        var $87=($86)==0; //@line 700 "_collectionsmodule.c"
+        if ($87) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 700 "_collectionsmodule.c"
+      case 11: // $bb13
+        var $88=$old_value; //@line 700 "_collectionsmodule.c"
+        var $89=$88+4; //@line 700 "_collectionsmodule.c"
+        var $90=HEAP[$89]; //@line 700 "_collectionsmodule.c"
+        var $91=$90+24; //@line 700 "_collectionsmodule.c"
+        var $92=HEAP[$91]; //@line 700 "_collectionsmodule.c"
+        var $93=$old_value; //@line 700 "_collectionsmodule.c"
+        FUNCTION_TABLE[$92]($93); //@line 700 "_collectionsmodule.c"
+        __label__ = 12; break; //@line 700 "_collectionsmodule.c"
+      case 12: // $bb14
+        $0=0; //@line 701 "_collectionsmodule.c"
+        __label__ = 13; break; //@line 701 "_collectionsmodule.c"
+      case 13: // $bb15
+        var $94=$0; //@line 679 "_collectionsmodule.c"
+        $retval=$94; //@line 679 "_collectionsmodule.c"
         var $retval16=$retval; //@line 679 "_collectionsmodule.c"
         ;
         return $retval16; //@line 679 "_collectionsmodule.c"
@@ -3163,7 +3172,6 @@ var __str78;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $b_addr_i;
         var $deque_addr;
         $deque_addr=$deque;
         var $0=$deque_addr; //@line 719 "_collectionsmodule.c"
@@ -3184,7 +3192,7 @@ var __str78;
         var $9=$8+8; //@line 722 "_collectionsmodule.c"
         var $10=HEAP[$9]; //@line 722 "_collectionsmodule.c"
         var $11=($10)!=0; //@line 722 "_collectionsmodule.c"
-        if ($11) { __label__ = 3; break; } else { __label__ = 8; break; } //@line 722 "_collectionsmodule.c"
+        if ($11) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 722 "_collectionsmodule.c"
       case 3: // $bb2
         var $12=$deque_addr; //@line 723 "_collectionsmodule.c"
         var $13=_deque_clear($12); //@line 723 "_collectionsmodule.c"
@@ -3200,40 +3208,24 @@ var __str78;
         var $18=$deque_addr; //@line 725 "_collectionsmodule.c"
         var $19=$18+8; //@line 725 "_collectionsmodule.c"
         var $20=HEAP[$19]; //@line 725 "_collectionsmodule.c"
-        $b_addr_i=$20;
-        var $21=HEAP[_numfreeblocks]; //@line 91 "_collectionsmodule.c"
-        var $22=($21) <= 9; //@line 91 "_collectionsmodule.c"
-        if ($22) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 91 "_collectionsmodule.c"
-      case 6: // $bb_i
-        var $23=HEAP[_numfreeblocks]; //@line 92 "_collectionsmodule.c"
-        var $24=_freeblocks+$23*4; //@line 92 "_collectionsmodule.c"
-        var $25=$b_addr_i; //@line 92 "_collectionsmodule.c"
-        HEAP[$24]=$25; //@line 92 "_collectionsmodule.c"
-        var $26=HEAP[_numfreeblocks]; //@line 93 "_collectionsmodule.c"
-        var $27=($26) + 1; //@line 93 "_collectionsmodule.c"
-        HEAP[_numfreeblocks]=$27; //@line 93 "_collectionsmodule.c"
-        __label__ = 8; break; //@line 93 "_collectionsmodule.c"
-      case 7: // $bb1_i
-        var $28=$b_addr_i; //@line 95 "_collectionsmodule.c"
-        var $29=$28; //@line 95 "_collectionsmodule.c"
-        _PyMem_Free($29); //@line 95 "_collectionsmodule.c"
-        __label__ = 8; break; //@line 95 "_collectionsmodule.c"
-      case 8: // $bb5
-        var $30=$deque_addr; //@line 727 "_collectionsmodule.c"
-        var $31=$30+8; //@line 727 "_collectionsmodule.c"
-        HEAP[$31]=0; //@line 727 "_collectionsmodule.c"
-        var $32=$deque_addr; //@line 728 "_collectionsmodule.c"
-        var $33=$32+12; //@line 728 "_collectionsmodule.c"
-        HEAP[$33]=0; //@line 728 "_collectionsmodule.c"
-        var $34=$deque_addr; //@line 729 "_collectionsmodule.c"
-        var $35=$34; //@line 729 "_collectionsmodule.c"
-        var $36=$35+4; //@line 729 "_collectionsmodule.c"
-        var $37=HEAP[$36]; //@line 729 "_collectionsmodule.c"
-        var $38=$37+160; //@line 729 "_collectionsmodule.c"
-        var $39=HEAP[$38]; //@line 729 "_collectionsmodule.c"
-        var $40=$deque_addr; //@line 729 "_collectionsmodule.c"
-        var $41=$40; //@line 729 "_collectionsmodule.c"
-        FUNCTION_TABLE[$39]($41); //@line 729 "_collectionsmodule.c"
+        _freeblock($20); //@line 725 "_collectionsmodule.c"
+        __label__ = 6; break; //@line 725 "_collectionsmodule.c"
+      case 6: // $bb5
+        var $21=$deque_addr; //@line 727 "_collectionsmodule.c"
+        var $22=$21+8; //@line 727 "_collectionsmodule.c"
+        HEAP[$22]=0; //@line 727 "_collectionsmodule.c"
+        var $23=$deque_addr; //@line 728 "_collectionsmodule.c"
+        var $24=$23+12; //@line 728 "_collectionsmodule.c"
+        HEAP[$24]=0; //@line 728 "_collectionsmodule.c"
+        var $25=$deque_addr; //@line 729 "_collectionsmodule.c"
+        var $26=$25; //@line 729 "_collectionsmodule.c"
+        var $27=$26+4; //@line 729 "_collectionsmodule.c"
+        var $28=HEAP[$27]; //@line 729 "_collectionsmodule.c"
+        var $29=$28+160; //@line 729 "_collectionsmodule.c"
+        var $30=HEAP[$29]; //@line 729 "_collectionsmodule.c"
+        var $31=$deque_addr; //@line 729 "_collectionsmodule.c"
+        var $32=$31; //@line 729 "_collectionsmodule.c"
+        FUNCTION_TABLE[$30]($32); //@line 729 "_collectionsmodule.c"
         ;
         return; //@line 730 "_collectionsmodule.c"
       default: assert(0, "bad label: " + __label__);
@@ -3374,7 +3366,7 @@ var __str78;
         var $8=HEAP[$7]; //@line 758 "_collectionsmodule.c"
         var $9=$8; //@line 758 "_collectionsmodule.c"
         var $10=$deque_addr; //@line 758 "_collectionsmodule.c"
-        var $11=_PyObject_CallFunction($9, __str22, $10, 0); //@line 758 "_collectionsmodule.c"
+        var $11=_PyObject_CallFunction($9, __str22, allocate([$10,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 758 "_collectionsmodule.c"
         $0=$11; //@line 758 "_collectionsmodule.c"
         __label__ = 3; break; //@line 758 "_collectionsmodule.c"
       case 2: // $bb1
@@ -3386,7 +3378,7 @@ var __str78;
         var $17=HEAP[$16]; //@line 760 "_collectionsmodule.c"
         var $18=$17; //@line 760 "_collectionsmodule.c"
         var $19=$deque_addr; //@line 760 "_collectionsmodule.c"
-        var $20=_PyObject_CallFunction($18, __str23, $19, $14, 0); //@line 760 "_collectionsmodule.c"
+        var $20=_PyObject_CallFunction($18, __str23, allocate([$19,0,0,0,$14,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i32",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 760 "_collectionsmodule.c"
         $0=$20; //@line 760 "_collectionsmodule.c"
         __label__ = 3; break; //@line 760 "_collectionsmodule.c"
       case 3: // $bb2
@@ -3474,7 +3466,7 @@ var __str78;
         var $35=$34+4; //@line 781 "_collectionsmodule.c"
         var $36=HEAP[$35]; //@line 781 "_collectionsmodule.c"
         var $37=$aslist; //@line 781 "_collectionsmodule.c"
-        var $38=_Py_BuildValue(__str25, $36, $37); //@line 781 "_collectionsmodule.c"
+        var $38=_Py_BuildValue(__str25, allocate([$36,0,0,0,$37,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 781 "_collectionsmodule.c"
         $result=$38; //@line 781 "_collectionsmodule.c"
         __label__ = 14; break; //@line 781 "_collectionsmodule.c"
       case 10: // $bb9
@@ -3485,7 +3477,7 @@ var __str78;
         var $43=$42+4; //@line 783 "_collectionsmodule.c"
         var $44=HEAP[$43]; //@line 783 "_collectionsmodule.c"
         var $45=$aslist; //@line 783 "_collectionsmodule.c"
-        var $46=_Py_BuildValue(__str26, $44, $45, $40); //@line 783 "_collectionsmodule.c"
+        var $46=_Py_BuildValue(__str26, allocate([$44,0,0,0,$45,0,0,0,$40,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 783 "_collectionsmodule.c"
         $result=$46; //@line 783 "_collectionsmodule.c"
         __label__ = 14; break; //@line 783 "_collectionsmodule.c"
       case 11: // $bb11
@@ -3496,7 +3488,7 @@ var __str78;
         var $49=HEAP[$48]; //@line 786 "_collectionsmodule.c"
         var $50=$aslist; //@line 786 "_collectionsmodule.c"
         var $51=$dict; //@line 786 "_collectionsmodule.c"
-        var $52=_Py_BuildValue(__str27, $49, $50, __Py_NoneStruct, $51); //@line 786 "_collectionsmodule.c"
+        var $52=_Py_BuildValue(__str27, allocate([$49,0,0,0,$50,0,0,0,__Py_NoneStruct,0,0,0,$51,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 786 "_collectionsmodule.c"
         $result=$52; //@line 786 "_collectionsmodule.c"
         __label__ = 14; break; //@line 786 "_collectionsmodule.c"
       case 13: // $bb13
@@ -3508,7 +3500,7 @@ var __str78;
         var $58=HEAP[$57]; //@line 788 "_collectionsmodule.c"
         var $59=$aslist; //@line 788 "_collectionsmodule.c"
         var $60=$dict; //@line 788 "_collectionsmodule.c"
-        var $61=_Py_BuildValue(__str28, $58, $59, $54, $60); //@line 788 "_collectionsmodule.c"
+        var $61=_Py_BuildValue(__str28, allocate([$58,0,0,0,$59,0,0,0,$54,0,0,0,$60,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"i32",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 788 "_collectionsmodule.c"
         $result=$61; //@line 788 "_collectionsmodule.c"
         __label__ = 14; break; //@line 788 "_collectionsmodule.c"
       case 14: // $bb14
@@ -3629,7 +3621,7 @@ var __str78;
         var $18=$17; //@line 816 "_collectionsmodule.c"
         var $19=$18+28; //@line 816 "_collectionsmodule.c"
         var $20=HEAP[$19]; //@line 816 "_collectionsmodule.c"
-        var $21=_PyString_FromFormat(__str30, $20); //@line 816 "_collectionsmodule.c"
+        var $21=_PyString_FromFormat(__str30, allocate([$20,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 816 "_collectionsmodule.c"
         $fmt=$21; //@line 816 "_collectionsmodule.c"
         __lastLabel__ = 7; __label__ = 9; break; //@line 816 "_collectionsmodule.c"
       case 8: // $bb7
@@ -3914,7 +3906,7 @@ var __str78;
         var $97=$96+28; //@line 879 "_collectionsmodule.c"
         var $98=HEAP[$97]; //@line 879 "_collectionsmodule.c"
         var $99=$fp_addr; //@line 879 "_collectionsmodule.c"
-        var $100=_fprintf($99, __str36, $98); //@line 879 "_collectionsmodule.c"
+        var $100=_fprintf($99, __str36, allocate([$98,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 879 "_collectionsmodule.c"
         __label__ = 23; break; //@line 879 "_collectionsmodule.c"
       case 23: // $bb22
         $0=0; //@line 881 "_collectionsmodule.c"
@@ -4428,7 +4420,7 @@ var __str78;
         var $4=$args_addr; //@line 971 "_collectionsmodule.c"
         var $5=$kwdargs_addr; //@line 971 "_collectionsmodule.c"
         var $kwlist1=$kwlist; //@line 971 "_collectionsmodule.c"
-        var $6=_PyArg_ParseTupleAndKeywords($4, $5, __str39, $kwlist1, $iterable, $maxlenobj); //@line 971 "_collectionsmodule.c"
+        var $6=_PyArg_ParseTupleAndKeywords($4, $5, __str39, $kwlist1, allocate([$iterable,0,0,0,$maxlenobj,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 971 "_collectionsmodule.c"
         var $7=($6)==0; //@line 971 "_collectionsmodule.c"
         if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 971 "_collectionsmodule.c"
       case 1: // $bb
@@ -5149,7 +5141,7 @@ var __str78;
         if ($or_cond) { __label__ = 1; break; } else { __label__ = 6; break; } //@line 1332 "_collectionsmodule.c"
       case 1: // $bb1
         var $8=$key_addr; //@line 1335 "_collectionsmodule.c"
-        var $9=_PyTuple_Pack(1, $8); //@line 1335 "_collectionsmodule.c"
+        var $9=_PyTuple_Pack(1, allocate([$8,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1335 "_collectionsmodule.c"
         $tup=$9; //@line 1335 "_collectionsmodule.c"
         var $10=$tup; //@line 1336 "_collectionsmodule.c"
         var $11=($10)==0; //@line 1336 "_collectionsmodule.c"
@@ -5265,7 +5257,7 @@ var __str78;
         var $8=HEAP[$7]; //@line 1362 "_collectionsmodule.c"
         var $9=$8; //@line 1362 "_collectionsmodule.c"
         var $10=$dd_addr; //@line 1362 "_collectionsmodule.c"
-        var $11=_PyObject_CallFunctionObjArgs($9, __Py_NoneStruct, $10, 0); //@line 1362 "_collectionsmodule.c"
+        var $11=_PyObject_CallFunctionObjArgs($9, allocate([__Py_NoneStruct,0,0,0,$10,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.defdictobject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1362 "_collectionsmodule.c"
         $0=$11; //@line 1362 "_collectionsmodule.c"
         __label__ = 3; break; //@line 1362 "_collectionsmodule.c"
       case 2: // $bb1
@@ -5277,7 +5269,7 @@ var __str78;
         var $17=HEAP[$16]; //@line 1363 "_collectionsmodule.c"
         var $18=$17; //@line 1363 "_collectionsmodule.c"
         var $19=$dd_addr; //@line 1363 "_collectionsmodule.c"
-        var $20=_PyObject_CallFunctionObjArgs($18, $13, $19, 0); //@line 1363 "_collectionsmodule.c"
+        var $20=_PyObject_CallFunctionObjArgs($18, allocate([$13,0,0,0,$19,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"%struct.defdictobject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1363 "_collectionsmodule.c"
         $0=$20; //@line 1363 "_collectionsmodule.c"
         __label__ = 3; break; //@line 1363 "_collectionsmodule.c"
       case 3: // $bb2
@@ -5324,7 +5316,7 @@ var __str78;
         var $10=$dd_addr; //@line 1398 "_collectionsmodule.c"
         var $11=$10+124; //@line 1398 "_collectionsmodule.c"
         var $12=HEAP[$11]; //@line 1398 "_collectionsmodule.c"
-        var $13=_PyTuple_Pack(1, $12); //@line 1398 "_collectionsmodule.c"
+        var $13=_PyTuple_Pack(1, allocate([$12,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1398 "_collectionsmodule.c"
         $args=$13; //@line 1398 "_collectionsmodule.c"
         __lastLabel__ = 3; __label__ = 4; break; //@line 1398 "_collectionsmodule.c"
       case 4: // $bb3
@@ -5337,7 +5329,7 @@ var __str78;
       case 6: // $bb5
         var $16=$dd_addr; //@line 1401 "_collectionsmodule.c"
         var $17=$16; //@line 1401 "_collectionsmodule.c"
-        var $18=_PyObject_CallMethod($17, __str64, __str65); //@line 1401 "_collectionsmodule.c"
+        var $18=_PyObject_CallMethod($17, __str64, __str65, allocate(1, "i32", ALLOC_STACK)); //@line 1401 "_collectionsmodule.c"
         $items=$18; //@line 1401 "_collectionsmodule.c"
         var $19=$items; //@line 1402 "_collectionsmodule.c"
         var $20=($19)==0; //@line 1402 "_collectionsmodule.c"
@@ -5374,7 +5366,7 @@ var __str78;
         var $40=HEAP[$39]; //@line 1406 "_collectionsmodule.c"
         var $41=$args; //@line 1406 "_collectionsmodule.c"
         var $42=$items; //@line 1406 "_collectionsmodule.c"
-        var $43=_PyTuple_Pack(5, $40, $41, __Py_NoneStruct, __Py_NoneStruct, $42); //@line 1406 "_collectionsmodule.c"
+        var $43=_PyTuple_Pack(5, allocate([$40,0,0,0,$41,0,0,0,__Py_NoneStruct,0,0,0,__Py_NoneStruct,0,0,0,$42,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1406 "_collectionsmodule.c"
         $result=$43; //@line 1406 "_collectionsmodule.c"
         var $44=$items; //@line 1408 "_collectionsmodule.c"
         var $45=$44; //@line 1408 "_collectionsmodule.c"
@@ -5656,7 +5648,7 @@ var __str78;
         var $50=$49; //@line 1490 "_collectionsmodule.c"
         var $51=$50+20; //@line 1490 "_collectionsmodule.c"
         var $52=$51; //@line 1490 "_collectionsmodule.c"
-        var $53=_PyString_FromFormat(__str73, $52, $48); //@line 1490 "_collectionsmodule.c"
+        var $53=_PyString_FromFormat(__str73, allocate([$52,0,0,0,$48,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 1490 "_collectionsmodule.c"
         $result=$53; //@line 1490 "_collectionsmodule.c"
         var $54=$defrepr; //@line 1493 "_collectionsmodule.c"
         var $55=$54; //@line 1493 "_collectionsmodule.c"

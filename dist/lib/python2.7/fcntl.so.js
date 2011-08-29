@@ -51,9 +51,9 @@ var $struct__typeobject___SIZE = 196; // %struct._typeobject
 var $struct_flock___SIZE = 24; // %struct.flock
   var $struct_flock___FLATTENER = [0,2,4,12,20];
 var __str;
-var _PyExc_ValueError;
+
 var __str1;
-var _PyExc_IOError;
+
 var __str2;
 var _fcntl_doc;
 var __str3;
@@ -62,7 +62,7 @@ var __str5;
 var __str6;
 var _ioctl_doc;
 var __str7;
-var __Py_NoneStruct;
+
 var _flock_doc;
 var __str8;
 var __str9;
@@ -223,7 +223,7 @@ var __str82;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 43 "fcntlmodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str, (FUNCTION_TABLE_OFFSET + 2), $fd, $code, $str, $len); //@line 43 "fcntlmodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0,$str,0,0,0,$len,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 43 "fcntlmodule.c"
         var $3=($2)!=0; //@line 43 "fcntlmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 6; break; } //@line 43 "fcntlmodule.c"
       case 1: // $bb
@@ -243,7 +243,7 @@ var __str82;
         var $9=HEAP[$code]; //@line 52 "fcntlmodule.c"
         var $10=HEAP[$fd]; //@line 52 "fcntlmodule.c"
         var $buf4=$buf; //@line 52 "fcntlmodule.c"
-        var $11=_fcntl($10, $9, $buf4); //@line 52 "fcntlmodule.c"
+        var $11=_fcntl($10, $9, allocate([$buf4,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 52 "fcntlmodule.c"
         $ret=$11; //@line 52 "fcntlmodule.c"
         var $12=$ret; //@line 54 "fcntlmodule.c"
         var $13=($12) < 0; //@line 54 "fcntlmodule.c"
@@ -263,7 +263,7 @@ var __str82;
         _PyErr_Clear(); //@line 61 "fcntlmodule.c"
         HEAP[$arg]=0; //@line 62 "fcntlmodule.c"
         var $18=$args_addr; //@line 63 "fcntlmodule.c"
-        var $19=__PyArg_ParseTuple_SizeT($18, __str2, (FUNCTION_TABLE_OFFSET + 2), $fd, $code, $arg); //@line 63 "fcntlmodule.c"
+        var $19=__PyArg_ParseTuple_SizeT($18, __str2, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0,$arg,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 63 "fcntlmodule.c"
         var $20=($19)==0; //@line 63 "fcntlmodule.c"
         if ($20) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 63 "fcntlmodule.c"
       case 7: // $bb9
@@ -273,7 +273,7 @@ var __str82;
         var $21=HEAP[$arg]; //@line 70 "fcntlmodule.c"
         var $22=HEAP[$code]; //@line 70 "fcntlmodule.c"
         var $23=HEAP[$fd]; //@line 70 "fcntlmodule.c"
-        var $24=_fcntl($23, $22, $21); //@line 70 "fcntlmodule.c"
+        var $24=_fcntl($23, $22, allocate([$21,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 70 "fcntlmodule.c"
         $ret=$24; //@line 70 "fcntlmodule.c"
         var $25=$ret; //@line 72 "fcntlmodule.c"
         var $26=($25) < 0; //@line 72 "fcntlmodule.c"
@@ -323,7 +323,7 @@ var __str82;
         $args_addr=$args;
         HEAP[$mutate_arg]=1; //@line 118 "fcntlmodule.c"
         var $1=$args_addr; //@line 121 "fcntlmodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str3, (FUNCTION_TABLE_OFFSET + 2), $fd, $code, $str, $len, $mutate_arg); //@line 121 "fcntlmodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str3, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0,$str,0,0,0,$len,0,0,0,$mutate_arg,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 121 "fcntlmodule.c"
         var $3=($2)!=0; //@line 121 "fcntlmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 17; break; } //@line 121 "fcntlmodule.c"
       case 1: // $bb
@@ -372,7 +372,7 @@ var __str82;
         var $19=HEAP[$code]; //@line 150 "fcntlmodule.c"
         var $20=HEAP[$fd]; //@line 150 "fcntlmodule.c"
         var $21=$arg1; //@line 150 "fcntlmodule.c"
-        var $22=_ioctl($20, $19, $21); //@line 150 "fcntlmodule.c"
+        var $22=_ioctl($20, $19, allocate([$21,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 150 "fcntlmodule.c"
         $ret=$22; //@line 150 "fcntlmodule.c"
         var $23=HEAP[$mutate_arg]; //@line 156 "fcntlmodule.c"
         var $24=($23)!=0; //@line 156 "fcntlmodule.c"
@@ -417,7 +417,7 @@ var __str82;
       case 17: // $bb27
         _PyErr_Clear(); //@line 171 "fcntlmodule.c"
         var $39=$args_addr; //@line 172 "fcntlmodule.c"
-        var $40=__PyArg_ParseTuple_SizeT($39, __str5, (FUNCTION_TABLE_OFFSET + 2), $fd, $code, $str, $len); //@line 172 "fcntlmodule.c"
+        var $40=__PyArg_ParseTuple_SizeT($39, __str5, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0,$str,0,0,0,$len,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 172 "fcntlmodule.c"
         var $41=($40)!=0; //@line 172 "fcntlmodule.c"
         if ($41) { __label__ = 18; break; } else { __label__ = 23; break; } //@line 172 "fcntlmodule.c"
       case 18: // $bb28
@@ -440,7 +440,7 @@ var __str82;
         var $49=HEAP[$code]; //@line 182 "fcntlmodule.c"
         var $50=HEAP[$fd]; //@line 182 "fcntlmodule.c"
         var $buf32=$buf; //@line 182 "fcntlmodule.c"
-        var $51=_ioctl($50, $49, $buf32); //@line 182 "fcntlmodule.c"
+        var $51=_ioctl($50, $49, allocate([$buf32,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 182 "fcntlmodule.c"
         $ret=$51; //@line 182 "fcntlmodule.c"
         var $52=$ret; //@line 184 "fcntlmodule.c"
         var $53=($52) < 0; //@line 184 "fcntlmodule.c"
@@ -460,7 +460,7 @@ var __str82;
         _PyErr_Clear(); //@line 191 "fcntlmodule.c"
         HEAP[$arg]=0; //@line 192 "fcntlmodule.c"
         var $58=$args_addr; //@line 193 "fcntlmodule.c"
-        var $59=__PyArg_ParseTuple_SizeT($58, __str6, (FUNCTION_TABLE_OFFSET + 2), $fd, $code, $arg); //@line 193 "fcntlmodule.c"
+        var $59=__PyArg_ParseTuple_SizeT($58, __str6, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0,$arg,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 193 "fcntlmodule.c"
         var $60=($59)==0; //@line 193 "fcntlmodule.c"
         if ($60) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 193 "fcntlmodule.c"
       case 24: // $bb37
@@ -470,7 +470,7 @@ var __str82;
         var $61=HEAP[$arg]; //@line 203 "fcntlmodule.c"
         var $62=HEAP[$code]; //@line 203 "fcntlmodule.c"
         var $63=HEAP[$fd]; //@line 203 "fcntlmodule.c"
-        var $64=_ioctl($63, $62, $61); //@line 203 "fcntlmodule.c"
+        var $64=_ioctl($63, $62, allocate([$61,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 203 "fcntlmodule.c"
         $ret=$64; //@line 203 "fcntlmodule.c"
         var $65=$ret; //@line 206 "fcntlmodule.c"
         var $66=($65) < 0; //@line 206 "fcntlmodule.c"
@@ -512,7 +512,7 @@ var __str82;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 255 "fcntlmodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str7, (FUNCTION_TABLE_OFFSET + 2), $fd, $code); //@line 255 "fcntlmodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str7, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 255 "fcntlmodule.c"
         var $3=($2)==0; //@line 255 "fcntlmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 255 "fcntlmodule.c"
       case 1: // $bb
@@ -574,7 +574,7 @@ var __str82;
         HEAP[$lenobj]=0; //@line 311 "fcntlmodule.c"
         HEAP[$startobj]=0; //@line 311 "fcntlmodule.c"
         var $1=$args_addr; //@line 313 "fcntlmodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str8, (FUNCTION_TABLE_OFFSET + 2), $fd, $code, $lenobj, $startobj, $whence); //@line 313 "fcntlmodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str8, allocate([(FUNCTION_TABLE_OFFSET + 2),0,0,0,$fd,0,0,0,$code,0,0,0,$lenobj,0,0,0,$startobj,0,0,0,$whence,0,0,0], ["i32 (%struct.PyObject*, i32*)*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 313 "fcntlmodule.c"
         var $3=($2)==0; //@line 313 "fcntlmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 313 "fcntlmodule.c"
       case 1: // $bb
@@ -702,7 +702,7 @@ var __str82;
       case 24: // $bb23
         var $60=HEAP[$fd]; //@line 367 "fcntlmodule.c"
         var $61=$iftmp_70; //@line 367 "fcntlmodule.c"
-        var $62=_fcntl($60, $61, $l); //@line 367 "fcntlmodule.c"
+        var $62=_fcntl($60, $61, allocate([$l,0,0,0], ["%struct.flock*",0,0,0], ALLOC_STACK)); //@line 367 "fcntlmodule.c"
         $ret=$62; //@line 367 "fcntlmodule.c"
         var $63=($62) < 0; //@line 370 "fcntlmodule.c"
         if ($63) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 370 "fcntlmodule.c"
@@ -795,582 +795,598 @@ var __str82;
   }
   
 
+  function _all_ins($d) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $d_addr;
+        var $0;
+        $d_addr=$d;
+        var $1=$d_addr; //@line 439 "fcntlmodule.c"
+        var $2=_ins($1, __str14, 1); //@line 439 "fcntlmodule.c"
+        var $3=($2)!=0; //@line 439 "fcntlmodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 439 "fcntlmodule.c"
+      case 1: // $bb
+        $0=-1; //@line 439 "fcntlmodule.c"
+        __label__ = 139; break; //@line 439 "fcntlmodule.c"
+      case 2: // $bb1
+        var $4=$d_addr; //@line 440 "fcntlmodule.c"
+        var $5=_ins($4, __str15, 2); //@line 440 "fcntlmodule.c"
+        var $6=($5)!=0; //@line 440 "fcntlmodule.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 440 "fcntlmodule.c"
+      case 3: // $bb2
+        $0=-1; //@line 440 "fcntlmodule.c"
+        __label__ = 139; break; //@line 440 "fcntlmodule.c"
+      case 4: // $bb3
+        var $7=$d_addr; //@line 441 "fcntlmodule.c"
+        var $8=_ins($7, __str16, 4); //@line 441 "fcntlmodule.c"
+        var $9=($8)!=0; //@line 441 "fcntlmodule.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 441 "fcntlmodule.c"
+      case 5: // $bb4
+        $0=-1; //@line 441 "fcntlmodule.c"
+        __label__ = 139; break; //@line 441 "fcntlmodule.c"
+      case 6: // $bb5
+        var $10=$d_addr; //@line 442 "fcntlmodule.c"
+        var $11=_ins($10, __str17, 8); //@line 442 "fcntlmodule.c"
+        var $12=($11)!=0; //@line 442 "fcntlmodule.c"
+        if ($12) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 442 "fcntlmodule.c"
+      case 7: // $bb6
+        $0=-1; //@line 442 "fcntlmodule.c"
+        __label__ = 139; break; //@line 442 "fcntlmodule.c"
+      case 8: // $bb7
+        var $13=$d_addr; //@line 445 "fcntlmodule.c"
+        var $14=_ins($13, __str18, 32); //@line 445 "fcntlmodule.c"
+        var $15=($14)!=0; //@line 445 "fcntlmodule.c"
+        if ($15) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 445 "fcntlmodule.c"
+      case 9: // $bb8
+        $0=-1; //@line 445 "fcntlmodule.c"
+        __label__ = 139; break; //@line 445 "fcntlmodule.c"
+      case 10: // $bb9
+        var $16=$d_addr; //@line 448 "fcntlmodule.c"
+        var $17=_ins($16, __str19, 64); //@line 448 "fcntlmodule.c"
+        var $18=($17)!=0; //@line 448 "fcntlmodule.c"
+        if ($18) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 448 "fcntlmodule.c"
+      case 11: // $bb10
+        $0=-1; //@line 448 "fcntlmodule.c"
+        __label__ = 139; break; //@line 448 "fcntlmodule.c"
+      case 12: // $bb11
+        var $19=$d_addr; //@line 451 "fcntlmodule.c"
+        var $20=_ins($19, __str20, 128); //@line 451 "fcntlmodule.c"
+        var $21=($20)!=0; //@line 451 "fcntlmodule.c"
+        if ($21) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 451 "fcntlmodule.c"
+      case 13: // $bb12
+        $0=-1; //@line 451 "fcntlmodule.c"
+        __label__ = 139; break; //@line 451 "fcntlmodule.c"
+      case 14: // $bb13
+        var $22=$d_addr; //@line 454 "fcntlmodule.c"
+        var $23=_ins($22, __str21, 192); //@line 454 "fcntlmodule.c"
+        var $24=($23)!=0; //@line 454 "fcntlmodule.c"
+        if ($24) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 454 "fcntlmodule.c"
+      case 15: // $bb14
+        $0=-1; //@line 454 "fcntlmodule.c"
+        __label__ = 139; break; //@line 454 "fcntlmodule.c"
+      case 16: // $bb15
+        var $25=$d_addr; //@line 458 "fcntlmodule.c"
+        var $26=_ins($25, __str22, 0); //@line 458 "fcntlmodule.c"
+        var $27=($26)!=0; //@line 458 "fcntlmodule.c"
+        if ($27) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 458 "fcntlmodule.c"
+      case 17: // $bb16
+        $0=-1; //@line 458 "fcntlmodule.c"
+        __label__ = 139; break; //@line 458 "fcntlmodule.c"
+      case 18: // $bb17
+        var $28=$d_addr; //@line 461 "fcntlmodule.c"
+        var $29=_ins($28, __str23, 1); //@line 461 "fcntlmodule.c"
+        var $30=($29)!=0; //@line 461 "fcntlmodule.c"
+        if ($30) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 461 "fcntlmodule.c"
+      case 19: // $bb18
+        $0=-1; //@line 461 "fcntlmodule.c"
+        __label__ = 139; break; //@line 461 "fcntlmodule.c"
+      case 20: // $bb19
+        var $31=$d_addr; //@line 464 "fcntlmodule.c"
+        var $32=_ins($31, __str24, 2); //@line 464 "fcntlmodule.c"
+        var $33=($32)!=0; //@line 464 "fcntlmodule.c"
+        if ($33) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 464 "fcntlmodule.c"
+      case 21: // $bb20
+        $0=-1; //@line 464 "fcntlmodule.c"
+        __label__ = 139; break; //@line 464 "fcntlmodule.c"
+      case 22: // $bb21
+        var $34=$d_addr; //@line 467 "fcntlmodule.c"
+        var $35=_ins($34, __str25, 3); //@line 467 "fcntlmodule.c"
+        var $36=($35)!=0; //@line 467 "fcntlmodule.c"
+        if ($36) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 467 "fcntlmodule.c"
+      case 23: // $bb22
+        $0=-1; //@line 467 "fcntlmodule.c"
+        __label__ = 139; break; //@line 467 "fcntlmodule.c"
+      case 24: // $bb23
+        var $37=$d_addr; //@line 470 "fcntlmodule.c"
+        var $38=_ins($37, __str26, 4); //@line 470 "fcntlmodule.c"
+        var $39=($38)!=0; //@line 470 "fcntlmodule.c"
+        if ($39) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 470 "fcntlmodule.c"
+      case 25: // $bb24
+        $0=-1; //@line 470 "fcntlmodule.c"
+        __label__ = 139; break; //@line 470 "fcntlmodule.c"
+      case 26: // $bb25
+        var $40=$d_addr; //@line 473 "fcntlmodule.c"
+        var $41=_ins($40, __str27, 12); //@line 473 "fcntlmodule.c"
+        var $42=($41)!=0; //@line 473 "fcntlmodule.c"
+        if ($42) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 473 "fcntlmodule.c"
+      case 27: // $bb26
+        $0=-1; //@line 473 "fcntlmodule.c"
+        __label__ = 139; break; //@line 473 "fcntlmodule.c"
+      case 28: // $bb27
+        var $43=$d_addr; //@line 476 "fcntlmodule.c"
+        var $44=_ins($43, __str28, 13); //@line 476 "fcntlmodule.c"
+        var $45=($44)!=0; //@line 476 "fcntlmodule.c"
+        if ($45) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 476 "fcntlmodule.c"
+      case 29: // $bb28
+        $0=-1; //@line 476 "fcntlmodule.c"
+        __label__ = 139; break; //@line 476 "fcntlmodule.c"
+      case 30: // $bb29
+        var $46=$d_addr; //@line 479 "fcntlmodule.c"
+        var $47=_ins($46, __str29, 14); //@line 479 "fcntlmodule.c"
+        var $48=($47)!=0; //@line 479 "fcntlmodule.c"
+        if ($48) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 479 "fcntlmodule.c"
+      case 31: // $bb30
+        $0=-1; //@line 479 "fcntlmodule.c"
+        __label__ = 139; break; //@line 479 "fcntlmodule.c"
+      case 32: // $bb31
+        var $49=$d_addr; //@line 482 "fcntlmodule.c"
+        var $50=_ins($49, __str30, 9); //@line 482 "fcntlmodule.c"
+        var $51=($50)!=0; //@line 482 "fcntlmodule.c"
+        if ($51) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 482 "fcntlmodule.c"
+      case 33: // $bb32
+        $0=-1; //@line 482 "fcntlmodule.c"
+        __label__ = 139; break; //@line 482 "fcntlmodule.c"
+      case 34: // $bb33
+        var $52=$d_addr; //@line 485 "fcntlmodule.c"
+        var $53=_ins($52, __str31, 8); //@line 485 "fcntlmodule.c"
+        var $54=($53)!=0; //@line 485 "fcntlmodule.c"
+        if ($54) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 485 "fcntlmodule.c"
+      case 35: // $bb34
+        $0=-1; //@line 485 "fcntlmodule.c"
+        __label__ = 139; break; //@line 485 "fcntlmodule.c"
+      case 36: // $bb35
+        var $55=$d_addr; //@line 488 "fcntlmodule.c"
+        var $56=_ins($55, __str32, 11); //@line 488 "fcntlmodule.c"
+        var $57=($56)!=0; //@line 488 "fcntlmodule.c"
+        if ($57) { __label__ = 37; break; } else { __label__ = 38; break; } //@line 488 "fcntlmodule.c"
+      case 37: // $bb36
+        $0=-1; //@line 488 "fcntlmodule.c"
+        __label__ = 139; break; //@line 488 "fcntlmodule.c"
+      case 38: // $bb37
+        var $58=$d_addr; //@line 491 "fcntlmodule.c"
+        var $59=_ins($58, __str33, 10); //@line 491 "fcntlmodule.c"
+        var $60=($59)!=0; //@line 491 "fcntlmodule.c"
+        if ($60) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 491 "fcntlmodule.c"
+      case 39: // $bb38
+        $0=-1; //@line 491 "fcntlmodule.c"
+        __label__ = 139; break; //@line 491 "fcntlmodule.c"
+      case 40: // $bb39
+        var $61=$d_addr; //@line 494 "fcntlmodule.c"
+        var $62=_ins($61, __str34, 0); //@line 494 "fcntlmodule.c"
+        var $63=($62)!=0; //@line 494 "fcntlmodule.c"
+        if ($63) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 494 "fcntlmodule.c"
+      case 41: // $bb40
+        $0=-1; //@line 494 "fcntlmodule.c"
+        __label__ = 139; break; //@line 494 "fcntlmodule.c"
+      case 42: // $bb41
+        var $64=$d_addr; //@line 497 "fcntlmodule.c"
+        var $65=_ins($64, __str35, 1); //@line 497 "fcntlmodule.c"
+        var $66=($65)!=0; //@line 497 "fcntlmodule.c"
+        if ($66) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 497 "fcntlmodule.c"
+      case 43: // $bb42
+        $0=-1; //@line 497 "fcntlmodule.c"
+        __label__ = 139; break; //@line 497 "fcntlmodule.c"
+      case 44: // $bb43
+        var $67=$d_addr; //@line 500 "fcntlmodule.c"
+        var $68=_ins($67, __str36, 2); //@line 500 "fcntlmodule.c"
+        var $69=($68)!=0; //@line 500 "fcntlmodule.c"
+        if ($69) { __label__ = 45; break; } else { __label__ = 46; break; } //@line 500 "fcntlmodule.c"
+      case 45: // $bb44
+        $0=-1; //@line 500 "fcntlmodule.c"
+        __label__ = 139; break; //@line 500 "fcntlmodule.c"
+      case 46: // $bb45
+        var $70=$d_addr; //@line 504 "fcntlmodule.c"
+        var $71=_ins($70, __str37, 12); //@line 504 "fcntlmodule.c"
+        var $72=($71)!=0; //@line 504 "fcntlmodule.c"
+        if ($72) { __label__ = 47; break; } else { __label__ = 48; break; } //@line 504 "fcntlmodule.c"
+      case 47: // $bb46
+        $0=-1; //@line 504 "fcntlmodule.c"
+        __label__ = 139; break; //@line 504 "fcntlmodule.c"
+      case 48: // $bb47
+        var $73=$d_addr; //@line 507 "fcntlmodule.c"
+        var $74=_ins($73, __str38, 13); //@line 507 "fcntlmodule.c"
+        var $75=($74)!=0; //@line 507 "fcntlmodule.c"
+        if ($75) { __label__ = 49; break; } else { __label__ = 50; break; } //@line 507 "fcntlmodule.c"
+      case 49: // $bb48
+        $0=-1; //@line 507 "fcntlmodule.c"
+        __label__ = 139; break; //@line 507 "fcntlmodule.c"
+      case 50: // $bb49
+        var $76=$d_addr; //@line 510 "fcntlmodule.c"
+        var $77=_ins($76, __str39, 14); //@line 510 "fcntlmodule.c"
+        var $78=($77)!=0; //@line 510 "fcntlmodule.c"
+        if ($78) { __label__ = 51; break; } else { __label__ = 52; break; } //@line 510 "fcntlmodule.c"
+      case 51: // $bb50
+        $0=-1; //@line 510 "fcntlmodule.c"
+        __label__ = 139; break; //@line 510 "fcntlmodule.c"
+      case 52: // $bb51
+        var $79=$d_addr; //@line 514 "fcntlmodule.c"
+        var $80=_ins($79, __str40, 8192); //@line 514 "fcntlmodule.c"
+        var $81=($80)!=0; //@line 514 "fcntlmodule.c"
+        if ($81) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 514 "fcntlmodule.c"
+      case 53: // $bb52
+        $0=-1; //@line 514 "fcntlmodule.c"
+        __label__ = 139; break; //@line 514 "fcntlmodule.c"
+      case 54: // $bb53
+        var $82=$d_addr; //@line 517 "fcntlmodule.c"
+        var $83=_ins($82, __str41, 1024); //@line 517 "fcntlmodule.c"
+        var $84=($83)!=0; //@line 517 "fcntlmodule.c"
+        if ($84) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 517 "fcntlmodule.c"
+      case 55: // $bb54
+        $0=-1; //@line 517 "fcntlmodule.c"
+        __label__ = 139; break; //@line 517 "fcntlmodule.c"
+      case 56: // $bb55
+        var $85=$d_addr; //@line 520 "fcntlmodule.c"
+        var $86=_ins($85, __str42, 1025); //@line 520 "fcntlmodule.c"
+        var $87=($86)!=0; //@line 520 "fcntlmodule.c"
+        if ($87) { __label__ = 57; break; } else { __label__ = 58; break; } //@line 520 "fcntlmodule.c"
+      case 57: // $bb56
+        $0=-1; //@line 520 "fcntlmodule.c"
+        __label__ = 139; break; //@line 520 "fcntlmodule.c"
+      case 58: // $bb57
+        var $88=$d_addr; //@line 523 "fcntlmodule.c"
+        var $89=_ins($88, __str43, 1026); //@line 523 "fcntlmodule.c"
+        var $90=($89)!=0; //@line 523 "fcntlmodule.c"
+        if ($90) { __label__ = 59; break; } else { __label__ = 60; break; } //@line 523 "fcntlmodule.c"
+      case 59: // $bb58
+        $0=-1; //@line 523 "fcntlmodule.c"
+        __label__ = 139; break; //@line 523 "fcntlmodule.c"
+      case 60: // $bb59
+        var $91=$d_addr; //@line 527 "fcntlmodule.c"
+        var $92=_ins($91, __str44, 4); //@line 527 "fcntlmodule.c"
+        var $93=($92)!=0; //@line 527 "fcntlmodule.c"
+        if ($93) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 527 "fcntlmodule.c"
+      case 61: // $bb60
+        $0=-1; //@line 527 "fcntlmodule.c"
+        __label__ = 139; break; //@line 527 "fcntlmodule.c"
+      case 62: // $bb61
+        var $94=$d_addr; //@line 530 "fcntlmodule.c"
+        var $95=_ins($94, __str45, 8); //@line 530 "fcntlmodule.c"
+        var $96=($95)!=0; //@line 530 "fcntlmodule.c"
+        if ($96) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 530 "fcntlmodule.c"
+      case 63: // $bb62
+        $0=-1; //@line 530 "fcntlmodule.c"
+        __label__ = 139; break; //@line 530 "fcntlmodule.c"
+      case 64: // $bb63
+        var $97=$d_addr; //@line 540 "fcntlmodule.c"
+        var $98=_ins($97, __str46, 1); //@line 540 "fcntlmodule.c"
+        var $99=($98)!=0; //@line 540 "fcntlmodule.c"
+        if ($99) { __label__ = 65; break; } else { __label__ = 66; break; } //@line 540 "fcntlmodule.c"
+      case 65: // $bb64
+        $0=-1; //@line 540 "fcntlmodule.c"
+        __label__ = 139; break; //@line 540 "fcntlmodule.c"
+      case 66: // $bb65
+        var $100=$d_addr; //@line 545 "fcntlmodule.c"
+        var $101=_ins($100, __str47, 1); //@line 545 "fcntlmodule.c"
+        var $102=($101)!=0; //@line 545 "fcntlmodule.c"
+        if ($102) { __label__ = 67; break; } else { __label__ = 68; break; } //@line 545 "fcntlmodule.c"
+      case 67: // $bb66
+        $0=-1; //@line 545 "fcntlmodule.c"
+        __label__ = 139; break; //@line 545 "fcntlmodule.c"
+      case 68: // $bb67
+        var $103=$d_addr; //@line 548 "fcntlmodule.c"
+        var $104=_ins($103, __str48, 2); //@line 548 "fcntlmodule.c"
+        var $105=($104)!=0; //@line 548 "fcntlmodule.c"
+        if ($105) { __label__ = 69; break; } else { __label__ = 70; break; } //@line 548 "fcntlmodule.c"
+      case 69: // $bb68
+        $0=-1; //@line 548 "fcntlmodule.c"
+        __label__ = 139; break; //@line 548 "fcntlmodule.c"
+      case 70: // $bb69
+        var $106=$d_addr; //@line 551 "fcntlmodule.c"
+        var $107=_ins($106, __str49, 4); //@line 551 "fcntlmodule.c"
+        var $108=($107)!=0; //@line 551 "fcntlmodule.c"
+        if ($108) { __label__ = 71; break; } else { __label__ = 72; break; } //@line 551 "fcntlmodule.c"
+      case 71: // $bb70
+        $0=-1; //@line 551 "fcntlmodule.c"
+        __label__ = 139; break; //@line 551 "fcntlmodule.c"
+      case 72: // $bb71
+        var $109=$d_addr; //@line 554 "fcntlmodule.c"
+        var $110=_ins($109, __str50, 8); //@line 554 "fcntlmodule.c"
+        var $111=($110)!=0; //@line 554 "fcntlmodule.c"
+        if ($111) { __label__ = 73; break; } else { __label__ = 74; break; } //@line 554 "fcntlmodule.c"
+      case 73: // $bb72
+        $0=-1; //@line 554 "fcntlmodule.c"
+        __label__ = 139; break; //@line 554 "fcntlmodule.c"
+      case 74: // $bb73
+        var $112=$d_addr; //@line 557 "fcntlmodule.c"
+        var $113=_ins($112, __str51, 16); //@line 557 "fcntlmodule.c"
+        var $114=($113)!=0; //@line 557 "fcntlmodule.c"
+        if ($114) { __label__ = 75; break; } else { __label__ = 76; break; } //@line 557 "fcntlmodule.c"
+      case 75: // $bb74
+        $0=-1; //@line 557 "fcntlmodule.c"
+        __label__ = 139; break; //@line 557 "fcntlmodule.c"
+      case 76: // $bb75
+        var $115=$d_addr; //@line 560 "fcntlmodule.c"
+        var $116=_ins($115, __str52, 32); //@line 560 "fcntlmodule.c"
+        var $117=($116)!=0; //@line 560 "fcntlmodule.c"
+        if ($117) { __label__ = 77; break; } else { __label__ = 78; break; } //@line 560 "fcntlmodule.c"
+      case 77: // $bb76
+        $0=-1; //@line 560 "fcntlmodule.c"
+        __label__ = 139; break; //@line 560 "fcntlmodule.c"
+      case 78: // $bb77
+        var $118=$d_addr; //@line 563 "fcntlmodule.c"
+        var $119=_ins($118, __str53, -2147483648); //@line 563 "fcntlmodule.c"
+        var $120=($119)!=0; //@line 563 "fcntlmodule.c"
+        if ($120) { __label__ = 79; break; } else { __label__ = 80; break; } //@line 563 "fcntlmodule.c"
+      case 79: // $bb78
+        $0=-1; //@line 563 "fcntlmodule.c"
+        __label__ = 139; break; //@line 563 "fcntlmodule.c"
+      case 80: // $bb79
+        var $121=$d_addr; //@line 568 "fcntlmodule.c"
+        var $122=_ins($121, __str54, 21250); //@line 568 "fcntlmodule.c"
+        var $123=($122)!=0; //@line 568 "fcntlmodule.c"
+        if ($123) { __label__ = 81; break; } else { __label__ = 82; break; } //@line 568 "fcntlmodule.c"
+      case 81: // $bb80
+        $0=-1; //@line 568 "fcntlmodule.c"
+        __label__ = 139; break; //@line 568 "fcntlmodule.c"
+      case 82: // $bb81
+        var $124=$d_addr; //@line 569 "fcntlmodule.c"
+        var $125=_ins($124, __str55, 21251); //@line 569 "fcntlmodule.c"
+        var $126=($125)!=0; //@line 569 "fcntlmodule.c"
+        if ($126) { __label__ = 83; break; } else { __label__ = 84; break; } //@line 569 "fcntlmodule.c"
+      case 83: // $bb82
+        $0=-1; //@line 569 "fcntlmodule.c"
+        __label__ = 139; break; //@line 569 "fcntlmodule.c"
+      case 84: // $bb83
+        var $127=$d_addr; //@line 570 "fcntlmodule.c"
+        var $128=_ins($127, __str56, 21252); //@line 570 "fcntlmodule.c"
+        var $129=($128)!=0; //@line 570 "fcntlmodule.c"
+        if ($129) { __label__ = 85; break; } else { __label__ = 86; break; } //@line 570 "fcntlmodule.c"
+      case 85: // $bb84
+        $0=-1; //@line 570 "fcntlmodule.c"
+        __label__ = 139; break; //@line 570 "fcntlmodule.c"
+      case 86: // $bb85
+        var $130=$d_addr; //@line 571 "fcntlmodule.c"
+        var $131=_ins($130, __str57, 21253); //@line 571 "fcntlmodule.c"
+        var $132=($131)!=0; //@line 571 "fcntlmodule.c"
+        if ($132) { __label__ = 87; break; } else { __label__ = 88; break; } //@line 571 "fcntlmodule.c"
+      case 87: // $bb86
+        $0=-1; //@line 571 "fcntlmodule.c"
+        __label__ = 139; break; //@line 571 "fcntlmodule.c"
+      case 88: // $bb87
+        var $133=$d_addr; //@line 572 "fcntlmodule.c"
+        var $134=_ins($133, __str58, 21276); //@line 572 "fcntlmodule.c"
+        var $135=($134)!=0; //@line 572 "fcntlmodule.c"
+        if ($135) { __label__ = 89; break; } else { __label__ = 90; break; } //@line 572 "fcntlmodule.c"
+      case 89: // $bb88
+        $0=-1; //@line 572 "fcntlmodule.c"
+        __label__ = 139; break; //@line 572 "fcntlmodule.c"
+      case 90: // $bb89
+        var $136=$d_addr; //@line 573 "fcntlmodule.c"
+        var $137=_ins($136, __str59, 21257); //@line 573 "fcntlmodule.c"
+        var $138=($137)!=0; //@line 573 "fcntlmodule.c"
+        if ($138) { __label__ = 91; break; } else { __label__ = 92; break; } //@line 573 "fcntlmodule.c"
+      case 91: // $bb90
+        $0=-1; //@line 573 "fcntlmodule.c"
+        __label__ = 139; break; //@line 573 "fcntlmodule.c"
+      case 92: // $bb91
+        var $139=$d_addr; //@line 574 "fcntlmodule.c"
+        var $140=_ins($139, __str60, 21258); //@line 574 "fcntlmodule.c"
+        var $141=($140)!=0; //@line 574 "fcntlmodule.c"
+        if ($141) { __label__ = 93; break; } else { __label__ = 94; break; } //@line 574 "fcntlmodule.c"
+      case 93: // $bb92
+        $0=-1; //@line 574 "fcntlmodule.c"
+        __label__ = 139; break; //@line 574 "fcntlmodule.c"
+      case 94: // $bb93
+        var $142=$d_addr; //@line 575 "fcntlmodule.c"
+        var $143=_ins($142, __str61, 21259); //@line 575 "fcntlmodule.c"
+        var $144=($143)!=0; //@line 575 "fcntlmodule.c"
+        if ($144) { __label__ = 95; break; } else { __label__ = 96; break; } //@line 575 "fcntlmodule.c"
+      case 95: // $bb94
+        $0=-1; //@line 575 "fcntlmodule.c"
+        __label__ = 139; break; //@line 575 "fcntlmodule.c"
+      case 96: // $bb95
+        var $145=$d_addr; //@line 576 "fcntlmodule.c"
+        var $146=_ins($145, __str62, 21263); //@line 576 "fcntlmodule.c"
+        var $147=($146)!=0; //@line 576 "fcntlmodule.c"
+        if ($147) { __label__ = 97; break; } else { __label__ = 98; break; } //@line 576 "fcntlmodule.c"
+      case 97: // $bb96
+        $0=-1; //@line 576 "fcntlmodule.c"
+        __label__ = 139; break; //@line 576 "fcntlmodule.c"
+      case 98: // $bb97
+        var $148=$d_addr; //@line 577 "fcntlmodule.c"
+        var $149=_ins($148, __str63, 21254); //@line 577 "fcntlmodule.c"
+        var $150=($149)!=0; //@line 577 "fcntlmodule.c"
+        if ($150) { __label__ = 99; break; } else { __label__ = 100; break; } //@line 577 "fcntlmodule.c"
+      case 99: // $bb98
+        $0=-1; //@line 577 "fcntlmodule.c"
+        __label__ = 139; break; //@line 577 "fcntlmodule.c"
+      case 100: // $bb99
+        var $151=$d_addr; //@line 578 "fcntlmodule.c"
+        var $152=_ins($151, __str64, 21255); //@line 578 "fcntlmodule.c"
+        var $153=($152)!=0; //@line 578 "fcntlmodule.c"
+        if ($153) { __label__ = 101; break; } else { __label__ = 102; break; } //@line 578 "fcntlmodule.c"
+      case 101: // $bb100
+        $0=-1; //@line 578 "fcntlmodule.c"
+        __label__ = 139; break; //@line 578 "fcntlmodule.c"
+      case 102: // $bb101
+        var $154=$d_addr; //@line 579 "fcntlmodule.c"
+        var $155=_ins($154, __str65, 21249); //@line 579 "fcntlmodule.c"
+        var $156=($155)!=0; //@line 579 "fcntlmodule.c"
+        if ($156) { __label__ = 103; break; } else { __label__ = 104; break; } //@line 579 "fcntlmodule.c"
+      case 103: // $bb102
+        $0=-1; //@line 579 "fcntlmodule.c"
+        __label__ = 139; break; //@line 579 "fcntlmodule.c"
+      case 104: // $bb103
+        var $157=$d_addr; //@line 580 "fcntlmodule.c"
+        var $158=_ins($157, __str66, 21264); //@line 580 "fcntlmodule.c"
+        var $159=($158)!=0; //@line 580 "fcntlmodule.c"
+        if ($159) { __label__ = 105; break; } else { __label__ = 106; break; } //@line 580 "fcntlmodule.c"
+      case 105: // $bb104
+        $0=-1; //@line 580 "fcntlmodule.c"
+        __label__ = 139; break; //@line 580 "fcntlmodule.c"
+      case 106: // $bb105
+        var $160=$d_addr; //@line 581 "fcntlmodule.c"
+        var $161=_ins($160, __str67, 21256); //@line 581 "fcntlmodule.c"
+        var $162=($161)!=0; //@line 581 "fcntlmodule.c"
+        if ($162) { __label__ = 107; break; } else { __label__ = 108; break; } //@line 581 "fcntlmodule.c"
+      case 107: // $bb106
+        $0=-1; //@line 581 "fcntlmodule.c"
+        __label__ = 139; break; //@line 581 "fcntlmodule.c"
+      case 108: // $bb107
+        var $163=$d_addr; //@line 582 "fcntlmodule.c"
+        var $164=_ins($163, __str68, 21267); //@line 582 "fcntlmodule.c"
+        var $165=($164)!=0; //@line 582 "fcntlmodule.c"
+        if ($165) { __label__ = 109; break; } else { __label__ = 110; break; } //@line 582 "fcntlmodule.c"
+      case 109: // $bb108
+        $0=-1; //@line 582 "fcntlmodule.c"
+        __label__ = 139; break; //@line 582 "fcntlmodule.c"
+      case 110: // $bb109
+        var $166=$d_addr; //@line 585 "fcntlmodule.c"
+        var $167=_ins($166, __str69, 21268); //@line 585 "fcntlmodule.c"
+        var $168=($167)!=0; //@line 585 "fcntlmodule.c"
+        if ($168) { __label__ = 111; break; } else { __label__ = 112; break; } //@line 585 "fcntlmodule.c"
+      case 111: // $bb110
+        $0=-1; //@line 585 "fcntlmodule.c"
+        __label__ = 139; break; //@line 585 "fcntlmodule.c"
+      case 112: // $bb111
+        var $169=$d_addr; //@line 587 "fcntlmodule.c"
+        var $170=_ins($169, __str70, 21265); //@line 587 "fcntlmodule.c"
+        var $171=($170)!=0; //@line 587 "fcntlmodule.c"
+        if ($171) { __label__ = 113; break; } else { __label__ = 114; break; } //@line 587 "fcntlmodule.c"
+      case 113: // $bb112
+        $0=-1; //@line 587 "fcntlmodule.c"
+        __label__ = 139; break; //@line 587 "fcntlmodule.c"
+      case 114: // $bb113
+        var $172=$d_addr; //@line 588 "fcntlmodule.c"
+        var $173=_ins($172, __str71, 21262); //@line 588 "fcntlmodule.c"
+        var $174=($173)!=0; //@line 588 "fcntlmodule.c"
+        if ($174) { __label__ = 115; break; } else { __label__ = 116; break; } //@line 588 "fcntlmodule.c"
+      case 115: // $bb114
+        $0=-1; //@line 588 "fcntlmodule.c"
+        __label__ = 139; break; //@line 588 "fcntlmodule.c"
+      case 116: // $bb115
+        var $175=$d_addr; //@line 589 "fcntlmodule.c"
+        var $176=_ins($175, __str72, 21269); //@line 589 "fcntlmodule.c"
+        var $177=($176)!=0; //@line 589 "fcntlmodule.c"
+        if ($177) { __label__ = 117; break; } else { __label__ = 118; break; } //@line 589 "fcntlmodule.c"
+      case 117: // $bb116
+        $0=-1; //@line 589 "fcntlmodule.c"
+        __label__ = 139; break; //@line 589 "fcntlmodule.c"
+      case 118: // $bb117
+        var $178=$d_addr; //@line 590 "fcntlmodule.c"
+        var $179=_ins($178, __str73, 21279); //@line 590 "fcntlmodule.c"
+        var $180=($179)!=0; //@line 590 "fcntlmodule.c"
+        if ($180) { __label__ = 119; break; } else { __label__ = 120; break; } //@line 590 "fcntlmodule.c"
+      case 119: // $bb118
+        $0=-1; //@line 590 "fcntlmodule.c"
+        __label__ = 139; break; //@line 590 "fcntlmodule.c"
+      case 120: // $bb119
+        var $181=$d_addr; //@line 591 "fcntlmodule.c"
+        var $182=_ins($181, __str74, 21277); //@line 591 "fcntlmodule.c"
+        var $183=($182)!=0; //@line 591 "fcntlmodule.c"
+        if ($183) { __label__ = 121; break; } else { __label__ = 122; break; } //@line 591 "fcntlmodule.c"
+      case 121: // $bb120
+        $0=-1; //@line 591 "fcntlmodule.c"
+        __label__ = 139; break; //@line 591 "fcntlmodule.c"
+      case 122: // $bb121
+        var $184=$d_addr; //@line 592 "fcntlmodule.c"
+        var $185=_ins($184, __str75, 21278); //@line 592 "fcntlmodule.c"
+        var $186=($185)!=0; //@line 592 "fcntlmodule.c"
+        if ($186) { __label__ = 123; break; } else { __label__ = 124; break; } //@line 592 "fcntlmodule.c"
+      case 123: // $bb122
+        $0=-1; //@line 592 "fcntlmodule.c"
+        __label__ = 139; break; //@line 592 "fcntlmodule.c"
+      case 124: // $bb123
+        var $187=$d_addr; //@line 593 "fcntlmodule.c"
+        var $188=_ins($187, __str76, 21282); //@line 593 "fcntlmodule.c"
+        var $189=($188)!=0; //@line 593 "fcntlmodule.c"
+        if ($189) { __label__ = 125; break; } else { __label__ = 126; break; } //@line 593 "fcntlmodule.c"
+      case 125: // $bb124
+        $0=-1; //@line 593 "fcntlmodule.c"
+        __label__ = 139; break; //@line 593 "fcntlmodule.c"
+      case 126: // $bb125
+        var $190=$d_addr; //@line 594 "fcntlmodule.c"
+        var $191=_ins($190, __str77, 21280); //@line 594 "fcntlmodule.c"
+        var $192=($191)!=0; //@line 594 "fcntlmodule.c"
+        if ($192) { __label__ = 127; break; } else { __label__ = 128; break; } //@line 594 "fcntlmodule.c"
+      case 127: // $bb126
+        $0=-1; //@line 594 "fcntlmodule.c"
+        __label__ = 139; break; //@line 594 "fcntlmodule.c"
+      case 128: // $bb127
+        var $193=$d_addr; //@line 596 "fcntlmodule.c"
+        var $194=_ins($193, __str78, 21281); //@line 596 "fcntlmodule.c"
+        var $195=($194)!=0; //@line 596 "fcntlmodule.c"
+        if ($195) { __label__ = 129; break; } else { __label__ = 130; break; } //@line 596 "fcntlmodule.c"
+      case 129: // $bb128
+        $0=-1; //@line 596 "fcntlmodule.c"
+        __label__ = 139; break; //@line 596 "fcntlmodule.c"
+      case 130: // $bb129
+        var $196=$d_addr; //@line 598 "fcntlmodule.c"
+        var $197=_ins($196, __str79, 21260); //@line 598 "fcntlmodule.c"
+        var $198=($197)!=0; //@line 598 "fcntlmodule.c"
+        if ($198) { __label__ = 131; break; } else { __label__ = 132; break; } //@line 598 "fcntlmodule.c"
+      case 131: // $bb130
+        $0=-1; //@line 598 "fcntlmodule.c"
+        __label__ = 139; break; //@line 598 "fcntlmodule.c"
+      case 132: // $bb131
+        var $199=$d_addr; //@line 599 "fcntlmodule.c"
+        var $200=_ins($199, __str80, 21261); //@line 599 "fcntlmodule.c"
+        var $201=($200)!=0; //@line 599 "fcntlmodule.c"
+        if ($201) { __label__ = 133; break; } else { __label__ = 134; break; } //@line 599 "fcntlmodule.c"
+      case 133: // $bb132
+        $0=-1; //@line 599 "fcntlmodule.c"
+        __label__ = 139; break; //@line 599 "fcntlmodule.c"
+      case 134: // $bb133
+        var $202=$d_addr; //@line 600 "fcntlmodule.c"
+        var $203=_ins($202, __str81, 21270); //@line 600 "fcntlmodule.c"
+        var $204=($203)!=0; //@line 600 "fcntlmodule.c"
+        if ($204) { __label__ = 135; break; } else { __label__ = 136; break; } //@line 600 "fcntlmodule.c"
+      case 135: // $bb134
+        $0=-1; //@line 600 "fcntlmodule.c"
+        __label__ = 139; break; //@line 600 "fcntlmodule.c"
+      case 136: // $bb135
+        var $205=$d_addr; //@line 601 "fcntlmodule.c"
+        var $206=_ins($205, __str82, 21271); //@line 601 "fcntlmodule.c"
+        var $207=($206)!=0; //@line 601 "fcntlmodule.c"
+        if ($207) { __label__ = 137; break; } else { __label__ = 138; break; } //@line 601 "fcntlmodule.c"
+      case 137: // $bb136
+        $0=-1; //@line 601 "fcntlmodule.c"
+        __label__ = 139; break; //@line 601 "fcntlmodule.c"
+      case 138: // $bb137
+        $0=0; //@line 604 "fcntlmodule.c"
+        __label__ = 139; break; //@line 604 "fcntlmodule.c"
+      case 139: // $bb138
+        ;
+        return;
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _initfcntl() {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $d_addr_i;
-        var $0;
         var $m;
         var $d;
-        var $1=_Py_InitModule4(__str10, _fcntl_methods, _module_doc, 0, 1013); //@line 613 "fcntlmodule.c"
-        $m=$1; //@line 613 "fcntlmodule.c"
-        var $2=$m; //@line 614 "fcntlmodule.c"
-        var $3=($2)==0; //@line 614 "fcntlmodule.c"
-        if ($3) { __label__ = 140; break; } else { __label__ = 1; break; } //@line 614 "fcntlmodule.c"
+        var $0=_Py_InitModule4(__str10, _fcntl_methods, _module_doc, 0, 1013); //@line 613 "fcntlmodule.c"
+        $m=$0; //@line 613 "fcntlmodule.c"
+        var $1=$m; //@line 614 "fcntlmodule.c"
+        var $2=($1)==0; //@line 614 "fcntlmodule.c"
+        if ($2) { __label__ = 2; break; } else { __label__ = 1; break; } //@line 614 "fcntlmodule.c"
       case 1: // $bb
-        var $4=$m; //@line 618 "fcntlmodule.c"
-        var $5=_PyModule_GetDict($4); //@line 618 "fcntlmodule.c"
-        $d=$5; //@line 618 "fcntlmodule.c"
-        var $6=$d; //@line 619 "fcntlmodule.c"
-        $d_addr_i=$6;
-        var $7=$d_addr_i; //@line 439 "fcntlmodule.c"
-        var $8=_ins($7, __str14, 1); //@line 439 "fcntlmodule.c"
-        var $9=($8)!=0; //@line 439 "fcntlmodule.c"
-        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 439 "fcntlmodule.c"
-      case 2: // $bb_i
-        $0=-1; //@line 439 "fcntlmodule.c"
-        __label__ = 140; break; //@line 439 "fcntlmodule.c"
-      case 3: // $bb1_i
-        var $10=$d_addr_i; //@line 440 "fcntlmodule.c"
-        var $11=_ins($10, __str15, 2); //@line 440 "fcntlmodule.c"
-        var $12=($11)!=0; //@line 440 "fcntlmodule.c"
-        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 440 "fcntlmodule.c"
-      case 4: // $bb2_i
-        $0=-1; //@line 440 "fcntlmodule.c"
-        __label__ = 140; break; //@line 440 "fcntlmodule.c"
-      case 5: // $bb3_i
-        var $13=$d_addr_i; //@line 441 "fcntlmodule.c"
-        var $14=_ins($13, __str16, 4); //@line 441 "fcntlmodule.c"
-        var $15=($14)!=0; //@line 441 "fcntlmodule.c"
-        if ($15) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 441 "fcntlmodule.c"
-      case 6: // $bb4_i
-        $0=-1; //@line 441 "fcntlmodule.c"
-        __label__ = 140; break; //@line 441 "fcntlmodule.c"
-      case 7: // $bb5_i
-        var $16=$d_addr_i; //@line 442 "fcntlmodule.c"
-        var $17=_ins($16, __str17, 8); //@line 442 "fcntlmodule.c"
-        var $18=($17)!=0; //@line 442 "fcntlmodule.c"
-        if ($18) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 442 "fcntlmodule.c"
-      case 8: // $bb6_i
-        $0=-1; //@line 442 "fcntlmodule.c"
-        __label__ = 140; break; //@line 442 "fcntlmodule.c"
-      case 9: // $bb7_i
-        var $19=$d_addr_i; //@line 445 "fcntlmodule.c"
-        var $20=_ins($19, __str18, 32); //@line 445 "fcntlmodule.c"
-        var $21=($20)!=0; //@line 445 "fcntlmodule.c"
-        if ($21) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 445 "fcntlmodule.c"
-      case 10: // $bb8_i
-        $0=-1; //@line 445 "fcntlmodule.c"
-        __label__ = 140; break; //@line 445 "fcntlmodule.c"
-      case 11: // $bb9_i
-        var $22=$d_addr_i; //@line 448 "fcntlmodule.c"
-        var $23=_ins($22, __str19, 64); //@line 448 "fcntlmodule.c"
-        var $24=($23)!=0; //@line 448 "fcntlmodule.c"
-        if ($24) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 448 "fcntlmodule.c"
-      case 12: // $bb10_i
-        $0=-1; //@line 448 "fcntlmodule.c"
-        __label__ = 140; break; //@line 448 "fcntlmodule.c"
-      case 13: // $bb11_i
-        var $25=$d_addr_i; //@line 451 "fcntlmodule.c"
-        var $26=_ins($25, __str20, 128); //@line 451 "fcntlmodule.c"
-        var $27=($26)!=0; //@line 451 "fcntlmodule.c"
-        if ($27) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 451 "fcntlmodule.c"
-      case 14: // $bb12_i
-        $0=-1; //@line 451 "fcntlmodule.c"
-        __label__ = 140; break; //@line 451 "fcntlmodule.c"
-      case 15: // $bb13_i
-        var $28=$d_addr_i; //@line 454 "fcntlmodule.c"
-        var $29=_ins($28, __str21, 192); //@line 454 "fcntlmodule.c"
-        var $30=($29)!=0; //@line 454 "fcntlmodule.c"
-        if ($30) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 454 "fcntlmodule.c"
-      case 16: // $bb14_i
-        $0=-1; //@line 454 "fcntlmodule.c"
-        __label__ = 140; break; //@line 454 "fcntlmodule.c"
-      case 17: // $bb15_i
-        var $31=$d_addr_i; //@line 458 "fcntlmodule.c"
-        var $32=_ins($31, __str22, 0); //@line 458 "fcntlmodule.c"
-        var $33=($32)!=0; //@line 458 "fcntlmodule.c"
-        if ($33) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 458 "fcntlmodule.c"
-      case 18: // $bb16_i
-        $0=-1; //@line 458 "fcntlmodule.c"
-        __label__ = 140; break; //@line 458 "fcntlmodule.c"
-      case 19: // $bb17_i
-        var $34=$d_addr_i; //@line 461 "fcntlmodule.c"
-        var $35=_ins($34, __str23, 1); //@line 461 "fcntlmodule.c"
-        var $36=($35)!=0; //@line 461 "fcntlmodule.c"
-        if ($36) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 461 "fcntlmodule.c"
-      case 20: // $bb18_i
-        $0=-1; //@line 461 "fcntlmodule.c"
-        __label__ = 140; break; //@line 461 "fcntlmodule.c"
-      case 21: // $bb19_i
-        var $37=$d_addr_i; //@line 464 "fcntlmodule.c"
-        var $38=_ins($37, __str24, 2); //@line 464 "fcntlmodule.c"
-        var $39=($38)!=0; //@line 464 "fcntlmodule.c"
-        if ($39) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 464 "fcntlmodule.c"
-      case 22: // $bb20_i
-        $0=-1; //@line 464 "fcntlmodule.c"
-        __label__ = 140; break; //@line 464 "fcntlmodule.c"
-      case 23: // $bb21_i
-        var $40=$d_addr_i; //@line 467 "fcntlmodule.c"
-        var $41=_ins($40, __str25, 3); //@line 467 "fcntlmodule.c"
-        var $42=($41)!=0; //@line 467 "fcntlmodule.c"
-        if ($42) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 467 "fcntlmodule.c"
-      case 24: // $bb22_i
-        $0=-1; //@line 467 "fcntlmodule.c"
-        __label__ = 140; break; //@line 467 "fcntlmodule.c"
-      case 25: // $bb23_i
-        var $43=$d_addr_i; //@line 470 "fcntlmodule.c"
-        var $44=_ins($43, __str26, 4); //@line 470 "fcntlmodule.c"
-        var $45=($44)!=0; //@line 470 "fcntlmodule.c"
-        if ($45) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 470 "fcntlmodule.c"
-      case 26: // $bb24_i
-        $0=-1; //@line 470 "fcntlmodule.c"
-        __label__ = 140; break; //@line 470 "fcntlmodule.c"
-      case 27: // $bb25_i
-        var $46=$d_addr_i; //@line 473 "fcntlmodule.c"
-        var $47=_ins($46, __str27, 12); //@line 473 "fcntlmodule.c"
-        var $48=($47)!=0; //@line 473 "fcntlmodule.c"
-        if ($48) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 473 "fcntlmodule.c"
-      case 28: // $bb26_i
-        $0=-1; //@line 473 "fcntlmodule.c"
-        __label__ = 140; break; //@line 473 "fcntlmodule.c"
-      case 29: // $bb27_i
-        var $49=$d_addr_i; //@line 476 "fcntlmodule.c"
-        var $50=_ins($49, __str28, 13); //@line 476 "fcntlmodule.c"
-        var $51=($50)!=0; //@line 476 "fcntlmodule.c"
-        if ($51) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 476 "fcntlmodule.c"
-      case 30: // $bb28_i
-        $0=-1; //@line 476 "fcntlmodule.c"
-        __label__ = 140; break; //@line 476 "fcntlmodule.c"
-      case 31: // $bb29_i
-        var $52=$d_addr_i; //@line 479 "fcntlmodule.c"
-        var $53=_ins($52, __str29, 14); //@line 479 "fcntlmodule.c"
-        var $54=($53)!=0; //@line 479 "fcntlmodule.c"
-        if ($54) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 479 "fcntlmodule.c"
-      case 32: // $bb30_i
-        $0=-1; //@line 479 "fcntlmodule.c"
-        __label__ = 140; break; //@line 479 "fcntlmodule.c"
-      case 33: // $bb31_i
-        var $55=$d_addr_i; //@line 482 "fcntlmodule.c"
-        var $56=_ins($55, __str30, 9); //@line 482 "fcntlmodule.c"
-        var $57=($56)!=0; //@line 482 "fcntlmodule.c"
-        if ($57) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 482 "fcntlmodule.c"
-      case 34: // $bb32_i
-        $0=-1; //@line 482 "fcntlmodule.c"
-        __label__ = 140; break; //@line 482 "fcntlmodule.c"
-      case 35: // $bb33_i
-        var $58=$d_addr_i; //@line 485 "fcntlmodule.c"
-        var $59=_ins($58, __str31, 8); //@line 485 "fcntlmodule.c"
-        var $60=($59)!=0; //@line 485 "fcntlmodule.c"
-        if ($60) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 485 "fcntlmodule.c"
-      case 36: // $bb34_i
-        $0=-1; //@line 485 "fcntlmodule.c"
-        __label__ = 140; break; //@line 485 "fcntlmodule.c"
-      case 37: // $bb35_i
-        var $61=$d_addr_i; //@line 488 "fcntlmodule.c"
-        var $62=_ins($61, __str32, 11); //@line 488 "fcntlmodule.c"
-        var $63=($62)!=0; //@line 488 "fcntlmodule.c"
-        if ($63) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 488 "fcntlmodule.c"
-      case 38: // $bb36_i
-        $0=-1; //@line 488 "fcntlmodule.c"
-        __label__ = 140; break; //@line 488 "fcntlmodule.c"
-      case 39: // $bb37_i
-        var $64=$d_addr_i; //@line 491 "fcntlmodule.c"
-        var $65=_ins($64, __str33, 10); //@line 491 "fcntlmodule.c"
-        var $66=($65)!=0; //@line 491 "fcntlmodule.c"
-        if ($66) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 491 "fcntlmodule.c"
-      case 40: // $bb38_i
-        $0=-1; //@line 491 "fcntlmodule.c"
-        __label__ = 140; break; //@line 491 "fcntlmodule.c"
-      case 41: // $bb39_i
-        var $67=$d_addr_i; //@line 494 "fcntlmodule.c"
-        var $68=_ins($67, __str34, 0); //@line 494 "fcntlmodule.c"
-        var $69=($68)!=0; //@line 494 "fcntlmodule.c"
-        if ($69) { __label__ = 42; break; } else { __label__ = 43; break; } //@line 494 "fcntlmodule.c"
-      case 42: // $bb40_i
-        $0=-1; //@line 494 "fcntlmodule.c"
-        __label__ = 140; break; //@line 494 "fcntlmodule.c"
-      case 43: // $bb41_i
-        var $70=$d_addr_i; //@line 497 "fcntlmodule.c"
-        var $71=_ins($70, __str35, 1); //@line 497 "fcntlmodule.c"
-        var $72=($71)!=0; //@line 497 "fcntlmodule.c"
-        if ($72) { __label__ = 44; break; } else { __label__ = 45; break; } //@line 497 "fcntlmodule.c"
-      case 44: // $bb42_i
-        $0=-1; //@line 497 "fcntlmodule.c"
-        __label__ = 140; break; //@line 497 "fcntlmodule.c"
-      case 45: // $bb43_i
-        var $73=$d_addr_i; //@line 500 "fcntlmodule.c"
-        var $74=_ins($73, __str36, 2); //@line 500 "fcntlmodule.c"
-        var $75=($74)!=0; //@line 500 "fcntlmodule.c"
-        if ($75) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 500 "fcntlmodule.c"
-      case 46: // $bb44_i
-        $0=-1; //@line 500 "fcntlmodule.c"
-        __label__ = 140; break; //@line 500 "fcntlmodule.c"
-      case 47: // $bb45_i
-        var $76=$d_addr_i; //@line 504 "fcntlmodule.c"
-        var $77=_ins($76, __str37, 12); //@line 504 "fcntlmodule.c"
-        var $78=($77)!=0; //@line 504 "fcntlmodule.c"
-        if ($78) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 504 "fcntlmodule.c"
-      case 48: // $bb46_i
-        $0=-1; //@line 504 "fcntlmodule.c"
-        __label__ = 140; break; //@line 504 "fcntlmodule.c"
-      case 49: // $bb47_i
-        var $79=$d_addr_i; //@line 507 "fcntlmodule.c"
-        var $80=_ins($79, __str38, 13); //@line 507 "fcntlmodule.c"
-        var $81=($80)!=0; //@line 507 "fcntlmodule.c"
-        if ($81) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 507 "fcntlmodule.c"
-      case 50: // $bb48_i
-        $0=-1; //@line 507 "fcntlmodule.c"
-        __label__ = 140; break; //@line 507 "fcntlmodule.c"
-      case 51: // $bb49_i
-        var $82=$d_addr_i; //@line 510 "fcntlmodule.c"
-        var $83=_ins($82, __str39, 14); //@line 510 "fcntlmodule.c"
-        var $84=($83)!=0; //@line 510 "fcntlmodule.c"
-        if ($84) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 510 "fcntlmodule.c"
-      case 52: // $bb50_i
-        $0=-1; //@line 510 "fcntlmodule.c"
-        __label__ = 140; break; //@line 510 "fcntlmodule.c"
-      case 53: // $bb51_i
-        var $85=$d_addr_i; //@line 514 "fcntlmodule.c"
-        var $86=_ins($85, __str40, 8192); //@line 514 "fcntlmodule.c"
-        var $87=($86)!=0; //@line 514 "fcntlmodule.c"
-        if ($87) { __label__ = 54; break; } else { __label__ = 55; break; } //@line 514 "fcntlmodule.c"
-      case 54: // $bb52_i
-        $0=-1; //@line 514 "fcntlmodule.c"
-        __label__ = 140; break; //@line 514 "fcntlmodule.c"
-      case 55: // $bb53_i
-        var $88=$d_addr_i; //@line 517 "fcntlmodule.c"
-        var $89=_ins($88, __str41, 1024); //@line 517 "fcntlmodule.c"
-        var $90=($89)!=0; //@line 517 "fcntlmodule.c"
-        if ($90) { __label__ = 56; break; } else { __label__ = 57; break; } //@line 517 "fcntlmodule.c"
-      case 56: // $bb54_i
-        $0=-1; //@line 517 "fcntlmodule.c"
-        __label__ = 140; break; //@line 517 "fcntlmodule.c"
-      case 57: // $bb55_i
-        var $91=$d_addr_i; //@line 520 "fcntlmodule.c"
-        var $92=_ins($91, __str42, 1025); //@line 520 "fcntlmodule.c"
-        var $93=($92)!=0; //@line 520 "fcntlmodule.c"
-        if ($93) { __label__ = 58; break; } else { __label__ = 59; break; } //@line 520 "fcntlmodule.c"
-      case 58: // $bb56_i
-        $0=-1; //@line 520 "fcntlmodule.c"
-        __label__ = 140; break; //@line 520 "fcntlmodule.c"
-      case 59: // $bb57_i
-        var $94=$d_addr_i; //@line 523 "fcntlmodule.c"
-        var $95=_ins($94, __str43, 1026); //@line 523 "fcntlmodule.c"
-        var $96=($95)!=0; //@line 523 "fcntlmodule.c"
-        if ($96) { __label__ = 60; break; } else { __label__ = 61; break; } //@line 523 "fcntlmodule.c"
-      case 60: // $bb58_i
-        $0=-1; //@line 523 "fcntlmodule.c"
-        __label__ = 140; break; //@line 523 "fcntlmodule.c"
-      case 61: // $bb59_i
-        var $97=$d_addr_i; //@line 527 "fcntlmodule.c"
-        var $98=_ins($97, __str44, 4); //@line 527 "fcntlmodule.c"
-        var $99=($98)!=0; //@line 527 "fcntlmodule.c"
-        if ($99) { __label__ = 62; break; } else { __label__ = 63; break; } //@line 527 "fcntlmodule.c"
-      case 62: // $bb60_i
-        $0=-1; //@line 527 "fcntlmodule.c"
-        __label__ = 140; break; //@line 527 "fcntlmodule.c"
-      case 63: // $bb61_i
-        var $100=$d_addr_i; //@line 530 "fcntlmodule.c"
-        var $101=_ins($100, __str45, 8); //@line 530 "fcntlmodule.c"
-        var $102=($101)!=0; //@line 530 "fcntlmodule.c"
-        if ($102) { __label__ = 64; break; } else { __label__ = 65; break; } //@line 530 "fcntlmodule.c"
-      case 64: // $bb62_i
-        $0=-1; //@line 530 "fcntlmodule.c"
-        __label__ = 140; break; //@line 530 "fcntlmodule.c"
-      case 65: // $bb63_i
-        var $103=$d_addr_i; //@line 540 "fcntlmodule.c"
-        var $104=_ins($103, __str46, 1); //@line 540 "fcntlmodule.c"
-        var $105=($104)!=0; //@line 540 "fcntlmodule.c"
-        if ($105) { __label__ = 66; break; } else { __label__ = 67; break; } //@line 540 "fcntlmodule.c"
-      case 66: // $bb64_i
-        $0=-1; //@line 540 "fcntlmodule.c"
-        __label__ = 140; break; //@line 540 "fcntlmodule.c"
-      case 67: // $bb65_i
-        var $106=$d_addr_i; //@line 545 "fcntlmodule.c"
-        var $107=_ins($106, __str47, 1); //@line 545 "fcntlmodule.c"
-        var $108=($107)!=0; //@line 545 "fcntlmodule.c"
-        if ($108) { __label__ = 68; break; } else { __label__ = 69; break; } //@line 545 "fcntlmodule.c"
-      case 68: // $bb66_i
-        $0=-1; //@line 545 "fcntlmodule.c"
-        __label__ = 140; break; //@line 545 "fcntlmodule.c"
-      case 69: // $bb67_i
-        var $109=$d_addr_i; //@line 548 "fcntlmodule.c"
-        var $110=_ins($109, __str48, 2); //@line 548 "fcntlmodule.c"
-        var $111=($110)!=0; //@line 548 "fcntlmodule.c"
-        if ($111) { __label__ = 70; break; } else { __label__ = 71; break; } //@line 548 "fcntlmodule.c"
-      case 70: // $bb68_i
-        $0=-1; //@line 548 "fcntlmodule.c"
-        __label__ = 140; break; //@line 548 "fcntlmodule.c"
-      case 71: // $bb69_i
-        var $112=$d_addr_i; //@line 551 "fcntlmodule.c"
-        var $113=_ins($112, __str49, 4); //@line 551 "fcntlmodule.c"
-        var $114=($113)!=0; //@line 551 "fcntlmodule.c"
-        if ($114) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 551 "fcntlmodule.c"
-      case 72: // $bb70_i
-        $0=-1; //@line 551 "fcntlmodule.c"
-        __label__ = 140; break; //@line 551 "fcntlmodule.c"
-      case 73: // $bb71_i
-        var $115=$d_addr_i; //@line 554 "fcntlmodule.c"
-        var $116=_ins($115, __str50, 8); //@line 554 "fcntlmodule.c"
-        var $117=($116)!=0; //@line 554 "fcntlmodule.c"
-        if ($117) { __label__ = 74; break; } else { __label__ = 75; break; } //@line 554 "fcntlmodule.c"
-      case 74: // $bb72_i
-        $0=-1; //@line 554 "fcntlmodule.c"
-        __label__ = 140; break; //@line 554 "fcntlmodule.c"
-      case 75: // $bb73_i
-        var $118=$d_addr_i; //@line 557 "fcntlmodule.c"
-        var $119=_ins($118, __str51, 16); //@line 557 "fcntlmodule.c"
-        var $120=($119)!=0; //@line 557 "fcntlmodule.c"
-        if ($120) { __label__ = 76; break; } else { __label__ = 77; break; } //@line 557 "fcntlmodule.c"
-      case 76: // $bb74_i
-        $0=-1; //@line 557 "fcntlmodule.c"
-        __label__ = 140; break; //@line 557 "fcntlmodule.c"
-      case 77: // $bb75_i
-        var $121=$d_addr_i; //@line 560 "fcntlmodule.c"
-        var $122=_ins($121, __str52, 32); //@line 560 "fcntlmodule.c"
-        var $123=($122)!=0; //@line 560 "fcntlmodule.c"
-        if ($123) { __label__ = 78; break; } else { __label__ = 79; break; } //@line 560 "fcntlmodule.c"
-      case 78: // $bb76_i
-        $0=-1; //@line 560 "fcntlmodule.c"
-        __label__ = 140; break; //@line 560 "fcntlmodule.c"
-      case 79: // $bb77_i
-        var $124=$d_addr_i; //@line 563 "fcntlmodule.c"
-        var $125=_ins($124, __str53, -2147483648); //@line 563 "fcntlmodule.c"
-        var $126=($125)!=0; //@line 563 "fcntlmodule.c"
-        if ($126) { __label__ = 80; break; } else { __label__ = 81; break; } //@line 563 "fcntlmodule.c"
-      case 80: // $bb78_i
-        $0=-1; //@line 563 "fcntlmodule.c"
-        __label__ = 140; break; //@line 563 "fcntlmodule.c"
-      case 81: // $bb79_i
-        var $127=$d_addr_i; //@line 568 "fcntlmodule.c"
-        var $128=_ins($127, __str54, 21250); //@line 568 "fcntlmodule.c"
-        var $129=($128)!=0; //@line 568 "fcntlmodule.c"
-        if ($129) { __label__ = 82; break; } else { __label__ = 83; break; } //@line 568 "fcntlmodule.c"
-      case 82: // $bb80_i
-        $0=-1; //@line 568 "fcntlmodule.c"
-        __label__ = 140; break; //@line 568 "fcntlmodule.c"
-      case 83: // $bb81_i
-        var $130=$d_addr_i; //@line 569 "fcntlmodule.c"
-        var $131=_ins($130, __str55, 21251); //@line 569 "fcntlmodule.c"
-        var $132=($131)!=0; //@line 569 "fcntlmodule.c"
-        if ($132) { __label__ = 84; break; } else { __label__ = 85; break; } //@line 569 "fcntlmodule.c"
-      case 84: // $bb82_i
-        $0=-1; //@line 569 "fcntlmodule.c"
-        __label__ = 140; break; //@line 569 "fcntlmodule.c"
-      case 85: // $bb83_i
-        var $133=$d_addr_i; //@line 570 "fcntlmodule.c"
-        var $134=_ins($133, __str56, 21252); //@line 570 "fcntlmodule.c"
-        var $135=($134)!=0; //@line 570 "fcntlmodule.c"
-        if ($135) { __label__ = 86; break; } else { __label__ = 87; break; } //@line 570 "fcntlmodule.c"
-      case 86: // $bb84_i
-        $0=-1; //@line 570 "fcntlmodule.c"
-        __label__ = 140; break; //@line 570 "fcntlmodule.c"
-      case 87: // $bb85_i
-        var $136=$d_addr_i; //@line 571 "fcntlmodule.c"
-        var $137=_ins($136, __str57, 21253); //@line 571 "fcntlmodule.c"
-        var $138=($137)!=0; //@line 571 "fcntlmodule.c"
-        if ($138) { __label__ = 88; break; } else { __label__ = 89; break; } //@line 571 "fcntlmodule.c"
-      case 88: // $bb86_i
-        $0=-1; //@line 571 "fcntlmodule.c"
-        __label__ = 140; break; //@line 571 "fcntlmodule.c"
-      case 89: // $bb87_i
-        var $139=$d_addr_i; //@line 572 "fcntlmodule.c"
-        var $140=_ins($139, __str58, 21276); //@line 572 "fcntlmodule.c"
-        var $141=($140)!=0; //@line 572 "fcntlmodule.c"
-        if ($141) { __label__ = 90; break; } else { __label__ = 91; break; } //@line 572 "fcntlmodule.c"
-      case 90: // $bb88_i
-        $0=-1; //@line 572 "fcntlmodule.c"
-        __label__ = 140; break; //@line 572 "fcntlmodule.c"
-      case 91: // $bb89_i
-        var $142=$d_addr_i; //@line 573 "fcntlmodule.c"
-        var $143=_ins($142, __str59, 21257); //@line 573 "fcntlmodule.c"
-        var $144=($143)!=0; //@line 573 "fcntlmodule.c"
-        if ($144) { __label__ = 92; break; } else { __label__ = 93; break; } //@line 573 "fcntlmodule.c"
-      case 92: // $bb90_i
-        $0=-1; //@line 573 "fcntlmodule.c"
-        __label__ = 140; break; //@line 573 "fcntlmodule.c"
-      case 93: // $bb91_i
-        var $145=$d_addr_i; //@line 574 "fcntlmodule.c"
-        var $146=_ins($145, __str60, 21258); //@line 574 "fcntlmodule.c"
-        var $147=($146)!=0; //@line 574 "fcntlmodule.c"
-        if ($147) { __label__ = 94; break; } else { __label__ = 95; break; } //@line 574 "fcntlmodule.c"
-      case 94: // $bb92_i
-        $0=-1; //@line 574 "fcntlmodule.c"
-        __label__ = 140; break; //@line 574 "fcntlmodule.c"
-      case 95: // $bb93_i
-        var $148=$d_addr_i; //@line 575 "fcntlmodule.c"
-        var $149=_ins($148, __str61, 21259); //@line 575 "fcntlmodule.c"
-        var $150=($149)!=0; //@line 575 "fcntlmodule.c"
-        if ($150) { __label__ = 96; break; } else { __label__ = 97; break; } //@line 575 "fcntlmodule.c"
-      case 96: // $bb94_i
-        $0=-1; //@line 575 "fcntlmodule.c"
-        __label__ = 140; break; //@line 575 "fcntlmodule.c"
-      case 97: // $bb95_i
-        var $151=$d_addr_i; //@line 576 "fcntlmodule.c"
-        var $152=_ins($151, __str62, 21263); //@line 576 "fcntlmodule.c"
-        var $153=($152)!=0; //@line 576 "fcntlmodule.c"
-        if ($153) { __label__ = 98; break; } else { __label__ = 99; break; } //@line 576 "fcntlmodule.c"
-      case 98: // $bb96_i
-        $0=-1; //@line 576 "fcntlmodule.c"
-        __label__ = 140; break; //@line 576 "fcntlmodule.c"
-      case 99: // $bb97_i
-        var $154=$d_addr_i; //@line 577 "fcntlmodule.c"
-        var $155=_ins($154, __str63, 21254); //@line 577 "fcntlmodule.c"
-        var $156=($155)!=0; //@line 577 "fcntlmodule.c"
-        if ($156) { __label__ = 100; break; } else { __label__ = 101; break; } //@line 577 "fcntlmodule.c"
-      case 100: // $bb98_i
-        $0=-1; //@line 577 "fcntlmodule.c"
-        __label__ = 140; break; //@line 577 "fcntlmodule.c"
-      case 101: // $bb99_i
-        var $157=$d_addr_i; //@line 578 "fcntlmodule.c"
-        var $158=_ins($157, __str64, 21255); //@line 578 "fcntlmodule.c"
-        var $159=($158)!=0; //@line 578 "fcntlmodule.c"
-        if ($159) { __label__ = 102; break; } else { __label__ = 103; break; } //@line 578 "fcntlmodule.c"
-      case 102: // $bb100_i
-        $0=-1; //@line 578 "fcntlmodule.c"
-        __label__ = 140; break; //@line 578 "fcntlmodule.c"
-      case 103: // $bb101_i
-        var $160=$d_addr_i; //@line 579 "fcntlmodule.c"
-        var $161=_ins($160, __str65, 21249); //@line 579 "fcntlmodule.c"
-        var $162=($161)!=0; //@line 579 "fcntlmodule.c"
-        if ($162) { __label__ = 104; break; } else { __label__ = 105; break; } //@line 579 "fcntlmodule.c"
-      case 104: // $bb102_i
-        $0=-1; //@line 579 "fcntlmodule.c"
-        __label__ = 140; break; //@line 579 "fcntlmodule.c"
-      case 105: // $bb103_i
-        var $163=$d_addr_i; //@line 580 "fcntlmodule.c"
-        var $164=_ins($163, __str66, 21264); //@line 580 "fcntlmodule.c"
-        var $165=($164)!=0; //@line 580 "fcntlmodule.c"
-        if ($165) { __label__ = 106; break; } else { __label__ = 107; break; } //@line 580 "fcntlmodule.c"
-      case 106: // $bb104_i
-        $0=-1; //@line 580 "fcntlmodule.c"
-        __label__ = 140; break; //@line 580 "fcntlmodule.c"
-      case 107: // $bb105_i
-        var $166=$d_addr_i; //@line 581 "fcntlmodule.c"
-        var $167=_ins($166, __str67, 21256); //@line 581 "fcntlmodule.c"
-        var $168=($167)!=0; //@line 581 "fcntlmodule.c"
-        if ($168) { __label__ = 108; break; } else { __label__ = 109; break; } //@line 581 "fcntlmodule.c"
-      case 108: // $bb106_i
-        $0=-1; //@line 581 "fcntlmodule.c"
-        __label__ = 140; break; //@line 581 "fcntlmodule.c"
-      case 109: // $bb107_i
-        var $169=$d_addr_i; //@line 582 "fcntlmodule.c"
-        var $170=_ins($169, __str68, 21267); //@line 582 "fcntlmodule.c"
-        var $171=($170)!=0; //@line 582 "fcntlmodule.c"
-        if ($171) { __label__ = 110; break; } else { __label__ = 111; break; } //@line 582 "fcntlmodule.c"
-      case 110: // $bb108_i
-        $0=-1; //@line 582 "fcntlmodule.c"
-        __label__ = 140; break; //@line 582 "fcntlmodule.c"
-      case 111: // $bb109_i
-        var $172=$d_addr_i; //@line 585 "fcntlmodule.c"
-        var $173=_ins($172, __str69, 21268); //@line 585 "fcntlmodule.c"
-        var $174=($173)!=0; //@line 585 "fcntlmodule.c"
-        if ($174) { __label__ = 112; break; } else { __label__ = 113; break; } //@line 585 "fcntlmodule.c"
-      case 112: // $bb110_i
-        $0=-1; //@line 585 "fcntlmodule.c"
-        __label__ = 140; break; //@line 585 "fcntlmodule.c"
-      case 113: // $bb111_i
-        var $175=$d_addr_i; //@line 587 "fcntlmodule.c"
-        var $176=_ins($175, __str70, 21265); //@line 587 "fcntlmodule.c"
-        var $177=($176)!=0; //@line 587 "fcntlmodule.c"
-        if ($177) { __label__ = 114; break; } else { __label__ = 115; break; } //@line 587 "fcntlmodule.c"
-      case 114: // $bb112_i
-        $0=-1; //@line 587 "fcntlmodule.c"
-        __label__ = 140; break; //@line 587 "fcntlmodule.c"
-      case 115: // $bb113_i
-        var $178=$d_addr_i; //@line 588 "fcntlmodule.c"
-        var $179=_ins($178, __str71, 21262); //@line 588 "fcntlmodule.c"
-        var $180=($179)!=0; //@line 588 "fcntlmodule.c"
-        if ($180) { __label__ = 116; break; } else { __label__ = 117; break; } //@line 588 "fcntlmodule.c"
-      case 116: // $bb114_i
-        $0=-1; //@line 588 "fcntlmodule.c"
-        __label__ = 140; break; //@line 588 "fcntlmodule.c"
-      case 117: // $bb115_i
-        var $181=$d_addr_i; //@line 589 "fcntlmodule.c"
-        var $182=_ins($181, __str72, 21269); //@line 589 "fcntlmodule.c"
-        var $183=($182)!=0; //@line 589 "fcntlmodule.c"
-        if ($183) { __label__ = 118; break; } else { __label__ = 119; break; } //@line 589 "fcntlmodule.c"
-      case 118: // $bb116_i
-        $0=-1; //@line 589 "fcntlmodule.c"
-        __label__ = 140; break; //@line 589 "fcntlmodule.c"
-      case 119: // $bb117_i
-        var $184=$d_addr_i; //@line 590 "fcntlmodule.c"
-        var $185=_ins($184, __str73, 21279); //@line 590 "fcntlmodule.c"
-        var $186=($185)!=0; //@line 590 "fcntlmodule.c"
-        if ($186) { __label__ = 120; break; } else { __label__ = 121; break; } //@line 590 "fcntlmodule.c"
-      case 120: // $bb118_i
-        $0=-1; //@line 590 "fcntlmodule.c"
-        __label__ = 140; break; //@line 590 "fcntlmodule.c"
-      case 121: // $bb119_i
-        var $187=$d_addr_i; //@line 591 "fcntlmodule.c"
-        var $188=_ins($187, __str74, 21277); //@line 591 "fcntlmodule.c"
-        var $189=($188)!=0; //@line 591 "fcntlmodule.c"
-        if ($189) { __label__ = 122; break; } else { __label__ = 123; break; } //@line 591 "fcntlmodule.c"
-      case 122: // $bb120_i
-        $0=-1; //@line 591 "fcntlmodule.c"
-        __label__ = 140; break; //@line 591 "fcntlmodule.c"
-      case 123: // $bb121_i
-        var $190=$d_addr_i; //@line 592 "fcntlmodule.c"
-        var $191=_ins($190, __str75, 21278); //@line 592 "fcntlmodule.c"
-        var $192=($191)!=0; //@line 592 "fcntlmodule.c"
-        if ($192) { __label__ = 124; break; } else { __label__ = 125; break; } //@line 592 "fcntlmodule.c"
-      case 124: // $bb122_i
-        $0=-1; //@line 592 "fcntlmodule.c"
-        __label__ = 140; break; //@line 592 "fcntlmodule.c"
-      case 125: // $bb123_i
-        var $193=$d_addr_i; //@line 593 "fcntlmodule.c"
-        var $194=_ins($193, __str76, 21282); //@line 593 "fcntlmodule.c"
-        var $195=($194)!=0; //@line 593 "fcntlmodule.c"
-        if ($195) { __label__ = 126; break; } else { __label__ = 127; break; } //@line 593 "fcntlmodule.c"
-      case 126: // $bb124_i
-        $0=-1; //@line 593 "fcntlmodule.c"
-        __label__ = 140; break; //@line 593 "fcntlmodule.c"
-      case 127: // $bb125_i
-        var $196=$d_addr_i; //@line 594 "fcntlmodule.c"
-        var $197=_ins($196, __str77, 21280); //@line 594 "fcntlmodule.c"
-        var $198=($197)!=0; //@line 594 "fcntlmodule.c"
-        if ($198) { __label__ = 128; break; } else { __label__ = 129; break; } //@line 594 "fcntlmodule.c"
-      case 128: // $bb126_i
-        $0=-1; //@line 594 "fcntlmodule.c"
-        __label__ = 140; break; //@line 594 "fcntlmodule.c"
-      case 129: // $bb127_i
-        var $199=$d_addr_i; //@line 596 "fcntlmodule.c"
-        var $200=_ins($199, __str78, 21281); //@line 596 "fcntlmodule.c"
-        var $201=($200)!=0; //@line 596 "fcntlmodule.c"
-        if ($201) { __label__ = 130; break; } else { __label__ = 131; break; } //@line 596 "fcntlmodule.c"
-      case 130: // $bb128_i
-        $0=-1; //@line 596 "fcntlmodule.c"
-        __label__ = 140; break; //@line 596 "fcntlmodule.c"
-      case 131: // $bb129_i
-        var $202=$d_addr_i; //@line 598 "fcntlmodule.c"
-        var $203=_ins($202, __str79, 21260); //@line 598 "fcntlmodule.c"
-        var $204=($203)!=0; //@line 598 "fcntlmodule.c"
-        if ($204) { __label__ = 132; break; } else { __label__ = 133; break; } //@line 598 "fcntlmodule.c"
-      case 132: // $bb130_i
-        $0=-1; //@line 598 "fcntlmodule.c"
-        __label__ = 140; break; //@line 598 "fcntlmodule.c"
-      case 133: // $bb131_i
-        var $205=$d_addr_i; //@line 599 "fcntlmodule.c"
-        var $206=_ins($205, __str80, 21261); //@line 599 "fcntlmodule.c"
-        var $207=($206)!=0; //@line 599 "fcntlmodule.c"
-        if ($207) { __label__ = 134; break; } else { __label__ = 135; break; } //@line 599 "fcntlmodule.c"
-      case 134: // $bb132_i
-        $0=-1; //@line 599 "fcntlmodule.c"
-        __label__ = 140; break; //@line 599 "fcntlmodule.c"
-      case 135: // $bb133_i
-        var $208=$d_addr_i; //@line 600 "fcntlmodule.c"
-        var $209=_ins($208, __str81, 21270); //@line 600 "fcntlmodule.c"
-        var $210=($209)!=0; //@line 600 "fcntlmodule.c"
-        if ($210) { __label__ = 136; break; } else { __label__ = 137; break; } //@line 600 "fcntlmodule.c"
-      case 136: // $bb134_i
-        $0=-1; //@line 600 "fcntlmodule.c"
-        __label__ = 140; break; //@line 600 "fcntlmodule.c"
-      case 137: // $bb135_i
-        var $211=$d_addr_i; //@line 601 "fcntlmodule.c"
-        var $212=_ins($211, __str82, 21271); //@line 601 "fcntlmodule.c"
-        var $213=($212)!=0; //@line 601 "fcntlmodule.c"
-        if ($213) { __label__ = 138; break; } else { __label__ = 139; break; } //@line 601 "fcntlmodule.c"
-      case 138: // $bb136_i
-        $0=-1; //@line 601 "fcntlmodule.c"
-        __label__ = 140; break; //@line 601 "fcntlmodule.c"
-      case 139: // $bb137_i
-        $0=0; //@line 604 "fcntlmodule.c"
-        __label__ = 140; break; //@line 604 "fcntlmodule.c"
-      case 140: // $return
+        var $3=$m; //@line 618 "fcntlmodule.c"
+        var $4=_PyModule_GetDict($3); //@line 618 "fcntlmodule.c"
+        $d=$4; //@line 618 "fcntlmodule.c"
+        var $5=$d; //@line 619 "fcntlmodule.c"
+        _all_ins($5); //@line 619 "fcntlmodule.c"
+        __label__ = 2; break; //@line 619 "fcntlmodule.c"
+      case 2: // $return
         ;
         return; //@line 615 "fcntlmodule.c"
       default: assert(0, "bad label: " + __label__);

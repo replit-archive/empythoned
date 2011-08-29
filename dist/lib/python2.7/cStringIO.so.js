@@ -74,14 +74,14 @@ var $struct__typeobject___SIZE = 196; // %struct._typeobject
   
 var _cStringIO_module_documentation;
 var _IO_flush__doc__;
-var _PyExc_ValueError;
+
 var __str;
-var __Py_ZeroStruct;
-var __Py_TrueStruct;
+
+
 var __str1;
 var __str2;
 var _file_getsetlist;
-var __Py_NoneStruct;
+
 var _IO_getval__doc__;
 var __str3;
 var __str4;
@@ -106,14 +106,14 @@ var _IO_tell__doc__;
 var ___PRETTY_FUNCTION___8704;
 var _IO_truncate__doc__;
 var __str12;
-var _PyExc_IOError;
-var _PyExc_StopIteration;
+
+
 var _IO_seek__doc__;
 var __str13;
 var _O_write__doc__;
 var __str14;
 var ___PRETTY_FUNCTION___8812;
-var _PyExc_MemoryError;
+
 var __str15;
 var __str16;
 var __str17;
@@ -143,14 +143,14 @@ var _I_methods;
 var _Itype__doc__;
 var __str34;
 var _Itype;
-var _PyExc_TypeError;
+
 var __str35;
 var _IO_StringIO__doc__;
 var __str36;
 var _IO_methods;
 var _CAPI;
 var __str37;
-var _PyType_Type;
+
 var __str38;
 var __str39;
 var __str40;
@@ -191,6 +191,40 @@ var __str41;
 
 
 
+
+  function _IO__opencheck($self) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        var $1=$self_addr; //@line 80 "cStringIO.c"
+        var $2=$1+8; //@line 80 "cStringIO.c"
+        var $3=HEAP[$2]; //@line 80 "cStringIO.c"
+        var $4=($3)==0; //@line 80 "cStringIO.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+      case 1: // $bb
+        var $5=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
+        _PyErr_SetString($5, __str); //@line 81 "cStringIO.c"
+        $0=0; //@line 83 "cStringIO.c"
+        __label__ = 3; break; //@line 83 "cStringIO.c"
+      case 2: // $bb1
+        $0=1; //@line 85 "cStringIO.c"
+        __label__ = 3; break; //@line 85 "cStringIO.c"
+      case 3: // $bb2
+        var $6=$0; //@line 83 "cStringIO.c"
+        $retval=$6; //@line 83 "cStringIO.c"
+        var $retval3=$retval; //@line 83 "cStringIO.c"
+        ;
+        return $retval3; //@line 83 "cStringIO.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
 
   function _IO_get_closed($self, $closure) {
     ;
@@ -240,40 +274,28 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $unused_addr=$unused;
-        var $2=$self_addr; //@line 107 "cStringIO.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 80 "cStringIO.c"
-        var $4=$3+8; //@line 80 "cStringIO.c"
-        var $5=HEAP[$4]; //@line 80 "cStringIO.c"
-        var $6=($5)==0; //@line 80 "cStringIO.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 107 "cStringIO.c"
+        var $2=_IO__opencheck($1); //@line 107 "cStringIO.c"
+        var $3=($2)==0; //@line 107 "cStringIO.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 107 "cStringIO.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($7, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 107 "cStringIO.c"
+        $0=0; //@line 107 "cStringIO.c"
         __label__ = 3; break; //@line 107 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $8=HEAP[__Py_NoneStruct]; //@line 109 "cStringIO.c"
-        var $9=($8) + 1; //@line 109 "cStringIO.c"
-        HEAP[__Py_NoneStruct]=$9; //@line 109 "cStringIO.c"
-        $1=__Py_NoneStruct; //@line 110 "cStringIO.c"
+        var $4=HEAP[__Py_NoneStruct]; //@line 109 "cStringIO.c"
+        var $5=($4) + 1; //@line 109 "cStringIO.c"
+        HEAP[__Py_NoneStruct]=$5; //@line 109 "cStringIO.c"
+        $0=__Py_NoneStruct; //@line 110 "cStringIO.c"
         __label__ = 3; break; //@line 110 "cStringIO.c"
       case 3: // $bb2
-        var $10=$1; //@line 107 "cStringIO.c"
-        $retval=$10; //@line 107 "cStringIO.c"
+        var $6=$0; //@line 107 "cStringIO.c"
+        $retval=$6; //@line 107 "cStringIO.c"
         var $retval3=$retval; //@line 107 "cStringIO.c"
         ;
         return $retval3; //@line 107 "cStringIO.c"
@@ -288,55 +310,43 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
-        var $2=$self_addr; //@line 121 "cStringIO.c"
-        var $3=$2; //@line 121 "cStringIO.c"
-        $self_addr_i=$3;
-        var $4=$self_addr_i; //@line 80 "cStringIO.c"
-        var $5=$4+8; //@line 80 "cStringIO.c"
-        var $6=HEAP[$5]; //@line 80 "cStringIO.c"
-        var $7=($6)==0; //@line 80 "cStringIO.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 121 "cStringIO.c"
+        var $2=$1; //@line 121 "cStringIO.c"
+        var $3=_IO__opencheck($2); //@line 121 "cStringIO.c"
+        var $4=($3)==0; //@line 121 "cStringIO.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 121 "cStringIO.c"
       case 1: // $bb
-        var $8=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($8, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 121 "cStringIO.c"
+        $0=0; //@line 121 "cStringIO.c"
         __label__ = 5; break; //@line 121 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $9=$self_addr; //@line 122 "cStringIO.c"
-        var $10=$9; //@line 122 "cStringIO.c"
-        var $11=$10+12; //@line 122 "cStringIO.c"
-        var $12=HEAP[$11]; //@line 122 "cStringIO.c"
-        var $13=($12) < 0; //@line 122 "cStringIO.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 122 "cStringIO.c"
+        var $5=$self_addr; //@line 122 "cStringIO.c"
+        var $6=$5; //@line 122 "cStringIO.c"
+        var $7=$6+12; //@line 122 "cStringIO.c"
+        var $8=HEAP[$7]; //@line 122 "cStringIO.c"
+        var $9=($8) < 0; //@line 122 "cStringIO.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 122 "cStringIO.c"
       case 3: // $bb2
         ___assert_fail(__str3, __str4, 122, ___PRETTY_FUNCTION___8417); //@line 122 "cStringIO.c"
         throw "Reached an unreachable!" //@line 122 "cStringIO.c"
       case 4: // $bb3
+        var $10=$self_addr; //@line 123 "cStringIO.c"
+        var $11=$10; //@line 123 "cStringIO.c"
+        var $12=$11+12; //@line 123 "cStringIO.c"
+        var $13=HEAP[$12]; //@line 123 "cStringIO.c"
         var $14=$self_addr; //@line 123 "cStringIO.c"
         var $15=$14; //@line 123 "cStringIO.c"
-        var $16=$15+12; //@line 123 "cStringIO.c"
+        var $16=$15+8; //@line 123 "cStringIO.c"
         var $17=HEAP[$16]; //@line 123 "cStringIO.c"
-        var $18=$self_addr; //@line 123 "cStringIO.c"
-        var $19=$18; //@line 123 "cStringIO.c"
-        var $20=$19+8; //@line 123 "cStringIO.c"
-        var $21=HEAP[$20]; //@line 123 "cStringIO.c"
-        var $22=_PyString_FromStringAndSize($21, $17); //@line 123 "cStringIO.c"
-        $1=$22; //@line 123 "cStringIO.c"
+        var $18=_PyString_FromStringAndSize($17, $13); //@line 123 "cStringIO.c"
+        $0=$18; //@line 123 "cStringIO.c"
         __label__ = 5; break; //@line 123 "cStringIO.c"
       case 5: // $bb4
-        var $23=$1; //@line 121 "cStringIO.c"
-        $retval=$23; //@line 121 "cStringIO.c"
+        var $19=$0; //@line 121 "cStringIO.c"
+        $retval=$19; //@line 121 "cStringIO.c"
         var $retval5=$retval; //@line 121 "cStringIO.c"
         ;
         return $retval5; //@line 121 "cStringIO.c"
@@ -351,89 +361,77 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $use_pos=__stackBase__;
         var $s;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$use_pos]=__Py_NoneStruct; //@line 129 "cStringIO.c"
-        var $2=$self_addr; //@line 132 "cStringIO.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 80 "cStringIO.c"
-        var $4=$3+8; //@line 80 "cStringIO.c"
-        var $5=HEAP[$4]; //@line 80 "cStringIO.c"
-        var $6=($5)==0; //@line 80 "cStringIO.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 132 "cStringIO.c"
+        var $2=_IO__opencheck($1); //@line 132 "cStringIO.c"
+        var $3=($2)==0; //@line 132 "cStringIO.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 132 "cStringIO.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($7, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 132 "cStringIO.c"
+        $0=0; //@line 132 "cStringIO.c"
         __label__ = 11; break; //@line 132 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $8=$args_addr; //@line 133 "cStringIO.c"
-        var $9=_PyArg_UnpackTuple($8, __str5, 0, 1, $use_pos); //@line 133 "cStringIO.c"
-        var $10=($9)==0; //@line 133 "cStringIO.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 133 "cStringIO.c"
+        var $4=$args_addr; //@line 133 "cStringIO.c"
+        var $5=_PyArg_UnpackTuple($4, __str5, 0, 1, allocate([$use_pos,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 133 "cStringIO.c"
+        var $6=($5)==0; //@line 133 "cStringIO.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 133 "cStringIO.c"
       case 3: // $bb2
-        $1=0; //@line 133 "cStringIO.c"
+        $0=0; //@line 133 "cStringIO.c"
         __label__ = 11; break; //@line 133 "cStringIO.c"
       case 4: // $bb3
-        var $11=HEAP[$use_pos]; //@line 135 "cStringIO.c"
-        var $12=_PyObject_IsTrue($11); //@line 135 "cStringIO.c"
-        var $13=($12)!=0; //@line 135 "cStringIO.c"
-        var $14=$self_addr; //@line 136 "cStringIO.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 135 "cStringIO.c"
+        var $7=HEAP[$use_pos]; //@line 135 "cStringIO.c"
+        var $8=_PyObject_IsTrue($7); //@line 135 "cStringIO.c"
+        var $9=($8)!=0; //@line 135 "cStringIO.c"
+        var $10=$self_addr; //@line 136 "cStringIO.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 135 "cStringIO.c"
       case 5: // $bb4
-        var $15=$14+12; //@line 136 "cStringIO.c"
-        var $16=HEAP[$15]; //@line 136 "cStringIO.c"
-        $s=$16; //@line 136 "cStringIO.c"
-        var $17=$self_addr; //@line 137 "cStringIO.c"
-        var $18=$17+16; //@line 137 "cStringIO.c"
-        var $19=HEAP[$18]; //@line 137 "cStringIO.c"
-        var $20=$s; //@line 137 "cStringIO.c"
-        var $21=($19) < ($20); //@line 137 "cStringIO.c"
-        if ($21) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 137 "cStringIO.c"
+        var $11=$10+12; //@line 136 "cStringIO.c"
+        var $12=HEAP[$11]; //@line 136 "cStringIO.c"
+        $s=$12; //@line 136 "cStringIO.c"
+        var $13=$self_addr; //@line 137 "cStringIO.c"
+        var $14=$13+16; //@line 137 "cStringIO.c"
+        var $15=HEAP[$14]; //@line 137 "cStringIO.c"
+        var $16=$s; //@line 137 "cStringIO.c"
+        var $17=($15) < ($16); //@line 137 "cStringIO.c"
+        if ($17) { __label__ = 6; break; } else { __label__ = 8; break; } //@line 137 "cStringIO.c"
       case 6: // $bb5
-        var $22=$self_addr; //@line 137 "cStringIO.c"
-        var $23=$22+16; //@line 137 "cStringIO.c"
-        var $24=HEAP[$23]; //@line 137 "cStringIO.c"
-        $s=$24; //@line 137 "cStringIO.c"
+        var $18=$self_addr; //@line 137 "cStringIO.c"
+        var $19=$18+16; //@line 137 "cStringIO.c"
+        var $20=HEAP[$19]; //@line 137 "cStringIO.c"
+        $s=$20; //@line 137 "cStringIO.c"
         __label__ = 8; break; //@line 137 "cStringIO.c"
       case 7: // $bb7
-        var $25=$14+16; //@line 140 "cStringIO.c"
-        var $26=HEAP[$25]; //@line 140 "cStringIO.c"
-        $s=$26; //@line 140 "cStringIO.c"
+        var $21=$10+16; //@line 140 "cStringIO.c"
+        var $22=HEAP[$21]; //@line 140 "cStringIO.c"
+        $s=$22; //@line 140 "cStringIO.c"
         __label__ = 8; break; //@line 140 "cStringIO.c"
       case 8: // $bb8
-        var $27=$self_addr; //@line 141 "cStringIO.c"
-        var $28=$27+12; //@line 141 "cStringIO.c"
-        var $29=HEAP[$28]; //@line 141 "cStringIO.c"
-        var $30=($29) < 0; //@line 141 "cStringIO.c"
-        if ($30) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 141 "cStringIO.c"
+        var $23=$self_addr; //@line 141 "cStringIO.c"
+        var $24=$23+12; //@line 141 "cStringIO.c"
+        var $25=HEAP[$24]; //@line 141 "cStringIO.c"
+        var $26=($25) < 0; //@line 141 "cStringIO.c"
+        if ($26) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 141 "cStringIO.c"
       case 9: // $bb9
         ___assert_fail(__str6, __str4, 141, ___PRETTY_FUNCTION___8439); //@line 141 "cStringIO.c"
         throw "Reached an unreachable!" //@line 141 "cStringIO.c"
       case 10: // $bb10
-        var $31=$self_addr; //@line 142 "cStringIO.c"
-        var $32=$31+8; //@line 142 "cStringIO.c"
-        var $33=HEAP[$32]; //@line 142 "cStringIO.c"
-        var $34=$s; //@line 142 "cStringIO.c"
-        var $35=_PyString_FromStringAndSize($33, $34); //@line 142 "cStringIO.c"
-        $1=$35; //@line 142 "cStringIO.c"
+        var $27=$self_addr; //@line 142 "cStringIO.c"
+        var $28=$27+8; //@line 142 "cStringIO.c"
+        var $29=HEAP[$28]; //@line 142 "cStringIO.c"
+        var $30=$s; //@line 142 "cStringIO.c"
+        var $31=_PyString_FromStringAndSize($29, $30); //@line 142 "cStringIO.c"
+        $0=$31; //@line 142 "cStringIO.c"
         __label__ = 11; break; //@line 142 "cStringIO.c"
       case 11: // $bb11
-        var $36=$1; //@line 132 "cStringIO.c"
-        $retval=$36; //@line 132 "cStringIO.c"
+        var $32=$0; //@line 132 "cStringIO.c"
+        $retval=$32; //@line 132 "cStringIO.c"
         var $retval12=$retval; //@line 132 "cStringIO.c"
         STACKTOP = __stackBase__;
         return $retval12; //@line 132 "cStringIO.c"
@@ -448,40 +446,28 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $unused_addr=$unused;
-        var $2=$self_addr; //@line 149 "cStringIO.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 80 "cStringIO.c"
-        var $4=$3+8; //@line 80 "cStringIO.c"
-        var $5=HEAP[$4]; //@line 80 "cStringIO.c"
-        var $6=($5)==0; //@line 80 "cStringIO.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 149 "cStringIO.c"
+        var $2=_IO__opencheck($1); //@line 149 "cStringIO.c"
+        var $3=($2)==0; //@line 149 "cStringIO.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 149 "cStringIO.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($7, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 149 "cStringIO.c"
+        $0=0; //@line 149 "cStringIO.c"
         __label__ = 3; break; //@line 149 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $8=HEAP[__Py_ZeroStruct]; //@line 150 "cStringIO.c"
-        var $9=($8) + 1; //@line 150 "cStringIO.c"
-        HEAP[__Py_ZeroStruct]=$9; //@line 150 "cStringIO.c"
-        $1=__Py_ZeroStruct; //@line 151 "cStringIO.c"
+        var $4=HEAP[__Py_ZeroStruct]; //@line 150 "cStringIO.c"
+        var $5=($4) + 1; //@line 150 "cStringIO.c"
+        HEAP[__Py_ZeroStruct]=$5; //@line 150 "cStringIO.c"
+        $0=__Py_ZeroStruct; //@line 151 "cStringIO.c"
         __label__ = 3; break; //@line 151 "cStringIO.c"
       case 3: // $bb2
-        var $10=$1; //@line 149 "cStringIO.c"
-        $retval=$10; //@line 149 "cStringIO.c"
+        var $6=$0; //@line 149 "cStringIO.c"
+        $retval=$6; //@line 149 "cStringIO.c"
         var $retval3=$retval; //@line 149 "cStringIO.c"
         ;
         return $retval3; //@line 149 "cStringIO.c"
@@ -497,110 +483,98 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $output_addr;
         var $n_addr;
         var $retval;
-        var $1;
+        var $0;
         var $l;
         $self_addr=$self;
         $output_addr=$output;
         $n_addr=$n;
-        var $2=$self_addr; //@line 161 "cStringIO.c"
-        var $3=$2; //@line 161 "cStringIO.c"
-        $self_addr_i=$3;
-        var $4=$self_addr_i; //@line 80 "cStringIO.c"
-        var $5=$4+8; //@line 80 "cStringIO.c"
-        var $6=HEAP[$5]; //@line 80 "cStringIO.c"
-        var $7=($6)==0; //@line 80 "cStringIO.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 161 "cStringIO.c"
+        var $2=$1; //@line 161 "cStringIO.c"
+        var $3=_IO__opencheck($2); //@line 161 "cStringIO.c"
+        var $4=($3)==0; //@line 161 "cStringIO.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 161 "cStringIO.c"
       case 1: // $bb
-        var $8=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($8, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=-1; //@line 161 "cStringIO.c"
+        $0=-1; //@line 161 "cStringIO.c"
         __label__ = 11; break; //@line 161 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $9=$self_addr; //@line 162 "cStringIO.c"
-        var $10=$9; //@line 162 "cStringIO.c"
-        var $11=$10+12; //@line 162 "cStringIO.c"
-        var $12=HEAP[$11]; //@line 162 "cStringIO.c"
-        var $13=($12) < 0; //@line 162 "cStringIO.c"
-        if ($13) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 162 "cStringIO.c"
+        var $5=$self_addr; //@line 162 "cStringIO.c"
+        var $6=$5; //@line 162 "cStringIO.c"
+        var $7=$6+12; //@line 162 "cStringIO.c"
+        var $8=HEAP[$7]; //@line 162 "cStringIO.c"
+        var $9=($8) < 0; //@line 162 "cStringIO.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 162 "cStringIO.c"
       case 3: // $bb2
         ___assert_fail(__str3, __str4, 162, ___PRETTY_FUNCTION___8481); //@line 162 "cStringIO.c"
         throw "Reached an unreachable!" //@line 162 "cStringIO.c"
       case 4: // $bb3
-        var $14=$self_addr; //@line 163 "cStringIO.c"
-        var $15=$14; //@line 163 "cStringIO.c"
-        var $16=$15+16; //@line 163 "cStringIO.c"
-        var $17=HEAP[$16]; //@line 163 "cStringIO.c"
-        var $18=($17) < 0; //@line 163 "cStringIO.c"
-        if ($18) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 163 "cStringIO.c"
+        var $10=$self_addr; //@line 163 "cStringIO.c"
+        var $11=$10; //@line 163 "cStringIO.c"
+        var $12=$11+16; //@line 163 "cStringIO.c"
+        var $13=HEAP[$12]; //@line 163 "cStringIO.c"
+        var $14=($13) < 0; //@line 163 "cStringIO.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 163 "cStringIO.c"
       case 5: // $bb4
         ___assert_fail(__str7, __str4, 163, ___PRETTY_FUNCTION___8481); //@line 163 "cStringIO.c"
         throw "Reached an unreachable!" //@line 163 "cStringIO.c"
       case 6: // $bb5
+        var $15=$self_addr; //@line 164 "cStringIO.c"
+        var $16=$15; //@line 164 "cStringIO.c"
+        var $17=$16+16; //@line 164 "cStringIO.c"
+        var $18=HEAP[$17]; //@line 164 "cStringIO.c"
         var $19=$self_addr; //@line 164 "cStringIO.c"
         var $20=$19; //@line 164 "cStringIO.c"
-        var $21=$20+16; //@line 164 "cStringIO.c"
+        var $21=$20+12; //@line 164 "cStringIO.c"
         var $22=HEAP[$21]; //@line 164 "cStringIO.c"
-        var $23=$self_addr; //@line 164 "cStringIO.c"
-        var $24=$23; //@line 164 "cStringIO.c"
-        var $25=$24+12; //@line 164 "cStringIO.c"
-        var $26=HEAP[$25]; //@line 164 "cStringIO.c"
-        var $27=($22) - ($26); //@line 164 "cStringIO.c"
-        $l=$27; //@line 164 "cStringIO.c"
-        var $28=$n_addr; //@line 165 "cStringIO.c"
-        var $29=($28) < 0; //@line 165 "cStringIO.c"
-        if ($29) { __lastLabel__ = 6; __label__ = 8; break; } else { __lastLabel__ = 6; __label__ = 7; break; } //@line 165 "cStringIO.c"
+        var $23=($18) - ($22); //@line 164 "cStringIO.c"
+        $l=$23; //@line 164 "cStringIO.c"
+        var $24=$n_addr; //@line 165 "cStringIO.c"
+        var $25=($24) < 0; //@line 165 "cStringIO.c"
+        if ($25) { __lastLabel__ = 6; __label__ = 8; break; } else { __lastLabel__ = 6; __label__ = 7; break; } //@line 165 "cStringIO.c"
       case 7: // $bb6
-        var $30=$n_addr; //@line 165 "cStringIO.c"
-        var $31=$l; //@line 165 "cStringIO.c"
-        var $32=($30) > ($31); //@line 165 "cStringIO.c"
-        if ($32) { __lastLabel__ = 7; __label__ = 8; break; } else { __lastLabel__ = 7; __label__ = 10; break; } //@line 165 "cStringIO.c"
+        var $26=$n_addr; //@line 165 "cStringIO.c"
+        var $27=$l; //@line 165 "cStringIO.c"
+        var $28=($26) > ($27); //@line 165 "cStringIO.c"
+        if ($28) { __lastLabel__ = 7; __label__ = 8; break; } else { __lastLabel__ = 7; __label__ = 10; break; } //@line 165 "cStringIO.c"
       case 8: // $bb7
-        var $33=__lastLabel__ == 7 ? $31 : ($27);
-        $n_addr=$33; //@line 166 "cStringIO.c"
-        var $34=($33) < 0; //@line 167 "cStringIO.c"
-        if ($34) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 167 "cStringIO.c"
+        var $29=__lastLabel__ == 7 ? $27 : ($23);
+        $n_addr=$29; //@line 166 "cStringIO.c"
+        var $30=($29) < 0; //@line 167 "cStringIO.c"
+        if ($30) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 167 "cStringIO.c"
       case 9: // $bb8
         $n_addr=0; //@line 167 "cStringIO.c"
         __label__ = 10; break; //@line 167 "cStringIO.c"
       case 10: // $bb9
+        var $31=$self_addr; //@line 170 "cStringIO.c"
+        var $32=$31; //@line 170 "cStringIO.c"
+        var $33=$32+8; //@line 170 "cStringIO.c"
+        var $34=HEAP[$33]; //@line 170 "cStringIO.c"
         var $35=$self_addr; //@line 170 "cStringIO.c"
         var $36=$35; //@line 170 "cStringIO.c"
-        var $37=$36+8; //@line 170 "cStringIO.c"
+        var $37=$36+12; //@line 170 "cStringIO.c"
         var $38=HEAP[$37]; //@line 170 "cStringIO.c"
-        var $39=$self_addr; //@line 170 "cStringIO.c"
-        var $40=$39; //@line 170 "cStringIO.c"
-        var $41=$40+12; //@line 170 "cStringIO.c"
-        var $42=HEAP[$41]; //@line 170 "cStringIO.c"
-        var $43=$38+$42; //@line 170 "cStringIO.c"
-        var $44=$output_addr; //@line 170 "cStringIO.c"
-        HEAP[$44]=$43; //@line 170 "cStringIO.c"
-        var $45=$self_addr; //@line 171 "cStringIO.c"
-        var $46=$45; //@line 171 "cStringIO.c"
-        var $47=$self_addr; //@line 171 "cStringIO.c"
-        var $48=$47; //@line 171 "cStringIO.c"
-        var $49=$48+12; //@line 171 "cStringIO.c"
-        var $50=HEAP[$49]; //@line 171 "cStringIO.c"
-        var $51=$n_addr; //@line 171 "cStringIO.c"
-        var $52=($51) + ($50); //@line 171 "cStringIO.c"
-        var $53=$46+12; //@line 171 "cStringIO.c"
-        HEAP[$53]=$52; //@line 171 "cStringIO.c"
-        var $54=$n_addr; //@line 172 "cStringIO.c"
-        $1=$54; //@line 172 "cStringIO.c"
+        var $39=$34+$38; //@line 170 "cStringIO.c"
+        var $40=$output_addr; //@line 170 "cStringIO.c"
+        HEAP[$40]=$39; //@line 170 "cStringIO.c"
+        var $41=$self_addr; //@line 171 "cStringIO.c"
+        var $42=$41; //@line 171 "cStringIO.c"
+        var $43=$self_addr; //@line 171 "cStringIO.c"
+        var $44=$43; //@line 171 "cStringIO.c"
+        var $45=$44+12; //@line 171 "cStringIO.c"
+        var $46=HEAP[$45]; //@line 171 "cStringIO.c"
+        var $47=$n_addr; //@line 171 "cStringIO.c"
+        var $48=($47) + ($46); //@line 171 "cStringIO.c"
+        var $49=$42+12; //@line 171 "cStringIO.c"
+        HEAP[$49]=$48; //@line 171 "cStringIO.c"
+        var $50=$n_addr; //@line 172 "cStringIO.c"
+        $0=$50; //@line 172 "cStringIO.c"
         __label__ = 11; break; //@line 172 "cStringIO.c"
       case 11: // $bb10
-        var $55=$1; //@line 161 "cStringIO.c"
-        $retval=$55; //@line 161 "cStringIO.c"
+        var $51=$0; //@line 161 "cStringIO.c"
+        $retval=$51; //@line 161 "cStringIO.c"
         var $retval11=$retval; //@line 161 "cStringIO.c"
         ;
         return $retval11; //@line 161 "cStringIO.c"
@@ -626,7 +600,7 @@ var __str41;
         HEAP[$n]=-1; //@line 177 "cStringIO.c"
         HEAP[$output]=0; //@line 178 "cStringIO.c"
         var $1=$args_addr; //@line 180 "cStringIO.c"
-        var $2=_PyArg_ParseTuple($1, __str8, $n); //@line 180 "cStringIO.c"
+        var $2=_PyArg_ParseTuple($1, __str8, allocate([$n,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 180 "cStringIO.c"
         var $3=($2)==0; //@line 180 "cStringIO.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 180 "cStringIO.c"
       case 1: // $bb
@@ -667,158 +641,146 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $output_addr;
         var $retval;
-        var $1;
+        var $0;
         var $n;
         var $s;
         var $l;
         $self_addr=$self;
         $output_addr=$output;
-        var $2=$self_addr; //@line 194 "cStringIO.c"
-        var $3=$2; //@line 194 "cStringIO.c"
-        $self_addr_i=$3;
-        var $4=$self_addr_i; //@line 80 "cStringIO.c"
-        var $5=$4+8; //@line 80 "cStringIO.c"
-        var $6=HEAP[$5]; //@line 80 "cStringIO.c"
-        var $7=($6)==0; //@line 80 "cStringIO.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 194 "cStringIO.c"
+        var $2=$1; //@line 194 "cStringIO.c"
+        var $3=_IO__opencheck($2); //@line 194 "cStringIO.c"
+        var $4=($3)==0; //@line 194 "cStringIO.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 194 "cStringIO.c"
       case 1: // $bb
-        var $8=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($8, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=-1; //@line 194 "cStringIO.c"
+        $0=-1; //@line 194 "cStringIO.c"
         __label__ = 15; break; //@line 194 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
+        var $5=$self_addr; //@line 197 "cStringIO.c"
+        var $6=$5; //@line 197 "cStringIO.c"
+        var $7=$6+8; //@line 197 "cStringIO.c"
+        var $8=HEAP[$7]; //@line 197 "cStringIO.c"
         var $9=$self_addr; //@line 197 "cStringIO.c"
         var $10=$9; //@line 197 "cStringIO.c"
-        var $11=$10+8; //@line 197 "cStringIO.c"
+        var $11=$10+12; //@line 197 "cStringIO.c"
         var $12=HEAP[$11]; //@line 197 "cStringIO.c"
-        var $13=$self_addr; //@line 197 "cStringIO.c"
-        var $14=$13; //@line 197 "cStringIO.c"
-        var $15=$14+12; //@line 197 "cStringIO.c"
-        var $16=HEAP[$15]; //@line 197 "cStringIO.c"
-        var $17=$12+$16; //@line 197 "cStringIO.c"
-        $n=$17; //@line 197 "cStringIO.c"
+        var $13=$8+$12; //@line 197 "cStringIO.c"
+        $n=$13; //@line 197 "cStringIO.c"
+        var $14=$self_addr; //@line 197 "cStringIO.c"
+        var $15=$14; //@line 197 "cStringIO.c"
+        var $16=$15+8; //@line 197 "cStringIO.c"
+        var $17=HEAP[$16]; //@line 197 "cStringIO.c"
         var $18=$self_addr; //@line 197 "cStringIO.c"
         var $19=$18; //@line 197 "cStringIO.c"
-        var $20=$19+8; //@line 197 "cStringIO.c"
+        var $20=$19+16; //@line 197 "cStringIO.c"
         var $21=HEAP[$20]; //@line 197 "cStringIO.c"
-        var $22=$self_addr; //@line 197 "cStringIO.c"
-        var $23=$22; //@line 197 "cStringIO.c"
-        var $24=$23+16; //@line 197 "cStringIO.c"
-        var $25=HEAP[$24]; //@line 197 "cStringIO.c"
-        var $26=$21+$25; //@line 197 "cStringIO.c"
-        $s=$26; //@line 197 "cStringIO.c"
+        var $22=$17+$21; //@line 197 "cStringIO.c"
+        $s=$22; //@line 197 "cStringIO.c"
         __label__ = 4; break; //@line 197 "cStringIO.c"
       case 3: // $bb2
-        var $27=$n; //@line 198 "cStringIO.c"
-        var $28=$27+1; //@line 198 "cStringIO.c"
-        $n=$28; //@line 198 "cStringIO.c"
+        var $23=$n; //@line 198 "cStringIO.c"
+        var $24=$23+1; //@line 198 "cStringIO.c"
+        $n=$24; //@line 198 "cStringIO.c"
         __label__ = 4; break; //@line 198 "cStringIO.c"
       case 4: // $bb3
-        var $29=$n; //@line 198 "cStringIO.c"
-        var $30=$s; //@line 198 "cStringIO.c"
-        var $31=($29) >= ($30); //@line 198 "cStringIO.c"
-        if ($31) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 198 "cStringIO.c"
+        var $25=$n; //@line 198 "cStringIO.c"
+        var $26=$s; //@line 198 "cStringIO.c"
+        var $27=($25) >= ($26); //@line 198 "cStringIO.c"
+        if ($27) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 198 "cStringIO.c"
       case 5: // $bb4
-        var $32=$n; //@line 198 "cStringIO.c"
-        var $33=HEAP[$32]; //@line 198 "cStringIO.c"
-        var $34=($33)!=10; //@line 198 "cStringIO.c"
-        if ($34) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 198 "cStringIO.c"
+        var $28=$n; //@line 198 "cStringIO.c"
+        var $29=HEAP[$28]; //@line 198 "cStringIO.c"
+        var $30=($29)!=10; //@line 198 "cStringIO.c"
+        if ($30) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 198 "cStringIO.c"
       case 6: // $bb5
-        var $35=$n; //@line 200 "cStringIO.c"
-        var $36=$s; //@line 200 "cStringIO.c"
-        var $37=($35) < ($36); //@line 200 "cStringIO.c"
-        if ($37) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 200 "cStringIO.c"
+        var $31=$n; //@line 200 "cStringIO.c"
+        var $32=$s; //@line 200 "cStringIO.c"
+        var $33=($31) < ($32); //@line 200 "cStringIO.c"
+        if ($33) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 200 "cStringIO.c"
       case 7: // $bb6
-        var $38=$n; //@line 200 "cStringIO.c"
-        var $39=$38+1; //@line 200 "cStringIO.c"
-        $n=$39; //@line 200 "cStringIO.c"
+        var $34=$n; //@line 200 "cStringIO.c"
+        var $35=$34+1; //@line 200 "cStringIO.c"
+        $n=$35; //@line 200 "cStringIO.c"
         __label__ = 8; break; //@line 200 "cStringIO.c"
       case 8: // $bb7
+        var $36=$self_addr; //@line 202 "cStringIO.c"
+        var $37=$36; //@line 202 "cStringIO.c"
+        var $38=$37+8; //@line 202 "cStringIO.c"
+        var $39=HEAP[$38]; //@line 202 "cStringIO.c"
         var $40=$self_addr; //@line 202 "cStringIO.c"
         var $41=$40; //@line 202 "cStringIO.c"
-        var $42=$41+8; //@line 202 "cStringIO.c"
+        var $42=$41+12; //@line 202 "cStringIO.c"
         var $43=HEAP[$42]; //@line 202 "cStringIO.c"
-        var $44=$self_addr; //@line 202 "cStringIO.c"
-        var $45=$44; //@line 202 "cStringIO.c"
-        var $46=$45+12; //@line 202 "cStringIO.c"
-        var $47=HEAP[$46]; //@line 202 "cStringIO.c"
-        var $48=$43+$47; //@line 202 "cStringIO.c"
-        var $49=$output_addr; //@line 202 "cStringIO.c"
-        HEAP[$49]=$48; //@line 202 "cStringIO.c"
-        var $50=$n; //@line 203 "cStringIO.c"
-        var $51=($50); //@line 203 "cStringIO.c"
-        var $52=$self_addr; //@line 203 "cStringIO.c"
-        var $53=$52; //@line 203 "cStringIO.c"
-        var $54=$53+8; //@line 203 "cStringIO.c"
-        var $55=HEAP[$54]; //@line 203 "cStringIO.c"
-        var $56=($55); //@line 203 "cStringIO.c"
-        var $_neg=0 - ($56);
-        var $57=$self_addr; //@line 203 "cStringIO.c"
-        var $58=$57; //@line 203 "cStringIO.c"
-        var $59=$58+12; //@line 203 "cStringIO.c"
-        var $60=HEAP[$59]; //@line 203 "cStringIO.c"
-        var $_neg1=0 - ($60);
-        var $61=($_neg) + ($51);
-        var $62=($61) + ($_neg1);
-        $l=$62; //@line 203 "cStringIO.c"
-        var $63=$self_addr; //@line 205 "cStringIO.c"
-        var $64=$63; //@line 205 "cStringIO.c"
-        var $65=$64+12; //@line 205 "cStringIO.c"
-        var $66=HEAP[$65]; //@line 205 "cStringIO.c"
-        var $67=$l; //@line 205 "cStringIO.c"
-        var $68=2147483647 - ($67); //@line 205 "cStringIO.c"
-        var $69=($66) > ($68); //@line 205 "cStringIO.c"
-        if ($69) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 205 "cStringIO.c"
+        var $44=$39+$43; //@line 202 "cStringIO.c"
+        var $45=$output_addr; //@line 202 "cStringIO.c"
+        HEAP[$45]=$44; //@line 202 "cStringIO.c"
+        var $46=$n; //@line 203 "cStringIO.c"
+        var $47=($46); //@line 203 "cStringIO.c"
+        var $48=$self_addr; //@line 203 "cStringIO.c"
+        var $49=$48; //@line 203 "cStringIO.c"
+        var $50=$49+8; //@line 203 "cStringIO.c"
+        var $51=HEAP[$50]; //@line 203 "cStringIO.c"
+        var $52=($51); //@line 203 "cStringIO.c"
+        var $_neg=0 - ($52);
+        var $53=$self_addr; //@line 203 "cStringIO.c"
+        var $54=$53; //@line 203 "cStringIO.c"
+        var $55=$54+12; //@line 203 "cStringIO.c"
+        var $56=HEAP[$55]; //@line 203 "cStringIO.c"
+        var $_neg1=0 - ($56);
+        var $57=($_neg) + ($47);
+        var $58=($57) + ($_neg1);
+        $l=$58; //@line 203 "cStringIO.c"
+        var $59=$self_addr; //@line 205 "cStringIO.c"
+        var $60=$59; //@line 205 "cStringIO.c"
+        var $61=$60+12; //@line 205 "cStringIO.c"
+        var $62=HEAP[$61]; //@line 205 "cStringIO.c"
+        var $63=$l; //@line 205 "cStringIO.c"
+        var $64=2147483647 - ($63); //@line 205 "cStringIO.c"
+        var $65=($62) > ($64); //@line 205 "cStringIO.c"
+        if ($65) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 205 "cStringIO.c"
       case 9: // $bb8
         ___assert_fail(__str9, __str4, 205, ___PRETTY_FUNCTION___8545); //@line 205 "cStringIO.c"
         throw "Reached an unreachable!" //@line 205 "cStringIO.c"
       case 10: // $bb9
-        var $70=$self_addr; //@line 206 "cStringIO.c"
-        var $71=$70; //@line 206 "cStringIO.c"
-        var $72=$71+12; //@line 206 "cStringIO.c"
-        var $73=HEAP[$72]; //@line 206 "cStringIO.c"
-        var $74=($73) < 0; //@line 206 "cStringIO.c"
-        if ($74) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 206 "cStringIO.c"
+        var $66=$self_addr; //@line 206 "cStringIO.c"
+        var $67=$66; //@line 206 "cStringIO.c"
+        var $68=$67+12; //@line 206 "cStringIO.c"
+        var $69=HEAP[$68]; //@line 206 "cStringIO.c"
+        var $70=($69) < 0; //@line 206 "cStringIO.c"
+        if ($70) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 206 "cStringIO.c"
       case 11: // $bb10
         ___assert_fail(__str3, __str4, 206, ___PRETTY_FUNCTION___8545); //@line 206 "cStringIO.c"
         throw "Reached an unreachable!" //@line 206 "cStringIO.c"
       case 12: // $bb11
-        var $75=$self_addr; //@line 207 "cStringIO.c"
-        var $76=$75; //@line 207 "cStringIO.c"
-        var $77=$76+16; //@line 207 "cStringIO.c"
-        var $78=HEAP[$77]; //@line 207 "cStringIO.c"
-        var $79=($78) < 0; //@line 207 "cStringIO.c"
-        if ($79) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 207 "cStringIO.c"
+        var $71=$self_addr; //@line 207 "cStringIO.c"
+        var $72=$71; //@line 207 "cStringIO.c"
+        var $73=$72+16; //@line 207 "cStringIO.c"
+        var $74=HEAP[$73]; //@line 207 "cStringIO.c"
+        var $75=($74) < 0; //@line 207 "cStringIO.c"
+        if ($75) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 207 "cStringIO.c"
       case 13: // $bb12
         ___assert_fail(__str7, __str4, 207, ___PRETTY_FUNCTION___8545); //@line 207 "cStringIO.c"
         throw "Reached an unreachable!" //@line 207 "cStringIO.c"
       case 14: // $bb13
-        var $80=$self_addr; //@line 209 "cStringIO.c"
-        var $81=$80; //@line 209 "cStringIO.c"
-        var $82=$self_addr; //@line 209 "cStringIO.c"
-        var $83=$82; //@line 209 "cStringIO.c"
-        var $84=$83+12; //@line 209 "cStringIO.c"
-        var $85=HEAP[$84]; //@line 209 "cStringIO.c"
-        var $86=$l; //@line 209 "cStringIO.c"
-        var $87=($86) + ($85); //@line 209 "cStringIO.c"
-        var $88=$81+12; //@line 209 "cStringIO.c"
-        HEAP[$88]=$87; //@line 209 "cStringIO.c"
-        var $89=$l; //@line 210 "cStringIO.c"
-        $1=$89; //@line 210 "cStringIO.c"
+        var $76=$self_addr; //@line 209 "cStringIO.c"
+        var $77=$76; //@line 209 "cStringIO.c"
+        var $78=$self_addr; //@line 209 "cStringIO.c"
+        var $79=$78; //@line 209 "cStringIO.c"
+        var $80=$79+12; //@line 209 "cStringIO.c"
+        var $81=HEAP[$80]; //@line 209 "cStringIO.c"
+        var $82=$l; //@line 209 "cStringIO.c"
+        var $83=($82) + ($81); //@line 209 "cStringIO.c"
+        var $84=$77+12; //@line 209 "cStringIO.c"
+        HEAP[$84]=$83; //@line 209 "cStringIO.c"
+        var $85=$l; //@line 210 "cStringIO.c"
+        $0=$85; //@line 210 "cStringIO.c"
         __label__ = 15; break; //@line 210 "cStringIO.c"
       case 15: // $bb14
-        var $90=$1; //@line 194 "cStringIO.c"
-        $retval=$90; //@line 194 "cStringIO.c"
+        var $86=$0; //@line 194 "cStringIO.c"
+        $retval=$86; //@line 194 "cStringIO.c"
         var $retval15=$retval; //@line 194 "cStringIO.c"
         ;
         return $retval15; //@line 194 "cStringIO.c"
@@ -848,7 +810,7 @@ var __str41;
         if ($2) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 218 "cStringIO.c"
       case 1: // $bb
         var $3=$args_addr; //@line 219 "cStringIO.c"
-        var $4=_PyArg_ParseTuple($3, __str10, $m); //@line 219 "cStringIO.c"
+        var $4=_PyArg_ParseTuple($3, __str10, allocate([$m,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 219 "cStringIO.c"
         var $5=($4)==0; //@line 219 "cStringIO.c"
         if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 219 "cStringIO.c"
       case 2: // $bb1
@@ -938,7 +900,7 @@ var __str41;
         HEAP[$hint]=0; //@line 238 "cStringIO.c"
         $length=0; //@line 238 "cStringIO.c"
         var $1=$args_addr; //@line 240 "cStringIO.c"
-        var $2=_PyArg_ParseTuple($1, __str11, $hint); //@line 240 "cStringIO.c"
+        var $2=_PyArg_ParseTuple($1, __str11, allocate([$hint,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 240 "cStringIO.c"
         var $3=($2)==0; //@line 240 "cStringIO.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 240 "cStringIO.c"
       case 1: // $bb
@@ -1070,43 +1032,31 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $unused_addr=$unused;
-        var $2=$self_addr; //@line 275 "cStringIO.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 80 "cStringIO.c"
-        var $4=$3+8; //@line 80 "cStringIO.c"
-        var $5=HEAP[$4]; //@line 80 "cStringIO.c"
-        var $6=($5)==0; //@line 80 "cStringIO.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 275 "cStringIO.c"
+        var $2=_IO__opencheck($1); //@line 275 "cStringIO.c"
+        var $3=($2)==0; //@line 275 "cStringIO.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 275 "cStringIO.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($7, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 275 "cStringIO.c"
+        $0=0; //@line 275 "cStringIO.c"
         __label__ = 3; break; //@line 275 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $8=$self_addr; //@line 277 "cStringIO.c"
-        var $9=$8+12; //@line 277 "cStringIO.c"
-        HEAP[$9]=0; //@line 277 "cStringIO.c"
-        var $10=HEAP[__Py_NoneStruct]; //@line 279 "cStringIO.c"
-        var $11=($10) + 1; //@line 279 "cStringIO.c"
-        HEAP[__Py_NoneStruct]=$11; //@line 279 "cStringIO.c"
-        $1=__Py_NoneStruct; //@line 280 "cStringIO.c"
+        var $4=$self_addr; //@line 277 "cStringIO.c"
+        var $5=$4+12; //@line 277 "cStringIO.c"
+        HEAP[$5]=0; //@line 277 "cStringIO.c"
+        var $6=HEAP[__Py_NoneStruct]; //@line 279 "cStringIO.c"
+        var $7=($6) + 1; //@line 279 "cStringIO.c"
+        HEAP[__Py_NoneStruct]=$7; //@line 279 "cStringIO.c"
+        $0=__Py_NoneStruct; //@line 280 "cStringIO.c"
         __label__ = 3; break; //@line 280 "cStringIO.c"
       case 3: // $bb2
-        var $12=$1; //@line 275 "cStringIO.c"
-        $retval=$12; //@line 275 "cStringIO.c"
+        var $8=$0; //@line 275 "cStringIO.c"
+        $retval=$8; //@line 275 "cStringIO.c"
         var $retval3=$retval; //@line 275 "cStringIO.c"
         ;
         return $retval3; //@line 275 "cStringIO.c"
@@ -1121,50 +1071,38 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $unused_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $unused_addr=$unused;
-        var $2=$self_addr; //@line 288 "cStringIO.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 80 "cStringIO.c"
-        var $4=$3+8; //@line 80 "cStringIO.c"
-        var $5=HEAP[$4]; //@line 80 "cStringIO.c"
-        var $6=($5)==0; //@line 80 "cStringIO.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 288 "cStringIO.c"
+        var $2=_IO__opencheck($1); //@line 288 "cStringIO.c"
+        var $3=($2)==0; //@line 288 "cStringIO.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 288 "cStringIO.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($7, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 288 "cStringIO.c"
+        $0=0; //@line 288 "cStringIO.c"
         __label__ = 5; break; //@line 288 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $8=$self_addr; //@line 290 "cStringIO.c"
-        var $9=$8+12; //@line 290 "cStringIO.c"
-        var $10=HEAP[$9]; //@line 290 "cStringIO.c"
-        var $11=($10) < 0; //@line 290 "cStringIO.c"
-        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 290 "cStringIO.c"
+        var $4=$self_addr; //@line 290 "cStringIO.c"
+        var $5=$4+12; //@line 290 "cStringIO.c"
+        var $6=HEAP[$5]; //@line 290 "cStringIO.c"
+        var $7=($6) < 0; //@line 290 "cStringIO.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 290 "cStringIO.c"
       case 3: // $bb2
         ___assert_fail(__str6, __str4, 290, ___PRETTY_FUNCTION___8704); //@line 290 "cStringIO.c"
         throw "Reached an unreachable!" //@line 290 "cStringIO.c"
       case 4: // $bb3
-        var $12=$self_addr; //@line 291 "cStringIO.c"
-        var $13=$12+12; //@line 291 "cStringIO.c"
-        var $14=HEAP[$13]; //@line 291 "cStringIO.c"
-        var $15=_PyInt_FromSsize_t($14); //@line 291 "cStringIO.c"
-        $1=$15; //@line 291 "cStringIO.c"
+        var $8=$self_addr; //@line 291 "cStringIO.c"
+        var $9=$8+12; //@line 291 "cStringIO.c"
+        var $10=HEAP[$9]; //@line 291 "cStringIO.c"
+        var $11=_PyInt_FromSsize_t($10); //@line 291 "cStringIO.c"
+        $0=$11; //@line 291 "cStringIO.c"
         __label__ = 5; break; //@line 291 "cStringIO.c"
       case 5: // $bb4
-        var $16=$1; //@line 288 "cStringIO.c"
-        $retval=$16; //@line 288 "cStringIO.c"
+        var $12=$0; //@line 288 "cStringIO.c"
+        $retval=$12; //@line 288 "cStringIO.c"
         var $retval5=$retval; //@line 288 "cStringIO.c"
         ;
         return $retval5; //@line 288 "cStringIO.c"
@@ -1180,94 +1118,82 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $pos=__stackBase__;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$pos]=-1; //@line 299 "cStringIO.c"
-        var $2=$self_addr; //@line 301 "cStringIO.c"
-        $self_addr_i=$2;
-        var $3=$self_addr_i; //@line 80 "cStringIO.c"
-        var $4=$3+8; //@line 80 "cStringIO.c"
-        var $5=HEAP[$4]; //@line 80 "cStringIO.c"
-        var $6=($5)==0; //@line 80 "cStringIO.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 301 "cStringIO.c"
+        var $2=_IO__opencheck($1); //@line 301 "cStringIO.c"
+        var $3=($2)==0; //@line 301 "cStringIO.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 301 "cStringIO.c"
       case 1: // $bb
-        var $7=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($7, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 301 "cStringIO.c"
+        $0=0; //@line 301 "cStringIO.c"
         __label__ = 12; break; //@line 301 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $8=$args_addr; //@line 302 "cStringIO.c"
-        var $9=_PyArg_ParseTuple($8, __str12, $pos); //@line 302 "cStringIO.c"
-        var $10=($9)==0; //@line 302 "cStringIO.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 302 "cStringIO.c"
+        var $4=$args_addr; //@line 302 "cStringIO.c"
+        var $5=_PyArg_ParseTuple($4, __str12, allocate([$pos,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 302 "cStringIO.c"
+        var $6=($5)==0; //@line 302 "cStringIO.c"
+        if ($6) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 302 "cStringIO.c"
       case 3: // $bb2
-        $1=0; //@line 302 "cStringIO.c"
+        $0=0; //@line 302 "cStringIO.c"
         __label__ = 12; break; //@line 302 "cStringIO.c"
       case 4: // $bb3
-        var $11=$args_addr; //@line 304 "cStringIO.c"
-        var $12=_PyTuple_Size($11); //@line 304 "cStringIO.c"
-        var $13=($12)==0; //@line 304 "cStringIO.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 304 "cStringIO.c"
+        var $7=$args_addr; //@line 304 "cStringIO.c"
+        var $8=_PyTuple_Size($7); //@line 304 "cStringIO.c"
+        var $9=($8)==0; //@line 304 "cStringIO.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 304 "cStringIO.c"
       case 5: // $bb4
-        var $14=$self_addr; //@line 306 "cStringIO.c"
-        var $15=$14+12; //@line 306 "cStringIO.c"
-        var $16=HEAP[$15]; //@line 306 "cStringIO.c"
-        HEAP[$pos]=$16; //@line 306 "cStringIO.c"
+        var $10=$self_addr; //@line 306 "cStringIO.c"
+        var $11=$10+12; //@line 306 "cStringIO.c"
+        var $12=HEAP[$11]; //@line 306 "cStringIO.c"
+        HEAP[$pos]=$12; //@line 306 "cStringIO.c"
         __lastLabel__ = 5; __label__ = 7; break; //@line 306 "cStringIO.c"
       case 6: // $bb5thread_pre_split
         var $_pr=HEAP[$pos];
         __lastLabel__ = 6; __label__ = 7; break;
       case 7: // $bb5
-        var $17=__lastLabel__ == 6 ? $_pr : ($16);
-        var $18=($17) < 0; //@line 309 "cStringIO.c"
-        if ($18) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 309 "cStringIO.c"
+        var $13=__lastLabel__ == 6 ? $_pr : ($12);
+        var $14=($13) < 0; //@line 309 "cStringIO.c"
+        if ($14) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 309 "cStringIO.c"
       case 8: // $bb6
-        var $19=___errno_location(); //@line 310 "cStringIO.c"
-        HEAP[$19]=22; //@line 310 "cStringIO.c"
-        var $20=HEAP[_PyExc_IOError]; //@line 311 "cStringIO.c"
-        var $21=_PyErr_SetFromErrno($20); //@line 311 "cStringIO.c"
-        $1=0; //@line 312 "cStringIO.c"
+        var $15=___errno_location(); //@line 310 "cStringIO.c"
+        HEAP[$15]=22; //@line 310 "cStringIO.c"
+        var $16=HEAP[_PyExc_IOError]; //@line 311 "cStringIO.c"
+        var $17=_PyErr_SetFromErrno($16); //@line 311 "cStringIO.c"
+        $0=0; //@line 312 "cStringIO.c"
         __label__ = 12; break; //@line 312 "cStringIO.c"
       case 9: // $bb7
-        var $22=$self_addr; //@line 315 "cStringIO.c"
-        var $23=$22+16; //@line 315 "cStringIO.c"
-        var $24=HEAP[$23]; //@line 315 "cStringIO.c"
-        var $25=HEAP[$pos]; //@line 315 "cStringIO.c"
-        var $26=($24) > ($25); //@line 315 "cStringIO.c"
-        if ($26) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 315 "cStringIO.c"
+        var $18=$self_addr; //@line 315 "cStringIO.c"
+        var $19=$18+16; //@line 315 "cStringIO.c"
+        var $20=HEAP[$19]; //@line 315 "cStringIO.c"
+        var $21=HEAP[$pos]; //@line 315 "cStringIO.c"
+        var $22=($20) > ($21); //@line 315 "cStringIO.c"
+        if ($22) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 315 "cStringIO.c"
       case 10: // $bb8
-        var $27=HEAP[$pos]; //@line 315 "cStringIO.c"
-        var $28=$self_addr; //@line 315 "cStringIO.c"
-        var $29=$28+16; //@line 315 "cStringIO.c"
-        HEAP[$29]=$27; //@line 315 "cStringIO.c"
+        var $23=HEAP[$pos]; //@line 315 "cStringIO.c"
+        var $24=$self_addr; //@line 315 "cStringIO.c"
+        var $25=$24+16; //@line 315 "cStringIO.c"
+        HEAP[$25]=$23; //@line 315 "cStringIO.c"
         __label__ = 11; break; //@line 315 "cStringIO.c"
       case 11: // $bb9
-        var $30=$self_addr; //@line 316 "cStringIO.c"
-        var $31=$30+16; //@line 316 "cStringIO.c"
-        var $32=HEAP[$31]; //@line 316 "cStringIO.c"
-        var $33=$self_addr; //@line 316 "cStringIO.c"
-        var $34=$33+12; //@line 316 "cStringIO.c"
-        HEAP[$34]=$32; //@line 316 "cStringIO.c"
-        var $35=HEAP[__Py_NoneStruct]; //@line 318 "cStringIO.c"
-        var $36=($35) + 1; //@line 318 "cStringIO.c"
-        HEAP[__Py_NoneStruct]=$36; //@line 318 "cStringIO.c"
-        $1=__Py_NoneStruct; //@line 319 "cStringIO.c"
+        var $26=$self_addr; //@line 316 "cStringIO.c"
+        var $27=$26+16; //@line 316 "cStringIO.c"
+        var $28=HEAP[$27]; //@line 316 "cStringIO.c"
+        var $29=$self_addr; //@line 316 "cStringIO.c"
+        var $30=$29+12; //@line 316 "cStringIO.c"
+        HEAP[$30]=$28; //@line 316 "cStringIO.c"
+        var $31=HEAP[__Py_NoneStruct]; //@line 318 "cStringIO.c"
+        var $32=($31) + 1; //@line 318 "cStringIO.c"
+        HEAP[__Py_NoneStruct]=$32; //@line 318 "cStringIO.c"
+        $0=__Py_NoneStruct; //@line 319 "cStringIO.c"
         __label__ = 12; break; //@line 319 "cStringIO.c"
       case 12: // $bb10
-        var $37=$1; //@line 301 "cStringIO.c"
-        $retval=$37; //@line 301 "cStringIO.c"
+        var $33=$0; //@line 301 "cStringIO.c"
+        $retval=$33; //@line 301 "cStringIO.c"
         var $retval11=$retval; //@line 301 "cStringIO.c"
         STACKTOP = __stackBase__;
         return $retval11; //@line 301 "cStringIO.c"
@@ -1352,90 +1278,78 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $position=__stackBase__;
         var $mode=__stackBase__+4;
         $self_addr=$self;
         $args_addr=$args;
         HEAP[$mode]=0; //@line 349 "cStringIO.c"
-        var $2=$self_addr; //@line 351 "cStringIO.c"
-        var $3=$2; //@line 351 "cStringIO.c"
-        $self_addr_i=$3;
-        var $4=$self_addr_i; //@line 80 "cStringIO.c"
-        var $5=$4+8; //@line 80 "cStringIO.c"
-        var $6=HEAP[$5]; //@line 80 "cStringIO.c"
-        var $7=($6)==0; //@line 80 "cStringIO.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 351 "cStringIO.c"
+        var $2=$1; //@line 351 "cStringIO.c"
+        var $3=_IO__opencheck($2); //@line 351 "cStringIO.c"
+        var $4=($3)==0; //@line 351 "cStringIO.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 351 "cStringIO.c"
       case 1: // $bb
-        var $8=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($8, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=0; //@line 351 "cStringIO.c"
+        $0=0; //@line 351 "cStringIO.c"
         __label__ = 12; break; //@line 351 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $9=$args_addr; //@line 352 "cStringIO.c"
-        var $10=_PyArg_ParseTuple($9, __str13, $position, $mode); //@line 352 "cStringIO.c"
-        var $11=($10)==0; //@line 352 "cStringIO.c"
-        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 352 "cStringIO.c"
+        var $5=$args_addr; //@line 352 "cStringIO.c"
+        var $6=_PyArg_ParseTuple($5, __str13, allocate([$position,0,0,0,$mode,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 352 "cStringIO.c"
+        var $7=($6)==0; //@line 352 "cStringIO.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 352 "cStringIO.c"
       case 3: // $bb2
-        $1=0; //@line 353 "cStringIO.c"
+        $0=0; //@line 353 "cStringIO.c"
         __label__ = 12; break; //@line 353 "cStringIO.c"
       case 4: // $bb3
-        var $12=HEAP[$mode]; //@line 355 "cStringIO.c"
-        var $13=($12)==2; //@line 355 "cStringIO.c"
-        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 355 "cStringIO.c"
+        var $8=HEAP[$mode]; //@line 355 "cStringIO.c"
+        var $9=($8)==2; //@line 355 "cStringIO.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 355 "cStringIO.c"
       case 5: // $bb4
-        var $14=$self_addr; //@line 356 "cStringIO.c"
-        var $15=$14+16; //@line 356 "cStringIO.c"
-        var $16=HEAP[$15]; //@line 356 "cStringIO.c"
-        var $17=HEAP[$position]; //@line 356 "cStringIO.c"
-        var $18=($17) + ($16); //@line 356 "cStringIO.c"
-        HEAP[$position]=$18; //@line 356 "cStringIO.c"
+        var $10=$self_addr; //@line 356 "cStringIO.c"
+        var $11=$10+16; //@line 356 "cStringIO.c"
+        var $12=HEAP[$11]; //@line 356 "cStringIO.c"
+        var $13=HEAP[$position]; //@line 356 "cStringIO.c"
+        var $14=($13) + ($12); //@line 356 "cStringIO.c"
+        HEAP[$position]=$14; //@line 356 "cStringIO.c"
         __lastLabel__ = 5; __label__ = 9; break; //@line 356 "cStringIO.c"
       case 6: // $bb5
-        var $19=HEAP[$mode]; //@line 358 "cStringIO.c"
-        var $20=($19)==1; //@line 358 "cStringIO.c"
-        if ($20) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 358 "cStringIO.c"
+        var $15=HEAP[$mode]; //@line 358 "cStringIO.c"
+        var $16=($15)==1; //@line 358 "cStringIO.c"
+        if ($16) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 358 "cStringIO.c"
       case 7: // $bb6
-        var $21=$self_addr; //@line 359 "cStringIO.c"
-        var $22=$21+12; //@line 359 "cStringIO.c"
-        var $23=HEAP[$22]; //@line 359 "cStringIO.c"
-        var $24=HEAP[$position]; //@line 359 "cStringIO.c"
-        var $25=($24) + ($23); //@line 359 "cStringIO.c"
-        HEAP[$position]=$25; //@line 359 "cStringIO.c"
+        var $17=$self_addr; //@line 359 "cStringIO.c"
+        var $18=$17+12; //@line 359 "cStringIO.c"
+        var $19=HEAP[$18]; //@line 359 "cStringIO.c"
+        var $20=HEAP[$position]; //@line 359 "cStringIO.c"
+        var $21=($20) + ($19); //@line 359 "cStringIO.c"
+        HEAP[$position]=$21; //@line 359 "cStringIO.c"
         __lastLabel__ = 7; __label__ = 9; break; //@line 359 "cStringIO.c"
       case 8: // $bb7thread_pre_split
         var $_pr=HEAP[$position];
         __lastLabel__ = 8; __label__ = 9; break;
       case 9: // $bb7
-        var $26=__lastLabel__ == 8 ? $_pr : (__lastLabel__ == 7 ? $25 : ($18));
-        var $27=($26) < 0; //@line 362 "cStringIO.c"
-        if ($27) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 362 "cStringIO.c"
+        var $22=__lastLabel__ == 8 ? $_pr : (__lastLabel__ == 7 ? $21 : ($14));
+        var $23=($22) < 0; //@line 362 "cStringIO.c"
+        if ($23) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 362 "cStringIO.c"
       case 10: // $bb8
         HEAP[$position]=0; //@line 362 "cStringIO.c"
         __label__ = 11; break; //@line 362 "cStringIO.c"
       case 11: // $bb9
-        var $28=HEAP[$position]; //@line 364 "cStringIO.c"
-        var $29=$self_addr; //@line 364 "cStringIO.c"
-        var $30=$29+12; //@line 364 "cStringIO.c"
-        HEAP[$30]=$28; //@line 364 "cStringIO.c"
-        var $31=HEAP[__Py_NoneStruct]; //@line 366 "cStringIO.c"
-        var $32=($31) + 1; //@line 366 "cStringIO.c"
-        HEAP[__Py_NoneStruct]=$32; //@line 366 "cStringIO.c"
-        $1=__Py_NoneStruct; //@line 367 "cStringIO.c"
+        var $24=HEAP[$position]; //@line 364 "cStringIO.c"
+        var $25=$self_addr; //@line 364 "cStringIO.c"
+        var $26=$25+12; //@line 364 "cStringIO.c"
+        HEAP[$26]=$24; //@line 364 "cStringIO.c"
+        var $27=HEAP[__Py_NoneStruct]; //@line 366 "cStringIO.c"
+        var $28=($27) + 1; //@line 366 "cStringIO.c"
+        HEAP[__Py_NoneStruct]=$28; //@line 366 "cStringIO.c"
+        $0=__Py_NoneStruct; //@line 367 "cStringIO.c"
         __label__ = 12; break; //@line 367 "cStringIO.c"
       case 12: // $bb10
-        var $33=$1; //@line 351 "cStringIO.c"
-        $retval=$33; //@line 351 "cStringIO.c"
+        var $29=$0; //@line 351 "cStringIO.c"
+        $retval=$29; //@line 351 "cStringIO.c"
         var $retval11=$retval; //@line 351 "cStringIO.c"
         STACKTOP = __stackBase__;
         return $retval11; //@line 351 "cStringIO.c"
@@ -1450,198 +1364,186 @@ var __str41;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $c_addr;
         var $l_addr;
         var $retval;
-        var $1;
+        var $0;
         var $newl;
         var $oself;
         var $newbuf;
         $self_addr=$self;
         $c_addr=$c;
         $l_addr=$l;
-        var $2=$self_addr; //@line 381 "cStringIO.c"
-        var $3=$2; //@line 381 "cStringIO.c"
-        $self_addr_i=$3;
-        var $4=$self_addr_i; //@line 80 "cStringIO.c"
-        var $5=$4+8; //@line 80 "cStringIO.c"
-        var $6=HEAP[$5]; //@line 80 "cStringIO.c"
-        var $7=($6)==0; //@line 80 "cStringIO.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 80 "cStringIO.c"
+        var $1=$self_addr; //@line 381 "cStringIO.c"
+        var $2=$1; //@line 381 "cStringIO.c"
+        var $3=_IO__opencheck($2); //@line 381 "cStringIO.c"
+        var $4=($3)==0; //@line 381 "cStringIO.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 381 "cStringIO.c"
       case 1: // $bb
-        var $8=HEAP[_PyExc_ValueError]; //@line 81 "cStringIO.c"
-        _PyErr_SetString($8, __str); //@line 81 "cStringIO.c"
-        $0=0; //@line 83 "cStringIO.c"
-        $retval_i=0; //@line 83 "cStringIO.c"
-        $1=-1; //@line 381 "cStringIO.c"
+        $0=-1; //@line 381 "cStringIO.c"
         __label__ = 17; break; //@line 381 "cStringIO.c"
       case 2: // $bb1
-        $0=1; //@line 85 "cStringIO.c"
-        $retval_i=1; //@line 83 "cStringIO.c"
-        var $9=$self_addr; //@line 382 "cStringIO.c"
-        var $10=$9; //@line 382 "cStringIO.c"
-        $oself=$10; //@line 382 "cStringIO.c"
-        var $11=$oself; //@line 384 "cStringIO.c"
-        var $12=$11+12; //@line 384 "cStringIO.c"
-        var $13=HEAP[$12]; //@line 384 "cStringIO.c"
-        var $14=$l_addr; //@line 384 "cStringIO.c"
-        var $15=($14) + ($13); //@line 384 "cStringIO.c"
-        $newl=$15; //@line 384 "cStringIO.c"
-        var $16=$oself; //@line 385 "cStringIO.c"
-        var $17=$16+20; //@line 385 "cStringIO.c"
-        var $18=HEAP[$17]; //@line 385 "cStringIO.c"
-        var $19=$newl; //@line 385 "cStringIO.c"
-        var $20=($18) <= ($19); //@line 385 "cStringIO.c"
-        if ($20) { __label__ = 3; break; } else { __label__ = 10; break; } //@line 385 "cStringIO.c"
+        var $5=$self_addr; //@line 382 "cStringIO.c"
+        var $6=$5; //@line 382 "cStringIO.c"
+        $oself=$6; //@line 382 "cStringIO.c"
+        var $7=$oself; //@line 384 "cStringIO.c"
+        var $8=$7+12; //@line 384 "cStringIO.c"
+        var $9=HEAP[$8]; //@line 384 "cStringIO.c"
+        var $10=$l_addr; //@line 384 "cStringIO.c"
+        var $11=($10) + ($9); //@line 384 "cStringIO.c"
+        $newl=$11; //@line 384 "cStringIO.c"
+        var $12=$oself; //@line 385 "cStringIO.c"
+        var $13=$12+20; //@line 385 "cStringIO.c"
+        var $14=HEAP[$13]; //@line 385 "cStringIO.c"
+        var $15=$newl; //@line 385 "cStringIO.c"
+        var $16=($14) <= ($15); //@line 385 "cStringIO.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 10; break; } //@line 385 "cStringIO.c"
       case 3: // $bb2
+        var $17=$oself; //@line 386 "cStringIO.c"
+        var $18=$17+20; //@line 386 "cStringIO.c"
+        var $19=HEAP[$18]; //@line 386 "cStringIO.c"
+        var $20=($19) * 2; //@line 386 "cStringIO.c"
         var $21=$oself; //@line 386 "cStringIO.c"
         var $22=$21+20; //@line 386 "cStringIO.c"
-        var $23=HEAP[$22]; //@line 386 "cStringIO.c"
-        var $24=($23) * 2; //@line 386 "cStringIO.c"
-        var $25=$oself; //@line 386 "cStringIO.c"
-        var $26=$25+20; //@line 386 "cStringIO.c"
-        HEAP[$26]=$24; //@line 386 "cStringIO.c"
-        var $27=$oself; //@line 387 "cStringIO.c"
-        var $28=$27+20; //@line 387 "cStringIO.c"
-        var $29=HEAP[$28]; //@line 387 "cStringIO.c"
-        var $30=$newl; //@line 387 "cStringIO.c"
-        var $31=($29) <= ($30); //@line 387 "cStringIO.c"
-        if ($31) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 387 "cStringIO.c"
+        HEAP[$22]=$20; //@line 386 "cStringIO.c"
+        var $23=$oself; //@line 387 "cStringIO.c"
+        var $24=$23+20; //@line 387 "cStringIO.c"
+        var $25=HEAP[$24]; //@line 387 "cStringIO.c"
+        var $26=$newl; //@line 387 "cStringIO.c"
+        var $27=($25) <= ($26); //@line 387 "cStringIO.c"
+        if ($27) { __label__ = 4; break; } else { __label__ = 7; break; } //@line 387 "cStringIO.c"
       case 4: // $bb3
-        var $32=$newl; //@line 388 "cStringIO.c"
-        var $33=($32)==2147483646; //@line 388 "cStringIO.c"
-        if ($33) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 388 "cStringIO.c"
+        var $28=$newl; //@line 388 "cStringIO.c"
+        var $29=($28)==2147483646; //@line 388 "cStringIO.c"
+        if ($29) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 388 "cStringIO.c"
       case 5: // $bb4
         ___assert_fail(__str14, __str4, 388, ___PRETTY_FUNCTION___8812); //@line 388 "cStringIO.c"
         throw "Reached an unreachable!" //@line 388 "cStringIO.c"
       case 6: // $bb5
-        var $34=$newl; //@line 389 "cStringIO.c"
-        var $35=($34) + 1; //@line 389 "cStringIO.c"
-        var $36=$oself; //@line 389 "cStringIO.c"
-        var $37=$36+20; //@line 389 "cStringIO.c"
-        HEAP[$37]=$35; //@line 389 "cStringIO.c"
+        var $30=$newl; //@line 389 "cStringIO.c"
+        var $31=($30) + 1; //@line 389 "cStringIO.c"
+        var $32=$oself; //@line 389 "cStringIO.c"
+        var $33=$32+20; //@line 389 "cStringIO.c"
+        HEAP[$33]=$31; //@line 389 "cStringIO.c"
         __label__ = 7; break; //@line 389 "cStringIO.c"
       case 7: // $bb6
-        var $38=$oself; //@line 391 "cStringIO.c"
-        var $39=$38+20; //@line 391 "cStringIO.c"
-        var $40=HEAP[$39]; //@line 391 "cStringIO.c"
-        var $41=$oself; //@line 391 "cStringIO.c"
-        var $42=$41+8; //@line 391 "cStringIO.c"
-        var $43=HEAP[$42]; //@line 391 "cStringIO.c"
-        var $44=_realloc($43, $40); //@line 391 "cStringIO.c"
-        $newbuf=$44; //@line 391 "cStringIO.c"
-        var $45=($44)==0; //@line 392 "cStringIO.c"
-        if ($45) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 392 "cStringIO.c"
+        var $34=$oself; //@line 391 "cStringIO.c"
+        var $35=$34+20; //@line 391 "cStringIO.c"
+        var $36=HEAP[$35]; //@line 391 "cStringIO.c"
+        var $37=$oself; //@line 391 "cStringIO.c"
+        var $38=$37+8; //@line 391 "cStringIO.c"
+        var $39=HEAP[$38]; //@line 391 "cStringIO.c"
+        var $40=_realloc($39, $36); //@line 391 "cStringIO.c"
+        $newbuf=$40; //@line 391 "cStringIO.c"
+        var $41=($40)==0; //@line 392 "cStringIO.c"
+        if ($41) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 392 "cStringIO.c"
       case 8: // $bb7
-        var $46=HEAP[_PyExc_MemoryError]; //@line 393 "cStringIO.c"
-        _PyErr_SetString($46, __str15); //@line 393 "cStringIO.c"
-        var $47=$oself; //@line 394 "cStringIO.c"
-        var $48=$47+8; //@line 394 "cStringIO.c"
-        var $49=HEAP[$48]; //@line 394 "cStringIO.c"
-        _free($49); //@line 394 "cStringIO.c"
-        var $50=$oself; //@line 395 "cStringIO.c"
-        var $51=$50+8; //@line 395 "cStringIO.c"
-        HEAP[$51]=0; //@line 395 "cStringIO.c"
-        var $52=$oself; //@line 396 "cStringIO.c"
-        var $53=$52+12; //@line 396 "cStringIO.c"
-        HEAP[$53]=0; //@line 396 "cStringIO.c"
-        var $54=$oself; //@line 396 "cStringIO.c"
-        var $55=$54+12; //@line 396 "cStringIO.c"
-        var $56=HEAP[$55]; //@line 396 "cStringIO.c"
-        var $57=$oself; //@line 396 "cStringIO.c"
-        var $58=$57+20; //@line 396 "cStringIO.c"
-        HEAP[$58]=$56; //@line 396 "cStringIO.c"
-        $1=-1; //@line 397 "cStringIO.c"
+        var $42=HEAP[_PyExc_MemoryError]; //@line 393 "cStringIO.c"
+        _PyErr_SetString($42, __str15); //@line 393 "cStringIO.c"
+        var $43=$oself; //@line 394 "cStringIO.c"
+        var $44=$43+8; //@line 394 "cStringIO.c"
+        var $45=HEAP[$44]; //@line 394 "cStringIO.c"
+        _free($45); //@line 394 "cStringIO.c"
+        var $46=$oself; //@line 395 "cStringIO.c"
+        var $47=$46+8; //@line 395 "cStringIO.c"
+        HEAP[$47]=0; //@line 395 "cStringIO.c"
+        var $48=$oself; //@line 396 "cStringIO.c"
+        var $49=$48+12; //@line 396 "cStringIO.c"
+        HEAP[$49]=0; //@line 396 "cStringIO.c"
+        var $50=$oself; //@line 396 "cStringIO.c"
+        var $51=$50+12; //@line 396 "cStringIO.c"
+        var $52=HEAP[$51]; //@line 396 "cStringIO.c"
+        var $53=$oself; //@line 396 "cStringIO.c"
+        var $54=$53+20; //@line 396 "cStringIO.c"
+        HEAP[$54]=$52; //@line 396 "cStringIO.c"
+        $0=-1; //@line 397 "cStringIO.c"
         __label__ = 17; break; //@line 397 "cStringIO.c"
       case 9: // $bb8
-        var $59=$oself; //@line 399 "cStringIO.c"
-        var $60=$59+8; //@line 399 "cStringIO.c"
-        var $61=$newbuf; //@line 399 "cStringIO.c"
-        HEAP[$60]=$61; //@line 399 "cStringIO.c"
+        var $55=$oself; //@line 399 "cStringIO.c"
+        var $56=$55+8; //@line 399 "cStringIO.c"
+        var $57=$newbuf; //@line 399 "cStringIO.c"
+        HEAP[$56]=$57; //@line 399 "cStringIO.c"
         __label__ = 10; break; //@line 399 "cStringIO.c"
       case 10: // $bb9
-        var $62=$oself; //@line 402 "cStringIO.c"
-        var $63=$62+16; //@line 402 "cStringIO.c"
-        var $64=HEAP[$63]; //@line 402 "cStringIO.c"
-        var $65=$oself; //@line 402 "cStringIO.c"
-        var $66=$65+12; //@line 402 "cStringIO.c"
-        var $67=HEAP[$66]; //@line 402 "cStringIO.c"
-        var $68=($64) < ($67); //@line 402 "cStringIO.c"
-        if ($68) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 402 "cStringIO.c"
+        var $58=$oself; //@line 402 "cStringIO.c"
+        var $59=$58+16; //@line 402 "cStringIO.c"
+        var $60=HEAP[$59]; //@line 402 "cStringIO.c"
+        var $61=$oself; //@line 402 "cStringIO.c"
+        var $62=$61+12; //@line 402 "cStringIO.c"
+        var $63=HEAP[$62]; //@line 402 "cStringIO.c"
+        var $64=($60) < ($63); //@line 402 "cStringIO.c"
+        if ($64) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 402 "cStringIO.c"
       case 11: // $bb10
-        var $69=$oself; //@line 411 "cStringIO.c"
-        var $70=$69+12; //@line 411 "cStringIO.c"
-        var $71=HEAP[$70]; //@line 411 "cStringIO.c"
+        var $65=$oself; //@line 411 "cStringIO.c"
+        var $66=$65+12; //@line 411 "cStringIO.c"
+        var $67=HEAP[$66]; //@line 411 "cStringIO.c"
+        var $68=$oself; //@line 411 "cStringIO.c"
+        var $69=$68+16; //@line 411 "cStringIO.c"
+        var $70=HEAP[$69]; //@line 411 "cStringIO.c"
+        var $71=($67) - ($70); //@line 411 "cStringIO.c"
         var $72=$oself; //@line 411 "cStringIO.c"
-        var $73=$72+16; //@line 411 "cStringIO.c"
+        var $73=$72+8; //@line 411 "cStringIO.c"
         var $74=HEAP[$73]; //@line 411 "cStringIO.c"
-        var $75=($71) - ($74); //@line 411 "cStringIO.c"
-        var $76=$oself; //@line 411 "cStringIO.c"
-        var $77=$76+8; //@line 411 "cStringIO.c"
-        var $78=HEAP[$77]; //@line 411 "cStringIO.c"
-        var $79=$oself; //@line 411 "cStringIO.c"
-        var $80=$79+16; //@line 411 "cStringIO.c"
-        var $81=HEAP[$80]; //@line 411 "cStringIO.c"
-        var $82=$78+$81; //@line 411 "cStringIO.c"
-        _llvm_memset_p0i8_i32($82, 0, $75, 1, 0); //@line 411 "cStringIO.c"
+        var $75=$oself; //@line 411 "cStringIO.c"
+        var $76=$75+16; //@line 411 "cStringIO.c"
+        var $77=HEAP[$76]; //@line 411 "cStringIO.c"
+        var $78=$74+$77; //@line 411 "cStringIO.c"
+        _llvm_memset_p0i8_i32($78, 0, $71, 1, 0); //@line 411 "cStringIO.c"
         __label__ = 12; break; //@line 411 "cStringIO.c"
       case 12: // $bb11
-        var $83=$l_addr; //@line 415 "cStringIO.c"
-        var $84=$oself; //@line 415 "cStringIO.c"
-        var $85=$84+8; //@line 415 "cStringIO.c"
-        var $86=HEAP[$85]; //@line 415 "cStringIO.c"
-        var $87=$oself; //@line 415 "cStringIO.c"
-        var $88=$87+12; //@line 415 "cStringIO.c"
-        var $89=HEAP[$88]; //@line 415 "cStringIO.c"
-        var $90=$86+$89; //@line 415 "cStringIO.c"
-        var $91=$c_addr; //@line 415 "cStringIO.c"
-        _llvm_memcpy_p0i8_p0i8_i32($90, $91, $83, 1, 0); //@line 415 "cStringIO.c"
-        var $92=$oself; //@line 417 "cStringIO.c"
-        var $93=$92+12; //@line 417 "cStringIO.c"
-        var $94=HEAP[$93]; //@line 417 "cStringIO.c"
-        var $95=$l_addr; //@line 417 "cStringIO.c"
-        var $96=($95) + ($94); //@line 417 "cStringIO.c"
-        var $97=($96)==2147483647; //@line 417 "cStringIO.c"
-        if ($97) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 417 "cStringIO.c"
+        var $79=$l_addr; //@line 415 "cStringIO.c"
+        var $80=$oself; //@line 415 "cStringIO.c"
+        var $81=$80+8; //@line 415 "cStringIO.c"
+        var $82=HEAP[$81]; //@line 415 "cStringIO.c"
+        var $83=$oself; //@line 415 "cStringIO.c"
+        var $84=$83+12; //@line 415 "cStringIO.c"
+        var $85=HEAP[$84]; //@line 415 "cStringIO.c"
+        var $86=$82+$85; //@line 415 "cStringIO.c"
+        var $87=$c_addr; //@line 415 "cStringIO.c"
+        _llvm_memcpy_p0i8_p0i8_i32($86, $87, $79, 1, 0); //@line 415 "cStringIO.c"
+        var $88=$oself; //@line 417 "cStringIO.c"
+        var $89=$88+12; //@line 417 "cStringIO.c"
+        var $90=HEAP[$89]; //@line 417 "cStringIO.c"
+        var $91=$l_addr; //@line 417 "cStringIO.c"
+        var $92=($91) + ($90); //@line 417 "cStringIO.c"
+        var $93=($92)==2147483647; //@line 417 "cStringIO.c"
+        if ($93) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 417 "cStringIO.c"
       case 13: // $bb12
         ___assert_fail(__str16, __str4, 417, ___PRETTY_FUNCTION___8812); //@line 417 "cStringIO.c"
         throw "Reached an unreachable!" //@line 417 "cStringIO.c"
       case 14: // $bb13
-        var $98=$oself; //@line 418 "cStringIO.c"
-        var $99=$98+12; //@line 418 "cStringIO.c"
-        var $100=HEAP[$99]; //@line 418 "cStringIO.c"
-        var $101=$l_addr; //@line 418 "cStringIO.c"
-        var $102=($101) + ($100); //@line 418 "cStringIO.c"
-        var $103=$oself; //@line 418 "cStringIO.c"
-        var $104=$103+12; //@line 418 "cStringIO.c"
-        HEAP[$104]=$102; //@line 418 "cStringIO.c"
-        var $105=$oself; //@line 420 "cStringIO.c"
-        var $106=$105+16; //@line 420 "cStringIO.c"
-        var $107=HEAP[$106]; //@line 420 "cStringIO.c"
-        var $108=$oself; //@line 420 "cStringIO.c"
-        var $109=$108+12; //@line 420 "cStringIO.c"
-        var $110=HEAP[$109]; //@line 420 "cStringIO.c"
-        var $111=($107) < ($110); //@line 420 "cStringIO.c"
-        if ($111) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 420 "cStringIO.c"
+        var $94=$oself; //@line 418 "cStringIO.c"
+        var $95=$94+12; //@line 418 "cStringIO.c"
+        var $96=HEAP[$95]; //@line 418 "cStringIO.c"
+        var $97=$l_addr; //@line 418 "cStringIO.c"
+        var $98=($97) + ($96); //@line 418 "cStringIO.c"
+        var $99=$oself; //@line 418 "cStringIO.c"
+        var $100=$99+12; //@line 418 "cStringIO.c"
+        HEAP[$100]=$98; //@line 418 "cStringIO.c"
+        var $101=$oself; //@line 420 "cStringIO.c"
+        var $102=$101+16; //@line 420 "cStringIO.c"
+        var $103=HEAP[$102]; //@line 420 "cStringIO.c"
+        var $104=$oself; //@line 420 "cStringIO.c"
+        var $105=$104+12; //@line 420 "cStringIO.c"
+        var $106=HEAP[$105]; //@line 420 "cStringIO.c"
+        var $107=($103) < ($106); //@line 420 "cStringIO.c"
+        if ($107) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 420 "cStringIO.c"
       case 15: // $bb14
-        var $112=$oself; //@line 421 "cStringIO.c"
-        var $113=$112+12; //@line 421 "cStringIO.c"
-        var $114=HEAP[$113]; //@line 421 "cStringIO.c"
-        var $115=$oself; //@line 421 "cStringIO.c"
-        var $116=$115+16; //@line 421 "cStringIO.c"
-        HEAP[$116]=$114; //@line 421 "cStringIO.c"
+        var $108=$oself; //@line 421 "cStringIO.c"
+        var $109=$108+12; //@line 421 "cStringIO.c"
+        var $110=HEAP[$109]; //@line 421 "cStringIO.c"
+        var $111=$oself; //@line 421 "cStringIO.c"
+        var $112=$111+16; //@line 421 "cStringIO.c"
+        HEAP[$112]=$110; //@line 421 "cStringIO.c"
         __label__ = 16; break; //@line 421 "cStringIO.c"
       case 16: // $bb15
-        var $117=$l_addr; //@line 424 "cStringIO.c"
-        $1=$117; //@line 424 "cStringIO.c"
+        var $113=$l_addr; //@line 424 "cStringIO.c"
+        $0=$113; //@line 424 "cStringIO.c"
         __label__ = 17; break; //@line 424 "cStringIO.c"
       case 17: // $bb16
-        var $118=$1; //@line 381 "cStringIO.c"
-        $retval=$118; //@line 381 "cStringIO.c"
+        var $114=$0; //@line 381 "cStringIO.c"
+        $retval=$114; //@line 381 "cStringIO.c"
         var $retval17=$retval; //@line 381 "cStringIO.c"
         ;
         return $retval17; //@line 381 "cStringIO.c"
@@ -1665,7 +1567,7 @@ var __str41;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 432 "cStringIO.c"
-        var $2=_PyArg_ParseTuple($1, __str17, $c, $l); //@line 432 "cStringIO.c"
+        var $2=_PyArg_ParseTuple($1, __str17, allocate([$c,0,0,0,$l,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 432 "cStringIO.c"
         var $3=($2)==0; //@line 432 "cStringIO.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 432 "cStringIO.c"
       case 1: // $bb
@@ -2230,7 +2132,7 @@ var __str41;
         var $7=$6+12; //@line 665 "cStringIO.c"
         var $8=HEAP[$7]; //@line 665 "cStringIO.c"
         var $9=HEAP[_PyExc_TypeError]; //@line 665 "cStringIO.c"
-        var $10=_PyErr_Format($9, __str35, $8); //@line 665 "cStringIO.c"
+        var $10=_PyErr_Format($9, __str35, allocate([$8,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 665 "cStringIO.c"
         $0=0; //@line 667 "cStringIO.c"
         __label__ = 5; break; //@line 667 "cStringIO.c"
       case 2: // $bb2
@@ -2296,7 +2198,7 @@ var __str41;
         $args_addr=$args;
         HEAP[$s]=0; //@line 690 "cStringIO.c"
         var $1=$args_addr; //@line 692 "cStringIO.c"
-        var $2=_PyArg_UnpackTuple($1, __str36, 0, 1, $s); //@line 692 "cStringIO.c"
+        var $2=_PyArg_UnpackTuple($1, __str36, 0, 1, allocate([$s,0,0,0], ["%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 692 "cStringIO.c"
         var $3=($2)==0; //@line 692 "cStringIO.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 692 "cStringIO.c"
       case 1: // $bb

@@ -77,8 +77,8 @@ var _struct_group__doc__;
 var _struct_group_type_desc;
 var __str8;
 var _StructGrpType;
-var __Py_NoneStruct;
-var _PyExc_KeyError;
+
+
 var __str9;
 var __str10;
 var __str11;
@@ -465,7 +465,7 @@ var __str18;
       case 5: // $bb4
         var $28=HEAP[_PyExc_KeyError]; //@line 99 "grpmodule.c"
         var $29=$gid; //@line 99 "grpmodule.c"
-        var $30=_PyErr_Format($28, __str9, $29); //@line 99 "grpmodule.c"
+        var $30=_PyErr_Format($28, __str9, allocate([$29,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 99 "grpmodule.c"
         $0=0; //@line 100 "grpmodule.c"
         __label__ = 7; break; //@line 100 "grpmodule.c"
       case 6: // $bb5
@@ -523,7 +523,7 @@ var __str18;
       case 3: // $bb2
         var $13=HEAP[_PyExc_KeyError]; //@line 118 "grpmodule.c"
         var $14=$name; //@line 118 "grpmodule.c"
-        var $15=_PyErr_Format($13, __str10, $14); //@line 118 "grpmodule.c"
+        var $15=_PyErr_Format($13, __str10, allocate([$14,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 118 "grpmodule.c"
         var $16=$py_str_name; //@line 119 "grpmodule.c"
         var $17=$16; //@line 119 "grpmodule.c"
         var $18=HEAP[$17]; //@line 119 "grpmodule.c"

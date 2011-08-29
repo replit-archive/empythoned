@@ -69,13 +69,13 @@ var $struct__typeobject___SIZE = 196; // %struct._typeobject
 var $struct_partialobject___SIZE = 28; // %struct.partialobject
   
 var __str;
-var _PyExc_TypeError;
+
 var __str1;
 var __str2;
 var _reduce_doc;
 var __str3;
 var __str4;
-var __Py_NoneStruct;
+
 var __str5;
 var __str6;
 var ___PRETTY_FUNCTION___8588;
@@ -156,7 +156,7 @@ var ___PRETTY_FUNCTION___8886;
         $args_addr=$args;
         HEAP[$result]=0; //@line 17 "_functoolsmodule.c"
         var $1=$args_addr; //@line 19 "_functoolsmodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str, 2, 3, $func, $seq, $result); //@line 19 "_functoolsmodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str, 2, 3, allocate([$func,0,0,0,$seq,0,0,0,$result,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 19 "_functoolsmodule.c"
         var $3=($2)==0; //@line 19 "_functoolsmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 19 "_functoolsmodule.c"
       case 1: // $bb
@@ -1364,7 +1364,7 @@ var ___PRETTY_FUNCTION___8886;
         var $22=$21+4; //@line 287 "_functoolsmodule.c"
         var $23=HEAP[$22]; //@line 287 "_functoolsmodule.c"
         var $24=$iftmp_33; //@line 287 "_functoolsmodule.c"
-        var $25=_Py_BuildValue(__str18, $23, $19, $16, $13, $10, $24); //@line 287 "_functoolsmodule.c"
+        var $25=_Py_BuildValue(__str18, allocate([$23,0,0,0,$19,0,0,0,$16,0,0,0,$13,0,0,0,$10,0,0,0,$24,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 287 "_functoolsmodule.c"
         $0=$25; //@line 287 "_functoolsmodule.c"
         var $26=$0; //@line 287 "_functoolsmodule.c"
         $retval=$26; //@line 287 "_functoolsmodule.c"
@@ -1393,7 +1393,7 @@ var ___PRETTY_FUNCTION___8886;
         $pto_addr=$pto;
         $args_addr=$args;
         var $1=$args_addr; //@line 296 "_functoolsmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str19, $fn, $fnargs, $kw, $dict); //@line 296 "_functoolsmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str19, allocate([$fn,0,0,0,$fnargs,0,0,0,$kw,0,0,0,$dict,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 296 "_functoolsmodule.c"
         var $3=($2)==0; //@line 296 "_functoolsmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 296 "_functoolsmodule.c"
       case 1: // $bb

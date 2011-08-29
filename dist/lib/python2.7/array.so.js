@@ -76,12 +76,12 @@ var $struct_arrayobject___SIZE = 28; // %struct.arrayobject
   
 var __str;
 var __str1;
-var _PyExc_OverflowError;
+
 var __str2;
 var __str3;
 var __str4;
 var __str5;
-var _PyExc_TypeError;
+
 var __str6;
 var __str7;
 var __str8;
@@ -96,10 +96,10 @@ var __str15;
 var __str16;
 var ___PRETTY_FUNCTION___8858;
 var __str17;
-var __Py_NotImplementedStruct;
-var __Py_ZeroStruct;
-var __Py_TrueStruct;
-var _PyExc_IndexError;
+
+
+
+
 var __str18;
 var _copy_doc;
 var __str19;
@@ -109,9 +109,9 @@ var __str22;
 var ___PRETTY_FUNCTION___9470;
 var __str23;
 var __str24;
-var __Py_NoneStruct;
+
 var _count_doc;
-var _PyExc_ValueError;
+
 var __str25;
 var _index_doc;
 var __str26;
@@ -125,7 +125,7 @@ var __str30;
 var _insert_doc;
 var _buffer_info_doc;
 var _append_doc;
-var _PyExc_RuntimeError;
+
 var __str31;
 var _byteswap_doc;
 var __str32;
@@ -133,12 +133,12 @@ var ___PRETTY_FUNCTION___10009;
 var _reverse_doc;
 var __str33;
 var __str34;
-var _PyExc_IOError;
-var _PyExc_EOFError;
+
+
 var __str35;
 var _fromfile_doc;
-var _Py_Py3kWarningFlag;
-var _PyExc_DeprecationWarning;
+
+
 var __str36;
 var __str37;
 var _tofile_doc;
@@ -156,7 +156,7 @@ var _fromunicode_doc;
 var __str44;
 var _tounicode_doc;
 var __str45;
-var _PyExc_AttributeError;
+
 var __str46;
 var _reduce_doc;
 var __str47;
@@ -191,13 +191,13 @@ var _array_methods;
 var __str74;
 var __str75;
 var __str76;
-var _PySlice_Type;
+
 var __str77;
 var __str78;
 var __str79;
 var _array_as_mapping;
 var __str80;
-var _PyExc_SystemError;
+
 var __str81;
 var _array_as_sequence;
 var _array_as_buffer;
@@ -213,7 +213,7 @@ var ___PRETTY_FUNCTION___11388;
 var __str87;
 var _PyArrayIter_Type;
 var _a_methods;
-var _PyType_Type;
+
 var __str88;
 var __str89;
 
@@ -503,7 +503,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 114 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str, $x); //@line 114 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str, allocate([$x,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 114 "arraymodule.c"
         var $3=($2)==0; //@line 114 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 114 "arraymodule.c"
       case 1: // $bb
@@ -595,7 +595,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 137 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str1, $x); //@line 137 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str1, allocate([$x,0,0,0], ["i16*",0,0,0], ALLOC_STACK)); //@line 137 "arraymodule.c"
         var $3=($2)==0; //@line 137 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 137 "arraymodule.c"
       case 1: // $bb
@@ -693,7 +693,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 166 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str4, $x); //@line 166 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str4, allocate([$x,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 166 "arraymodule.c"
         var $3=($2)==0; //@line 166 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 166 "arraymodule.c"
       case 1: // $bb
@@ -769,7 +769,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 186 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str5, $p, $len); //@line 186 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str5, allocate([$p,0,0,0,$len,0,0,0], ["i16**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 186 "arraymodule.c"
         var $3=($2)==0; //@line 186 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 186 "arraymodule.c"
       case 1: // $bb
@@ -858,7 +858,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 210 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str1, $x); //@line 210 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str1, allocate([$x,0,0,0], ["i16*",0,0,0], ALLOC_STACK)); //@line 210 "arraymodule.c"
         var $3=($2)==0; //@line 210 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 210 "arraymodule.c"
       case 1: // $bb
@@ -936,7 +936,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 229 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str7, $x); //@line 229 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str7, allocate([$x,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 229 "arraymodule.c"
         var $3=($2)==0; //@line 229 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 229 "arraymodule.c"
       case 1: // $bb
@@ -1032,7 +1032,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 257 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str7, $x); //@line 257 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str7, allocate([$x,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 257 "arraymodule.c"
         var $3=($2)==0; //@line 257 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 257 "arraymodule.c"
       case 1: // $bb
@@ -1132,7 +1132,7 @@ var __str89;
         $0=-1; //@line 278 "arraymodule.c"
         __label__ = 12; break; //@line 278 "arraymodule.c"
       case 4: // $bb4
-        var $14=__PyArg_Parse_SizeT($8, __str10, $y); //@line 282 "arraymodule.c"
+        var $14=__PyArg_Parse_SizeT($8, __str10, allocate([$y,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 282 "arraymodule.c"
         var $15=($14)==0; //@line 282 "arraymodule.c"
         if ($15) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 282 "arraymodule.c"
       case 5: // $bb5
@@ -1222,7 +1222,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 313 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str10, $x); //@line 313 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str10, allocate([$x,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 313 "arraymodule.c"
         var $3=($2)==0; //@line 313 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 313 "arraymodule.c"
       case 1: // $bb
@@ -1322,7 +1322,7 @@ var __str89;
         $0=-1; //@line 333 "arraymodule.c"
         __label__ = 12; break; //@line 333 "arraymodule.c"
       case 4: // $bb4
-        var $14=__PyArg_Parse_SizeT($8, __str10, $y); //@line 337 "arraymodule.c"
+        var $14=__PyArg_Parse_SizeT($8, __str10, allocate([$y,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 337 "arraymodule.c"
         var $15=($14)==0; //@line 337 "arraymodule.c"
         if ($15) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 337 "arraymodule.c"
       case 5: // $bb5
@@ -1413,7 +1413,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 368 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str13, $x); //@line 368 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str13, allocate([$x,0,0,0], ["float*",0,0,0], ALLOC_STACK)); //@line 368 "arraymodule.c"
         var $3=($2)==0; //@line 368 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 368 "arraymodule.c"
       case 1: // $bb
@@ -1490,7 +1490,7 @@ var __str89;
         $i_addr=$i;
         $v_addr=$v;
         var $1=$v_addr; //@line 385 "arraymodule.c"
-        var $2=__PyArg_Parse_SizeT($1, __str14, $x); //@line 385 "arraymodule.c"
+        var $2=__PyArg_Parse_SizeT($1, __str14, allocate([$x,0,0,0], ["double*",0,0,0], ALLOC_STACK)); //@line 385 "arraymodule.c"
         var $3=($2)==0; //@line 385 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 385 "arraymodule.c"
       case 1: // $bb
@@ -2648,7 +2648,7 @@ var __str89;
         var $13=$12+12; //@line 645 "arraymodule.c"
         var $14=HEAP[$13]; //@line 645 "arraymodule.c"
         var $15=HEAP[_PyExc_TypeError]; //@line 645 "arraymodule.c"
-        var $16=_PyErr_Format($15, __str19, $14); //@line 645 "arraymodule.c"
+        var $16=_PyErr_Format($15, __str19, allocate([$14,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 645 "arraymodule.c"
         $0=0; //@line 648 "arraymodule.c"
         __label__ = 10; break; //@line 648 "arraymodule.c"
       case 3: // $bb3
@@ -3005,7 +3005,7 @@ var __str89;
         var $58=$57+12; //@line 723 "arraymodule.c"
         var $59=HEAP[$58]; //@line 723 "arraymodule.c"
         var $60=HEAP[_PyExc_TypeError]; //@line 723 "arraymodule.c"
-        var $61=_PyErr_Format($60, __str20, $59); //@line 723 "arraymodule.c"
+        var $61=_PyErr_Format($60, __str20, allocate([$59,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 723 "arraymodule.c"
         $0=-1; //@line 726 "arraymodule.c"
         __label__ = 48; break; //@line 726 "arraymodule.c"
       case 13: // $bb13
@@ -3457,6 +3457,52 @@ var __str89;
   }
   
 
+  function _setarrayitem($a, $i, $v) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $a_addr;
+        var $i_addr;
+        var $v_addr;
+        var $retval;
+        var $0;
+        $a_addr=$a;
+        $i_addr=$i;
+        $v_addr=$v;
+        var $1=$a_addr; //@line 787 "arraymodule.c"
+        var $2=$1+4; //@line 787 "arraymodule.c"
+        var $3=HEAP[$2]; //@line 787 "arraymodule.c"
+        var $4=($3)!=(_Arraytype); //@line 787 "arraymodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 787 "arraymodule.c"
+      case 1: // $bb
+        var $5=$a_addr; //@line 787 "arraymodule.c"
+        var $6=$5+4; //@line 787 "arraymodule.c"
+        var $7=HEAP[$6]; //@line 787 "arraymodule.c"
+        var $8=_PyType_IsSubtype($7, _Arraytype); //@line 787 "arraymodule.c"
+        var $9=($8)==0; //@line 787 "arraymodule.c"
+        if ($9) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 787 "arraymodule.c"
+      case 2: // $bb1
+        ___assert_fail(__str22, __str15, 787, ___PRETTY_FUNCTION___9470); //@line 787 "arraymodule.c"
+        throw "Reached an unreachable!" //@line 787 "arraymodule.c"
+      case 3: // $bb2
+        var $10=$a_addr; //@line 788 "arraymodule.c"
+        var $11=$10; //@line 788 "arraymodule.c"
+        var $12=$i_addr; //@line 788 "arraymodule.c"
+        var $13=$v_addr; //@line 788 "arraymodule.c"
+        var $14=_array_ass_item($11, $12, $13); //@line 788 "arraymodule.c"
+        $0=$14; //@line 788 "arraymodule.c"
+        var $15=$0; //@line 788 "arraymodule.c"
+        $retval=$15; //@line 788 "arraymodule.c"
+        var $retval3=$retval; //@line 788 "arraymodule.c"
+        ;
+        return $retval3; //@line 788 "arraymodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _array_iter_extend($self, $bb) {
     ;
     var __label__;
@@ -3858,7 +3904,7 @@ var __str89;
         var $13=$12+12; //@line 854 "arraymodule.c"
         var $14=HEAP[$13]; //@line 854 "arraymodule.c"
         var $15=HEAP[_PyExc_TypeError]; //@line 854 "arraymodule.c"
-        var $16=_PyErr_Format($15, __str24, $14); //@line 854 "arraymodule.c"
+        var $16=_PyErr_Format($15, __str24, allocate([$14,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 854 "arraymodule.c"
         $0=0; //@line 857 "arraymodule.c"
         __label__ = 6; break; //@line 857 "arraymodule.c"
       case 3: // $bb3
@@ -4107,6 +4153,46 @@ var __str89;
         var $retval26=$retval; //@line 877 "arraymodule.c"
         ;
         return $retval26; //@line 877 "arraymodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _ins($self, $where, $v) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $where_addr;
+        var $v_addr;
+        var $retval;
+        var $0;
+        $self_addr=$self;
+        $where_addr=$where;
+        $v_addr=$v;
+        var $1=$self_addr; //@line 911 "arraymodule.c"
+        var $2=$where_addr; //@line 911 "arraymodule.c"
+        var $3=$v_addr; //@line 911 "arraymodule.c"
+        var $4=_ins1($1, $2, $3); //@line 911 "arraymodule.c"
+        var $5=($4)!=0; //@line 911 "arraymodule.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 911 "arraymodule.c"
+      case 1: // $bb
+        $0=0; //@line 912 "arraymodule.c"
+        __label__ = 3; break; //@line 912 "arraymodule.c"
+      case 2: // $bb1
+        var $6=HEAP[__Py_NoneStruct]; //@line 913 "arraymodule.c"
+        var $7=($6) + 1; //@line 913 "arraymodule.c"
+        HEAP[__Py_NoneStruct]=$7; //@line 913 "arraymodule.c"
+        $0=__Py_NoneStruct; //@line 914 "arraymodule.c"
+        __label__ = 3; break; //@line 914 "arraymodule.c"
+      case 3: // $bb2
+        var $8=$0; //@line 912 "arraymodule.c"
+        $retval=$8; //@line 912 "arraymodule.c"
+        var $retval3=$retval; //@line 912 "arraymodule.c"
+        ;
+        return $retval3; //@line 912 "arraymodule.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -4502,7 +4588,7 @@ var __str89;
         $args_addr=$args;
         HEAP[$i]=-1; //@line 1009 "arraymodule.c"
         var $1=$args_addr; //@line 1011 "arraymodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str27, $i); //@line 1011 "arraymodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str27, allocate([$i,0,0,0], ["i32*",0,0,0], ALLOC_STACK)); //@line 1011 "arraymodule.c"
         var $3=($2)==0; //@line 1011 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1011 "arraymodule.c"
       case 1: // $bb
@@ -4642,57 +4728,31 @@ var __str89;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i;
-        var $where_addr_i;
-        var $v_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $i=__stackBase__;
         var $v=__stackBase__+4;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 1056 "arraymodule.c"
-        var $3=__PyArg_ParseTuple_SizeT($2, __str30, $i, $v); //@line 1056 "arraymodule.c"
-        var $4=($3)==0; //@line 1056 "arraymodule.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1056 "arraymodule.c"
+        var $1=$args_addr; //@line 1056 "arraymodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str30, allocate([$i,0,0,0,$v,0,0,0], ["i32*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1056 "arraymodule.c"
+        var $3=($2)==0; //@line 1056 "arraymodule.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1056 "arraymodule.c"
       case 1: // $bb
-        $1=0; //@line 1057 "arraymodule.c"
-        __label__ = 6; break; //@line 1057 "arraymodule.c"
+        $0=0; //@line 1057 "arraymodule.c"
+        __label__ = 3; break; //@line 1057 "arraymodule.c"
       case 2: // $bb1
-        var $5=HEAP[$v]; //@line 1058 "arraymodule.c"
-        var $6=HEAP[$i]; //@line 1058 "arraymodule.c"
-        var $7=$self_addr; //@line 1058 "arraymodule.c"
-        $self_addr_i=$7;
-        $where_addr_i=$6;
-        $v_addr_i=$5;
-        var $8=$self_addr_i; //@line 911 "arraymodule.c"
-        var $9=$where_addr_i; //@line 911 "arraymodule.c"
-        var $10=$v_addr_i; //@line 911 "arraymodule.c"
-        var $11=_ins1($8, $9, $10); //@line 911 "arraymodule.c"
-        var $12=($11)!=0; //@line 911 "arraymodule.c"
-        if ($12) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 911 "arraymodule.c"
-      case 3: // $bb_i
-        $0=0; //@line 912 "arraymodule.c"
-        __label__ = 5; break; //@line 912 "arraymodule.c"
-      case 4: // $bb1_i
-        var $13=HEAP[__Py_NoneStruct]; //@line 913 "arraymodule.c"
-        var $14=($13) + 1; //@line 913 "arraymodule.c"
-        HEAP[__Py_NoneStruct]=$14; //@line 913 "arraymodule.c"
-        $0=__Py_NoneStruct; //@line 914 "arraymodule.c"
-        __label__ = 5; break; //@line 914 "arraymodule.c"
-      case 5: // $ins_exit
-        var $15=$0; //@line 912 "arraymodule.c"
-        $retval_i=$15; //@line 912 "arraymodule.c"
-        var $retval3_i=$retval_i; //@line 912 "arraymodule.c"
-        $1=$retval3_i; //@line 1058 "arraymodule.c"
-        __label__ = 6; break; //@line 1058 "arraymodule.c"
-      case 6: // $bb2
-        var $16=$1; //@line 1057 "arraymodule.c"
-        $retval=$16; //@line 1057 "arraymodule.c"
+        var $4=HEAP[$v]; //@line 1058 "arraymodule.c"
+        var $5=HEAP[$i]; //@line 1058 "arraymodule.c"
+        var $6=$self_addr; //@line 1058 "arraymodule.c"
+        var $7=_ins($6, $5, $4); //@line 1058 "arraymodule.c"
+        $0=$7; //@line 1058 "arraymodule.c"
+        __label__ = 3; break; //@line 1058 "arraymodule.c"
+      case 3: // $bb2
+        var $8=$0; //@line 1057 "arraymodule.c"
+        $retval=$8; //@line 1057 "arraymodule.c"
         var $retval3=$retval; //@line 1057 "arraymodule.c"
         STACKTOP = __stackBase__;
         return $retval3; //@line 1057 "arraymodule.c"
@@ -4760,56 +4820,26 @@ var __str89;
   function _array_append($self, $v) {
     ;
     var __label__;
-    __label__ = -1; 
-    while(1) switch(__label__) {
-      case -1: // $entry
-        var $self_addr_i;
-        var $where_addr_i;
-        var $v_addr_i;
-        var $retval_i;
-        var $0;
-        var $self_addr;
-        var $v_addr;
-        var $retval;
-        var $1;
-        $self_addr=$self;
-        $v_addr=$v;
-        var $2=$self_addr; //@line 1093 "arraymodule.c"
-        var $3=$2; //@line 1093 "arraymodule.c"
-        var $4=$3+8; //@line 1093 "arraymodule.c"
-        var $5=HEAP[$4]; //@line 1093 "arraymodule.c"
-        var $6=$self_addr; //@line 1093 "arraymodule.c"
-        var $7=$v_addr; //@line 1093 "arraymodule.c"
-        $self_addr_i=$6;
-        $where_addr_i=$5;
-        $v_addr_i=$7;
-        var $8=$self_addr_i; //@line 911 "arraymodule.c"
-        var $9=$where_addr_i; //@line 911 "arraymodule.c"
-        var $10=$v_addr_i; //@line 911 "arraymodule.c"
-        var $11=_ins1($8, $9, $10); //@line 911 "arraymodule.c"
-        var $12=($11)!=0; //@line 911 "arraymodule.c"
-        if ($12) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 911 "arraymodule.c"
-      case 1: // $bb_i
-        $0=0; //@line 912 "arraymodule.c"
-        __label__ = 3; break; //@line 912 "arraymodule.c"
-      case 2: // $bb1_i
-        var $13=HEAP[__Py_NoneStruct]; //@line 913 "arraymodule.c"
-        var $14=($13) + 1; //@line 913 "arraymodule.c"
-        HEAP[__Py_NoneStruct]=$14; //@line 913 "arraymodule.c"
-        $0=__Py_NoneStruct; //@line 914 "arraymodule.c"
-        __label__ = 3; break; //@line 914 "arraymodule.c"
-      case 3: // $ins_exit
-        var $15=$0; //@line 912 "arraymodule.c"
-        $retval_i=$15; //@line 912 "arraymodule.c"
-        var $retval3_i=$retval_i; //@line 912 "arraymodule.c"
-        $1=$retval3_i; //@line 1093 "arraymodule.c"
-        var $16=$1; //@line 1093 "arraymodule.c"
-        $retval=$16; //@line 1093 "arraymodule.c"
-        var $retval1=$retval; //@line 1093 "arraymodule.c"
-        ;
-        return $retval1; //@line 1093 "arraymodule.c"
-      default: assert(0, "bad label: " + __label__);
-    }
+  
+    var $self_addr;
+    var $v_addr;
+    var $retval;
+    var $0;
+    $self_addr=$self;
+    $v_addr=$v;
+    var $1=$self_addr; //@line 1093 "arraymodule.c"
+    var $2=$1; //@line 1093 "arraymodule.c"
+    var $3=$2+8; //@line 1093 "arraymodule.c"
+    var $4=HEAP[$3]; //@line 1093 "arraymodule.c"
+    var $5=$self_addr; //@line 1093 "arraymodule.c"
+    var $6=$v_addr; //@line 1093 "arraymodule.c"
+    var $7=_ins($5, $4, $6); //@line 1093 "arraymodule.c"
+    $0=$7; //@line 1093 "arraymodule.c"
+    var $8=$0; //@line 1093 "arraymodule.c"
+    $retval=$8; //@line 1093 "arraymodule.c"
+    var $retval1=$retval; //@line 1093 "arraymodule.c"
+    ;
+    return $retval1; //@line 1093 "arraymodule.c"
   }
   
 
@@ -5173,7 +5203,7 @@ var __str89;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1197 "arraymodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str33, $f, $n); //@line 1197 "arraymodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str33, allocate([$f,0,0,0,$n,0,0,0], ["%struct.PyObject**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1197 "arraymodule.c"
         var $3=($2)==0; //@line 1197 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1197 "arraymodule.c"
       case 1: // $bb
@@ -5995,7 +6025,7 @@ var __str89;
         var $5=HEAP[$4]; //@line 1380 "arraymodule.c"
         $itemsize=$5; //@line 1380 "arraymodule.c"
         var $6=$args_addr; //@line 1381 "arraymodule.c"
-        var $7=__PyArg_ParseTuple_SizeT($6, __str40, $str, $n); //@line 1381 "arraymodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str40, allocate([$str,0,0,0,$n,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1381 "arraymodule.c"
         var $8=($7)==0; //@line 1381 "arraymodule.c"
         if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1381 "arraymodule.c"
       case 1: // $bb
@@ -6246,7 +6276,7 @@ var __str89;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1443 "arraymodule.c"
-        var $2=__PyArg_ParseTuple_SizeT($1, __str42, $ustr, $n); //@line 1443 "arraymodule.c"
+        var $2=__PyArg_ParseTuple_SizeT($1, __str42, allocate([$ustr,0,0,0,$n,0,0,0], ["i16**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1443 "arraymodule.c"
         var $3=($2)==0; //@line 1443 "arraymodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1443 "arraymodule.c"
       case 1: // $bb
@@ -6538,7 +6568,7 @@ var __str89;
         var $42=HEAP[$41]; //@line 1526 "arraymodule.c"
         var $43=$list; //@line 1526 "arraymodule.c"
         var $44=$dict; //@line 1526 "arraymodule.c"
-        var $45=__Py_BuildValue_SizeT(__str46, $42, $38, $43, $44); //@line 1526 "arraymodule.c"
+        var $45=__Py_BuildValue_SizeT(__str46, allocate([$42,0,0,0,$38,0,0,0,$43,0,0,0,$44,0,0,0], ["%struct._typeobject*",0,0,0,"i32",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1526 "arraymodule.c"
         $result=$45; //@line 1526 "arraymodule.c"
         var $46=$list; //@line 1528 "arraymodule.c"
         var $47=$46; //@line 1528 "arraymodule.c"
@@ -6657,17 +6687,9 @@ var __str89;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $self_addr_i1;
-        var $unused_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $self_addr_i;
-        var $unused_addr_i;
-        var $retval_i;
-        var $1;
         var $a_addr;
         var $retval;
-        var $2;
+        var $0;
         var $buf=__stackBase__;
         var $typecode;
         var $s=__stackBase__+256;
@@ -6676,164 +6698,98 @@ var __str89;
         var $len;
         $a_addr=$a;
         $v=0; //@line 1616 "arraymodule.c"
-        var $3=$a_addr; //@line 1619 "arraymodule.c"
-        var $4=$3; //@line 1619 "arraymodule.c"
-        var $5=$4+8; //@line 1619 "arraymodule.c"
-        var $6=HEAP[$5]; //@line 1619 "arraymodule.c"
-        $len=$6; //@line 1619 "arraymodule.c"
-        var $7=$a_addr; //@line 1620 "arraymodule.c"
-        var $8=$7+20; //@line 1620 "arraymodule.c"
+        var $1=$a_addr; //@line 1619 "arraymodule.c"
+        var $2=$1; //@line 1619 "arraymodule.c"
+        var $3=$2+8; //@line 1619 "arraymodule.c"
+        var $4=HEAP[$3]; //@line 1619 "arraymodule.c"
+        $len=$4; //@line 1619 "arraymodule.c"
+        var $5=$a_addr; //@line 1620 "arraymodule.c"
+        var $6=$5+20; //@line 1620 "arraymodule.c"
+        var $7=HEAP[$6]; //@line 1620 "arraymodule.c"
+        var $8=$7; //@line 1620 "arraymodule.c"
         var $9=HEAP[$8]; //@line 1620 "arraymodule.c"
-        var $10=$9; //@line 1620 "arraymodule.c"
-        var $11=HEAP[$10]; //@line 1620 "arraymodule.c"
-        var $12=((($11)) & 255); //@line 1620 "arraymodule.c"
-        $typecode=$12; //@line 1620 "arraymodule.c"
-        var $13=$len; //@line 1621 "arraymodule.c"
-        var $14=($13)==0; //@line 1621 "arraymodule.c"
-        var $15=$typecode; //@line 1622 "arraymodule.c"
-        if ($14) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1621 "arraymodule.c"
+        var $10=((($9)) & 255); //@line 1620 "arraymodule.c"
+        $typecode=$10; //@line 1620 "arraymodule.c"
+        var $11=$len; //@line 1621 "arraymodule.c"
+        var $12=($11)==0; //@line 1621 "arraymodule.c"
+        var $13=$typecode; //@line 1622 "arraymodule.c"
+        if ($12) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1621 "arraymodule.c"
       case 1: // $bb
-        var $16=($15); //@line 1622 "arraymodule.c"
+        var $14=($13); //@line 1622 "arraymodule.c"
         var $buf1=$buf; //@line 1622 "arraymodule.c"
-        var $17=_PyOS_snprintf($buf1, 256, __str74, $16); //@line 1622 "arraymodule.c"
+        var $15=_PyOS_snprintf($buf1, 256, __str74, allocate([$14,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1622 "arraymodule.c"
         var $buf2=$buf; //@line 1623 "arraymodule.c"
-        var $18=_PyString_FromString($buf2); //@line 1623 "arraymodule.c"
-        $2=$18; //@line 1623 "arraymodule.c"
-        __label__ = 17; break; //@line 1623 "arraymodule.c"
+        var $16=_PyString_FromString($buf2); //@line 1623 "arraymodule.c"
+        $0=$16; //@line 1623 "arraymodule.c"
+        __label__ = 11; break; //@line 1623 "arraymodule.c"
       case 2: // $bb3
-        var $19=($15)==99; //@line 1626 "arraymodule.c"
-        if ($19) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 1626 "arraymodule.c"
+        var $17=($13)==99; //@line 1626 "arraymodule.c"
+        if ($17) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 1626 "arraymodule.c"
       case 3: // $bb4
-        var $20=$a_addr; //@line 1627 "arraymodule.c"
-        $self_addr_i=$20;
-        $unused_addr_i=0;
-        var $21=$self_addr_i; //@line 1420 "arraymodule.c"
-        var $22=$21+8; //@line 1420 "arraymodule.c"
-        var $23=HEAP[$22]; //@line 1420 "arraymodule.c"
-        var $24=$self_addr_i; //@line 1420 "arraymodule.c"
-        var $25=$24+20; //@line 1420 "arraymodule.c"
-        var $26=HEAP[$25]; //@line 1420 "arraymodule.c"
-        var $27=$26+4; //@line 1420 "arraymodule.c"
-        var $28=HEAP[$27]; //@line 1420 "arraymodule.c"
-        var $29=((2147483647/($28))|0); //@line 1420 "arraymodule.c"
-        var $30=($23) <= ($29); //@line 1420 "arraymodule.c"
-        if ($30) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1420 "arraymodule.c"
-      case 4: // $bb_i
-        var $31=$self_addr_i; //@line 1421 "arraymodule.c"
-        var $32=$31; //@line 1421 "arraymodule.c"
-        var $33=$32+8; //@line 1421 "arraymodule.c"
-        var $34=HEAP[$33]; //@line 1421 "arraymodule.c"
-        var $35=$self_addr_i; //@line 1421 "arraymodule.c"
-        var $36=$35+20; //@line 1421 "arraymodule.c"
-        var $37=HEAP[$36]; //@line 1421 "arraymodule.c"
-        var $38=$37+4; //@line 1421 "arraymodule.c"
-        var $39=HEAP[$38]; //@line 1421 "arraymodule.c"
-        var $40=($39) * ($34); //@line 1421 "arraymodule.c"
-        var $41=$self_addr_i; //@line 1421 "arraymodule.c"
-        var $42=$41+12; //@line 1421 "arraymodule.c"
-        var $43=HEAP[$42]; //@line 1421 "arraymodule.c"
-        var $44=_PyString_FromStringAndSize($43, $40); //@line 1421 "arraymodule.c"
-        $1=$44; //@line 1421 "arraymodule.c"
-        __label__ = 6; break; //@line 1421 "arraymodule.c"
-      case 5: // $bb1_i
-        var $45=_PyErr_NoMemory(); //@line 1424 "arraymodule.c"
-        $1=$45; //@line 1424 "arraymodule.c"
-        __label__ = 6; break; //@line 1424 "arraymodule.c"
-      case 6: // $array_tostring_exit
-        var $46=$1; //@line 1421 "arraymodule.c"
-        $retval_i=$46; //@line 1421 "arraymodule.c"
-        var $retval3_i=$retval_i; //@line 1421 "arraymodule.c"
-        $v=$retval3_i; //@line 1627 "arraymodule.c"
-        __label__ = 13; break; //@line 1627 "arraymodule.c"
-      case 7: // $bb5
-        var $47=$typecode; //@line 1629 "arraymodule.c"
-        var $48=($47)==117; //@line 1629 "arraymodule.c"
-        var $49=$a_addr; //@line 1630 "arraymodule.c"
-        if ($48) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 1629 "arraymodule.c"
-      case 8: // $bb6
-        $self_addr_i1=$49;
-        $unused_addr_i2=0;
-        var $50=$self_addr_i1; //@line 1484 "arraymodule.c"
-        var $51=$50+20; //@line 1484 "arraymodule.c"
-        var $52=HEAP[$51]; //@line 1484 "arraymodule.c"
-        var $53=$52; //@line 1484 "arraymodule.c"
-        var $54=HEAP[$53]; //@line 1484 "arraymodule.c"
-        var $55=($54)!=117; //@line 1484 "arraymodule.c"
-        if ($55) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1484 "arraymodule.c"
-      case 9: // $bb_i4
-        var $56=HEAP[_PyExc_ValueError]; //@line 1485 "arraymodule.c"
-        _PyErr_SetString($56, __str44); //@line 1485 "arraymodule.c"
-        $0=0; //@line 1487 "arraymodule.c"
-        __label__ = 11; break; //@line 1487 "arraymodule.c"
-      case 10: // $bb1_i5
-        var $57=$self_addr_i1; //@line 1489 "arraymodule.c"
-        var $58=$57; //@line 1489 "arraymodule.c"
-        var $59=$58+8; //@line 1489 "arraymodule.c"
-        var $60=HEAP[$59]; //@line 1489 "arraymodule.c"
-        var $61=$self_addr_i1; //@line 1489 "arraymodule.c"
-        var $62=$61+12; //@line 1489 "arraymodule.c"
-        var $63=HEAP[$62]; //@line 1489 "arraymodule.c"
-        var $64=$63; //@line 1489 "arraymodule.c"
-        var $65=_PyUnicodeUCS2_FromUnicode($64, $60); //@line 1489 "arraymodule.c"
-        $0=$65; //@line 1489 "arraymodule.c"
-        __label__ = 11; break; //@line 1489 "arraymodule.c"
-      case 11: // $array_tounicode_exit
-        var $66=$0; //@line 1487 "arraymodule.c"
-        $retval_i3=$66; //@line 1487 "arraymodule.c"
-        var $retval3_i6=$retval_i3; //@line 1487 "arraymodule.c"
-        $v=$retval3_i6; //@line 1630 "arraymodule.c"
-        __label__ = 13; break; //@line 1630 "arraymodule.c"
-      case 12: // $bb7
-        var $67=_array_tolist($49, 0); //@line 1633 "arraymodule.c"
-        $v=$67; //@line 1633 "arraymodule.c"
-        __label__ = 13; break; //@line 1633 "arraymodule.c"
-      case 13: // $bb8
-        var $68=$v; //@line 1634 "arraymodule.c"
-        var $69=_PyObject_Repr($68); //@line 1634 "arraymodule.c"
-        $t=$69; //@line 1634 "arraymodule.c"
-        var $70=$v; //@line 1635 "arraymodule.c"
-        var $71=($70)!=0; //@line 1635 "arraymodule.c"
-        if ($71) { __label__ = 14; break; } else { __label__ = 16; break; } //@line 1635 "arraymodule.c"
-      case 14: // $bb9
-        var $72=$v; //@line 1635 "arraymodule.c"
-        var $73=$72; //@line 1635 "arraymodule.c"
-        var $74=HEAP[$73]; //@line 1635 "arraymodule.c"
-        var $75=($74) - 1; //@line 1635 "arraymodule.c"
-        var $76=$v; //@line 1635 "arraymodule.c"
-        var $77=$76; //@line 1635 "arraymodule.c"
-        HEAP[$77]=$75; //@line 1635 "arraymodule.c"
-        var $78=$v; //@line 1635 "arraymodule.c"
-        var $79=$78; //@line 1635 "arraymodule.c"
-        var $80=HEAP[$79]; //@line 1635 "arraymodule.c"
-        var $81=($80)==0; //@line 1635 "arraymodule.c"
-        if ($81) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 1635 "arraymodule.c"
-      case 15: // $bb10
-        var $82=$v; //@line 1635 "arraymodule.c"
-        var $83=$82+4; //@line 1635 "arraymodule.c"
-        var $84=HEAP[$83]; //@line 1635 "arraymodule.c"
-        var $85=$84+24; //@line 1635 "arraymodule.c"
-        var $86=HEAP[$85]; //@line 1635 "arraymodule.c"
-        var $87=$v; //@line 1635 "arraymodule.c"
-        FUNCTION_TABLE[$86]($87); //@line 1635 "arraymodule.c"
-        __label__ = 16; break; //@line 1635 "arraymodule.c"
-      case 16: // $bb11
-        var $88=$typecode; //@line 1637 "arraymodule.c"
-        var $89=($88); //@line 1637 "arraymodule.c"
+        var $18=$a_addr; //@line 1627 "arraymodule.c"
+        var $19=_array_tostring($18, 0); //@line 1627 "arraymodule.c"
+        $v=$19; //@line 1627 "arraymodule.c"
+        __label__ = 7; break; //@line 1627 "arraymodule.c"
+      case 4: // $bb5
+        var $20=$typecode; //@line 1629 "arraymodule.c"
+        var $21=($20)==117; //@line 1629 "arraymodule.c"
+        var $22=$a_addr; //@line 1630 "arraymodule.c"
+        if ($21) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1629 "arraymodule.c"
+      case 5: // $bb6
+        var $23=_array_tounicode($22, 0); //@line 1630 "arraymodule.c"
+        $v=$23; //@line 1630 "arraymodule.c"
+        __label__ = 7; break; //@line 1630 "arraymodule.c"
+      case 6: // $bb7
+        var $24=_array_tolist($22, 0); //@line 1633 "arraymodule.c"
+        $v=$24; //@line 1633 "arraymodule.c"
+        __label__ = 7; break; //@line 1633 "arraymodule.c"
+      case 7: // $bb8
+        var $25=$v; //@line 1634 "arraymodule.c"
+        var $26=_PyObject_Repr($25); //@line 1634 "arraymodule.c"
+        $t=$26; //@line 1634 "arraymodule.c"
+        var $27=$v; //@line 1635 "arraymodule.c"
+        var $28=($27)!=0; //@line 1635 "arraymodule.c"
+        if ($28) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 1635 "arraymodule.c"
+      case 8: // $bb9
+        var $29=$v; //@line 1635 "arraymodule.c"
+        var $30=$29; //@line 1635 "arraymodule.c"
+        var $31=HEAP[$30]; //@line 1635 "arraymodule.c"
+        var $32=($31) - 1; //@line 1635 "arraymodule.c"
+        var $33=$v; //@line 1635 "arraymodule.c"
+        var $34=$33; //@line 1635 "arraymodule.c"
+        HEAP[$34]=$32; //@line 1635 "arraymodule.c"
+        var $35=$v; //@line 1635 "arraymodule.c"
+        var $36=$35; //@line 1635 "arraymodule.c"
+        var $37=HEAP[$36]; //@line 1635 "arraymodule.c"
+        var $38=($37)==0; //@line 1635 "arraymodule.c"
+        if ($38) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 1635 "arraymodule.c"
+      case 9: // $bb10
+        var $39=$v; //@line 1635 "arraymodule.c"
+        var $40=$39+4; //@line 1635 "arraymodule.c"
+        var $41=HEAP[$40]; //@line 1635 "arraymodule.c"
+        var $42=$41+24; //@line 1635 "arraymodule.c"
+        var $43=HEAP[$42]; //@line 1635 "arraymodule.c"
+        var $44=$v; //@line 1635 "arraymodule.c"
+        FUNCTION_TABLE[$43]($44); //@line 1635 "arraymodule.c"
+        __label__ = 10; break; //@line 1635 "arraymodule.c"
+      case 10: // $bb11
+        var $45=$typecode; //@line 1637 "arraymodule.c"
+        var $46=($45); //@line 1637 "arraymodule.c"
         var $buf12=$buf; //@line 1637 "arraymodule.c"
-        var $90=_PyOS_snprintf($buf12, 256, __str75, $89); //@line 1637 "arraymodule.c"
+        var $47=_PyOS_snprintf($buf12, 256, __str75, allocate([$46,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 1637 "arraymodule.c"
         var $buf13=$buf; //@line 1638 "arraymodule.c"
-        var $91=_PyString_FromString($buf13); //@line 1638 "arraymodule.c"
-        HEAP[$s]=$91; //@line 1638 "arraymodule.c"
-        var $92=$t; //@line 1639 "arraymodule.c"
-        _PyString_ConcatAndDel($s, $92); //@line 1639 "arraymodule.c"
-        var $93=_PyString_FromString(__str76); //@line 1640 "arraymodule.c"
-        _PyString_ConcatAndDel($s, $93); //@line 1640 "arraymodule.c"
-        var $94=HEAP[$s]; //@line 1641 "arraymodule.c"
-        $2=$94; //@line 1641 "arraymodule.c"
-        __label__ = 17; break; //@line 1641 "arraymodule.c"
-      case 17: // $bb14
-        var $95=$2; //@line 1623 "arraymodule.c"
-        $retval=$95; //@line 1623 "arraymodule.c"
+        var $48=_PyString_FromString($buf13); //@line 1638 "arraymodule.c"
+        HEAP[$s]=$48; //@line 1638 "arraymodule.c"
+        var $49=$t; //@line 1639 "arraymodule.c"
+        _PyString_ConcatAndDel($s, $49); //@line 1639 "arraymodule.c"
+        var $50=_PyString_FromString(__str76); //@line 1640 "arraymodule.c"
+        _PyString_ConcatAndDel($s, $50); //@line 1640 "arraymodule.c"
+        var $51=HEAP[$s]; //@line 1641 "arraymodule.c"
+        $0=$51; //@line 1641 "arraymodule.c"
+        __label__ = 11; break; //@line 1641 "arraymodule.c"
+      case 11: // $bb14
+        var $52=$0; //@line 1623 "arraymodule.c"
+        $retval=$52; //@line 1623 "arraymodule.c"
         var $retval15=$retval; //@line 1623 "arraymodule.c"
         STACKTOP = __stackBase__;
         return $retval15; //@line 1623 "arraymodule.c"
@@ -6849,14 +6805,10 @@ var __str89;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $a_addr_i;
-        var $i_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $item_addr;
         var $retval;
-        var $1;
+        var $0;
         var $i;
         var $start=__stackBase__;
         var $stop=__stackBase__+4;
@@ -6870,230 +6822,200 @@ var __str89;
         var $result16;
         $self_addr=$self;
         $item_addr=$item;
-        var $2=$item_addr; //@line 1647 "arraymodule.c"
-        var $3=$2+4; //@line 1647 "arraymodule.c"
-        var $4=HEAP[$3]; //@line 1647 "arraymodule.c"
-        var $5=$4+48; //@line 1647 "arraymodule.c"
-        var $6=HEAP[$5]; //@line 1647 "arraymodule.c"
-        var $7=($6)==0; //@line 1647 "arraymodule.c"
-        if ($7) { __label__ = 15; break; } else { __label__ = 1; break; } //@line 1647 "arraymodule.c"
+        var $1=$item_addr; //@line 1647 "arraymodule.c"
+        var $2=$1+4; //@line 1647 "arraymodule.c"
+        var $3=HEAP[$2]; //@line 1647 "arraymodule.c"
+        var $4=$3+48; //@line 1647 "arraymodule.c"
+        var $5=HEAP[$4]; //@line 1647 "arraymodule.c"
+        var $6=($5)==0; //@line 1647 "arraymodule.c"
+        if ($6) { __label__ = 10; break; } else { __label__ = 1; break; } //@line 1647 "arraymodule.c"
       case 1: // $bb
-        var $8=$item_addr; //@line 1647 "arraymodule.c"
-        var $9=$8+4; //@line 1647 "arraymodule.c"
-        var $10=HEAP[$9]; //@line 1647 "arraymodule.c"
-        var $11=$10+84; //@line 1647 "arraymodule.c"
-        var $12=HEAP[$11]; //@line 1647 "arraymodule.c"
-        var $13=($12) & 131072; //@line 1647 "arraymodule.c"
-        var $14=($13)==0; //@line 1647 "arraymodule.c"
-        if ($14) { __label__ = 15; break; } else { __label__ = 2; break; } //@line 1647 "arraymodule.c"
+        var $7=$item_addr; //@line 1647 "arraymodule.c"
+        var $8=$7+4; //@line 1647 "arraymodule.c"
+        var $9=HEAP[$8]; //@line 1647 "arraymodule.c"
+        var $10=$9+84; //@line 1647 "arraymodule.c"
+        var $11=HEAP[$10]; //@line 1647 "arraymodule.c"
+        var $12=($11) & 131072; //@line 1647 "arraymodule.c"
+        var $13=($12)==0; //@line 1647 "arraymodule.c"
+        if ($13) { __label__ = 10; break; } else { __label__ = 2; break; } //@line 1647 "arraymodule.c"
       case 2: // $bb1
-        var $15=$item_addr; //@line 1647 "arraymodule.c"
-        var $16=$15+4; //@line 1647 "arraymodule.c"
-        var $17=HEAP[$16]; //@line 1647 "arraymodule.c"
-        var $18=$17+48; //@line 1647 "arraymodule.c"
-        var $19=HEAP[$18]; //@line 1647 "arraymodule.c"
-        var $20=$19+152; //@line 1647 "arraymodule.c"
-        var $21=HEAP[$20]; //@line 1647 "arraymodule.c"
-        var $22=($21)==0; //@line 1647 "arraymodule.c"
-        if ($22) { __label__ = 15; break; } else { __label__ = 3; break; } //@line 1647 "arraymodule.c"
+        var $14=$item_addr; //@line 1647 "arraymodule.c"
+        var $15=$14+4; //@line 1647 "arraymodule.c"
+        var $16=HEAP[$15]; //@line 1647 "arraymodule.c"
+        var $17=$16+48; //@line 1647 "arraymodule.c"
+        var $18=HEAP[$17]; //@line 1647 "arraymodule.c"
+        var $19=$18+152; //@line 1647 "arraymodule.c"
+        var $20=HEAP[$19]; //@line 1647 "arraymodule.c"
+        var $21=($20)==0; //@line 1647 "arraymodule.c"
+        if ($21) { __label__ = 10; break; } else { __label__ = 3; break; } //@line 1647 "arraymodule.c"
       case 3: // $bb2
-        var $23=HEAP[_PyExc_IndexError]; //@line 1648 "arraymodule.c"
-        var $24=$item_addr; //@line 1648 "arraymodule.c"
-        var $25=_PyNumber_AsSsize_t($24, $23); //@line 1648 "arraymodule.c"
-        $i=$25; //@line 1648 "arraymodule.c"
-        var $26=$i; //@line 1649 "arraymodule.c"
-        var $27=($26)==-1; //@line 1649 "arraymodule.c"
-        if ($27) { __lastLabel__ = 3; __label__ = 4; break; } else { __lastLabel__ = 3; __label__ = 7; break; } //@line 1649 "arraymodule.c"
+        var $22=HEAP[_PyExc_IndexError]; //@line 1648 "arraymodule.c"
+        var $23=$item_addr; //@line 1648 "arraymodule.c"
+        var $24=_PyNumber_AsSsize_t($23, $22); //@line 1648 "arraymodule.c"
+        $i=$24; //@line 1648 "arraymodule.c"
+        var $25=$i; //@line 1649 "arraymodule.c"
+        var $26=($25)==-1; //@line 1649 "arraymodule.c"
+        if ($26) { __lastLabel__ = 3; __label__ = 4; break; } else { __lastLabel__ = 3; __label__ = 7; break; } //@line 1649 "arraymodule.c"
       case 4: // $bb3
-        var $28=_PyErr_Occurred(); //@line 1649 "arraymodule.c"
-        var $29=($28)!=0; //@line 1649 "arraymodule.c"
-        if ($29) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1649 "arraymodule.c"
+        var $27=_PyErr_Occurred(); //@line 1649 "arraymodule.c"
+        var $28=($27)!=0; //@line 1649 "arraymodule.c"
+        if ($28) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1649 "arraymodule.c"
       case 5: // $bb4
-        $1=0; //@line 1650 "arraymodule.c"
-        __label__ = 30; break; //@line 1650 "arraymodule.c"
+        $0=0; //@line 1650 "arraymodule.c"
+        __label__ = 25; break; //@line 1650 "arraymodule.c"
       case 6: // $bb5thread_pre_split
         var $_pr=$i;
         __lastLabel__ = 6; __label__ = 7; break;
       case 7: // $bb5
-        var $30=__lastLabel__ == 6 ? $_pr : ($26);
-        var $31=($30) < 0; //@line 1652 "arraymodule.c"
-        if ($31) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1652 "arraymodule.c"
+        var $29=__lastLabel__ == 6 ? $_pr : ($25);
+        var $30=($29) < 0; //@line 1652 "arraymodule.c"
+        if ($30) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 1652 "arraymodule.c"
       case 8: // $bb6
-        var $32=$self_addr; //@line 1653 "arraymodule.c"
-        var $33=$32; //@line 1653 "arraymodule.c"
-        var $34=$33+8; //@line 1653 "arraymodule.c"
-        var $35=HEAP[$34]; //@line 1653 "arraymodule.c"
-        var $36=$i; //@line 1653 "arraymodule.c"
-        var $37=($36) + ($35); //@line 1653 "arraymodule.c"
-        $i=$37; //@line 1653 "arraymodule.c"
-        __lastLabel__ = 8; __label__ = 10; break; //@line 1653 "arraymodule.c"
-      case 9: // $bb7thread_pre_split
-        var $_pr1=$i;
-        __lastLabel__ = 9; __label__ = 10; break;
-      case 10: // $bb7
-        var $38=__lastLabel__ == 9 ? $_pr1 : ($37);
-        var $39=$self_addr; //@line 1654 "arraymodule.c"
-        $a_addr_i=$39;
-        $i_addr_i=$38;
-        var $40=($38) < 0; //@line 599 "arraymodule.c"
-        if ($40) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 599 "arraymodule.c"
-      case 11: // $bb_i
-        var $41=$a_addr_i; //@line 599 "arraymodule.c"
-        var $42=$41; //@line 599 "arraymodule.c"
-        var $43=$42+8; //@line 599 "arraymodule.c"
-        var $44=HEAP[$43]; //@line 599 "arraymodule.c"
-        var $45=$i_addr_i; //@line 599 "arraymodule.c"
-        var $46=($44) <= ($45); //@line 599 "arraymodule.c"
-        if ($46) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 599 "arraymodule.c"
-      case 12: // $bb1_i
-        var $47=HEAP[_PyExc_IndexError]; //@line 600 "arraymodule.c"
-        _PyErr_SetString($47, __str18); //@line 600 "arraymodule.c"
-        $0=0; //@line 601 "arraymodule.c"
-        __label__ = 14; break; //@line 601 "arraymodule.c"
-      case 13: // $bb2_i
-        var $48=$a_addr_i; //@line 603 "arraymodule.c"
-        var $49=$48; //@line 603 "arraymodule.c"
-        var $50=$i_addr_i; //@line 603 "arraymodule.c"
-        var $51=_getarrayitem($49, $50); //@line 603 "arraymodule.c"
-        $0=$51; //@line 603 "arraymodule.c"
-        __label__ = 14; break; //@line 603 "arraymodule.c"
-      case 14: // $array_item_exit
-        var $52=$0; //@line 601 "arraymodule.c"
-        $retval_i=$52; //@line 601 "arraymodule.c"
-        var $retval4_i=$retval_i; //@line 601 "arraymodule.c"
-        $1=$retval4_i; //@line 1654 "arraymodule.c"
-        __label__ = 30; break; //@line 1654 "arraymodule.c"
-      case 15: // $bb8
-        var $53=$item_addr; //@line 1656 "arraymodule.c"
-        var $54=$53+4; //@line 1656 "arraymodule.c"
-        var $55=HEAP[$54]; //@line 1656 "arraymodule.c"
-        var $56=($55)==(_PySlice_Type); //@line 1656 "arraymodule.c"
-        if ($56) { __label__ = 16; break; } else { __label__ = 29; break; } //@line 1656 "arraymodule.c"
-      case 16: // $bb9
-        var $57=$self_addr; //@line 1660 "arraymodule.c"
-        var $58=$57+20; //@line 1660 "arraymodule.c"
-        var $59=HEAP[$58]; //@line 1660 "arraymodule.c"
-        var $60=$59+4; //@line 1660 "arraymodule.c"
-        var $61=HEAP[$60]; //@line 1660 "arraymodule.c"
-        $itemsize=$61; //@line 1660 "arraymodule.c"
-        var $62=$self_addr; //@line 1662 "arraymodule.c"
-        var $63=$62; //@line 1662 "arraymodule.c"
-        var $64=$63+8; //@line 1662 "arraymodule.c"
-        var $65=HEAP[$64]; //@line 1662 "arraymodule.c"
-        var $66=$item_addr; //@line 1662 "arraymodule.c"
-        var $67=$66; //@line 1662 "arraymodule.c"
-        var $68=_PySlice_GetIndicesEx($67, $65, $start, $stop, $step, $slicelength); //@line 1662 "arraymodule.c"
-        var $69=($68) < 0; //@line 1662 "arraymodule.c"
-        if ($69) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1662 "arraymodule.c"
-      case 17: // $bb11
-        $1=0; //@line 1664 "arraymodule.c"
-        __label__ = 30; break; //@line 1664 "arraymodule.c"
-      case 18: // $bb12
-        var $70=HEAP[$slicelength]; //@line 1667 "arraymodule.c"
-        var $71=($70) <= 0; //@line 1667 "arraymodule.c"
-        if ($71) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1667 "arraymodule.c"
-      case 19: // $bb13
-        var $72=$self_addr; //@line 1668 "arraymodule.c"
-        var $73=$72+20; //@line 1668 "arraymodule.c"
-        var $74=HEAP[$73]; //@line 1668 "arraymodule.c"
-        var $75=_newarrayobject(_Arraytype, 0, $74); //@line 1668 "arraymodule.c"
-        $1=$75; //@line 1668 "arraymodule.c"
-        __label__ = 30; break; //@line 1668 "arraymodule.c"
-      case 20: // $bb14
-        var $76=HEAP[$step]; //@line 1670 "arraymodule.c"
-        var $77=($76)==1; //@line 1670 "arraymodule.c"
-        var $78=$self_addr; //@line 1672 "arraymodule.c"
-        var $79=$78+20; //@line 1672 "arraymodule.c"
-        var $80=HEAP[$79]; //@line 1672 "arraymodule.c"
-        var $81=HEAP[$slicelength]; //@line 1672 "arraymodule.c"
-        var $82=_newarrayobject(_Arraytype, $81, $80); //@line 1672 "arraymodule.c"
-        if ($77) { __label__ = 21; break; } else { __label__ = 24; break; } //@line 1670 "arraymodule.c"
-      case 21: // $bb15
-        $result16=$82; //@line 1672 "arraymodule.c"
-        var $83=$result16; //@line 1673 "arraymodule.c"
-        var $84=($83)==0; //@line 1673 "arraymodule.c"
-        if ($84) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1673 "arraymodule.c"
-      case 22: // $bb17
-        $1=0; //@line 1674 "arraymodule.c"
-        __label__ = 30; break; //@line 1674 "arraymodule.c"
-      case 23: // $bb18
-        var $85=HEAP[$slicelength]; //@line 1675 "arraymodule.c"
-        var $86=$itemsize; //@line 1675 "arraymodule.c"
-        var $87=($86) * ($85); //@line 1675 "arraymodule.c"
-        var $88=$self_addr; //@line 1675 "arraymodule.c"
-        var $89=$88+12; //@line 1675 "arraymodule.c"
-        var $90=HEAP[$89]; //@line 1675 "arraymodule.c"
-        var $91=HEAP[$start]; //@line 1675 "arraymodule.c"
-        var $92=$itemsize; //@line 1675 "arraymodule.c"
-        var $93=($92) * ($91); //@line 1675 "arraymodule.c"
-        var $94=$90+$93; //@line 1675 "arraymodule.c"
-        var $95=$result16; //@line 1675 "arraymodule.c"
-        var $96=$95; //@line 1675 "arraymodule.c"
-        var $97=$96+12; //@line 1675 "arraymodule.c"
-        var $98=HEAP[$97]; //@line 1675 "arraymodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($98, $94, $87, 1, 0); //@line 1675 "arraymodule.c"
-        var $99=$result16; //@line 1678 "arraymodule.c"
-        $1=$99; //@line 1678 "arraymodule.c"
-        __label__ = 30; break; //@line 1678 "arraymodule.c"
-      case 24: // $bb19
-        $result=$82; //@line 1681 "arraymodule.c"
-        var $100=$result; //@line 1682 "arraymodule.c"
-        var $101=($100)==0; //@line 1682 "arraymodule.c"
-        if ($101) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1682 "arraymodule.c"
-      case 25: // $bb20
-        $1=0; //@line 1682 "arraymodule.c"
-        __label__ = 30; break; //@line 1682 "arraymodule.c"
-      case 26: // $bb21
-        var $102=$result; //@line 1684 "arraymodule.c"
-        var $103=$102; //@line 1684 "arraymodule.c"
-        $ar=$103; //@line 1684 "arraymodule.c"
-        var $104=HEAP[$start]; //@line 1686 "arraymodule.c"
-        $cur=$104; //@line 1686 "arraymodule.c"
+        var $31=$self_addr; //@line 1653 "arraymodule.c"
+        var $32=$31; //@line 1653 "arraymodule.c"
+        var $33=$32+8; //@line 1653 "arraymodule.c"
+        var $34=HEAP[$33]; //@line 1653 "arraymodule.c"
+        var $35=$i; //@line 1653 "arraymodule.c"
+        var $36=($35) + ($34); //@line 1653 "arraymodule.c"
+        $i=$36; //@line 1653 "arraymodule.c"
+        __label__ = 9; break; //@line 1653 "arraymodule.c"
+      case 9: // $bb7
+        var $37=$self_addr; //@line 1654 "arraymodule.c"
+        var $38=$i; //@line 1654 "arraymodule.c"
+        var $39=_array_item($37, $38); //@line 1654 "arraymodule.c"
+        $0=$39; //@line 1654 "arraymodule.c"
+        __label__ = 25; break; //@line 1654 "arraymodule.c"
+      case 10: // $bb8
+        var $40=$item_addr; //@line 1656 "arraymodule.c"
+        var $41=$40+4; //@line 1656 "arraymodule.c"
+        var $42=HEAP[$41]; //@line 1656 "arraymodule.c"
+        var $43=($42)==(_PySlice_Type); //@line 1656 "arraymodule.c"
+        if ($43) { __label__ = 11; break; } else { __label__ = 24; break; } //@line 1656 "arraymodule.c"
+      case 11: // $bb9
+        var $44=$self_addr; //@line 1660 "arraymodule.c"
+        var $45=$44+20; //@line 1660 "arraymodule.c"
+        var $46=HEAP[$45]; //@line 1660 "arraymodule.c"
+        var $47=$46+4; //@line 1660 "arraymodule.c"
+        var $48=HEAP[$47]; //@line 1660 "arraymodule.c"
+        $itemsize=$48; //@line 1660 "arraymodule.c"
+        var $49=$self_addr; //@line 1662 "arraymodule.c"
+        var $50=$49; //@line 1662 "arraymodule.c"
+        var $51=$50+8; //@line 1662 "arraymodule.c"
+        var $52=HEAP[$51]; //@line 1662 "arraymodule.c"
+        var $53=$item_addr; //@line 1662 "arraymodule.c"
+        var $54=$53; //@line 1662 "arraymodule.c"
+        var $55=_PySlice_GetIndicesEx($54, $52, $start, $stop, $step, $slicelength); //@line 1662 "arraymodule.c"
+        var $56=($55) < 0; //@line 1662 "arraymodule.c"
+        if ($56) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1662 "arraymodule.c"
+      case 12: // $bb11
+        $0=0; //@line 1664 "arraymodule.c"
+        __label__ = 25; break; //@line 1664 "arraymodule.c"
+      case 13: // $bb12
+        var $57=HEAP[$slicelength]; //@line 1667 "arraymodule.c"
+        var $58=($57) <= 0; //@line 1667 "arraymodule.c"
+        if ($58) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 1667 "arraymodule.c"
+      case 14: // $bb13
+        var $59=$self_addr; //@line 1668 "arraymodule.c"
+        var $60=$59+20; //@line 1668 "arraymodule.c"
+        var $61=HEAP[$60]; //@line 1668 "arraymodule.c"
+        var $62=_newarrayobject(_Arraytype, 0, $61); //@line 1668 "arraymodule.c"
+        $0=$62; //@line 1668 "arraymodule.c"
+        __label__ = 25; break; //@line 1668 "arraymodule.c"
+      case 15: // $bb14
+        var $63=HEAP[$step]; //@line 1670 "arraymodule.c"
+        var $64=($63)==1; //@line 1670 "arraymodule.c"
+        var $65=$self_addr; //@line 1672 "arraymodule.c"
+        var $66=$65+20; //@line 1672 "arraymodule.c"
+        var $67=HEAP[$66]; //@line 1672 "arraymodule.c"
+        var $68=HEAP[$slicelength]; //@line 1672 "arraymodule.c"
+        var $69=_newarrayobject(_Arraytype, $68, $67); //@line 1672 "arraymodule.c"
+        if ($64) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 1670 "arraymodule.c"
+      case 16: // $bb15
+        $result16=$69; //@line 1672 "arraymodule.c"
+        var $70=$result16; //@line 1673 "arraymodule.c"
+        var $71=($70)==0; //@line 1673 "arraymodule.c"
+        if ($71) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 1673 "arraymodule.c"
+      case 17: // $bb17
+        $0=0; //@line 1674 "arraymodule.c"
+        __label__ = 25; break; //@line 1674 "arraymodule.c"
+      case 18: // $bb18
+        var $72=HEAP[$slicelength]; //@line 1675 "arraymodule.c"
+        var $73=$itemsize; //@line 1675 "arraymodule.c"
+        var $74=($73) * ($72); //@line 1675 "arraymodule.c"
+        var $75=$self_addr; //@line 1675 "arraymodule.c"
+        var $76=$75+12; //@line 1675 "arraymodule.c"
+        var $77=HEAP[$76]; //@line 1675 "arraymodule.c"
+        var $78=HEAP[$start]; //@line 1675 "arraymodule.c"
+        var $79=$itemsize; //@line 1675 "arraymodule.c"
+        var $80=($79) * ($78); //@line 1675 "arraymodule.c"
+        var $81=$77+$80; //@line 1675 "arraymodule.c"
+        var $82=$result16; //@line 1675 "arraymodule.c"
+        var $83=$82; //@line 1675 "arraymodule.c"
+        var $84=$83+12; //@line 1675 "arraymodule.c"
+        var $85=HEAP[$84]; //@line 1675 "arraymodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($85, $81, $74, 1, 0); //@line 1675 "arraymodule.c"
+        var $86=$result16; //@line 1678 "arraymodule.c"
+        $0=$86; //@line 1678 "arraymodule.c"
+        __label__ = 25; break; //@line 1678 "arraymodule.c"
+      case 19: // $bb19
+        $result=$69; //@line 1681 "arraymodule.c"
+        var $87=$result; //@line 1682 "arraymodule.c"
+        var $88=($87)==0; //@line 1682 "arraymodule.c"
+        if ($88) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1682 "arraymodule.c"
+      case 20: // $bb20
+        $0=0; //@line 1682 "arraymodule.c"
+        __label__ = 25; break; //@line 1682 "arraymodule.c"
+      case 21: // $bb21
+        var $89=$result; //@line 1684 "arraymodule.c"
+        var $90=$89; //@line 1684 "arraymodule.c"
+        $ar=$90; //@line 1684 "arraymodule.c"
+        var $91=HEAP[$start]; //@line 1686 "arraymodule.c"
+        $cur=$91; //@line 1686 "arraymodule.c"
         $i10=0; //@line 1686 "arraymodule.c"
-        var $105=HEAP[$slicelength]; //@line 1686 "arraymodule.c"
-        var $106=$i10; //@line 1686 "arraymodule.c"
-        var $107=($106) < ($105); //@line 1686 "arraymodule.c"
-        if ($107) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1686 "arraymodule.c"
-      case 27: // $bb22
-        var $108=$itemsize; //@line 1688 "arraymodule.c"
-        var $109=$self_addr; //@line 1688 "arraymodule.c"
-        var $110=$109+12; //@line 1688 "arraymodule.c"
-        var $111=HEAP[$110]; //@line 1688 "arraymodule.c"
-        var $112=$cur; //@line 1688 "arraymodule.c"
-        var $113=$itemsize; //@line 1688 "arraymodule.c"
-        var $114=($113) * ($112); //@line 1688 "arraymodule.c"
-        var $115=$111+$114; //@line 1688 "arraymodule.c"
-        var $116=$ar; //@line 1688 "arraymodule.c"
-        var $117=$116+12; //@line 1688 "arraymodule.c"
-        var $118=HEAP[$117]; //@line 1688 "arraymodule.c"
-        var $119=$i10; //@line 1688 "arraymodule.c"
-        var $120=$itemsize; //@line 1688 "arraymodule.c"
-        var $121=($120) * ($119); //@line 1688 "arraymodule.c"
-        var $122=$118+$121; //@line 1688 "arraymodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($122, $115, $108, 1, 0); //@line 1688 "arraymodule.c"
-        var $123=HEAP[$step]; //@line 1687 "arraymodule.c"
-        var $124=$cur; //@line 1687 "arraymodule.c"
-        var $125=($124) + ($123); //@line 1687 "arraymodule.c"
-        $cur=$125; //@line 1687 "arraymodule.c"
-        var $126=$i10; //@line 1687 "arraymodule.c"
-        var $127=($126) + 1; //@line 1687 "arraymodule.c"
-        $i10=$127; //@line 1687 "arraymodule.c"
-        var $128=HEAP[$slicelength]; //@line 1686 "arraymodule.c"
-        var $129=$i10; //@line 1686 "arraymodule.c"
-        var $130=($129) < ($128); //@line 1686 "arraymodule.c"
-        if ($130) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1686 "arraymodule.c"
-      case 28: // $bb24
-        var $131=$result; //@line 1693 "arraymodule.c"
-        $1=$131; //@line 1693 "arraymodule.c"
-        __label__ = 30; break; //@line 1693 "arraymodule.c"
-      case 29: // $bb25
-        var $132=HEAP[_PyExc_TypeError]; //@line 1697 "arraymodule.c"
-        _PyErr_SetString($132, __str77); //@line 1697 "arraymodule.c"
-        $1=0; //@line 1699 "arraymodule.c"
-        __label__ = 30; break; //@line 1699 "arraymodule.c"
-      case 30: // $bb26
-        var $133=$1; //@line 1650 "arraymodule.c"
-        $retval=$133; //@line 1650 "arraymodule.c"
+        var $92=HEAP[$slicelength]; //@line 1686 "arraymodule.c"
+        var $93=$i10; //@line 1686 "arraymodule.c"
+        var $94=($93) < ($92); //@line 1686 "arraymodule.c"
+        if ($94) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1686 "arraymodule.c"
+      case 22: // $bb22
+        var $95=$itemsize; //@line 1688 "arraymodule.c"
+        var $96=$self_addr; //@line 1688 "arraymodule.c"
+        var $97=$96+12; //@line 1688 "arraymodule.c"
+        var $98=HEAP[$97]; //@line 1688 "arraymodule.c"
+        var $99=$cur; //@line 1688 "arraymodule.c"
+        var $100=$itemsize; //@line 1688 "arraymodule.c"
+        var $101=($100) * ($99); //@line 1688 "arraymodule.c"
+        var $102=$98+$101; //@line 1688 "arraymodule.c"
+        var $103=$ar; //@line 1688 "arraymodule.c"
+        var $104=$103+12; //@line 1688 "arraymodule.c"
+        var $105=HEAP[$104]; //@line 1688 "arraymodule.c"
+        var $106=$i10; //@line 1688 "arraymodule.c"
+        var $107=$itemsize; //@line 1688 "arraymodule.c"
+        var $108=($107) * ($106); //@line 1688 "arraymodule.c"
+        var $109=$105+$108; //@line 1688 "arraymodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($109, $102, $95, 1, 0); //@line 1688 "arraymodule.c"
+        var $110=HEAP[$step]; //@line 1687 "arraymodule.c"
+        var $111=$cur; //@line 1687 "arraymodule.c"
+        var $112=($111) + ($110); //@line 1687 "arraymodule.c"
+        $cur=$112; //@line 1687 "arraymodule.c"
+        var $113=$i10; //@line 1687 "arraymodule.c"
+        var $114=($113) + 1; //@line 1687 "arraymodule.c"
+        $i10=$114; //@line 1687 "arraymodule.c"
+        var $115=HEAP[$slicelength]; //@line 1686 "arraymodule.c"
+        var $116=$i10; //@line 1686 "arraymodule.c"
+        var $117=($116) < ($115); //@line 1686 "arraymodule.c"
+        if ($117) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1686 "arraymodule.c"
+      case 23: // $bb24
+        var $118=$result; //@line 1693 "arraymodule.c"
+        $0=$118; //@line 1693 "arraymodule.c"
+        __label__ = 25; break; //@line 1693 "arraymodule.c"
+      case 24: // $bb25
+        var $119=HEAP[_PyExc_TypeError]; //@line 1697 "arraymodule.c"
+        _PyErr_SetString($119, __str77); //@line 1697 "arraymodule.c"
+        $0=0; //@line 1699 "arraymodule.c"
+        __label__ = 25; break; //@line 1699 "arraymodule.c"
+      case 25: // $bb26
+        var $120=$0; //@line 1650 "arraymodule.c"
+        $retval=$120; //@line 1650 "arraymodule.c"
         var $retval27=$retval; //@line 1650 "arraymodule.c"
         STACKTOP = __stackBase__;
         return $retval27; //@line 1650 "arraymodule.c"
@@ -7352,7 +7274,7 @@ var __str89;
         var $129=$128+12; //@line 1767 "arraymodule.c"
         var $130=HEAP[$129]; //@line 1767 "arraymodule.c"
         var $131=HEAP[_PyExc_TypeError]; //@line 1767 "arraymodule.c"
-        var $132=_PyErr_Format($131, __str20, $130); //@line 1767 "arraymodule.c"
+        var $132=_PyErr_Format($131, __str20, allocate([$130,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1767 "arraymodule.c"
         $0=-1; //@line 1770 "arraymodule.c"
         __label__ = 68; break; //@line 1770 "arraymodule.c"
       case 33: // $bb32
@@ -7672,7 +7594,7 @@ var __str89;
         var $355=HEAP[$slicelength]; //@line 1833 "arraymodule.c"
         var $356=HEAP[_PyExc_ValueError]; //@line 1833 "arraymodule.c"
         var $357=$needed; //@line 1833 "arraymodule.c"
-        var $358=_PyErr_Format($356, __str79, $357, $355); //@line 1833 "arraymodule.c"
+        var $358=_PyErr_Format($356, __str79, allocate([$357,0,0,0,$355,0,0,0], ["i32",0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1833 "arraymodule.c"
         $0=-1; //@line 1837 "arraymodule.c"
         __label__ = 68; break; //@line 1837 "arraymodule.c"
       case 65: // $bb67
@@ -7892,16 +7814,11 @@ var __str89;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $a_addr_i;
-        var $i_addr_i;
-        var $v_addr_i;
-        var $retval_i;
-        var $0;
         var $type_addr;
         var $args_addr;
         var $kwds_addr;
         var $retval;
-        var $1;
+        var $0;
         var $c=__stackBase__;
         var $initial=__stackBase__+1;
         var $it;
@@ -7920,576 +7837,551 @@ var __str89;
         $kwds_addr=$kwds;
         HEAP[$initial]=0; //@line 1917 "arraymodule.c"
         $it=0; //@line 1917 "arraymodule.c"
-        var $2=$type_addr; //@line 1920 "arraymodule.c"
-        var $3=($2)==(_Arraytype); //@line 1920 "arraymodule.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1920 "arraymodule.c"
+        var $1=$type_addr; //@line 1920 "arraymodule.c"
+        var $2=($1)==(_Arraytype); //@line 1920 "arraymodule.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 1920 "arraymodule.c"
       case 1: // $bb
-        var $4=$kwds_addr; //@line 1920 "arraymodule.c"
-        var $5=__PyArg_NoKeywords(__str82, $4); //@line 1920 "arraymodule.c"
-        var $6=($5)==0; //@line 1920 "arraymodule.c"
-        if ($6) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1920 "arraymodule.c"
+        var $3=$kwds_addr; //@line 1920 "arraymodule.c"
+        var $4=__PyArg_NoKeywords(__str82, $3); //@line 1920 "arraymodule.c"
+        var $5=($4)==0; //@line 1920 "arraymodule.c"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1920 "arraymodule.c"
       case 2: // $bb1
-        $1=0; //@line 1921 "arraymodule.c"
-        __label__ = 77; break; //@line 1921 "arraymodule.c"
+        $0=0; //@line 1921 "arraymodule.c"
+        __label__ = 74; break; //@line 1921 "arraymodule.c"
       case 3: // $bb2
-        var $7=$args_addr; //@line 1923 "arraymodule.c"
-        var $8=__PyArg_ParseTuple_SizeT($7, __str83, $c, $initial); //@line 1923 "arraymodule.c"
-        var $9=($8)==0; //@line 1923 "arraymodule.c"
-        if ($9) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1923 "arraymodule.c"
+        var $6=$args_addr; //@line 1923 "arraymodule.c"
+        var $7=__PyArg_ParseTuple_SizeT($6, __str83, allocate([$c,0,0,0,$initial,0,0,0], ["i8*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1923 "arraymodule.c"
+        var $8=($7)==0; //@line 1923 "arraymodule.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1923 "arraymodule.c"
       case 4: // $bb3
-        $1=0; //@line 1924 "arraymodule.c"
-        __label__ = 77; break; //@line 1924 "arraymodule.c"
+        $0=0; //@line 1924 "arraymodule.c"
+        __label__ = 74; break; //@line 1924 "arraymodule.c"
       case 5: // $bb4
-        var $10=HEAP[$initial]; //@line 1926 "arraymodule.c"
-        var $11=($10)!=0; //@line 1926 "arraymodule.c"
-        if ($11) { __label__ = 6; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
+        var $9=HEAP[$initial]; //@line 1926 "arraymodule.c"
+        var $10=($9)!=0; //@line 1926 "arraymodule.c"
+        if ($10) { __label__ = 6; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
       case 6: // $bb5
-        var $12=HEAP[$initial]; //@line 1926 "arraymodule.c"
-        var $13=$12+4; //@line 1926 "arraymodule.c"
-        var $14=HEAP[$13]; //@line 1926 "arraymodule.c"
-        var $15=$14+84; //@line 1926 "arraymodule.c"
-        var $16=HEAP[$15]; //@line 1926 "arraymodule.c"
-        var $17=($16) & 33554432; //@line 1926 "arraymodule.c"
-        var $18=($17)==0; //@line 1926 "arraymodule.c"
-        if ($18) { __label__ = 7; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
+        var $11=HEAP[$initial]; //@line 1926 "arraymodule.c"
+        var $12=$11+4; //@line 1926 "arraymodule.c"
+        var $13=HEAP[$12]; //@line 1926 "arraymodule.c"
+        var $14=$13+84; //@line 1926 "arraymodule.c"
+        var $15=HEAP[$14]; //@line 1926 "arraymodule.c"
+        var $16=($15) & 33554432; //@line 1926 "arraymodule.c"
+        var $17=($16)==0; //@line 1926 "arraymodule.c"
+        if ($17) { __label__ = 7; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
       case 7: // $bb6
-        var $19=HEAP[$initial]; //@line 1926 "arraymodule.c"
-        var $20=$19+4; //@line 1926 "arraymodule.c"
-        var $21=HEAP[$20]; //@line 1926 "arraymodule.c"
-        var $22=$21+84; //@line 1926 "arraymodule.c"
-        var $23=HEAP[$22]; //@line 1926 "arraymodule.c"
-        var $24=($23) & 134217728; //@line 1926 "arraymodule.c"
-        var $25=($24)==0; //@line 1926 "arraymodule.c"
-        if ($25) { __label__ = 8; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
+        var $18=HEAP[$initial]; //@line 1926 "arraymodule.c"
+        var $19=$18+4; //@line 1926 "arraymodule.c"
+        var $20=HEAP[$19]; //@line 1926 "arraymodule.c"
+        var $21=$20+84; //@line 1926 "arraymodule.c"
+        var $22=HEAP[$21]; //@line 1926 "arraymodule.c"
+        var $23=($22) & 134217728; //@line 1926 "arraymodule.c"
+        var $24=($23)==0; //@line 1926 "arraymodule.c"
+        if ($24) { __label__ = 8; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
       case 8: // $bb7
-        var $26=HEAP[$initial]; //@line 1926 "arraymodule.c"
-        var $27=$26+4; //@line 1926 "arraymodule.c"
-        var $28=HEAP[$27]; //@line 1926 "arraymodule.c"
-        var $29=$28+84; //@line 1926 "arraymodule.c"
-        var $30=HEAP[$29]; //@line 1926 "arraymodule.c"
-        var $31=($30) & 67108864; //@line 1926 "arraymodule.c"
-        var $32=($31)==0; //@line 1926 "arraymodule.c"
-        if ($32) { __label__ = 9; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
+        var $25=HEAP[$initial]; //@line 1926 "arraymodule.c"
+        var $26=$25+4; //@line 1926 "arraymodule.c"
+        var $27=HEAP[$26]; //@line 1926 "arraymodule.c"
+        var $28=$27+84; //@line 1926 "arraymodule.c"
+        var $29=HEAP[$28]; //@line 1926 "arraymodule.c"
+        var $30=($29) & 67108864; //@line 1926 "arraymodule.c"
+        var $31=($30)==0; //@line 1926 "arraymodule.c"
+        if ($31) { __label__ = 9; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
       case 9: // $bb8
-        var $33=HEAP[$c]; //@line 1926 "arraymodule.c"
-        var $34=($33)!=117; //@line 1926 "arraymodule.c"
-        if ($34) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 1926 "arraymodule.c"
+        var $32=HEAP[$c]; //@line 1926 "arraymodule.c"
+        var $33=($32)!=117; //@line 1926 "arraymodule.c"
+        if ($33) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 1926 "arraymodule.c"
       case 10: // $bb9
-        var $35=HEAP[$initial]; //@line 1926 "arraymodule.c"
-        var $36=$35+4; //@line 1926 "arraymodule.c"
-        var $37=HEAP[$36]; //@line 1926 "arraymodule.c"
-        var $38=$37+84; //@line 1926 "arraymodule.c"
-        var $39=HEAP[$38]; //@line 1926 "arraymodule.c"
-        var $40=($39) & 268435456; //@line 1926 "arraymodule.c"
-        var $41=($40)==0; //@line 1926 "arraymodule.c"
-        if ($41) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
+        var $34=HEAP[$initial]; //@line 1926 "arraymodule.c"
+        var $35=$34+4; //@line 1926 "arraymodule.c"
+        var $36=HEAP[$35]; //@line 1926 "arraymodule.c"
+        var $37=$36+84; //@line 1926 "arraymodule.c"
+        var $38=HEAP[$37]; //@line 1926 "arraymodule.c"
+        var $39=($38) & 268435456; //@line 1926 "arraymodule.c"
+        var $40=($39)==0; //@line 1926 "arraymodule.c"
+        if ($40) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 1926 "arraymodule.c"
       case 11: // $bb10
-        var $42=HEAP[$initial]; //@line 1929 "arraymodule.c"
-        var $43=_PyObject_GetIter($42); //@line 1929 "arraymodule.c"
-        $it=$43; //@line 1929 "arraymodule.c"
-        var $44=($43)==0; //@line 1930 "arraymodule.c"
-        if ($44) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1930 "arraymodule.c"
+        var $41=HEAP[$initial]; //@line 1929 "arraymodule.c"
+        var $42=_PyObject_GetIter($41); //@line 1929 "arraymodule.c"
+        $it=$42; //@line 1929 "arraymodule.c"
+        var $43=($42)==0; //@line 1930 "arraymodule.c"
+        if ($43) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 1930 "arraymodule.c"
       case 12: // $bb11
-        $1=0; //@line 1931 "arraymodule.c"
-        __label__ = 77; break; //@line 1931 "arraymodule.c"
+        $0=0; //@line 1931 "arraymodule.c"
+        __label__ = 74; break; //@line 1931 "arraymodule.c"
       case 13: // $bb12
         HEAP[$initial]=0; //@line 1937 "arraymodule.c"
         __label__ = 14; break; //@line 1937 "arraymodule.c"
       case 14: // $bb13
         $descr=_descriptors; //@line 1939 "arraymodule.c"
-        __label__ = 75; break; //@line 1939 "arraymodule.c"
+        __label__ = 72; break; //@line 1939 "arraymodule.c"
       case 15: // $bb14
-        var $45=$descr; //@line 1940 "arraymodule.c"
-        var $46=$45; //@line 1940 "arraymodule.c"
-        var $47=HEAP[$46]; //@line 1940 "arraymodule.c"
-        var $48=HEAP[$c]; //@line 1940 "arraymodule.c"
-        var $49=($48); //@line 1940 "arraymodule.c"
-        var $50=($47)==($49); //@line 1940 "arraymodule.c"
-        if ($50) { __label__ = 16; break; } else { __label__ = 74; break; } //@line 1940 "arraymodule.c"
+        var $44=$descr; //@line 1940 "arraymodule.c"
+        var $45=$44; //@line 1940 "arraymodule.c"
+        var $46=HEAP[$45]; //@line 1940 "arraymodule.c"
+        var $47=HEAP[$c]; //@line 1940 "arraymodule.c"
+        var $48=($47); //@line 1940 "arraymodule.c"
+        var $49=($46)==($48); //@line 1940 "arraymodule.c"
+        if ($49) { __label__ = 16; break; } else { __label__ = 71; break; } //@line 1940 "arraymodule.c"
       case 16: // $bb15
-        var $51=HEAP[$initial]; //@line 1944 "arraymodule.c"
-        var $52=($51)==0; //@line 1944 "arraymodule.c"
-        if ($52) { __label__ = 19; break; } else { __label__ = 17; break; } //@line 1944 "arraymodule.c"
+        var $50=HEAP[$initial]; //@line 1944 "arraymodule.c"
+        var $51=($50)==0; //@line 1944 "arraymodule.c"
+        if ($51) { __label__ = 19; break; } else { __label__ = 17; break; } //@line 1944 "arraymodule.c"
       case 17: // $bb16
-        var $53=HEAP[$initial]; //@line 1944 "arraymodule.c"
-        var $54=$53+4; //@line 1944 "arraymodule.c"
-        var $55=HEAP[$54]; //@line 1944 "arraymodule.c"
-        var $56=$55+84; //@line 1944 "arraymodule.c"
-        var $57=HEAP[$56]; //@line 1944 "arraymodule.c"
-        var $58=($57) & 33554432; //@line 1944 "arraymodule.c"
-        var $59=($58)!=0; //@line 1944 "arraymodule.c"
-        if ($59) { __label__ = 20; break; } else { __label__ = 18; break; } //@line 1944 "arraymodule.c"
+        var $52=HEAP[$initial]; //@line 1944 "arraymodule.c"
+        var $53=$52+4; //@line 1944 "arraymodule.c"
+        var $54=HEAP[$53]; //@line 1944 "arraymodule.c"
+        var $55=$54+84; //@line 1944 "arraymodule.c"
+        var $56=HEAP[$55]; //@line 1944 "arraymodule.c"
+        var $57=($56) & 33554432; //@line 1944 "arraymodule.c"
+        var $58=($57)!=0; //@line 1944 "arraymodule.c"
+        if ($58) { __label__ = 20; break; } else { __label__ = 18; break; } //@line 1944 "arraymodule.c"
       case 18: // $bb17
-        var $60=HEAP[$initial]; //@line 1944 "arraymodule.c"
-        var $61=$60+4; //@line 1944 "arraymodule.c"
-        var $62=HEAP[$61]; //@line 1944 "arraymodule.c"
-        var $63=$62+84; //@line 1944 "arraymodule.c"
-        var $64=HEAP[$63]; //@line 1944 "arraymodule.c"
-        var $65=($64) & 67108864; //@line 1944 "arraymodule.c"
-        var $66=($65)==0; //@line 1944 "arraymodule.c"
-        if ($66) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1944 "arraymodule.c"
+        var $59=HEAP[$initial]; //@line 1944 "arraymodule.c"
+        var $60=$59+4; //@line 1944 "arraymodule.c"
+        var $61=HEAP[$60]; //@line 1944 "arraymodule.c"
+        var $62=$61+84; //@line 1944 "arraymodule.c"
+        var $63=HEAP[$62]; //@line 1944 "arraymodule.c"
+        var $64=($63) & 67108864; //@line 1944 "arraymodule.c"
+        var $65=($64)==0; //@line 1944 "arraymodule.c"
+        if ($65) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 1944 "arraymodule.c"
       case 19: // $bb18
         $len=0; //@line 1946 "arraymodule.c"
         __label__ = 21; break; //@line 1946 "arraymodule.c"
       case 20: // $bb19
-        var $67=HEAP[$initial]; //@line 1948 "arraymodule.c"
-        var $68=_PySequence_Size($67); //@line 1948 "arraymodule.c"
-        $len=$68; //@line 1948 "arraymodule.c"
+        var $66=HEAP[$initial]; //@line 1948 "arraymodule.c"
+        var $67=_PySequence_Size($66); //@line 1948 "arraymodule.c"
+        $len=$67; //@line 1948 "arraymodule.c"
         __label__ = 21; break; //@line 1948 "arraymodule.c"
       case 21: // $bb20
-        var $69=$type_addr; //@line 1950 "arraymodule.c"
-        var $70=$len; //@line 1950 "arraymodule.c"
-        var $71=$descr; //@line 1950 "arraymodule.c"
-        var $72=_newarrayobject($69, $70, $71); //@line 1950 "arraymodule.c"
-        $a=$72; //@line 1950 "arraymodule.c"
-        var $73=($72)==0; //@line 1951 "arraymodule.c"
-        if ($73) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1951 "arraymodule.c"
+        var $68=$type_addr; //@line 1950 "arraymodule.c"
+        var $69=$len; //@line 1950 "arraymodule.c"
+        var $70=$descr; //@line 1950 "arraymodule.c"
+        var $71=_newarrayobject($68, $69, $70); //@line 1950 "arraymodule.c"
+        $a=$71; //@line 1950 "arraymodule.c"
+        var $72=($71)==0; //@line 1951 "arraymodule.c"
+        if ($72) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1951 "arraymodule.c"
       case 22: // $bb21
-        $1=0; //@line 1952 "arraymodule.c"
-        __label__ = 77; break; //@line 1952 "arraymodule.c"
+        $0=0; //@line 1952 "arraymodule.c"
+        __label__ = 74; break; //@line 1952 "arraymodule.c"
       case 23: // $bb22
-        var $74=$len; //@line 1954 "arraymodule.c"
-        var $75=($74) > 0; //@line 1954 "arraymodule.c"
-        if ($75) { __label__ = 24; break; } else { __label__ = 42; break; } //@line 1954 "arraymodule.c"
+        var $73=$len; //@line 1954 "arraymodule.c"
+        var $74=($73) > 0; //@line 1954 "arraymodule.c"
+        if ($74) { __label__ = 24; break; } else { __label__ = 39; break; } //@line 1954 "arraymodule.c"
       case 24: // $bb23
         $i=0; //@line 1956 "arraymodule.c"
-        __label__ = 41; break; //@line 1956 "arraymodule.c"
+        __label__ = 38; break; //@line 1956 "arraymodule.c"
       case 25: // $bb24
-        var $76=HEAP[$initial]; //@line 1958 "arraymodule.c"
-        var $77=$i; //@line 1958 "arraymodule.c"
-        var $78=_PySequence_GetItem($76, $77); //@line 1958 "arraymodule.c"
-        $v=$78; //@line 1958 "arraymodule.c"
-        var $79=$v; //@line 1959 "arraymodule.c"
-        var $80=($79)==0; //@line 1959 "arraymodule.c"
-        var $81=$a; //@line 1960 "arraymodule.c"
-        if ($80) { __label__ = 26; break; } else { __label__ = 29; break; } //@line 1959 "arraymodule.c"
+        var $75=HEAP[$initial]; //@line 1958 "arraymodule.c"
+        var $76=$i; //@line 1958 "arraymodule.c"
+        var $77=_PySequence_GetItem($75, $76); //@line 1958 "arraymodule.c"
+        $v=$77; //@line 1958 "arraymodule.c"
+        var $78=$v; //@line 1959 "arraymodule.c"
+        var $79=($78)==0; //@line 1959 "arraymodule.c"
+        var $80=$a; //@line 1960 "arraymodule.c"
+        if ($79) { __label__ = 26; break; } else { __label__ = 29; break; } //@line 1959 "arraymodule.c"
       case 26: // $bb25
-        var $82=$81; //@line 1960 "arraymodule.c"
-        var $83=HEAP[$82]; //@line 1960 "arraymodule.c"
-        var $84=($83) - 1; //@line 1960 "arraymodule.c"
-        var $85=$a; //@line 1960 "arraymodule.c"
-        var $86=$85; //@line 1960 "arraymodule.c"
-        HEAP[$86]=$84; //@line 1960 "arraymodule.c"
-        var $87=$a; //@line 1960 "arraymodule.c"
-        var $88=$87; //@line 1960 "arraymodule.c"
-        var $89=HEAP[$88]; //@line 1960 "arraymodule.c"
-        var $90=($89)==0; //@line 1960 "arraymodule.c"
-        if ($90) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1960 "arraymodule.c"
+        var $81=$80; //@line 1960 "arraymodule.c"
+        var $82=HEAP[$81]; //@line 1960 "arraymodule.c"
+        var $83=($82) - 1; //@line 1960 "arraymodule.c"
+        var $84=$a; //@line 1960 "arraymodule.c"
+        var $85=$84; //@line 1960 "arraymodule.c"
+        HEAP[$85]=$83; //@line 1960 "arraymodule.c"
+        var $86=$a; //@line 1960 "arraymodule.c"
+        var $87=$86; //@line 1960 "arraymodule.c"
+        var $88=HEAP[$87]; //@line 1960 "arraymodule.c"
+        var $89=($88)==0; //@line 1960 "arraymodule.c"
+        if ($89) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1960 "arraymodule.c"
       case 27: // $bb26
-        var $91=$a; //@line 1960 "arraymodule.c"
-        var $92=$91+4; //@line 1960 "arraymodule.c"
-        var $93=HEAP[$92]; //@line 1960 "arraymodule.c"
-        var $94=$93+24; //@line 1960 "arraymodule.c"
-        var $95=HEAP[$94]; //@line 1960 "arraymodule.c"
-        var $96=$a; //@line 1960 "arraymodule.c"
-        FUNCTION_TABLE[$95]($96); //@line 1960 "arraymodule.c"
+        var $90=$a; //@line 1960 "arraymodule.c"
+        var $91=$90+4; //@line 1960 "arraymodule.c"
+        var $92=HEAP[$91]; //@line 1960 "arraymodule.c"
+        var $93=$92+24; //@line 1960 "arraymodule.c"
+        var $94=HEAP[$93]; //@line 1960 "arraymodule.c"
+        var $95=$a; //@line 1960 "arraymodule.c"
+        FUNCTION_TABLE[$94]($95); //@line 1960 "arraymodule.c"
         __label__ = 28; break; //@line 1960 "arraymodule.c"
       case 28: // $bb27
-        $1=0; //@line 1961 "arraymodule.c"
-        __label__ = 77; break; //@line 1961 "arraymodule.c"
+        $0=0; //@line 1961 "arraymodule.c"
+        __label__ = 74; break; //@line 1961 "arraymodule.c"
       case 29: // $bb28
-        var $97=$i; //@line 1963 "arraymodule.c"
-        var $98=$v; //@line 1963 "arraymodule.c"
-        $a_addr_i=$81;
-        $i_addr_i=$97;
-        $v_addr_i=$98;
-        var $99=$a_addr_i; //@line 787 "arraymodule.c"
-        var $100=$99+4; //@line 787 "arraymodule.c"
-        var $101=HEAP[$100]; //@line 787 "arraymodule.c"
-        var $102=($101)!=(_Arraytype); //@line 787 "arraymodule.c"
-        if ($102) { __label__ = 30; break; } else { __label__ = 32; break; } //@line 787 "arraymodule.c"
-      case 30: // $bb_i
-        var $103=$a_addr_i; //@line 787 "arraymodule.c"
-        var $104=$103+4; //@line 787 "arraymodule.c"
-        var $105=HEAP[$104]; //@line 787 "arraymodule.c"
-        var $106=_PyType_IsSubtype($105, _Arraytype); //@line 787 "arraymodule.c"
-        var $107=($106)==0; //@line 787 "arraymodule.c"
-        if ($107) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 787 "arraymodule.c"
-      case 31: // $bb1_i
-        ___assert_fail(__str22, __str15, 787, ___PRETTY_FUNCTION___9470); //@line 787 "arraymodule.c"
-        throw "Reached an unreachable!" //@line 787 "arraymodule.c"
-      case 32: // $setarrayitem_exit
-        var $108=$a_addr_i; //@line 788 "arraymodule.c"
-        var $109=$108; //@line 788 "arraymodule.c"
-        var $110=$i_addr_i; //@line 788 "arraymodule.c"
-        var $111=$v_addr_i; //@line 788 "arraymodule.c"
-        var $112=_array_ass_item($109, $110, $111); //@line 788 "arraymodule.c"
-        $0=$112; //@line 788 "arraymodule.c"
-        $retval_i=$112; //@line 788 "arraymodule.c"
-        var $113=($112)!=0; //@line 1963 "arraymodule.c"
-        var $114=$v; //@line 1964 "arraymodule.c"
-        var $115=$114; //@line 1964 "arraymodule.c"
-        var $116=HEAP[$115]; //@line 1964 "arraymodule.c"
-        var $117=($116) - 1; //@line 1964 "arraymodule.c"
-        var $118=$v; //@line 1964 "arraymodule.c"
-        var $119=$118; //@line 1964 "arraymodule.c"
-        HEAP[$119]=$117; //@line 1964 "arraymodule.c"
-        var $120=$v; //@line 1964 "arraymodule.c"
-        var $121=$120; //@line 1964 "arraymodule.c"
-        var $122=HEAP[$121]; //@line 1964 "arraymodule.c"
-        var $123=($122)==0; //@line 1964 "arraymodule.c"
-        if ($113) { __label__ = 33; break; } else { __label__ = 38; break; } //@line 1963 "arraymodule.c"
-      case 33: // $bb29
-        if ($123) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 1964 "arraymodule.c"
-      case 34: // $bb30
-        var $124=$v; //@line 1964 "arraymodule.c"
-        var $125=$124+4; //@line 1964 "arraymodule.c"
-        var $126=HEAP[$125]; //@line 1964 "arraymodule.c"
-        var $127=$126+24; //@line 1964 "arraymodule.c"
-        var $128=HEAP[$127]; //@line 1964 "arraymodule.c"
-        var $129=$v; //@line 1964 "arraymodule.c"
-        FUNCTION_TABLE[$128]($129); //@line 1964 "arraymodule.c"
-        __label__ = 35; break; //@line 1964 "arraymodule.c"
-      case 35: // $bb31
-        var $130=$a; //@line 1965 "arraymodule.c"
-        var $131=$130; //@line 1965 "arraymodule.c"
-        var $132=HEAP[$131]; //@line 1965 "arraymodule.c"
-        var $133=($132) - 1; //@line 1965 "arraymodule.c"
-        var $134=$a; //@line 1965 "arraymodule.c"
-        var $135=$134; //@line 1965 "arraymodule.c"
-        HEAP[$135]=$133; //@line 1965 "arraymodule.c"
-        var $136=$a; //@line 1965 "arraymodule.c"
-        var $137=$136; //@line 1965 "arraymodule.c"
-        var $138=HEAP[$137]; //@line 1965 "arraymodule.c"
-        var $139=($138)==0; //@line 1965 "arraymodule.c"
-        if ($139) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 1965 "arraymodule.c"
-      case 36: // $bb32
-        var $140=$a; //@line 1965 "arraymodule.c"
-        var $141=$140+4; //@line 1965 "arraymodule.c"
-        var $142=HEAP[$141]; //@line 1965 "arraymodule.c"
-        var $143=$142+24; //@line 1965 "arraymodule.c"
-        var $144=HEAP[$143]; //@line 1965 "arraymodule.c"
-        var $145=$a; //@line 1965 "arraymodule.c"
-        FUNCTION_TABLE[$144]($145); //@line 1965 "arraymodule.c"
-        __label__ = 37; break; //@line 1965 "arraymodule.c"
-      case 37: // $bb33
-        $1=0; //@line 1966 "arraymodule.c"
-        __label__ = 77; break; //@line 1966 "arraymodule.c"
-      case 38: // $bb34
-        if ($123) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 1968 "arraymodule.c"
-      case 39: // $bb35
-        var $146=$v; //@line 1968 "arraymodule.c"
-        var $147=$146+4; //@line 1968 "arraymodule.c"
-        var $148=HEAP[$147]; //@line 1968 "arraymodule.c"
-        var $149=$148+24; //@line 1968 "arraymodule.c"
-        var $150=HEAP[$149]; //@line 1968 "arraymodule.c"
-        var $151=$v; //@line 1968 "arraymodule.c"
-        FUNCTION_TABLE[$150]($151); //@line 1968 "arraymodule.c"
-        __label__ = 40; break; //@line 1968 "arraymodule.c"
-      case 40: // $bb36
-        var $152=$i; //@line 1956 "arraymodule.c"
-        var $153=($152) + 1; //@line 1956 "arraymodule.c"
-        $i=$153; //@line 1956 "arraymodule.c"
-        __label__ = 41; break; //@line 1956 "arraymodule.c"
-      case 41: // $bb37
-        var $154=$i; //@line 1956 "arraymodule.c"
-        var $155=$len; //@line 1956 "arraymodule.c"
-        var $156=($154) < ($155); //@line 1956 "arraymodule.c"
-        if ($156) { __label__ = 25; break; } else { __label__ = 64; break; } //@line 1956 "arraymodule.c"
-      case 42: // $bb39
-        var $157=HEAP[$initial]; //@line 1970 "arraymodule.c"
-        var $158=($157)==0; //@line 1970 "arraymodule.c"
-        if ($158) { __label__ = 64; break; } else { __label__ = 43; break; } //@line 1970 "arraymodule.c"
-      case 43: // $bb40
-        var $159=HEAP[$initial]; //@line 1970 "arraymodule.c"
-        var $160=$159+4; //@line 1970 "arraymodule.c"
-        var $161=HEAP[$160]; //@line 1970 "arraymodule.c"
-        var $162=$161+84; //@line 1970 "arraymodule.c"
-        var $163=HEAP[$162]; //@line 1970 "arraymodule.c"
-        var $164=($163) & 134217728; //@line 1970 "arraymodule.c"
-        var $165=($164)==0; //@line 1970 "arraymodule.c"
+        var $96=$i; //@line 1963 "arraymodule.c"
+        var $97=$v; //@line 1963 "arraymodule.c"
+        var $98=_setarrayitem($80, $96, $97); //@line 1963 "arraymodule.c"
+        var $99=($98)!=0; //@line 1963 "arraymodule.c"
+        var $100=$v; //@line 1964 "arraymodule.c"
+        var $101=$100; //@line 1964 "arraymodule.c"
+        var $102=HEAP[$101]; //@line 1964 "arraymodule.c"
+        var $103=($102) - 1; //@line 1964 "arraymodule.c"
+        var $104=$v; //@line 1964 "arraymodule.c"
+        var $105=$104; //@line 1964 "arraymodule.c"
+        HEAP[$105]=$103; //@line 1964 "arraymodule.c"
+        var $106=$v; //@line 1964 "arraymodule.c"
+        var $107=$106; //@line 1964 "arraymodule.c"
+        var $108=HEAP[$107]; //@line 1964 "arraymodule.c"
+        var $109=($108)==0; //@line 1964 "arraymodule.c"
+        if ($99) { __label__ = 30; break; } else { __label__ = 35; break; } //@line 1963 "arraymodule.c"
+      case 30: // $bb29
+        if ($109) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1964 "arraymodule.c"
+      case 31: // $bb30
+        var $110=$v; //@line 1964 "arraymodule.c"
+        var $111=$110+4; //@line 1964 "arraymodule.c"
+        var $112=HEAP[$111]; //@line 1964 "arraymodule.c"
+        var $113=$112+24; //@line 1964 "arraymodule.c"
+        var $114=HEAP[$113]; //@line 1964 "arraymodule.c"
+        var $115=$v; //@line 1964 "arraymodule.c"
+        FUNCTION_TABLE[$114]($115); //@line 1964 "arraymodule.c"
+        __label__ = 32; break; //@line 1964 "arraymodule.c"
+      case 32: // $bb31
+        var $116=$a; //@line 1965 "arraymodule.c"
+        var $117=$116; //@line 1965 "arraymodule.c"
+        var $118=HEAP[$117]; //@line 1965 "arraymodule.c"
+        var $119=($118) - 1; //@line 1965 "arraymodule.c"
+        var $120=$a; //@line 1965 "arraymodule.c"
+        var $121=$120; //@line 1965 "arraymodule.c"
+        HEAP[$121]=$119; //@line 1965 "arraymodule.c"
+        var $122=$a; //@line 1965 "arraymodule.c"
+        var $123=$122; //@line 1965 "arraymodule.c"
+        var $124=HEAP[$123]; //@line 1965 "arraymodule.c"
+        var $125=($124)==0; //@line 1965 "arraymodule.c"
+        if ($125) { __label__ = 33; break; } else { __label__ = 34; break; } //@line 1965 "arraymodule.c"
+      case 33: // $bb32
+        var $126=$a; //@line 1965 "arraymodule.c"
+        var $127=$126+4; //@line 1965 "arraymodule.c"
+        var $128=HEAP[$127]; //@line 1965 "arraymodule.c"
+        var $129=$128+24; //@line 1965 "arraymodule.c"
+        var $130=HEAP[$129]; //@line 1965 "arraymodule.c"
+        var $131=$a; //@line 1965 "arraymodule.c"
+        FUNCTION_TABLE[$130]($131); //@line 1965 "arraymodule.c"
+        __label__ = 34; break; //@line 1965 "arraymodule.c"
+      case 34: // $bb33
+        $0=0; //@line 1966 "arraymodule.c"
+        __label__ = 74; break; //@line 1966 "arraymodule.c"
+      case 35: // $bb34
+        if ($109) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 1968 "arraymodule.c"
+      case 36: // $bb35
+        var $132=$v; //@line 1968 "arraymodule.c"
+        var $133=$132+4; //@line 1968 "arraymodule.c"
+        var $134=HEAP[$133]; //@line 1968 "arraymodule.c"
+        var $135=$134+24; //@line 1968 "arraymodule.c"
+        var $136=HEAP[$135]; //@line 1968 "arraymodule.c"
+        var $137=$v; //@line 1968 "arraymodule.c"
+        FUNCTION_TABLE[$136]($137); //@line 1968 "arraymodule.c"
+        __label__ = 37; break; //@line 1968 "arraymodule.c"
+      case 37: // $bb36
+        var $138=$i; //@line 1956 "arraymodule.c"
+        var $139=($138) + 1; //@line 1956 "arraymodule.c"
+        $i=$139; //@line 1956 "arraymodule.c"
+        __label__ = 38; break; //@line 1956 "arraymodule.c"
+      case 38: // $bb37
+        var $140=$i; //@line 1956 "arraymodule.c"
+        var $141=$len; //@line 1956 "arraymodule.c"
+        var $142=($140) < ($141); //@line 1956 "arraymodule.c"
+        if ($142) { __label__ = 25; break; } else { __label__ = 61; break; } //@line 1956 "arraymodule.c"
+      case 39: // $bb39
+        var $143=HEAP[$initial]; //@line 1970 "arraymodule.c"
+        var $144=($143)==0; //@line 1970 "arraymodule.c"
+        if ($144) { __label__ = 61; break; } else { __label__ = 40; break; } //@line 1970 "arraymodule.c"
+      case 40: // $bb40
+        var $145=HEAP[$initial]; //@line 1970 "arraymodule.c"
+        var $146=$145+4; //@line 1970 "arraymodule.c"
+        var $147=HEAP[$146]; //@line 1970 "arraymodule.c"
+        var $148=$147+84; //@line 1970 "arraymodule.c"
+        var $149=HEAP[$148]; //@line 1970 "arraymodule.c"
+        var $150=($149) & 134217728; //@line 1970 "arraymodule.c"
+        var $151=($150)==0; //@line 1970 "arraymodule.c"
         var $_pr=HEAP[$initial];
-        if ($165) { __label__ = 56; break; } else { __label__ = 44; break; } //@line 1970 "arraymodule.c"
-      case 44: // $bb41
-        var $166=_PyTuple_Pack(1, $_pr); //@line 1972 "arraymodule.c"
-        $t_initial=$166; //@line 1972 "arraymodule.c"
-        var $167=$t_initial; //@line 1973 "arraymodule.c"
-        var $168=($167)==0; //@line 1973 "arraymodule.c"
-        var $169=$a; //@line 1974 "arraymodule.c"
-        if ($168) { __label__ = 45; break; } else { __label__ = 48; break; } //@line 1973 "arraymodule.c"
-      case 45: // $bb43
-        var $170=$169; //@line 1974 "arraymodule.c"
-        var $171=HEAP[$170]; //@line 1974 "arraymodule.c"
-        var $172=($171) - 1; //@line 1974 "arraymodule.c"
-        var $173=$a; //@line 1974 "arraymodule.c"
-        var $174=$173; //@line 1974 "arraymodule.c"
-        HEAP[$174]=$172; //@line 1974 "arraymodule.c"
-        var $175=$a; //@line 1974 "arraymodule.c"
-        var $176=$175; //@line 1974 "arraymodule.c"
-        var $177=HEAP[$176]; //@line 1974 "arraymodule.c"
-        var $178=($177)==0; //@line 1974 "arraymodule.c"
-        if ($178) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1974 "arraymodule.c"
-      case 46: // $bb44
-        var $179=$a; //@line 1974 "arraymodule.c"
-        var $180=$179+4; //@line 1974 "arraymodule.c"
-        var $181=HEAP[$180]; //@line 1974 "arraymodule.c"
-        var $182=$181+24; //@line 1974 "arraymodule.c"
-        var $183=HEAP[$182]; //@line 1974 "arraymodule.c"
-        var $184=$a; //@line 1974 "arraymodule.c"
-        FUNCTION_TABLE[$183]($184); //@line 1974 "arraymodule.c"
-        __label__ = 47; break; //@line 1974 "arraymodule.c"
-      case 47: // $bb45
-        $1=0; //@line 1975 "arraymodule.c"
-        __label__ = 77; break; //@line 1975 "arraymodule.c"
-      case 48: // $bb46
-        var $185=$169; //@line 1977 "arraymodule.c"
-        var $186=$t_initial; //@line 1977 "arraymodule.c"
-        var $187=_array_fromstring($185, $186); //@line 1977 "arraymodule.c"
-        $v42=$187; //@line 1977 "arraymodule.c"
-        var $188=$t_initial; //@line 1979 "arraymodule.c"
-        var $189=$188; //@line 1979 "arraymodule.c"
-        var $190=HEAP[$189]; //@line 1979 "arraymodule.c"
-        var $191=($190) - 1; //@line 1979 "arraymodule.c"
-        var $192=$t_initial; //@line 1979 "arraymodule.c"
-        var $193=$192; //@line 1979 "arraymodule.c"
-        HEAP[$193]=$191; //@line 1979 "arraymodule.c"
-        var $194=$t_initial; //@line 1979 "arraymodule.c"
-        var $195=$194; //@line 1979 "arraymodule.c"
-        var $196=HEAP[$195]; //@line 1979 "arraymodule.c"
-        var $197=($196)==0; //@line 1979 "arraymodule.c"
-        if ($197) { __label__ = 49; break; } else { __label__ = 50; break; } //@line 1979 "arraymodule.c"
-      case 49: // $bb47
-        var $198=$t_initial; //@line 1979 "arraymodule.c"
-        var $199=$198+4; //@line 1979 "arraymodule.c"
-        var $200=HEAP[$199]; //@line 1979 "arraymodule.c"
-        var $201=$200+24; //@line 1979 "arraymodule.c"
-        var $202=HEAP[$201]; //@line 1979 "arraymodule.c"
-        var $203=$t_initial; //@line 1979 "arraymodule.c"
-        FUNCTION_TABLE[$202]($203); //@line 1979 "arraymodule.c"
-        __label__ = 50; break; //@line 1979 "arraymodule.c"
-      case 50: // $bb48
-        var $204=$v42; //@line 1980 "arraymodule.c"
-        var $205=($204)==0; //@line 1980 "arraymodule.c"
-        if ($205) { __label__ = 51; break; } else { __label__ = 54; break; } //@line 1980 "arraymodule.c"
-      case 51: // $bb49
-        var $206=$a; //@line 1981 "arraymodule.c"
-        var $207=$206; //@line 1981 "arraymodule.c"
-        var $208=HEAP[$207]; //@line 1981 "arraymodule.c"
-        var $209=($208) - 1; //@line 1981 "arraymodule.c"
-        var $210=$a; //@line 1981 "arraymodule.c"
-        var $211=$210; //@line 1981 "arraymodule.c"
-        HEAP[$211]=$209; //@line 1981 "arraymodule.c"
-        var $212=$a; //@line 1981 "arraymodule.c"
-        var $213=$212; //@line 1981 "arraymodule.c"
-        var $214=HEAP[$213]; //@line 1981 "arraymodule.c"
-        var $215=($214)==0; //@line 1981 "arraymodule.c"
-        if ($215) { __label__ = 52; break; } else { __label__ = 53; break; } //@line 1981 "arraymodule.c"
-      case 52: // $bb50
-        var $216=$a; //@line 1981 "arraymodule.c"
-        var $217=$216+4; //@line 1981 "arraymodule.c"
-        var $218=HEAP[$217]; //@line 1981 "arraymodule.c"
-        var $219=$218+24; //@line 1981 "arraymodule.c"
-        var $220=HEAP[$219]; //@line 1981 "arraymodule.c"
-        var $221=$a; //@line 1981 "arraymodule.c"
-        FUNCTION_TABLE[$220]($221); //@line 1981 "arraymodule.c"
-        __label__ = 53; break; //@line 1981 "arraymodule.c"
-      case 53: // $bb51
-        $1=0; //@line 1982 "arraymodule.c"
-        __label__ = 77; break; //@line 1982 "arraymodule.c"
-      case 54: // $bb52
-        var $222=$v42; //@line 1984 "arraymodule.c"
-        var $223=$222; //@line 1984 "arraymodule.c"
-        var $224=HEAP[$223]; //@line 1984 "arraymodule.c"
-        var $225=($224) - 1; //@line 1984 "arraymodule.c"
-        var $226=$v42; //@line 1984 "arraymodule.c"
-        var $227=$226; //@line 1984 "arraymodule.c"
-        HEAP[$227]=$225; //@line 1984 "arraymodule.c"
-        var $228=$v42; //@line 1984 "arraymodule.c"
-        var $229=$228; //@line 1984 "arraymodule.c"
-        var $230=HEAP[$229]; //@line 1984 "arraymodule.c"
-        var $231=($230)==0; //@line 1984 "arraymodule.c"
-        if ($231) { __label__ = 55; break; } else { __label__ = 64; break; } //@line 1984 "arraymodule.c"
-      case 55: // $bb53
-        var $232=$v42; //@line 1984 "arraymodule.c"
-        var $233=$232+4; //@line 1984 "arraymodule.c"
-        var $234=HEAP[$233]; //@line 1984 "arraymodule.c"
-        var $235=$234+24; //@line 1984 "arraymodule.c"
-        var $236=HEAP[$235]; //@line 1984 "arraymodule.c"
-        var $237=$v42; //@line 1984 "arraymodule.c"
-        FUNCTION_TABLE[$236]($237); //@line 1984 "arraymodule.c"
-        __label__ = 64; break; //@line 1984 "arraymodule.c"
-      case 56: // $bb55
-        var $238=($_pr)!=0; //@line 1986 "arraymodule.c"
-        if ($238) { __label__ = 57; break; } else { __label__ = 64; break; } //@line 1986 "arraymodule.c"
-      case 57: // $bb56
-        var $239=HEAP[$initial]; //@line 1986 "arraymodule.c"
-        var $240=$239+4; //@line 1986 "arraymodule.c"
-        var $241=HEAP[$240]; //@line 1986 "arraymodule.c"
-        var $242=$241+84; //@line 1986 "arraymodule.c"
-        var $243=HEAP[$242]; //@line 1986 "arraymodule.c"
-        var $244=($243) & 268435456; //@line 1986 "arraymodule.c"
-        var $245=($244)!=0; //@line 1986 "arraymodule.c"
-        if ($245) { __label__ = 58; break; } else { __label__ = 64; break; } //@line 1986 "arraymodule.c"
-      case 58: // $bb57
-        var $246=HEAP[$initial]; //@line 1987 "arraymodule.c"
-        var $247=$246; //@line 1987 "arraymodule.c"
-        var $248=$247+8; //@line 1987 "arraymodule.c"
-        var $249=HEAP[$248]; //@line 1987 "arraymodule.c"
-        var $250=($249) * 2; //@line 1987 "arraymodule.c"
-        $n=$250; //@line 1987 "arraymodule.c"
-        var $251=$n; //@line 1988 "arraymodule.c"
-        var $252=($251) > 0; //@line 1988 "arraymodule.c"
-        if ($252) { __label__ = 59; break; } else { __label__ = 64; break; } //@line 1988 "arraymodule.c"
-      case 59: // $bb58
-        var $253=$a; //@line 1989 "arraymodule.c"
-        var $254=$253; //@line 1989 "arraymodule.c"
-        $self=$254; //@line 1989 "arraymodule.c"
-        var $255=$self; //@line 1990 "arraymodule.c"
-        var $256=$255+12; //@line 1990 "arraymodule.c"
-        var $257=HEAP[$256]; //@line 1990 "arraymodule.c"
-        $item=$257; //@line 1990 "arraymodule.c"
-        var $258=$n; //@line 1991 "arraymodule.c"
-        var $259=$item; //@line 1991 "arraymodule.c"
-        var $260=_PyMem_Realloc($259, $258); //@line 1991 "arraymodule.c"
-        $item=$260; //@line 1991 "arraymodule.c"
-        var $261=$item; //@line 1992 "arraymodule.c"
-        var $262=($261)==0; //@line 1992 "arraymodule.c"
-        if ($262) { __label__ = 60; break; } else { __label__ = 63; break; } //@line 1992 "arraymodule.c"
-      case 60: // $bb59
-        var $263=_PyErr_NoMemory(); //@line 1993 "arraymodule.c"
-        var $264=$a; //@line 1994 "arraymodule.c"
-        var $265=$264; //@line 1994 "arraymodule.c"
-        var $266=HEAP[$265]; //@line 1994 "arraymodule.c"
-        var $267=($266) - 1; //@line 1994 "arraymodule.c"
-        var $268=$a; //@line 1994 "arraymodule.c"
-        var $269=$268; //@line 1994 "arraymodule.c"
-        HEAP[$269]=$267; //@line 1994 "arraymodule.c"
-        var $270=$a; //@line 1994 "arraymodule.c"
-        var $271=$270; //@line 1994 "arraymodule.c"
-        var $272=HEAP[$271]; //@line 1994 "arraymodule.c"
-        var $273=($272)==0; //@line 1994 "arraymodule.c"
-        if ($273) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 1994 "arraymodule.c"
-      case 61: // $bb60
-        var $274=$a; //@line 1994 "arraymodule.c"
-        var $275=$274+4; //@line 1994 "arraymodule.c"
-        var $276=HEAP[$275]; //@line 1994 "arraymodule.c"
-        var $277=$276+24; //@line 1994 "arraymodule.c"
-        var $278=HEAP[$277]; //@line 1994 "arraymodule.c"
-        var $279=$a; //@line 1994 "arraymodule.c"
-        FUNCTION_TABLE[$278]($279); //@line 1994 "arraymodule.c"
-        __label__ = 62; break; //@line 1994 "arraymodule.c"
-      case 62: // $bb61
-        $1=0; //@line 1995 "arraymodule.c"
-        __label__ = 77; break; //@line 1995 "arraymodule.c"
-      case 63: // $bb62
-        var $280=$self; //@line 1997 "arraymodule.c"
-        var $281=$280+12; //@line 1997 "arraymodule.c"
-        var $282=$item; //@line 1997 "arraymodule.c"
-        HEAP[$281]=$282; //@line 1997 "arraymodule.c"
-        var $283=$self; //@line 1998 "arraymodule.c"
-        var $284=$283; //@line 1998 "arraymodule.c"
-        var $285=$n; //@line 1998 "arraymodule.c"
-        var $286=Math.floor(($285)/2); //@line 1998 "arraymodule.c"
-        var $287=$284+8; //@line 1998 "arraymodule.c"
-        HEAP[$287]=$286; //@line 1998 "arraymodule.c"
-        var $288=$n; //@line 1999 "arraymodule.c"
-        var $289=HEAP[$initial]; //@line 1999 "arraymodule.c"
-        var $290=$289; //@line 1999 "arraymodule.c"
-        var $291=$290+12; //@line 1999 "arraymodule.c"
-        var $292=HEAP[$291]; //@line 1999 "arraymodule.c"
-        var $293=$item; //@line 1999 "arraymodule.c"
-        var $294=$292; //@line 1999 "arraymodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($293, $294, $288, 1, 0); //@line 1999 "arraymodule.c"
-        var $295=$self; //@line 2000 "arraymodule.c"
-        var $296=$295; //@line 2000 "arraymodule.c"
-        var $297=$296+8; //@line 2000 "arraymodule.c"
-        var $298=HEAP[$297]; //@line 2000 "arraymodule.c"
-        var $299=$self; //@line 2000 "arraymodule.c"
-        var $300=$299+16; //@line 2000 "arraymodule.c"
-        HEAP[$300]=$298; //@line 2000 "arraymodule.c"
-        __label__ = 64; break; //@line 2000 "arraymodule.c"
-      case 64: // $bb63
-        var $301=$it; //@line 2004 "arraymodule.c"
-        var $302=($301)!=0; //@line 2004 "arraymodule.c"
-        if ($302) { __label__ = 65; break; } else { __label__ = 73; break; } //@line 2004 "arraymodule.c"
-      case 65: // $bb64
-        var $303=$a; //@line 2005 "arraymodule.c"
-        var $304=$303; //@line 2005 "arraymodule.c"
-        var $305=$it; //@line 2005 "arraymodule.c"
-        var $306=_array_iter_extend($304, $305); //@line 2005 "arraymodule.c"
-        var $307=($306)==-1; //@line 2005 "arraymodule.c"
-        var $308=$it; //@line 2006 "arraymodule.c"
-        var $309=$308; //@line 2006 "arraymodule.c"
-        var $310=HEAP[$309]; //@line 2006 "arraymodule.c"
-        var $311=($310) - 1; //@line 2006 "arraymodule.c"
-        var $312=$it; //@line 2006 "arraymodule.c"
-        var $313=$312; //@line 2006 "arraymodule.c"
-        HEAP[$313]=$311; //@line 2006 "arraymodule.c"
-        var $314=$it; //@line 2006 "arraymodule.c"
-        var $315=$314; //@line 2006 "arraymodule.c"
-        var $316=HEAP[$315]; //@line 2006 "arraymodule.c"
-        var $317=($316)==0; //@line 2006 "arraymodule.c"
-        if ($307) { __label__ = 66; break; } else { __label__ = 71; break; } //@line 2005 "arraymodule.c"
-      case 66: // $bb65
-        if ($317) { __label__ = 67; break; } else { __label__ = 68; break; } //@line 2006 "arraymodule.c"
-      case 67: // $bb66
-        var $318=$it; //@line 2006 "arraymodule.c"
-        var $319=$318+4; //@line 2006 "arraymodule.c"
-        var $320=HEAP[$319]; //@line 2006 "arraymodule.c"
-        var $321=$320+24; //@line 2006 "arraymodule.c"
-        var $322=HEAP[$321]; //@line 2006 "arraymodule.c"
-        var $323=$it; //@line 2006 "arraymodule.c"
-        FUNCTION_TABLE[$322]($323); //@line 2006 "arraymodule.c"
-        __label__ = 68; break; //@line 2006 "arraymodule.c"
-      case 68: // $bb67
-        var $324=$a; //@line 2007 "arraymodule.c"
-        var $325=$324; //@line 2007 "arraymodule.c"
-        var $326=HEAP[$325]; //@line 2007 "arraymodule.c"
-        var $327=($326) - 1; //@line 2007 "arraymodule.c"
-        var $328=$a; //@line 2007 "arraymodule.c"
-        var $329=$328; //@line 2007 "arraymodule.c"
-        HEAP[$329]=$327; //@line 2007 "arraymodule.c"
-        var $330=$a; //@line 2007 "arraymodule.c"
-        var $331=$330; //@line 2007 "arraymodule.c"
-        var $332=HEAP[$331]; //@line 2007 "arraymodule.c"
-        var $333=($332)==0; //@line 2007 "arraymodule.c"
-        if ($333) { __label__ = 69; break; } else { __label__ = 70; break; } //@line 2007 "arraymodule.c"
-      case 69: // $bb68
-        var $334=$a; //@line 2007 "arraymodule.c"
-        var $335=$334+4; //@line 2007 "arraymodule.c"
-        var $336=HEAP[$335]; //@line 2007 "arraymodule.c"
-        var $337=$336+24; //@line 2007 "arraymodule.c"
-        var $338=HEAP[$337]; //@line 2007 "arraymodule.c"
-        var $339=$a; //@line 2007 "arraymodule.c"
-        FUNCTION_TABLE[$338]($339); //@line 2007 "arraymodule.c"
-        __label__ = 70; break; //@line 2007 "arraymodule.c"
-      case 70: // $bb69
-        $1=0; //@line 2008 "arraymodule.c"
-        __label__ = 77; break; //@line 2008 "arraymodule.c"
-      case 71: // $bb70
-        if ($317) { __label__ = 72; break; } else { __label__ = 73; break; } //@line 2010 "arraymodule.c"
-      case 72: // $bb71
-        var $340=$it; //@line 2010 "arraymodule.c"
-        var $341=$340+4; //@line 2010 "arraymodule.c"
-        var $342=HEAP[$341]; //@line 2010 "arraymodule.c"
-        var $343=$342+24; //@line 2010 "arraymodule.c"
-        var $344=HEAP[$343]; //@line 2010 "arraymodule.c"
-        var $345=$it; //@line 2010 "arraymodule.c"
-        FUNCTION_TABLE[$344]($345); //@line 2010 "arraymodule.c"
-        __label__ = 73; break; //@line 2010 "arraymodule.c"
-      case 73: // $bb72
-        var $346=$a; //@line 2012 "arraymodule.c"
-        $1=$346; //@line 2012 "arraymodule.c"
-        __label__ = 77; break; //@line 2012 "arraymodule.c"
-      case 74: // $bb73
-        var $347=$descr; //@line 1939 "arraymodule.c"
-        var $348=$347+16; //@line 1939 "arraymodule.c"
-        $descr=$348; //@line 1939 "arraymodule.c"
-        __label__ = 75; break; //@line 1939 "arraymodule.c"
-      case 75: // $bb74
-        var $349=$descr; //@line 1939 "arraymodule.c"
-        var $350=$349; //@line 1939 "arraymodule.c"
-        var $351=HEAP[$350]; //@line 1939 "arraymodule.c"
-        var $352=($351)!=0; //@line 1939 "arraymodule.c"
-        if ($352) { __label__ = 15; break; } else { __label__ = 76; break; } //@line 1939 "arraymodule.c"
-      case 76: // $bb75
-        var $353=HEAP[_PyExc_ValueError]; //@line 2015 "arraymodule.c"
-        _PyErr_SetString($353, __str84); //@line 2015 "arraymodule.c"
-        $1=0; //@line 2017 "arraymodule.c"
-        __label__ = 77; break; //@line 2017 "arraymodule.c"
-      case 77: // $bb76
-        var $354=$1; //@line 1921 "arraymodule.c"
-        $retval=$354; //@line 1921 "arraymodule.c"
+        if ($151) { __label__ = 53; break; } else { __label__ = 41; break; } //@line 1970 "arraymodule.c"
+      case 41: // $bb41
+        var $152=_PyTuple_Pack(1, allocate([$_pr,0,0,0], ["%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 1972 "arraymodule.c"
+        $t_initial=$152; //@line 1972 "arraymodule.c"
+        var $153=$t_initial; //@line 1973 "arraymodule.c"
+        var $154=($153)==0; //@line 1973 "arraymodule.c"
+        var $155=$a; //@line 1974 "arraymodule.c"
+        if ($154) { __label__ = 42; break; } else { __label__ = 45; break; } //@line 1973 "arraymodule.c"
+      case 42: // $bb43
+        var $156=$155; //@line 1974 "arraymodule.c"
+        var $157=HEAP[$156]; //@line 1974 "arraymodule.c"
+        var $158=($157) - 1; //@line 1974 "arraymodule.c"
+        var $159=$a; //@line 1974 "arraymodule.c"
+        var $160=$159; //@line 1974 "arraymodule.c"
+        HEAP[$160]=$158; //@line 1974 "arraymodule.c"
+        var $161=$a; //@line 1974 "arraymodule.c"
+        var $162=$161; //@line 1974 "arraymodule.c"
+        var $163=HEAP[$162]; //@line 1974 "arraymodule.c"
+        var $164=($163)==0; //@line 1974 "arraymodule.c"
+        if ($164) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 1974 "arraymodule.c"
+      case 43: // $bb44
+        var $165=$a; //@line 1974 "arraymodule.c"
+        var $166=$165+4; //@line 1974 "arraymodule.c"
+        var $167=HEAP[$166]; //@line 1974 "arraymodule.c"
+        var $168=$167+24; //@line 1974 "arraymodule.c"
+        var $169=HEAP[$168]; //@line 1974 "arraymodule.c"
+        var $170=$a; //@line 1974 "arraymodule.c"
+        FUNCTION_TABLE[$169]($170); //@line 1974 "arraymodule.c"
+        __label__ = 44; break; //@line 1974 "arraymodule.c"
+      case 44: // $bb45
+        $0=0; //@line 1975 "arraymodule.c"
+        __label__ = 74; break; //@line 1975 "arraymodule.c"
+      case 45: // $bb46
+        var $171=$155; //@line 1977 "arraymodule.c"
+        var $172=$t_initial; //@line 1977 "arraymodule.c"
+        var $173=_array_fromstring($171, $172); //@line 1977 "arraymodule.c"
+        $v42=$173; //@line 1977 "arraymodule.c"
+        var $174=$t_initial; //@line 1979 "arraymodule.c"
+        var $175=$174; //@line 1979 "arraymodule.c"
+        var $176=HEAP[$175]; //@line 1979 "arraymodule.c"
+        var $177=($176) - 1; //@line 1979 "arraymodule.c"
+        var $178=$t_initial; //@line 1979 "arraymodule.c"
+        var $179=$178; //@line 1979 "arraymodule.c"
+        HEAP[$179]=$177; //@line 1979 "arraymodule.c"
+        var $180=$t_initial; //@line 1979 "arraymodule.c"
+        var $181=$180; //@line 1979 "arraymodule.c"
+        var $182=HEAP[$181]; //@line 1979 "arraymodule.c"
+        var $183=($182)==0; //@line 1979 "arraymodule.c"
+        if ($183) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 1979 "arraymodule.c"
+      case 46: // $bb47
+        var $184=$t_initial; //@line 1979 "arraymodule.c"
+        var $185=$184+4; //@line 1979 "arraymodule.c"
+        var $186=HEAP[$185]; //@line 1979 "arraymodule.c"
+        var $187=$186+24; //@line 1979 "arraymodule.c"
+        var $188=HEAP[$187]; //@line 1979 "arraymodule.c"
+        var $189=$t_initial; //@line 1979 "arraymodule.c"
+        FUNCTION_TABLE[$188]($189); //@line 1979 "arraymodule.c"
+        __label__ = 47; break; //@line 1979 "arraymodule.c"
+      case 47: // $bb48
+        var $190=$v42; //@line 1980 "arraymodule.c"
+        var $191=($190)==0; //@line 1980 "arraymodule.c"
+        if ($191) { __label__ = 48; break; } else { __label__ = 51; break; } //@line 1980 "arraymodule.c"
+      case 48: // $bb49
+        var $192=$a; //@line 1981 "arraymodule.c"
+        var $193=$192; //@line 1981 "arraymodule.c"
+        var $194=HEAP[$193]; //@line 1981 "arraymodule.c"
+        var $195=($194) - 1; //@line 1981 "arraymodule.c"
+        var $196=$a; //@line 1981 "arraymodule.c"
+        var $197=$196; //@line 1981 "arraymodule.c"
+        HEAP[$197]=$195; //@line 1981 "arraymodule.c"
+        var $198=$a; //@line 1981 "arraymodule.c"
+        var $199=$198; //@line 1981 "arraymodule.c"
+        var $200=HEAP[$199]; //@line 1981 "arraymodule.c"
+        var $201=($200)==0; //@line 1981 "arraymodule.c"
+        if ($201) { __label__ = 49; break; } else { __label__ = 50; break; } //@line 1981 "arraymodule.c"
+      case 49: // $bb50
+        var $202=$a; //@line 1981 "arraymodule.c"
+        var $203=$202+4; //@line 1981 "arraymodule.c"
+        var $204=HEAP[$203]; //@line 1981 "arraymodule.c"
+        var $205=$204+24; //@line 1981 "arraymodule.c"
+        var $206=HEAP[$205]; //@line 1981 "arraymodule.c"
+        var $207=$a; //@line 1981 "arraymodule.c"
+        FUNCTION_TABLE[$206]($207); //@line 1981 "arraymodule.c"
+        __label__ = 50; break; //@line 1981 "arraymodule.c"
+      case 50: // $bb51
+        $0=0; //@line 1982 "arraymodule.c"
+        __label__ = 74; break; //@line 1982 "arraymodule.c"
+      case 51: // $bb52
+        var $208=$v42; //@line 1984 "arraymodule.c"
+        var $209=$208; //@line 1984 "arraymodule.c"
+        var $210=HEAP[$209]; //@line 1984 "arraymodule.c"
+        var $211=($210) - 1; //@line 1984 "arraymodule.c"
+        var $212=$v42; //@line 1984 "arraymodule.c"
+        var $213=$212; //@line 1984 "arraymodule.c"
+        HEAP[$213]=$211; //@line 1984 "arraymodule.c"
+        var $214=$v42; //@line 1984 "arraymodule.c"
+        var $215=$214; //@line 1984 "arraymodule.c"
+        var $216=HEAP[$215]; //@line 1984 "arraymodule.c"
+        var $217=($216)==0; //@line 1984 "arraymodule.c"
+        if ($217) { __label__ = 52; break; } else { __label__ = 61; break; } //@line 1984 "arraymodule.c"
+      case 52: // $bb53
+        var $218=$v42; //@line 1984 "arraymodule.c"
+        var $219=$218+4; //@line 1984 "arraymodule.c"
+        var $220=HEAP[$219]; //@line 1984 "arraymodule.c"
+        var $221=$220+24; //@line 1984 "arraymodule.c"
+        var $222=HEAP[$221]; //@line 1984 "arraymodule.c"
+        var $223=$v42; //@line 1984 "arraymodule.c"
+        FUNCTION_TABLE[$222]($223); //@line 1984 "arraymodule.c"
+        __label__ = 61; break; //@line 1984 "arraymodule.c"
+      case 53: // $bb55
+        var $224=($_pr)!=0; //@line 1986 "arraymodule.c"
+        if ($224) { __label__ = 54; break; } else { __label__ = 61; break; } //@line 1986 "arraymodule.c"
+      case 54: // $bb56
+        var $225=HEAP[$initial]; //@line 1986 "arraymodule.c"
+        var $226=$225+4; //@line 1986 "arraymodule.c"
+        var $227=HEAP[$226]; //@line 1986 "arraymodule.c"
+        var $228=$227+84; //@line 1986 "arraymodule.c"
+        var $229=HEAP[$228]; //@line 1986 "arraymodule.c"
+        var $230=($229) & 268435456; //@line 1986 "arraymodule.c"
+        var $231=($230)!=0; //@line 1986 "arraymodule.c"
+        if ($231) { __label__ = 55; break; } else { __label__ = 61; break; } //@line 1986 "arraymodule.c"
+      case 55: // $bb57
+        var $232=HEAP[$initial]; //@line 1987 "arraymodule.c"
+        var $233=$232; //@line 1987 "arraymodule.c"
+        var $234=$233+8; //@line 1987 "arraymodule.c"
+        var $235=HEAP[$234]; //@line 1987 "arraymodule.c"
+        var $236=($235) * 2; //@line 1987 "arraymodule.c"
+        $n=$236; //@line 1987 "arraymodule.c"
+        var $237=$n; //@line 1988 "arraymodule.c"
+        var $238=($237) > 0; //@line 1988 "arraymodule.c"
+        if ($238) { __label__ = 56; break; } else { __label__ = 61; break; } //@line 1988 "arraymodule.c"
+      case 56: // $bb58
+        var $239=$a; //@line 1989 "arraymodule.c"
+        var $240=$239; //@line 1989 "arraymodule.c"
+        $self=$240; //@line 1989 "arraymodule.c"
+        var $241=$self; //@line 1990 "arraymodule.c"
+        var $242=$241+12; //@line 1990 "arraymodule.c"
+        var $243=HEAP[$242]; //@line 1990 "arraymodule.c"
+        $item=$243; //@line 1990 "arraymodule.c"
+        var $244=$n; //@line 1991 "arraymodule.c"
+        var $245=$item; //@line 1991 "arraymodule.c"
+        var $246=_PyMem_Realloc($245, $244); //@line 1991 "arraymodule.c"
+        $item=$246; //@line 1991 "arraymodule.c"
+        var $247=$item; //@line 1992 "arraymodule.c"
+        var $248=($247)==0; //@line 1992 "arraymodule.c"
+        if ($248) { __label__ = 57; break; } else { __label__ = 60; break; } //@line 1992 "arraymodule.c"
+      case 57: // $bb59
+        var $249=_PyErr_NoMemory(); //@line 1993 "arraymodule.c"
+        var $250=$a; //@line 1994 "arraymodule.c"
+        var $251=$250; //@line 1994 "arraymodule.c"
+        var $252=HEAP[$251]; //@line 1994 "arraymodule.c"
+        var $253=($252) - 1; //@line 1994 "arraymodule.c"
+        var $254=$a; //@line 1994 "arraymodule.c"
+        var $255=$254; //@line 1994 "arraymodule.c"
+        HEAP[$255]=$253; //@line 1994 "arraymodule.c"
+        var $256=$a; //@line 1994 "arraymodule.c"
+        var $257=$256; //@line 1994 "arraymodule.c"
+        var $258=HEAP[$257]; //@line 1994 "arraymodule.c"
+        var $259=($258)==0; //@line 1994 "arraymodule.c"
+        if ($259) { __label__ = 58; break; } else { __label__ = 59; break; } //@line 1994 "arraymodule.c"
+      case 58: // $bb60
+        var $260=$a; //@line 1994 "arraymodule.c"
+        var $261=$260+4; //@line 1994 "arraymodule.c"
+        var $262=HEAP[$261]; //@line 1994 "arraymodule.c"
+        var $263=$262+24; //@line 1994 "arraymodule.c"
+        var $264=HEAP[$263]; //@line 1994 "arraymodule.c"
+        var $265=$a; //@line 1994 "arraymodule.c"
+        FUNCTION_TABLE[$264]($265); //@line 1994 "arraymodule.c"
+        __label__ = 59; break; //@line 1994 "arraymodule.c"
+      case 59: // $bb61
+        $0=0; //@line 1995 "arraymodule.c"
+        __label__ = 74; break; //@line 1995 "arraymodule.c"
+      case 60: // $bb62
+        var $266=$self; //@line 1997 "arraymodule.c"
+        var $267=$266+12; //@line 1997 "arraymodule.c"
+        var $268=$item; //@line 1997 "arraymodule.c"
+        HEAP[$267]=$268; //@line 1997 "arraymodule.c"
+        var $269=$self; //@line 1998 "arraymodule.c"
+        var $270=$269; //@line 1998 "arraymodule.c"
+        var $271=$n; //@line 1998 "arraymodule.c"
+        var $272=Math.floor(($271)/2); //@line 1998 "arraymodule.c"
+        var $273=$270+8; //@line 1998 "arraymodule.c"
+        HEAP[$273]=$272; //@line 1998 "arraymodule.c"
+        var $274=$n; //@line 1999 "arraymodule.c"
+        var $275=HEAP[$initial]; //@line 1999 "arraymodule.c"
+        var $276=$275; //@line 1999 "arraymodule.c"
+        var $277=$276+12; //@line 1999 "arraymodule.c"
+        var $278=HEAP[$277]; //@line 1999 "arraymodule.c"
+        var $279=$item; //@line 1999 "arraymodule.c"
+        var $280=$278; //@line 1999 "arraymodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($279, $280, $274, 1, 0); //@line 1999 "arraymodule.c"
+        var $281=$self; //@line 2000 "arraymodule.c"
+        var $282=$281; //@line 2000 "arraymodule.c"
+        var $283=$282+8; //@line 2000 "arraymodule.c"
+        var $284=HEAP[$283]; //@line 2000 "arraymodule.c"
+        var $285=$self; //@line 2000 "arraymodule.c"
+        var $286=$285+16; //@line 2000 "arraymodule.c"
+        HEAP[$286]=$284; //@line 2000 "arraymodule.c"
+        __label__ = 61; break; //@line 2000 "arraymodule.c"
+      case 61: // $bb63
+        var $287=$it; //@line 2004 "arraymodule.c"
+        var $288=($287)!=0; //@line 2004 "arraymodule.c"
+        if ($288) { __label__ = 62; break; } else { __label__ = 70; break; } //@line 2004 "arraymodule.c"
+      case 62: // $bb64
+        var $289=$a; //@line 2005 "arraymodule.c"
+        var $290=$289; //@line 2005 "arraymodule.c"
+        var $291=$it; //@line 2005 "arraymodule.c"
+        var $292=_array_iter_extend($290, $291); //@line 2005 "arraymodule.c"
+        var $293=($292)==-1; //@line 2005 "arraymodule.c"
+        var $294=$it; //@line 2006 "arraymodule.c"
+        var $295=$294; //@line 2006 "arraymodule.c"
+        var $296=HEAP[$295]; //@line 2006 "arraymodule.c"
+        var $297=($296) - 1; //@line 2006 "arraymodule.c"
+        var $298=$it; //@line 2006 "arraymodule.c"
+        var $299=$298; //@line 2006 "arraymodule.c"
+        HEAP[$299]=$297; //@line 2006 "arraymodule.c"
+        var $300=$it; //@line 2006 "arraymodule.c"
+        var $301=$300; //@line 2006 "arraymodule.c"
+        var $302=HEAP[$301]; //@line 2006 "arraymodule.c"
+        var $303=($302)==0; //@line 2006 "arraymodule.c"
+        if ($293) { __label__ = 63; break; } else { __label__ = 68; break; } //@line 2005 "arraymodule.c"
+      case 63: // $bb65
+        if ($303) { __label__ = 64; break; } else { __label__ = 65; break; } //@line 2006 "arraymodule.c"
+      case 64: // $bb66
+        var $304=$it; //@line 2006 "arraymodule.c"
+        var $305=$304+4; //@line 2006 "arraymodule.c"
+        var $306=HEAP[$305]; //@line 2006 "arraymodule.c"
+        var $307=$306+24; //@line 2006 "arraymodule.c"
+        var $308=HEAP[$307]; //@line 2006 "arraymodule.c"
+        var $309=$it; //@line 2006 "arraymodule.c"
+        FUNCTION_TABLE[$308]($309); //@line 2006 "arraymodule.c"
+        __label__ = 65; break; //@line 2006 "arraymodule.c"
+      case 65: // $bb67
+        var $310=$a; //@line 2007 "arraymodule.c"
+        var $311=$310; //@line 2007 "arraymodule.c"
+        var $312=HEAP[$311]; //@line 2007 "arraymodule.c"
+        var $313=($312) - 1; //@line 2007 "arraymodule.c"
+        var $314=$a; //@line 2007 "arraymodule.c"
+        var $315=$314; //@line 2007 "arraymodule.c"
+        HEAP[$315]=$313; //@line 2007 "arraymodule.c"
+        var $316=$a; //@line 2007 "arraymodule.c"
+        var $317=$316; //@line 2007 "arraymodule.c"
+        var $318=HEAP[$317]; //@line 2007 "arraymodule.c"
+        var $319=($318)==0; //@line 2007 "arraymodule.c"
+        if ($319) { __label__ = 66; break; } else { __label__ = 67; break; } //@line 2007 "arraymodule.c"
+      case 66: // $bb68
+        var $320=$a; //@line 2007 "arraymodule.c"
+        var $321=$320+4; //@line 2007 "arraymodule.c"
+        var $322=HEAP[$321]; //@line 2007 "arraymodule.c"
+        var $323=$322+24; //@line 2007 "arraymodule.c"
+        var $324=HEAP[$323]; //@line 2007 "arraymodule.c"
+        var $325=$a; //@line 2007 "arraymodule.c"
+        FUNCTION_TABLE[$324]($325); //@line 2007 "arraymodule.c"
+        __label__ = 67; break; //@line 2007 "arraymodule.c"
+      case 67: // $bb69
+        $0=0; //@line 2008 "arraymodule.c"
+        __label__ = 74; break; //@line 2008 "arraymodule.c"
+      case 68: // $bb70
+        if ($303) { __label__ = 69; break; } else { __label__ = 70; break; } //@line 2010 "arraymodule.c"
+      case 69: // $bb71
+        var $326=$it; //@line 2010 "arraymodule.c"
+        var $327=$326+4; //@line 2010 "arraymodule.c"
+        var $328=HEAP[$327]; //@line 2010 "arraymodule.c"
+        var $329=$328+24; //@line 2010 "arraymodule.c"
+        var $330=HEAP[$329]; //@line 2010 "arraymodule.c"
+        var $331=$it; //@line 2010 "arraymodule.c"
+        FUNCTION_TABLE[$330]($331); //@line 2010 "arraymodule.c"
+        __label__ = 70; break; //@line 2010 "arraymodule.c"
+      case 70: // $bb72
+        var $332=$a; //@line 2012 "arraymodule.c"
+        $0=$332; //@line 2012 "arraymodule.c"
+        __label__ = 74; break; //@line 2012 "arraymodule.c"
+      case 71: // $bb73
+        var $333=$descr; //@line 1939 "arraymodule.c"
+        var $334=$333+16; //@line 1939 "arraymodule.c"
+        $descr=$334; //@line 1939 "arraymodule.c"
+        __label__ = 72; break; //@line 1939 "arraymodule.c"
+      case 72: // $bb74
+        var $335=$descr; //@line 1939 "arraymodule.c"
+        var $336=$335; //@line 1939 "arraymodule.c"
+        var $337=HEAP[$336]; //@line 1939 "arraymodule.c"
+        var $338=($337)!=0; //@line 1939 "arraymodule.c"
+        if ($338) { __label__ = 15; break; } else { __label__ = 73; break; } //@line 1939 "arraymodule.c"
+      case 73: // $bb75
+        var $339=HEAP[_PyExc_ValueError]; //@line 2015 "arraymodule.c"
+        _PyErr_SetString($339, __str84); //@line 2015 "arraymodule.c"
+        $0=0; //@line 2017 "arraymodule.c"
+        __label__ = 74; break; //@line 2017 "arraymodule.c"
+      case 74: // $bb76
+        var $340=$0; //@line 1921 "arraymodule.c"
+        $retval=$340; //@line 1921 "arraymodule.c"
         var $retval77=$retval; //@line 1921 "arraymodule.c"
         STACKTOP = __stackBase__;
         return $retval77; //@line 1921 "arraymodule.c"

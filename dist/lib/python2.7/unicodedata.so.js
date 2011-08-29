@@ -161,12 +161,12 @@ var _changes_3_2_0_index;
 var _changes_3_2_0_data;
 var __str72;
 var _DB_members;
-var _PyExc_TypeError;
+
 var __str73;
 var _unicodedata_decimal__doc__;
 var __str74;
-var _PyUnicode_Type;
-var _PyExc_ValueError;
+
+
 var __str75;
 var _unicodedata_digit__doc__;
 var __str76;
@@ -263,7 +263,7 @@ var __str147;
 var __str148;
 var _unicodedata_lookup__doc__;
 var __str149;
-var _PyExc_KeyError;
+
 var __str150;
 var __str151;
 var __str152;
@@ -281,7 +281,7 @@ var _unicodedata_functions;
 var __str163;
 var _UCD_Type;
 var _unicodedata_docstring;
-var _PyType_Type;
+
 var __str164;
 var __str165;
 var __str166;
@@ -430,6 +430,106 @@ var __str170;
   }
   
 
+  function __getrecord_ex($code) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $code_addr;
+        var $retval;
+        var $0;
+        var $index;
+        $code_addr=$code;
+        var $1=$code_addr; //@line 49 "unicodedata.c"
+        var $2=($1) > 1114111; //@line 49 "unicodedata.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 49 "unicodedata.c"
+      case 1: // $bb
+        $index=0; //@line 50 "unicodedata.c"
+        __label__ = 3; break; //@line 50 "unicodedata.c"
+      case 2: // $bb1
+        var $3=$code_addr; //@line 52 "unicodedata.c"
+        var $4=($3) >>> 7; //@line 52 "unicodedata.c"
+        var $5=_index1+$4; //@line 52 "unicodedata.c"
+        var $6=HEAP[$5]; //@line 52 "unicodedata.c"
+        var $7=($6); //@line 52 "unicodedata.c"
+        $index=$7; //@line 52 "unicodedata.c"
+        var $8=$index; //@line 53 "unicodedata.c"
+        var $9=($8) * 128;
+        var $10=$code_addr; //@line 53 "unicodedata.c"
+        var $11=($10) & 127; //@line 53 "unicodedata.c"
+        var $12=($11) + ($9); //@line 53 "unicodedata.c"
+        var $13=_index2+$12*2; //@line 53 "unicodedata.c"
+        var $14=HEAP[$13]; //@line 53 "unicodedata.c"
+        var $15=($14); //@line 53 "unicodedata.c"
+        $index=$15; //@line 53 "unicodedata.c"
+        __label__ = 3; break; //@line 53 "unicodedata.c"
+      case 3: // $bb2
+        var $16=$index; //@line 56 "unicodedata.c"
+        var $17=__PyUnicode_Database_Records+$16*6; //@line 56 "unicodedata.c"
+        $0=$17; //@line 56 "unicodedata.c"
+        var $18=$0; //@line 56 "unicodedata.c"
+        $retval=$18; //@line 56 "unicodedata.c"
+        var $retval3=$retval; //@line 56 "unicodedata.c"
+        ;
+        return $retval3; //@line 56 "unicodedata.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _new_previous_version() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $name_addr;
+        var $getrecord_addr;
+        var $normalization_addr;
+        var $retval;
+        var $0;
+        var $self;
+        $name_addr=__str167;
+        $getrecord_addr=(FUNCTION_TABLE_OFFSET + 2);
+        $normalization_addr=(FUNCTION_TABLE_OFFSET + 4);
+        var $1=__PyObject_New(_UCD_Type); //@line 82 "unicodedata.c"
+        var $2=$1; //@line 82 "unicodedata.c"
+        $self=$2; //@line 82 "unicodedata.c"
+        var $3=$self; //@line 83 "unicodedata.c"
+        var $4=($3)==0; //@line 83 "unicodedata.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 83 "unicodedata.c"
+      case 1: // $bb
+        $0=0; //@line 84 "unicodedata.c"
+        __label__ = 3; break; //@line 84 "unicodedata.c"
+      case 2: // $bb1
+        var $5=$self; //@line 85 "unicodedata.c"
+        var $6=$5+8; //@line 85 "unicodedata.c"
+        var $7=$name_addr; //@line 85 "unicodedata.c"
+        HEAP[$6]=$7; //@line 85 "unicodedata.c"
+        var $8=$self; //@line 86 "unicodedata.c"
+        var $9=$8+12; //@line 86 "unicodedata.c"
+        var $10=$getrecord_addr; //@line 86 "unicodedata.c"
+        HEAP[$9]=$10; //@line 86 "unicodedata.c"
+        var $11=$self; //@line 87 "unicodedata.c"
+        var $12=$11+16; //@line 87 "unicodedata.c"
+        var $13=$normalization_addr; //@line 87 "unicodedata.c"
+        HEAP[$12]=$13; //@line 87 "unicodedata.c"
+        var $14=$self; //@line 88 "unicodedata.c"
+        var $15=$14; //@line 88 "unicodedata.c"
+        $0=$15; //@line 88 "unicodedata.c"
+        __label__ = 3; break; //@line 88 "unicodedata.c"
+      case 3: // $bb2
+        var $16=$0; //@line 84 "unicodedata.c"
+        $retval=$16; //@line 84 "unicodedata.c"
+        var $retval3=$retval; //@line 84 "unicodedata.c"
+        ;
+        return $retval3; //@line 84 "unicodedata.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _getuchar($obj) {
     ;
     var __label__;
@@ -540,7 +640,7 @@ var __str170;
         HEAP[$defobj]=0; //@line 122 "unicodedata.c"
         $have_old=0; //@line 123 "unicodedata.c"
         var $1=$args_addr; //@line 127 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str74, _PyUnicode_Type, $v, $defobj); //@line 127 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str74, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0,$defobj,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 127 "unicodedata.c"
         var $3=($2)==0; //@line 127 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 127 "unicodedata.c"
       case 1: // $bb
@@ -663,7 +763,7 @@ var __str170;
         $args_addr=$args;
         HEAP[$defobj]=0; //@line 173 "unicodedata.c"
         var $1=$args_addr; //@line 177 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str76, _PyUnicode_Type, $v, $defobj); //@line 177 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str76, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0,$defobj,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 177 "unicodedata.c"
         var $3=($2)==0; //@line 177 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 177 "unicodedata.c"
       case 1: // $bb
@@ -746,7 +846,7 @@ var __str170;
         HEAP[$defobj]=0; //@line 207 "unicodedata.c"
         $have_old=0; //@line 208 "unicodedata.c"
         var $1=$args_addr; //@line 212 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str78, _PyUnicode_Type, $v, $defobj); //@line 212 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str78, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0,$defobj,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 212 "unicodedata.c"
         var $3=($2)==0; //@line 212 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 212 "unicodedata.c"
       case 1: // $bb
@@ -857,107 +957,73 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $v=__stackBase__;
         var $index;
         var $c;
         var $old;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 259 "unicodedata.c"
-        var $3=_PyArg_ParseTuple($2, __str80, _PyUnicode_Type, $v); //@line 259 "unicodedata.c"
-        var $4=($3)==0; //@line 259 "unicodedata.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 259 "unicodedata.c"
+        var $1=$args_addr; //@line 259 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str80, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0], ALLOC_STACK)); //@line 259 "unicodedata.c"
+        var $3=($2)==0; //@line 259 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 259 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 261 "unicodedata.c"
-        __label__ = 11; break; //@line 261 "unicodedata.c"
+        $0=0; //@line 261 "unicodedata.c"
+        __label__ = 8; break; //@line 261 "unicodedata.c"
       case 2: // $bb1
-        var $5=HEAP[$v]; //@line 262 "unicodedata.c"
-        var $6=_getuchar($5); //@line 262 "unicodedata.c"
-        $c=$6; //@line 262 "unicodedata.c"
-        var $7=$c; //@line 263 "unicodedata.c"
-        var $8=($7)==-1; //@line 263 "unicodedata.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 263 "unicodedata.c"
+        var $4=HEAP[$v]; //@line 262 "unicodedata.c"
+        var $5=_getuchar($4); //@line 262 "unicodedata.c"
+        $c=$5; //@line 262 "unicodedata.c"
+        var $6=$c; //@line 263 "unicodedata.c"
+        var $7=($6)==-1; //@line 263 "unicodedata.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 263 "unicodedata.c"
       case 3: // $bb2
-        $1=0; //@line 264 "unicodedata.c"
-        __label__ = 11; break; //@line 264 "unicodedata.c"
+        $0=0; //@line 264 "unicodedata.c"
+        __label__ = 8; break; //@line 264 "unicodedata.c"
       case 4: // $bb3
-        var $9=$c; //@line 265 "unicodedata.c"
-        $code_addr_i=$9;
-        var $10=$code_addr_i; //@line 49 "unicodedata.c"
-        var $11=($10) > 1114111; //@line 49 "unicodedata.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 49 "unicodedata.c"
-      case 5: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 7; break; //@line 50 "unicodedata.c"
-      case 6: // $bb1_i
-        var $12=$code_addr_i; //@line 52 "unicodedata.c"
-        var $13=($12) >>> 7; //@line 52 "unicodedata.c"
-        var $14=_index1+$13; //@line 52 "unicodedata.c"
-        var $15=HEAP[$14]; //@line 52 "unicodedata.c"
-        var $16=($15); //@line 52 "unicodedata.c"
-        $index_i=$16; //@line 52 "unicodedata.c"
-        var $17=$index_i; //@line 53 "unicodedata.c"
-        var $18=($17) * 128;
-        var $19=$code_addr_i; //@line 53 "unicodedata.c"
-        var $20=($19) & 127; //@line 53 "unicodedata.c"
-        var $21=($20) + ($18); //@line 53 "unicodedata.c"
-        var $22=_index2+$21*2; //@line 53 "unicodedata.c"
-        var $23=HEAP[$22]; //@line 53 "unicodedata.c"
-        var $24=($23); //@line 53 "unicodedata.c"
-        $index_i=$24; //@line 53 "unicodedata.c"
-        __label__ = 7; break; //@line 53 "unicodedata.c"
-      case 7: // $_getrecord_ex_exit
-        var $25=$index_i; //@line 56 "unicodedata.c"
-        var $26=__PyUnicode_Database_Records+$25*6; //@line 56 "unicodedata.c"
-        $0=$26; //@line 56 "unicodedata.c"
-        var $27=$0; //@line 56 "unicodedata.c"
-        $retval_i=$27; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $28=$retval3_i; //@line 265 "unicodedata.c"
-        var $29=HEAP[$28]; //@line 265 "unicodedata.c"
-        var $30=($29); //@line 265 "unicodedata.c"
-        $index=$30; //@line 265 "unicodedata.c"
-        var $31=$self_addr; //@line 266 "unicodedata.c"
-        var $32=($31)!=0; //@line 266 "unicodedata.c"
-        if ($32) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 266 "unicodedata.c"
-      case 8: // $bb4
-        var $33=$self_addr; //@line 267 "unicodedata.c"
-        var $34=$33; //@line 267 "unicodedata.c"
-        var $35=$34+12; //@line 267 "unicodedata.c"
-        var $36=HEAP[$35]; //@line 267 "unicodedata.c"
-        var $37=$c; //@line 267 "unicodedata.c"
-        var $38=FUNCTION_TABLE[$36]($37); //@line 267 "unicodedata.c"
-        $old=$38; //@line 267 "unicodedata.c"
-        var $39=$old; //@line 268 "unicodedata.c"
-        var $40=$39+1; //@line 268 "unicodedata.c"
-        var $41=HEAP[$40]; //@line 268 "unicodedata.c"
-        var $42=($41)!=-1; //@line 268 "unicodedata.c"
-        if ($42) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 268 "unicodedata.c"
-      case 9: // $bb5
-        var $43=$old; //@line 269 "unicodedata.c"
-        var $44=$43+1; //@line 269 "unicodedata.c"
-        var $45=HEAP[$44]; //@line 269 "unicodedata.c"
-        var $46=($45); //@line 269 "unicodedata.c"
-        $index=$46; //@line 269 "unicodedata.c"
-        __label__ = 10; break; //@line 269 "unicodedata.c"
-      case 10: // $bb6
-        var $47=$index; //@line 271 "unicodedata.c"
-        var $48=__PyUnicode_CategoryNames+$47*4; //@line 271 "unicodedata.c"
-        var $49=HEAP[$48]; //@line 271 "unicodedata.c"
-        var $50=_PyString_FromString($49); //@line 271 "unicodedata.c"
-        $1=$50; //@line 271 "unicodedata.c"
-        __label__ = 11; break; //@line 271 "unicodedata.c"
-      case 11: // $bb7
-        var $51=$1; //@line 261 "unicodedata.c"
-        $retval=$51; //@line 261 "unicodedata.c"
+        var $8=$c; //@line 265 "unicodedata.c"
+        var $9=__getrecord_ex($8); //@line 265 "unicodedata.c"
+        var $10=$9; //@line 265 "unicodedata.c"
+        var $11=HEAP[$10]; //@line 265 "unicodedata.c"
+        var $12=($11); //@line 265 "unicodedata.c"
+        $index=$12; //@line 265 "unicodedata.c"
+        var $13=$self_addr; //@line 266 "unicodedata.c"
+        var $14=($13)!=0; //@line 266 "unicodedata.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 266 "unicodedata.c"
+      case 5: // $bb4
+        var $15=$self_addr; //@line 267 "unicodedata.c"
+        var $16=$15; //@line 267 "unicodedata.c"
+        var $17=$16+12; //@line 267 "unicodedata.c"
+        var $18=HEAP[$17]; //@line 267 "unicodedata.c"
+        var $19=$c; //@line 267 "unicodedata.c"
+        var $20=FUNCTION_TABLE[$18]($19); //@line 267 "unicodedata.c"
+        $old=$20; //@line 267 "unicodedata.c"
+        var $21=$old; //@line 268 "unicodedata.c"
+        var $22=$21+1; //@line 268 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 268 "unicodedata.c"
+        var $24=($23)!=-1; //@line 268 "unicodedata.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 268 "unicodedata.c"
+      case 6: // $bb5
+        var $25=$old; //@line 269 "unicodedata.c"
+        var $26=$25+1; //@line 269 "unicodedata.c"
+        var $27=HEAP[$26]; //@line 269 "unicodedata.c"
+        var $28=($27); //@line 269 "unicodedata.c"
+        $index=$28; //@line 269 "unicodedata.c"
+        __label__ = 7; break; //@line 269 "unicodedata.c"
+      case 7: // $bb6
+        var $29=$index; //@line 271 "unicodedata.c"
+        var $30=__PyUnicode_CategoryNames+$29*4; //@line 271 "unicodedata.c"
+        var $31=HEAP[$30]; //@line 271 "unicodedata.c"
+        var $32=_PyString_FromString($31); //@line 271 "unicodedata.c"
+        $0=$32; //@line 271 "unicodedata.c"
+        __label__ = 8; break; //@line 271 "unicodedata.c"
+      case 8: // $bb7
+        var $33=$0; //@line 261 "unicodedata.c"
+        $retval=$33; //@line 261 "unicodedata.c"
         var $retval8=$retval; //@line 261 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval8; //@line 261 "unicodedata.c"
@@ -972,116 +1038,82 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $v=__stackBase__;
         var $index;
         var $c;
         var $old;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 288 "unicodedata.c"
-        var $3=_PyArg_ParseTuple($2, __str81, _PyUnicode_Type, $v); //@line 288 "unicodedata.c"
-        var $4=($3)==0; //@line 288 "unicodedata.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 288 "unicodedata.c"
+        var $1=$args_addr; //@line 288 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str81, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0], ALLOC_STACK)); //@line 288 "unicodedata.c"
+        var $3=($2)==0; //@line 288 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 288 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 290 "unicodedata.c"
-        __label__ = 13; break; //@line 290 "unicodedata.c"
+        $0=0; //@line 290 "unicodedata.c"
+        __label__ = 10; break; //@line 290 "unicodedata.c"
       case 2: // $bb1
-        var $5=HEAP[$v]; //@line 291 "unicodedata.c"
-        var $6=_getuchar($5); //@line 291 "unicodedata.c"
-        $c=$6; //@line 291 "unicodedata.c"
-        var $7=$c; //@line 292 "unicodedata.c"
-        var $8=($7)==-1; //@line 292 "unicodedata.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 292 "unicodedata.c"
+        var $4=HEAP[$v]; //@line 291 "unicodedata.c"
+        var $5=_getuchar($4); //@line 291 "unicodedata.c"
+        $c=$5; //@line 291 "unicodedata.c"
+        var $6=$c; //@line 292 "unicodedata.c"
+        var $7=($6)==-1; //@line 292 "unicodedata.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 292 "unicodedata.c"
       case 3: // $bb2
-        $1=0; //@line 293 "unicodedata.c"
-        __label__ = 13; break; //@line 293 "unicodedata.c"
+        $0=0; //@line 293 "unicodedata.c"
+        __label__ = 10; break; //@line 293 "unicodedata.c"
       case 4: // $bb3
-        var $9=$c; //@line 294 "unicodedata.c"
-        $code_addr_i=$9;
-        var $10=$code_addr_i; //@line 49 "unicodedata.c"
-        var $11=($10) > 1114111; //@line 49 "unicodedata.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 49 "unicodedata.c"
-      case 5: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 7; break; //@line 50 "unicodedata.c"
-      case 6: // $bb1_i
-        var $12=$code_addr_i; //@line 52 "unicodedata.c"
-        var $13=($12) >>> 7; //@line 52 "unicodedata.c"
-        var $14=_index1+$13; //@line 52 "unicodedata.c"
-        var $15=HEAP[$14]; //@line 52 "unicodedata.c"
-        var $16=($15); //@line 52 "unicodedata.c"
-        $index_i=$16; //@line 52 "unicodedata.c"
-        var $17=$index_i; //@line 53 "unicodedata.c"
-        var $18=($17) * 128;
-        var $19=$code_addr_i; //@line 53 "unicodedata.c"
-        var $20=($19) & 127; //@line 53 "unicodedata.c"
-        var $21=($20) + ($18); //@line 53 "unicodedata.c"
-        var $22=_index2+$21*2; //@line 53 "unicodedata.c"
-        var $23=HEAP[$22]; //@line 53 "unicodedata.c"
-        var $24=($23); //@line 53 "unicodedata.c"
-        $index_i=$24; //@line 53 "unicodedata.c"
-        __label__ = 7; break; //@line 53 "unicodedata.c"
-      case 7: // $_getrecord_ex_exit
-        var $25=$index_i; //@line 56 "unicodedata.c"
-        var $26=__PyUnicode_Database_Records+$25*6; //@line 56 "unicodedata.c"
-        $0=$26; //@line 56 "unicodedata.c"
-        var $27=$0; //@line 56 "unicodedata.c"
-        $retval_i=$27; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $28=$retval3_i+2; //@line 294 "unicodedata.c"
-        var $29=HEAP[$28]; //@line 294 "unicodedata.c"
-        var $30=($29); //@line 294 "unicodedata.c"
-        $index=$30; //@line 294 "unicodedata.c"
-        var $31=$self_addr; //@line 295 "unicodedata.c"
-        var $32=($31)!=0; //@line 295 "unicodedata.c"
-        if ($32) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 295 "unicodedata.c"
-      case 8: // $bb4
-        var $33=$self_addr; //@line 296 "unicodedata.c"
-        var $34=$33; //@line 296 "unicodedata.c"
-        var $35=$34+12; //@line 296 "unicodedata.c"
-        var $36=HEAP[$35]; //@line 296 "unicodedata.c"
-        var $37=$c; //@line 296 "unicodedata.c"
-        var $38=FUNCTION_TABLE[$36]($37); //@line 296 "unicodedata.c"
-        $old=$38; //@line 296 "unicodedata.c"
-        var $39=$old; //@line 297 "unicodedata.c"
-        var $40=$39+1; //@line 297 "unicodedata.c"
-        var $41=HEAP[$40]; //@line 297 "unicodedata.c"
-        var $42=($41)==0; //@line 297 "unicodedata.c"
-        if ($42) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 297 "unicodedata.c"
-      case 9: // $bb5
+        var $8=$c; //@line 294 "unicodedata.c"
+        var $9=__getrecord_ex($8); //@line 294 "unicodedata.c"
+        var $10=$9+2; //@line 294 "unicodedata.c"
+        var $11=HEAP[$10]; //@line 294 "unicodedata.c"
+        var $12=($11); //@line 294 "unicodedata.c"
+        $index=$12; //@line 294 "unicodedata.c"
+        var $13=$self_addr; //@line 295 "unicodedata.c"
+        var $14=($13)!=0; //@line 295 "unicodedata.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 9; break; } //@line 295 "unicodedata.c"
+      case 5: // $bb4
+        var $15=$self_addr; //@line 296 "unicodedata.c"
+        var $16=$15; //@line 296 "unicodedata.c"
+        var $17=$16+12; //@line 296 "unicodedata.c"
+        var $18=HEAP[$17]; //@line 296 "unicodedata.c"
+        var $19=$c; //@line 296 "unicodedata.c"
+        var $20=FUNCTION_TABLE[$18]($19); //@line 296 "unicodedata.c"
+        $old=$20; //@line 296 "unicodedata.c"
+        var $21=$old; //@line 297 "unicodedata.c"
+        var $22=$21+1; //@line 297 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 297 "unicodedata.c"
+        var $24=($23)==0; //@line 297 "unicodedata.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 297 "unicodedata.c"
+      case 6: // $bb5
         $index=0; //@line 298 "unicodedata.c"
-        __label__ = 12; break; //@line 298 "unicodedata.c"
-      case 10: // $bb6
-        var $43=$old; //@line 299 "unicodedata.c"
-        var $44=$43; //@line 299 "unicodedata.c"
-        var $45=HEAP[$44]; //@line 299 "unicodedata.c"
-        var $46=($45)!=-1; //@line 299 "unicodedata.c"
-        if ($46) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 299 "unicodedata.c"
-      case 11: // $bb7
-        var $47=$old; //@line 300 "unicodedata.c"
-        var $48=$47; //@line 300 "unicodedata.c"
-        var $49=HEAP[$48]; //@line 300 "unicodedata.c"
-        var $50=($49); //@line 300 "unicodedata.c"
-        $index=$50; //@line 300 "unicodedata.c"
-        __label__ = 12; break; //@line 300 "unicodedata.c"
-      case 12: // $bb8
-        var $51=$index; //@line 302 "unicodedata.c"
-        var $52=__PyUnicode_BidirectionalNames+$51*4; //@line 302 "unicodedata.c"
-        var $53=HEAP[$52]; //@line 302 "unicodedata.c"
-        var $54=_PyString_FromString($53); //@line 302 "unicodedata.c"
-        $1=$54; //@line 302 "unicodedata.c"
-        __label__ = 13; break; //@line 302 "unicodedata.c"
-      case 13: // $bb9
-        var $55=$1; //@line 290 "unicodedata.c"
-        $retval=$55; //@line 290 "unicodedata.c"
+        __label__ = 9; break; //@line 298 "unicodedata.c"
+      case 7: // $bb6
+        var $25=$old; //@line 299 "unicodedata.c"
+        var $26=$25; //@line 299 "unicodedata.c"
+        var $27=HEAP[$26]; //@line 299 "unicodedata.c"
+        var $28=($27)!=-1; //@line 299 "unicodedata.c"
+        if ($28) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 299 "unicodedata.c"
+      case 8: // $bb7
+        var $29=$old; //@line 300 "unicodedata.c"
+        var $30=$29; //@line 300 "unicodedata.c"
+        var $31=HEAP[$30]; //@line 300 "unicodedata.c"
+        var $32=($31); //@line 300 "unicodedata.c"
+        $index=$32; //@line 300 "unicodedata.c"
+        __label__ = 9; break; //@line 300 "unicodedata.c"
+      case 9: // $bb8
+        var $33=$index; //@line 302 "unicodedata.c"
+        var $34=__PyUnicode_BidirectionalNames+$33*4; //@line 302 "unicodedata.c"
+        var $35=HEAP[$34]; //@line 302 "unicodedata.c"
+        var $36=_PyString_FromString($35); //@line 302 "unicodedata.c"
+        $0=$36; //@line 302 "unicodedata.c"
+        __label__ = 10; break; //@line 302 "unicodedata.c"
+      case 10: // $bb9
+        var $37=$0; //@line 290 "unicodedata.c"
+        $retval=$37; //@line 290 "unicodedata.c"
         var $retval10=$retval; //@line 290 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 290 "unicodedata.c"
@@ -1096,101 +1128,67 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $v=__stackBase__;
         var $index;
         var $c;
         var $old;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 319 "unicodedata.c"
-        var $3=_PyArg_ParseTuple($2, __str82, _PyUnicode_Type, $v); //@line 319 "unicodedata.c"
-        var $4=($3)==0; //@line 319 "unicodedata.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 319 "unicodedata.c"
+        var $1=$args_addr; //@line 319 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str82, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0], ALLOC_STACK)); //@line 319 "unicodedata.c"
+        var $3=($2)==0; //@line 319 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 319 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 321 "unicodedata.c"
-        __label__ = 11; break; //@line 321 "unicodedata.c"
+        $0=0; //@line 321 "unicodedata.c"
+        __label__ = 8; break; //@line 321 "unicodedata.c"
       case 2: // $bb1
-        var $5=HEAP[$v]; //@line 322 "unicodedata.c"
-        var $6=_getuchar($5); //@line 322 "unicodedata.c"
-        $c=$6; //@line 322 "unicodedata.c"
-        var $7=$c; //@line 323 "unicodedata.c"
-        var $8=($7)==-1; //@line 323 "unicodedata.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 323 "unicodedata.c"
+        var $4=HEAP[$v]; //@line 322 "unicodedata.c"
+        var $5=_getuchar($4); //@line 322 "unicodedata.c"
+        $c=$5; //@line 322 "unicodedata.c"
+        var $6=$c; //@line 323 "unicodedata.c"
+        var $7=($6)==-1; //@line 323 "unicodedata.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 323 "unicodedata.c"
       case 3: // $bb2
-        $1=0; //@line 324 "unicodedata.c"
-        __label__ = 11; break; //@line 324 "unicodedata.c"
+        $0=0; //@line 324 "unicodedata.c"
+        __label__ = 8; break; //@line 324 "unicodedata.c"
       case 4: // $bb3
-        var $9=$c; //@line 325 "unicodedata.c"
-        $code_addr_i=$9;
-        var $10=$code_addr_i; //@line 49 "unicodedata.c"
-        var $11=($10) > 1114111; //@line 49 "unicodedata.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 49 "unicodedata.c"
-      case 5: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 7; break; //@line 50 "unicodedata.c"
-      case 6: // $bb1_i
-        var $12=$code_addr_i; //@line 52 "unicodedata.c"
-        var $13=($12) >>> 7; //@line 52 "unicodedata.c"
-        var $14=_index1+$13; //@line 52 "unicodedata.c"
-        var $15=HEAP[$14]; //@line 52 "unicodedata.c"
-        var $16=($15); //@line 52 "unicodedata.c"
-        $index_i=$16; //@line 52 "unicodedata.c"
-        var $17=$index_i; //@line 53 "unicodedata.c"
-        var $18=($17) * 128;
-        var $19=$code_addr_i; //@line 53 "unicodedata.c"
-        var $20=($19) & 127; //@line 53 "unicodedata.c"
-        var $21=($20) + ($18); //@line 53 "unicodedata.c"
-        var $22=_index2+$21*2; //@line 53 "unicodedata.c"
-        var $23=HEAP[$22]; //@line 53 "unicodedata.c"
-        var $24=($23); //@line 53 "unicodedata.c"
-        $index_i=$24; //@line 53 "unicodedata.c"
-        __label__ = 7; break; //@line 53 "unicodedata.c"
-      case 7: // $_getrecord_ex_exit
-        var $25=$index_i; //@line 56 "unicodedata.c"
-        var $26=__PyUnicode_Database_Records+$25*6; //@line 56 "unicodedata.c"
-        $0=$26; //@line 56 "unicodedata.c"
-        var $27=$0; //@line 56 "unicodedata.c"
-        $retval_i=$27; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $28=$retval3_i+1; //@line 325 "unicodedata.c"
-        var $29=HEAP[$28]; //@line 325 "unicodedata.c"
-        var $30=($29); //@line 325 "unicodedata.c"
-        $index=$30; //@line 325 "unicodedata.c"
-        var $31=$self_addr; //@line 326 "unicodedata.c"
-        var $32=($31)!=0; //@line 326 "unicodedata.c"
-        if ($32) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 326 "unicodedata.c"
-      case 8: // $bb4
-        var $33=$self_addr; //@line 327 "unicodedata.c"
-        var $34=$33; //@line 327 "unicodedata.c"
-        var $35=$34+12; //@line 327 "unicodedata.c"
-        var $36=HEAP[$35]; //@line 327 "unicodedata.c"
-        var $37=$c; //@line 327 "unicodedata.c"
-        var $38=FUNCTION_TABLE[$36]($37); //@line 327 "unicodedata.c"
-        $old=$38; //@line 327 "unicodedata.c"
-        var $39=$old; //@line 328 "unicodedata.c"
-        var $40=$39+1; //@line 328 "unicodedata.c"
-        var $41=HEAP[$40]; //@line 328 "unicodedata.c"
-        var $42=($41)==0; //@line 328 "unicodedata.c"
-        if ($42) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 328 "unicodedata.c"
-      case 9: // $bb5
+        var $8=$c; //@line 325 "unicodedata.c"
+        var $9=__getrecord_ex($8); //@line 325 "unicodedata.c"
+        var $10=$9+1; //@line 325 "unicodedata.c"
+        var $11=HEAP[$10]; //@line 325 "unicodedata.c"
+        var $12=($11); //@line 325 "unicodedata.c"
+        $index=$12; //@line 325 "unicodedata.c"
+        var $13=$self_addr; //@line 326 "unicodedata.c"
+        var $14=($13)!=0; //@line 326 "unicodedata.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 326 "unicodedata.c"
+      case 5: // $bb4
+        var $15=$self_addr; //@line 327 "unicodedata.c"
+        var $16=$15; //@line 327 "unicodedata.c"
+        var $17=$16+12; //@line 327 "unicodedata.c"
+        var $18=HEAP[$17]; //@line 327 "unicodedata.c"
+        var $19=$c; //@line 327 "unicodedata.c"
+        var $20=FUNCTION_TABLE[$18]($19); //@line 327 "unicodedata.c"
+        $old=$20; //@line 327 "unicodedata.c"
+        var $21=$old; //@line 328 "unicodedata.c"
+        var $22=$21+1; //@line 328 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 328 "unicodedata.c"
+        var $24=($23)==0; //@line 328 "unicodedata.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 328 "unicodedata.c"
+      case 6: // $bb5
         $index=0; //@line 329 "unicodedata.c"
-        __label__ = 10; break; //@line 329 "unicodedata.c"
-      case 10: // $bb6
-        var $43=$index; //@line 331 "unicodedata.c"
-        var $44=_PyInt_FromLong($43); //@line 331 "unicodedata.c"
-        $1=$44; //@line 331 "unicodedata.c"
-        __label__ = 11; break; //@line 331 "unicodedata.c"
-      case 11: // $bb7
-        var $45=$1; //@line 321 "unicodedata.c"
-        $retval=$45; //@line 321 "unicodedata.c"
+        __label__ = 7; break; //@line 329 "unicodedata.c"
+      case 7: // $bb6
+        var $25=$index; //@line 331 "unicodedata.c"
+        var $26=_PyInt_FromLong($25); //@line 331 "unicodedata.c"
+        $0=$26; //@line 331 "unicodedata.c"
+        __label__ = 8; break; //@line 331 "unicodedata.c"
+      case 8: // $bb7
+        var $27=$0; //@line 321 "unicodedata.c"
+        $retval=$27; //@line 321 "unicodedata.c"
         var $retval8=$retval; //@line 321 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval8; //@line 321 "unicodedata.c"
@@ -1205,114 +1203,80 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $v=__stackBase__;
         var $index;
         var $c;
         var $old;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 348 "unicodedata.c"
-        var $3=_PyArg_ParseTuple($2, __str83, _PyUnicode_Type, $v); //@line 348 "unicodedata.c"
-        var $4=($3)==0; //@line 348 "unicodedata.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 348 "unicodedata.c"
+        var $1=$args_addr; //@line 348 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str83, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0], ALLOC_STACK)); //@line 348 "unicodedata.c"
+        var $3=($2)==0; //@line 348 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 348 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 350 "unicodedata.c"
-        __label__ = 13; break; //@line 350 "unicodedata.c"
+        $0=0; //@line 350 "unicodedata.c"
+        __label__ = 10; break; //@line 350 "unicodedata.c"
       case 2: // $bb1
-        var $5=HEAP[$v]; //@line 351 "unicodedata.c"
-        var $6=_getuchar($5); //@line 351 "unicodedata.c"
-        $c=$6; //@line 351 "unicodedata.c"
-        var $7=$c; //@line 352 "unicodedata.c"
-        var $8=($7)==-1; //@line 352 "unicodedata.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 352 "unicodedata.c"
+        var $4=HEAP[$v]; //@line 351 "unicodedata.c"
+        var $5=_getuchar($4); //@line 351 "unicodedata.c"
+        $c=$5; //@line 351 "unicodedata.c"
+        var $6=$c; //@line 352 "unicodedata.c"
+        var $7=($6)==-1; //@line 352 "unicodedata.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 352 "unicodedata.c"
       case 3: // $bb2
-        $1=0; //@line 353 "unicodedata.c"
-        __label__ = 13; break; //@line 353 "unicodedata.c"
+        $0=0; //@line 353 "unicodedata.c"
+        __label__ = 10; break; //@line 353 "unicodedata.c"
       case 4: // $bb3
-        var $9=$c; //@line 354 "unicodedata.c"
-        $code_addr_i=$9;
-        var $10=$code_addr_i; //@line 49 "unicodedata.c"
-        var $11=($10) > 1114111; //@line 49 "unicodedata.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 49 "unicodedata.c"
-      case 5: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 7; break; //@line 50 "unicodedata.c"
-      case 6: // $bb1_i
-        var $12=$code_addr_i; //@line 52 "unicodedata.c"
-        var $13=($12) >>> 7; //@line 52 "unicodedata.c"
-        var $14=_index1+$13; //@line 52 "unicodedata.c"
-        var $15=HEAP[$14]; //@line 52 "unicodedata.c"
-        var $16=($15); //@line 52 "unicodedata.c"
-        $index_i=$16; //@line 52 "unicodedata.c"
-        var $17=$index_i; //@line 53 "unicodedata.c"
-        var $18=($17) * 128;
-        var $19=$code_addr_i; //@line 53 "unicodedata.c"
-        var $20=($19) & 127; //@line 53 "unicodedata.c"
-        var $21=($20) + ($18); //@line 53 "unicodedata.c"
-        var $22=_index2+$21*2; //@line 53 "unicodedata.c"
-        var $23=HEAP[$22]; //@line 53 "unicodedata.c"
-        var $24=($23); //@line 53 "unicodedata.c"
-        $index_i=$24; //@line 53 "unicodedata.c"
-        __label__ = 7; break; //@line 53 "unicodedata.c"
-      case 7: // $_getrecord_ex_exit
-        var $25=$index_i; //@line 56 "unicodedata.c"
-        var $26=__PyUnicode_Database_Records+$25*6; //@line 56 "unicodedata.c"
-        $0=$26; //@line 56 "unicodedata.c"
-        var $27=$0; //@line 56 "unicodedata.c"
-        $retval_i=$27; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $28=$retval3_i+3; //@line 354 "unicodedata.c"
-        var $29=HEAP[$28]; //@line 354 "unicodedata.c"
-        var $30=($29); //@line 354 "unicodedata.c"
-        $index=$30; //@line 354 "unicodedata.c"
-        var $31=$self_addr; //@line 355 "unicodedata.c"
-        var $32=($31)!=0; //@line 355 "unicodedata.c"
-        if ($32) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 355 "unicodedata.c"
-      case 8: // $bb4
-        var $33=$self_addr; //@line 356 "unicodedata.c"
-        var $34=$33; //@line 356 "unicodedata.c"
-        var $35=$34+12; //@line 356 "unicodedata.c"
-        var $36=HEAP[$35]; //@line 356 "unicodedata.c"
-        var $37=$c; //@line 356 "unicodedata.c"
-        var $38=FUNCTION_TABLE[$36]($37); //@line 356 "unicodedata.c"
-        $old=$38; //@line 356 "unicodedata.c"
-        var $39=$old; //@line 357 "unicodedata.c"
-        var $40=$39+1; //@line 357 "unicodedata.c"
-        var $41=HEAP[$40]; //@line 357 "unicodedata.c"
-        var $42=($41)==0; //@line 357 "unicodedata.c"
-        if ($42) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 357 "unicodedata.c"
-      case 9: // $bb5
+        var $8=$c; //@line 354 "unicodedata.c"
+        var $9=__getrecord_ex($8); //@line 354 "unicodedata.c"
+        var $10=$9+3; //@line 354 "unicodedata.c"
+        var $11=HEAP[$10]; //@line 354 "unicodedata.c"
+        var $12=($11); //@line 354 "unicodedata.c"
+        $index=$12; //@line 354 "unicodedata.c"
+        var $13=$self_addr; //@line 355 "unicodedata.c"
+        var $14=($13)!=0; //@line 355 "unicodedata.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 9; break; } //@line 355 "unicodedata.c"
+      case 5: // $bb4
+        var $15=$self_addr; //@line 356 "unicodedata.c"
+        var $16=$15; //@line 356 "unicodedata.c"
+        var $17=$16+12; //@line 356 "unicodedata.c"
+        var $18=HEAP[$17]; //@line 356 "unicodedata.c"
+        var $19=$c; //@line 356 "unicodedata.c"
+        var $20=FUNCTION_TABLE[$18]($19); //@line 356 "unicodedata.c"
+        $old=$20; //@line 356 "unicodedata.c"
+        var $21=$old; //@line 357 "unicodedata.c"
+        var $22=$21+1; //@line 357 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 357 "unicodedata.c"
+        var $24=($23)==0; //@line 357 "unicodedata.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 357 "unicodedata.c"
+      case 6: // $bb5
         $index=0; //@line 358 "unicodedata.c"
-        __label__ = 12; break; //@line 358 "unicodedata.c"
-      case 10: // $bb6
-        var $43=$old; //@line 359 "unicodedata.c"
-        var $44=$43+3; //@line 359 "unicodedata.c"
-        var $45=HEAP[$44]; //@line 359 "unicodedata.c"
-        var $46=($45)!=-1; //@line 359 "unicodedata.c"
-        if ($46) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 359 "unicodedata.c"
-      case 11: // $bb7
-        var $47=$old; //@line 360 "unicodedata.c"
-        var $48=$47+3; //@line 360 "unicodedata.c"
-        var $49=HEAP[$48]; //@line 360 "unicodedata.c"
-        var $50=($49); //@line 360 "unicodedata.c"
-        $index=$50; //@line 360 "unicodedata.c"
-        __label__ = 12; break; //@line 360 "unicodedata.c"
-      case 12: // $bb8
-        var $51=$index; //@line 362 "unicodedata.c"
-        var $52=_PyInt_FromLong($51); //@line 362 "unicodedata.c"
-        $1=$52; //@line 362 "unicodedata.c"
-        __label__ = 13; break; //@line 362 "unicodedata.c"
-      case 13: // $bb9
-        var $53=$1; //@line 350 "unicodedata.c"
-        $retval=$53; //@line 350 "unicodedata.c"
+        __label__ = 9; break; //@line 358 "unicodedata.c"
+      case 7: // $bb6
+        var $25=$old; //@line 359 "unicodedata.c"
+        var $26=$25+3; //@line 359 "unicodedata.c"
+        var $27=HEAP[$26]; //@line 359 "unicodedata.c"
+        var $28=($27)!=-1; //@line 359 "unicodedata.c"
+        if ($28) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 359 "unicodedata.c"
+      case 8: // $bb7
+        var $29=$old; //@line 360 "unicodedata.c"
+        var $30=$29+3; //@line 360 "unicodedata.c"
+        var $31=HEAP[$30]; //@line 360 "unicodedata.c"
+        var $32=($31); //@line 360 "unicodedata.c"
+        $index=$32; //@line 360 "unicodedata.c"
+        __label__ = 9; break; //@line 360 "unicodedata.c"
+      case 9: // $bb8
+        var $33=$index; //@line 362 "unicodedata.c"
+        var $34=_PyInt_FromLong($33); //@line 362 "unicodedata.c"
+        $0=$34; //@line 362 "unicodedata.c"
+        __label__ = 10; break; //@line 362 "unicodedata.c"
+      case 10: // $bb9
+        var $35=$0; //@line 350 "unicodedata.c"
+        $retval=$35; //@line 350 "unicodedata.c"
         var $retval10=$retval; //@line 350 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval10; //@line 350 "unicodedata.c"
@@ -1327,103 +1291,69 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $args_addr;
         var $retval;
-        var $1;
+        var $0;
         var $v=__stackBase__;
         var $index;
         var $c;
         var $old;
         $self_addr=$self;
         $args_addr=$args;
-        var $2=$args_addr; //@line 378 "unicodedata.c"
-        var $3=_PyArg_ParseTuple($2, __str84, _PyUnicode_Type, $v); //@line 378 "unicodedata.c"
-        var $4=($3)==0; //@line 378 "unicodedata.c"
-        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 378 "unicodedata.c"
+        var $1=$args_addr; //@line 378 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str84, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0], ALLOC_STACK)); //@line 378 "unicodedata.c"
+        var $3=($2)==0; //@line 378 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 378 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 380 "unicodedata.c"
-        __label__ = 11; break; //@line 380 "unicodedata.c"
+        $0=0; //@line 380 "unicodedata.c"
+        __label__ = 8; break; //@line 380 "unicodedata.c"
       case 2: // $bb1
-        var $5=HEAP[$v]; //@line 381 "unicodedata.c"
-        var $6=_getuchar($5); //@line 381 "unicodedata.c"
-        $c=$6; //@line 381 "unicodedata.c"
-        var $7=$c; //@line 382 "unicodedata.c"
-        var $8=($7)==-1; //@line 382 "unicodedata.c"
-        if ($8) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 382 "unicodedata.c"
+        var $4=HEAP[$v]; //@line 381 "unicodedata.c"
+        var $5=_getuchar($4); //@line 381 "unicodedata.c"
+        $c=$5; //@line 381 "unicodedata.c"
+        var $6=$c; //@line 382 "unicodedata.c"
+        var $7=($6)==-1; //@line 382 "unicodedata.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 382 "unicodedata.c"
       case 3: // $bb2
-        $1=0; //@line 383 "unicodedata.c"
-        __label__ = 11; break; //@line 383 "unicodedata.c"
+        $0=0; //@line 383 "unicodedata.c"
+        __label__ = 8; break; //@line 383 "unicodedata.c"
       case 4: // $bb3
-        var $9=$c; //@line 384 "unicodedata.c"
-        $code_addr_i=$9;
-        var $10=$code_addr_i; //@line 49 "unicodedata.c"
-        var $11=($10) > 1114111; //@line 49 "unicodedata.c"
-        if ($11) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 49 "unicodedata.c"
-      case 5: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 7; break; //@line 50 "unicodedata.c"
-      case 6: // $bb1_i
-        var $12=$code_addr_i; //@line 52 "unicodedata.c"
-        var $13=($12) >>> 7; //@line 52 "unicodedata.c"
-        var $14=_index1+$13; //@line 52 "unicodedata.c"
-        var $15=HEAP[$14]; //@line 52 "unicodedata.c"
-        var $16=($15); //@line 52 "unicodedata.c"
-        $index_i=$16; //@line 52 "unicodedata.c"
-        var $17=$index_i; //@line 53 "unicodedata.c"
-        var $18=($17) * 128;
-        var $19=$code_addr_i; //@line 53 "unicodedata.c"
-        var $20=($19) & 127; //@line 53 "unicodedata.c"
-        var $21=($20) + ($18); //@line 53 "unicodedata.c"
-        var $22=_index2+$21*2; //@line 53 "unicodedata.c"
-        var $23=HEAP[$22]; //@line 53 "unicodedata.c"
-        var $24=($23); //@line 53 "unicodedata.c"
-        $index_i=$24; //@line 53 "unicodedata.c"
-        __label__ = 7; break; //@line 53 "unicodedata.c"
-      case 7: // $_getrecord_ex_exit
-        var $25=$index_i; //@line 56 "unicodedata.c"
-        var $26=__PyUnicode_Database_Records+$25*6; //@line 56 "unicodedata.c"
-        $0=$26; //@line 56 "unicodedata.c"
-        var $27=$0; //@line 56 "unicodedata.c"
-        $retval_i=$27; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $28=$retval3_i+4; //@line 384 "unicodedata.c"
-        var $29=HEAP[$28]; //@line 384 "unicodedata.c"
-        var $30=($29); //@line 384 "unicodedata.c"
-        $index=$30; //@line 384 "unicodedata.c"
-        var $31=$self_addr; //@line 385 "unicodedata.c"
-        var $32=($31)!=0; //@line 385 "unicodedata.c"
-        if ($32) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 385 "unicodedata.c"
-      case 8: // $bb4
-        var $33=$self_addr; //@line 386 "unicodedata.c"
-        var $34=$33; //@line 386 "unicodedata.c"
-        var $35=$34+12; //@line 386 "unicodedata.c"
-        var $36=HEAP[$35]; //@line 386 "unicodedata.c"
-        var $37=$c; //@line 386 "unicodedata.c"
-        var $38=FUNCTION_TABLE[$36]($37); //@line 386 "unicodedata.c"
-        $old=$38; //@line 386 "unicodedata.c"
-        var $39=$old; //@line 387 "unicodedata.c"
-        var $40=$39+1; //@line 387 "unicodedata.c"
-        var $41=HEAP[$40]; //@line 387 "unicodedata.c"
-        var $42=($41)==0; //@line 387 "unicodedata.c"
-        if ($42) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 387 "unicodedata.c"
-      case 9: // $bb5
+        var $8=$c; //@line 384 "unicodedata.c"
+        var $9=__getrecord_ex($8); //@line 384 "unicodedata.c"
+        var $10=$9+4; //@line 384 "unicodedata.c"
+        var $11=HEAP[$10]; //@line 384 "unicodedata.c"
+        var $12=($11); //@line 384 "unicodedata.c"
+        $index=$12; //@line 384 "unicodedata.c"
+        var $13=$self_addr; //@line 385 "unicodedata.c"
+        var $14=($13)!=0; //@line 385 "unicodedata.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 7; break; } //@line 385 "unicodedata.c"
+      case 5: // $bb4
+        var $15=$self_addr; //@line 386 "unicodedata.c"
+        var $16=$15; //@line 386 "unicodedata.c"
+        var $17=$16+12; //@line 386 "unicodedata.c"
+        var $18=HEAP[$17]; //@line 386 "unicodedata.c"
+        var $19=$c; //@line 386 "unicodedata.c"
+        var $20=FUNCTION_TABLE[$18]($19); //@line 386 "unicodedata.c"
+        $old=$20; //@line 386 "unicodedata.c"
+        var $21=$old; //@line 387 "unicodedata.c"
+        var $22=$21+1; //@line 387 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 387 "unicodedata.c"
+        var $24=($23)==0; //@line 387 "unicodedata.c"
+        if ($24) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 387 "unicodedata.c"
+      case 6: // $bb5
         $index=0; //@line 388 "unicodedata.c"
-        __label__ = 10; break; //@line 388 "unicodedata.c"
-      case 10: // $bb6
-        var $43=$index; //@line 390 "unicodedata.c"
-        var $44=__PyUnicode_EastAsianWidthNames+$43*4; //@line 390 "unicodedata.c"
-        var $45=HEAP[$44]; //@line 390 "unicodedata.c"
-        var $46=_PyString_FromString($45); //@line 390 "unicodedata.c"
-        $1=$46; //@line 390 "unicodedata.c"
-        __label__ = 11; break; //@line 390 "unicodedata.c"
-      case 11: // $bb7
-        var $47=$1; //@line 380 "unicodedata.c"
-        $retval=$47; //@line 380 "unicodedata.c"
+        __label__ = 7; break; //@line 388 "unicodedata.c"
+      case 7: // $bb6
+        var $25=$index; //@line 390 "unicodedata.c"
+        var $26=__PyUnicode_EastAsianWidthNames+$25*4; //@line 390 "unicodedata.c"
+        var $27=HEAP[$26]; //@line 390 "unicodedata.c"
+        var $28=_PyString_FromString($27); //@line 390 "unicodedata.c"
+        $0=$28; //@line 390 "unicodedata.c"
+        __label__ = 8; break; //@line 390 "unicodedata.c"
+      case 8: // $bb7
+        var $29=$0; //@line 380 "unicodedata.c"
+        $retval=$29; //@line 380 "unicodedata.c"
         var $retval8=$retval; //@line 380 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval8; //@line 380 "unicodedata.c"
@@ -1455,7 +1385,7 @@ var __str170;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 409 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str85, _PyUnicode_Type, $v); //@line 409 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str85, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0], ALLOC_STACK)); //@line 409 "unicodedata.c"
         var $3=($2)==0; //@line 409 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 409 "unicodedata.c"
       case 1: // $bb
@@ -1581,7 +1511,7 @@ var __str170;
         var $69=256 - ($68); //@line 453 "unicodedata.c"
         var $70=$i; //@line 453 "unicodedata.c"
         var $71=$decomp19+$70; //@line 453 "unicodedata.c"
-        var $72=_PyOS_snprintf($71, $69, __str89, $67); //@line 453 "unicodedata.c"
+        var $72=_PyOS_snprintf($71, $69, __str89, allocate([$67,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 453 "unicodedata.c"
         var $73=$i; //@line 455 "unicodedata.c"
         var $74=$decomp20+$73; //@line 455 "unicodedata.c"
         var $75=_strlen($74); //@line 455 "unicodedata.c"
@@ -1617,6 +1547,95 @@ var __str170;
   }
   
 
+  function _get_decomp_record($self, $code, $index, $prefix, $count) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $self_addr;
+        var $code_addr;
+        var $index_addr;
+        var $prefix_addr;
+        var $count_addr;
+        $self_addr=$self;
+        $code_addr=$code;
+        $index_addr=$index;
+        $prefix_addr=$prefix;
+        $count_addr=$count;
+        var $0=$code_addr; //@line 466 "unicodedata.c"
+        var $1=($0) > 1114111; //@line 466 "unicodedata.c"
+        if ($1) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 466 "unicodedata.c"
+      case 1: // $bb
+        var $2=$index_addr; //@line 467 "unicodedata.c"
+        HEAP[$2]=0; //@line 467 "unicodedata.c"
+        __label__ = 6; break; //@line 467 "unicodedata.c"
+      case 2: // $bb1
+        var $3=$self_addr; //@line 468 "unicodedata.c"
+        var $4=($3)==0; //@line 468 "unicodedata.c"
+        if ($4) { __label__ = 5; break; } else { __label__ = 3; break; } //@line 468 "unicodedata.c"
+      case 3: // $bb2
+        var $5=$self_addr; //@line 468 "unicodedata.c"
+        var $6=$5; //@line 468 "unicodedata.c"
+        var $7=$6+12; //@line 468 "unicodedata.c"
+        var $8=HEAP[$7]; //@line 468 "unicodedata.c"
+        var $9=$code_addr; //@line 468 "unicodedata.c"
+        var $10=FUNCTION_TABLE[$8]($9); //@line 468 "unicodedata.c"
+        var $11=$10+1; //@line 468 "unicodedata.c"
+        var $12=HEAP[$11]; //@line 468 "unicodedata.c"
+        var $13=($12)!=0; //@line 468 "unicodedata.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 468 "unicodedata.c"
+      case 4: // $bb3
+        var $14=$index_addr; //@line 470 "unicodedata.c"
+        HEAP[$14]=0; //@line 470 "unicodedata.c"
+        __label__ = 6; break; //@line 470 "unicodedata.c"
+      case 5: // $bb4
+        var $15=$code_addr; //@line 473 "unicodedata.c"
+        var $16=($15) >>> 8; //@line 473 "unicodedata.c"
+        var $17=_decomp_index1+$16; //@line 473 "unicodedata.c"
+        var $18=HEAP[$17]; //@line 473 "unicodedata.c"
+        var $19=($18); //@line 473 "unicodedata.c"
+        var $20=$index_addr; //@line 473 "unicodedata.c"
+        HEAP[$20]=$19; //@line 473 "unicodedata.c"
+        var $21=$index_addr; //@line 474 "unicodedata.c"
+        var $22=HEAP[$21]; //@line 474 "unicodedata.c"
+        var $23=($22) * 256;
+        var $24=$code_addr; //@line 474 "unicodedata.c"
+        var $25=($24) & 255; //@line 474 "unicodedata.c"
+        var $26=($25) + ($23); //@line 474 "unicodedata.c"
+        var $27=_decomp_index2+$26*2; //@line 474 "unicodedata.c"
+        var $28=HEAP[$27]; //@line 474 "unicodedata.c"
+        var $29=($28); //@line 474 "unicodedata.c"
+        var $30=$index_addr; //@line 474 "unicodedata.c"
+        HEAP[$30]=$29; //@line 474 "unicodedata.c"
+        __label__ = 6; break; //@line 474 "unicodedata.c"
+      case 6: // $bb5
+        var $31=$index_addr; //@line 480 "unicodedata.c"
+        var $32=HEAP[$31]; //@line 480 "unicodedata.c"
+        var $33=_decomp_data+$32*4; //@line 480 "unicodedata.c"
+        var $34=HEAP[$33]; //@line 480 "unicodedata.c"
+        var $35=($34) >>> 8; //@line 480 "unicodedata.c"
+        var $36=$count_addr; //@line 480 "unicodedata.c"
+        HEAP[$36]=$35; //@line 480 "unicodedata.c"
+        var $37=$index_addr; //@line 481 "unicodedata.c"
+        var $38=HEAP[$37]; //@line 481 "unicodedata.c"
+        var $39=_decomp_data+$38*4; //@line 481 "unicodedata.c"
+        var $40=HEAP[$39]; //@line 481 "unicodedata.c"
+        var $41=($40) & 255; //@line 481 "unicodedata.c"
+        var $42=$prefix_addr; //@line 481 "unicodedata.c"
+        HEAP[$42]=$41; //@line 481 "unicodedata.c"
+        var $43=$index_addr; //@line 483 "unicodedata.c"
+        var $44=HEAP[$43]; //@line 483 "unicodedata.c"
+        var $45=($44) + 1; //@line 483 "unicodedata.c"
+        var $46=$index_addr; //@line 483 "unicodedata.c"
+        HEAP[$46]=$45; //@line 483 "unicodedata.c"
+        ;
+        return; //@line 484 "unicodedata.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _nfd_nfkd($self, $input, $k) {
     var __stackBase__  = STACKTOP; STACKTOP += 56; _memset(__stackBase__, 0, 56);
     var __label__;
@@ -1624,32 +1643,11 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i22;
-        var $retval_i23;
-        var $0;
-        var $index_i24;
-        var $code_addr_i14;
-        var $retval_i15;
-        var $1;
-        var $index_i16;
-        var $code_addr_i6;
-        var $retval_i7;
-        var $2;
-        var $index_i8;
-        var $code_addr_i2;
-        var $retval_i;
-        var $3;
-        var $index_i;
-        var $self_addr_i;
-        var $code_addr_i;
-        var $index_addr_i;
-        var $prefix_addr_i;
-        var $count_addr_i;
         var $self_addr;
         var $input_addr;
         var $k_addr;
         var $retval;
-        var $4;
+        var $0;
         var $result=__stackBase__;
         var $i;
         var $end;
@@ -1675,556 +1673,370 @@ var __str170;
         $input_addr=$input;
         $k_addr=$k;
         $stackptr=0; //@line 507 "unicodedata.c"
-        var $5=$input_addr; //@line 508 "unicodedata.c"
-        var $6=$5; //@line 508 "unicodedata.c"
-        var $7=$6+8; //@line 508 "unicodedata.c"
-        var $8=HEAP[$7]; //@line 508 "unicodedata.c"
-        $isize=$8; //@line 508 "unicodedata.c"
-        var $9=$isize; //@line 510 "unicodedata.c"
-        var $10=($9) <= 10; //@line 510 "unicodedata.c"
-        var $min=($10) ? ($9) : 10; //@line 510 "unicodedata.c"
-        var $11=$isize; //@line 510 "unicodedata.c"
-        var $12=($min) + ($11); //@line 510 "unicodedata.c"
-        $space=$12; //@line 510 "unicodedata.c"
-        var $13=$space; //@line 511 "unicodedata.c"
-        var $14=_PyUnicodeUCS2_FromUnicode(0, $13); //@line 511 "unicodedata.c"
-        HEAP[$result]=$14; //@line 511 "unicodedata.c"
-        var $15=HEAP[$result]; //@line 512 "unicodedata.c"
-        var $16=($15)==0; //@line 512 "unicodedata.c"
-        if ($16) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 512 "unicodedata.c"
+        var $1=$input_addr; //@line 508 "unicodedata.c"
+        var $2=$1; //@line 508 "unicodedata.c"
+        var $3=$2+8; //@line 508 "unicodedata.c"
+        var $4=HEAP[$3]; //@line 508 "unicodedata.c"
+        $isize=$4; //@line 508 "unicodedata.c"
+        var $5=$isize; //@line 510 "unicodedata.c"
+        var $6=($5) <= 10; //@line 510 "unicodedata.c"
+        var $min=($6) ? ($5) : 10; //@line 510 "unicodedata.c"
+        var $7=$isize; //@line 510 "unicodedata.c"
+        var $8=($min) + ($7); //@line 510 "unicodedata.c"
+        $space=$8; //@line 510 "unicodedata.c"
+        var $9=$space; //@line 511 "unicodedata.c"
+        var $10=_PyUnicodeUCS2_FromUnicode(0, $9); //@line 511 "unicodedata.c"
+        HEAP[$result]=$10; //@line 511 "unicodedata.c"
+        var $11=HEAP[$result]; //@line 512 "unicodedata.c"
+        var $12=($11)==0; //@line 512 "unicodedata.c"
+        if ($12) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 512 "unicodedata.c"
       case 1: // $bb
-        $4=0; //@line 513 "unicodedata.c"
-        __label__ = 53; break; //@line 513 "unicodedata.c"
+        $0=0; //@line 513 "unicodedata.c"
+        __label__ = 35; break; //@line 513 "unicodedata.c"
       case 2: // $bb2
-        var $17=$input_addr; //@line 514 "unicodedata.c"
-        var $18=$17; //@line 514 "unicodedata.c"
-        var $19=$18+12; //@line 514 "unicodedata.c"
-        var $20=HEAP[$19]; //@line 514 "unicodedata.c"
-        $i=$20; //@line 514 "unicodedata.c"
-        var $21=$i; //@line 515 "unicodedata.c"
-        var $22=$isize; //@line 515 "unicodedata.c"
-        var $23=$21+2*$22; //@line 515 "unicodedata.c"
-        $end=$23; //@line 515 "unicodedata.c"
-        var $24=HEAP[$result]; //@line 516 "unicodedata.c"
-        var $25=$24; //@line 516 "unicodedata.c"
-        var $26=$25+12; //@line 516 "unicodedata.c"
-        var $27=HEAP[$26]; //@line 516 "unicodedata.c"
-        $o=$27; //@line 516 "unicodedata.c"
-        __label__ = 28; break; //@line 516 "unicodedata.c"
+        var $13=$input_addr; //@line 514 "unicodedata.c"
+        var $14=$13; //@line 514 "unicodedata.c"
+        var $15=$14+12; //@line 514 "unicodedata.c"
+        var $16=HEAP[$15]; //@line 514 "unicodedata.c"
+        $i=$16; //@line 514 "unicodedata.c"
+        var $17=$i; //@line 515 "unicodedata.c"
+        var $18=$isize; //@line 515 "unicodedata.c"
+        var $19=$17+2*$18; //@line 515 "unicodedata.c"
+        $end=$19; //@line 515 "unicodedata.c"
+        var $20=HEAP[$result]; //@line 516 "unicodedata.c"
+        var $21=$20; //@line 516 "unicodedata.c"
+        var $22=$21+12; //@line 516 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 516 "unicodedata.c"
+        $o=$23; //@line 516 "unicodedata.c"
+        __label__ = 22; break; //@line 516 "unicodedata.c"
       case 3: // $bb3
+        var $24=$stackptr; //@line 519 "unicodedata.c"
+        var $25=$i; //@line 519 "unicodedata.c"
+        var $26=HEAP[$25]; //@line 519 "unicodedata.c"
+        var $27=$stack+$24*2; //@line 519 "unicodedata.c"
+        HEAP[$27]=$26; //@line 519 "unicodedata.c"
         var $28=$stackptr; //@line 519 "unicodedata.c"
-        var $29=$i; //@line 519 "unicodedata.c"
-        var $30=HEAP[$29]; //@line 519 "unicodedata.c"
-        var $31=$stack+$28*2; //@line 519 "unicodedata.c"
-        HEAP[$31]=$30; //@line 519 "unicodedata.c"
-        var $32=$stackptr; //@line 519 "unicodedata.c"
-        var $33=($32) + 1; //@line 519 "unicodedata.c"
-        $stackptr=$33; //@line 519 "unicodedata.c"
-        var $34=$i; //@line 519 "unicodedata.c"
-        var $35=$34+2; //@line 519 "unicodedata.c"
-        $i=$35; //@line 519 "unicodedata.c"
-        __lastLabel__ = 3; __label__ = 27; break; //@line 519 "unicodedata.c"
+        var $29=($28) + 1; //@line 519 "unicodedata.c"
+        $stackptr=$29; //@line 519 "unicodedata.c"
+        var $30=$i; //@line 519 "unicodedata.c"
+        var $31=$30+2; //@line 519 "unicodedata.c"
+        $i=$31; //@line 519 "unicodedata.c"
+        __lastLabel__ = 3; __label__ = 21; break; //@line 519 "unicodedata.c"
       case 4: // $bb4
-        var $36=$stackptr; //@line 521 "unicodedata.c"
-        var $37=($36) - 1; //@line 521 "unicodedata.c"
-        $stackptr=$37; //@line 521 "unicodedata.c"
-        var $38=$stackptr; //@line 521 "unicodedata.c"
-        var $39=$stack+$38*2; //@line 521 "unicodedata.c"
-        var $40=HEAP[$39]; //@line 521 "unicodedata.c"
-        $code=$40; //@line 521 "unicodedata.c"
-        var $41=$space; //@line 524 "unicodedata.c"
-        var $42=($41) <= 2; //@line 524 "unicodedata.c"
-        if ($42) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 524 "unicodedata.c"
+        var $32=$stackptr; //@line 521 "unicodedata.c"
+        var $33=($32) - 1; //@line 521 "unicodedata.c"
+        $stackptr=$33; //@line 521 "unicodedata.c"
+        var $34=$stackptr; //@line 521 "unicodedata.c"
+        var $35=$stack+$34*2; //@line 521 "unicodedata.c"
+        var $36=HEAP[$35]; //@line 521 "unicodedata.c"
+        $code=$36; //@line 521 "unicodedata.c"
+        var $37=$space; //@line 524 "unicodedata.c"
+        var $38=($37) <= 2; //@line 524 "unicodedata.c"
+        if ($38) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 524 "unicodedata.c"
       case 5: // $bb5
-        var $43=HEAP[$result]; //@line 525 "unicodedata.c"
-        var $44=$43; //@line 525 "unicodedata.c"
-        var $45=$44+8; //@line 525 "unicodedata.c"
-        var $46=HEAP[$45]; //@line 525 "unicodedata.c"
-        var $47=($46) + 10; //@line 525 "unicodedata.c"
-        $newsize=$47; //@line 525 "unicodedata.c"
-        var $48=$space; //@line 526 "unicodedata.c"
-        var $49=($48) + 10; //@line 526 "unicodedata.c"
-        $space=$49; //@line 526 "unicodedata.c"
-        var $50=$newsize; //@line 527 "unicodedata.c"
-        var $51=_PyUnicodeUCS2_Resize($result, $50); //@line 527 "unicodedata.c"
-        var $52=($51)==-1; //@line 527 "unicodedata.c"
-        if ($52) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 527 "unicodedata.c"
+        var $39=HEAP[$result]; //@line 525 "unicodedata.c"
+        var $40=$39; //@line 525 "unicodedata.c"
+        var $41=$40+8; //@line 525 "unicodedata.c"
+        var $42=HEAP[$41]; //@line 525 "unicodedata.c"
+        var $43=($42) + 10; //@line 525 "unicodedata.c"
+        $newsize=$43; //@line 525 "unicodedata.c"
+        var $44=$space; //@line 526 "unicodedata.c"
+        var $45=($44) + 10; //@line 526 "unicodedata.c"
+        $space=$45; //@line 526 "unicodedata.c"
+        var $46=$newsize; //@line 527 "unicodedata.c"
+        var $47=_PyUnicodeUCS2_Resize($result, $46); //@line 527 "unicodedata.c"
+        var $48=($47)==-1; //@line 527 "unicodedata.c"
+        if ($48) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 527 "unicodedata.c"
       case 6: // $bb6
-        $4=0; //@line 528 "unicodedata.c"
-        __label__ = 53; break; //@line 528 "unicodedata.c"
+        $0=0; //@line 528 "unicodedata.c"
+        __label__ = 35; break; //@line 528 "unicodedata.c"
       case 7: // $bb7
-        var $53=HEAP[$result]; //@line 529 "unicodedata.c"
-        var $54=$53; //@line 529 "unicodedata.c"
-        var $55=$54+12; //@line 529 "unicodedata.c"
-        var $56=HEAP[$55]; //@line 529 "unicodedata.c"
-        var $57=$newsize; //@line 529 "unicodedata.c"
-        var $58=$56+2*$57; //@line 529 "unicodedata.c"
-        var $59=$space; //@line 529 "unicodedata.c"
-        var $60=0 - ($59); //@line 529 "unicodedata.c"
-        var $61=$58+2*$60; //@line 529 "unicodedata.c"
-        $o=$61; //@line 529 "unicodedata.c"
+        var $49=HEAP[$result]; //@line 529 "unicodedata.c"
+        var $50=$49; //@line 529 "unicodedata.c"
+        var $51=$50+12; //@line 529 "unicodedata.c"
+        var $52=HEAP[$51]; //@line 529 "unicodedata.c"
+        var $53=$newsize; //@line 529 "unicodedata.c"
+        var $54=$52+2*$53; //@line 529 "unicodedata.c"
+        var $55=$space; //@line 529 "unicodedata.c"
+        var $56=0 - ($55); //@line 529 "unicodedata.c"
+        var $57=$54+2*$56; //@line 529 "unicodedata.c"
+        $o=$57; //@line 529 "unicodedata.c"
         __label__ = 8; break; //@line 529 "unicodedata.c"
       case 8: // $bb8
-        var $62=$code; //@line 532 "unicodedata.c"
-        var $63=($62) > 44031; //@line 532 "unicodedata.c"
-        var $64=$code; //@line 532 "unicodedata.c"
-        var $65=($64) <= 55203; //@line 532 "unicodedata.c"
-        var $or_cond=($63) & ($65);
+        var $58=$code; //@line 532 "unicodedata.c"
+        var $59=($58) > 44031; //@line 532 "unicodedata.c"
+        var $60=$code; //@line 532 "unicodedata.c"
+        var $61=($60) <= 55203; //@line 532 "unicodedata.c"
+        var $or_cond=($59) & ($61);
         if ($or_cond) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 532 "unicodedata.c"
       case 9: // $bb10
-        var $66=$code; //@line 533 "unicodedata.c"
-        var $67=($66); //@line 533 "unicodedata.c"
-        var $68=($67) - 44032; //@line 533 "unicodedata.c"
-        $SIndex=$68; //@line 533 "unicodedata.c"
-        var $69=$SIndex; //@line 534 "unicodedata.c"
-        var $70=((($69)/588)|0); //@line 534 "unicodedata.c"
-        var $71=($70) + 4352; //@line 534 "unicodedata.c"
-        $L=$71; //@line 534 "unicodedata.c"
-        var $72=$SIndex; //@line 535 "unicodedata.c"
-        var $73=($72) % 588; //@line 535 "unicodedata.c"
-        var $74=((($73)/28)|0); //@line 535 "unicodedata.c"
-        var $75=($74) + 4449; //@line 535 "unicodedata.c"
-        $V=$75; //@line 535 "unicodedata.c"
-        var $76=$SIndex; //@line 536 "unicodedata.c"
-        var $77=($76) % 28; //@line 536 "unicodedata.c"
-        var $78=($77) + 4519; //@line 536 "unicodedata.c"
-        $T=$78; //@line 536 "unicodedata.c"
-        var $79=$L; //@line 537 "unicodedata.c"
-        var $80=((($79)) & 65535); //@line 537 "unicodedata.c"
-        var $81=$o; //@line 537 "unicodedata.c"
-        HEAP[$81]=$80; //@line 537 "unicodedata.c"
-        var $82=$o; //@line 537 "unicodedata.c"
-        var $83=$82+2; //@line 537 "unicodedata.c"
-        $o=$83; //@line 537 "unicodedata.c"
-        var $84=$V; //@line 538 "unicodedata.c"
-        var $85=((($84)) & 65535); //@line 538 "unicodedata.c"
-        var $86=$o; //@line 538 "unicodedata.c"
-        HEAP[$86]=$85; //@line 538 "unicodedata.c"
-        var $87=$o; //@line 538 "unicodedata.c"
-        var $88=$87+2; //@line 538 "unicodedata.c"
-        $o=$88; //@line 538 "unicodedata.c"
-        var $89=$space; //@line 539 "unicodedata.c"
-        var $90=($89) - 2; //@line 539 "unicodedata.c"
-        $space=$90; //@line 539 "unicodedata.c"
-        var $91=$T; //@line 540 "unicodedata.c"
-        var $92=($91)!=4519; //@line 540 "unicodedata.c"
-        if ($92) { __label__ = 10; break; } else { __label__ = 26; break; } //@line 540 "unicodedata.c"
+        var $62=$code; //@line 533 "unicodedata.c"
+        var $63=($62); //@line 533 "unicodedata.c"
+        var $64=($63) - 44032; //@line 533 "unicodedata.c"
+        $SIndex=$64; //@line 533 "unicodedata.c"
+        var $65=$SIndex; //@line 534 "unicodedata.c"
+        var $66=((($65)/588)|0); //@line 534 "unicodedata.c"
+        var $67=($66) + 4352; //@line 534 "unicodedata.c"
+        $L=$67; //@line 534 "unicodedata.c"
+        var $68=$SIndex; //@line 535 "unicodedata.c"
+        var $69=($68) % 588; //@line 535 "unicodedata.c"
+        var $70=((($69)/28)|0); //@line 535 "unicodedata.c"
+        var $71=($70) + 4449; //@line 535 "unicodedata.c"
+        $V=$71; //@line 535 "unicodedata.c"
+        var $72=$SIndex; //@line 536 "unicodedata.c"
+        var $73=($72) % 28; //@line 536 "unicodedata.c"
+        var $74=($73) + 4519; //@line 536 "unicodedata.c"
+        $T=$74; //@line 536 "unicodedata.c"
+        var $75=$L; //@line 537 "unicodedata.c"
+        var $76=((($75)) & 65535); //@line 537 "unicodedata.c"
+        var $77=$o; //@line 537 "unicodedata.c"
+        HEAP[$77]=$76; //@line 537 "unicodedata.c"
+        var $78=$o; //@line 537 "unicodedata.c"
+        var $79=$78+2; //@line 537 "unicodedata.c"
+        $o=$79; //@line 537 "unicodedata.c"
+        var $80=$V; //@line 538 "unicodedata.c"
+        var $81=((($80)) & 65535); //@line 538 "unicodedata.c"
+        var $82=$o; //@line 538 "unicodedata.c"
+        HEAP[$82]=$81; //@line 538 "unicodedata.c"
+        var $83=$o; //@line 538 "unicodedata.c"
+        var $84=$83+2; //@line 538 "unicodedata.c"
+        $o=$84; //@line 538 "unicodedata.c"
+        var $85=$space; //@line 539 "unicodedata.c"
+        var $86=($85) - 2; //@line 539 "unicodedata.c"
+        $space=$86; //@line 539 "unicodedata.c"
+        var $87=$T; //@line 540 "unicodedata.c"
+        var $88=($87)!=4519; //@line 540 "unicodedata.c"
+        if ($88) { __label__ = 10; break; } else { __label__ = 20; break; } //@line 540 "unicodedata.c"
       case 10: // $bb11
-        var $93=$T; //@line 541 "unicodedata.c"
-        var $94=((($93)) & 65535); //@line 541 "unicodedata.c"
-        var $95=$o; //@line 541 "unicodedata.c"
-        HEAP[$95]=$94; //@line 541 "unicodedata.c"
-        var $96=$o; //@line 541 "unicodedata.c"
-        var $97=$96+2; //@line 541 "unicodedata.c"
-        $o=$97; //@line 541 "unicodedata.c"
-        var $98=$space; //@line 542 "unicodedata.c"
-        var $99=($98) - 1; //@line 542 "unicodedata.c"
-        $space=$99; //@line 542 "unicodedata.c"
-        __label__ = 26; break; //@line 542 "unicodedata.c"
+        var $89=$T; //@line 541 "unicodedata.c"
+        var $90=((($89)) & 65535); //@line 541 "unicodedata.c"
+        var $91=$o; //@line 541 "unicodedata.c"
+        HEAP[$91]=$90; //@line 541 "unicodedata.c"
+        var $92=$o; //@line 541 "unicodedata.c"
+        var $93=$92+2; //@line 541 "unicodedata.c"
+        $o=$93; //@line 541 "unicodedata.c"
+        var $94=$space; //@line 542 "unicodedata.c"
+        var $95=($94) - 1; //@line 542 "unicodedata.c"
+        $space=$95; //@line 542 "unicodedata.c"
+        __label__ = 20; break; //@line 542 "unicodedata.c"
       case 11: // $bb13
-        var $100=$self_addr; //@line 547 "unicodedata.c"
-        var $101=($100)!=0; //@line 547 "unicodedata.c"
-        if ($101) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 547 "unicodedata.c"
+        var $96=$self_addr; //@line 547 "unicodedata.c"
+        var $97=($96)!=0; //@line 547 "unicodedata.c"
+        if ($97) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 547 "unicodedata.c"
       case 12: // $bb14
-        var $102=$self_addr; //@line 548 "unicodedata.c"
-        var $103=$102; //@line 548 "unicodedata.c"
-        var $104=$103+16; //@line 548 "unicodedata.c"
-        var $105=HEAP[$104]; //@line 548 "unicodedata.c"
-        var $106=$code; //@line 548 "unicodedata.c"
-        var $107=($106); //@line 548 "unicodedata.c"
-        var $108=FUNCTION_TABLE[$105]($107); //@line 548 "unicodedata.c"
-        $value=$108; //@line 548 "unicodedata.c"
-        var $109=$value; //@line 549 "unicodedata.c"
-        var $110=($109)!=0; //@line 549 "unicodedata.c"
-        if ($110) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 549 "unicodedata.c"
+        var $98=$self_addr; //@line 548 "unicodedata.c"
+        var $99=$98; //@line 548 "unicodedata.c"
+        var $100=$99+16; //@line 548 "unicodedata.c"
+        var $101=HEAP[$100]; //@line 548 "unicodedata.c"
+        var $102=$code; //@line 548 "unicodedata.c"
+        var $103=($102); //@line 548 "unicodedata.c"
+        var $104=FUNCTION_TABLE[$101]($103); //@line 548 "unicodedata.c"
+        $value=$104; //@line 548 "unicodedata.c"
+        var $105=$value; //@line 549 "unicodedata.c"
+        var $106=($105)!=0; //@line 549 "unicodedata.c"
+        if ($106) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 549 "unicodedata.c"
       case 13: // $bb15
+        var $107=$stackptr; //@line 550 "unicodedata.c"
+        var $108=$value; //@line 550 "unicodedata.c"
+        var $109=((($108)) & 65535); //@line 550 "unicodedata.c"
+        var $110=$stack+$107*2; //@line 550 "unicodedata.c"
+        HEAP[$110]=$109; //@line 550 "unicodedata.c"
         var $111=$stackptr; //@line 550 "unicodedata.c"
-        var $112=$value; //@line 550 "unicodedata.c"
-        var $113=((($112)) & 65535); //@line 550 "unicodedata.c"
-        var $114=$stack+$111*2; //@line 550 "unicodedata.c"
-        HEAP[$114]=$113; //@line 550 "unicodedata.c"
-        var $115=$stackptr; //@line 550 "unicodedata.c"
-        var $116=($115) + 1; //@line 550 "unicodedata.c"
-        $stackptr=$116; //@line 550 "unicodedata.c"
-        __lastLabel__ = 13; __label__ = 27; break; //@line 550 "unicodedata.c"
+        var $112=($111) + 1; //@line 550 "unicodedata.c"
+        $stackptr=$112; //@line 550 "unicodedata.c"
+        __lastLabel__ = 13; __label__ = 21; break; //@line 550 "unicodedata.c"
       case 14: // $bb16
-        var $117=$code; //@line 556 "unicodedata.c"
-        var $118=($117); //@line 556 "unicodedata.c"
-        var $119=$self_addr; //@line 556 "unicodedata.c"
-        $self_addr_i=$119;
-        $code_addr_i=$118;
-        $index_addr_i=$index;
-        $prefix_addr_i=$prefix;
-        $count_addr_i=$count;
-        var $120=($118) > 1114111; //@line 466 "unicodedata.c"
-        if ($120) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 466 "unicodedata.c"
-      case 15: // $bb_i
-        var $121=$index_addr_i; //@line 467 "unicodedata.c"
-        HEAP[$121]=0; //@line 467 "unicodedata.c"
-        __label__ = 20; break; //@line 467 "unicodedata.c"
-      case 16: // $bb1_i
-        var $122=$self_addr_i; //@line 468 "unicodedata.c"
-        var $123=($122)==0; //@line 468 "unicodedata.c"
-        if ($123) { __label__ = 19; break; } else { __label__ = 17; break; } //@line 468 "unicodedata.c"
-      case 17: // $bb2_i
-        var $124=$self_addr_i; //@line 468 "unicodedata.c"
-        var $125=$124; //@line 468 "unicodedata.c"
-        var $126=$125+12; //@line 468 "unicodedata.c"
-        var $127=HEAP[$126]; //@line 468 "unicodedata.c"
-        var $128=$code_addr_i; //@line 468 "unicodedata.c"
-        var $129=FUNCTION_TABLE[$127]($128); //@line 468 "unicodedata.c"
-        var $130=$129+1; //@line 468 "unicodedata.c"
-        var $131=HEAP[$130]; //@line 468 "unicodedata.c"
-        var $132=($131)!=0; //@line 468 "unicodedata.c"
-        if ($132) { __label__ = 19; break; } else { __label__ = 18; break; } //@line 468 "unicodedata.c"
-      case 18: // $bb3_i
-        var $133=$index_addr_i; //@line 470 "unicodedata.c"
-        HEAP[$133]=0; //@line 470 "unicodedata.c"
-        __label__ = 20; break; //@line 470 "unicodedata.c"
-      case 19: // $bb4_i
-        var $134=$code_addr_i; //@line 473 "unicodedata.c"
-        var $135=($134) >>> 8; //@line 473 "unicodedata.c"
-        var $136=_decomp_index1+$135; //@line 473 "unicodedata.c"
-        var $137=HEAP[$136]; //@line 473 "unicodedata.c"
-        var $138=($137); //@line 473 "unicodedata.c"
-        var $139=$index_addr_i; //@line 473 "unicodedata.c"
-        HEAP[$139]=$138; //@line 473 "unicodedata.c"
-        var $140=$index_addr_i; //@line 474 "unicodedata.c"
-        var $141=HEAP[$140]; //@line 474 "unicodedata.c"
-        var $142=($141) * 256;
-        var $143=$code_addr_i; //@line 474 "unicodedata.c"
-        var $144=($143) & 255; //@line 474 "unicodedata.c"
-        var $145=($144) + ($142); //@line 474 "unicodedata.c"
-        var $146=_decomp_index2+$145*2; //@line 474 "unicodedata.c"
-        var $147=HEAP[$146]; //@line 474 "unicodedata.c"
-        var $148=($147); //@line 474 "unicodedata.c"
-        var $149=$index_addr_i; //@line 474 "unicodedata.c"
-        HEAP[$149]=$148; //@line 474 "unicodedata.c"
-        __label__ = 20; break; //@line 474 "unicodedata.c"
-      case 20: // $get_decomp_record_exit
-        var $150=$index_addr_i; //@line 480 "unicodedata.c"
-        var $151=HEAP[$150]; //@line 480 "unicodedata.c"
-        var $152=_decomp_data+$151*4; //@line 480 "unicodedata.c"
-        var $153=HEAP[$152]; //@line 480 "unicodedata.c"
-        var $154=($153) >>> 8; //@line 480 "unicodedata.c"
-        var $155=$count_addr_i; //@line 480 "unicodedata.c"
-        HEAP[$155]=$154; //@line 480 "unicodedata.c"
-        var $156=$index_addr_i; //@line 481 "unicodedata.c"
-        var $157=HEAP[$156]; //@line 481 "unicodedata.c"
-        var $158=_decomp_data+$157*4; //@line 481 "unicodedata.c"
-        var $159=HEAP[$158]; //@line 481 "unicodedata.c"
-        var $160=($159) & 255; //@line 481 "unicodedata.c"
-        var $161=$prefix_addr_i; //@line 481 "unicodedata.c"
-        HEAP[$161]=$160; //@line 481 "unicodedata.c"
-        var $162=$index_addr_i; //@line 483 "unicodedata.c"
-        var $163=HEAP[$162]; //@line 483 "unicodedata.c"
-        var $164=($163) + 1; //@line 483 "unicodedata.c"
-        var $165=$index_addr_i; //@line 483 "unicodedata.c"
-        HEAP[$165]=$164; //@line 483 "unicodedata.c"
-        var $166=HEAP[$count]; //@line 560 "unicodedata.c"
-        var $167=($166)==0; //@line 560 "unicodedata.c"
-        if ($167) { __label__ = 24; break; } else { __label__ = 21; break; } //@line 560 "unicodedata.c"
-      case 21: // $bb17
-        var $168=HEAP[$prefix]; //@line 560 "unicodedata.c"
-        var $169=($168)==0; //@line 560 "unicodedata.c"
-        if ($169) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 560 "unicodedata.c"
-      case 22: // $bb22_preheader
-        var $170=HEAP[$count]; //@line 567 "unicodedata.c"
-        var $171=($170)!=0; //@line 567 "unicodedata.c"
-        if ($171) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 567 "unicodedata.c"
-      case 23: // $bb18
-        var $172=$k_addr; //@line 560 "unicodedata.c"
-        var $173=($172)==0; //@line 560 "unicodedata.c"
-        if ($173) { __label__ = 24; break; } else { __label__ = 22; break; } //@line 560 "unicodedata.c"
-      case 24: // $bb19
-        var $174=$o; //@line 561 "unicodedata.c"
-        var $175=$code; //@line 561 "unicodedata.c"
-        HEAP[$174]=$175; //@line 561 "unicodedata.c"
-        var $176=$o; //@line 561 "unicodedata.c"
-        var $177=$176+2; //@line 561 "unicodedata.c"
-        $o=$177; //@line 561 "unicodedata.c"
-        var $178=$space; //@line 562 "unicodedata.c"
-        var $179=($178) - 1; //@line 562 "unicodedata.c"
-        $space=$179; //@line 562 "unicodedata.c"
-        __label__ = 26; break; //@line 562 "unicodedata.c"
-      case 25: // $bb21
-        var $180=HEAP[$count]; //@line 568 "unicodedata.c"
-        var $181=($180) - 1; //@line 568 "unicodedata.c"
-        HEAP[$count]=$181; //@line 568 "unicodedata.c"
-        var $182=HEAP[$count]; //@line 568 "unicodedata.c"
-        var $183=HEAP[$index]; //@line 568 "unicodedata.c"
-        var $184=($183) + ($182); //@line 568 "unicodedata.c"
-        var $185=_decomp_data+$184*4; //@line 568 "unicodedata.c"
-        var $186=HEAP[$185]; //@line 568 "unicodedata.c"
-        var $187=((($186)) & 65535); //@line 568 "unicodedata.c"
-        $code=$187; //@line 568 "unicodedata.c"
-        var $188=$stackptr; //@line 569 "unicodedata.c"
-        var $189=$stack+$188*2; //@line 569 "unicodedata.c"
-        var $190=$code; //@line 569 "unicodedata.c"
-        HEAP[$189]=$190; //@line 569 "unicodedata.c"
-        var $191=$stackptr; //@line 569 "unicodedata.c"
-        var $192=($191) + 1; //@line 569 "unicodedata.c"
-        $stackptr=$192; //@line 569 "unicodedata.c"
-        var $193=HEAP[$count]; //@line 567 "unicodedata.c"
-        var $194=($193)!=0; //@line 567 "unicodedata.c"
-        if ($194) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 567 "unicodedata.c"
-      case 26: // $bb23thread_pre_split
+        var $113=$code; //@line 556 "unicodedata.c"
+        var $114=($113); //@line 556 "unicodedata.c"
+        var $115=$self_addr; //@line 556 "unicodedata.c"
+        _get_decomp_record($115, $114, $index, $prefix, $count); //@line 556 "unicodedata.c"
+        var $116=HEAP[$count]; //@line 560 "unicodedata.c"
+        var $117=($116)==0; //@line 560 "unicodedata.c"
+        if ($117) { __label__ = 18; break; } else { __label__ = 15; break; } //@line 560 "unicodedata.c"
+      case 15: // $bb17
+        var $118=HEAP[$prefix]; //@line 560 "unicodedata.c"
+        var $119=($118)==0; //@line 560 "unicodedata.c"
+        if ($119) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 560 "unicodedata.c"
+      case 16: // $bb22_preheader
+        var $120=HEAP[$count]; //@line 567 "unicodedata.c"
+        var $121=($120)!=0; //@line 567 "unicodedata.c"
+        if ($121) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 567 "unicodedata.c"
+      case 17: // $bb18
+        var $122=$k_addr; //@line 560 "unicodedata.c"
+        var $123=($122)==0; //@line 560 "unicodedata.c"
+        if ($123) { __label__ = 18; break; } else { __label__ = 16; break; } //@line 560 "unicodedata.c"
+      case 18: // $bb19
+        var $124=$o; //@line 561 "unicodedata.c"
+        var $125=$code; //@line 561 "unicodedata.c"
+        HEAP[$124]=$125; //@line 561 "unicodedata.c"
+        var $126=$o; //@line 561 "unicodedata.c"
+        var $127=$126+2; //@line 561 "unicodedata.c"
+        $o=$127; //@line 561 "unicodedata.c"
+        var $128=$space; //@line 562 "unicodedata.c"
+        var $129=($128) - 1; //@line 562 "unicodedata.c"
+        $space=$129; //@line 562 "unicodedata.c"
+        __label__ = 20; break; //@line 562 "unicodedata.c"
+      case 19: // $bb21
+        var $130=HEAP[$count]; //@line 568 "unicodedata.c"
+        var $131=($130) - 1; //@line 568 "unicodedata.c"
+        HEAP[$count]=$131; //@line 568 "unicodedata.c"
+        var $132=HEAP[$count]; //@line 568 "unicodedata.c"
+        var $133=HEAP[$index]; //@line 568 "unicodedata.c"
+        var $134=($133) + ($132); //@line 568 "unicodedata.c"
+        var $135=_decomp_data+$134*4; //@line 568 "unicodedata.c"
+        var $136=HEAP[$135]; //@line 568 "unicodedata.c"
+        var $137=((($136)) & 65535); //@line 568 "unicodedata.c"
+        $code=$137; //@line 568 "unicodedata.c"
+        var $138=$stackptr; //@line 569 "unicodedata.c"
+        var $139=$stack+$138*2; //@line 569 "unicodedata.c"
+        var $140=$code; //@line 569 "unicodedata.c"
+        HEAP[$139]=$140; //@line 569 "unicodedata.c"
+        var $141=$stackptr; //@line 569 "unicodedata.c"
+        var $142=($141) + 1; //@line 569 "unicodedata.c"
+        $stackptr=$142; //@line 569 "unicodedata.c"
+        var $143=HEAP[$count]; //@line 567 "unicodedata.c"
+        var $144=($143)!=0; //@line 567 "unicodedata.c"
+        if ($144) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 567 "unicodedata.c"
+      case 20: // $bb23thread_pre_split
         var $_pr=$stackptr;
-        __lastLabel__ = 26; __label__ = 27; break;
-      case 27: // $bb23
-        var $195=__lastLabel__ == 3 ? $33 : (__lastLabel__ == 26 ? $_pr : ($116));
-        var $196=($195)!=0; //@line 520 "unicodedata.c"
-        if ($196) { __label__ = 4; break; } else { __label__ = 28; break; } //@line 520 "unicodedata.c"
-      case 28: // $bb24
-        var $197=$i; //@line 518 "unicodedata.c"
-        var $198=$end; //@line 518 "unicodedata.c"
-        var $199=($197) < ($198); //@line 518 "unicodedata.c"
-        if ($199) { __label__ = 3; break; } else { __label__ = 29; break; } //@line 518 "unicodedata.c"
-      case 29: // $bb25
-        var $200=HEAP[$result]; //@line 575 "unicodedata.c"
-        var $201=$200; //@line 575 "unicodedata.c"
-        var $202=$201+8; //@line 575 "unicodedata.c"
-        var $203=HEAP[$202]; //@line 575 "unicodedata.c"
-        var $204=$space; //@line 575 "unicodedata.c"
-        var $205=($203) - ($204); //@line 575 "unicodedata.c"
-        var $206=_PyUnicodeUCS2_Resize($result, $205); //@line 575 "unicodedata.c"
-        var $207=HEAP[$result]; //@line 578 "unicodedata.c"
-        var $208=$207; //@line 578 "unicodedata.c"
-        var $209=$208+12; //@line 578 "unicodedata.c"
-        var $210=HEAP[$209]; //@line 578 "unicodedata.c"
-        $i=$210; //@line 578 "unicodedata.c"
-        var $211=$i; //@line 579 "unicodedata.c"
-        var $212=HEAP[$211]; //@line 579 "unicodedata.c"
-        var $213=($212); //@line 579 "unicodedata.c"
-        $code_addr_i2=$213;
-        var $214=$code_addr_i2; //@line 49 "unicodedata.c"
-        var $215=($214) > 1114111; //@line 49 "unicodedata.c"
-        if ($215) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 49 "unicodedata.c"
-      case 30: // $bb_i3
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 32; break; //@line 50 "unicodedata.c"
-      case 31: // $bb1_i4
-        var $216=$code_addr_i2; //@line 52 "unicodedata.c"
-        var $217=($216) >>> 7; //@line 52 "unicodedata.c"
-        var $218=_index1+$217; //@line 52 "unicodedata.c"
-        var $219=HEAP[$218]; //@line 52 "unicodedata.c"
-        var $220=($219); //@line 52 "unicodedata.c"
-        $index_i=$220; //@line 52 "unicodedata.c"
-        var $221=$index_i; //@line 53 "unicodedata.c"
-        var $222=($221) * 128;
-        var $223=$code_addr_i2; //@line 53 "unicodedata.c"
-        var $224=($223) & 127; //@line 53 "unicodedata.c"
-        var $225=($224) + ($222); //@line 53 "unicodedata.c"
-        var $226=_index2+$225*2; //@line 53 "unicodedata.c"
-        var $227=HEAP[$226]; //@line 53 "unicodedata.c"
-        var $228=($227); //@line 53 "unicodedata.c"
-        $index_i=$228; //@line 53 "unicodedata.c"
-        __label__ = 32; break; //@line 53 "unicodedata.c"
-      case 32: // $_getrecord_ex_exit
-        var $229=$index_i; //@line 56 "unicodedata.c"
-        var $230=__PyUnicode_Database_Records+$229*6; //@line 56 "unicodedata.c"
-        $3=$230; //@line 56 "unicodedata.c"
-        var $231=$3; //@line 56 "unicodedata.c"
-        $retval_i=$231; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $232=$retval3_i+1; //@line 579 "unicodedata.c"
-        var $233=HEAP[$232]; //@line 579 "unicodedata.c"
-        $prev=$233; //@line 579 "unicodedata.c"
-        var $234=HEAP[$result]; //@line 580 "unicodedata.c"
-        var $235=$234; //@line 580 "unicodedata.c"
-        var $236=$235+8; //@line 580 "unicodedata.c"
-        var $237=HEAP[$236]; //@line 580 "unicodedata.c"
-        var $238=$i; //@line 580 "unicodedata.c"
-        var $239=$238+2*$237; //@line 580 "unicodedata.c"
-        $end=$239; //@line 580 "unicodedata.c"
-        var $240=$i; //@line 581 "unicodedata.c"
-        var $241=$240+2; //@line 581 "unicodedata.c"
-        $i=$241; //@line 581 "unicodedata.c"
-        var $242=$i; //@line 581 "unicodedata.c"
-        var $243=$end; //@line 581 "unicodedata.c"
-        var $244=($242) < ($243); //@line 581 "unicodedata.c"
-        if ($244) { __label__ = 33; break; } else { __label__ = 52; break; } //@line 581 "unicodedata.c"
-      case 33: // $bb26
-        var $245=$i; //@line 582 "unicodedata.c"
-        var $246=HEAP[$245]; //@line 582 "unicodedata.c"
-        var $247=($246); //@line 582 "unicodedata.c"
-        $code_addr_i22=$247;
-        var $248=($247) > 1114111; //@line 49 "unicodedata.c"
-        if ($248) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 49 "unicodedata.c"
-      case 34: // $bb_i25
-        $index_i24=0; //@line 50 "unicodedata.c"
-        __label__ = 36; break; //@line 50 "unicodedata.c"
-      case 35: // $bb1_i26
-        var $249=$code_addr_i22; //@line 52 "unicodedata.c"
-        var $250=($249) >>> 7; //@line 52 "unicodedata.c"
-        var $251=_index1+$250; //@line 52 "unicodedata.c"
-        var $252=HEAP[$251]; //@line 52 "unicodedata.c"
-        var $253=($252); //@line 52 "unicodedata.c"
-        $index_i24=$253; //@line 52 "unicodedata.c"
-        var $254=$index_i24; //@line 53 "unicodedata.c"
-        var $255=($254) * 128;
-        var $256=$code_addr_i22; //@line 53 "unicodedata.c"
-        var $257=($256) & 127; //@line 53 "unicodedata.c"
-        var $258=($257) + ($255); //@line 53 "unicodedata.c"
-        var $259=_index2+$258*2; //@line 53 "unicodedata.c"
-        var $260=HEAP[$259]; //@line 53 "unicodedata.c"
-        var $261=($260); //@line 53 "unicodedata.c"
-        $index_i24=$261; //@line 53 "unicodedata.c"
-        __label__ = 36; break; //@line 53 "unicodedata.c"
-      case 36: // $_getrecord_ex_exit29
-        var $262=$index_i24; //@line 56 "unicodedata.c"
-        var $263=__PyUnicode_Database_Records+$262*6; //@line 56 "unicodedata.c"
-        $0=$263; //@line 56 "unicodedata.c"
-        var $264=$0; //@line 56 "unicodedata.c"
-        $retval_i23=$264; //@line 56 "unicodedata.c"
-        var $retval3_i27=$retval_i23; //@line 56 "unicodedata.c"
-        var $265=$retval3_i27+1; //@line 582 "unicodedata.c"
-        var $266=HEAP[$265]; //@line 582 "unicodedata.c"
-        $cur=$266; //@line 582 "unicodedata.c"
-        var $267=$prev; //@line 583 "unicodedata.c"
-        var $268=($267)==0; //@line 583 "unicodedata.c"
-        if ($268) { __label__ = 39; break; } else { __label__ = 37; break; } //@line 583 "unicodedata.c"
-      case 37: // $bb27
-        var $269=$cur; //@line 583 "unicodedata.c"
-        var $270=($269)==0; //@line 583 "unicodedata.c"
-        if ($270) { __label__ = 39; break; } else { __label__ = 38; break; } //@line 583 "unicodedata.c"
-      case 38: // $bb28
-        var $271=$prev; //@line 583 "unicodedata.c"
-        var $272=$cur; //@line 583 "unicodedata.c"
-        var $273=($271) <= ($272); //@line 583 "unicodedata.c"
-        if ($273) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 583 "unicodedata.c"
-      case 39: // $bb29
-        var $274=$cur; //@line 584 "unicodedata.c"
-        $prev=$274; //@line 584 "unicodedata.c"
-        __label__ = 51; break; //@line 584 "unicodedata.c"
-      case 40: // $bb30
-        var $275=$i; //@line 588 "unicodedata.c"
-        var $276=$275+-2; //@line 588 "unicodedata.c"
-        $o=$276; //@line 588 "unicodedata.c"
-        __label__ = 41; break; //@line 588 "unicodedata.c"
-      case 41: // $bb31
-        var $277=$o; //@line 590 "unicodedata.c"
-        var $278=$277+2; //@line 590 "unicodedata.c"
-        var $279=HEAP[$278]; //@line 590 "unicodedata.c"
-        $tmp=$279; //@line 590 "unicodedata.c"
-        var $280=$o; //@line 591 "unicodedata.c"
-        var $281=$280; //@line 591 "unicodedata.c"
-        var $282=HEAP[$281]; //@line 591 "unicodedata.c"
-        var $283=$o; //@line 591 "unicodedata.c"
-        var $284=$283+2; //@line 591 "unicodedata.c"
-        HEAP[$284]=$282; //@line 591 "unicodedata.c"
-        var $285=$o; //@line 592 "unicodedata.c"
-        var $286=$285; //@line 592 "unicodedata.c"
-        var $287=$tmp; //@line 592 "unicodedata.c"
-        HEAP[$286]=$287; //@line 592 "unicodedata.c"
-        var $288=$o; //@line 593 "unicodedata.c"
-        var $289=$288+-2; //@line 593 "unicodedata.c"
-        $o=$289; //@line 593 "unicodedata.c"
-        var $290=HEAP[$result]; //@line 594 "unicodedata.c"
-        var $291=$290; //@line 594 "unicodedata.c"
-        var $292=$291+12; //@line 594 "unicodedata.c"
-        var $293=HEAP[$292]; //@line 594 "unicodedata.c"
-        var $294=$o; //@line 594 "unicodedata.c"
-        var $295=($293) > ($294); //@line 594 "unicodedata.c"
-        if ($295) { __label__ = 47; break; } else { __label__ = 42; break; } //@line 594 "unicodedata.c"
-      case 42: // $bb32
-        var $296=$o; //@line 596 "unicodedata.c"
-        var $297=HEAP[$296]; //@line 596 "unicodedata.c"
-        var $298=($297); //@line 596 "unicodedata.c"
-        $code_addr_i14=$298;
-        var $299=$code_addr_i14; //@line 49 "unicodedata.c"
-        var $300=($299) > 1114111; //@line 49 "unicodedata.c"
-        if ($300) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 49 "unicodedata.c"
-      case 43: // $bb_i17
-        $index_i16=0; //@line 50 "unicodedata.c"
-        __label__ = 45; break; //@line 50 "unicodedata.c"
-      case 44: // $bb1_i18
-        var $301=$code_addr_i14; //@line 52 "unicodedata.c"
-        var $302=($301) >>> 7; //@line 52 "unicodedata.c"
-        var $303=_index1+$302; //@line 52 "unicodedata.c"
-        var $304=HEAP[$303]; //@line 52 "unicodedata.c"
-        var $305=($304); //@line 52 "unicodedata.c"
-        $index_i16=$305; //@line 52 "unicodedata.c"
-        var $306=$index_i16; //@line 53 "unicodedata.c"
-        var $307=($306) * 128;
-        var $308=$code_addr_i14; //@line 53 "unicodedata.c"
-        var $309=($308) & 127; //@line 53 "unicodedata.c"
-        var $310=($309) + ($307); //@line 53 "unicodedata.c"
-        var $311=_index2+$310*2; //@line 53 "unicodedata.c"
-        var $312=HEAP[$311]; //@line 53 "unicodedata.c"
-        var $313=($312); //@line 53 "unicodedata.c"
-        $index_i16=$313; //@line 53 "unicodedata.c"
-        __label__ = 45; break; //@line 53 "unicodedata.c"
-      case 45: // $_getrecord_ex_exit21
-        var $314=$index_i16; //@line 56 "unicodedata.c"
-        var $315=__PyUnicode_Database_Records+$314*6; //@line 56 "unicodedata.c"
-        $1=$315; //@line 56 "unicodedata.c"
-        var $316=$1; //@line 56 "unicodedata.c"
-        $retval_i15=$316; //@line 56 "unicodedata.c"
-        var $retval3_i19=$retval_i15; //@line 56 "unicodedata.c"
-        var $317=$retval3_i19+1; //@line 596 "unicodedata.c"
-        var $318=HEAP[$317]; //@line 596 "unicodedata.c"
-        $prev=$318; //@line 596 "unicodedata.c"
-        var $319=($318)==0; //@line 597 "unicodedata.c"
-        if ($319) { __label__ = 47; break; } else { __label__ = 46; break; } //@line 597 "unicodedata.c"
-      case 46: // $bb33
-        var $320=$prev; //@line 597 "unicodedata.c"
-        var $321=$cur; //@line 597 "unicodedata.c"
-        var $322=($320) <= ($321); //@line 597 "unicodedata.c"
-        if ($322) { __label__ = 47; break; } else { __label__ = 41; break; } //@line 597 "unicodedata.c"
-      case 47: // $bb35
-        var $323=$i; //@line 600 "unicodedata.c"
-        var $324=HEAP[$323]; //@line 600 "unicodedata.c"
-        var $325=($324); //@line 600 "unicodedata.c"
-        $code_addr_i6=$325;
-        var $326=($325) > 1114111; //@line 49 "unicodedata.c"
-        if ($326) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 49 "unicodedata.c"
-      case 48: // $bb_i9
-        $index_i8=0; //@line 50 "unicodedata.c"
-        __label__ = 50; break; //@line 50 "unicodedata.c"
-      case 49: // $bb1_i10
-        var $327=$code_addr_i6; //@line 52 "unicodedata.c"
-        var $328=($327) >>> 7; //@line 52 "unicodedata.c"
-        var $329=_index1+$328; //@line 52 "unicodedata.c"
-        var $330=HEAP[$329]; //@line 52 "unicodedata.c"
-        var $331=($330); //@line 52 "unicodedata.c"
-        $index_i8=$331; //@line 52 "unicodedata.c"
-        var $332=$index_i8; //@line 53 "unicodedata.c"
-        var $333=($332) * 128;
-        var $334=$code_addr_i6; //@line 53 "unicodedata.c"
-        var $335=($334) & 127; //@line 53 "unicodedata.c"
-        var $336=($335) + ($333); //@line 53 "unicodedata.c"
-        var $337=_index2+$336*2; //@line 53 "unicodedata.c"
-        var $338=HEAP[$337]; //@line 53 "unicodedata.c"
-        var $339=($338); //@line 53 "unicodedata.c"
-        $index_i8=$339; //@line 53 "unicodedata.c"
-        __label__ = 50; break; //@line 53 "unicodedata.c"
-      case 50: // $_getrecord_ex_exit13
-        var $340=$index_i8; //@line 56 "unicodedata.c"
-        var $341=__PyUnicode_Database_Records+$340*6; //@line 56 "unicodedata.c"
-        $2=$341; //@line 56 "unicodedata.c"
-        var $342=$2; //@line 56 "unicodedata.c"
-        $retval_i7=$342; //@line 56 "unicodedata.c"
-        var $retval3_i11=$retval_i7; //@line 56 "unicodedata.c"
-        var $343=$retval3_i11+1; //@line 600 "unicodedata.c"
-        var $344=HEAP[$343]; //@line 600 "unicodedata.c"
-        $prev=$344; //@line 600 "unicodedata.c"
-        __label__ = 51; break; //@line 600 "unicodedata.c"
-      case 51: // $bb36
-        var $345=$i; //@line 581 "unicodedata.c"
-        var $346=$345+2; //@line 581 "unicodedata.c"
-        $i=$346; //@line 581 "unicodedata.c"
-        var $347=$i; //@line 581 "unicodedata.c"
-        var $348=$end; //@line 581 "unicodedata.c"
-        var $349=($347) < ($348); //@line 581 "unicodedata.c"
-        if ($349) { __label__ = 33; break; } else { __label__ = 52; break; } //@line 581 "unicodedata.c"
-      case 52: // $bb38
-        var $350=HEAP[$result]; //@line 602 "unicodedata.c"
-        $4=$350; //@line 602 "unicodedata.c"
-        __label__ = 53; break; //@line 602 "unicodedata.c"
-      case 53: // $bb39
-        var $351=$4; //@line 513 "unicodedata.c"
-        $retval=$351; //@line 513 "unicodedata.c"
+        __lastLabel__ = 20; __label__ = 21; break;
+      case 21: // $bb23
+        var $145=__lastLabel__ == 3 ? $29 : (__lastLabel__ == 20 ? $_pr : ($112));
+        var $146=($145)!=0; //@line 520 "unicodedata.c"
+        if ($146) { __label__ = 4; break; } else { __label__ = 22; break; } //@line 520 "unicodedata.c"
+      case 22: // $bb24
+        var $147=$i; //@line 518 "unicodedata.c"
+        var $148=$end; //@line 518 "unicodedata.c"
+        var $149=($147) < ($148); //@line 518 "unicodedata.c"
+        if ($149) { __label__ = 3; break; } else { __label__ = 23; break; } //@line 518 "unicodedata.c"
+      case 23: // $bb25
+        var $150=HEAP[$result]; //@line 575 "unicodedata.c"
+        var $151=$150; //@line 575 "unicodedata.c"
+        var $152=$151+8; //@line 575 "unicodedata.c"
+        var $153=HEAP[$152]; //@line 575 "unicodedata.c"
+        var $154=$space; //@line 575 "unicodedata.c"
+        var $155=($153) - ($154); //@line 575 "unicodedata.c"
+        var $156=_PyUnicodeUCS2_Resize($result, $155); //@line 575 "unicodedata.c"
+        var $157=HEAP[$result]; //@line 578 "unicodedata.c"
+        var $158=$157; //@line 578 "unicodedata.c"
+        var $159=$158+12; //@line 578 "unicodedata.c"
+        var $160=HEAP[$159]; //@line 578 "unicodedata.c"
+        $i=$160; //@line 578 "unicodedata.c"
+        var $161=$i; //@line 579 "unicodedata.c"
+        var $162=HEAP[$161]; //@line 579 "unicodedata.c"
+        var $163=($162); //@line 579 "unicodedata.c"
+        var $164=__getrecord_ex($163); //@line 579 "unicodedata.c"
+        var $165=$164+1; //@line 579 "unicodedata.c"
+        var $166=HEAP[$165]; //@line 579 "unicodedata.c"
+        $prev=$166; //@line 579 "unicodedata.c"
+        var $167=HEAP[$result]; //@line 580 "unicodedata.c"
+        var $168=$167; //@line 580 "unicodedata.c"
+        var $169=$168+8; //@line 580 "unicodedata.c"
+        var $170=HEAP[$169]; //@line 580 "unicodedata.c"
+        var $171=$i; //@line 580 "unicodedata.c"
+        var $172=$171+2*$170; //@line 580 "unicodedata.c"
+        $end=$172; //@line 580 "unicodedata.c"
+        var $173=$i; //@line 581 "unicodedata.c"
+        var $174=$173+2; //@line 581 "unicodedata.c"
+        $i=$174; //@line 581 "unicodedata.c"
+        var $175=$i; //@line 581 "unicodedata.c"
+        var $176=$end; //@line 581 "unicodedata.c"
+        var $177=($175) < ($176); //@line 581 "unicodedata.c"
+        if ($177) { __label__ = 24; break; } else { __label__ = 34; break; } //@line 581 "unicodedata.c"
+      case 24: // $bb26
+        var $178=$i; //@line 582 "unicodedata.c"
+        var $179=HEAP[$178]; //@line 582 "unicodedata.c"
+        var $180=($179); //@line 582 "unicodedata.c"
+        var $181=__getrecord_ex($180); //@line 582 "unicodedata.c"
+        var $182=$181+1; //@line 582 "unicodedata.c"
+        var $183=HEAP[$182]; //@line 582 "unicodedata.c"
+        $cur=$183; //@line 582 "unicodedata.c"
+        var $184=$prev; //@line 583 "unicodedata.c"
+        var $185=($184)==0; //@line 583 "unicodedata.c"
+        if ($185) { __label__ = 27; break; } else { __label__ = 25; break; } //@line 583 "unicodedata.c"
+      case 25: // $bb27
+        var $186=$cur; //@line 583 "unicodedata.c"
+        var $187=($186)==0; //@line 583 "unicodedata.c"
+        if ($187) { __label__ = 27; break; } else { __label__ = 26; break; } //@line 583 "unicodedata.c"
+      case 26: // $bb28
+        var $188=$prev; //@line 583 "unicodedata.c"
+        var $189=$cur; //@line 583 "unicodedata.c"
+        var $190=($188) <= ($189); //@line 583 "unicodedata.c"
+        if ($190) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 583 "unicodedata.c"
+      case 27: // $bb29
+        var $191=$cur; //@line 584 "unicodedata.c"
+        $prev=$191; //@line 584 "unicodedata.c"
+        __label__ = 33; break; //@line 584 "unicodedata.c"
+      case 28: // $bb30
+        var $192=$i; //@line 588 "unicodedata.c"
+        var $193=$192+-2; //@line 588 "unicodedata.c"
+        $o=$193; //@line 588 "unicodedata.c"
+        __label__ = 29; break; //@line 588 "unicodedata.c"
+      case 29: // $bb31
+        var $194=$o; //@line 590 "unicodedata.c"
+        var $195=$194+2; //@line 590 "unicodedata.c"
+        var $196=HEAP[$195]; //@line 590 "unicodedata.c"
+        $tmp=$196; //@line 590 "unicodedata.c"
+        var $197=$o; //@line 591 "unicodedata.c"
+        var $198=$197; //@line 591 "unicodedata.c"
+        var $199=HEAP[$198]; //@line 591 "unicodedata.c"
+        var $200=$o; //@line 591 "unicodedata.c"
+        var $201=$200+2; //@line 591 "unicodedata.c"
+        HEAP[$201]=$199; //@line 591 "unicodedata.c"
+        var $202=$o; //@line 592 "unicodedata.c"
+        var $203=$202; //@line 592 "unicodedata.c"
+        var $204=$tmp; //@line 592 "unicodedata.c"
+        HEAP[$203]=$204; //@line 592 "unicodedata.c"
+        var $205=$o; //@line 593 "unicodedata.c"
+        var $206=$205+-2; //@line 593 "unicodedata.c"
+        $o=$206; //@line 593 "unicodedata.c"
+        var $207=HEAP[$result]; //@line 594 "unicodedata.c"
+        var $208=$207; //@line 594 "unicodedata.c"
+        var $209=$208+12; //@line 594 "unicodedata.c"
+        var $210=HEAP[$209]; //@line 594 "unicodedata.c"
+        var $211=$o; //@line 594 "unicodedata.c"
+        var $212=($210) > ($211); //@line 594 "unicodedata.c"
+        if ($212) { __label__ = 32; break; } else { __label__ = 30; break; } //@line 594 "unicodedata.c"
+      case 30: // $bb32
+        var $213=$o; //@line 596 "unicodedata.c"
+        var $214=HEAP[$213]; //@line 596 "unicodedata.c"
+        var $215=($214); //@line 596 "unicodedata.c"
+        var $216=__getrecord_ex($215); //@line 596 "unicodedata.c"
+        var $217=$216+1; //@line 596 "unicodedata.c"
+        var $218=HEAP[$217]; //@line 596 "unicodedata.c"
+        $prev=$218; //@line 596 "unicodedata.c"
+        var $219=$prev; //@line 597 "unicodedata.c"
+        var $220=($219)==0; //@line 597 "unicodedata.c"
+        if ($220) { __label__ = 32; break; } else { __label__ = 31; break; } //@line 597 "unicodedata.c"
+      case 31: // $bb33
+        var $221=$prev; //@line 597 "unicodedata.c"
+        var $222=$cur; //@line 597 "unicodedata.c"
+        var $223=($221) <= ($222); //@line 597 "unicodedata.c"
+        if ($223) { __label__ = 32; break; } else { __label__ = 29; break; } //@line 597 "unicodedata.c"
+      case 32: // $bb35
+        var $224=$i; //@line 600 "unicodedata.c"
+        var $225=HEAP[$224]; //@line 600 "unicodedata.c"
+        var $226=($225); //@line 600 "unicodedata.c"
+        var $227=__getrecord_ex($226); //@line 600 "unicodedata.c"
+        var $228=$227+1; //@line 600 "unicodedata.c"
+        var $229=HEAP[$228]; //@line 600 "unicodedata.c"
+        $prev=$229; //@line 600 "unicodedata.c"
+        __label__ = 33; break; //@line 600 "unicodedata.c"
+      case 33: // $bb36
+        var $230=$i; //@line 581 "unicodedata.c"
+        var $231=$230+2; //@line 581 "unicodedata.c"
+        $i=$231; //@line 581 "unicodedata.c"
+        var $232=$i; //@line 581 "unicodedata.c"
+        var $233=$end; //@line 581 "unicodedata.c"
+        var $234=($232) < ($233); //@line 581 "unicodedata.c"
+        if ($234) { __label__ = 24; break; } else { __label__ = 34; break; } //@line 581 "unicodedata.c"
+      case 34: // $bb38
+        var $235=HEAP[$result]; //@line 602 "unicodedata.c"
+        $0=$235; //@line 602 "unicodedata.c"
+        __label__ = 35; break; //@line 602 "unicodedata.c"
+      case 35: // $bb39
+        var $236=$0; //@line 513 "unicodedata.c"
+        $retval=$236; //@line 513 "unicodedata.c"
         var $retval40=$retval; //@line 513 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval40; //@line 513 "unicodedata.c"
@@ -2329,15 +2141,11 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $input_addr;
         var $k_addr;
         var $retval;
-        var $1;
+        var $0;
         var $result=__stackBase__;
         var $i;
         var $i1;
@@ -2358,368 +2166,338 @@ var __str170;
         $input_addr=$input;
         $k_addr=$k;
         $cskipped=0; //@line 629 "unicodedata.c"
-        var $2=$self_addr; //@line 631 "unicodedata.c"
-        var $3=$input_addr; //@line 631 "unicodedata.c"
-        var $4=$k_addr; //@line 631 "unicodedata.c"
-        var $5=_nfd_nfkd($2, $3, $4); //@line 631 "unicodedata.c"
-        HEAP[$result]=$5; //@line 631 "unicodedata.c"
-        var $6=HEAP[$result]; //@line 632 "unicodedata.c"
-        var $7=($6)==0; //@line 632 "unicodedata.c"
-        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 632 "unicodedata.c"
+        var $1=$self_addr; //@line 631 "unicodedata.c"
+        var $2=$input_addr; //@line 631 "unicodedata.c"
+        var $3=$k_addr; //@line 631 "unicodedata.c"
+        var $4=_nfd_nfkd($1, $2, $3); //@line 631 "unicodedata.c"
+        HEAP[$result]=$4; //@line 631 "unicodedata.c"
+        var $5=HEAP[$result]; //@line 632 "unicodedata.c"
+        var $6=($5)==0; //@line 632 "unicodedata.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 632 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 633 "unicodedata.c"
-        __label__ = 43; break; //@line 633 "unicodedata.c"
+        $0=0; //@line 633 "unicodedata.c"
+        __label__ = 40; break; //@line 633 "unicodedata.c"
       case 2: // $bb1
-        var $8=HEAP[$result]; //@line 638 "unicodedata.c"
-        var $9=$input_addr; //@line 638 "unicodedata.c"
-        var $10=($8)==($9); //@line 638 "unicodedata.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 638 "unicodedata.c"
+        var $7=HEAP[$result]; //@line 638 "unicodedata.c"
+        var $8=$input_addr; //@line 638 "unicodedata.c"
+        var $9=($7)==($8); //@line 638 "unicodedata.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 638 "unicodedata.c"
       case 3: // $bb2
         ___assert_fail(__str90, __str87, 638, ___PRETTY_FUNCTION___9076); //@line 638 "unicodedata.c"
         throw "Reached an unreachable!" //@line 638 "unicodedata.c"
       case 4: // $bb3
-        var $11=HEAP[$result]; //@line 640 "unicodedata.c"
-        var $12=$11; //@line 640 "unicodedata.c"
-        var $13=$12+12; //@line 640 "unicodedata.c"
-        var $14=HEAP[$13]; //@line 640 "unicodedata.c"
-        $i=$14; //@line 640 "unicodedata.c"
-        var $15=HEAP[$result]; //@line 641 "unicodedata.c"
-        var $16=$15; //@line 641 "unicodedata.c"
-        var $17=$16+8; //@line 641 "unicodedata.c"
-        var $18=HEAP[$17]; //@line 641 "unicodedata.c"
-        var $19=$i; //@line 641 "unicodedata.c"
-        var $20=$19+2*$18; //@line 641 "unicodedata.c"
-        $end=$20; //@line 641 "unicodedata.c"
-        var $21=HEAP[$result]; //@line 642 "unicodedata.c"
-        var $22=$21; //@line 642 "unicodedata.c"
-        var $23=$22+12; //@line 642 "unicodedata.c"
-        var $24=HEAP[$23]; //@line 642 "unicodedata.c"
-        $o=$24; //@line 642 "unicodedata.c"
-        __label__ = 39; break; //@line 644 "unicodedata.c"
+        var $10=HEAP[$result]; //@line 640 "unicodedata.c"
+        var $11=$10; //@line 640 "unicodedata.c"
+        var $12=$11+12; //@line 640 "unicodedata.c"
+        var $13=HEAP[$12]; //@line 640 "unicodedata.c"
+        $i=$13; //@line 640 "unicodedata.c"
+        var $14=HEAP[$result]; //@line 641 "unicodedata.c"
+        var $15=$14; //@line 641 "unicodedata.c"
+        var $16=$15+8; //@line 641 "unicodedata.c"
+        var $17=HEAP[$16]; //@line 641 "unicodedata.c"
+        var $18=$i; //@line 641 "unicodedata.c"
+        var $19=$18+2*$17; //@line 641 "unicodedata.c"
+        $end=$19; //@line 641 "unicodedata.c"
+        var $20=HEAP[$result]; //@line 642 "unicodedata.c"
+        var $21=$20; //@line 642 "unicodedata.c"
+        var $22=$21+12; //@line 642 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 642 "unicodedata.c"
+        $o=$23; //@line 642 "unicodedata.c"
+        __label__ = 36; break; //@line 644 "unicodedata.c"
       case 5: // $bb4
         $index=0; //@line 646 "unicodedata.c"
         __label__ = 9; break; //@line 646 "unicodedata.c"
       case 6: // $bb5
-        var $25=$index; //@line 647 "unicodedata.c"
-        var $26=$skipped+$25*4; //@line 647 "unicodedata.c"
-        var $27=HEAP[$26]; //@line 647 "unicodedata.c"
-        var $28=$i; //@line 647 "unicodedata.c"
-        var $29=($27)==($28); //@line 647 "unicodedata.c"
-        var $30=$index; //@line 650 "unicodedata.c"
-        if ($29) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 647 "unicodedata.c"
+        var $24=$index; //@line 647 "unicodedata.c"
+        var $25=$skipped+$24*4; //@line 647 "unicodedata.c"
+        var $26=HEAP[$25]; //@line 647 "unicodedata.c"
+        var $27=$i; //@line 647 "unicodedata.c"
+        var $28=($26)==($27); //@line 647 "unicodedata.c"
+        var $29=$index; //@line 650 "unicodedata.c"
+        if ($28) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 647 "unicodedata.c"
       case 7: // $bb6
-        var $31=$cskipped; //@line 650 "unicodedata.c"
-        var $32=($31) - 1; //@line 650 "unicodedata.c"
-        var $33=$skipped+$32*4; //@line 650 "unicodedata.c"
-        var $34=HEAP[$33]; //@line 650 "unicodedata.c"
-        var $35=$skipped+$30*4; //@line 650 "unicodedata.c"
-        HEAP[$35]=$34; //@line 650 "unicodedata.c"
-        var $36=$cskipped; //@line 651 "unicodedata.c"
-        var $37=($36) - 1; //@line 651 "unicodedata.c"
-        $cskipped=$37; //@line 651 "unicodedata.c"
-        var $38=$i; //@line 652 "unicodedata.c"
-        var $39=$38+2; //@line 652 "unicodedata.c"
-        $i=$39; //@line 652 "unicodedata.c"
-        __label__ = 39; break; //@line 652 "unicodedata.c"
+        var $30=$cskipped; //@line 650 "unicodedata.c"
+        var $31=($30) - 1; //@line 650 "unicodedata.c"
+        var $32=$skipped+$31*4; //@line 650 "unicodedata.c"
+        var $33=HEAP[$32]; //@line 650 "unicodedata.c"
+        var $34=$skipped+$29*4; //@line 650 "unicodedata.c"
+        HEAP[$34]=$33; //@line 650 "unicodedata.c"
+        var $35=$cskipped; //@line 651 "unicodedata.c"
+        var $36=($35) - 1; //@line 651 "unicodedata.c"
+        $cskipped=$36; //@line 651 "unicodedata.c"
+        var $37=$i; //@line 652 "unicodedata.c"
+        var $38=$37+2; //@line 652 "unicodedata.c"
+        $i=$38; //@line 652 "unicodedata.c"
+        __label__ = 36; break; //@line 652 "unicodedata.c"
       case 8: // $bb7
-        var $40=($30) + 1; //@line 646 "unicodedata.c"
-        $index=$40; //@line 646 "unicodedata.c"
+        var $39=($29) + 1; //@line 646 "unicodedata.c"
+        $index=$39; //@line 646 "unicodedata.c"
         __label__ = 9; break; //@line 646 "unicodedata.c"
       case 9: // $bb8
-        var $41=$index; //@line 646 "unicodedata.c"
-        var $42=$cskipped; //@line 646 "unicodedata.c"
-        var $43=($41) < ($42); //@line 646 "unicodedata.c"
-        if ($43) { __label__ = 6; break; } else { __label__ = 10; break; } //@line 646 "unicodedata.c"
+        var $40=$index; //@line 646 "unicodedata.c"
+        var $41=$cskipped; //@line 646 "unicodedata.c"
+        var $42=($40) < ($41); //@line 646 "unicodedata.c"
+        if ($42) { __label__ = 6; break; } else { __label__ = 10; break; } //@line 646 "unicodedata.c"
       case 10: // $bb9
-        var $44=$i; //@line 658 "unicodedata.c"
-        var $45=HEAP[$44]; //@line 658 "unicodedata.c"
-        var $46=($45) > 4351; //@line 658 "unicodedata.c"
-        if ($46) { __label__ = 11; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
+        var $43=$i; //@line 658 "unicodedata.c"
+        var $44=HEAP[$43]; //@line 658 "unicodedata.c"
+        var $45=($44) > 4351; //@line 658 "unicodedata.c"
+        if ($45) { __label__ = 11; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
       case 11: // $bb10
-        var $47=$i; //@line 658 "unicodedata.c"
-        var $48=HEAP[$47]; //@line 658 "unicodedata.c"
-        var $49=($48) <= 4370; //@line 658 "unicodedata.c"
-        if ($49) { __label__ = 12; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
+        var $46=$i; //@line 658 "unicodedata.c"
+        var $47=HEAP[$46]; //@line 658 "unicodedata.c"
+        var $48=($47) <= 4370; //@line 658 "unicodedata.c"
+        if ($48) { __label__ = 12; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
       case 12: // $bb11
-        var $50=$i; //@line 658 "unicodedata.c"
-        var $51=$50+2; //@line 658 "unicodedata.c"
-        var $52=$end; //@line 658 "unicodedata.c"
-        var $53=($51) < ($52); //@line 658 "unicodedata.c"
-        if ($53) { __label__ = 13; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
+        var $49=$i; //@line 658 "unicodedata.c"
+        var $50=$49+2; //@line 658 "unicodedata.c"
+        var $51=$end; //@line 658 "unicodedata.c"
+        var $52=($50) < ($51); //@line 658 "unicodedata.c"
+        if ($52) { __label__ = 13; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
       case 13: // $bb12
-        var $54=$i; //@line 658 "unicodedata.c"
-        var $55=$54+2; //@line 658 "unicodedata.c"
-        var $56=HEAP[$55]; //@line 658 "unicodedata.c"
-        var $57=($56) > 4448; //@line 658 "unicodedata.c"
-        if ($57) { __label__ = 14; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
+        var $53=$i; //@line 658 "unicodedata.c"
+        var $54=$53+2; //@line 658 "unicodedata.c"
+        var $55=HEAP[$54]; //@line 658 "unicodedata.c"
+        var $56=($55) > 4448; //@line 658 "unicodedata.c"
+        if ($56) { __label__ = 14; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
       case 14: // $bb13
-        var $58=$i; //@line 658 "unicodedata.c"
-        var $59=$58+2; //@line 658 "unicodedata.c"
-        var $60=HEAP[$59]; //@line 658 "unicodedata.c"
-        var $61=($60) <= 4470; //@line 658 "unicodedata.c"
-        if ($61) { __label__ = 15; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
+        var $57=$i; //@line 658 "unicodedata.c"
+        var $58=$57+2; //@line 658 "unicodedata.c"
+        var $59=HEAP[$58]; //@line 658 "unicodedata.c"
+        var $60=($59) <= 4470; //@line 658 "unicodedata.c"
+        if ($60) { __label__ = 15; break; } else { __label__ = 20; break; } //@line 658 "unicodedata.c"
       case 15: // $bb14
-        var $62=$i; //@line 662 "unicodedata.c"
-        var $63=$62; //@line 662 "unicodedata.c"
-        var $64=HEAP[$63]; //@line 662 "unicodedata.c"
-        var $65=($64); //@line 662 "unicodedata.c"
-        var $66=($65) - 4352; //@line 662 "unicodedata.c"
-        $LIndex=$66; //@line 662 "unicodedata.c"
-        var $67=$i; //@line 663 "unicodedata.c"
-        var $68=$67+2; //@line 663 "unicodedata.c"
-        var $69=HEAP[$68]; //@line 663 "unicodedata.c"
-        var $70=($69); //@line 663 "unicodedata.c"
-        var $71=($70) - 4449; //@line 663 "unicodedata.c"
-        $VIndex=$71; //@line 663 "unicodedata.c"
-        var $72=$LIndex; //@line 664 "unicodedata.c"
-        var $73=($72) * 21; //@line 664 "unicodedata.c"
-        var $74=$VIndex; //@line 664 "unicodedata.c"
-        var $75=($73) + ($74); //@line 664 "unicodedata.c"
-        var $76=($75) * 28; //@line 664 "unicodedata.c"
-        var $77=((($76)) & 65535); //@line 664 "unicodedata.c"
-        var $78=($77) + -21504; //@line 664 "unicodedata.c"
-        $code=$78; //@line 664 "unicodedata.c"
-        var $79=$i; //@line 665 "unicodedata.c"
-        var $80=$79+4; //@line 665 "unicodedata.c"
-        $i=$80; //@line 665 "unicodedata.c"
-        var $81=$i; //@line 666 "unicodedata.c"
-        var $82=$end; //@line 666 "unicodedata.c"
-        var $83=($81) < ($82); //@line 666 "unicodedata.c"
-        if ($83) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 666 "unicodedata.c"
+        var $61=$i; //@line 662 "unicodedata.c"
+        var $62=$61; //@line 662 "unicodedata.c"
+        var $63=HEAP[$62]; //@line 662 "unicodedata.c"
+        var $64=($63); //@line 662 "unicodedata.c"
+        var $65=($64) - 4352; //@line 662 "unicodedata.c"
+        $LIndex=$65; //@line 662 "unicodedata.c"
+        var $66=$i; //@line 663 "unicodedata.c"
+        var $67=$66+2; //@line 663 "unicodedata.c"
+        var $68=HEAP[$67]; //@line 663 "unicodedata.c"
+        var $69=($68); //@line 663 "unicodedata.c"
+        var $70=($69) - 4449; //@line 663 "unicodedata.c"
+        $VIndex=$70; //@line 663 "unicodedata.c"
+        var $71=$LIndex; //@line 664 "unicodedata.c"
+        var $72=($71) * 21; //@line 664 "unicodedata.c"
+        var $73=$VIndex; //@line 664 "unicodedata.c"
+        var $74=($72) + ($73); //@line 664 "unicodedata.c"
+        var $75=($74) * 28; //@line 664 "unicodedata.c"
+        var $76=((($75)) & 65535); //@line 664 "unicodedata.c"
+        var $77=($76) + -21504; //@line 664 "unicodedata.c"
+        $code=$77; //@line 664 "unicodedata.c"
+        var $78=$i; //@line 665 "unicodedata.c"
+        var $79=$78+4; //@line 665 "unicodedata.c"
+        $i=$79; //@line 665 "unicodedata.c"
+        var $80=$i; //@line 666 "unicodedata.c"
+        var $81=$end; //@line 666 "unicodedata.c"
+        var $82=($80) < ($81); //@line 666 "unicodedata.c"
+        if ($82) { __label__ = 16; break; } else { __label__ = 19; break; } //@line 666 "unicodedata.c"
       case 16: // $bb15
-        var $84=$i; //@line 666 "unicodedata.c"
-        var $85=HEAP[$84]; //@line 666 "unicodedata.c"
-        var $86=($85) > 4518; //@line 666 "unicodedata.c"
-        if ($86) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 666 "unicodedata.c"
+        var $83=$i; //@line 666 "unicodedata.c"
+        var $84=HEAP[$83]; //@line 666 "unicodedata.c"
+        var $85=($84) > 4518; //@line 666 "unicodedata.c"
+        if ($85) { __label__ = 17; break; } else { __label__ = 19; break; } //@line 666 "unicodedata.c"
       case 17: // $bb16
-        var $87=$i; //@line 666 "unicodedata.c"
-        var $88=HEAP[$87]; //@line 666 "unicodedata.c"
-        var $89=($88) <= 4547; //@line 666 "unicodedata.c"
-        if ($89) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 666 "unicodedata.c"
+        var $86=$i; //@line 666 "unicodedata.c"
+        var $87=HEAP[$86]; //@line 666 "unicodedata.c"
+        var $88=($87) <= 4547; //@line 666 "unicodedata.c"
+        if ($88) { __label__ = 18; break; } else { __label__ = 19; break; } //@line 666 "unicodedata.c"
       case 18: // $bb17
-        var $90=$i; //@line 668 "unicodedata.c"
-        var $91=HEAP[$90]; //@line 668 "unicodedata.c"
-        var $92=$code; //@line 668 "unicodedata.c"
-        var $93=($91) + -4519; //@line 668 "unicodedata.c"
-        var $94=($93) + ($92);
-        $code=$94; //@line 668 "unicodedata.c"
-        var $95=$i; //@line 669 "unicodedata.c"
-        var $96=$95+2; //@line 669 "unicodedata.c"
-        $i=$96; //@line 669 "unicodedata.c"
+        var $89=$i; //@line 668 "unicodedata.c"
+        var $90=HEAP[$89]; //@line 668 "unicodedata.c"
+        var $91=$code; //@line 668 "unicodedata.c"
+        var $92=($90) + -4519; //@line 668 "unicodedata.c"
+        var $93=($92) + ($91);
+        $code=$93; //@line 668 "unicodedata.c"
+        var $94=$i; //@line 669 "unicodedata.c"
+        var $95=$94+2; //@line 669 "unicodedata.c"
+        $i=$95; //@line 669 "unicodedata.c"
         __label__ = 19; break; //@line 669 "unicodedata.c"
       case 19: // $bb18
-        var $97=$o; //@line 671 "unicodedata.c"
-        var $98=$code; //@line 671 "unicodedata.c"
-        HEAP[$97]=$98; //@line 671 "unicodedata.c"
-        var $99=$o; //@line 671 "unicodedata.c"
-        var $100=$99+2; //@line 671 "unicodedata.c"
-        $o=$100; //@line 671 "unicodedata.c"
-        __label__ = 39; break; //@line 671 "unicodedata.c"
+        var $96=$o; //@line 671 "unicodedata.c"
+        var $97=$code; //@line 671 "unicodedata.c"
+        HEAP[$96]=$97; //@line 671 "unicodedata.c"
+        var $98=$o; //@line 671 "unicodedata.c"
+        var $99=$98+2; //@line 671 "unicodedata.c"
+        $o=$99; //@line 671 "unicodedata.c"
+        __label__ = 36; break; //@line 671 "unicodedata.c"
       case 20: // $bb19
-        var $101=$i; //@line 675 "unicodedata.c"
-        var $102=HEAP[$101]; //@line 675 "unicodedata.c"
-        var $103=($102); //@line 675 "unicodedata.c"
-        var $104=$self_addr; //@line 675 "unicodedata.c"
-        var $105=((($103)) & 65535); //@line 675 "unicodedata.c"
-        var $106=_find_nfc_index($104, _nfc_first, $105); //@line 675 "unicodedata.c"
-        $f=$106; //@line 675 "unicodedata.c"
-        var $107=($106)==-1; //@line 676 "unicodedata.c"
-        var $108=$i; //@line 677 "unicodedata.c"
-        if ($107) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 676 "unicodedata.c"
+        var $100=$i; //@line 675 "unicodedata.c"
+        var $101=HEAP[$100]; //@line 675 "unicodedata.c"
+        var $102=($101); //@line 675 "unicodedata.c"
+        var $103=$self_addr; //@line 675 "unicodedata.c"
+        var $104=((($102)) & 65535); //@line 675 "unicodedata.c"
+        var $105=_find_nfc_index($103, _nfc_first, $104); //@line 675 "unicodedata.c"
+        $f=$105; //@line 675 "unicodedata.c"
+        var $106=($105)==-1; //@line 676 "unicodedata.c"
+        var $107=$i; //@line 677 "unicodedata.c"
+        if ($106) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 676 "unicodedata.c"
       case 21: // $bb20
-        var $109=HEAP[$108]; //@line 677 "unicodedata.c"
+        var $108=HEAP[$107]; //@line 677 "unicodedata.c"
+        var $109=$o; //@line 677 "unicodedata.c"
+        HEAP[$109]=$108; //@line 677 "unicodedata.c"
         var $110=$o; //@line 677 "unicodedata.c"
-        HEAP[$110]=$109; //@line 677 "unicodedata.c"
-        var $111=$o; //@line 677 "unicodedata.c"
-        var $112=$111+2; //@line 677 "unicodedata.c"
-        $o=$112; //@line 677 "unicodedata.c"
-        var $113=$i; //@line 677 "unicodedata.c"
-        var $114=$113+2; //@line 677 "unicodedata.c"
-        $i=$114; //@line 677 "unicodedata.c"
-        __label__ = 39; break; //@line 677 "unicodedata.c"
+        var $111=$110+2; //@line 677 "unicodedata.c"
+        $o=$111; //@line 677 "unicodedata.c"
+        var $112=$i; //@line 677 "unicodedata.c"
+        var $113=$112+2; //@line 677 "unicodedata.c"
+        $i=$113; //@line 677 "unicodedata.c"
+        __label__ = 36; break; //@line 677 "unicodedata.c"
       case 22: // $bb21
-        var $115=$108+2; //@line 681 "unicodedata.c"
-        $i1=$115; //@line 681 "unicodedata.c"
+        var $114=$107+2; //@line 681 "unicodedata.c"
+        $i1=$114; //@line 681 "unicodedata.c"
         $comb=0; //@line 682 "unicodedata.c"
-        __label__ = 37; break; //@line 682 "unicodedata.c"
+        __label__ = 34; break; //@line 682 "unicodedata.c"
       case 23: // $bb22
-        var $116=$i1; //@line 684 "unicodedata.c"
-        var $117=HEAP[$116]; //@line 684 "unicodedata.c"
-        var $118=($117); //@line 684 "unicodedata.c"
-        $code_addr_i=$118;
-        var $119=$code_addr_i; //@line 49 "unicodedata.c"
-        var $120=($119) > 1114111; //@line 49 "unicodedata.c"
-        if ($120) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 49 "unicodedata.c"
-      case 24: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 26; break; //@line 50 "unicodedata.c"
-      case 25: // $bb1_i
-        var $121=$code_addr_i; //@line 52 "unicodedata.c"
-        var $122=($121) >>> 7; //@line 52 "unicodedata.c"
-        var $123=_index1+$122; //@line 52 "unicodedata.c"
-        var $124=HEAP[$123]; //@line 52 "unicodedata.c"
-        var $125=($124); //@line 52 "unicodedata.c"
-        $index_i=$125; //@line 52 "unicodedata.c"
-        var $126=$index_i; //@line 53 "unicodedata.c"
-        var $127=($126) * 128;
-        var $128=$code_addr_i; //@line 53 "unicodedata.c"
-        var $129=($128) & 127; //@line 53 "unicodedata.c"
-        var $130=($129) + ($127); //@line 53 "unicodedata.c"
-        var $131=_index2+$130*2; //@line 53 "unicodedata.c"
-        var $132=HEAP[$131]; //@line 53 "unicodedata.c"
-        var $133=($132); //@line 53 "unicodedata.c"
-        $index_i=$133; //@line 53 "unicodedata.c"
-        __label__ = 26; break; //@line 53 "unicodedata.c"
-      case 26: // $_getrecord_ex_exit
-        var $134=$index_i; //@line 56 "unicodedata.c"
-        var $135=__PyUnicode_Database_Records+$134*6; //@line 56 "unicodedata.c"
-        $0=$135; //@line 56 "unicodedata.c"
-        var $136=$0; //@line 56 "unicodedata.c"
-        $retval_i=$136; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        var $137=$retval3_i+1; //@line 684 "unicodedata.c"
-        var $138=HEAP[$137]; //@line 684 "unicodedata.c"
-        var $139=($138); //@line 684 "unicodedata.c"
-        $comb1=$139; //@line 684 "unicodedata.c"
-        var $140=$comb; //@line 685 "unicodedata.c"
-        var $141=($140)!=0; //@line 685 "unicodedata.c"
-        if ($141) { __label__ = 27; break; } else { __label__ = 30; break; } //@line 685 "unicodedata.c"
-      case 27: // $bb23
-        var $142=$comb1; //@line 686 "unicodedata.c"
-        var $143=($142)==0; //@line 686 "unicodedata.c"
-        if ($143) { __label__ = 38; break; } else { __label__ = 28; break; } //@line 686 "unicodedata.c"
-      case 28: // $bb24
-        var $144=$comb; //@line 688 "unicodedata.c"
-        var $145=$comb1; //@line 688 "unicodedata.c"
-        var $146=($144) >= ($145); //@line 688 "unicodedata.c"
-        if ($146) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 688 "unicodedata.c"
-      case 29: // $bb25
-        var $147=$i1; //@line 690 "unicodedata.c"
-        var $148=$147+2; //@line 690 "unicodedata.c"
-        $i1=$148; //@line 690 "unicodedata.c"
-        __label__ = 37; break; //@line 690 "unicodedata.c"
-      case 30: // $bb26
-        var $149=$i1; //@line 694 "unicodedata.c"
-        var $150=HEAP[$149]; //@line 694 "unicodedata.c"
-        var $151=($150); //@line 694 "unicodedata.c"
-        var $152=$self_addr; //@line 694 "unicodedata.c"
-        var $153=((($151)) & 65535); //@line 694 "unicodedata.c"
-        var $154=_find_nfc_index($152, _nfc_last, $153); //@line 694 "unicodedata.c"
-        $l=$154; //@line 694 "unicodedata.c"
-        var $155=($154)==-1; //@line 698 "unicodedata.c"
-        if ($155) { __label__ = 31; break; } else { __label__ = 33; break; } //@line 698 "unicodedata.c"
-      case 31: // $not_combinable
-        var $156=$comb1; //@line 700 "unicodedata.c"
-        var $157=($156)==0; //@line 700 "unicodedata.c"
-        if ($157) { __label__ = 38; break; } else { __label__ = 32; break; } //@line 700 "unicodedata.c"
-      case 32: // $bb27
-        var $158=$comb1; //@line 702 "unicodedata.c"
-        $comb=$158; //@line 702 "unicodedata.c"
-        var $159=$i1; //@line 703 "unicodedata.c"
-        var $160=$159+2; //@line 703 "unicodedata.c"
-        $i1=$160; //@line 703 "unicodedata.c"
-        __label__ = 37; break; //@line 703 "unicodedata.c"
-      case 33: // $bb28
-        var $161=$f; //@line 706 "unicodedata.c"
-        var $162=($161) * 55; //@line 706 "unicodedata.c"
-        var $163=$l; //@line 706 "unicodedata.c"
-        var $164=($162) + ($163); //@line 706 "unicodedata.c"
-        $index=$164; //@line 706 "unicodedata.c"
-        var $165=$index; //@line 707 "unicodedata.c"
-        var $166=($165) >> 2; //@line 707 "unicodedata.c"
-        var $167=_comp_index+$166*2; //@line 707 "unicodedata.c"
-        var $168=HEAP[$167]; //@line 707 "unicodedata.c"
-        var $169=($168); //@line 707 "unicodedata.c"
-        $index1=$169; //@line 707 "unicodedata.c"
-        var $170=$index1; //@line 708 "unicodedata.c"
-        var $171=($170) * 4;
-        var $172=$index; //@line 708 "unicodedata.c"
-        var $173=($172) & 3; //@line 708 "unicodedata.c"
-        var $174=($173) + ($171); //@line 708 "unicodedata.c"
-        var $175=_comp_data+$174*4; //@line 708 "unicodedata.c"
-        var $176=HEAP[$175]; //@line 708 "unicodedata.c"
-        var $177=((($176)) & 65535); //@line 708 "unicodedata.c"
-        $code=$177; //@line 708 "unicodedata.c"
-        var $178=$code; //@line 710 "unicodedata.c"
-        var $179=($178)==0; //@line 710 "unicodedata.c"
-        if ($179) { __label__ = 31; break; } else { __label__ = 34; break; } //@line 710 "unicodedata.c"
-      case 34: // $bb29
-        var $180=$i; //@line 714 "unicodedata.c"
-        var $181=$code; //@line 714 "unicodedata.c"
-        HEAP[$180]=$181; //@line 714 "unicodedata.c"
-        var $182=$cskipped; //@line 716 "unicodedata.c"
-        var $183=($182) > 19; //@line 716 "unicodedata.c"
-        if ($183) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 716 "unicodedata.c"
-      case 35: // $bb30
+        var $115=$i1; //@line 684 "unicodedata.c"
+        var $116=HEAP[$115]; //@line 684 "unicodedata.c"
+        var $117=($116); //@line 684 "unicodedata.c"
+        var $118=__getrecord_ex($117); //@line 684 "unicodedata.c"
+        var $119=$118+1; //@line 684 "unicodedata.c"
+        var $120=HEAP[$119]; //@line 684 "unicodedata.c"
+        var $121=($120); //@line 684 "unicodedata.c"
+        $comb1=$121; //@line 684 "unicodedata.c"
+        var $122=$comb; //@line 685 "unicodedata.c"
+        var $123=($122)!=0; //@line 685 "unicodedata.c"
+        if ($123) { __label__ = 24; break; } else { __label__ = 27; break; } //@line 685 "unicodedata.c"
+      case 24: // $bb23
+        var $124=$comb1; //@line 686 "unicodedata.c"
+        var $125=($124)==0; //@line 686 "unicodedata.c"
+        if ($125) { __label__ = 35; break; } else { __label__ = 25; break; } //@line 686 "unicodedata.c"
+      case 25: // $bb24
+        var $126=$comb; //@line 688 "unicodedata.c"
+        var $127=$comb1; //@line 688 "unicodedata.c"
+        var $128=($126) >= ($127); //@line 688 "unicodedata.c"
+        if ($128) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 688 "unicodedata.c"
+      case 26: // $bb25
+        var $129=$i1; //@line 690 "unicodedata.c"
+        var $130=$129+2; //@line 690 "unicodedata.c"
+        $i1=$130; //@line 690 "unicodedata.c"
+        __label__ = 34; break; //@line 690 "unicodedata.c"
+      case 27: // $bb26
+        var $131=$i1; //@line 694 "unicodedata.c"
+        var $132=HEAP[$131]; //@line 694 "unicodedata.c"
+        var $133=($132); //@line 694 "unicodedata.c"
+        var $134=$self_addr; //@line 694 "unicodedata.c"
+        var $135=((($133)) & 65535); //@line 694 "unicodedata.c"
+        var $136=_find_nfc_index($134, _nfc_last, $135); //@line 694 "unicodedata.c"
+        $l=$136; //@line 694 "unicodedata.c"
+        var $137=($136)==-1; //@line 698 "unicodedata.c"
+        if ($137) { __label__ = 28; break; } else { __label__ = 30; break; } //@line 698 "unicodedata.c"
+      case 28: // $not_combinable
+        var $138=$comb1; //@line 700 "unicodedata.c"
+        var $139=($138)==0; //@line 700 "unicodedata.c"
+        if ($139) { __label__ = 35; break; } else { __label__ = 29; break; } //@line 700 "unicodedata.c"
+      case 29: // $bb27
+        var $140=$comb1; //@line 702 "unicodedata.c"
+        $comb=$140; //@line 702 "unicodedata.c"
+        var $141=$i1; //@line 703 "unicodedata.c"
+        var $142=$141+2; //@line 703 "unicodedata.c"
+        $i1=$142; //@line 703 "unicodedata.c"
+        __label__ = 34; break; //@line 703 "unicodedata.c"
+      case 30: // $bb28
+        var $143=$f; //@line 706 "unicodedata.c"
+        var $144=($143) * 55; //@line 706 "unicodedata.c"
+        var $145=$l; //@line 706 "unicodedata.c"
+        var $146=($144) + ($145); //@line 706 "unicodedata.c"
+        $index=$146; //@line 706 "unicodedata.c"
+        var $147=$index; //@line 707 "unicodedata.c"
+        var $148=($147) >> 2; //@line 707 "unicodedata.c"
+        var $149=_comp_index+$148*2; //@line 707 "unicodedata.c"
+        var $150=HEAP[$149]; //@line 707 "unicodedata.c"
+        var $151=($150); //@line 707 "unicodedata.c"
+        $index1=$151; //@line 707 "unicodedata.c"
+        var $152=$index1; //@line 708 "unicodedata.c"
+        var $153=($152) * 4;
+        var $154=$index; //@line 708 "unicodedata.c"
+        var $155=($154) & 3; //@line 708 "unicodedata.c"
+        var $156=($155) + ($153); //@line 708 "unicodedata.c"
+        var $157=_comp_data+$156*4; //@line 708 "unicodedata.c"
+        var $158=HEAP[$157]; //@line 708 "unicodedata.c"
+        var $159=((($158)) & 65535); //@line 708 "unicodedata.c"
+        $code=$159; //@line 708 "unicodedata.c"
+        var $160=$code; //@line 710 "unicodedata.c"
+        var $161=($160)==0; //@line 710 "unicodedata.c"
+        if ($161) { __label__ = 28; break; } else { __label__ = 31; break; } //@line 710 "unicodedata.c"
+      case 31: // $bb29
+        var $162=$i; //@line 714 "unicodedata.c"
+        var $163=$code; //@line 714 "unicodedata.c"
+        HEAP[$162]=$163; //@line 714 "unicodedata.c"
+        var $164=$cskipped; //@line 716 "unicodedata.c"
+        var $165=($164) > 19; //@line 716 "unicodedata.c"
+        if ($165) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 716 "unicodedata.c"
+      case 32: // $bb30
         ___assert_fail(__str91, __str87, 716, ___PRETTY_FUNCTION___9076); //@line 716 "unicodedata.c"
         throw "Reached an unreachable!" //@line 716 "unicodedata.c"
-      case 36: // $bb31
-        var $184=$cskipped; //@line 717 "unicodedata.c"
-        var $185=$skipped+$184*4; //@line 717 "unicodedata.c"
-        var $186=$i1; //@line 717 "unicodedata.c"
-        HEAP[$185]=$186; //@line 717 "unicodedata.c"
-        var $187=$cskipped; //@line 717 "unicodedata.c"
-        var $188=($187) + 1; //@line 717 "unicodedata.c"
-        $cskipped=$188; //@line 717 "unicodedata.c"
-        var $189=$i1; //@line 718 "unicodedata.c"
-        var $190=$189+2; //@line 718 "unicodedata.c"
-        $i1=$190; //@line 718 "unicodedata.c"
-        var $191=$i; //@line 719 "unicodedata.c"
-        var $192=HEAP[$191]; //@line 719 "unicodedata.c"
-        var $193=($192); //@line 719 "unicodedata.c"
-        var $194=$self_addr; //@line 719 "unicodedata.c"
-        var $195=((($193)) & 65535); //@line 719 "unicodedata.c"
-        var $196=_find_nfc_index($194, _nfc_first, $195); //@line 719 "unicodedata.c"
-        $f=$196; //@line 719 "unicodedata.c"
-        var $197=$f; //@line 720 "unicodedata.c"
-        var $198=($197)==-1; //@line 720 "unicodedata.c"
-        if ($198) { __label__ = 38; break; } else { __label__ = 37; break; } //@line 720 "unicodedata.c"
-      case 37: // $bb32
-        var $199=$i1; //@line 683 "unicodedata.c"
-        var $200=$end; //@line 683 "unicodedata.c"
-        var $201=($199) < ($200); //@line 683 "unicodedata.c"
-        if ($201) { __label__ = 23; break; } else { __label__ = 38; break; } //@line 683 "unicodedata.c"
-      case 38: // $bb33
-        var $202=$i; //@line 723 "unicodedata.c"
-        var $203=HEAP[$202]; //@line 723 "unicodedata.c"
-        var $204=$o; //@line 723 "unicodedata.c"
-        HEAP[$204]=$203; //@line 723 "unicodedata.c"
-        var $205=$o; //@line 723 "unicodedata.c"
-        var $206=$205+2; //@line 723 "unicodedata.c"
-        $o=$206; //@line 723 "unicodedata.c"
-        var $207=$i; //@line 723 "unicodedata.c"
-        var $208=$207+2; //@line 723 "unicodedata.c"
-        $i=$208; //@line 723 "unicodedata.c"
-        __label__ = 39; break; //@line 723 "unicodedata.c"
-      case 39: // $bb34
-        var $209=$i; //@line 645 "unicodedata.c"
-        var $210=$end; //@line 645 "unicodedata.c"
-        var $211=($209) < ($210); //@line 645 "unicodedata.c"
-        if ($211) { __label__ = 5; break; } else { __label__ = 40; break; } //@line 645 "unicodedata.c"
-      case 40: // $bb35
-        var $212=$o; //@line 725 "unicodedata.c"
-        var $213=$end; //@line 725 "unicodedata.c"
-        var $214=($212)!=($213); //@line 725 "unicodedata.c"
-        if ($214) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 725 "unicodedata.c"
-      case 41: // $bb36
-        var $215=$o; //@line 726 "unicodedata.c"
-        var $216=($215); //@line 726 "unicodedata.c"
-        var $217=HEAP[$result]; //@line 726 "unicodedata.c"
-        var $218=$217; //@line 726 "unicodedata.c"
-        var $219=$218+12; //@line 726 "unicodedata.c"
-        var $220=HEAP[$219]; //@line 726 "unicodedata.c"
-        var $221=($220); //@line 726 "unicodedata.c"
-        var $222=($216) - ($221); //@line 726 "unicodedata.c"
-        var $223=((($222)/2)|0); //@line 726 "unicodedata.c"
-        var $224=_PyUnicodeUCS2_Resize($result, $223); //@line 726 "unicodedata.c"
-        __label__ = 42; break; //@line 726 "unicodedata.c"
-      case 42: // $bb37
-        var $225=HEAP[$result]; //@line 727 "unicodedata.c"
-        $1=$225; //@line 727 "unicodedata.c"
-        __label__ = 43; break; //@line 727 "unicodedata.c"
-      case 43: // $bb38
-        var $226=$1; //@line 633 "unicodedata.c"
-        $retval=$226; //@line 633 "unicodedata.c"
+      case 33: // $bb31
+        var $166=$cskipped; //@line 717 "unicodedata.c"
+        var $167=$skipped+$166*4; //@line 717 "unicodedata.c"
+        var $168=$i1; //@line 717 "unicodedata.c"
+        HEAP[$167]=$168; //@line 717 "unicodedata.c"
+        var $169=$cskipped; //@line 717 "unicodedata.c"
+        var $170=($169) + 1; //@line 717 "unicodedata.c"
+        $cskipped=$170; //@line 717 "unicodedata.c"
+        var $171=$i1; //@line 718 "unicodedata.c"
+        var $172=$171+2; //@line 718 "unicodedata.c"
+        $i1=$172; //@line 718 "unicodedata.c"
+        var $173=$i; //@line 719 "unicodedata.c"
+        var $174=HEAP[$173]; //@line 719 "unicodedata.c"
+        var $175=($174); //@line 719 "unicodedata.c"
+        var $176=$self_addr; //@line 719 "unicodedata.c"
+        var $177=((($175)) & 65535); //@line 719 "unicodedata.c"
+        var $178=_find_nfc_index($176, _nfc_first, $177); //@line 719 "unicodedata.c"
+        $f=$178; //@line 719 "unicodedata.c"
+        var $179=$f; //@line 720 "unicodedata.c"
+        var $180=($179)==-1; //@line 720 "unicodedata.c"
+        if ($180) { __label__ = 35; break; } else { __label__ = 34; break; } //@line 720 "unicodedata.c"
+      case 34: // $bb32
+        var $181=$i1; //@line 683 "unicodedata.c"
+        var $182=$end; //@line 683 "unicodedata.c"
+        var $183=($181) < ($182); //@line 683 "unicodedata.c"
+        if ($183) { __label__ = 23; break; } else { __label__ = 35; break; } //@line 683 "unicodedata.c"
+      case 35: // $bb33
+        var $184=$i; //@line 723 "unicodedata.c"
+        var $185=HEAP[$184]; //@line 723 "unicodedata.c"
+        var $186=$o; //@line 723 "unicodedata.c"
+        HEAP[$186]=$185; //@line 723 "unicodedata.c"
+        var $187=$o; //@line 723 "unicodedata.c"
+        var $188=$187+2; //@line 723 "unicodedata.c"
+        $o=$188; //@line 723 "unicodedata.c"
+        var $189=$i; //@line 723 "unicodedata.c"
+        var $190=$189+2; //@line 723 "unicodedata.c"
+        $i=$190; //@line 723 "unicodedata.c"
+        __label__ = 36; break; //@line 723 "unicodedata.c"
+      case 36: // $bb34
+        var $191=$i; //@line 645 "unicodedata.c"
+        var $192=$end; //@line 645 "unicodedata.c"
+        var $193=($191) < ($192); //@line 645 "unicodedata.c"
+        if ($193) { __label__ = 5; break; } else { __label__ = 37; break; } //@line 645 "unicodedata.c"
+      case 37: // $bb35
+        var $194=$o; //@line 725 "unicodedata.c"
+        var $195=$end; //@line 725 "unicodedata.c"
+        var $196=($194)!=($195); //@line 725 "unicodedata.c"
+        if ($196) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 725 "unicodedata.c"
+      case 38: // $bb36
+        var $197=$o; //@line 726 "unicodedata.c"
+        var $198=($197); //@line 726 "unicodedata.c"
+        var $199=HEAP[$result]; //@line 726 "unicodedata.c"
+        var $200=$199; //@line 726 "unicodedata.c"
+        var $201=$200+12; //@line 726 "unicodedata.c"
+        var $202=HEAP[$201]; //@line 726 "unicodedata.c"
+        var $203=($202); //@line 726 "unicodedata.c"
+        var $204=($198) - ($203); //@line 726 "unicodedata.c"
+        var $205=((($204)/2)|0); //@line 726 "unicodedata.c"
+        var $206=_PyUnicodeUCS2_Resize($result, $205); //@line 726 "unicodedata.c"
+        __label__ = 39; break; //@line 726 "unicodedata.c"
+      case 39: // $bb37
+        var $207=HEAP[$result]; //@line 727 "unicodedata.c"
+        $0=$207; //@line 727 "unicodedata.c"
+        __label__ = 40; break; //@line 727 "unicodedata.c"
+      case 40: // $bb38
+        var $208=$0; //@line 633 "unicodedata.c"
+        $retval=$208; //@line 633 "unicodedata.c"
         var $retval39=$retval; //@line 633 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval39; //@line 633 "unicodedata.c"
@@ -2734,10 +2512,6 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $0;
-        var $index_i;
         var $self_addr;
         var $input_addr;
         var $nfc_addr;
@@ -2745,7 +2519,7 @@ var __str170;
         var $retval;
         var $iftmp_86;
         var $iftmp_85;
-        var $1;
+        var $0;
         var $i;
         var $end;
         var $prev_combining;
@@ -2758,16 +2532,16 @@ var __str170;
         $nfc_addr=$nfc;
         $k_addr=$k;
         $prev_combining=0; //@line 735 "unicodedata.c"
-        var $2=$self_addr; //@line 739 "unicodedata.c"
-        var $3=($2)!=0; //@line 739 "unicodedata.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 739 "unicodedata.c"
+        var $1=$self_addr; //@line 739 "unicodedata.c"
+        var $2=($1)!=0; //@line 739 "unicodedata.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 739 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 740 "unicodedata.c"
-        __label__ = 20; break; //@line 740 "unicodedata.c"
+        $0=0; //@line 740 "unicodedata.c"
+        __label__ = 17; break; //@line 740 "unicodedata.c"
       case 2: // $bb1
-        var $4=$nfc_addr; //@line 744 "unicodedata.c"
-        var $5=($4)!=0; //@line 744 "unicodedata.c"
-        if ($5) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 744 "unicodedata.c"
+        var $3=$nfc_addr; //@line 744 "unicodedata.c"
+        var $4=($3)!=0; //@line 744 "unicodedata.c"
+        if ($4) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 744 "unicodedata.c"
       case 3: // $bb2
         $iftmp_85=4; //@line 744 "unicodedata.c"
         __label__ = 5; break; //@line 744 "unicodedata.c"
@@ -2775,9 +2549,9 @@ var __str170;
         $iftmp_85=0; //@line 744 "unicodedata.c"
         __label__ = 5; break; //@line 744 "unicodedata.c"
       case 5: // $bb4
-        var $6=$k_addr; //@line 744 "unicodedata.c"
-        var $7=($6)!=0; //@line 744 "unicodedata.c"
-        if ($7) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 744 "unicodedata.c"
+        var $5=$k_addr; //@line 744 "unicodedata.c"
+        var $6=($5)!=0; //@line 744 "unicodedata.c"
+        if ($6) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 744 "unicodedata.c"
       case 6: // $bb5
         $iftmp_86=2; //@line 744 "unicodedata.c"
         __label__ = 8; break; //@line 744 "unicodedata.c"
@@ -2785,107 +2559,77 @@ var __str170;
         $iftmp_86=0; //@line 744 "unicodedata.c"
         __label__ = 8; break; //@line 744 "unicodedata.c"
       case 8: // $bb7
-        var $8=$iftmp_85; //@line 744 "unicodedata.c"
-        var $9=$iftmp_86; //@line 744 "unicodedata.c"
-        var $10=($9) + ($8); //@line 744 "unicodedata.c"
-        var $11=3 << ($10); //@line 744 "unicodedata.c"
-        var $12=((($11)) & 255); //@line 744 "unicodedata.c"
-        $quickcheck_mask=$12; //@line 744 "unicodedata.c"
-        var $13=$input_addr; //@line 746 "unicodedata.c"
-        var $14=$13; //@line 746 "unicodedata.c"
-        var $15=$14+12; //@line 746 "unicodedata.c"
-        var $16=HEAP[$15]; //@line 746 "unicodedata.c"
-        $i=$16; //@line 746 "unicodedata.c"
-        var $17=$input_addr; //@line 747 "unicodedata.c"
-        var $18=$17; //@line 747 "unicodedata.c"
-        var $19=$18+8; //@line 747 "unicodedata.c"
-        var $20=HEAP[$19]; //@line 747 "unicodedata.c"
-        var $21=$i; //@line 747 "unicodedata.c"
-        var $22=$21+2*$20; //@line 747 "unicodedata.c"
-        $end=$22; //@line 747 "unicodedata.c"
-        __label__ = 18; break; //@line 747 "unicodedata.c"
+        var $7=$iftmp_85; //@line 744 "unicodedata.c"
+        var $8=$iftmp_86; //@line 744 "unicodedata.c"
+        var $9=($8) + ($7); //@line 744 "unicodedata.c"
+        var $10=3 << ($9); //@line 744 "unicodedata.c"
+        var $11=((($10)) & 255); //@line 744 "unicodedata.c"
+        $quickcheck_mask=$11; //@line 744 "unicodedata.c"
+        var $12=$input_addr; //@line 746 "unicodedata.c"
+        var $13=$12; //@line 746 "unicodedata.c"
+        var $14=$13+12; //@line 746 "unicodedata.c"
+        var $15=HEAP[$14]; //@line 746 "unicodedata.c"
+        $i=$15; //@line 746 "unicodedata.c"
+        var $16=$input_addr; //@line 747 "unicodedata.c"
+        var $17=$16; //@line 747 "unicodedata.c"
+        var $18=$17+8; //@line 747 "unicodedata.c"
+        var $19=HEAP[$18]; //@line 747 "unicodedata.c"
+        var $20=$i; //@line 747 "unicodedata.c"
+        var $21=$20+2*$19; //@line 747 "unicodedata.c"
+        $end=$21; //@line 747 "unicodedata.c"
+        __label__ = 15; break; //@line 747 "unicodedata.c"
       case 9: // $bb8
-        var $23=$i; //@line 749 "unicodedata.c"
-        var $24=HEAP[$23]; //@line 749 "unicodedata.c"
-        var $25=($24); //@line 749 "unicodedata.c"
-        var $26=$i; //@line 749 "unicodedata.c"
-        var $27=$26+2; //@line 749 "unicodedata.c"
-        $i=$27; //@line 749 "unicodedata.c"
-        $code_addr_i=$25;
-        var $28=$code_addr_i; //@line 49 "unicodedata.c"
-        var $29=($28) > 1114111; //@line 49 "unicodedata.c"
-        if ($29) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 49 "unicodedata.c"
-      case 10: // $bb_i
-        $index_i=0; //@line 50 "unicodedata.c"
-        __label__ = 12; break; //@line 50 "unicodedata.c"
-      case 11: // $bb1_i
-        var $30=$code_addr_i; //@line 52 "unicodedata.c"
-        var $31=($30) >>> 7; //@line 52 "unicodedata.c"
-        var $32=_index1+$31; //@line 52 "unicodedata.c"
-        var $33=HEAP[$32]; //@line 52 "unicodedata.c"
-        var $34=($33); //@line 52 "unicodedata.c"
-        $index_i=$34; //@line 52 "unicodedata.c"
-        var $35=$index_i; //@line 53 "unicodedata.c"
-        var $36=($35) * 128;
-        var $37=$code_addr_i; //@line 53 "unicodedata.c"
-        var $38=($37) & 127; //@line 53 "unicodedata.c"
-        var $39=($38) + ($36); //@line 53 "unicodedata.c"
-        var $40=_index2+$39*2; //@line 53 "unicodedata.c"
-        var $41=HEAP[$40]; //@line 53 "unicodedata.c"
-        var $42=($41); //@line 53 "unicodedata.c"
-        $index_i=$42; //@line 53 "unicodedata.c"
-        __label__ = 12; break; //@line 53 "unicodedata.c"
-      case 12: // $_getrecord_ex_exit
-        var $43=$index_i; //@line 56 "unicodedata.c"
-        var $44=__PyUnicode_Database_Records+$43*6; //@line 56 "unicodedata.c"
-        $0=$44; //@line 56 "unicodedata.c"
-        var $45=$0; //@line 56 "unicodedata.c"
-        $retval_i=$45; //@line 56 "unicodedata.c"
-        var $retval3_i=$retval_i; //@line 56 "unicodedata.c"
-        $record=$retval3_i; //@line 749 "unicodedata.c"
-        var $46=$record; //@line 750 "unicodedata.c"
-        var $47=$46+1; //@line 750 "unicodedata.c"
-        var $48=HEAP[$47]; //@line 750 "unicodedata.c"
-        $combining=$48; //@line 750 "unicodedata.c"
-        var $49=$record; //@line 751 "unicodedata.c"
-        var $50=$49+5; //@line 751 "unicodedata.c"
-        var $51=HEAP[$50]; //@line 751 "unicodedata.c"
-        $quickcheck=$51; //@line 751 "unicodedata.c"
-        var $52=$quickcheck; //@line 753 "unicodedata.c"
-        var $53=$quickcheck_mask; //@line 753 "unicodedata.c"
-        var $54=($53) & ($52); //@line 753 "unicodedata.c"
-        var $55=($54)!=0; //@line 753 "unicodedata.c"
-        if ($55) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 753 "unicodedata.c"
-      case 13: // $bb9
-        $1=0; //@line 754 "unicodedata.c"
-        __label__ = 20; break; //@line 754 "unicodedata.c"
-      case 14: // $bb10
-        var $56=$combining; //@line 755 "unicodedata.c"
-        var $57=($56)!=0; //@line 755 "unicodedata.c"
-        if ($57) { __label__ = 15; break; } else { __label__ = 17; break; } //@line 755 "unicodedata.c"
-      case 15: // $bb11
-        var $58=$prev_combining; //@line 755 "unicodedata.c"
-        var $59=$combining; //@line 755 "unicodedata.c"
-        var $60=($58) > ($59); //@line 755 "unicodedata.c"
-        if ($60) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 755 "unicodedata.c"
-      case 16: // $bb12
-        $1=0; //@line 756 "unicodedata.c"
-        __label__ = 20; break; //@line 756 "unicodedata.c"
-      case 17: // $bb13
-        var $61=$combining; //@line 757 "unicodedata.c"
-        $prev_combining=$61; //@line 757 "unicodedata.c"
-        __label__ = 18; break; //@line 757 "unicodedata.c"
-      case 18: // $bb14
-        var $62=$i; //@line 748 "unicodedata.c"
-        var $63=$end; //@line 748 "unicodedata.c"
-        var $64=($62) < ($63); //@line 748 "unicodedata.c"
-        if ($64) { __label__ = 9; break; } else { __label__ = 19; break; } //@line 748 "unicodedata.c"
-      case 19: // $bb15
-        $1=1; //@line 759 "unicodedata.c"
-        __label__ = 20; break; //@line 759 "unicodedata.c"
-      case 20: // $bb16
-        var $65=$1; //@line 740 "unicodedata.c"
-        $retval=$65; //@line 740 "unicodedata.c"
+        var $22=$i; //@line 749 "unicodedata.c"
+        var $23=HEAP[$22]; //@line 749 "unicodedata.c"
+        var $24=($23); //@line 749 "unicodedata.c"
+        var $25=$i; //@line 749 "unicodedata.c"
+        var $26=$25+2; //@line 749 "unicodedata.c"
+        $i=$26; //@line 749 "unicodedata.c"
+        var $27=__getrecord_ex($24); //@line 749 "unicodedata.c"
+        $record=$27; //@line 749 "unicodedata.c"
+        var $28=$record; //@line 750 "unicodedata.c"
+        var $29=$28+1; //@line 750 "unicodedata.c"
+        var $30=HEAP[$29]; //@line 750 "unicodedata.c"
+        $combining=$30; //@line 750 "unicodedata.c"
+        var $31=$record; //@line 751 "unicodedata.c"
+        var $32=$31+5; //@line 751 "unicodedata.c"
+        var $33=HEAP[$32]; //@line 751 "unicodedata.c"
+        $quickcheck=$33; //@line 751 "unicodedata.c"
+        var $34=$quickcheck; //@line 753 "unicodedata.c"
+        var $35=$quickcheck_mask; //@line 753 "unicodedata.c"
+        var $36=($35) & ($34); //@line 753 "unicodedata.c"
+        var $37=($36)!=0; //@line 753 "unicodedata.c"
+        if ($37) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 753 "unicodedata.c"
+      case 10: // $bb9
+        $0=0; //@line 754 "unicodedata.c"
+        __label__ = 17; break; //@line 754 "unicodedata.c"
+      case 11: // $bb10
+        var $38=$combining; //@line 755 "unicodedata.c"
+        var $39=($38)!=0; //@line 755 "unicodedata.c"
+        if ($39) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 755 "unicodedata.c"
+      case 12: // $bb11
+        var $40=$prev_combining; //@line 755 "unicodedata.c"
+        var $41=$combining; //@line 755 "unicodedata.c"
+        var $42=($40) > ($41); //@line 755 "unicodedata.c"
+        if ($42) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 755 "unicodedata.c"
+      case 13: // $bb12
+        $0=0; //@line 756 "unicodedata.c"
+        __label__ = 17; break; //@line 756 "unicodedata.c"
+      case 14: // $bb13
+        var $43=$combining; //@line 757 "unicodedata.c"
+        $prev_combining=$43; //@line 757 "unicodedata.c"
+        __label__ = 15; break; //@line 757 "unicodedata.c"
+      case 15: // $bb14
+        var $44=$i; //@line 748 "unicodedata.c"
+        var $45=$end; //@line 748 "unicodedata.c"
+        var $46=($44) < ($45); //@line 748 "unicodedata.c"
+        if ($46) { __label__ = 9; break; } else { __label__ = 16; break; } //@line 748 "unicodedata.c"
+      case 16: // $bb15
+        $0=1; //@line 759 "unicodedata.c"
+        __label__ = 17; break; //@line 759 "unicodedata.c"
+      case 17: // $bb16
+        var $47=$0; //@line 740 "unicodedata.c"
+        $retval=$47; //@line 740 "unicodedata.c"
         var $retval17=$retval; //@line 740 "unicodedata.c"
         ;
         return $retval17; //@line 740 "unicodedata.c"
@@ -2909,7 +2653,7 @@ var __str170;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 774 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str92, $form, _PyUnicode_Type, $input); //@line 774 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str92, allocate([$form,0,0,0,_PyUnicode_Type,0,0,0,$input,0,0,0], ["i8**",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 774 "unicodedata.c"
         var $3=($2)==0; //@line 774 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 774 "unicodedata.c"
       case 1: // $bb
@@ -3050,22 +2794,147 @@ var __str170;
   }
   
 
+  function __gethash($s, $len) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $s_addr;
+        var $len_addr;
+        var $scale_addr;
+        var $retval;
+        var $0;
+        var $i;
+        var $h;
+        var $ix;
+        $s_addr=$s;
+        $len_addr=$len;
+        $scale_addr=47;
+        $h=0; //@line 830 "unicodedata.c"
+        $i=0; //@line 832 "unicodedata.c"
+        var $1=$i; //@line 832 "unicodedata.c"
+        var $2=$len_addr; //@line 832 "unicodedata.c"
+        var $3=($1) < ($2); //@line 832 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 832 "unicodedata.c"
+      case 1: // $bb
+        var $4=$scale_addr; //@line 833 "unicodedata.c"
+        var $5=$h; //@line 833 "unicodedata.c"
+        var $6=($5) * ($4); //@line 833 "unicodedata.c"
+        var $7=$s_addr; //@line 833 "unicodedata.c"
+        var $8=$i; //@line 833 "unicodedata.c"
+        var $9=$7+$8; //@line 833 "unicodedata.c"
+        var $10=HEAP[$9]; //@line 833 "unicodedata.c"
+        var $11=($10); //@line 833 "unicodedata.c"
+        var $12=_toupper($11); //@line 833 "unicodedata.c"
+        var $13=((($12)) & 255); //@line 833 "unicodedata.c"
+        var $14=($13); //@line 833 "unicodedata.c"
+        var $15=($14) + ($6); //@line 833 "unicodedata.c"
+        $h=$15; //@line 833 "unicodedata.c"
+        var $16=$h; //@line 834 "unicodedata.c"
+        var $17=($16) & -16777216; //@line 834 "unicodedata.c"
+        $ix=$17; //@line 834 "unicodedata.c"
+        var $18=($17)!=0; //@line 835 "unicodedata.c"
+        if ($18) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 835 "unicodedata.c"
+      case 2: // $bb1
+        var $19=$ix; //@line 836 "unicodedata.c"
+        var $20=($19) >>> 24; //@line 836 "unicodedata.c"
+        var $21=($20) & 255; //@line 836 "unicodedata.c"
+        var $22=$h; //@line 836 "unicodedata.c"
+        var $23=($21) ^ ($22); //@line 836 "unicodedata.c"
+        var $24=($23) & 16777215; //@line 836 "unicodedata.c"
+        $h=$24; //@line 836 "unicodedata.c"
+        __label__ = 3; break; //@line 836 "unicodedata.c"
+      case 3: // $bb2
+        var $25=$i; //@line 832 "unicodedata.c"
+        var $26=($25) + 1; //@line 832 "unicodedata.c"
+        $i=$26; //@line 832 "unicodedata.c"
+        var $27=$i; //@line 832 "unicodedata.c"
+        var $28=$len_addr; //@line 832 "unicodedata.c"
+        var $29=($27) < ($28); //@line 832 "unicodedata.c"
+        if ($29) { __label__ = 1; break; } else { __label__ = 4; break; } //@line 832 "unicodedata.c"
+      case 4: // $bb4
+        var $30=$h; //@line 838 "unicodedata.c"
+        $0=$30; //@line 838 "unicodedata.c"
+        var $31=$0; //@line 838 "unicodedata.c"
+        $retval=$31; //@line 838 "unicodedata.c"
+        var $retval5=$retval; //@line 838 "unicodedata.c"
+        ;
+        return $retval5; //@line 838 "unicodedata.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _is_unified_ideograph($code) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $code_addr;
+        var $retval;
+        var $iftmp_109;
+        var $0;
+        $code_addr=$code;
+        var $1=$code_addr; //@line 875 "unicodedata.c"
+        var $2=($1) > 13311; //@line 875 "unicodedata.c"
+        var $3=$code_addr; //@line 875 "unicodedata.c"
+        var $4=($3) <= 19893; //@line 875 "unicodedata.c"
+        var $or_cond=($2) & ($4);
+        if ($or_cond) { __label__ = 4; break; } else { __label__ = 1; break; } //@line 875 "unicodedata.c"
+      case 1: // $bb1
+        var $5=$code_addr; //@line 875 "unicodedata.c"
+        var $6=($5) > 19967; //@line 875 "unicodedata.c"
+        var $7=$code_addr; //@line 875 "unicodedata.c"
+        var $8=($7) <= 40907; //@line 875 "unicodedata.c"
+        var $or_cond3=($6) & ($8);
+        if ($or_cond3) { __label__ = 4; break; } else { __label__ = 2; break; } //@line 875 "unicodedata.c"
+      case 2: // $bb3
+        var $9=$code_addr; //@line 875 "unicodedata.c"
+        var $10=($9) > 131071; //@line 875 "unicodedata.c"
+        var $11=$code_addr; //@line 875 "unicodedata.c"
+        var $12=($11) <= 173782; //@line 875 "unicodedata.c"
+        var $or_cond5=($10) & ($12);
+        if ($or_cond5) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 875 "unicodedata.c"
+      case 3: // $bb5
+        var $13=$code_addr; //@line 875 "unicodedata.c"
+        var $14=($13) > 173823; //@line 875 "unicodedata.c"
+        var $15=$code_addr; //@line 875 "unicodedata.c"
+        var $16=($15) <= 177972; //@line 875 "unicodedata.c"
+        var $or_cond7=($14) & ($16);
+        if ($or_cond7) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 875 "unicodedata.c"
+      case 4: // $bb7
+        $iftmp_109=1; //@line 875 "unicodedata.c"
+        __label__ = 6; break; //@line 875 "unicodedata.c"
+      case 5: // $bb8
+        $iftmp_109=0; //@line 875 "unicodedata.c"
+        __label__ = 6; break; //@line 875 "unicodedata.c"
+      case 6: // $bb9
+        var $17=$iftmp_109; //@line 875 "unicodedata.c"
+        $0=$17; //@line 875 "unicodedata.c"
+        var $18=$0; //@line 875 "unicodedata.c"
+        $retval=$18; //@line 875 "unicodedata.c"
+        var $retval10=$retval; //@line 875 "unicodedata.c"
+        ;
+        return $retval10; //@line 875 "unicodedata.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function __getucname($self, $code, $buffer, $buflen) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $code_addr_i;
-        var $retval_i;
-        var $iftmp_109_i;
-        var $0;
         var $self_addr;
         var $code_addr;
         var $buffer_addr;
         var $buflen_addr;
         var $retval;
-        var $1;
+        var $0;
         var $offset;
         var $i;
         var $word;
@@ -3079,297 +2948,266 @@ var __str170;
         $code_addr=$code;
         $buffer_addr=$buffer;
         $buflen_addr=$buflen;
-        var $2=$code_addr; //@line 890 "unicodedata.c"
-        var $3=($2) > 1114111; //@line 890 "unicodedata.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 890 "unicodedata.c"
+        var $1=$code_addr; //@line 890 "unicodedata.c"
+        var $2=($1) > 1114111; //@line 890 "unicodedata.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 890 "unicodedata.c"
       case 1: // $bb
-        $1=0; //@line 891 "unicodedata.c"
-        __label__ = 35; break; //@line 891 "unicodedata.c"
+        $0=0; //@line 891 "unicodedata.c"
+        __label__ = 32; break; //@line 891 "unicodedata.c"
       case 2: // $bb1
-        var $4=$self_addr; //@line 893 "unicodedata.c"
-        var $5=($4)!=0; //@line 893 "unicodedata.c"
-        if ($5) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 893 "unicodedata.c"
+        var $3=$self_addr; //@line 893 "unicodedata.c"
+        var $4=($3)!=0; //@line 893 "unicodedata.c"
+        if ($4) { __label__ = 3; break; } else { __label__ = 5; break; } //@line 893 "unicodedata.c"
       case 3: // $bb2
-        var $6=$self_addr; //@line 894 "unicodedata.c"
-        var $7=$6; //@line 894 "unicodedata.c"
-        var $8=$7+12; //@line 894 "unicodedata.c"
-        var $9=HEAP[$8]; //@line 894 "unicodedata.c"
-        var $10=$code_addr; //@line 894 "unicodedata.c"
-        var $11=FUNCTION_TABLE[$9]($10); //@line 894 "unicodedata.c"
-        $old=$11; //@line 894 "unicodedata.c"
-        var $12=$old; //@line 895 "unicodedata.c"
-        var $13=$12+1; //@line 895 "unicodedata.c"
-        var $14=HEAP[$13]; //@line 895 "unicodedata.c"
-        var $15=($14)==0; //@line 895 "unicodedata.c"
-        if ($15) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 895 "unicodedata.c"
+        var $5=$self_addr; //@line 894 "unicodedata.c"
+        var $6=$5; //@line 894 "unicodedata.c"
+        var $7=$6+12; //@line 894 "unicodedata.c"
+        var $8=HEAP[$7]; //@line 894 "unicodedata.c"
+        var $9=$code_addr; //@line 894 "unicodedata.c"
+        var $10=FUNCTION_TABLE[$8]($9); //@line 894 "unicodedata.c"
+        $old=$10; //@line 894 "unicodedata.c"
+        var $11=$old; //@line 895 "unicodedata.c"
+        var $12=$11+1; //@line 895 "unicodedata.c"
+        var $13=HEAP[$12]; //@line 895 "unicodedata.c"
+        var $14=($13)==0; //@line 895 "unicodedata.c"
+        if ($14) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 895 "unicodedata.c"
       case 4: // $bb3
-        $1=0; //@line 897 "unicodedata.c"
-        __label__ = 35; break; //@line 897 "unicodedata.c"
+        $0=0; //@line 897 "unicodedata.c"
+        __label__ = 32; break; //@line 897 "unicodedata.c"
       case 5: // $bb4
-        var $16=$code_addr; //@line 901 "unicodedata.c"
-        var $17=($16) > 44031; //@line 901 "unicodedata.c"
-        var $18=$code_addr; //@line 901 "unicodedata.c"
-        var $19=($18) <= 55203; //@line 901 "unicodedata.c"
-        var $or_cond=($17) & ($19);
-        var $20=$code_addr; //@line 903 "unicodedata.c"
+        var $15=$code_addr; //@line 901 "unicodedata.c"
+        var $16=($15) > 44031; //@line 901 "unicodedata.c"
+        var $17=$code_addr; //@line 901 "unicodedata.c"
+        var $18=($17) <= 55203; //@line 901 "unicodedata.c"
+        var $or_cond=($16) & ($18);
+        var $19=$code_addr; //@line 903 "unicodedata.c"
         if ($or_cond) { __label__ = 6; break; } else { __label__ = 9; break; } //@line 901 "unicodedata.c"
       case 6: // $bb6
-        var $21=($20) - 44032; //@line 903 "unicodedata.c"
-        $SIndex=$21; //@line 903 "unicodedata.c"
-        var $22=$SIndex; //@line 904 "unicodedata.c"
-        var $23=((($22)/588)|0); //@line 904 "unicodedata.c"
-        $L=$23; //@line 904 "unicodedata.c"
-        var $24=$SIndex; //@line 905 "unicodedata.c"
-        var $25=($24) % 588; //@line 905 "unicodedata.c"
-        var $26=((($25)/28)|0); //@line 905 "unicodedata.c"
-        $V=$26; //@line 905 "unicodedata.c"
-        var $27=$SIndex; //@line 906 "unicodedata.c"
-        var $28=($27) % 28; //@line 906 "unicodedata.c"
-        $T=$28; //@line 906 "unicodedata.c"
-        var $29=$buflen_addr; //@line 908 "unicodedata.c"
-        var $30=($29) <= 26; //@line 908 "unicodedata.c"
-        if ($30) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 908 "unicodedata.c"
+        var $20=($19) - 44032; //@line 903 "unicodedata.c"
+        $SIndex=$20; //@line 903 "unicodedata.c"
+        var $21=$SIndex; //@line 904 "unicodedata.c"
+        var $22=((($21)/588)|0); //@line 904 "unicodedata.c"
+        $L=$22; //@line 904 "unicodedata.c"
+        var $23=$SIndex; //@line 905 "unicodedata.c"
+        var $24=($23) % 588; //@line 905 "unicodedata.c"
+        var $25=((($24)/28)|0); //@line 905 "unicodedata.c"
+        $V=$25; //@line 905 "unicodedata.c"
+        var $26=$SIndex; //@line 906 "unicodedata.c"
+        var $27=($26) % 28; //@line 906 "unicodedata.c"
+        $T=$27; //@line 906 "unicodedata.c"
+        var $28=$buflen_addr; //@line 908 "unicodedata.c"
+        var $29=($28) <= 26; //@line 908 "unicodedata.c"
+        if ($29) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 908 "unicodedata.c"
       case 7: // $bb7
-        $1=0; //@line 910 "unicodedata.c"
-        __label__ = 35; break; //@line 910 "unicodedata.c"
+        $0=0; //@line 910 "unicodedata.c"
+        __label__ = 32; break; //@line 910 "unicodedata.c"
       case 8: // $bb8
-        var $31=$buffer_addr; //@line 911 "unicodedata.c"
-        _llvm_memcpy_p0i8_p0i8_i32($31, __str143, 17, 1, 0); //@line 911 "unicodedata.c"
-        var $32=$buffer_addr; //@line 912 "unicodedata.c"
-        var $33=$32+16; //@line 912 "unicodedata.c"
-        $buffer_addr=$33; //@line 912 "unicodedata.c"
-        var $34=$L; //@line 913 "unicodedata.c"
-        var $35=_hangul_syllables+$34*12; //@line 913 "unicodedata.c"
-        var $36=$35; //@line 913 "unicodedata.c"
-        var $37=HEAP[$36]; //@line 913 "unicodedata.c"
-        var $38=$buffer_addr; //@line 913 "unicodedata.c"
-        var $39=_strcpy($38, $37); //@line 913 "unicodedata.c"
-        var $40=$L; //@line 914 "unicodedata.c"
-        var $41=_hangul_syllables+$40*12; //@line 914 "unicodedata.c"
-        var $42=$41; //@line 914 "unicodedata.c"
-        var $43=HEAP[$42]; //@line 914 "unicodedata.c"
-        var $44=_strlen($43); //@line 914 "unicodedata.c"
-        var $45=$buffer_addr; //@line 914 "unicodedata.c"
-        var $46=$45+$44; //@line 914 "unicodedata.c"
-        $buffer_addr=$46; //@line 914 "unicodedata.c"
-        var $47=$V; //@line 915 "unicodedata.c"
-        var $48=_hangul_syllables+$47*12; //@line 915 "unicodedata.c"
-        var $49=$48+4; //@line 915 "unicodedata.c"
-        var $50=HEAP[$49]; //@line 915 "unicodedata.c"
-        var $51=$buffer_addr; //@line 915 "unicodedata.c"
-        var $52=_strcpy($51, $50); //@line 915 "unicodedata.c"
-        var $53=$V; //@line 916 "unicodedata.c"
-        var $54=_hangul_syllables+$53*12; //@line 916 "unicodedata.c"
-        var $55=$54+4; //@line 916 "unicodedata.c"
-        var $56=HEAP[$55]; //@line 916 "unicodedata.c"
-        var $57=_strlen($56); //@line 916 "unicodedata.c"
-        var $58=$buffer_addr; //@line 916 "unicodedata.c"
-        var $59=$58+$57; //@line 916 "unicodedata.c"
-        $buffer_addr=$59; //@line 916 "unicodedata.c"
-        var $60=$T; //@line 917 "unicodedata.c"
-        var $61=_hangul_syllables+$60*12; //@line 917 "unicodedata.c"
-        var $62=$61+8; //@line 917 "unicodedata.c"
-        var $63=HEAP[$62]; //@line 917 "unicodedata.c"
-        var $64=$buffer_addr; //@line 917 "unicodedata.c"
-        var $65=_strcpy($64, $63); //@line 917 "unicodedata.c"
-        var $66=$T; //@line 918 "unicodedata.c"
-        var $67=_hangul_syllables+$66*12; //@line 918 "unicodedata.c"
-        var $68=$67+8; //@line 918 "unicodedata.c"
-        var $69=HEAP[$68]; //@line 918 "unicodedata.c"
-        var $70=_strlen($69); //@line 918 "unicodedata.c"
-        var $71=$buffer_addr; //@line 918 "unicodedata.c"
-        var $72=$71+$70; //@line 918 "unicodedata.c"
-        $buffer_addr=$72; //@line 918 "unicodedata.c"
-        var $73=$buffer_addr; //@line 919 "unicodedata.c"
-        HEAP[$73]=0; //@line 919 "unicodedata.c"
-        $1=1; //@line 920 "unicodedata.c"
-        __label__ = 35; break; //@line 920 "unicodedata.c"
+        var $30=$buffer_addr; //@line 911 "unicodedata.c"
+        _llvm_memcpy_p0i8_p0i8_i32($30, __str143, 17, 1, 0); //@line 911 "unicodedata.c"
+        var $31=$buffer_addr; //@line 912 "unicodedata.c"
+        var $32=$31+16; //@line 912 "unicodedata.c"
+        $buffer_addr=$32; //@line 912 "unicodedata.c"
+        var $33=$L; //@line 913 "unicodedata.c"
+        var $34=_hangul_syllables+$33*12; //@line 913 "unicodedata.c"
+        var $35=$34; //@line 913 "unicodedata.c"
+        var $36=HEAP[$35]; //@line 913 "unicodedata.c"
+        var $37=$buffer_addr; //@line 913 "unicodedata.c"
+        var $38=_strcpy($37, $36); //@line 913 "unicodedata.c"
+        var $39=$L; //@line 914 "unicodedata.c"
+        var $40=_hangul_syllables+$39*12; //@line 914 "unicodedata.c"
+        var $41=$40; //@line 914 "unicodedata.c"
+        var $42=HEAP[$41]; //@line 914 "unicodedata.c"
+        var $43=_strlen($42); //@line 914 "unicodedata.c"
+        var $44=$buffer_addr; //@line 914 "unicodedata.c"
+        var $45=$44+$43; //@line 914 "unicodedata.c"
+        $buffer_addr=$45; //@line 914 "unicodedata.c"
+        var $46=$V; //@line 915 "unicodedata.c"
+        var $47=_hangul_syllables+$46*12; //@line 915 "unicodedata.c"
+        var $48=$47+4; //@line 915 "unicodedata.c"
+        var $49=HEAP[$48]; //@line 915 "unicodedata.c"
+        var $50=$buffer_addr; //@line 915 "unicodedata.c"
+        var $51=_strcpy($50, $49); //@line 915 "unicodedata.c"
+        var $52=$V; //@line 916 "unicodedata.c"
+        var $53=_hangul_syllables+$52*12; //@line 916 "unicodedata.c"
+        var $54=$53+4; //@line 916 "unicodedata.c"
+        var $55=HEAP[$54]; //@line 916 "unicodedata.c"
+        var $56=_strlen($55); //@line 916 "unicodedata.c"
+        var $57=$buffer_addr; //@line 916 "unicodedata.c"
+        var $58=$57+$56; //@line 916 "unicodedata.c"
+        $buffer_addr=$58; //@line 916 "unicodedata.c"
+        var $59=$T; //@line 917 "unicodedata.c"
+        var $60=_hangul_syllables+$59*12; //@line 917 "unicodedata.c"
+        var $61=$60+8; //@line 917 "unicodedata.c"
+        var $62=HEAP[$61]; //@line 917 "unicodedata.c"
+        var $63=$buffer_addr; //@line 917 "unicodedata.c"
+        var $64=_strcpy($63, $62); //@line 917 "unicodedata.c"
+        var $65=$T; //@line 918 "unicodedata.c"
+        var $66=_hangul_syllables+$65*12; //@line 918 "unicodedata.c"
+        var $67=$66+8; //@line 918 "unicodedata.c"
+        var $68=HEAP[$67]; //@line 918 "unicodedata.c"
+        var $69=_strlen($68); //@line 918 "unicodedata.c"
+        var $70=$buffer_addr; //@line 918 "unicodedata.c"
+        var $71=$70+$69; //@line 918 "unicodedata.c"
+        $buffer_addr=$71; //@line 918 "unicodedata.c"
+        var $72=$buffer_addr; //@line 919 "unicodedata.c"
+        HEAP[$72]=0; //@line 919 "unicodedata.c"
+        $0=1; //@line 920 "unicodedata.c"
+        __label__ = 32; break; //@line 920 "unicodedata.c"
       case 9: // $bb9
-        $code_addr_i=$20;
-        var $74=$code_addr_i; //@line 875 "unicodedata.c"
-        var $75=($74) > 13311; //@line 875 "unicodedata.c"
-        var $76=$code_addr_i; //@line 875 "unicodedata.c"
-        var $77=($76) <= 19893; //@line 875 "unicodedata.c"
-        var $or_cond_i=($75) & ($77);
-        if ($or_cond_i) { __label__ = 13; break; } else { __label__ = 10; break; } //@line 875 "unicodedata.c"
-      case 10: // $bb1_i
-        var $78=$code_addr_i; //@line 875 "unicodedata.c"
-        var $79=($78) > 19967; //@line 875 "unicodedata.c"
-        var $80=$code_addr_i; //@line 875 "unicodedata.c"
-        var $81=($80) <= 40907; //@line 875 "unicodedata.c"
-        var $or_cond3_i=($79) & ($81);
-        if ($or_cond3_i) { __label__ = 13; break; } else { __label__ = 11; break; } //@line 875 "unicodedata.c"
-      case 11: // $bb3_i
-        var $82=$code_addr_i; //@line 875 "unicodedata.c"
-        var $83=($82) > 131071; //@line 875 "unicodedata.c"
-        var $84=$code_addr_i; //@line 875 "unicodedata.c"
-        var $85=($84) <= 173782; //@line 875 "unicodedata.c"
-        var $or_cond5_i=($83) & ($85);
-        if ($or_cond5_i) { __label__ = 13; break; } else { __label__ = 12; break; } //@line 875 "unicodedata.c"
-      case 12: // $bb5_i
-        var $86=$code_addr_i; //@line 875 "unicodedata.c"
-        var $87=($86) > 173823; //@line 875 "unicodedata.c"
-        var $88=$code_addr_i; //@line 875 "unicodedata.c"
-        var $89=($88) <= 177972; //@line 875 "unicodedata.c"
-        var $or_cond7_i=($87) & ($89);
-        if ($or_cond7_i) { __label__ = 13; break; } else { __label__ = 16; break; } //@line 875 "unicodedata.c"
-      case 13: // $bb10
-        $iftmp_109_i=1; //@line 875 "unicodedata.c"
-        $0=1; //@line 875 "unicodedata.c"
-        $retval_i=1; //@line 875 "unicodedata.c"
-        var $90=$buflen_addr; //@line 924 "unicodedata.c"
-        var $91=($90) <= 27; //@line 924 "unicodedata.c"
-        if ($91) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 924 "unicodedata.c"
-      case 14: // $bb11
-        $1=0; //@line 926 "unicodedata.c"
-        __label__ = 35; break; //@line 926 "unicodedata.c"
-      case 15: // $bb12
-        var $92=$buffer_addr; //@line 927 "unicodedata.c"
-        var $93=$code_addr; //@line 927 "unicodedata.c"
-        var $94=_sprintf($92, __str144, $93); //@line 927 "unicodedata.c"
-        $1=1; //@line 928 "unicodedata.c"
-        __label__ = 35; break; //@line 928 "unicodedata.c"
-      case 16: // $bb13
-        $iftmp_109_i=0; //@line 875 "unicodedata.c"
-        $0=0; //@line 875 "unicodedata.c"
-        $retval_i=0; //@line 875 "unicodedata.c"
-        var $95=$code_addr; //@line 932 "unicodedata.c"
-        var $96=($95) >>> 7; //@line 932 "unicodedata.c"
-        var $97=_phrasebook_offset1+$96; //@line 932 "unicodedata.c"
-        var $98=HEAP[$97]; //@line 932 "unicodedata.c"
-        var $99=($98); //@line 932 "unicodedata.c"
-        $offset=$99; //@line 932 "unicodedata.c"
-        var $100=$offset; //@line 933 "unicodedata.c"
-        var $101=($100) * 128;
-        var $102=$code_addr; //@line 933 "unicodedata.c"
-        var $103=($102) & 127; //@line 933 "unicodedata.c"
-        var $104=($103) + ($101); //@line 933 "unicodedata.c"
-        var $105=_phrasebook_offset2+$104*4; //@line 933 "unicodedata.c"
-        var $106=HEAP[$105]; //@line 933 "unicodedata.c"
-        $offset=$106; //@line 933 "unicodedata.c"
-        var $107=$offset; //@line 935 "unicodedata.c"
-        var $108=($107)==0; //@line 935 "unicodedata.c"
-        if ($108) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 935 "unicodedata.c"
-      case 17: // $bb14
-        $1=0; //@line 936 "unicodedata.c"
-        __label__ = 35; break; //@line 936 "unicodedata.c"
-      case 18: // $bb15
+        var $73=_is_unified_ideograph($19); //@line 923 "unicodedata.c"
+        var $74=($73)!=0; //@line 923 "unicodedata.c"
+        if ($74) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 923 "unicodedata.c"
+      case 10: // $bb10
+        var $75=$buflen_addr; //@line 924 "unicodedata.c"
+        var $76=($75) <= 27; //@line 924 "unicodedata.c"
+        if ($76) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 924 "unicodedata.c"
+      case 11: // $bb11
+        $0=0; //@line 926 "unicodedata.c"
+        __label__ = 32; break; //@line 926 "unicodedata.c"
+      case 12: // $bb12
+        var $77=$buffer_addr; //@line 927 "unicodedata.c"
+        var $78=$code_addr; //@line 927 "unicodedata.c"
+        var $79=_sprintf($77, __str144, allocate([$78,0,0,0], ["i32",0,0,0], ALLOC_STACK)); //@line 927 "unicodedata.c"
+        $0=1; //@line 928 "unicodedata.c"
+        __label__ = 32; break; //@line 928 "unicodedata.c"
+      case 13: // $bb13
+        var $80=$code_addr; //@line 932 "unicodedata.c"
+        var $81=($80) >>> 7; //@line 932 "unicodedata.c"
+        var $82=_phrasebook_offset1+$81; //@line 932 "unicodedata.c"
+        var $83=HEAP[$82]; //@line 932 "unicodedata.c"
+        var $84=($83); //@line 932 "unicodedata.c"
+        $offset=$84; //@line 932 "unicodedata.c"
+        var $85=$offset; //@line 933 "unicodedata.c"
+        var $86=($85) * 128;
+        var $87=$code_addr; //@line 933 "unicodedata.c"
+        var $88=($87) & 127; //@line 933 "unicodedata.c"
+        var $89=($88) + ($86); //@line 933 "unicodedata.c"
+        var $90=_phrasebook_offset2+$89*4; //@line 933 "unicodedata.c"
+        var $91=HEAP[$90]; //@line 933 "unicodedata.c"
+        $offset=$91; //@line 933 "unicodedata.c"
+        var $92=$offset; //@line 935 "unicodedata.c"
+        var $93=($92)==0; //@line 935 "unicodedata.c"
+        if ($93) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 935 "unicodedata.c"
+      case 14: // $bb14
+        $0=0; //@line 936 "unicodedata.c"
+        __label__ = 32; break; //@line 936 "unicodedata.c"
+      case 15: // $bb15
         $i=0; //@line 938 "unicodedata.c"
-        __label__ = 19; break; //@line 938 "unicodedata.c"
-      case 19: // $bb16
-        var $109=$offset; //@line 942 "unicodedata.c"
-        var $110=_phrasebook+$109; //@line 942 "unicodedata.c"
-        var $111=HEAP[$110]; //@line 942 "unicodedata.c"
-        var $112=($111); //@line 942 "unicodedata.c"
-        var $113=($112) - 216; //@line 942 "unicodedata.c"
-        $word=$113; //@line 942 "unicodedata.c"
-        var $114=($113) >= 0; //@line 943 "unicodedata.c"
-        if ($114) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 943 "unicodedata.c"
-      case 20: // $bb17
-        var $115=$word; //@line 944 "unicodedata.c"
-        var $116=($115) * 256;
-        var $117=$offset; //@line 944 "unicodedata.c"
-        var $118=($117) + 1; //@line 944 "unicodedata.c"
-        var $119=_phrasebook+$118; //@line 944 "unicodedata.c"
-        var $120=HEAP[$119]; //@line 944 "unicodedata.c"
-        var $121=($120); //@line 944 "unicodedata.c"
-        var $122=($121) + ($116); //@line 944 "unicodedata.c"
-        $word=$122; //@line 944 "unicodedata.c"
-        var $123=$offset; //@line 945 "unicodedata.c"
-        var $124=($123) + 2; //@line 945 "unicodedata.c"
-        $offset=$124; //@line 945 "unicodedata.c"
-        __label__ = 22; break; //@line 945 "unicodedata.c"
-      case 21: // $bb18
-        var $125=$offset; //@line 947 "unicodedata.c"
-        var $126=_phrasebook+$125; //@line 947 "unicodedata.c"
-        var $127=HEAP[$126]; //@line 947 "unicodedata.c"
-        var $128=($127); //@line 947 "unicodedata.c"
-        $word=$128; //@line 947 "unicodedata.c"
-        var $129=$offset; //@line 947 "unicodedata.c"
-        var $130=($129) + 1; //@line 947 "unicodedata.c"
-        $offset=$130; //@line 947 "unicodedata.c"
-        __label__ = 22; break; //@line 947 "unicodedata.c"
-      case 22: // $bb19
-        var $131=$i; //@line 948 "unicodedata.c"
-        var $132=($131)!=0; //@line 948 "unicodedata.c"
-        if ($132) { __label__ = 23; break; } else { __label__ = 26; break; } //@line 948 "unicodedata.c"
-      case 23: // $bb20
-        var $133=$i; //@line 949 "unicodedata.c"
-        var $134=$buflen_addr; //@line 949 "unicodedata.c"
-        var $135=($133) > ($134); //@line 949 "unicodedata.c"
-        if ($135) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 949 "unicodedata.c"
-      case 24: // $bb21
-        $1=0; //@line 950 "unicodedata.c"
-        __label__ = 35; break; //@line 950 "unicodedata.c"
-      case 25: // $bb22
-        var $136=$buffer_addr; //@line 951 "unicodedata.c"
-        var $137=$i; //@line 951 "unicodedata.c"
-        var $138=$136+$137; //@line 951 "unicodedata.c"
-        HEAP[$138]=32; //@line 951 "unicodedata.c"
-        var $139=$i; //@line 951 "unicodedata.c"
-        var $140=($139) + 1; //@line 951 "unicodedata.c"
-        $i=$140; //@line 951 "unicodedata.c"
-        __label__ = 26; break; //@line 951 "unicodedata.c"
-      case 26: // $bb23
-        var $141=$word; //@line 956 "unicodedata.c"
-        var $142=_lexicon_offset+$141*4; //@line 956 "unicodedata.c"
-        var $143=HEAP[$142]; //@line 956 "unicodedata.c"
-        var $144=_lexicon+$143; //@line 956 "unicodedata.c"
-        $w=$144; //@line 956 "unicodedata.c"
-        __label__ = 30; break; //@line 956 "unicodedata.c"
-      case 27: // $bb24
-        if ($159) { __label__ = 28; break; } else { __label__ = 29; break; } //@line 958 "unicodedata.c"
-      case 28: // $bb25
-        $1=0; //@line 959 "unicodedata.c"
-        __label__ = 35; break; //@line 959 "unicodedata.c"
-      case 29: // $bb26
-        var $145=$w; //@line 960 "unicodedata.c"
-        var $146=HEAP[$145]; //@line 960 "unicodedata.c"
-        var $147=$buffer_addr; //@line 960 "unicodedata.c"
-        var $148=$i; //@line 960 "unicodedata.c"
-        var $149=$147+$148; //@line 960 "unicodedata.c"
-        HEAP[$149]=$146; //@line 960 "unicodedata.c"
-        var $150=$i; //@line 960 "unicodedata.c"
-        var $151=($150) + 1; //@line 960 "unicodedata.c"
-        $i=$151; //@line 960 "unicodedata.c"
-        var $152=$w; //@line 960 "unicodedata.c"
-        var $153=$152+1; //@line 960 "unicodedata.c"
-        $w=$153; //@line 960 "unicodedata.c"
-        __label__ = 30; break; //@line 960 "unicodedata.c"
-      case 30: // $bb27
-        var $154=$w; //@line 957 "unicodedata.c"
-        var $155=HEAP[$154]; //@line 957 "unicodedata.c"
-        var $156=($155) >= 0; //@line 957 "unicodedata.c"
-        var $157=$i; //@line 958 "unicodedata.c"
-        var $158=$buflen_addr; //@line 958 "unicodedata.c"
-        var $159=($157) >= ($158); //@line 958 "unicodedata.c"
-        if ($156) { __label__ = 27; break; } else { __label__ = 31; break; } //@line 957 "unicodedata.c"
-      case 31: // $bb28
-        if ($159) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 962 "unicodedata.c"
-      case 32: // $bb29
-        $1=0; //@line 963 "unicodedata.c"
-        __label__ = 35; break; //@line 963 "unicodedata.c"
-      case 33: // $bb30
-        var $160=$w; //@line 964 "unicodedata.c"
-        var $161=HEAP[$160]; //@line 964 "unicodedata.c"
-        var $162=($161) & 127; //@line 964 "unicodedata.c"
-        var $163=$buffer_addr; //@line 964 "unicodedata.c"
-        var $164=$i; //@line 964 "unicodedata.c"
-        var $165=$163+$164; //@line 964 "unicodedata.c"
-        HEAP[$165]=$162; //@line 964 "unicodedata.c"
-        var $166=$i; //@line 964 "unicodedata.c"
-        var $167=($166) + 1; //@line 964 "unicodedata.c"
-        $i=$167; //@line 964 "unicodedata.c"
-        var $168=$w; //@line 965 "unicodedata.c"
-        var $169=HEAP[$168]; //@line 965 "unicodedata.c"
-        var $170=($169)==-128; //@line 965 "unicodedata.c"
-        if ($170) { __label__ = 34; break; } else { __label__ = 19; break; } //@line 965 "unicodedata.c"
-      case 34: // $bb32
-        $1=1; //@line 969 "unicodedata.c"
-        __label__ = 35; break; //@line 969 "unicodedata.c"
-      case 35: // $bb33
-        var $171=$1; //@line 891 "unicodedata.c"
-        $retval=$171; //@line 891 "unicodedata.c"
+        __label__ = 16; break; //@line 938 "unicodedata.c"
+      case 16: // $bb16
+        var $94=$offset; //@line 942 "unicodedata.c"
+        var $95=_phrasebook+$94; //@line 942 "unicodedata.c"
+        var $96=HEAP[$95]; //@line 942 "unicodedata.c"
+        var $97=($96); //@line 942 "unicodedata.c"
+        var $98=($97) - 216; //@line 942 "unicodedata.c"
+        $word=$98; //@line 942 "unicodedata.c"
+        var $99=($98) >= 0; //@line 943 "unicodedata.c"
+        if ($99) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 943 "unicodedata.c"
+      case 17: // $bb17
+        var $100=$word; //@line 944 "unicodedata.c"
+        var $101=($100) * 256;
+        var $102=$offset; //@line 944 "unicodedata.c"
+        var $103=($102) + 1; //@line 944 "unicodedata.c"
+        var $104=_phrasebook+$103; //@line 944 "unicodedata.c"
+        var $105=HEAP[$104]; //@line 944 "unicodedata.c"
+        var $106=($105); //@line 944 "unicodedata.c"
+        var $107=($106) + ($101); //@line 944 "unicodedata.c"
+        $word=$107; //@line 944 "unicodedata.c"
+        var $108=$offset; //@line 945 "unicodedata.c"
+        var $109=($108) + 2; //@line 945 "unicodedata.c"
+        $offset=$109; //@line 945 "unicodedata.c"
+        __label__ = 19; break; //@line 945 "unicodedata.c"
+      case 18: // $bb18
+        var $110=$offset; //@line 947 "unicodedata.c"
+        var $111=_phrasebook+$110; //@line 947 "unicodedata.c"
+        var $112=HEAP[$111]; //@line 947 "unicodedata.c"
+        var $113=($112); //@line 947 "unicodedata.c"
+        $word=$113; //@line 947 "unicodedata.c"
+        var $114=$offset; //@line 947 "unicodedata.c"
+        var $115=($114) + 1; //@line 947 "unicodedata.c"
+        $offset=$115; //@line 947 "unicodedata.c"
+        __label__ = 19; break; //@line 947 "unicodedata.c"
+      case 19: // $bb19
+        var $116=$i; //@line 948 "unicodedata.c"
+        var $117=($116)!=0; //@line 948 "unicodedata.c"
+        if ($117) { __label__ = 20; break; } else { __label__ = 23; break; } //@line 948 "unicodedata.c"
+      case 20: // $bb20
+        var $118=$i; //@line 949 "unicodedata.c"
+        var $119=$buflen_addr; //@line 949 "unicodedata.c"
+        var $120=($118) > ($119); //@line 949 "unicodedata.c"
+        if ($120) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 949 "unicodedata.c"
+      case 21: // $bb21
+        $0=0; //@line 950 "unicodedata.c"
+        __label__ = 32; break; //@line 950 "unicodedata.c"
+      case 22: // $bb22
+        var $121=$buffer_addr; //@line 951 "unicodedata.c"
+        var $122=$i; //@line 951 "unicodedata.c"
+        var $123=$121+$122; //@line 951 "unicodedata.c"
+        HEAP[$123]=32; //@line 951 "unicodedata.c"
+        var $124=$i; //@line 951 "unicodedata.c"
+        var $125=($124) + 1; //@line 951 "unicodedata.c"
+        $i=$125; //@line 951 "unicodedata.c"
+        __label__ = 23; break; //@line 951 "unicodedata.c"
+      case 23: // $bb23
+        var $126=$word; //@line 956 "unicodedata.c"
+        var $127=_lexicon_offset+$126*4; //@line 956 "unicodedata.c"
+        var $128=HEAP[$127]; //@line 956 "unicodedata.c"
+        var $129=_lexicon+$128; //@line 956 "unicodedata.c"
+        $w=$129; //@line 956 "unicodedata.c"
+        __label__ = 27; break; //@line 956 "unicodedata.c"
+      case 24: // $bb24
+        if ($144) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 958 "unicodedata.c"
+      case 25: // $bb25
+        $0=0; //@line 959 "unicodedata.c"
+        __label__ = 32; break; //@line 959 "unicodedata.c"
+      case 26: // $bb26
+        var $130=$w; //@line 960 "unicodedata.c"
+        var $131=HEAP[$130]; //@line 960 "unicodedata.c"
+        var $132=$buffer_addr; //@line 960 "unicodedata.c"
+        var $133=$i; //@line 960 "unicodedata.c"
+        var $134=$132+$133; //@line 960 "unicodedata.c"
+        HEAP[$134]=$131; //@line 960 "unicodedata.c"
+        var $135=$i; //@line 960 "unicodedata.c"
+        var $136=($135) + 1; //@line 960 "unicodedata.c"
+        $i=$136; //@line 960 "unicodedata.c"
+        var $137=$w; //@line 960 "unicodedata.c"
+        var $138=$137+1; //@line 960 "unicodedata.c"
+        $w=$138; //@line 960 "unicodedata.c"
+        __label__ = 27; break; //@line 960 "unicodedata.c"
+      case 27: // $bb27
+        var $139=$w; //@line 957 "unicodedata.c"
+        var $140=HEAP[$139]; //@line 957 "unicodedata.c"
+        var $141=reSign(($140), 8, 1) >= 0; //@line 957 "unicodedata.c"
+        var $142=$i; //@line 958 "unicodedata.c"
+        var $143=$buflen_addr; //@line 958 "unicodedata.c"
+        var $144=($142) >= ($143); //@line 958 "unicodedata.c"
+        if ($141) { __label__ = 24; break; } else { __label__ = 28; break; } //@line 957 "unicodedata.c"
+      case 28: // $bb28
+        if ($144) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 962 "unicodedata.c"
+      case 29: // $bb29
+        $0=0; //@line 963 "unicodedata.c"
+        __label__ = 32; break; //@line 963 "unicodedata.c"
+      case 30: // $bb30
+        var $145=$w; //@line 964 "unicodedata.c"
+        var $146=HEAP[$145]; //@line 964 "unicodedata.c"
+        var $147=($146) & 127; //@line 964 "unicodedata.c"
+        var $148=$buffer_addr; //@line 964 "unicodedata.c"
+        var $149=$i; //@line 964 "unicodedata.c"
+        var $150=$148+$149; //@line 964 "unicodedata.c"
+        HEAP[$150]=$147; //@line 964 "unicodedata.c"
+        var $151=$i; //@line 964 "unicodedata.c"
+        var $152=($151) + 1; //@line 964 "unicodedata.c"
+        $i=$152; //@line 964 "unicodedata.c"
+        var $153=$w; //@line 965 "unicodedata.c"
+        var $154=HEAP[$153]; //@line 965 "unicodedata.c"
+        var $155=reSign(($154), 8, 1)==-128; //@line 965 "unicodedata.c"
+        if ($155) { __label__ = 31; break; } else { __label__ = 16; break; } //@line 965 "unicodedata.c"
+      case 31: // $bb32
+        $0=1; //@line 969 "unicodedata.c"
+        __label__ = 32; break; //@line 969 "unicodedata.c"
+      case 32: // $bb33
+        var $156=$0; //@line 891 "unicodedata.c"
+        $retval=$156; //@line 891 "unicodedata.c"
         var $retval34=$retval; //@line 891 "unicodedata.c"
         ;
         return $retval34; //@line 891 "unicodedata.c"
@@ -3540,24 +3378,12 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $s_addr_i;
-        var $len_addr_i;
-        var $scale_addr_i;
-        var $retval_i2;
-        var $0;
-        var $i_i;
-        var $h_i;
-        var $ix_i;
-        var $code_addr_i;
-        var $retval_i;
-        var $iftmp_109_i;
-        var $1;
         var $self_addr;
         var $name_addr;
         var $namelen_addr;
         var $code_addr;
         var $retval;
-        var $2;
+        var $0;
         var $h;
         var $v;
         var $mask;
@@ -3573,336 +3399,256 @@ var __str170;
         $namelen_addr=$namelen;
         $code_addr=$code;
         $mask=32767; //@line 1011 "unicodedata.c"
-        var $3=$name_addr; //@line 1015 "unicodedata.c"
-        var $4=_strncmp($3, __str143, 16); //@line 1015 "unicodedata.c"
-        var $5=($4)==0; //@line 1015 "unicodedata.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 1015 "unicodedata.c"
+        var $1=$name_addr; //@line 1015 "unicodedata.c"
+        var $2=_strncmp($1, __str143, 16); //@line 1015 "unicodedata.c"
+        var $3=($2)==0; //@line 1015 "unicodedata.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 1015 "unicodedata.c"
       case 1: // $bb
         HEAP[$L]=-1; //@line 1016 "unicodedata.c"
         HEAP[$V]=-1; //@line 1016 "unicodedata.c"
         HEAP[$T]=-1; //@line 1016 "unicodedata.c"
-        var $6=$name_addr; //@line 1017 "unicodedata.c"
-        var $7=$6+16; //@line 1017 "unicodedata.c"
-        $pos=$7; //@line 1017 "unicodedata.c"
-        var $8=$pos; //@line 1018 "unicodedata.c"
-        _find_syllable($8, $len, $L, 19, 0); //@line 1018 "unicodedata.c"
-        var $9=HEAP[$len]; //@line 1019 "unicodedata.c"
-        var $10=$pos; //@line 1019 "unicodedata.c"
-        var $11=$10+$9; //@line 1019 "unicodedata.c"
-        $pos=$11; //@line 1019 "unicodedata.c"
-        var $12=$pos; //@line 1020 "unicodedata.c"
-        _find_syllable($12, $len, $V, 21, 1); //@line 1020 "unicodedata.c"
-        var $13=HEAP[$len]; //@line 1021 "unicodedata.c"
-        var $14=$pos; //@line 1021 "unicodedata.c"
-        var $15=$14+$13; //@line 1021 "unicodedata.c"
-        $pos=$15; //@line 1021 "unicodedata.c"
-        var $16=$pos; //@line 1022 "unicodedata.c"
-        _find_syllable($16, $len, $T, 28, 2); //@line 1022 "unicodedata.c"
-        var $17=HEAP[$len]; //@line 1023 "unicodedata.c"
-        var $18=$pos; //@line 1023 "unicodedata.c"
-        var $19=$18+$17; //@line 1023 "unicodedata.c"
-        $pos=$19; //@line 1023 "unicodedata.c"
-        var $20=HEAP[$L]; //@line 1024 "unicodedata.c"
-        var $21=($20)!=-1; //@line 1024 "unicodedata.c"
-        if ($21) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
+        var $4=$name_addr; //@line 1017 "unicodedata.c"
+        var $5=$4+16; //@line 1017 "unicodedata.c"
+        $pos=$5; //@line 1017 "unicodedata.c"
+        var $6=$pos; //@line 1018 "unicodedata.c"
+        _find_syllable($6, $len, $L, 19, 0); //@line 1018 "unicodedata.c"
+        var $7=HEAP[$len]; //@line 1019 "unicodedata.c"
+        var $8=$pos; //@line 1019 "unicodedata.c"
+        var $9=$8+$7; //@line 1019 "unicodedata.c"
+        $pos=$9; //@line 1019 "unicodedata.c"
+        var $10=$pos; //@line 1020 "unicodedata.c"
+        _find_syllable($10, $len, $V, 21, 1); //@line 1020 "unicodedata.c"
+        var $11=HEAP[$len]; //@line 1021 "unicodedata.c"
+        var $12=$pos; //@line 1021 "unicodedata.c"
+        var $13=$12+$11; //@line 1021 "unicodedata.c"
+        $pos=$13; //@line 1021 "unicodedata.c"
+        var $14=$pos; //@line 1022 "unicodedata.c"
+        _find_syllable($14, $len, $T, 28, 2); //@line 1022 "unicodedata.c"
+        var $15=HEAP[$len]; //@line 1023 "unicodedata.c"
+        var $16=$pos; //@line 1023 "unicodedata.c"
+        var $17=$16+$15; //@line 1023 "unicodedata.c"
+        $pos=$17; //@line 1023 "unicodedata.c"
+        var $18=HEAP[$L]; //@line 1024 "unicodedata.c"
+        var $19=($18)!=-1; //@line 1024 "unicodedata.c"
+        if ($19) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
       case 2: // $bb1
-        var $22=HEAP[$V]; //@line 1024 "unicodedata.c"
-        var $23=($22)!=-1; //@line 1024 "unicodedata.c"
-        if ($23) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
+        var $20=HEAP[$V]; //@line 1024 "unicodedata.c"
+        var $21=($20)!=-1; //@line 1024 "unicodedata.c"
+        if ($21) { __label__ = 3; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
       case 3: // $bb2
-        var $24=HEAP[$T]; //@line 1024 "unicodedata.c"
-        var $25=($24)!=-1; //@line 1024 "unicodedata.c"
-        if ($25) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
+        var $22=HEAP[$T]; //@line 1024 "unicodedata.c"
+        var $23=($22)!=-1; //@line 1024 "unicodedata.c"
+        if ($23) { __label__ = 4; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
       case 4: // $bb3
-        var $26=$pos; //@line 1024 "unicodedata.c"
+        var $24=$pos; //@line 1024 "unicodedata.c"
+        var $25=($24); //@line 1024 "unicodedata.c"
+        var $26=$name_addr; //@line 1024 "unicodedata.c"
         var $27=($26); //@line 1024 "unicodedata.c"
-        var $28=$name_addr; //@line 1024 "unicodedata.c"
-        var $29=($28); //@line 1024 "unicodedata.c"
-        var $30=($27) - ($29); //@line 1024 "unicodedata.c"
-        var $31=$namelen_addr; //@line 1024 "unicodedata.c"
-        var $32=($30)==($31); //@line 1024 "unicodedata.c"
-        if ($32) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
+        var $28=($25) - ($27); //@line 1024 "unicodedata.c"
+        var $29=$namelen_addr; //@line 1024 "unicodedata.c"
+        var $30=($28)==($29); //@line 1024 "unicodedata.c"
+        if ($30) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 1024 "unicodedata.c"
       case 5: // $bb4
-        var $33=HEAP[$L]; //@line 1025 "unicodedata.c"
-        var $34=($33) * 21; //@line 1025 "unicodedata.c"
-        var $35=HEAP[$V]; //@line 1025 "unicodedata.c"
-        var $36=($34) + ($35); //@line 1025 "unicodedata.c"
-        var $37=($36) * 28; //@line 1025 "unicodedata.c"
-        var $38=HEAP[$T]; //@line 1025 "unicodedata.c"
-        var $39=($38) + 44032; //@line 1025 "unicodedata.c"
-        var $40=($39) + ($37); //@line 1025 "unicodedata.c"
-        var $41=$code_addr; //@line 1025 "unicodedata.c"
-        HEAP[$41]=$40; //@line 1025 "unicodedata.c"
-        $2=1; //@line 1026 "unicodedata.c"
-        __label__ = 41; break; //@line 1026 "unicodedata.c"
+        var $31=HEAP[$L]; //@line 1025 "unicodedata.c"
+        var $32=($31) * 21; //@line 1025 "unicodedata.c"
+        var $33=HEAP[$V]; //@line 1025 "unicodedata.c"
+        var $34=($32) + ($33); //@line 1025 "unicodedata.c"
+        var $35=($34) * 28; //@line 1025 "unicodedata.c"
+        var $36=HEAP[$T]; //@line 1025 "unicodedata.c"
+        var $37=($36) + 44032; //@line 1025 "unicodedata.c"
+        var $38=($37) + ($35); //@line 1025 "unicodedata.c"
+        var $39=$code_addr; //@line 1025 "unicodedata.c"
+        HEAP[$39]=$38; //@line 1025 "unicodedata.c"
+        $0=1; //@line 1026 "unicodedata.c"
+        __label__ = 34; break; //@line 1026 "unicodedata.c"
       case 6: // $bb5
-        $2=0; //@line 1029 "unicodedata.c"
-        __label__ = 41; break; //@line 1029 "unicodedata.c"
+        $0=0; //@line 1029 "unicodedata.c"
+        __label__ = 34; break; //@line 1029 "unicodedata.c"
       case 7: // $bb6
-        var $42=$name_addr; //@line 1033 "unicodedata.c"
-        var $43=_strncmp($42, __str145, 22); //@line 1033 "unicodedata.c"
-        var $44=($43)==0; //@line 1033 "unicodedata.c"
-        if ($44) { __label__ = 8; break; } else { __label__ = 25; break; } //@line 1033 "unicodedata.c"
+        var $40=$name_addr; //@line 1033 "unicodedata.c"
+        var $41=_strncmp($40, __str145, 22); //@line 1033 "unicodedata.c"
+        var $42=($41)==0; //@line 1033 "unicodedata.c"
+        if ($42) { __label__ = 8; break; } else { __label__ = 22; break; } //@line 1033 "unicodedata.c"
       case 8: // $bb7
         $v=0; //@line 1035 "unicodedata.c"
-        var $45=$name_addr; //@line 1036 "unicodedata.c"
-        var $46=$45+22; //@line 1036 "unicodedata.c"
-        $name_addr=$46; //@line 1036 "unicodedata.c"
-        var $47=$namelen_addr; //@line 1037 "unicodedata.c"
-        var $48=($47) - 22; //@line 1037 "unicodedata.c"
-        $namelen_addr=$48; //@line 1037 "unicodedata.c"
+        var $43=$name_addr; //@line 1036 "unicodedata.c"
+        var $44=$43+22; //@line 1036 "unicodedata.c"
+        $name_addr=$44; //@line 1036 "unicodedata.c"
+        var $45=$namelen_addr; //@line 1037 "unicodedata.c"
+        var $46=($45) - 22; //@line 1037 "unicodedata.c"
+        $namelen_addr=$46; //@line 1037 "unicodedata.c"
+        var $47=$namelen_addr; //@line 1038 "unicodedata.c"
+        var $48=($47)!=4; //@line 1038 "unicodedata.c"
         var $49=$namelen_addr; //@line 1038 "unicodedata.c"
-        var $50=($49)!=4; //@line 1038 "unicodedata.c"
-        var $51=$namelen_addr; //@line 1038 "unicodedata.c"
-        var $52=($51)!=5; //@line 1038 "unicodedata.c"
-        var $or_cond=($50) & ($52);
+        var $50=($49)!=5; //@line 1038 "unicodedata.c"
+        var $or_cond=($48) & ($50);
         if ($or_cond) { __label__ = 9; break; } else { __label__ = 18; break; } //@line 1038 "unicodedata.c"
       case 9: // $bb9
-        $2=0; //@line 1039 "unicodedata.c"
-        __label__ = 41; break; //@line 1039 "unicodedata.c"
+        $0=0; //@line 1039 "unicodedata.c"
+        __label__ = 34; break; //@line 1039 "unicodedata.c"
       case 10: // $bb11
-        var $53=($83) * 16; //@line 1041 "unicodedata.c"
-        $v=$53; //@line 1041 "unicodedata.c"
-        var $54=$name_addr; //@line 1042 "unicodedata.c"
-        var $55=HEAP[$54]; //@line 1042 "unicodedata.c"
-        var $56=($55) <= 47; //@line 1042 "unicodedata.c"
-        if ($56) { __label__ = 13; break; } else { __label__ = 11; break; } //@line 1042 "unicodedata.c"
+        var $51=($81) * 16; //@line 1041 "unicodedata.c"
+        $v=$51; //@line 1041 "unicodedata.c"
+        var $52=$name_addr; //@line 1042 "unicodedata.c"
+        var $53=HEAP[$52]; //@line 1042 "unicodedata.c"
+        var $54=($53) <= 47; //@line 1042 "unicodedata.c"
+        if ($54) { __label__ = 13; break; } else { __label__ = 11; break; } //@line 1042 "unicodedata.c"
       case 11: // $bb12
-        var $57=$name_addr; //@line 1042 "unicodedata.c"
-        var $58=HEAP[$57]; //@line 1042 "unicodedata.c"
-        var $59=($58) > 57; //@line 1042 "unicodedata.c"
-        if ($59) { __label__ = 13; break; } else { __label__ = 12; break; } //@line 1042 "unicodedata.c"
+        var $55=$name_addr; //@line 1042 "unicodedata.c"
+        var $56=HEAP[$55]; //@line 1042 "unicodedata.c"
+        var $57=($56) > 57; //@line 1042 "unicodedata.c"
+        if ($57) { __label__ = 13; break; } else { __label__ = 12; break; } //@line 1042 "unicodedata.c"
       case 12: // $bb13
-        var $60=$name_addr; //@line 1043 "unicodedata.c"
-        var $61=HEAP[$60]; //@line 1043 "unicodedata.c"
-        var $62=($61); //@line 1043 "unicodedata.c"
-        var $63=$v; //@line 1043 "unicodedata.c"
-        var $64=($63) + -48; //@line 1043 "unicodedata.c"
-        var $65=($64) + ($62);
-        $v=$65; //@line 1043 "unicodedata.c"
+        var $58=$name_addr; //@line 1043 "unicodedata.c"
+        var $59=HEAP[$58]; //@line 1043 "unicodedata.c"
+        var $60=($59); //@line 1043 "unicodedata.c"
+        var $61=$v; //@line 1043 "unicodedata.c"
+        var $62=($61) + -48; //@line 1043 "unicodedata.c"
+        var $63=($62) + ($60);
+        $v=$63; //@line 1043 "unicodedata.c"
         __label__ = 17; break; //@line 1043 "unicodedata.c"
       case 13: // $bb14
-        var $66=$name_addr; //@line 1044 "unicodedata.c"
-        var $67=HEAP[$66]; //@line 1044 "unicodedata.c"
-        var $68=($67) <= 64; //@line 1044 "unicodedata.c"
-        if ($68) { __label__ = 16; break; } else { __label__ = 14; break; } //@line 1044 "unicodedata.c"
+        var $64=$name_addr; //@line 1044 "unicodedata.c"
+        var $65=HEAP[$64]; //@line 1044 "unicodedata.c"
+        var $66=($65) <= 64; //@line 1044 "unicodedata.c"
+        if ($66) { __label__ = 16; break; } else { __label__ = 14; break; } //@line 1044 "unicodedata.c"
       case 14: // $bb15
-        var $69=$name_addr; //@line 1044 "unicodedata.c"
-        var $70=HEAP[$69]; //@line 1044 "unicodedata.c"
-        var $71=($70) > 70; //@line 1044 "unicodedata.c"
-        if ($71) { __label__ = 16; break; } else { __label__ = 15; break; } //@line 1044 "unicodedata.c"
+        var $67=$name_addr; //@line 1044 "unicodedata.c"
+        var $68=HEAP[$67]; //@line 1044 "unicodedata.c"
+        var $69=($68) > 70; //@line 1044 "unicodedata.c"
+        if ($69) { __label__ = 16; break; } else { __label__ = 15; break; } //@line 1044 "unicodedata.c"
       case 15: // $bb16
-        var $72=$name_addr; //@line 1045 "unicodedata.c"
-        var $73=HEAP[$72]; //@line 1045 "unicodedata.c"
-        var $74=($73); //@line 1045 "unicodedata.c"
-        var $75=$v; //@line 1045 "unicodedata.c"
-        var $76=($75) + -55; //@line 1045 "unicodedata.c"
-        var $77=($76) + ($74);
-        $v=$77; //@line 1045 "unicodedata.c"
+        var $70=$name_addr; //@line 1045 "unicodedata.c"
+        var $71=HEAP[$70]; //@line 1045 "unicodedata.c"
+        var $72=($71); //@line 1045 "unicodedata.c"
+        var $73=$v; //@line 1045 "unicodedata.c"
+        var $74=($73) + -55; //@line 1045 "unicodedata.c"
+        var $75=($74) + ($72);
+        $v=$75; //@line 1045 "unicodedata.c"
         __label__ = 17; break; //@line 1045 "unicodedata.c"
       case 16: // $bb17
-        $2=0; //@line 1047 "unicodedata.c"
-        __label__ = 41; break; //@line 1047 "unicodedata.c"
+        $0=0; //@line 1047 "unicodedata.c"
+        __label__ = 34; break; //@line 1047 "unicodedata.c"
       case 17: // $bb18
-        var $78=$name_addr; //@line 1048 "unicodedata.c"
-        var $79=$78+1; //@line 1048 "unicodedata.c"
-        $name_addr=$79; //@line 1048 "unicodedata.c"
+        var $76=$name_addr; //@line 1048 "unicodedata.c"
+        var $77=$76+1; //@line 1048 "unicodedata.c"
+        $name_addr=$77; //@line 1048 "unicodedata.c"
         __label__ = 18; break; //@line 1048 "unicodedata.c"
       case 18: // $bb19
-        var $80=$namelen_addr; //@line 1040 "unicodedata.c"
-        var $81=($80) - 1; //@line 1040 "unicodedata.c"
-        $namelen_addr=$81; //@line 1040 "unicodedata.c"
-        var $82=($81)!=-1; //@line 1040 "unicodedata.c"
-        var $83=$v; //@line 1041 "unicodedata.c"
-        if ($82) { __label__ = 10; break; } else { __label__ = 19; break; } //@line 1040 "unicodedata.c"
+        var $78=$namelen_addr; //@line 1040 "unicodedata.c"
+        var $79=($78) - 1; //@line 1040 "unicodedata.c"
+        $namelen_addr=$79; //@line 1040 "unicodedata.c"
+        var $80=($79)!=-1; //@line 1040 "unicodedata.c"
+        var $81=$v; //@line 1041 "unicodedata.c"
+        if ($80) { __label__ = 10; break; } else { __label__ = 19; break; } //@line 1040 "unicodedata.c"
       case 19: // $bb20
-        $code_addr_i=$83;
-        var $84=$code_addr_i; //@line 875 "unicodedata.c"
-        var $85=($84) > 13311; //@line 875 "unicodedata.c"
-        var $86=$code_addr_i; //@line 875 "unicodedata.c"
-        var $87=($86) <= 19893; //@line 875 "unicodedata.c"
-        var $or_cond_i=($85) & ($87);
-        if ($or_cond_i) { __label__ = 24; break; } else { __label__ = 20; break; } //@line 875 "unicodedata.c"
-      case 20: // $bb1_i
-        var $88=$code_addr_i; //@line 875 "unicodedata.c"
-        var $89=($88) > 19967; //@line 875 "unicodedata.c"
-        var $90=$code_addr_i; //@line 875 "unicodedata.c"
-        var $91=($90) <= 40907; //@line 875 "unicodedata.c"
-        var $or_cond3_i=($89) & ($91);
-        if ($or_cond3_i) { __label__ = 24; break; } else { __label__ = 21; break; } //@line 875 "unicodedata.c"
-      case 21: // $bb3_i
-        var $92=$code_addr_i; //@line 875 "unicodedata.c"
-        var $93=($92) > 131071; //@line 875 "unicodedata.c"
-        var $94=$code_addr_i; //@line 875 "unicodedata.c"
-        var $95=($94) <= 173782; //@line 875 "unicodedata.c"
-        var $or_cond5_i=($93) & ($95);
-        if ($or_cond5_i) { __label__ = 24; break; } else { __label__ = 22; break; } //@line 875 "unicodedata.c"
-      case 22: // $bb5_i
-        var $96=$code_addr_i; //@line 875 "unicodedata.c"
-        var $97=($96) > 173823; //@line 875 "unicodedata.c"
-        var $98=$code_addr_i; //@line 875 "unicodedata.c"
-        var $99=($98) <= 177972; //@line 875 "unicodedata.c"
-        var $or_cond7_i=($97) & ($99);
-        if ($or_cond7_i) { __label__ = 24; break; } else { __label__ = 23; break; } //@line 875 "unicodedata.c"
-      case 23: // $bb21
-        $iftmp_109_i=0; //@line 875 "unicodedata.c"
-        $1=0; //@line 875 "unicodedata.c"
-        $retval_i=0; //@line 875 "unicodedata.c"
-        $2=0; //@line 1051 "unicodedata.c"
-        __label__ = 41; break; //@line 1051 "unicodedata.c"
-      case 24: // $bb22
-        $iftmp_109_i=1; //@line 875 "unicodedata.c"
-        $1=1; //@line 875 "unicodedata.c"
-        $retval_i=1; //@line 875 "unicodedata.c"
-        var $100=$code_addr; //@line 1052 "unicodedata.c"
-        var $101=$v; //@line 1052 "unicodedata.c"
-        HEAP[$100]=$101; //@line 1052 "unicodedata.c"
-        $2=1; //@line 1053 "unicodedata.c"
-        __label__ = 41; break; //@line 1053 "unicodedata.c"
-      case 25: // $bb23
-        var $102=$name_addr; //@line 1060 "unicodedata.c"
-        var $103=$namelen_addr; //@line 1060 "unicodedata.c"
-        $s_addr_i=$102;
-        $len_addr_i=$103;
-        $scale_addr_i=47;
-        $h_i=0; //@line 830 "unicodedata.c"
-        $i_i=0; //@line 832 "unicodedata.c"
-        var $104=$i_i; //@line 832 "unicodedata.c"
-        var $105=$len_addr_i; //@line 832 "unicodedata.c"
-        var $106=($104) < ($105); //@line 832 "unicodedata.c"
-        if ($106) { __label__ = 26; break; } else { __label__ = 29; break; } //@line 832 "unicodedata.c"
-      case 26: // $bb_i
-        var $107=$scale_addr_i; //@line 833 "unicodedata.c"
-        var $108=$h_i; //@line 833 "unicodedata.c"
-        var $109=($108) * ($107); //@line 833 "unicodedata.c"
-        var $110=$s_addr_i; //@line 833 "unicodedata.c"
-        var $111=$i_i; //@line 833 "unicodedata.c"
-        var $112=$110+$111; //@line 833 "unicodedata.c"
-        var $113=HEAP[$112]; //@line 833 "unicodedata.c"
-        var $114=($113); //@line 833 "unicodedata.c"
-        var $115=_toupper($114); //@line 833 "unicodedata.c"
-        var $116=((($115)) & 255); //@line 833 "unicodedata.c"
-        var $117=($116); //@line 833 "unicodedata.c"
-        var $118=($117) + ($109); //@line 833 "unicodedata.c"
-        $h_i=$118; //@line 833 "unicodedata.c"
-        var $119=$h_i; //@line 834 "unicodedata.c"
-        var $120=($119) & -16777216; //@line 834 "unicodedata.c"
-        $ix_i=$120; //@line 834 "unicodedata.c"
-        var $121=($120)!=0; //@line 835 "unicodedata.c"
-        if ($121) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 835 "unicodedata.c"
-      case 27: // $bb1_i3
-        var $122=$ix_i; //@line 836 "unicodedata.c"
-        var $123=($122) >>> 24; //@line 836 "unicodedata.c"
-        var $124=($123) & 255; //@line 836 "unicodedata.c"
-        var $125=$h_i; //@line 836 "unicodedata.c"
-        var $126=($124) ^ ($125); //@line 836 "unicodedata.c"
-        var $127=($126) & 16777215; //@line 836 "unicodedata.c"
-        $h_i=$127; //@line 836 "unicodedata.c"
-        __label__ = 28; break; //@line 836 "unicodedata.c"
-      case 28: // $bb2_i
-        var $128=$i_i; //@line 832 "unicodedata.c"
-        var $129=($128) + 1; //@line 832 "unicodedata.c"
-        $i_i=$129; //@line 832 "unicodedata.c"
-        var $130=$i_i; //@line 832 "unicodedata.c"
-        var $131=$len_addr_i; //@line 832 "unicodedata.c"
-        var $132=($130) < ($131); //@line 832 "unicodedata.c"
-        if ($132) { __label__ = 26; break; } else { __label__ = 29; break; } //@line 832 "unicodedata.c"
-      case 29: // $_gethash_exit
-        var $133=$h_i; //@line 838 "unicodedata.c"
-        $0=$133; //@line 838 "unicodedata.c"
-        var $134=$0; //@line 838 "unicodedata.c"
-        $retval_i2=$134; //@line 838 "unicodedata.c"
-        var $retval5_i=$retval_i2; //@line 838 "unicodedata.c"
-        $h=$retval5_i; //@line 1060 "unicodedata.c"
-        var $135=$h; //@line 1061 "unicodedata.c"
-        var $not=($135) ^ -1; //@line 1061 "unicodedata.c"
-        var $136=$mask; //@line 1061 "unicodedata.c"
-        var $137=($136) & ($not); //@line 1061 "unicodedata.c"
-        $i=$137; //@line 1061 "unicodedata.c"
-        var $138=$i; //@line 1062 "unicodedata.c"
-        var $139=_code_hash+$138*4; //@line 1062 "unicodedata.c"
-        var $140=HEAP[$139]; //@line 1062 "unicodedata.c"
-        $v=$140; //@line 1062 "unicodedata.c"
-        var $141=($140)==0; //@line 1063 "unicodedata.c"
-        if ($141) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 1063 "unicodedata.c"
-      case 30: // $bb25
-        $2=0; //@line 1064 "unicodedata.c"
-        __label__ = 41; break; //@line 1064 "unicodedata.c"
-      case 31: // $bb26
-        var $142=$v; //@line 1065 "unicodedata.c"
-        var $143=$self_addr; //@line 1065 "unicodedata.c"
-        var $144=$name_addr; //@line 1065 "unicodedata.c"
-        var $145=$namelen_addr; //@line 1065 "unicodedata.c"
-        var $146=__cmpname($143, $142, $144, $145); //@line 1065 "unicodedata.c"
-        var $147=($146)!=0; //@line 1065 "unicodedata.c"
-        if ($147) { __label__ = 32; break; } else { __label__ = 33; break; } //@line 1065 "unicodedata.c"
-      case 32: // $bb27
-        var $148=$code_addr; //@line 1066 "unicodedata.c"
-        var $149=$v; //@line 1066 "unicodedata.c"
-        HEAP[$148]=$149; //@line 1066 "unicodedata.c"
-        $2=1; //@line 1067 "unicodedata.c"
-        __label__ = 41; break; //@line 1067 "unicodedata.c"
-      case 33: // $bb28
-        var $150=$h; //@line 1069 "unicodedata.c"
-        var $151=($150) >>> 3; //@line 1069 "unicodedata.c"
-        var $152=$h; //@line 1069 "unicodedata.c"
-        var $153=($151) ^ ($152); //@line 1069 "unicodedata.c"
-        var $154=$mask; //@line 1069 "unicodedata.c"
-        var $155=($153) & ($154); //@line 1069 "unicodedata.c"
-        $incr=$155; //@line 1069 "unicodedata.c"
-        var $156=$incr; //@line 1070 "unicodedata.c"
-        var $157=($156)==0; //@line 1070 "unicodedata.c"
-        if ($157) { __label__ = 34; break; } else { __label__ = 35; break; } //@line 1070 "unicodedata.c"
-      case 34: // $bb29
-        var $158=$mask; //@line 1071 "unicodedata.c"
-        $incr=$158; //@line 1071 "unicodedata.c"
-        __label__ = 35; break; //@line 1071 "unicodedata.c"
-      case 35: // $bb30
-        var $159=$i; //@line 1073 "unicodedata.c"
-        var $160=$incr; //@line 1073 "unicodedata.c"
-        var $161=($160) + ($159); //@line 1073 "unicodedata.c"
-        var $162=$mask; //@line 1073 "unicodedata.c"
-        var $163=($161) & ($162); //@line 1073 "unicodedata.c"
-        $i=$163; //@line 1073 "unicodedata.c"
-        var $164=$i; //@line 1074 "unicodedata.c"
-        var $165=_code_hash+$164*4; //@line 1074 "unicodedata.c"
-        var $166=HEAP[$165]; //@line 1074 "unicodedata.c"
-        $v=$166; //@line 1074 "unicodedata.c"
-        var $167=($166)==0; //@line 1075 "unicodedata.c"
-        if ($167) { __label__ = 36; break; } else { __label__ = 37; break; } //@line 1075 "unicodedata.c"
-      case 36: // $bb31
-        $2=0; //@line 1076 "unicodedata.c"
-        __label__ = 41; break; //@line 1076 "unicodedata.c"
-      case 37: // $bb32
-        var $168=$v; //@line 1077 "unicodedata.c"
-        var $169=$self_addr; //@line 1077 "unicodedata.c"
-        var $170=$name_addr; //@line 1077 "unicodedata.c"
-        var $171=$namelen_addr; //@line 1077 "unicodedata.c"
-        var $172=__cmpname($169, $168, $170, $171); //@line 1077 "unicodedata.c"
-        var $173=($172)!=0; //@line 1077 "unicodedata.c"
-        if ($173) { __label__ = 38; break; } else { __label__ = 39; break; } //@line 1077 "unicodedata.c"
-      case 38: // $bb33
-        var $174=$code_addr; //@line 1078 "unicodedata.c"
-        var $175=$v; //@line 1078 "unicodedata.c"
-        HEAP[$174]=$175; //@line 1078 "unicodedata.c"
-        $2=1; //@line 1079 "unicodedata.c"
-        __label__ = 41; break; //@line 1079 "unicodedata.c"
-      case 39: // $bb34
-        var $176=$incr; //@line 1081 "unicodedata.c"
-        var $177=($176) << 1; //@line 1081 "unicodedata.c"
-        $incr=$177; //@line 1081 "unicodedata.c"
-        var $178=$incr; //@line 1082 "unicodedata.c"
-        var $179=$mask; //@line 1082 "unicodedata.c"
-        var $180=($178) > ($179); //@line 1082 "unicodedata.c"
-        if ($180) { __label__ = 40; break; } else { __label__ = 35; break; } //@line 1082 "unicodedata.c"
-      case 40: // $bb35
-        var $181=$incr; //@line 1083 "unicodedata.c"
-        var $182=($181) ^ 32771; //@line 1083 "unicodedata.c"
-        $incr=$182; //@line 1083 "unicodedata.c"
-        __label__ = 35; break; //@line 1083 "unicodedata.c"
-      case 41: // $bb37
-        var $183=$2; //@line 1026 "unicodedata.c"
-        $retval=$183; //@line 1026 "unicodedata.c"
+        var $82=_is_unified_ideograph($81); //@line 1050 "unicodedata.c"
+        var $83=($82)==0; //@line 1050 "unicodedata.c"
+        if ($83) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 1050 "unicodedata.c"
+      case 20: // $bb21
+        $0=0; //@line 1051 "unicodedata.c"
+        __label__ = 34; break; //@line 1051 "unicodedata.c"
+      case 21: // $bb22
+        var $84=$code_addr; //@line 1052 "unicodedata.c"
+        var $85=$v; //@line 1052 "unicodedata.c"
+        HEAP[$84]=$85; //@line 1052 "unicodedata.c"
+        $0=1; //@line 1053 "unicodedata.c"
+        __label__ = 34; break; //@line 1053 "unicodedata.c"
+      case 22: // $bb23
+        var $86=$name_addr; //@line 1060 "unicodedata.c"
+        var $87=$namelen_addr; //@line 1060 "unicodedata.c"
+        var $88=__gethash($86, $87); //@line 1060 "unicodedata.c"
+        $h=$88; //@line 1060 "unicodedata.c"
+        var $89=$h; //@line 1061 "unicodedata.c"
+        var $not=($89) ^ -1; //@line 1061 "unicodedata.c"
+        var $90=$mask; //@line 1061 "unicodedata.c"
+        var $91=($90) & ($not); //@line 1061 "unicodedata.c"
+        $i=$91; //@line 1061 "unicodedata.c"
+        var $92=$i; //@line 1062 "unicodedata.c"
+        var $93=_code_hash+$92*4; //@line 1062 "unicodedata.c"
+        var $94=HEAP[$93]; //@line 1062 "unicodedata.c"
+        $v=$94; //@line 1062 "unicodedata.c"
+        var $95=$v; //@line 1063 "unicodedata.c"
+        var $96=($95)==0; //@line 1063 "unicodedata.c"
+        if ($96) { __label__ = 23; break; } else { __label__ = 24; break; } //@line 1063 "unicodedata.c"
+      case 23: // $bb25
+        $0=0; //@line 1064 "unicodedata.c"
+        __label__ = 34; break; //@line 1064 "unicodedata.c"
+      case 24: // $bb26
+        var $97=$v; //@line 1065 "unicodedata.c"
+        var $98=$self_addr; //@line 1065 "unicodedata.c"
+        var $99=$name_addr; //@line 1065 "unicodedata.c"
+        var $100=$namelen_addr; //@line 1065 "unicodedata.c"
+        var $101=__cmpname($98, $97, $99, $100); //@line 1065 "unicodedata.c"
+        var $102=($101)!=0; //@line 1065 "unicodedata.c"
+        if ($102) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 1065 "unicodedata.c"
+      case 25: // $bb27
+        var $103=$code_addr; //@line 1066 "unicodedata.c"
+        var $104=$v; //@line 1066 "unicodedata.c"
+        HEAP[$103]=$104; //@line 1066 "unicodedata.c"
+        $0=1; //@line 1067 "unicodedata.c"
+        __label__ = 34; break; //@line 1067 "unicodedata.c"
+      case 26: // $bb28
+        var $105=$h; //@line 1069 "unicodedata.c"
+        var $106=($105) >>> 3; //@line 1069 "unicodedata.c"
+        var $107=$h; //@line 1069 "unicodedata.c"
+        var $108=($106) ^ ($107); //@line 1069 "unicodedata.c"
+        var $109=$mask; //@line 1069 "unicodedata.c"
+        var $110=($108) & ($109); //@line 1069 "unicodedata.c"
+        $incr=$110; //@line 1069 "unicodedata.c"
+        var $111=$incr; //@line 1070 "unicodedata.c"
+        var $112=($111)==0; //@line 1070 "unicodedata.c"
+        if ($112) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1070 "unicodedata.c"
+      case 27: // $bb29
+        var $113=$mask; //@line 1071 "unicodedata.c"
+        $incr=$113; //@line 1071 "unicodedata.c"
+        __label__ = 28; break; //@line 1071 "unicodedata.c"
+      case 28: // $bb30
+        var $114=$i; //@line 1073 "unicodedata.c"
+        var $115=$incr; //@line 1073 "unicodedata.c"
+        var $116=($115) + ($114); //@line 1073 "unicodedata.c"
+        var $117=$mask; //@line 1073 "unicodedata.c"
+        var $118=($116) & ($117); //@line 1073 "unicodedata.c"
+        $i=$118; //@line 1073 "unicodedata.c"
+        var $119=$i; //@line 1074 "unicodedata.c"
+        var $120=_code_hash+$119*4; //@line 1074 "unicodedata.c"
+        var $121=HEAP[$120]; //@line 1074 "unicodedata.c"
+        $v=$121; //@line 1074 "unicodedata.c"
+        var $122=($121)==0; //@line 1075 "unicodedata.c"
+        if ($122) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 1075 "unicodedata.c"
+      case 29: // $bb31
+        $0=0; //@line 1076 "unicodedata.c"
+        __label__ = 34; break; //@line 1076 "unicodedata.c"
+      case 30: // $bb32
+        var $123=$v; //@line 1077 "unicodedata.c"
+        var $124=$self_addr; //@line 1077 "unicodedata.c"
+        var $125=$name_addr; //@line 1077 "unicodedata.c"
+        var $126=$namelen_addr; //@line 1077 "unicodedata.c"
+        var $127=__cmpname($124, $123, $125, $126); //@line 1077 "unicodedata.c"
+        var $128=($127)!=0; //@line 1077 "unicodedata.c"
+        if ($128) { __label__ = 31; break; } else { __label__ = 32; break; } //@line 1077 "unicodedata.c"
+      case 31: // $bb33
+        var $129=$code_addr; //@line 1078 "unicodedata.c"
+        var $130=$v; //@line 1078 "unicodedata.c"
+        HEAP[$129]=$130; //@line 1078 "unicodedata.c"
+        $0=1; //@line 1079 "unicodedata.c"
+        __label__ = 34; break; //@line 1079 "unicodedata.c"
+      case 32: // $bb34
+        var $131=$incr; //@line 1081 "unicodedata.c"
+        var $132=($131) << 1; //@line 1081 "unicodedata.c"
+        $incr=$132; //@line 1081 "unicodedata.c"
+        var $133=$incr; //@line 1082 "unicodedata.c"
+        var $134=$mask; //@line 1082 "unicodedata.c"
+        var $135=($133) > ($134); //@line 1082 "unicodedata.c"
+        if ($135) { __label__ = 33; break; } else { __label__ = 28; break; } //@line 1082 "unicodedata.c"
+      case 33: // $bb35
+        var $136=$incr; //@line 1083 "unicodedata.c"
+        var $137=($136) ^ 32771; //@line 1083 "unicodedata.c"
+        $incr=$137; //@line 1083 "unicodedata.c"
+        __label__ = 28; break; //@line 1083 "unicodedata.c"
+      case 34: // $bb37
+        var $138=$0; //@line 1026 "unicodedata.c"
+        $retval=$138; //@line 1026 "unicodedata.c"
         var $retval38=$retval; //@line 1026 "unicodedata.c"
         STACKTOP = __stackBase__;
         return $retval38; //@line 1026 "unicodedata.c"
@@ -3929,7 +3675,7 @@ var __str170;
         $args_addr=$args;
         HEAP[$defobj]=0; //@line 1110 "unicodedata.c"
         var $1=$args_addr; //@line 1111 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str146, _PyUnicode_Type, $v, $defobj); //@line 1111 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str146, allocate([_PyUnicode_Type,0,0,0,$v,0,0,0,$defobj,0,0,0], ["%struct._typeobject*",0,0,0,"%struct.PyUnicodeObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1111 "unicodedata.c"
         var $3=($2)==0; //@line 1111 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1111 "unicodedata.c"
       case 1: // $bb
@@ -3973,7 +3719,7 @@ var __str170;
         __label__ = 9; break; //@line 1125 "unicodedata.c"
       case 8: // $bb8
         var $name9=$name; //@line 1129 "unicodedata.c"
-        var $21=_Py_BuildValue(__str148, $name9); //@line 1129 "unicodedata.c"
+        var $21=_Py_BuildValue(__str148, allocate([$name9,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1129 "unicodedata.c"
         $0=$21; //@line 1129 "unicodedata.c"
         __label__ = 9; break; //@line 1129 "unicodedata.c"
       case 9: // $bb10
@@ -4004,7 +3750,7 @@ var __str170;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1147 "unicodedata.c"
-        var $2=_PyArg_ParseTuple($1, __str149, $name, $namelen); //@line 1147 "unicodedata.c"
+        var $2=_PyArg_ParseTuple($1, __str149, allocate([$name,0,0,0,$namelen,0,0,0], ["i8**",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 1147 "unicodedata.c"
         var $3=($2)==0; //@line 1147 "unicodedata.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1147 "unicodedata.c"
       case 1: // $bb
@@ -4020,7 +3766,7 @@ var __str170;
       case 3: // $bb2
         var $9=HEAP[$name]; //@line 1151 "unicodedata.c"
         var $10=HEAP[_PyExc_KeyError]; //@line 1151 "unicodedata.c"
-        var $11=_PyErr_Format($10, __str150, $9); //@line 1151 "unicodedata.c"
+        var $11=_PyErr_Format($10, __str150, allocate([$9,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 1151 "unicodedata.c"
         $0=0; //@line 1153 "unicodedata.c"
         __label__ = 7; break; //@line 1153 "unicodedata.c"
       case 4: // $bb3
@@ -4070,78 +3816,43 @@ var __str170;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $name_addr_i;
-        var $getrecord_addr_i;
-        var $normalization_addr_i;
-        var $retval_i;
-        var $0;
-        var $self_i;
         var $m;
         var $v;
         HEAP[_UCD_Type+4]=_PyType_Type; //@line 1253 "unicodedata.c"
-        var $1=_Py_InitModule4(__str164, _unicodedata_functions, _unicodedata_docstring, 0, 1013); //@line 1255 "unicodedata.c"
-        $m=$1; //@line 1255 "unicodedata.c"
-        var $2=$m; //@line 1257 "unicodedata.c"
-        var $3=($2)==0; //@line 1257 "unicodedata.c"
-        if ($3) { __label__ = 7; break; } else { __label__ = 1; break; } //@line 1257 "unicodedata.c"
+        var $0=_Py_InitModule4(__str164, _unicodedata_functions, _unicodedata_docstring, 0, 1013); //@line 1255 "unicodedata.c"
+        $m=$0; //@line 1255 "unicodedata.c"
+        var $1=$m; //@line 1257 "unicodedata.c"
+        var $2=($1)==0; //@line 1257 "unicodedata.c"
+        if ($2) { __label__ = 5; break; } else { __label__ = 1; break; } //@line 1257 "unicodedata.c"
       case 1: // $bb
-        var $4=$m; //@line 1260 "unicodedata.c"
-        var $5=_PyModule_AddStringConstant($4, __str72, __str165); //@line 1260 "unicodedata.c"
-        var $6=HEAP[_UCD_Type]; //@line 1261 "unicodedata.c"
-        var $7=($6) + 1; //@line 1261 "unicodedata.c"
-        HEAP[_UCD_Type]=$7; //@line 1261 "unicodedata.c"
-        var $8=$m; //@line 1262 "unicodedata.c"
-        var $9=_PyModule_AddObject($8, __str166, _UCD_Type); //@line 1262 "unicodedata.c"
-        $name_addr_i=__str167;
-        $getrecord_addr_i=(FUNCTION_TABLE_OFFSET + 2);
-        $normalization_addr_i=(FUNCTION_TABLE_OFFSET + 4);
-        var $10=__PyObject_New(_UCD_Type); //@line 82 "unicodedata.c"
-        var $11=$10; //@line 82 "unicodedata.c"
-        $self_i=$11; //@line 82 "unicodedata.c"
-        var $12=$self_i; //@line 83 "unicodedata.c"
-        var $13=($12)==0; //@line 83 "unicodedata.c"
-        if ($13) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 83 "unicodedata.c"
-      case 2: // $new_previous_version_exit_thread
-        $0=0; //@line 84 "unicodedata.c"
-        $retval_i=0; //@line 84 "unicodedata.c"
-        $v=0; //@line 1265 "unicodedata.c"
-        __label__ = 5; break;
-      case 3: // $new_previous_version_exit
-        var $14=$self_i; //@line 85 "unicodedata.c"
-        var $15=$14+8; //@line 85 "unicodedata.c"
-        var $16=$name_addr_i; //@line 85 "unicodedata.c"
-        HEAP[$15]=$16; //@line 85 "unicodedata.c"
-        var $17=$self_i; //@line 86 "unicodedata.c"
-        var $18=$17+12; //@line 86 "unicodedata.c"
-        var $19=$getrecord_addr_i; //@line 86 "unicodedata.c"
-        HEAP[$18]=$19; //@line 86 "unicodedata.c"
-        var $20=$self_i; //@line 87 "unicodedata.c"
-        var $21=$20+16; //@line 87 "unicodedata.c"
-        var $22=$normalization_addr_i; //@line 87 "unicodedata.c"
-        HEAP[$21]=$22; //@line 87 "unicodedata.c"
-        var $23=$self_i; //@line 88 "unicodedata.c"
-        var $24=$23; //@line 88 "unicodedata.c"
-        $0=$24; //@line 88 "unicodedata.c"
-        $retval_i=$24; //@line 84 "unicodedata.c"
-        $v=$24; //@line 1265 "unicodedata.c"
-        var $25=($24)!=0; //@line 1266 "unicodedata.c"
-        if ($25) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1266 "unicodedata.c"
-      case 4: // $bb1
-        var $26=$m; //@line 1267 "unicodedata.c"
-        var $27=$v; //@line 1267 "unicodedata.c"
-        var $28=_PyModule_AddObject($26, __str168, $27); //@line 1267 "unicodedata.c"
-        __label__ = 5; break; //@line 1267 "unicodedata.c"
-      case 5: // $bb2
-        var $29=_PyCapsule_New(_hashAPI, __str169, 0); //@line 1270 "unicodedata.c"
-        $v=$29; //@line 1270 "unicodedata.c"
-        var $30=($29)!=0; //@line 1271 "unicodedata.c"
-        if ($30) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 1271 "unicodedata.c"
-      case 6: // $bb3
-        var $31=$m; //@line 1272 "unicodedata.c"
-        var $32=$v; //@line 1272 "unicodedata.c"
-        var $33=_PyModule_AddObject($31, __str170, $32); //@line 1272 "unicodedata.c"
-        __label__ = 7; break; //@line 1272 "unicodedata.c"
-      case 7: // $return
+        var $3=$m; //@line 1260 "unicodedata.c"
+        var $4=_PyModule_AddStringConstant($3, __str72, __str165); //@line 1260 "unicodedata.c"
+        var $5=HEAP[_UCD_Type]; //@line 1261 "unicodedata.c"
+        var $6=($5) + 1; //@line 1261 "unicodedata.c"
+        HEAP[_UCD_Type]=$6; //@line 1261 "unicodedata.c"
+        var $7=$m; //@line 1262 "unicodedata.c"
+        var $8=_PyModule_AddObject($7, __str166, _UCD_Type); //@line 1262 "unicodedata.c"
+        var $9=_new_previous_version(); //@line 1265 "unicodedata.c"
+        $v=$9; //@line 1265 "unicodedata.c"
+        var $10=$v; //@line 1266 "unicodedata.c"
+        var $11=($10)!=0; //@line 1266 "unicodedata.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 1266 "unicodedata.c"
+      case 2: // $bb1
+        var $12=$m; //@line 1267 "unicodedata.c"
+        var $13=$v; //@line 1267 "unicodedata.c"
+        var $14=_PyModule_AddObject($12, __str168, $13); //@line 1267 "unicodedata.c"
+        __label__ = 3; break; //@line 1267 "unicodedata.c"
+      case 3: // $bb2
+        var $15=_PyCapsule_New(_hashAPI, __str169, 0); //@line 1270 "unicodedata.c"
+        $v=$15; //@line 1270 "unicodedata.c"
+        var $16=($15)!=0; //@line 1271 "unicodedata.c"
+        if ($16) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 1271 "unicodedata.c"
+      case 4: // $bb3
+        var $17=$m; //@line 1272 "unicodedata.c"
+        var $18=$v; //@line 1272 "unicodedata.c"
+        var $19=_PyModule_AddObject($17, __str170, $18); //@line 1272 "unicodedata.c"
+        __label__ = 5; break; //@line 1272 "unicodedata.c"
+      case 5: // $return
         ;
         return; //@line 1258 "unicodedata.c"
       default: assert(0, "bad label: " + __label__);

@@ -89,13 +89,13 @@ var $struct_statscollector_t___SIZE = 16; // %struct.statscollector_t
 var $struct_timeval___SIZE = 8; // %struct.timeval
   
 var _empty_tuple;
-var _PyCFunction_Type;
-var _PyModule_Type;
+
+
 var __str;
 var __str1;
 var __str2;
 var __str3;
-var _PyExc_MemoryError;
+
 var __str4;
 var __str5;
 var __str6;
@@ -122,7 +122,7 @@ var _profiler_subentry_desc;
 var __str23;
 var _StatsSubEntryType;
 var __str24;
-var __Py_NoneStruct;
+
 var _StatsEntryType;
 var __str25;
 var _getstats_doc;
@@ -192,6 +192,51 @@ var _random_stream;
 
 
 
+
+  function _hpTimer() {
+    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+    var __label__;
+  
+    var $retval;
+    var $0;
+    var $tv=__stackBase__;
+    var $ret;
+    var $1=_gettimeofday($tv, 0); //@line 56 "_lsprof.c"
+    var $2=$tv; //@line 58 "_lsprof.c"
+    var $3=HEAP[$2]; //@line 58 "_lsprof.c"
+    var $4=($3); //@line 58 "_lsprof.c"
+    $ret=$4; //@line 58 "_lsprof.c"
+    var $5=$ret; //@line 59 "_lsprof.c"
+    var $6=($5) * 1000000; //@line 59 "_lsprof.c"
+    var $7=$tv+4; //@line 59 "_lsprof.c"
+    var $8=HEAP[$7]; //@line 59 "_lsprof.c"
+    var $9=($8); //@line 59 "_lsprof.c"
+    var $10=($9) + ($6); //@line 59 "_lsprof.c"
+    $ret=$10; //@line 59 "_lsprof.c"
+    var $11=$ret; //@line 60 "_lsprof.c"
+    $0=$11; //@line 60 "_lsprof.c"
+    var $12=$0; //@line 60 "_lsprof.c"
+    $retval=$12; //@line 60 "_lsprof.c"
+    var $retval1=$retval; //@line 60 "_lsprof.c"
+    STACKTOP = __stackBase__;
+    return $retval1; //@line 60 "_lsprof.c"
+  }
+  
+
+  function _hpTimerUnit() {
+    ;
+    var __label__;
+  
+    var $retval;
+    var $0;
+    $0=0.000001; //@line 66 "_lsprof.c"
+    var $1=$0; //@line 66 "_lsprof.c"
+    $retval=$1; //@line 66 "_lsprof.c"
+    var $retval1=$retval; //@line 66 "_lsprof.c"
+    ;
+    return $retval1; //@line 66 "_lsprof.c"
+  }
+  
 
   function _CallExternalTimer($pObj) {
     ;
@@ -283,6 +328,454 @@ var _random_stream;
         var $retval10=$retval; //@line 136 "_lsprof.c"
         ;
         return $retval10; //@line 136 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _normalizeUserObj($obj) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $obj_addr;
+        var $retval;
+        var $0;
+        var $fn;
+        var $mod;
+        var $modname;
+        var $self;
+        var $name;
+        var $mo;
+        var $res;
+        $obj_addr=$obj;
+        var $1=$obj_addr; //@line 169 "_lsprof.c"
+        var $2=$1+4; //@line 169 "_lsprof.c"
+        var $3=HEAP[$2]; //@line 169 "_lsprof.c"
+        var $4=($3)!=(_PyCFunction_Type); //@line 169 "_lsprof.c"
+        var $5=$obj_addr; //@line 170 "_lsprof.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 169 "_lsprof.c"
+      case 1: // $bb
+        var $6=$5; //@line 170 "_lsprof.c"
+        var $7=HEAP[$6]; //@line 170 "_lsprof.c"
+        var $8=($7) + 1; //@line 170 "_lsprof.c"
+        var $9=$obj_addr; //@line 170 "_lsprof.c"
+        var $10=$9; //@line 170 "_lsprof.c"
+        HEAP[$10]=$8; //@line 170 "_lsprof.c"
+        var $11=$obj_addr; //@line 171 "_lsprof.c"
+        $0=$11; //@line 171 "_lsprof.c"
+        __label__ = 26; break; //@line 171 "_lsprof.c"
+      case 2: // $bb1
+        var $12=$5; //@line 176 "_lsprof.c"
+        $fn=$12; //@line 176 "_lsprof.c"
+        var $13=$fn; //@line 178 "_lsprof.c"
+        var $14=$13+12; //@line 178 "_lsprof.c"
+        var $15=HEAP[$14]; //@line 178 "_lsprof.c"
+        var $16=($15)==0; //@line 178 "_lsprof.c"
+        var $17=$fn; //@line 180 "_lsprof.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 15; break; } //@line 178 "_lsprof.c"
+      case 3: // $bb2
+        var $18=$17+16; //@line 180 "_lsprof.c"
+        var $19=HEAP[$18]; //@line 180 "_lsprof.c"
+        $mod=$19; //@line 180 "_lsprof.c"
+        var $20=$mod; //@line 182 "_lsprof.c"
+        var $21=($20)==0; //@line 182 "_lsprof.c"
+        if ($21) { __label__ = 11; break; } else { __label__ = 4; break; } //@line 182 "_lsprof.c"
+      case 4: // $bb3
+        var $22=$mod; //@line 182 "_lsprof.c"
+        var $23=$22+4; //@line 182 "_lsprof.c"
+        var $24=HEAP[$23]; //@line 182 "_lsprof.c"
+        var $25=$24+84; //@line 182 "_lsprof.c"
+        var $26=HEAP[$25]; //@line 182 "_lsprof.c"
+        var $27=($26) & 134217728; //@line 182 "_lsprof.c"
+        var $28=($27)==0; //@line 182 "_lsprof.c"
+        var $_pr=$mod;
+        if ($28) { __label__ = 6; break; } else { __label__ = 5; break; } //@line 182 "_lsprof.c"
+      case 5: // $bb4
+        var $29=$_pr; //@line 183 "_lsprof.c"
+        var $30=$29+20; //@line 183 "_lsprof.c"
+        var $31=$30; //@line 183 "_lsprof.c"
+        $modname=$31; //@line 183 "_lsprof.c"
+        __label__ = 12; break; //@line 183 "_lsprof.c"
+      case 6: // $bb5
+        var $32=($_pr)==0; //@line 185 "_lsprof.c"
+        if ($32) { __label__ = 11; break; } else { __label__ = 7; break; } //@line 185 "_lsprof.c"
+      case 7: // $bb6
+        var $33=$mod; //@line 185 "_lsprof.c"
+        var $34=$33+4; //@line 185 "_lsprof.c"
+        var $35=HEAP[$34]; //@line 185 "_lsprof.c"
+        var $36=($35)==(_PyModule_Type); //@line 185 "_lsprof.c"
+        if ($36) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 185 "_lsprof.c"
+      case 8: // $bb7
+        var $37=$mod; //@line 185 "_lsprof.c"
+        var $38=$37+4; //@line 185 "_lsprof.c"
+        var $39=HEAP[$38]; //@line 185 "_lsprof.c"
+        var $40=_PyType_IsSubtype($39, _PyModule_Type); //@line 185 "_lsprof.c"
+        var $41=($40)!=0; //@line 185 "_lsprof.c"
+        if ($41) { __label__ = 9; break; } else { __label__ = 11; break; } //@line 185 "_lsprof.c"
+      case 9: // $bb8
+        var $42=$mod; //@line 186 "_lsprof.c"
+        var $43=_PyModule_GetName($42); //@line 186 "_lsprof.c"
+        $modname=$43; //@line 186 "_lsprof.c"
+        var $44=($43)==0; //@line 187 "_lsprof.c"
+        if ($44) { __label__ = 10; break; } else { __label__ = 12; break; } //@line 187 "_lsprof.c"
+      case 10: // $bb9
+        _PyErr_Clear(); //@line 188 "_lsprof.c"
+        $modname=__str; //@line 189 "_lsprof.c"
+        __label__ = 12; break; //@line 189 "_lsprof.c"
+      case 11: // $bb11
+        $modname=__str; //@line 193 "_lsprof.c"
+        __label__ = 12; break; //@line 193 "_lsprof.c"
+      case 12: // $bb12
+        var $45=$modname; //@line 195 "_lsprof.c"
+        var $46=_strcmp($45, __str); //@line 195 "_lsprof.c"
+        var $47=($46)!=0; //@line 195 "_lsprof.c"
+        var $48=$fn; //@line 196 "_lsprof.c"
+        var $49=$48+8; //@line 196 "_lsprof.c"
+        var $50=HEAP[$49]; //@line 196 "_lsprof.c"
+        var $51=$50; //@line 196 "_lsprof.c"
+        var $52=HEAP[$51]; //@line 196 "_lsprof.c"
+        if ($47) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 195 "_lsprof.c"
+      case 13: // $bb13
+        var $53=$modname; //@line 196 "_lsprof.c"
+        var $54=_PyString_FromFormat(__str1, allocate([$53,0,0,0,$52,0,0,0], ["i8*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 196 "_lsprof.c"
+        $0=$54; //@line 196 "_lsprof.c"
+        __label__ = 26; break; //@line 196 "_lsprof.c"
+      case 14: // $bb14
+        var $55=_PyString_FromFormat(__str2, allocate([$52,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 200 "_lsprof.c"
+        $0=$55; //@line 200 "_lsprof.c"
+        __label__ = 26; break; //@line 200 "_lsprof.c"
+      case 15: // $bb15
+        var $56=$17+12; //@line 207 "_lsprof.c"
+        var $57=HEAP[$56]; //@line 207 "_lsprof.c"
+        $self=$57; //@line 207 "_lsprof.c"
+        var $58=$fn; //@line 208 "_lsprof.c"
+        var $59=$58+8; //@line 208 "_lsprof.c"
+        var $60=HEAP[$59]; //@line 208 "_lsprof.c"
+        var $61=$60; //@line 208 "_lsprof.c"
+        var $62=HEAP[$61]; //@line 208 "_lsprof.c"
+        var $63=_PyString_FromString($62); //@line 208 "_lsprof.c"
+        $name=$63; //@line 208 "_lsprof.c"
+        var $64=$name; //@line 209 "_lsprof.c"
+        var $65=($64)!=0; //@line 209 "_lsprof.c"
+        if ($65) { __label__ = 16; break; } else { __label__ = 25; break; } //@line 209 "_lsprof.c"
+      case 16: // $bb16
+        var $66=$self; //@line 210 "_lsprof.c"
+        var $67=$66+4; //@line 210 "_lsprof.c"
+        var $68=HEAP[$67]; //@line 210 "_lsprof.c"
+        var $69=$name; //@line 210 "_lsprof.c"
+        var $70=__PyType_Lookup($68, $69); //@line 210 "_lsprof.c"
+        $mo=$70; //@line 210 "_lsprof.c"
+        var $71=$mo; //@line 211 "_lsprof.c"
+        var $72=($71)!=0; //@line 211 "_lsprof.c"
+        if ($72) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 211 "_lsprof.c"
+      case 17: // $bb17
+        var $73=$mo; //@line 211 "_lsprof.c"
+        var $74=$73; //@line 211 "_lsprof.c"
+        var $75=HEAP[$74]; //@line 211 "_lsprof.c"
+        var $76=($75) + 1; //@line 211 "_lsprof.c"
+        var $77=$mo; //@line 211 "_lsprof.c"
+        var $78=$77; //@line 211 "_lsprof.c"
+        HEAP[$78]=$76; //@line 211 "_lsprof.c"
+        __label__ = 18; break; //@line 211 "_lsprof.c"
+      case 18: // $bb18
+        var $79=$name; //@line 212 "_lsprof.c"
+        var $80=$79; //@line 212 "_lsprof.c"
+        var $81=HEAP[$80]; //@line 212 "_lsprof.c"
+        var $82=($81) - 1; //@line 212 "_lsprof.c"
+        var $83=$name; //@line 212 "_lsprof.c"
+        var $84=$83; //@line 212 "_lsprof.c"
+        HEAP[$84]=$82; //@line 212 "_lsprof.c"
+        var $85=$name; //@line 212 "_lsprof.c"
+        var $86=$85; //@line 212 "_lsprof.c"
+        var $87=HEAP[$86]; //@line 212 "_lsprof.c"
+        var $88=($87)==0; //@line 212 "_lsprof.c"
+        if ($88) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 212 "_lsprof.c"
+      case 19: // $bb19
+        var $89=$name; //@line 212 "_lsprof.c"
+        var $90=$89+4; //@line 212 "_lsprof.c"
+        var $91=HEAP[$90]; //@line 212 "_lsprof.c"
+        var $92=$91+24; //@line 212 "_lsprof.c"
+        var $93=HEAP[$92]; //@line 212 "_lsprof.c"
+        var $94=$name; //@line 212 "_lsprof.c"
+        FUNCTION_TABLE[$93]($94); //@line 212 "_lsprof.c"
+        __label__ = 20; break; //@line 212 "_lsprof.c"
+      case 20: // $bb20
+        var $95=$mo; //@line 213 "_lsprof.c"
+        var $96=($95)!=0; //@line 213 "_lsprof.c"
+        if ($96) { __label__ = 21; break; } else { __label__ = 25; break; } //@line 213 "_lsprof.c"
+      case 21: // $bb21
+        var $97=$mo; //@line 214 "_lsprof.c"
+        var $98=_PyObject_Repr($97); //@line 214 "_lsprof.c"
+        $res=$98; //@line 214 "_lsprof.c"
+        var $99=$mo; //@line 215 "_lsprof.c"
+        var $100=$99; //@line 215 "_lsprof.c"
+        var $101=HEAP[$100]; //@line 215 "_lsprof.c"
+        var $102=($101) - 1; //@line 215 "_lsprof.c"
+        var $103=$mo; //@line 215 "_lsprof.c"
+        var $104=$103; //@line 215 "_lsprof.c"
+        HEAP[$104]=$102; //@line 215 "_lsprof.c"
+        var $105=$mo; //@line 215 "_lsprof.c"
+        var $106=$105; //@line 215 "_lsprof.c"
+        var $107=HEAP[$106]; //@line 215 "_lsprof.c"
+        var $108=($107)==0; //@line 215 "_lsprof.c"
+        if ($108) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 215 "_lsprof.c"
+      case 22: // $bb22
+        var $109=$mo; //@line 215 "_lsprof.c"
+        var $110=$109+4; //@line 215 "_lsprof.c"
+        var $111=HEAP[$110]; //@line 215 "_lsprof.c"
+        var $112=$111+24; //@line 215 "_lsprof.c"
+        var $113=HEAP[$112]; //@line 215 "_lsprof.c"
+        var $114=$mo; //@line 215 "_lsprof.c"
+        FUNCTION_TABLE[$113]($114); //@line 215 "_lsprof.c"
+        __label__ = 23; break; //@line 215 "_lsprof.c"
+      case 23: // $bb23
+        var $115=$res; //@line 216 "_lsprof.c"
+        var $116=($115)!=0; //@line 216 "_lsprof.c"
+        if ($116) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 216 "_lsprof.c"
+      case 24: // $bb24
+        var $117=$res; //@line 217 "_lsprof.c"
+        $0=$117; //@line 217 "_lsprof.c"
+        __label__ = 26; break; //@line 217 "_lsprof.c"
+      case 25: // $bb25
+        _PyErr_Clear(); //@line 220 "_lsprof.c"
+        var $118=$fn; //@line 221 "_lsprof.c"
+        var $119=$118+8; //@line 221 "_lsprof.c"
+        var $120=HEAP[$119]; //@line 221 "_lsprof.c"
+        var $121=$120; //@line 221 "_lsprof.c"
+        var $122=HEAP[$121]; //@line 221 "_lsprof.c"
+        var $123=_PyString_FromFormat(__str3, allocate([$122,0,0,0], ["i8*",0,0,0], ALLOC_STACK)); //@line 221 "_lsprof.c"
+        $0=$123; //@line 221 "_lsprof.c"
+        __label__ = 26; break; //@line 221 "_lsprof.c"
+      case 26: // $bb26
+        var $124=$0; //@line 171 "_lsprof.c"
+        $retval=$124; //@line 171 "_lsprof.c"
+        var $retval27=$retval; //@line 171 "_lsprof.c"
+        ;
+        return $retval27; //@line 171 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _newProfilerEntry($pObj, $key, $userObj) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $pObj_addr;
+        var $key_addr;
+        var $userObj_addr;
+        var $retval;
+        var $0;
+        var $self;
+        $pObj_addr=$pObj;
+        $key_addr=$key;
+        $userObj_addr=$userObj;
+        var $1=_malloc(48); //@line 230 "_lsprof.c"
+        var $2=$1; //@line 230 "_lsprof.c"
+        $self=$2; //@line 230 "_lsprof.c"
+        var $3=$self; //@line 231 "_lsprof.c"
+        var $4=($3)==0; //@line 231 "_lsprof.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 231 "_lsprof.c"
+      case 1: // $bb
+        var $5=$pObj_addr; //@line 232 "_lsprof.c"
+        var $6=$5+20; //@line 232 "_lsprof.c"
+        var $7=HEAP[$6]; //@line 232 "_lsprof.c"
+        var $8=($7) | 256; //@line 232 "_lsprof.c"
+        var $9=$pObj_addr; //@line 232 "_lsprof.c"
+        var $10=$9+20; //@line 232 "_lsprof.c"
+        HEAP[$10]=$8; //@line 232 "_lsprof.c"
+        $0=0; //@line 233 "_lsprof.c"
+        __label__ = 5; break; //@line 233 "_lsprof.c"
+      case 2: // $bb1
+        var $11=$userObj_addr; //@line 235 "_lsprof.c"
+        var $12=_normalizeUserObj($11); //@line 235 "_lsprof.c"
+        $userObj_addr=$12; //@line 235 "_lsprof.c"
+        var $13=$userObj_addr; //@line 236 "_lsprof.c"
+        var $14=($13)==0; //@line 236 "_lsprof.c"
+        if ($14) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 236 "_lsprof.c"
+      case 3: // $bb2
+        _PyErr_Clear(); //@line 237 "_lsprof.c"
+        var $15=$self; //@line 238 "_lsprof.c"
+        var $16=$15; //@line 238 "_lsprof.c"
+        _free($16); //@line 238 "_lsprof.c"
+        var $17=$pObj_addr; //@line 239 "_lsprof.c"
+        var $18=$17+20; //@line 239 "_lsprof.c"
+        var $19=HEAP[$18]; //@line 239 "_lsprof.c"
+        var $20=($19) | 256; //@line 239 "_lsprof.c"
+        var $21=$pObj_addr; //@line 239 "_lsprof.c"
+        var $22=$21+20; //@line 239 "_lsprof.c"
+        HEAP[$22]=$20; //@line 239 "_lsprof.c"
+        $0=0; //@line 240 "_lsprof.c"
+        __label__ = 5; break; //@line 240 "_lsprof.c"
+      case 4: // $bb3
+        var $23=$self; //@line 242 "_lsprof.c"
+        var $24=$23; //@line 242 "_lsprof.c"
+        var $25=$24; //@line 242 "_lsprof.c"
+        var $26=$key_addr; //@line 242 "_lsprof.c"
+        HEAP[$25]=$26; //@line 242 "_lsprof.c"
+        var $27=$self; //@line 243 "_lsprof.c"
+        var $28=$27+12; //@line 243 "_lsprof.c"
+        var $29=$userObj_addr; //@line 243 "_lsprof.c"
+        HEAP[$28]=$29; //@line 243 "_lsprof.c"
+        var $30=$self; //@line 244 "_lsprof.c"
+        var $31=$30+16; //@line 244 "_lsprof.c"
+        HEAP[$31]=0; //@line 244 "_lsprof.c"
+        var $32=$self; //@line 245 "_lsprof.c"
+        var $33=$32+24; //@line 245 "_lsprof.c"
+        HEAP[$33]=0; //@line 245 "_lsprof.c"
+        var $34=$self; //@line 246 "_lsprof.c"
+        var $35=$34+32; //@line 246 "_lsprof.c"
+        HEAP[$35]=0; //@line 246 "_lsprof.c"
+        var $36=$self; //@line 247 "_lsprof.c"
+        var $37=$36+36; //@line 247 "_lsprof.c"
+        HEAP[$37]=0; //@line 247 "_lsprof.c"
+        var $38=$self; //@line 248 "_lsprof.c"
+        var $39=$38+40; //@line 248 "_lsprof.c"
+        HEAP[$39]=0; //@line 248 "_lsprof.c"
+        var $40=$self; //@line 249 "_lsprof.c"
+        var $41=$40+44; //@line 249 "_lsprof.c"
+        HEAP[$41]=0; //@line 249 "_lsprof.c"
+        var $42=$self; //@line 250 "_lsprof.c"
+        var $43=$42; //@line 250 "_lsprof.c"
+        var $44=$pObj_addr; //@line 250 "_lsprof.c"
+        var $45=$44+8; //@line 250 "_lsprof.c"
+        _RotatingTree_Add($45, $43); //@line 250 "_lsprof.c"
+        var $46=$self; //@line 251 "_lsprof.c"
+        $0=$46; //@line 251 "_lsprof.c"
+        __label__ = 5; break; //@line 251 "_lsprof.c"
+      case 5: // $bb4
+        var $47=$0; //@line 233 "_lsprof.c"
+        $retval=$47; //@line 233 "_lsprof.c"
+        var $retval5=$retval; //@line 233 "_lsprof.c"
+        ;
+        return $retval5; //@line 233 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _getEntry($pObj, $key) {
+    ;
+    var __label__;
+  
+    var $pObj_addr;
+    var $key_addr;
+    var $retval;
+    var $0;
+    $pObj_addr=$pObj;
+    $key_addr=$key;
+    var $1=$pObj_addr; //@line 257 "_lsprof.c"
+    var $2=$1+8; //@line 257 "_lsprof.c"
+    var $3=$key_addr; //@line 257 "_lsprof.c"
+    var $4=_RotatingTree_Get($2, $3); //@line 257 "_lsprof.c"
+    var $5=$4; //@line 257 "_lsprof.c"
+    $0=$5; //@line 257 "_lsprof.c"
+    var $6=$0; //@line 257 "_lsprof.c"
+    $retval=$6; //@line 257 "_lsprof.c"
+    var $retval1=$retval; //@line 257 "_lsprof.c"
+    ;
+    return $retval1; //@line 257 "_lsprof.c"
+  }
+  
+
+  function _getSubEntry($pObj, $caller, $entry1) {
+    ;
+    var __label__;
+  
+    var $pObj_addr;
+    var $caller_addr;
+    var $entry_addr;
+    var $retval;
+    var $0;
+    $pObj_addr=$pObj;
+    $caller_addr=$caller;
+    $entry_addr=$entry1;
+    var $1=$caller_addr; //@line 263 "_lsprof.c"
+    var $2=$1+44; //@line 263 "_lsprof.c"
+    var $3=$entry_addr; //@line 263 "_lsprof.c"
+    var $4=$3; //@line 263 "_lsprof.c"
+    var $5=_RotatingTree_Get($2, $4); //@line 263 "_lsprof.c"
+    var $6=$5; //@line 263 "_lsprof.c"
+    $0=$6; //@line 263 "_lsprof.c"
+    var $7=$0; //@line 263 "_lsprof.c"
+    $retval=$7; //@line 263 "_lsprof.c"
+    var $retval2=$retval; //@line 263 "_lsprof.c"
+    ;
+    return $retval2; //@line 263 "_lsprof.c"
+  }
+  
+
+  function _newSubEntry($pObj, $caller, $entry1) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $pObj_addr;
+        var $caller_addr;
+        var $entry_addr;
+        var $retval;
+        var $0;
+        var $self;
+        $pObj_addr=$pObj;
+        $caller_addr=$caller;
+        $entry_addr=$entry1;
+        var $1=_malloc(40); //@line 271 "_lsprof.c"
+        var $2=$1; //@line 271 "_lsprof.c"
+        $self=$2; //@line 271 "_lsprof.c"
+        var $3=$self; //@line 272 "_lsprof.c"
+        var $4=($3)==0; //@line 272 "_lsprof.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 272 "_lsprof.c"
+      case 1: // $bb
+        var $5=$pObj_addr; //@line 273 "_lsprof.c"
+        var $6=$5+20; //@line 273 "_lsprof.c"
+        var $7=HEAP[$6]; //@line 273 "_lsprof.c"
+        var $8=($7) | 256; //@line 273 "_lsprof.c"
+        var $9=$pObj_addr; //@line 273 "_lsprof.c"
+        var $10=$9+20; //@line 273 "_lsprof.c"
+        HEAP[$10]=$8; //@line 273 "_lsprof.c"
+        $0=0; //@line 274 "_lsprof.c"
+        __label__ = 3; break; //@line 274 "_lsprof.c"
+      case 2: // $bb2
+        var $11=$self; //@line 276 "_lsprof.c"
+        var $12=$11; //@line 276 "_lsprof.c"
+        var $13=$12; //@line 276 "_lsprof.c"
+        var $14=$entry_addr; //@line 276 "_lsprof.c"
+        var $15=$14; //@line 276 "_lsprof.c"
+        HEAP[$13]=$15; //@line 276 "_lsprof.c"
+        var $16=$self; //@line 277 "_lsprof.c"
+        var $17=$16+12; //@line 277 "_lsprof.c"
+        HEAP[$17]=0; //@line 277 "_lsprof.c"
+        var $18=$self; //@line 278 "_lsprof.c"
+        var $19=$18+20; //@line 278 "_lsprof.c"
+        HEAP[$19]=0; //@line 278 "_lsprof.c"
+        var $20=$self; //@line 279 "_lsprof.c"
+        var $21=$20+28; //@line 279 "_lsprof.c"
+        HEAP[$21]=0; //@line 279 "_lsprof.c"
+        var $22=$self; //@line 280 "_lsprof.c"
+        var $23=$22+32; //@line 280 "_lsprof.c"
+        HEAP[$23]=0; //@line 280 "_lsprof.c"
+        var $24=$self; //@line 281 "_lsprof.c"
+        var $25=$24+36; //@line 281 "_lsprof.c"
+        HEAP[$25]=0; //@line 281 "_lsprof.c"
+        var $26=$self; //@line 282 "_lsprof.c"
+        var $27=$26; //@line 282 "_lsprof.c"
+        var $28=$caller_addr; //@line 282 "_lsprof.c"
+        var $29=$28+44; //@line 282 "_lsprof.c"
+        _RotatingTree_Add($29, $27); //@line 282 "_lsprof.c"
+        var $30=$self; //@line 283 "_lsprof.c"
+        $0=$30; //@line 283 "_lsprof.c"
+        __label__ = 3; break; //@line 283 "_lsprof.c"
+      case 3: // $bb3
+        var $31=$0; //@line 274 "_lsprof.c"
+        $retval=$31; //@line 274 "_lsprof.c"
+        var $retval4=$retval; //@line 274 "_lsprof.c"
+        ;
+        return $retval4; //@line 274 "_lsprof.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -444,21 +937,122 @@ var _random_stream;
   }
   
 
-  function _Stop($pObj, $self, $entry1) {
-    var __stackBase__  = STACKTOP; STACKTOP += 8; _memset(__stackBase__, 0, 8);
+  function _initContext($pObj, $self, $entry1) {
+    ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pObj_addr_i;
-        var $caller_addr_i;
-        var $entry_addr_i;
-        var $retval_i1;
-        var $0;
-        var $retval_i;
-        var $1;
-        var $tv_i=__stackBase__;
-        var $ret_i;
+        var $pObj_addr;
+        var $self_addr;
+        var $entry_addr;
+        var $iftmp_2;
+        var $caller;
+        var $subentry;
+        $pObj_addr=$pObj;
+        $self_addr=$self;
+        $entry_addr=$entry1;
+        var $0=$self_addr; //@line 322 "_lsprof.c"
+        var $1=$0+20; //@line 322 "_lsprof.c"
+        var $2=$entry_addr; //@line 322 "_lsprof.c"
+        HEAP[$1]=$2; //@line 322 "_lsprof.c"
+        var $3=$self_addr; //@line 323 "_lsprof.c"
+        var $4=$3+8; //@line 323 "_lsprof.c"
+        HEAP[$4]=0; //@line 323 "_lsprof.c"
+        var $5=$pObj_addr; //@line 324 "_lsprof.c"
+        var $6=$5+12; //@line 324 "_lsprof.c"
+        var $7=HEAP[$6]; //@line 324 "_lsprof.c"
+        var $8=$self_addr; //@line 324 "_lsprof.c"
+        var $9=$8+16; //@line 324 "_lsprof.c"
+        HEAP[$9]=$7; //@line 324 "_lsprof.c"
+        var $10=$pObj_addr; //@line 325 "_lsprof.c"
+        var $11=$10+12; //@line 325 "_lsprof.c"
+        var $12=$self_addr; //@line 325 "_lsprof.c"
+        HEAP[$11]=$12; //@line 325 "_lsprof.c"
+        var $13=$entry_addr; //@line 326 "_lsprof.c"
+        var $14=$13+40; //@line 326 "_lsprof.c"
+        var $15=HEAP[$14]; //@line 326 "_lsprof.c"
+        var $16=($15) + 1; //@line 326 "_lsprof.c"
+        var $17=$entry_addr; //@line 326 "_lsprof.c"
+        var $18=$17+40; //@line 326 "_lsprof.c"
+        HEAP[$18]=$16; //@line 326 "_lsprof.c"
+        var $19=$pObj_addr; //@line 327 "_lsprof.c"
+        var $20=$19+20; //@line 327 "_lsprof.c"
+        var $21=HEAP[$20]; //@line 327 "_lsprof.c"
+        var $22=($21) & 2; //@line 327 "_lsprof.c"
+        var $23=($22)!=0; //@line 327 "_lsprof.c"
+        if ($23) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 327 "_lsprof.c"
+      case 1: // $bb
+        var $24=$self_addr; //@line 327 "_lsprof.c"
+        var $25=$24+16; //@line 327 "_lsprof.c"
+        var $26=HEAP[$25]; //@line 327 "_lsprof.c"
+        var $27=($26)!=0; //@line 327 "_lsprof.c"
+        if ($27) { __label__ = 2; break; } else { __label__ = 5; break; } //@line 327 "_lsprof.c"
+      case 2: // $bb2
+        var $28=$self_addr; //@line 329 "_lsprof.c"
+        var $29=$28+16; //@line 329 "_lsprof.c"
+        var $30=HEAP[$29]; //@line 329 "_lsprof.c"
+        var $31=$30+20; //@line 329 "_lsprof.c"
+        var $32=HEAP[$31]; //@line 329 "_lsprof.c"
+        $caller=$32; //@line 329 "_lsprof.c"
+        var $33=$pObj_addr; //@line 330 "_lsprof.c"
+        var $34=$caller; //@line 330 "_lsprof.c"
+        var $35=$entry_addr; //@line 330 "_lsprof.c"
+        var $36=_getSubEntry($33, $34, $35); //@line 330 "_lsprof.c"
+        $subentry=$36; //@line 330 "_lsprof.c"
+        var $37=$subentry; //@line 331 "_lsprof.c"
+        var $38=($37)==0; //@line 331 "_lsprof.c"
+        if ($38) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 331 "_lsprof.c"
+      case 3: // $bb4
+        var $39=$pObj_addr; //@line 332 "_lsprof.c"
+        var $40=$caller; //@line 332 "_lsprof.c"
+        var $41=$entry_addr; //@line 332 "_lsprof.c"
+        var $42=_newSubEntry($39, $40, $41); //@line 332 "_lsprof.c"
+        $subentry=$42; //@line 332 "_lsprof.c"
+        var $43=($42)!=0; //@line 333 "_lsprof.c"
+        if ($43) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 333 "_lsprof.c"
+      case 4: // $bb5
+        var $44=$subentry; //@line 334 "_lsprof.c"
+        var $45=$44+36; //@line 334 "_lsprof.c"
+        var $46=HEAP[$45]; //@line 334 "_lsprof.c"
+        var $47=($46) + 1; //@line 334 "_lsprof.c"
+        var $48=$subentry; //@line 334 "_lsprof.c"
+        var $49=$48+36; //@line 334 "_lsprof.c"
+        HEAP[$49]=$47; //@line 334 "_lsprof.c"
+        __label__ = 5; break; //@line 334 "_lsprof.c"
+      case 5: // $bb6
+        var $50=$pObj_addr; //@line 336 "_lsprof.c"
+        var $51=$50+24; //@line 336 "_lsprof.c"
+        var $52=HEAP[$51]; //@line 336 "_lsprof.c"
+        var $53=($52)!=0; //@line 336 "_lsprof.c"
+        if ($53) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 336 "_lsprof.c"
+      case 6: // $bb7
+        var $54=$pObj_addr; //@line 336 "_lsprof.c"
+        var $55=_CallExternalTimer($54); //@line 336 "_lsprof.c"
+        $iftmp_2=$55; //@line 336 "_lsprof.c"
+        __label__ = 8; break; //@line 336 "_lsprof.c"
+      case 7: // $bb8
+        var $56=_hpTimer(); //@line 336 "_lsprof.c"
+        $iftmp_2=$56; //@line 336 "_lsprof.c"
+        __label__ = 8; break; //@line 336 "_lsprof.c"
+      case 8: // $bb9
+        var $57=$self_addr; //@line 336 "_lsprof.c"
+        var $58=$57; //@line 336 "_lsprof.c"
+        var $59=$iftmp_2; //@line 336 "_lsprof.c"
+        HEAP[$58]=$59; //@line 336 "_lsprof.c"
+        ;
+        return; //@line 337 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _Stop($pObj, $self, $entry1) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
         var $pObj_addr;
         var $self_addr;
         var $entry_addr;
@@ -470,210 +1064,182 @@ var _random_stream;
         $pObj_addr=$pObj;
         $self_addr=$self;
         $entry_addr=$entry1;
-        var $2=$pObj_addr; //@line 342 "_lsprof.c"
-        var $3=$2+24; //@line 342 "_lsprof.c"
-        var $4=HEAP[$3]; //@line 342 "_lsprof.c"
-        var $5=($4)!=0; //@line 342 "_lsprof.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 342 "_lsprof.c"
+        var $0=$pObj_addr; //@line 342 "_lsprof.c"
+        var $1=$0+24; //@line 342 "_lsprof.c"
+        var $2=HEAP[$1]; //@line 342 "_lsprof.c"
+        var $3=($2)!=0; //@line 342 "_lsprof.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 342 "_lsprof.c"
       case 1: // $bb
-        var $6=$pObj_addr; //@line 342 "_lsprof.c"
-        var $7=_CallExternalTimer($6); //@line 342 "_lsprof.c"
-        $iftmp_3=$7; //@line 342 "_lsprof.c"
+        var $4=$pObj_addr; //@line 342 "_lsprof.c"
+        var $5=_CallExternalTimer($4); //@line 342 "_lsprof.c"
+        $iftmp_3=$5; //@line 342 "_lsprof.c"
         __label__ = 3; break; //@line 342 "_lsprof.c"
       case 2: // $bb2
-        var $8=_gettimeofday($tv_i, 0); //@line 56 "_lsprof.c"
-        var $9=$tv_i; //@line 58 "_lsprof.c"
-        var $10=HEAP[$9]; //@line 58 "_lsprof.c"
-        var $11=($10); //@line 58 "_lsprof.c"
-        $ret_i=$11; //@line 58 "_lsprof.c"
-        var $12=$ret_i; //@line 59 "_lsprof.c"
-        var $13=($12) * 1000000; //@line 59 "_lsprof.c"
-        var $14=$tv_i+4; //@line 59 "_lsprof.c"
-        var $15=HEAP[$14]; //@line 59 "_lsprof.c"
-        var $16=($15); //@line 59 "_lsprof.c"
-        var $17=($16) + ($13); //@line 59 "_lsprof.c"
-        $ret_i=$17; //@line 59 "_lsprof.c"
-        var $18=$ret_i; //@line 60 "_lsprof.c"
-        $1=$18; //@line 60 "_lsprof.c"
-        var $19=$1; //@line 60 "_lsprof.c"
-        $retval_i=$19; //@line 60 "_lsprof.c"
-        var $retval1_i=$retval_i; //@line 60 "_lsprof.c"
-        $iftmp_3=$retval1_i; //@line 342 "_lsprof.c"
+        var $6=_hpTimer(); //@line 342 "_lsprof.c"
+        $iftmp_3=$6; //@line 342 "_lsprof.c"
         __label__ = 3; break; //@line 342 "_lsprof.c"
       case 3: // $bb3
-        var $20=$self_addr; //@line 342 "_lsprof.c"
-        var $21=$20; //@line 342 "_lsprof.c"
-        var $22=HEAP[$21]; //@line 342 "_lsprof.c"
-        var $23=$iftmp_3; //@line 342 "_lsprof.c"
-        var $24=($23) - ($22); //@line 342 "_lsprof.c"
-        $tt=$24; //@line 342 "_lsprof.c"
-        var $25=$self_addr; //@line 343 "_lsprof.c"
-        var $26=$25+8; //@line 343 "_lsprof.c"
-        var $27=HEAP[$26]; //@line 343 "_lsprof.c"
-        var $28=$tt; //@line 343 "_lsprof.c"
-        var $29=($28) - ($27); //@line 343 "_lsprof.c"
-        $it=$29; //@line 343 "_lsprof.c"
-        var $30=$self_addr; //@line 344 "_lsprof.c"
-        var $31=$30+16; //@line 344 "_lsprof.c"
-        var $32=HEAP[$31]; //@line 344 "_lsprof.c"
-        var $33=($32)!=0; //@line 344 "_lsprof.c"
-        if ($33) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 344 "_lsprof.c"
+        var $7=$self_addr; //@line 342 "_lsprof.c"
+        var $8=$7; //@line 342 "_lsprof.c"
+        var $9=HEAP[$8]; //@line 342 "_lsprof.c"
+        var $10=$iftmp_3; //@line 342 "_lsprof.c"
+        var $11=($10) - ($9); //@line 342 "_lsprof.c"
+        $tt=$11; //@line 342 "_lsprof.c"
+        var $12=$self_addr; //@line 343 "_lsprof.c"
+        var $13=$12+8; //@line 343 "_lsprof.c"
+        var $14=HEAP[$13]; //@line 343 "_lsprof.c"
+        var $15=$tt; //@line 343 "_lsprof.c"
+        var $16=($15) - ($14); //@line 343 "_lsprof.c"
+        $it=$16; //@line 343 "_lsprof.c"
+        var $17=$self_addr; //@line 344 "_lsprof.c"
+        var $18=$17+16; //@line 344 "_lsprof.c"
+        var $19=HEAP[$18]; //@line 344 "_lsprof.c"
+        var $20=($19)!=0; //@line 344 "_lsprof.c"
+        if ($20) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 344 "_lsprof.c"
       case 4: // $bb4
-        var $34=$self_addr; //@line 345 "_lsprof.c"
-        var $35=$34+16; //@line 345 "_lsprof.c"
-        var $36=HEAP[$35]; //@line 345 "_lsprof.c"
-        var $37=$self_addr; //@line 345 "_lsprof.c"
-        var $38=$37+16; //@line 345 "_lsprof.c"
-        var $39=HEAP[$38]; //@line 345 "_lsprof.c"
-        var $40=$39+8; //@line 345 "_lsprof.c"
-        var $41=HEAP[$40]; //@line 345 "_lsprof.c"
-        var $42=$tt; //@line 345 "_lsprof.c"
-        var $43=($42) + ($41); //@line 345 "_lsprof.c"
-        var $44=$36+8; //@line 345 "_lsprof.c"
-        HEAP[$44]=$43; //@line 345 "_lsprof.c"
+        var $21=$self_addr; //@line 345 "_lsprof.c"
+        var $22=$21+16; //@line 345 "_lsprof.c"
+        var $23=HEAP[$22]; //@line 345 "_lsprof.c"
+        var $24=$self_addr; //@line 345 "_lsprof.c"
+        var $25=$24+16; //@line 345 "_lsprof.c"
+        var $26=HEAP[$25]; //@line 345 "_lsprof.c"
+        var $27=$26+8; //@line 345 "_lsprof.c"
+        var $28=HEAP[$27]; //@line 345 "_lsprof.c"
+        var $29=$tt; //@line 345 "_lsprof.c"
+        var $30=($29) + ($28); //@line 345 "_lsprof.c"
+        var $31=$23+8; //@line 345 "_lsprof.c"
+        HEAP[$31]=$30; //@line 345 "_lsprof.c"
         __label__ = 5; break; //@line 345 "_lsprof.c"
       case 5: // $bb5
-        var $45=$self_addr; //@line 346 "_lsprof.c"
-        var $46=$45+16; //@line 346 "_lsprof.c"
-        var $47=HEAP[$46]; //@line 346 "_lsprof.c"
-        var $48=$pObj_addr; //@line 346 "_lsprof.c"
-        var $49=$48+12; //@line 346 "_lsprof.c"
-        HEAP[$49]=$47; //@line 346 "_lsprof.c"
-        var $50=$entry_addr; //@line 347 "_lsprof.c"
-        var $51=$50+40; //@line 347 "_lsprof.c"
-        var $52=HEAP[$51]; //@line 347 "_lsprof.c"
-        var $53=($52) - 1; //@line 347 "_lsprof.c"
-        var $54=$entry_addr; //@line 347 "_lsprof.c"
-        var $55=$54+40; //@line 347 "_lsprof.c"
-        HEAP[$55]=$53; //@line 347 "_lsprof.c"
-        var $56=$entry_addr; //@line 347 "_lsprof.c"
-        var $57=$56+40; //@line 347 "_lsprof.c"
-        var $58=HEAP[$57]; //@line 347 "_lsprof.c"
-        var $59=($58)==0; //@line 347 "_lsprof.c"
-        var $60=$entry_addr; //@line 348 "_lsprof.c"
-        if ($59) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 347 "_lsprof.c"
+        var $32=$self_addr; //@line 346 "_lsprof.c"
+        var $33=$32+16; //@line 346 "_lsprof.c"
+        var $34=HEAP[$33]; //@line 346 "_lsprof.c"
+        var $35=$pObj_addr; //@line 346 "_lsprof.c"
+        var $36=$35+12; //@line 346 "_lsprof.c"
+        HEAP[$36]=$34; //@line 346 "_lsprof.c"
+        var $37=$entry_addr; //@line 347 "_lsprof.c"
+        var $38=$37+40; //@line 347 "_lsprof.c"
+        var $39=HEAP[$38]; //@line 347 "_lsprof.c"
+        var $40=($39) - 1; //@line 347 "_lsprof.c"
+        var $41=$entry_addr; //@line 347 "_lsprof.c"
+        var $42=$41+40; //@line 347 "_lsprof.c"
+        HEAP[$42]=$40; //@line 347 "_lsprof.c"
+        var $43=$entry_addr; //@line 347 "_lsprof.c"
+        var $44=$43+40; //@line 347 "_lsprof.c"
+        var $45=HEAP[$44]; //@line 347 "_lsprof.c"
+        var $46=($45)==0; //@line 347 "_lsprof.c"
+        var $47=$entry_addr; //@line 348 "_lsprof.c"
+        if ($46) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 347 "_lsprof.c"
       case 6: // $bb6
-        var $61=$60+16; //@line 348 "_lsprof.c"
-        var $62=HEAP[$61]; //@line 348 "_lsprof.c"
-        var $63=$tt; //@line 348 "_lsprof.c"
-        var $64=($63) + ($62); //@line 348 "_lsprof.c"
-        var $65=$entry_addr; //@line 348 "_lsprof.c"
-        var $66=$65+16; //@line 348 "_lsprof.c"
-        HEAP[$66]=$64; //@line 348 "_lsprof.c"
+        var $48=$47+16; //@line 348 "_lsprof.c"
+        var $49=HEAP[$48]; //@line 348 "_lsprof.c"
+        var $50=$tt; //@line 348 "_lsprof.c"
+        var $51=($50) + ($49); //@line 348 "_lsprof.c"
+        var $52=$entry_addr; //@line 348 "_lsprof.c"
+        var $53=$52+16; //@line 348 "_lsprof.c"
+        HEAP[$53]=$51; //@line 348 "_lsprof.c"
         __label__ = 8; break; //@line 348 "_lsprof.c"
       case 7: // $bb7
-        var $67=$60+36; //@line 350 "_lsprof.c"
-        var $68=HEAP[$67]; //@line 350 "_lsprof.c"
-        var $69=($68) + 1; //@line 350 "_lsprof.c"
-        var $70=$entry_addr; //@line 350 "_lsprof.c"
-        var $71=$70+36; //@line 350 "_lsprof.c"
-        HEAP[$71]=$69; //@line 350 "_lsprof.c"
+        var $54=$47+36; //@line 350 "_lsprof.c"
+        var $55=HEAP[$54]; //@line 350 "_lsprof.c"
+        var $56=($55) + 1; //@line 350 "_lsprof.c"
+        var $57=$entry_addr; //@line 350 "_lsprof.c"
+        var $58=$57+36; //@line 350 "_lsprof.c"
+        HEAP[$58]=$56; //@line 350 "_lsprof.c"
         __label__ = 8; break; //@line 350 "_lsprof.c"
       case 8: // $bb8
-        var $72=$entry_addr; //@line 351 "_lsprof.c"
-        var $73=$72+24; //@line 351 "_lsprof.c"
-        var $74=HEAP[$73]; //@line 351 "_lsprof.c"
-        var $75=$it; //@line 351 "_lsprof.c"
-        var $76=($75) + ($74); //@line 351 "_lsprof.c"
-        var $77=$entry_addr; //@line 351 "_lsprof.c"
-        var $78=$77+24; //@line 351 "_lsprof.c"
-        HEAP[$78]=$76; //@line 351 "_lsprof.c"
-        var $79=$entry_addr; //@line 352 "_lsprof.c"
-        var $80=$79+32; //@line 352 "_lsprof.c"
-        var $81=HEAP[$80]; //@line 352 "_lsprof.c"
-        var $82=($81) + 1; //@line 352 "_lsprof.c"
-        var $83=$entry_addr; //@line 352 "_lsprof.c"
-        var $84=$83+32; //@line 352 "_lsprof.c"
-        HEAP[$84]=$82; //@line 352 "_lsprof.c"
-        var $85=$pObj_addr; //@line 353 "_lsprof.c"
-        var $86=$85+20; //@line 353 "_lsprof.c"
-        var $87=HEAP[$86]; //@line 353 "_lsprof.c"
-        var $88=($87) & 2; //@line 353 "_lsprof.c"
-        var $89=($88)!=0; //@line 353 "_lsprof.c"
-        if ($89) { __label__ = 9; break; } else { __label__ = 15; break; } //@line 353 "_lsprof.c"
+        var $59=$entry_addr; //@line 351 "_lsprof.c"
+        var $60=$59+24; //@line 351 "_lsprof.c"
+        var $61=HEAP[$60]; //@line 351 "_lsprof.c"
+        var $62=$it; //@line 351 "_lsprof.c"
+        var $63=($62) + ($61); //@line 351 "_lsprof.c"
+        var $64=$entry_addr; //@line 351 "_lsprof.c"
+        var $65=$64+24; //@line 351 "_lsprof.c"
+        HEAP[$65]=$63; //@line 351 "_lsprof.c"
+        var $66=$entry_addr; //@line 352 "_lsprof.c"
+        var $67=$66+32; //@line 352 "_lsprof.c"
+        var $68=HEAP[$67]; //@line 352 "_lsprof.c"
+        var $69=($68) + 1; //@line 352 "_lsprof.c"
+        var $70=$entry_addr; //@line 352 "_lsprof.c"
+        var $71=$70+32; //@line 352 "_lsprof.c"
+        HEAP[$71]=$69; //@line 352 "_lsprof.c"
+        var $72=$pObj_addr; //@line 353 "_lsprof.c"
+        var $73=$72+20; //@line 353 "_lsprof.c"
+        var $74=HEAP[$73]; //@line 353 "_lsprof.c"
+        var $75=($74) & 2; //@line 353 "_lsprof.c"
+        var $76=($75)!=0; //@line 353 "_lsprof.c"
+        if ($76) { __label__ = 9; break; } else { __label__ = 15; break; } //@line 353 "_lsprof.c"
       case 9: // $bb9
-        var $90=$self_addr; //@line 353 "_lsprof.c"
-        var $91=$90+16; //@line 353 "_lsprof.c"
-        var $92=HEAP[$91]; //@line 353 "_lsprof.c"
-        var $93=($92)!=0; //@line 353 "_lsprof.c"
-        if ($93) { __label__ = 10; break; } else { __label__ = 15; break; } //@line 353 "_lsprof.c"
+        var $77=$self_addr; //@line 353 "_lsprof.c"
+        var $78=$77+16; //@line 353 "_lsprof.c"
+        var $79=HEAP[$78]; //@line 353 "_lsprof.c"
+        var $80=($79)!=0; //@line 353 "_lsprof.c"
+        if ($80) { __label__ = 10; break; } else { __label__ = 15; break; } //@line 353 "_lsprof.c"
       case 10: // $bb10
-        var $94=$self_addr; //@line 355 "_lsprof.c"
-        var $95=$94+16; //@line 355 "_lsprof.c"
-        var $96=HEAP[$95]; //@line 355 "_lsprof.c"
-        var $97=$96+20; //@line 355 "_lsprof.c"
-        var $98=HEAP[$97]; //@line 355 "_lsprof.c"
-        $caller=$98; //@line 355 "_lsprof.c"
-        var $99=$pObj_addr; //@line 356 "_lsprof.c"
-        var $100=$caller; //@line 356 "_lsprof.c"
-        var $101=$entry_addr; //@line 356 "_lsprof.c"
-        $pObj_addr_i=$99;
-        $caller_addr_i=$100;
-        $entry_addr_i=$101;
-        var $102=$caller_addr_i; //@line 263 "_lsprof.c"
-        var $103=$102+44; //@line 263 "_lsprof.c"
-        var $104=$entry_addr_i; //@line 263 "_lsprof.c"
-        var $105=$104; //@line 263 "_lsprof.c"
-        var $106=_RotatingTree_Get($103, $105); //@line 263 "_lsprof.c"
-        var $107=$106; //@line 263 "_lsprof.c"
-        $0=$107; //@line 263 "_lsprof.c"
-        var $108=$0; //@line 263 "_lsprof.c"
-        $retval_i1=$108; //@line 263 "_lsprof.c"
-        var $retval2_i=$retval_i1; //@line 263 "_lsprof.c"
-        $subentry=$retval2_i; //@line 356 "_lsprof.c"
-        var $109=$subentry; //@line 357 "_lsprof.c"
-        var $110=($109)!=0; //@line 357 "_lsprof.c"
-        if ($110) { __label__ = 11; break; } else { __label__ = 15; break; } //@line 357 "_lsprof.c"
+        var $81=$self_addr; //@line 355 "_lsprof.c"
+        var $82=$81+16; //@line 355 "_lsprof.c"
+        var $83=HEAP[$82]; //@line 355 "_lsprof.c"
+        var $84=$83+20; //@line 355 "_lsprof.c"
+        var $85=HEAP[$84]; //@line 355 "_lsprof.c"
+        $caller=$85; //@line 355 "_lsprof.c"
+        var $86=$pObj_addr; //@line 356 "_lsprof.c"
+        var $87=$caller; //@line 356 "_lsprof.c"
+        var $88=$entry_addr; //@line 356 "_lsprof.c"
+        var $89=_getSubEntry($86, $87, $88); //@line 356 "_lsprof.c"
+        $subentry=$89; //@line 356 "_lsprof.c"
+        var $90=$subentry; //@line 357 "_lsprof.c"
+        var $91=($90)!=0; //@line 357 "_lsprof.c"
+        if ($91) { __label__ = 11; break; } else { __label__ = 15; break; } //@line 357 "_lsprof.c"
       case 11: // $bb11
-        var $111=$subentry; //@line 358 "_lsprof.c"
-        var $112=$111+36; //@line 358 "_lsprof.c"
-        var $113=HEAP[$112]; //@line 358 "_lsprof.c"
-        var $114=($113) - 1; //@line 358 "_lsprof.c"
-        var $115=$subentry; //@line 358 "_lsprof.c"
-        var $116=$115+36; //@line 358 "_lsprof.c"
-        HEAP[$116]=$114; //@line 358 "_lsprof.c"
-        var $117=$subentry; //@line 358 "_lsprof.c"
-        var $118=$117+36; //@line 358 "_lsprof.c"
-        var $119=HEAP[$118]; //@line 358 "_lsprof.c"
-        var $120=($119)==0; //@line 358 "_lsprof.c"
-        var $121=$subentry; //@line 359 "_lsprof.c"
-        if ($120) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 358 "_lsprof.c"
+        var $92=$subentry; //@line 358 "_lsprof.c"
+        var $93=$92+36; //@line 358 "_lsprof.c"
+        var $94=HEAP[$93]; //@line 358 "_lsprof.c"
+        var $95=($94) - 1; //@line 358 "_lsprof.c"
+        var $96=$subentry; //@line 358 "_lsprof.c"
+        var $97=$96+36; //@line 358 "_lsprof.c"
+        HEAP[$97]=$95; //@line 358 "_lsprof.c"
+        var $98=$subentry; //@line 358 "_lsprof.c"
+        var $99=$98+36; //@line 358 "_lsprof.c"
+        var $100=HEAP[$99]; //@line 358 "_lsprof.c"
+        var $101=($100)==0; //@line 358 "_lsprof.c"
+        var $102=$subentry; //@line 359 "_lsprof.c"
+        if ($101) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 358 "_lsprof.c"
       case 12: // $bb12
-        var $122=$121+12; //@line 359 "_lsprof.c"
-        var $123=HEAP[$122]; //@line 359 "_lsprof.c"
-        var $124=$tt; //@line 359 "_lsprof.c"
-        var $125=($124) + ($123); //@line 359 "_lsprof.c"
-        var $126=$subentry; //@line 359 "_lsprof.c"
-        var $127=$126+12; //@line 359 "_lsprof.c"
-        HEAP[$127]=$125; //@line 359 "_lsprof.c"
+        var $103=$102+12; //@line 359 "_lsprof.c"
+        var $104=HEAP[$103]; //@line 359 "_lsprof.c"
+        var $105=$tt; //@line 359 "_lsprof.c"
+        var $106=($105) + ($104); //@line 359 "_lsprof.c"
+        var $107=$subentry; //@line 359 "_lsprof.c"
+        var $108=$107+12; //@line 359 "_lsprof.c"
+        HEAP[$108]=$106; //@line 359 "_lsprof.c"
         __label__ = 14; break; //@line 359 "_lsprof.c"
       case 13: // $bb13
-        var $128=$121+32; //@line 361 "_lsprof.c"
-        var $129=HEAP[$128]; //@line 361 "_lsprof.c"
-        var $130=($129) + 1; //@line 361 "_lsprof.c"
-        var $131=$subentry; //@line 361 "_lsprof.c"
-        var $132=$131+32; //@line 361 "_lsprof.c"
-        HEAP[$132]=$130; //@line 361 "_lsprof.c"
+        var $109=$102+32; //@line 361 "_lsprof.c"
+        var $110=HEAP[$109]; //@line 361 "_lsprof.c"
+        var $111=($110) + 1; //@line 361 "_lsprof.c"
+        var $112=$subentry; //@line 361 "_lsprof.c"
+        var $113=$112+32; //@line 361 "_lsprof.c"
+        HEAP[$113]=$111; //@line 361 "_lsprof.c"
         __label__ = 14; break; //@line 361 "_lsprof.c"
       case 14: // $bb14
-        var $133=$subentry; //@line 362 "_lsprof.c"
-        var $134=$133+20; //@line 362 "_lsprof.c"
-        var $135=HEAP[$134]; //@line 362 "_lsprof.c"
-        var $136=$it; //@line 362 "_lsprof.c"
-        var $137=($136) + ($135); //@line 362 "_lsprof.c"
-        var $138=$subentry; //@line 362 "_lsprof.c"
-        var $139=$138+20; //@line 362 "_lsprof.c"
-        HEAP[$139]=$137; //@line 362 "_lsprof.c"
-        var $140=$subentry; //@line 363 "_lsprof.c"
-        var $141=$140+28; //@line 363 "_lsprof.c"
-        var $142=HEAP[$141]; //@line 363 "_lsprof.c"
-        var $143=($142) + 1; //@line 363 "_lsprof.c"
-        var $144=$subentry; //@line 363 "_lsprof.c"
-        var $145=$144+28; //@line 363 "_lsprof.c"
-        HEAP[$145]=$143; //@line 363 "_lsprof.c"
+        var $114=$subentry; //@line 362 "_lsprof.c"
+        var $115=$114+20; //@line 362 "_lsprof.c"
+        var $116=HEAP[$115]; //@line 362 "_lsprof.c"
+        var $117=$it; //@line 362 "_lsprof.c"
+        var $118=($117) + ($116); //@line 362 "_lsprof.c"
+        var $119=$subentry; //@line 362 "_lsprof.c"
+        var $120=$119+20; //@line 362 "_lsprof.c"
+        HEAP[$120]=$118; //@line 362 "_lsprof.c"
+        var $121=$subentry; //@line 363 "_lsprof.c"
+        var $122=$121+28; //@line 363 "_lsprof.c"
+        var $123=HEAP[$122]; //@line 363 "_lsprof.c"
+        var $124=($123) + 1; //@line 363 "_lsprof.c"
+        var $125=$subentry; //@line 363 "_lsprof.c"
+        var $126=$125+28; //@line 363 "_lsprof.c"
+        HEAP[$126]=$124; //@line 363 "_lsprof.c"
         __label__ = 15; break; //@line 363 "_lsprof.c"
       case 15: // $return
-        STACKTOP = __stackBase__;
+        ;
         return; //@line 366 "_lsprof.c"
       default: assert(0, "bad label: " + __label__);
     }
@@ -681,671 +1247,85 @@ var _random_stream;
   
 
   function _ptrace_enter_call($self, $key, $userObj) {
-    var __stackBase__  = STACKTOP; STACKTOP += 20; _memset(__stackBase__, 0, 20);
+    var __stackBase__  = STACKTOP; STACKTOP += 12; _memset(__stackBase__, 0, 12);
     var __label__;
-    var __lastLabel__ = null;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i5_i;
-        var $0;
-        var $tv_i_i=__stackBase__;
-        var $ret_i_i;
-        var $root_addr_i_i_i;
-        var $node_addr_i_i_i;
-        var $pObj_addr_i1_i;
-        var $caller_addr_i2_i;
-        var $entry_addr_i3_i;
-        var $retval_i4_i;
-        var $1;
-        var $self_i_i4;
-        var $pObj_addr_i_i;
-        var $caller_addr_i_i;
-        var $entry_addr_i_i;
-        var $retval_i_i5;
-        var $2;
-        var $pObj_addr_i6;
-        var $self_addr_i;
-        var $entry_addr_i;
-        var $iftmp_2_i;
-        var $caller_i;
-        var $subentry_i;
-        var $root_addr_i_i;
-        var $node_addr_i_i;
-        var $obj_addr_i_i;
-        var $retval_i_i;
-        var $3;
-        var $fn_i_i;
-        var $mod_i_i;
-        var $modname_i_i;
-        var $self_i_i;
-        var $name_i_i;
-        var $mo_i_i;
-        var $res_i_i;
-        var $pObj_addr_i1;
-        var $key_addr_i2;
-        var $userObj_addr_i;
-        var $retval_i3;
-        var $4;
-        var $self_i;
-        var $pObj_addr_i;
-        var $key_addr_i;
-        var $retval_i;
-        var $5;
         var $self_addr;
         var $key_addr;
         var $userObj_addr;
         var $pObj;
         var $profEntry;
         var $pContext;
-        var $last_type=__stackBase__+8;
-        var $last_value=__stackBase__+12;
-        var $last_tb=__stackBase__+16;
+        var $last_type=__stackBase__;
+        var $last_value=__stackBase__+4;
+        var $last_tb=__stackBase__+8;
         $self_addr=$self;
         $key_addr=$key;
         $userObj_addr=$userObj;
-        var $6=$self_addr; //@line 373 "_lsprof.c"
-        var $7=$6; //@line 373 "_lsprof.c"
-        $pObj=$7; //@line 373 "_lsprof.c"
+        var $0=$self_addr; //@line 373 "_lsprof.c"
+        var $1=$0; //@line 373 "_lsprof.c"
+        $pObj=$1; //@line 373 "_lsprof.c"
         _PyErr_Fetch($last_type, $last_value, $last_tb); //@line 384 "_lsprof.c"
-        var $8=$pObj; //@line 386 "_lsprof.c"
-        var $9=$key_addr; //@line 386 "_lsprof.c"
-        $pObj_addr_i=$8;
-        $key_addr_i=$9;
-        var $10=$pObj_addr_i; //@line 257 "_lsprof.c"
-        var $11=$10+8; //@line 257 "_lsprof.c"
-        var $12=$key_addr_i; //@line 257 "_lsprof.c"
-        var $13=_RotatingTree_Get($11, $12); //@line 257 "_lsprof.c"
-        var $14=$13; //@line 257 "_lsprof.c"
-        $5=$14; //@line 257 "_lsprof.c"
-        var $15=$5; //@line 257 "_lsprof.c"
-        $retval_i=$15; //@line 257 "_lsprof.c"
-        var $retval1_i=$retval_i; //@line 257 "_lsprof.c"
-        $profEntry=$retval1_i; //@line 386 "_lsprof.c"
-        var $16=$profEntry; //@line 387 "_lsprof.c"
-        var $17=($16)==0; //@line 387 "_lsprof.c"
-        if ($17) { __label__ = 1; break; } else { __label__ = 38; break; } //@line 387 "_lsprof.c"
+        var $2=$pObj; //@line 386 "_lsprof.c"
+        var $3=$key_addr; //@line 386 "_lsprof.c"
+        var $4=_getEntry($2, $3); //@line 386 "_lsprof.c"
+        $profEntry=$4; //@line 386 "_lsprof.c"
+        var $5=$profEntry; //@line 387 "_lsprof.c"
+        var $6=($5)==0; //@line 387 "_lsprof.c"
+        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 387 "_lsprof.c"
       case 1: // $bb
-        var $18=$pObj; //@line 388 "_lsprof.c"
-        var $19=$key_addr; //@line 388 "_lsprof.c"
-        var $20=$userObj_addr; //@line 388 "_lsprof.c"
-        $pObj_addr_i1=$18;
-        $key_addr_i2=$19;
-        $userObj_addr_i=$20;
-        var $21=_malloc(48); //@line 230 "_lsprof.c"
-        var $22=$21; //@line 230 "_lsprof.c"
-        $self_i=$22; //@line 230 "_lsprof.c"
-        var $23=$self_i; //@line 231 "_lsprof.c"
-        var $24=($23)==0; //@line 231 "_lsprof.c"
-        if ($24) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 231 "_lsprof.c"
-      case 2: // $bb_i
-        var $25=$pObj_addr_i1; //@line 232 "_lsprof.c"
-        var $26=$25+20; //@line 232 "_lsprof.c"
-        var $27=HEAP[$26]; //@line 232 "_lsprof.c"
-        var $28=($27) | 256; //@line 232 "_lsprof.c"
-        var $29=$pObj_addr_i1; //@line 232 "_lsprof.c"
-        var $30=$29+20; //@line 232 "_lsprof.c"
-        HEAP[$30]=$28; //@line 232 "_lsprof.c"
-        $4=0; //@line 233 "_lsprof.c"
-        __label__ = 36; break; //@line 233 "_lsprof.c"
-      case 3: // $bb1_i
-        var $31=$userObj_addr_i; //@line 235 "_lsprof.c"
-        $obj_addr_i_i=$31;
-        var $32=$obj_addr_i_i; //@line 169 "_lsprof.c"
-        var $33=$32+4; //@line 169 "_lsprof.c"
-        var $34=HEAP[$33]; //@line 169 "_lsprof.c"
-        var $35=($34)!=(_PyCFunction_Type); //@line 169 "_lsprof.c"
-        var $36=$obj_addr_i_i; //@line 170 "_lsprof.c"
-        if ($35) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 169 "_lsprof.c"
-      case 4: // $bb_i_i
-        var $37=$36; //@line 170 "_lsprof.c"
-        var $38=HEAP[$37]; //@line 170 "_lsprof.c"
-        var $39=($38) + 1; //@line 170 "_lsprof.c"
-        var $40=$obj_addr_i_i; //@line 170 "_lsprof.c"
-        var $41=$40; //@line 170 "_lsprof.c"
-        HEAP[$41]=$39; //@line 170 "_lsprof.c"
-        var $42=$obj_addr_i_i; //@line 171 "_lsprof.c"
-        $3=$42; //@line 171 "_lsprof.c"
-        __lastLabel__ = 4; __label__ = 29; break; //@line 171 "_lsprof.c"
-      case 5: // $bb1_i_i
-        var $43=$36; //@line 176 "_lsprof.c"
-        $fn_i_i=$43; //@line 176 "_lsprof.c"
-        var $44=$fn_i_i; //@line 178 "_lsprof.c"
-        var $45=$44+12; //@line 178 "_lsprof.c"
-        var $46=HEAP[$45]; //@line 178 "_lsprof.c"
-        var $47=($46)==0; //@line 178 "_lsprof.c"
-        var $48=$fn_i_i; //@line 180 "_lsprof.c"
-        if ($47) { __label__ = 6; break; } else { __label__ = 18; break; } //@line 178 "_lsprof.c"
-      case 6: // $bb2_i_i
-        var $49=$48+16; //@line 180 "_lsprof.c"
-        var $50=HEAP[$49]; //@line 180 "_lsprof.c"
-        $mod_i_i=$50; //@line 180 "_lsprof.c"
-        var $51=$mod_i_i; //@line 182 "_lsprof.c"
-        var $52=($51)==0; //@line 182 "_lsprof.c"
-        if ($52) { __label__ = 14; break; } else { __label__ = 7; break; } //@line 182 "_lsprof.c"
-      case 7: // $bb3_i_i
-        var $53=$mod_i_i; //@line 182 "_lsprof.c"
-        var $54=$53+4; //@line 182 "_lsprof.c"
-        var $55=HEAP[$54]; //@line 182 "_lsprof.c"
-        var $56=$55+84; //@line 182 "_lsprof.c"
-        var $57=HEAP[$56]; //@line 182 "_lsprof.c"
-        var $58=($57) & 134217728; //@line 182 "_lsprof.c"
-        var $59=($58)==0; //@line 182 "_lsprof.c"
-        var $_pr_i_i=$mod_i_i;
-        if ($59) { __label__ = 9; break; } else { __label__ = 8; break; } //@line 182 "_lsprof.c"
-      case 8: // $bb4_i_i
-        var $60=$_pr_i_i; //@line 183 "_lsprof.c"
-        var $61=$60+20; //@line 183 "_lsprof.c"
-        var $62=$61; //@line 183 "_lsprof.c"
-        $modname_i_i=$62; //@line 183 "_lsprof.c"
-        __label__ = 15; break; //@line 183 "_lsprof.c"
-      case 9: // $bb5_i_i
-        var $63=($_pr_i_i)==0; //@line 185 "_lsprof.c"
-        if ($63) { __label__ = 14; break; } else { __label__ = 10; break; } //@line 185 "_lsprof.c"
-      case 10: // $bb6_i_i
-        var $64=$mod_i_i; //@line 185 "_lsprof.c"
-        var $65=$64+4; //@line 185 "_lsprof.c"
-        var $66=HEAP[$65]; //@line 185 "_lsprof.c"
-        var $67=($66)==(_PyModule_Type); //@line 185 "_lsprof.c"
-        if ($67) { __label__ = 12; break; } else { __label__ = 11; break; } //@line 185 "_lsprof.c"
-      case 11: // $bb7_i_i
-        var $68=$mod_i_i; //@line 185 "_lsprof.c"
-        var $69=$68+4; //@line 185 "_lsprof.c"
-        var $70=HEAP[$69]; //@line 185 "_lsprof.c"
-        var $71=_PyType_IsSubtype($70, _PyModule_Type); //@line 185 "_lsprof.c"
-        var $72=($71)!=0; //@line 185 "_lsprof.c"
-        if ($72) { __label__ = 12; break; } else { __label__ = 14; break; } //@line 185 "_lsprof.c"
-      case 12: // $bb8_i_i
-        var $73=$mod_i_i; //@line 186 "_lsprof.c"
-        var $74=_PyModule_GetName($73); //@line 186 "_lsprof.c"
-        $modname_i_i=$74; //@line 186 "_lsprof.c"
-        var $75=($74)==0; //@line 187 "_lsprof.c"
-        if ($75) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 187 "_lsprof.c"
-      case 13: // $bb9_i_i
-        _PyErr_Clear(); //@line 188 "_lsprof.c"
-        $modname_i_i=__str; //@line 189 "_lsprof.c"
-        __label__ = 15; break; //@line 189 "_lsprof.c"
-      case 14: // $bb11_i_i
-        $modname_i_i=__str; //@line 193 "_lsprof.c"
-        __label__ = 15; break; //@line 193 "_lsprof.c"
-      case 15: // $bb12_i_i
-        var $76=$modname_i_i; //@line 195 "_lsprof.c"
-        var $77=_strcmp($76, __str); //@line 195 "_lsprof.c"
-        var $78=($77)!=0; //@line 195 "_lsprof.c"
-        var $79=$fn_i_i; //@line 196 "_lsprof.c"
-        var $80=$79+8; //@line 196 "_lsprof.c"
-        var $81=HEAP[$80]; //@line 196 "_lsprof.c"
-        var $82=$81; //@line 196 "_lsprof.c"
-        var $83=HEAP[$82]; //@line 196 "_lsprof.c"
-        if ($78) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 195 "_lsprof.c"
-      case 16: // $bb13_i_i
-        var $84=$modname_i_i; //@line 196 "_lsprof.c"
-        var $85=_PyString_FromFormat(__str1, $84, $83); //@line 196 "_lsprof.c"
-        $3=$85; //@line 196 "_lsprof.c"
-        __lastLabel__ = 16; __label__ = 29; break; //@line 196 "_lsprof.c"
-      case 17: // $bb14_i_i
-        var $86=_PyString_FromFormat(__str2, $83); //@line 200 "_lsprof.c"
-        $3=$86; //@line 200 "_lsprof.c"
-        __lastLabel__ = 17; __label__ = 29; break; //@line 200 "_lsprof.c"
-      case 18: // $bb15_i_i
-        var $87=$48+12; //@line 207 "_lsprof.c"
-        var $88=HEAP[$87]; //@line 207 "_lsprof.c"
-        $self_i_i=$88; //@line 207 "_lsprof.c"
-        var $89=$fn_i_i; //@line 208 "_lsprof.c"
-        var $90=$89+8; //@line 208 "_lsprof.c"
-        var $91=HEAP[$90]; //@line 208 "_lsprof.c"
-        var $92=$91; //@line 208 "_lsprof.c"
-        var $93=HEAP[$92]; //@line 208 "_lsprof.c"
-        var $94=_PyString_FromString($93); //@line 208 "_lsprof.c"
-        $name_i_i=$94; //@line 208 "_lsprof.c"
-        var $95=$name_i_i; //@line 209 "_lsprof.c"
-        var $96=($95)!=0; //@line 209 "_lsprof.c"
-        if ($96) { __label__ = 19; break; } else { __label__ = 28; break; } //@line 209 "_lsprof.c"
-      case 19: // $bb16_i_i
-        var $97=$self_i_i; //@line 210 "_lsprof.c"
-        var $98=$97+4; //@line 210 "_lsprof.c"
-        var $99=HEAP[$98]; //@line 210 "_lsprof.c"
-        var $100=$name_i_i; //@line 210 "_lsprof.c"
-        var $101=__PyType_Lookup($99, $100); //@line 210 "_lsprof.c"
-        $mo_i_i=$101; //@line 210 "_lsprof.c"
-        var $102=$mo_i_i; //@line 211 "_lsprof.c"
-        var $103=($102)!=0; //@line 211 "_lsprof.c"
-        if ($103) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 211 "_lsprof.c"
-      case 20: // $bb17_i_i
-        var $104=$mo_i_i; //@line 211 "_lsprof.c"
-        var $105=$104; //@line 211 "_lsprof.c"
-        var $106=HEAP[$105]; //@line 211 "_lsprof.c"
-        var $107=($106) + 1; //@line 211 "_lsprof.c"
-        var $108=$mo_i_i; //@line 211 "_lsprof.c"
-        var $109=$108; //@line 211 "_lsprof.c"
-        HEAP[$109]=$107; //@line 211 "_lsprof.c"
-        __label__ = 21; break; //@line 211 "_lsprof.c"
-      case 21: // $bb18_i_i
-        var $110=$name_i_i; //@line 212 "_lsprof.c"
-        var $111=$110; //@line 212 "_lsprof.c"
-        var $112=HEAP[$111]; //@line 212 "_lsprof.c"
-        var $113=($112) - 1; //@line 212 "_lsprof.c"
-        var $114=$name_i_i; //@line 212 "_lsprof.c"
-        var $115=$114; //@line 212 "_lsprof.c"
-        HEAP[$115]=$113; //@line 212 "_lsprof.c"
-        var $116=$name_i_i; //@line 212 "_lsprof.c"
-        var $117=$116; //@line 212 "_lsprof.c"
-        var $118=HEAP[$117]; //@line 212 "_lsprof.c"
-        var $119=($118)==0; //@line 212 "_lsprof.c"
-        if ($119) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 212 "_lsprof.c"
-      case 22: // $bb19_i_i
-        var $120=$name_i_i; //@line 212 "_lsprof.c"
-        var $121=$120+4; //@line 212 "_lsprof.c"
-        var $122=HEAP[$121]; //@line 212 "_lsprof.c"
-        var $123=$122+24; //@line 212 "_lsprof.c"
-        var $124=HEAP[$123]; //@line 212 "_lsprof.c"
-        var $125=$name_i_i; //@line 212 "_lsprof.c"
-        FUNCTION_TABLE[$124]($125); //@line 212 "_lsprof.c"
-        __label__ = 23; break; //@line 212 "_lsprof.c"
-      case 23: // $bb20_i_i
-        var $126=$mo_i_i; //@line 213 "_lsprof.c"
-        var $127=($126)!=0; //@line 213 "_lsprof.c"
-        if ($127) { __label__ = 24; break; } else { __label__ = 28; break; } //@line 213 "_lsprof.c"
-      case 24: // $bb21_i_i
-        var $128=$mo_i_i; //@line 214 "_lsprof.c"
-        var $129=_PyObject_Repr($128); //@line 214 "_lsprof.c"
-        $res_i_i=$129; //@line 214 "_lsprof.c"
-        var $130=$mo_i_i; //@line 215 "_lsprof.c"
-        var $131=$130; //@line 215 "_lsprof.c"
-        var $132=HEAP[$131]; //@line 215 "_lsprof.c"
-        var $133=($132) - 1; //@line 215 "_lsprof.c"
-        var $134=$mo_i_i; //@line 215 "_lsprof.c"
-        var $135=$134; //@line 215 "_lsprof.c"
-        HEAP[$135]=$133; //@line 215 "_lsprof.c"
-        var $136=$mo_i_i; //@line 215 "_lsprof.c"
-        var $137=$136; //@line 215 "_lsprof.c"
-        var $138=HEAP[$137]; //@line 215 "_lsprof.c"
-        var $139=($138)==0; //@line 215 "_lsprof.c"
-        if ($139) { __label__ = 25; break; } else { __label__ = 26; break; } //@line 215 "_lsprof.c"
-      case 25: // $bb22_i_i
-        var $140=$mo_i_i; //@line 215 "_lsprof.c"
-        var $141=$140+4; //@line 215 "_lsprof.c"
-        var $142=HEAP[$141]; //@line 215 "_lsprof.c"
-        var $143=$142+24; //@line 215 "_lsprof.c"
-        var $144=HEAP[$143]; //@line 215 "_lsprof.c"
-        var $145=$mo_i_i; //@line 215 "_lsprof.c"
-        FUNCTION_TABLE[$144]($145); //@line 215 "_lsprof.c"
-        __label__ = 26; break; //@line 215 "_lsprof.c"
-      case 26: // $bb23_i_i
-        var $146=$res_i_i; //@line 216 "_lsprof.c"
-        var $147=($146)!=0; //@line 216 "_lsprof.c"
-        if ($147) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 216 "_lsprof.c"
-      case 27: // $bb24_i_i
-        var $148=$res_i_i; //@line 217 "_lsprof.c"
-        $3=$148; //@line 217 "_lsprof.c"
-        __lastLabel__ = 27; __label__ = 29; break; //@line 217 "_lsprof.c"
-      case 28: // $bb25_i_i
-        _PyErr_Clear(); //@line 220 "_lsprof.c"
-        var $149=$fn_i_i; //@line 221 "_lsprof.c"
-        var $150=$149+8; //@line 221 "_lsprof.c"
-        var $151=HEAP[$150]; //@line 221 "_lsprof.c"
-        var $152=$151; //@line 221 "_lsprof.c"
-        var $153=HEAP[$152]; //@line 221 "_lsprof.c"
-        var $154=_PyString_FromFormat(__str3, $153); //@line 221 "_lsprof.c"
-        $3=$154; //@line 221 "_lsprof.c"
-        __lastLabel__ = 28; __label__ = 29; break; //@line 221 "_lsprof.c"
-      case 29: // $normalizeUserObj_exit_i
-        var $155=__lastLabel__ == 4 ? $42 : (__lastLabel__ == 16 ? $85 : (__lastLabel__ == 17 ? $86 : (__lastLabel__ == 27 ? $148 : ($154))));
-        $retval_i_i=$155; //@line 171 "_lsprof.c"
-        $userObj_addr_i=$155; //@line 235 "_lsprof.c"
-        var $156=($155)==0; //@line 236 "_lsprof.c"
-        if ($156) { __label__ = 30; break; } else { __label__ = 31; break; } //@line 236 "_lsprof.c"
-      case 30: // $bb2_i
-        _PyErr_Clear(); //@line 237 "_lsprof.c"
-        var $157=$self_i; //@line 238 "_lsprof.c"
-        var $158=$157; //@line 238 "_lsprof.c"
-        _free($158); //@line 238 "_lsprof.c"
-        var $159=$pObj_addr_i1; //@line 239 "_lsprof.c"
-        var $160=$159+20; //@line 239 "_lsprof.c"
-        var $161=HEAP[$160]; //@line 239 "_lsprof.c"
-        var $162=($161) | 256; //@line 239 "_lsprof.c"
-        var $163=$pObj_addr_i1; //@line 239 "_lsprof.c"
-        var $164=$163+20; //@line 239 "_lsprof.c"
-        HEAP[$164]=$162; //@line 239 "_lsprof.c"
-        $4=0; //@line 240 "_lsprof.c"
-        __label__ = 36; break; //@line 240 "_lsprof.c"
-      case 31: // $bb3_i
-        var $165=$self_i; //@line 242 "_lsprof.c"
-        var $166=$165; //@line 242 "_lsprof.c"
-        var $167=$166; //@line 242 "_lsprof.c"
-        var $168=$key_addr_i2; //@line 242 "_lsprof.c"
-        HEAP[$167]=$168; //@line 242 "_lsprof.c"
-        var $169=$self_i; //@line 243 "_lsprof.c"
-        var $170=$169+12; //@line 243 "_lsprof.c"
-        var $171=$userObj_addr_i; //@line 243 "_lsprof.c"
-        HEAP[$170]=$171; //@line 243 "_lsprof.c"
-        var $172=$self_i; //@line 244 "_lsprof.c"
-        var $173=$172+16; //@line 244 "_lsprof.c"
-        HEAP[$173]=0; //@line 244 "_lsprof.c"
-        var $174=$self_i; //@line 245 "_lsprof.c"
-        var $175=$174+24; //@line 245 "_lsprof.c"
-        HEAP[$175]=0; //@line 245 "_lsprof.c"
-        var $176=$self_i; //@line 246 "_lsprof.c"
-        var $177=$176+32; //@line 246 "_lsprof.c"
-        HEAP[$177]=0; //@line 246 "_lsprof.c"
-        var $178=$self_i; //@line 247 "_lsprof.c"
-        var $179=$178+36; //@line 247 "_lsprof.c"
-        HEAP[$179]=0; //@line 247 "_lsprof.c"
-        var $180=$self_i; //@line 248 "_lsprof.c"
-        var $181=$180+40; //@line 248 "_lsprof.c"
-        HEAP[$181]=0; //@line 248 "_lsprof.c"
-        var $182=$self_i; //@line 249 "_lsprof.c"
-        var $183=$182+44; //@line 249 "_lsprof.c"
-        HEAP[$183]=0; //@line 249 "_lsprof.c"
-        var $184=$self_i; //@line 250 "_lsprof.c"
-        var $185=$184; //@line 250 "_lsprof.c"
-        var $186=$pObj_addr_i1; //@line 250 "_lsprof.c"
-        var $187=$186+8; //@line 250 "_lsprof.c"
-        $root_addr_i_i=$187;
-        $node_addr_i_i=$185;
-        var $188=$root_addr_i_i; //@line 33 "rotatingtree.c"
-        var $189=HEAP[$188]; //@line 33 "rotatingtree.c"
-        var $190=($189)!=0; //@line 33 "rotatingtree.c"
-        var $191=$node_addr_i_i; //@line 34 "rotatingtree.c"
-        if ($190) { __lastLabel__ = 31; __label__ = 32; break; } else { __lastLabel__ = 31; __label__ = 37; break; } //@line 33 "rotatingtree.c"
-      case 32: // $bb_i1_i
-        var $192=__lastLabel__ == 34 ? $206 : ($191);
-        var $193=$192; //@line 34 "rotatingtree.c"
-        var $194=HEAP[$193]; //@line 34 "rotatingtree.c"
-        var $195=$root_addr_i_i; //@line 34 "rotatingtree.c"
-        var $196=HEAP[$195]; //@line 34 "rotatingtree.c"
-        var $197=$196; //@line 34 "rotatingtree.c"
-        var $198=HEAP[$197]; //@line 34 "rotatingtree.c"
-        var $199=($194) < ($198); //@line 34 "rotatingtree.c"
-        var $200=$root_addr_i_i; //@line 35 "rotatingtree.c"
-        var $201=HEAP[$200]; //@line 35 "rotatingtree.c"
-        if ($199) { __label__ = 33; break; } else { __label__ = 35; break; } //@line 34 "rotatingtree.c"
-      case 33: // $bb1_i2_i
-        var $202=$201+4; //@line 35 "rotatingtree.c"
-        $root_addr_i_i=$202; //@line 35 "rotatingtree.c"
-        __label__ = 34; break; //@line 35 "rotatingtree.c"
-      case 34: // $bb3_backedge_i_i
-        var $203=$root_addr_i_i; //@line 33 "rotatingtree.c"
-        var $204=HEAP[$203]; //@line 33 "rotatingtree.c"
-        var $205=($204)!=0; //@line 33 "rotatingtree.c"
-        var $206=$node_addr_i_i; //@line 34 "rotatingtree.c"
-        if ($205) { __lastLabel__ = 34; __label__ = 32; break; } else { __lastLabel__ = 34; __label__ = 37; break; } //@line 33 "rotatingtree.c"
-      case 35: // $bb2_i3_i
-        var $207=$201+8; //@line 37 "rotatingtree.c"
-        $root_addr_i_i=$207; //@line 37 "rotatingtree.c"
-        __label__ = 34; break; //@line 37 "rotatingtree.c"
-      case 36: // $newProfilerEntry_exit_thread
-        $retval_i3=0; //@line 233 "_lsprof.c"
-        $profEntry=0; //@line 388 "_lsprof.c"
-        __label__ = 58; break;
-      case 37: // $newProfilerEntry_exit
-        var $_lcssa_i_i=__lastLabel__ == 31 ? $191 : ($206);
-        var $208=$_lcssa_i_i+4; //@line 39 "rotatingtree.c"
-        HEAP[$208]=0; //@line 39 "rotatingtree.c"
-        var $209=$node_addr_i_i; //@line 40 "rotatingtree.c"
-        var $210=$209+8; //@line 40 "rotatingtree.c"
-        HEAP[$210]=0; //@line 40 "rotatingtree.c"
-        var $211=$root_addr_i_i; //@line 41 "rotatingtree.c"
-        var $212=$node_addr_i_i; //@line 41 "rotatingtree.c"
-        HEAP[$211]=$212; //@line 41 "rotatingtree.c"
-        var $213=$self_i; //@line 251 "_lsprof.c"
-        $4=$213; //@line 251 "_lsprof.c"
-        $retval_i3=$213; //@line 233 "_lsprof.c"
-        $profEntry=$213; //@line 388 "_lsprof.c"
-        var $214=($213)==0; //@line 389 "_lsprof.c"
-        if ($214) { __label__ = 58; break; } else { __label__ = 38; break; } //@line 389 "_lsprof.c"
-      case 38: // $bb1
-        var $215=$pObj; //@line 393 "_lsprof.c"
-        var $216=$215+16; //@line 393 "_lsprof.c"
-        var $217=HEAP[$216]; //@line 393 "_lsprof.c"
-        $pContext=$217; //@line 393 "_lsprof.c"
-        var $218=($217)!=0; //@line 394 "_lsprof.c"
-        if ($218) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 394 "_lsprof.c"
-      case 39: // $bb2
-        var $219=$pContext; //@line 395 "_lsprof.c"
-        var $220=$219+16; //@line 395 "_lsprof.c"
-        var $221=HEAP[$220]; //@line 395 "_lsprof.c"
-        var $222=$pObj; //@line 395 "_lsprof.c"
-        var $223=$222+16; //@line 395 "_lsprof.c"
-        HEAP[$223]=$221; //@line 395 "_lsprof.c"
-        __label__ = 42; break; //@line 395 "_lsprof.c"
-      case 40: // $bb3
-        var $224=_malloc(24); //@line 399 "_lsprof.c"
-        var $225=$224; //@line 399 "_lsprof.c"
-        $pContext=$225; //@line 399 "_lsprof.c"
-        var $226=$pContext; //@line 401 "_lsprof.c"
-        var $227=($226)==0; //@line 401 "_lsprof.c"
-        if ($227) { __label__ = 41; break; } else { __label__ = 42; break; } //@line 401 "_lsprof.c"
-      case 41: // $bb4
-        var $228=$pObj; //@line 402 "_lsprof.c"
-        var $229=$228+20; //@line 402 "_lsprof.c"
-        var $230=HEAP[$229]; //@line 402 "_lsprof.c"
-        var $231=($230) | 256; //@line 402 "_lsprof.c"
-        var $232=$pObj; //@line 402 "_lsprof.c"
-        var $233=$232+20; //@line 402 "_lsprof.c"
-        HEAP[$233]=$231; //@line 402 "_lsprof.c"
-        __label__ = 58; break; //@line 402 "_lsprof.c"
-      case 42: // $bb5
-        var $234=$pObj; //@line 406 "_lsprof.c"
-        var $235=$pContext; //@line 406 "_lsprof.c"
-        var $236=$profEntry; //@line 406 "_lsprof.c"
-        $pObj_addr_i6=$234;
-        $self_addr_i=$235;
-        $entry_addr_i=$236;
-        var $237=$self_addr_i; //@line 322 "_lsprof.c"
-        var $238=$237+20; //@line 322 "_lsprof.c"
-        var $239=$entry_addr_i; //@line 322 "_lsprof.c"
-        HEAP[$238]=$239; //@line 322 "_lsprof.c"
-        var $240=$self_addr_i; //@line 323 "_lsprof.c"
-        var $241=$240+8; //@line 323 "_lsprof.c"
-        HEAP[$241]=0; //@line 323 "_lsprof.c"
-        var $242=$pObj_addr_i6; //@line 324 "_lsprof.c"
-        var $243=$242+12; //@line 324 "_lsprof.c"
-        var $244=HEAP[$243]; //@line 324 "_lsprof.c"
-        var $245=$self_addr_i; //@line 324 "_lsprof.c"
-        var $246=$245+16; //@line 324 "_lsprof.c"
-        HEAP[$246]=$244; //@line 324 "_lsprof.c"
-        var $247=$pObj_addr_i6; //@line 325 "_lsprof.c"
-        var $248=$247+12; //@line 325 "_lsprof.c"
-        var $249=$self_addr_i; //@line 325 "_lsprof.c"
-        HEAP[$248]=$249; //@line 325 "_lsprof.c"
-        var $250=$entry_addr_i; //@line 326 "_lsprof.c"
-        var $251=$250+40; //@line 326 "_lsprof.c"
-        var $252=HEAP[$251]; //@line 326 "_lsprof.c"
-        var $253=($252) + 1; //@line 326 "_lsprof.c"
-        var $254=$entry_addr_i; //@line 326 "_lsprof.c"
-        var $255=$254+40; //@line 326 "_lsprof.c"
-        HEAP[$255]=$253; //@line 326 "_lsprof.c"
-        var $256=$pObj_addr_i6; //@line 327 "_lsprof.c"
-        var $257=$256+20; //@line 327 "_lsprof.c"
-        var $258=HEAP[$257]; //@line 327 "_lsprof.c"
-        var $259=($258) & 2; //@line 327 "_lsprof.c"
-        var $260=($259)!=0; //@line 327 "_lsprof.c"
-        if ($260) { __label__ = 43; break; } else { __label__ = 54; break; } //@line 327 "_lsprof.c"
-      case 43: // $bb_i7
-        var $261=$self_addr_i; //@line 327 "_lsprof.c"
-        var $262=$261+16; //@line 327 "_lsprof.c"
-        var $263=HEAP[$262]; //@line 327 "_lsprof.c"
-        var $264=($263)!=0; //@line 327 "_lsprof.c"
-        if ($264) { __label__ = 44; break; } else { __label__ = 54; break; } //@line 327 "_lsprof.c"
-      case 44: // $bb2_i8
-        var $265=$self_addr_i; //@line 329 "_lsprof.c"
-        var $266=$265+16; //@line 329 "_lsprof.c"
-        var $267=HEAP[$266]; //@line 329 "_lsprof.c"
-        var $268=$267+20; //@line 329 "_lsprof.c"
-        var $269=HEAP[$268]; //@line 329 "_lsprof.c"
-        $caller_i=$269; //@line 329 "_lsprof.c"
-        var $270=$pObj_addr_i6; //@line 330 "_lsprof.c"
-        var $271=$caller_i; //@line 330 "_lsprof.c"
-        var $272=$entry_addr_i; //@line 330 "_lsprof.c"
-        $pObj_addr_i_i=$270;
-        $caller_addr_i_i=$271;
-        $entry_addr_i_i=$272;
-        var $273=$caller_addr_i_i; //@line 263 "_lsprof.c"
-        var $274=$273+44; //@line 263 "_lsprof.c"
-        var $275=$entry_addr_i_i; //@line 263 "_lsprof.c"
-        var $276=$275; //@line 263 "_lsprof.c"
-        var $277=_RotatingTree_Get($274, $276); //@line 263 "_lsprof.c"
-        var $278=$277; //@line 263 "_lsprof.c"
-        $2=$278; //@line 263 "_lsprof.c"
-        var $279=$2; //@line 263 "_lsprof.c"
-        $retval_i_i5=$279; //@line 263 "_lsprof.c"
-        var $retval2_i_i=$retval_i_i5; //@line 263 "_lsprof.c"
-        $subentry_i=$retval2_i_i; //@line 330 "_lsprof.c"
-        var $280=$subentry_i; //@line 331 "_lsprof.c"
-        var $281=($280)==0; //@line 331 "_lsprof.c"
-        if ($281) { __label__ = 45; break; } else { __label__ = 53; break; } //@line 331 "_lsprof.c"
-      case 45: // $bb3_i9
-        var $282=$pObj_addr_i6; //@line 332 "_lsprof.c"
-        var $283=$caller_i; //@line 332 "_lsprof.c"
-        var $284=$entry_addr_i; //@line 332 "_lsprof.c"
-        $pObj_addr_i1_i=$282;
-        $caller_addr_i2_i=$283;
-        $entry_addr_i3_i=$284;
-        var $285=_malloc(40); //@line 271 "_lsprof.c"
-        var $286=$285; //@line 271 "_lsprof.c"
-        $self_i_i4=$286; //@line 271 "_lsprof.c"
-        var $287=$self_i_i4; //@line 272 "_lsprof.c"
-        var $288=($287)==0; //@line 272 "_lsprof.c"
-        if ($288) { __label__ = 46; break; } else { __label__ = 47; break; } //@line 272 "_lsprof.c"
-      case 46: // $bb4_thread6_i
-        var $289=$pObj_addr_i1_i; //@line 273 "_lsprof.c"
-        var $290=$289+20; //@line 273 "_lsprof.c"
-        var $291=HEAP[$290]; //@line 273 "_lsprof.c"
-        var $292=($291) | 256; //@line 273 "_lsprof.c"
-        var $293=$pObj_addr_i1_i; //@line 273 "_lsprof.c"
-        var $294=$293+20; //@line 273 "_lsprof.c"
-        HEAP[$294]=$292; //@line 273 "_lsprof.c"
-        $1=0; //@line 274 "_lsprof.c"
-        $retval_i4_i=0; //@line 274 "_lsprof.c"
-        $subentry_i=0; //@line 332 "_lsprof.c"
-        __label__ = 54; break;
-      case 47: // $bb2_i_i10
-        var $295=$self_i_i4; //@line 276 "_lsprof.c"
-        var $296=$295; //@line 276 "_lsprof.c"
-        var $297=$296; //@line 276 "_lsprof.c"
-        var $298=$entry_addr_i3_i; //@line 276 "_lsprof.c"
-        var $299=$298; //@line 276 "_lsprof.c"
-        HEAP[$297]=$299; //@line 276 "_lsprof.c"
-        var $300=$self_i_i4; //@line 277 "_lsprof.c"
-        var $301=$300+12; //@line 277 "_lsprof.c"
-        HEAP[$301]=0; //@line 277 "_lsprof.c"
-        var $302=$self_i_i4; //@line 278 "_lsprof.c"
-        var $303=$302+20; //@line 278 "_lsprof.c"
-        HEAP[$303]=0; //@line 278 "_lsprof.c"
-        var $304=$self_i_i4; //@line 279 "_lsprof.c"
-        var $305=$304+28; //@line 279 "_lsprof.c"
-        HEAP[$305]=0; //@line 279 "_lsprof.c"
-        var $306=$self_i_i4; //@line 280 "_lsprof.c"
-        var $307=$306+32; //@line 280 "_lsprof.c"
-        HEAP[$307]=0; //@line 280 "_lsprof.c"
-        var $308=$self_i_i4; //@line 281 "_lsprof.c"
-        var $309=$308+36; //@line 281 "_lsprof.c"
-        HEAP[$309]=0; //@line 281 "_lsprof.c"
-        var $310=$self_i_i4; //@line 282 "_lsprof.c"
-        var $311=$310; //@line 282 "_lsprof.c"
-        var $312=$caller_addr_i2_i; //@line 282 "_lsprof.c"
-        var $313=$312+44; //@line 282 "_lsprof.c"
-        $root_addr_i_i_i=$313;
-        $node_addr_i_i_i=$311;
-        var $314=$root_addr_i_i_i; //@line 33 "rotatingtree.c"
-        var $315=HEAP[$314]; //@line 33 "rotatingtree.c"
-        var $316=($315)!=0; //@line 33 "rotatingtree.c"
-        var $317=$node_addr_i_i_i; //@line 34 "rotatingtree.c"
-        if ($316) { __lastLabel__ = 47; __label__ = 48; break; } else { __lastLabel__ = 47; __label__ = 52; break; } //@line 33 "rotatingtree.c"
-      case 48: // $bb_i_i_i
-        var $318=__lastLabel__ == 50 ? $332 : ($317);
-        var $319=$318; //@line 34 "rotatingtree.c"
-        var $320=HEAP[$319]; //@line 34 "rotatingtree.c"
-        var $321=$root_addr_i_i_i; //@line 34 "rotatingtree.c"
-        var $322=HEAP[$321]; //@line 34 "rotatingtree.c"
-        var $323=$322; //@line 34 "rotatingtree.c"
-        var $324=HEAP[$323]; //@line 34 "rotatingtree.c"
-        var $325=($320) < ($324); //@line 34 "rotatingtree.c"
-        var $326=$root_addr_i_i_i; //@line 35 "rotatingtree.c"
-        var $327=HEAP[$326]; //@line 35 "rotatingtree.c"
-        if ($325) { __label__ = 49; break; } else { __label__ = 51; break; } //@line 34 "rotatingtree.c"
-      case 49: // $bb1_i_i_i
-        var $328=$327+4; //@line 35 "rotatingtree.c"
-        $root_addr_i_i_i=$328; //@line 35 "rotatingtree.c"
-        __label__ = 50; break; //@line 35 "rotatingtree.c"
-      case 50: // $bb3_backedge_i_i_i
-        var $329=$root_addr_i_i_i; //@line 33 "rotatingtree.c"
-        var $330=HEAP[$329]; //@line 33 "rotatingtree.c"
-        var $331=($330)!=0; //@line 33 "rotatingtree.c"
-        var $332=$node_addr_i_i_i; //@line 34 "rotatingtree.c"
-        if ($331) { __lastLabel__ = 50; __label__ = 48; break; } else { __lastLabel__ = 50; __label__ = 52; break; } //@line 33 "rotatingtree.c"
-      case 51: // $bb2_i_i_i
-        var $333=$327+8; //@line 37 "rotatingtree.c"
-        $root_addr_i_i_i=$333; //@line 37 "rotatingtree.c"
-        __label__ = 50; break; //@line 37 "rotatingtree.c"
-      case 52: // $bb4_i
-        var $_lcssa_i_i_i=__lastLabel__ == 47 ? $317 : ($332);
-        var $334=$_lcssa_i_i_i+4; //@line 39 "rotatingtree.c"
-        HEAP[$334]=0; //@line 39 "rotatingtree.c"
-        var $335=$node_addr_i_i_i; //@line 40 "rotatingtree.c"
-        var $336=$335+8; //@line 40 "rotatingtree.c"
-        HEAP[$336]=0; //@line 40 "rotatingtree.c"
-        var $337=$root_addr_i_i_i; //@line 41 "rotatingtree.c"
-        var $338=$node_addr_i_i_i; //@line 41 "rotatingtree.c"
-        HEAP[$337]=$338; //@line 41 "rotatingtree.c"
-        var $339=$self_i_i4; //@line 283 "_lsprof.c"
-        $1=$339; //@line 283 "_lsprof.c"
-        $retval_i4_i=$339; //@line 274 "_lsprof.c"
-        $subentry_i=$339; //@line 332 "_lsprof.c"
-        var $340=($339)!=0; //@line 333 "_lsprof.c"
-        if ($340) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 333 "_lsprof.c"
-      case 53: // $bb5_i
-        var $341=$subentry_i; //@line 334 "_lsprof.c"
-        var $342=$341+36; //@line 334 "_lsprof.c"
-        var $343=HEAP[$342]; //@line 334 "_lsprof.c"
-        var $344=($343) + 1; //@line 334 "_lsprof.c"
-        var $345=$subentry_i; //@line 334 "_lsprof.c"
-        var $346=$345+36; //@line 334 "_lsprof.c"
-        HEAP[$346]=$344; //@line 334 "_lsprof.c"
-        __label__ = 54; break; //@line 334 "_lsprof.c"
-      case 54: // $bb6_i
-        var $347=$pObj_addr_i6; //@line 336 "_lsprof.c"
-        var $348=$347+24; //@line 336 "_lsprof.c"
-        var $349=HEAP[$348]; //@line 336 "_lsprof.c"
-        var $350=($349)!=0; //@line 336 "_lsprof.c"
-        if ($350) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 336 "_lsprof.c"
-      case 55: // $bb7_i
-        var $351=$pObj_addr_i6; //@line 336 "_lsprof.c"
-        var $352=_CallExternalTimer($351); //@line 336 "_lsprof.c"
-        $iftmp_2_i=$352; //@line 336 "_lsprof.c"
-        __label__ = 57; break; //@line 336 "_lsprof.c"
-      case 56: // $bb8_i
-        var $353=_gettimeofday($tv_i_i, 0); //@line 56 "_lsprof.c"
-        var $354=$tv_i_i; //@line 58 "_lsprof.c"
-        var $355=HEAP[$354]; //@line 58 "_lsprof.c"
-        var $356=($355); //@line 58 "_lsprof.c"
-        $ret_i_i=$356; //@line 58 "_lsprof.c"
-        var $357=$ret_i_i; //@line 59 "_lsprof.c"
-        var $358=($357) * 1000000; //@line 59 "_lsprof.c"
-        var $359=$tv_i_i+4; //@line 59 "_lsprof.c"
-        var $360=HEAP[$359]; //@line 59 "_lsprof.c"
-        var $361=($360); //@line 59 "_lsprof.c"
-        var $362=($361) + ($358); //@line 59 "_lsprof.c"
-        $ret_i_i=$362; //@line 59 "_lsprof.c"
-        var $363=$ret_i_i; //@line 60 "_lsprof.c"
-        $0=$363; //@line 60 "_lsprof.c"
-        var $364=$0; //@line 60 "_lsprof.c"
-        $retval_i5_i=$364; //@line 60 "_lsprof.c"
-        var $retval1_i_i=$retval_i5_i; //@line 60 "_lsprof.c"
-        $iftmp_2_i=$retval1_i_i; //@line 336 "_lsprof.c"
-        __label__ = 57; break; //@line 336 "_lsprof.c"
-      case 57: // $initContext_exit
-        var $365=$self_addr_i; //@line 336 "_lsprof.c"
-        var $366=$365; //@line 336 "_lsprof.c"
-        var $367=$iftmp_2_i; //@line 336 "_lsprof.c"
-        HEAP[$366]=$367; //@line 336 "_lsprof.c"
-        __label__ = 58; break; //@line 408 "_lsprof.c"
-      case 58: // $restorePyerr
-        var $368=HEAP[$last_tb]; //@line 409 "_lsprof.c"
-        var $369=HEAP[$last_value]; //@line 409 "_lsprof.c"
-        var $370=HEAP[$last_type]; //@line 409 "_lsprof.c"
-        _PyErr_Restore($370, $369, $368); //@line 409 "_lsprof.c"
+        var $7=$pObj; //@line 388 "_lsprof.c"
+        var $8=$key_addr; //@line 388 "_lsprof.c"
+        var $9=$userObj_addr; //@line 388 "_lsprof.c"
+        var $10=_newProfilerEntry($7, $8, $9); //@line 388 "_lsprof.c"
+        $profEntry=$10; //@line 388 "_lsprof.c"
+        var $11=$profEntry; //@line 389 "_lsprof.c"
+        var $12=($11)==0; //@line 389 "_lsprof.c"
+        if ($12) { __label__ = 7; break; } else { __label__ = 2; break; } //@line 389 "_lsprof.c"
+      case 2: // $bb1
+        var $13=$pObj; //@line 393 "_lsprof.c"
+        var $14=$13+16; //@line 393 "_lsprof.c"
+        var $15=HEAP[$14]; //@line 393 "_lsprof.c"
+        $pContext=$15; //@line 393 "_lsprof.c"
+        var $16=($15)!=0; //@line 394 "_lsprof.c"
+        if ($16) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 394 "_lsprof.c"
+      case 3: // $bb2
+        var $17=$pContext; //@line 395 "_lsprof.c"
+        var $18=$17+16; //@line 395 "_lsprof.c"
+        var $19=HEAP[$18]; //@line 395 "_lsprof.c"
+        var $20=$pObj; //@line 395 "_lsprof.c"
+        var $21=$20+16; //@line 395 "_lsprof.c"
+        HEAP[$21]=$19; //@line 395 "_lsprof.c"
+        __label__ = 6; break; //@line 395 "_lsprof.c"
+      case 4: // $bb3
+        var $22=_malloc(24); //@line 399 "_lsprof.c"
+        var $23=$22; //@line 399 "_lsprof.c"
+        $pContext=$23; //@line 399 "_lsprof.c"
+        var $24=$pContext; //@line 401 "_lsprof.c"
+        var $25=($24)==0; //@line 401 "_lsprof.c"
+        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 401 "_lsprof.c"
+      case 5: // $bb4
+        var $26=$pObj; //@line 402 "_lsprof.c"
+        var $27=$26+20; //@line 402 "_lsprof.c"
+        var $28=HEAP[$27]; //@line 402 "_lsprof.c"
+        var $29=($28) | 256; //@line 402 "_lsprof.c"
+        var $30=$pObj; //@line 402 "_lsprof.c"
+        var $31=$30+20; //@line 402 "_lsprof.c"
+        HEAP[$31]=$29; //@line 402 "_lsprof.c"
+        __label__ = 7; break; //@line 402 "_lsprof.c"
+      case 6: // $bb5
+        var $32=$pObj; //@line 406 "_lsprof.c"
+        var $33=$pContext; //@line 406 "_lsprof.c"
+        var $34=$profEntry; //@line 406 "_lsprof.c"
+        _initContext($32, $33, $34); //@line 406 "_lsprof.c"
+        __label__ = 7; break; //@line 408 "_lsprof.c"
+      case 7: // $restorePyerr
+        var $35=HEAP[$last_tb]; //@line 409 "_lsprof.c"
+        var $36=HEAP[$last_value]; //@line 409 "_lsprof.c"
+        var $37=HEAP[$last_type]; //@line 409 "_lsprof.c"
+        _PyErr_Restore($37, $36, $35); //@line 409 "_lsprof.c"
         STACKTOP = __stackBase__;
         return; //@line 410 "_lsprof.c"
       default: assert(0, "bad label: " + __label__);
@@ -1359,10 +1339,6 @@ var _random_stream;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pObj_addr_i;
-        var $key_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $key_addr;
         var $pObj;
@@ -1370,59 +1346,49 @@ var _random_stream;
         var $pContext;
         $self_addr=$self;
         $key_addr=$key;
-        var $1=$self_addr; //@line 416 "_lsprof.c"
-        var $2=$1; //@line 416 "_lsprof.c"
-        $pObj=$2; //@line 416 "_lsprof.c"
-        var $3=$pObj; //@line 420 "_lsprof.c"
-        var $4=$3+12; //@line 420 "_lsprof.c"
-        var $5=HEAP[$4]; //@line 420 "_lsprof.c"
-        $pContext=$5; //@line 420 "_lsprof.c"
-        var $6=$pContext; //@line 421 "_lsprof.c"
-        var $7=($6)==0; //@line 421 "_lsprof.c"
-        if ($7) { __label__ = 5; break; } else { __label__ = 1; break; } //@line 421 "_lsprof.c"
+        var $0=$self_addr; //@line 416 "_lsprof.c"
+        var $1=$0; //@line 416 "_lsprof.c"
+        $pObj=$1; //@line 416 "_lsprof.c"
+        var $2=$pObj; //@line 420 "_lsprof.c"
+        var $3=$2+12; //@line 420 "_lsprof.c"
+        var $4=HEAP[$3]; //@line 420 "_lsprof.c"
+        $pContext=$4; //@line 420 "_lsprof.c"
+        var $5=$pContext; //@line 421 "_lsprof.c"
+        var $6=($5)==0; //@line 421 "_lsprof.c"
+        if ($6) { __label__ = 5; break; } else { __label__ = 1; break; } //@line 421 "_lsprof.c"
       case 1: // $bb
-        var $8=$pObj; //@line 423 "_lsprof.c"
-        var $9=$key_addr; //@line 423 "_lsprof.c"
-        $pObj_addr_i=$8;
-        $key_addr_i=$9;
-        var $10=$pObj_addr_i; //@line 257 "_lsprof.c"
-        var $11=$10+8; //@line 257 "_lsprof.c"
-        var $12=$key_addr_i; //@line 257 "_lsprof.c"
-        var $13=_RotatingTree_Get($11, $12); //@line 257 "_lsprof.c"
-        var $14=$13; //@line 257 "_lsprof.c"
-        $0=$14; //@line 257 "_lsprof.c"
-        var $15=$0; //@line 257 "_lsprof.c"
-        $retval_i=$15; //@line 257 "_lsprof.c"
-        var $retval1_i=$retval_i; //@line 257 "_lsprof.c"
-        $profEntry=$retval1_i; //@line 423 "_lsprof.c"
-        var $16=$profEntry; //@line 424 "_lsprof.c"
-        var $17=($16)!=0; //@line 424 "_lsprof.c"
-        if ($17) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 424 "_lsprof.c"
+        var $7=$pObj; //@line 423 "_lsprof.c"
+        var $8=$key_addr; //@line 423 "_lsprof.c"
+        var $9=_getEntry($7, $8); //@line 423 "_lsprof.c"
+        $profEntry=$9; //@line 423 "_lsprof.c"
+        var $10=$profEntry; //@line 424 "_lsprof.c"
+        var $11=($10)!=0; //@line 424 "_lsprof.c"
+        if ($11) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 424 "_lsprof.c"
       case 2: // $bb1
-        var $18=$pObj; //@line 425 "_lsprof.c"
-        var $19=$pContext; //@line 425 "_lsprof.c"
-        var $20=$profEntry; //@line 425 "_lsprof.c"
-        _Stop($18, $19, $20); //@line 425 "_lsprof.c"
+        var $12=$pObj; //@line 425 "_lsprof.c"
+        var $13=$pContext; //@line 425 "_lsprof.c"
+        var $14=$profEntry; //@line 425 "_lsprof.c"
+        _Stop($12, $13, $14); //@line 425 "_lsprof.c"
         __label__ = 4; break; //@line 425 "_lsprof.c"
       case 3: // $bb2
-        var $21=$pContext; //@line 428 "_lsprof.c"
-        var $22=$21+16; //@line 428 "_lsprof.c"
-        var $23=HEAP[$22]; //@line 428 "_lsprof.c"
-        var $24=$pObj; //@line 428 "_lsprof.c"
-        var $25=$24+12; //@line 428 "_lsprof.c"
-        HEAP[$25]=$23; //@line 428 "_lsprof.c"
+        var $15=$pContext; //@line 428 "_lsprof.c"
+        var $16=$15+16; //@line 428 "_lsprof.c"
+        var $17=HEAP[$16]; //@line 428 "_lsprof.c"
+        var $18=$pObj; //@line 428 "_lsprof.c"
+        var $19=$18+12; //@line 428 "_lsprof.c"
+        HEAP[$19]=$17; //@line 428 "_lsprof.c"
         __label__ = 4; break; //@line 428 "_lsprof.c"
       case 4: // $bb3
-        var $26=$pObj; //@line 431 "_lsprof.c"
-        var $27=$26+16; //@line 431 "_lsprof.c"
-        var $28=HEAP[$27]; //@line 431 "_lsprof.c"
-        var $29=$pContext; //@line 431 "_lsprof.c"
-        var $30=$29+16; //@line 431 "_lsprof.c"
-        HEAP[$30]=$28; //@line 431 "_lsprof.c"
-        var $31=$pObj; //@line 432 "_lsprof.c"
-        var $32=$31+16; //@line 432 "_lsprof.c"
-        var $33=$pContext; //@line 432 "_lsprof.c"
-        HEAP[$32]=$33; //@line 432 "_lsprof.c"
+        var $20=$pObj; //@line 431 "_lsprof.c"
+        var $21=$20+16; //@line 431 "_lsprof.c"
+        var $22=HEAP[$21]; //@line 431 "_lsprof.c"
+        var $23=$pContext; //@line 431 "_lsprof.c"
+        var $24=$23+16; //@line 431 "_lsprof.c"
+        HEAP[$24]=$22; //@line 431 "_lsprof.c"
+        var $25=$pObj; //@line 432 "_lsprof.c"
+        var $26=$25+16; //@line 432 "_lsprof.c"
+        var $27=$pContext; //@line 432 "_lsprof.c"
+        HEAP[$26]=$27; //@line 432 "_lsprof.c"
         __label__ = 5; break; //@line 432 "_lsprof.c"
       case 5: // $return
         ;
@@ -1547,6 +1513,48 @@ var _random_stream;
   }
   
 
+  function _pending_exception($pObj) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $pObj_addr;
+        var $retval;
+        var $0;
+        $pObj_addr=$pObj;
+        var $1=$pObj_addr; //@line 491 "_lsprof.c"
+        var $2=$1+20; //@line 491 "_lsprof.c"
+        var $3=HEAP[$2]; //@line 491 "_lsprof.c"
+        var $4=($3) & 256; //@line 491 "_lsprof.c"
+        var $5=($4)!=0; //@line 491 "_lsprof.c"
+        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 491 "_lsprof.c"
+      case 1: // $bb
+        var $6=$pObj_addr; //@line 492 "_lsprof.c"
+        var $7=$6+20; //@line 492 "_lsprof.c"
+        var $8=HEAP[$7]; //@line 492 "_lsprof.c"
+        var $9=($8) - 256; //@line 492 "_lsprof.c"
+        var $10=$pObj_addr; //@line 492 "_lsprof.c"
+        var $11=$10+20; //@line 492 "_lsprof.c"
+        HEAP[$11]=$9; //@line 492 "_lsprof.c"
+        var $12=HEAP[_PyExc_MemoryError]; //@line 493 "_lsprof.c"
+        _PyErr_SetString($12, __str4); //@line 493 "_lsprof.c"
+        $0=-1; //@line 495 "_lsprof.c"
+        __label__ = 3; break; //@line 495 "_lsprof.c"
+      case 2: // $bb1
+        $0=0; //@line 497 "_lsprof.c"
+        __label__ = 3; break; //@line 497 "_lsprof.c"
+      case 3: // $bb2
+        var $13=$0; //@line 495 "_lsprof.c"
+        $retval=$13; //@line 495 "_lsprof.c"
+        var $retval3=$retval; //@line 495 "_lsprof.c"
+        ;
+        return $retval3; //@line 495 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _statsForSubEntry($node, $arg) {
     ;
     var __label__;
@@ -1601,7 +1609,7 @@ var _random_stream;
         var $32=$entry1; //@line 553 "_lsprof.c"
         var $33=$32+12; //@line 553 "_lsprof.c"
         var $34=HEAP[$33]; //@line 553 "_lsprof.c"
-        var $35=_PyObject_CallFunction(_StatsSubEntryType, __str24, $34, $31, $28, $25, $17); //@line 553 "_lsprof.c"
+        var $35=_PyObject_CallFunction(_StatsSubEntryType, __str24, allocate([$34,0,0,0,$31,0,0,0,$28,0,0,0,$25,0,0,0,0,0,0,0,$17,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i32",0,0,0,"i32",0,0,0,"double",0,0,0,0,0,0,0,"double",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 553 "_lsprof.c"
         $sinfo=$35; //@line 553 "_lsprof.c"
         var $36=$sinfo; //@line 560 "_lsprof.c"
         var $37=($36)==0; //@line 560 "_lsprof.c"
@@ -1776,7 +1784,7 @@ var _random_stream;
         var $76=$entry1; //@line 591 "_lsprof.c"
         var $77=$76+12; //@line 591 "_lsprof.c"
         var $78=HEAP[$77]; //@line 591 "_lsprof.c"
-        var $79=_PyObject_CallFunction(_StatsEntryType, __str25, $78, $75, $72, $69, $61, $53); //@line 591 "_lsprof.c"
+        var $79=_PyObject_CallFunction(_StatsEntryType, __str25, allocate([$78,0,0,0,$75,0,0,0,$72,0,0,0,$69,0,0,0,0,0,0,0,$61,0,0,0,0,0,0,0,$53,0,0,0], ["%struct.PyObject*",0,0,0,"i32",0,0,0,"i32",0,0,0,"double",0,0,0,0,0,0,0,"double",0,0,0,0,0,0,0,"%struct.PyObject*",0,0,0], ALLOC_STACK)); //@line 591 "_lsprof.c"
         $info=$79; //@line 591 "_lsprof.c"
         var $80=$collect; //@line 599 "_lsprof.c"
         var $81=$80+4; //@line 599 "_lsprof.c"
@@ -1859,127 +1867,200 @@ var _random_stream;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i1;
-        var $0;
-        var $pObj_addr_i;
-        var $retval_i;
-        var $1;
         var $pObj_addr;
         var $noarg_addr;
         var $retval;
-        var $2;
+        var $0;
         var $collect=__stackBase__;
         $pObj_addr=$pObj;
         $noarg_addr=$noarg;
-        var $3=$pObj_addr; //@line 635 "_lsprof.c"
-        $pObj_addr_i=$3;
-        var $4=$pObj_addr_i; //@line 491 "_lsprof.c"
-        var $5=$4+20; //@line 491 "_lsprof.c"
-        var $6=HEAP[$5]; //@line 491 "_lsprof.c"
-        var $7=($6) & 256; //@line 491 "_lsprof.c"
-        var $8=($7)!=0; //@line 491 "_lsprof.c"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 491 "_lsprof.c"
+        var $1=$pObj_addr; //@line 635 "_lsprof.c"
+        var $2=_pending_exception($1); //@line 635 "_lsprof.c"
+        var $3=($2)!=0; //@line 635 "_lsprof.c"
+        if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 635 "_lsprof.c"
       case 1: // $bb
-        var $9=$pObj_addr_i; //@line 492 "_lsprof.c"
-        var $10=$9+20; //@line 492 "_lsprof.c"
-        var $11=HEAP[$10]; //@line 492 "_lsprof.c"
-        var $12=($11) - 256; //@line 492 "_lsprof.c"
-        var $13=$pObj_addr_i; //@line 492 "_lsprof.c"
-        var $14=$13+20; //@line 492 "_lsprof.c"
-        HEAP[$14]=$12; //@line 492 "_lsprof.c"
-        var $15=HEAP[_PyExc_MemoryError]; //@line 493 "_lsprof.c"
-        _PyErr_SetString($15, __str4); //@line 493 "_lsprof.c"
-        $1=-1; //@line 495 "_lsprof.c"
-        $retval_i=-1; //@line 495 "_lsprof.c"
-        $2=0; //@line 636 "_lsprof.c"
+        $0=0; //@line 636 "_lsprof.c"
         __label__ = 14; break; //@line 636 "_lsprof.c"
       case 2: // $bb1
-        $1=0; //@line 497 "_lsprof.c"
-        $retval_i=0; //@line 495 "_lsprof.c"
-        var $16=$pObj_addr; //@line 637 "_lsprof.c"
-        var $17=$16+24; //@line 637 "_lsprof.c"
-        var $18=HEAP[$17]; //@line 637 "_lsprof.c"
-        var $19=($18)==0; //@line 637 "_lsprof.c"
-        if ($19) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 637 "_lsprof.c"
+        var $4=$pObj_addr; //@line 637 "_lsprof.c"
+        var $5=$4+24; //@line 637 "_lsprof.c"
+        var $6=HEAP[$5]; //@line 637 "_lsprof.c"
+        var $7=($6)==0; //@line 637 "_lsprof.c"
+        if ($7) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 637 "_lsprof.c"
       case 3: // $bb2
-        $0=0.000001; //@line 66 "_lsprof.c"
-        var $20=$0; //@line 66 "_lsprof.c"
-        $retval_i1=$20; //@line 66 "_lsprof.c"
-        var $retval1_i=$retval_i1; //@line 66 "_lsprof.c"
-        var $21=$collect+8; //@line 638 "_lsprof.c"
-        HEAP[$21]=$retval1_i; //@line 638 "_lsprof.c"
+        var $8=_hpTimerUnit(); //@line 638 "_lsprof.c"
+        var $9=$collect+8; //@line 638 "_lsprof.c"
+        HEAP[$9]=$8; //@line 638 "_lsprof.c"
         __label__ = 7; break; //@line 638 "_lsprof.c"
       case 4: // $bb3
-        var $22=$pObj_addr; //@line 639 "_lsprof.c"
-        var $23=$22+28; //@line 639 "_lsprof.c"
-        var $24=HEAP[$23]; //@line 639 "_lsprof.c"
-        var $25=($24) > 0; //@line 639 "_lsprof.c"
-        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 639 "_lsprof.c"
+        var $10=$pObj_addr; //@line 639 "_lsprof.c"
+        var $11=$10+28; //@line 639 "_lsprof.c"
+        var $12=HEAP[$11]; //@line 639 "_lsprof.c"
+        var $13=($12) > 0; //@line 639 "_lsprof.c"
+        if ($13) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 639 "_lsprof.c"
       case 5: // $bb4
-        var $26=$pObj_addr; //@line 640 "_lsprof.c"
-        var $27=$26+28; //@line 640 "_lsprof.c"
-        var $28=HEAP[$27]; //@line 640 "_lsprof.c"
-        var $29=$collect+8; //@line 640 "_lsprof.c"
-        HEAP[$29]=$28; //@line 640 "_lsprof.c"
+        var $14=$pObj_addr; //@line 640 "_lsprof.c"
+        var $15=$14+28; //@line 640 "_lsprof.c"
+        var $16=HEAP[$15]; //@line 640 "_lsprof.c"
+        var $17=$collect+8; //@line 640 "_lsprof.c"
+        HEAP[$17]=$16; //@line 640 "_lsprof.c"
         __label__ = 7; break; //@line 640 "_lsprof.c"
       case 6: // $bb5
-        var $30=$collect+8; //@line 642 "_lsprof.c"
-        HEAP[$30]=2.3283064365386963e-10; //@line 642 "_lsprof.c"
+        var $18=$collect+8; //@line 642 "_lsprof.c"
+        HEAP[$18]=2.3283064365386963e-10; //@line 642 "_lsprof.c"
         __label__ = 7; break; //@line 642 "_lsprof.c"
       case 7: // $bb6
-        var $31=_PyList_New(0); //@line 643 "_lsprof.c"
-        var $32=$collect; //@line 643 "_lsprof.c"
-        HEAP[$32]=$31; //@line 643 "_lsprof.c"
-        var $33=$collect; //@line 644 "_lsprof.c"
-        var $34=HEAP[$33]; //@line 644 "_lsprof.c"
-        var $35=($34)==0; //@line 644 "_lsprof.c"
-        if ($35) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 644 "_lsprof.c"
+        var $19=_PyList_New(0); //@line 643 "_lsprof.c"
+        var $20=$collect; //@line 643 "_lsprof.c"
+        HEAP[$20]=$19; //@line 643 "_lsprof.c"
+        var $21=$collect; //@line 644 "_lsprof.c"
+        var $22=HEAP[$21]; //@line 644 "_lsprof.c"
+        var $23=($22)==0; //@line 644 "_lsprof.c"
+        if ($23) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 644 "_lsprof.c"
       case 8: // $bb7
-        $2=0; //@line 645 "_lsprof.c"
+        $0=0; //@line 645 "_lsprof.c"
         __label__ = 14; break; //@line 645 "_lsprof.c"
       case 9: // $bb8
-        var $36=$pObj_addr; //@line 646 "_lsprof.c"
-        var $37=$36+8; //@line 646 "_lsprof.c"
-        var $38=HEAP[$37]; //@line 646 "_lsprof.c"
+        var $24=$pObj_addr; //@line 646 "_lsprof.c"
+        var $25=$24+8; //@line 646 "_lsprof.c"
+        var $26=HEAP[$25]; //@line 646 "_lsprof.c"
         var $collect9=$collect; //@line 646 "_lsprof.c"
-        var $39=_RotatingTree_Enum($38, (FUNCTION_TABLE_OFFSET + 8), $collect9); //@line 646 "_lsprof.c"
-        var $40=($39)!=0; //@line 646 "_lsprof.c"
-        var $41=$collect; //@line 648 "_lsprof.c"
-        var $42=HEAP[$41]; //@line 648 "_lsprof.c"
-        if ($40) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 646 "_lsprof.c"
+        var $27=_RotatingTree_Enum($26, (FUNCTION_TABLE_OFFSET + 8), $collect9); //@line 646 "_lsprof.c"
+        var $28=($27)!=0; //@line 646 "_lsprof.c"
+        var $29=$collect; //@line 648 "_lsprof.c"
+        var $30=HEAP[$29]; //@line 648 "_lsprof.c"
+        if ($28) { __label__ = 10; break; } else { __label__ = 13; break; } //@line 646 "_lsprof.c"
       case 10: // $bb10
-        var $43=$42; //@line 648 "_lsprof.c"
-        var $44=HEAP[$43]; //@line 648 "_lsprof.c"
-        var $45=($44) - 1; //@line 648 "_lsprof.c"
-        var $46=$42; //@line 648 "_lsprof.c"
-        HEAP[$46]=$45; //@line 648 "_lsprof.c"
-        var $47=$42; //@line 648 "_lsprof.c"
-        var $48=HEAP[$47]; //@line 648 "_lsprof.c"
-        var $49=($48)==0; //@line 648 "_lsprof.c"
-        if ($49) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 648 "_lsprof.c"
+        var $31=$30; //@line 648 "_lsprof.c"
+        var $32=HEAP[$31]; //@line 648 "_lsprof.c"
+        var $33=($32) - 1; //@line 648 "_lsprof.c"
+        var $34=$30; //@line 648 "_lsprof.c"
+        HEAP[$34]=$33; //@line 648 "_lsprof.c"
+        var $35=$30; //@line 648 "_lsprof.c"
+        var $36=HEAP[$35]; //@line 648 "_lsprof.c"
+        var $37=($36)==0; //@line 648 "_lsprof.c"
+        if ($37) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 648 "_lsprof.c"
       case 11: // $bb11
-        var $50=$collect; //@line 648 "_lsprof.c"
-        var $51=HEAP[$50]; //@line 648 "_lsprof.c"
-        var $52=$51+4; //@line 648 "_lsprof.c"
-        var $53=HEAP[$52]; //@line 648 "_lsprof.c"
-        var $54=$53+24; //@line 648 "_lsprof.c"
-        var $55=HEAP[$54]; //@line 648 "_lsprof.c"
-        var $56=$collect; //@line 648 "_lsprof.c"
-        var $57=HEAP[$56]; //@line 648 "_lsprof.c"
-        FUNCTION_TABLE[$55]($57); //@line 648 "_lsprof.c"
+        var $38=$collect; //@line 648 "_lsprof.c"
+        var $39=HEAP[$38]; //@line 648 "_lsprof.c"
+        var $40=$39+4; //@line 648 "_lsprof.c"
+        var $41=HEAP[$40]; //@line 648 "_lsprof.c"
+        var $42=$41+24; //@line 648 "_lsprof.c"
+        var $43=HEAP[$42]; //@line 648 "_lsprof.c"
+        var $44=$collect; //@line 648 "_lsprof.c"
+        var $45=HEAP[$44]; //@line 648 "_lsprof.c"
+        FUNCTION_TABLE[$43]($45); //@line 648 "_lsprof.c"
         __label__ = 12; break; //@line 648 "_lsprof.c"
       case 12: // $bb12
-        $2=0; //@line 649 "_lsprof.c"
+        $0=0; //@line 649 "_lsprof.c"
         __label__ = 14; break; //@line 649 "_lsprof.c"
       case 13: // $bb13
-        $2=$42; //@line 651 "_lsprof.c"
+        $0=$30; //@line 651 "_lsprof.c"
         __label__ = 14; break; //@line 651 "_lsprof.c"
       case 14: // $bb14
-        var $58=$2; //@line 636 "_lsprof.c"
-        $retval=$58; //@line 636 "_lsprof.c"
+        var $46=$0; //@line 636 "_lsprof.c"
+        $retval=$46; //@line 636 "_lsprof.c"
         var $retval15=$retval; //@line 636 "_lsprof.c"
         STACKTOP = __stackBase__;
         return $retval15; //@line 636 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _setSubcalls($pObj, $nvalue) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $pObj_addr;
+        var $nvalue_addr;
+        var $retval;
+        var $0;
+        $pObj_addr=$pObj;
+        $nvalue_addr=$nvalue;
+        var $1=$nvalue_addr; //@line 657 "_lsprof.c"
+        var $2=($1)==0; //@line 657 "_lsprof.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 657 "_lsprof.c"
+      case 1: // $bb
+        var $3=$pObj_addr; //@line 658 "_lsprof.c"
+        var $4=$3+20; //@line 658 "_lsprof.c"
+        var $5=HEAP[$4]; //@line 658 "_lsprof.c"
+        var $6=($5) & -3; //@line 658 "_lsprof.c"
+        var $7=$pObj_addr; //@line 658 "_lsprof.c"
+        var $8=$7+20; //@line 658 "_lsprof.c"
+        HEAP[$8]=$6; //@line 658 "_lsprof.c"
+        __label__ = 4; break; //@line 658 "_lsprof.c"
+      case 2: // $bb1
+        var $9=$nvalue_addr; //@line 659 "_lsprof.c"
+        var $10=($9) > 0; //@line 659 "_lsprof.c"
+        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 659 "_lsprof.c"
+      case 3: // $bb2
+        var $11=$pObj_addr; //@line 660 "_lsprof.c"
+        var $12=$11+20; //@line 660 "_lsprof.c"
+        var $13=HEAP[$12]; //@line 660 "_lsprof.c"
+        var $14=($13) | 2; //@line 660 "_lsprof.c"
+        var $15=$pObj_addr; //@line 660 "_lsprof.c"
+        var $16=$15+20; //@line 660 "_lsprof.c"
+        HEAP[$16]=$14; //@line 660 "_lsprof.c"
+        __label__ = 4; break; //@line 660 "_lsprof.c"
+      case 4: // $bb3
+        $0=0; //@line 661 "_lsprof.c"
+        var $17=$0; //@line 661 "_lsprof.c"
+        $retval=$17; //@line 661 "_lsprof.c"
+        var $retval4=$retval; //@line 661 "_lsprof.c"
+        ;
+        return $retval4; //@line 661 "_lsprof.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _setBuiltins($pObj, $nvalue) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $pObj_addr;
+        var $nvalue_addr;
+        var $retval;
+        var $0;
+        $pObj_addr=$pObj;
+        $nvalue_addr=$nvalue;
+        var $1=$nvalue_addr; //@line 667 "_lsprof.c"
+        var $2=($1)==0; //@line 667 "_lsprof.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 667 "_lsprof.c"
+      case 1: // $bb
+        var $3=$pObj_addr; //@line 668 "_lsprof.c"
+        var $4=$3+20; //@line 668 "_lsprof.c"
+        var $5=HEAP[$4]; //@line 668 "_lsprof.c"
+        var $6=($5) & -5; //@line 668 "_lsprof.c"
+        var $7=$pObj_addr; //@line 668 "_lsprof.c"
+        var $8=$7+20; //@line 668 "_lsprof.c"
+        HEAP[$8]=$6; //@line 668 "_lsprof.c"
+        __label__ = 4; break; //@line 668 "_lsprof.c"
+      case 2: // $bb1
+        var $9=$nvalue_addr; //@line 669 "_lsprof.c"
+        var $10=($9) > 0; //@line 669 "_lsprof.c"
+        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 669 "_lsprof.c"
+      case 3: // $bb2
+        var $11=$pObj_addr; //@line 675 "_lsprof.c"
+        var $12=$11+20; //@line 675 "_lsprof.c"
+        var $13=HEAP[$12]; //@line 675 "_lsprof.c"
+        var $14=($13) | 4; //@line 675 "_lsprof.c"
+        var $15=$pObj_addr; //@line 675 "_lsprof.c"
+        var $16=$15+20; //@line 675 "_lsprof.c"
+        HEAP[$16]=$14; //@line 675 "_lsprof.c"
+        __label__ = 4; break; //@line 675 "_lsprof.c"
+      case 4: // $bb3
+        $0=0; //@line 678 "_lsprof.c"
+        var $17=$0; //@line 678 "_lsprof.c"
+        $retval=$17; //@line 678 "_lsprof.c"
+        var $retval4=$retval; //@line 678 "_lsprof.c"
+        ;
+        return $retval4; //@line 678 "_lsprof.c"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -1991,19 +2072,11 @@ var _random_stream;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pObj_addr_i1;
-        var $nvalue_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $pObj_addr_i;
-        var $nvalue_addr_i;
-        var $retval_i;
-        var $1;
         var $self_addr;
         var $args_addr;
         var $kwds_addr;
         var $retval;
-        var $2;
+        var $0;
         var $subcalls=__stackBase__;
         var $builtins=__stackBase__+4;
         $self_addr=$self;
@@ -2011,96 +2084,48 @@ var _random_stream;
         $kwds_addr=$kwds;
         HEAP[$subcalls]=-1; //@line 694 "_lsprof.c"
         HEAP[$builtins]=-1; //@line 695 "_lsprof.c"
-        var $3=$args_addr; //@line 697 "_lsprof.c"
-        var $4=$kwds_addr; //@line 697 "_lsprof.c"
-        var $5=_PyArg_ParseTupleAndKeywords($3, $4, __str26, _kwlist_9138, $subcalls, $builtins); //@line 697 "_lsprof.c"
-        var $6=($5)==0; //@line 697 "_lsprof.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 697 "_lsprof.c"
+        var $1=$args_addr; //@line 697 "_lsprof.c"
+        var $2=$kwds_addr; //@line 697 "_lsprof.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str26, _kwlist_9138, allocate([$subcalls,0,0,0,$builtins,0,0,0], ["i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 697 "_lsprof.c"
+        var $4=($3)==0; //@line 697 "_lsprof.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 697 "_lsprof.c"
       case 1: // $bb
-        $2=0; //@line 699 "_lsprof.c"
-        __label__ = 11; break; //@line 699 "_lsprof.c"
+        $0=0; //@line 699 "_lsprof.c"
+        __label__ = 6; break; //@line 699 "_lsprof.c"
       case 2: // $bb1
-        var $7=HEAP[$subcalls]; //@line 700 "_lsprof.c"
-        var $8=$self_addr; //@line 700 "_lsprof.c"
-        $pObj_addr_i=$8;
-        $nvalue_addr_i=$7;
-        var $9=$nvalue_addr_i; //@line 657 "_lsprof.c"
-        var $10=($9)==0; //@line 657 "_lsprof.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 657 "_lsprof.c"
-      case 3: // $bb_i
-        var $11=$pObj_addr_i; //@line 658 "_lsprof.c"
-        var $12=$11+20; //@line 658 "_lsprof.c"
-        var $13=HEAP[$12]; //@line 658 "_lsprof.c"
-        var $14=($13) & -3; //@line 658 "_lsprof.c"
-        var $15=$pObj_addr_i; //@line 658 "_lsprof.c"
-        var $16=$15+20; //@line 658 "_lsprof.c"
-        HEAP[$16]=$14; //@line 658 "_lsprof.c"
-        __label__ = 6; break; //@line 658 "_lsprof.c"
-      case 4: // $bb1_i
-        var $17=$nvalue_addr_i; //@line 659 "_lsprof.c"
-        var $18=($17) > 0; //@line 659 "_lsprof.c"
-        if ($18) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 659 "_lsprof.c"
-      case 5: // $bb2_i
-        var $19=$pObj_addr_i; //@line 660 "_lsprof.c"
-        var $20=$19+20; //@line 660 "_lsprof.c"
-        var $21=HEAP[$20]; //@line 660 "_lsprof.c"
-        var $22=($21) | 2; //@line 660 "_lsprof.c"
-        var $23=$pObj_addr_i; //@line 660 "_lsprof.c"
-        var $24=$23+20; //@line 660 "_lsprof.c"
-        HEAP[$24]=$22; //@line 660 "_lsprof.c"
-        __label__ = 6; break; //@line 660 "_lsprof.c"
-      case 6: // $bb2
-        $1=0; //@line 661 "_lsprof.c"
-        $retval_i=0; //@line 661 "_lsprof.c"
-        var $25=HEAP[$builtins]; //@line 700 "_lsprof.c"
-        var $26=$self_addr; //@line 700 "_lsprof.c"
-        $pObj_addr_i1=$26;
-        $nvalue_addr_i2=$25;
-        var $27=($25)==0; //@line 667 "_lsprof.c"
-        if ($27) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 667 "_lsprof.c"
-      case 7: // $bb_i4
-        var $28=$pObj_addr_i1; //@line 668 "_lsprof.c"
-        var $29=$28+20; //@line 668 "_lsprof.c"
-        var $30=HEAP[$29]; //@line 668 "_lsprof.c"
-        var $31=($30) & -5; //@line 668 "_lsprof.c"
-        var $32=$pObj_addr_i1; //@line 668 "_lsprof.c"
-        var $33=$32+20; //@line 668 "_lsprof.c"
-        HEAP[$33]=$31; //@line 668 "_lsprof.c"
-        __label__ = 10; break; //@line 668 "_lsprof.c"
-      case 8: // $bb1_i5
-        var $34=$nvalue_addr_i2; //@line 669 "_lsprof.c"
-        var $35=($34) > 0; //@line 669 "_lsprof.c"
-        if ($35) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 669 "_lsprof.c"
-      case 9: // $bb2_i6
-        var $36=$pObj_addr_i1; //@line 675 "_lsprof.c"
-        var $37=$36+20; //@line 675 "_lsprof.c"
-        var $38=HEAP[$37]; //@line 675 "_lsprof.c"
-        var $39=($38) | 4; //@line 675 "_lsprof.c"
-        var $40=$pObj_addr_i1; //@line 675 "_lsprof.c"
-        var $41=$40+20; //@line 675 "_lsprof.c"
-        HEAP[$41]=$39; //@line 675 "_lsprof.c"
-        __label__ = 10; break; //@line 675 "_lsprof.c"
-      case 10: // $bb4
-        $0=0; //@line 678 "_lsprof.c"
-        $retval_i3=0; //@line 678 "_lsprof.c"
-        var $42=$self_addr; //@line 702 "_lsprof.c"
-        var $43=$42; //@line 702 "_lsprof.c"
-        _PyEval_SetProfile((FUNCTION_TABLE_OFFSET + 10), $43); //@line 702 "_lsprof.c"
-        var $44=$self_addr; //@line 703 "_lsprof.c"
-        var $45=$44+20; //@line 703 "_lsprof.c"
-        var $46=HEAP[$45]; //@line 703 "_lsprof.c"
-        var $47=($46) | 1; //@line 703 "_lsprof.c"
-        var $48=$self_addr; //@line 703 "_lsprof.c"
-        var $49=$48+20; //@line 703 "_lsprof.c"
-        HEAP[$49]=$47; //@line 703 "_lsprof.c"
-        var $50=HEAP[__Py_NoneStruct]; //@line 704 "_lsprof.c"
-        var $51=($50) + 1; //@line 704 "_lsprof.c"
-        HEAP[__Py_NoneStruct]=$51; //@line 704 "_lsprof.c"
-        $2=__Py_NoneStruct; //@line 705 "_lsprof.c"
-        __label__ = 11; break; //@line 705 "_lsprof.c"
-      case 11: // $bb5
-        var $52=$2; //@line 699 "_lsprof.c"
-        $retval=$52; //@line 699 "_lsprof.c"
+        var $5=HEAP[$subcalls]; //@line 700 "_lsprof.c"
+        var $6=$self_addr; //@line 700 "_lsprof.c"
+        var $7=_setSubcalls($6, $5); //@line 700 "_lsprof.c"
+        var $8=($7) < 0; //@line 700 "_lsprof.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 700 "_lsprof.c"
+      case 3: // $bb2
+        var $9=HEAP[$builtins]; //@line 700 "_lsprof.c"
+        var $10=$self_addr; //@line 700 "_lsprof.c"
+        var $11=_setBuiltins($10, $9); //@line 700 "_lsprof.c"
+        var $12=($11) < 0; //@line 700 "_lsprof.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 700 "_lsprof.c"
+      case 4: // $bb3
+        $0=0; //@line 701 "_lsprof.c"
+        __label__ = 6; break; //@line 701 "_lsprof.c"
+      case 5: // $bb4
+        var $13=$self_addr; //@line 702 "_lsprof.c"
+        var $14=$13; //@line 702 "_lsprof.c"
+        _PyEval_SetProfile((FUNCTION_TABLE_OFFSET + 10), $14); //@line 702 "_lsprof.c"
+        var $15=$self_addr; //@line 703 "_lsprof.c"
+        var $16=$15+20; //@line 703 "_lsprof.c"
+        var $17=HEAP[$16]; //@line 703 "_lsprof.c"
+        var $18=($17) | 1; //@line 703 "_lsprof.c"
+        var $19=$self_addr; //@line 703 "_lsprof.c"
+        var $20=$19+20; //@line 703 "_lsprof.c"
+        HEAP[$20]=$18; //@line 703 "_lsprof.c"
+        var $21=HEAP[__Py_NoneStruct]; //@line 704 "_lsprof.c"
+        var $22=($21) + 1; //@line 704 "_lsprof.c"
+        HEAP[__Py_NoneStruct]=$22; //@line 704 "_lsprof.c"
+        $0=__Py_NoneStruct; //@line 705 "_lsprof.c"
+        __label__ = 6; break; //@line 705 "_lsprof.c"
+      case 6: // $bb5
+        var $23=$0; //@line 699 "_lsprof.c"
+        $retval=$23; //@line 699 "_lsprof.c"
         var $retval6=$retval; //@line 699 "_lsprof.c"
         STACKTOP = __stackBase__;
         return $retval6; //@line 699 "_lsprof.c"
@@ -2178,58 +2203,38 @@ var _random_stream;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pObj_addr_i;
-        var $retval_i;
-        var $0;
         var $self_addr;
         var $noarg_addr;
         var $retval;
-        var $1;
+        var $0;
         $self_addr=$self;
         $noarg_addr=$noarg;
-        var $2=$self_addr; //@line 733 "_lsprof.c"
-        var $3=$2+20; //@line 733 "_lsprof.c"
-        var $4=HEAP[$3]; //@line 733 "_lsprof.c"
-        var $5=($4) & -2; //@line 733 "_lsprof.c"
-        var $6=$self_addr; //@line 733 "_lsprof.c"
-        var $7=$6+20; //@line 733 "_lsprof.c"
-        HEAP[$7]=$5; //@line 733 "_lsprof.c"
+        var $1=$self_addr; //@line 733 "_lsprof.c"
+        var $2=$1+20; //@line 733 "_lsprof.c"
+        var $3=HEAP[$2]; //@line 733 "_lsprof.c"
+        var $4=($3) & -2; //@line 733 "_lsprof.c"
+        var $5=$self_addr; //@line 733 "_lsprof.c"
+        var $6=$5+20; //@line 733 "_lsprof.c"
+        HEAP[$6]=$4; //@line 733 "_lsprof.c"
         _PyEval_SetProfile(0, 0); //@line 734 "_lsprof.c"
-        var $8=$self_addr; //@line 735 "_lsprof.c"
-        _flush_unmatched($8); //@line 735 "_lsprof.c"
-        var $9=$self_addr; //@line 736 "_lsprof.c"
-        $pObj_addr_i=$9;
-        var $10=$pObj_addr_i; //@line 491 "_lsprof.c"
-        var $11=$10+20; //@line 491 "_lsprof.c"
-        var $12=HEAP[$11]; //@line 491 "_lsprof.c"
-        var $13=($12) & 256; //@line 491 "_lsprof.c"
-        var $14=($13)!=0; //@line 491 "_lsprof.c"
-        if ($14) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 491 "_lsprof.c"
+        var $7=$self_addr; //@line 735 "_lsprof.c"
+        _flush_unmatched($7); //@line 735 "_lsprof.c"
+        var $8=$self_addr; //@line 736 "_lsprof.c"
+        var $9=_pending_exception($8); //@line 736 "_lsprof.c"
+        var $10=($9)!=0; //@line 736 "_lsprof.c"
+        if ($10) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 736 "_lsprof.c"
       case 1: // $bb
-        var $15=$pObj_addr_i; //@line 492 "_lsprof.c"
-        var $16=$15+20; //@line 492 "_lsprof.c"
-        var $17=HEAP[$16]; //@line 492 "_lsprof.c"
-        var $18=($17) - 256; //@line 492 "_lsprof.c"
-        var $19=$pObj_addr_i; //@line 492 "_lsprof.c"
-        var $20=$19+20; //@line 492 "_lsprof.c"
-        HEAP[$20]=$18; //@line 492 "_lsprof.c"
-        var $21=HEAP[_PyExc_MemoryError]; //@line 493 "_lsprof.c"
-        _PyErr_SetString($21, __str4); //@line 493 "_lsprof.c"
-        $0=-1; //@line 495 "_lsprof.c"
-        $retval_i=-1; //@line 495 "_lsprof.c"
-        $1=0; //@line 737 "_lsprof.c"
+        $0=0; //@line 737 "_lsprof.c"
         __label__ = 3; break; //@line 737 "_lsprof.c"
       case 2: // $bb1
-        $0=0; //@line 497 "_lsprof.c"
-        $retval_i=0; //@line 495 "_lsprof.c"
-        var $22=HEAP[__Py_NoneStruct]; //@line 738 "_lsprof.c"
-        var $23=($22) + 1; //@line 738 "_lsprof.c"
-        HEAP[__Py_NoneStruct]=$23; //@line 738 "_lsprof.c"
-        $1=__Py_NoneStruct; //@line 739 "_lsprof.c"
+        var $11=HEAP[__Py_NoneStruct]; //@line 738 "_lsprof.c"
+        var $12=($11) + 1; //@line 738 "_lsprof.c"
+        HEAP[__Py_NoneStruct]=$12; //@line 738 "_lsprof.c"
+        $0=__Py_NoneStruct; //@line 739 "_lsprof.c"
         __label__ = 3; break; //@line 739 "_lsprof.c"
       case 3: // $bb2
-        var $24=$1; //@line 737 "_lsprof.c"
-        $retval=$24; //@line 737 "_lsprof.c"
+        var $13=$0; //@line 737 "_lsprof.c"
+        $retval=$13; //@line 737 "_lsprof.c"
         var $retval3=$retval; //@line 737 "_lsprof.c"
         ;
         return $retval3; //@line 737 "_lsprof.c"
@@ -2339,19 +2344,11 @@ var _random_stream;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $pObj_addr_i1;
-        var $nvalue_addr_i2;
-        var $retval_i3;
-        var $0;
-        var $pObj_addr_i;
-        var $nvalue_addr_i;
-        var $retval_i;
-        var $1;
         var $pObj_addr;
         var $args_addr;
         var $kw_addr;
         var $retval;
-        var $2;
+        var $0;
         var $o;
         var $timer=__stackBase__;
         var $timeunit=__stackBase__+4;
@@ -2364,133 +2361,85 @@ var _random_stream;
         HEAP[$timeunit]=0; //@line 772 "_lsprof.c"
         HEAP[$subcalls]=1; //@line 773 "_lsprof.c"
         HEAP[$builtins]=1; //@line 775 "_lsprof.c"
-        var $3=$args_addr; //@line 782 "_lsprof.c"
-        var $4=$kw_addr; //@line 782 "_lsprof.c"
-        var $5=_PyArg_ParseTupleAndKeywords($3, $4, __str29, _kwlist_9228, $timer, $timeunit, $subcalls, $builtins); //@line 782 "_lsprof.c"
-        var $6=($5)==0; //@line 782 "_lsprof.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 782 "_lsprof.c"
+        var $1=$args_addr; //@line 782 "_lsprof.c"
+        var $2=$kw_addr; //@line 782 "_lsprof.c"
+        var $3=_PyArg_ParseTupleAndKeywords($1, $2, __str29, _kwlist_9228, allocate([$timer,0,0,0,$timeunit,0,0,0,$subcalls,0,0,0,$builtins,0,0,0], ["%struct.PyObject**",0,0,0,"double*",0,0,0,"i32*",0,0,0,"i32*",0,0,0], ALLOC_STACK)); //@line 782 "_lsprof.c"
+        var $4=($3)==0; //@line 782 "_lsprof.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 782 "_lsprof.c"
       case 1: // $bb
-        $2=-1; //@line 785 "_lsprof.c"
-        __label__ = 16; break; //@line 785 "_lsprof.c"
+        $0=-1; //@line 785 "_lsprof.c"
+        __label__ = 11; break; //@line 785 "_lsprof.c"
       case 2: // $bb1
-        var $7=HEAP[$subcalls]; //@line 787 "_lsprof.c"
-        var $8=$pObj_addr; //@line 787 "_lsprof.c"
-        $pObj_addr_i=$8;
-        $nvalue_addr_i=$7;
-        var $9=$nvalue_addr_i; //@line 657 "_lsprof.c"
-        var $10=($9)==0; //@line 657 "_lsprof.c"
-        if ($10) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 657 "_lsprof.c"
-      case 3: // $bb_i
-        var $11=$pObj_addr_i; //@line 658 "_lsprof.c"
-        var $12=$11+20; //@line 658 "_lsprof.c"
-        var $13=HEAP[$12]; //@line 658 "_lsprof.c"
-        var $14=($13) & -3; //@line 658 "_lsprof.c"
-        var $15=$pObj_addr_i; //@line 658 "_lsprof.c"
-        var $16=$15+20; //@line 658 "_lsprof.c"
-        HEAP[$16]=$14; //@line 658 "_lsprof.c"
-        __label__ = 6; break; //@line 658 "_lsprof.c"
-      case 4: // $bb1_i
-        var $17=$nvalue_addr_i; //@line 659 "_lsprof.c"
-        var $18=($17) > 0; //@line 659 "_lsprof.c"
-        if ($18) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 659 "_lsprof.c"
-      case 5: // $bb2_i
-        var $19=$pObj_addr_i; //@line 660 "_lsprof.c"
-        var $20=$19+20; //@line 660 "_lsprof.c"
-        var $21=HEAP[$20]; //@line 660 "_lsprof.c"
-        var $22=($21) | 2; //@line 660 "_lsprof.c"
-        var $23=$pObj_addr_i; //@line 660 "_lsprof.c"
-        var $24=$23+20; //@line 660 "_lsprof.c"
-        HEAP[$24]=$22; //@line 660 "_lsprof.c"
-        __label__ = 6; break; //@line 660 "_lsprof.c"
-      case 6: // $bb2
-        $1=0; //@line 661 "_lsprof.c"
-        $retval_i=0; //@line 661 "_lsprof.c"
-        var $25=HEAP[$builtins]; //@line 787 "_lsprof.c"
-        var $26=$pObj_addr; //@line 787 "_lsprof.c"
-        $pObj_addr_i1=$26;
-        $nvalue_addr_i2=$25;
-        var $27=($25)==0; //@line 667 "_lsprof.c"
-        if ($27) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 667 "_lsprof.c"
-      case 7: // $bb_i4
-        var $28=$pObj_addr_i1; //@line 668 "_lsprof.c"
-        var $29=$28+20; //@line 668 "_lsprof.c"
-        var $30=HEAP[$29]; //@line 668 "_lsprof.c"
-        var $31=($30) & -5; //@line 668 "_lsprof.c"
-        var $32=$pObj_addr_i1; //@line 668 "_lsprof.c"
-        var $33=$32+20; //@line 668 "_lsprof.c"
-        HEAP[$33]=$31; //@line 668 "_lsprof.c"
-        __label__ = 10; break; //@line 668 "_lsprof.c"
-      case 8: // $bb1_i5
-        var $34=$nvalue_addr_i2; //@line 669 "_lsprof.c"
-        var $35=($34) > 0; //@line 669 "_lsprof.c"
-        if ($35) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 669 "_lsprof.c"
-      case 9: // $bb2_i6
-        var $36=$pObj_addr_i1; //@line 675 "_lsprof.c"
-        var $37=$36+20; //@line 675 "_lsprof.c"
-        var $38=HEAP[$37]; //@line 675 "_lsprof.c"
-        var $39=($38) | 4; //@line 675 "_lsprof.c"
-        var $40=$pObj_addr_i1; //@line 675 "_lsprof.c"
-        var $41=$40+20; //@line 675 "_lsprof.c"
-        HEAP[$41]=$39; //@line 675 "_lsprof.c"
-        __label__ = 10; break; //@line 675 "_lsprof.c"
-      case 10: // $bb4
-        $0=0; //@line 678 "_lsprof.c"
-        $retval_i3=0; //@line 678 "_lsprof.c"
-        var $42=$pObj_addr; //@line 789 "_lsprof.c"
-        var $43=$42+24; //@line 789 "_lsprof.c"
-        var $44=HEAP[$43]; //@line 789 "_lsprof.c"
-        $o=$44; //@line 789 "_lsprof.c"
-        var $45=HEAP[$timer]; //@line 790 "_lsprof.c"
-        var $46=$pObj_addr; //@line 790 "_lsprof.c"
-        var $47=$46+24; //@line 790 "_lsprof.c"
-        HEAP[$47]=$45; //@line 790 "_lsprof.c"
-        var $48=HEAP[$timer]; //@line 791 "_lsprof.c"
-        var $49=($48)!=0; //@line 791 "_lsprof.c"
-        if ($49) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 791 "_lsprof.c"
-      case 11: // $bb5
-        var $50=HEAP[$timer]; //@line 791 "_lsprof.c"
-        var $51=$50; //@line 791 "_lsprof.c"
-        var $52=HEAP[$51]; //@line 791 "_lsprof.c"
-        var $53=($52) + 1; //@line 791 "_lsprof.c"
-        var $54=$50; //@line 791 "_lsprof.c"
-        HEAP[$54]=$53; //@line 791 "_lsprof.c"
-        __label__ = 12; break; //@line 791 "_lsprof.c"
-      case 12: // $bb6
-        var $55=$o; //@line 792 "_lsprof.c"
-        var $56=($55)!=0; //@line 792 "_lsprof.c"
-        if ($56) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 792 "_lsprof.c"
-      case 13: // $bb7
-        var $57=$o; //@line 792 "_lsprof.c"
-        var $58=$57; //@line 792 "_lsprof.c"
-        var $59=HEAP[$58]; //@line 792 "_lsprof.c"
-        var $60=($59) - 1; //@line 792 "_lsprof.c"
-        var $61=$o; //@line 792 "_lsprof.c"
-        var $62=$61; //@line 792 "_lsprof.c"
-        HEAP[$62]=$60; //@line 792 "_lsprof.c"
-        var $63=$o; //@line 792 "_lsprof.c"
-        var $64=$63; //@line 792 "_lsprof.c"
-        var $65=HEAP[$64]; //@line 792 "_lsprof.c"
-        var $66=($65)==0; //@line 792 "_lsprof.c"
-        if ($66) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 792 "_lsprof.c"
-      case 14: // $bb8
-        var $67=$o; //@line 792 "_lsprof.c"
-        var $68=$67+4; //@line 792 "_lsprof.c"
-        var $69=HEAP[$68]; //@line 792 "_lsprof.c"
-        var $70=$69+24; //@line 792 "_lsprof.c"
-        var $71=HEAP[$70]; //@line 792 "_lsprof.c"
-        var $72=$o; //@line 792 "_lsprof.c"
-        FUNCTION_TABLE[$71]($72); //@line 792 "_lsprof.c"
-        __label__ = 15; break; //@line 792 "_lsprof.c"
-      case 15: // $bb9
-        var $73=HEAP[$timeunit]; //@line 793 "_lsprof.c"
-        var $74=$pObj_addr; //@line 793 "_lsprof.c"
-        var $75=$74+28; //@line 793 "_lsprof.c"
-        HEAP[$75]=$73; //@line 793 "_lsprof.c"
-        $2=0; //@line 794 "_lsprof.c"
-        __label__ = 16; break; //@line 794 "_lsprof.c"
-      case 16: // $bb10
-        var $76=$2; //@line 785 "_lsprof.c"
-        $retval=$76; //@line 785 "_lsprof.c"
+        var $5=HEAP[$subcalls]; //@line 787 "_lsprof.c"
+        var $6=$pObj_addr; //@line 787 "_lsprof.c"
+        var $7=_setSubcalls($6, $5); //@line 787 "_lsprof.c"
+        var $8=($7) < 0; //@line 787 "_lsprof.c"
+        if ($8) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 787 "_lsprof.c"
+      case 3: // $bb2
+        var $9=HEAP[$builtins]; //@line 787 "_lsprof.c"
+        var $10=$pObj_addr; //@line 787 "_lsprof.c"
+        var $11=_setBuiltins($10, $9); //@line 787 "_lsprof.c"
+        var $12=($11) < 0; //@line 787 "_lsprof.c"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 787 "_lsprof.c"
+      case 4: // $bb3
+        $0=-1; //@line 788 "_lsprof.c"
+        __label__ = 11; break; //@line 788 "_lsprof.c"
+      case 5: // $bb4
+        var $13=$pObj_addr; //@line 789 "_lsprof.c"
+        var $14=$13+24; //@line 789 "_lsprof.c"
+        var $15=HEAP[$14]; //@line 789 "_lsprof.c"
+        $o=$15; //@line 789 "_lsprof.c"
+        var $16=HEAP[$timer]; //@line 790 "_lsprof.c"
+        var $17=$pObj_addr; //@line 790 "_lsprof.c"
+        var $18=$17+24; //@line 790 "_lsprof.c"
+        HEAP[$18]=$16; //@line 790 "_lsprof.c"
+        var $19=HEAP[$timer]; //@line 791 "_lsprof.c"
+        var $20=($19)!=0; //@line 791 "_lsprof.c"
+        if ($20) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 791 "_lsprof.c"
+      case 6: // $bb5
+        var $21=HEAP[$timer]; //@line 791 "_lsprof.c"
+        var $22=$21; //@line 791 "_lsprof.c"
+        var $23=HEAP[$22]; //@line 791 "_lsprof.c"
+        var $24=($23) + 1; //@line 791 "_lsprof.c"
+        var $25=$21; //@line 791 "_lsprof.c"
+        HEAP[$25]=$24; //@line 791 "_lsprof.c"
+        __label__ = 7; break; //@line 791 "_lsprof.c"
+      case 7: // $bb6
+        var $26=$o; //@line 792 "_lsprof.c"
+        var $27=($26)!=0; //@line 792 "_lsprof.c"
+        if ($27) { __label__ = 8; break; } else { __label__ = 10; break; } //@line 792 "_lsprof.c"
+      case 8: // $bb7
+        var $28=$o; //@line 792 "_lsprof.c"
+        var $29=$28; //@line 792 "_lsprof.c"
+        var $30=HEAP[$29]; //@line 792 "_lsprof.c"
+        var $31=($30) - 1; //@line 792 "_lsprof.c"
+        var $32=$o; //@line 792 "_lsprof.c"
+        var $33=$32; //@line 792 "_lsprof.c"
+        HEAP[$33]=$31; //@line 792 "_lsprof.c"
+        var $34=$o; //@line 792 "_lsprof.c"
+        var $35=$34; //@line 792 "_lsprof.c"
+        var $36=HEAP[$35]; //@line 792 "_lsprof.c"
+        var $37=($36)==0; //@line 792 "_lsprof.c"
+        if ($37) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 792 "_lsprof.c"
+      case 9: // $bb8
+        var $38=$o; //@line 792 "_lsprof.c"
+        var $39=$38+4; //@line 792 "_lsprof.c"
+        var $40=HEAP[$39]; //@line 792 "_lsprof.c"
+        var $41=$40+24; //@line 792 "_lsprof.c"
+        var $42=HEAP[$41]; //@line 792 "_lsprof.c"
+        var $43=$o; //@line 792 "_lsprof.c"
+        FUNCTION_TABLE[$42]($43); //@line 792 "_lsprof.c"
+        __label__ = 10; break; //@line 792 "_lsprof.c"
+      case 10: // $bb9
+        var $44=HEAP[$timeunit]; //@line 793 "_lsprof.c"
+        var $45=$pObj_addr; //@line 793 "_lsprof.c"
+        var $46=$45+28; //@line 793 "_lsprof.c"
+        HEAP[$46]=$44; //@line 793 "_lsprof.c"
+        $0=0; //@line 794 "_lsprof.c"
+        __label__ = 11; break; //@line 794 "_lsprof.c"
+      case 11: // $bb10
+        var $47=$0; //@line 785 "_lsprof.c"
+        $retval=$47; //@line 785 "_lsprof.c"
         var $retval11=$retval; //@line 785 "_lsprof.c"
         STACKTOP = __stackBase__;
         return $retval11; //@line 785 "_lsprof.c"
@@ -2552,6 +2501,52 @@ var _random_stream;
     }
   }
   Module["_init_lsprof"] = _init_lsprof;
+
+  function _randombits($bits) {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $bits_addr;
+        var $retval;
+        var $0;
+        var $result;
+        $bits_addr=$bits;
+        var $1=$bits_addr; //@line 18 "rotatingtree.c"
+        var $2=1 << ($1); //@line 18 "rotatingtree.c"
+        var $3=HEAP[_random_stream]; //@line 18 "rotatingtree.c"
+        var $4=($2) > ($3); //@line 18 "rotatingtree.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 18 "rotatingtree.c"
+      case 1: // $bb
+        var $5=HEAP[_random_value]; //@line 19 "rotatingtree.c"
+        var $6=($5) * 1082527; //@line 19 "rotatingtree.c"
+        HEAP[_random_value]=$6; //@line 19 "rotatingtree.c"
+        var $7=HEAP[_random_value]; //@line 20 "rotatingtree.c"
+        HEAP[_random_stream]=$7; //@line 20 "rotatingtree.c"
+        __label__ = 2; break; //@line 20 "rotatingtree.c"
+      case 2: // $bb1
+        var $8=$bits_addr; //@line 22 "rotatingtree.c"
+        var $9=1 << ($8); //@line 22 "rotatingtree.c"
+        var $10=($9) - 1; //@line 22 "rotatingtree.c"
+        var $11=HEAP[_random_stream]; //@line 22 "rotatingtree.c"
+        var $12=($10) & ($11); //@line 22 "rotatingtree.c"
+        $result=$12; //@line 22 "rotatingtree.c"
+        var $13=HEAP[_random_stream]; //@line 23 "rotatingtree.c"
+        var $14=$bits_addr; //@line 23 "rotatingtree.c"
+        var $15=($13) >>> ($14); //@line 23 "rotatingtree.c"
+        HEAP[_random_stream]=$15; //@line 23 "rotatingtree.c"
+        var $16=$result; //@line 24 "rotatingtree.c"
+        $0=$16; //@line 24 "rotatingtree.c"
+        var $17=$0; //@line 24 "rotatingtree.c"
+        $retval=$17; //@line 24 "rotatingtree.c"
+        var $retval2=$retval; //@line 24 "rotatingtree.c"
+        ;
+        return $retval2; //@line 24 "rotatingtree.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
 
   function _RotatingTree_Add($root, $node) {
     ;
@@ -2619,18 +2614,10 @@ var _random_stream;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $bits_addr_i1;
-        var $retval_i2;
-        var $0;
-        var $result_i3;
-        var $bits_addr_i;
-        var $retval_i;
-        var $1;
-        var $result_i;
         var $root_addr;
         var $key_addr;
         var $retval;
-        var $2;
+        var $0;
         var $node;
         var $pnode;
         var $node9;
@@ -2638,211 +2625,158 @@ var _random_stream;
         var $rotate;
         $root_addr=$root;
         $key_addr=$key;
-        $bits_addr_i=3;
-        var $3=$bits_addr_i; //@line 18 "rotatingtree.c"
-        var $4=1 << ($3); //@line 18 "rotatingtree.c"
-        var $5=HEAP[_random_stream]; //@line 18 "rotatingtree.c"
-        var $6=($4) > ($5); //@line 18 "rotatingtree.c"
-        if ($6) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 18 "rotatingtree.c"
-      case 1: // $bb_i
-        var $7=HEAP[_random_value]; //@line 19 "rotatingtree.c"
-        var $8=($7) * 1082527; //@line 19 "rotatingtree.c"
-        HEAP[_random_value]=$8; //@line 19 "rotatingtree.c"
-        var $9=HEAP[_random_value]; //@line 20 "rotatingtree.c"
-        HEAP[_random_stream]=$9; //@line 20 "rotatingtree.c"
-        __label__ = 2; break; //@line 20 "rotatingtree.c"
-      case 2: // $randombits_exit
-        var $10=$bits_addr_i; //@line 22 "rotatingtree.c"
-        var $11=1 << ($10); //@line 22 "rotatingtree.c"
-        var $12=($11) - 1; //@line 22 "rotatingtree.c"
-        var $13=HEAP[_random_stream]; //@line 22 "rotatingtree.c"
-        var $14=($12) & ($13); //@line 22 "rotatingtree.c"
-        $result_i=$14; //@line 22 "rotatingtree.c"
-        var $15=HEAP[_random_stream]; //@line 23 "rotatingtree.c"
-        var $16=$bits_addr_i; //@line 23 "rotatingtree.c"
-        var $17=($15) >>> ($16); //@line 23 "rotatingtree.c"
-        HEAP[_random_stream]=$17; //@line 23 "rotatingtree.c"
-        $1=$14; //@line 24 "rotatingtree.c"
-        $retval_i=$14; //@line 24 "rotatingtree.c"
-        var $18=($14)!=4; //@line 50 "rotatingtree.c"
-        var $19=$root_addr; //@line 52 "rotatingtree.c"
-        if ($18) { __label__ = 3; break; } else { __label__ = 11; break; } //@line 50 "rotatingtree.c"
-      case 3: // $bb
-        var $20=HEAP[$19]; //@line 52 "rotatingtree.c"
-        $node=$20; //@line 52 "rotatingtree.c"
-        __lastLabel__ = 3; __label__ = 9; break; //@line 52 "rotatingtree.c"
-      case 4: // $bb1
-        var $21=$node; //@line 54 "rotatingtree.c"
-        var $22=$21; //@line 54 "rotatingtree.c"
-        var $23=HEAP[$22]; //@line 54 "rotatingtree.c"
-        var $24=$key_addr; //@line 54 "rotatingtree.c"
-        var $25=($23)==($24); //@line 54 "rotatingtree.c"
-        var $26=$node; //@line 55 "rotatingtree.c"
-        if ($25) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 54 "rotatingtree.c"
-      case 5: // $bb2
-        $2=$26; //@line 55 "rotatingtree.c"
-        __label__ = 29; break; //@line 55 "rotatingtree.c"
-      case 6: // $bb3
-        var $27=$26; //@line 56 "rotatingtree.c"
-        var $28=HEAP[$27]; //@line 56 "rotatingtree.c"
-        var $29=$key_addr; //@line 56 "rotatingtree.c"
-        var $30=($28) > ($29); //@line 56 "rotatingtree.c"
-        var $31=$node; //@line 57 "rotatingtree.c"
-        if ($30) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 56 "rotatingtree.c"
-      case 7: // $bb4
-        var $32=$31+4; //@line 57 "rotatingtree.c"
-        var $33=HEAP[$32]; //@line 57 "rotatingtree.c"
-        $node=$33; //@line 57 "rotatingtree.c"
-        __lastLabel__ = 7; __label__ = 9; break; //@line 57 "rotatingtree.c"
-      case 8: // $bb5
-        var $34=$31+8; //@line 59 "rotatingtree.c"
-        var $35=HEAP[$34]; //@line 59 "rotatingtree.c"
-        $node=$35; //@line 59 "rotatingtree.c"
-        __lastLabel__ = 8; __label__ = 9; break; //@line 59 "rotatingtree.c"
-      case 9: // $bb6
-        var $36=__lastLabel__ == 3 ? $20 : (__lastLabel__ == 8 ? $35 : ($33));
-        var $37=($36)!=0; //@line 53 "rotatingtree.c"
-        if ($37) { __label__ = 4; break; } else { __label__ = 10; break; } //@line 53 "rotatingtree.c"
-      case 10: // $bb7
-        $2=0; //@line 61 "rotatingtree.c"
-        __label__ = 29; break; //@line 61 "rotatingtree.c"
-      case 11: // $bb8
-        $pnode=$19; //@line 64 "rotatingtree.c"
-        var $38=$pnode; //@line 65 "rotatingtree.c"
-        var $39=HEAP[$38]; //@line 65 "rotatingtree.c"
-        $node9=$39; //@line 65 "rotatingtree.c"
-        var $40=$node9; //@line 68 "rotatingtree.c"
-        var $41=($40)==0; //@line 68 "rotatingtree.c"
-        if ($41) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 68 "rotatingtree.c"
-      case 12: // $bb10
-        $2=0; //@line 69 "rotatingtree.c"
-        __label__ = 29; break; //@line 69 "rotatingtree.c"
-      case 13: // $bb11
-        var $42=$node9; //@line 71 "rotatingtree.c"
-        var $43=$42; //@line 71 "rotatingtree.c"
-        var $44=HEAP[$43]; //@line 71 "rotatingtree.c"
-        var $45=$key_addr; //@line 71 "rotatingtree.c"
-        var $46=($44)==($45); //@line 71 "rotatingtree.c"
-        if ($46) { __label__ = 14; break; } else { __label__ = 15; break; } //@line 71 "rotatingtree.c"
-      case 14: // $bb12
-        var $47=$node9; //@line 72 "rotatingtree.c"
-        $2=$47; //@line 72 "rotatingtree.c"
-        __label__ = 29; break; //@line 72 "rotatingtree.c"
-      case 15: // $bb13
-        $bits_addr_i1=1;
-        var $48=$bits_addr_i1; //@line 18 "rotatingtree.c"
-        var $49=1 << ($48); //@line 18 "rotatingtree.c"
-        var $50=HEAP[_random_stream]; //@line 18 "rotatingtree.c"
-        var $51=($49) > ($50); //@line 18 "rotatingtree.c"
-        if ($51) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 18 "rotatingtree.c"
-      case 16: // $bb_i4
-        var $52=HEAP[_random_value]; //@line 19 "rotatingtree.c"
-        var $53=($52) * 1082527; //@line 19 "rotatingtree.c"
-        HEAP[_random_value]=$53; //@line 19 "rotatingtree.c"
-        var $54=HEAP[_random_value]; //@line 20 "rotatingtree.c"
-        HEAP[_random_stream]=$54; //@line 20 "rotatingtree.c"
-        __label__ = 17; break; //@line 20 "rotatingtree.c"
-      case 17: // $randombits_exit6
-        var $55=$bits_addr_i1; //@line 22 "rotatingtree.c"
-        var $56=1 << ($55); //@line 22 "rotatingtree.c"
-        var $57=($56) - 1; //@line 22 "rotatingtree.c"
-        var $58=HEAP[_random_stream]; //@line 22 "rotatingtree.c"
-        var $59=($57) & ($58); //@line 22 "rotatingtree.c"
-        $result_i3=$59; //@line 22 "rotatingtree.c"
-        var $60=HEAP[_random_stream]; //@line 23 "rotatingtree.c"
-        var $61=$bits_addr_i1; //@line 23 "rotatingtree.c"
-        var $62=($60) >>> ($61); //@line 23 "rotatingtree.c"
-        HEAP[_random_stream]=$62; //@line 23 "rotatingtree.c"
-        var $63=$result_i3; //@line 24 "rotatingtree.c"
-        $0=$63; //@line 24 "rotatingtree.c"
-        var $64=$0; //@line 24 "rotatingtree.c"
-        $retval_i2=$64; //@line 24 "rotatingtree.c"
-        var $retval2_i5=$retval_i2; //@line 24 "rotatingtree.c"
-        var $65=($retval2_i5)==0; //@line 73 "rotatingtree.c"
-        var $66=($65); //@line 73 "rotatingtree.c"
-        $rotate=$66; //@line 73 "rotatingtree.c"
-        var $67=$node9; //@line 74 "rotatingtree.c"
-        var $68=$67; //@line 74 "rotatingtree.c"
-        var $69=HEAP[$68]; //@line 74 "rotatingtree.c"
-        var $70=$key_addr; //@line 74 "rotatingtree.c"
-        var $71=($69) > ($70); //@line 74 "rotatingtree.c"
-        var $72=$node9; //@line 75 "rotatingtree.c"
-        if ($71) { __label__ = 18; break; } else { __label__ = 23; break; } //@line 74 "rotatingtree.c"
-      case 18: // $bb14
-        var $73=$72+4; //@line 75 "rotatingtree.c"
-        var $74=HEAP[$73]; //@line 75 "rotatingtree.c"
-        $next=$74; //@line 75 "rotatingtree.c"
-        var $75=$next; //@line 76 "rotatingtree.c"
-        var $76=($75)==0; //@line 76 "rotatingtree.c"
-        if ($76) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 76 "rotatingtree.c"
-      case 19: // $bb15
-        $2=0; //@line 77 "rotatingtree.c"
-        __label__ = 29; break; //@line 77 "rotatingtree.c"
-      case 20: // $bb16
-        var $77=$rotate; //@line 78 "rotatingtree.c"
-        var $78=($77)!=0; //@line 78 "rotatingtree.c"
-        if ($78) { __label__ = 21; break; } else { __label__ = 22; break; } //@line 78 "rotatingtree.c"
-      case 21: // $bb17
-        var $79=$next; //@line 79 "rotatingtree.c"
-        var $80=$79+8; //@line 79 "rotatingtree.c"
-        var $81=HEAP[$80]; //@line 79 "rotatingtree.c"
-        var $82=$node9; //@line 79 "rotatingtree.c"
-        var $83=$82+4; //@line 79 "rotatingtree.c"
-        HEAP[$83]=$81; //@line 79 "rotatingtree.c"
-        var $84=$next; //@line 80 "rotatingtree.c"
-        var $85=$84+8; //@line 80 "rotatingtree.c"
-        var $86=$node9; //@line 80 "rotatingtree.c"
-        HEAP[$85]=$86; //@line 80 "rotatingtree.c"
-        var $87=$pnode; //@line 81 "rotatingtree.c"
-        var $88=$next; //@line 81 "rotatingtree.c"
-        HEAP[$87]=$88; //@line 81 "rotatingtree.c"
-        __label__ = 28; break; //@line 81 "rotatingtree.c"
-      case 22: // $bb18
-        var $89=$node9; //@line 84 "rotatingtree.c"
-        var $90=$89+4; //@line 84 "rotatingtree.c"
-        $pnode=$90; //@line 84 "rotatingtree.c"
-        __label__ = 28; break; //@line 84 "rotatingtree.c"
-      case 23: // $bb20
-        var $91=$72+8; //@line 87 "rotatingtree.c"
-        var $92=HEAP[$91]; //@line 87 "rotatingtree.c"
-        $next=$92; //@line 87 "rotatingtree.c"
-        var $93=$next; //@line 88 "rotatingtree.c"
-        var $94=($93)==0; //@line 88 "rotatingtree.c"
-        if ($94) { __label__ = 24; break; } else { __label__ = 25; break; } //@line 88 "rotatingtree.c"
-      case 24: // $bb21
-        $2=0; //@line 89 "rotatingtree.c"
-        __label__ = 29; break; //@line 89 "rotatingtree.c"
-      case 25: // $bb22
-        var $95=$rotate; //@line 90 "rotatingtree.c"
-        var $96=($95)!=0; //@line 90 "rotatingtree.c"
-        if ($96) { __label__ = 26; break; } else { __label__ = 27; break; } //@line 90 "rotatingtree.c"
-      case 26: // $bb23
-        var $97=$next; //@line 91 "rotatingtree.c"
-        var $98=$97+4; //@line 91 "rotatingtree.c"
-        var $99=HEAP[$98]; //@line 91 "rotatingtree.c"
-        var $100=$node9; //@line 91 "rotatingtree.c"
-        var $101=$100+8; //@line 91 "rotatingtree.c"
-        HEAP[$101]=$99; //@line 91 "rotatingtree.c"
-        var $102=$next; //@line 92 "rotatingtree.c"
-        var $103=$102+4; //@line 92 "rotatingtree.c"
-        var $104=$node9; //@line 92 "rotatingtree.c"
-        HEAP[$103]=$104; //@line 92 "rotatingtree.c"
-        var $105=$pnode; //@line 93 "rotatingtree.c"
-        var $106=$next; //@line 93 "rotatingtree.c"
-        HEAP[$105]=$106; //@line 93 "rotatingtree.c"
-        __label__ = 28; break; //@line 93 "rotatingtree.c"
-      case 27: // $bb24
-        var $107=$node9; //@line 96 "rotatingtree.c"
-        var $108=$107+8; //@line 96 "rotatingtree.c"
-        $pnode=$108; //@line 96 "rotatingtree.c"
-        __label__ = 28; break; //@line 96 "rotatingtree.c"
-      case 28: // $bb25
-        var $109=$next; //@line 98 "rotatingtree.c"
-        $node9=$109; //@line 98 "rotatingtree.c"
-        __label__ = 13; break; //@line 98 "rotatingtree.c"
-      case 29: // $bb26
-        var $110=$2; //@line 55 "rotatingtree.c"
-        $retval=$110; //@line 55 "rotatingtree.c"
+        var $1=_randombits(3); //@line 50 "rotatingtree.c"
+        var $2=($1)!=4; //@line 50 "rotatingtree.c"
+        var $3=$root_addr; //@line 52 "rotatingtree.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 9; break; } //@line 50 "rotatingtree.c"
+      case 1: // $bb
+        var $4=HEAP[$3]; //@line 52 "rotatingtree.c"
+        $node=$4; //@line 52 "rotatingtree.c"
+        __lastLabel__ = 1; __label__ = 7; break; //@line 52 "rotatingtree.c"
+      case 2: // $bb1
+        var $5=$node; //@line 54 "rotatingtree.c"
+        var $6=$5; //@line 54 "rotatingtree.c"
+        var $7=HEAP[$6]; //@line 54 "rotatingtree.c"
+        var $8=$key_addr; //@line 54 "rotatingtree.c"
+        var $9=($7)==($8); //@line 54 "rotatingtree.c"
+        var $10=$node; //@line 55 "rotatingtree.c"
+        if ($9) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 54 "rotatingtree.c"
+      case 3: // $bb2
+        $0=$10; //@line 55 "rotatingtree.c"
+        __label__ = 25; break; //@line 55 "rotatingtree.c"
+      case 4: // $bb3
+        var $11=$10; //@line 56 "rotatingtree.c"
+        var $12=HEAP[$11]; //@line 56 "rotatingtree.c"
+        var $13=$key_addr; //@line 56 "rotatingtree.c"
+        var $14=($12) > ($13); //@line 56 "rotatingtree.c"
+        var $15=$node; //@line 57 "rotatingtree.c"
+        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 56 "rotatingtree.c"
+      case 5: // $bb4
+        var $16=$15+4; //@line 57 "rotatingtree.c"
+        var $17=HEAP[$16]; //@line 57 "rotatingtree.c"
+        $node=$17; //@line 57 "rotatingtree.c"
+        __lastLabel__ = 5; __label__ = 7; break; //@line 57 "rotatingtree.c"
+      case 6: // $bb5
+        var $18=$15+8; //@line 59 "rotatingtree.c"
+        var $19=HEAP[$18]; //@line 59 "rotatingtree.c"
+        $node=$19; //@line 59 "rotatingtree.c"
+        __lastLabel__ = 6; __label__ = 7; break; //@line 59 "rotatingtree.c"
+      case 7: // $bb6
+        var $20=__lastLabel__ == 1 ? $4 : (__lastLabel__ == 6 ? $19 : ($17));
+        var $21=($20)!=0; //@line 53 "rotatingtree.c"
+        if ($21) { __label__ = 2; break; } else { __label__ = 8; break; } //@line 53 "rotatingtree.c"
+      case 8: // $bb7
+        $0=0; //@line 61 "rotatingtree.c"
+        __label__ = 25; break; //@line 61 "rotatingtree.c"
+      case 9: // $bb8
+        $pnode=$3; //@line 64 "rotatingtree.c"
+        var $22=$pnode; //@line 65 "rotatingtree.c"
+        var $23=HEAP[$22]; //@line 65 "rotatingtree.c"
+        $node9=$23; //@line 65 "rotatingtree.c"
+        var $24=$node9; //@line 68 "rotatingtree.c"
+        var $25=($24)==0; //@line 68 "rotatingtree.c"
+        if ($25) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 68 "rotatingtree.c"
+      case 10: // $bb10
+        $0=0; //@line 69 "rotatingtree.c"
+        __label__ = 25; break; //@line 69 "rotatingtree.c"
+      case 11: // $bb11
+        var $26=$node9; //@line 71 "rotatingtree.c"
+        var $27=$26; //@line 71 "rotatingtree.c"
+        var $28=HEAP[$27]; //@line 71 "rotatingtree.c"
+        var $29=$key_addr; //@line 71 "rotatingtree.c"
+        var $30=($28)==($29); //@line 71 "rotatingtree.c"
+        if ($30) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 71 "rotatingtree.c"
+      case 12: // $bb12
+        var $31=$node9; //@line 72 "rotatingtree.c"
+        $0=$31; //@line 72 "rotatingtree.c"
+        __label__ = 25; break; //@line 72 "rotatingtree.c"
+      case 13: // $bb13
+        var $32=_randombits(1); //@line 73 "rotatingtree.c"
+        var $33=($32)==0; //@line 73 "rotatingtree.c"
+        var $34=($33); //@line 73 "rotatingtree.c"
+        $rotate=$34; //@line 73 "rotatingtree.c"
+        var $35=$node9; //@line 74 "rotatingtree.c"
+        var $36=$35; //@line 74 "rotatingtree.c"
+        var $37=HEAP[$36]; //@line 74 "rotatingtree.c"
+        var $38=$key_addr; //@line 74 "rotatingtree.c"
+        var $39=($37) > ($38); //@line 74 "rotatingtree.c"
+        var $40=$node9; //@line 75 "rotatingtree.c"
+        if ($39) { __label__ = 14; break; } else { __label__ = 19; break; } //@line 74 "rotatingtree.c"
+      case 14: // $bb14
+        var $41=$40+4; //@line 75 "rotatingtree.c"
+        var $42=HEAP[$41]; //@line 75 "rotatingtree.c"
+        $next=$42; //@line 75 "rotatingtree.c"
+        var $43=$next; //@line 76 "rotatingtree.c"
+        var $44=($43)==0; //@line 76 "rotatingtree.c"
+        if ($44) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 76 "rotatingtree.c"
+      case 15: // $bb15
+        $0=0; //@line 77 "rotatingtree.c"
+        __label__ = 25; break; //@line 77 "rotatingtree.c"
+      case 16: // $bb16
+        var $45=$rotate; //@line 78 "rotatingtree.c"
+        var $46=($45)!=0; //@line 78 "rotatingtree.c"
+        if ($46) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 78 "rotatingtree.c"
+      case 17: // $bb17
+        var $47=$next; //@line 79 "rotatingtree.c"
+        var $48=$47+8; //@line 79 "rotatingtree.c"
+        var $49=HEAP[$48]; //@line 79 "rotatingtree.c"
+        var $50=$node9; //@line 79 "rotatingtree.c"
+        var $51=$50+4; //@line 79 "rotatingtree.c"
+        HEAP[$51]=$49; //@line 79 "rotatingtree.c"
+        var $52=$next; //@line 80 "rotatingtree.c"
+        var $53=$52+8; //@line 80 "rotatingtree.c"
+        var $54=$node9; //@line 80 "rotatingtree.c"
+        HEAP[$53]=$54; //@line 80 "rotatingtree.c"
+        var $55=$pnode; //@line 81 "rotatingtree.c"
+        var $56=$next; //@line 81 "rotatingtree.c"
+        HEAP[$55]=$56; //@line 81 "rotatingtree.c"
+        __label__ = 24; break; //@line 81 "rotatingtree.c"
+      case 18: // $bb18
+        var $57=$node9; //@line 84 "rotatingtree.c"
+        var $58=$57+4; //@line 84 "rotatingtree.c"
+        $pnode=$58; //@line 84 "rotatingtree.c"
+        __label__ = 24; break; //@line 84 "rotatingtree.c"
+      case 19: // $bb20
+        var $59=$40+8; //@line 87 "rotatingtree.c"
+        var $60=HEAP[$59]; //@line 87 "rotatingtree.c"
+        $next=$60; //@line 87 "rotatingtree.c"
+        var $61=$next; //@line 88 "rotatingtree.c"
+        var $62=($61)==0; //@line 88 "rotatingtree.c"
+        if ($62) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 88 "rotatingtree.c"
+      case 20: // $bb21
+        $0=0; //@line 89 "rotatingtree.c"
+        __label__ = 25; break; //@line 89 "rotatingtree.c"
+      case 21: // $bb22
+        var $63=$rotate; //@line 90 "rotatingtree.c"
+        var $64=($63)!=0; //@line 90 "rotatingtree.c"
+        if ($64) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 90 "rotatingtree.c"
+      case 22: // $bb23
+        var $65=$next; //@line 91 "rotatingtree.c"
+        var $66=$65+4; //@line 91 "rotatingtree.c"
+        var $67=HEAP[$66]; //@line 91 "rotatingtree.c"
+        var $68=$node9; //@line 91 "rotatingtree.c"
+        var $69=$68+8; //@line 91 "rotatingtree.c"
+        HEAP[$69]=$67; //@line 91 "rotatingtree.c"
+        var $70=$next; //@line 92 "rotatingtree.c"
+        var $71=$70+4; //@line 92 "rotatingtree.c"
+        var $72=$node9; //@line 92 "rotatingtree.c"
+        HEAP[$71]=$72; //@line 92 "rotatingtree.c"
+        var $73=$pnode; //@line 93 "rotatingtree.c"
+        var $74=$next; //@line 93 "rotatingtree.c"
+        HEAP[$73]=$74; //@line 93 "rotatingtree.c"
+        __label__ = 24; break; //@line 93 "rotatingtree.c"
+      case 23: // $bb24
+        var $75=$node9; //@line 96 "rotatingtree.c"
+        var $76=$75+8; //@line 96 "rotatingtree.c"
+        $pnode=$76; //@line 96 "rotatingtree.c"
+        __label__ = 24; break; //@line 96 "rotatingtree.c"
+      case 24: // $bb25
+        var $77=$next; //@line 98 "rotatingtree.c"
+        $node9=$77; //@line 98 "rotatingtree.c"
+        __label__ = 11; break; //@line 98 "rotatingtree.c"
+      case 25: // $bb26
+        var $78=$0; //@line 55 "rotatingtree.c"
+        $retval=$78; //@line 55 "rotatingtree.c"
         var $retval27=$retval; //@line 55 "rotatingtree.c"
         ;
         return $retval27; //@line 55 "rotatingtree.c"
@@ -2988,7 +2922,7 @@ __str39=allocate([80,114,111,102,105,108,101,114,0] /* Profiler\00 */, "i8", ALL
 _initialized_b=allocate(1, "i1", ALLOC_NORMAL);
 __str40=allocate([112,114,111,102,105,108,101,114,95,101,110,116,114,121,0] /* profiler_entry\00 */, "i8", ALLOC_NORMAL);
 __str41=allocate([112,114,111,102,105,108,101,114,95,115,117,98,101,110,116,114,121,0] /* profiler_subentry\00 */, "i8", ALLOC_NORMAL);
-_random_value=allocate([1], "i32", ALLOC_NORMAL);
+_random_value=allocate([1], ["i32",0,0,0,0], ALLOC_NORMAL);
 _random_stream=allocate(1, "i32", ALLOC_NORMAL);
 HEAP[_profiler_entry_fields]=__str5;
 HEAP[_profiler_entry_fields+4]=__str6;

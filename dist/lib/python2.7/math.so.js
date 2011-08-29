@@ -64,9 +64,9 @@ var __str4;
 var ___PRETTY_FUNCTION___8369;
 var __str5;
 var ___PRETTY_FUNCTION___8706;
-var _PyExc_ValueError;
+
 var __str6;
-var _PyExc_OverflowError;
+
 var __str7;
 var _math_acos_doc;
 var _math_acosh_doc;
@@ -95,7 +95,7 @@ var _math_sinh_doc;
 var _math_sqrt_doc;
 var _math_tan_doc;
 var _math_tanh_doc;
-var _PyExc_MemoryError;
+
 var __str10;
 var __str11;
 var ___PRETTY_FUNCTION___9121;
@@ -104,7 +104,7 @@ var __str13;
 var __str14;
 var __str15;
 var _math_fsum_doc;
-var _PyFloat_Type;
+
 var __str16;
 var __str17;
 var _math_factorial_doc;
@@ -113,7 +113,7 @@ var _math_trunc_doc;
 var __str19;
 var _math_frexp_doc;
 var __str20;
-var _PyExc_TypeError;
+
 var __str21;
 var _math_ldexp_doc;
 var __str22;
@@ -1622,7 +1622,7 @@ var __str63;
         $funcname_addr=$funcname;
         var $1=$args_addr; //@line 763 "mathmodule.c"
         var $2=$funcname_addr; //@line 763 "mathmodule.c"
-        var $3=_PyArg_UnpackTuple($1, $2, 2, 2, $ox, $oy); //@line 763 "mathmodule.c"
+        var $3=_PyArg_UnpackTuple($1, $2, 2, 2, allocate([$ox,0,0,0,$oy,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 763 "mathmodule.c"
         var $4=($3)==0; //@line 763 "mathmodule.c"
         if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 763 "mathmodule.c"
       case 1: // $bb
@@ -2256,6 +2256,104 @@ var __str63;
   }
   
 
+  function __fsum_realloc($p_ptr, $n, $ps, $m_ptr) {
+    ;
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $p_ptr_addr;
+        var $n_addr;
+        var $ps_addr;
+        var $m_ptr_addr;
+        var $retval;
+        var $0;
+        var $v;
+        var $m;
+        var $p;
+        $p_ptr_addr=$p_ptr;
+        $n_addr=$n;
+        $ps_addr=$ps;
+        $m_ptr_addr=$m_ptr;
+        $v=0; //@line 909 "mathmodule.c"
+        var $1=$m_ptr_addr; //@line 910 "mathmodule.c"
+        var $2=HEAP[$1]; //@line 910 "mathmodule.c"
+        $m=$2; //@line 910 "mathmodule.c"
+        var $3=$m; //@line 912 "mathmodule.c"
+        var $4=$m; //@line 912 "mathmodule.c"
+        var $5=($4) + ($3); //@line 912 "mathmodule.c"
+        $m=$5; //@line 912 "mathmodule.c"
+        var $6=$n_addr; //@line 913 "mathmodule.c"
+        var $7=$m; //@line 913 "mathmodule.c"
+        var $8=($6) < ($7); //@line 913 "mathmodule.c"
+        var $9=$m; //@line 913 "mathmodule.c"
+        var $10=($9) <= 268435454; //@line 913 "mathmodule.c"
+        var $or_cond=($8) & ($10);
+        if ($or_cond) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 913 "mathmodule.c"
+      case 1: // $bb1
+        var $11=$p_ptr_addr; //@line 914 "mathmodule.c"
+        var $12=HEAP[$11]; //@line 914 "mathmodule.c"
+        $p=$12; //@line 914 "mathmodule.c"
+        var $13=$p; //@line 915 "mathmodule.c"
+        var $14=$ps_addr; //@line 915 "mathmodule.c"
+        var $15=($13)==($14); //@line 915 "mathmodule.c"
+        var $16=$m; //@line 916 "mathmodule.c"
+        var $17=($16) * 8; //@line 916 "mathmodule.c"
+        if ($15) { __label__ = 2; break; } else { __label__ = 4; break; } //@line 915 "mathmodule.c"
+      case 2: // $bb2
+        var $18=_PyMem_Malloc($17); //@line 916 "mathmodule.c"
+        $v=$18; //@line 916 "mathmodule.c"
+        var $19=$v; //@line 917 "mathmodule.c"
+        var $20=($19)!=0; //@line 917 "mathmodule.c"
+        if ($20) { __label__ = 3; break; } else { __label__ = 7; break; } //@line 917 "mathmodule.c"
+      case 3: // $bb3
+        var $21=$n_addr; //@line 918 "mathmodule.c"
+        var $22=($21) * 8; //@line 918 "mathmodule.c"
+        var $23=$v; //@line 918 "mathmodule.c"
+        var $24=$ps_addr; //@line 918 "mathmodule.c"
+        var $25=$24; //@line 918 "mathmodule.c"
+        _llvm_memcpy_p0i8_p0i8_i32($23, $25, $22, 1, 0); //@line 918 "mathmodule.c"
+        __label__ = 5; break; //@line 918 "mathmodule.c"
+      case 4: // $bb5
+        var $26=$p; //@line 921 "mathmodule.c"
+        var $27=$26; //@line 921 "mathmodule.c"
+        var $28=_PyMem_Realloc($27, $17); //@line 921 "mathmodule.c"
+        $v=$28; //@line 921 "mathmodule.c"
+        __lastLabel__ = 4; __label__ = 6; break; //@line 921 "mathmodule.c"
+      case 5: // $bb6thread_pre_split
+        var $_pr=$v;
+        __lastLabel__ = 5; __label__ = 6; break;
+      case 6: // $bb6
+        var $29=__lastLabel__ == 5 ? $_pr : ($28);
+        var $30=($29)==0; //@line 923 "mathmodule.c"
+        if ($30) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 923 "mathmodule.c"
+      case 7: // $bb7
+        var $31=HEAP[_PyExc_MemoryError]; //@line 924 "mathmodule.c"
+        _PyErr_SetString($31, __str10); //@line 924 "mathmodule.c"
+        $0=1; //@line 925 "mathmodule.c"
+        __label__ = 9; break; //@line 925 "mathmodule.c"
+      case 8: // $bb8
+        var $32=$v; //@line 927 "mathmodule.c"
+        var $33=$32; //@line 927 "mathmodule.c"
+        var $34=$p_ptr_addr; //@line 927 "mathmodule.c"
+        HEAP[$34]=$33; //@line 927 "mathmodule.c"
+        var $35=$m_ptr_addr; //@line 928 "mathmodule.c"
+        var $36=$m; //@line 928 "mathmodule.c"
+        HEAP[$35]=$36; //@line 928 "mathmodule.c"
+        $0=0; //@line 929 "mathmodule.c"
+        __label__ = 9; break; //@line 929 "mathmodule.c"
+      case 9: // $bb9
+        var $37=$0; //@line 925 "mathmodule.c"
+        $retval=$37; //@line 925 "mathmodule.c"
+        var $retval10=$retval; //@line 925 "mathmodule.c"
+        ;
+        return $retval10; //@line 925 "mathmodule.c"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _math_fsum($self, $seq) {
     var __stackBase__  = STACKTOP; STACKTOP += 264; _memset(__stackBase__, 0, 264);
     var __label__;
@@ -2263,19 +2361,10 @@ var __str63;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $p_ptr_addr_i;
-        var $n_addr_i;
-        var $ps_addr_i;
-        var $m_ptr_addr_i;
-        var $retval_i;
-        var $0;
-        var $v_i;
-        var $m_i;
-        var $p_i;
         var $self_addr;
         var $seq_addr;
         var $retval;
-        var $1;
+        var $0;
         var $item;
         var $iter;
         var $sum;
@@ -2303,455 +2392,385 @@ var __str63;
         HEAP[$p]=$ps1; //@line 967 "mathmodule.c"
         $special_sum=0; //@line 968 "mathmodule.c"
         $inf_sum=0; //@line 968 "mathmodule.c"
-        var $2=$seq_addr; //@line 971 "mathmodule.c"
-        var $3=_PyObject_GetIter($2); //@line 971 "mathmodule.c"
-        $iter=$3; //@line 971 "mathmodule.c"
-        var $4=$iter; //@line 972 "mathmodule.c"
-        var $5=($4)==0; //@line 972 "mathmodule.c"
-        if ($5) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 972 "mathmodule.c"
+        var $1=$seq_addr; //@line 971 "mathmodule.c"
+        var $2=_PyObject_GetIter($1); //@line 971 "mathmodule.c"
+        $iter=$2; //@line 971 "mathmodule.c"
+        var $3=$iter; //@line 972 "mathmodule.c"
+        var $4=($3)==0; //@line 972 "mathmodule.c"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 972 "mathmodule.c"
       case 1: // $bb
-        $1=0; //@line 973 "mathmodule.c"
-        __label__ = 65; break; //@line 973 "mathmodule.c"
+        $0=0; //@line 973 "mathmodule.c"
+        __label__ = 57; break; //@line 973 "mathmodule.c"
       case 2: // $bb2thread_pre_split
         var $_pr=$n;
         var $ps33=$ps; //@line 1025 "mathmodule.c"
         var $ps7=$ps; //@line 979 "mathmodule.c"
         __lastLabel__ = 2; __label__ = 3; break;
       case 3: // $bb2
-        var $6=__lastLabel__ == 2 ? $_pr : (__lastLabel__ == 24 ? $86 : (__lastLabel__ == 30 ? 0 : ($150)));
-        var $7=($6) < 0; //@line 978 "mathmodule.c"
-        if ($7) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 978 "mathmodule.c"
+        var $5=__lastLabel__ == 2 ? $_pr : (__lastLabel__ == 24 ? $85 : (__lastLabel__ == 30 ? 0 : ($115)));
+        var $6=($5) < 0; //@line 978 "mathmodule.c"
+        if ($6) { __label__ = 5; break; } else { __label__ = 4; break; } //@line 978 "mathmodule.c"
       case 4: // $bb3
-        var $8=HEAP[$m]; //@line 978 "mathmodule.c"
-        var $9=$n; //@line 978 "mathmodule.c"
-        var $10=($9) > ($8); //@line 978 "mathmodule.c"
-        if ($10) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 978 "mathmodule.c"
+        var $7=HEAP[$m]; //@line 978 "mathmodule.c"
+        var $8=$n; //@line 978 "mathmodule.c"
+        var $9=($8) > ($7); //@line 978 "mathmodule.c"
+        if ($9) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 978 "mathmodule.c"
       case 5: // $bb4
         ___assert_fail(__str11, __str1, 978, ___PRETTY_FUNCTION___9121); //@line 978 "mathmodule.c"
         throw "Reached an unreachable!" //@line 978 "mathmodule.c"
       case 6: // $bb5
-        var $11=HEAP[$m]; //@line 979 "mathmodule.c"
-        var $12=($11)!=32; //@line 979 "mathmodule.c"
-        if ($12) { __lastLabel__ = 6; __label__ = 9; break; } else { __lastLabel__ = 6; __label__ = 7; break; } //@line 979 "mathmodule.c"
+        var $10=HEAP[$m]; //@line 979 "mathmodule.c"
+        var $11=($10)!=32; //@line 979 "mathmodule.c"
+        if ($11) { __lastLabel__ = 6; __label__ = 9; break; } else { __lastLabel__ = 6; __label__ = 7; break; } //@line 979 "mathmodule.c"
       case 7: // $bb6
-        var $13=HEAP[$p]; //@line 979 "mathmodule.c"
-        var $14=($ps7)!=($13); //@line 979 "mathmodule.c"
-        if ($14) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 979 "mathmodule.c"
+        var $12=HEAP[$p]; //@line 979 "mathmodule.c"
+        var $13=($ps7)!=($12); //@line 979 "mathmodule.c"
+        if ($13) { __label__ = 8; break; } else { __label__ = 12; break; } //@line 979 "mathmodule.c"
       case 8: // $bb8thread_pre_split
         var $_pr1=HEAP[$m];
         __lastLabel__ = 8; __label__ = 9; break;
       case 9: // $bb8
-        var $15=__lastLabel__ == 8 ? $_pr1 : ($11);
-        var $16=($15) <= 32; //@line 979 "mathmodule.c"
-        if ($16) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 979 "mathmodule.c"
+        var $14=__lastLabel__ == 8 ? $_pr1 : ($10);
+        var $15=($14) <= 32; //@line 979 "mathmodule.c"
+        if ($15) { __label__ = 11; break; } else { __label__ = 10; break; } //@line 979 "mathmodule.c"
       case 10: // $bb9
-        var $17=HEAP[$p]; //@line 979 "mathmodule.c"
-        var $18=($17)==0; //@line 979 "mathmodule.c"
-        if ($18) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 979 "mathmodule.c"
+        var $16=HEAP[$p]; //@line 979 "mathmodule.c"
+        var $17=($16)==0; //@line 979 "mathmodule.c"
+        if ($17) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 979 "mathmodule.c"
       case 11: // $bb10
         ___assert_fail(__str12, __str1, 980, ___PRETTY_FUNCTION___9121); //@line 979 "mathmodule.c"
         throw "Reached an unreachable!" //@line 979 "mathmodule.c"
       case 12: // $bb11
-        var $19=$iter; //@line 982 "mathmodule.c"
-        var $20=_PyIter_Next($19); //@line 982 "mathmodule.c"
-        $item=$20; //@line 982 "mathmodule.c"
-        var $21=($20)==0; //@line 983 "mathmodule.c"
-        if ($21) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 983 "mathmodule.c"
+        var $18=$iter; //@line 982 "mathmodule.c"
+        var $19=_PyIter_Next($18); //@line 982 "mathmodule.c"
+        $item=$19; //@line 982 "mathmodule.c"
+        var $20=($19)==0; //@line 983 "mathmodule.c"
+        if ($20) { __label__ = 13; break; } else { __label__ = 15; break; } //@line 983 "mathmodule.c"
       case 13: // $bb12
-        var $22=_PyErr_Occurred(); //@line 984 "mathmodule.c"
-        var $23=($22)!=0; //@line 984 "mathmodule.c"
-        if ($23) { __label__ = 60; break; } else { __label__ = 14; break; } //@line 984 "mathmodule.c"
+        var $21=_PyErr_Occurred(); //@line 984 "mathmodule.c"
+        var $22=($21)!=0; //@line 984 "mathmodule.c"
+        if ($22) { __label__ = 52; break; } else { __label__ = 14; break; } //@line 984 "mathmodule.c"
       case 14: // $bb13
-        var $24=$special_sum; //@line 1032 "mathmodule.c"
-        var $25=($24) != 0; //@line 1032 "mathmodule.c"
-        if ($25) { __label__ = 42; break; } else { __label__ = 45; break; } //@line 1032 "mathmodule.c"
+        var $23=$special_sum; //@line 1032 "mathmodule.c"
+        var $24=($23) != 0; //@line 1032 "mathmodule.c"
+        if ($24) { __label__ = 34; break; } else { __label__ = 37; break; } //@line 1032 "mathmodule.c"
       case 15: // $bb14
-        var $26=$item; //@line 988 "mathmodule.c"
-        var $27=_PyFloat_AsDouble($26); //@line 988 "mathmodule.c"
-        $x=$27; //@line 988 "mathmodule.c"
-        var $28=$item; //@line 989 "mathmodule.c"
-        var $29=$28; //@line 989 "mathmodule.c"
-        var $30=HEAP[$29]; //@line 989 "mathmodule.c"
-        var $31=($30) - 1; //@line 989 "mathmodule.c"
-        var $32=$item; //@line 989 "mathmodule.c"
-        var $33=$32; //@line 989 "mathmodule.c"
-        HEAP[$33]=$31; //@line 989 "mathmodule.c"
-        var $34=$item; //@line 989 "mathmodule.c"
-        var $35=$34; //@line 989 "mathmodule.c"
-        var $36=HEAP[$35]; //@line 989 "mathmodule.c"
-        var $37=($36)==0; //@line 989 "mathmodule.c"
-        if ($37) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 989 "mathmodule.c"
+        var $25=$item; //@line 988 "mathmodule.c"
+        var $26=_PyFloat_AsDouble($25); //@line 988 "mathmodule.c"
+        $x=$26; //@line 988 "mathmodule.c"
+        var $27=$item; //@line 989 "mathmodule.c"
+        var $28=$27; //@line 989 "mathmodule.c"
+        var $29=HEAP[$28]; //@line 989 "mathmodule.c"
+        var $30=($29) - 1; //@line 989 "mathmodule.c"
+        var $31=$item; //@line 989 "mathmodule.c"
+        var $32=$31; //@line 989 "mathmodule.c"
+        HEAP[$32]=$30; //@line 989 "mathmodule.c"
+        var $33=$item; //@line 989 "mathmodule.c"
+        var $34=$33; //@line 989 "mathmodule.c"
+        var $35=HEAP[$34]; //@line 989 "mathmodule.c"
+        var $36=($35)==0; //@line 989 "mathmodule.c"
+        if ($36) { __label__ = 16; break; } else { __label__ = 17; break; } //@line 989 "mathmodule.c"
       case 16: // $bb15
-        var $38=$item; //@line 989 "mathmodule.c"
-        var $39=$38+4; //@line 989 "mathmodule.c"
-        var $40=HEAP[$39]; //@line 989 "mathmodule.c"
-        var $41=$40+24; //@line 989 "mathmodule.c"
-        var $42=HEAP[$41]; //@line 989 "mathmodule.c"
-        var $43=$item; //@line 989 "mathmodule.c"
-        FUNCTION_TABLE[$42]($43); //@line 989 "mathmodule.c"
+        var $37=$item; //@line 989 "mathmodule.c"
+        var $38=$37+4; //@line 989 "mathmodule.c"
+        var $39=HEAP[$38]; //@line 989 "mathmodule.c"
+        var $40=$39+24; //@line 989 "mathmodule.c"
+        var $41=HEAP[$40]; //@line 989 "mathmodule.c"
+        var $42=$item; //@line 989 "mathmodule.c"
+        FUNCTION_TABLE[$41]($42); //@line 989 "mathmodule.c"
         __label__ = 17; break; //@line 989 "mathmodule.c"
       case 17: // $bb16
-        var $44=_PyErr_Occurred(); //@line 990 "mathmodule.c"
-        var $45=($44)!=0; //@line 990 "mathmodule.c"
-        if ($45) { __label__ = 60; break; } else { __label__ = 18; break; } //@line 990 "mathmodule.c"
+        var $43=_PyErr_Occurred(); //@line 990 "mathmodule.c"
+        var $44=($43)!=0; //@line 990 "mathmodule.c"
+        if ($44) { __label__ = 52; break; } else { __label__ = 18; break; } //@line 990 "mathmodule.c"
       case 18: // $bb17
-        var $46=$x; //@line 993 "mathmodule.c"
-        $xsave=$46; //@line 993 "mathmodule.c"
+        var $45=$x; //@line 993 "mathmodule.c"
+        $xsave=$45; //@line 993 "mathmodule.c"
         $j=0; //@line 994 "mathmodule.c"
+        var $46=$j; //@line 994 "mathmodule.c"
+        $i=$46; //@line 994 "mathmodule.c"
         var $47=$j; //@line 994 "mathmodule.c"
-        $i=$47; //@line 994 "mathmodule.c"
-        var $48=$j; //@line 994 "mathmodule.c"
-        var $49=$n; //@line 994 "mathmodule.c"
-        var $50=($48) < ($49); //@line 994 "mathmodule.c"
-        if ($50) { __label__ = 19; break; } else { __label__ = 24; break; } //@line 994 "mathmodule.c"
+        var $48=$n; //@line 994 "mathmodule.c"
+        var $49=($47) < ($48); //@line 994 "mathmodule.c"
+        if ($49) { __label__ = 19; break; } else { __label__ = 24; break; } //@line 994 "mathmodule.c"
       case 19: // $bb18
-        var $51=HEAP[$p]; //@line 995 "mathmodule.c"
-        var $52=$j; //@line 995 "mathmodule.c"
-        var $53=$51+8*$52; //@line 995 "mathmodule.c"
-        var $54=HEAP[$53]; //@line 995 "mathmodule.c"
-        $y=$54; //@line 995 "mathmodule.c"
-        var $55=$x; //@line 996 "mathmodule.c"
-        var $56=_fabs($55); //@line 996 "mathmodule.c"
-        var $57=$y; //@line 996 "mathmodule.c"
-        var $58=_fabs($57); //@line 996 "mathmodule.c"
-        var $59=($56) < ($58); //@line 996 "mathmodule.c"
-        if ($59) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 996 "mathmodule.c"
+        var $50=HEAP[$p]; //@line 995 "mathmodule.c"
+        var $51=$j; //@line 995 "mathmodule.c"
+        var $52=$50+8*$51; //@line 995 "mathmodule.c"
+        var $53=HEAP[$52]; //@line 995 "mathmodule.c"
+        $y=$53; //@line 995 "mathmodule.c"
+        var $54=$x; //@line 996 "mathmodule.c"
+        var $55=_fabs($54); //@line 996 "mathmodule.c"
+        var $56=$y; //@line 996 "mathmodule.c"
+        var $57=_fabs($56); //@line 996 "mathmodule.c"
+        var $58=($55) < ($57); //@line 996 "mathmodule.c"
+        if ($58) { __label__ = 20; break; } else { __label__ = 21; break; } //@line 996 "mathmodule.c"
       case 20: // $bb19
-        var $60=$x; //@line 997 "mathmodule.c"
-        $t=$60; //@line 997 "mathmodule.c"
-        var $61=$y; //@line 997 "mathmodule.c"
-        $x=$61; //@line 997 "mathmodule.c"
-        var $62=$t; //@line 997 "mathmodule.c"
-        $y=$62; //@line 997 "mathmodule.c"
+        var $59=$x; //@line 997 "mathmodule.c"
+        $t=$59; //@line 997 "mathmodule.c"
+        var $60=$y; //@line 997 "mathmodule.c"
+        $x=$60; //@line 997 "mathmodule.c"
+        var $61=$t; //@line 997 "mathmodule.c"
+        $y=$61; //@line 997 "mathmodule.c"
         __label__ = 21; break; //@line 997 "mathmodule.c"
       case 21: // $bb20
-        var $63=$x; //@line 999 "mathmodule.c"
-        var $64=$y; //@line 999 "mathmodule.c"
-        var $65=($63) + ($64); //@line 999 "mathmodule.c"
-        $hi=$65; //@line 999 "mathmodule.c"
-        var $66=$hi; //@line 1000 "mathmodule.c"
-        var $67=$x; //@line 1000 "mathmodule.c"
-        var $68=($66) - ($67); //@line 1000 "mathmodule.c"
-        $yr=$68; //@line 1000 "mathmodule.c"
-        var $69=$yr; //@line 1001 "mathmodule.c"
-        var $70=$y; //@line 1001 "mathmodule.c"
-        var $71=($70) - ($69); //@line 1001 "mathmodule.c"
-        $lo=$71; //@line 1001 "mathmodule.c"
-        var $72=$lo; //@line 1002 "mathmodule.c"
-        var $73=($72) != 0; //@line 1002 "mathmodule.c"
-        if ($73) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1002 "mathmodule.c"
+        var $62=$x; //@line 999 "mathmodule.c"
+        var $63=$y; //@line 999 "mathmodule.c"
+        var $64=($62) + ($63); //@line 999 "mathmodule.c"
+        $hi=$64; //@line 999 "mathmodule.c"
+        var $65=$hi; //@line 1000 "mathmodule.c"
+        var $66=$x; //@line 1000 "mathmodule.c"
+        var $67=($65) - ($66); //@line 1000 "mathmodule.c"
+        $yr=$67; //@line 1000 "mathmodule.c"
+        var $68=$yr; //@line 1001 "mathmodule.c"
+        var $69=$y; //@line 1001 "mathmodule.c"
+        var $70=($69) - ($68); //@line 1001 "mathmodule.c"
+        $lo=$70; //@line 1001 "mathmodule.c"
+        var $71=$lo; //@line 1002 "mathmodule.c"
+        var $72=($71) != 0; //@line 1002 "mathmodule.c"
+        if ($72) { __label__ = 22; break; } else { __label__ = 23; break; } //@line 1002 "mathmodule.c"
       case 22: // $bb21
-        var $74=HEAP[$p]; //@line 1003 "mathmodule.c"
-        var $75=$lo; //@line 1003 "mathmodule.c"
-        var $76=$i; //@line 1003 "mathmodule.c"
-        var $77=$74+8*$76; //@line 1003 "mathmodule.c"
-        HEAP[$77]=$75; //@line 1003 "mathmodule.c"
-        var $78=$i; //@line 1003 "mathmodule.c"
-        var $79=($78) + 1; //@line 1003 "mathmodule.c"
-        $i=$79; //@line 1003 "mathmodule.c"
+        var $73=HEAP[$p]; //@line 1003 "mathmodule.c"
+        var $74=$lo; //@line 1003 "mathmodule.c"
+        var $75=$i; //@line 1003 "mathmodule.c"
+        var $76=$73+8*$75; //@line 1003 "mathmodule.c"
+        HEAP[$76]=$74; //@line 1003 "mathmodule.c"
+        var $77=$i; //@line 1003 "mathmodule.c"
+        var $78=($77) + 1; //@line 1003 "mathmodule.c"
+        $i=$78; //@line 1003 "mathmodule.c"
         __label__ = 23; break; //@line 1003 "mathmodule.c"
       case 23: // $bb22
-        var $80=$hi; //@line 1004 "mathmodule.c"
-        $x=$80; //@line 1004 "mathmodule.c"
-        var $81=$j; //@line 994 "mathmodule.c"
-        var $82=($81) + 1; //@line 994 "mathmodule.c"
-        $j=$82; //@line 994 "mathmodule.c"
-        var $83=$j; //@line 994 "mathmodule.c"
-        var $84=$n; //@line 994 "mathmodule.c"
-        var $85=($83) < ($84); //@line 994 "mathmodule.c"
-        if ($85) { __label__ = 19; break; } else { __label__ = 24; break; } //@line 994 "mathmodule.c"
+        var $79=$hi; //@line 1004 "mathmodule.c"
+        $x=$79; //@line 1004 "mathmodule.c"
+        var $80=$j; //@line 994 "mathmodule.c"
+        var $81=($80) + 1; //@line 994 "mathmodule.c"
+        $j=$81; //@line 994 "mathmodule.c"
+        var $82=$j; //@line 994 "mathmodule.c"
+        var $83=$n; //@line 994 "mathmodule.c"
+        var $84=($82) < ($83); //@line 994 "mathmodule.c"
+        if ($84) { __label__ = 19; break; } else { __label__ = 24; break; } //@line 994 "mathmodule.c"
       case 24: // $bb24
-        var $86=$i; //@line 1007 "mathmodule.c"
-        $n=$86; //@line 1007 "mathmodule.c"
-        var $87=$x; //@line 1008 "mathmodule.c"
-        var $88=($87) != 0; //@line 1008 "mathmodule.c"
-        if ($88) { __lastLabel__ = 24; __label__ = 25; break; } else { __lastLabel__ = 24; __label__ = 3; break; } //@line 1008 "mathmodule.c"
+        var $85=$i; //@line 1007 "mathmodule.c"
+        $n=$85; //@line 1007 "mathmodule.c"
+        var $86=$x; //@line 1008 "mathmodule.c"
+        var $87=($86) != 0; //@line 1008 "mathmodule.c"
+        if ($87) { __lastLabel__ = 24; __label__ = 25; break; } else { __lastLabel__ = 24; __label__ = 3; break; } //@line 1008 "mathmodule.c"
       case 25: // $bb25
-        var $89=$x; //@line 1009 "mathmodule.c"
-        var $90=___finite($89); //@line 1009 "mathmodule.c"
-        var $91=($90)==0; //@line 1009 "mathmodule.c"
-        if ($91) { __label__ = 26; break; } else { __label__ = 31; break; } //@line 1009 "mathmodule.c"
+        var $88=$x; //@line 1009 "mathmodule.c"
+        var $89=___finite($88); //@line 1009 "mathmodule.c"
+        var $90=($89)==0; //@line 1009 "mathmodule.c"
+        if ($90) { __label__ = 26; break; } else { __label__ = 31; break; } //@line 1009 "mathmodule.c"
       case 26: // $bb26
-        var $92=$xsave; //@line 1014 "mathmodule.c"
-        var $93=___finite($92); //@line 1014 "mathmodule.c"
-        var $94=($93)!=0; //@line 1014 "mathmodule.c"
-        if ($94) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1014 "mathmodule.c"
+        var $91=$xsave; //@line 1014 "mathmodule.c"
+        var $92=___finite($91); //@line 1014 "mathmodule.c"
+        var $93=($92)!=0; //@line 1014 "mathmodule.c"
+        if ($93) { __label__ = 27; break; } else { __label__ = 28; break; } //@line 1014 "mathmodule.c"
       case 27: // $bb27
-        var $95=HEAP[_PyExc_OverflowError]; //@line 1015 "mathmodule.c"
-        _PyErr_SetString($95, __str13); //@line 1015 "mathmodule.c"
-        __label__ = 60; break; //@line 1015 "mathmodule.c"
+        var $94=HEAP[_PyExc_OverflowError]; //@line 1015 "mathmodule.c"
+        _PyErr_SetString($94, __str13); //@line 1015 "mathmodule.c"
+        __label__ = 52; break; //@line 1015 "mathmodule.c"
       case 28: // $bb28
-        var $96=$xsave; //@line 1019 "mathmodule.c"
-        var $97=___isinf($96); //@line 1019 "mathmodule.c"
-        var $98=($97)!=0; //@line 1019 "mathmodule.c"
-        if ($98) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 1019 "mathmodule.c"
+        var $95=$xsave; //@line 1019 "mathmodule.c"
+        var $96=___isinf($95); //@line 1019 "mathmodule.c"
+        var $97=($96)!=0; //@line 1019 "mathmodule.c"
+        if ($97) { __label__ = 29; break; } else { __label__ = 30; break; } //@line 1019 "mathmodule.c"
       case 29: // $bb29
-        var $99=$inf_sum; //@line 1020 "mathmodule.c"
-        var $100=$xsave; //@line 1020 "mathmodule.c"
-        var $101=($99) + ($100); //@line 1020 "mathmodule.c"
-        $inf_sum=$101; //@line 1020 "mathmodule.c"
+        var $98=$inf_sum; //@line 1020 "mathmodule.c"
+        var $99=$xsave; //@line 1020 "mathmodule.c"
+        var $100=($98) + ($99); //@line 1020 "mathmodule.c"
+        $inf_sum=$100; //@line 1020 "mathmodule.c"
         __label__ = 30; break; //@line 1020 "mathmodule.c"
       case 30: // $bb30
-        var $102=$special_sum; //@line 1021 "mathmodule.c"
-        var $103=$xsave; //@line 1021 "mathmodule.c"
-        var $104=($102) + ($103); //@line 1021 "mathmodule.c"
-        $special_sum=$104; //@line 1021 "mathmodule.c"
+        var $101=$special_sum; //@line 1021 "mathmodule.c"
+        var $102=$xsave; //@line 1021 "mathmodule.c"
+        var $103=($101) + ($102); //@line 1021 "mathmodule.c"
+        $special_sum=$103; //@line 1021 "mathmodule.c"
         $n=0; //@line 1023 "mathmodule.c"
         __lastLabel__ = 30; __label__ = 3; break; //@line 1023 "mathmodule.c"
       case 31: // $bb31
-        var $105=HEAP[$m]; //@line 1025 "mathmodule.c"
-        var $106=$n; //@line 1025 "mathmodule.c"
-        var $107=($106) < ($105); //@line 1025 "mathmodule.c"
-        if ($107) { __label__ = 41; break; } else { __label__ = 32; break; } //@line 1025 "mathmodule.c"
+        var $104=HEAP[$m]; //@line 1025 "mathmodule.c"
+        var $105=$n; //@line 1025 "mathmodule.c"
+        var $106=($105) < ($104); //@line 1025 "mathmodule.c"
+        if ($106) { __label__ = 33; break; } else { __label__ = 32; break; } //@line 1025 "mathmodule.c"
       case 32: // $bb32
-        var $108=$n; //@line 1025 "mathmodule.c"
-        $p_ptr_addr_i=$p;
-        $n_addr_i=$108;
-        $ps_addr_i=$ps33;
-        $m_ptr_addr_i=$m;
-        $v_i=0; //@line 909 "mathmodule.c"
-        var $109=$m_ptr_addr_i; //@line 910 "mathmodule.c"
-        var $110=HEAP[$109]; //@line 910 "mathmodule.c"
-        $m_i=$110; //@line 910 "mathmodule.c"
-        var $111=$m_i; //@line 912 "mathmodule.c"
-        var $112=$m_i; //@line 912 "mathmodule.c"
-        var $113=($112) + ($111); //@line 912 "mathmodule.c"
-        $m_i=$113; //@line 912 "mathmodule.c"
-        var $114=$n_addr_i; //@line 913 "mathmodule.c"
-        var $115=$m_i; //@line 913 "mathmodule.c"
-        var $116=($114) < ($115); //@line 913 "mathmodule.c"
-        var $117=$m_i; //@line 913 "mathmodule.c"
-        var $118=($117) <= 268435454; //@line 913 "mathmodule.c"
-        var $or_cond_i=($116) & ($118);
-        if ($or_cond_i) { __label__ = 33; break; } else { __label__ = 37; break; } //@line 913 "mathmodule.c"
-      case 33: // $bb1_i
-        var $119=$p_ptr_addr_i; //@line 914 "mathmodule.c"
-        var $120=HEAP[$119]; //@line 914 "mathmodule.c"
-        $p_i=$120; //@line 914 "mathmodule.c"
-        var $121=$p_i; //@line 915 "mathmodule.c"
-        var $122=$ps_addr_i; //@line 915 "mathmodule.c"
-        var $123=($121)==($122); //@line 915 "mathmodule.c"
-        var $124=$m_i; //@line 916 "mathmodule.c"
-        var $125=($124) * 8; //@line 916 "mathmodule.c"
-        if ($123) { __label__ = 34; break; } else { __label__ = 36; break; } //@line 915 "mathmodule.c"
-      case 34: // $bb2_i
-        var $126=_PyMem_Malloc($125); //@line 916 "mathmodule.c"
-        $v_i=$126; //@line 916 "mathmodule.c"
-        var $127=$v_i; //@line 917 "mathmodule.c"
-        var $128=($127)!=0; //@line 917 "mathmodule.c"
-        if ($128) { __label__ = 35; break; } else { __label__ = 39; break; } //@line 917 "mathmodule.c"
-      case 35: // $bb3_i
-        var $129=$n_addr_i; //@line 918 "mathmodule.c"
-        var $130=($129) * 8; //@line 918 "mathmodule.c"
-        var $131=$v_i; //@line 918 "mathmodule.c"
-        var $132=$ps_addr_i; //@line 918 "mathmodule.c"
-        var $133=$132; //@line 918 "mathmodule.c"
-        _llvm_memcpy_p0i8_p0i8_i32($131, $133, $130, 1, 0); //@line 918 "mathmodule.c"
-        __label__ = 37; break; //@line 918 "mathmodule.c"
-      case 36: // $bb5_i
-        var $134=$p_i; //@line 921 "mathmodule.c"
-        var $135=$134; //@line 921 "mathmodule.c"
-        var $136=_PyMem_Realloc($135, $125); //@line 921 "mathmodule.c"
-        $v_i=$136; //@line 921 "mathmodule.c"
-        __lastLabel__ = 36; __label__ = 38; break; //@line 921 "mathmodule.c"
-      case 37: // $bb6thread_pre_split_i
-        var $_pr_i=$v_i;
-        __lastLabel__ = 37; __label__ = 38; break;
-      case 38: // $bb6_i
-        var $137=__lastLabel__ == 37 ? $_pr_i : ($136);
-        var $138=($137)==0; //@line 923 "mathmodule.c"
-        if ($138) { __label__ = 39; break; } else { __label__ = 40; break; } //@line 923 "mathmodule.c"
-      case 39: // $_fsum_realloc_exit_thread
-        var $139=HEAP[_PyExc_MemoryError]; //@line 924 "mathmodule.c"
-        _PyErr_SetString($139, __str10); //@line 924 "mathmodule.c"
-        $0=1; //@line 925 "mathmodule.c"
-        $retval_i=1; //@line 925 "mathmodule.c"
-        __label__ = 60; break;
-      case 40: // $_fsum_realloc_exit
-        var $140=$v_i; //@line 927 "mathmodule.c"
-        var $141=$140; //@line 927 "mathmodule.c"
-        var $142=$p_ptr_addr_i; //@line 927 "mathmodule.c"
-        HEAP[$142]=$141; //@line 927 "mathmodule.c"
-        var $143=$m_ptr_addr_i; //@line 928 "mathmodule.c"
-        var $144=$m_i; //@line 928 "mathmodule.c"
-        HEAP[$143]=$144; //@line 928 "mathmodule.c"
-        $0=0; //@line 929 "mathmodule.c"
-        $retval_i=0; //@line 925 "mathmodule.c"
-        __label__ = 41; break;
-      case 41: // $bb34
-        var $145=HEAP[$p]; //@line 1028 "mathmodule.c"
-        var $146=$n; //@line 1028 "mathmodule.c"
-        var $147=$145+8*$146; //@line 1028 "mathmodule.c"
-        var $148=$x; //@line 1028 "mathmodule.c"
-        HEAP[$147]=$148; //@line 1028 "mathmodule.c"
-        var $149=$n; //@line 1028 "mathmodule.c"
-        var $150=($149) + 1; //@line 1028 "mathmodule.c"
-        $n=$150; //@line 1028 "mathmodule.c"
-        __lastLabel__ = 41; __label__ = 3; break; //@line 1028 "mathmodule.c"
-      case 42: // $bb36
-        var $151=$inf_sum; //@line 1033 "mathmodule.c"
-        var $152=___isnan($151); //@line 1033 "mathmodule.c"
-        var $153=($152)!=0; //@line 1033 "mathmodule.c"
-        if ($153) { __label__ = 43; break; } else { __label__ = 44; break; } //@line 1033 "mathmodule.c"
-      case 43: // $bb37
-        var $154=HEAP[_PyExc_ValueError]; //@line 1034 "mathmodule.c"
-        _PyErr_SetString($154, __str14); //@line 1034 "mathmodule.c"
-        __label__ = 60; break; //@line 1034 "mathmodule.c"
-      case 44: // $bb38
-        var $155=$special_sum; //@line 1037 "mathmodule.c"
-        var $156=_PyFloat_FromDouble($155); //@line 1037 "mathmodule.c"
-        $sum=$156; //@line 1037 "mathmodule.c"
-        __label__ = 60; break; //@line 1037 "mathmodule.c"
-      case 45: // $bb40
+        var $107=$n; //@line 1025 "mathmodule.c"
+        var $108=__fsum_realloc($p, $107, $ps33, $m); //@line 1025 "mathmodule.c"
+        var $109=($108)!=0; //@line 1025 "mathmodule.c"
+        if ($109) { __label__ = 52; break; } else { __label__ = 33; break; } //@line 1025 "mathmodule.c"
+      case 33: // $bb34
+        var $110=HEAP[$p]; //@line 1028 "mathmodule.c"
+        var $111=$n; //@line 1028 "mathmodule.c"
+        var $112=$110+8*$111; //@line 1028 "mathmodule.c"
+        var $113=$x; //@line 1028 "mathmodule.c"
+        HEAP[$112]=$113; //@line 1028 "mathmodule.c"
+        var $114=$n; //@line 1028 "mathmodule.c"
+        var $115=($114) + 1; //@line 1028 "mathmodule.c"
+        $n=$115; //@line 1028 "mathmodule.c"
+        __lastLabel__ = 33; __label__ = 3; break; //@line 1028 "mathmodule.c"
+      case 34: // $bb36
+        var $116=$inf_sum; //@line 1033 "mathmodule.c"
+        var $117=___isnan($116); //@line 1033 "mathmodule.c"
+        var $118=($117)!=0; //@line 1033 "mathmodule.c"
+        if ($118) { __label__ = 35; break; } else { __label__ = 36; break; } //@line 1033 "mathmodule.c"
+      case 35: // $bb37
+        var $119=HEAP[_PyExc_ValueError]; //@line 1034 "mathmodule.c"
+        _PyErr_SetString($119, __str14); //@line 1034 "mathmodule.c"
+        __label__ = 52; break; //@line 1034 "mathmodule.c"
+      case 36: // $bb38
+        var $120=$special_sum; //@line 1037 "mathmodule.c"
+        var $121=_PyFloat_FromDouble($120); //@line 1037 "mathmodule.c"
+        $sum=$121; //@line 1037 "mathmodule.c"
+        __label__ = 52; break; //@line 1037 "mathmodule.c"
+      case 37: // $bb40
         $hi=0; //@line 1041 "mathmodule.c"
-        var $157=$n; //@line 1042 "mathmodule.c"
-        var $158=($157) > 0; //@line 1042 "mathmodule.c"
-        if ($158) { __label__ = 46; break; } else { __label__ = 59; break; } //@line 1042 "mathmodule.c"
-      case 46: // $bb41
-        var $159=HEAP[$p]; //@line 1043 "mathmodule.c"
-        var $160=$n; //@line 1043 "mathmodule.c"
-        var $161=($160) - 1; //@line 1043 "mathmodule.c"
-        $n=$161; //@line 1043 "mathmodule.c"
-        var $162=$n; //@line 1043 "mathmodule.c"
-        var $163=$159+8*$162; //@line 1043 "mathmodule.c"
-        var $164=HEAP[$163]; //@line 1043 "mathmodule.c"
-        $hi=$164; //@line 1043 "mathmodule.c"
-        __lastLabel__ = 46; __label__ = 51; break; //@line 1043 "mathmodule.c"
-      case 47: // $bb42
-        var $165=$hi; //@line 1047 "mathmodule.c"
-        $x=$165; //@line 1047 "mathmodule.c"
-        var $166=HEAP[$p]; //@line 1048 "mathmodule.c"
-        var $167=$n; //@line 1048 "mathmodule.c"
-        var $168=($167) - 1; //@line 1048 "mathmodule.c"
-        $n=$168; //@line 1048 "mathmodule.c"
-        var $169=$n; //@line 1048 "mathmodule.c"
-        var $170=$166+8*$169; //@line 1048 "mathmodule.c"
-        var $171=HEAP[$170]; //@line 1048 "mathmodule.c"
-        $y=$171; //@line 1048 "mathmodule.c"
-        var $172=$y; //@line 1049 "mathmodule.c"
-        var $173=_fabs($172); //@line 1049 "mathmodule.c"
-        var $174=$x; //@line 1049 "mathmodule.c"
-        var $175=_fabs($174); //@line 1049 "mathmodule.c"
-        var $176=($173) >= ($175); //@line 1049 "mathmodule.c"
-        if ($176) { __label__ = 48; break; } else { __label__ = 49; break; } //@line 1049 "mathmodule.c"
-      case 48: // $bb43
+        var $122=$n; //@line 1042 "mathmodule.c"
+        var $123=($122) > 0; //@line 1042 "mathmodule.c"
+        if ($123) { __label__ = 38; break; } else { __label__ = 51; break; } //@line 1042 "mathmodule.c"
+      case 38: // $bb41
+        var $124=HEAP[$p]; //@line 1043 "mathmodule.c"
+        var $125=$n; //@line 1043 "mathmodule.c"
+        var $126=($125) - 1; //@line 1043 "mathmodule.c"
+        $n=$126; //@line 1043 "mathmodule.c"
+        var $127=$n; //@line 1043 "mathmodule.c"
+        var $128=$124+8*$127; //@line 1043 "mathmodule.c"
+        var $129=HEAP[$128]; //@line 1043 "mathmodule.c"
+        $hi=$129; //@line 1043 "mathmodule.c"
+        __lastLabel__ = 38; __label__ = 43; break; //@line 1043 "mathmodule.c"
+      case 39: // $bb42
+        var $130=$hi; //@line 1047 "mathmodule.c"
+        $x=$130; //@line 1047 "mathmodule.c"
+        var $131=HEAP[$p]; //@line 1048 "mathmodule.c"
+        var $132=$n; //@line 1048 "mathmodule.c"
+        var $133=($132) - 1; //@line 1048 "mathmodule.c"
+        $n=$133; //@line 1048 "mathmodule.c"
+        var $134=$n; //@line 1048 "mathmodule.c"
+        var $135=$131+8*$134; //@line 1048 "mathmodule.c"
+        var $136=HEAP[$135]; //@line 1048 "mathmodule.c"
+        $y=$136; //@line 1048 "mathmodule.c"
+        var $137=$y; //@line 1049 "mathmodule.c"
+        var $138=_fabs($137); //@line 1049 "mathmodule.c"
+        var $139=$x; //@line 1049 "mathmodule.c"
+        var $140=_fabs($139); //@line 1049 "mathmodule.c"
+        var $141=($138) >= ($140); //@line 1049 "mathmodule.c"
+        if ($141) { __label__ = 40; break; } else { __label__ = 41; break; } //@line 1049 "mathmodule.c"
+      case 40: // $bb43
         ___assert_fail(__str15, __str1, 1049, ___PRETTY_FUNCTION___9121); //@line 1049 "mathmodule.c"
         throw "Reached an unreachable!" //@line 1049 "mathmodule.c"
-      case 49: // $bb44
-        var $177=$x; //@line 1050 "mathmodule.c"
-        var $178=$y; //@line 1050 "mathmodule.c"
-        var $179=($177) + ($178); //@line 1050 "mathmodule.c"
-        $hi=$179; //@line 1050 "mathmodule.c"
-        var $180=$hi; //@line 1051 "mathmodule.c"
-        var $181=$x; //@line 1051 "mathmodule.c"
-        var $182=($180) - ($181); //@line 1051 "mathmodule.c"
-        $yr=$182; //@line 1051 "mathmodule.c"
-        var $183=$yr; //@line 1052 "mathmodule.c"
-        var $184=$y; //@line 1052 "mathmodule.c"
-        var $185=($184) - ($183); //@line 1052 "mathmodule.c"
-        $lo=$185; //@line 1052 "mathmodule.c"
-        var $186=$lo; //@line 1053 "mathmodule.c"
-        var $187=($186) != 0; //@line 1053 "mathmodule.c"
-        if ($187) { __label__ = 52; break; } else { __label__ = 50; break; } //@line 1053 "mathmodule.c"
-      case 50: // $bb45thread_pre_split
+      case 41: // $bb44
+        var $142=$x; //@line 1050 "mathmodule.c"
+        var $143=$y; //@line 1050 "mathmodule.c"
+        var $144=($142) + ($143); //@line 1050 "mathmodule.c"
+        $hi=$144; //@line 1050 "mathmodule.c"
+        var $145=$hi; //@line 1051 "mathmodule.c"
+        var $146=$x; //@line 1051 "mathmodule.c"
+        var $147=($145) - ($146); //@line 1051 "mathmodule.c"
+        $yr=$147; //@line 1051 "mathmodule.c"
+        var $148=$yr; //@line 1052 "mathmodule.c"
+        var $149=$y; //@line 1052 "mathmodule.c"
+        var $150=($149) - ($148); //@line 1052 "mathmodule.c"
+        $lo=$150; //@line 1052 "mathmodule.c"
+        var $151=$lo; //@line 1053 "mathmodule.c"
+        var $152=($151) != 0; //@line 1053 "mathmodule.c"
+        if ($152) { __label__ = 44; break; } else { __label__ = 42; break; } //@line 1053 "mathmodule.c"
+      case 42: // $bb45thread_pre_split
         var $_pr2=$n;
-        __lastLabel__ = 50; __label__ = 51; break;
-      case 51: // $bb45
-        var $188=__lastLabel__ == 50 ? $_pr2 : ($162);
-        var $189=($188) > 0; //@line 1046 "mathmodule.c"
-        if ($189) { __label__ = 47; break; } else { __label__ = 52; break; } //@line 1046 "mathmodule.c"
-      case 52: // $bb46
-        var $190=$n; //@line 1061 "mathmodule.c"
-        var $191=($190) > 0; //@line 1061 "mathmodule.c"
-        if ($191) { __label__ = 53; break; } else { __label__ = 59; break; } //@line 1061 "mathmodule.c"
-      case 53: // $bb47
-        var $192=$lo; //@line 1061 "mathmodule.c"
-        var $193=($192) >= 0; //@line 1061 "mathmodule.c"
-        if ($193) { __label__ = 55; break; } else { __label__ = 54; break; } //@line 1061 "mathmodule.c"
-      case 54: // $bb48
-        var $194=HEAP[$p]; //@line 1061 "mathmodule.c"
-        var $195=$n; //@line 1061 "mathmodule.c"
-        var $196=($195) - 1; //@line 1061 "mathmodule.c"
-        var $197=$194+8*$196; //@line 1061 "mathmodule.c"
-        var $198=HEAP[$197]; //@line 1061 "mathmodule.c"
-        var $199=($198) < 0; //@line 1061 "mathmodule.c"
-        if ($199) { __label__ = 57; break; } else { __label__ = 55; break; } //@line 1061 "mathmodule.c"
-      case 55: // $bb49
-        var $200=$lo; //@line 1061 "mathmodule.c"
-        var $201=($200) <= 0; //@line 1061 "mathmodule.c"
-        if ($201) { __label__ = 59; break; } else { __label__ = 56; break; } //@line 1061 "mathmodule.c"
-      case 56: // $bb50
-        var $202=HEAP[$p]; //@line 1061 "mathmodule.c"
-        var $203=$n; //@line 1061 "mathmodule.c"
-        var $204=($203) - 1; //@line 1061 "mathmodule.c"
-        var $205=$202+8*$204; //@line 1061 "mathmodule.c"
-        var $206=HEAP[$205]; //@line 1061 "mathmodule.c"
-        var $207=($206) > 0; //@line 1061 "mathmodule.c"
-        if ($207) { __label__ = 57; break; } else { __label__ = 59; break; } //@line 1061 "mathmodule.c"
-      case 57: // $bb51
-        var $208=$lo; //@line 1063 "mathmodule.c"
-        var $209=($208) * 2; //@line 1063 "mathmodule.c"
-        $y=$209; //@line 1063 "mathmodule.c"
-        var $210=$hi; //@line 1064 "mathmodule.c"
-        var $211=$y; //@line 1064 "mathmodule.c"
-        var $212=($210) + ($211); //@line 1064 "mathmodule.c"
-        $x=$212; //@line 1064 "mathmodule.c"
-        var $213=$hi; //@line 1065 "mathmodule.c"
-        var $214=$x; //@line 1065 "mathmodule.c"
-        var $215=($214) - ($213); //@line 1065 "mathmodule.c"
-        $yr=$215; //@line 1065 "mathmodule.c"
-        var $216=$yr; //@line 1066 "mathmodule.c"
-        var $217=$y; //@line 1066 "mathmodule.c"
-        var $218=($217) == ($216); //@line 1066 "mathmodule.c"
-        if ($218) { __label__ = 58; break; } else { __label__ = 59; break; } //@line 1066 "mathmodule.c"
-      case 58: // $bb52
-        var $219=$x; //@line 1067 "mathmodule.c"
-        $hi=$219; //@line 1067 "mathmodule.c"
-        __label__ = 59; break; //@line 1067 "mathmodule.c"
-      case 59: // $bb53
-        var $220=$hi; //@line 1070 "mathmodule.c"
-        var $221=_PyFloat_FromDouble($220); //@line 1070 "mathmodule.c"
-        $sum=$221; //@line 1070 "mathmodule.c"
-        __label__ = 60; break; //@line 1072 "mathmodule.c"
-      case 60: // $_fsum_error
-        var $222=$iter; //@line 1074 "mathmodule.c"
-        var $223=$222; //@line 1074 "mathmodule.c"
-        var $224=HEAP[$223]; //@line 1074 "mathmodule.c"
-        var $225=($224) - 1; //@line 1074 "mathmodule.c"
-        var $226=$iter; //@line 1074 "mathmodule.c"
-        var $227=$226; //@line 1074 "mathmodule.c"
-        HEAP[$227]=$225; //@line 1074 "mathmodule.c"
-        var $228=$iter; //@line 1074 "mathmodule.c"
-        var $229=$228; //@line 1074 "mathmodule.c"
-        var $230=HEAP[$229]; //@line 1074 "mathmodule.c"
-        var $231=($230)==0; //@line 1074 "mathmodule.c"
-        if ($231) { __label__ = 61; break; } else { __label__ = 62; break; } //@line 1074 "mathmodule.c"
-      case 61: // $bb54
-        var $232=$iter; //@line 1074 "mathmodule.c"
-        var $233=$232+4; //@line 1074 "mathmodule.c"
-        var $234=HEAP[$233]; //@line 1074 "mathmodule.c"
-        var $235=$234+24; //@line 1074 "mathmodule.c"
-        var $236=HEAP[$235]; //@line 1074 "mathmodule.c"
-        var $237=$iter; //@line 1074 "mathmodule.c"
-        FUNCTION_TABLE[$236]($237); //@line 1074 "mathmodule.c"
-        __label__ = 62; break; //@line 1074 "mathmodule.c"
-      case 62: // $bb55
-        var $238=HEAP[$p]; //@line 1075 "mathmodule.c"
+        __lastLabel__ = 42; __label__ = 43; break;
+      case 43: // $bb45
+        var $153=__lastLabel__ == 42 ? $_pr2 : ($127);
+        var $154=($153) > 0; //@line 1046 "mathmodule.c"
+        if ($154) { __label__ = 39; break; } else { __label__ = 44; break; } //@line 1046 "mathmodule.c"
+      case 44: // $bb46
+        var $155=$n; //@line 1061 "mathmodule.c"
+        var $156=($155) > 0; //@line 1061 "mathmodule.c"
+        if ($156) { __label__ = 45; break; } else { __label__ = 51; break; } //@line 1061 "mathmodule.c"
+      case 45: // $bb47
+        var $157=$lo; //@line 1061 "mathmodule.c"
+        var $158=($157) >= 0; //@line 1061 "mathmodule.c"
+        if ($158) { __label__ = 47; break; } else { __label__ = 46; break; } //@line 1061 "mathmodule.c"
+      case 46: // $bb48
+        var $159=HEAP[$p]; //@line 1061 "mathmodule.c"
+        var $160=$n; //@line 1061 "mathmodule.c"
+        var $161=($160) - 1; //@line 1061 "mathmodule.c"
+        var $162=$159+8*$161; //@line 1061 "mathmodule.c"
+        var $163=HEAP[$162]; //@line 1061 "mathmodule.c"
+        var $164=($163) < 0; //@line 1061 "mathmodule.c"
+        if ($164) { __label__ = 49; break; } else { __label__ = 47; break; } //@line 1061 "mathmodule.c"
+      case 47: // $bb49
+        var $165=$lo; //@line 1061 "mathmodule.c"
+        var $166=($165) <= 0; //@line 1061 "mathmodule.c"
+        if ($166) { __label__ = 51; break; } else { __label__ = 48; break; } //@line 1061 "mathmodule.c"
+      case 48: // $bb50
+        var $167=HEAP[$p]; //@line 1061 "mathmodule.c"
+        var $168=$n; //@line 1061 "mathmodule.c"
+        var $169=($168) - 1; //@line 1061 "mathmodule.c"
+        var $170=$167+8*$169; //@line 1061 "mathmodule.c"
+        var $171=HEAP[$170]; //@line 1061 "mathmodule.c"
+        var $172=($171) > 0; //@line 1061 "mathmodule.c"
+        if ($172) { __label__ = 49; break; } else { __label__ = 51; break; } //@line 1061 "mathmodule.c"
+      case 49: // $bb51
+        var $173=$lo; //@line 1063 "mathmodule.c"
+        var $174=($173) * 2; //@line 1063 "mathmodule.c"
+        $y=$174; //@line 1063 "mathmodule.c"
+        var $175=$hi; //@line 1064 "mathmodule.c"
+        var $176=$y; //@line 1064 "mathmodule.c"
+        var $177=($175) + ($176); //@line 1064 "mathmodule.c"
+        $x=$177; //@line 1064 "mathmodule.c"
+        var $178=$hi; //@line 1065 "mathmodule.c"
+        var $179=$x; //@line 1065 "mathmodule.c"
+        var $180=($179) - ($178); //@line 1065 "mathmodule.c"
+        $yr=$180; //@line 1065 "mathmodule.c"
+        var $181=$yr; //@line 1066 "mathmodule.c"
+        var $182=$y; //@line 1066 "mathmodule.c"
+        var $183=($182) == ($181); //@line 1066 "mathmodule.c"
+        if ($183) { __label__ = 50; break; } else { __label__ = 51; break; } //@line 1066 "mathmodule.c"
+      case 50: // $bb52
+        var $184=$x; //@line 1067 "mathmodule.c"
+        $hi=$184; //@line 1067 "mathmodule.c"
+        __label__ = 51; break; //@line 1067 "mathmodule.c"
+      case 51: // $bb53
+        var $185=$hi; //@line 1070 "mathmodule.c"
+        var $186=_PyFloat_FromDouble($185); //@line 1070 "mathmodule.c"
+        $sum=$186; //@line 1070 "mathmodule.c"
+        __label__ = 52; break; //@line 1072 "mathmodule.c"
+      case 52: // $_fsum_error
+        var $187=$iter; //@line 1074 "mathmodule.c"
+        var $188=$187; //@line 1074 "mathmodule.c"
+        var $189=HEAP[$188]; //@line 1074 "mathmodule.c"
+        var $190=($189) - 1; //@line 1074 "mathmodule.c"
+        var $191=$iter; //@line 1074 "mathmodule.c"
+        var $192=$191; //@line 1074 "mathmodule.c"
+        HEAP[$192]=$190; //@line 1074 "mathmodule.c"
+        var $193=$iter; //@line 1074 "mathmodule.c"
+        var $194=$193; //@line 1074 "mathmodule.c"
+        var $195=HEAP[$194]; //@line 1074 "mathmodule.c"
+        var $196=($195)==0; //@line 1074 "mathmodule.c"
+        if ($196) { __label__ = 53; break; } else { __label__ = 54; break; } //@line 1074 "mathmodule.c"
+      case 53: // $bb54
+        var $197=$iter; //@line 1074 "mathmodule.c"
+        var $198=$197+4; //@line 1074 "mathmodule.c"
+        var $199=HEAP[$198]; //@line 1074 "mathmodule.c"
+        var $200=$199+24; //@line 1074 "mathmodule.c"
+        var $201=HEAP[$200]; //@line 1074 "mathmodule.c"
+        var $202=$iter; //@line 1074 "mathmodule.c"
+        FUNCTION_TABLE[$201]($202); //@line 1074 "mathmodule.c"
+        __label__ = 54; break; //@line 1074 "mathmodule.c"
+      case 54: // $bb55
+        var $203=HEAP[$p]; //@line 1075 "mathmodule.c"
         var $ps56=$ps; //@line 1075 "mathmodule.c"
-        var $239=($ps56)!=($238); //@line 1075 "mathmodule.c"
-        if ($239) { __label__ = 63; break; } else { __label__ = 64; break; } //@line 1075 "mathmodule.c"
-      case 63: // $bb57
-        var $240=HEAP[$p]; //@line 1076 "mathmodule.c"
-        var $241=$240; //@line 1076 "mathmodule.c"
-        _PyMem_Free($241); //@line 1076 "mathmodule.c"
-        __label__ = 64; break; //@line 1076 "mathmodule.c"
-      case 64: // $bb58
-        var $242=$sum; //@line 1077 "mathmodule.c"
-        $1=$242; //@line 1077 "mathmodule.c"
-        __label__ = 65; break; //@line 1077 "mathmodule.c"
-      case 65: // $bb59
-        var $243=$1; //@line 973 "mathmodule.c"
-        $retval=$243; //@line 973 "mathmodule.c"
+        var $204=($ps56)!=($203); //@line 1075 "mathmodule.c"
+        if ($204) { __label__ = 55; break; } else { __label__ = 56; break; } //@line 1075 "mathmodule.c"
+      case 55: // $bb57
+        var $205=HEAP[$p]; //@line 1076 "mathmodule.c"
+        var $206=$205; //@line 1076 "mathmodule.c"
+        _PyMem_Free($206); //@line 1076 "mathmodule.c"
+        __label__ = 56; break; //@line 1076 "mathmodule.c"
+      case 56: // $bb58
+        var $207=$sum; //@line 1077 "mathmodule.c"
+        $0=$207; //@line 1077 "mathmodule.c"
+        __label__ = 57; break; //@line 1077 "mathmodule.c"
+      case 57: // $bb59
+        var $208=$0; //@line 973 "mathmodule.c"
+        $retval=$208; //@line 973 "mathmodule.c"
         var $retval60=$retval; //@line 973 "mathmodule.c"
         STACKTOP = __stackBase__;
         return $retval60; //@line 973 "mathmodule.c"
@@ -3010,7 +3029,7 @@ var __str63;
     $self_addr=$self;
     $number_addr=$number;
     var $1=$number_addr; //@line 1147 "mathmodule.c"
-    var $2=_PyObject_CallMethod($1, __str18, 0); //@line 1147 "mathmodule.c"
+    var $2=_PyObject_CallMethod($1, __str18, 0, allocate(1, "i32", ALLOC_STACK)); //@line 1147 "mathmodule.c"
     $0=$2; //@line 1147 "mathmodule.c"
     var $3=$0; //@line 1147 "mathmodule.c"
     $retval=$3; //@line 1147 "mathmodule.c"
@@ -3071,7 +3090,7 @@ var __str63;
       case 7: // $bb7
         var $17=HEAP[$i]; //@line 1172 "mathmodule.c"
         var $18=$x; //@line 1172 "mathmodule.c"
-        var $19=_Py_BuildValue(__str19, $18, $17); //@line 1172 "mathmodule.c"
+        var $19=_Py_BuildValue(__str19, allocate([$18,0,0,0,0,0,0,0,$17,0,0,0], ["double",0,0,0,0,0,0,0,"i32",0,0,0], ALLOC_STACK)); //@line 1172 "mathmodule.c"
         $0=$19; //@line 1172 "mathmodule.c"
         __label__ = 8; break; //@line 1172 "mathmodule.c"
       case 8: // $bb8
@@ -3104,7 +3123,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1189 "mathmodule.c"
-        var $2=_PyArg_ParseTuple($1, __str20, $x, $oexp); //@line 1189 "mathmodule.c"
+        var $2=_PyArg_ParseTuple($1, __str20, allocate([$x,0,0,0,$oexp,0,0,0], ["double*",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1189 "mathmodule.c"
         var $3=($2)==0; //@line 1189 "mathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1189 "mathmodule.c"
       case 1: // $bb
@@ -3264,7 +3283,7 @@ var __str63;
       case 5: // $bb4
         var $14=_copysign(0, $13); //@line 1248 "mathmodule.c"
         var $15=$x; //@line 1248 "mathmodule.c"
-        var $16=_Py_BuildValue(__str22, $14, $15); //@line 1248 "mathmodule.c"
+        var $16=_Py_BuildValue(__str22, allocate([$14,0,0,0,0,0,0,0,$15,0,0,0,0,0,0,0], ["double",0,0,0,0,0,0,0,"double",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 1248 "mathmodule.c"
         $0=$16; //@line 1248 "mathmodule.c"
         __label__ = 9; break; //@line 1248 "mathmodule.c"
       case 6: // $bb5
@@ -3274,7 +3293,7 @@ var __str63;
       case 7: // $bb6
         var $19=$x; //@line 1250 "mathmodule.c"
         var $20=$x; //@line 1250 "mathmodule.c"
-        var $21=_Py_BuildValue(__str22, $19, $20); //@line 1250 "mathmodule.c"
+        var $21=_Py_BuildValue(__str22, allocate([$19,0,0,0,0,0,0,0,$20,0,0,0,0,0,0,0], ["double",0,0,0,0,0,0,0,"double",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 1250 "mathmodule.c"
         $0=$21; //@line 1250 "mathmodule.c"
         __label__ = 9; break; //@line 1250 "mathmodule.c"
       case 8: // $bb7
@@ -3285,7 +3304,7 @@ var __str63;
         $x=$24; //@line 1255 "mathmodule.c"
         var $25=HEAP[$y]; //@line 1257 "mathmodule.c"
         var $26=$x; //@line 1257 "mathmodule.c"
-        var $27=_Py_BuildValue(__str22, $26, $25); //@line 1257 "mathmodule.c"
+        var $27=_Py_BuildValue(__str22, allocate([$26,0,0,0,0,0,0,0,$25,0,0,0,0,0,0,0], ["double",0,0,0,0,0,0,0,"double",0,0,0,0,0,0,0], ALLOC_STACK)); //@line 1257 "mathmodule.c"
         $0=$27; //@line 1257 "mathmodule.c"
         __label__ = 9; break; //@line 1257 "mathmodule.c"
       case 9: // $bb8
@@ -3413,7 +3432,7 @@ var __str63;
         $args_addr=$args;
         HEAP[$base]=0; //@line 1307 "mathmodule.c"
         var $1=$args_addr; //@line 1311 "mathmodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str23, 1, 2, $arg, $base); //@line 1311 "mathmodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str23, 1, 2, allocate([$arg,0,0,0,$base,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1311 "mathmodule.c"
         var $3=($2)==0; //@line 1311 "mathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1311 "mathmodule.c"
       case 1: // $bb
@@ -3567,7 +3586,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1349 "mathmodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str25, 2, 2, $ox, $oy); //@line 1349 "mathmodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str25, 2, 2, allocate([$ox,0,0,0,$oy,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1349 "mathmodule.c"
         var $3=($2)==0; //@line 1349 "mathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1349 "mathmodule.c"
       case 1: // $bb
@@ -3685,7 +3704,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1383 "mathmodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str26, 2, 2, $ox, $oy); //@line 1383 "mathmodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str26, 2, 2, allocate([$ox,0,0,0,$oy,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1383 "mathmodule.c"
         var $3=($2)==0; //@line 1383 "mathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1383 "mathmodule.c"
       case 1: // $bb
@@ -3840,7 +3859,7 @@ var __str63;
         $self_addr=$self;
         $args_addr=$args;
         var $1=$args_addr; //@line 1432 "mathmodule.c"
-        var $2=_PyArg_UnpackTuple($1, __str27, 2, 2, $ox, $oy); //@line 1432 "mathmodule.c"
+        var $2=_PyArg_UnpackTuple($1, __str27, 2, 2, allocate([$ox,0,0,0,$oy,0,0,0], ["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0], ALLOC_STACK)); //@line 1432 "mathmodule.c"
         var $3=($2)==0; //@line 1432 "mathmodule.c"
         if ($3) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 1432 "mathmodule.c"
       case 1: // $bb

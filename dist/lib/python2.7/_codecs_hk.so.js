@@ -65,16 +65,16 @@ var $union_MultibyteCodec_State___SIZE = 8; // %union.MultibyteCodec_State
 var _cofunc_8453;
 var __str;
 var __str1;
-var _PyExc_TypeError;
+
 var __str2;
-var _PyExc_LookupError;
+
 var __str3;
 var __str4;
 var __str5;
 var __str6;
 var ___methods;
 var __str7;
-var _PyExc_ValueError;
+
 var __str8;
 var ___big5hkscs_decmap;
 var _big5hkscs_decmap;
@@ -120,19 +120,77 @@ var __str17;
 
 
 
+  function _getmultibytecodec() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $retval;
+        var $0;
+        var $mod;
+        var $1=HEAP[_cofunc_8453]; //@line 247 "cjkcodecs.h"
+        var $2=($1)==0; //@line 247 "cjkcodecs.h"
+        if ($2) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 247 "cjkcodecs.h"
+      case 1: // $bb
+        var $3=_PyImport_ImportModuleNoBlock(__str); //@line 248 "cjkcodecs.h"
+        $mod=$3; //@line 248 "cjkcodecs.h"
+        var $4=$mod; //@line 249 "cjkcodecs.h"
+        var $5=($4)==0; //@line 249 "cjkcodecs.h"
+        if ($5) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 249 "cjkcodecs.h"
+      case 2: // $bb1
+        $0=0; //@line 250 "cjkcodecs.h"
+        __label__ = 6; break; //@line 250 "cjkcodecs.h"
+      case 3: // $bb2
+        var $6=$mod; //@line 251 "cjkcodecs.h"
+        var $7=_PyObject_GetAttrString($6, __str1); //@line 251 "cjkcodecs.h"
+        HEAP[_cofunc_8453]=$7; //@line 251 "cjkcodecs.h"
+        var $8=$mod; //@line 252 "cjkcodecs.h"
+        var $9=$8; //@line 252 "cjkcodecs.h"
+        var $10=HEAP[$9]; //@line 252 "cjkcodecs.h"
+        var $11=($10) - 1; //@line 252 "cjkcodecs.h"
+        var $12=$mod; //@line 252 "cjkcodecs.h"
+        var $13=$12; //@line 252 "cjkcodecs.h"
+        HEAP[$13]=$11; //@line 252 "cjkcodecs.h"
+        var $14=$mod; //@line 252 "cjkcodecs.h"
+        var $15=$14; //@line 252 "cjkcodecs.h"
+        var $16=HEAP[$15]; //@line 252 "cjkcodecs.h"
+        var $17=($16)==0; //@line 252 "cjkcodecs.h"
+        if ($17) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 252 "cjkcodecs.h"
+      case 4: // $bb3
+        var $18=$mod; //@line 252 "cjkcodecs.h"
+        var $19=$18+4; //@line 252 "cjkcodecs.h"
+        var $20=HEAP[$19]; //@line 252 "cjkcodecs.h"
+        var $21=$20+24; //@line 252 "cjkcodecs.h"
+        var $22=HEAP[$21]; //@line 252 "cjkcodecs.h"
+        var $23=$mod; //@line 252 "cjkcodecs.h"
+        FUNCTION_TABLE[$22]($23); //@line 252 "cjkcodecs.h"
+        __label__ = 5; break; //@line 252 "cjkcodecs.h"
+      case 5: // $bb4
+        var $24=HEAP[_cofunc_8453]; //@line 254 "cjkcodecs.h"
+        $0=$24; //@line 254 "cjkcodecs.h"
+        __label__ = 6; break; //@line 254 "cjkcodecs.h"
+      case 6: // $bb5
+        var $25=$0; //@line 250 "cjkcodecs.h"
+        $retval=$25; //@line 250 "cjkcodecs.h"
+        var $retval6=$retval; //@line 250 "cjkcodecs.h"
+        ;
+        return $retval6; //@line 250 "cjkcodecs.h"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
   function _getcodec($self, $encoding) {
     ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $retval_i;
-        var $0;
-        var $mod_i;
         var $self_addr;
         var $encoding_addr;
         var $retval;
-        var $1;
+        var $0;
         var $codecobj;
         var $r;
         var $cofunc;
@@ -140,163 +198,334 @@ var __str17;
         var $enc;
         $self_addr=$self;
         $encoding_addr=$encoding;
-        var $2=$encoding_addr; //@line 264 "cjkcodecs.h"
-        var $3=$2+4; //@line 264 "cjkcodecs.h"
-        var $4=HEAP[$3]; //@line 264 "cjkcodecs.h"
-        var $5=$4+84; //@line 264 "cjkcodecs.h"
-        var $6=HEAP[$5]; //@line 264 "cjkcodecs.h"
-        var $7=($6) & 134217728; //@line 264 "cjkcodecs.h"
-        var $8=($7)==0; //@line 264 "cjkcodecs.h"
-        if ($8) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 264 "cjkcodecs.h"
+        var $1=$encoding_addr; //@line 264 "cjkcodecs.h"
+        var $2=$1+4; //@line 264 "cjkcodecs.h"
+        var $3=HEAP[$2]; //@line 264 "cjkcodecs.h"
+        var $4=$3+84; //@line 264 "cjkcodecs.h"
+        var $5=HEAP[$4]; //@line 264 "cjkcodecs.h"
+        var $6=($5) & 134217728; //@line 264 "cjkcodecs.h"
+        var $7=($6)==0; //@line 264 "cjkcodecs.h"
+        if ($7) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 264 "cjkcodecs.h"
       case 1: // $bb
-        var $9=HEAP[_PyExc_TypeError]; //@line 265 "cjkcodecs.h"
-        _PyErr_SetString($9, __str2); //@line 265 "cjkcodecs.h"
-        $1=0; //@line 267 "cjkcodecs.h"
-        __label__ = 21; break; //@line 267 "cjkcodecs.h"
+        var $8=HEAP[_PyExc_TypeError]; //@line 265 "cjkcodecs.h"
+        _PyErr_SetString($8, __str2); //@line 265 "cjkcodecs.h"
+        $0=0; //@line 267 "cjkcodecs.h"
+        __label__ = 15; break; //@line 267 "cjkcodecs.h"
       case 2: // $bb1
-        var $10=HEAP[_cofunc_8453]; //@line 247 "cjkcodecs.h"
-        var $11=($10)==0; //@line 247 "cjkcodecs.h"
-        if ($11) { __label__ = 4; break; } else { __label__ = 3; break; } //@line 247 "cjkcodecs.h"
-      case 3: // $getmultibytecodec_exit_thread1
-        $0=$10; //@line 254 "cjkcodecs.h"
-        $retval_i=$10; //@line 250 "cjkcodecs.h"
-        $cofunc=$10; //@line 270 "cjkcodecs.h"
-        __label__ = 10; break;
-      case 4: // $bb_i
-        var $12=_PyImport_ImportModuleNoBlock(__str); //@line 248 "cjkcodecs.h"
-        $mod_i=$12; //@line 248 "cjkcodecs.h"
-        var $13=$mod_i; //@line 249 "cjkcodecs.h"
-        var $14=($13)==0; //@line 249 "cjkcodecs.h"
-        if ($14) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 249 "cjkcodecs.h"
-      case 5: // $getmultibytecodec_exit_thread
-        $0=0; //@line 250 "cjkcodecs.h"
-        $retval_i=0; //@line 250 "cjkcodecs.h"
-        $cofunc=0; //@line 270 "cjkcodecs.h"
-        __label__ = 9; break;
-      case 6: // $bb2_i
-        var $15=$mod_i; //@line 251 "cjkcodecs.h"
-        var $16=_PyObject_GetAttrString($15, __str1); //@line 251 "cjkcodecs.h"
-        HEAP[_cofunc_8453]=$16; //@line 251 "cjkcodecs.h"
-        var $17=$mod_i; //@line 252 "cjkcodecs.h"
-        var $18=$17; //@line 252 "cjkcodecs.h"
-        var $19=HEAP[$18]; //@line 252 "cjkcodecs.h"
-        var $20=($19) - 1; //@line 252 "cjkcodecs.h"
-        var $21=$mod_i; //@line 252 "cjkcodecs.h"
-        var $22=$21; //@line 252 "cjkcodecs.h"
-        HEAP[$22]=$20; //@line 252 "cjkcodecs.h"
-        var $23=$mod_i; //@line 252 "cjkcodecs.h"
-        var $24=$23; //@line 252 "cjkcodecs.h"
-        var $25=HEAP[$24]; //@line 252 "cjkcodecs.h"
-        var $26=($25)==0; //@line 252 "cjkcodecs.h"
-        if ($26) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 252 "cjkcodecs.h"
-      case 7: // $bb3_i
-        var $27=$mod_i; //@line 252 "cjkcodecs.h"
-        var $28=$27+4; //@line 252 "cjkcodecs.h"
-        var $29=HEAP[$28]; //@line 252 "cjkcodecs.h"
-        var $30=$29+24; //@line 252 "cjkcodecs.h"
-        var $31=HEAP[$30]; //@line 252 "cjkcodecs.h"
-        var $32=$mod_i; //@line 252 "cjkcodecs.h"
-        FUNCTION_TABLE[$31]($32); //@line 252 "cjkcodecs.h"
-        __label__ = 8; break; //@line 252 "cjkcodecs.h"
-      case 8: // $getmultibytecodec_exit
-        var $_pr=HEAP[_cofunc_8453];
-        $0=$_pr; //@line 254 "cjkcodecs.h"
-        $retval_i=$_pr; //@line 250 "cjkcodecs.h"
-        $cofunc=$_pr; //@line 270 "cjkcodecs.h"
-        var $33=($_pr)==0; //@line 271 "cjkcodecs.h"
-        if ($33) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 271 "cjkcodecs.h"
-      case 9: // $bb2
-        $1=0; //@line 272 "cjkcodecs.h"
-        __label__ = 21; break; //@line 272 "cjkcodecs.h"
-      case 10: // $bb3
-        var $34=$encoding_addr; //@line 274 "cjkcodecs.h"
-        var $35=$34; //@line 274 "cjkcodecs.h"
-        var $36=$35+20; //@line 274 "cjkcodecs.h"
-        var $37=$36; //@line 274 "cjkcodecs.h"
-        $enc=$37; //@line 274 "cjkcodecs.h"
+        var $9=_getmultibytecodec(); //@line 270 "cjkcodecs.h"
+        $cofunc=$9; //@line 270 "cjkcodecs.h"
+        var $10=$cofunc; //@line 271 "cjkcodecs.h"
+        var $11=($10)==0; //@line 271 "cjkcodecs.h"
+        if ($11) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 271 "cjkcodecs.h"
+      case 3: // $bb2
+        $0=0; //@line 272 "cjkcodecs.h"
+        __label__ = 15; break; //@line 272 "cjkcodecs.h"
+      case 4: // $bb3
+        var $12=$encoding_addr; //@line 274 "cjkcodecs.h"
+        var $13=$12; //@line 274 "cjkcodecs.h"
+        var $14=$13+20; //@line 274 "cjkcodecs.h"
+        var $15=$14; //@line 274 "cjkcodecs.h"
+        $enc=$15; //@line 274 "cjkcodecs.h"
         $codec=__codec_list; //@line 275 "cjkcodecs.h"
-        __label__ = 13; break; //@line 275 "cjkcodecs.h"
-      case 11: // $bb4
-        var $38=$codec; //@line 276 "cjkcodecs.h"
-        var $39=$38; //@line 276 "cjkcodecs.h"
-        var $40=HEAP[$39]; //@line 276 "cjkcodecs.h"
-        var $41=$enc; //@line 276 "cjkcodecs.h"
-        var $42=_strcmp($40, $41); //@line 276 "cjkcodecs.h"
-        var $43=($42)==0; //@line 276 "cjkcodecs.h"
-        if ($43) { __label__ = 14; break; } else { __label__ = 12; break; } //@line 276 "cjkcodecs.h"
-      case 12: // $bb5
-        var $44=$codec; //@line 275 "cjkcodecs.h"
-        var $45=$44+36; //@line 275 "cjkcodecs.h"
-        $codec=$45; //@line 275 "cjkcodecs.h"
-        __label__ = 13; break; //@line 275 "cjkcodecs.h"
-      case 13: // $bb6
-        var $46=$codec; //@line 275 "cjkcodecs.h"
-        var $47=$46; //@line 275 "cjkcodecs.h"
-        var $48=HEAP[$47]; //@line 275 "cjkcodecs.h"
-        var $49=$48; //@line 275 "cjkcodecs.h"
-        var $50=HEAP[$49]; //@line 275 "cjkcodecs.h"
-        var $51=($50)!=0; //@line 275 "cjkcodecs.h"
-        if ($51) { __label__ = 11; break; } else { __label__ = 14; break; } //@line 275 "cjkcodecs.h"
-      case 14: // $bb7
-        var $52=$codec; //@line 279 "cjkcodecs.h"
-        var $53=$52; //@line 279 "cjkcodecs.h"
-        var $54=HEAP[$53]; //@line 279 "cjkcodecs.h"
-        var $55=$54; //@line 279 "cjkcodecs.h"
-        var $56=HEAP[$55]; //@line 279 "cjkcodecs.h"
-        var $57=($56)==0; //@line 279 "cjkcodecs.h"
-        if ($57) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 279 "cjkcodecs.h"
-      case 15: // $bb8
-        var $58=HEAP[_PyExc_LookupError]; //@line 280 "cjkcodecs.h"
-        _PyErr_SetString($58, __str3); //@line 280 "cjkcodecs.h"
-        $1=0; //@line 282 "cjkcodecs.h"
-        __label__ = 21; break; //@line 282 "cjkcodecs.h"
-      case 16: // $bb9
-        var $59=$codec; //@line 285 "cjkcodecs.h"
-        var $60=$59; //@line 285 "cjkcodecs.h"
-        var $61=_PyCapsule_New($60, __str4, 0); //@line 285 "cjkcodecs.h"
-        $codecobj=$61; //@line 285 "cjkcodecs.h"
-        var $62=$codecobj; //@line 286 "cjkcodecs.h"
-        var $63=($62)==0; //@line 286 "cjkcodecs.h"
-        if ($63) { __label__ = 17; break; } else { __label__ = 18; break; } //@line 286 "cjkcodecs.h"
-      case 17: // $bb10
-        $1=0; //@line 287 "cjkcodecs.h"
-        __label__ = 21; break; //@line 287 "cjkcodecs.h"
-      case 18: // $bb11
-        var $64=$cofunc; //@line 289 "cjkcodecs.h"
-        var $65=$codecobj; //@line 289 "cjkcodecs.h"
-        var $66=_PyObject_CallFunctionObjArgs($64, $65, 0); //@line 289 "cjkcodecs.h"
-        $r=$66; //@line 289 "cjkcodecs.h"
-        var $67=$codecobj; //@line 290 "cjkcodecs.h"
-        var $68=$67; //@line 290 "cjkcodecs.h"
-        var $69=HEAP[$68]; //@line 290 "cjkcodecs.h"
-        var $70=($69) - 1; //@line 290 "cjkcodecs.h"
-        var $71=$codecobj; //@line 290 "cjkcodecs.h"
-        var $72=$71; //@line 290 "cjkcodecs.h"
-        HEAP[$72]=$70; //@line 290 "cjkcodecs.h"
-        var $73=$codecobj; //@line 290 "cjkcodecs.h"
-        var $74=$73; //@line 290 "cjkcodecs.h"
-        var $75=HEAP[$74]; //@line 290 "cjkcodecs.h"
-        var $76=($75)==0; //@line 290 "cjkcodecs.h"
-        if ($76) { __label__ = 19; break; } else { __label__ = 20; break; } //@line 290 "cjkcodecs.h"
-      case 19: // $bb12
-        var $77=$codecobj; //@line 290 "cjkcodecs.h"
-        var $78=$77+4; //@line 290 "cjkcodecs.h"
-        var $79=HEAP[$78]; //@line 290 "cjkcodecs.h"
-        var $80=$79+24; //@line 290 "cjkcodecs.h"
-        var $81=HEAP[$80]; //@line 290 "cjkcodecs.h"
-        var $82=$codecobj; //@line 290 "cjkcodecs.h"
-        FUNCTION_TABLE[$81]($82); //@line 290 "cjkcodecs.h"
-        __label__ = 20; break; //@line 290 "cjkcodecs.h"
-      case 20: // $bb13
-        var $83=$r; //@line 292 "cjkcodecs.h"
-        $1=$83; //@line 292 "cjkcodecs.h"
-        __label__ = 21; break; //@line 292 "cjkcodecs.h"
-      case 21: // $bb14
-        var $84=$1; //@line 267 "cjkcodecs.h"
-        $retval=$84; //@line 267 "cjkcodecs.h"
+        __label__ = 7; break; //@line 275 "cjkcodecs.h"
+      case 5: // $bb4
+        var $16=$codec; //@line 276 "cjkcodecs.h"
+        var $17=$16; //@line 276 "cjkcodecs.h"
+        var $18=HEAP[$17]; //@line 276 "cjkcodecs.h"
+        var $19=$enc; //@line 276 "cjkcodecs.h"
+        var $20=_strcmp($18, $19); //@line 276 "cjkcodecs.h"
+        var $21=($20)==0; //@line 276 "cjkcodecs.h"
+        if ($21) { __label__ = 8; break; } else { __label__ = 6; break; } //@line 276 "cjkcodecs.h"
+      case 6: // $bb5
+        var $22=$codec; //@line 275 "cjkcodecs.h"
+        var $23=$22+36; //@line 275 "cjkcodecs.h"
+        $codec=$23; //@line 275 "cjkcodecs.h"
+        __label__ = 7; break; //@line 275 "cjkcodecs.h"
+      case 7: // $bb6
+        var $24=$codec; //@line 275 "cjkcodecs.h"
+        var $25=$24; //@line 275 "cjkcodecs.h"
+        var $26=HEAP[$25]; //@line 275 "cjkcodecs.h"
+        var $27=$26; //@line 275 "cjkcodecs.h"
+        var $28=HEAP[$27]; //@line 275 "cjkcodecs.h"
+        var $29=($28)!=0; //@line 275 "cjkcodecs.h"
+        if ($29) { __label__ = 5; break; } else { __label__ = 8; break; } //@line 275 "cjkcodecs.h"
+      case 8: // $bb7
+        var $30=$codec; //@line 279 "cjkcodecs.h"
+        var $31=$30; //@line 279 "cjkcodecs.h"
+        var $32=HEAP[$31]; //@line 279 "cjkcodecs.h"
+        var $33=$32; //@line 279 "cjkcodecs.h"
+        var $34=HEAP[$33]; //@line 279 "cjkcodecs.h"
+        var $35=($34)==0; //@line 279 "cjkcodecs.h"
+        if ($35) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 279 "cjkcodecs.h"
+      case 9: // $bb8
+        var $36=HEAP[_PyExc_LookupError]; //@line 280 "cjkcodecs.h"
+        _PyErr_SetString($36, __str3); //@line 280 "cjkcodecs.h"
+        $0=0; //@line 282 "cjkcodecs.h"
+        __label__ = 15; break; //@line 282 "cjkcodecs.h"
+      case 10: // $bb9
+        var $37=$codec; //@line 285 "cjkcodecs.h"
+        var $38=$37; //@line 285 "cjkcodecs.h"
+        var $39=_PyCapsule_New($38, __str4, 0); //@line 285 "cjkcodecs.h"
+        $codecobj=$39; //@line 285 "cjkcodecs.h"
+        var $40=$codecobj; //@line 286 "cjkcodecs.h"
+        var $41=($40)==0; //@line 286 "cjkcodecs.h"
+        if ($41) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 286 "cjkcodecs.h"
+      case 11: // $bb10
+        $0=0; //@line 287 "cjkcodecs.h"
+        __label__ = 15; break; //@line 287 "cjkcodecs.h"
+      case 12: // $bb11
+        var $42=$cofunc; //@line 289 "cjkcodecs.h"
+        var $43=$codecobj; //@line 289 "cjkcodecs.h"
+        var $44=_PyObject_CallFunctionObjArgs($42, allocate([$43,0,0,0,0,0,0,0], ["%struct.PyObject*",0,0,0,"i8*",0,0,0], ALLOC_STACK)); //@line 289 "cjkcodecs.h"
+        $r=$44; //@line 289 "cjkcodecs.h"
+        var $45=$codecobj; //@line 290 "cjkcodecs.h"
+        var $46=$45; //@line 290 "cjkcodecs.h"
+        var $47=HEAP[$46]; //@line 290 "cjkcodecs.h"
+        var $48=($47) - 1; //@line 290 "cjkcodecs.h"
+        var $49=$codecobj; //@line 290 "cjkcodecs.h"
+        var $50=$49; //@line 290 "cjkcodecs.h"
+        HEAP[$50]=$48; //@line 290 "cjkcodecs.h"
+        var $51=$codecobj; //@line 290 "cjkcodecs.h"
+        var $52=$51; //@line 290 "cjkcodecs.h"
+        var $53=HEAP[$52]; //@line 290 "cjkcodecs.h"
+        var $54=($53)==0; //@line 290 "cjkcodecs.h"
+        if ($54) { __label__ = 13; break; } else { __label__ = 14; break; } //@line 290 "cjkcodecs.h"
+      case 13: // $bb12
+        var $55=$codecobj; //@line 290 "cjkcodecs.h"
+        var $56=$55+4; //@line 290 "cjkcodecs.h"
+        var $57=HEAP[$56]; //@line 290 "cjkcodecs.h"
+        var $58=$57+24; //@line 290 "cjkcodecs.h"
+        var $59=HEAP[$58]; //@line 290 "cjkcodecs.h"
+        var $60=$codecobj; //@line 290 "cjkcodecs.h"
+        FUNCTION_TABLE[$59]($60); //@line 290 "cjkcodecs.h"
+        __label__ = 14; break; //@line 290 "cjkcodecs.h"
+      case 14: // $bb13
+        var $61=$r; //@line 292 "cjkcodecs.h"
+        $0=$61; //@line 292 "cjkcodecs.h"
+        __label__ = 15; break; //@line 292 "cjkcodecs.h"
+      case 15: // $bb14
+        var $62=$0; //@line 267 "cjkcodecs.h"
+        $retval=$62; //@line 267 "cjkcodecs.h"
         var $retval15=$retval; //@line 267 "cjkcodecs.h"
         ;
         return $retval15; //@line 267 "cjkcodecs.h"
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _register_maps($module) {
+    var __stackBase__  = STACKTOP; STACKTOP += 256; _memset(__stackBase__, 0, 256);
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $module_addr;
+        var $0;
+        var $h;
+        var $mhname=__stackBase__;
+        var $r;
+        $module_addr=$module;
+        $h=__mapping_list; //@line 305 "cjkcodecs.h"
+        var $mhname1=$mhname; //@line 306 "cjkcodecs.h"
+        var $mhname2=$mhname; //@line 308 "cjkcodecs.h"
+        var $1=$mhname2+7; //@line 308 "cjkcodecs.h"
+        var $2=$1+-1; //@line 308 "cjkcodecs.h"
+        var $mhname3=$mhname; //@line 309 "cjkcodecs.h"
+        __label__ = 4; break; //@line 305 "cjkcodecs.h"
+      case 1: // $bb
+        _llvm_memcpy_p0i8_p0i8_i32($mhname1, __str7, 256, 1, 0); //@line 306 "cjkcodecs.h"
+        var $3=$h; //@line 308 "cjkcodecs.h"
+        var $4=$3; //@line 308 "cjkcodecs.h"
+        var $5=HEAP[$4]; //@line 308 "cjkcodecs.h"
+        var $6=_strcpy($2, $5); //@line 308 "cjkcodecs.h"
+        var $7=$h; //@line 309 "cjkcodecs.h"
+        var $8=$7; //@line 309 "cjkcodecs.h"
+        var $9=_PyCapsule_New($8, __str4, 0); //@line 309 "cjkcodecs.h"
+        var $10=$module_addr; //@line 309 "cjkcodecs.h"
+        var $11=_PyModule_AddObject($10, $mhname3, $9); //@line 309 "cjkcodecs.h"
+        $r=$11; //@line 309 "cjkcodecs.h"
+        var $12=$r; //@line 311 "cjkcodecs.h"
+        var $13=($12)==-1; //@line 311 "cjkcodecs.h"
+        if ($13) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 311 "cjkcodecs.h"
+      case 2: // $bb4
+        $0=-1; //@line 312 "cjkcodecs.h"
+        __label__ = 6; break; //@line 312 "cjkcodecs.h"
+      case 3: // $bb5
+        var $14=$h; //@line 305 "cjkcodecs.h"
+        var $15=$14+12; //@line 305 "cjkcodecs.h"
+        $h=$15; //@line 305 "cjkcodecs.h"
+        __label__ = 4; break; //@line 305 "cjkcodecs.h"
+      case 4: // $bb6
+        var $16=$h; //@line 305 "cjkcodecs.h"
+        var $17=$16; //@line 305 "cjkcodecs.h"
+        var $18=HEAP[$17]; //@line 305 "cjkcodecs.h"
+        var $19=$18; //@line 305 "cjkcodecs.h"
+        var $20=HEAP[$19]; //@line 305 "cjkcodecs.h"
+        var $21=($20)!=0; //@line 305 "cjkcodecs.h"
+        if ($21) { __label__ = 1; break; } else { __label__ = 5; break; } //@line 305 "cjkcodecs.h"
+      case 5: // $bb7
+        $0=0; //@line 314 "cjkcodecs.h"
+        __label__ = 6; break; //@line 314 "cjkcodecs.h"
+      case 6: // $bb8
+        STACKTOP = __stackBase__;
+        return;
+      default: assert(0, "bad label: " + __label__);
+    }
+  }
+  
+
+  function _importmap() {
+    ;
+    var __label__;
+    __label__ = -1; 
+    while(1) switch(__label__) {
+      case -1: // $entry
+        var $modname_addr;
+        var $symbol_addr;
+        var $encmap_addr;
+        var $decmap_addr;
+        var $retval;
+        var $0;
+        var $o;
+        var $mod;
+        var $map;
+        $modname_addr=__str9;
+        $symbol_addr=__str10;
+        $encmap_addr=_big5_encmap;
+        $decmap_addr=_big5_decmap;
+        var $1=$modname_addr; //@line 358 "cjkcodecs.h"
+        var $2=_PyImport_ImportModule($1); //@line 358 "cjkcodecs.h"
+        $mod=$2; //@line 358 "cjkcodecs.h"
+        var $3=$mod; //@line 359 "cjkcodecs.h"
+        var $4=($3)==0; //@line 359 "cjkcodecs.h"
+        if ($4) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 359 "cjkcodecs.h"
+      case 1: // $bb
+        $0=-1; //@line 360 "cjkcodecs.h"
+        __label__ = 17; break; //@line 360 "cjkcodecs.h"
+      case 2: // $bb1
+        var $5=$mod; //@line 362 "cjkcodecs.h"
+        var $6=$symbol_addr; //@line 362 "cjkcodecs.h"
+        var $7=_PyObject_GetAttrString($5, $6); //@line 362 "cjkcodecs.h"
+        $o=$7; //@line 362 "cjkcodecs.h"
+        var $8=$o; //@line 363 "cjkcodecs.h"
+        var $9=($8)==0; //@line 363 "cjkcodecs.h"
+        if ($9) { __label__ = 14; break; } else { __label__ = 3; break; } //@line 363 "cjkcodecs.h"
+      case 3: // $bb2
+        var $10=$o; //@line 365 "cjkcodecs.h"
+        var $11=_PyCapsule_IsValid($10, __str4); //@line 365 "cjkcodecs.h"
+        var $12=($11)==0; //@line 365 "cjkcodecs.h"
+        if ($12) { __label__ = 4; break; } else { __label__ = 5; break; } //@line 365 "cjkcodecs.h"
+      case 4: // $bb3
+        var $13=HEAP[_PyExc_ValueError]; //@line 366 "cjkcodecs.h"
+        _PyErr_SetString($13, __str8); //@line 366 "cjkcodecs.h"
+        __label__ = 14; break; //@line 366 "cjkcodecs.h"
+      case 5: // $bb4
+        var $14=$o; //@line 372 "cjkcodecs.h"
+        var $15=_PyCapsule_GetPointer($14, __str4); //@line 372 "cjkcodecs.h"
+        var $16=$15; //@line 372 "cjkcodecs.h"
+        $map=$16; //@line 372 "cjkcodecs.h"
+        var $17=$encmap_addr; //@line 373 "cjkcodecs.h"
+        var $18=($17)!=0; //@line 373 "cjkcodecs.h"
+        if ($18) { __label__ = 6; break; } else { __label__ = 7; break; } //@line 373 "cjkcodecs.h"
+      case 6: // $bb5
+        var $19=$map; //@line 374 "cjkcodecs.h"
+        var $20=$19+4; //@line 374 "cjkcodecs.h"
+        var $21=HEAP[$20]; //@line 374 "cjkcodecs.h"
+        var $22=$encmap_addr; //@line 374 "cjkcodecs.h"
+        var $23=$21; //@line 374 "cjkcodecs.h"
+        HEAP[$22]=$23; //@line 374 "cjkcodecs.h"
+        __label__ = 7; break; //@line 374 "cjkcodecs.h"
+      case 7: // $bb6
+        var $24=$decmap_addr; //@line 375 "cjkcodecs.h"
+        var $25=($24)!=0; //@line 375 "cjkcodecs.h"
+        if ($25) { __label__ = 8; break; } else { __label__ = 9; break; } //@line 375 "cjkcodecs.h"
+      case 8: // $bb7
+        var $26=$map; //@line 376 "cjkcodecs.h"
+        var $27=$26+8; //@line 376 "cjkcodecs.h"
+        var $28=HEAP[$27]; //@line 376 "cjkcodecs.h"
+        var $29=$decmap_addr; //@line 376 "cjkcodecs.h"
+        var $30=$28; //@line 376 "cjkcodecs.h"
+        HEAP[$29]=$30; //@line 376 "cjkcodecs.h"
+        __label__ = 9; break; //@line 376 "cjkcodecs.h"
+      case 9: // $bb8
+        var $31=$o; //@line 377 "cjkcodecs.h"
+        var $32=$31; //@line 377 "cjkcodecs.h"
+        var $33=HEAP[$32]; //@line 377 "cjkcodecs.h"
+        var $34=($33) - 1; //@line 377 "cjkcodecs.h"
+        var $35=$o; //@line 377 "cjkcodecs.h"
+        var $36=$35; //@line 377 "cjkcodecs.h"
+        HEAP[$36]=$34; //@line 377 "cjkcodecs.h"
+        var $37=$o; //@line 377 "cjkcodecs.h"
+        var $38=$37; //@line 377 "cjkcodecs.h"
+        var $39=HEAP[$38]; //@line 377 "cjkcodecs.h"
+        var $40=($39)==0; //@line 377 "cjkcodecs.h"
+        if ($40) { __label__ = 10; break; } else { __label__ = 11; break; } //@line 377 "cjkcodecs.h"
+      case 10: // $bb9
+        var $41=$o; //@line 377 "cjkcodecs.h"
+        var $42=$41+4; //@line 377 "cjkcodecs.h"
+        var $43=HEAP[$42]; //@line 377 "cjkcodecs.h"
+        var $44=$43+24; //@line 377 "cjkcodecs.h"
+        var $45=HEAP[$44]; //@line 377 "cjkcodecs.h"
+        var $46=$o; //@line 377 "cjkcodecs.h"
+        FUNCTION_TABLE[$45]($46); //@line 377 "cjkcodecs.h"
+        __label__ = 11; break; //@line 377 "cjkcodecs.h"
+      case 11: // $bb10
+        var $47=$mod; //@line 380 "cjkcodecs.h"
+        var $48=$47; //@line 380 "cjkcodecs.h"
+        var $49=HEAP[$48]; //@line 380 "cjkcodecs.h"
+        var $50=($49) - 1; //@line 380 "cjkcodecs.h"
+        var $51=$mod; //@line 380 "cjkcodecs.h"
+        var $52=$51; //@line 380 "cjkcodecs.h"
+        HEAP[$52]=$50; //@line 380 "cjkcodecs.h"
+        var $53=$mod; //@line 380 "cjkcodecs.h"
+        var $54=$53; //@line 380 "cjkcodecs.h"
+        var $55=HEAP[$54]; //@line 380 "cjkcodecs.h"
+        var $56=($55)==0; //@line 380 "cjkcodecs.h"
+        if ($56) { __label__ = 12; break; } else { __label__ = 13; break; } //@line 380 "cjkcodecs.h"
+      case 12: // $bb11
+        var $57=$mod; //@line 380 "cjkcodecs.h"
+        var $58=$57+4; //@line 380 "cjkcodecs.h"
+        var $59=HEAP[$58]; //@line 380 "cjkcodecs.h"
+        var $60=$59+24; //@line 380 "cjkcodecs.h"
+        var $61=HEAP[$60]; //@line 380 "cjkcodecs.h"
+        var $62=$mod; //@line 380 "cjkcodecs.h"
+        FUNCTION_TABLE[$61]($62); //@line 380 "cjkcodecs.h"
+        __label__ = 13; break; //@line 380 "cjkcodecs.h"
+      case 13: // $bb12
+        $0=0; //@line 381 "cjkcodecs.h"
+        __label__ = 17; break; //@line 381 "cjkcodecs.h"
+      case 14: // $errorexit
+        var $63=$mod; //@line 384 "cjkcodecs.h"
+        var $64=$63; //@line 384 "cjkcodecs.h"
+        var $65=HEAP[$64]; //@line 384 "cjkcodecs.h"
+        var $66=($65) - 1; //@line 384 "cjkcodecs.h"
+        var $67=$mod; //@line 384 "cjkcodecs.h"
+        var $68=$67; //@line 384 "cjkcodecs.h"
+        HEAP[$68]=$66; //@line 384 "cjkcodecs.h"
+        var $69=$mod; //@line 384 "cjkcodecs.h"
+        var $70=$69; //@line 384 "cjkcodecs.h"
+        var $71=HEAP[$70]; //@line 384 "cjkcodecs.h"
+        var $72=($71)==0; //@line 384 "cjkcodecs.h"
+        if ($72) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 384 "cjkcodecs.h"
+      case 15: // $bb13
+        var $73=$mod; //@line 384 "cjkcodecs.h"
+        var $74=$73+4; //@line 384 "cjkcodecs.h"
+        var $75=HEAP[$74]; //@line 384 "cjkcodecs.h"
+        var $76=$75+24; //@line 384 "cjkcodecs.h"
+        var $77=HEAP[$76]; //@line 384 "cjkcodecs.h"
+        var $78=$mod; //@line 384 "cjkcodecs.h"
+        FUNCTION_TABLE[$77]($78); //@line 384 "cjkcodecs.h"
+        __label__ = 16; break; //@line 384 "cjkcodecs.h"
+      case 16: // $bb14
+        $0=-1; //@line 385 "cjkcodecs.h"
+        __label__ = 17; break; //@line 385 "cjkcodecs.h"
+      case 17: // $bb15
+        var $79=$0; //@line 360 "cjkcodecs.h"
+        $retval=$79; //@line 360 "cjkcodecs.h"
+        var $retval16=$retval; //@line 360 "cjkcodecs.h"
+        ;
+        return $retval16; //@line 360 "cjkcodecs.h"
       default: assert(0, "bad label: " + __label__);
     }
   }
@@ -308,166 +537,28 @@ var __str17;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $modname_addr_i;
-        var $symbol_addr_i;
-        var $encmap_addr_i;
-        var $decmap_addr_i;
-        var $retval_i;
-        var $0;
-        var $o_i;
-        var $mod_i;
-        var $map_i;
         var $config_addr;
         var $retval;
-        var $1;
+        var $0;
         $config_addr=$config;
         var $_b=HEAP[_initialized_8600_b];
-        var $2=($_b);
-        var $3=($2)==0; //@line 23 "_codecs_hk.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 19; break; } //@line 23 "_codecs_hk.c"
+        var $1=($_b);
+        var $2=($1)==0; //@line 23 "_codecs_hk.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 3; break; } //@line 23 "_codecs_hk.c"
       case 1: // $bb
-        $modname_addr_i=__str9;
-        $symbol_addr_i=__str10;
-        $encmap_addr_i=_big5_encmap;
-        $decmap_addr_i=_big5_decmap;
-        var $4=$modname_addr_i; //@line 358 "cjkcodecs.h"
-        var $5=_PyImport_ImportModule($4); //@line 358 "cjkcodecs.h"
-        $mod_i=$5; //@line 358 "cjkcodecs.h"
-        var $6=$mod_i; //@line 359 "cjkcodecs.h"
-        var $7=($6)==0; //@line 359 "cjkcodecs.h"
-        if ($7) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 359 "cjkcodecs.h"
-      case 2: // $bb_i
-        $0=-1; //@line 360 "cjkcodecs.h"
-        __label__ = 18; break; //@line 360 "cjkcodecs.h"
-      case 3: // $bb1_i
-        var $8=$mod_i; //@line 362 "cjkcodecs.h"
-        var $9=$symbol_addr_i; //@line 362 "cjkcodecs.h"
-        var $10=_PyObject_GetAttrString($8, $9); //@line 362 "cjkcodecs.h"
-        $o_i=$10; //@line 362 "cjkcodecs.h"
-        var $11=$o_i; //@line 363 "cjkcodecs.h"
-        var $12=($11)==0; //@line 363 "cjkcodecs.h"
-        if ($12) { __label__ = 14; break; } else { __label__ = 4; break; } //@line 363 "cjkcodecs.h"
-      case 4: // $bb2_i
-        var $13=$o_i; //@line 365 "cjkcodecs.h"
-        var $14=_PyCapsule_IsValid($13, __str4); //@line 365 "cjkcodecs.h"
-        var $15=($14)==0; //@line 365 "cjkcodecs.h"
-        if ($15) { __label__ = 5; break; } else { __label__ = 6; break; } //@line 365 "cjkcodecs.h"
-      case 5: // $bb3_i
-        var $16=HEAP[_PyExc_ValueError]; //@line 366 "cjkcodecs.h"
-        _PyErr_SetString($16, __str8); //@line 366 "cjkcodecs.h"
-        __label__ = 14; break; //@line 366 "cjkcodecs.h"
-      case 6: // $bb4_i
-        var $17=$o_i; //@line 372 "cjkcodecs.h"
-        var $18=_PyCapsule_GetPointer($17, __str4); //@line 372 "cjkcodecs.h"
-        var $19=$18; //@line 372 "cjkcodecs.h"
-        $map_i=$19; //@line 372 "cjkcodecs.h"
-        var $20=$encmap_addr_i; //@line 373 "cjkcodecs.h"
-        var $21=($20)!=0; //@line 373 "cjkcodecs.h"
-        if ($21) { __label__ = 7; break; } else { __label__ = 8; break; } //@line 373 "cjkcodecs.h"
-      case 7: // $bb5_i
-        var $22=$map_i; //@line 374 "cjkcodecs.h"
-        var $23=$22+4; //@line 374 "cjkcodecs.h"
-        var $24=HEAP[$23]; //@line 374 "cjkcodecs.h"
-        var $25=$encmap_addr_i; //@line 374 "cjkcodecs.h"
-        var $26=$24; //@line 374 "cjkcodecs.h"
-        HEAP[$25]=$26; //@line 374 "cjkcodecs.h"
-        __label__ = 8; break; //@line 374 "cjkcodecs.h"
-      case 8: // $bb6_i
-        var $27=$decmap_addr_i; //@line 375 "cjkcodecs.h"
-        var $28=($27)!=0; //@line 375 "cjkcodecs.h"
-        if ($28) { __label__ = 9; break; } else { __label__ = 10; break; } //@line 375 "cjkcodecs.h"
-      case 9: // $bb7_i
-        var $29=$map_i; //@line 376 "cjkcodecs.h"
-        var $30=$29+8; //@line 376 "cjkcodecs.h"
-        var $31=HEAP[$30]; //@line 376 "cjkcodecs.h"
-        var $32=$decmap_addr_i; //@line 376 "cjkcodecs.h"
-        var $33=$31; //@line 376 "cjkcodecs.h"
-        HEAP[$32]=$33; //@line 376 "cjkcodecs.h"
-        __label__ = 10; break; //@line 376 "cjkcodecs.h"
-      case 10: // $bb8_i
-        var $34=$o_i; //@line 377 "cjkcodecs.h"
-        var $35=$34; //@line 377 "cjkcodecs.h"
-        var $36=HEAP[$35]; //@line 377 "cjkcodecs.h"
-        var $37=($36) - 1; //@line 377 "cjkcodecs.h"
-        var $38=$o_i; //@line 377 "cjkcodecs.h"
-        var $39=$38; //@line 377 "cjkcodecs.h"
-        HEAP[$39]=$37; //@line 377 "cjkcodecs.h"
-        var $40=$o_i; //@line 377 "cjkcodecs.h"
-        var $41=$40; //@line 377 "cjkcodecs.h"
-        var $42=HEAP[$41]; //@line 377 "cjkcodecs.h"
-        var $43=($42)==0; //@line 377 "cjkcodecs.h"
-        if ($43) { __label__ = 11; break; } else { __label__ = 12; break; } //@line 377 "cjkcodecs.h"
-      case 11: // $bb9_i
-        var $44=$o_i; //@line 377 "cjkcodecs.h"
-        var $45=$44+4; //@line 377 "cjkcodecs.h"
-        var $46=HEAP[$45]; //@line 377 "cjkcodecs.h"
-        var $47=$46+24; //@line 377 "cjkcodecs.h"
-        var $48=HEAP[$47]; //@line 377 "cjkcodecs.h"
-        var $49=$o_i; //@line 377 "cjkcodecs.h"
-        FUNCTION_TABLE[$48]($49); //@line 377 "cjkcodecs.h"
-        __label__ = 12; break; //@line 377 "cjkcodecs.h"
-      case 12: // $bb10_i
-        var $50=$mod_i; //@line 380 "cjkcodecs.h"
-        var $51=$50; //@line 380 "cjkcodecs.h"
-        var $52=HEAP[$51]; //@line 380 "cjkcodecs.h"
-        var $53=($52) - 1; //@line 380 "cjkcodecs.h"
-        var $54=$mod_i; //@line 380 "cjkcodecs.h"
-        var $55=$54; //@line 380 "cjkcodecs.h"
-        HEAP[$55]=$53; //@line 380 "cjkcodecs.h"
-        var $56=$mod_i; //@line 380 "cjkcodecs.h"
-        var $57=$56; //@line 380 "cjkcodecs.h"
-        var $58=HEAP[$57]; //@line 380 "cjkcodecs.h"
-        var $59=($58)==0; //@line 380 "cjkcodecs.h"
-        if ($59) { __label__ = 13; break; } else { __label__ = 17; break; } //@line 380 "cjkcodecs.h"
-      case 13: // $bb11_i
-        var $60=$mod_i; //@line 380 "cjkcodecs.h"
-        var $61=$60+4; //@line 380 "cjkcodecs.h"
-        var $62=HEAP[$61]; //@line 380 "cjkcodecs.h"
-        var $63=$62+24; //@line 380 "cjkcodecs.h"
-        var $64=HEAP[$63]; //@line 380 "cjkcodecs.h"
-        var $65=$mod_i; //@line 380 "cjkcodecs.h"
-        FUNCTION_TABLE[$64]($65); //@line 380 "cjkcodecs.h"
-        __label__ = 17; break; //@line 380 "cjkcodecs.h"
-      case 14: // $errorexit_i
-        var $66=$mod_i; //@line 384 "cjkcodecs.h"
-        var $67=$66; //@line 384 "cjkcodecs.h"
-        var $68=HEAP[$67]; //@line 384 "cjkcodecs.h"
-        var $69=($68) - 1; //@line 384 "cjkcodecs.h"
-        var $70=$mod_i; //@line 384 "cjkcodecs.h"
-        var $71=$70; //@line 384 "cjkcodecs.h"
-        HEAP[$71]=$69; //@line 384 "cjkcodecs.h"
-        var $72=$mod_i; //@line 384 "cjkcodecs.h"
-        var $73=$72; //@line 384 "cjkcodecs.h"
-        var $74=HEAP[$73]; //@line 384 "cjkcodecs.h"
-        var $75=($74)==0; //@line 384 "cjkcodecs.h"
-        if ($75) { __label__ = 15; break; } else { __label__ = 16; break; } //@line 384 "cjkcodecs.h"
-      case 15: // $bb13_i
-        var $76=$mod_i; //@line 384 "cjkcodecs.h"
-        var $77=$76+4; //@line 384 "cjkcodecs.h"
-        var $78=HEAP[$77]; //@line 384 "cjkcodecs.h"
-        var $79=$78+24; //@line 384 "cjkcodecs.h"
-        var $80=HEAP[$79]; //@line 384 "cjkcodecs.h"
-        var $81=$mod_i; //@line 384 "cjkcodecs.h"
-        FUNCTION_TABLE[$80]($81); //@line 384 "cjkcodecs.h"
-        __label__ = 16; break; //@line 384 "cjkcodecs.h"
-      case 16: // $bb14_i
-        $0=-1; //@line 385 "cjkcodecs.h"
-        __label__ = 18; break; //@line 385 "cjkcodecs.h"
-      case 17: // $importmap_exit
-        $0=0; //@line 381 "cjkcodecs.h"
-        $retval_i=0; //@line 360 "cjkcodecs.h"
-        __label__ = 19; break;
-      case 18: // $bb1
-        $retval_i=-1; //@line 360 "cjkcodecs.h"
-        $1=-1; //@line 24 "_codecs_hk.c"
-        __label__ = 20; break; //@line 24 "_codecs_hk.c"
-      case 19: // $bb2
+        var $3=_importmap(); //@line 23 "_codecs_hk.c"
+        var $4=($3)!=0; //@line 23 "_codecs_hk.c"
+        if ($4) { __label__ = 2; break; } else { __label__ = 3; break; } //@line 23 "_codecs_hk.c"
+      case 2: // $bb1
+        $0=-1; //@line 24 "_codecs_hk.c"
+        __label__ = 4; break; //@line 24 "_codecs_hk.c"
+      case 3: // $bb2
         HEAP[_initialized_8600_b]=1;
-        $1=0; //@line 26 "_codecs_hk.c"
-        __label__ = 20; break; //@line 26 "_codecs_hk.c"
-      case 20: // $bb3
-        var $82=$1; //@line 24 "_codecs_hk.c"
-        $retval=$82; //@line 24 "_codecs_hk.c"
+        $0=0; //@line 26 "_codecs_hk.c"
+        __label__ = 4; break; //@line 26 "_codecs_hk.c"
+      case 4: // $bb3
+        var $5=$0; //@line 24 "_codecs_hk.c"
+        $retval=$5; //@line 24 "_codecs_hk.c"
         var $retval4=$retval; //@line 24 "_codecs_hk.c"
         ;
         return $retval4; //@line 24 "_codecs_hk.c"
@@ -1427,68 +1518,23 @@ var __str17;
   
 
   function _init_codecs_hk() {
-    var __stackBase__  = STACKTOP; STACKTOP += 256; _memset(__stackBase__, 0, 256);
+    ;
     var __label__;
     __label__ = -1; 
     while(1) switch(__label__) {
       case -1: // $entry
-        var $module_addr_i;
-        var $0;
-        var $h_i;
-        var $mhname_i=__stackBase__;
-        var $r_i;
         var $m;
-        var $1=_Py_InitModule4(__str17, ___methods, 0, 0, 1013); //@line 183 "_codecs_hk.c"
-        $m=$1; //@line 183 "_codecs_hk.c"
-        var $2=$m; //@line 183 "_codecs_hk.c"
-        var $3=($2)!=0; //@line 183 "_codecs_hk.c"
-        if ($3) { __label__ = 1; break; } else { __label__ = 7; break; } //@line 183 "_codecs_hk.c"
+        var $0=_Py_InitModule4(__str17, ___methods, 0, 0, 1013); //@line 183 "_codecs_hk.c"
+        $m=$0; //@line 183 "_codecs_hk.c"
+        var $1=$m; //@line 183 "_codecs_hk.c"
+        var $2=($1)!=0; //@line 183 "_codecs_hk.c"
+        if ($2) { __label__ = 1; break; } else { __label__ = 2; break; } //@line 183 "_codecs_hk.c"
       case 1: // $bb
-        var $4=$m; //@line 183 "_codecs_hk.c"
-        $module_addr_i=$4;
-        $h_i=__mapping_list; //@line 305 "cjkcodecs.h"
-        var $mhname1_i=$mhname_i; //@line 306 "cjkcodecs.h"
-        var $mhname2_i=$mhname_i; //@line 308 "cjkcodecs.h"
-        var $5=$mhname2_i+7; //@line 308 "cjkcodecs.h"
-        var $6=$5+-1; //@line 308 "cjkcodecs.h"
-        var $mhname3_i=$mhname_i; //@line 309 "cjkcodecs.h"
-        __label__ = 5; break; //@line 305 "cjkcodecs.h"
-      case 2: // $bb_i
-        _llvm_memcpy_p0i8_p0i8_i32($mhname1_i, __str7, 256, 1, 0); //@line 306 "cjkcodecs.h"
-        var $7=$h_i; //@line 308 "cjkcodecs.h"
-        var $8=$7; //@line 308 "cjkcodecs.h"
-        var $9=HEAP[$8]; //@line 308 "cjkcodecs.h"
-        var $10=_strcpy($6, $9); //@line 308 "cjkcodecs.h"
-        var $11=$h_i; //@line 309 "cjkcodecs.h"
-        var $12=$11; //@line 309 "cjkcodecs.h"
-        var $13=_PyCapsule_New($12, __str4, 0); //@line 309 "cjkcodecs.h"
-        var $14=$module_addr_i; //@line 309 "cjkcodecs.h"
-        var $15=_PyModule_AddObject($14, $mhname3_i, $13); //@line 309 "cjkcodecs.h"
-        $r_i=$15; //@line 309 "cjkcodecs.h"
-        var $16=$r_i; //@line 311 "cjkcodecs.h"
-        var $17=($16)==-1; //@line 311 "cjkcodecs.h"
-        if ($17) { __label__ = 3; break; } else { __label__ = 4; break; } //@line 311 "cjkcodecs.h"
-      case 3: // $bb4_i
-        $0=-1; //@line 312 "cjkcodecs.h"
-        __label__ = 7; break; //@line 312 "cjkcodecs.h"
-      case 4: // $bb5_i
-        var $18=$h_i; //@line 305 "cjkcodecs.h"
-        var $19=$18+12; //@line 305 "cjkcodecs.h"
-        $h_i=$19; //@line 305 "cjkcodecs.h"
-        __label__ = 5; break; //@line 305 "cjkcodecs.h"
-      case 5: // $bb6_i
-        var $20=$h_i; //@line 305 "cjkcodecs.h"
-        var $21=$20; //@line 305 "cjkcodecs.h"
-        var $22=HEAP[$21]; //@line 305 "cjkcodecs.h"
-        var $23=$22; //@line 305 "cjkcodecs.h"
-        var $24=HEAP[$23]; //@line 305 "cjkcodecs.h"
-        var $25=($24)!=0; //@line 305 "cjkcodecs.h"
-        if ($25) { __label__ = 2; break; } else { __label__ = 6; break; } //@line 305 "cjkcodecs.h"
-      case 6: // $bb7_i
-        $0=0; //@line 314 "cjkcodecs.h"
-        __label__ = 7; break; //@line 314 "cjkcodecs.h"
-      case 7: // $return
-        STACKTOP = __stackBase__;
+        var $3=$m; //@line 183 "_codecs_hk.c"
+        _register_maps($3); //@line 183 "_codecs_hk.c"
+        __label__ = 2; break; //@line 183 "_codecs_hk.c"
+      case 2: // $return
+        ;
         return; //@line 183 "_codecs_hk.c"
       default: assert(0, "bad label: " + __label__);
     }
