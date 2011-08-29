@@ -7,12 +7,10 @@
 # Whether to produce optimized, name-mangled, debugging-unfriendly JS.
 OPTIMIZED=1
 
-# Which global variables and functions to export to the final Module object.
-EXPORTED_GLOBALS='["_Py_NoSiteFlag"]'
-EXPORTED_FUNCTIONS='["_free","_Py_Initialize","_PyImport_AddModule","_PyModule_GetDict","_Py_CompileStringFlags","_PyEval_EvalCode","_PyObject_Repr","_PyString_AsString","_PyArg_ParseTuple","_PyErr_Clear","_PyErr_Print","_PyErr_Fetch","_PyErr_Restore"]'
-
-# Where the LLVM binaries can be found.
+# Commands to use for various compilation steps.
 LLVM=/home/max/emscripten-workspace/llvm-build/Release/bin/
+CLOSURE_JAR=/home/max/emscripten-workspace/closure/build/compiler.jar
+PYTHON=python2
 
 # Which modules to build dynamically.
 # Maps each module name to the C files implementing it.
@@ -54,8 +52,6 @@ MODULES[_sha]="shamodule.c"
 MODULES[_md5]="md5module.c md5.c"
 MODULES[_sha256]="sha256module.c"
 MODULES[_sha512]="sha512module.c"
-MODULES[gdbm]="gdbmmodule.c"
-MODULES[termios]="termios.c"
 MODULES[resource]="resource.c"
 MODULES[nis]="nismodule.c"
 MODULES[zlib]="zlibmodule.c"
@@ -74,6 +70,12 @@ MODULES[pyexpat]="pyexpat.c expat/xmlparse.c expat/xmlrole.c expat/xmltok.c"
 MODULES[parser]="parsermodule.c"
 MODULES[_struct]="_struct.c"
 
+# Disabled because it's useless in our environment and will fail anyway.
+# MODULES[termios]="termios.c"
+
+# Requires external libraries which are too much work to compile.
+# MODULES[gdbm]="gdbmmodule.c"
+
 # This is disabled due to problems with libffi headers.
 # MODULES[_ctypes]="_ctypes/_ctypes.c _ctypes/callbacks.c _ctypes/callproc.c _ctypes/stgdict.c _ctypes/cfield.c"
 
@@ -91,8 +93,9 @@ MODULES[_struct]="_struct.c"
 #                                   Patches                                    #
 ################################################################################
 
-CORRECT_OVERFLOWS_LINES='["stringobject.c:1271","typeobject.c:2474","typeobject.c:2507","tupleobject.c:352","object.c:1069","dictobject.c:365"]'
-CORRECT_SIGNS_LINES='["compile.c:3433","compile.c:3542","compile.c:3670","compile.c:3692","compile.c:3934","listobject.c:51","peephole.c:429","typeobject.c:2474","typeobject.c:2507","dictobject.c:442","dictobject.c:364","dictobject.c:569"]'
+CORRECT_OVERFLOWS_LINES='["stringobject.c:1271","intobject.c:800","longobject.c:1367","dlmalloc.c:4647","peephole.c:624","367189","tupleobject.c:352","10456","binascii.c:1159","typeobject.c:2507","typeobject.c:2474","longobject.c:839","407211","_randommodule.c:154","unicodedata.c:965","peephole.c:556","longobject.c:113","unicodeobject.c:6552","418798","215089","intobject.c:767","10542","intobject.c:522","unicodedata.c:957","dictobject.c:443","469034","215967","longobject.c:2431","_randommodule.c:189","10618","_randommodule.c:181","object.c:1069","418680","dictobject.c:365","mystrtoul.c:220"]'
+
+CORRECT_SIGNS_LINES='["compile.c:3542","dlmalloc.c:4235","longobject.c:889","longobject.c:881","longobject.c:2490","unicodeobject.c:6552","typeobject.c:2474","longobject.c:155","unicodedata.c:965","longobject.c:2400","listobject.c:51","fastsearch.h:65","longobject.c:2395","ceval.c:988","setobject.c:259","peephole.c:581","peephole.c:429","binascii.c:722","_randommodule.c:140","stringobject.c:1271","dlmalloc.c:4205","stringobject.c:1174","compile.c:3792","compile.c:3796","compile.c:3794","_randommodule.c:154","peephole.c:624","stringobject.c:72","binascii.c:510","dlmalloc.c:4816","dlmalloc.c:4227","symtable.c:488","symtable.c:484","binascii.c:876","peephole.c:615","mystrtoul.c:224","compile.c:3461","binascii.c:316","binascii.c:1365","tupleobject.c:352","binascii.c:1044","setobject.c:118","compile.c:3934","peephole.c:602","compile.c:3670","longobject.c:836","dlmalloc.c:4246","dictobject.c:569","symtable.c:702","compile.c:3692","binascii.c:398","unicodedata.c:957","dictobject.c:442","dictobject.c:443","_randommodule.c:108","_randommodule.c:189","peephole.c:460","binascii.c:660","_randommodule.c:181","peephole.c:377","dictobject.c:365","dictobject.c:364","marshal.c:107","dlmalloc.c:4191","compile.c:3728","dlmalloc.c:4199","typeobject.c:2507","_randommodule.c:112","_randommodule.c:115","peephole.c:556","setobject.c:189","binascii.c:653","stringobject.c:108","compile.c:3451","compile.c:3730","marshal.c:114","binascii.c:424","compile.c:3433","binascii.c:833","longobject.c:2484","longobject.c:163","_randommodule.c:124","peephole.c:446","_randommodule.c:121","longobject.c:2431","compile.c:3440","ceval.c:2487"]'
 
 ################################################################################
 #                                  Functions                                   #
@@ -102,7 +105,7 @@ function build_module {
   echo "  Building $1..."
 
   # Compile.
-  FLAGS="-c -emit-llvm -fPIC -fno-strict-aliasing -I. -IInclude -I../cpython/Include -Wstrict-prototypes"
+  FLAGS="-c -emit-llvm -fPIC -fno-strict-aliasing -I. -IInclude -I../cpython/Include -I../cpython/Modules/expat -Wstrict-prototypes"
   FILES=""
   for ((i=2; i<=$#; i++)); do
     ../ccproxy.py $FLAGS ../cpython/Modules/${!i} -o `basename ${!i}`.o
@@ -113,7 +116,7 @@ function build_module {
   ../ccproxy.py $FILES -o $1.so.bc
 
   # Emscript.
-  python2 ../emscripten/emscripten.py $1.so.bc \
+  $PYTHON ../emscripten/emscripten.py $1.so.bc \
       -o $1.so.js \
       -s BUILD_AS_SHARED_LIB=1 \
       -s EXPORTED_FUNCTIONS="[\"_init$1\"]" \
@@ -139,7 +142,6 @@ set -e
 # Setup optimization flags for all future emscripting.
 if [ $OPTIMIZED -eq 1 ]; then
   # TODO: Figure out if reloop is possible and useful.
-  # TODO: Find the bug with USE_TYPED_ARRAYS=1 and =2.
   OPTIMIZATION_ARGS="-O -s OPTIMIZE=1 -s RELOOP=0 -s ASSERTIONS=0"
 else
   OPTIMIZATION_ARGS="   -s OPTIMIZE=0 -s RELOOP=0 -s ASSERTIONS=1"
@@ -187,13 +189,11 @@ cd ..
 
 # Compile the bytecode into JS using Emscripten.
 echo 'Emscripting...'
-python2 ../emscripten/emscripten.py python.bc \
+$PYTHON ../emscripten/emscripten.py python.bc \
     -m \
     -o python.js \
     -s INVOKE_RUN=0 \
     -s INCLUDE_FULL_LIBRARY=1 \
-    -s EXPORTED_GLOBALS=$EXPORTED_GLOBALS \
-    -s EXPORTED_FUNCTIONS=$EXPORTED_FUNCTIONS \
     -s CORRECT_SIGNS=2 -s CORRECT_SIGNS_LINES=$CORRECT_SIGNS_LINES \
     -s CORRECT_OVERFLOWS=2 -s CORRECT_OVERFLOWS_LINES=$CORRECT_OVERFLOWS_LINES \
     $OPTIMIZATION_ARGS
@@ -207,10 +207,20 @@ mkdir -p ../dist/lib/python2.7
 cp -r ../cpython/Lib/* ../dist/lib/python2.7
 rm -rf ../dist/lib/python2.7/{idlelib,lib-tk}
 rm -rf ../dist/lib/python2.7/plat-{aix3,aix4,atheos,beos5,darwin,freebsd4,freebsd5,freebsd6,freebsd7,freebsd8,generic,irix5,irix6,mac,netbsd1,next3,os2emx,riscos,sunos5,unixware7}
+# TODO: Remove tests in optimized build.
+# TODO: Remove non-working modules (sockets, etc).
 # TODO: Precompile pure modules instead.
 find ../dist -name '*.pyc' | xargs rm
 # Make sure everything is readable and folders are executable (browseable).
 chmod -R ugo+rX ../dist
+
+# Copy the configs.
+mkdir -p ../dist/lib/python2.7/config
+cp Makefile Modules/{Setup*,config.c} ../dist/lib/python2.7/config
+cp ../cpython/{Modules/{config.c.in,makesetup},install-sh} ../dist/lib/python2.7/config
+mkdir -p ../dist/include
+mkdir -p ../dist/include/python2.7
+cp pyconfig.h ../dist/include/python2.7/
 
 # Build dynamically loaded modules.
 echo 'Building dynamic modules...'
@@ -222,15 +232,18 @@ done
 echo 'Mapping virtual filesystem.'
 python2 ../map_filesystem.py ../dist >> ../dist/python.js
 
-# Add a tiny handcoded JavaScript wrapper.
+# Add a tiny handcoded JavaScript API.
 echo 'Adding entry point.'
 cat ../entry_point.js >> ../dist/python.js
 
-# TODO: Switch to ADVANCED_OPTIMIZATIONS.
-# NOTE: Disabled because it hits a Closure Compiler iteration limit.
-# if [ $OPTIMIZED -eq 1 ]; then
+# Run optimizations.
+if [ $OPTIMIZED -eq 1 ]; then
+  echo 'Running eliminator...'
+  ../emscripten/tools/eliminator/node_modules/coffee-script/bin/coffee ../emscripten/tools/eliminator/eliminator.coffee < ../dist/python.js > ../dist/python.elim.js 2>/dev/null
+  # TODO: Switch to a merge-compile-split scheme.
 #   echo 'Running closure compiler...'
-#   closure --compilation_level SIMPLE_OPTIMIZATIONS --js python.js --js_output_file python.opt.js
-# else
-#   cp ../dist/python.js ../dist/python.opt.js
-# fi
+#   "$JAVA_HOME/bin/java" -Xms1g -Xmx8g -jar $CLOSURE_JAR --compilation_level ADVANCED_OPTIMIZATIONS --js python.elim.js --js_output_file python.opt.js
+else
+  cp ../dist/python.js ../dist/python.elim.js
+  cp ../dist/python.js ../dist/python.opt.js
+fi
