@@ -6,7 +6,7 @@ this['Python'] = {
       return;
     }
     FS.init(input, output, error);
-    ENV.PYTHONHOME = '/:/';
+    ENV['PYTHONHOME'] = '/:/';
     run();
     setValue(_Py_NoSiteFlag, 1, 'i32');
     _Py_Initialize();
