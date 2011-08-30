@@ -77,6 +77,7 @@ this['Python'] = {
   'isFinished': function(command) {
     if (!this.isInitialized) throw new Error('Python runtime not initialized.');
     // Based on http://docs.python.org/faq/extending.html#how-do-i-tell-incomplete-input-from-invalid-input.
+    // WARNING: This is pretty broken at the moment.
     var commandPtr = this.allocateString(command);
 
     var compiled = _Py_CompileStringFlags(
@@ -96,15 +97,14 @@ this['Python'] = {
     var trb = allocate([0], 'void*', ALLOC_NORMAL);
     var obj = allocate([0], 'void*', ALLOC_NORMAL);
     var msg = allocate([0], 'i8*', ALLOC_NORMAL);
-    var msgPtr = allocate([msg], 'i8**', ALLOC_NORMAL);
     var idx = this.allocateString('sO');
 
     _PyErr_Fetch(exc, val, trb);
-    var varargs = allocate([msgPtr, 0, 0, 0, obj, 0, 0, 0],
+    var varargs = allocate([msg, 0, 0, 0, obj, 0, 0, 0],
                            ['i8**', 0, 0, 0, 'void*', 0, 0, 0],
                            ALLOC_NORMAL);
     _PyArg_ParseTuple(getValue(val, 'void*'), idx, varargs);
-    var msgStr = Pointer_stringify(getValue(getValue(msgPtr, 'i8**'), 'i8*'));
+    var msgStr = Pointer_stringify(getValue(msg, 'i8*'));
     var ret = (msgStr != 'unexpected EOF while parsing' &&
                msgStr != 'EOF while scanning triple-quoted string literal');
 
@@ -114,7 +114,6 @@ this['Python'] = {
     _free(varargs);
     _free(commandPtr);
     _free(idx);
-    _free(msgPtr);
     _free(msg);
     _free(obj);
     _free(trb);
