@@ -124,8 +124,11 @@ function build_module {
       -s CORRECT_OVERFLOWS=2 -s CORRECT_OVERFLOWS_LINES=$CORRECT_OVERFLOWS_LINES \
       $OPTIMIZATION_ARGS
 
+  # Run eliminator.
+  ../emscripten/tools/eliminator/node_modules/coffee-script/bin/coffee ../emscripten/tools/eliminator/eliminator.coffee < $1.so.js > $1.so.elim.js 2>/dev/null
+
   # Copy the new module to dist.
-  cp $1.so.js ../dist/lib/python2.7/$1.so.js
+  cp $1.so.elim.js ../dist/lib/python2.7/$1.so.js
 }
 
 ################################################################################
@@ -134,7 +137,6 @@ function build_module {
 
 # TODO: Make it possible to build only the main python.js, only modules or only
 #       a specific module.
-# TODO: Build the native version too, for comparison during debugging.
 
 # Exit on first error.
 set -e
@@ -142,7 +144,7 @@ set -e
 # Setup optimization flags for all future emscripting.
 if [ $OPTIMIZED -eq 1 ]; then
   # TODO: Figure out if reloop is possible and useful.
-  OPTIMIZATION_ARGS="-O -s OPTIMIZE=1 -s RELOOP=0 -s ASSERTIONS=0"
+  OPTIMIZATION_ARGS="-O -s OPTIMIZE=1 -s RELOOP=1 -s ASSERTIONS=0"
 else
   OPTIMIZATION_ARGS="   -s OPTIMIZE=0 -s RELOOP=0 -s ASSERTIONS=1"
 fi
@@ -153,7 +155,7 @@ mkdir -p dist
 
 # Remove old build.
 rm -rf obj/*
-rm -rf dist/{python.js,lib}
+rm -rf dist/{*.js,lib,include}
 
 # Start building in the obj folder.
 cd obj
@@ -205,11 +207,12 @@ cp python.js ../dist/python.js
 mkdir -p ../dist/lib
 mkdir -p ../dist/lib/python2.7
 cp -r ../cpython/Lib/* ../dist/lib/python2.7
-rm -rf ../dist/lib/python2.7/{idlelib,lib-tk}
+rm -rf ../dist/lib/python2.7/{idlelib,lib-tk,multiprocessing,curses,bsddb}
 rm -rf ../dist/lib/python2.7/plat-{aix3,aix4,atheos,beos5,darwin,freebsd4,freebsd5,freebsd6,freebsd7,freebsd8,generic,irix5,irix6,mac,netbsd1,next3,os2emx,riscos,sunos5,unixware7}
-# TODO: Remove tests in optimized build.
-# TODO: Remove non-working modules (sockets, etc).
-# TODO: Precompile pure modules instead.
+if [ $OPTIMIZED -eq 1 ]; then
+  rm -rf ../dist/lib/python2.7/test
+  rm -rf ../dist/lib/python2.7/*/test{,s}
+fi
 find ../dist -name '*.pyc' | xargs rm
 # Make sure everything is readable and folders are executable (browseable).
 chmod -R ugo+rX ../dist
@@ -240,9 +243,9 @@ cat ../entry_point.js >> ../dist/python.js
 if [ $OPTIMIZED -eq 1 ]; then
   echo 'Running eliminator...'
   ../emscripten/tools/eliminator/node_modules/coffee-script/bin/coffee ../emscripten/tools/eliminator/eliminator.coffee < ../dist/python.js > ../dist/python.elim.js 2>/dev/null
-  # TODO: Switch to a merge-compile-split scheme.
-#   echo 'Running closure compiler...'
-#   "$JAVA_HOME/bin/java" -Xms1g -Xmx8g -jar $CLOSURE_JAR --compilation_level ADVANCED_OPTIMIZATIONS --js python.elim.js --js_output_file python.opt.js
+
+  echo 'Minifying...'
+  ./minify.py
 else
   cp ../dist/python.js ../dist/python.elim.js
   cp ../dist/python.js ../dist/python.opt.js
