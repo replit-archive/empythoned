@@ -1,0 +1,417 @@
+PASS: 147
+FAIL: 155
+---------------------------------- SUCCEEDED  ----------------------------------
+test_grammar
+test_opcodes
+test_dict
+test_unittest (Subprocess bits fail, but that's expected)
+test___future__
+test_abc
+test_abstract_numbers
+test_argparse
+test_ast
+test_augassign
+test_base64
+test_bastion
+test_atexit
+test_binop
+test_bisect
+test_buffer
+test_call
+test_cfgparser
+test_cgi
+test_charmapcodec
+test_class
+test_cmd
+test_code
+test_codeop
+test_coding
+test_colorsys
+test_compare
+test_complex_args
+test_contains
+test_contextlib
+test_cookie
+test_cookielib
+test_copy_reg
+test_cprofile
+test_crypt
+test_decorators
+test_defaultdict
+test_descrtut
+test_dictcomps
+test_dictviews
+test_dis
+test_enumerate
+test_eof
+test_errno
+test_exception_variations
+test_extcall
+test_fileinput
+test_fnmatch
+test_fork1
+test_fpformat
+test_frozen
+test_funcattrs
+test_functools
+test_future
+test_future3
+test_future4
+test_future5
+test_future_builtins
+test_gc
+test_generators
+test_genexps
+test_getargs
+test_getopt
+test_global
+test_htmllib
+test_htmlparser
+test_imp
+test_importhooks
+test_importlib
+test_index
+test_heapq
+test_inspect
+test_int_literal
+test_isinstance
+test_iter
+test_iterlen
+test_linecache
+test_long_future
+test_memoryio
+test_memoryview
+test_mimetypes
+test_module
+test_modulefinder
+test_mutex
+test_netrc
+test_new
+test_normalization
+test_operator
+test_optparse
+test_parser
+test_pdb
+test_pep247
+test_pep292
+test_pep352
+test_pkg
+test_pkgimport
+test_pow
+test_print
+test_profile
+test_property
+test_pstats
+test_mutants
+test_pyclbr
+test_repr
+test_rfc822
+test_richcmp
+test_rlcompleter
+test_robotparser
+test_sax
+test_scope
+test_setcomps
+test_sets
+test_sgmllib
+test_shlex
+test_softspace
+test_sort
+test_strop
+test_strtod
+test_stringprep
+test_structseq
+test_symtable
+test_syntax
+test_sys_setprofile
+test_tokenize (expected double precision loss)
+test_textwrap
+test_transformer
+test_typechecks
+test_ucn
+test_unary
+test_undocumented_details
+test_unpack
+test_urllib
+test_urlparse
+test_userdict
+test_uu
+test_wave
+test_weakref
+test_weakset
+test_with
+test_xdrlib
+test_xmllib
+test_doctest2
+test_MimeWriter
+test_StringIO
+test_pep263
+test_tarfile
+test_hash
+------------------------------- FAILED EXPECTEDLY ------------------------------
+test_asynchat
+test_asyncore
+test_anydbm
+test_commands
+test_dbm
+test_docxmlrpc
+test_gdbm
+test_ioctl
+test_multiprocessing
+test_file2k
+test_imaplib
+test_pipes
+test_pty
+test_queue
+test_readline
+test_shelve
+test_sqlite
+test_tcl
+test_thread
+test_threaded_import
+test_threadedtempfile
+test_threading
+test_threading_local
+test_threadsignals
+test_ttk_textonly
+test_wait3
+test_wait4
+test_whichdb
+  Not supported
+test_bigaddrspace
+test_bigmem
+test_bufio
+test_bytes
+test_largefile
+  Out of memory
+test_ascii_formatd
+test_ctypes
+  Missing _ctypes
+test_pep277
+test_unicode_file
+  Windows-only
+------------------------------------ FAILED ------------------------------------
+test_builtin
+  dlmalloc crash
+test_exceptions
+test_coercion
+test_compile
+test_compiler
+test_copy
+test_descr
+test_list
+test_marshal
+test_userlist
+  Too much recursion
+test_types
+test___all__
+test_decimal
+test_calendar
+test_email_renamed
+test_email
+test_float
+test_int
+test_itertools
+test_multibytecodec
+test_set (probably sign/overflow causing an infinite loop in a hashing function)
+test_string
+test_tuple
+test_unicode
+  Hang
+test__locale
+  Hang / not implemented
+test_aifc
+test_audioop
+test_codecencodings_jp
+test_codecencodings_kr
+test_codecencodings_tw
+test_compileall
+  Binary corruption
+test_array
+test_capi (test_long_and_overflow)
+  Overflow/signing issues
+test_binascii
+test_binhex
+  Various. Most likely overflow/signing
+test_bool
+test_codeccallbacks
+test_email_codecs
+test_pyexpat
+test_re
+test_xml_etree
+test_xml_etree_c
+test_doctest
+  Encoding or string processing failure
+    assert(unicode("xyz", 'ascii').endswith(unicode("z", 'ascii')) == True)
+test_cmath
+test_fractions
+test_math
+  OverflowError: float too large to pack with d format
+test_codecencodings_cn
+test_codecencodings_hk
+test_codecs
+test_pickle
+test_pickletools
+test_cpickle
+test_json
+  crash: FUNCTION_TABLE[foo] is not a function
+test_collections
+test_deque
+test_slice
+  Pickle / binary corruption
+test_complex
+test_genericpath
+test_macpath
+test_gettext
+test_ntpath
+  Formatting; weirdness
+test_csv
+  ValueError: cannot fit 'long' into an offset-sized integer
+test_datetime
+  JS assertion failure (some kind of limit); no stack trace
+test_dircache
+test_dummy_thread
+test_dummy_threading
+test_random
+test_time
+test_traceback
+  _select is not defined
+test_bz2
+test_cmd_line
+test_cmd_line_script
+test_epoll
+test_fileio
+test_ftplib
+test_httpservers
+test_import
+test_logging
+test_os
+test_platform
+test_poll
+test_poplib
+test_pydoc
+test_quopri
+test_runpy
+test_select
+test_signal
+test_site
+test_smtplib
+test_socket
+test_ssl
+test_sundry
+test_sys
+test_sysconfig
+test_telnetlib
+test_unicodedata
+test_urllib2_localnet
+test_wsgiref
+test_xmlrpc
+test_xpickle
+test_zipimport_support
+test_SimpleHTTPServer
+  Requires the select module
+test_dumbdbm
+  File permission issues
+test_fcntl
+  IOError: [Errno 22] Invalid argument
+test_file
+  COtherFileTests.testTruncateOnWindows -> OverflowError: long too big to convert
+  PyOtherFileTests.testTruncateOnWindows -> File size after ftruncate wrong 5
+  CAutoFileTests.testErrors -> AssertionError: "not f.isatty()" is not true
+  PyAutoFileTests.testErrors -> AssertionError: "not f.isatty()" is not true
+test_filecmp
+  Mismatched files compare as equal
+test_difflib
+  Behaviour errors - might be genuine module error
+test_format
+test_getargs2
+test_locale
+  "print 123456789012345678901234567890L" produces weird unicode characters
+    Probably overflow
+test_glob
+  OSError: [Errno 2] No such file or directory: '@test_0_tmp_dir/sym1'
+  OSError: [Errno 17] File exists
+test_grp
+  _setgrent is not defined (needs <grp.h>)
+test_gzip
+test_pkgutil
+test_zipimport
+  _crc32 not defined
+test_hashlib
+test_hmac
+test_md5
+test_sha
+  Just wrong - probably overflow
+test_hotshot
+  _getrusage is not defined
+test_httplib
+  _socket is not defined
+test_longexp
+  SystemError: unknown opcode
+test_mailbox
+test_mhlib
+test_shutil
+  _utimes is not a function
+test_mimetools
+test_urllib2
+test_uuid
+  _getaddrinfo is not defined
+test_minidom
+  AssertionError: testEncodings - encoding EURO SIGN
+test_mmap
+  ___01mmap64_ is not defined
+test_io
+  Overflows
+  Binary corruption
+  uses unsupported pipe()
+test_nis
+  _yp_get_default_domain is not defined
+test_old_mailbox
+  OSError: [Errno 31] Too many links
+  OverflowError: long too big to convert
+test_openpty
+  _openpty is not a function
+test_peepholer
+  test_binary_subscr_on_unicode fails; might be expected due to no x87 optimizations
+test_long
+  _llvm_log10_f64 is not defined
+test_plistlib
+  ExpatError: not well-formed (invalid token): line 14, column 11
+test_posix
+test_posixpath
+  _getpwnam is not a function
+test_pprint
+  Incorrect values inside frozensets
+test_pwd
+  _getpwent is not a function
+test_resource
+  ___01getrlimit64_ is not defined
+test_str
+test_userstring
+  _deflateInit_ is not defined
+test_zlib
+  _deflateInit2_ is not defined
+test_strftime
+  strftime not implemented
+test_strptime
+  ValueError: unknown locale:
+test_struct
+  test_705836: SystemError: frexp() result out of range
+  test_integers: AssertionError: -2 != 254
+  test_new_features: AssertionError: 0 is not true
+test_structmembers
+test_xrange
+  Overflows/Signs
+test_sys_settrace
+  ValueError: line 1008 comes after the current code block
+  AssertionError: events did not match expectation: ...
+test_tempfile
+  Uses fork
+  test_mode: AssertionError: 0777 != 0700
+  test_file_mode: AssertionError: 0777 != 0600
+test_trace
+  NameError: name 'threading' is not defined
+test_univnewlines
+  ValueError: cannot fit 'long' into an offset-sized integer
+test_univnewlines2k
+  OverflowError: long too big to convert

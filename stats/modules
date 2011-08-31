@@ -1,0 +1,234 @@
+--------------------------------------------------------------------------------
+abc Abstract base classes according to PEP 3119.
+anydbm  Generic interface to DBM-style database modules.
+array Space efficient arrays of uniformly typed numeric values.
+ast Abstract Syntax Tree classes and manipulation.
+atexit  Register and execute cleanup functions.
+audioop Manipulate raw audio data.
+binascii  Tools for converting between binary and various ASCII-encoded binary representations.
+bz2 Interface to compression and decompression routines compatible with bzip2.
+chunk Module to read IFF chunks.
+cmath Mathematical functions for complex numbers.
+code  Facilities to implement read-eval-print loops.
+codecs  Encode and decode data and streams.
+codeop  Compile (possibly incomplete) Python code.
+colorsys  Conversion functions between RGB and other color systems.
+copy  Shallow and deep copy operations.
+copy_reg  Register pickle support functions.
+cProfile  Python profiler
+crypt (Unix)  The crypt() function used to check Unix passwords.
+_csv
+datetime  Basic date and time types.
+itertools Functions creating iterators for efficient looping.
+dis Disassembler for Python bytecode.
+posix (Unix)  The most common POSIX system calls (normally used via module os).
+os  Miscellaneous operating system interfaces.
+dumbdbm Portable implementation of the simple DBM interface.
+dummy_thread  Drop-in replacement for the thread module.
+errno Standard errno system symbols.
+exceptions  Standard exception classes.
+fcntl (Unix)  The fcntl() and ioctl() system calls.
+filecmp Compare files efficiently.
+fileinput Loop over standard input or a list of files.
+formatter Generic output formatter and device interface.
+gdbm (Unix) GNU's reinterpretation of dbm.
+getopt  Portable parser for command line options; support both short and long option names.
+getpass Portable reading of passwords and retrieval of the userid.
+grp (Unix)  The group database (getgrnam() and friends).
+hmac  Keyed-Hashing for Message Authentication (HMAC) implementation for Python.
+htmlentitydefs  Definitions of HTML general entities.
+imghdr  Determine the type of image contained in a file or byte stream.
+imp Access the implementation of the import statement.
+keyword Test whether a string is a keyword in Python.
+linecache This module provides random access to individual lines from text files.
+mailcap Mailcap file handling.
+marshal Convert Python objects to streams of bytes and back (with different constraints).
+nis (Unix)  Interface to Sun's NIS (Yellow Pages) library.
+operator  Functions corresponding to the standard operators.
+functools Higher order functions and operations on callable objects.
+contextlib  Utilities for with-statement contexts.
+pwd (Unix)  The password database (getpwnam() and friends).
+py_compile  Generate byte-code files from Python source files.
+stat  Utilities for interpreting the results of os.stat(), os.lstat() and os.fstat().
+quopri  Encode and decode files using the MIME quoted-printable encoding.
+resource (Unix) An interface to provide resource usage information on the current process.
+rlcompleter Python identifier completion, suitable for the GNU readline library.
+signal  Set handlers for asynchronous events.
+sndhdr  Determine type of a sound file.
+spwd (Unix) The shadow password database (getspnam() and friends).
+StringIO  Read and write strings as if they were files.
+sunau Provide an interface to the Sun AU sound format.
+symbol  Constants representing internal nodes of the parse tree.
+symtable  Interface to the compiler's internal symbol tables.
+sys Access system-specific parameters and functions.
+syslog (Unix) An interface to the Unix syslog library routines.
+token Constants representing terminal nodes of the parse tree.
+traceback Print or retrieve a stack traceback.
+types Names for built-in types.
+unicodedata Access the Unicode Database.
+UserDict  Class wrapper for dictionary objects.
+uu  Encode and decode files in uuencode format.
+uuid  UUID objects (universally unique identifiers) according to RFC 4122
+warnings  Issue warning messages and control their disposition.
+weakref Support for weak references and weak dictionaries.
+zlib  Low-level interface to compression and decompression routines compatible with gzip.
+time  Time access and conversions.
+gc  Interface to the cycle-detecting garbage collector.
+pstats  Statistics object for use with the profiler.
+re  Regular expression operations.
+bdb Debugger framework.
+string  Common string operations.
+cmd Build line-oriented command interpreters.
+fnmatch Unix shell style filename pattern matching.
+glob  Unix shell style pathname pattern expansion.
+HTMLParser  A simple parser that can handle HTML and XHTML.
+platform  Retrieves as much platform identifying data as possible.
+textwrap  Text wrapping and filling
+math  Mathematical functions (sin() etc.).
+encodings
+email Package supporting the parsing, manipulating, and generating email messages, including MIME documents.
+importlib Convenience wrappers for __import__
+hotshot High performance logging profiler, mostly written in C.
+locale  Internationalization services.
+sysconfig Python's configuration information
+pkgutil Utilities for the import system.
+numbers Numeric abstract base classes (Complex, Real, Integral, etc.).
+bisect  Array bisection algorithms for binary searching.
+cPickle Faster version of pickle, but not subclassable.
+cStringIO Faster version of StringIO, but not subclassable.
+difflib Helpers for computing differences between objects.
+future_builtins
+hashlib Secure hash and message digest algorithms.
+imaplib IMAP4 protocol client (requires sockets).
+aifc  Read and write audio files in AIFF or AIFC format.
+binhex  Encode and decode files in binhex4 format.
+compileall  Tools for byte-compiling all Python source files in a directory tree.
+gzip  Interfaces for gzip compression and decompression using file objects.
+argparse  Command-line option and argument-parsing library.
+ConfigParser  Configuration file parser.
+decimal Implementation of the General Decimal Arithmetic Specification.
+collections High-performance datatypes.
+modulefinder  Find modules used by a script.
+heapq Heap queue algorithm (a.k.a. priority queue).
+netrc Loading of .netrc files.
+pickle  Convert Python objects to streams of bytes and back.
+pickletools Contains extensive comments about the pickle protocols and pickle-machine opcodes, as well as some useful functions.
+plistlib  Generate and parse Mac OS X plist files.
+pprint  Data pretty printer.
+random  Generate pseudo-random numbers with various common distributions.
+repr  Alternate repr() implementation with size limits.
+robotparser Loads a robots.txt file and answers questions about fetchability of other URLs.
+sched General purpose event scheduler.
+shelve  Python object persistence.
+shlex Simple lexical analysis for Unix shell-like languages.
+struct  Interpret strings as packed binary data.
+tempfile  Generate temporary files and directories.
+UserList  Class wrapper for list objects.
+UserString  Class wrapper for string objects.
+webbrowser  Easy-to-use controller for Web browsers.
+whichdb Guess which DBM-style module created a given database.
+xdrlib  Encoders and decoders for the External Data Representation (XDR).
+zipfile Read and write ZIP-format archive files.
+dummy_threading Drop-in replacement for the threading module.
+timeit  Measure the execution time of small code snippets.
+Cookie  Support for HTTP state management (cookies).
+cookielib Classes for automatic handling of HTTP cookies.
+csv Write and read tabular data to and from delimited files.
+pdb The Python debugger for interactive interpreters.
+shutil  High-level file operations, including copying.
+tarfile Read and write tar-format archive files.
+urllib2 Next generation URL opening library.
+fractions Rational numbers.
+pipes (Unix)  A Python interface to Unix shell pipelines.
+distutils Support for building and installing Python modules into an existing Python installation.
+json  Encode and decode the JSON format.
+gettext Multilingual internationalization services.
+lib2to3.__main__ the 2to3 library
+logging Flexible event logging system for applications.
+test  Regression tests package containing the testing suite for Python.
+unittest  Unit testing framework for Python.
+profile Python source profiler.
+base64  RFC 3548: Base16, Base32, Base64 Data Encodings
+wave  Provide an interface to the WAV sound format.
+urlparse  Parse URLs into or assemble them from components.
+Queue A synchronized queue class.
+urllib  Open an arbitrary network resource by URL (requires sockets).
+SimpleXMLRPCServer  Basic XML-RPC server implementation.
+poplib  POP3 protocol client (requires sockets).
+ftplib  FTP protocol client (requires sockets).
+httplib HTTP and HTTPS protocol client (requires sockets).
+mmap  Interface to memory-mapped files for Unix and Windows.
+runpy Locate and run Python modules without importing them first.
+smtplib SMTP protocol client (requires sockets).
+socket  Low-level networking interface.
+SocketServer  A framework for network servers.
+telnetlib Telnet client class.
+zipimport support for importing Python modules from ZIP archives.
+smtpd A SMTP server implementation in Python.
+BaseHTTPServer  Basic HTTP server (base class for SimpleHTTPServer and CGIHTTPServer).
+SimpleHTTPServer  This module provides a basic request handler for HTTP servers.
+cgi Helpers for running Python scripts via the Common Gateway Interface.
+mimetypes Mapping of filename extensions to MIME types.
+xmlrpclib XML-RPC client access.
+CGIHTTPServer This module provides a request handler for HTTP servers which can run CGI scripts.
+nntplib NNTP protocol client (requires sockets).
+asynchat  Support for asynchronous command/response protocols.
+cgitb Configurable traceback handler for CGI scripts.
+DocXMLRPCServer Self-documenting XML-RPC server implementation.
+inspect Extract information and source code from live objects.
+pyclbr  Supports information extraction for a Python class browser.
+tabnanny  Tool for detecting white space related problems in Python source files in a directory tree.
+tokenize  Lexical scanner for Python source code.
+trace Trace or track Python statement execution.
+site  A standard way to reference site-specific modules.
+pydoc Documentation generator and online help system.
+doctest Test pieces of code within docstrings.
+calendar  Functions for working with calendars, including some emulation of the Unix cal program.
+mailbox Manipulate mailboxes in various formats
+io  Core tools for working with streams.
+ctypes  A foreign function library for Python.
+parser  Access parse trees for Python source code.
+wsgiref.handlers WSGI Utilities and Reference Implementation.
+xml.parsers.expat
+ssl TLS/SSL wrapper for socket objects
+--------------------------------------------------------------------------------
+Irrelevant without appropriate libraries
+  bsddb Interface to Berkeley DB database library
+  dbhash  DBM-style interface to the BSD database library.
+  dbm (Unix)  The standard "database" interface, based on ndbm.
+  sqlite3 A DB-API 2.0 implementation using SQLite 3.x.
+  ossaudiodev (Linux, FreeBSD)  Access to OSS-compatible audio devices.
+Lack of tcl support
+  ScrolledText (Tk) Text widget with a vertical scroll bar.
+  Tix Tk Extension Widgets for Tkinter
+  Tkinter Interface to Tcl/Tk for graphical user interfaces
+  ttk Tk themed widget set
+  turtle  Turtle graphics for Tk
+Lack of signal/terminal control support
+  fpectl (Unix) Provide control for floating point exception handling.
+  readline (Unix) GNU readline support for Python.
+  pty (Linux) Pseudo-Terminal Handling for Linux.
+  termios (Unix)  POSIX style tty control.
+  tty (Unix)  Utility functions that perform common terminal control operations.
+  asyncore  A base class for developing asynchronous socket handling services.
+  curses (Unix) An interface to the curses library, providing portable terminal handling.
+Lack of threading/process support
+  multiprocessing Process-based "threading" interface.
+  select  Wait for I/O completion on multiple streams.
+  thread  Create multiple threads of control within one interpreter.
+  threading Higher-level threading interface.
+  subprocess  Subprocess management.
+Lack of sockets
+  imaplib
+  telnetlib
+  smtpd
+  asynchat
+  SocketServer
+  BaseHTTPServer
+  SimpleHTTPServer
+  SimpleXMLRPCServer
+  CGIHTTPServer
+  DocXMLRPCServer
+  webbrowser
+  ssl
+--------------------------------------------------------------------------------
