@@ -179,7 +179,6 @@ DYNLOADFILE=	dynload_shlib.o
 MACHDEP_OBJS=	
 LIBOBJDIR=	Python/
 LIBOBJS=	
-UNICODE_OBJS=   Objects/unicodeobject.o Objects/unicodectype.o
 
 PYTHON=		python$(EXE)
 BUILDPYTHON=	python$(BUILDEXE)
@@ -315,7 +314,6 @@ PYTHON_OBJS=	\
 		Python/pystrcmp.o \
 		Python/pystrtod.o \
 		Python/dtoa.o \
-		Python/formatter_unicode.o \
 		Python/formatter_string.o \
 		Python/$(DYNLOADFILE) \
 		$(LIBOBJS) \
@@ -362,8 +360,7 @@ OBJECT_OBJS=	\
 		Objects/structseq.o \
 		Objects/tupleobject.o \
 		Objects/typeobject.o \
-		Objects/weakrefobject.o \
-		$(UNICODE_OBJS)
+		Objects/weakrefobject.o
 
 
 ##########################################################################
@@ -588,8 +585,6 @@ Python/getplatform.o: $(srcdir)/Python/getplatform.c
 Python/importdl.o: $(srcdir)/Python/importdl.c
 		$(CC) -c $(PY_CFLAGS) -I$(DLINCLDIR) -o $@ $(srcdir)/Python/importdl.c
 
-Objects/unicodectype.o:	$(srcdir)/Objects/unicodectype.c \
-				$(srcdir)/Objects/unicodetype_db.h
 
 STRINGLIB_HEADERS= \
 		$(srcdir)/Include/bytes_methods.h \
@@ -603,11 +598,8 @@ STRINGLIB_HEADERS= \
 		$(srcdir)/Objects/stringlib/stringdefs.h \
 		$(srcdir)/Objects/stringlib/string_format.h \
 		$(srcdir)/Objects/stringlib/transmogrify.h \
-		$(srcdir)/Objects/stringlib/unicodedefs.h \
 		$(srcdir)/Objects/stringlib/localeutil.h
 
-Objects/unicodeobject.o: $(srcdir)/Objects/unicodeobject.c \
-				$(STRINGLIB_HEADERS)
 
 Objects/bytearrayobject.o: $(srcdir)/Objects/bytearrayobject.c \
 				$(STRINGLIB_HEADERS)
@@ -615,8 +607,6 @@ Objects/bytearrayobject.o: $(srcdir)/Objects/bytearrayobject.c \
 Objects/stringobject.o: $(srcdir)/Objects/stringobject.c \
 				$(STRINGLIB_HEADERS)
 
-Python/formatter_unicode.o: $(srcdir)/Python/formatter_unicode.c \
-				$(STRINGLIB_HEADERS)
 
 Python/formatter_string.o: $(srcdir)/Python/formatter_string.c \
 				$(STRINGLIB_HEADERS)
@@ -703,7 +693,6 @@ PYTHON_HEADERS= \
 		Include/traceback.h \
 		Include/tupleobject.h \
 		Include/ucnhash.h \
-		Include/unicodeobject.h \
 		Include/warnings.h \
 		Include/weakrefobject.h \
 		pyconfig.h \
