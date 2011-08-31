@@ -9,6 +9,7 @@ this['Python'] = {
     ENV['PYTHONHOME'] = '/:/';
     run();
     setValue(_Py_NoSiteFlag, 1, 'i32');
+    setValue(_Py_DontWriteBytecodeFlag, 1, 'i32');
     _Py_Initialize();
 
     var cmd = this.allocateString('python');
