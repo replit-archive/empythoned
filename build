@@ -178,6 +178,10 @@ echo '#undef HAVE_SIGRELSE' >> pyconfig.h
 # Put the closing endif back.
 echo '#endif /*Py_PYCONFIG_H*/' >> pyconfig.h
 
+# Override makefile with a tweaked unicodeless version.
+echo 'Overriding Makefile...'
+cp ../Makefile-override Makefile
+
 # Compile CPython.
 echo 'Compiling...'
 make
