@@ -244,7 +244,8 @@ if [ $OPTIMIZED -eq 1 ]; then
   ../emscripten/tools/eliminator/node_modules/coffee-script/bin/coffee ../emscripten/tools/eliminator/eliminator.coffee < ../dist/python.js > ../dist/python.elim.js 2>/dev/null
 
   echo 'Minifying...'
-  ../minify.py
+  cd ..
+  ./minify.py
 else
   cp ../dist/python.js ../dist/python.elim.js
   cp ../dist/python.js ../dist/python.opt.js
