@@ -2555,10 +2555,12 @@ date_format(PyDateTime_Date *self, PyObject *args)
         /* If format is zero length, return str(self) */
         if (PyString_GET_SIZE(format) == 0)
             return PyObject_Str((PyObject *)self);
+#ifdef Py_USING_UNICODE
     } else if (PyUnicode_Check(format)) {
         /* If format is zero length, return str(self) */
         if (PyUnicode_GET_SIZE(format) == 0)
             return PyObject_Unicode((PyObject *)self);
+#endif
     } else {
         PyErr_Format(PyExc_ValueError,
                      "__format__ expects str or unicode, not %.200s",
