@@ -28,12 +28,8 @@ MODULES[_bisect]="_bisectmodule.c"
 MODULES[_heapq]="_heapqmodule.c"
 MODULES[operator]="operator.c"
 MODULES[_functools]="_functoolsmodule.c"
-MODULES[_io]="_io/bufferedio.c _io/bytesio.c _io/fileio.c _io/iobase.c _io/_iomodule.c _io/stringio.c _io/textio.c"
-MODULES[_json]="_json.c"
-MODULES[_testcapi]="_testcapimodule.c"
 MODULES[_hotshot]="_hotshot.c"
 MODULES[_lsprof]="_lsprof.c rotatingtree.c"
-MODULES[unicodedata]="unicodedata.c"
 MODULES[_locale]="_localemodule.c"
 MODULES[fcntl]="fcntlmodule.c"
 MODULES[grp]="grpmodule.c"
@@ -57,17 +53,23 @@ MODULES[zlib]="zlibmodule.c"
 MODULES[binascii]="binascii.c"
 MODULES[bz2]="bz2module.c"
 MODULES[_elementtree]="_elementtree.c"
-MODULES[_multibytecodec]="cjkcodecs/multibytecodec.c"
-MODULES[_codecs_kr]="cjkcodecs/_codecs_kr.c"
-MODULES[_codecs_jp]="cjkcodecs/_codecs_jp.c"
-MODULES[_codecs_cn]="cjkcodecs/_codecs_cn.c"
-MODULES[_codecs_tw]="cjkcodecs/_codecs_tw.c"
-MODULES[_codecs_hk]="cjkcodecs/_codecs_hk.c"
-MODULES[_codecs_iso2022]="cjkcodecs/_codecs_iso2022.c"
 MODULES[dl]="dlmodule.c"
 MODULES[pyexpat]="pyexpat.c expat/xmlparse.c expat/xmlrole.c expat/xmltok.c"
 MODULES[parser]="parsermodule.c"
 MODULES[_struct]="_struct.c"
+
+# Require unicode.
+# MODULES[_io]="_io/bufferedio.c _io/bytesio.c _io/fileio.c _io/iobase.c _io/_iomodule.c _io/stringio.c _io/textio.c"
+# MODULES[_multibytecodec]="cjkcodecs/multibytecodec.c"
+# MODULES[_codecs_kr]="cjkcodecs/_codecs_kr.c"
+# MODULES[_codecs_jp]="cjkcodecs/_codecs_jp.c"
+# MODULES[_codecs_cn]="cjkcodecs/_codecs_cn.c"
+# MODULES[_codecs_tw]="cjkcodecs/_codecs_tw.c"
+# MODULES[_codecs_hk]="cjkcodecs/_codecs_hk.c"
+# MODULES[_codecs_iso2022]="cjkcodecs/_codecs_iso2022.c"
+# MODULES[unicodedata]="unicodedata.c"
+# MODULES[_json]="_json.c"
+# MODULES[_testcapi]="_testcapimodule.c"
 
 # Disabled because it's useless in our environment and will fail anyway.
 # MODULES[termios]="termios.c"
@@ -163,6 +165,8 @@ cd obj
 CC=../ccproxy.py ../cpython/configure --without-threads --without-pymalloc
 
 # Adjust configuration.
+# Disable Unicode.
+sed -i 's~#define Py_USING_UNICODE 1~/* #define Py_USING_UNICODE 1 */~' pyconfig.h
 # Remove the closing endif so we can insert new options.
 sed -i 's~#endif /\*Py_PYCONFIG_H\*/~~' pyconfig.h
 # Emscripten doesn't support CPU-specific assembly code.
