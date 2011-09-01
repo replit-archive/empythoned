@@ -20,6 +20,7 @@
             if (result !== null && result !== undefined) {
               output.value += '\n--------------------------\nResult: ' + result;
             }
+            output.scrollTop = output.scrollHeight;
           } else {
             output.value = 'Command not finished.';
           }
