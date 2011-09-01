@@ -1,5 +1,5 @@
-PASS: 147
-FAIL: 155
+PASS: 148
+FAIL: 154
 ---------------------------------- SUCCEEDED  ----------------------------------
 test_grammar
 test_opcodes
@@ -148,6 +148,7 @@ test_StringIO
 test_pep263
 test_tarfile
 test_hash
+test_binhex
 ------------------------------- FAILED EXPECTEDLY ------------------------------
 test_asynchat
 test_asyncore
@@ -231,7 +232,6 @@ test_array
 test_capi (test_long_and_overflow)
   Overflow/signing issues
 test_binascii
-test_binhex
   Various. Most likely overflow/signing
 test_bool
 test_codeccallbacks
