@@ -1,24 +1,929 @@
-(function(g){function f(b,d,e,f){var g;for(g=-1;;)switch(g){case -1:var h,i,j,l,m,n,o,q;h=b;i=d;j=e;l=f;g=j<0?1:2;break;case 1:T(w[wt],c);m=-1;g=16;break;case 2:g=l==-1?3:14;break;case 3:l=$Z(h);g=l<0?4:14;break;case 4:m=-1;g=16;break;case 5:o=(l+t)/2|0;n=zY(h,o);g=n==0?6:7;break;case 6:m=-1;g=16;break;case 7:q=p_(i,n,0);w[n]-=1;g=w[n]==0?8:9;break;case 8:P[w[w[n+4]+24]](n);g=9;break;case 9:g=q<0?10:11;break;case 10:m=-1;g=16;break;case 11:var r=
-o;g=q!=0?12:13;break;case 12:l=r;g=14;break;case 13:j=r+1;g=14;break;case 14:var t=j;g=j<l?5:15;break;case 15:m=t;g=16;break;case 16:return b=m;default:p(0,"bad label: "+g)}}function d(b,d,e,f){var g;for(g=-1;;)switch(g){case -1:var h,i,j,l,m,n,o,q;h=b;i=d;j=e;l=f;g=j<0?1:2;break;case 1:T(w[wt],c);m=-1;g=16;break;case 2:g=l==-1?3:14;break;case 3:l=$Z(h);g=l<0?4:14;break;case 4:m=-1;g=16;break;case 5:o=(l+t)/2|0;n=zY(h,o);g=n==0?6:7;break;case 6:m=-1;g=16;break;case 7:q=p_(n,i,0);w[n]-=1;g=w[n]==0?
-8:9;break;case 8:P[w[w[n+4]+24]](n);g=9;break;case 9:g=q<0?10:11;break;case 10:m=-1;g=16;break;case 11:var r=o;g=q!=0?12:13;break;case 12:j=r+1;g=14;break;case 13:l=r;g=14;break;case 14:var t=j;g=j<l?5:15;break;case 15:m=t;g=16;break;case 16:return b=m;default:p(0,"bad label: "+g)}}function b(){c=O([108,111,32,109,117,115,116,32,98,101,32,110,111,110,45,110,101,103,97,116,105,118,101,0],"i8",x);h=O([79,79,124,110,110,58,98,105,115,101,99,116,95,114,105,103,104,116,0],"i8",x);i=O(20,"i8*",x);j=O([97,
-0],"i8",x);l=O([120,0],"i8",x);m=O([108,111,0],"i8",x);n=O([104,105,0],"i8",x);q=O([98,105,115,101,99,116,95,114,105,103,104,116,40,97,44,32,120,91,44,32,108,111,91,44,32,104,105,93,93,41,32,45,62,32,105,110,100,101,120,10,10,82,101,116,117,114,110,32,116,104,101,32,105,110,100,101,120,32,119,104,101,114,101,32,116,111,32,105,110,115,101,114,116,32,105,116,101,109,32,120,32,105,110,32,108,105,115,116,32,97,44,32,97,115,115,117,109,105,110,103,32,97,32,105,115,32,115,111,114,116,101,100,46,10,10,84,
-104,101,32,114,101,116,117,114,110,32,118,97,108,117,101,32,105,32,105,115,32,115,117,99,104,32,116,104,97,116,32,97,108,108,32,101,32,105,110,32,97,91,58,105,93,32,104,97,118,101,32,101,32,60,61,32,120,44,32,97,110,100,32,97,108,108,32,101,32,105,110,10,97,91,105,58,93,32,104,97,118,101,32,101,32,62,32,120,46,32,32,83,111,32,105,102,32,120,32,97,108,114,101,97,100,121,32,97,112,112,101,97,114,115,32,105,110,32,116,104,101,32,108,105,115,116,44,32,105,32,112,111,105,110,116,115,32,106,117,115,116,
-10,98,101,121,111,110,100,32,116,104,101,32,114,105,103,104,116,109,111,115,116,32,120,32,97,108,114,101,97,100,121,32,116,104,101,114,101,10,10,79,112,116,105,111,110,97,108,32,97,114,103,115,32,108,111,32,40,100,101,102,97,117,108,116,32,48,41,32,97,110,100,32,104,105,32,40,100,101,102,97,117,108,116,32,108,101,110,40,97,41,41,32,98,111,117,110,100,32,116,104,101,10,115,108,105,99,101,32,111,102,32,97,32,116,111,32,98,101,32,115,101,97,114,99,104,101,100,46,10,0],"i8",x);o=O([79,79,124,110,110,
-58,105,110,115,111,114,116,95,114,105,103,104,116,0],"i8",x);r=O(20,"i8*",x);t=O([105,110,115,101,114,116,0],"i8",x);v=O([110,79,0],"i8",x);y=O([105,110,115,111,114,116,95,114,105,103,104,116,40,97,44,32,120,91,44,32,108,111,91,44,32,104,105,93,93,41,10,10,73,110,115,101,114,116,32,105,116,101,109,32,120,32,105,110,32,108,105,115,116,32,97,44,32,97,110,100,32,107,101,101,112,32,105,116,32,115,111,114,116,101,100,32,97,115,115,117,109,105,110,103,32,97,32,105,115,32,115,111,114,116,101,100,46,10,10,
-73,102,32,120,32,105,115,32,97,108,114,101,97,100,121,32,105,110,32,97,44,32,105,110,115,101,114,116,32,105,116,32,116,111,32,116,104,101,32,114,105,103,104,116,32,111,102,32,116,104,101,32,114,105,103,104,116,109,111,115,116,32,120,46,10,10,79,112,116,105,111,110,97,108,32,97,114,103,115,32,108,111,32,40,100,101,102,97,117,108,116,32,48,41,32,97,110,100,32,104,105,32,40,100,101,102,97,117,108,116,32,108,101,110,40,97,41,41,32,98,111,117,110,100,32,116,104,101,10,115,108,105,99,101,32,111,102,32,
-97,32,116,111,32,98,101,32,115,101,97,114,99,104,101,100,46,10,0],"i8",x);A=O([79,79,124,110,110,58,98,105,115,101,99,116,95,108,101,102,116,0],"i8",x);z=O(20,"i8*",x);C=O([98,105,115,101,99,116,95,108,101,102,116,40,97,44,32,120,91,44,32,108,111,91,44,32,104,105,93,93,41,32,45,62,32,105,110,100,101,120,10,10,82,101,116,117,114,110,32,116,104,101,32,105,110,100,101,120,32,119,104,101,114,101,32,116,111,32,105,110,115,101,114,116,32,105,116,101,109,32,120,32,105,110,32,108,105,115,116,32,97,44,32,
-97,115,115,117,109,105,110,103,32,97,32,105,115,32,115,111,114,116,101,100,46,10,10,84,104,101,32,114,101,116,117,114,110,32,118,97,108,117,101,32,105,32,105,115,32,115,117,99,104,32,116,104,97,116,32,97,108,108,32,101,32,105,110,32,97,91,58,105,93,32,104,97,118,101,32,101,32,60,32,120,44,32,97,110,100,32,97,108,108,32,101,32,105,110,10,97,91,105,58,93,32,104,97,118,101,32,101,32,62,61,32,120,46,32,32,83,111,32,105,102,32,120,32,97,108,114,101,97,100,121,32,97,112,112,101,97,114,115,32,105,110,32,
-116,104,101,32,108,105,115,116,44,32,105,32,112,111,105,110,116,115,32,106,117,115,116,10,98,101,102,111,114,101,32,116,104,101,32,108,101,102,116,109,111,115,116,32,120,32,97,108,114,101,97,100,121,32,116,104,101,114,101,46,10,10,79,112,116,105,111,110,97,108,32,97,114,103,115,32,108,111,32,40,100,101,102,97,117,108,116,32,48,41,32,97,110,100,32,104,105,32,40,100,101,102,97,117,108,116,32,108,101,110,40,97,41,41,32,98,111,117,110,100,32,116,104,101,10,115,108,105,99,101,32,111,102,32,97,32,116,111,
-32,98,101,32,115,101,97,114,99,104,101,100,46,10,0],"i8",x);F=O([79,79,124,110,110,58,105,110,115,111,114,116,95,108,101,102,116,0],"i8",x);B=O(20,"i8*",x);I=O([105,79,0],"i8",x);D=O([105,110,115,111,114,116,95,108,101,102,116,40,97,44,32,120,91,44,32,108,111,91,44,32,104,105,93,93,41,10,10,73,110,115,101,114,116,32,105,116,101,109,32,120,32,105,110,32,108,105,115,116,32,97,44,32,97,110,100,32,107,101,101,112,32,105,116,32,115,111,114,116,101,100,32,97,115,115,117,109,105,110,103,32,97,32,105,115,
-32,115,111,114,116,101,100,46,10,10,73,102,32,120,32,105,115,32,97,108,114,101,97,100,121,32,105,110,32,97,44,32,105,110,115,101,114,116,32,105,116,32,116,111,32,116,104,101,32,108,101,102,116,32,111,102,32,116,104,101,32,108,101,102,116,109,111,115,116,32,120,46,10,10,79,112,116,105,111,110,97,108,32,97,114,103,115,32,108,111,32,40,100,101,102,97,117,108,116,32,48,41,32,97,110,100,32,104,105,32,40,100,101,102,97,117,108,116,32,108,101,110,40,97,41,41,32,98,111,117,110,100,32,116,104,101,10,115,108,
-105,99,101,32,111,102,32,97,32,116,111,32,98,101,32,115,101,97,114,99,104,101,100,46,10,0],"i8",x);L=O([65,108,105,97,115,32,102,111,114,32,98,105,115,101,99,116,95,114,105,103,104,116,40,41,46,10,0],"i8",x);J=O([65,108,105,97,115,32,102,111,114,32,105,110,115,111,114,116,95,114,105,103,104,116,40,41,46,10,0],"i8",x);N=O([98,105,115,101,99,116,95,114,105,103,104,116,0],"i8",x);H=O([98,105,115,101,99,116,0],"i8",x);X=O([105,110,115,111,114,116,95,114,105,103,104,116,0],"i8",x);W=O([105,110,115,111,
-114,116,0],"i8",x);S=O([98,105,115,101,99,116,95,108,101,102,116,0],"i8",x);R=O([105,110,115,111,114,116,95,108,101,102,116,0],"i8",x);$=O([0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],["i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",
-0,0,0,"i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",
-0,0,0,"i8","i8","i8","i8","i8","i8","i8","i8"],x);Y=O([66,105,115,101,99,116,105,111,110,32,97,108,103,111,114,105,116,104,109,115,46,10,10,84,104,105,115,32,109,111,100,117,108,101,32,112,114,111,118,105,100,101,115,32,115,117,112,112,111,114,116,32,102,111,114,32,109,97,105,110,116,97,105,110,105,110,103,32,97,32,108,105,115,116,32,105,110,32,115,111,114,116,101,100,32,111,114,100,101,114,32,119,105,116,104,111,117,116,10,104,97,118,105,110,103,32,116,111,32,115,111,114,116,32,116,104,101,32,108,
-105,115,116,32,97,102,116,101,114,32,101,97,99,104,32,105,110,115,101,114,116,105,111,110,46,32,70,111,114,32,108,111,110,103,32,108,105,115,116,115,32,111,102,32,105,116,101,109,115,32,119,105,116,104,10,101,120,112,101,110,115,105,118,101,32,99,111,109,112,97,114,105,115,111,110,32,111,112,101,114,97,116,105,111,110,115,44,32,116,104,105,115,32,99,97,110,32,98,101,32,97,110,32,105,109,112,114,111,118,101,109,101,110,116,32,111,118,101,114,32,116,104,101,32,109,111,114,101,10,99,111,109,109,111,
-110,32,97,112,112,114,111,97,99,104,46,10,0],"i8",x);ea=O([95,98,105,115,101,99,116,0],"i8",x);w[i]=j;w[i+4]=l;w[i+8]=m;w[i+12]=n;w[r]=j;w[r+4]=l;w[r+8]=m;w[r+12]=n;w[z]=j;w[z+4]=l;w[z+8]=m;w[z+12]=n;w[B]=j;w[B+4]=l;w[B+8]=m;w[B+12]=n;w[$]=N;w[$+4]=g+2;w[$+12]=q;w[$+16]=H;w[$+20]=g+2;w[$+28]=L;w[$+32]=X;w[$+36]=g+4;w[$+44]=y;w[$+48]=W;w[$+52]=g+4;w[$+60]=J;w[$+64]=S;w[$+68]=g+6;w[$+76]=C;w[$+80]=R;w[$+84]=g+8;w[$+92]=D}var e={arguments:[]},c,h,i,j,l,m,n,q,o,r,t,v,y,A,z,C,F,B,I,D,L,J,N,H,X,W,S,R,$,
-Y,ea;e._init_bisect=function(){t7(ea,$,Y)};P=P.concat([0,0,function(b,d,e){b=s;s+=16;u(b,0,16);var c;for(c=-1;;)switch(c){case -1:var g,j,l=b,m=b+4,n=b+8,o=b+12,q;c=d;g=e;w[n]=0;w[o]=-1;c=W4(c,g,h,i,O([l,0,0,0,m,0,0,0,n,0,0,0,o,0,0,0],["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0],E))==0?1:2;break;case 1:j=0;c=5;break;case 2:q=f(w[l],w[m],w[n],w[o]);c=q<0?3:4;break;case 3:j=0;c=5;break;case 4:j=OZ(q);c=5;break;case 5:return d=j,s=b,d;default:p(0,"bad label: "+c)}},
-0,function(b,d,e){b=s;s+=16;u(b,0,16);var c;for(c=-1;;)switch(c){case -1:var g,h,i=b,j=b+4,l,m=b+8,n=b+12,q;c=d;g=e;w[m]=0;w[n]=-1;c=W4(c,g,o,r,O([i,0,0,0,j,0,0,0,m,0,0,0,n,0,0,0],["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0],E))==0?1:2;break;case 1:h=0;c=12;break;case 2:q=f(w[i],w[j],w[m],w[n]);c=q<0?3:4;break;case 3:h=0;c=12;break;case 4:var y=w[j],z=w[i],A=q;c=w[w[i]+4]==jC?5:7;break;case 5:c=w6(z,A,y)<0?6:11;break;case 6:h=0;c=12;break;case 7:l=y_(z,t,v,O([A,
-0,0,0,y,0,0,0],["i32",0,0,0,"%struct.PyObject*",0,0,0],E));c=l==0?8:9;break;case 8:h=0;c=12;break;case 9:w[l]-=1;c=w[l]==0?10:11;break;case 10:P[w[w[l+4]+24]](l);c=11;break;case 11:w[Q]+=1;h=Q;c=12;break;case 12:return d=h,s=b,d;default:p(0,"bad label: "+c)}},0,function(b,e,c){b=s;s+=16;u(b,0,16);var f;for(f=-1;;)switch(f){case -1:var g,h,i=b,j=b+4,l=b+8,m=b+12,n;f=e;g=c;w[l]=0;w[m]=-1;f=W4(f,g,A,z,O([i,0,0,0,j,0,0,0,l,0,0,0,m,0,0,0],["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,
-0,0,"i32*",0,0,0],E))==0?1:2;break;case 1:h=0;f=5;break;case 2:n=d(w[i],w[j],w[l],w[m]);f=n<0?3:4;break;case 3:h=0;f=5;break;case 4:h=OZ(n);f=5;break;case 5:return e=h,s=b,e;default:p(0,"bad label: "+f)}},0,function(b,e,c){b=s;s+=16;u(b,0,16);var f;for(f=-1;;)switch(f){case -1:var g,h,i=b,j=b+4,l,m=b+8,n=b+12,o;f=e;g=c;w[m]=0;w[n]=-1;f=W4(f,g,F,B,O([i,0,0,0,j,0,0,0,m,0,0,0,n,0,0,0],["%struct.PyObject**",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0],E))==0?1:2;break;case 1:h=0;f=12;break;
-case 2:o=d(w[i],w[j],w[m],w[n]);f=o<0?3:4;break;case 3:h=0;f=12;break;case 4:var q=w[j],r=w[i],v=o;f=w[w[i]+4]==jC?5:7;break;case 5:f=w6(r,v,q)<0?6:11;break;case 6:h=0;f=12;break;case 7:l=y_(r,t,I,O([v,0,0,0,q,0,0,0],["i32",0,0,0,"%struct.PyObject*",0,0,0],E));f=l==0?8:9;break;case 8:h=0;f=12;break;case 9:w[l]-=1;f=w[l]==0?10:11;break;case 10:P[w[w[l+4]+24]](l);f=11;break;case 11:w[Q]+=1;h=Q;f=12;break;case 12:return e=h,s=b,e;default:p(0,"bad label: "+f)}},0]);e.run=b;b();return e});
+"use strict";
+(function(FUNCTION_TABLE_OFFSET) {
+  var Module = {};
+  var args = [];
+  Module.arguments = [];
+  var __globalConstructor__ = function globalConstructor() {};
+  var $0___SIZE = 112;
+  var $1___SIZE = 16;
+  var $struct_FILE___SIZE = 148;
+  var $struct_FILE___FLATTENER = [ 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 70, 71, 72, 76, 84, 88, 92, 96, 100, 104, 108 ];
+  var $struct_PyBufferProcs___SIZE = 24;
+  var $struct_PyGetSetDef___SIZE = 20;
+  var $struct_PyMappingMethods___SIZE = 12;
+  var $struct_PyMemberDef___SIZE = 0;
+  var $struct_PyMemberDef___FLATTENER = [];
+  var $struct_PyMethodDef___SIZE = 16;
+  var $struct_PyNumberMethods___SIZE = 156;
+  var $struct_PyObject___SIZE = 8;
+  var $struct_PySequenceMethods___SIZE = 40;
+  var $struct_Py_buffer___SIZE = 52;
+  var $struct_Py_buffer___FLATTENER = [ 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48 ];
+  var $struct__IO_marker___SIZE = 12;
+  var $struct__typeobject___SIZE = 196;
+  var __str;
+  var __str1;
+  var _keywords_7604;
+  var __str2;
+  var __str3;
+  var __str4;
+  var __str5;
+  var _bisect_right_doc;
+  var __str6;
+  var _keywords_7630;
+  var __str7;
+  var __str8;
+  var _insort_right_doc;
+  var __str9;
+  var _keywords_7717;
+  var _bisect_left_doc;
+  var __str10;
+  var _keywords_7743;
+  var __str11;
+  var _insort_left_doc;
+  var _bisect_doc;
+  var _insort_doc;
+  var __str12;
+  var __str13;
+  var __str14;
+  var __str15;
+  var __str16;
+  var __str17;
+  var _bisect_methods;
+  var _module_doc;
+  var __str18;
+  function _internal_bisect_right($list, $item, $lo, $hi) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $list_addr;
+      var $item_addr;
+      var $lo_addr;
+      var $hi_addr;
+      var $retval;
+      var $0;
+      var $litem;
+      var $mid;
+      var $res;
+      $list_addr = $list;
+      $item_addr = $item;
+      $lo_addr = $lo;
+      $hi_addr = $hi;
+      
+      
+      if ($lo_addr < 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $3 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($3, __str);
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 2:
+      
+      var $5 = $hi_addr == -1;
+      if ($5) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 14;
+        break;
+      }
+     case 3:
+      
+      var $7 = _PySequence_Size($list_addr);
+      $hi_addr = $7;
+      
+      
+      if ($hi_addr < 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 14;
+        break;
+      }
+     case 4:
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 5:
+      
+      
+      
+      $mid = ($hi_addr + $46) / 2 | 0;
+      
+      
+      var $15 = _PySequence_GetItem($list_addr, $mid);
+      $litem = $15;
+      
+      
+      if ($litem == 0) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 6:
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 7:
+      
+      
+      var $20 = _PyObject_RichCompareBool($item_addr, $litem, 0);
+      $res = $20;
+      
+      
+      
+      var $24 = HEAP[$litem] - 1;
+      
+      
+      HEAP[$litem] = $24;
+      
+      
+      
+      
+      if (HEAP[$litem] == 0) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      
+      
+      
+      
+      var $35 = HEAP[HEAP[$litem + 4] + 24];
+      
+      FUNCTION_TABLE[$35]($litem);
+      __label__ = 9;
+      break;
+     case 9:
+      
+      
+      if ($res < 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 11:
+      
+      
+      var $41 = $mid;
+      if ($res != 0) {
+        __label__ = 12;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 12:
+      $hi_addr = $41;
+      __label__ = 14;
+      break;
+     case 13:
+      
+      $lo_addr = $41 + 1;
+      __label__ = 14;
+      break;
+     case 14:
+      
+      
+      
+      var $46 = $lo_addr;
+      if ($lo_addr < $hi_addr) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 15;
+        break;
+      }
+     case 15:
+      $0 = $46;
+      __label__ = 16;
+      break;
+     case 16:
+      
+      $retval = $0;
+      var $retval17 = $retval;
+      return $retval17;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _bisect_right($self, $args, $kw) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $kw_addr;
+      var $retval;
+      var $0;
+      var $list = __stackBase__;
+      var $item = __stackBase__ + 4;
+      var $lo = __stackBase__ + 8;
+      var $hi = __stackBase__ + 12;
+      var $index;
+      $self_addr = $self;
+      $args_addr = $args;
+      $kw_addr = $kw;
+      HEAP[$lo] = 0;
+      HEAP[$hi] = -1;
+      
+      
+      var $3 = _PyArg_ParseTupleAndKeywords($args_addr, $kw_addr, __str1, _keywords_7604, allocate([ $list, 0, 0, 0, $item, 0, 0, 0, $lo, 0, 0, 0, $hi, 0, 0, 0 ], [ "%struct.PyObject**", 0, 0, 0, "%struct.PyObject**", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($3 == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 2:
+      var $5 = HEAP[$hi];
+      var $6 = HEAP[$lo];
+      var $7 = HEAP[$item];
+      var $8 = HEAP[$list];
+      var $9 = _internal_bisect_right($8, $7, $6, $5);
+      $index = $9;
+      
+      
+      if ($index < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 4:
+      
+      var $13 = _PyInt_FromSsize_t($index);
+      $0 = $13;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      $retval = $0;
+      var $retval5 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval5;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _insort_right($self, $args, $kw) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $kw_addr;
+      var $retval;
+      var $0;
+      var $list = __stackBase__;
+      var $item = __stackBase__ + 4;
+      var $result;
+      var $lo = __stackBase__ + 8;
+      var $hi = __stackBase__ + 12;
+      var $index;
+      $self_addr = $self;
+      $args_addr = $args;
+      $kw_addr = $kw;
+      HEAP[$lo] = 0;
+      HEAP[$hi] = -1;
+      
+      
+      var $3 = _PyArg_ParseTupleAndKeywords($args_addr, $kw_addr, __str6, _keywords_7630, allocate([ $list, 0, 0, 0, $item, 0, 0, 0, $lo, 0, 0, 0, $hi, 0, 0, 0 ], [ "%struct.PyObject**", 0, 0, 0, "%struct.PyObject**", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($3 == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 2:
+      var $5 = HEAP[$hi];
+      var $6 = HEAP[$lo];
+      var $7 = HEAP[$item];
+      var $8 = HEAP[$list];
+      var $9 = _internal_bisect_right($8, $7, $6, $5);
+      $index = $9;
+      
+      
+      if ($index < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 4:
+      
+      
+      
+      
+      var $16 = HEAP[$item];
+      var $17 = HEAP[$list];
+      var $18 = $index;
+      if (HEAP[HEAP[$list] + 4] == _PyList_Type) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 5:
+      var $19 = _PyList_Insert($17, $18, $16);
+      
+      if ($19 < 0) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 6:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 7:
+      var $21 = _PyObject_CallMethod($17, __str7, __str8, allocate([ $18, 0, 0, 0, $16, 0, 0, 0 ], [ "i32", 0, 0, 0, "%struct.PyObject*", 0, 0, 0 ], ALLOC_STACK));
+      $result = $21;
+      
+      
+      if ($result == 0) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 9:
+      
+      
+      
+      var $27 = HEAP[$result] - 1;
+      
+      
+      HEAP[$result] = $27;
+      
+      
+      
+      
+      if (HEAP[$result] == 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      
+      
+      
+      
+      var $38 = HEAP[HEAP[$result + 4] + 24];
+      
+      FUNCTION_TABLE[$38]($result);
+      __label__ = 11;
+      break;
+     case 11:
+      
+      var $41 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $41;
+      $0 = __Py_NoneStruct;
+      __label__ = 12;
+      break;
+     case 12:
+      
+      $retval = $0;
+      var $retval13 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval13;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _internal_bisect_left($list, $item, $lo, $hi) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $list_addr;
+      var $item_addr;
+      var $lo_addr;
+      var $hi_addr;
+      var $retval;
+      var $0;
+      var $litem;
+      var $mid;
+      var $res;
+      $list_addr = $list;
+      $item_addr = $item;
+      $lo_addr = $lo;
+      $hi_addr = $hi;
+      
+      
+      if ($lo_addr < 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $3 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($3, __str);
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 2:
+      
+      var $5 = $hi_addr == -1;
+      if ($5) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 14;
+        break;
+      }
+     case 3:
+      
+      var $7 = _PySequence_Size($list_addr);
+      $hi_addr = $7;
+      
+      
+      if ($hi_addr < 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 14;
+        break;
+      }
+     case 4:
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 5:
+      
+      
+      
+      $mid = ($hi_addr + $46) / 2 | 0;
+      
+      
+      var $15 = _PySequence_GetItem($list_addr, $mid);
+      $litem = $15;
+      
+      
+      if ($litem == 0) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 6:
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 7:
+      
+      
+      var $20 = _PyObject_RichCompareBool($litem, $item_addr, 0);
+      $res = $20;
+      
+      
+      
+      var $24 = HEAP[$litem] - 1;
+      
+      
+      HEAP[$litem] = $24;
+      
+      
+      
+      
+      if (HEAP[$litem] == 0) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      
+      
+      
+      
+      var $35 = HEAP[HEAP[$litem + 4] + 24];
+      
+      FUNCTION_TABLE[$35]($litem);
+      __label__ = 9;
+      break;
+     case 9:
+      
+      
+      if ($res < 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      $0 = -1;
+      __label__ = 16;
+      break;
+     case 11:
+      
+      
+      var $41 = $mid;
+      if ($res != 0) {
+        __label__ = 12;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 12:
+      
+      $lo_addr = $41 + 1;
+      __label__ = 14;
+      break;
+     case 13:
+      $hi_addr = $41;
+      __label__ = 14;
+      break;
+     case 14:
+      
+      
+      
+      var $46 = $lo_addr;
+      if ($lo_addr < $hi_addr) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 15;
+        break;
+      }
+     case 15:
+      $0 = $46;
+      __label__ = 16;
+      break;
+     case 16:
+      
+      $retval = $0;
+      var $retval17 = $retval;
+      return $retval17;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _bisect_left($self, $args, $kw) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $kw_addr;
+      var $retval;
+      var $0;
+      var $list = __stackBase__;
+      var $item = __stackBase__ + 4;
+      var $lo = __stackBase__ + 8;
+      var $hi = __stackBase__ + 12;
+      var $index;
+      $self_addr = $self;
+      $args_addr = $args;
+      $kw_addr = $kw;
+      HEAP[$lo] = 0;
+      HEAP[$hi] = -1;
+      
+      
+      var $3 = _PyArg_ParseTupleAndKeywords($args_addr, $kw_addr, __str9, _keywords_7717, allocate([ $list, 0, 0, 0, $item, 0, 0, 0, $lo, 0, 0, 0, $hi, 0, 0, 0 ], [ "%struct.PyObject**", 0, 0, 0, "%struct.PyObject**", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($3 == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 2:
+      var $5 = HEAP[$hi];
+      var $6 = HEAP[$lo];
+      var $7 = HEAP[$item];
+      var $8 = HEAP[$list];
+      var $9 = _internal_bisect_left($8, $7, $6, $5);
+      $index = $9;
+      
+      
+      if ($index < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 4:
+      
+      var $13 = _PyInt_FromSsize_t($index);
+      $0 = $13;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      $retval = $0;
+      var $retval5 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval5;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _insort_left($self, $args, $kw) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $kw_addr;
+      var $retval;
+      var $0;
+      var $list = __stackBase__;
+      var $item = __stackBase__ + 4;
+      var $result;
+      var $lo = __stackBase__ + 8;
+      var $hi = __stackBase__ + 12;
+      var $index;
+      $self_addr = $self;
+      $args_addr = $args;
+      $kw_addr = $kw;
+      HEAP[$lo] = 0;
+      HEAP[$hi] = -1;
+      
+      
+      var $3 = _PyArg_ParseTupleAndKeywords($args_addr, $kw_addr, __str10, _keywords_7743, allocate([ $list, 0, 0, 0, $item, 0, 0, 0, $lo, 0, 0, 0, $hi, 0, 0, 0 ], [ "%struct.PyObject**", 0, 0, 0, "%struct.PyObject**", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($3 == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 2:
+      var $5 = HEAP[$hi];
+      var $6 = HEAP[$lo];
+      var $7 = HEAP[$item];
+      var $8 = HEAP[$list];
+      var $9 = _internal_bisect_left($8, $7, $6, $5);
+      $index = $9;
+      
+      
+      if ($index < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 4:
+      
+      
+      
+      
+      var $16 = HEAP[$item];
+      var $17 = HEAP[$list];
+      var $18 = $index;
+      if (HEAP[HEAP[$list] + 4] == _PyList_Type) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 5:
+      var $19 = _PyList_Insert($17, $18, $16);
+      
+      if ($19 < 0) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 6:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 7:
+      var $21 = _PyObject_CallMethod($17, __str7, __str11, allocate([ $18, 0, 0, 0, $16, 0, 0, 0 ], [ "i32", 0, 0, 0, "%struct.PyObject*", 0, 0, 0 ], ALLOC_STACK));
+      $result = $21;
+      
+      
+      if ($result == 0) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 9:
+      
+      
+      
+      var $27 = HEAP[$result] - 1;
+      
+      
+      HEAP[$result] = $27;
+      
+      
+      
+      
+      if (HEAP[$result] == 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      
+      
+      
+      
+      var $38 = HEAP[HEAP[$result + 4] + 24];
+      
+      FUNCTION_TABLE[$38]($result);
+      __label__ = 11;
+      break;
+     case 11:
+      
+      var $41 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $41;
+      $0 = __Py_NoneStruct;
+      __label__ = 12;
+      break;
+     case 12:
+      
+      $retval = $0;
+      var $retval13 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval13;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _init_bisect() {
+    
+    var $0 = _Py_InitModule4(__str18, _bisect_methods, _module_doc, 0, 1013);
+    return;
+  }
+  Module["_init_bisect"] = _init_bisect;
+  FUNCTION_TABLE = FUNCTION_TABLE.concat([ 0, 0, _bisect_right, 0, _insort_right, 0, _bisect_left, 0, _insort_left, 0 ]);
+  function run(args) {
+    __str = allocate([ 108, 111, 32, 109, 117, 115, 116, 32, 98, 101, 32, 110, 111, 110, 45, 110, 101, 103, 97, 116, 105, 118, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str1 = allocate([ 79, 79, 124, 110, 110, 58, 98, 105, 115, 101, 99, 116, 95, 114, 105, 103, 104, 116, 0 ], "i8", ALLOC_NORMAL);
+    _keywords_7604 = allocate(20, "i8*", ALLOC_NORMAL);
+    __str2 = allocate([ 97, 0 ], "i8", ALLOC_NORMAL);
+    __str3 = allocate([ 120, 0 ], "i8", ALLOC_NORMAL);
+    __str4 = allocate([ 108, 111, 0 ], "i8", ALLOC_NORMAL);
+    __str5 = allocate([ 104, 105, 0 ], "i8", ALLOC_NORMAL);
+    _bisect_right_doc = allocate([ 98, 105, 115, 101, 99, 116, 95, 114, 105, 103, 104, 116, 40, 97, 44, 32, 120, 91, 44, 32, 108, 111, 91, 44, 32, 104, 105, 93, 93, 41, 32, 45, 62, 32, 105, 110, 100, 101, 120, 10, 10, 82, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 105, 110, 100, 101, 120, 32, 119, 104, 101, 114, 101, 32, 116, 111, 32, 105, 110, 115, 101, 114, 116, 32, 105, 116, 101, 109, 32, 120, 32, 105, 110, 32, 108, 105, 115, 116, 32, 97, 44, 32, 97, 115, 115, 117, 109, 105, 110, 103, 32, 97, 32, 105, 115, 32, 115, 111, 114, 116, 101, 100, 46, 10, 10, 84, 104, 101, 32, 114, 101, 116, 117, 114, 110, 32, 118, 97, 108, 117, 101, 32, 105, 32, 105, 115, 32, 115, 117, 99, 104, 32, 116, 104, 97, 116, 32, 97, 108, 108, 32, 101, 32, 105, 110, 32, 97, 91, 58, 105, 93, 32, 104, 97, 118, 101, 32, 101, 32, 60, 61, 32, 120, 44, 32, 97, 110, 100, 32, 97, 108, 108, 32, 101, 32, 105, 110, 10, 97, 91, 105, 58, 93, 32, 104, 97, 118, 101, 32, 101, 32, 62, 32, 120, 46, 32, 32, 83, 111, 32, 105, 102, 32, 120, 32, 97, 108, 114, 101, 97, 100, 121, 32, 97, 112, 112, 101, 97, 114, 115, 32, 105, 110, 32, 116, 104, 101, 32, 108, 105, 115, 116, 44, 32, 105, 32, 112, 111, 105, 110, 116, 115, 32, 106, 117, 115, 116, 10, 98, 101, 121, 111, 110, 100, 32, 116, 104, 101, 32, 114, 105, 103, 104, 116, 109, 111, 115, 116, 32, 120, 32, 97, 108, 114, 101, 97, 100, 121, 32, 116, 104, 101, 114, 101, 10, 10, 79, 112, 116, 105, 111, 110, 97, 108, 32, 97, 114, 103, 115, 32, 108, 111, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 48, 41, 32, 97, 110, 100, 32, 104, 105, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 108, 101, 110, 40, 97, 41, 41, 32, 98, 111, 117, 110, 100, 32, 116, 104, 101, 10, 115, 108, 105, 99, 101, 32, 111, 102, 32, 97, 32, 116, 111, 32, 98, 101, 32, 115, 101, 97, 114, 99, 104, 101, 100, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    __str6 = allocate([ 79, 79, 124, 110, 110, 58, 105, 110, 115, 111, 114, 116, 95, 114, 105, 103, 104, 116, 0 ], "i8", ALLOC_NORMAL);
+    _keywords_7630 = allocate(20, "i8*", ALLOC_NORMAL);
+    __str7 = allocate([ 105, 110, 115, 101, 114, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str8 = allocate([ 110, 79, 0 ], "i8", ALLOC_NORMAL);
+    _insort_right_doc = allocate([ 105, 110, 115, 111, 114, 116, 95, 114, 105, 103, 104, 116, 40, 97, 44, 32, 120, 91, 44, 32, 108, 111, 91, 44, 32, 104, 105, 93, 93, 41, 10, 10, 73, 110, 115, 101, 114, 116, 32, 105, 116, 101, 109, 32, 120, 32, 105, 110, 32, 108, 105, 115, 116, 32, 97, 44, 32, 97, 110, 100, 32, 107, 101, 101, 112, 32, 105, 116, 32, 115, 111, 114, 116, 101, 100, 32, 97, 115, 115, 117, 109, 105, 110, 103, 32, 97, 32, 105, 115, 32, 115, 111, 114, 116, 101, 100, 46, 10, 10, 73, 102, 32, 120, 32, 105, 115, 32, 97, 108, 114, 101, 97, 100, 121, 32, 105, 110, 32, 97, 44, 32, 105, 110, 115, 101, 114, 116, 32, 105, 116, 32, 116, 111, 32, 116, 104, 101, 32, 114, 105, 103, 104, 116, 32, 111, 102, 32, 116, 104, 101, 32, 114, 105, 103, 104, 116, 109, 111, 115, 116, 32, 120, 46, 10, 10, 79, 112, 116, 105, 111, 110, 97, 108, 32, 97, 114, 103, 115, 32, 108, 111, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 48, 41, 32, 97, 110, 100, 32, 104, 105, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 108, 101, 110, 40, 97, 41, 41, 32, 98, 111, 117, 110, 100, 32, 116, 104, 101, 10, 115, 108, 105, 99, 101, 32, 111, 102, 32, 97, 32, 116, 111, 32, 98, 101, 32, 115, 101, 97, 114, 99, 104, 101, 100, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    __str9 = allocate([ 79, 79, 124, 110, 110, 58, 98, 105, 115, 101, 99, 116, 95, 108, 101, 102, 116, 0 ], "i8", ALLOC_NORMAL);
+    _keywords_7717 = allocate(20, "i8*", ALLOC_NORMAL);
+    _bisect_left_doc = allocate([ 98, 105, 115, 101, 99, 116, 95, 108, 101, 102, 116, 40, 97, 44, 32, 120, 91, 44, 32, 108, 111, 91, 44, 32, 104, 105, 93, 93, 41, 32, 45, 62, 32, 105, 110, 100, 101, 120, 10, 10, 82, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 105, 110, 100, 101, 120, 32, 119, 104, 101, 114, 101, 32, 116, 111, 32, 105, 110, 115, 101, 114, 116, 32, 105, 116, 101, 109, 32, 120, 32, 105, 110, 32, 108, 105, 115, 116, 32, 97, 44, 32, 97, 115, 115, 117, 109, 105, 110, 103, 32, 97, 32, 105, 115, 32, 115, 111, 114, 116, 101, 100, 46, 10, 10, 84, 104, 101, 32, 114, 101, 116, 117, 114, 110, 32, 118, 97, 108, 117, 101, 32, 105, 32, 105, 115, 32, 115, 117, 99, 104, 32, 116, 104, 97, 116, 32, 97, 108, 108, 32, 101, 32, 105, 110, 32, 97, 91, 58, 105, 93, 32, 104, 97, 118, 101, 32, 101, 32, 60, 32, 120, 44, 32, 97, 110, 100, 32, 97, 108, 108, 32, 101, 32, 105, 110, 10, 97, 91, 105, 58, 93, 32, 104, 97, 118, 101, 32, 101, 32, 62, 61, 32, 120, 46, 32, 32, 83, 111, 32, 105, 102, 32, 120, 32, 97, 108, 114, 101, 97, 100, 121, 32, 97, 112, 112, 101, 97, 114, 115, 32, 105, 110, 32, 116, 104, 101, 32, 108, 105, 115, 116, 44, 32, 105, 32, 112, 111, 105, 110, 116, 115, 32, 106, 117, 115, 116, 10, 98, 101, 102, 111, 114, 101, 32, 116, 104, 101, 32, 108, 101, 102, 116, 109, 111, 115, 116, 32, 120, 32, 97, 108, 114, 101, 97, 100, 121, 32, 116, 104, 101, 114, 101, 46, 10, 10, 79, 112, 116, 105, 111, 110, 97, 108, 32, 97, 114, 103, 115, 32, 108, 111, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 48, 41, 32, 97, 110, 100, 32, 104, 105, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 108, 101, 110, 40, 97, 41, 41, 32, 98, 111, 117, 110, 100, 32, 116, 104, 101, 10, 115, 108, 105, 99, 101, 32, 111, 102, 32, 97, 32, 116, 111, 32, 98, 101, 32, 115, 101, 97, 114, 99, 104, 101, 100, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    __str10 = allocate([ 79, 79, 124, 110, 110, 58, 105, 110, 115, 111, 114, 116, 95, 108, 101, 102, 116, 0 ], "i8", ALLOC_NORMAL);
+    _keywords_7743 = allocate(20, "i8*", ALLOC_NORMAL);
+    __str11 = allocate([ 105, 79, 0 ], "i8", ALLOC_NORMAL);
+    _insort_left_doc = allocate([ 105, 110, 115, 111, 114, 116, 95, 108, 101, 102, 116, 40, 97, 44, 32, 120, 91, 44, 32, 108, 111, 91, 44, 32, 104, 105, 93, 93, 41, 10, 10, 73, 110, 115, 101, 114, 116, 32, 105, 116, 101, 109, 32, 120, 32, 105, 110, 32, 108, 105, 115, 116, 32, 97, 44, 32, 97, 110, 100, 32, 107, 101, 101, 112, 32, 105, 116, 32, 115, 111, 114, 116, 101, 100, 32, 97, 115, 115, 117, 109, 105, 110, 103, 32, 97, 32, 105, 115, 32, 115, 111, 114, 116, 101, 100, 46, 10, 10, 73, 102, 32, 120, 32, 105, 115, 32, 97, 108, 114, 101, 97, 100, 121, 32, 105, 110, 32, 97, 44, 32, 105, 110, 115, 101, 114, 116, 32, 105, 116, 32, 116, 111, 32, 116, 104, 101, 32, 108, 101, 102, 116, 32, 111, 102, 32, 116, 104, 101, 32, 108, 101, 102, 116, 109, 111, 115, 116, 32, 120, 46, 10, 10, 79, 112, 116, 105, 111, 110, 97, 108, 32, 97, 114, 103, 115, 32, 108, 111, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 48, 41, 32, 97, 110, 100, 32, 104, 105, 32, 40, 100, 101, 102, 97, 117, 108, 116, 32, 108, 101, 110, 40, 97, 41, 41, 32, 98, 111, 117, 110, 100, 32, 116, 104, 101, 10, 115, 108, 105, 99, 101, 32, 111, 102, 32, 97, 32, 116, 111, 32, 98, 101, 32, 115, 101, 97, 114, 99, 104, 101, 100, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    _bisect_doc = allocate([ 65, 108, 105, 97, 115, 32, 102, 111, 114, 32, 98, 105, 115, 101, 99, 116, 95, 114, 105, 103, 104, 116, 40, 41, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    _insort_doc = allocate([ 65, 108, 105, 97, 115, 32, 102, 111, 114, 32, 105, 110, 115, 111, 114, 116, 95, 114, 105, 103, 104, 116, 40, 41, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    __str12 = allocate([ 98, 105, 115, 101, 99, 116, 95, 114, 105, 103, 104, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str13 = allocate([ 98, 105, 115, 101, 99, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str14 = allocate([ 105, 110, 115, 111, 114, 116, 95, 114, 105, 103, 104, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str15 = allocate([ 105, 110, 115, 111, 114, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str16 = allocate([ 98, 105, 115, 101, 99, 116, 95, 108, 101, 102, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str17 = allocate([ 105, 110, 115, 111, 114, 116, 95, 108, 101, 102, 116, 0 ], "i8", ALLOC_NORMAL);
+    _bisect_methods = allocate([ 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], [ "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8" ], ALLOC_NORMAL);
+    _module_doc = allocate([ 66, 105, 115, 101, 99, 116, 105, 111, 110, 32, 97, 108, 103, 111, 114, 105, 116, 104, 109, 115, 46, 10, 10, 84, 104, 105, 115, 32, 109, 111, 100, 117, 108, 101, 32, 112, 114, 111, 118, 105, 100, 101, 115, 32, 115, 117, 112, 112, 111, 114, 116, 32, 102, 111, 114, 32, 109, 97, 105, 110, 116, 97, 105, 110, 105, 110, 103, 32, 97, 32, 108, 105, 115, 116, 32, 105, 110, 32, 115, 111, 114, 116, 101, 100, 32, 111, 114, 100, 101, 114, 32, 119, 105, 116, 104, 111, 117, 116, 10, 104, 97, 118, 105, 110, 103, 32, 116, 111, 32, 115, 111, 114, 116, 32, 116, 104, 101, 32, 108, 105, 115, 116, 32, 97, 102, 116, 101, 114, 32, 101, 97, 99, 104, 32, 105, 110, 115, 101, 114, 116, 105, 111, 110, 46, 32, 70, 111, 114, 32, 108, 111, 110, 103, 32, 108, 105, 115, 116, 115, 32, 111, 102, 32, 105, 116, 101, 109, 115, 32, 119, 105, 116, 104, 10, 101, 120, 112, 101, 110, 115, 105, 118, 101, 32, 99, 111, 109, 112, 97, 114, 105, 115, 111, 110, 32, 111, 112, 101, 114, 97, 116, 105, 111, 110, 115, 44, 32, 116, 104, 105, 115, 32, 99, 97, 110, 32, 98, 101, 32, 97, 110, 32, 105, 109, 112, 114, 111, 118, 101, 109, 101, 110, 116, 32, 111, 118, 101, 114, 32, 116, 104, 101, 32, 109, 111, 114, 101, 10, 99, 111, 109, 109, 111, 110, 32, 97, 112, 112, 114, 111, 97, 99, 104, 46, 10, 0 ], "i8", ALLOC_NORMAL);
+    __str18 = allocate([ 95, 98, 105, 115, 101, 99, 116, 0 ], "i8", ALLOC_NORMAL);
+    HEAP[_keywords_7604] = __str2;
+    HEAP[_keywords_7604 + 4] = __str3;
+    HEAP[_keywords_7604 + 8] = __str4;
+    HEAP[_keywords_7604 + 12] = __str5;
+    HEAP[_keywords_7630] = __str2;
+    HEAP[_keywords_7630 + 4] = __str3;
+    HEAP[_keywords_7630 + 8] = __str4;
+    HEAP[_keywords_7630 + 12] = __str5;
+    HEAP[_keywords_7717] = __str2;
+    HEAP[_keywords_7717 + 4] = __str3;
+    HEAP[_keywords_7717 + 8] = __str4;
+    HEAP[_keywords_7717 + 12] = __str5;
+    HEAP[_keywords_7743] = __str2;
+    HEAP[_keywords_7743 + 4] = __str3;
+    HEAP[_keywords_7743 + 8] = __str4;
+    HEAP[_keywords_7743 + 12] = __str5;
+    HEAP[_bisect_methods] = __str12;
+    HEAP[_bisect_methods + 4] = FUNCTION_TABLE_OFFSET + 2;
+    HEAP[_bisect_methods + 12] = _bisect_right_doc;
+    HEAP[_bisect_methods + 16] = __str13;
+    HEAP[_bisect_methods + 20] = FUNCTION_TABLE_OFFSET + 2;
+    HEAP[_bisect_methods + 28] = _bisect_doc;
+    HEAP[_bisect_methods + 32] = __str14;
+    HEAP[_bisect_methods + 36] = FUNCTION_TABLE_OFFSET + 4;
+    HEAP[_bisect_methods + 44] = _insort_right_doc;
+    HEAP[_bisect_methods + 48] = __str15;
+    HEAP[_bisect_methods + 52] = FUNCTION_TABLE_OFFSET + 4;
+    HEAP[_bisect_methods + 60] = _insort_doc;
+    HEAP[_bisect_methods + 64] = __str16;
+    HEAP[_bisect_methods + 68] = FUNCTION_TABLE_OFFSET + 6;
+    HEAP[_bisect_methods + 76] = _bisect_left_doc;
+    HEAP[_bisect_methods + 80] = __str17;
+    HEAP[_bisect_methods + 84] = FUNCTION_TABLE_OFFSET + 8;
+    HEAP[_bisect_methods + 92] = _insort_left_doc;
+    __globalConstructor__();
+  }
+  Module["run"] = run;
+  run();
+  return Module;
+});

@@ -1,69 +1,4863 @@
-(function(g){function f(b,d,e){var c=s;s+=16;u(c,0,16);var f;for(f=-1;;)switch(f){case -1:var g,i,j,l,m,n,r,t=c,v=c+4,y=c+8,z=c+12,A,B,C,D,Fa;g=b;i=d;j=e;w[t]=w[g+16];w[v]=w[g+12];f=w[g+8]==0?1:2;break;case 1:T(w[wt],h);r=0;f=34;break;case 2:f=j!=0?3:4;break;case 3:n=q;f=5;break;case 4:n=o;f=5;break;case 5:f=B1(i,n,O([y,0,0,0,z,0,0,0,t,0,0,0,v,0,0,0],["i8**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0],E))==0?6:7;break;case 6:r=0;f=34;break;
-case 7:f=j!=0?8:9;break;case 8:m=-1;f=10;break;case 9:m=1;f=10;break;case 10:D=m;f=w[t]<0?11:13;break;case 11:f=w[t]+w[g+12];w[t]=f;f=f<0?12:13;break;case 12:w[t]=0;f=15;break;case 13:f=w[t]>w[g+12]?14:15;break;case 14:w[t]=w[g+12];f=15;break;case 15:f=w[v]<0?16:18;break;case 16:f=w[v]+w[g+12];w[v]=f;f=f<0?17:18;break;case 17:w[v]=0;f=20;break;case 18:f=w[v]>w[g+12]?19:20;break;case 19:w[v]=w[g+12];f=20;break;case 20:B=w[g+8]+w[t];C=w[g+8]+w[v];f=j!=0?21:22;break;case 21:l=C+(0-w[z]);f=23;break;case 22:l=
-B;f=23;break;case 23:A=l;f=31;break;case 24:Fa=0;f=26;break;case 25:Fa+=1;f=26;break;case 26:f=Fa>=w[z]?28:27;break;case 27:f=w[w[y]+Fa]==w[A+Fa]?25:28;break;case 28:var F=A;f=Fa==w[z]?29:30;break;case 29:r=OZ(F-w[g+8]);f=34;break;case 30:A=F+D;f=31;break;case 31:f=A<B?33:32;break;case 32:f=A+w[z]<=C?24:33;break;case 33:r=OZ(-1);f=34;break;case 34:return b=r,s=c,b;default:p(0,"bad label: "+f)}}function d(b){var d;for(d=-1;;)switch(d){case -1:var e;d=w[b+32]!=1?1:2;break;case 1:e=1;d=3;break;case 2:lY(w[os],
-r,O(1,"i32",E));e=0;d=3;break;case 3:return b=e;default:p(0,"bad label: "+d)}}function b(b,d,e){var c;for(c=-1;;)switch(c){case -1:var f,g,h;f=b;g=d;h=OZ(e);c=h!=0?1:4;break;case 1:c=d2(f,g,h)==0?2:4;break;case 2:w[h]-=1;c=w[h]==0?3:4;break;case 3:P[w[w[h+4]+24]](h);c=4;break;case 4:return;default:p(0,"bad label: "+c)}}function e(){h=O([109,109,97,112,32,99,108,111,115,101,100,32,111,114,32,105,110,118,97,108,105,100,0],"i8",x);i=O([99,0],"i8",x);j=O([114,101,97,100,32,98,121,116,101,32,111,117,116,
-32,111,102,32,114,97,110,103,101,0],"i8",x);l=O([110,58,114,101,97,100,0],"i8",x);m=O([115,101,108,102,45,62,115,105,122,101,32,62,61,32,115,101,108,102,45,62,112,111,115,0],"i8",x);O([46,46,47,99,112,121,116,104,111,110,47,77,111,100,117,108,101,115,47,109,109,97,112,109,111,100,117,108,101,46,99,0],"i8",x);O([109,109,97,112,95,114,101,97,100,95,109,101,116,104,111,100,0],"i8",x);n=O([115,35,0],"i8",x);q=O([115,35,124,110,110,58,114,102,105,110,100,0],"i8",x);o=O([115,35,124,110,110,58,102,105,110,
-100,0],"i8",x);r=O([109,109,97,112,32,99,97,110,39,116,32,109,111,100,105,102,121,32,97,32,114,101,97,100,111,110,108,121,32,109,101,109,111,114,121,32,109,97,112,46,0],"i8",x);t=O([109,109,97,112,32,99,97,110,39,116,32,114,101,115,105,122,101,32,97,32,114,101,97,100,111,110,108,121,32,111,114,32,99,111,112,121,45,111,110,45,119,114,105,116,101,32,109,101,109,111,114,121,32,109,97,112,46,0],"i8",x);v=O([115,35,58,119,114,105,116,101,0],"i8",x);y=O([100,97,116,97,32,111,117,116,32,111,102,32,114,97,
-110,103,101,0],"i8",x);A=O([99,58,119,114,105,116,101,95,98,121,116,101,0],"i8",x);z=O([119,114,105,116,101,32,98,121,116,101,32,111,117,116,32,111,102,32,114,97,110,103,101,0],"i8",x);C=O(1,"%struct.PyObject*",x);F=O([110,58,114,101,115,105,122,101,0],"i8",x);B=O([124,110,110,58,102,108,117,115,104,0],"i8",x);I=O([102,108,117,115,104,32,118,97,108,117,101,115,32,111,117,116,32,111,102,32,114,97,110,103,101,0],"i8",x);D=O([110,124,105,58,115,101,101,107,0],"i8",x);L=O([117,110,107,110,111,119,110,
-32,115,101,101,107,32,116,121,112,101,0],"i8",x);J=O([115,101,101,107,32,111,117,116,32,111,102,32,114,97,110,103,101,0],"i8",x);N=O([107,107,107,58,109,111,118,101,0],"i8",x);H=O([115,111,117,114,99,101,44,32,100,101,115,116,105,110,97,116,105,111,110,44,32,111,114,32,99,111,117,110,116,32,111,117,116,32,111,102,32,114,97,110,103,101,0],"i8",x);X=O([99,108,111,115,101,0],"i8",x);W=O([102,105,110,100,0],"i8",x);S=O([114,102,105,110,100,0],"i8",x);R=O([102,108,117,115,104,0],"i8",x);$=O([109,111,118,
-101,0],"i8",x);Y=O([114,101,97,100,0],"i8",x);ea=O([114,101,97,100,95,98,121,116,101,0],"i8",x);U=O([114,101,97,100,108,105,110,101,0],"i8",x);V=O([114,101,115,105,122,101,0],"i8",x);Z=O([115,101,101,107,0],"i8",x);da=O([115,105,122,101,0],"i8",x);ja=O([116,101,108,108,0],"i8",x);aa=O([119,114,105,116,101,0],"i8",x);wa=O([119,114,105,116,101,95,98,121,116,101,0],"i8",x);K=O([0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],["i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",
-0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",
-0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",
-0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i8","i8","i8","i8","i8*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i8","i8","i8","i8","i8","i8","i8","i8"],x);G=O([65,99,99,101,115,115,105,110,103,32,110,111,110,45,101,120,105,115,116,101,110,116,32,109,109,97,112,32,115,101,103,
-109,101,110,116,0],"i8",x);qa=O([97,99,99,101,115,115,105,110,103,32,110,111,110,45,101,120,105,115,116,101,110,116,32,98,117,102,102,101,114,32,115,101,103,109,101,110,116,0],"i8",x);fa=O([109,109,97,112,32,105,110,100,101,120,32,111,117,116,32,111,102,32,114,97,110,103,101,0],"i8",x);ia=O(1,"i8",x);Ja=O([109,109,97,112,32,105,110,100,105,99,101,115,32,109,117,115,116,32,98,101,32,105,110,116,101,103,101,114,115,0],"i8",x);za=O([109,109,97,112,115,32,100,111,110,39,116,32,115,117,112,112,111,114,
-116,32,99,111,110,99,97,116,101,110,97,116,105,111,110,0],"i8",x);ca=O([109,109,97,112,115,32,100,111,110,39,116,32,115,117,112,112,111,114,116,32,114,101,112,101,97,116,32,111,112,101,114,97,116,105,111,110,0],"i8",x);ka=O([109,109,97,112,32,111,98,106,101,99,116,32,100,111,101,115,110,39,116,32,115,117,112,112,111,114,116,32,115,108,105,99,101,32,100,101,108,101,116,105,111,110,0],"i8",x);La=O([109,109,97,112,32,115,108,105,99,101,32,97,115,115,105,103,110,109,101,110,116,32,109,117,115,116,32,
-98,101,32,97,32,115,116,114,105,110,103,0],"i8",x);sa=O([109,109,97,112,32,115,108,105,99,101,32,97,115,115,105,103,110,109,101,110,116,32,105,115,32,119,114,111,110,103,32,115,105,122,101,0],"i8",x);Ha=O([109,109,97,112,32,111,98,106,101,99,116,32,100,111,101,115,110,39,116,32,115,117,112,112,111,114,116,32,105,116,101,109,32,100,101,108,101,116,105,111,110,0],"i8",x);na=O([109,109,97,112,32,97,115,115,105,103,110,109,101,110,116,32,109,117,115,116,32,98,101,32,115,105,110,103,108,101,45,99,104,
-97,114,97,99,116,101,114,32,115,116,114,105,110,103,0],"i8",x);Ga=O([109,109,97,112,32,105,110,100,105,99,101,115,32,109,117,115,116,32,98,101,32,105,110,116,101,103,101,114,0],"i8",x);xa=O(40,["i32 (%struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, i32)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, i32)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, i32, i32)*",0,0,0,"i32 (%struct.PyObject*, i32, %struct.PyObject*)*",
-0,0,0,"i32 (%struct.PyObject*, i32, i32, %struct.PyObject*)*",0,0,0,"i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8"],x);Ba=O(12,["i32 (%struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0],x);ta=O(24,["i32 (%struct.PyObject*, i32, i8**)*",0,0,0,"i32 (%struct.PyObject*, i32, i8**)*",0,0,0,"i32 (%struct.PyObject*, i32*)*",0,0,0,"i32 (%struct.PyObject*, i32, i8**)*",0,0,0,"i8","i8",
-"i8","i8","i8","i8","i8","i8"],x);Ta=O([87,105,110,100,111,119,115,58,32,109,109,97,112,40,102,105,108,101,110,111,44,32,108,101,110,103,116,104,91,44,32,116,97,103,110,97,109,101,91,44,32,97,99,99,101,115,115,91,44,32,111,102,102,115,101,116,93,93,93,41,10,10,77,97,112,115,32,108,101,110,103,116,104,32,98,121,116,101,115,32,102,114,111,109,32,116,104,101,32,102,105,108,101,32,115,112,101,99,105,102,105,101,100,32,98,121,32,116,104,101,32,102,105,108,101,32,104,97,110,100,108,101,32,102,105,108,101,
-110,111,44,10,97,110,100,32,114,101,116,117,114,110,115,32,97,32,109,109,97,112,32,111,98,106,101,99,116,46,32,32,73,102,32,108,101,110,103,116,104,32,105,115,32,108,97,114,103,101,114,32,116,104,97,110,32,116,104,101,32,99,117,114,114,101,110,116,32,115,105,122,101,10,111,102,32,116,104,101,32,102,105,108,101,44,32,116,104,101,32,102,105,108,101,32,105,115,32,101,120,116,101,110,100,101,100,32,116,111,32,99,111,110,116,97,105,110,32,108,101,110,103,116,104,32,98,121,116,101,115,46,32,32,73,102,32,
-108,101,110,103,116,104,10,105,115,32,48,44,32,116,104,101,32,109,97,120,105,109,117,109,32,108,101,110,103,116,104,32,111,102,32,116,104,101,32,109,97,112,32,105,115,32,116,104,101,32,99,117,114,114,101,110,116,32,115,105,122,101,32,111,102,32,116,104,101,32,102,105,108,101,44,10,101,120,99,101,112,116,32,116,104,97,116,32,105,102,32,116,104,101,32,102,105,108,101,32,105,115,32,101,109,112,116,121,32,87,105,110,100,111,119,115,32,114,97,105,115,101,115,32,97,110,32,101,120,99,101,112,116,105,111,
-110,32,40,121,111,117,32,99,97,110,110,111,116,10,99,114,101,97,116,101,32,97,110,32,101,109,112,116,121,32,109,97,112,112,105,110,103,32,111,110,32,87,105,110,100,111,119,115,41,46,10,10,85,110,105,120,58,32,109,109,97,112,40,102,105,108,101,110,111,44,32,108,101,110,103,116,104,91,44,32,102,108,97,103,115,91,44,32,112,114,111,116,91,44,32,97,99,99,101,115,115,91,44,32,111,102,102,115,101,116,93,93,93,93,41,10,10,77,97,112,115,32,108,101,110,103,116,104,32,98,121,116,101,115,32,102,114,111,109,32,
-116,104,101,32,102,105,108,101,32,115,112,101,99,105,102,105,101,100,32,98,121,32,116,104,101,32,102,105,108,101,32,100,101,115,99,114,105,112,116,111,114,32,102,105,108,101,110,111,44,10,97,110,100,32,114,101,116,117,114,110,115,32,97,32,109,109,97,112,32,111,98,106,101,99,116,46,32,32,73,102,32,108,101,110,103,116,104,32,105,115,32,48,44,32,116,104,101,32,109,97,120,105,109,117,109,32,108,101,110,103,116,104,32,111,102,32,116,104,101,32,109,97,112,10,119,105,108,108,32,98,101,32,116,104,101,32,
-99,117,114,114,101,110,116,32,115,105,122,101,32,111,102,32,116,104,101,32,102,105,108,101,32,119,104,101,110,32,109,109,97,112,32,105,115,32,99,97,108,108,101,100,46,10,102,108,97,103,115,32,115,112,101,99,105,102,105,101,115,32,116,104,101,32,110,97,116,117,114,101,32,111,102,32,116,104,101,32,109,97,112,112,105,110,103,46,32,77,65,80,95,80,82,73,86,65,84,69,32,99,114,101,97,116,101,115,32,97,10,112,114,105,118,97,116,101,32,99,111,112,121,45,111,110,45,119,114,105,116,101,32,109,97,112,112,105,
-110,103,44,32,115,111,32,99,104,97,110,103,101,115,32,116,111,32,116,104,101,32,99,111,110,116,101,110,116,115,32,111,102,32,116,104,101,32,109,109,97,112,10,111,98,106,101,99,116,32,119,105,108,108,32,98,101,32,112,114,105,118,97,116,101,32,116,111,32,116,104,105,115,32,112,114,111,99,101,115,115,44,32,97,110,100,32,77,65,80,95,83,72,65,82,69,68,32,99,114,101,97,116,101,115,32,97,32,109,97,112,112,105,110,103,10,116,104,97,116,39,115,32,115,104,97,114,101,100,32,119,105,116,104,32,97,108,108,32,
-111,116,104,101,114,32,112,114,111,99,101,115,115,101,115,32,109,97,112,112,105,110,103,32,116,104,101,32,115,97,109,101,32,97,114,101,97,115,32,111,102,32,116,104,101,32,102,105,108,101,46,10,84,104,101,32,100,101,102,97,117,108,116,32,118,97,108,117,101,32,105,115,32,77,65,80,95,83,72,65,82,69,68,46,10,10,84,111,32,109,97,112,32,97,110,111,110,121,109,111,117,115,32,109,101,109,111,114,121,44,32,112,97,115,115,32,45,49,32,97,115,32,116,104,101,32,102,105,108,101,110,111,32,40,98,111,116,104,32,
-118,101,114,115,105,111,110,115,41,46,0],"i8",x);Ea=O([109,109,97,112,46,109,109,97,112,0],"i8",x);Ka=O([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132587,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0],["i32",0,0,0,"%struct._typeobject*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i32",0,0,0,"i32",0,0,0,"void (%struct.PyObject*)*",0,0,0,"i32 (%struct.PyObject*, %struct.FILE*, i32)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, i8*)*",0,0,0,"i32 (%struct.PyObject*, i8*, %struct.PyObject*)*",0,0,0,"i32 (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*)*",0,0,0,"%struct.PyNumberMethods*",0,0,0,"%struct.PySequenceMethods*",0,0,0,"%struct.PyMappingMethods*",0,0,0,"i32 (%struct.PyObject*)*",
-0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0,"%struct.PyBufferProcs*",0,0,0,"i32",0,0,0,"i8*",0,0,0,"i32 (%struct.PyObject*, i32 (%struct.PyObject*, i8*)*, i8*)*",0,0,0,"i32 (%struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*, i32)*",0,0,
-0,"i32",0,0,0,"%struct.PyObject* (%struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct.PyObject*)*",0,0,0,"%struct.PyMethodDef*",0,0,0,"%struct.PyMemberDef*",0,0,0,"%struct.PyGetSetDef*",0,0,0,"%struct._typeobject*",0,0,0,"%struct.PyObject*",0,0,0,"%struct.PyObject* (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0,"i32",0,0,0,"i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0,"%struct.PyObject* (%struct._typeobject*, i32)*",
-0,0,0,"%struct.PyObject* (%struct._typeobject*, %struct.PyObject*, %struct.PyObject*)*",0,0,0,"void (i8*)*",0,0,0,"i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8","i8"],x);Na=O([109,101,109,111,114,121,32,109,97,112,112,101,100,32,37,115,32,109,117,115,116,32,98,101,32,112,111,115,105,116,105,118,101,0],"i8",x);oa=O([109,97,112,32,115,105,122,101,32,109,117,115,116,32,98,101,32,97,110,32,105,
-110,116,101,103,114,97,108,32,118,97,108,117,101,0],"i8",x);ba=O([105,79,124,105,105,105,76,0],"i8",x);la=O(28,"i8*",x);Ia=O([102,105,108,101,110,111,0],"i8",x);Ya=O([108,101,110,103,116,104,0],"i8",x);Pa=O([102,108,97,103,115,0],"i8",x);ra=O([112,114,111,116,0],"i8",x);Ca=O([97,99,99,101,115,115,0],"i8",x);ua=O([111,102,102,115,101,116,0],"i8",x);Sa=O([109,101,109,111,114,121,32,109,97,112,112,101,100,32,111,102,102,115,101,116,32,109,117,115,116,32,98,101,32,112,111,115,105,116,105,118,101,0],"i8",
-x);bb=O([109,109,97,112,32,99,97,110,39,116,32,115,112,101,99,105,102,121,32,98,111,116,104,32,97,99,99,101,115,115,32,97,110,100,32,102,108,97,103,115,44,32,112,114,111,116,46,0],"i8",x);lb=O([109,109,97,112,32,105,110,118,97,108,105,100,32,97,99,99,101,115,115,32,112,97,114,97,109,101,116,101,114,46,0],"i8",x);yb=O([109,109,97,112,32,111,102,102,115,101,116,32,105,115,32,103,114,101,97,116,101,114,32,116,104,97,110,32,102,105,108,101,32,115,105,122,101,0],"i8",x);Xa=O([109,109,97,112,32,108,101,
-110,103,116,104,32,105,115,32,116,111,111,32,108,97,114,103,101,0],"i8",x);Va=O([109,109,97,112,32,108,101,110,103,116,104,32,105,115,32,103,114,101,97,116,101,114,32,116,104,97,110,32,102,105,108,101,32,115,105,122,101,0],"i8",x);xb=O([109,109,97,112,0],"i8",x);Db=O([109,109,97,112,46,101,114,114,111,114,0],"i8",x);pa=O([101,114,114,111,114,0],"i8",x);gb=O([80,82,79,84,95,69,88,69,67,0],"i8",x);sb=O([80,82,79,84,95,82,69,65,68,0],"i8",x);ob=O([80,82,79,84,95,87,82,73,84,69,0],"i8",x);wb=O([77,65,
-80,95,83,72,65,82,69,68,0],"i8",x);Ua=O([77,65,80,95,80,82,73,86,65,84,69,0],"i8",x);Fb=O([77,65,80,95,68,69,78,89,87,82,73,84,69,0],"i8",x);tb=O([77,65,80,95,69,88,69,67,85,84,65,66,76,69,0],"i8",x);Bb=O([77,65,80,95,65,78,79,78,0],"i8",x);Zb=O([77,65,80,95,65,78,79,78,89,77,79,85,83,0],"i8",x);Lb=O([80,65,71,69,83,73,90,69,0],"i8",x);cb=O([65,76,76,79,67,65,84,73,79,78,71,82,65,78,85,76,65,82,73,84,89,0],"i8",x);Fa=O([65,67,67,69,83,83,95,82,69,65,68,0],"i8",x);lc=O([65,67,67,69,83,83,95,87,82,
-73,84,69,0],"i8",x);cc=O([65,67,67,69,83,83,95,67,79,80,89,0],"i8",x);w[K]=X;w[K+4]=g+2;w[K+16]=W;w[K+20]=g+4;w[K+32]=S;w[K+36]=g+6;w[K+48]=R;w[K+52]=g+8;w[K+64]=$;w[K+68]=g+10;w[K+80]=Y;w[K+84]=g+12;w[K+96]=ea;w[K+100]=g+14;w[K+112]=U;w[K+116]=g+16;w[K+128]=V;w[K+132]=g+18;w[K+144]=Z;w[K+148]=g+20;w[K+160]=da;w[K+164]=g+22;w[K+176]=ja;w[K+180]=g+24;w[K+192]=aa;w[K+196]=g+26;w[K+208]=wa;w[K+212]=g+28;w[xa]=g+30;w[xa+4]=g+32;w[xa+8]=g+34;w[xa+12]=g+36;w[xa+16]=g+38;w[xa+20]=g+40;w[xa+24]=g+42;w[Ba]=
-g+30;w[Ba+4]=g+44;w[Ba+8]=g+46;w[ta]=g+48;w[ta+4]=g+50;w[ta+8]=g+52;w[ta+12]=g+54;w[Ka+12]=Ea;w[Ka+24]=g+56;w[Ka+52]=xa;w[Ka+56]=Ba;w[Ka+72]=g+58;w[Ka+80]=ta;w[Ka+88]=Ta;w[Ka+116]=K;w[Ka+152]=g+60;w[Ka+156]=g+62;w[Ka+160]=g+64;w[la]=Ia;w[la+4]=Ya;w[la+8]=Pa;w[la+12]=ra;w[la+16]=Ca;w[la+20]=ua}var c={arguments:[]},h,i,j,l,m,n,q,o,r,t,v,y,A,z,C,F,B,I,D,L,J,N,H,X,W,S,R,$,Y,ea,U,V,Z,da,ja,aa,wa,K,G,qa,fa,ia,Ja,za,ca,ka,La,sa,Ha,na,Ga,xa,Ba,ta,Ta,Ea,Ka,Na,oa,ba,la,Ia,Ya,Pa,ra,Ca,ua,Sa,bb,lb,yb,Xa,Va,xb,
-Db,pa,gb,sb,ob,wb,Ua,Fb,tb,Bb,Zb,Lb,cb,Fa,lc,cc;c._initmmap=function(){var d;for(d=-1;;)switch(d){case -1:var e,c;d=H7(Ka)<0?5:1;break;case 1:c=t7(xb,0,0);d=c==0?5:2;break;case 2:e=h5(c);d=e==0?5:3;break;case 3:d=C4(Db,w[Ts],0);w[C]=d;d=w[C]==0?5:4;break;case 4:d2(e,pa,w[C]);d2(e,xb,Ka);b(e,gb,4);b(e,sb,1);b(e,ob,2);b(e,wb,1);b(e,Ua,2);b(e,Fb,2048);b(e,tb,4096);b(e,Bb,32);b(e,Zb,32);d=yX(30);b(e,Lb,d);d=yX(30);b(e,cb,d);b(e,Fa,1);b(e,lc,2);b(e,cc,3);d=5;break;case 5:return;default:p(0,"bad label: "+
-d)}};P=P.concat([0,0,function(b){var d;for(d=-1;;)switch(d){case -1:var e;e=b;d=w[e+28]>=0?1:2;break;case 1:GW(w[e+28]);d=2;break;case 2:w[e+28]=-1;d=w[e+8]!=0?3:4;break;case 3:dW(w[e+8]);w[e+8]=0;d=4;break;case 4:return w[Q]+=1,b=Q;default:p(0,"bad label: "+d)}},0,function(b,d){return f(b,d,0)},0,function(b,d){return f(b,d,1)},0,function(b,d){var e=s;s+=8;u(e,0,8);var c;for(c=-1;;)switch(c){case -1:var f,g,i,j=e,l=e+4;f=b;g=d;w[j]=0;w[l]=w[f+12];c=w[f+8]==0?1:2;break;case 1:T(w[wt],h);i=0;c=12;break;
-case 2:c=B1(g,B,O([j,0,0,0,l,0,0,0],["i32*",0,0,0,"i32*",0,0,0],E))==0?3:4;break;case 3:i=0;c=12;break;case 4:c=w[l]+w[j]>w[f+12]?5:6;break;case 5:T(w[wt],I);i=0;c=12;break;case 6:c=w[f+32]==1?8:7;break;case 7:c=w[f+32]==3?8:9;break;case 8:i=RZ(0);c=12;break;case 9:c=_msync(w[f+8]+w[j],w[l],4)==-1?10:11;break;case 10:B4(w[C]);i=0;c=12;break;case 11:i=OZ(0);c=12;break;case 12:return c=i,s=e,c;default:p(0,"bad label: "+c)}},0,function(b,e){var c=s;s+=12;u(c,0,12);var f;for(f=-1;;)switch(f){case -1:var g,
-i,j,l=c,m=c+4,n=c+8;g=b;i=e;f=w[g+8]==0?1:2;break;case 1:T(w[wt],h);j=0;f=13;break;case 2:f=B1(i,N,O([l,0,0,0,m,0,0,0,n,0,0,0],["i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0],E))==0?4:3;break;case 3:f=d(g)==0?4:5;break;case 4:j=0;f=13;break;case 5:f=w[l]+w[n]<w[n]?11:6;break;case 6:f=w[m]+w[n]<w[n]?11:7;break;case 7:f=w[g+12]<w[m]?11:8;break;case 8:f=w[n]+w[m]>w[g+12]?11:9;break;case 9:f=w[g+12]<w[l]?11:10;break;case 10:f=w[n]+w[l]>w[g+12]?11:12;break;case 11:T(w[wt],H);j=0;f=13;break;case 12:cW(w[g+8]+
-w[l],w[g+8]+w[m],w[n]);w[Q]+=1;j=Q;f=13;break;case 13:return f=j,s=c,f;default:p(0,"bad label: "+f)}},0,function(b,d){var e=s;s+=4;u(e,0,4);var c;for(c=-1;;)switch(c){case -1:var f,g,i,j=e,o;f=b;g=d;c=w[f+8]==0?1:2;break;case 1:T(w[wt],h);i=0;c=12;break;case 2:c=B1(g,l,O([j,0,0,0],["i32*",0,0,0],E))==0?3:4;break;case 3:i=0;c=12;break;case 4:c=w[f+12]<w[f+16]?5:6;break;case 5:XX(m),ga("Reached an unreachable!");case 6:o=w[f+12]-w[f+16];c=o<0?7:8;break;case 7:o=2147483647;c=8;break;case 8:c=w[j]<0?
-10:9;break;case 9:c=w[j]>o?10:11;break;case 10:w[j]=o;c=11;break;case 11:c=h1(n,O([w[f+8]+w[f+16],0,0,0,w[j],0,0,0],["i8*",0,0,0,"i32",0,0,0],E));w[f+16]=w[j]+w[f+16];i=c;c=12;break;case 12:return f=i,s=e,f;default:p(0,"bad label: "+c)}},0,function(b){var d;for(d=-1;;)switch(d){case -1:var e,c;e=b;d=w[e+8]==0?1:2;break;case 1:T(w[wt],h);c=0;d=5;break;case 2:d=w[e+16]<w[e+12]?3:4;break;case 3:d=w[w[e+8]+w[e+16]];w[e+16]+=1;c=h1(i,O([d,0,0,0],["i32",0,0,0],E));d=5;break;case 4:T(w[wt],j);c=0;d=5;break;
-case 5:return b=c;default:p(0,"bad label: "+d)}},0,function(b){var d;for(d=-1;;)switch(d){case -1:var e,c,f,g,i;e=b;f=w[e+8]+w[e+16];g=w[e+8]+w[e+12];d=w[e+8]==0?1:2;break;case 1:T(w[wt],h);c=0;d=6;break;case 2:i=fW(f,10,w[e+12]-w[e+16]);d=i==0?3:4;break;case 3:i=g;d=5;break;case 4:i+=1;d=5;break;case 5:d=NY(f,i-f);w[e+16]=i+w[e+16]+(0-f);c=d;d=6;break;case 6:return b=c;default:p(0,"bad label: "+d)}},0,function(b,d){var e=s;s+=4;u(e,0,4);var c;for(c=-1;;)switch(c){case -1:var f,g,i,j=e,l;f=b;g=d;
-c=w[f+8]==0?1:2;break;case 1:T(w[wt],h);i=0;c=10;break;case 2:c=B1(g,F,O([j,0,0,0],["i32*",0,0,0],E))==0?4:3;break;case 3:a:{c=f;for(var m=a,m=-1;;)switch(m){case -1:var n,o;n=c;m=w[n+32]==2?2:1;break;case 1:m=w[n+32]==0?2:3;break;case 2:o=1;m=4;break;case 3:lY(w[os],t,O(1,"i32",E));o=0;m=4;break;case 4:c=o;break a;default:p(0,"bad label: "+m)}c=a}c=c==0?4:5;break;case 4:i=0;c=10;break;case 5:c=NW(w[f+28],w[j]+w[f+20])==-1?6:7;break;case 6:B4(w[C]);i=0;c=10;break;case 7:l=a(w[f+8],w[f+12],w[j],1,
-O(1,"i32",E));c=l==-1?8:9;break;case 8:B4(w[C]);i=0;c=10;break;case 9:w[f+8]=l;w[f+12]=w[j];w[Q]+=1;i=Q;c=10;break;case 10:return f=i,s=e,f;default:p(0,"bad label: "+c)}},0,function(b,d){var e=s;s+=8;u(e,0,8);var c;for(c=-1;;)switch(c){case -1:var f,g,i,j=e,l=e+4,m;f=b;g=d;w[l]=0;c=w[f+8]==0?1:2;break;case 1:T(w[wt],h);i=0;c=15;break;case 2:c=B1(g,D,O([j,0,0,0,l,0,0,0],["i32*",0,0,0,"i32*",0,0,0],E))==0?3:4;break;case 3:i=0;c=15;break;case 4:c=w[l];c=c==0?5:c==1?7:c==2?9:11;break;case 5:c=w[j]<0?
-14:6;break;case 6:m=w[j];c=12;break;case 7:c=w[j]+w[f+16]<0?14:8;break;case 8:m=w[j]+w[f+16];c=12;break;case 9:c=w[j]+w[f+12]<0?14:10;break;case 10:m=w[j]+w[f+12];c=12;break;case 11:T(w[wt],L);i=0;c=15;break;case 12:c=w[f+12]<m?14:13;break;case 13:w[f+16]=m;w[Q]+=1;i=Q;c=15;break;case 14:T(w[wt],J);i=0;c=15;break;case 15:return f=i,s=e,f;default:p(0,"bad label: "+c)}},0,function(b){var d=s;s+=96;u(d,0,96);var e;for(e=-1;;)switch(e){case -1:var c,f,g=d;c=b;e=w[c+8]==0?1:2;break;case 1:T(w[wt],h);f=
-0;e=5;break;case 2:e=tW(w[c+28],g)==-1?3:4;break;case 3:B4(w[C]);f=0;e=5;break;case 4:f=R6(w[g+44]);e=5;break;case 5:return b=f,s=d,b;default:p(0,"bad label: "+e)}},0,function(b){var d;for(d=-1;;)switch(d){case -1:var e,c;e=b;d=w[e+8]==0?1:2;break;case 1:T(w[wt],h);c=0;d=3;break;case 2:c=p6(w[e+16]);d=3;break;case 3:return b=c;default:p(0,"bad label: "+d)}},0,function(b,e){var c=s;s+=8;u(c,0,8);var f;for(f=-1;;)switch(f){case -1:var g,i,j,l=c,m=c+4;g=b;i=e;f=w[g+8]==0?1:2;break;case 1:T(w[wt],h);
-j=0;f=9;break;case 2:f=B1(i,v,O([m,0,0,0,l,0,0,0],["i8**",0,0,0,"i32*",0,0,0],E))==0?3:4;break;case 3:j=0;f=9;break;case 4:f=d(g)==0?5:6;break;case 5:j=0;f=9;break;case 6:f=w[l]+w[g+16]>w[g+12]?7:8;break;case 7:T(w[wt],y);j=0;f=9;break;case 8:iV(w[g+8]+w[g+16],w[m],w[l],1,0);w[g+16]=w[l]+w[g+16];w[Q]+=1;j=Q;f=9;break;case 9:return f=j,s=c,f;default:p(0,"bad label: "+f)}},0,function(b,e){var c=s;s+=1;u(c,0,1);var f;for(f=-1;;)switch(f){case -1:var g,i,j,l=c;g=b;i=e;f=w[g+8]==0?1:2;break;case 1:T(w[wt],
-h);j=0;f=9;break;case 2:f=B1(i,A,O([l,0,0,0],["i8*",0,0,0],E))==0?3:4;break;case 3:j=0;f=9;break;case 4:f=d(g)==0?5:6;break;case 5:j=0;f=9;break;case 6:f=w[g+16]<w[g+12]?7:8;break;case 7:w[w[g+8]+w[g+16]]=w[l];w[g+16]+=1;w[Q]+=1;j=Q;f=9;break;case 8:T(w[wt],z);j=0;f=9;break;case 9:return f=j,s=c,f;default:p(0,"bad label: "+f)}},0,function(b){var d;for(d=-1;;)switch(d){case -1:var e,c;e=b;d=w[e+8]==0?1:2;break;case 1:T(w[wt],h);c=-1;d=3;break;case 2:c=w[e+12];d=3;break;case 3:return b=c;default:p(0,
-"bad label: "+d)}},0,function(b){var d;for(d=-1;;)switch(d){case -1:var e;d=w[b+8]==0?1:2;break;case 1:T(w[wt],h);e=0;d=3;break;case 2:T(w[Du],za);e=0;d=3;break;case 3:return b=e;default:p(0,"bad label: "+d)}},0,function(b){var d;for(d=-1;;)switch(d){case -1:var e;d=w[b+8]==0?1:2;break;case 1:T(w[wt],h);e=0;d=3;break;case 2:T(w[Du],ca);e=0;d=3;break;case 3:return b=e;default:p(0,"bad label: "+d)}},0,function(b,d){var e;for(e=-1;;)switch(e){case -1:var c,f,g;c=b;f=d;e=w[c+8]==0?1:2;break;case 1:T(w[wt],
-h);g=0;e=6;break;case 2:e=f<0?4:3;break;case 3:e=f>=w[c+12]?4:5;break;case 4:T(w[it],fa);g=0;e=6;break;case 5:g=NY(w[c+8]+f,1);e=6;break;case 6:return e=g;default:p(0,"bad label: "+e)}},0,function(b,d,e){var c;for(c=-1;;)switch(c){case -1:var f,g,i,j;f=b;g=d;i=e;c=w[f+8]==0?1:2;break;case 1:T(w[wt],h);j=0;c=13;break;case 2:c=g<0?3:4;break;case 3:g=0;c=6;break;case 4:c=g>w[f+12]?5:6;break;case 5:g=w[f+12];c=6;break;case 6:c=i<0?7:8;break;case 7:i=0;c=8;break;case 8:c=i<g?9:10;break;case 9:i=g;c=12;
-break;case 10:c=i>w[f+12]?11:12;break;case 11:i=w[f+12];c=12;break;case 12:j=NY(w[f+8]+g,i-g);c=13;break;case 13:return b=j;default:p(0,"bad label: "+c)}},0,function(b,e,c){var f;for(f=-1;;)switch(f){case -1:var g,i,j,l;g=b;i=e;j=c;f=w[g+8]==0?1:2;break;case 1:T(w[wt],h);l=-1;f=13;break;case 2:f=i<0?4:3;break;case 3:f=i>=w[g+12]?4:5;break;case 4:T(w[it],fa);l=-1;f=13;break;case 5:f=j==0?6:7;break;case 6:T(w[os],Ha);l=-1;f=13;break;case 7:f=(w[w[j+4]+84]&134217728)==0?9:8;break;case 8:f=g5(j)!=1?9:
-10;break;case 9:T(w[it],na);l=-1;f=13;break;case 10:f=d(g)==0?11:12;break;case 11:l=-1;f=13;break;case 12:f=a1(j);w[w[g+8]+i]=w[f];l=0;f=13;break;case 13:return b=l;default:p(0,"bad label: "+f)}},0,function(b,e,c,f){var g;for(g=-1;;)switch(g){case -1:var i,j,l,m,n;i=b;j=e;l=c;m=f;g=w[i+8]==0?1:2;break;case 1:T(w[wt],h);n=-1;g=21;break;case 2:g=j<0?3:4;break;case 3:j=0;g=6;break;case 4:g=j>w[i+12]?5:6;break;case 5:j=w[i+12];g=6;break;case 6:g=l<0?7:8;break;case 7:l=0;g=8;break;case 8:g=l<j?9:10;break;
-case 9:l=j;g=12;break;case 10:g=l>w[i+12]?11:12;break;case 11:l=w[i+12];g=12;break;case 12:g=m==0?13:14;break;case 13:T(w[os],ka);n=-1;g=21;break;case 14:g=(w[w[m+4]+84]&134217728)==0?15:16;break;case 15:T(w[it],La);n=-1;g=21;break;case 16:g=g5(m)!=l-j?17:18;break;case 17:T(w[it],sa);n=-1;g=21;break;case 18:g=d(i)==0?19:20;break;case 19:n=-1;g=21;break;case 20:g=a1(m);iV(w[i+8]+j,g,l-j,1,0);n=0;g=21;break;case 21:return b=n;default:p(0,"bad label: "+g)}},0,function(b,d){var e=s;s+=16;u(e,0,16);var c,
-f=ha;for(c=-1;;)switch(c){case -1:var g,i,j,l,m=e,n=e+4,o=e+8,q=e+12,r,t,v;g=b;i=d;c=w[g+8]==0?1:2;break;case 1:T(w[wt],h);j=0;c=29;break;case 2:c=w[w[i+4]+48]==0?16:3;break;case 3:c=(w[w[i+4]+84]&131072)==0?16:4;break;case 4:c=w[w[w[i+4]+48]+152]==0?16:5;break;case 5:var y=l=yY(i,w[it]);y==-1?(f=5,c=6):(f=5,c=9);break;case 6:c=nY()!=0?7:8;break;case 7:j=0;c=29;break;case 8:var z=l,f=8;c=9;break;case 9:c=(f==8?z:y)<0?10:11;break;case 10:var A=l+w[g+12];l=A;f=10;c=12;break;case 11:var B=l,f=11;c=12;
-break;case 12:c=(f==11?B:A)<0?14:13;break;case 13:c=l>=w[g+12]?14:15;break;case 14:T(w[it],fa);j=0;c=29;break;case 15:j=NY(w[g+8]+l,1);c=29;break;case 16:c=w[i+4]==kN?17:28;break;case 17:c=w1(i,w[g+12],m,n,o,q)<0?18:19;break;case 18:j=0;c=29;break;case 19:c=w[q]<=0?20:21;break;case 20:j=NY(ia,0);c=29;break;case 21:var C=w[q];c=w[o]==1?22:23;break;case 22:j=NY(w[g+8]+w[m],C);c=29;break;case 23:r=IY(C);c=r==0?24:25;break;case 24:j=JY();c=29;break;case 25:t=w[m];v=0;c=v<w[q]?26:27;break;case 26:w[r+
-v]=w[w[g+8]+t];t+=w[o];v+=1;c=v<w[q]?26:27;break;case 27:c=NY(r,w[q]);dW(r);j=c;c=29;break;case 28:T(w[os],Ja);j=0;c=29;break;case 29:return f=j,s=e,f;default:p(0,"bad label: "+c)}},0,function(b,e,c){var f=s;s+=16;u(f,0,16);var g,i=ha;for(g=-1;;)switch(g){case -1:var j,l,m,n,o,q=f,r=f+4,t=f+8,v=f+12,y,z,A,B;j=b;l=e;m=c;g=w[j+8]==0?1:2;break;case 1:T(w[wt],h);n=-1;g=46;break;case 2:g=w[w[l+4]+48]==0?23:3;break;case 3:g=(w[w[l+4]+84]&131072)==0?23:4;break;case 4:g=w[w[w[l+4]+48]+152]==0?23:5;break;
-case 5:var C=o=yY(l,w[it]);C==-1?(i=5,g=6):(i=5,g=9);break;case 6:g=nY()!=0?7:8;break;case 7:n=-1;g=46;break;case 8:var D=o,i=8;g=9;break;case 9:g=(i==8?D:C)<0?10:11;break;case 10:var Fa=o+w[j+12];o=Fa;i=10;g=12;break;case 11:var F=o,i=11;g=12;break;case 12:g=(i==11?F:Fa)<0?14:13;break;case 13:g=o>=w[j+12]?14:15;break;case 14:T(w[it],fa);n=-1;g=46;break;case 15:g=m==0?16:17;break;case 16:T(w[os],Ha);n=-1;g=46;break;case 17:g=(w[w[m+4]+84]&134217728)==0?19:18;break;case 18:g=g5(m)!=1?19:20;break;case 19:T(w[it],
-na);n=-1;g=46;break;case 20:g=d(j)==0?21:22;break;case 21:n=-1;g=46;break;case 22:n=a1(m);w[w[j+8]+o]=w[n];n=0;g=46;break;case 23:g=w[l+4]==kN?24:45;break;case 24:g=w1(l,w[j+12],q,r,t,v)<0?25:26;break;case 25:n=-1;g=46;break;case 26:g=m==0?27:28;break;case 27:T(w[os],ka);n=-1;g=46;break;case 28:g=(w[w[m+4]+84]&134217728)==0?29:30;break;case 29:T(w[it],La);n=-1;g=46;break;case 30:g=g5(m)!=w[v]?31:32;break;case 31:T(w[it],sa);n=-1;g=46;break;case 32:g=d(j)==0?33:34;break;case 33:n=-1;g=46;break;case 34:g=
-w[v]==0?35:36;break;case 35:n=0;g=46;break;case 36:g=w[t]==1;var G=a1(m);g=g?37:40;break;case 37:y=G;g=y==0?38:39;break;case 38:n=-1;g=46;break;case 39:iV(w[j+8]+w[q],y,w[v],1,0);n=0;g=46;break;case 40:B=G;g=B==0?41:42;break;case 41:n=-1;g=46;break;case 42:z=w[q];A=0;g=A<w[v]?43:44;break;case 43:w[w[j+8]+z]=w[B+A];z+=w[t];A+=1;g=A<w[v]?43:44;break;case 44:n=0;g=46;break;case 45:T(w[os],Ga);n=-1;g=46;break;case 46:return b=n,s=f,b;default:p(0,"bad label: "+g)}},0,function(b,d,e){var c;for(c=-1;;)switch(c){case -1:var f,
-g,i,j;f=b;g=d;i=e;c=w[f+8]==0?1:2;break;case 1:T(w[wt],h);j=-1;c=5;break;case 2:c=g!=0?3:4;break;case 3:T(w[Du],G);j=-1;c=5;break;case 4:w[i]=w[f+8];j=w[f+12];c=5;break;case 5:return b=j;default:p(0,"bad label: "+c)}},0,function(b,e,c){var f;for(f=-1;;)switch(f){case -1:var g,i,j,l;g=b;i=e;j=c;f=w[g+8]==0?1:2;break;case 1:T(w[wt],h);l=-1;f=7;break;case 2:f=i!=0?3:4;break;case 3:T(w[Du],G);l=-1;f=7;break;case 4:f=d(g)==0?5:6;break;case 5:l=-1;f=7;break;case 6:w[j]=w[g+8];l=w[g+12];f=7;break;case 7:return b=
-l;default:p(0,"bad label: "+f)}},0,function(b,d){var e;for(e=-1;;)switch(e){case -1:var c,f,g;c=b;f=d;e=w[c+8]==0?1:2;break;case 1:T(w[wt],h);g=-1;e=5;break;case 2:e=f!=0?3:4;break;case 3:w[f]=w[c+12];e=4;break;case 4:g=1;e=5;break;case 5:return e=g;default:p(0,"bad label: "+e)}},0,function(b,d,e){var c;for(c=-1;;)switch(c){case -1:var f,g,h;f=b;c=d;g=e;c=c!=0?1:2;break;case 1:T(w[Du],qa);h=-1;c=3;break;case 2:w[g]=w[f+8];h=w[f+12];c=3;break;case 3:return b=h;default:p(0,"bad label: "+c)}},0,function(b){var d;
-for(d=-1;;)switch(d){case -1:var e;e=b;d=w[e+28]>=0?1:2;break;case 1:GW(w[e+28]);d=2;break;case 2:d=w[e+8]!=0?3:7;break;case 3:d=w[e+32]!=1?4:6;break;case 4:d=w[e+32]!=3?5:6;break;case 5:_msync(w[e+8],w[e+12],4);d=6;break;case 6:dW(w[e+8]);d=7;break;case 7:P[w[w[e+4]+160]](e);return;default:p(0,"bad label: "+d)}},0,M7,0,i4,0,function(b,d,e){var c=s;s+=124;u(c,0,124);var f;for(f=-1;;)switch(f){case -1:var g,h,i,j=c,l,m=c+96,n,o=c+100,q=c+108,r=c+112,t=c+116,v,y=c+120;g=b;f=d;h=e;w[m]=0;w[o]=0;w[r]=
-1;w[t]=3;v=-1;w[y]=0;f=L5(f,h,ba,la,O([q,0,0,0,m,0,0,0,r,0,0,0,t,0,0,0,y,0,0,0,o,0,0,0],["i32*",0,0,0,"%struct.PyObject**",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i32*",0,0,0,"i64*",0,0,0],E))==0?1:2;break;case 1:i=0;f=45;break;case 2:a:{n=w[m];f=a;h=ha;for(f=-1;;)switch(f){case -1:var z,A,B,D;z=n;A=da;f=z==0?1:2;break;case 1:B=0;f=13;break;case 2:f=w[w[z+4]+48]!=0?3:12;break;case 3:f=(w[w[z+4]+84]&131072)!=0?4:12;break;case 4:f=w[w[w[z+4]+48]+152]!=0?5:12;break;case 5:var Fa=D=yY(z,w[zu]);Fa==-1?(h=5,f=
-6):(h=5,f=9);break;case 6:f=nY()!=0?7:8;break;case 7:B=-1;f=13;break;case 8:var F=D;h=8;f=9;break;case 9:f=(h==8?F:Fa)<0?10:11;break;case 10:lY(w[zu],Na,O([A,0,0,0],["i8*",0,0,0],E));B=-1;f=13;break;case 11:B=D;f=13;break;case 12:T(w[os],oa);B=-1;f=13;break;case 13:n=B;break a;default:p(0,"bad label: "+f)}n=a}f=n<0?3:4;break;case 3:i=0;f=45;break;case 4:f=w[o]<0?5:6;break;case 5:T(w[zu],Sa);i=0;f=45;break;case 6:f=w[y]!=0?7:14;break;case 7:f=w[r]!=1?9:8;break;case 8:f=w[t]!=3?9:10;break;case 9:i=
-lY(w[wt],bb,O(1,"i32",E));f=45;break;case 10:f=w[y];f=f==0?14:f==1?11:f==2?12:f==3?13:19;break;case 11:w[r]=1;w[t]=1;f=20;break;case 12:w[r]=1;w[t]=3;f=20;break;case 13:w[r]=2;w[t]=3;f=20;break;case 14:f=((w[t]&1)!=0^1)!=0?16:15;break;case 15:f=(w[t]&2)==0?16:20;break;case 16:f=(w[t]&2)!=0?17:18;break;case 17:w[y]=2;f=20;break;case 18:w[y]=1;f=20;break;case 19:i=lY(w[wt],lb,O(1,"i32",E));f=45;break;case 20:f=w[q]!=-1?21:30;break;case 21:f=tW(w[q],j)==0?22:30;break;case 22:f=(w[j+16]&61440)==32768?
-23:30;break;case 23:f=n==0?24:28;break;case 24:f=w[j+44]<=w[o]?25:26;break;case 25:T(w[wt],yb);i=0;f=45;break;case 26:f=w[j+44]-w[o];n=f&4294967295;f=n!=f?27:30;break;case 27:T(w[wt],Xa);i=0;f=45;break;case 28:f=n+w[o]>w[j+44]?29:30;break;case 29:T(w[wt],Va);i=0;f=45;break;case 30:l=f=P[w[g+152]](g,0);f=f==0?31:32;break;case 31:i=0;f=45;break;case 32:w[l+8]=0;w[l+12]=n;w[l+16]=0;w[l+20]=w[o];f=w[q]==-1?33:34;break;case 33:w[l+28]=-1;w[r]|=32;f=38;break;case 34:f=uX(w[q]);w[l+28]=f;f=w[l+28]==-1?35:
-38;break;case 35:w[l]-=1;f=w[l]==0?36:37;break;case 36:P[w[w[l+4]+24]](l);f=37;break;case 37:B4(w[C]);i=0;f=45;break;case 38:f=$Eb(0,n,w[t],w[r],w[q],w[o]);w[l+8]=f;f=v!=-1?39:40;break;case 39:GW(v);f=40;break;case 40:f=w[l+8]==-1?41:44;break;case 41:w[l+8]=0;w[l]-=1;f=w[l]==0?42:43;break;case 42:P[w[w[l+4]+24]](l);f=43;break;case 43:B4(w[C]);i=0;f=45;break;case 44:w[l+32]=w[y];i=l;f=45;break;case 45:return b=i,s=c,b;default:p(0,"bad label: "+f)}},0,T7,0]);c.run=e;e();return c});
+"use strict";
+(function(FUNCTION_TABLE_OFFSET) {
+  var Module = {};
+  var args = [];
+  Module.arguments = [];
+  var __globalConstructor__ = function globalConstructor() {};
+  var $0___SIZE = 240;
+  var $1___SIZE = 16;
+  var $2___SIZE = 16;
+  var $3___SIZE = 40;
+  var $4___SIZE = 24;
+  var $5___SIZE = 196;
+  var $struct_FILE___SIZE = 148;
+  var $struct_FILE___FLATTENER = [ 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 70, 71, 72, 76, 84, 88, 92, 96, 100, 104, 108 ];
+  var $struct_PyBufferProcs___SIZE = 24;
+  var $struct_PyGetSetDef___SIZE = 20;
+  var $struct_PyMappingMethods___SIZE = 12;
+  var $struct_PyMemberDef___SIZE = 0;
+  var $struct_PyMemberDef___FLATTENER = [];
+  var $struct_PyMethodDef___SIZE = 16;
+  var $struct_PyNumberMethods___SIZE = 156;
+  var $struct_PyObject___SIZE = 8;
+  var $struct_PySequenceMethods___SIZE = 40;
+  var $struct_PySliceObject___SIZE = 20;
+  var $struct_Py_buffer___SIZE = 52;
+  var $struct_Py_buffer___FLATTENER = [ 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48 ];
+  var $struct__IO_marker___SIZE = 12;
+  var $struct__typeobject___SIZE = 196;
+  var $struct_mmap_object___SIZE = 36;
+  var $struct_mmap_object___FLATTENER = [ 0, 4, 8, 12, 16, 20, 28, 32 ];
+  var $struct_stat___SIZE = 96;
+  var $struct_stat___FLATTENER = [ 0, 8, 12, 16, 20, 24, 28, 32, 40, 44, 52, 56, 64, 72, 80, 88 ];
+  var $struct_timespec___SIZE = 8;
+  var __str;
+  var __str1;
+  var __str2;
+  var __str3;
+  var __str4;
+  var __str5;
+  var ___PRETTY_FUNCTION___7743;
+  var __str6;
+  var __str7;
+  var __str8;
+  var __str9;
+  var __str10;
+  var __str11;
+  var __str12;
+  var __str13;
+  var __str14;
+  var _mmap_module_error;
+  var __str15;
+  var __str16;
+  var __str17;
+  var __str18;
+  var __str19;
+  var __str20;
+  var __str21;
+  var __str22;
+  var __str23;
+  var __str24;
+  var __str25;
+  var __str26;
+  var __str27;
+  var __str28;
+  var __str29;
+  var __str30;
+  var __str31;
+  var __str32;
+  var __str33;
+  var __str34;
+  var __str35;
+  var __str36;
+  var _mmap_object_methods;
+  var __str37;
+  var __str38;
+  var __str39;
+  var __str40;
+  var __str41;
+  var __str42;
+  var __str43;
+  var __str44;
+  var __str45;
+  var __str46;
+  var __str47;
+  var __str48;
+  var __str49;
+  var _mmap_as_sequence;
+  var _mmap_as_mapping;
+  var _mmap_as_buffer;
+  var _mmap_doc;
+  var __str50;
+  var _mmap_object_type;
+  var __str51;
+  var __str52;
+  var __str53;
+  var _keywords_8698;
+  var __str54;
+  var __str55;
+  var __str56;
+  var __str57;
+  var __str58;
+  var __str59;
+  var __str60;
+  var __str61;
+  var __str62;
+  var __str63;
+  var __str64;
+  var __str65;
+  var __str66;
+  var __str67;
+  var __str68;
+  var __str69;
+  var __str70;
+  var __str71;
+  var __str72;
+  var __str73;
+  var __str74;
+  var __str75;
+  var __str76;
+  var __str77;
+  var __str78;
+  var __str79;
+  var __str80;
+  var __str81;
+  var __str82;
+  function _my_getpagesize() {
+    
+    var $retval;
+    var $0;
+    var $1 = _sysconf(30);
+    $0 = $1;
+    
+    $retval = $0;
+    var $retval1 = $retval;
+    return $retval1;
+  }
+  function _mmap_object_dealloc($m_obj) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $m_obj_addr;
+      $m_obj_addr = $m_obj;
+      
+      
+      
+      
+      if (HEAP[$m_obj_addr + 28] >= 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      
+      
+      var $6 = HEAP[$m_obj_addr + 28];
+      var $7 = _close($6);
+      __label__ = 2;
+      break;
+     case 2:
+      
+      
+      
+      
+      if (HEAP[$m_obj_addr + 8] != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      if (HEAP[$m_obj_addr + 32] != 1) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 4:
+      
+      
+      
+      
+      if (HEAP[$m_obj_addr + 32] != 3) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      
+      
+      var $22 = HEAP[$m_obj_addr + 12];
+      
+      
+      var $25 = HEAP[$m_obj_addr + 8];
+      var $26 = _msync($25, $22, 4);
+      __label__ = 6;
+      break;
+     case 6:
+      
+      
+      var $29 = HEAP[$m_obj_addr + 12];
+      
+      
+      var $32 = HEAP[$m_obj_addr + 8];
+      var $33 = _munmap($32, $29);
+      __label__ = 7;
+      break;
+     case 7:
+      
+      
+      
+      
+      
+      var $39 = HEAP[HEAP[$m_obj_addr + 4] + 160];
+      
+      
+      FUNCTION_TABLE[$39]($m_obj_addr);
+      return;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_close_method($self, $unused) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $unused_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $unused_addr = $unused;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 28] >= 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      
+      
+      var $7 = HEAP[$self_addr + 28];
+      var $8 = _close($7);
+      __label__ = 2;
+      break;
+     case 2:
+      
+      
+      HEAP[$self_addr + 28] = -1;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      
+      
+      var $17 = HEAP[$self_addr + 12];
+      
+      
+      var $20 = HEAP[$self_addr + 8];
+      var $21 = _munmap($20, $17);
+      
+      
+      HEAP[$self_addr + 8] = 0;
+      __label__ = 4;
+      break;
+     case 4:
+      
+      var $25 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $25;
+      $0 = __Py_NoneStruct;
+      
+      $retval = $0;
+      var $retval4 = $retval;
+      return $retval4;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_read_byte_method($self, $unused) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $unused_addr;
+      var $retval;
+      var $0;
+      var $value;
+      $self_addr = $self;
+      $unused_addr = $unused;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 2:
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$self_addr + 16] < HEAP[$self_addr + 12]) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      
+      
+      
+      
+      $value = HEAP[HEAP[$self_addr + 8] + HEAP[$self_addr + 16]];
+      
+      
+      
+      var $24 = HEAP[$self_addr + 16] + 1;
+      
+      
+      HEAP[$self_addr + 16] = $24;
+      
+      
+      var $29 = __Py_BuildValue_SizeT(__str1, allocate([ $value, 0, 0, 0 ], [ "i32", 0, 0, 0 ], ALLOC_STACK));
+      $0 = $29;
+      __label__ = 5;
+      break;
+     case 4:
+      var $30 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($30, __str2);
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      $retval = $0;
+      var $retval5 = $retval;
+      return $retval5;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_read_line_method($self, $unused) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $unused_addr;
+      var $retval;
+      var $0;
+      var $start;
+      var $eof;
+      var $eol;
+      var $result;
+      $self_addr = $self;
+      $unused_addr = $unused;
+      
+      
+      
+      
+      
+      
+      
+      $start = HEAP[$self_addr + 8] + HEAP[$self_addr + 16];
+      
+      
+      
+      
+      
+      
+      
+      $eof = HEAP[$self_addr + 8] + HEAP[$self_addr + 12];
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $19 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($19, __str);
+      $0 = 0;
+      __label__ = 6;
+      break;
+     case 2:
+      
+      
+      
+      
+      
+      
+      var $26 = HEAP[$self_addr + 12] - HEAP[$self_addr + 16];
+      
+      var $28 = _memchr($start, 10, $26);
+      $eol = $28;
+      
+      
+      if ($eol == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      
+      $eol = $eof;
+      __label__ = 5;
+      break;
+     case 4:
+      
+      var $33 = $eol + 1;
+      $eol = $33;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      
+      
+      
+      
+      
+      var $40 = _PyString_FromStringAndSize($start, $eol - $start);
+      $result = $40;
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      var $49 = $eol + HEAP[$self_addr + 16] + (0 - $start);
+      
+      
+      HEAP[$self_addr + 16] = $49;
+      
+      $0 = $result;
+      __label__ = 6;
+      break;
+     case 6:
+      
+      $retval = $0;
+      var $retval6 = $retval;
+      return $retval6;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_read_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 4;
+    _memset(__stackBase__, 0, 4);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $num_bytes = __stackBase__;
+      var $n;
+      var $result;
+      $self_addr = $self;
+      $args_addr = $args;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 2:
+      
+      var $7 = __PyArg_ParseTuple_SizeT($args_addr, __str3, allocate([ $num_bytes, 0, 0, 0 ], [ "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($7 == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 4:
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$self_addr + 12] < HEAP[$self_addr + 16]) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      ___assert_fail(__str4, __str5, 251, ___PRETTY_FUNCTION___7743);
+      throw "Reached an unreachable!";
+     case 6:
+      
+      
+      
+      
+      
+      
+      
+      $n = HEAP[$self_addr + 12] - HEAP[$self_addr + 16];
+      
+      
+      if ($n < 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      $n = 2147483647;
+      __label__ = 8;
+      break;
+     case 8:
+      
+      
+      if (HEAP[$num_bytes] < 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 9:
+      
+      
+      
+      if (HEAP[$num_bytes] > $n) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      
+      HEAP[$num_bytes] = $n;
+      __label__ = 11;
+      break;
+     case 11:
+      var $31 = HEAP[$num_bytes];
+      
+      
+      
+      
+      
+      
+      var $38 = HEAP[$self_addr + 8] + HEAP[$self_addr + 16];
+      var $39 = __Py_BuildValue_SizeT(__str6, allocate([ $38, 0, 0, 0, $31, 0, 0, 0 ], [ "i8*", 0, 0, 0, "i32", 0, 0, 0 ], ALLOC_STACK));
+      $result = $39;
+      
+      
+      
+      
+      var $44 = HEAP[$num_bytes] + HEAP[$self_addr + 16];
+      
+      
+      HEAP[$self_addr + 16] = $44;
+      
+      $0 = $result;
+      __label__ = 12;
+      break;
+     case 12:
+      
+      $retval = $0;
+      var $retval12 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval12;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_gfind($self, $args, $reverse) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $reverse_addr;
+      var $retval;
+      var $iftmp_31;
+      var $iftmp_16;
+      var $iftmp_15;
+      var $0;
+      var $start = __stackBase__;
+      var $end = __stackBase__ + 4;
+      var $needle = __stackBase__ + 8;
+      var $len = __stackBase__ + 12;
+      var $p;
+      var $start_p;
+      var $end_p;
+      var $sign;
+      var $i;
+      $self_addr = $self;
+      $args_addr = $args;
+      $reverse_addr = $reverse;
+      
+      
+      var $3 = HEAP[$self_addr + 16];
+      HEAP[$start] = $3;
+      
+      
+      var $6 = HEAP[$self_addr + 12];
+      HEAP[$end] = $6;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $11 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($11, __str);
+      $0 = 0;
+      __label__ = 34;
+      break;
+     case 2:
+      
+      
+      if ($reverse_addr != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $iftmp_15 = __str7;
+      __label__ = 5;
+      break;
+     case 4:
+      $iftmp_15 = __str8;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      
+      var $16 = __PyArg_ParseTuple_SizeT($args_addr, $iftmp_15, allocate([ $needle, 0, 0, 0, $len, 0, 0, 0, $start, 0, 0, 0, $end, 0, 0, 0 ], [ "i8**", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($16 == 0) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 6:
+      $0 = 0;
+      __label__ = 34;
+      break;
+     case 7:
+      
+      
+      if ($reverse_addr != 0) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      $iftmp_16 = -1;
+      __label__ = 10;
+      break;
+     case 9:
+      $iftmp_16 = 1;
+      __label__ = 10;
+      break;
+     case 10:
+      
+      $sign = $iftmp_16;
+      
+      
+      if (HEAP[$start] < 0) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 11:
+      
+      
+      
+      
+      var $27 = HEAP[$start] + HEAP[$self_addr + 12];
+      HEAP[$start] = $27;
+      
+      if ($27 < 0) {
+        __label__ = 12;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 12:
+      HEAP[$start] = 0;
+      __label__ = 15;
+      break;
+     case 13:
+      
+      
+      
+      
+      
+      if (HEAP[$start] > HEAP[$self_addr + 12]) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 15;
+        break;
+      }
+     case 14:
+      
+      
+      var $36 = HEAP[$self_addr + 12];
+      HEAP[$start] = $36;
+      __label__ = 15;
+      break;
+     case 15:
+      
+      
+      if (HEAP[$end] < 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 18;
+        break;
+      }
+     case 16:
+      
+      
+      
+      
+      var $43 = HEAP[$end] + HEAP[$self_addr + 12];
+      HEAP[$end] = $43;
+      
+      if ($43 < 0) {
+        __label__ = 17;
+        break;
+      } else {
+        __label__ = 18;
+        break;
+      }
+     case 17:
+      HEAP[$end] = 0;
+      __label__ = 20;
+      break;
+     case 18:
+      
+      
+      
+      
+      
+      if (HEAP[$end] > HEAP[$self_addr + 12]) {
+        __label__ = 19;
+        break;
+      } else {
+        __label__ = 20;
+        break;
+      }
+     case 19:
+      
+      
+      var $52 = HEAP[$self_addr + 12];
+      HEAP[$end] = $52;
+      __label__ = 20;
+      break;
+     case 20:
+      
+      
+      
+      
+      
+      $start_p = HEAP[$self_addr + 8] + HEAP[$start];
+      
+      
+      
+      
+      
+      $end_p = HEAP[$self_addr + 8] + HEAP[$end];
+      
+      
+      if ($reverse_addr != 0) {
+        __label__ = 21;
+        break;
+      } else {
+        __label__ = 22;
+        break;
+      }
+     case 21:
+      
+      
+      
+      
+      $iftmp_31 = $end_p + (0 - HEAP[$len]);
+      __label__ = 23;
+      break;
+     case 22:
+      
+      $iftmp_31 = $start_p;
+      __label__ = 23;
+      break;
+     case 23:
+      
+      $p = $iftmp_31;
+      __label__ = 31;
+      break;
+     case 24:
+      $i = 0;
+      __label__ = 26;
+      break;
+     case 25:
+      
+      var $72 = $i + 1;
+      $i = $72;
+      __label__ = 26;
+      break;
+     case 26:
+      
+      
+      
+      if ($i >= HEAP[$len]) {
+        __label__ = 28;
+        break;
+      } else {
+        __label__ = 27;
+        break;
+      }
+     case 27:
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[$needle] + $i] == HEAP[$p + $i]) {
+        __label__ = 25;
+        break;
+      } else {
+        __label__ = 28;
+        break;
+      }
+     case 28:
+      
+      
+      
+      var $88 = $p;
+      if ($i == HEAP[$len]) {
+        __label__ = 29;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 29:
+      
+      
+      
+      
+      
+      var $94 = $88 - HEAP[$self_addr + 8];
+      var $95 = _PyInt_FromSsize_t($94);
+      $0 = $95;
+      __label__ = 34;
+      break;
+     case 30:
+      
+      var $97 = $88 + $sign;
+      $p = $97;
+      __label__ = 31;
+      break;
+     case 31:
+      
+      
+      
+      if ($p < $start_p) {
+        __label__ = 33;
+        break;
+      } else {
+        __label__ = 32;
+        break;
+      }
+     case 32:
+      
+      
+      
+      
+      
+      if ($p + HEAP[$len] <= $end_p) {
+        __label__ = 24;
+        break;
+      } else {
+        __label__ = 33;
+        break;
+      }
+     case 33:
+      var $106 = _PyInt_FromLong(-1);
+      $0 = $106;
+      __label__ = 34;
+      break;
+     case 34:
+      
+      $retval = $0;
+      var $retval36 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval36;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_find_method($self, $args) {
+    
+    var $self_addr;
+    var $args_addr;
+    var $retval;
+    var $0;
+    $self_addr = $self;
+    $args_addr = $args;
+    
+    
+    var $3 = _mmap_gfind($self_addr, $args_addr, 0);
+    $0 = $3;
+    
+    $retval = $0;
+    var $retval1 = $retval;
+    return $retval1;
+  }
+  function _mmap_rfind_method($self, $args) {
+    
+    var $self_addr;
+    var $args_addr;
+    var $retval;
+    var $0;
+    $self_addr = $self;
+    $args_addr = $args;
+    
+    
+    var $3 = _mmap_gfind($self_addr, $args_addr, 1);
+    $0 = $3;
+    
+    $retval = $0;
+    var $retval1 = $retval;
+    return $retval1;
+  }
+  function _is_writeable($self) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 32] != 1) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 1;
+      __label__ = 3;
+      break;
+     case 2:
+      var $5 = HEAP[_PyExc_TypeError];
+      var $6 = _PyErr_Format($5, __str9, allocate(1, "i32", ALLOC_STACK));
+      $0 = 0;
+      __label__ = 3;
+      break;
+     case 3:
+      
+      $retval = $0;
+      var $retval3 = $retval;
+      return $retval3;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _is_resizeable($self) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 32] == 2) {
+        __label__ = 2;
+        break;
+      } else {
+        __label__ = 1;
+        break;
+      }
+     case 1:
+      
+      
+      
+      
+      if (HEAP[$self_addr + 32] == 0) {
+        __label__ = 2;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 2:
+      $0 = 1;
+      __label__ = 4;
+      break;
+     case 3:
+      var $9 = HEAP[_PyExc_TypeError];
+      var $10 = _PyErr_Format($9, __str10, allocate(1, "i32", ALLOC_STACK));
+      $0 = 0;
+      __label__ = 4;
+      break;
+     case 4:
+      
+      $retval = $0;
+      var $retval4 = $retval;
+      return $retval4;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_write_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 8;
+    _memset(__stackBase__, 0, 8);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $length = __stackBase__;
+      var $data = __stackBase__ + 4;
+      $self_addr = $self;
+      $args_addr = $args;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 2:
+      
+      var $7 = __PyArg_ParseTuple_SizeT($args_addr, __str11, allocate([ $data, 0, 0, 0, $length, 0, 0, 0 ], [ "i8**", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($7 == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 4:
+      
+      var $10 = _is_writeable($self_addr);
+      
+      if ($10 == 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 6:
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$length] + HEAP[$self_addr + 16] > HEAP[$self_addr + 12]) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      var $21 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($21, __str12);
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 8:
+      var $22 = HEAP[$length];
+      var $23 = HEAP[$data];
+      
+      
+      
+      
+      
+      
+      var $30 = HEAP[$self_addr + 8] + HEAP[$self_addr + 16];
+      _llvm_memcpy_p0i8_p0i8_i32($30, $23, $22, 1, 0);
+      
+      
+      
+      
+      var $35 = HEAP[$length] + HEAP[$self_addr + 16];
+      
+      
+      HEAP[$self_addr + 16] = $35;
+      
+      var $39 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $39;
+      $0 = __Py_NoneStruct;
+      __label__ = 9;
+      break;
+     case 9:
+      
+      $retval = $0;
+      var $retval9 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval9;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_write_byte_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 1;
+    _memset(__stackBase__, 0, 1);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $value = __stackBase__;
+      $self_addr = $self;
+      $args_addr = $args;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 2:
+      
+      var $7 = __PyArg_ParseTuple_SizeT($args_addr, __str13, allocate([ $value, 0, 0, 0 ], [ "i8*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($7 == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 4:
+      
+      var $10 = _is_writeable($self_addr);
+      
+      if ($10 == 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 6:
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$self_addr + 16] < HEAP[$self_addr + 12]) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      
+      
+      
+      
+      
+      
+      var $25 = HEAP[$value];
+      var $26 = HEAP[$self_addr + 8] + HEAP[$self_addr + 16];
+      HEAP[$26] = $25;
+      
+      
+      
+      var $30 = HEAP[$self_addr + 16] + 1;
+      
+      
+      HEAP[$self_addr + 16] = $30;
+      
+      var $34 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $34;
+      $0 = __Py_NoneStruct;
+      __label__ = 9;
+      break;
+     case 8:
+      var $35 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($35, __str14);
+      $0 = 0;
+      __label__ = 9;
+      break;
+     case 9:
+      
+      $retval = $0;
+      var $retval9 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval9;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_size_method($self, $unused) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 96;
+    _memset(__stackBase__, 0, 96);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $unused_addr;
+      var $retval;
+      var $0;
+      var $buf = __stackBase__;
+      $self_addr = $self;
+      $unused_addr = $unused;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 2:
+      
+      
+      var $8 = HEAP[$self_addr + 28];
+      var $9 = ___01fstat64_($8, $buf);
+      var $10 = $9 == -1;
+      if ($10) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      var $11 = HEAP[_mmap_module_error];
+      var $12 = _PyErr_SetFromErrno($11);
+      $0 = 0;
+      __label__ = 5;
+      break;
+     case 4:
+      
+      var $14 = HEAP[$buf + 44];
+      var $15 = _PyLong_FromLongLong($14);
+      $0 = $15;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      $retval = $0;
+      var $retval5 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval5;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_resize_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 4;
+    _memset(__stackBase__, 0, 4);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $new_size = __stackBase__;
+      var $newmap;
+      $self_addr = $self;
+      $args_addr = $args;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 10;
+      break;
+     case 2:
+      
+      var $7 = __PyArg_ParseTuple_SizeT($args_addr, __str15, allocate([ $new_size, 0, 0, 0 ], [ "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($7 == 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      
+      var $10 = _is_resizeable($self_addr);
+      
+      if ($10 == 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 5;
+        break;
+      }
+     case 4:
+      $0 = 0;
+      __label__ = 10;
+      break;
+     case 5:
+      
+      
+      
+      
+      
+      var $17 = HEAP[$new_size] + HEAP[$self_addr + 20];
+      
+      
+      var $20 = HEAP[$self_addr + 28];
+      var $21 = ___01ftruncate64_($20, $17);
+      var $22 = $21 == -1;
+      if ($22) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 6:
+      var $23 = HEAP[_mmap_module_error];
+      var $24 = _PyErr_SetFromErrno($23);
+      $0 = 0;
+      __label__ = 10;
+      break;
+     case 7:
+      var $25 = HEAP[$new_size];
+      
+      
+      var $28 = HEAP[$self_addr + 12];
+      
+      
+      var $31 = HEAP[$self_addr + 8];
+      var $32 = _mremap($31, $28, $25, 1, allocate(1, "i32", ALLOC_STACK));
+      $newmap = $32;
+      
+      var $34 = $newmap == -1;
+      if ($34) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      var $35 = HEAP[_mmap_module_error];
+      var $36 = _PyErr_SetFromErrno($35);
+      $0 = 0;
+      __label__ = 10;
+      break;
+     case 9:
+      
+      
+      
+      HEAP[$self_addr + 8] = $newmap;
+      var $40 = HEAP[$new_size];
+      
+      
+      HEAP[$self_addr + 12] = $40;
+      
+      var $44 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $44;
+      $0 = __Py_NoneStruct;
+      __label__ = 10;
+      break;
+     case 10:
+      
+      $retval = $0;
+      var $retval10 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval10;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_tell_method($self, $unused) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $unused_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $unused_addr = $unused;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 3;
+      break;
+     case 2:
+      
+      
+      var $8 = HEAP[$self_addr + 16];
+      var $9 = _PyInt_FromSize_t($8);
+      $0 = $9;
+      __label__ = 3;
+      break;
+     case 3:
+      
+      $retval = $0;
+      var $retval3 = $retval;
+      return $retval3;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_flush_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 8;
+    _memset(__stackBase__, 0, 8);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $offset = __stackBase__;
+      var $size = __stackBase__ + 4;
+      $self_addr = $self;
+      $args_addr = $args;
+      HEAP[$offset] = 0;
+      
+      
+      var $3 = HEAP[$self_addr + 12];
+      HEAP[$size] = $3;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $8 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($8, __str);
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 2:
+      
+      var $10 = __PyArg_ParseTuple_SizeT($args_addr, __str16, allocate([ $offset, 0, 0, 0, $size, 0, 0, 0 ], [ "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($10 == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 4:
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$size] + HEAP[$offset] > HEAP[$self_addr + 12]) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      var $19 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($19, __str17);
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 6:
+      
+      
+      
+      
+      if (HEAP[$self_addr + 32] == 1) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 7:
+      
+      
+      
+      
+      if (HEAP[$self_addr + 32] == 3) {
+        __label__ = 8;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 8:
+      var $28 = _PyLong_FromLong(0);
+      $0 = $28;
+      __label__ = 12;
+      break;
+     case 9:
+      var $29 = HEAP[$size];
+      
+      
+      
+      
+      var $34 = HEAP[$self_addr + 8] + HEAP[$offset];
+      var $35 = _msync($34, $29, 4);
+      var $36 = $35 == -1;
+      if ($36) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      var $37 = HEAP[_mmap_module_error];
+      var $38 = _PyErr_SetFromErrno($37);
+      $0 = 0;
+      __label__ = 12;
+      break;
+     case 11:
+      var $39 = _PyInt_FromLong(0);
+      $0 = $39;
+      __label__ = 12;
+      break;
+     case 12:
+      
+      $retval = $0;
+      var $retval12 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval12;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_seek_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 8;
+    _memset(__stackBase__, 0, 8);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $dist = __stackBase__;
+      var $how = __stackBase__ + 4;
+      var $where;
+      $self_addr = $self;
+      $args_addr = $args;
+      HEAP[$how] = 0;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 15;
+      break;
+     case 2:
+      
+      var $7 = __PyArg_ParseTuple_SizeT($args_addr, __str18, allocate([ $dist, 0, 0, 0, $how, 0, 0, 0 ], [ "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($7 == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 15;
+      break;
+     case 4:
+      var $9 = HEAP[$how];
+      if ($9 == 0) {
+        __label__ = 5;
+        break;
+      } else if ($9 == 1) {
+        __label__ = 7;
+        break;
+      } else if ($9 == 2) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 5:
+      
+      
+      if (HEAP[$dist] < 0) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 6:
+      
+      $where = HEAP[$dist];
+      __label__ = 12;
+      break;
+     case 7:
+      
+      
+      
+      
+      
+      
+      if (HEAP[$dist] + HEAP[$self_addr + 16] < 0) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 8:
+      
+      
+      
+      
+      
+      $where = HEAP[$dist] + HEAP[$self_addr + 16];
+      __label__ = 12;
+      break;
+     case 9:
+      
+      
+      
+      
+      
+      
+      if (HEAP[$dist] + HEAP[$self_addr + 12] < 0) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 10;
+        break;
+      }
+     case 10:
+      
+      
+      
+      
+      
+      $where = HEAP[$dist] + HEAP[$self_addr + 12];
+      __label__ = 12;
+      break;
+     case 11:
+      var $35 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($35, __str19);
+      $0 = 0;
+      __label__ = 15;
+      break;
+     case 12:
+      
+      
+      
+      
+      
+      if (HEAP[$self_addr + 12] < $where) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 13:
+      
+      
+      
+      HEAP[$self_addr + 16] = $where;
+      
+      var $45 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $45;
+      $0 = __Py_NoneStruct;
+      __label__ = 15;
+      break;
+     case 14:
+      var $46 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($46, __str20);
+      $0 = 0;
+      __label__ = 15;
+      break;
+     case 15:
+      
+      $retval = $0;
+      var $retval14 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval14;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_move_method($self, $args) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 12;
+    _memset(__stackBase__, 0, 12);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $args_addr;
+      var $retval;
+      var $0;
+      var $dest = __stackBase__;
+      var $src = __stackBase__ + 4;
+      var $cnt = __stackBase__ + 8;
+      $self_addr = $self;
+      $args_addr = $args;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 13;
+      break;
+     case 2:
+      
+      var $7 = __PyArg_ParseTuple_SizeT($args_addr, __str21, allocate([ $dest, 0, 0, 0, $src, 0, 0, 0, $cnt, 0, 0, 0 ], [ "i32*", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($7 == 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      
+      var $10 = _is_writeable($self_addr);
+      
+      if ($10 == 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 5;
+        break;
+      }
+     case 4:
+      $0 = 0;
+      __label__ = 13;
+      break;
+     case 5:
+      
+      
+      
+      
+      
+      if (HEAP[$dest] + HEAP[$cnt] < HEAP[$cnt]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 6:
+      
+      
+      
+      
+      
+      if (HEAP[$src] + HEAP[$cnt] < HEAP[$cnt]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 7:
+      
+      
+      
+      
+      
+      if (HEAP[$self_addr + 12] < HEAP[$src]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 8:
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$cnt] + HEAP[$src] > HEAP[$self_addr + 12]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 9;
+        break;
+      }
+     case 9:
+      
+      
+      
+      
+      
+      if (HEAP[$self_addr + 12] < HEAP[$dest]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 10;
+        break;
+      }
+     case 10:
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[$cnt] + HEAP[$dest] > HEAP[$self_addr + 12]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 11:
+      var $46 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($46, __str22);
+      $0 = 0;
+      __label__ = 13;
+      break;
+     case 12:
+      var $47 = HEAP[$cnt];
+      
+      
+      
+      
+      var $52 = HEAP[$self_addr + 8] + HEAP[$src];
+      
+      
+      
+      
+      var $57 = HEAP[$self_addr + 8] + HEAP[$dest];
+      _llvm_memmove_p0i8_p0i8_i32($57, $52, $47, 1, 0);
+      
+      var $59 = HEAP[__Py_NoneStruct] + 1;
+      HEAP[__Py_NoneStruct] = $59;
+      $0 = __Py_NoneStruct;
+      __label__ = 13;
+      break;
+     case 13:
+      
+      $retval = $0;
+      var $retval13 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval13;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_buffer_getreadbuf($self, $index, $ptr) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $index_addr;
+      var $ptr_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $index_addr = $index;
+      $ptr_addr = $ptr;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 5;
+      break;
+     case 2:
+      
+      
+      if ($index_addr != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      var $8 = HEAP[_PyExc_SystemError];
+      _PyErr_SetString($8, __str37);
+      $0 = -1;
+      __label__ = 5;
+      break;
+     case 4:
+      
+      
+      var $11 = HEAP[$self_addr + 8];
+      
+      HEAP[$ptr_addr] = $11;
+      
+      
+      
+      $0 = HEAP[$self_addr + 12];
+      __label__ = 5;
+      break;
+     case 5:
+      
+      $retval = $0;
+      var $retval5 = $retval;
+      return $retval5;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_buffer_getwritebuf($self, $index, $ptr) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $index_addr;
+      var $ptr_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $index_addr = $index;
+      $ptr_addr = $ptr;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 7;
+      break;
+     case 2:
+      
+      
+      if ($index_addr != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      var $8 = HEAP[_PyExc_SystemError];
+      _PyErr_SetString($8, __str37);
+      $0 = -1;
+      __label__ = 7;
+      break;
+     case 4:
+      
+      var $10 = _is_writeable($self_addr);
+      
+      if ($10 == 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      $0 = -1;
+      __label__ = 7;
+      break;
+     case 6:
+      
+      
+      var $14 = HEAP[$self_addr + 8];
+      
+      HEAP[$ptr_addr] = $14;
+      
+      
+      
+      $0 = HEAP[$self_addr + 12];
+      __label__ = 7;
+      break;
+     case 7:
+      
+      $retval = $0;
+      var $retval7 = $retval;
+      return $retval7;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_buffer_getsegcount($self, $lenp) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $lenp_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $lenp_addr = $lenp;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 5;
+      break;
+     case 2:
+      
+      
+      if ($lenp_addr != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      
+      
+      var $10 = HEAP[$self_addr + 12];
+      
+      HEAP[$lenp_addr] = $10;
+      __label__ = 4;
+      break;
+     case 4:
+      $0 = 1;
+      __label__ = 5;
+      break;
+     case 5:
+      
+      $retval = $0;
+      var $retval5 = $retval;
+      return $retval5;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_buffer_getcharbuffer($self, $index, $ptr) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $index_addr;
+      var $ptr_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $index_addr = $index;
+      $ptr_addr = $ptr;
+      
+      
+      if ($index_addr != 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $3 = HEAP[_PyExc_SystemError];
+      _PyErr_SetString($3, __str38);
+      $0 = -1;
+      __label__ = 3;
+      break;
+     case 2:
+      
+      
+      var $6 = HEAP[$self_addr + 8];
+      
+      HEAP[$ptr_addr] = $6;
+      
+      
+      
+      $0 = HEAP[$self_addr + 12];
+      __label__ = 3;
+      break;
+     case 3:
+      
+      $retval = $0;
+      var $retval3 = $retval;
+      return $retval3;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_length($self) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 3;
+      break;
+     case 2:
+      
+      
+      
+      $0 = HEAP[$self_addr + 12];
+      __label__ = 3;
+      break;
+     case 3:
+      
+      $retval = $0;
+      var $retval3 = $retval;
+      return $retval3;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_item($self, $i) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $i_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $i_addr = $i;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 6;
+      break;
+     case 2:
+      
+      
+      if ($i_addr < 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      
+      if ($i_addr >= HEAP[$self_addr + 12]) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 5;
+        break;
+      }
+     case 4:
+      var $13 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($13, __str39);
+      $0 = 0;
+      __label__ = 6;
+      break;
+     case 5:
+      
+      
+      
+      
+      var $18 = HEAP[$self_addr + 8] + $i_addr;
+      var $19 = _PyString_FromStringAndSize($18, 1);
+      $0 = $19;
+      __label__ = 6;
+      break;
+     case 6:
+      
+      $retval = $0;
+      var $retval6 = $retval;
+      return $retval6;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_slice($self, $ilow, $ihigh) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $ilow_addr;
+      var $ihigh_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $ilow_addr = $ilow;
+      $ihigh_addr = $ihigh;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 13;
+      break;
+     case 2:
+      
+      
+      if ($ilow_addr < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $ilow_addr = 0;
+      __label__ = 6;
+      break;
+     case 4:
+      
+      
+      
+      
+      
+      if ($ilow_addr > HEAP[$self_addr + 12]) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      
+      
+      
+      $ilow_addr = HEAP[$self_addr + 12];
+      __label__ = 6;
+      break;
+     case 6:
+      
+      
+      if ($ihigh_addr < 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      $ihigh_addr = 0;
+      __label__ = 8;
+      break;
+     case 8:
+      
+      
+      
+      if ($ihigh_addr < $ilow_addr) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 10;
+        break;
+      }
+     case 9:
+      
+      $ihigh_addr = $ilow_addr;
+      __label__ = 12;
+      break;
+     case 10:
+      
+      
+      
+      
+      
+      if ($ihigh_addr > HEAP[$self_addr + 12]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 11:
+      
+      
+      
+      $ihigh_addr = HEAP[$self_addr + 12];
+      __label__ = 12;
+      break;
+     case 12:
+      
+      
+      
+      
+      
+      
+      
+      var $37 = HEAP[$self_addr + 8] + $ilow_addr;
+      var $38 = _PyString_FromStringAndSize($37, $ihigh_addr - $ilow_addr);
+      $0 = $38;
+      __label__ = 13;
+      break;
+     case 13:
+      
+      $retval = $0;
+      var $retval13 = $retval;
+      return $retval13;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_subscript($self, $item) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $item_addr;
+      var $retval;
+      var $0;
+      var $i;
+      var $start = __stackBase__;
+      var $stop = __stackBase__ + 4;
+      var $step = __stackBase__ + 8;
+      var $slicelen = __stackBase__ + 12;
+      var $result_buf;
+      var $cur;
+      var $i21;
+      var $result;
+      $self_addr = $self;
+      $item_addr = $item;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 29;
+      break;
+     case 2:
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[$item_addr + 4] + 48] == 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$item_addr + 4] + 84] & 131072) == 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 4:
+      
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[HEAP[$item_addr + 4] + 48] + 152] == 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 5;
+        break;
+      }
+     case 5:
+      var $27 = HEAP[_PyExc_IndexError];
+      
+      var $29 = _PyNumber_AsSsize_t($item_addr, $27);
+      $i = $29;
+      var $30 = $i;
+      var $31 = $30 == -1;
+      if ($31) {
+        __lastLabel__ = 5;
+        __label__ = 6;
+        break;
+      } else {
+        __lastLabel__ = 5;
+        __label__ = 9;
+        break;
+      }
+     case 6:
+      var $32 = _PyErr_Occurred();
+      
+      if ($32 != 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      $0 = 0;
+      __label__ = 29;
+      break;
+     case 8:
+      var $_pr = $i;
+      __lastLabel__ = 8;
+      __label__ = 9;
+      break;
+     case 9:
+      var $34 = __lastLabel__ == 8 ? $_pr : $30;
+      
+      if ($34 < 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      
+      
+      
+      
+      var $40 = $i + HEAP[$self_addr + 12];
+      $i = $40;
+      __lastLabel__ = 10;
+      __label__ = 12;
+      break;
+     case 11:
+      var $_pr1 = $i;
+      __lastLabel__ = 11;
+      __label__ = 12;
+      break;
+     case 12:
+      var $41 = __lastLabel__ == 11 ? $_pr1 : $40;
+      
+      if ($41 < 0) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 13:
+      
+      
+      
+      
+      
+      if ($i >= HEAP[$self_addr + 12]) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 15;
+        break;
+      }
+     case 14:
+      var $48 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($48, __str39);
+      $0 = 0;
+      __label__ = 29;
+      break;
+     case 15:
+      
+      
+      
+      
+      var $53 = HEAP[$self_addr + 8] + $i;
+      var $54 = _PyString_FromStringAndSize($53, 1);
+      $0 = $54;
+      __label__ = 29;
+      break;
+     case 16:
+      
+      
+      
+      
+      if (HEAP[$item_addr + 4] == _PySlice_Type) {
+        __label__ = 17;
+        break;
+      } else {
+        __label__ = 28;
+        break;
+      }
+     case 17:
+      
+      
+      var $61 = HEAP[$self_addr + 12];
+      
+      
+      var $64 = _PySlice_GetIndicesEx($item_addr, $61, $start, $stop, $step, $slicelen);
+      
+      if ($64 < 0) {
+        __label__ = 18;
+        break;
+      } else {
+        __label__ = 19;
+        break;
+      }
+     case 18:
+      $0 = 0;
+      __label__ = 29;
+      break;
+     case 19:
+      
+      
+      if (HEAP[$slicelen] <= 0) {
+        __label__ = 20;
+        break;
+      } else {
+        __label__ = 21;
+        break;
+      }
+     case 20:
+      var $68 = _PyString_FromStringAndSize(__str40, 0);
+      $0 = $68;
+      __label__ = 29;
+      break;
+     case 21:
+      
+      
+      var $71 = HEAP[$slicelen];
+      if (HEAP[$step] == 1) {
+        __label__ = 22;
+        break;
+      } else {
+        __label__ = 23;
+        break;
+      }
+     case 22:
+      
+      
+      
+      
+      var $76 = HEAP[$self_addr + 8] + HEAP[$start];
+      var $77 = _PyString_FromStringAndSize($76, $71);
+      $0 = $77;
+      __label__ = 29;
+      break;
+     case 23:
+      var $78 = _PyMem_Malloc($71);
+      $result_buf = $78;
+      
+      
+      if ($result_buf == 0) {
+        __label__ = 24;
+        break;
+      } else {
+        __label__ = 25;
+        break;
+      }
+     case 24:
+      var $81 = _PyErr_NoMemory();
+      $0 = $81;
+      __label__ = 29;
+      break;
+     case 25:
+      
+      $cur = HEAP[$start];
+      $i21 = 0;
+      
+      
+      
+      if ($i21 < HEAP[$slicelen]) {
+        __label__ = 26;
+        break;
+      } else {
+        __label__ = 27;
+        break;
+      }
+     case 26:
+      
+      
+      
+      
+      
+      var $91 = HEAP[HEAP[$self_addr + 8] + $cur];
+      
+      
+      
+      HEAP[$result_buf + $i21] = $91;
+      
+      
+      var $97 = $cur + HEAP[$step];
+      $cur = $97;
+      
+      var $99 = $i21 + 1;
+      $i21 = $99;
+      
+      
+      
+      if ($i21 < HEAP[$slicelen]) {
+        __label__ = 26;
+        break;
+      } else {
+        __label__ = 27;
+        break;
+      }
+     case 27:
+      var $103 = HEAP[$slicelen];
+      
+      var $105 = _PyString_FromStringAndSize($result_buf, $103);
+      $result = $105;
+      
+      _PyMem_Free($result_buf);
+      
+      $0 = $result;
+      __label__ = 29;
+      break;
+     case 28:
+      var $108 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($108, __str41);
+      $0 = 0;
+      __label__ = 29;
+      break;
+     case 29:
+      
+      $retval = $0;
+      var $retval29 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval29;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_concat($self, $bb) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $bb_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $bb_addr = $bb;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 3;
+      break;
+     case 2:
+      var $6 = HEAP[_PyExc_SystemError];
+      _PyErr_SetString($6, __str42);
+      $0 = 0;
+      __label__ = 3;
+      break;
+     case 3:
+      
+      $retval = $0;
+      var $retval4 = $retval;
+      return $retval4;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_repeat($self, $n) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $n_addr;
+      var $retval;
+      var $0;
+      $self_addr = $self;
+      $n_addr = $n;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = 0;
+      __label__ = 3;
+      break;
+     case 2:
+      var $6 = HEAP[_PyExc_SystemError];
+      _PyErr_SetString($6, __str43);
+      $0 = 0;
+      __label__ = 3;
+      break;
+     case 3:
+      
+      $retval = $0;
+      var $retval3 = $retval;
+      return $retval3;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_ass_slice($self, $ilow, $ihigh, $v) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $ilow_addr;
+      var $ihigh_addr;
+      var $v_addr;
+      var $retval;
+      var $0;
+      var $buf;
+      $self_addr = $self;
+      $ilow_addr = $ilow;
+      $ihigh_addr = $ihigh;
+      $v_addr = $v;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 21;
+      break;
+     case 2:
+      
+      
+      if ($ilow_addr < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $ilow_addr = 0;
+      __label__ = 6;
+      break;
+     case 4:
+      
+      
+      
+      
+      
+      if ($ilow_addr > HEAP[$self_addr + 12]) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      
+      
+      
+      $ilow_addr = HEAP[$self_addr + 12];
+      __label__ = 6;
+      break;
+     case 6:
+      
+      
+      if ($ihigh_addr < 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      $ihigh_addr = 0;
+      __label__ = 8;
+      break;
+     case 8:
+      
+      
+      
+      if ($ihigh_addr < $ilow_addr) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 10;
+        break;
+      }
+     case 9:
+      
+      $ihigh_addr = $ilow_addr;
+      __label__ = 12;
+      break;
+     case 10:
+      
+      
+      
+      
+      
+      if ($ihigh_addr > HEAP[$self_addr + 12]) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 11:
+      
+      
+      
+      $ihigh_addr = HEAP[$self_addr + 12];
+      __label__ = 12;
+      break;
+     case 12:
+      
+      
+      if ($v_addr == 0) {
+        __label__ = 13;
+        break;
+      } else {
+        __label__ = 14;
+        break;
+      }
+     case 13:
+      var $32 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($32, __str44);
+      $0 = -1;
+      __label__ = 21;
+      break;
+     case 14:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$v_addr + 4] + 84] & 134217728) == 0) {
+        __label__ = 15;
+        break;
+      } else {
+        __label__ = 16;
+        break;
+      }
+     case 15:
+      var $40 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($40, __str45);
+      $0 = -1;
+      __label__ = 21;
+      break;
+     case 16:
+      
+      var $42 = _PyString_Size($v_addr);
+      
+      
+      
+      
+      if ($42 != $ihigh_addr - $ilow_addr) {
+        __label__ = 17;
+        break;
+      } else {
+        __label__ = 18;
+        break;
+      }
+     case 17:
+      var $47 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($47, __str46);
+      $0 = -1;
+      __label__ = 21;
+      break;
+     case 18:
+      
+      var $49 = _is_writeable($self_addr);
+      
+      if ($49 == 0) {
+        __label__ = 19;
+        break;
+      } else {
+        __label__ = 20;
+        break;
+      }
+     case 19:
+      $0 = -1;
+      __label__ = 21;
+      break;
+     case 20:
+      
+      var $52 = _PyString_AsString($v_addr);
+      $buf = $52;
+      
+      
+      
+      
+      
+      
+      
+      var $60 = HEAP[$self_addr + 8] + $ilow_addr;
+      
+      _llvm_memcpy_p0i8_p0i8_i32($60, $buf, $ihigh_addr - $ilow_addr, 1, 0);
+      $0 = 0;
+      __label__ = 21;
+      break;
+     case 21:
+      
+      $retval = $0;
+      var $retval21 = $retval;
+      return $retval21;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_ass_item($self, $i, $v) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $i_addr;
+      var $v_addr;
+      var $retval;
+      var $0;
+      var $buf;
+      $self_addr = $self;
+      $i_addr = $i;
+      $v_addr = $v;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 2:
+      
+      
+      if ($i_addr < 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      
+      if ($i_addr >= HEAP[$self_addr + 12]) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 5;
+        break;
+      }
+     case 4:
+      var $13 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($13, __str39);
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 5:
+      
+      
+      if ($v_addr == 0) {
+        __label__ = 6;
+        break;
+      } else {
+        __label__ = 7;
+        break;
+      }
+     case 6:
+      var $16 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($16, __str47);
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 7:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$v_addr + 4] + 84] & 134217728) == 0) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 8:
+      
+      var $25 = _PyString_Size($v_addr);
+      
+      if ($25 != 1) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 10;
+        break;
+      }
+     case 9:
+      var $27 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($27, __str48);
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 10:
+      
+      var $29 = _is_writeable($self_addr);
+      
+      if ($29 == 0) {
+        __label__ = 11;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 11:
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 12:
+      
+      var $32 = _PyString_AsString($v_addr);
+      $buf = $32;
+      
+      
+      
+      
+      
+      var $38 = HEAP[$buf];
+      
+      var $40 = HEAP[$self_addr + 8] + $i_addr;
+      HEAP[$40] = $38;
+      $0 = 0;
+      __label__ = 13;
+      break;
+     case 13:
+      
+      $retval = $0;
+      var $retval13 = $retval;
+      return $retval13;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _mmap_ass_subscript($self, $item, $value) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 16;
+    _memset(__stackBase__, 0, 16);
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $self_addr;
+      var $item_addr;
+      var $value_addr;
+      var $retval;
+      var $0;
+      var $i;
+      var $buf;
+      var $start = __stackBase__;
+      var $stop = __stackBase__ + 4;
+      var $step = __stackBase__ + 8;
+      var $slicelen = __stackBase__ + 12;
+      var $buf35;
+      var $cur;
+      var $i39;
+      var $buf40;
+      $self_addr = $self;
+      $item_addr = $item;
+      $value_addr = $value;
+      
+      
+      
+      
+      if (HEAP[$self_addr + 8] == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      var $5 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($5, __str);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 2:
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[$item_addr + 4] + 48] == 0) {
+        __label__ = 23;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$item_addr + 4] + 84] & 131072) == 0) {
+        __label__ = 23;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 4:
+      
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[HEAP[$item_addr + 4] + 48] + 152] == 0) {
+        __label__ = 23;
+        break;
+      } else {
+        __label__ = 5;
+        break;
+      }
+     case 5:
+      var $27 = HEAP[_PyExc_IndexError];
+      
+      var $29 = _PyNumber_AsSsize_t($item_addr, $27);
+      $i = $29;
+      var $30 = $i;
+      var $31 = $30 == -1;
+      if ($31) {
+        __lastLabel__ = 5;
+        __label__ = 6;
+        break;
+      } else {
+        __lastLabel__ = 5;
+        __label__ = 9;
+        break;
+      }
+     case 6:
+      var $32 = _PyErr_Occurred();
+      
+      if ($32 != 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 8:
+      var $_pr = $i;
+      __lastLabel__ = 8;
+      __label__ = 9;
+      break;
+     case 9:
+      var $34 = __lastLabel__ == 8 ? $_pr : $30;
+      
+      if ($34 < 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      
+      
+      
+      
+      var $40 = $i + HEAP[$self_addr + 12];
+      $i = $40;
+      __lastLabel__ = 10;
+      __label__ = 12;
+      break;
+     case 11:
+      var $_pr1 = $i;
+      __lastLabel__ = 11;
+      __label__ = 12;
+      break;
+     case 12:
+      var $41 = __lastLabel__ == 11 ? $_pr1 : $40;
+      
+      if ($41 < 0) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 13;
+        break;
+      }
+     case 13:
+      
+      
+      
+      
+      
+      if ($i >= HEAP[$self_addr + 12]) {
+        __label__ = 14;
+        break;
+      } else {
+        __label__ = 15;
+        break;
+      }
+     case 14:
+      var $48 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($48, __str39);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 15:
+      
+      
+      if ($value_addr == 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 17;
+        break;
+      }
+     case 16:
+      var $51 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($51, __str47);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 17:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$value_addr + 4] + 84] & 134217728) == 0) {
+        __label__ = 19;
+        break;
+      } else {
+        __label__ = 18;
+        break;
+      }
+     case 18:
+      
+      var $60 = _PyString_Size($value_addr);
+      
+      if ($60 != 1) {
+        __label__ = 19;
+        break;
+      } else {
+        __label__ = 20;
+        break;
+      }
+     case 19:
+      var $62 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($62, __str48);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 20:
+      
+      var $64 = _is_writeable($self_addr);
+      
+      if ($64 == 0) {
+        __label__ = 21;
+        break;
+      } else {
+        __label__ = 22;
+        break;
+      }
+     case 21:
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 22:
+      
+      var $67 = _PyString_AsString($value_addr);
+      $buf = $67;
+      
+      
+      
+      
+      
+      var $73 = HEAP[$buf];
+      
+      var $75 = HEAP[$self_addr + 8] + $i;
+      HEAP[$75] = $73;
+      $0 = 0;
+      __label__ = 46;
+      break;
+     case 23:
+      
+      
+      
+      
+      if (HEAP[$item_addr + 4] == _PySlice_Type) {
+        __label__ = 24;
+        break;
+      } else {
+        __label__ = 45;
+        break;
+      }
+     case 24:
+      
+      
+      var $82 = HEAP[$self_addr + 12];
+      
+      
+      var $85 = _PySlice_GetIndicesEx($item_addr, $82, $start, $stop, $step, $slicelen);
+      
+      if ($85 < 0) {
+        __label__ = 25;
+        break;
+      } else {
+        __label__ = 26;
+        break;
+      }
+     case 25:
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 26:
+      
+      
+      if ($value_addr == 0) {
+        __label__ = 27;
+        break;
+      } else {
+        __label__ = 28;
+        break;
+      }
+     case 27:
+      var $89 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($89, __str44);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 28:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$value_addr + 4] + 84] & 134217728) == 0) {
+        __label__ = 29;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 29:
+      var $97 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($97, __str45);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 30:
+      
+      var $99 = _PyString_Size($value_addr);
+      
+      
+      if ($99 != HEAP[$slicelen]) {
+        __label__ = 31;
+        break;
+      } else {
+        __label__ = 32;
+        break;
+      }
+     case 31:
+      var $102 = HEAP[_PyExc_IndexError];
+      _PyErr_SetString($102, __str46);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 32:
+      
+      var $104 = _is_writeable($self_addr);
+      
+      if ($104 == 0) {
+        __label__ = 33;
+        break;
+      } else {
+        __label__ = 34;
+        break;
+      }
+     case 33:
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 34:
+      
+      
+      if (HEAP[$slicelen] == 0) {
+        __label__ = 35;
+        break;
+      } else {
+        __label__ = 36;
+        break;
+      }
+     case 35:
+      $0 = 0;
+      __label__ = 46;
+      break;
+     case 36:
+      
+      var $109 = HEAP[$step] == 1;
+      
+      var $111 = _PyString_AsString($value_addr);
+      if ($109) {
+        __label__ = 37;
+        break;
+      } else {
+        __label__ = 40;
+        break;
+      }
+     case 37:
+      $buf35 = $111;
+      
+      
+      if ($buf35 == 0) {
+        __label__ = 38;
+        break;
+      } else {
+        __label__ = 39;
+        break;
+      }
+     case 38:
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 39:
+      var $114 = HEAP[$slicelen];
+      
+      
+      
+      
+      var $119 = HEAP[$self_addr + 8] + HEAP[$start];
+      
+      _llvm_memcpy_p0i8_p0i8_i32($119, $buf35, $114, 1, 0);
+      $0 = 0;
+      __label__ = 46;
+      break;
+     case 40:
+      $buf40 = $111;
+      
+      
+      if ($buf40 == 0) {
+        __label__ = 41;
+        break;
+      } else {
+        __label__ = 42;
+        break;
+      }
+     case 41:
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 42:
+      
+      $cur = HEAP[$start];
+      $i39 = 0;
+      
+      
+      
+      if ($i39 < HEAP[$slicelen]) {
+        __label__ = 43;
+        break;
+      } else {
+        __label__ = 44;
+        break;
+      }
+     case 43:
+      
+      
+      
+      
+      
+      
+      var $133 = HEAP[$buf40 + $i39];
+      
+      var $135 = HEAP[$self_addr + 8] + $cur;
+      HEAP[$135] = $133;
+      
+      
+      var $138 = $cur + HEAP[$step];
+      $cur = $138;
+      
+      var $140 = $i39 + 1;
+      $i39 = $140;
+      
+      
+      
+      if ($i39 < HEAP[$slicelen]) {
+        __label__ = 43;
+        break;
+      } else {
+        __label__ = 44;
+        break;
+      }
+     case 44:
+      $0 = 0;
+      __label__ = 46;
+      break;
+     case 45:
+      var $144 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($144, __str49);
+      $0 = -1;
+      __label__ = 46;
+      break;
+     case 46:
+      
+      $retval = $0;
+      var $retval48 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval48;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function __GetMapSize($o) {
+    var __label__;
+    var __lastLabel__ = null;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $o_addr;
+      var $param_addr;
+      var $retval;
+      var $0;
+      var $i;
+      $o_addr = $o;
+      $param_addr = __str33;
+      
+      
+      if ($o_addr == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 0;
+      __label__ = 13;
+      break;
+     case 2:
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[$o_addr + 4] + 48] != 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      
+      
+      
+      if ((HEAP[HEAP[$o_addr + 4] + 84] & 131072) != 0) {
+        __label__ = 4;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 4:
+      
+      
+      
+      
+      
+      
+      
+      
+      if (HEAP[HEAP[HEAP[$o_addr + 4] + 48] + 152] != 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 12;
+        break;
+      }
+     case 5:
+      var $24 = HEAP[_PyExc_OverflowError];
+      
+      var $26 = _PyNumber_AsSsize_t($o_addr, $24);
+      $i = $26;
+      var $27 = $i;
+      var $28 = $27 == -1;
+      if ($28) {
+        __lastLabel__ = 5;
+        __label__ = 6;
+        break;
+      } else {
+        __lastLabel__ = 5;
+        __label__ = 9;
+        break;
+      }
+     case 6:
+      var $29 = _PyErr_Occurred();
+      
+      if ($29 != 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 7:
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 8:
+      var $_pr = $i;
+      __lastLabel__ = 8;
+      __label__ = 9;
+      break;
+     case 9:
+      var $31 = __lastLabel__ == 8 ? $_pr : $27;
+      
+      if ($31 < 0) {
+        __label__ = 10;
+        break;
+      } else {
+        __label__ = 11;
+        break;
+      }
+     case 10:
+      var $33 = HEAP[_PyExc_OverflowError];
+      
+      var $35 = _PyErr_Format($33, __str51, allocate([ $param_addr, 0, 0, 0 ], [ "i8*", 0, 0, 0 ], ALLOC_STACK));
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 11:
+      
+      $0 = $i;
+      __label__ = 13;
+      break;
+     case 12:
+      var $37 = HEAP[_PyExc_TypeError];
+      _PyErr_SetString($37, __str52);
+      $0 = -1;
+      __label__ = 13;
+      break;
+     case 13:
+      
+      $retval = $0;
+      var $retval12 = $retval;
+      return $retval12;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _new_mmap_object($type, $args, $kwdict) {
+    var __stackBase__ = STACKTOP;
+    STACKTOP += 124;
+    _memset(__stackBase__, 0, 124);
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $type_addr;
+      var $args_addr;
+      var $kwdict_addr;
+      var $retval;
+      var $0;
+      var $st = __stackBase__;
+      var $m_obj;
+      var $map_size_obj = __stackBase__ + 96;
+      var $map_size;
+      var $offset = __stackBase__ + 100;
+      var $fd = __stackBase__ + 108;
+      var $flags = __stackBase__ + 112;
+      var $prot = __stackBase__ + 116;
+      var $devzero;
+      var $access = __stackBase__ + 120;
+      var $calc_size;
+      $type_addr = $type;
+      $args_addr = $args;
+      $kwdict_addr = $kwdict;
+      HEAP[$map_size_obj] = 0;
+      HEAP[$offset] = 0;
+      HEAP[$flags] = 1;
+      HEAP[$prot] = 3;
+      $devzero = -1;
+      HEAP[$access] = 0;
+      
+      
+      var $3 = __PyArg_ParseTupleAndKeywords_SizeT($args_addr, $kwdict_addr, __str53, _keywords_8698, allocate([ $fd, 0, 0, 0, $map_size_obj, 0, 0, 0, $flags, 0, 0, 0, $prot, 0, 0, 0, $access, 0, 0, 0, $offset, 0, 0, 0 ], [ "i32*", 0, 0, 0, "%struct.PyObject**", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0, "i32*", 0, 0, 0, "i64*", 0, 0, 0 ], ALLOC_STACK));
+      
+      if ($3 == 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 1:
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 2:
+      var $5 = HEAP[$map_size_obj];
+      var $6 = __GetMapSize($5);
+      $map_size = $6;
+      
+      
+      if ($map_size < 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 4:
+      
+      
+      if (HEAP[$offset] < 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 6;
+        break;
+      }
+     case 5:
+      var $11 = HEAP[_PyExc_OverflowError];
+      _PyErr_SetString($11, __str60);
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 6:
+      
+      
+      if (HEAP[$access] != 0) {
+        __label__ = 7;
+        break;
+      } else {
+        __label__ = 14;
+        break;
+      }
+     case 7:
+      
+      
+      if (HEAP[$flags] != 1) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 8;
+        break;
+      }
+     case 8:
+      
+      
+      if (HEAP[$prot] != 3) {
+        __label__ = 9;
+        break;
+      } else {
+        __label__ = 10;
+        break;
+      }
+     case 9:
+      var $18 = HEAP[_PyExc_ValueError];
+      var $19 = _PyErr_Format($18, __str61, allocate(1, "i32", ALLOC_STACK));
+      $0 = $19;
+      __label__ = 45;
+      break;
+     case 10:
+      var $_pr = HEAP[$access];
+      if ($_pr == 0) {
+        __label__ = 14;
+        break;
+      } else if ($_pr == 1) {
+        __label__ = 11;
+        break;
+      } else if ($_pr == 2) {
+        __label__ = 12;
+        break;
+      } else if ($_pr == 3) {
+        __label__ = 13;
+        break;
+      } else {
+        __label__ = 19;
+        break;
+      }
+     case 11:
+      HEAP[$flags] = 1;
+      HEAP[$prot] = 1;
+      __label__ = 20;
+      break;
+     case 12:
+      HEAP[$flags] = 1;
+      HEAP[$prot] = 3;
+      __label__ = 20;
+      break;
+     case 13:
+      HEAP[$flags] = 2;
+      HEAP[$prot] = 3;
+      __label__ = 20;
+      break;
+     case 14:
+      
+      
+      
+      
+      
+      
+      
+      if (((HEAP[$prot] & 1 & 255) != 0 ^ 1) != 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 15;
+        break;
+      }
+     case 15:
+      
+      
+      
+      if ((HEAP[$prot] & 2) == 0) {
+        __label__ = 16;
+        break;
+      } else {
+        __label__ = 20;
+        break;
+      }
+     case 16:
+      
+      
+      
+      if ((HEAP[$prot] & 2) != 0) {
+        __label__ = 17;
+        break;
+      } else {
+        __label__ = 18;
+        break;
+      }
+     case 17:
+      HEAP[$access] = 2;
+      __label__ = 20;
+      break;
+     case 18:
+      HEAP[$access] = 1;
+      __label__ = 20;
+      break;
+     case 19:
+      var $29 = HEAP[_PyExc_ValueError];
+      var $30 = _PyErr_Format($29, __str62, allocate(1, "i32", ALLOC_STACK));
+      $0 = $30;
+      __label__ = 45;
+      break;
+     case 20:
+      
+      var $32 = HEAP[$fd] != -1;
+      if ($32) {
+        __label__ = 21;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 21:
+      var $33 = HEAP[$fd];
+      var $34 = ___01fstat64_($33, $st);
+      
+      if ($34 == 0) {
+        __label__ = 22;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 22:
+      
+      
+      
+      
+      if ((HEAP[$st + 16] & 61440) == 32768) {
+        __label__ = 23;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 23:
+      
+      
+      if ($map_size == 0) {
+        __label__ = 24;
+        break;
+      } else {
+        __label__ = 28;
+        break;
+      }
+     case 24:
+      
+      
+      
+      
+      if (HEAP[$st + 44] <= HEAP[$offset]) {
+        __label__ = 25;
+        break;
+      } else {
+        __label__ = 26;
+        break;
+      }
+     case 25:
+      var $46 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($46, __str63);
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 26:
+      
+      
+      
+      
+      $calc_size = HEAP[$st + 44] - HEAP[$offset];
+      
+      
+      $map_size = $calc_size & 4294967295;
+      
+      
+      
+      
+      if ($map_size != $calc_size) {
+        __label__ = 27;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 27:
+      var $57 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($57, __str64);
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 28:
+      
+      
+      
+      
+      
+      
+      
+      if ($map_size + HEAP[$offset] > HEAP[$st + 44]) {
+        __label__ = 29;
+        break;
+      } else {
+        __label__ = 30;
+        break;
+      }
+     case 29:
+      var $65 = HEAP[_PyExc_ValueError];
+      _PyErr_SetString($65, __str65);
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 30:
+      
+      
+      var $68 = HEAP[$type_addr + 152];
+      
+      var $70 = FUNCTION_TABLE[$68]($type_addr, 0);
+      
+      $m_obj = $70;
+      
+      if ($70 == 0) {
+        __label__ = 31;
+        break;
+      } else {
+        __label__ = 32;
+        break;
+      }
+     case 31:
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 32:
+      
+      
+      HEAP[$m_obj + 8] = 0;
+      
+      
+      
+      HEAP[$m_obj + 12] = $map_size;
+      
+      
+      HEAP[$m_obj + 16] = 0;
+      var $80 = HEAP[$offset];
+      
+      
+      HEAP[$m_obj + 20] = $80;
+      
+      var $84 = HEAP[$fd] == -1;
+      if ($84) {
+        __label__ = 33;
+        break;
+      } else {
+        __label__ = 34;
+        break;
+      }
+     case 33:
+      
+      
+      HEAP[$m_obj + 28] = -1;
+      
+      var $88 = HEAP[$flags] | 32;
+      HEAP[$flags] = $88;
+      __label__ = 38;
+      break;
+     case 34:
+      var $89 = HEAP[$fd];
+      var $90 = _dup($89);
+      
+      
+      HEAP[$m_obj + 28] = $90;
+      
+      
+      
+      var $96 = HEAP[$m_obj + 28] == -1;
+      if ($96) {
+        __label__ = 35;
+        break;
+      } else {
+        __label__ = 38;
+        break;
+      }
+     case 35:
+      
+      
+      
+      
+      var $101 = HEAP[$m_obj] - 1;
+      
+      HEAP[$m_obj] = $101;
+      
+      
+      
+      if (HEAP[$m_obj] == 0) {
+        __label__ = 36;
+        break;
+      } else {
+        __label__ = 37;
+        break;
+      }
+     case 36:
+      
+      
+      
+      
+      
+      var $111 = HEAP[HEAP[$m_obj + 4] + 24];
+      
+      
+      FUNCTION_TABLE[$111]($m_obj);
+      __label__ = 37;
+      break;
+     case 37:
+      var $114 = HEAP[_mmap_module_error];
+      var $115 = _PyErr_SetFromErrno($114);
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 38:
+      var $116 = HEAP[$offset];
+      var $117 = HEAP[$fd];
+      var $118 = HEAP[$flags];
+      var $119 = HEAP[$prot];
+      
+      var $121 = ___01mmap64_(0, $map_size, $119, $118, $117, $116);
+      
+      
+      HEAP[$m_obj + 8] = $121;
+      
+      var $125 = $devzero != -1;
+      if ($125) {
+        __label__ = 39;
+        break;
+      } else {
+        __label__ = 40;
+        break;
+      }
+     case 39:
+      
+      var $127 = _close($devzero);
+      __label__ = 40;
+      break;
+     case 40:
+      
+      
+      
+      var $131 = HEAP[$m_obj + 8] == -1;
+      if ($131) {
+        __label__ = 41;
+        break;
+      } else {
+        __label__ = 44;
+        break;
+      }
+     case 41:
+      
+      
+      HEAP[$m_obj + 8] = 0;
+      
+      
+      
+      
+      var $138 = HEAP[$m_obj] - 1;
+      
+      HEAP[$m_obj] = $138;
+      
+      
+      
+      if (HEAP[$m_obj] == 0) {
+        __label__ = 42;
+        break;
+      } else {
+        __label__ = 43;
+        break;
+      }
+     case 42:
+      
+      
+      
+      
+      
+      var $148 = HEAP[HEAP[$m_obj + 4] + 24];
+      
+      
+      FUNCTION_TABLE[$148]($m_obj);
+      __label__ = 43;
+      break;
+     case 43:
+      var $151 = HEAP[_mmap_module_error];
+      var $152 = _PyErr_SetFromErrno($151);
+      $0 = 0;
+      __label__ = 45;
+      break;
+     case 44:
+      var $153 = HEAP[$access];
+      
+      
+      HEAP[$m_obj + 32] = $153;
+      
+      
+      $0 = $m_obj;
+      __label__ = 45;
+      break;
+     case 45:
+      
+      $retval = $0;
+      var $retval51 = $retval;
+      STACKTOP = __stackBase__;
+      return $retval51;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _setint($d, $name, $value) {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $d_addr;
+      var $name_addr;
+      var $value_addr;
+      var $o;
+      $d_addr = $d;
+      $name_addr = $name;
+      $value_addr = $value;
+      
+      var $1 = _PyInt_FromLong($value_addr);
+      $o = $1;
+      
+      
+      if ($o != 0) {
+        __label__ = 1;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 1:
+      
+      
+      
+      var $7 = _PyDict_SetItemString($d_addr, $name_addr, $o);
+      
+      if ($7 == 0) {
+        __label__ = 2;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 2:
+      
+      
+      
+      var $12 = HEAP[$o] - 1;
+      
+      
+      HEAP[$o] = $12;
+      
+      
+      
+      
+      if (HEAP[$o] == 0) {
+        __label__ = 3;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 3:
+      
+      
+      
+      
+      var $23 = HEAP[HEAP[$o + 4] + 24];
+      
+      FUNCTION_TABLE[$23]($o);
+      __label__ = 4;
+      break;
+     case 4:
+      return;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  function _initmmap() {
+    var __label__;
+    __label__ = -1;
+    while (1) switch (__label__) {
+     case -1:
+      var $dict;
+      var $module;
+      var $0 = _PyType_Ready(_mmap_object_type);
+      
+      if ($0 < 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 1;
+        break;
+      }
+     case 1:
+      var $2 = _Py_InitModule4(__str66, 0, 0, 0, 1013);
+      $module = $2;
+      
+      
+      if ($module == 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 2;
+        break;
+      }
+     case 2:
+      
+      var $6 = _PyModule_GetDict($module);
+      $dict = $6;
+      
+      
+      if ($dict == 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 3;
+        break;
+      }
+     case 3:
+      var $9 = HEAP[_PyExc_EnvironmentError];
+      var $10 = _PyErr_NewException(__str67, $9, 0);
+      HEAP[_mmap_module_error] = $10;
+      
+      
+      if (HEAP[_mmap_module_error] == 0) {
+        __label__ = 5;
+        break;
+      } else {
+        __label__ = 4;
+        break;
+      }
+     case 4:
+      var $13 = HEAP[_mmap_module_error];
+      
+      var $15 = _PyDict_SetItemString($dict, __str68, $13);
+      
+      var $17 = _PyDict_SetItemString($dict, __str66, _mmap_object_type);
+      
+      _setint($dict, __str69, 4);
+      
+      _setint($dict, __str70, 1);
+      
+      _setint($dict, __str71, 2);
+      
+      _setint($dict, __str72, 1);
+      
+      _setint($dict, __str73, 2);
+      
+      _setint($dict, __str74, 2048);
+      
+      _setint($dict, __str75, 4096);
+      
+      _setint($dict, __str76, 32);
+      
+      _setint($dict, __str77, 32);
+      var $27 = _my_getpagesize();
+      
+      _setint($dict, __str78, $27);
+      var $29 = _my_getpagesize();
+      
+      _setint($dict, __str79, $29);
+      
+      _setint($dict, __str80, 1);
+      
+      _setint($dict, __str81, 2);
+      
+      _setint($dict, __str82, 3);
+      __label__ = 5;
+      break;
+     case 5:
+      return;
+     default:
+      assert(0, "bad label: " + __label__);
+    }
+  }
+  Module["_initmmap"] = _initmmap;
+  FUNCTION_TABLE = FUNCTION_TABLE.concat([ 0, 0, _mmap_close_method, 0, _mmap_find_method, 0, _mmap_rfind_method, 0, _mmap_flush_method, 0, _mmap_move_method, 0, _mmap_read_method, 0, _mmap_read_byte_method, 0, _mmap_read_line_method, 0, _mmap_resize_method, 0, _mmap_seek_method, 0, _mmap_size_method, 0, _mmap_tell_method, 0, _mmap_write_method, 0, _mmap_write_byte_method, 0, _mmap_length, 0, _mmap_concat, 0, _mmap_repeat, 0, _mmap_item, 0, _mmap_slice, 0, _mmap_ass_item, 0, _mmap_ass_slice, 0, _mmap_subscript, 0, _mmap_ass_subscript, 0, _mmap_buffer_getreadbuf, 0, _mmap_buffer_getwritebuf, 0, _mmap_buffer_getsegcount, 0, _mmap_buffer_getcharbuffer, 0, _mmap_object_dealloc, 0, _PyObject_GenericGetAttr, 0, _PyType_GenericAlloc, 0, _new_mmap_object, 0, _PyObject_Free, 0 ]);
+  function run(args) {
+    __str = allocate([ 109, 109, 97, 112, 32, 99, 108, 111, 115, 101, 100, 32, 111, 114, 32, 105, 110, 118, 97, 108, 105, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str1 = allocate([ 99, 0 ], "i8", ALLOC_NORMAL);
+    __str2 = allocate([ 114, 101, 97, 100, 32, 98, 121, 116, 101, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str3 = allocate([ 110, 58, 114, 101, 97, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str4 = allocate([ 115, 101, 108, 102, 45, 62, 115, 105, 122, 101, 32, 62, 61, 32, 115, 101, 108, 102, 45, 62, 112, 111, 115, 0 ], "i8", ALLOC_NORMAL);
+    __str5 = allocate([ 46, 46, 47, 99, 112, 121, 116, 104, 111, 110, 47, 77, 111, 100, 117, 108, 101, 115, 47, 109, 109, 97, 112, 109, 111, 100, 117, 108, 101, 46, 99, 0 ], "i8", ALLOC_NORMAL);
+    ___PRETTY_FUNCTION___7743 = allocate([ 109, 109, 97, 112, 95, 114, 101, 97, 100, 95, 109, 101, 116, 104, 111, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str6 = allocate([ 115, 35, 0 ], "i8", ALLOC_NORMAL);
+    __str7 = allocate([ 115, 35, 124, 110, 110, 58, 114, 102, 105, 110, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str8 = allocate([ 115, 35, 124, 110, 110, 58, 102, 105, 110, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str9 = allocate([ 109, 109, 97, 112, 32, 99, 97, 110, 39, 116, 32, 109, 111, 100, 105, 102, 121, 32, 97, 32, 114, 101, 97, 100, 111, 110, 108, 121, 32, 109, 101, 109, 111, 114, 121, 32, 109, 97, 112, 46, 0 ], "i8", ALLOC_NORMAL);
+    __str10 = allocate([ 109, 109, 97, 112, 32, 99, 97, 110, 39, 116, 32, 114, 101, 115, 105, 122, 101, 32, 97, 32, 114, 101, 97, 100, 111, 110, 108, 121, 32, 111, 114, 32, 99, 111, 112, 121, 45, 111, 110, 45, 119, 114, 105, 116, 101, 32, 109, 101, 109, 111, 114, 121, 32, 109, 97, 112, 46, 0 ], "i8", ALLOC_NORMAL);
+    __str11 = allocate([ 115, 35, 58, 119, 114, 105, 116, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str12 = allocate([ 100, 97, 116, 97, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str13 = allocate([ 99, 58, 119, 114, 105, 116, 101, 95, 98, 121, 116, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str14 = allocate([ 119, 114, 105, 116, 101, 32, 98, 121, 116, 101, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    _mmap_module_error = allocate(1, "%struct.PyObject*", ALLOC_NORMAL);
+    __str15 = allocate([ 110, 58, 114, 101, 115, 105, 122, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str16 = allocate([ 124, 110, 110, 58, 102, 108, 117, 115, 104, 0 ], "i8", ALLOC_NORMAL);
+    __str17 = allocate([ 102, 108, 117, 115, 104, 32, 118, 97, 108, 117, 101, 115, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str18 = allocate([ 110, 124, 105, 58, 115, 101, 101, 107, 0 ], "i8", ALLOC_NORMAL);
+    __str19 = allocate([ 117, 110, 107, 110, 111, 119, 110, 32, 115, 101, 101, 107, 32, 116, 121, 112, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str20 = allocate([ 115, 101, 101, 107, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str21 = allocate([ 107, 107, 107, 58, 109, 111, 118, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str22 = allocate([ 115, 111, 117, 114, 99, 101, 44, 32, 100, 101, 115, 116, 105, 110, 97, 116, 105, 111, 110, 44, 32, 111, 114, 32, 99, 111, 117, 110, 116, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str23 = allocate([ 99, 108, 111, 115, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str24 = allocate([ 102, 105, 110, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str25 = allocate([ 114, 102, 105, 110, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str26 = allocate([ 102, 108, 117, 115, 104, 0 ], "i8", ALLOC_NORMAL);
+    __str27 = allocate([ 109, 111, 118, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str28 = allocate([ 114, 101, 97, 100, 0 ], "i8", ALLOC_NORMAL);
+    __str29 = allocate([ 114, 101, 97, 100, 95, 98, 121, 116, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str30 = allocate([ 114, 101, 97, 100, 108, 105, 110, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str31 = allocate([ 114, 101, 115, 105, 122, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str32 = allocate([ 115, 101, 101, 107, 0 ], "i8", ALLOC_NORMAL);
+    __str33 = allocate([ 115, 105, 122, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str34 = allocate([ 116, 101, 108, 108, 0 ], "i8", ALLOC_NORMAL);
+    __str35 = allocate([ 119, 114, 105, 116, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str36 = allocate([ 119, 114, 105, 116, 101, 95, 98, 121, 116, 101, 0 ], "i8", ALLOC_NORMAL);
+    _mmap_object_methods = allocate([ 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], [ "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i8", "i8", "i8", "i8", "i8*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8" ], ALLOC_NORMAL);
+    __str37 = allocate([ 65, 99, 99, 101, 115, 115, 105, 110, 103, 32, 110, 111, 110, 45, 101, 120, 105, 115, 116, 101, 110, 116, 32, 109, 109, 97, 112, 32, 115, 101, 103, 109, 101, 110, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str38 = allocate([ 97, 99, 99, 101, 115, 115, 105, 110, 103, 32, 110, 111, 110, 45, 101, 120, 105, 115, 116, 101, 110, 116, 32, 98, 117, 102, 102, 101, 114, 32, 115, 101, 103, 109, 101, 110, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str39 = allocate([ 109, 109, 97, 112, 32, 105, 110, 100, 101, 120, 32, 111, 117, 116, 32, 111, 102, 32, 114, 97, 110, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str40 = allocate(1, "i8", ALLOC_NORMAL);
+    __str41 = allocate([ 109, 109, 97, 112, 32, 105, 110, 100, 105, 99, 101, 115, 32, 109, 117, 115, 116, 32, 98, 101, 32, 105, 110, 116, 101, 103, 101, 114, 115, 0 ], "i8", ALLOC_NORMAL);
+    __str42 = allocate([ 109, 109, 97, 112, 115, 32, 100, 111, 110, 39, 116, 32, 115, 117, 112, 112, 111, 114, 116, 32, 99, 111, 110, 99, 97, 116, 101, 110, 97, 116, 105, 111, 110, 0 ], "i8", ALLOC_NORMAL);
+    __str43 = allocate([ 109, 109, 97, 112, 115, 32, 100, 111, 110, 39, 116, 32, 115, 117, 112, 112, 111, 114, 116, 32, 114, 101, 112, 101, 97, 116, 32, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0 ], "i8", ALLOC_NORMAL);
+    __str44 = allocate([ 109, 109, 97, 112, 32, 111, 98, 106, 101, 99, 116, 32, 100, 111, 101, 115, 110, 39, 116, 32, 115, 117, 112, 112, 111, 114, 116, 32, 115, 108, 105, 99, 101, 32, 100, 101, 108, 101, 116, 105, 111, 110, 0 ], "i8", ALLOC_NORMAL);
+    __str45 = allocate([ 109, 109, 97, 112, 32, 115, 108, 105, 99, 101, 32, 97, 115, 115, 105, 103, 110, 109, 101, 110, 116, 32, 109, 117, 115, 116, 32, 98, 101, 32, 97, 32, 115, 116, 114, 105, 110, 103, 0 ], "i8", ALLOC_NORMAL);
+    __str46 = allocate([ 109, 109, 97, 112, 32, 115, 108, 105, 99, 101, 32, 97, 115, 115, 105, 103, 110, 109, 101, 110, 116, 32, 105, 115, 32, 119, 114, 111, 110, 103, 32, 115, 105, 122, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str47 = allocate([ 109, 109, 97, 112, 32, 111, 98, 106, 101, 99, 116, 32, 100, 111, 101, 115, 110, 39, 116, 32, 115, 117, 112, 112, 111, 114, 116, 32, 105, 116, 101, 109, 32, 100, 101, 108, 101, 116, 105, 111, 110, 0 ], "i8", ALLOC_NORMAL);
+    __str48 = allocate([ 109, 109, 97, 112, 32, 97, 115, 115, 105, 103, 110, 109, 101, 110, 116, 32, 109, 117, 115, 116, 32, 98, 101, 32, 115, 105, 110, 103, 108, 101, 45, 99, 104, 97, 114, 97, 99, 116, 101, 114, 32, 115, 116, 114, 105, 110, 103, 0 ], "i8", ALLOC_NORMAL);
+    __str49 = allocate([ 109, 109, 97, 112, 32, 105, 110, 100, 105, 99, 101, 115, 32, 109, 117, 115, 116, 32, 98, 101, 32, 105, 110, 116, 101, 103, 101, 114, 0 ], "i8", ALLOC_NORMAL);
+    _mmap_as_sequence = allocate(40, [ "i32 (%struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, i32)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, i32)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, i32, i32)*", 0, 0, 0, "i32 (%struct.PyObject*, i32, %struct.PyObject*)*", 0, 0, 0, "i32 (%struct.PyObject*, i32, i32, %struct.PyObject*)*", 0, 0, 0, "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8" ], ALLOC_NORMAL);
+    _mmap_as_mapping = allocate(12, [ "i32 (%struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0 ], ALLOC_NORMAL);
+    _mmap_as_buffer = allocate(24, [ "i32 (%struct.PyObject*, i32, i8**)*", 0, 0, 0, "i32 (%struct.PyObject*, i32, i8**)*", 0, 0, 0, "i32 (%struct.PyObject*, i32*)*", 0, 0, 0, "i32 (%struct.PyObject*, i32, i8**)*", 0, 0, 0, "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8" ], ALLOC_NORMAL);
+    _mmap_doc = allocate([ 87, 105, 110, 100, 111, 119, 115, 58, 32, 109, 109, 97, 112, 40, 102, 105, 108, 101, 110, 111, 44, 32, 108, 101, 110, 103, 116, 104, 91, 44, 32, 116, 97, 103, 110, 97, 109, 101, 91, 44, 32, 97, 99, 99, 101, 115, 115, 91, 44, 32, 111, 102, 102, 115, 101, 116, 93, 93, 93, 41, 10, 10, 77, 97, 112, 115, 32, 108, 101, 110, 103, 116, 104, 32, 98, 121, 116, 101, 115, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 115, 112, 101, 99, 105, 102, 105, 101, 100, 32, 98, 121, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 104, 97, 110, 100, 108, 101, 32, 102, 105, 108, 101, 110, 111, 44, 10, 97, 110, 100, 32, 114, 101, 116, 117, 114, 110, 115, 32, 97, 32, 109, 109, 97, 112, 32, 111, 98, 106, 101, 99, 116, 46, 32, 32, 73, 102, 32, 108, 101, 110, 103, 116, 104, 32, 105, 115, 32, 108, 97, 114, 103, 101, 114, 32, 116, 104, 97, 110, 32, 116, 104, 101, 32, 99, 117, 114, 114, 101, 110, 116, 32, 115, 105, 122, 101, 10, 111, 102, 32, 116, 104, 101, 32, 102, 105, 108, 101, 44, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 105, 115, 32, 101, 120, 116, 101, 110, 100, 101, 100, 32, 116, 111, 32, 99, 111, 110, 116, 97, 105, 110, 32, 108, 101, 110, 103, 116, 104, 32, 98, 121, 116, 101, 115, 46, 32, 32, 73, 102, 32, 108, 101, 110, 103, 116, 104, 10, 105, 115, 32, 48, 44, 32, 116, 104, 101, 32, 109, 97, 120, 105, 109, 117, 109, 32, 108, 101, 110, 103, 116, 104, 32, 111, 102, 32, 116, 104, 101, 32, 109, 97, 112, 32, 105, 115, 32, 116, 104, 101, 32, 99, 117, 114, 114, 101, 110, 116, 32, 115, 105, 122, 101, 32, 111, 102, 32, 116, 104, 101, 32, 102, 105, 108, 101, 44, 10, 101, 120, 99, 101, 112, 116, 32, 116, 104, 97, 116, 32, 105, 102, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 105, 115, 32, 101, 109, 112, 116, 121, 32, 87, 105, 110, 100, 111, 119, 115, 32, 114, 97, 105, 115, 101, 115, 32, 97, 110, 32, 101, 120, 99, 101, 112, 116, 105, 111, 110, 32, 40, 121, 111, 117, 32, 99, 97, 110, 110, 111, 116, 10, 99, 114, 101, 97, 116, 101, 32, 97, 110, 32, 101, 109, 112, 116, 121, 32, 109, 97, 112, 112, 105, 110, 103, 32, 111, 110, 32, 87, 105, 110, 100, 111, 119, 115, 41, 46, 10, 10, 85, 110, 105, 120, 58, 32, 109, 109, 97, 112, 40, 102, 105, 108, 101, 110, 111, 44, 32, 108, 101, 110, 103, 116, 104, 91, 44, 32, 102, 108, 97, 103, 115, 91, 44, 32, 112, 114, 111, 116, 91, 44, 32, 97, 99, 99, 101, 115, 115, 91, 44, 32, 111, 102, 102, 115, 101, 116, 93, 93, 93, 93, 41, 10, 10, 77, 97, 112, 115, 32, 108, 101, 110, 103, 116, 104, 32, 98, 121, 116, 101, 115, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 115, 112, 101, 99, 105, 102, 105, 101, 100, 32, 98, 121, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 100, 101, 115, 99, 114, 105, 112, 116, 111, 114, 32, 102, 105, 108, 101, 110, 111, 44, 10, 97, 110, 100, 32, 114, 101, 116, 117, 114, 110, 115, 32, 97, 32, 109, 109, 97, 112, 32, 111, 98, 106, 101, 99, 116, 46, 32, 32, 73, 102, 32, 108, 101, 110, 103, 116, 104, 32, 105, 115, 32, 48, 44, 32, 116, 104, 101, 32, 109, 97, 120, 105, 109, 117, 109, 32, 108, 101, 110, 103, 116, 104, 32, 111, 102, 32, 116, 104, 101, 32, 109, 97, 112, 10, 119, 105, 108, 108, 32, 98, 101, 32, 116, 104, 101, 32, 99, 117, 114, 114, 101, 110, 116, 32, 115, 105, 122, 101, 32, 111, 102, 32, 116, 104, 101, 32, 102, 105, 108, 101, 32, 119, 104, 101, 110, 32, 109, 109, 97, 112, 32, 105, 115, 32, 99, 97, 108, 108, 101, 100, 46, 10, 102, 108, 97, 103, 115, 32, 115, 112, 101, 99, 105, 102, 105, 101, 115, 32, 116, 104, 101, 32, 110, 97, 116, 117, 114, 101, 32, 111, 102, 32, 116, 104, 101, 32, 109, 97, 112, 112, 105, 110, 103, 46, 32, 77, 65, 80, 95, 80, 82, 73, 86, 65, 84, 69, 32, 99, 114, 101, 97, 116, 101, 115, 32, 97, 10, 112, 114, 105, 118, 97, 116, 101, 32, 99, 111, 112, 121, 45, 111, 110, 45, 119, 114, 105, 116, 101, 32, 109, 97, 112, 112, 105, 110, 103, 44, 32, 115, 111, 32, 99, 104, 97, 110, 103, 101, 115, 32, 116, 111, 32, 116, 104, 101, 32, 99, 111, 110, 116, 101, 110, 116, 115, 32, 111, 102, 32, 116, 104, 101, 32, 109, 109, 97, 112, 10, 111, 98, 106, 101, 99, 116, 32, 119, 105, 108, 108, 32, 98, 101, 32, 112, 114, 105, 118, 97, 116, 101, 32, 116, 111, 32, 116, 104, 105, 115, 32, 112, 114, 111, 99, 101, 115, 115, 44, 32, 97, 110, 100, 32, 77, 65, 80, 95, 83, 72, 65, 82, 69, 68, 32, 99, 114, 101, 97, 116, 101, 115, 32, 97, 32, 109, 97, 112, 112, 105, 110, 103, 10, 116, 104, 97, 116, 39, 115, 32, 115, 104, 97, 114, 101, 100, 32, 119, 105, 116, 104, 32, 97, 108, 108, 32, 111, 116, 104, 101, 114, 32, 112, 114, 111, 99, 101, 115, 115, 101, 115, 32, 109, 97, 112, 112, 105, 110, 103, 32, 116, 104, 101, 32, 115, 97, 109, 101, 32, 97, 114, 101, 97, 115, 32, 111, 102, 32, 116, 104, 101, 32, 102, 105, 108, 101, 46, 10, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 118, 97, 108, 117, 101, 32, 105, 115, 32, 77, 65, 80, 95, 83, 72, 65, 82, 69, 68, 46, 10, 10, 84, 111, 32, 109, 97, 112, 32, 97, 110, 111, 110, 121, 109, 111, 117, 115, 32, 109, 101, 109, 111, 114, 121, 44, 32, 112, 97, 115, 115, 32, 45, 49, 32, 97, 115, 32, 116, 104, 101, 32, 102, 105, 108, 101, 110, 111, 32, 40, 98, 111, 116, 104, 32, 118, 101, 114, 115, 105, 111, 110, 115, 41, 46, 0 ], "i8", ALLOC_NORMAL);
+    __str50 = allocate([ 109, 109, 97, 112, 46, 109, 109, 97, 112, 0 ], "i8", ALLOC_NORMAL);
+    _mmap_object_type = allocate([ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 132587, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], [ "i32", 0, 0, 0, "%struct._typeobject*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i32", 0, 0, 0, "i32", 0, 0, 0, "void (%struct.PyObject*)*", 0, 0, 0, "i32 (%struct.PyObject*, %struct.FILE*, i32)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, i8*)*", 0, 0, 0, "i32 (%struct.PyObject*, i8*, %struct.PyObject*)*", 0, 0, 0, "i32 (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*)*", 0, 0, 0, "%struct.PyNumberMethods*", 0, 0, 0, "%struct.PySequenceMethods*", 0, 0, 0, "%struct.PyMappingMethods*", 0, 0, 0, "i32 (%struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "%struct.PyBufferProcs*", 0, 0, 0, "i32", 0, 0, 0, "i8*", 0, 0, 0, "i32 (%struct.PyObject*, i32 (%struct.PyObject*, i8*)*, i8*)*", 0, 0, 0, "i32 (%struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*, i32)*", 0, 0, 0, "i32", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*)*", 0, 0, 0, "%struct.PyMethodDef*", 0, 0, 0, "%struct.PyMemberDef*", 0, 0, 0, "%struct.PyGetSetDef*", 0, 0, 0, "%struct._typeobject*", 0, 0, 0, "%struct.PyObject*", 0, 0, 0, "%struct.PyObject* (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "i32", 0, 0, 0, "i32 (%struct.PyObject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "%struct.PyObject* (%struct._typeobject*, i32)*", 0, 0, 0, "%struct.PyObject* (%struct._typeobject*, %struct.PyObject*, %struct.PyObject*)*", 0, 0, 0, "void (i8*)*", 0, 0, 0, "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8", "i8" ], ALLOC_NORMAL);
+    __str51 = allocate([ 109, 101, 109, 111, 114, 121, 32, 109, 97, 112, 112, 101, 100, 32, 37, 115, 32, 109, 117, 115, 116, 32, 98, 101, 32, 112, 111, 115, 105, 116, 105, 118, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str52 = allocate([ 109, 97, 112, 32, 115, 105, 122, 101, 32, 109, 117, 115, 116, 32, 98, 101, 32, 97, 110, 32, 105, 110, 116, 101, 103, 114, 97, 108, 32, 118, 97, 108, 117, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str53 = allocate([ 105, 79, 124, 105, 105, 105, 76, 0 ], "i8", ALLOC_NORMAL);
+    _keywords_8698 = allocate(28, "i8*", ALLOC_NORMAL);
+    __str54 = allocate([ 102, 105, 108, 101, 110, 111, 0 ], "i8", ALLOC_NORMAL);
+    __str55 = allocate([ 108, 101, 110, 103, 116, 104, 0 ], "i8", ALLOC_NORMAL);
+    __str56 = allocate([ 102, 108, 97, 103, 115, 0 ], "i8", ALLOC_NORMAL);
+    __str57 = allocate([ 112, 114, 111, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str58 = allocate([ 97, 99, 99, 101, 115, 115, 0 ], "i8", ALLOC_NORMAL);
+    __str59 = allocate([ 111, 102, 102, 115, 101, 116, 0 ], "i8", ALLOC_NORMAL);
+    __str60 = allocate([ 109, 101, 109, 111, 114, 121, 32, 109, 97, 112, 112, 101, 100, 32, 111, 102, 102, 115, 101, 116, 32, 109, 117, 115, 116, 32, 98, 101, 32, 112, 111, 115, 105, 116, 105, 118, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str61 = allocate([ 109, 109, 97, 112, 32, 99, 97, 110, 39, 116, 32, 115, 112, 101, 99, 105, 102, 121, 32, 98, 111, 116, 104, 32, 97, 99, 99, 101, 115, 115, 32, 97, 110, 100, 32, 102, 108, 97, 103, 115, 44, 32, 112, 114, 111, 116, 46, 0 ], "i8", ALLOC_NORMAL);
+    __str62 = allocate([ 109, 109, 97, 112, 32, 105, 110, 118, 97, 108, 105, 100, 32, 97, 99, 99, 101, 115, 115, 32, 112, 97, 114, 97, 109, 101, 116, 101, 114, 46, 0 ], "i8", ALLOC_NORMAL);
+    __str63 = allocate([ 109, 109, 97, 112, 32, 111, 102, 102, 115, 101, 116, 32, 105, 115, 32, 103, 114, 101, 97, 116, 101, 114, 32, 116, 104, 97, 110, 32, 102, 105, 108, 101, 32, 115, 105, 122, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str64 = allocate([ 109, 109, 97, 112, 32, 108, 101, 110, 103, 116, 104, 32, 105, 115, 32, 116, 111, 111, 32, 108, 97, 114, 103, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str65 = allocate([ 109, 109, 97, 112, 32, 108, 101, 110, 103, 116, 104, 32, 105, 115, 32, 103, 114, 101, 97, 116, 101, 114, 32, 116, 104, 97, 110, 32, 102, 105, 108, 101, 32, 115, 105, 122, 101, 0 ], "i8", ALLOC_NORMAL);
+    __str66 = allocate([ 109, 109, 97, 112, 0 ], "i8", ALLOC_NORMAL);
+    __str67 = allocate([ 109, 109, 97, 112, 46, 101, 114, 114, 111, 114, 0 ], "i8", ALLOC_NORMAL);
+    __str68 = allocate([ 101, 114, 114, 111, 114, 0 ], "i8", ALLOC_NORMAL);
+    __str69 = allocate([ 80, 82, 79, 84, 95, 69, 88, 69, 67, 0 ], "i8", ALLOC_NORMAL);
+    __str70 = allocate([ 80, 82, 79, 84, 95, 82, 69, 65, 68, 0 ], "i8", ALLOC_NORMAL);
+    __str71 = allocate([ 80, 82, 79, 84, 95, 87, 82, 73, 84, 69, 0 ], "i8", ALLOC_NORMAL);
+    __str72 = allocate([ 77, 65, 80, 95, 83, 72, 65, 82, 69, 68, 0 ], "i8", ALLOC_NORMAL);
+    __str73 = allocate([ 77, 65, 80, 95, 80, 82, 73, 86, 65, 84, 69, 0 ], "i8", ALLOC_NORMAL);
+    __str74 = allocate([ 77, 65, 80, 95, 68, 69, 78, 89, 87, 82, 73, 84, 69, 0 ], "i8", ALLOC_NORMAL);
+    __str75 = allocate([ 77, 65, 80, 95, 69, 88, 69, 67, 85, 84, 65, 66, 76, 69, 0 ], "i8", ALLOC_NORMAL);
+    __str76 = allocate([ 77, 65, 80, 95, 65, 78, 79, 78, 0 ], "i8", ALLOC_NORMAL);
+    __str77 = allocate([ 77, 65, 80, 95, 65, 78, 79, 78, 89, 77, 79, 85, 83, 0 ], "i8", ALLOC_NORMAL);
+    __str78 = allocate([ 80, 65, 71, 69, 83, 73, 90, 69, 0 ], "i8", ALLOC_NORMAL);
+    __str79 = allocate([ 65, 76, 76, 79, 67, 65, 84, 73, 79, 78, 71, 82, 65, 78, 85, 76, 65, 82, 73, 84, 89, 0 ], "i8", ALLOC_NORMAL);
+    __str80 = allocate([ 65, 67, 67, 69, 83, 83, 95, 82, 69, 65, 68, 0 ], "i8", ALLOC_NORMAL);
+    __str81 = allocate([ 65, 67, 67, 69, 83, 83, 95, 87, 82, 73, 84, 69, 0 ], "i8", ALLOC_NORMAL);
+    __str82 = allocate([ 65, 67, 67, 69, 83, 83, 95, 67, 79, 80, 89, 0 ], "i8", ALLOC_NORMAL);
+    HEAP[_mmap_object_methods] = __str23;
+    HEAP[_mmap_object_methods + 4] = FUNCTION_TABLE_OFFSET + 2;
+    HEAP[_mmap_object_methods + 16] = __str24;
+    HEAP[_mmap_object_methods + 20] = FUNCTION_TABLE_OFFSET + 4;
+    HEAP[_mmap_object_methods + 32] = __str25;
+    HEAP[_mmap_object_methods + 36] = FUNCTION_TABLE_OFFSET + 6;
+    HEAP[_mmap_object_methods + 48] = __str26;
+    HEAP[_mmap_object_methods + 52] = FUNCTION_TABLE_OFFSET + 8;
+    HEAP[_mmap_object_methods + 64] = __str27;
+    HEAP[_mmap_object_methods + 68] = FUNCTION_TABLE_OFFSET + 10;
+    HEAP[_mmap_object_methods + 80] = __str28;
+    HEAP[_mmap_object_methods + 84] = FUNCTION_TABLE_OFFSET + 12;
+    HEAP[_mmap_object_methods + 96] = __str29;
+    HEAP[_mmap_object_methods + 100] = FUNCTION_TABLE_OFFSET + 14;
+    HEAP[_mmap_object_methods + 112] = __str30;
+    HEAP[_mmap_object_methods + 116] = FUNCTION_TABLE_OFFSET + 16;
+    HEAP[_mmap_object_methods + 128] = __str31;
+    HEAP[_mmap_object_methods + 132] = FUNCTION_TABLE_OFFSET + 18;
+    HEAP[_mmap_object_methods + 144] = __str32;
+    HEAP[_mmap_object_methods + 148] = FUNCTION_TABLE_OFFSET + 20;
+    HEAP[_mmap_object_methods + 160] = __str33;
+    HEAP[_mmap_object_methods + 164] = FUNCTION_TABLE_OFFSET + 22;
+    HEAP[_mmap_object_methods + 176] = __str34;
+    HEAP[_mmap_object_methods + 180] = FUNCTION_TABLE_OFFSET + 24;
+    HEAP[_mmap_object_methods + 192] = __str35;
+    HEAP[_mmap_object_methods + 196] = FUNCTION_TABLE_OFFSET + 26;
+    HEAP[_mmap_object_methods + 208] = __str36;
+    HEAP[_mmap_object_methods + 212] = FUNCTION_TABLE_OFFSET + 28;
+    HEAP[_mmap_as_sequence] = FUNCTION_TABLE_OFFSET + 30;
+    HEAP[_mmap_as_sequence + 4] = FUNCTION_TABLE_OFFSET + 32;
+    HEAP[_mmap_as_sequence + 8] = FUNCTION_TABLE_OFFSET + 34;
+    HEAP[_mmap_as_sequence + 12] = FUNCTION_TABLE_OFFSET + 36;
+    HEAP[_mmap_as_sequence + 16] = FUNCTION_TABLE_OFFSET + 38;
+    HEAP[_mmap_as_sequence + 20] = FUNCTION_TABLE_OFFSET + 40;
+    HEAP[_mmap_as_sequence + 24] = FUNCTION_TABLE_OFFSET + 42;
+    HEAP[_mmap_as_mapping] = FUNCTION_TABLE_OFFSET + 30;
+    HEAP[_mmap_as_mapping + 4] = FUNCTION_TABLE_OFFSET + 44;
+    HEAP[_mmap_as_mapping + 8] = FUNCTION_TABLE_OFFSET + 46;
+    HEAP[_mmap_as_buffer] = FUNCTION_TABLE_OFFSET + 48;
+    HEAP[_mmap_as_buffer + 4] = FUNCTION_TABLE_OFFSET + 50;
+    HEAP[_mmap_as_buffer + 8] = FUNCTION_TABLE_OFFSET + 52;
+    HEAP[_mmap_as_buffer + 12] = FUNCTION_TABLE_OFFSET + 54;
+    HEAP[_mmap_object_type + 12] = __str50;
+    HEAP[_mmap_object_type + 24] = FUNCTION_TABLE_OFFSET + 56;
+    HEAP[_mmap_object_type + 52] = _mmap_as_sequence;
+    HEAP[_mmap_object_type + 56] = _mmap_as_mapping;
+    HEAP[_mmap_object_type + 72] = FUNCTION_TABLE_OFFSET + 58;
+    HEAP[_mmap_object_type + 80] = _mmap_as_buffer;
+    HEAP[_mmap_object_type + 88] = _mmap_doc;
+    HEAP[_mmap_object_type + 116] = _mmap_object_methods;
+    HEAP[_mmap_object_type + 152] = FUNCTION_TABLE_OFFSET + 60;
+    HEAP[_mmap_object_type + 156] = FUNCTION_TABLE_OFFSET + 62;
+    HEAP[_mmap_object_type + 160] = FUNCTION_TABLE_OFFSET + 64;
+    HEAP[_keywords_8698] = __str54;
+    HEAP[_keywords_8698 + 4] = __str55;
+    HEAP[_keywords_8698 + 8] = __str56;
+    HEAP[_keywords_8698 + 12] = __str57;
+    HEAP[_keywords_8698 + 16] = __str58;
+    HEAP[_keywords_8698 + 20] = __str59;
+    __globalConstructor__();
+  }
+  Module["run"] = run;
+  run();
+  return Module;
+});
