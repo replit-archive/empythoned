@@ -22,6 +22,15 @@ this['Python'] = {
     this.globals = _PyModule_GetDict(this.module);
     this.isInitialized = true;
 
+    // Hijack traceback printer to give live indicator of whether an error has
+    // occurred. Useful for deciding whether to print stderr or buffer it.
+    var old_PyTraceBack_Print = _PyTraceBack_Print;
+    var that = this;
+    _PyTraceBack_Print = function() {
+      that.isHandlingError = true;
+      return old_PyTraceBack_Print.apply(null, arguments);
+    };
+
     var help = ('def help(x):\n' +
                 '  print getattr(x, "__doc__", "No documentation.")\n' +
                 '  print ""\n' +
@@ -35,6 +44,7 @@ this['Python'] = {
   //   3. If a Python exception occurs while evaluating, returns undefined.
   'eval': function(command) {
     if (!this.isInitialized) throw new Error('Python runtime not initialized.');
+    this.isHandlingError = false;
     var commandPtr = this.allocateString(command);
 
     // Compile.
@@ -122,6 +132,7 @@ this['Python'] = {
     _free(exc);
     return ret;
   },
+  isHandlingError: false,
   isInitialized: false,
   flags: null,
   filename: null,
